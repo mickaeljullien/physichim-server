@@ -132,7 +132,7 @@ async function router(req, res) {
       res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
       return res.end(fs.readFileSync(htmlPath));
     }
-    return json(res, 404, { error: 'admin.html introuvable' });
+    return json(res, 404, { error: 'admin.html introuvable.' });
   }
 
   // ── API : Connexion élève par code ──
