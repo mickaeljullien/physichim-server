@@ -125,6 +125,16 @@ async function router(req, res) {
     return json(res, 404, { error: 'index.html introuvable' });
   }
 
+  // ── Servir le fichier HTML principal ──
+  if (p === '/' || p === '/admin.html') {
+    const htmlPath = path.join(__dirname, 'admin.html');
+    if (fs.existsSync(htmlPath)) {
+      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+      return res.end(fs.readFileSync(htmlPath));
+    }
+    return json(res, 404, { error: 'admin.html introuvable' });
+  }
+
   // ── API : Connexion élève par code ──
   // POST /api/login  { code: "E01" }
   if (p === '/api/login' && method === 'POST') {
