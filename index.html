@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhysiChim Terminale — Espace de révision</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #161922;
+    --surface2: #1e2330;
+    --border: #2a3040;
+    --accent: #4f8ef7;
+    --accent2: #f7a24f;
+    --green: #4fca7a;
+    --red: #f75959;
+    --yellow: #f7d44f;
+    --text: #e8ecf4;
+    --muted: #7a8399;
+    --ch-chimie: #4f8ef7;
+    --ch-physique: #a44ff7;
+    --ch-meca: #f7a24f;
+    --ch-thermo: #4fca7a;
+    --ch-elec: #f75959;
+    --ch-organique: #f7d44f;
+    --radius: 12px;
+    --transition: 0.18s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── LAYOUT ── */
+  #app { display: flex; height: 100vh; }
+
+  /* ── SIDEBAR ── */
+  #sidebar {
+    width: 280px;
+    min-width: 280px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: width var(--transition);
+    z-index: 100;
+  }
+
+  #sidebar.collapsed { width: 0; min-width: 0; }
+
+  .sidebar-header {
+    padding: 24px 20px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .app-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    white-space: nowrap;
+  }
+
+  .app-subtitle { font-size: 0.72rem; color: var(--muted); margin-top: 2px; white-space: nowrap; }
+
+  /* student badge */
+  #student-badge {
+    margin: 12px 20px 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: border-color var(--transition);
+  }
+  #student-badge:hover { border-color: var(--accent); }
+  #student-badge .student-icon { font-size: 1.2rem; }
+  #student-badge .student-info { flex: 1; min-width: 0; }
+  #student-badge .student-id { font-size: 0.75rem; color: var(--muted); }
+  #student-badge .student-name { font-size: 0.85rem; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  .nav-section { padding: 12px 12px 6px; }
+  .nav-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 0 8px 6px; }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    transition: all var(--transition);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 1px solid transparent;
+  }
+
+  .nav-item:hover { background: var(--surface2); color: var(--text); }
+  .nav-item.active { background: rgba(79,142,247,0.12); color: var(--accent); border-color: rgba(79,142,247,0.2); font-weight: 500; }
+  .nav-item .nav-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .nav-item .nav-check { font-size: 0.75rem; margin-left: auto; }
+  .nav-item .quiz-score { font-family: 'DM Mono', monospace; font-size: 0.72rem; margin-left: auto; color: var(--green); }
+
+  /* chapters dividers */
+  .ch-chimie { --dot-color: var(--ch-chimie); }
+  .ch-physique { --dot-color: var(--ch-physique); }
+  .ch-meca { --dot-color: var(--ch-meca); }
+  .ch-thermo { --dot-color: var(--ch-thermo); }
+  .ch-elec { --dot-color: var(--ch-elec); }
+  .ch-organique { --dot-color: var(--ch-organique); }
+
+  .nav-item .nav-dot { background: var(--dot-color); }
+
+  /* ── MAIN ── */
+  #main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  #topbar {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--border);
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  #menu-toggle {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    transition: color var(--transition);
+  }
+  #menu-toggle:hover { color: var(--text); background: var(--surface2); }
+
+  #page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    flex: 1;
+  }
+
+  .tab-bar {
+    display: flex;
+    gap: 4px;
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 4px;
+  }
+
+  .tab-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-weight: 500;
+  }
+  .tab-btn.active { background: var(--surface2); color: var(--text); }
+  .tab-btn:hover:not(.active) { color: var(--text); }
+
+  /* ── CONTENT AREA ── */
+  #content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 32px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  /* ── HOME SCREEN ── */
+  .home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .chapter-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    cursor: pointer;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .chapter-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--card-color, var(--accent));
+  }
+  .chapter-card:hover { border-color: var(--card-color, var(--accent)); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+
+  .card-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
+  .card-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+  .card-tag { display: inline-block; font-size: 0.68rem; padding: 2px 7px; border-radius: 4px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .card-progress-row { margin-top: 12px; display: flex; align-items: center; gap: 8px; }
+  .card-progress-bar { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .card-progress-fill { height: 100%; background: var(--card-color, var(--accent)); border-radius: 2px; transition: width 0.5s ease; }
+  .card-progress-text { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--muted); }
+
+  /* ── FICHE DE COURS ── */
+  .fiche-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .fiche-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--muted);
+    opacity: 0.4;
+    line-height: 1;
+    min-width: 48px;
+  }
+  .fiche-title { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; line-height: 1.2; }
+  .fiche-subtitle { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title .s-icon { font-size: 1rem; }
+
+  .key-def {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 8px 0;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .key-def .def-term { font-weight: 600; color: var(--accent); }
+
+  .formula-box {
+    background: #0a0c12;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.85rem;
+    margin: 8px 0;
+    color: var(--accent2);
+    line-height: 1.8;
+  }
+  .formula-box .formula-label { font-size: 0.72rem; color: var(--muted); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+  .points-list { list-style: none; }
+  .points-list li {
+    display: flex;
+    gap: 10px;
+    padding: 5px 0;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #c8d0e0;
+  }
+  .points-list li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .warn-box {
+    background: rgba(247,162,79,0.08);
+    border: 1px solid rgba(247,162,79,0.3);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.84rem;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+    margin: 8px 0;
+  }
+  .warn-box::before { content: '⚠'; color: var(--accent2); flex-shrink: 0; }
+
+  .table-wrapper { overflow-x: auto; margin: 8px 0; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+  .data-table th { background: var(--surface2); padding: 8px 12px; text-align: left; font-weight: 600; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
+  .data-table td { padding: 8px 12px; border-top: 1px solid var(--border); color: #c8d0e0; }
+  .data-table tr:hover td { background: var(--surface2); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  /* ── QUIZ ── */
+  .quiz-intro {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .quiz-intro .big-icon { font-size: 3rem; margin-bottom: 12px; }
+  .quiz-intro h2 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 8px; }
+  .quiz-intro p { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .btn-primary:hover { background: #3a7de8; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(79,142,247,0.35); }
+  .btn-secondary {
+    background: var(--surface2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .quiz-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .quiz-progress-bar { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .quiz-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 3px; transition: width 0.4s ease; }
+  .quiz-progress-text { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); min-width: 50px; text-align: right; }
+
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .question-num { font-size: 0.75rem; color: var(--muted); margin-bottom: 8px; font-family: 'DM Mono', monospace; }
+  .question-text { font-size: 1rem; font-weight: 500; line-height: 1.6; margin-bottom: 20px; }
+
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .option:hover:not(.locked) { border-color: var(--accent); background: rgba(79,142,247,0.06); }
+  .option.selected { border-color: var(--accent); background: rgba(79,142,247,0.1); }
+  .option.correct { border-color: var(--green); background: rgba(79,202,122,0.1); }
+  .option.wrong { border-color: var(--red); background: rgba(247,89,89,0.1); }
+  .option.locked { cursor: default; }
+  .option-letter {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .explanation {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 14px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+    color: #c8d0e0;
+    display: none;
+  }
+  .explanation.show { display: block; }
+  .explanation .exp-label { font-weight: 700; color: var(--green); margin-bottom: 4px; font-size: 0.8rem; }
+
+  .quiz-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
+
+  .quiz-results {
+    text-align: center;
+    padding: 32px 20px;
+  }
+  .score-circle {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    border: 3px solid var(--border);
+    font-family: 'Syne', sans-serif;
+  }
+  .score-circle.great { border-color: var(--green); background: rgba(79,202,122,0.1); }
+  .score-circle.ok { border-color: var(--yellow); background: rgba(247,212,79,0.1); }
+  .score-circle.bad { border-color: var(--red); background: rgba(247,89,89,0.1); }
+  .score-num { font-size: 2rem; font-weight: 800; }
+  .score-label { font-size: 0.75rem; color: var(--muted); }
+
+  /* ── TABLEAU DE BORD ── */
+  .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+  }
+  .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+  .stat-value { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; }
+  .stat-unit { font-size: 0.8rem; color: var(--muted); margin-left: 4px; }
+
+  .grades-section { margin-top: 20px; }
+  .grades-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .grades-title { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; }
+
+  .grade-entry {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .grade-type { font-size: 0.75rem; color: var(--muted); min-width: 80px; }
+  .grade-name { flex: 1; font-size: 0.88rem; }
+  .grade-value { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 600; }
+  .grade-del { color: var(--red); cursor: pointer; font-size: 1rem; padding: 4px; opacity: 0.5; transition: opacity var(--transition); }
+  .grade-del:hover { opacity: 1; }
+
+  .add-grade-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 16px;
+    display: none;
+  }
+  .add-grade-form.open { display: block; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 10px; align-items: end; }
+  .form-group { display: flex; flex-direction: column; gap: 4px; }
+  .form-label { font-size: 0.75rem; color: var(--muted); }
+  .form-input, .form-select {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color var(--transition);
+  }
+  .form-input:focus, .form-select:focus { border-color: var(--accent); }
+  .form-select option { background: var(--surface2); }
+
+  /* ── ANNALES ── */
+  .annales-list { display: flex; flex-direction: column; gap: 12px; }
+  .annale-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .annale-year {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent2);
+    min-width: 50px;
+  }
+  .annale-info { flex: 1; }
+  .annale-title { font-size: 0.88rem; font-weight: 500; margin-bottom: 2px; }
+  .annale-meta { font-size: 0.75rem; color: var(--muted); }
+  .annale-link {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 6px 14px;
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition);
+    cursor: pointer;
+  }
+  .annale-link:hover { background: rgba(79,142,247,0.1); border-color: var(--accent); }
+
+  /* ── STUDENT MODAL ── */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: none;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    width: min(480px, 90vw);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  .modal-title { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+  .modal-sub { color: var(--muted); font-size: 0.84rem; margin-bottom: 20px; }
+
+  .student-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; max-height: 300px; overflow-y: auto; }
+  .student-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .student-item:hover { border-color: var(--accent); }
+  .student-item.active-student { border-color: var(--accent); background: rgba(79,142,247,0.1); }
+  .student-item .s-num { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--muted); min-width: 40px; }
+  .student-item .s-name { flex: 1; font-size: 0.88rem; }
+  .student-item .s-del { color: var(--red); cursor: pointer; opacity: 0.4; transition: opacity var(--transition); font-size: 0.9rem; padding: 2px 6px; }
+  .student-item .s-del:hover { opacity: 1; }
+
+  .add-student-row { display: flex; gap: 8px; }
+  .modal-actions { display: flex; gap: 8px; margin-top: 16px; justify-content: flex-end; }
+  .btn-close { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 1.2rem; }
+
+  /* ── RGPD notice ── */
+  .rgpd-notice {
+    background: rgba(79,142,247,0.06);
+    border: 1px solid rgba(79,142,247,0.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 12px;
+  }
+  .rgpd-notice strong { color: var(--accent); }
+
+  /* ── TEACHER VIEW ── */
+  .teacher-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(79,202,122,0.1);
+    border: 1px solid rgba(79,202,122,0.3);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    color: var(--green);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .data-table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #sidebar { position: fixed; top: 0; left: 0; bottom: 0; transform: translateX(0); }
+    #sidebar.collapsed { transform: translateX(-100%); width: 280px; }
+    #content { padding: 16px; }
+    .two-col, .dashboard-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr 1fr; }
+    .home-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .home-grid { grid-template-columns: 1fr; }
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 4px; height: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <!-- SIDEBAR -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <div class="app-logo">⚛ PhysiChim</div>
+      <div class="app-subtitle">Terminale — Espace de révision</div>
+    </div>
+    <div id="student-badge" onclick="openStudentModal()">
+      <span class="student-icon">👤</span>
+      <div class="student-info">
+        <div class="student-id">Identifiant</div>
+        <div class="student-name" id="badge-name">Sélectionner un élève</div>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Navigation</div>
+      <div class="nav-item active" onclick="showHome()" id="nav-home">
+        <span class="nav-dot" style="background:var(--accent)"></span>
+        Accueil
+      </div>
+      <div class="nav-item" onclick="showDashboard()" id="nav-dashboard">
+        <span class="nav-dot" style="background:var(--accent2)"></span>
+        Tableau de bord élève
+      </div>
+      <div class="nav-item" onclick="showTeacher()" id="nav-teacher">
+        <span class="nav-dot" style="background:var(--green)"></span>
+        Vue enseignant
+      </div>
+    </div>
+
+    <div class="nav-section" style="flex:1;overflow-y:auto;padding-bottom:16px">
+      <div class="nav-label">Chapitres</div>
+      <div id="chapters-nav"></div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <div id="main">
+    <div id="topbar">
+      <button id="menu-toggle" onclick="toggleSidebar()">☰</button>
+      <div id="page-title">Accueil</div>
+      <div class="tab-bar" id="tab-bar" style="display:none">
+        <button class="tab-btn active" id="tab-cours" onclick="switchTab('cours')">📖 Cours</button>
+        <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">🧠 Quiz</button>
+        <button class="tab-btn" id="tab-annales" onclick="switchTab('annales')">📝 Annales</button>
+      </div>
+    </div>
+    <div id="content">
+      <!-- dynamically filled -->
+    </div>
+  </div>
+</div>
+
+<!-- STUDENT LOGIN MODAL -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <div class="modal-title">🔑 Connexion élève</div>
+      <button class="btn-close" onclick="closeStudentModal()">✕</button>
+    </div>
+
+    <!-- Config serveur (première fois) -->
+    <div id="modal-server-setup" style="display:none">
+      <div class="modal-sub">⚙️ Entrez l'adresse du serveur fournie par votre enseignant.</div>
+      <div class="form-group" style="margin-bottom:12px">
+        <label class="form-label">Adresse du serveur</label>
+        <input type="text" class="form-input" id="server-url-input" placeholder="https://votre-app.railway.app" style="width:100%">
+      </div>
+      <button class="btn-primary" onclick="saveServerUrl()" style="width:100%">Valider</button>
+    </div>
+
+    <!-- Connexion par code -->
+    <div id="modal-login-form">
+      <div class="modal-sub">Entrez votre code élève fourni par votre enseignant.</div>
+      <div id="modal-server-info" style="font-size:.75rem;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:6px">
+        <span>🌐</span><span id="modal-server-display"></span>
+        <span style="cursor:pointer;color:var(--accent);margin-left:auto" onclick="showServerSetup()">Changer</span>
+      </div>
+      <div id="login-error" style="display:none;background:rgba(247,89,89,.1);border:1px solid rgba(247,89,89,.3);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--red);margin-bottom:12px"></div>
+      <div class="form-group" style="margin-bottom:12px">
+        <label class="form-label">Mon code élève</label>
+        <input type="text" class="form-input" id="login-code" placeholder="ex: E01" style="width:100%;text-transform:uppercase;font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.1em" onkeydown="if(event.key==='Enter')doStudentLogin()">
+      </div>
+      <button class="btn-primary" id="login-btn" onclick="doStudentLogin()" style="width:100%">Se connecter</button>
+    </div>
+
+    <div class="rgpd-notice" style="margin-top:12px">
+      <strong>🔒 RGPD :</strong> Votre code est anonyme. Seuls vos scores et notes sont transmis au serveur de votre établissement, hébergé en Europe.
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// DATA — CHAPITRES, FICHES, QUIZ, ANNALES
+// ═══════════════════════════════════════════════════
+
+const CHAPTERS = [
+  {
+    id: 0, num: '00', title: 'Outils mathématiques & Nomenclature', category: 'chimie',
+    color: '#8b8bef', tag: 'Prérequis',
+    fiche: {
+      sections: [
+        {
+          title: '1. La proportionnalité — le "produit en croix"', icon: '⚖️',
+          content: [
+            { type: 'text', text: 'En physique-chimie, on a très souvent besoin de trouver une valeur inconnue quand on sait que deux grandeurs sont proportionnelles. La méthode du <strong>produit en croix</strong> (ou règle de trois) permet de le faire en 2 secondes.' },
+            { type: 'def', term: '💡 La règle à retenir', text: 'Si deux grandeurs sont proportionnelles, le rapport entre elles est toujours le même :<br><br><strong>colonne 1 : colonne 2 = même rapport partout</strong><br><br>On croise et on multiplie : la valeur inconnue = (les deux valeurs qui se font face × l\'une sur l\'autre).' },
+            { type: 'formula', label: '📐 Exemple concret du cours : mortier', text: 'Ciment (kg) :  5   →   20  →  25  →   ?\nSable  (kg)  : 18   →   ?   →  ?   → 180\n\nSi 5 kg de ciment → 18 kg de sable\nAlors 20 kg de ciment → x = 20 × 18 / 5 = 72 kg de sable' },
+            { type: 'warn', text: 'Astuce : on peut toujours vérifier ! Le rapport sable/ciment doit être le même partout : 18/5 = 3,6. Donc 72/20 = 3,6 ✓' },
+          ]
+        },
+        {
+          title: '2. Les puissances de 10 — écrire très grand ou très petit', icon: '🔢',
+          content: [
+            { type: 'text', text: 'En chimie et physique, on travaille avec des tailles d\'atomes (0,000 000 001 m) ou des distances astronomiques (1 500 000 000 000 m). Écrire tous ces zéros est fastidieux et source d\'erreurs. Les <strong>puissances de 10</strong> sont là pour ça.' },
+            { type: 'def', term: '🧠 Idée simple', text: '10³ veut dire "1 suivi de 3 zéros" = 1 000<br>10⁻³ veut dire "1 divisé 3 fois par 10" = 0,001<br><br>L\'exposant = le nombre de fois qu\'on multiplie (ou divise) par 10.' },
+            { type: 'formula', label: '🔁 Règles de calcul (avec exemples)', text: 'Multiplier → les exposants s\'ADDITIONNENT\n   10³ × 10² = 10⁵   (ex : 1000 × 100 = 100 000)\n\nDiviser → les exposants se SOUSTRAIENT\n   10⁵ / 10³ = 10²   (ex : 100 000 / 1 000 = 100)\n\nExposant négatif → c\'est l\'inverse\n   10⁻³ = 1/10³ = 1/1000 = 0,001' },
+            { type: 'table', headers: ['Préfixe', 'Symbole', 'Valeur', 'Exemple'], rows: [
+              ['giga', 'G', '10⁹ = 1 000 000 000', '1 Go (gigaoctet)'],
+              ['méga', 'M', '10⁶ = 1 000 000', '1 MHz (mégahertz)'],
+              ['kilo', 'k', '10³ = 1 000', '1 km = 1000 m'],
+              ['— (rien)', '—', '10⁰ = 1', 'l\'unité de base'],
+              ['milli', 'm', '10⁻³ = 0,001', '1 mm = 0,001 m'],
+              ['micro', 'μ', '10⁻⁶ = 0,000 001', '1 μm (taille d\'une bactérie)'],
+              ['nano', 'n', '10⁻⁹ = 0,000 000 001', '1 nm (taille d\'un atome)'],
+            ]},
+          ]
+        },
+        {
+          title: '3. La notation scientifique — s\'écrire proprement', icon: '✍️',
+          content: [
+            { type: 'text', text: 'La notation scientifique, c\'est la façon <strong>standard et universelle</strong> d\'écrire un nombre en sciences. Elle permet d\'éviter les erreurs de zéros et de comparer facilement des valeurs.' },
+            { type: 'def', term: '📏 La règle : a × 10ⁿ avec 1 ≤ a < 10', text: 'On écrit toujours un seul chiffre (non nul) avant la virgule, puis on ajuste l\'exposant de 10.<br><br><strong>3,00 × 10⁸</strong> ✓ (c\'est la vitesse de la lumière en m/s)<br><strong>30 × 10⁷</strong> ✗ (pas valide : il faut 1 chiffre avant la virgule)' },
+            { type: 'formula', label: '🔄 Comment convertir — la méthode', text: 'GRAND nombre → exposant POSITIF\n   835 = 8,35 × 10²  (virgule déplace de 2 rangs vers la gauche)\n\nPETIT nombre → exposant NÉGATIF\n   0,0000012 = 1,2 × 10⁻⁶  (virgule déplace de 6 rangs vers la droite)\n\nAstuces : compter le nombre de \"sauts\" de la virgule = valeur de l\'exposant' },
+            { type: 'warn', text: 'Les chiffres significatifs = les chiffres du nombre "a". Exemple : 5,143 × 10¹ g possède 4 chiffres significatifs. Ton résultat ne peut pas avoir PLUS de chiffres significatifs que la donnée la moins précise.' },
+          ]
+        },
+        {
+          title: '4. Les groupes fonctionnels en chimie organique', icon: '🧪',
+          content: [
+            { type: 'text', text: 'Une molécule organique, c\'est une chaîne de carbones (le squelette) sur laquelle sont accrochés des <strong>groupes caractéristiques</strong> qui donnent ses propriétés chimiques. Reconnaître ces groupes, c\'est comprendre ce que la molécule peut faire.' },
+            { type: 'table', headers: ['Famille', 'Groupe caractéristique', 'Formule générale', 'Exemple'], rows: [
+              ['Alcool', '–OH (hydroxyle)', 'R–OH', 'éthanol CH₃–CH₂–OH'],
+              ['Aldéhyde', '–CHO (carbonyle en bout)', 'R–CHO', 'méthanal HCHO'],
+              ['Cétone', '>C=O (carbonyle au milieu)', 'R–CO–R\'', 'propanone (acétone)'],
+              ['Acide carboxylique', '–COOH (carboxyle)', 'R–COOH', 'acide éthanoïque CH₃COOH'],
+              ['Ester', '–COO– (entre deux R)', 'R–COO–R\'', 'éthanoate d\'éthyle'],
+              ['Amine', '–NH₂ (amino)', 'R–NH₂', 'méthanamine CH₃–NH₂'],
+              ['Amide', '–CO–NH– ', 'R–CO–NH₂', 'éthanamide CH₃–CO–NH₂'],
+            ]},
+            { type: 'warn', text: 'Moyen mnémotechnique : AACA-EAA → Alcool, Aldéhyde, Cétone, Acide, Ester, Amine, Amide. Chacun a une "signature" visuelle (cherche le O, le N, le double trait =).' },
+          ]
+        },
+        {
+          title: '5. Nommer une molécule — la nomenclature', icon: '🏷️',
+          content: [
+            { type: 'text', text: 'Nommer une molécule organique suit des règles précises comme une langue. Voici la méthode en 3 étapes :' },
+            { type: 'def', term: '🔑 Étape 1 — trouver la chaîne principale', text: 'C\'est la chaîne carbonée la plus longue qui contient le groupe fonctionnel principal.<br>Le nombre de C donne le nom de base : 1=méth, 2=éth, 3=prop, 4=but, 5=pent, 6=hex, 7=hept, 8=oct...' },
+            { type: 'def', term: '🔑 Étape 2 — identifier et localiser le groupe fonctionnel', text: 'On numérote la chaîne depuis le bout le plus proche du groupe fonctionnel.<br>Le numéro du carbone portant le groupe s\'ajoute devant le suffixe.<br>Alcool → <strong>-ol</strong> | Aldéhyde → <strong>-al</strong> | Cétone → <strong>-one</strong> | Acide → <strong>acide …-oïque</strong>' },
+            { type: 'def', term: '🔑 Étape 3 — nommer les ramifications (substituants)', text: 'Les groupes alkyles sur la chaîne sont nommés avec leur position :<br>–CH₃ = méthyle | –C₂H₅ = éthyle | –C₃H₇ = propyle<br>Exemple : <strong>3-éthyl-5-méthylhexane</strong> = chaîne de 6C avec éthyle en C3 et méthyle en C5.' },
+            { type: 'formula', label: '📝 Exemple complet — Ester', text: 'Un ester = acide carboxylique + alcool (réaction d\'estérification)\n\nNom : [alcane de R\' sans "e"]-yl + [acide oïque → -oate]\nEx : pentanoate d\'éthyle\n  → vient de l\'acide pentanoïque (5C) + éthanol' },
+          ]
+        },
+        {
+          title: '6. Les 3 façons de représenter une molécule', icon: '🖊️',
+          content: [
+            { type: 'def', term: 'Formule développée', text: 'On trace <strong>TOUTES les liaisons</strong> entre tous les atomes (même C–H). La plus détaillée, la plus longue à écrire.' },
+            { type: 'def', term: 'Formule semi-développée', text: 'On trace les liaisons C–C (squelette) mais on regroupe les H autour de chaque C. Ex : CH₃–CH₂–OH pour l\'éthanol.' },
+            { type: 'def', term: 'Formule topologique', text: 'La plus rapide : chaque angle ou bout de trait = un carbone. Les H sont implicites. On ne montre que les hétéroatomes (O, N, Cl...) et leurs H. Très utilisée en chimie organique.' },
+            { type: 'warn', text: 'À l\'examen, la formule topologique est souvent utilisée. Rappelle-toi : chaque angle = 1 carbone, et un carbone "ordinaire" porte autant de H que nécessaire pour avoir 4 liaisons.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Pour faire du mortier, 5 kg de ciment nécessitent 18 kg de sable. Combien faut-il de sable pour 25 kg de ciment ?', opts: ['72 kg','90 kg','45 kg','100 kg'], ans: 1, exp: 'Produit en croix : x = 25 × 18 / 5 = 90 kg. Le rapport sable/ciment est toujours 18/5 = 3,6. 25 × 3,6 = 90 ✓' },
+      { q: '10³ × 10⁻² est égal à :', opts: ['10⁶','10⁵','10¹','10⁻⁵'], ans: 2, exp: 'Quand on multiplie des puissances de 10, on additionne les exposants : 3 + (−2) = 1. Donc 10¹ = 10.' },
+      { q: '0,00056 s\'écrit en notation scientifique :', opts: ['56 × 10⁻⁵','5,6 × 10⁻⁴','0,56 × 10⁻³','5,6 × 10⁴'], ans: 1, exp: 'On déplace la virgule de 4 rangs vers la droite pour avoir un seul chiffre avant la virgule : 5,6 × 10⁻⁴.' },
+      { q: '1 μm (micromètre) correspond à :', opts: ['0,001 m','0,000 001 m','0,000 000 001 m','1 000 m'], ans: 1, exp: 'Le préfixe micro (μ) = 10⁻⁶. Donc 1 μm = 10⁻⁶ m = 0,000 001 m. Taille typique d\'une bactérie.' },
+      { q: 'Quel groupe caractéristique contient –OH ?', opts: ['Un acide carboxylique','Un aldéhyde','Un alcool','Une cétone'], ans: 2, exp: 'Le groupe –OH (hydroxyle) est caractéristique des alcools. La formule générale est R–OH (ex : éthanol CH₃CH₂OH).' },
+      { q: 'Le groupe carbonyle (C=O) situé en bout de chaîne caractérise :', opts: ['Une cétone','Un alcool','Un ester','Un aldéhyde'], ans: 3, exp: 'C=O en bout de chaîne → aldéhyde (–CHO). C=O au milieu de la chaîne → cétone. C\'est la position qui change tout !' },
+      { q: 'La chaîne principale de l\'hexane contient combien de carbones ?', opts: ['4','5','6','7'], ans: 2, exp: 'Hex- = 6 carbones. Rappel : méth(1), éth(2), prop(3), but(4), pent(5), hex(6), hept(7), oct(8)...' },
+      { q: 'Dans la formule topologique, chaque angle du dessin représente :', opts: ['Un atome d\'hydrogène','Un atome d\'oxygène','Un atome de carbone','Une double liaison'], ans: 2, exp: 'Dans la formule topologique, chaque sommet (angle ou extrémité) représente un carbone. Les H sont implicites.' },
+      { q: 'L\'acide éthanoïque a pour formule CH₃–COOH. Sa famille est :', opts: ['Alcool','Ester','Acide carboxylique','Aldéhyde'], ans: 2, exp: 'Le groupe –COOH (carboxyle) est caractéristique des acides carboxyliques. Ici CH₃–COOH = acide éthanoïque (vinaigre !).' },
+      { q: 'Un ester est formé par la réaction entre :', opts: ['Deux acides','Un acide carboxylique et un alcool','Un alcool et une amine','Deux alcools'], ans: 1, exp: 'Estérification : acide carboxylique + alcool → ester + eau. Ex : acide éthanoïque + éthanol → éthanoate d\'éthyle + H₂O.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Groupes fonctionnels et nomenclature', session: 'Métropole J2', link: 'https://www.labolycee.org/2023/2023-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Notation scientifique et grandeurs', session: 'Métropole J1', link: 'https://www.labolycee.org/2022/2022-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Proportionnalité et calculs de concentrations', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2021/2021-AN-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 1, num: '01', title: 'Acides et bases', category: 'chimie',
+    color: '#4f8ef7', tag: 'Chimie',
+    fiche: {
+      sections: [
+        {
+          title: '1. Définitions fondamentales', icon: '📌',
+          content: [
+            { type: 'def', term: 'Acide (au sens de Brønsted)', text: 'Espèce moléculaire ou ionique susceptible de <strong>céder un proton H⁺</strong>.' },
+            { type: 'def', term: 'Base (au sens de Brønsted)', text: 'Espèce moléculaire ou ionique susceptible de <strong>capter un proton H⁺</strong>.' },
+            { type: 'def', term: 'Couple acide-base AH/A⁻', text: 'Liés par la demi-équation : <code>AH ⇌ A⁻ + H⁺</code>. Notation : AH/A⁻ (acide devant) ou BH⁺/B (base devant).' },
+            { type: 'warn', text: 'Solvants, gaz et solides purs ne figurent pas dans les expressions de K et Qr — leur valeur est remplacée par 1.' },
+          ]
+        },
+        {
+          title: '2. Couples acide-base à connaître', icon: '🔗',
+          content: [
+            { type: 'table', headers: ['Acide', 'Base conjuguée', 'Nom courant'], rows: [
+              ['H₃O⁺ (aq)', 'H₂O (l)', 'Ion oxonium / eau'],
+              ['H₂O (l)', 'HO⁻ (aq)', 'Eau / ion hydroxyde'],
+              ['CH₃CO₂H (aq)', 'CH₃CO₂⁻ (aq)', 'Acide éthanoïque / ion éthanoate'],
+              ['NH₄⁺ (aq)', 'NH₃ (aq)', 'Ion ammonium / ammoniac'],
+              ['HCl (g)', 'Cl⁻ (aq)', 'Acide chlorhydrique'],
+              ['HNO₃ (l)', 'NO₃⁻ (aq)', 'Acide nitrique'],
+              ['H₂O / HO⁻', 'H₂O', 'Amphotère (ampholyte)'],
+            ]}
+          ]
+        },
+        {
+          title: '3. Réactions acide-base', icon: '⚗️',
+          content: [
+            { type: 'text', text: 'Une réaction acide-base implique <strong>deux couples</strong>. L\'acide du couple 1 réagit avec la base du couple 2 :' },
+            { type: 'formula', label: 'Équation bilan', text: 'A₁H + A₂⁻  ⇌  A₁⁻ + A₂H' },
+            { type: 'text', text: 'La double flèche ⇌ indique que la réaction n\'est pas obligatoirement totale.' },
+            { type: 'warn', text: 'HCl est un acide fort → réaction totale (flèche simple →). CH₃CO₂H est un acide faible → équilibre (⇌).' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Selon Brønsted, un acide est une espèce qui :', opts: ['Capte un proton H⁺','Cède un proton H⁺','Cède un électron','Capte un électron'], ans: 1, exp: 'Un acide de Brønsted cède un proton H⁺. C\'est la définition de base du cours.' },
+      { q: 'Le couple acide-base de l\'ammoniac NH₃ s\'écrit :', opts: ['NH₃/NH₄⁺','NH₄⁺/NH₃','NH₃/N₂','NH₄/NH₂'], ans: 1, exp: 'La convention est Acide/Base : NH₄⁺ (acide, cède H⁺) / NH₃ (base, capte H⁺).' },
+      { q: 'L\'eau H₂O est dite amphotère car :', opts: ['Elle ne réagit ni comme acide ni comme base','Elle peut se comporter à la fois comme acide ET base','Elle est neutre à pH 7 uniquement','Elle capte deux protons'], ans: 1, exp: 'H₂O peut céder H⁺ (couple H₃O⁺/H₂O) et capter H⁺ (couple H₂O/HO⁻) → amphotère (ampholyte).' },
+      { q: 'Dans la réaction : CH₃CO₂H + H₂O ⇌ CH₃CO₂⁻ + H₃O⁺\nLe rôle de H₂O est :', opts: ['Acide','Base','Oxydant','Spectateur'], ans: 1, exp: 'H₂O capte le proton cédé par CH₃CO₂H → rôle de base. Couple H₃O⁺/H₂O.' },
+      { q: 'La demi-équation d\'un couple acide-base AH/A⁻ s\'écrit :', opts: ['A⁻ = AH + H⁺','AH = A⁻ + H⁺','AH + H⁺ = A⁻','AH + e⁻ = A⁻'], ans: 1, exp: 'La convention : AH ⇌ A⁻ + H⁺ (l\'acide cède un proton pour donner la base conjuguée).' },
+      { q: 'HCl est un acide fort. Cela signifie que :', opts: ['Sa réaction avec l\'eau est un équilibre','Sa réaction avec l\'eau est totale','Il ne réagit pas avec l\'eau','Son pH est supérieur à 7'], ans: 1, exp: 'Un acide fort est totalement dissocié dans l\'eau : HCl + H₂O → H₃O⁺ + Cl⁻ (réaction totale).' },
+      { q: 'Lequel de ces acides est un polyacide ?', opts: ['HCl','CH₃CO₂H','H₃PO₄','NH₄⁺'], ans: 2, exp: 'H₃PO₄ (acide phosphorique) peut céder 3 protons successifs → polyacide. HCl cède 1 proton.' },
+      { q: 'Un réaction acide-base nécessite :', opts: ['Un seul couple acide-base','Deux couples acide-base','Un oxydant et un réducteur','De la chaleur obligatoirement'], ans: 1, exp: 'Deux couples sont toujours impliqués : l\'acide du couple 1 cède son proton à la base du couple 2.' },
+      { q: 'L\'ion éthanoate CH₃CO₂⁻ est :', opts: ['Un acide','Une base','Un amphotère','Un sel neutre'], ans: 1, exp: 'CH₃CO₂⁻ peut capter H⁺ pour redonner CH₃CO₂H → c\'est la base conjuguée de l\'acide éthanoïque.' },
+      { q: 'Dans CH₃CO₂H + NH₃ ⇌ CH₃CO₂⁻ + NH₄⁺\nQuel couple est donneur de proton ?', opts: ['NH₃/NH₄⁺','CH₃CO₂⁻/CH₃CO₂H','CH₃CO₂H/CH₃CO₂⁻','NH₄⁺/NH₃'], ans: 2, exp: 'CH₃CO₂H est l\'acide (donneur de H⁺). Le couple est CH₃CO₂H/CH₃CO₂⁻ (acide/base conjuguée).' },
+    ],
+    annales: [
+      { year: '2023', title: 'Acides aminés et couples acide-base', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2023/2023-AN-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Dosage acide-base par pH-métrie', session: 'Métropole J2', link: 'https://www.labolycee.org/2022/2022-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Réactions acide-base et équilibres', session: 'Métropole J1', link: 'https://www.labolycee.org/2021/2021-MET1-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 2, num: '02', title: 'Sens d\'évolution spontanée', category: 'chimie',
+    color: '#4f8ef7', tag: 'Chimie',
+    fiche: {
+      sections: [
+        {
+          title: '1. Transformations totales et non totales', icon: '⚖️',
+          content: [
+            { type: 'def', term: 'Réaction totale', text: 'À l\'état final, le <strong>réactif limitant est totalement consommé</strong>. L\'avancement final xf = xmax. Taux d\'avancement τ = 1.' },
+            { type: 'def', term: 'Réaction non totale (équilibre)', text: 'À l\'état final, <strong>il reste des réactifs</strong>. xf < xmax et τ < 1.' },
+            { type: 'formula', label: 'Taux d\'avancement', text: 'τ = xf / xmax    (sans unité, 0 < τ ≤ 1)' },
+          ]
+        },
+        {
+          title: '2. Quotient de réaction et constante d\'équilibre', icon: '📐',
+          content: [
+            { type: 'text', text: 'Pour la réaction : aA + bB ⇌ cC + dD' },
+            { type: 'formula', label: 'Quotient de réaction Qr', text: 'Qr = [C]ᶜ·[D]ᵈ / ([A]ᵃ·[B]ᵇ)   (concentrations en mol/L)' },
+            { type: 'formula', label: 'Constante d\'équilibre K', text: 'K = Qr,f   (valeur de Qr à l\'état final)\nK ne dépend que de la température.' },
+            { type: 'table', headers: ['Situation', 'Comparaison', 'Évolution'], rows: [
+              ['Hors équilibre', 'Qr,i < K', '→ Sens direct (formation produits)'],
+              ['Hors équilibre', 'Qr,i > K', '→ Sens inverse (formation réactifs)'],
+              ['Équilibre', 'Qr,f = K', 'Système à l\'équilibre, pas d\'évolution nette'],
+            ]}
+          ]
+        },
+        {
+          title: '3. Piles et oxydoréduction', icon: '🔋',
+          content: [
+            { type: 'def', term: 'Oxydant', text: 'Capte des électrons. Demi-équation : Ox + ne⁻ → Red' },
+            { type: 'def', term: 'Réducteur', text: 'Donne des électrons. Demi-équation : Red → Ox + ne⁻' },
+            { type: 'text', text: '<strong>Pile :</strong> convertit énergie chimique → énergie électrique (transformation spontanée). Pont salin assure la neutralité électrique.' },
+            { type: 'formula', label: 'Capacité électrique d\'une pile', text: 'qmax = ne⁻ × NA × e   (C)\nave NA = 6,02×10²³ mol⁻¹, e = 1,6×10⁻¹⁹ C' },
+            { type: 'def', term: 'Électrolyseur', text: 'Forcer une transformation non spontanée grâce à un générateur extérieur (transformation forcée). Q = I × Δt' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Si τ = 0,85 pour une réaction, on peut dire que :', opts: ['La réaction est totale','La réaction est non totale (partielle)','Le réactif limitant est totalement consommé','L\'équilibre n\'est pas atteint'], ans: 1, exp: 'τ = 0,85 < 1 → réaction non totale. Si τ = 1, la réaction serait totale.' },
+      { q: 'Qr,i < K signifie que le système va évoluer :', opts: ['Dans le sens inverse','Dans le sens direct','Il ne va pas évoluer','Impossible à dire'], ans: 1, exp: 'Qr < K → la réaction évolue dans le sens direct (formation des produits) pour atteindre K.' },
+      { q: 'La constante d\'équilibre K dépend de :', opts: ['La concentration initiale des réactifs','La température uniquement','La pression et la température','La concentration et la température'], ans: 1, exp: 'K ne dépend que de la température. Les concentrations initiales influencent l\'état final mais pas K.' },
+      { q: 'Dans une pile électrochimique, le pont salin sert à :', opts: ['Transporter les électrons','Assurer la neutralité électrique des solutions','Produire de l\'énergie chimique','Accélérer la réaction'], ans: 1, exp: 'Le pont salin assure la circulation des ions pour maintenir l\'électroneutralité de chaque demi-pile.' },
+      { q: 'Un oxydant est une espèce qui :', opts: ['Donne des électrons','Capte des électrons','Donne des protons','Capte des protons'], ans: 1, exp: 'Oxydant + ne⁻ → Réducteur. L\'oxydant capte des électrons (il est réduit).' },
+      { q: 'La transformation dans un électrolyseur est :', opts: ['Spontanée','Forcée (non spontanée)','Toujours totale','Impossible en solution aqueuse'], ans: 1, exp: 'L\'électrolyseur impose une transformation non spontanée grâce à un générateur extérieur.' },
+      { q: 'Si Qr,f = K, le système est :', opts: ['Hors équilibre sens direct','Hors équilibre sens inverse','À l\'équilibre chimique','En réaction totale'], ans: 2, exp: 'Qr,f = K est la définition de l\'état d\'équilibre chimique. Les concentrations ne varient plus.' },
+      { q: 'La quantité d\'électricité Q transférée lors d\'une électrolyse est :', opts: ['Q = I / Δt','Q = I × Δt','Q = n(e⁻) / F','Q = U × R'], ans: 1, exp: 'Q = I × Δt avec Q en coulombs, I en ampères, Δt en secondes.' },
+      { q: 'Quelle affirmation est correcte pour Qr,i = 0 ?', opts: ['L\'équilibre est atteint','Il n\'y a aucun produit initialement → sens direct certain','La réaction est inverse','La constante K = 0'], ans: 1, exp: 'Qr = 0 signifie qu\'il n\'y a pas encore de produit. La réaction évolue forcément dans le sens direct.' },
+      { q: 'Le taux d\'avancement τ d\'une réaction totale vaut :', opts: ['0','Entre 0 et 1','1','Infini'], ans: 2, exp: 'Pour une réaction totale, xf = xmax donc τ = xf/xmax = 1.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Pile Daniell et oxydoréduction', session: 'Métropole J1', link: 'https://www.labolycee.org/2023/2023-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Constante d\'équilibre et quotient de réaction', session: 'Asie-Pacifique', link: 'https://www.labolycee.org/2022/2022-APAC-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Électrolyse et loi de Faraday', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2021/2021-AN-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 3, num: '03', title: 'Force des acides et des bases', category: 'chimie',
+    color: '#4f8ef7', tag: 'Chimie',
+    fiche: {
+      sections: [
+        {
+          title: '1. Constante d\'acidité et pKₐ', icon: '📊',
+          content: [
+            { type: 'formula', label: 'Produit ionique de l\'eau Ke', text: 'Ke = [H₃O⁺]f × [HO⁻]f = 10⁻¹⁴  à 25°C\npKe = -log(Ke) = 14' },
+            { type: 'formula', label: 'Constante d\'acidité KA', text: 'KA = ([A⁻]f × [H₃O⁺]f) / [AH]f\npKA = -log(KA)   (0 < pKA < 14)' },
+            { type: 'warn', text: 'Plus pKA est petit → acide plus fort (plus dissocié). Plus pKA est grand → acide plus faible.' },
+          ]
+        },
+        {
+          title: '2. Calcul du pH selon les cas', icon: '🧮',
+          content: [
+            { type: 'def', term: 'Acide fort (ex: HCl)', text: 'Réaction totale avec H₂O. <strong>pH = -log(C)</strong>' },
+            { type: 'def', term: 'Base forte (ex: NaOH)', text: '<strong>pH = pKe + log(C) = 14 + log(C)</strong>' },
+            { type: 'def', term: 'Acide faible (ex: CH₃CO₂H)', text: 'Réaction partielle. τ = xf/xmax<br>KA = (τ×C)² / C×(1-τ)' },
+            { type: 'formula', label: 'Solution tampon : relation de Henderson-Hasselbalch', text: 'pH = pKA + log([A⁻]f / [AH]f)\nSi [AH] = [A⁻] → pH = pKA' },
+          ]
+        },
+        {
+          title: '3. Diagrammes de prédominance', icon: '📈',
+          content: [
+            { type: 'text', text: 'Sur l\'échelle de pH (0 à 14), à pH = pKA les deux espèces sont en proportions égales.' },
+            { type: 'def', term: 'pH < pKA', text: 'L\'espèce <strong>acide AH prédomine</strong>' },
+            { type: 'def', term: 'pH > pKA', text: 'L\'espèce <strong>basique A⁻ prédomine</strong>' },
+            { type: 'def', term: 'Indicateur coloré', text: 'Zone de virage centrée sur pKA de l\'indicateur. Permet de repérer l\'équivalence d\'un dosage.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Le produit ionique de l\'eau à 25°C vaut :', opts: ['Ke = 10⁻⁷','Ke = 10⁻¹⁴','Ke = 14','Ke = 7'], ans: 1, exp: 'Ke = [H₃O⁺]×[HO⁻] = 10⁻¹⁴ à 25°C. C\'est la valeur fondamentale du cours.' },
+      { q: 'Un acide avec pKA = 2 est :', opts: ['Plus fort qu\'un acide avec pKA = 5','Plus faible qu\'un acide avec pKA = 5','De même force','Impossible à comparer'], ans: 0, exp: 'Plus pKA est petit, plus l\'acide est fort (plus dissocié). pKA=2 → acide plus fort que pKA=5.' },
+      { q: 'Le pH d\'une solution d\'acide chlorhydrique HCl à C = 0,01 mol/L est :', opts: ['2','7','12','1'], ans: 0, exp: 'HCl est un acide fort. pH = -log(C) = -log(0,01) = -log(10⁻²) = 2.' },
+      { q: 'Pour un acide faible AH de concentration C et de taux d\'avancement τ :', opts: ['KA = τ²C / (1-τ)','KA = τC / (1-τ)²','KA = (1-τ) / τ²C','KA = τ / C(1-τ)'], ans: 0, exp: 'Cf = τ×C pour A⁻ et H₃O⁺, concentration finale AH = C(1-τ). Donc KA = (τC)²/C(1-τ) = τ²C/(1-τ).' },
+      { q: 'À pH = pKA d\'un couple AH/A⁻ :', opts: ['AH prédomine','A⁻ prédomine','[AH] = [A⁻]','La solution est neutre'], ans: 2, exp: 'Henderson-Hasselbalch : pH = pKA + log([A⁻]/[AH]). Si pH = pKA → log([A⁻]/[AH]) = 0 → [AH] = [A⁻].' },
+      { q: 'Une solution tampon est une solution dont le pH :', opts: ['Varie beaucoup quand on ajoute de l\'acide','Varie peu par ajout d\'acide, base ou eau','Est toujours égal à 7','Ne dépend pas du pKA'], ans: 1, exp: 'Une solution tampon résiste aux variations de pH par ajout modéré d\'acide, de base ou par dilution.' },
+      { q: 'Le pH d\'une solution de NaOH à C = 0,001 mol/L est :', opts: ['3','7','11','14'], ans: 2, exp: 'NaOH est une base forte. pH = 14 + log(C) = 14 + log(10⁻³) = 14 - 3 = 11.' },
+      { q: 'Dans un diagramme de prédominance, si pH > pKA :', opts: ['L\'acide AH prédomine','La base A⁻ prédomine','Les deux espèces sont égales','L\'indicateur change de couleur'], ans: 1, exp: 'Si pH > pKA, la base conjuguée A⁻ prédomine. La base prédomine quand le milieu est plus basique que pKA.' },
+      { q: 'Un acide alpha-aminé possède :', opts: ['Un seul pKA','Deux pKA (deux groupes ionisables)','Trois pKA','Aucun pKA'], ans: 1, exp: 'Un acide alpha-aminé possède un groupe -COOH (acide) et un groupe -NH₂ (base), donc deux pKA.' },
+      { q: 'Le pKA de l\'acide éthanoïque est environ 4,8. Pour CH₃CO₂H/CH₃CO₂⁻ à pH = 6 :', opts: ['L\'acide prédomine','La base (ion éthanoate) prédomine','Les deux sont égaux','Impossible à déterminer'], ans: 1, exp: 'pH = 6 > pKA = 4,8 → l\'espèce basique CH₃CO₂⁻ prédomine.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Dosage acide-base d\'un vinaigre', session: 'Métropole J2', link: 'https://www.labolycee.org/2023/2023-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Force des acides et pH de solutions', session: 'Métropole J1', link: 'https://www.labolycee.org/2022/2022-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Diagramme de prédominance et indicateurs', session: 'Polynésie', link: 'https://www.labolycee.org/2021/2021-POL-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 4, num: '04', title: 'Phénomènes ondulatoires', category: 'physique',
+    color: '#a44ff7', tag: 'Physique des ondes',
+    fiche: {
+      sections: [
+        {
+          title: '1. Niveau d\'intensité sonore', icon: '🔊',
+          content: [
+            { type: 'def', term: 'Intensité sonore I', text: 'Puissance par unité de surface reçue en W.m⁻². I₀ = 1,0×10⁻¹² W.m⁻² (seuil d\'audibilité).' },
+            { type: 'formula', label: 'Niveau sonore L (décibels)', text: 'L = 10 × log(I / I₀)   [dB]\nInverse : I = I₀ × 10^(L/10)' },
+            { type: 'text', text: 'Atténuation géométrique (distance) ou par absorption (matériaux).' },
+          ]
+        },
+        {
+          title: '2. Diffraction d\'une onde', icon: '〰️',
+          content: [
+            { type: 'def', term: 'Diffraction', text: 'Phénomène par lequel une onde <strong>change de direction</strong> au passage d\'une ouverture ou d\'un obstacle. Importantsi la taille de l\'obstacle ≈ λ.' },
+            { type: 'formula', label: 'Angle de diffraction θ et largeur de tache', text: 'θ = λ/a   (angle en radian)\nθ = L/(2D)   (géométrie fente-écran)' },
+            { type: 'warn', text: 'Plus la fente a est petite (ou λ grand), plus la diffraction est importante.' },
+          ]
+        },
+        {
+          title: '3. Interférences', icon: '🌊',
+          content: [
+            { type: 'def', term: 'Interférences constructives', text: 'Les deux ondes <strong>s\'additionnent</strong> (en phase ou déphasage = nλ). Amplitude maximale.' },
+            { type: 'def', term: 'Interférences destructives', text: 'Les deux ondes <strong>s\'annulent</strong> (déphasage = (2n+1)λ/2). Amplitude nulle.' },
+            { type: 'text', text: 'Les ondes doivent être cohérentes (même λ, déphasage constant).' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'L\'intensité sonore minimale audible (seuil d\'audibilité) I₀ vaut :', opts: ['10⁻¹² W.m⁻²','1 W.m⁻²','10⁻⁶ W.m⁻²','10⁻³ W.m⁻²'], ans: 0, exp: 'I₀ = 1,0×10⁻¹² W.m⁻² est le seuil conventionnel d\'audibilité à 1 kHz.' },
+      { q: 'La formule du niveau sonore en décibels est :', opts: ['L = log(I/I₀)','L = 10×log(I/I₀)','L = 20×log(I/I₀)','L = I/I₀'], ans: 1, exp: 'L = 10×log(I/I₀). Pour les pressions sonores on utilise 20×log, mais pour les intensités c\'est 10×log.' },
+      { q: 'La diffraction est d\'autant plus importante que :', opts: ['La fente est grande et λ est petit','La fente est petite et λ est grand','La fente et λ sont grands','La fente et λ sont petits'], ans: 1, exp: 'θ = λ/a : angle de diffraction grand si a petit (fente fine) et λ grand (grande longueur d\'onde).' },
+      { q: 'L\'angle de diffraction θ (petit angle) est donné par :', opts: ['θ = a/λ','θ = λ/a','θ = λ×a','θ = D/λ'], ans: 1, exp: 'θ = λ/a en radians. a est la largeur de la fente, λ la longueur d\'onde.' },
+      { q: 'Pour qu\'il y ait diffraction, il faut que la taille de l\'obstacle soit :', opts: ['Très grande devant λ','Du même ordre de grandeur que λ','Très petite devant λ','Indépendante de λ'], ans: 1, exp: 'La diffraction n\'est observable que si a ≈ λ. Si a >> λ, l\'onde n\'est pas déviée.' },
+      { q: 'Les interférences constructives ont lieu quand :', opts: ['Les ondes sont en opposition de phase','Les ondes sont en phase (ou déphasage nλ)','Les fréquences sont différentes','Les amplitudes sont différentes'], ans: 1, exp: 'Interférences constructives si les ondes arrivent en phase ou avec un retard entier de longueur d\'onde.' },
+      { q: 'Deux ondes cohérentes ont obligatoirement :', opts: ['La même amplitude','La même fréquence et un déphasage constant','La même direction de propagation','La même intensité'], ans: 1, exp: 'Cohérence = même fréquence + déphasage constant dans le temps. Cela permet des franges d\'interférences stables.' },
+      { q: 'Le seuil de la douleur correspond environ à :', opts: ['I = 1 W.m⁻²','L = 0 dB','I = 10⁻⁶ W.m⁻²','L = 60 dB'], ans: 0, exp: 'Le seuil de douleur est I = 1 W.m⁻² soit L = 120 dB.' },
+      { q: 'Dans l\'expérience des fentes de Young, on observe :', opts: ['Un seul spot lumineux','Des franges alternées claires et sombres','Une tache unique large','Un arc-en-ciel'], ans: 1, exp: 'Les interférences entre les deux fentes créent des franges alternées (constructives/destructives).' },
+      { q: 'Dans la relation θ = L/(2D), L représente :', opts: ['La longueur d\'onde','La largeur totale de la tache centrale de diffraction','La distance fente-écran','La largeur de la fente'], ans: 1, exp: 'L est la largeur de la tache centrale (entre les deux premiers minima). D est la distance fente-écran.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Diffraction et interférences lumineuses', session: 'Métropole J1', link: 'https://www.labolycee.org/2023/2023-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Ondes sonores et niveau d\'intensité', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2022/2022-AN-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Diffraction et mesure de longueur d\'onde', session: 'Métropole J2', link: 'https://www.labolycee.org/2021/2021-MET2-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 5, num: '05', title: 'Lunette astronomique', category: 'physique',
+    color: '#a44ff7', tag: 'Optique',
+    fiche: {
+      sections: [
+        {
+          title: '1. Principe de la lunette afocale', icon: '🔭',
+          content: [
+            { type: 'def', term: 'Objectif L₁', text: 'Grande distance focale f₁\'. Reçoit les rayons de l\'infini et forme l\'image intermédiaire en F₁\'.' },
+            { type: 'def', term: 'Oculaire L₂', text: 'Petite distance focale f₂\'. Agit comme une loupe sur l\'image intermédiaire et envoie l\'image finale à l\'infini.' },
+            { type: 'warn', text: 'Condition afocale : F₁\' confondu avec F₂ (le foyer image de L₁ coïncide avec le foyer objet de L₂). Distance entre lentilles = f₁\' + f₂\'' },
+          ]
+        },
+        {
+          title: '2. Grossissement angulaire', icon: '🔎',
+          content: [
+            { type: 'formula', label: 'Grossissement G', text: 'G = f₁\' / f₂\'   (sans unité, toujours > 1)\nCondition : f₁\' > f₂\' obligatoirement' },
+            { type: 'text', text: 'Plus f₁\' est grande et f₂\' petite → meilleur grossissement.' },
+          ]
+        },
+        {
+          title: '3. Formation de l\'image', icon: '🌠',
+          content: [
+            { type: 'text', text: '<strong>Objet à l\'infini :</strong> L₁ forme l\'image A\'B\' en F₁\'. Cette image sert d\'objet réel à L₂ placé de sorte que A\'B\' soit en F₂.' },
+            { type: 'text', text: '<strong>Image finale :</strong> L₂ renvoie l\'image à l\'infini, permettant l\'observation sans accommodation.' },
+            { type: 'warn', text: 'Si l\'image finale doit être à l\'infini : objet de L₂ doit être en F₂ (son foyer objet).' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Dans une lunette afocale, la condition d\'afocalisme impose que :', opts: ['F₁\' coïncide avec F₂','f₁\' = f₂\'','L\'objectif est plus petit que l\'oculaire','Les deux lentilles sont identiques'], ans: 0, exp: 'Afocalisme : F₁\' = F₂. Cela signifie que le foyer image de l\'objectif coïncide avec le foyer objet de l\'oculaire.' },
+      { q: 'Dans une lunette astronomique, l\'objectif doit avoir :', opts: ['Une distance focale plus petite que l\'oculaire','Une distance focale plus grande que l\'oculaire','La même focale que l\'oculaire','Une focale négative'], ans: 1, exp: 'Condition nécessaire : f₁\' > f₂\', sinon G = f₁\'/f₂\' < 1 ce qui n\'est pas un grossissement.' },
+      { q: 'Le grossissement G d\'une lunette afocale est donné par :', opts: ['G = f₂\'/f₁\'','G = f₁\'/f₂\'','G = f₁\' × f₂\'','G = f₁\' + f₂\''], ans: 1, exp: 'G = f₁\'/f₂\'. Plus f₁\' est grande et f₂\' petite, plus le grossissement est élevé.' },
+      { q: 'La longueur d\'une lunette afocale vaut :', opts: ['f₁\' - f₂\'','f₁\' × f₂\'','f₁\' + f₂\'','f₁\' / f₂\''], ans: 2, exp: 'Pour que F₁\' coïncide avec F₂, la distance entre les deux lentilles est f₁\' + f₂\'.' },
+      { q: 'L\'oculaire d\'une lunette astronomique fonctionne comme :', opts: ['Un miroir','Un prisme','Une loupe','Un objectif photographique'], ans: 2, exp: 'L\'oculaire agit comme une loupe : il grossit l\'image intermédiaire formée par l\'objectif.' },
+      { q: 'Pour qu\'une lunette afocale envoie l\'image finale à l\'infini, l\'image intermédiaire doit être :', opts: ['En dehors de l\'oculaire','Au foyer objet F₂ de l\'oculaire','Au foyer image F₂\' de l\'oculaire','À l\'infini'], ans: 1, exp: 'Lentille convergente → objet au foyer objet F₂ donne image à l\'infini. C\'est la condition afocale.' },
+      { q: 'Un observateur regarde avec une lunette afocale sans avoir besoin d\'accommoder. Cela signifie que :', opts: ['Il est myope','L\'image finale est à l\'infini','L\'image finale est très proche','Il ferme un œil'], ans: 1, exp: 'L\'œil normal (ou emmétrope) au repos fixe à l\'infini sans accommodation. La lunette afocale envoie l\'image à l\'infini.' },
+      { q: 'Si f₁\' = 80 cm et f₂\' = 4 cm, le grossissement vaut :', opts: ['0,05','20','84','76'], ans: 1, exp: 'G = f₁\'/f₂\' = 80/4 = 20 fois. La lunette grossit 20 fois.' },
+      { q: 'L\'objectif d\'une lunette astronomique reçoit les rayons d\'un objet situé à l\'infini et forme l\'image :', opts: ['À l\'infini','En son foyer image F₁\'','En son foyer objet F₁','À mi-distance'], ans: 1, exp: 'Un objet à l\'infini donne une image au foyer image F₁\' de la lentille convergente objectif.' },
+      { q: 'Pourquoi f₁\' > f₂\' est une condition nécessaire pour la lunette :', opts: ['Pour que G > 1 (grossissement réel)','Pour que l\'image soit droite','Pour diminuer les aberrations','Pour que la lunette soit compacte'], ans: 0, exp: 'G = f₁\'/f₂\' doit être > 1 pour que l\'instrument grossisse. Donc nécessairement f₁\' > f₂\'.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Lunette astronomique et grandissement', session: 'Polynésie', link: 'https://www.labolycee.org/2023/2023-POL-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Formation d\'images et lentilles convergentes', session: 'Métropole J1', link: 'https://www.labolycee.org/2022/2022-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Lunette afocale et conditions d\'observation', session: 'Asie-Pacifique', link: 'https://www.labolycee.org/2021/2021-APAC-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 6, num: '06', title: 'Mesures physiques (pH, conductimétrie)', category: 'chimie',
+    color: '#4f8ef7', tag: 'Chimie analytique',
+    fiche: {
+      sections: [
+        {
+          title: '1. pH-métrie', icon: '🌡️',
+          content: [
+            { type: 'formula', label: 'Définition du pH', text: 'pH = -log([H₃O⁺]/C°)  avec C° = 1 mol/L\n[H₃O⁺] = C° × 10⁻ᵖᴴ' },
+            { type: 'table', headers: ['Type de solution', 'pH à 25°C'], rows: [
+              ['Acide', '0 < pH < 7'],
+              ['Neutre', 'pH = 7'],
+              ['Basique', '7 < pH < 14'],
+            ]},
+            { type: 'def', term: 'pH-mètre', text: 'Mesure le pH via une électrode. Doit être étalonné avec des solutions tampons de pH connu avant utilisation.' },
+          ]
+        },
+        {
+          title: '2. Conductimétrie', icon: '⚡',
+          content: [
+            { type: 'def', term: 'Conductance G', text: 'G = σ × S/L  (siemens, S). Inverse de la résistance électrique.' },
+            { type: 'formula', label: 'Conductivité d\'une solution', text: 'σ = Σ λᵢ × [Xᵢ]   (S.m⁻¹)\nλᵢ = conductivité molaire ionique de l\'ion Xᵢ' },
+            { type: 'text', text: 'Utilisée pour suivre l\'évolution d\'un dosage ou identifier des ions en solution.' },
+          ]
+        },
+        {
+          title: '3. Spectrophotométrie', icon: '🔬',
+          content: [
+            { type: 'formula', label: 'Loi de Beer-Lambert', text: 'A = ε × l × C\nA : absorbance (sans unité)\nε : coefficient d\'extinction molaire (L.mol⁻¹.cm⁻¹)\nl : longueur du trajet optique (cm)\nC : concentration (mol/L)' },
+            { type: 'warn', text: 'La loi de Beer-Lambert n\'est valable que pour des solutions diluées et à longueur d\'onde fixe.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'La relation entre pH et concentration en ions oxonium est :', opts: ['[H₃O⁺] = pH','[H₃O⁺] = 10^pH','[H₃O⁺] = 10⁻ᵖᴴ mol/L','pH = [H₃O⁺] × 10'], ans: 2, exp: 'pH = -log([H₃O⁺]/C°) donc [H₃O⁺] = C° × 10⁻ᵖᴴ avec C° = 1 mol/L.' },
+      { q: 'Une solution à pH = 3 est :', opts: ['Basique','Neutre','Acide','Indéterminable'], ans: 2, exp: 'pH < 7 → solution acide. pH = 7 → neutre. pH > 7 → basique (à 25°C).' },
+      { q: 'Avant toute mesure de pH, le pH-mètre doit être :', opts: ['Rincé à l\'eau distillée','Étalonné avec des solutions tampons','Chauffé à 25°C','Immergé 10 minutes'], ans: 1, exp: 'L\'étalonnage avec au moins 2 solutions tampons de pH connu est indispensable pour la précision.' },
+      { q: 'La loi de Beer-Lambert donne la relation A = ε×l×C. Que représente ε ?', opts: ['L\'absorbance','Le coefficient d\'extinction molaire','La longueur de la cuve','La concentration'], ans: 1, exp: 'ε (epsilon) est le coefficient d\'extinction molaire, caractéristique du soluté à une longueur d\'onde donnée.' },
+      { q: 'Si la concentration d\'une solution colorée double, son absorbance :', opts: ['Double aussi','Est divisée par 2','Reste constante','Suit une loi logarithmique'], ans: 0, exp: 'A = ε×l×C : A est proportionnelle à C (Beer-Lambert). Si C double, A double.' },
+      { q: 'La conductivité σ d\'une solution ionique augmente quand :', opts: ['La concentration en ions diminue','La concentration en ions augmente','La température diminue toujours','La solution est pure'], ans: 1, exp: 'Plus il y a d\'ions en solution, plus la conductivité est élevée : σ = Σ λᵢ × [Xᵢ].' },
+      { q: 'Pour mesurer correctement un pH, la solution doit être :', opts: ['Très concentrée','Diluée (pH entre 2 et 12)','À ébullition','Saturée en sel'], ans: 1, exp: 'La mesure de pH est fiable entre environ 2 et 12 pour la plupart des électrodes standard.' },
+      { q: 'La Beer-Lambert est valable uniquement si :', opts: ['La solution est concentrée','La longueur d\'onde est fixe et la solution diluée','La cuvette est grande','L\'espèce est incolore'], ans: 1, exp: 'La loi de Beer-Lambert : solutions diluées + longueur d\'onde fixe (monochromatique). Sinon, elle dévie.' },
+      { q: 'Une conductimétrie d\'un dosage permet de repérer l\'équivalence car :', opts: ['L\'absorbance est nulle','La conductivité présente un minimum ou changement de pente','Le pH est égal à 7','La couleur change'], ans: 1, exp: 'Au point d\'équivalence, la nature et la quantité d\'ions changent brusquement → changement de pente sur la courbe σ = f(V).' },
+      { q: 'Si pH = 5, la concentration [H₃O⁺] vaut :', opts: ['5 mol/L','10⁻⁵ mol/L','0,5 mol/L','10⁵ mol/L'], ans: 1, exp: '[H₃O⁺] = 10⁻ᵖᴴ = 10⁻⁵ mol/L.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Dosage conductimétrique', session: 'Métropole J1', link: 'https://www.labolycee.org/2023/2023-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Spectrophotométrie et Beer-Lambert', session: 'Métropole J2', link: 'https://www.labolycee.org/2022/2022-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'pH-métrie et dosage d\'un acide', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2021/2021-AN-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 7, num: '07', title: 'Mesures chimiques', category: 'chimie',
+    color: '#4f8ef7', tag: 'Chimie',
+    fiche: {
+      sections: [
+        {
+          title: '1. Grandeurs de concentration', icon: '⚗️',
+          content: [
+            { type: 'formula', label: 'Titre massique w', text: 'w = m_soluté / m_solution   (sans unité)\nw% = w × 100' },
+            { type: 'formula', label: 'Masse volumique ρ', text: 'ρ = m / V   [g.L⁻¹ ou g.cm⁻³]' },
+            { type: 'formula', label: 'Densité d', text: 'd = ρ_solution / ρ_eau   (sans unité)\nρ_eau = 1000 g.L⁻¹ = 1 g.cm⁻³' },
+            { type: 'formula', label: 'Concentration molaire C', text: 'C = n / V   [mol.L⁻¹]\nRelation : C = w × ρ × 1000 / M' },
+          ]
+        },
+        {
+          title: '2. Dilution', icon: '💧',
+          content: [
+            { type: 'def', term: 'Principe de la dilution', text: 'La quantité de matière du soluté est conservée : n_mère = n_fille' },
+            { type: 'formula', label: 'Relation de dilution', text: 'C_mère × V_mère = C_fille × V_fille\nFacteur de dilution F = V_fille / V_mère = C_mère / C_fille' },
+            { type: 'warn', text: 'Toujours verser l\'acide concentré dans l\'eau, jamais l\'inverse (réaction exothermique !)' },
+          ]
+        },
+        {
+          title: '3. Dosages par étalonnage', icon: '📏',
+          content: [
+            { type: 'text', text: 'La <strong>courbe d\'étalonnage</strong> relie la grandeur mesurée (absorbance, conductance, etc.) à la concentration. Elle permet d\'en déduire la concentration d\'une solution inconnue.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Le titre massique w est :', opts: ['m_soluté / m_solvant','m_soluté / m_solution','m_solution / m_soluté','n_soluté / m_solution'], ans: 1, exp: 'w = m_soluté / m_solution. C\'est un ratio sans unité (ou en %).' },
+      { q: 'La masse volumique ρ de l\'eau est :', opts: ['1 g.L⁻¹','100 g.L⁻¹','1000 g.L⁻¹','10000 g.L⁻¹'], ans: 2, exp: 'ρ_eau = 1000 g.L⁻¹ = 1 g.cm⁻³ = 1 kg.L⁻¹ à 25°C.' },
+      { q: 'La relation de dilution est :', opts: ['C_m × V_f = C_f × V_m','C_m × V_m = C_f × V_f','C_m / V_m = C_f / V_f','C_m = C_f × F'], ans: 1, exp: 'n_mère = n_fille → C_mère × V_mère = C_fille × V_fille. C\'est la conservation de la matière lors de la dilution.' },
+      { q: 'On veut diluer 10 fois une solution. Le facteur de dilution F vaut :', opts: ['0,1','1','10','100'], ans: 2, exp: 'F = V_fille/V_mère = C_mère/C_fille = 10. La concentration est divisée par 10.' },
+      { q: 'La densité d est :', opts: ['ρ_eau / ρ_solution','ρ_solution / ρ_eau','m / V','n / V'], ans: 1, exp: 'd = ρ_solution / ρ_eau. La densité est sans unité.' },
+      { q: 'Pour préparer une solution diluée d\'acide sulfurique concentré, il faut :', opts: ['Verser l\'eau dans l\'acide','Verser l\'acide dans l\'eau','Mélanger à parts égales','Chauffer l\'acide d\'abord'], ans: 1, exp: 'TOUJOURS verser l\'acide dans l\'eau (la réaction est très exothermique, l\'inverse est dangereux).' },
+      { q: 'La concentration molaire C est reliée à ρ, w et M par :', opts: ['C = w / (ρ × M)','C = w × ρ × 1000 / M','C = ρ / (w × M)','C = M × w × V'], ans: 1, exp: 'C (mol/L) = (w × ρ × 1000) / M avec ρ en g/cm³, M en g/mol. Vient de C = n/V et n = m/M.' },
+      { q: 'Une courbe d\'étalonnage permet de :', opts: ['Calculer la masse molaire','Déterminer la concentration d\'une solution inconnue','Mesurer la température','Calculer le pH'], ans: 1, exp: 'L\'étalonnage consiste à tracer grandeur physique = f(C) avec des solutions de concentrations connues, puis à lire C_inconnue.' },
+      { q: 'Si ρ = 1200 g.L⁻¹, la densité d de la solution est :', opts: ['0,83','1,2','1200','12'], ans: 1, exp: 'd = ρ/ρ_eau = 1200/1000 = 1,2. La densité est sans unité.' },
+      { q: 'Pour diluer de factor F, on prélève V_mère et on complète à V_fille tel que :', opts: ['V_fille = V_mère / F','V_fille = V_mère × F','V_fille = V_mère + F','V_fille = F / V_mère'], ans: 1, exp: 'F = V_fille/V_mère → V_fille = F × V_mère. Si F=10 et V_mère = 10 mL → V_fille = 100 mL.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Dosage et courbe d\'étalonnage', session: 'Polynésie', link: 'https://www.labolycee.org/2023/2023-POL-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Dilutions et concentrations', session: 'Métropole J2', link: 'https://www.labolycee.org/2022/2022-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Titre massique et masse volumique', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2021/2021-AN-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 8, num: '08', title: 'Mouvement et lois de Newton', category: 'mecanique',
+    color: '#f7a24f', tag: 'Mécanique',
+    fiche: {
+      sections: [
+        {
+          title: '1. Vecteurs cinématiques', icon: '📐',
+          content: [
+            { type: 'formula', label: 'Vecteur position', text: 'OM(t) = x(t)·î + y(t)·ĵ + z(t)·k̂' },
+            { type: 'formula', label: 'Vecteur vitesse', text: 'v⃗(t) = dOM/dt   [m.s⁻¹]\nDirection : tangente à la trajectoire\nSens : sens du mouvement' },
+            { type: 'formula', label: 'Vecteur accélération', text: 'a⃗(t) = dv⃗/dt = d²OM/dt²   [m.s⁻²]' },
+          ]
+        },
+        {
+          title: '2. Lois de Newton', icon: '⚖️',
+          content: [
+            { type: 'def', term: '1ère loi (principe d\'inertie)', text: 'Dans un référentiel galiléen, si Σf⃗ = 0⃗ alors v⃗ = constante (mouvement rectiligne uniforme ou repos).' },
+            { type: 'def', term: '2ème loi (principe fondamental)', text: '<strong>Σf⃗ = m × a⃗</strong>  (dans un référentiel galiléen)\nProjection sur chaque axe !' },
+            { type: 'def', term: '3ème loi (action-réaction)', text: 'F⃗(A/B) = -F⃗(B/A) : forces égales, opposées, même droite d\'action.' },
+          ]
+        },
+        {
+          title: '3. Application : chute libre', icon: '🍎',
+          content: [
+            { type: 'text', text: 'Seul le poids agit (pas de frottements). P⃗ = m×g⃗' },
+            { type: 'formula', label: 'Équations horaires (axe y vertical descendant)', text: 'aₓ = 0   → vₓ = v₀cosα   → x = v₀cosα × t\naᵧ = g   → vᵧ = v₀sinα + gt  → y = ½gt²' },
+            { type: 'warn', text: 'Toujours choisir un repère avec un axe selon la direction du mouvement. Identifier les forces AVANT d\'écrire Σf⃗ = ma⃗.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Le vecteur vitesse est toujours :', opts: ['Perpendiculaire à la trajectoire','Tangent à la trajectoire','Vertical','Horizontal'], ans: 1, exp: 'La vitesse est tangente à la trajectoire et dans le sens du mouvement, par définition cinématique.' },
+      { q: 'La 2ème loi de Newton s\'écrit :', opts: ['Σf⃗ = m/a⃗','Σf⃗ = m×a⃗','Σf⃗ = a⃗/m','Σf⃗ = m×v⃗'], ans: 1, exp: 'La 2ème loi de Newton (principe fondamental de la dynamique) : Σf⃗ = m×a⃗.' },
+      { q: 'Dans un référentiel galiléen, si Σf⃗ = 0 alors :', opts: ['Le corps est forcément au repos','La vitesse est constante (MRU ou repos)','L\'accélération est constante','Le corps tourne en cercle'], ans: 1, exp: '1ère loi de Newton : si résultante nulle → a⃗ = 0 → v⃗ = cste. Mouvement rectiligne uniforme (ou repos).' },
+      { q: 'Le vecteur accélération est :', opts: ['v⃗/t','dv⃗/dt','∫v⃗dt','m × v⃗'], ans: 1, exp: 'a⃗(t) = dv⃗/dt = dérivée du vecteur vitesse par rapport au temps.' },
+      { q: 'Dans une chute libre (sans frottements), la seule force appliquée est :', opts: ['La normale','La force d\'Archimède','Le poids P⃗ = m×g⃗','La tension du fil'], ans: 2, exp: 'Chute libre = sans frottements → seule la gravité (poids) agit : P⃗ = m×g⃗.' },
+      { q: 'La 3ème loi de Newton (action-réaction) dit que F⃗(A/B) vaut :', opts: ['-F⃗(B/A)','2×F⃗(B/A)','+F⃗(B/A)','F⃗(B/A)/2'], ans: 0, exp: 'Les forces d\'interaction sont égales et opposées : F⃗(A/B) = -F⃗(B/A). Même droite d\'action, sens contraires.' },
+      { q: 'L\'accélération dans une chute libre verticale (axe y vers le bas) est :', opts: ['a = 0','a = g vers le bas','a = g/2','a = -g'], ans: 1, exp: 'Σf = P = mg (vers le bas). Par PFD : ma = mg → a = g ≈ 9,81 m.s⁻² vers le bas.' },
+      { q: 'Projeter la 2ème loi de Newton sur l\'axe x donne :', opts: ['Σ Fₓ = m','Σ Fₓ = m × aₓ','Σ Fy = m × aₓ','Σ Fₓ = aₓ'], ans: 1, exp: 'La projection de Σf⃗ = m×a⃗ sur x donne : Σ Fₓ = m × aₓ. On projette toutes les forces sur l\'axe.' },
+      { q: 'Si aₓ = 0 dans un mouvement, la composante vₓ est :', opts: ['Nulle','Croissante','Constante','Décroissante'], ans: 2, exp: 'aₓ = dvₓ/dt = 0 → vₓ = constante. Mouvement uniforme selon x.' },
+      { q: 'Un référentiel galiléen est un référentiel dans lequel :', opts: ['Tout est accéléré','La première loi de Newton est valable','La pesanteur est nulle','Tout corps est au repos'], ans: 1, exp: 'Un référentiel galiléen (ou inertiel) est celui dans lequel la 1ère loi de Newton (principe d\'inertie) est vérifiée.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Chute libre et équations horaires', session: 'Métropole J1', link: 'https://www.labolycee.org/2023/2023-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Dynamique d\'un solide et lois de Newton', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2022/2022-AN-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Mouvement d\'un projectile', session: 'Métropole J2', link: 'https://www.labolycee.org/2021/2021-MET2-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 9, num: '09', title: 'Mouvement dans un champ uniforme', category: 'mecanique',
+    color: '#f7a24f', tag: 'Mécanique',
+    fiche: {
+      sections: [
+        {
+          title: '1. Champ de pesanteur uniforme', icon: '🌍',
+          content: [
+            { type: 'text', text: 'Au voisinage de la Terre, g⃗₀ est uniforme (même norme, direction et sens partout).' },
+            { type: 'formula', label: 'Équations horaires (plan xOy, angle α)', text: 'aₓ = 0        → vₓ = v₀cosα      → x = v₀cosα × t\naᵧ = -g       → vᵧ = v₀sinα - gt → y = v₀sinα×t - ½gt²' },
+            { type: 'formula', label: 'Équation de la trajectoire y = f(x)', text: 'y = x×tanα - g×x² / (2v₀²cos²α)\n→ parabole' },
+          ]
+        },
+        {
+          title: '2. Champ électrique uniforme', icon: '⚡',
+          content: [
+            { type: 'def', term: 'Condensateur plan', text: 'Deux armatures parallèles séparées de distance d. Champ électrique E⃗ uniforme entre elles, perpendiculaire aux armatures.' },
+            { type: 'formula', label: 'Champ électrique E', text: 'E = U_AB / d   [V.m⁻¹]' },
+            { type: 'formula', label: 'Force électrique sur une charge q', text: 'F⃗_élec = q × E⃗\nPour un électron (q = -e) : F⃗ opposée à E⃗' },
+            { type: 'text', text: 'Si seul le champ électrique agit : mouvement parabolique analogue à la chute libre.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'La trajectoire d\'un projectile en champ de pesanteur uniforme est :', opts: ['Une droite','Un cercle','Une parabole','Une ellipse'], ans: 2, exp: 'y = f(x) est une équation du 2nd degré en x → trajectoire parabolique.' },
+      { q: 'Dans un champ de pesanteur uniforme, la composante horizontale de la vitesse vₓ :', opts: ['Diminue','Augmente','Reste constante','Est nulle'], ans: 2, exp: 'aₓ = 0 (pas de force horizontale) → vₓ = cste = v₀cosα.' },
+      { q: 'Le champ électrique E dans un condensateur plan est :', opts: ['E = d/U','E = U×d','E = U/d','E = q/d'], ans: 2, exp: 'E = U_AB / d avec U la tension entre armatures et d la distance entre elles.' },
+      { q: 'La force exercée par un champ E⃗ sur un électron (charge -e) est :', opts: ['Dans le même sens que E⃗','En sens opposé à E⃗','Perpendiculaire à E⃗','Nulle'], ans: 1, exp: 'F⃗ = q×E⃗ = (-e)×E⃗. La force est opposée au champ électrique pour une charge négative.' },
+      { q: 'L\'équation de la trajectoire parabolique est obtenue :', opts: ['En intégrant l\'accélération deux fois','En éliminant le temps t entre x(t) et y(t)','En dérivant v(t)','En sommant les forces'], ans: 1, exp: 'On exprime t en fonction de x depuis x(t), puis on substitue dans y(t) pour obtenir y = f(x).' },
+      { q: 'Un projectile lancé horizontalement (α = 0). À t = 0, vᵧ = ?', opts: ['v₀','g','0','-g'], ans: 2, exp: 'Si α = 0, vᵧ(0) = v₀sinα = v₀×sin(0) = 0. Le mouvement vertical commence à partir du repos.' },
+      { q: 'Dans un condensateur plan, le mouvement d\'une charge est analogue à :', opts: ['Un mouvement circulaire','Une chute libre dans g⃗ mais avec F⃗ = qE⃗','Un MRU','Une oscillation'], ans: 1, exp: 'F⃗_élec = qE⃗ joue le rôle de la pesanteur. Si horizontal, même traitement mathématique que la chute libre.' },
+      { q: 'Pour un projectile, la portée maximale est atteinte pour α = ?', opts: ['90°','0°','45°','30°'], ans: 2, exp: 'La portée est maximale pour α = 45° (démonstration par dérivation de l\'expression de la portée).' },
+      { q: 'aᵧ = -g dans le référentiel avec y vers le haut signifie :', opts: ['L\'accélération est vers le haut','Le corps monte infiniment','L\'accélération est dirigée vers le bas','Le corps est en équilibre'], ans: 2, exp: 'g > 0 et aᵧ = -g < 0 : l\'accélération est dans le sens négatif de y, soit vers le bas. C\'est la pesanteur.' },
+      { q: 'La distance d entre les armatures d\'un condensateur apparaît dans la formule E = U/d. Si d double (tension U constante) :', opts: ['E double','E est divisé par 2','E reste constant','E est nul'], ans: 1, exp: 'E = U/d. Si d double avec U constant → E est divisé par 2. Le champ s\'affaiblit.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Mouvement parabolique d\'un projectile', session: 'Métropole J2', link: 'https://www.labolycee.org/2023/2023-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Déviation d\'électrons dans un condensateur', session: 'Polynésie', link: 'https://www.labolycee.org/2022/2022-POL-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Champ électrique et mouvement de charge', session: 'Métropole J1', link: 'https://www.labolycee.org/2021/2021-MET1-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 10, num: '10', title: 'Mouvement dans un champ de gravitation', category: 'mecanique',
+    color: '#f7a24f', tag: 'Mécanique',
+    fiche: {
+      sections: [
+        {
+          title: '1. Lois de Kepler', icon: '🪐',
+          content: [
+            { type: 'def', term: '1ère loi (loi des orbites)', text: 'Dans le référentiel héliocentrique, l\'orbite d\'une planète est une <strong>ellipse</strong> dont le Soleil occupe un foyer.' },
+            { type: 'def', term: '2ème loi (loi des aires)', text: 'Le segment Soleil-planète balaye des <strong>aires égales en des durées égales</strong>.' },
+            { type: 'def', term: '3ème loi (loi des périodes)', text: '<strong>T² / a³ = constante</strong> (même constante pour tous les corps orbitant autour du même astre).' },
+          ]
+        },
+        {
+          title: '2. Loi de gravitation universelle', icon: '🌐',
+          content: [
+            { type: 'formula', label: 'Force de gravitation', text: 'F = G × m₁ × m₂ / d²\nG = 6,67×10⁻¹¹ N.m².kg⁻²' },
+            { type: 'formula', label: 'Pour une orbite circulaire', text: 'F_grav = F_centripète\nGMm/R² = mω²R = mv²/R\n→ v = √(GM/R)   →   T² = 4π²R³/(GM)' },
+          ]
+        },
+        {
+          title: '3. Vitesse et énergie orbitale', icon: '🛰',
+          content: [
+            { type: 'formula', label: 'Vitesse orbitale circulaire', text: 'v = √(GM/R)   (indépendante de la masse du satellite !)' },
+            { type: 'warn', text: 'Pour un satellite géostationnaire : T = 24 h et orbite dans le plan de l\'équateur.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Selon la 1ère loi de Kepler, l\'orbite d\'une planète est :', opts: ['Un cercle','Une ellipse','Une parabole','Une droite'], ans: 1, exp: 'La 1ère loi de Kepler (loi des orbites) : les planètes décrivent des ellipses dont le Soleil est un foyer.' },
+      { q: 'La 3ème loi de Kepler dit que T²/a³ est :', opts: ['Propre à chaque planète','Différente pour chaque planète','La même pour toutes les planètes d\'un même système','Égale à G'], ans: 2, exp: 'T²/a³ = 4π²/(GM_astre) : cette constante est la même pour tous les corps orbitant autour du même astre.' },
+      { q: 'La force de gravitation entre deux masses est :', opts: ['Proportionnelle à d²','Inversement proportionnelle à d²','Proportionnelle à d','Indépendante de la distance'], ans: 1, exp: 'F = GMm/d². La gravitation suit une loi en 1/d² (force en carré inverse de la distance).' },
+      { q: 'La vitesse d\'un satellite en orbite circulaire de rayon R est :', opts: ['v = GMR','v = √(GM/R)','v = GM/R²','v = √(GMR)'], ans: 1, exp: 'PFD en orbite circulaire : GMm/R² = mv²/R → v² = GM/R → v = √(GM/R).' },
+      { q: 'La vitesse orbitale d\'un satellite dépend-elle de sa propre masse ?', opts: ['Oui, proportionnellement','Non, elle est indépendante de sa masse','Oui, mais faiblement','Oui si le satellite est très lourd'], ans: 1, exp: 'v = √(GM/R) ne contient pas la masse du satellite. La vitesse orbitale est indépendante de la masse du satellite.' },
+      { q: 'Un satellite géostationnaire a une période orbitale de :', opts: ['1 heure','12 heures','24 heures','1 an'], ans: 2, exp: 'Géostationnaire = même période de rotation que la Terre = 24 h = 86400 s.' },
+      { q: 'Selon la 2ème loi de Kepler, une planète va :', opts: ['Plus vite loin du Soleil','Plus vite près du Soleil','À vitesse constante','À la même vitesse qu\'en été'], ans: 1, exp: 'Loi des aires : aire balayée constante → planète plus rapide quand elle est proche du Soleil (au périhélie).' },
+      { q: 'La constante de gravitation universelle G vaut :', opts: ['9,81 m.s⁻²','6,67×10⁻¹¹ N.m².kg⁻²','6,02×10²³ mol⁻¹','1,6×10⁻¹⁹ C'], ans: 1, exp: 'G = 6,67×10⁻¹¹ N.m².kg⁻². À ne pas confondre avec g = 9,81 m.s⁻² (intensité du champ de pesanteur terrestre).' },
+      { q: 'Pour que la 3ème loi de Kepler T²/a³ = k s\'applique, il faut :', opts: ['Que les masses soient égales','Que les objets orbitent autour du même astre central','Que les orbites soient circulaires','Que T soit en secondes'], ans: 1, exp: 'La constante k = 4π²/(GM) dépend de M (masse de l\'astre central). Elle est identique pour tous les satellites du même astre.' },
+      { q: 'La révolution est différente de la rotation car :', opts: ['Révolution = tour sur elle-même, Rotation = tour autour d\'un autre astre','Révolution = tour autour d\'un autre astre, Rotation = tour sur elle-même','Elles sont synonymes','Seule la révolution implique de la gravitation'], ans: 1, exp: 'Rotation = mouvement sur lui-même (ex: Terre : 24h). Révolution = orbite autour d\'un autre astre (ex: Terre autour du Soleil : 1 an).' },
+    ],
+    annales: [
+      { year: '2023', title: 'Lois de Kepler et satellites', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2023/2023-AN-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Gravitation universelle et orbites', session: 'Métropole J1', link: 'https://www.labolycee.org/2022/2022-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Satellite géostationnaire', session: 'Asie-Pacifique', link: 'https://www.labolycee.org/2021/2021-APAC-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 11, num: '11', title: 'Évolution temporelle d\'un système chimique', category: 'chimie',
+    color: '#4f8ef7', tag: 'Chimie',
+    fiche: {
+      sections: [
+        {
+          title: '1. Transformations lentes et rapides', icon: '⏱️',
+          content: [
+            { type: 'def', term: 'Transformation rapide', text: 'Durée très petite par rapport au temps de réponse du capteur. L\'état final est atteint quasi-instantanément.' },
+            { type: 'def', term: 'Transformation lente', text: 'Durée comparable ou supérieure au temps de réponse du capteur. Permet le suivi temporel.' },
+            { type: 'def', term: 'Catalyseur', text: 'Espèce chimique qui <strong>diminue la durée</strong> d\'une transformation <strong>sans être consommée</strong> ni figurer dans l\'équation bilan.' },
+          ]
+        },
+        {
+          title: '2. Suivi de l\'avancement', icon: '📊',
+          content: [
+            { type: 'def', term: 'Vitesse volumique de réaction v', text: 'v = (1/V) × dx/dt   [mol.L⁻¹.s⁻¹]' },
+            { type: 'text', text: 'Suivi possible par : dosage, mesure de pH, conductivité, absorbance, pression, volume de gaz...' },
+            { type: 'warn', text: 'Le capteur doit avoir un temps de réponse très inférieur à la durée de la transformation.' },
+          ]
+        },
+        {
+          title: '3. Facteurs cinétiques', icon: '🔥',
+          content: [
+            { type: 'def', term: 'Concentration', text: 'Plus la concentration des réactifs est élevée, plus la réaction est rapide.' },
+            { type: 'def', term: 'Température', text: 'Une augmentation de température accélère la réaction (règle : +10°C ≈ vitesse × 2 à 3).' },
+            { type: 'def', term: 'Catalyseur', text: 'Abaisse l\'énergie d\'activation → réaction plus rapide à même température. Catalyseur homogène ou hétérogène.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Un catalyseur permet de :', opts: ['Modifier les produits de la réaction','Diminuer la durée de la réaction sans être consommé','Augmenter la quantité de produit formé','Abaisser la température de la réaction'], ans: 1, exp: 'Un catalyseur accélère la réaction (abaisse énergie d\'activation) mais n\'est ni consommé ni produit.' },
+      { q: 'La vitesse volumique de réaction est en :', opts: ['mol.s⁻¹','mol.L⁻¹.s⁻¹','L.mol⁻¹.s⁻¹','s⁻¹'], ans: 1, exp: 'La vitesse volumique v = (1/V)×dx/dt s\'exprime en mol.L⁻¹.s⁻¹.' },
+      { q: 'Pour suivre une transformation lente, le capteur doit avoir :', opts: ['Un temps de réponse supérieur à la durée de la réaction','Un temps de réponse très inférieur à la durée de la réaction','La même durée de réponse que la réaction','Aucune importance'], ans: 1, exp: 'Pour capter l\'évolution, le capteur doit répondre bien plus vite que la réaction elle-même.' },
+      { q: 'Augmenter la température d\'une réaction chimique :', opts: ['La ralentit','L\'accélère','Ne change pas sa vitesse','Modifie les produits formés'], ans: 1, exp: 'La température est un facteur cinétique : plus T est élevée, plus les molécules ont d\'énergie → réaction plus rapide.' },
+      { q: 'Un catalyseur homogène est :', opts: ['Dans une phase différente des réactifs','Dans la même phase que les réactifs','Toujours solide','Toujours gazeux'], ans: 1, exp: 'Catalyseur homogène = même état physique que les réactifs (ex: solution aqueuse + catalyseur ionique en solution).' },
+      { q: 'La vitesse d\'une réaction diminue au cours du temps car :', opts: ['La température baisse','La concentration des réactifs diminue','Le catalyseur est consommé','La pression diminue'], ans: 1, exp: 'Plus la réaction avance, moins il y a de réactifs. La vitesse v dépend des concentrations → elle diminue.' },
+      { q: 'La spectrophotométrie convient comme technique de suivi si :', opts: ['La solution est incolore','Un des réactifs ou produits est coloré','La réaction est totale','La réaction est très rapide'], ans: 1, exp: 'La spectrophotométrie mesure l\'absorbance d\'une espèce colorée. Elle convient si l\'une des espèces est colorée.' },
+      { q: 'La notion de transformation lente/rapide est :', opts: ['Absolue','Relative au capteur utilisé','Définie à 25°C uniquement','Indépendante de la température'], ans: 1, exp: 'Une transformation est dite lente ou rapide par rapport au temps de réponse du capteur choisi. C\'est relatif.' },
+      { q: 'Augmenter la concentration des réactifs :', opts: ['Ralentit la réaction','Accélère la réaction','Ne change pas la vitesse','Modifie l\'équilibre uniquement'], ans: 1, exp: 'Concentration plus élevée → plus de chocs efficaces entre molécules → vitesse augmentée.' },
+      { q: 'Le suivi de l\'avancement par conductimétrie est possible si :', opts: ['La conductivité ne varie pas','La solution contient des ions dont la quantité varie au cours du temps','La solution est non conductrice','La température est constante uniquement'], ans: 1, exp: 'La conductivité varie si les concentrations ioniques changent au cours du temps → permet de suivre x(t).' },
+    ],
+    annales: [
+      { year: '2023', title: 'Cinétique chimique et suivi temporel', session: 'Métropole J1', link: 'https://www.labolycee.org/2023/2023-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Facteurs cinétiques et catalyse', session: 'Polynésie', link: 'https://www.labolycee.org/2022/2022-POL-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Suivi conductimétrique d\'une réaction', session: 'Métropole J2', link: 'https://www.labolycee.org/2021/2021-MET2-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 12, num: '12', title: 'Bilans thermiques et thermodynamique', category: 'thermo',
+    color: '#4fca7a', tag: 'Thermodynamique',
+    fiche: {
+      sections: [
+        {
+          title: '1. Premier principe de la thermodynamique', icon: '🌡️',
+          content: [
+            { type: 'def', term: 'Système', text: 'Objet ou ensemble d\'objets étudiés. Peut être ouvert (échange matière + énergie), fermé (échange énergie), ou isolé (aucun échange).' },
+            { type: 'def', term: 'Énergie interne U', text: 'Somme de toutes les énergies microscopiques (cinétiques et potentielles d\'interaction des particules).' },
+            { type: 'formula', label: '1er principe', text: 'ΔU = W + Q\nW : travail reçu (J)\nQ : chaleur reçue (J)\nΔU : variation d\'énergie interne (J)' },
+          ]
+        },
+        {
+          title: '2. Modes de transfert thermique', icon: '🔥',
+          content: [
+            { type: 'def', term: 'Conduction', text: 'Transfert de chaleur par contact direct entre deux corps. Flux Q = λ × S × ΔT / e' },
+            { type: 'def', term: 'Convection', text: 'Transfert par déplacement macroscopique de fluide (liquide ou gaz).' },
+            { type: 'def', term: 'Rayonnement', text: 'Transfert d\'énergie par ondes électromagnétiques (sans matière intermédiaire). Loi de Stefan.' },
+          ]
+        },
+        {
+          title: '3. Capacité thermique', icon: '🧊',
+          content: [
+            { type: 'formula', label: 'Chaleur échangée Q', text: 'Q = m × c × ΔT\nc : capacité thermique massique [J.kg⁻¹.K⁻¹]\nΔT = T_finale - T_initiale' },
+            { type: 'warn', text: 'Pour un système isolé : ΔU = 0 → W + Q = 0. Pour un système sans travail mécanique : ΔU = Q.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Le premier principe de la thermodynamique s\'écrit :', opts: ['ΔU = W - Q','ΔU = W + Q','ΔU = Q / W','ΔU = Q × W'], ans: 1, exp: 'ΔU = W + Q : variation d\'énergie interne = travail reçu + chaleur reçue (algébrique !).' },
+      { q: 'Un système isolé est un système qui :', opts: ['Échange de la chaleur mais pas de travail','N\'échange ni matière ni énergie','Échange de la matière uniquement','Échange de l\'énergie uniquement'], ans: 1, exp: 'Système isolé = pas d\'échange de matière ET pas d\'échange d\'énergie (ni chaleur ni travail).' },
+      { q: 'La formule Q = m × c × ΔT donne :', opts: ['La température finale','La chaleur échangée lors d\'un changement de température','L\'énergie interne','Le travail mécanique'], ans: 1, exp: 'Q = m×c×ΔT est la chaleur échangée lors d\'un changement de température ΔT. c est la capacité thermique massique.' },
+      { q: 'Si ΔT > 0 dans Q = mcΔT, le système :', opts: ['Se refroidit','Se réchauffe','Ne change pas de température','Fond'], ans: 1, exp: 'ΔT = T_f - T_i > 0 → T_f > T_i → le système se réchauffe. Il a reçu de la chaleur.' },
+      { q: 'La conduction thermique est un transfert :', opts: ['Par rayonnement électromagnétique','Par mouvement de fluide','Par contact entre corps','Par convection'], ans: 2, exp: 'La conduction = transfert par contact direct (choc entre particules voisines).' },
+      { q: 'L\'énergie interne U d\'un système comprend :', opts: ['Uniquement l\'énergie cinétique macroscopique','Toutes les énergies microscopiques (cinétique + potentielle d\'interaction)','Uniquement la chaleur','L\'énergie chimique uniquement'], ans: 1, exp: 'U = somme de toutes les énergies à l\'échelle microscopique (agitation thermique + interactions entre particules).' },
+      { q: 'Pour un système sans échange de travail mécanique, le 1er principe donne :', opts: ['ΔU = W','ΔU = Q','ΔU = 0','Q = 0'], ans: 1, exp: 'Si W = 0 → ΔU = W + Q = 0 + Q = Q.' },
+      { q: 'Le rayonnement thermique se propage :', opts: ['Par contact','Par déplacement d\'un fluide','Sans matière intermédiaire (ondes EM)','Par conduction uniquement'], ans: 2, exp: 'Le rayonnement (infrarouge, etc.) se propage par ondes électromagnétiques, même dans le vide.' },
+      { q: 'Un système fermé échange :', opts: ['Ni matière ni énergie','De la matière et de l\'énergie','De l\'énergie mais pas de matière','De la matière mais pas d\'énergie'], ans: 2, exp: 'Fermé = fermeture aux échanges de matière seulement. L\'énergie (chaleur et travail) peut toujours être échangée.' },
+      { q: 'Si W = -50 J et Q = +80 J pour un système, alors ΔU = ?', opts: ['130 J','30 J','-130 J','-30 J'], ans: 1, exp: 'ΔU = W + Q = -50 + 80 = +30 J. L\'énergie interne du système augmente de 30 J.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Bilan thermique et échanges d\'énergie', session: 'Métropole J2', link: 'https://www.labolycee.org/2023/2023-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Premier principe et capacité thermique', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2022/2022-AN-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Transferts thermiques et isolation', session: 'Polynésie', link: 'https://www.labolycee.org/2021/2021-POL-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 13, num: '13', title: 'Dynamique d\'un système électrique', category: 'elec',
+    color: '#f75959', tag: 'Électricité',
+    fiche: {
+      sections: [
+        {
+          title: '1. Le condensateur', icon: '⚡',
+          content: [
+            { type: 'def', term: 'Condensateur', text: 'Composant constitué de deux conducteurs (armatures) séparés par un isolant. Stocke de l\'énergie électrique.' },
+            { type: 'formula', label: 'Relation q-u (capacité)', text: 'q = C × u\nC : capacité en farads (F)\nu : tension entre armatures (V)\nq : charge électrique (C)' },
+            { type: 'formula', label: 'Intensité dans un condensateur', text: 'i(t) = dq/dt = C × du/dt' },
+          ]
+        },
+        {
+          title: '2. Charge et décharge RC', icon: '🔌',
+          content: [
+            { type: 'formula', label: 'Charge (E - E₀) : équation de u', text: 'u(t) = E × (1 - e^(-t/τ))\nτ = R × C  (constante de temps en secondes)' },
+            { type: 'formula', label: 'Décharge : équation de u', text: 'u(t) = E × e^(-t/τ)\nÀ t = 5τ : condensateur considéré chargé/déchargé' },
+            { type: 'warn', text: 'τ = RC : plus τ est grand, plus la charge est lente. À t = τ, u = 0,63×E (charge) ou u = 0,37×E (décharge).' },
+          ]
+        },
+        {
+          title: '3. Le bobine (inductance)', icon: '🌀',
+          content: [
+            { type: 'formula', label: 'Tension aux bornes d\'une bobine', text: 'u_L(t) = L × di/dt\nL : inductance en henry (H)' },
+            { type: 'def', term: 'Circuit LC / RLC', text: 'Oscillations électriques libres dans un circuit LC. Amorties si résistance R ≠ 0.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'La relation fondamentale du condensateur est :', opts: ['q = C/u','q = C × u','q = u/C','i = C/u'], ans: 1, exp: 'q = C × u : la charge est proportionnelle à la tension. C est la capacité en farads.' },
+      { q: 'L\'intensité dans un condensateur est :', opts: ['i = q × C','i = C × du/dt','i = u/C','i = dC/dt'], ans: 1, exp: 'i(t) = dq/dt = C × du/dt. L\'intensité est proportionnelle à la dérivée de la tension.' },
+      { q: 'La constante de temps τ d\'un circuit RC vaut :', opts: ['τ = R/C','τ = C/R','τ = R × C','τ = √(RC)'], ans: 2, exp: 'τ = R × C (en secondes). C\'est le temps caractéristique de charge ou décharge du condensateur.' },
+      { q: 'Lors de la charge d\'un condensateur, à t = 5τ le condensateur est considéré :', opts: ['À moitié chargé','Non chargé','Pratiquement totalement chargé','Déchargé'], ans: 2, exp: 'À t = 5τ : u ≈ 0,993×E ≈ E. On considère le condensateur pratiquement chargé (à 99,3%).' },
+      { q: 'Lors de la décharge : u(t) = E × e^(-t/τ). À t = τ, u vaut :', opts: ['0','E/2','0,63×E','0,37×E'], ans: 3, exp: 'u(τ) = E×e^(-1) ≈ 0,37×E. Le condensateur a perdu environ 63% de sa charge initiale.' },
+      { q: 'La tension aux bornes d\'une bobine d\'inductance L est :', opts: ['u = L × i','u = i/L','u = L × di/dt','u = di/(L×dt)'], ans: 2, exp: 'u_L = L × di/dt. La bobine s\'oppose aux variations d\'intensité.' },
+      { q: 'Plus la résistance R dans un circuit RC est grande :', opts: ['Plus la charge est rapide','Plus la charge est lente','La vitesse ne change pas','Le condensateur ne charge plus'], ans: 1, exp: 'τ = RC. R grande → τ grand → charge plus lente (l\'intensité initiale est plus faible).' },
+      { q: 'Un condensateur pleinement chargé laisse passer un courant :', opts: ['Maximum','Constant','Nul','Alternatif uniquement'], ans: 2, exp: 'Quand u = E = constante, i = C×du/dt = C×0 = 0. Un condensateur bloque le courant continu à l\'état stationnaire.' },
+      { q: 'Un circuit LC sans résistance produit :', opts: ['Un courant continu','Des oscillations électriques non amorties','Un court-circuit','Aucun courant'], ans: 1, exp: 'Sans R (pas de perte d\'énergie), le circuit LC oscille indéfiniment : oscillations libres non amorties.' },
+      { q: 'La capacité C d\'un condensateur s\'exprime en :', opts: ['Ohms (Ω)','Henry (H)','Farads (F)','Coulombs (C)'], ans: 2, exp: 'La capacité d\'un condensateur s\'exprime en Farads (F). 1 F = 1 C/V.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Circuit RC et charge d\'un condensateur', session: 'Métropole J1', link: 'https://www.labolycee.org/2023/2023-MET1-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Oscillations électriques libres dans LC', session: 'Métropole J2', link: 'https://www.labolycee.org/2022/2022-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Condensateur et constante de temps', session: 'Amérique du Nord', link: 'https://www.labolycee.org/2021/2021-AN-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+  {
+    id: 14, num: '14', title: 'Stratégie de la synthèse organique', category: 'organique',
+    color: '#f7d44f', tag: 'Chimie organique',
+    fiche: {
+      sections: [
+        {
+          title: '1. Étapes d\'une synthèse', icon: '🧪',
+          content: [
+            { type: 'def', term: '1. Avant l\'expérience', text: 'Choisir les réactifs et leurs quantités, le solvant, le catalyseur, les conditions physiques (T, P). Évaluer les risques.' },
+            { type: 'def', term: '2. Montage', text: 'Chauffage à reflux pour les réactions nécessitant de la chaleur (évite l\'évaporation des réactifs).' },
+            { type: 'def', term: '3. Isoler le produit', text: 'Après réaction : extraction (décantation), lavage, séchage, distillation ou recristallisation.' },
+          ]
+        },
+        {
+          title: '2. Techniques de purification', icon: '🔬',
+          content: [
+            { type: 'def', term: 'Extraction liquide-liquide', text: 'Ampoule à décanter : sépare deux phases non miscibles. Le produit migre dans le solvant organique.' },
+            { type: 'def', term: 'Distillation', text: 'Sépare des liquides miscibles par différence de températures d\'ébullition.' },
+            { type: 'def', term: 'Recristallisation', text: 'Sépare un solide des impuretés par dissolution à chaud puis cristallisation lente à froid.' },
+          ]
+        },
+        {
+          title: '3. Rendement de la synthèse', icon: '📈',
+          content: [
+            { type: 'formula', label: 'Rendement η', text: 'η = n_obtenu / n_théorique × 100  (%)\nn_théorique : calculé à partir du réactif limitant' },
+            { type: 'warn', text: 'Le rendement est toujours ≤ 100%. Causes de perte : réactions parasites, pertes lors des manipulations, équilibre non total.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Le montage à reflux sert à :', opts: ['Refroidir rapidement la solution','Permettre le chauffage sans perte de réactifs par évaporation','Filtrer la solution','Mesurer la température exacte'], ans: 1, exp: 'Le réfrigérant à eau condense les vapeurs qui retombent dans le ballon → chauffage prolongé sans évaporation.' },
+      { q: 'Le rendement η d\'une synthèse est calculé par :', opts: ['η = n_théorique / n_obtenu','η = n_obtenu / n_théorique × 100%','η = m_obtenu / M','η = V_obtenu / V_théorique'], ans: 1, exp: 'η = (n_obtenu / n_théorique) × 100%. Le rendement est toujours ≤ 100%.' },
+      { q: 'La quantité théorique de produit est calculée à partir de :', opts: ['La masse du solvant','Le réactif limitant','Le catalyseur','La température de la réaction'], ans: 1, exp: 'La quantité théorique est la quantité maximale de produit que l\'on pourrait obtenir si la réaction était totale, calculée avec le réactif limitant.' },
+      { q: 'L\'extraction liquide-liquide est réalisée avec :', opts: ['Un ballon de distillation','Une ampoule à décanter','Une colonne chromatographique','Un évaporateur'], ans: 1, exp: 'L\'ampoule à décanter permet de séparer deux phases liquides non miscibles (eau + solvant organique).' },
+      { q: 'La distillation sépare des liquides par différence de :', opts: ['Masse volumique','Solubilité','Température d\'ébullition','Viscosité'], ans: 2, exp: 'La distillation exploite les différences de températures d\'ébullition entre les constituants d\'un mélange.' },
+      { q: 'Pourquoi utilise-t-on un solvant lors d\'une synthèse ?', opts: ['Pour augmenter la masse du produit','Pour dissoudre les réactifs et faciliter leur contact','Pour abaisser le point d\'ébullition du produit','Pour éviter toute réaction'], ans: 1, exp: 'Le solvant permet de dissoudre les réactifs, assurant un bon contact entre eux et homogénéisant le milieu réactionnel.' },
+      { q: 'Un rendement de 60% signifie que :', opts: ['60% des réactifs ont réagi','On a obtenu 60% de la quantité théorique de produit','La réaction dure 60 minutes','40% du produit est purifié'], ans: 1, exp: 'η = 60% → on a obtenu 60% du produit attendu théoriquement (40% est perdu par réactions parasites ou manipulations).' },
+      { q: 'La recristallisation permet de purifier :', opts: ['Un liquide','Un gaz','Un solide','Une solution ionique'], ans: 2, exp: 'Recristallisation = purification d\'un solide. On dissout à chaud (impuretés et produit dissous), puis on refroidit lentement pour faire cristalliser le produit pur.' },
+      { q: 'Avant une synthèse, il faut évaluer les risques liés aux :', opts: ['Produits formés uniquement','Réactifs, solvants, produits (toxicité, inflammabilité, etc.)','Instruments de mesure','Conditions climatiques'], ans: 1, exp: 'L\'évaluation des risques porte sur tous les produits chimiques impliqués : réactifs, solvants et produits finaux.' },
+      { q: 'Après une extraction liquide-liquide, pour sécher la phase organique on utilise :', opts: ['Du sel de cuisine','Du sulfate de magnésium (MgSO₄) anhydre','De l\'eau distillée','Du papier filtre seul'], ans: 1, exp: 'MgSO₄ anhydre (ou Na₂SO₄ anhydre) absorbe l\'eau résiduelle de la phase organique par hydratation.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Synthèse d\'un ester et extraction', session: 'Métropole J2', link: 'https://www.labolycee.org/2023/2023-MET2-PhysiqueChimie-Sujet.pdf' },
+      { year: '2022', title: 'Stratégie de synthèse et rendement', session: 'Asie-Pacifique', link: 'https://www.labolycee.org/2022/2022-APAC-PhysiqueChimie-Sujet.pdf' },
+      { year: '2021', title: 'Purification et identification d\'un produit', session: 'Métropole J1', link: 'https://www.labolycee.org/2021/2021-MET1-PhysiqueChimie-Sujet.pdf' },
+    ]
+  },
+];
+
+const CAT_COLORS = {
+  chimie: '#4f8ef7', physique: '#a44ff7', mecanique: '#f7a24f',
+  thermo: '#4fca7a', elec: '#f75959', organique: '#f7d44f'
+};
+const CAT_LABELS = {
+  chimie: 'Chimie', physique: 'Physique', mecanique: 'Mécanique',
+  thermo: 'Thermodynamique', elec: 'Électricité', organique: 'Chimie Organique'
+};
+
+// ═══════════════════════════════════════════════════
+// STATE + API
+// ═══════════════════════════════════════════════════
+
+let SERVER_URL = localStorage.getItem('physichim_server') || '';
+
+let state = {
+  currentChapter: null,
+  currentTab: 'cours',
+  sidebarOpen: window.innerWidth > 768,
+  quiz: { active: false, idx: 0, answers: {}, revealed: {} },
+  students: [],          // liste locale (code + pseudo)
+  activeStudentId: null, // id serveur de l'élève connecté
+  activeStudentData: {   // données chargées depuis le serveur
+    scores: {},          // { chapitre_id: score }
+    notes: [],
+    progression: []
+  }
+};
+
+// ── Connexion au serveur ──────────────────────────────
+async function apiLogin(code) {
+  if (!SERVER_URL) return { error: 'Serveur non configuré.' };
+  try {
+    const r = await fetch(SERVER_URL + '/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code })
+    });
+    const d = await r.json();
+    if (!r.ok) return { error: d.error || 'Erreur de connexion.' };
+    return d;
+  } catch(e) {
+    return { error: 'Impossible de contacter le serveur. Vérifiez votre connexion.' };
+  }
+}
+
+async function apiSaveQuiz(chapitreId, score) {
+  if (!state.activeStudentId || !SERVER_URL) return;
+  try {
+    await fetch(SERVER_URL + '/api/quiz', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: 10 })
+    });
+  } catch(e) { console.warn('Quiz non sauvegardé sur le serveur', e); }
+}
+
+async function apiSaveNote(type, intitule, valeur) {
+  if (!state.activeStudentId || !SERVER_URL) return null;
+  try {
+    const r = await fetch(SERVER_URL + '/api/notes', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eleve_id: state.activeStudentId, type, intitule, valeur })
+    });
+    const d = await r.json();
+    return d.id || null;
+  } catch(e) { return null; }
+}
+
+async function apiDeleteNote(noteId) {
+  if (!state.activeStudentId || !SERVER_URL) return;
+  try {
+    await fetch(`${SERVER_URL}/api/notes/${noteId}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eleve_id: state.activeStudentId })
+    });
+  } catch(e) {}
+}
+
+async function apiLogProgression(chapitreId, action) {
+  if (!state.activeStudentId || !SERVER_URL) return;
+  try {
+    await fetch(SERVER_URL + '/api/progression', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, action })
+    });
+  } catch(e) {}
+}
+
+// ── Compatibilité avec l'ancien système ──────────────
+function loadState() {
+  try {
+    const a = localStorage.getItem('physichim_active_code');
+    if (a) state._savedCode = a;
+    // Garder les données locales en fallback si pas de serveur
+    const s = localStorage.getItem('physichim_students');
+    if (s) state.students = JSON.parse(s);
+  } catch(e) {}
+}
+
+function getStudent() {
+  if (!state.activeStudentId) return null;
+  return state.students.find(s => s.id === state.activeStudentId) || null;
+}
+
+function getStudentData(studentId) {
+  if (studentId !== state.activeStudentId) return {};
+  const d = state.activeStudentData;
+  // Convertir le format serveur en format attendu par l'UI
+  const result = { grades: d.notes || [] };
+  (d.scores || []).forEach(s => {
+    result[`quiz_${s.chapitre_id}`] = s.score;
+  });
+  return result;
+}
+
+function saveStudentData(key, value) {
+  // Les données sont sauvegardées via API directement
+  // Cette fonction n'est plus utilisée pour la persistance
+  const student = getStudent();
+  if (!student) return;
+  if (!student.data) student.data = {};
+  student.data[key] = value;
+}
+
+function saveStudents() {
+  try { localStorage.setItem('physichim_students', JSON.stringify(state.students)); } catch(e) {}
+}
+
+// ═══════════════════════════════════════════════════
+// SIDEBAR
+// ═══════════════════════════════════════════════════
+
+function buildNav() {
+  const nav = document.getElementById('chapters-nav');
+  nav.innerHTML = '';
+  CHAPTERS.forEach(ch => {
+    const d = getStudentData(state.activeStudentId);
+    const quizScore = d[`quiz_${ch.id}`];
+    const scoreLabel = quizScore !== undefined ? `${quizScore}/10` : '';
+    const scoreColor = quizScore >= 7 ? 'var(--green)' : quizScore >= 5 ? 'var(--yellow)' : quizScore !== undefined ? 'var(--red)' : 'var(--muted)';
+    nav.innerHTML += `
+      <div class="nav-item ch-${ch.category}" id="nav-ch-${ch.id}" onclick="openChapter(${ch.id})"
+           style="--dot-color:${ch.color}">
+        <span class="nav-dot"></span>
+        <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${ch.num}. ${ch.title}</span>
+        ${scoreLabel ? `<span class="quiz-score" style="color:${scoreColor}">${scoreLabel}</span>` : ''}
+      </div>`;
+  });
+}
+
+function toggleSidebar() {
+  state.sidebarOpen = !state.sidebarOpen;
+  document.getElementById('sidebar').classList.toggle('collapsed', !state.sidebarOpen);
+}
+
+function setNavActive(id) {
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  const el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+
+// ═══════════════════════════════════════════════════
+// RENDERING FICHE
+// ═══════════════════════════════════════════════════
+
+function renderContent(c) {
+  if (c.type === 'def') return `<div class="key-def"><span class="def-term">${c.term}</span><br>${c.text}</div>`;
+  if (c.type === 'formula') return `<div class="formula-box"><div class="formula-label">${c.label}</div>${c.text.replace(/\n/g,'<br>')}</div>`;
+  if (c.type === 'warn') return `<div class="warn-box">${c.text}</div>`;
+  if (c.type === 'text') return `<p style="font-size:.88rem;line-height:1.6;color:#c8d0e0;margin:6px 0">${c.text}</p>`;
+  if (c.type === 'table') return `<div class="table-wrapper"><table class="data-table"><thead><tr>${c.headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${c.rows.map(r=>`<tr>${r.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  return '';
+}
+
+function renderFiche(ch) {
+  return `
+    <div class="fiche-header">
+      <div class="fiche-num">${ch.num}</div>
+      <div>
+        <div class="fiche-title">${ch.title}</div>
+        <div class="fiche-subtitle">
+          <span class="card-tag" style="background:${ch.color}22;color:${ch.color}">${ch.tag}</span>
+        </div>
+      </div>
+    </div>
+    ${ch.fiche.sections.map(sec => `
+      <div class="section">
+        <div class="section-title"><span class="s-icon">${sec.icon}</span>${sec.title}</div>
+        ${sec.content.map(renderContent).join('')}
+      </div>
+    `).join('')}
+  `;
+}
+
+// ═══════════════════════════════════════════════════
+// RENDERING QUIZ
+// ═══════════════════════════════════════════════════
+
+function renderQuiz(ch) {
+  const qz = state.quiz;
+  if (!qz.active) {
+    const d = getStudentData(state.activeStudentId);
+    const prev = d[`quiz_${ch.id}`];
+    return `
+      <div class="quiz-intro">
+        <div class="big-icon">🧠</div>
+        <h2>Quiz — ${ch.title}</h2>
+        <p>${ch.quiz.length} questions pour vérifier vos connaissances sur ce chapitre.</p>
+        ${prev !== undefined ? `<p style="color:var(--accent);margin-bottom:16px">Votre score précédent : <strong>${prev}/10</strong></p>` : ''}
+        ${!state.activeStudentId ? '<p style="color:var(--accent2);margin-bottom:16px">⚠️ Sélectionnez un élève pour enregistrer votre score.</p>' : ''}
+        <button class="btn-primary" onclick="startQuiz()">Commencer le quiz</button>
+      </div>`;
+  }
+
+  const i = qz.idx;
+  const q = ch.quiz[i];
+  const totalQ = ch.quiz.length;
+  const revealed = qz.revealed[i];
+  const selected = qz.answers[i];
+
+  return `
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" style="width:${(i/totalQ)*100}%"></div>
+      </div>
+      <div class="quiz-progress-text">Q${i+1}/${totalQ}</div>
+    </div>
+    <div class="question-card">
+      <div class="question-num">Question ${i+1}</div>
+      <div class="question-text">${q.q.replace(/\n/g,'<br>')}</div>
+      <div class="options">
+        ${q.opts.map((opt, oi) => {
+          let cls = 'option';
+          if (revealed) {
+            cls += ' locked';
+            if (oi === q.ans) cls += ' correct';
+            else if (oi === selected && selected !== q.ans) cls += ' wrong';
+          } else {
+            if (oi === selected) cls += ' selected';
+          }
+          const letter = String.fromCharCode(65+oi);
+          const clickHandler = revealed ? '' : `onclick="selectAnswer(${oi})"`;
+          return `<div class="${cls}" ${clickHandler}>
+            <span class="option-letter">${letter}</span>${opt}
+          </div>`;
+        }).join('')}
+      </div>
+      <div class="explanation ${revealed ? 'show' : ''}">
+        <div class="exp-label">✓ Explication</div>
+        ${q.exp}
+      </div>
+    </div>
+    <div class="quiz-actions">
+      ${!revealed && selected !== undefined ? `<button class="btn-primary" onclick="revealAnswer()">Valider</button>` : ''}
+      ${revealed && i < totalQ-1 ? `<button class="btn-primary" onclick="nextQuestion()">Question suivante →</button>` : ''}
+      ${revealed && i === totalQ-1 ? `<button class="btn-primary" onclick="finishQuiz()">Voir les résultats</button>` : ''}
+    </div>
+  `;
+}
+
+function startQuiz() {
+  state.quiz = { active: true, idx: 0, answers: {}, revealed: {} };
+  refreshContent();
+}
+
+function selectAnswer(oi) {
+  state.quiz.answers[state.quiz.idx] = oi;
+  refreshContent();
+}
+
+function revealAnswer() {
+  state.quiz.revealed[state.quiz.idx] = true;
+  refreshContent();
+}
+
+function nextQuestion() {
+  state.quiz.idx++;
+  refreshContent();
+}
+
+async function finishQuiz() {
+  const ch = CHAPTERS.find(c => c.id === state.currentChapter);
+  const q = state.quiz;
+  let score = 0;
+  ch.quiz.forEach((question, i) => {
+    if (q.answers[i] === question.ans) score++;
+  });
+
+  // Sauvegarder localement ET sur le serveur
+  state.activeStudentData.scores[ch.id] = score;
+  await apiSaveQuiz(ch.id, score);
+  await apiLogProgression(ch.id, `quiz_${score}_10`);
+  buildNav();
+
+  const cls = score >= 7 ? 'great' : score >= 5 ? 'ok' : 'bad';
+  const msg = score >= 7 ? '🎉 Excellent !' : score >= 5 ? '👍 Bien !' : '📚 À retravailler';
+  const student = getStudent();
+
+  document.getElementById('content').innerHTML = `
+    <div class="quiz-results">
+      <div class="score-circle ${cls}">
+        <div class="score-num">${score}/10</div>
+        <div class="score-label">score</div>
+      </div>
+      <h2 style="font-family:Syne,sans-serif;font-size:1.3rem;margin-bottom:8px">${msg}</h2>
+      <p style="color:var(--muted);margin-bottom:8px">Score enregistré${student ? ' pour <strong>' + student.name + '</strong>' : ''} sur le serveur.</p>
+      <p style="color:var(--green);font-size:.82rem;margin-bottom:24px">✓ Synchronisé</p>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button class="btn-secondary" onclick="startQuiz()">Refaire le quiz</button>
+        <button class="btn-primary" onclick="switchTab('cours')">Revoir le cours</button>
+      </div>
+    </div>`;
+
+  state.quiz.active = false;
+}
+
+// ═══════════════════════════════════════════════════
+// RENDERING ANNALES
+// ═══════════════════════════════════════════════════
+
+function renderAnnales(ch) {
+  return `
+    <div style="margin-bottom:20px">
+      <div style="font-family:Syne,sans-serif;font-size:1rem;font-weight:700;margin-bottom:4px">Annales — ${ch.title}</div>
+      <p style="color:var(--muted);font-size:.84rem;margin-bottom:16px">Sujets de bac correspondant à ce chapitre. Les liens pointent vers labolycee.org.</p>
+    </div>
+    <div class="annales-list">
+      ${ch.annales.map(a => `
+        <div class="annale-card">
+          <div class="annale-year">${a.year}</div>
+          <div class="annale-info">
+            <div class="annale-title">${a.title}</div>
+            <div class="annale-meta">${a.session}</div>
+          </div>
+          <a class="annale-link" href="${a.link}" target="_blank" rel="noopener">Accéder ↗</a>
+        </div>
+      `).join('')}
+    </div>
+    <div class="warn-box" style="margin-top:20px">Pour des annales supplémentaires, consultez directement <a href="https://www.labolycee.org" target="_blank" rel="noopener" style="color:var(--accent)">labolycee.org</a> et filtrez par thème.</div>
+  `;
+}
+
+// ═══════════════════════════════════════════════════
+// DASHBOARD
+// ═══════════════════════════════════════════════════
+
+function renderDashboard() {
+  const student = getStudent();
+  if (!student) {
+    return `<div style="text-align:center;padding:60px 20px">
+      <div style="font-size:3rem;margin-bottom:16px">👤</div>
+      <h2 style="font-family:Syne,sans-serif;margin-bottom:8px">Non connecté</h2>
+      <p style="color:var(--muted);margin-bottom:20px">Connectez-vous avec votre code élève pour voir votre tableau de bord.</p>
+      <button class="btn-primary" onclick="openStudentModal()">Se connecter</button>
+    </div>`;
+  }
+
+  const scores = state.activeStudentData.scores || {};
+  const notes  = state.activeStudentData.notes  || [];
+
+  const scoreVals = Object.values(scores);
+  const avgScore  = scoreVals.length ? (scoreVals.reduce((a,b)=>a+b,0)/scoreVals.length).toFixed(1) : '—';
+  const completed = scoreVals.length;
+  const avgGrade  = notes.length ? (notes.reduce((a,b)=>a+parseFloat(b.val),0)/notes.length).toFixed(1) : '—';
+
+  return `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
+      <div style="font-size:2rem">👤</div>
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:1.3rem;font-weight:800">${student.name}</div>
+        <div style="color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:6px">
+          Code : <strong style="font-family:'DM Mono',monospace;color:var(--accent)">${student.code || student.id}</strong>
+          <span style="color:var(--green);font-size:.75rem">● Synchronisé</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="stat-card">
+        <div class="stat-label">Quiz complétés</div>
+        <div class="stat-value">${completed}<span class="stat-unit">/ ${CHAPTERS.length}</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Moyenne quiz</div>
+        <div class="stat-value" style="color:${avgScore!=='—'&&parseFloat(avgScore)>=7?'var(--green)':avgScore!=='—'&&parseFloat(avgScore)>=5?'var(--yellow)':'inherit'}">${avgScore}<span class="stat-unit">/ 10</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Notes enregistrées</div>
+        <div class="stat-value">${notes.length}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Moyenne notes</div>
+        <div class="stat-value" style="color:${avgGrade!=='—'&&parseFloat(avgGrade)>=10?'var(--green)':'var(--red)'}">${avgGrade}<span class="stat-unit">/ 20</span></div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div style="font-family:Syne,sans-serif;font-weight:700;margin-bottom:12px">📊 Résultats par chapitre</div>
+      ${CHAPTERS.map(ch => {
+        const score = scores[ch.id];
+        const pct   = score !== undefined ? (score/10)*100 : 0;
+        const color = score === undefined ? 'var(--border)' : score>=7?'var(--green)':score>=5?'var(--yellow)':'var(--red)';
+        return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:.78rem;width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)">${ch.num}. ${ch.title}</div>
+          <div class="card-progress-bar" style="flex:1"><div class="card-progress-fill" style="width:${pct}%;background:${color}"></div></div>
+          <div style="font-family:'DM Mono',monospace;font-size:.78rem;min-width:36px;text-align:right;color:${color}">${score !== undefined ? score+'/10' : '—'}</div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div class="grades-section">
+      <div class="grades-header">
+        <div class="grades-title">📝 Notes de devoirs</div>
+        <button class="btn-secondary" onclick="toggleAddGrade()" style="font-size:.8rem;padding:6px 14px">+ Ajouter</button>
+      </div>
+      <div class="add-grade-form" id="add-grade-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Type</label>
+            <select class="form-select" id="grade-type">
+              <option>DS</option><option>DM</option><option>Interro</option><option>TP noté</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Intitulé</label>
+            <input type="text" class="form-input" id="grade-name" placeholder="Ex: DS Ch.1-2">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Note /20</label>
+            <input type="number" class="form-input" id="grade-val" min="0" max="20" step="0.5" placeholder="ex: 14.5">
+          </div>
+          <button class="btn-primary" onclick="addGrade()" style="height:36px;padding:0 16px">✓</button>
+        </div>
+      </div>
+      ${notes.length === 0
+        ? `<p style="color:var(--muted);font-size:.85rem;text-align:center;padding:20px 0">Aucune note enregistrée.</p>`
+        : notes.map(g => `
+          <div class="grade-entry">
+            <div class="grade-type">${g.type}</div>
+            <div class="grade-name">${g.name}</div>
+            <div class="grade-value" style="color:${parseFloat(g.val)>=10?'var(--green)':'var(--red)'}">${parseFloat(g.val).toFixed(1)}/20</div>
+            <div class="grade-del" onclick="deleteGrade(${g.id})">🗑</div>
+          </div>`).join('')
+      }
+    </div>
+  `;
+}
+
+function toggleAddGrade() {
+  document.getElementById('add-grade-form').classList.toggle('open');
+}
+
+async function addGrade() {
+  const type = document.getElementById('grade-type').value;
+  const name = document.getElementById('grade-name').value.trim() || 'Sans titre';
+  const val = document.getElementById('grade-val').value;
+  if (!val || !state.activeStudentId) return;
+
+  const valeur = parseFloat(val);
+  const noteId = await apiSaveNote(type, name, valeur);
+
+  // Mettre à jour localement
+  state.activeStudentData.notes.unshift({
+    id: noteId, type, name, val: valeur.toFixed(1), date: new Date().toISOString()
+  });
+
+  document.getElementById('grade-name').value = '';
+  document.getElementById('grade-val').value = '';
+  showDashboard();
+}
+
+async function deleteGrade(noteId) {
+  await apiDeleteNote(noteId);
+  state.activeStudentData.notes = state.activeStudentData.notes.filter(n => n.id !== noteId);
+  showDashboard();
+}
+
+// ═══════════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════════
+
+function showHome() {
+  state.currentChapter = null;
+  document.getElementById('tab-bar').style.display = 'none';
+  document.getElementById('page-title').textContent = 'Accueil';
+  setNavActive('nav-home');
+  document.getElementById('content').innerHTML = `
+    <div style="margin-bottom:20px">
+      <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">Bienvenue 👋</div>
+      <p style="color:var(--muted);font-size:.88rem">Cliquez sur un chapitre pour commencer à réviser.</p>
+    </div>
+    <div class="home-grid">
+      ${CHAPTERS.map(ch => {
+        const d = getStudentData(state.activeStudentId);
+        const score = d[`quiz_${ch.id}`];
+        const pct = score !== undefined ? (score/10)*100 : 0;
+        return `<div class="chapter-card" style="--card-color:${ch.color}" onclick="openChapter(${ch.id})">
+          <div class="card-num">Chapitre ${ch.num}</div>
+          <div class="card-title">${ch.title}</div>
+          <span class="card-tag" style="background:${ch.color}22;color:${ch.color}">${ch.tag}</span>
+          <div class="card-progress-row">
+            <div class="card-progress-bar"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+            <div class="card-progress-text">${score !== undefined ? score+'/10' : '—'}</div>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  `;
+}
+
+function showDashboard() {
+  state.currentChapter = null;
+  document.getElementById('tab-bar').style.display = 'none';
+  document.getElementById('page-title').textContent = 'Tableau de bord';
+  setNavActive('nav-dashboard');
+  document.getElementById('content').innerHTML = renderDashboard();
+}
+
+function openChapter(id) {
+  state.currentChapter = id;
+  state.currentTab = 'cours';
+  state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
+  const ch = CHAPTERS.find(c => c.id === id);
+  document.getElementById('page-title').textContent = `${ch.num}. ${ch.title}`;
+  document.getElementById('tab-bar').style.display = 'flex';
+  document.getElementById('tab-cours').classList.add('active');
+  document.getElementById('tab-quiz').classList.remove('active');
+  document.getElementById('tab-annales').classList.remove('active');
+  setNavActive(`nav-ch-${id}`);
+  document.getElementById('content').innerHTML = renderFiche(ch);
+  if (window.innerWidth <= 768) {
+    state.sidebarOpen = false;
+    document.getElementById('sidebar').classList.add('collapsed');
+  }
+  document.getElementById('content').scrollTop = 0;
+}
+
+function switchTab(tab) {
+  state.currentTab = tab;
+  if (state.currentChapter === null) return;
+  if (tab !== 'quiz') state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
+  ['cours','quiz','annales'].forEach(t => {
+    document.getElementById(`tab-${t}`).classList.toggle('active', t === tab);
+  });
+  refreshContent();
+}
+
+function refreshContent() {
+  const ch = CHAPTERS.find(c => c.id === state.currentChapter);
+  if (!ch) return;
+  let html = '';
+  if (state.currentTab === 'cours') html = renderFiche(ch);
+  else if (state.currentTab === 'quiz') html = renderQuiz(ch);
+  else if (state.currentTab === 'annales') html = renderAnnales(ch);
+  document.getElementById('content').innerHTML = html;
+  if (state.currentTab !== 'quiz') document.getElementById('content').scrollTop = 0;
+}
+
+// ═══════════════════════════════════════════════════
+// CONNEXION ÉLÈVE (via serveur)
+// ═══════════════════════════════════════════════════
+
+function openStudentModal() {
+  if (!SERVER_URL) {
+    document.getElementById('modal-server-setup').style.display = 'block';
+    document.getElementById('modal-login-form').style.display = 'none';
+  } else {
+    document.getElementById('modal-server-setup').style.display = 'none';
+    document.getElementById('modal-login-form').style.display = 'block';
+    document.getElementById('modal-server-display').textContent = SERVER_URL.replace('https://','');
+    document.getElementById('login-code').value = state._savedCode || '';
+  }
+  document.getElementById('login-error').style.display = 'none';
+  document.getElementById('modal-overlay').classList.add('open');
+  setTimeout(() => {
+    const el = document.getElementById(SERVER_URL ? 'login-code' : 'server-url-input');
+    if (el) el.focus();
+  }, 100);
+}
+
+function closeStudentModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function showServerSetup() {
+  document.getElementById('modal-server-setup').style.display = 'block';
+  document.getElementById('modal-login-form').style.display = 'none';
+  document.getElementById('server-url-input').value = SERVER_URL;
+}
+
+function saveServerUrl() {
+  const url = document.getElementById('server-url-input').value.trim().replace(/\/$/,'');
+  if (!url) return;
+  SERVER_URL = url;
+  localStorage.setItem('physichim_server', url);
+  document.getElementById('modal-server-setup').style.display = 'none';
+  document.getElementById('modal-login-form').style.display = 'block';
+  document.getElementById('modal-server-display').textContent = url.replace('https://','');
+  document.getElementById('login-code').focus();
+}
+
+async function doStudentLogin() {
+  const code = document.getElementById('login-code').value.trim().toUpperCase();
+  if (!code) return;
+
+  const btn = document.getElementById('login-btn');
+  btn.textContent = 'Connexion...';
+  btn.disabled = true;
+  document.getElementById('login-error').style.display = 'none';
+
+  const result = await apiLogin(code);
+
+  btn.textContent = 'Se connecter';
+  btn.disabled = false;
+
+  if (result.error) {
+    const errEl = document.getElementById('login-error');
+    errEl.textContent = result.error;
+    errEl.style.display = 'block';
+    return;
+  }
+
+  // Connexion réussie
+  const { eleve, scores, notes } = result;
+  state.activeStudentId = eleve.id;
+  state._savedCode = code;
+  localStorage.setItem('physichim_active_code', code);
+
+  // Stocker les données serveur
+  state.activeStudentData = {
+    scores: scores.reduce((acc, s) => { acc[s.chapitre_id] = s.score; return acc; }, {}),
+    notes: notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
+    progression: result.progression || []
+  };
+
+  // Mettre à jour la liste locale
+  const existing = state.students.find(s => s.id === eleve.id);
+  if (!existing) {
+    state.students.push({ id: eleve.id, code: eleve.code, name: eleve.pseudo });
+    saveStudents();
+  }
+
+  document.getElementById('badge-name').textContent = `${eleve.pseudo} (${eleve.code})`;
+  buildNav();
+  closeStudentModal();
+  if (state.currentChapter !== null) openChapter(state.currentChapter);
+  else showHome();
+}
+
+function getStudentData(studentId) {
+  if (studentId !== state.activeStudentId) return {};
+  const d = state.activeStudentData;
+  const result = { grades: d.notes || [] };
+  Object.entries(d.scores || {}).forEach(([cid, score]) => {
+    result[`quiz_${cid}`] = score;
+  });
+  return result;
+}
+
+
+// ═══════════════════════════════════════════════════
+// VUE ENSEIGNANT — redirige vers admin.html
+// ═══════════════════════════════════════════════════
+
+function showTeacher() {
+  state.currentChapter = null;
+  document.getElementById('tab-bar').style.display = 'none';
+  document.getElementById('page-title').textContent = 'Espace enseignant';
+  setNavActive('nav-teacher');
+
+  const adminUrl = SERVER_URL ? SERVER_URL + '/admin.html' : '';
+
+  document.getElementById('content').innerHTML = `
+    <div style="text-align:center;padding:48px 20px">
+      <div style="font-size:3rem;margin-bottom:16px">🏫</div>
+      <div style="font-family:Syne,sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:8px">Espace enseignant</div>
+      <p style="color:var(--muted);font-size:.88rem;margin-bottom:24px;max-width:400px;margin-left:auto;margin-right:auto">
+        La gestion des élèves, la vue globale des scores et l'export CSV se font depuis l'interface d'administration dédiée.
+      </p>
+      ${adminUrl
+        ? `<a href="${adminUrl}" target="_blank" rel="noopener">
+            <button class="btn-primary" style="font-size:.95rem;padding:12px 28px">Ouvrir l'interface admin ↗</button>
+           </a>
+           <p style="color:var(--muted);font-size:.75rem;margin-top:12px">${adminUrl}</p>`
+        : `<p style="color:var(--accent2);margin-bottom:16px">⚠️ Configurez d'abord l'adresse du serveur en vous connectant avec votre code élève.</p>
+           <button class="btn-secondary" onclick="openStudentModal()">Configurer le serveur</button>`
+      }
+      <div class="rgpd-notice" style="margin-top:24px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
+        <strong>🔒 RGPD :</strong> L'interface admin est protégée par une clé secrète. Les données sont hébergées en Europe (Railway Frankfurt). Les élèves ne sont identifiés que par un code anonyme.
+      </div>
+    </div>
+  `;
+}
+
+// ═══════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════
+
+loadState();
+
+// Reconnexion automatique si code sauvegardé
+(async () => {
+  const savedCode = localStorage.getItem('physichim_active_code');
+  if (savedCode && SERVER_URL) {
+    const result = await apiLogin(savedCode);
+    if (!result.error) {
+      const { eleve, scores, notes } = result;
+      state.activeStudentId = eleve.id;
+      state._savedCode = savedCode;
+      state.activeStudentData = {
+        scores: scores.reduce((acc, s) => { acc[s.chapitre_id] = s.score; return acc; }, {}),
+        notes: notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
+        progression: result.progression || []
+      };
+      const existing = state.students.find(s => s.id === eleve.id);
+      if (!existing) state.students.push({ id: eleve.id, code: eleve.code, name: eleve.pseudo });
+      document.getElementById('badge-name').textContent = `${eleve.pseudo} (${eleve.code})`;
+    }
+  }
+  buildNav();
+  showHome();
+})();
+
+// Fermer modal si clic sur l'overlay
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeStudentModal();
+});
+</script>
+</body>
+</html>

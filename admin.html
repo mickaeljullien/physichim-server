@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhysiChim — Administration</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+  :root {
+    --bg:#0d0f14;--surface:#161922;--surface2:#1e2330;--border:#2a3040;
+    --accent:#4f8ef7;--accent2:#f7a24f;--green:#4fca7a;--red:#f75959;
+    --yellow:#f7d44f;--text:#e8ecf4;--muted:#7a8399;--radius:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:24px}
+  .logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .subtitle{font-size:.8rem;color:var(--muted);margin-top:2px}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+  .header-left{}
+  .header-right{display:flex;gap:8px;align-items:center}
+
+  .login-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;max-width:420px;margin:80px auto}
+  .login-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:6px}
+  .login-sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+  .form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}
+  .form-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .form-input,.form-select{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .15s}
+  .form-input:focus,.form-select:focus{border-color:var(--accent)}
+  .form-select option{background:var(--surface2)}
+
+  .btn{padding:10px 20px;border-radius:8px;border:none;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .15s}
+  .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#3a7de8;transform:translateY(-1px)}
+  .btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-danger{background:rgba(247,89,89,.1);color:var(--red);border:1px solid rgba(247,89,89,.3)}.btn-danger:hover{background:rgba(247,89,89,.2)}
+  .btn-sm{padding:6px 12px;font-size:.78rem}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+  .card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+  .stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800}
+  .stat-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+  .table-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  th{background:var(--surface2);padding:8px 10px;text-align:left;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+  td{padding:8px 10px;border-top:1px solid var(--border);vertical-align:middle}
+  tr:hover td{background:rgba(255,255,255,.02)}
+
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600;font-family:'DM Mono',monospace}
+  .badge-green{background:rgba(79,202,122,.15);color:var(--green)}
+  .badge-yellow{background:rgba(247,212,79,.15);color:var(--yellow)}
+  .badge-red{background:rgba(247,89,89,.15);color:var(--red)}
+  .badge-gray{background:rgba(122,131,153,.15);color:var(--muted)}
+
+  .score-bar{display:flex;align-items:center;gap:6px}
+  .score-bar-bg{flex:1;height:4px;background:var(--border);border-radius:2px;min-width:60px}
+  .score-bar-fill{height:100%;border-radius:2px;transition:width .4s}
+  .score-val{font-family:'DM Mono',monospace;font-size:.75rem;min-width:30px;text-align:right}
+
+  .tabs{display:flex;gap:4px;background:var(--surface);border-radius:8px;padding:4px;margin-bottom:20px;width:fit-content}
+  .tab{padding:7px 16px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:.82rem;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .15s;font-weight:500}
+  .tab.active{background:var(--surface2);color:var(--text)}
+
+  .add-eleve-row{display:flex;gap:8px;align-items:flex-end;margin-bottom:12px;flex-wrap:wrap}
+  .add-eleve-row .form-group{margin-bottom:0;min-width:120px}
+
+  .alert{padding:10px 14px;border-radius:8px;font-size:.84rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .alert-err{background:rgba(247,89,89,.1);border:1px solid rgba(247,89,89,.3);color:var(--red)}
+  .alert-ok{background:rgba(79,202,122,.1);border:1px solid rgba(79,202,122,.3);color:var(--green)}
+
+  .eleve-detail{display:none}
+  .eleve-detail.open{display:block}
+  .back-btn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.85rem;cursor:pointer;margin-bottom:16px;border:none;background:none;font-family:'DM Sans',sans-serif}
+  .back-btn:hover{color:var(--accent)}
+
+  .progression-item{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--border);font-size:.82rem}
+  .prog-date{color:var(--muted);font-family:'DM Mono',monospace;font-size:.72rem;white-space:nowrap;margin-top:1px}
+
+  ::-webkit-scrollbar{width:4px;height:4px}
+  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+  @media(max-width:600px){
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .add-eleve-row{flex-direction:column}
+    .add-eleve-row .form-group{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-box">
+    <div class="logo">⚛ PhysiChim</div>
+    <div class="subtitle">Espace enseignant</div>
+    <br>
+    <div class="login-title">Connexion</div>
+    <div class="login-sub">Entrez l'adresse de votre serveur et votre clé admin.</div>
+    <div id="login-alert"></div>
+    <div class="form-group">
+      <label class="form-label">URL du serveur</label>
+      <input class="form-input" id="server-url" placeholder="https://votre-app.railway.app" value="">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Clé admin</label>
+      <input class="form-input" type="password" id="admin-key" placeholder="physichim-admin-2024">
+    </div>
+    <button class="btn btn-primary" onclick="doLogin()" style="width:100%">Se connecter</button>
+    <p style="font-size:.75rem;color:var(--muted);margin-top:12px;text-align:center">La clé admin est définie dans les variables d'environnement Railway (ADMIN_KEY)</p>
+  </div>
+</div>
+
+<div id="main-screen" style="display:none">
+  <header>
+    <div class="header-left">
+      <div class="logo">⚛ PhysiChim</div>
+      <div class="subtitle" id="server-label">Administration</div>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-secondary btn-sm" onclick="exportCSV()">📥 Export CSV</button>
+      <button class="btn btn-secondary btn-sm" onclick="doLogout()">Déconnexion</button>
+    </div>
+  </header>
+
+  <!-- Vue liste élèves -->
+  <div id="view-list">
+    <div class="stats-grid" id="stats-grid"></div>
+
+    <div class="tabs">
+      <button class="tab active" id="tab-eleves" onclick="switchTab('eleves')">👤 Élèves</button>
+      <button class="tab" id="tab-scores" onclick="switchTab('scores')">📊 Scores quiz</button>
+      <button class="tab" id="tab-notes" onclick="switchTab('notes')">📝 Notes</button>
+    </div>
+
+    <!-- Onglet Élèves -->
+    <div id="pane-eleves">
+      <div class="card">
+        <div class="card-title">➕ Ajouter un élève</div>
+        <div class="add-eleve-row">
+          <div class="form-group">
+            <label class="form-label">Code (ex: E01)</label>
+            <input class="form-input" id="new-code" placeholder="E01" style="width:90px">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Pseudo ou initiales</label>
+            <input class="form-input" id="new-pseudo" placeholder="ex: ML ou Marie L.">
+          </div>
+          <button class="btn btn-primary" onclick="addEleve()">Ajouter</button>
+        </div>
+        <div id="add-alert"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">👥 Liste des élèves</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Code</th><th>Pseudo</th><th>Dernière connexion</th>
+              <th>Quiz faits</th><th>Moy. quiz</th><th>Moy. notes</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="eleves-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Onglet Scores -->
+    <div id="pane-scores" style="display:none">
+      <div class="card">
+        <div class="card-title">📊 Résultats quiz par chapitre</div>
+        <div class="table-wrap">
+          <table id="scores-table">
+            <thead><tr id="scores-head"></tr></thead>
+            <tbody id="scores-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Onglet Notes -->
+    <div id="pane-notes" style="display:none">
+      <div class="card">
+        <div class="card-title">📝 Toutes les notes de devoirs</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Code</th><th>Pseudo</th><th>Type</th><th>Intitulé</th><th>Note</th><th>Date</th>
+            </tr></thead>
+            <tbody id="notes-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vue détail élève -->
+  <div id="view-detail" style="display:none">
+    <button class="back-btn" onclick="showList()">← Retour à la liste</button>
+    <div id="detail-content"></div>
+  </div>
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────────────
+let SERVER = '';
+let ADMIN_KEY_VAL = '';
+let DATA = [];
+const CH_NAMES = [
+  'Ch.00 Outils maths','Ch.01 Acides/bases','Ch.02 Évolution spontanée',
+  'Ch.03 Force acides/bases','Ch.04 Ondes','Ch.05 Lunette',
+  'Ch.06 Mesures physiques','Ch.07 Mesures chimiques','Ch.08 Newton',
+  'Ch.09 Champ uniforme','Ch.10 Gravitation','Ch.11 Cinétique',
+  'Ch.12 Thermodynamique','Ch.13 Électricité','Ch.14 Synthèse organique'
+];
+
+function headers() {
+  return { 'Content-Type':'application/json', 'Authorization':'Bearer '+ADMIN_KEY_VAL };
+}
+
+// ── Login ────────────────────────────────────────────────
+async function doLogin() {
+  SERVER = document.getElementById('server-url').value.trim().replace(/\/$/,'');
+  ADMIN_KEY_VAL = document.getElementById('admin-key').value.trim();
+  if (!SERVER || !ADMIN_KEY_VAL) {
+    showAlert('login-alert','Veuillez remplir tous les champs.','err'); return;
+  }
+  try {
+    const r = await fetch(SERVER+'/api/admin/eleves', { headers: headers() });
+    if (r.status === 401) { showAlert('login-alert','Clé admin incorrecte.','err'); return; }
+    if (!r.ok) throw new Error('Erreur '+r.status);
+    DATA = await r.json();
+    localStorage.setItem('physichim_server', SERVER);
+    localStorage.setItem('physichim_key', ADMIN_KEY_VAL);
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('main-screen').style.display = 'block';
+    document.getElementById('server-label').textContent = SERVER.replace('https://','');
+    renderAll();
+  } catch(e) {
+    showAlert('login-alert','Impossible de contacter le serveur : '+e.message,'err');
+  }
+}
+
+function doLogout() {
+  localStorage.removeItem('physichim_server');
+  localStorage.removeItem('physichim_key');
+  document.getElementById('main-screen').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'block';
+}
+
+// ── Refresh données ──────────────────────────────────────
+async function refreshData() {
+  const r = await fetch(SERVER+'/api/admin/eleves', { headers: headers() });
+  DATA = await r.json();
+  renderAll();
+}
+
+function renderAll() {
+  renderStats();
+  renderEleves();
+  renderScores();
+  renderNotes();
+}
+
+// ── Stats globales ───────────────────────────────────────
+function renderStats() {
+  const allScores = DATA.flatMap(e => e.scores || []);
+  const allNotes = DATA.flatMap(e => e.notes || []);
+  const avgQuiz = allScores.length ? (allScores.reduce((a,b)=>a+b.score,0)/allScores.length).toFixed(1) : '—';
+  const avgNote = allNotes.length ? (allNotes.reduce((a,b)=>a+b.valeur,0)/allNotes.length).toFixed(1) : '—';
+  const quizFaits = [...new Set(DATA.flatMap(e=>(e.scores||[]).map(s=>e.id+'_'+s.chapitre_id)))].length;
+
+  document.getElementById('stats-grid').innerHTML = `
+    <div class="stat-card"><div class="stat-val">${DATA.length}</div><div class="stat-lbl">Élèves</div></div>
+    <div class="stat-card"><div class="stat-val">${quizFaits}</div><div class="stat-lbl">Quiz complétés</div></div>
+    <div class="stat-card"><div class="stat-val">${avgQuiz !== '—' ? avgQuiz+'/10' : '—'}</div><div class="stat-lbl">Moy. quiz</div></div>
+    <div class="stat-card"><div class="stat-val">${avgNote !== '—' ? avgNote+'/20' : '—'}</div><div class="stat-lbl">Moy. notes</div></div>
+  `;
+}
+
+// ── Liste élèves ─────────────────────────────────────────
+function renderEleves() {
+  const tbody = document.getElementById('eleves-tbody');
+  if (!DATA.length) { tbody.innerHTML = '<tr><td colspan="7" style="color:var(--muted);text-align:center;padding:20px">Aucun élève</td></tr>'; return; }
+
+  tbody.innerHTML = DATA.map(e => {
+    const scores = e.scores || [];
+    const notes = e.notes || [];
+    const avgQuiz = scores.length ? (scores.reduce((a,b)=>a+b.score,0)/scores.length).toFixed(1) : null;
+    const avgNote = notes.length ? (notes.reduce((a,b)=>a+b.valeur,0)/notes.length).toFixed(1) : null;
+    const lastSeen = e.last_seen ? new Date(e.last_seen).toLocaleDateString('fr-FR') : 'Jamais';
+    const qBadge = avgQuiz ? `<span class="badge ${parseFloat(avgQuiz)>=7?'badge-green':parseFloat(avgQuiz)>=5?'badge-yellow':'badge-red'}">${avgQuiz}/10</span>` : '<span class="badge badge-gray">—</span>';
+    const nBadge = avgNote ? `<span class="badge ${parseFloat(avgNote)>=10?'badge-green':'badge-red'}">${avgNote}/20</span>` : '<span class="badge badge-gray">—</span>';
+    return `<tr>
+      <td><strong style="font-family:DM Mono,monospace">${e.code}</strong></td>
+      <td>${e.pseudo}</td>
+      <td style="color:var(--muted);font-size:.78rem">${lastSeen}</td>
+      <td><span class="badge badge-gray">${scores.length}/${CH_NAMES.length}</span></td>
+      <td>${qBadge}</td>
+      <td>${nBadge}</td>
+      <td style="display:flex;gap:6px;flex-wrap:wrap">
+        <button class="btn btn-secondary btn-sm" onclick="showDetail('${e.id}')">Détail</button>
+        <button class="btn btn-danger btn-sm" onclick="resetEleve('${e.id}','${e.pseudo}')">Reset</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteEleve('${e.id}','${e.pseudo}')">✕</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Scores quiz ──────────────────────────────────────────
+function renderScores() {
+  const head = document.getElementById('scores-head');
+  const tbody = document.getElementById('scores-tbody');
+  head.innerHTML = '<th>Code</th><th>Pseudo</th>' + CH_NAMES.map(n=>`<th style="writing-mode:vertical-rl;transform:rotate(180deg);height:80px;font-size:.65rem">${n}</th>`).join('') + '<th>Moy.</th>';
+  tbody.innerHTML = DATA.map(e => {
+    const scoreMap = {};
+    (e.scores||[]).forEach(s => scoreMap[s.chapitre_id] = s.score);
+    const vals = Object.values(scoreMap);
+    const avg = vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : null;
+    const cells = CH_NAMES.map((_,i) => {
+      const sc = scoreMap[i];
+      if (sc === undefined) return '<td style="text-align:center;color:var(--border)">—</td>';
+      const color = sc>=7?'var(--green)':sc>=5?'var(--yellow)':'var(--red)';
+      return `<td style="text-align:center;font-family:DM Mono,monospace;font-size:.78rem;color:${color};font-weight:600">${sc}/10</td>`;
+    }).join('');
+    const avgBadge = avg ? `<span class="badge ${parseFloat(avg)>=7?'badge-green':parseFloat(avg)>=5?'badge-yellow':'badge-red'}">${avg}</span>` : '<span class="badge badge-gray">—</span>';
+    return `<tr><td><strong style="font-family:DM Mono,monospace">${e.code}</strong></td><td>${e.pseudo}</td>${cells}<td>${avgBadge}</td></tr>`;
+  }).join('') || '<tr><td colspan="18" style="color:var(--muted);text-align:center;padding:20px">Aucune donnée</td></tr>';
+}
+
+// ── Notes ────────────────────────────────────────────────
+function renderNotes() {
+  const allNotes = DATA.flatMap(e => (e.notes||[]).map(n => ({...n, code:e.code, pseudo:e.pseudo})));
+  allNotes.sort((a,b) => new Date(b.date)-new Date(a.date));
+  const tbody = document.getElementById('notes-tbody');
+  tbody.innerHTML = allNotes.map(n => {
+    const color = n.valeur>=10?'var(--green)':'var(--red)';
+    const date = new Date(n.date).toLocaleDateString('fr-FR');
+    return `<tr>
+      <td><strong style="font-family:DM Mono,monospace">${n.code}</strong></td>
+      <td>${n.pseudo}</td>
+      <td><span class="badge badge-gray">${n.type}</span></td>
+      <td>${n.intitule}</td>
+      <td style="font-family:DM Mono,monospace;font-weight:600;color:${color}">${n.valeur}/20</td>
+      <td style="color:var(--muted);font-size:.78rem">${date}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">Aucune note</td></tr>';
+}
+
+// ── Détail élève ─────────────────────────────────────────
+function showDetail(id) {
+  const e = DATA.find(x => x.id === id);
+  if (!e) return;
+  const scores = e.scores || [];
+  const notes = e.notes || [];
+  const prog = e.progression || [];
+  const avgQuiz = scores.length ? (scores.reduce((a,b)=>a+b.score,0)/scores.length).toFixed(1) : '—';
+  const avgNote = notes.length ? (notes.reduce((a,b)=>a+b.valeur,0)/notes.length).toFixed(1) : '—';
+
+  const scoreMap = {};
+  scores.forEach(s => scoreMap[s.chapitre_id] = s.score);
+
+  document.getElementById('detail-content').innerHTML = `
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+      <div style="font-size:2.5rem">👤</div>
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:1.4rem;font-weight:800">${e.pseudo}</div>
+        <div style="color:var(--muted);font-size:.82rem">Code : <strong style="font-family:DM Mono,monospace;color:var(--accent)">${e.code}</strong> — Dernière connexion : ${e.last_seen ? new Date(e.last_seen).toLocaleString('fr-FR') : 'Jamais'}</div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-val">${scores.length}</div><div class="stat-lbl">Quiz complétés</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:${parseFloat(avgQuiz)>=7?'var(--green)':parseFloat(avgQuiz)>=5?'var(--yellow)':'var(--red)'}">${avgQuiz !== '—' ? avgQuiz+'/10' : '—'}</div><div class="stat-lbl">Moy. quiz</div></div>
+      <div class="stat-card"><div class="stat-val">${notes.length}</div><div class="stat-lbl">Notes</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:${parseFloat(avgNote)>=10?'var(--green)':'var(--red)'}">${avgNote !== '—' ? avgNote+'/20' : '—'}</div><div class="stat-lbl">Moy. notes</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 Progression par chapitre</div>
+      ${CH_NAMES.map((name, i) => {
+        const sc = scoreMap[i];
+        const pct = sc !== undefined ? (sc/10)*100 : 0;
+        const color = sc === undefined ? 'var(--border)' : sc>=7?'var(--green)':sc>=5?'var(--yellow)':'var(--red)';
+        return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+          <div style="font-size:.78rem;min-width:200px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${name}</div>
+          <div class="score-bar" style="flex:1">
+            <div class="score-bar-bg"><div class="score-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+            <div class="score-val" style="color:${color}">${sc !== undefined ? sc+'/10' : '—'}</div>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+
+    <div class="card">
+      <div class="card-title">📝 Notes de devoirs</div>
+      ${notes.length ? `<div class="table-wrap"><table>
+        <thead><tr><th>Type</th><th>Intitulé</th><th>Note</th><th>Date</th></tr></thead>
+        <tbody>${notes.map(n => {
+          const color = n.valeur>=10?'var(--green)':'var(--red)';
+          return `<tr><td><span class="badge badge-gray">${n.type}</span></td><td>${n.intitule}</td>
+            <td style="font-family:DM Mono,monospace;font-weight:600;color:${color}">${n.valeur}/20</td>
+            <td style="color:var(--muted);font-size:.78rem">${new Date(n.date).toLocaleDateString('fr-FR')}</td></tr>`;
+        }).join('')}</tbody>
+      </table></div>` : '<p style="color:var(--muted);font-size:.85rem">Aucune note enregistrée.</p>'}
+    </div>
+  `;
+  document.getElementById('view-list').style.display = 'none';
+  document.getElementById('view-detail').style.display = 'block';
+}
+
+function showList() {
+  document.getElementById('view-detail').style.display = 'none';
+  document.getElementById('view-list').style.display = 'block';
+}
+
+// ── Actions ──────────────────────────────────────────────
+async function addEleve() {
+  const code = document.getElementById('new-code').value.trim().toUpperCase();
+  const pseudo = document.getElementById('new-pseudo').value.trim() || code;
+  if (!code) { showAlert('add-alert','Entrez un code.','err'); return; }
+  const r = await fetch(SERVER+'/api/admin/eleves', { method:'POST', headers:headers(), body:JSON.stringify({code,pseudo}) });
+  const d = await r.json();
+  if (!r.ok) { showAlert('add-alert', d.error || 'Erreur','err'); return; }
+  showAlert('add-alert', `Élève ${code} créé avec succès.`, 'ok');
+  document.getElementById('new-code').value = '';
+  document.getElementById('new-pseudo').value = '';
+  await refreshData();
+}
+
+async function resetEleve(id, pseudo) {
+  if (!confirm(`Réinitialiser toutes les données de ${pseudo} ?\n(quiz, notes, progression)\nCette action est irréversible.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/eleves/${id}/reset`, { method:'POST', headers:headers() });
+  if (r.ok) { await refreshData(); }
+}
+
+async function deleteEleve(id, pseudo) {
+  if (!confirm(`Supprimer définitivement l'élève ${pseudo} et toutes ses données ?`)) return;
+  const r = await fetch(`${SERVER}/api/admin/eleves/${id}`, { method:'DELETE', headers:headers() });
+  if (r.ok) { await refreshData(); }
+}
+
+function exportCSV() {
+  window.open(`${SERVER}/api/admin/export`, '_blank');
+}
+
+// ── Tabs ─────────────────────────────────────────────────
+function switchTab(tab) {
+  ['eleves','scores','notes'].forEach(t => {
+    document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+    document.getElementById('pane-'+t).style.display = t===tab ? 'block' : 'none';
+  });
+}
+
+// ── Alerts ───────────────────────────────────────────────
+function showAlert(id, msg, type) {
+  const el = document.getElementById(id);
+  el.innerHTML = `<div class="alert alert-${type==='err'?'err':'ok'}">${type==='err'?'⚠':'✓'} ${msg}</div>`;
+  setTimeout(() => { el.innerHTML = ''; }, 4000);
+}
+
+// ── Auto-login si credentials sauvegardés ────────────────
+window.onload = () => {
+  const s = localStorage.getItem('physichim_server');
+  const k = localStorage.getItem('physichim_key');
+  if (s && k) {
+    document.getElementById('server-url').value = s;
+    document.getElementById('admin-key').value = k;
+    SERVER = s; ADMIN_KEY_VAL = k;
+    fetch(SERVER+'/api/admin/eleves', { headers:headers() })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d) return;
+        DATA = d;
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('main-screen').style.display = 'block';
+        document.getElementById('server-label').textContent = SERVER.replace('https://','');
+        renderAll();
+      }).catch(() => {});
+  }
+};
+</script>
+</body>
+</html>
