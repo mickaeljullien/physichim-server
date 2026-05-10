@@ -1359,6 +1359,144 @@
 
   .data-table tbody tr:hover td { background: rgba(255,255,255,0.03); }
 
+  /* ── XP & NIVEAUX ── */
+  @keyframes xp-fill {
+    from { width: 0%; }
+    to   { width: var(--xp-pct); }
+  }
+  @keyframes level-up {
+    0%   { transform: scale(1); }
+    30%  { transform: scale(1.4) rotate(-5deg); }
+    60%  { transform: scale(0.9) rotate(3deg); }
+    100% { transform: scale(1); }
+  }
+  @keyframes toast-in {
+    from { transform: translateX(120%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes toast-out {
+    from { transform: translateX(0); opacity: 1; }
+    to   { transform: translateX(120%); opacity: 0; }
+  }
+  @keyframes card-flip-in {
+    from { transform: rotateY(-90deg); opacity: 0; }
+    to   { transform: rotateY(0deg); opacity: 1; }
+  }
+
+  .xp-bar-wrapper {
+    margin: 10px 20px 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 12px;
+    transition: border-color .2s;
+  }
+  .xp-bar-wrapper:hover { border-color: rgba(124,106,247,.3); }
+  .xp-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; }
+  .xp-level {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: .8rem; font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .xp-points { font-family: 'DM Mono', monospace; font-size: .7rem; color: var(--muted); }
+  .xp-bar-bg { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .xp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--pink));
+    border-radius: 3px;
+    width: var(--xp-pct, 0%);
+    animation: xp-fill .8s cubic-bezier(0.34,1.2,0.64,1) .2s both;
+    position: relative;
+  }
+  .xp-bar-fill::after {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0; width: 20px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.35));
+    animation: shimmer 1.5s linear infinite;
+  }
+
+  #xp-toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    color: #fff; border-radius: 14px; padding: 12px 20px;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: .95rem; font-weight: 900; z-index: 9999;
+    box-shadow: 0 8px 32px rgba(124,106,247,.5);
+    display: none; flex-direction: column; align-items: center; gap: 2px;
+    min-width: 160px; text-align: center;
+  }
+  #xp-toast.show { display: flex; animation: toast-in .4s cubic-bezier(0.34,1.56,0.64,1) both; }
+  #xp-toast.hide { animation: toast-out .35s ease both; }
+  #xp-toast .toast-xp { font-size: 1.4rem; }
+  #xp-toast .toast-label { font-size: .72rem; opacity: .85; font-family: 'Nunito', sans-serif; font-weight: 700; }
+
+  #levelup-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,.8);
+    backdrop-filter: blur(12px);
+    display: none; align-items: center; justify-content: center; z-index: 9998;
+  }
+  #levelup-overlay.open { display: flex; }
+  .levelup-box {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 24px;
+    padding: 40px 32px; text-align: center; max-width: 340px;
+    animation: fadeInScale .5s cubic-bezier(0.34,1.56,0.64,1) both;
+    box-shadow: 0 0 60px rgba(124,106,247,.4);
+  }
+  .levelup-emoji { font-size: 4rem; display: block; margin-bottom: 12px; animation: level-up 1s ease .3s both; }
+  .levelup-title {
+    font-family: 'Cabinet Grotesk', sans-serif; font-size: 1.6rem; font-weight: 900; margin-bottom: 6px;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  }
+  .levelup-sub { color: var(--muted); font-size: .88rem; margin-bottom: 20px; font-weight: 600; }
+
+  /* ── FLASHCARDS ── */
+  .flashcard-scene { margin: 0 auto 24px; max-width: 520px; }
+  .flashcard {
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 20px;
+    min-height: 220px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 32px 28px; cursor: pointer; position: relative; overflow: hidden;
+    transition: border-color .2s, box-shadow .2s, transform .15s; text-align: center;
+  }
+  .flashcard::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--pink), var(--accent3));
+    transition: height .2s;
+  }
+  .flashcard:hover { border-color: var(--accent); box-shadow: 0 12px 40px rgba(0,0,0,.4); }
+  .flashcard:hover::before { height: 6px; }
+  .flashcard:active { transform: scale(.98); }
+  .flashcard.flipped { border-color: var(--accent3); box-shadow: 0 0 24px rgba(74,247,196,.2); }
+  .flashcard.flipped::before { background: linear-gradient(90deg, var(--accent3), var(--green)); }
+  .flashcard-face { animation: card-flip-in .3s ease both; }
+  .fc-side-label { font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 16px; font-family: 'Nunito', sans-serif; }
+  .fc-side-label.question { color: var(--accent); }
+  .fc-side-label.answer   { color: var(--accent3); }
+  .fc-content { font-family: 'Nunito', sans-serif; font-size: 1.05rem; font-weight: 700; line-height: 1.6; color: var(--text); }
+  .fc-formula { font-family: 'DM Mono', monospace; background: var(--surface2); border-radius: 8px; padding: 8px 14px; font-size: .88rem; color: var(--accent2); margin-top: 10px; line-height: 1.7; }
+  .fc-tap-hint { position: absolute; bottom: 12px; right: 16px; font-size: .7rem; color: var(--muted); font-weight: 600; }
+  .fc-nav { display: flex; align-items: center; justify-content: space-between; max-width: 520px; margin: 0 auto 16px; gap: 12px; }
+  .fc-counter { font-family: 'DM Mono', monospace; font-size: .82rem; color: var(--muted); text-align: center; flex: 1; }
+  .fc-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 10px; padding: 10px 20px; font-family: 'Nunito', sans-serif; font-size: .88rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+  .fc-btn:hover { border-color: var(--accent); color: var(--accent); transform: scale(1.05); }
+  .fc-btn:disabled { opacity: .35; pointer-events: none; }
+  .fc-verdict-row { display: flex; gap: 10px; justify-content: center; max-width: 520px; margin: 0 auto; }
+  .fc-verdict { flex: 1; padding: 12px; border-radius: 12px; border: 1.5px solid; font-family: 'Nunito', sans-serif; font-size: .88rem; font-weight: 800; cursor: pointer; transition: all var(--transition); text-align: center; }
+  .fc-verdict.known { border-color: var(--green); color: var(--green); background: rgba(74,247,154,.06); }
+  .fc-verdict.known:hover { background: rgba(74,247,154,.14); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(74,247,154,.25); }
+  .fc-verdict.unknown { border-color: var(--red); color: var(--red); background: rgba(247,94,122,.06); }
+  .fc-verdict.unknown:hover { background: rgba(247,94,122,.14); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(247,94,122,.25); }
+  .fc-progress { max-width: 520px; margin: 0 auto 20px; }
+  .fc-progress-bar { height: 5px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .fc-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent3), var(--green)); border-radius: 3px; transition: width .5s ease; }
+  .fc-results { text-align: center; padding: 32px 20px; animation: fadeInScale .5s cubic-bezier(0.34,1.56,0.64,1) both; max-width: 520px; margin: 0 auto; }
+  .fc-donut { width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; font-family: 'Cabinet Grotesk', sans-serif; font-size: 1.8rem; font-weight: 900; border: 4px solid; position: relative; }
+  .fc-donut.great { border-color: var(--green); background: rgba(74,247,154,.1); color: var(--green); box-shadow: var(--glow-green); }
+  .fc-donut.ok    { border-color: var(--yellow); background: rgba(247,227,74,.1); color: var(--yellow); }
+  .fc-donut.bad   { border-color: var(--red); background: rgba(247,94,122,.1); color: var(--red); box-shadow: var(--glow-red); }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     #sidebar { position: fixed; top: 0; left: 0; bottom: 0; transform: translateX(0); }
@@ -1396,6 +1534,17 @@
       </div>
     </div>
 
+    <!-- Barre XP -->
+    <div class="xp-bar-wrapper" id="xp-bar-wrapper" style="display:none">
+      <div class="xp-header">
+        <span class="xp-level" id="xp-level-label">Niveau 1 — Débutant</span>
+        <span class="xp-points" id="xp-points-label">0 XP</span>
+      </div>
+      <div class="xp-bar-bg">
+        <div class="xp-bar-fill" id="xp-bar-fill" style="--xp-pct:0%"></div>
+      </div>
+    </div>
+
     <div class="nav-section">
       <div class="nav-label">Navigation</div>
       <div class="nav-item active" onclick="showHome()" id="nav-home">
@@ -1418,6 +1567,22 @@
     </div>
   </nav>
 
+  <!-- XP Toast -->
+  <div id="xp-toast">
+    <span class="toast-xp" id="toast-xp-text">+50 XP</span>
+    <span class="toast-label" id="toast-xp-label">Quiz terminé !</span>
+  </div>
+
+  <!-- Level-up overlay -->
+  <div id="levelup-overlay">
+    <div class="levelup-box">
+      <span class="levelup-emoji" id="lu-emoji">🎖️</span>
+      <div class="levelup-title" id="lu-title">Niveau atteint !</div>
+      <div class="levelup-sub" id="lu-sub">Tu progresses !</div>
+      <button class="btn-primary" onclick="document.getElementById('levelup-overlay').classList.remove('open')" style="margin-top:8px">Super ! 🎉</button>
+    </div>
+  </div>
+
   <!-- MAIN -->
   <div id="main">
     <div id="topbar">
@@ -1425,6 +1590,7 @@
       <div id="page-title">Accueil</div>
       <div class="tab-bar" id="tab-bar" style="display:none">
         <button class="tab-btn active" id="tab-cours" onclick="switchTab('cours')">📖 Cours</button>
+        <button class="tab-btn" id="tab-flashcards" onclick="switchTab('flashcards')">🃏 Flashcards</button>
         <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">🧠 Quiz</button>
         <button class="tab-btn" id="tab-annales" onclick="switchTab('annales')">📝 Annales</button>
       </div>
@@ -1479,10 +1645,782 @@
 // DATA — CHAPITRES, FICHES, QUIZ, ANNALES
 // ═══════════════════════════════════════════════════
 
+// Ordre des années pour filtrage
+const ANNEES_ORDER = ['seconde', 'premiere', 'terminale'];
+
+// Chapitres de 2nde (à compléter par le prof)
+const CHAPTERS_SECONDE = [
+  {
+    id: 'S2', num: 'S2', title: 'Propagation d\'un signal sonore', category: 'physique',
+    color: '#f74acd', tag: 'Physique — Ondes', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Émission et propagation d\'un son', icon: '🔊',
+          content: [
+            { type: 'def', term: 'Source sonore', text: 'Un son est émis par un objet en vibration : cordes vocales, cordes de guitare... Il se propage ensuite jusqu\'à un récepteur.' },
+            { type: 'def', term: 'Milieu matériel (de propagation)', text: 'Un signal sonore a <strong>besoin de matière</strong> (gaz, liquide ou solide) pour se propager. Il ne se propage <strong>pas dans le vide</strong>.' },
+            { type: 'def', term: 'Onde sonore', text: 'Les vibrations se propagent de proche en proche. Il n\'y a <strong>pas de déplacement de matière</strong>, uniquement un déplacement d\'énergie.' },
+            { type: 'warn', text: 'Ne pas confondre : la matière ne se déplace pas, c\'est l\'énergie (la vibration) qui se propage !' },
+          ]
+        },
+        {
+          title: '2. Vitesse de propagation', icon: '⚡',
+          content: [
+            { type: 'formula', label: 'Vitesse de propagation d\'un signal', text: 'v = d / Δt\nv : vitesse (m.s⁻¹)\nd : distance parcourue (m)\nΔt : durée de propagation (s)' },
+            { type: 'def', term: 'Vitesse du son dans l\'air à 20°C', text: 'v ≈ <strong>340 m.s⁻¹</strong>. Elle dépend du milieu et de la température.' },
+            { type: 'warn', text: 'La lumière se propage à 3,0×10⁸ m.s⁻¹ — environ 1 million de fois plus vite que le son ! C\'est pourquoi on voit l\'éclair avant d\'entendre le tonnerre.' },
+          ]
+        },
+        {
+          title: '3. Récepteurs sonores', icon: '👂',
+          content: [
+            { type: 'def', term: 'Tympan (oreille)', text: 'Membrane qui capte les vibrations de l\'onde sonore. Le pavillon de l\'oreille concentre le son vers le tympan.' },
+            { type: 'def', term: 'Microphone', text: 'Récepteur qui capte les vibrations sonores et les transforme en signal électrique.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Un signal sonore peut-il se propager dans le vide ?', opts: ['Oui, comme la lumière', 'Non, il a besoin d\'un milieu matériel', 'Oui, mais très lentement', 'Cela dépend de la fréquence'], ans: 1, exp: 'Le son a besoin d\'un milieu matériel (gaz, liquide, solide) pour se propager. Dans le vide, il n\'y a pas de matière → pas de son.' },
+      { q: 'La vitesse du son dans l\'air à 20°C est environ :', opts: ['3,0 × 10⁸ m.s⁻¹', '1500 m.s⁻¹', '340 m.s⁻¹', '10 m.s⁻¹'], ans: 2, exp: 'v_son ≈ 340 m.s⁻¹ dans l\'air à 20°C. La lumière va à 3×10⁸ m.s⁻¹, soit environ 1 million de fois plus vite.' },
+      { q: 'Lors de la propagation d\'une onde sonore, ce qui se déplace est :', opts: ['La matière (molécules d\'air)', 'L\'énergie (la vibration)', 'Le son et la matière ensemble', 'Rien ne se déplace'], ans: 1, exp: 'Il n\'y a pas de déplacement de matière, uniquement un déplacement d\'énergie de proche en proche.' },
+      { q: 'La formule de la vitesse de propagation est :', opts: ['v = Δt × d', 'v = d / Δt', 'v = Δt / d', 'v = d + Δt'], ans: 1, exp: 'v = d/Δt. Vitesse = distance / durée. En m.s⁻¹.' },
+      { q: 'Un éclair est vu 3 secondes avant d\'entendre le tonnerre. La distance à l\'orage est d\'environ :', opts: ['340 m', '1020 m', '3000 m', '113 m'], ans: 1, exp: 'd = v × Δt = 340 × 3 = 1020 m ≈ 1 km. Règle pratique : 3s ≈ 1 km.' },
+      { q: 'Une source sonore est :', opts: ['Un objet immobile qui reçoit le son', 'Un objet en vibration qui émet du son', 'Un milieu de propagation', 'Un récepteur sonore'], ans: 1, exp: 'Une source sonore est liée à la vibration d\'un objet : cordes vocales, corde de guitare, membrane de haut-parleur...' },
+      { q: 'La vitesse du son dépend de :', opts: ['La fréquence du son uniquement', 'Le milieu de propagation et la température', 'L\'intensité du son', 'La distance parcourue'], ans: 1, exp: 'La vitesse du son dépend du milieu (plus rapide dans l\'eau que dans l\'air) et de la température (plus rapide quand il fait chaud).' },
+      { q: 'Le tympan est :', opts: ['Une source sonore', 'Une membrane qui capte les vibrations sonores', 'Un milieu de propagation', 'Un instrument de mesure'], ans: 1, exp: 'Le tympan est une fine membrane dans l\'oreille qui vibre sous l\'effet de l\'onde sonore, permettant la perception du son.' },
+      { q: 'Si d = 680 m et Δt = 2 s, la vitesse v est :', opts: ['340 m.s⁻¹', '1360 m.s⁻¹', '680 m.s⁻¹', '170 m.s⁻¹'], ans: 0, exp: 'v = d/Δt = 680/2 = 340 m.s⁻¹. C\'est bien la vitesse du son dans l\'air à 20°C !' },
+      { q: 'Le son se propage-t-il dans l\'eau ?', opts: ['Non, uniquement dans l\'air', 'Oui, et plus vite que dans l\'air (~1500 m.s⁻¹)', 'Oui, mais plus lentement que dans l\'air', 'Non, l\'eau absorbe le son'], ans: 1, exp: 'Le son se propage dans tous les milieux matériels. Dans l\'eau : ~1500 m.s⁻¹, dans le fer : ~5000 m.s⁻¹ — bien plus vite que dans l\'air.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Propagation d\'un signal sonore', session: 'Seconde — Métropole', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Vitesse du son et ondes', session: 'Seconde — Métropole', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Émission et réception d\'un son', session: 'Seconde — Métropole', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S5a', num: 'S5', title: 'Les atomes', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Structure de l\'atome', icon: '⚛️',
+          content: [
+            { type: 'def', term: 'Atome', text: 'L\'atome est constitué d\'un <strong>noyau</strong> (protons + neutrons) entouré d\'un <strong>nuage d\'électrons</strong>.' },
+            { type: 'table', headers: ['Particule', 'Localisation', 'Charge', 'Masse'], rows: [
+              ['Proton (p)', 'Noyau', '+1', '1 uma'],
+              ['Neutron (n)', 'Noyau', '0', '1 uma'],
+              ['Électron (e⁻)', 'Couche électronique', '-1', 'négligeable'],
+            ]},
+            { type: 'formula', label: 'Notation d\'un atome (symbole)', text: 'ᴬZ X\nA : nombre de masse (= p + n)\nZ : numéro atomique (= nombre de protons)\nX : symbole de l\'élément' },
+          ]
+        },
+        {
+          title: '2. Structure électronique', icon: '🔬',
+          content: [
+            { type: 'def', term: 'Couches électroniques', text: 'Les électrons se répartissent sur des couches : <strong>K (max 2e⁻), L (max 8e⁻), M (max 8e⁻)</strong>. On remplit dans l\'ordre K → L → M.' },
+            { type: 'def', term: 'Règle du duet et de l\'octet', text: 'Les atomes cherchent à avoir 2 électrons (duet, couche K) ou 8 électrons (octet, couches L ou M) sur leur couche externe → configuration stable des gaz nobles.' },
+            { type: 'formula', label: 'Exemple : Oxygène Z=8', text: 'Structure : (K)2 (L)6\n→ Il manque 2e⁻ pour l\'octet\n→ O forme 2 liaisons covalentes' },
+            { type: 'warn', text: 'L\'atome électriquement neutre a autant de protons que d\'électrons : Z = nb protons = nb électrons.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Le numéro atomique Z d\'un atome correspond au nombre de :', opts: ['Neutrons', 'Protons', 'Électrons de valence', 'Nucléons'], ans: 1, exp: 'Z = nombre de protons dans le noyau. Pour un atome neutre, Z = nombre d\'électrons également.' },
+      { q: 'Le nombre de masse A est égal à :', opts: ['Nombre de protons seulement', 'Nombre de neutrons seulement', 'Nombre de protons + neutrons', 'Nombre d\'électrons'], ans: 2, exp: 'A = Z + N = nombre de protons + nombre de neutrons. Les électrons ont une masse négligeable.' },
+      { q: 'La couche K peut contenir au maximum :', opts: ['8 électrons', '2 électrons', '4 électrons', '18 électrons'], ans: 1, exp: 'Couche K : max 2 électrons. Couche L : max 8 électrons. Couche M : max 8 électrons (en seconde).' },
+      { q: 'Un atome de carbone a Z=6. Sa structure électronique est :', opts: ['(K)6', '(K)2(L)4', '(K)2(L)2(M)2', '(K)4(L)2'], ans: 1, exp: 'Z=6 : 6 électrons. On remplit K (max 2) puis L. Structure : (K)2(L)4.' },
+      { q: 'La règle de l\'octet dit qu\'un atome est stable quand il a :', opts: ['2 électrons au total', '8 électrons sur sa couche externe', '8 protons', '8 neutrons'], ans: 1, exp: 'L\'octet = 8 électrons sur la couche externe (sauf H et He qui obéissent à la règle du duet : 2 électrons).' },
+      { q: 'L\'oxygène (Z=8) forme combien de liaisons covalentes ?', opts: ['1', '2', '3', '4'], ans: 1, exp: 'O : (K)2(L)6 → il manque 2e⁻ pour l\'octet → 2 liaisons covalentes. Ex : H₂O a 2 liaisons O-H.' },
+      { q: 'Un atome est électriquement neutre car :', opts: ['Il n\'a pas de charges', 'Il a autant de protons que d\'électrons', 'Il a autant de protons que de neutrons', 'Ses électrons se compensent'], ans: 1, exp: 'Charge proton = +1, charge électron = -1. Neutralité : nb protons = nb électrons.' },
+      { q: 'Dans le noyau atomique, on trouve :', opts: ['Des électrons et des protons', 'Des protons et des neutrons', 'Des électrons et des neutrons', 'Uniquement des protons'], ans: 1, exp: 'Le noyau contient des protons (charge +) et des neutrons (neutres). Les électrons orbitent autour du noyau.' },
+      { q: 'Le carbone C a Z=6 et A=12. Son nombre de neutrons est :', opts: ['6', '12', '18', '0'], ans: 0, exp: 'N = A - Z = 12 - 6 = 6 neutrons. L\'atome de carbone le plus courant a 6 protons et 6 neutrons.' },
+      { q: 'L\'hydrogène H (Z=1) obéit à la règle du :', opts: ['Duet (2e⁻)','Octet (8e⁻)','Sextet (6e⁻)','Quartet (4e⁻)'], ans: 0, exp: 'H et He obéissent à la règle du duet (2e⁻ pour être stable) car leur couche externe est K (max 2e⁻).' },
+    ],
+    annales: [
+      { year: '2023', title: 'Structure de l\'atome', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Configuration électronique', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Modèle de l\'atome', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S8', num: 'S8', title: 'Les molécules', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Définition et liaisons', icon: '🔗',
+          content: [
+            { type: 'def', term: 'Molécule', text: 'Édifice formé d\'un nombre limité d\'<strong>atomes liés entre eux par des liaisons de valence</strong>. Ex : H₂O (2H + 1O).' },
+            { type: 'def', term: 'Liaison de valence (covalente)', text: 'Mise en commun de <strong>2 électrons</strong> entre deux atomes voisins (un de chaque atome). Représentée par un tiret : A–B.' },
+            { type: 'table', headers: ['Atome', 'Liaisons formées', 'Exemple'], rows: [
+              ['H (Z=1)', '1 liaison', 'H–Cl'],
+              ['C (Z=6)', '4 liaisons', 'CH₄ méthane'],
+              ['N (Z=7)', '3 liaisons', 'NH₃ ammoniac'],
+              ['O (Z=8)', '2 liaisons', 'H₂O eau'],
+              ['F, Cl (Z=9,17)', '1 liaison', 'HF, HCl'],
+            ]},
+          ]
+        },
+        {
+          title: '2. Représentations d\'une molécule', icon: '✏️',
+          content: [
+            { type: 'def', term: 'Formule brute', text: 'Nature et nombre d\'atomes. Ex : éthanol = C₂H₆O. Ne donne pas la géométrie.' },
+            { type: 'def', term: 'Formule développée', text: 'Tous les atomes et <strong>toutes les liaisons</strong> représentés. Représentation plane.' },
+            { type: 'def', term: 'Formule semi-développée', text: 'On regroupe les H autour de chaque atome de carbone. Ex : éthanol = CH₃–CH₂–OH.' },
+            { type: 'def', term: 'Modèle moléculaire', text: 'Représentation 3D avec des sphères (atomes) et des bâtonnets (liaisons). Respecte la géométrie réelle.' },
+          ]
+        },
+        {
+          title: '3. Schéma de Lewis', icon: '⚗️',
+          content: [
+            { type: 'text', text: 'Le schéma de Lewis représente <strong>tous les électrons de valence</strong> (couche externe) de chaque atome : doublets liants (liaisons) et doublets non liants.' },
+            { type: 'warn', text: 'Le nombre de liaisons formées = nombre d\'électrons manquants pour respecter la règle du duet/octet.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Une molécule est :', opts: ['Un atome isolé chargé', 'Des atomes liés par des liaisons de valence', 'Un ion positif', 'Un mélange d\'atomes'], ans: 1, exp: 'Une molécule = plusieurs atomes liés par des liaisons covalentes (liaisons de valence).' },
+      { q: 'Une liaison de valence simple correspond à la mise en commun de :', opts: ['1 électron', '2 électrons', '4 électrons', '8 électrons'], ans: 1, exp: 'Une liaison covalente simple = partage de 2 électrons (1 de chaque atome). Représentée par un tiret –.' },
+      { q: 'Le carbone C forme :', opts: ['1 liaison', '2 liaisons', '3 liaisons', '4 liaisons'], ans: 3, exp: 'C (Z=6) : (K)2(L)4, il manque 4e⁻ pour l\'octet → 4 liaisons covalentes. Ex: CH₄ (méthane).' },
+      { q: 'La formule brute de l\'eau est :', opts: ['HO', 'H₂O', 'H₃O', 'O₂H'], ans: 1, exp: 'L\'eau a 2 atomes d\'hydrogène et 1 atome d\'oxygène → formule brute H₂O.' },
+      { q: 'La formule semi-développée de l\'éthane CH₃–CH₃ a :', opts: ['1 liaison C–C', '2 liaisons C–C', '4 liaisons C–H', '2 atomes de carbone et 8 d\'hydrogène'], ans: 0, exp: 'Éthane CH₃–CH₃ : 1 liaison C–C et 6 liaisons C–H (3+3). Formule brute : C₂H₆.' },
+      { q: 'La formule développée montre :', opts: ['Uniquement les carbones', 'Tous les atomes et toutes les liaisons', 'La géométrie 3D', 'Seulement la formule brute'], ans: 1, exp: 'La formule développée est une représentation plane montrant tous les atomes et toutes les liaisons entre eux.' },
+      { q: 'L\'oxygène O (Z=8) forme :', opts: ['1 liaison', '2 liaisons', '3 liaisons', '4 liaisons'], ans: 1, exp: 'O : (K)2(L)6, il manque 2e⁻ pour l\'octet → 2 liaisons. Ex : H₂O possède 2 liaisons O–H.' },
+      { q: 'Un modèle moléculaire permet de visualiser :', opts: ['Uniquement la formule brute', 'La géométrie 3D de la molécule', 'Seulement les liaisons', 'Le nombre de protons'], ans: 1, exp: 'Les modèles moléculaires (boules et bâtonnets) représentent la géométrie réelle des molécules dans l\'espace.' },
+      { q: 'Dans le schéma de Lewis, les doublets non liants représentent :', opts: ['Les liaisons entre atomes', 'Les paires d\'électrons non partagées', 'Les protons du noyau', 'Les neutrons'], ans: 1, exp: 'Les doublets non liants = paires d\'électrons qui n\'participent pas à des liaisons. Ex : O dans H₂O a 2 doublets non liants.' },
+      { q: 'La formule brute de l\'éthanol est :', opts: ['C₂H₅', 'C₂H₆O', 'CH₃OH', 'C₂H₄O₂'], ans: 1, exp: 'Éthanol (CH₃–CH₂–OH) : 2C + 6H + 1O → formule brute C₂H₆O.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Molécules et liaisons covalentes', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Représentation des molécules', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Schéma de Lewis et formules', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S9', num: 'S9', title: 'Les transformations physiques', category: 'chimie',
+    color: '#4af79a', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Changements d\'état', icon: '🧊',
+          content: [
+            { type: 'def', term: 'Transformation physique', text: 'Une espèce chimique passe d\'un <strong>état physique à un autre</strong> (solide, liquide, gaz). Les espèces chimiques se <strong>conservent</strong>.' },
+            { type: 'table', headers: ['Transformation', 'Sens', 'Énergie'], rows: [
+              ['Fusion', 'Solide → Liquide', 'Endothermique (reçoit)'],
+              ['Solidification', 'Liquide → Solide', 'Exothermique (libère)'],
+              ['Vaporisation', 'Liquide → Gaz', 'Endothermique (reçoit)'],
+              ['Liquéfaction', 'Gaz → Liquide', 'Exothermique (libère)'],
+              ['Sublimation', 'Solide → Gaz', 'Endothermique (reçoit)'],
+              ['Condensation', 'Gaz → Solide', 'Exothermique (libère)'],
+            ]},
+            { type: 'warn', text: 'Ne pas confondre fusion (changement d\'état) et dissolution (mélange dans un solvant) !' },
+          ]
+        },
+        {
+          title: '2. Propriétés des changements d\'état', icon: '🌡️',
+          content: [
+            { type: 'def', term: 'Température constante', text: 'Un changement d\'état d\'un corps pur s\'effectue à <strong>température constante</strong> sous pression donnée. Les deux états coexistent pendant le changement.' },
+            { type: 'def', term: 'Température caractéristique', text: 'La température de changement d\'état est <strong>caractéristique</strong> du corps pur. Ex : l\'eau fond toujours à 0°C (sous pression atmosphérique).' },
+          ]
+        },
+        {
+          title: '3. Transferts d\'énergie', icon: '⚡',
+          content: [
+            { type: 'formula', label: 'Énergie massique de changement d\'état (chaleur latente L)', text: 'Q = m × L\nQ : énergie échangée (J)\nm : masse (kg)\nL : chaleur latente (J.kg⁻¹)' },
+            { type: 'def', term: 'Endothermique (Q > 0)', text: 'Le système reçoit de l\'énergie du milieu extérieur → le milieu extérieur se <strong>refroidit</strong>. (fusion, vaporisation)' },
+            { type: 'def', term: 'Exothermique (Q < 0)', text: 'Le système libère de l\'énergie vers le milieu extérieur → le milieu extérieur se <strong>réchauffe</strong>. (solidification, liquéfaction)' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Lors d\'un changement d\'état, les espèces chimiques :', opts: ['Se transforment en d\'autres espèces', 'Se conservent', 'Disparaissent', 'Se divisent en atomes'], ans: 1, exp: 'Une transformation physique ne modifie pas la nature des espèces chimiques : elles se conservent (contrairement aux réactions chimiques).' },
+      { q: 'La fusion de la glace (eau solide → eau liquide) est :', opts: ['Exothermique', 'Endothermique', 'Sans échange d\'énergie', 'Impossible'], ans: 1, exp: 'Fusion = endothermique : le système absorbe de l\'énergie du milieu extérieur (qui refroidit). C\'est pour ça que la glace refroidit votre boisson.' },
+      { q: 'Lors du changement d\'état d\'un corps pur, la température :', opts: ['Augmente constamment', 'Reste constante', 'Diminue constamment', 'Varie de façon aléatoire'], ans: 1, exp: 'Un corps pur change d\'état à température constante. Ex : l\'eau bout à 100°C et reste à 100°C pendant toute la vaporisation.' },
+      { q: 'La vaporisation est le changement d\'état :', opts: ['Solide → Liquide', 'Liquide → Gaz', 'Gaz → Liquide', 'Solide → Gaz'], ans: 1, exp: 'Vaporisation = Liquide → Gaz. Liquéfaction = Gaz → Liquide. Sublimation = Solide → Gaz.' },
+      { q: 'La solidification est :', opts: ['Endothermique', 'Exothermique', 'Sans transfert d\'énergie', 'Toujours à 0°C'], ans: 1, exp: 'Solidification = Liquide → Solide = exothermique : le système libère de l\'énergie (le milieu se réchauffe).' },
+      { q: 'Q = m × L. Si m = 2 kg et L = 334 000 J.kg⁻¹ (eau), Q vaut :', opts: ['167 000 J', '334 000 J', '668 000 J', '166 J'], ans: 2, exp: 'Q = 2 × 334 000 = 668 000 J = 668 kJ. C\'est l\'énergie nécessaire pour faire fondre 2 kg de glace.' },
+      { q: 'Ne pas confondre fusion et dissolution : la dissolution, c\'est :', opts: ['Solide → Liquide (changement d\'état)', 'Un corps se mélange dans un solvant', 'Liquide → Gaz', 'Gaz → Solide'], ans: 1, exp: 'Dissolution : un corps (solide, liquide ou gaz) se mélange dans un solvant sans changer de nature chimique. Fusion = changement d\'état uniquement.' },
+      { q: 'Pendant un changement d\'état d\'un corps pur, on peut dire que :', opts: ['Un seul état est présent', 'Les deux états coexistent', 'L\'état solide disparaît toujours en premier', 'La masse change'], ans: 1, exp: 'Pendant le changement d\'état, les deux états coexistent à la même température jusqu\'à ce que la transformation soit complète.' },
+      { q: 'La chaleur latente L s\'exprime en :', opts: ['J', 'J.kg⁻¹', 'J.mol⁻¹', 'W'], ans: 1, exp: 'L est l\'énergie massique de changement d\'état en J.kg⁻¹ (joules par kilogramme). Pour l\'eau : L_fusion = 334 000 J.kg⁻¹.' },
+      { q: 'Quand on met des glaçons dans un verre, le verre se refroidit parce que :', opts: ['La glace absorbe de la chaleur en fondant (endothermique)', 'La glace libère du froid', 'L\'eau est plus froide que l\'air', 'Les molécules ralentissent'], ans: 0, exp: 'La fusion est endothermique : la glace absorbe de l\'énergie thermique du milieu extérieur (le verre et son contenu), qui refroidit.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Changements d\'état et chaleur latente', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Corps purs et transformations physiques', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Transferts thermiques et états de la matière', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S11', num: 'S11', title: 'La transformation chimique', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Modèle de la réaction chimique', icon: '⚗️',
+          content: [
+            { type: 'def', term: 'Transformation chimique', text: 'Passage d\'un système chimique d\'un état initial à un état final avec <strong>formation de nouvelles espèces chimiques</strong>.' },
+            { type: 'def', term: 'Réactifs / Produits', text: '<strong>Réactifs</strong> : espèces consommées (état initial). <strong>Produits</strong> : espèces formées (état final). Les espèces spectatrices ne figurent pas dans l\'équation.' },
+            { type: 'def', term: 'Équation de réaction', text: 'Traduit la conservation des éléments chimiques et des charges. Des <strong>nombres stœchiométriques</strong> équilibrent l\'équation.' },
+            { type: 'formula', label: 'Exemple : combustion du carbone', text: 'C + O₂ → CO₂\n(1 atome C + 1 molécule O₂ → 1 molécule CO₂)' },
+          ]
+        },
+        {
+          title: '2. Réactif limitant', icon: '⚖️',
+          content: [
+            { type: 'def', term: 'Réactif limitant', text: 'Lors d\'une transformation totale, l\'un des réactifs est <strong>totalement consommé</strong> en premier : c\'est le réactif limitant. Il détermine la quantité de produit formé.' },
+            { type: 'warn', text: 'Lors d\'une transformation totale : au moins un réactif est totalement consommé à l\'état final.' },
+          ]
+        },
+        {
+          title: '3. Effets thermiques', icon: '🌡️',
+          content: [
+            { type: 'def', term: 'Réaction exothermique', text: 'Le système chimique <strong>libère de l\'énergie</strong> → le milieu extérieur se réchauffe. Ex : combustion.' },
+            { type: 'def', term: 'Réaction endothermique', text: 'Le système chimique <strong>reçoit de l\'énergie</strong> du milieu extérieur → le milieu extérieur se refroidit.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Une transformation chimique se caractérise par :', opts: ['Un changement d\'état physique', 'La formation de nouvelles espèces chimiques', 'La conservation de toutes les espèces', 'Un simple mélange'], ans: 1, exp: 'La transformation chimique = formation de nouvelles espèces. À distinguer de la transformation physique (changement d\'état sans nouvelle espèce).' },
+      { q: 'Les espèces spectatrices dans une réaction :', opts: ['Sont des réactifs', 'Sont des produits', 'Ne figurent pas dans l\'équation de réaction', 'Sont toujours des ions'], ans: 2, exp: 'Les espèces spectatrices ne participent pas à la réaction : elles ne sont ni consommées ni produites, donc absentes de l\'équation.' },
+      { q: 'L\'équation de réaction traduit la conservation de :', opts: ['La masse uniquement', 'Les éléments chimiques et les charges', 'Les molécules uniquement', 'La température'], ans: 1, exp: 'L\'équation est équilibrée pour respecter la conservation des éléments chimiques (atomes) et des charges électriques.' },
+      { q: 'Le réactif limitant est :', opts: ['Celui qui est en plus grande quantité', 'Celui qui est totalement consommé en premier', 'Toujours le premier écrit dans l\'équation', 'Celui qui a la plus grande masse molaire'], ans: 1, exp: 'Le réactif limitant est totalement consommé lors de la transformation totale. Il limite la quantité de produit formée.' },
+      { q: 'Une combustion complète est :', opts: ['Endothermique', 'Exothermique', 'Sans échange d\'énergie', 'Toujours endothermique'], ans: 1, exp: 'Les combustions sont toujours exothermiques : elles libèrent de l\'énergie thermique (et lumineuse) vers le milieu extérieur.' },
+      { q: 'Pour équilibrer C + O₂ → CO₂, les coefficients sont :', opts: ['2,1,2', '1,1,1', '1,2,1', '2,2,2'], ans: 1, exp: 'C + O₂ → CO₂ : 1C + 2O → 1C + 2O. L\'équation est déjà équilibrée avec des coefficients de 1.' },
+      { q: 'Un mélange stœchiométrique signifie que :', opts: ['Les réactifs sont en excès', 'Les réactifs sont dans les proportions exactes de l\'équation', 'Un seul réactif est présent', 'Les produits sont déjà formés'], ans: 1, exp: 'Stœchiométrique = proportions exactes de l\'équation → tous les réactifs sont totalement consommés simultanément.' },
+      { q: 'Dans une réaction endothermique, la température du milieu extérieur :', opts: ['Augmente', 'Reste constante', 'Diminue', 'Varie aléatoirement'], ans: 2, exp: 'Endothermique : le système absorbe de l\'énergie du milieu extérieur → le milieu extérieur se refroidit (sa température baisse).' },
+      { q: 'État final d\'une transformation totale : les réactifs sont :', opts: ['Tous encore présents', 'Partiellement consommés', 'Au moins l\'un est totalement consommé', 'Transformés en espèces spectatrices'], ans: 2, exp: 'Transformation totale : au moins un réactif (le limitant) est totalement consommé à l\'état final.' },
+      { q: 'La réaction de combustion du méthane CH₄ + 2O₂ → CO₂ + 2H₂O est :', opts: ['Équilibrée : 1C, 4H, 4O de chaque côté', 'Non équilibrée', 'Équilibrée : 1C, 4H, 4O à gauche et 1C, 2H, 4O à droite', 'Impossible'], ans: 0, exp: 'Gauche : 1C, 4H, 4O. Droite : CO₂(1C,2O) + 2H₂O(4H,2O) = 1C, 4H, 4O. L\'équation est bien équilibrée.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Réactions chimiques et stœchiométrie', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Transformations chimiques et effets thermiques', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Réactif limitant et équation de réaction', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S19', num: 'S19', title: 'Propagation des ondes lumineuses', category: 'physique',
+    color: '#f74acd', tag: 'Optique', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Réfraction et réflexion', icon: '💡',
+          content: [
+            { type: 'def', term: 'Réfraction', text: '<strong>Changement de direction</strong> d\'un rayon lumineux passant d\'un milieu à un autre. Le rayon est dévié à l\'interface.' },
+            { type: 'def', term: 'Réflexion', text: 'Le rayon lumineux repart dans le premier milieu en changeant de direction. Angle d\'incidence = angle de réflexion.' },
+            { type: 'formula', label: 'Lois de Snell-Descartes (réfraction)', text: 'n₁ × sin(i₁) = n₂ × sin(i₂)\nn : indice de réfraction (sans unité, ≥ 1)\ni : angle par rapport à la normale' },
+            { type: 'warn', text: 'Les angles se mesurent par rapport à la NORMALE à la surface, pas par rapport à la surface elle-même !' },
+          ]
+        },
+        {
+          title: '2. Indice de réfraction', icon: '🔬',
+          content: [
+            { type: 'def', term: 'Indice de réfraction n', text: 'Caractéristique d\'un milieu transparent, sans unité, <strong>toujours ≥ 1</strong>. n_air = 1 ; n_eau ≈ 1,33 ; n_verre ≈ 1,5.' },
+            { type: 'text', text: 'Plus l\'indice est grand, plus le milieu est "optiquement dense" et plus la lumière ralentit. n = c / v (c = vitesse lumière dans le vide).' },
+          ]
+        },
+        {
+          title: '3. Dispersion de la lumière blanche', icon: '🌈',
+          content: [
+            { type: 'def', term: 'Dispersion', text: 'Séparation des différentes radiations (couleurs) qui composent la lumière blanche. Produite par un prisme.' },
+            { type: 'def', term: 'Explication', text: 'L\'indice de réfraction d\'un milieu dispersif <strong>dépend de la longueur d\'onde</strong> → chaque couleur est déviée différemment.' },
+            { type: 'text', text: 'Ordre du spectre : rouge (λ ≈ 700 nm) → orange → jaune → vert → bleu → violet (λ ≈ 400 nm).' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'La réfraction est :', opts: ['Le rebond de la lumière sur une surface', 'Le changement de direction de la lumière en changeant de milieu', 'L\'absorption de la lumière', 'La diffusion de la lumière'], ans: 1, exp: 'La réfraction = changement de direction d\'un rayon lumineux au passage d\'un milieu à un autre (ex: air → verre).' },
+      { q: 'Les angles dans les lois de Snell-Descartes se mesurent par rapport à :', opts: ['La surface de séparation', 'La normale à la surface', 'L\'horizontale', 'La verticale'], ans: 1, exp: 'Convention : les angles i₁ et i₂ se mesurent par rapport à la normale à la surface de séparation des milieux.' },
+      { q: 'L\'indice de réfraction de l\'air vaut :', opts: ['0', '1', '1,33', '1,5'], ans: 1, exp: 'n_air ≈ 1 (exactement 1,0003). C\'est le milieu de référence. n_eau ≈ 1,33 ; n_verre ≈ 1,5.' },
+      { q: 'La dispersion de la lumière blanche par un prisme produit :', opts: ['Un rayon unique rouge', 'Un spectre continu de couleurs', 'De la lumière blanche plus intense', 'Uniquement du bleu et du rouge'], ans: 1, exp: 'Un prisme disperse la lumière blanche en un spectre continu : rouge → orangé → jaune → vert → bleu → violet.' },
+      { q: 'Si n₁×sin(i₁) = n₂×sin(i₂) avec n₁=1, i₁=30° et n₂=1,5, alors sin(i₂) = :', opts: ['0,5/1,5 = 0,33', '1,5×0,5 = 0,75', '1×0,5 = 0,5', '1,5/0,5 = 3'], ans: 0, exp: 'sin(i₂) = n₁×sin(i₁)/n₂ = 1×sin(30°)/1,5 = 0,5/1,5 ≈ 0,33. Donc i₂ ≈ 19°.' },
+      { q: 'L\'indice de réfraction est :', opts: ['Toujours inférieur à 1', 'Toujours supérieur ou égal à 1', 'Sans unité et peut valoir 0', 'Égal à la vitesse de la lumière'], ans: 1, exp: 'n ≥ 1 toujours. n = 1 dans le vide (ou approximativement dans l\'air). n = c/v ≥ 1 car v ≤ c.' },
+      { q: 'La dispersion de la lumière s\'explique par le fait que :', opts: ['Toutes les couleurs ont le même indice', 'L\'indice de réfraction dépend de la longueur d\'onde', 'Le prisme absorbe certaines couleurs', 'La lumière blanche n\'existe pas'], ans: 1, exp: 'L\'indice de réfraction dépend de λ → chaque couleur est réfractée différemment → séparation des couleurs.' },
+      { q: 'Dans la réflexion, l\'angle de réflexion est :', opts: ['Supérieur à l\'angle d\'incidence', 'Inférieur à l\'angle d\'incidence', 'Égal à l\'angle d\'incidence', 'Nul'], ans: 2, exp: 'Loi de la réflexion (Snell-Descartes) : angle d\'incidence = angle de réflexion (mesurés par rapport à la normale).' },
+      { q: 'Quelle couleur est la moins déviée par un prisme ?', opts: ['Le violet', 'Le bleu', 'Le vert', 'Le rouge'], ans: 3, exp: 'Le rouge a le plus grand λ et le plus petit indice de réfraction → il est le moins dévié. Le violet est le plus dévié.' },
+      { q: 'La vitesse de la lumière dans l\'eau (n=1,33) par rapport au vide est :', opts: ['Identique', 'Plus grande', 'Plus petite', 'Nulle'], ans: 2, exp: 'n = c/v → v = c/n = 3×10⁸/1,33 ≈ 2,25×10⁸ m.s⁻¹. La lumière ralentit dans les milieux plus denses.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Réfraction et lois de Snell-Descartes', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Dispersion de la lumière blanche', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Propagation et déviation de la lumière', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S20', num: 'S20', title: 'L\'œil — modélisation optique', category: 'physique',
+    color: '#f74acd', tag: 'Optique', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Lentilles minces convergentes', icon: '🔭',
+          content: [
+            { type: 'def', term: 'Lentille convergente', text: 'Lentille qui fait converger les rayons parallèles en un point : le <strong>foyer image F\'</strong>. Distance focale f\' = OF\'.' },
+            { type: 'def', term: 'Foyer objet F et foyer image F\'', text: 'F et F\' sont symétriques par rapport au centre optique O. La distance focale f\' caractérise la lentille.' },
+            { type: 'def', term: 'Image réelle', text: 'L\'image est réelle si la distance objet–lentille est <strong>supérieure à f\'</strong>. Elle est visible sur un écran, de l\'autre côté de la lentille.' },
+          ]
+        },
+        {
+          title: '2. Modélisation de l\'œil', icon: '👁️',
+          content: [
+            { type: 'def', term: 'Modèle de l\'œil', text: 'L\'ensemble des milieux transparents de l\'œil (cornée, humeur aqueuse, cristallin...) est assimilé à une <strong>lentille mince convergente</strong>.' },
+            { type: 'def', term: 'Rétine', text: 'Pour une vision nette, l\'image de l\'objet doit se former <strong>sur la rétine</strong>. C\'est l\'écran de l\'œil.' },
+            { type: 'def', term: 'Iris et pupille', text: 'L\'iris régule la quantité de lumière entrant dans l\'œil via l\'ouverture de la pupille.' },
+            { type: 'def', term: 'Accommodation', text: 'Le cristallin change de forme (courbure) pour adapter la distance focale et former l\'image nette sur la rétine quel que soit l\'éloignement.' },
+          ]
+        },
+        {
+          title: '3. Grandissement', icon: '📐',
+          content: [
+            { type: 'formula', label: 'Grandissement γ', text: 'γ = A\'B\' / AB = OA\' / OA\nSi |γ| > 1 : image agrandie\nSi |γ| < 1 : image réduite\nSi γ < 0 : image renversée' },
+            { type: 'formula', label: 'Relation de conjugaison', text: '1/OA\' - 1/OA = 1/f\'\n(distances algébriques, avec O au centre)' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Dans le modèle simplifié de l\'œil, les milieux transparents sont assimilés à :', opts: ['Un miroir plan', 'Une lentille mince convergente', 'Un prisme', 'Une lentille divergente'], ans: 1, exp: 'L\'ensemble cornée + humeur aqueuse + cristallin + humeur vitrée est modélisé par une lentille convergente unique.' },
+      { q: 'Pour une vision nette, l\'image doit se former sur :', opts: ['Le cristallin', 'La cornée', 'La rétine', 'L\'iris'], ans: 2, exp: 'La rétine est le récepteur de lumière de l\'œil (comme un écran). Pour voir net, l\'image doit se former exactement sur la rétine.' },
+      { q: 'L\'iris joue le rôle de :', opts: ['Lentille convergente', 'Diaphragme qui règle la quantité de lumière', 'Écran récepteur', 'Foyer image'], ans: 1, exp: 'L\'iris est un diaphragme : il règle le diamètre de la pupille, donc la quantité de lumière qui entre dans l\'œil.' },
+      { q: 'L\'accommodation correspond à :', opts: ['Le déplacement de l\'œil', 'Le changement de forme du cristallin pour voir net à différentes distances', 'La dilatation de la pupille', 'La perception des couleurs'], ans: 1, exp: 'Accommodation : le cristallin change de courbure (donc de focale f\') pour que l\'image se forme toujours sur la rétine.' },
+      { q: 'Une image réelle par une lentille convergente se forme :', opts: ['Du même côté que l\'objet', 'De l\'autre côté de la lentille', 'À l\'infini', 'Au foyer objet F'], ans: 1, exp: 'Image réelle = de l\'autre côté de la lentille par rapport à l\'objet. Elle peut être projetée sur un écran.' },
+      { q: 'La distance focale f\' d\'une lentille convergente est :', opts: ['Toujours négative', 'La distance entre O et F\'', 'La taille de l\'image', 'Le grossissement'], ans: 1, exp: 'f\' = OF\' : distance entre le centre optique O et le foyer image F\'. Pour une lentille convergente, f\' > 0.' },
+      { q: 'Si γ = -2, l\'image est :', opts: ['Droite et agrandie 2 fois', 'Renversée et agrandie 2 fois', 'Droite et réduite 2 fois', 'Renversée et réduite 2 fois'], ans: 1, exp: 'γ = -2 : signe moins → image renversée (inversée). |γ| = 2 → image 2 fois plus grande que l\'objet.' },
+      { q: 'Pour qu\'une lentille convergente forme une image réelle, l\'objet doit être situé :', opts: ['Entre O et F', 'Au-delà de F (distance > f\')', 'Au foyer image F\'', 'À une distance égale à f\''], ans: 1, exp: 'Image réelle : objet au-delà du foyer objet F (à distance supérieure à f\'). Entre O et F → image virtuelle.' },
+      { q: 'La vergence V d\'une lentille (en dioptries) est liée à f\' par :', opts: ['V = f\'', 'V = 1/f\'', 'V = f\'²', 'V = -f\''], ans: 1, exp: 'V = 1/f\' (f\' en mètres). Vergence en dioptries (δ). Ex : f\' = 0,05 m → V = 20 δ (lentille puissante).' },
+      { q: 'L\'œil d\'une personne myope forme l\'image :', opts: ['Sur la rétine', 'En avant de la rétine', 'En arrière de la rétine', 'Sur le cristallin'], ans: 1, exp: 'Myopie : l\'œil est trop convergent (ou trop long) → l\'image se forme en avant de la rétine → vision floue de loin.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Modélisation de l\'œil et lentilles', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Formation d\'images par une lentille convergente', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'L\'œil, accommodation et défauts visuels', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S4', num: 'S4', title: 'Préparations de solutions aqueuses', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Concentration molaire et massique', icon: '⚗️',
+          content: [
+            { type: 'def', term: 'Concentration molaire C', text: 'Quantité de matière de soluté par litre de solution. <strong>C = n / V</strong> [mol/L]' },
+            { type: 'def', term: 'Concentration massique Cm', text: 'Masse de soluté par litre de solution. <strong>Cm = m / V</strong> [g/L]' },
+            { type: 'formula', label: 'Lien entre C et Cm', text: 'Cm = C × M\nM : masse molaire du soluté (g/mol)' },
+            { type: 'warn', text: 'Attention aux unités ! C en mol/L, V en L, n en mol. Convertir si besoin.' },
+          ]
+        },
+        {
+          title: '2. Dissolution — préparer une solution', icon: '💧',
+          content: [
+            { type: 'def', term: 'Dissolution', text: 'Mélange d\'un soluté (solide, liquide ou gaz) dans un solvant. La nature chimique du soluté est conservée.' },
+            { type: 'def', term: 'Protocole de dissolution (soluté solide)', text: '1. Peser la masse m de soluté. 2. Dissoudre dans un peu de solvant. 3. Transvaser dans la fiole jaugée. 4. Compléter jusqu\'au trait de jauge.' },
+          ]
+        },
+        {
+          title: '3. Dilution', icon: '🔬',
+          content: [
+            { type: 'formula', label: 'Relation de dilution', text: 'C₁ × V₁ = C₂ × V₂\nC₁, V₁ : solution mère\nC₂, V₂ : solution fille (diluée)\nFacteur de dilution : F = C₁/C₂ = V₂/V₁' },
+            { type: 'def', term: 'Protocole de dilution', text: '1. Prélever V₁ de solution mère à la pipette. 2. Placer dans la fiole jaugée de volume V₂. 3. Compléter au trait de jauge avec le solvant.' },
+            { type: 'warn', text: 'Lors d\'une dilution : n_soluté est conservé. La concentration diminue, le volume augmente.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'La concentration molaire C d\'une solution est :', opts: ['m/V','n/V','M×V','n×M'], ans: 1, exp: 'C = n/V (mol/L). n = quantité de matière en mol, V = volume de solution en L.' },
+      { q: 'On dissout 0,5 mol dans 250 mL. La concentration est :', opts: ['0,125 mol/L','2 mol/L','0,5 mol/L','1 mol/L'], ans: 1, exp: 'C = n/V = 0,5 / 0,250 = 2 mol/L. V en litres : 250 mL = 0,250 L.' },
+      { q: 'La relation de dilution est :', opts: ['C₁ + V₁ = C₂ + V₂','C₁ × V₁ = C₂ × V₂','C₁/V₁ = C₂/V₂','C₁ - V₁ = C₂ - V₂'], ans: 1, exp: 'Conservation de la quantité de matière : n₁ = n₂ → C₁×V₁ = C₂×V₂.' },
+      { q: 'On dilue 10 fois une solution de concentration 2 mol/L. La nouvelle concentration est :', opts: ['20 mol/L','0,2 mol/L','2 mol/L','0,02 mol/L'], ans: 1, exp: 'Dilution × 10 → C₂ = C₁/F = 2/10 = 0,2 mol/L.' },
+      { q: 'La fiole jaugée sert à :', opts: ['Peser le soluté','Préparer un volume précis de solution','Chauffer la solution','Filtrer la solution'], ans: 1, exp: 'La fiole jaugée garantit un volume précis grâce au trait de jauge gravé sur le col.' },
+      { q: 'Lors d\'une dilution, ce qui est conservé est :', opts: ['La concentration','Le volume','La quantité de matière de soluté','La masse volumique'], ans: 2, exp: 'n_soluté = C₁V₁ = C₂V₂ = constante. La concentration et le volume changent, mais la quantité de matière est conservée.' },
+      { q: 'La concentration massique Cm s\'exprime en :', opts: ['mol/L','g/mol','g/L','L/g'], ans: 2, exp: 'Cm = m/V en g/L. La concentration molaire C = n/V en mol/L.' },
+      { q: 'Relation entre Cm et C :', opts: ['Cm = C/M','Cm = C × M','Cm = M/C','Cm = C + M'], ans: 1, exp: 'Cm = C × M. En divisant n/V × (g/mol) on obtient des g/L.' },
+      { q: 'Pour préparer une solution par dilution, on prélève V₁ = 20 mL d\'une solution à C₁ = 1 mol/L dans V₂ = 200 mL. C₂ vaut :', opts: ['10 mol/L','0,1 mol/L','1 mol/L','0,01 mol/L'], ans: 1, exp: 'C₂ = C₁×V₁/V₂ = 1×20/200 = 0,1 mol/L. Facteur de dilution F = 10.' },
+      { q: 'Lors de la dissolution d\'un solide, on ajoute le solvant :', opts: ['Avant de peser le soluté','Après avoir mis le soluté dans la fiole jaugée','À la place du soluté','Avant de transférer dans la fiole'], ans: 1, exp: 'On pèse le soluté, on le transfère dans la fiole avec un peu de solvant, on dissout, puis on complète au trait de jauge.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Solutions aqueuses et concentration', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Dilution et préparation de solutions', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Concentration molaire et massique', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S5b', num: 'S5b', title: 'Dosage par étalonnage', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie analytique', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Principe du dosage par étalonnage', icon: '📊',
+          content: [
+            { type: 'def', term: 'Dosage', text: 'Détermination de la concentration d\'une espèce chimique dans une solution inconnue.' },
+            { type: 'def', term: 'Étalonnage', text: 'Préparer une série de solutions de concentrations <strong>connues</strong> (solutions étalons), mesurer une grandeur physique pour chacune, tracer la courbe d\'étalonnage.' },
+            { type: 'def', term: 'Courbe d\'étalonnage', text: 'Graphe de la grandeur physique (absorbance, conductance...) en fonction de la concentration. Permet de lire la concentration inconnue par interpolation.' },
+          ]
+        },
+        {
+          title: '2. Grandeurs physiques utilisées', icon: '🔬',
+          content: [
+            { type: 'def', term: 'Absorbance A (spectrophotométrie)', text: 'Mesure la quantité de lumière absorbée par la solution colorée. <strong>A = ε × l × C</strong> (loi de Beer-Lambert). A est sans unité.' },
+            { type: 'def', term: 'Conductance G (conductimétrie)', text: 'Mesure la capacité de la solution à conduire l\'électricité. Dépend de la concentration en ions. En siemens (S).' },
+          ]
+        },
+        {
+          title: '3. Méthode pratique', icon: '📏',
+          content: [
+            { type: 'def', term: 'Étapes du dosage', text: '1. Préparer les solutions étalons par dilution. 2. Mesurer la grandeur physique. 3. Tracer la courbe étalon. 4. Mesurer la grandeur pour la solution inconnue. 5. Lire la concentration sur la courbe.' },
+            { type: 'warn', text: 'La courbe d\'étalonnage doit passer par l\'origine. Si ce n\'est pas le cas, vérifier les mesures.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Un dosage par étalonnage permet de déterminer :', opts: ['La masse molaire d\'une espèce','La concentration d\'une solution inconnue','La température d\'ébullition','La couleur d\'une solution'], ans: 1, exp: 'Le dosage par étalonnage détermine la concentration d\'une espèce dans une solution de concentration inconnue.' },
+      { q: 'La courbe d\'étalonnage relie :', opts: ['La masse au volume','La grandeur physique mesurée à la concentration','La température à la pression','Le pH à la température'], ans: 1, exp: 'On trace : grandeur physique (absorbance, conductance...) = f(concentration). On lit ensuite C_inconnue.' },
+      { q: 'La loi de Beer-Lambert A = ε×l×C montre que :', opts: ['A est indépendant de C','A est proportionnel à C','A diminue quand C augmente','A est toujours égal à 1'], ans: 1, exp: 'A = ε×l×C : l\'absorbance est proportionnelle à la concentration → courbe droite passant par l\'origine.' },
+      { q: 'Pour préparer les solutions étalons, on utilise :', opts: ['La dissolution uniquement','La dilution successive d\'une solution mère','La filtration','L\'évaporation'], ans: 1, exp: 'On part d\'une solution mère et on réalise des dilutions successives pour obtenir des solutions de concentrations connues et croissantes.' },
+      { q: 'La spectrophotométrie est adaptée si la solution est :', opts: ['Incolore','Colorée (ou si elle absorbe la lumière)','Très concentrée uniquement','Un gaz'], ans: 1, exp: 'La spectrophotométrie mesure l\'absorbance d\'une espèce colorée. Solution incolore → pas d\'absorbance → autre technique.' },
+      { q: 'La conductimétrie est adaptée si la solution contient :', opts: ['Des molécules neutres','Des ions en solution','Un solide dissous non ionique','Un gaz dissous'], ans: 1, exp: 'La conductance mesure le courant transporté par les ions. Plus il y a d\'ions, plus la conductance est élevée.' },
+      { q: 'La courbe d\'étalonnage idéale (Beer-Lambert) est :', opts: ['Une courbe exponentielle','Une droite passant par l\'origine','Une droite ne passant pas par l\'origine','Une parabole'], ans: 1, exp: 'A = ε×l×C est une relation de proportionnalité → droite passant par l\'origine.' },
+      { q: 'Pour lire la concentration inconnue sur la courbe étalon, on :', opts: ['Prolonge la droite jusqu\'à l\'axe des C','Reporte la valeur mesurée sur l\'axe Y puis lit C sur l\'axe X','Calcule la pente','Mesure la surface sous la courbe'], ans: 1, exp: 'On place la valeur mesurée (ex: A_inconnue) sur l\'axe Y, on trace une horizontale jusqu\'à la droite, puis une verticale jusqu\'à l\'axe X → on lit C.' },
+      { q: 'La grandeur A (absorbance) est :', opts: ['Exprimée en mol/L','Sans unité','Exprimée en siemens','Toujours comprise entre 0 et 1'], ans: 1, exp: 'L\'absorbance A est sans unité (A = log(I₀/I)). Elle peut dépasser 1 pour les solutions très concentrées.' },
+      { q: 'Pourquoi faut-il étalonner un appareil de mesure avant utilisation ?', opts: ['Pour chauffer l\'appareil','Pour vérifier la linéarité et obtenir une relation concentration–signal fiable','Pour allonger sa durée de vie','Pour mesurer le pH'], ans: 1, exp: 'L\'étalonnage établit la relation entre la grandeur mesurée et la concentration, tenant compte des caractéristiques propres à l\'appareil et à l\'espèce.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Dosage par étalonnage spectrophotométrique', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Courbe d\'étalonnage et concentration', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Dosage conductimétrique par étalonnage', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S5c', num: 'S5c', title: 'Perception d\'un son', category: 'physique',
+    color: '#f74acd', tag: 'Physique — Ondes', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Hauteur et fréquence', icon: '🎵',
+          content: [
+            { type: 'def', term: 'Fréquence f', text: 'Nombre de vibrations par seconde. Unité : <strong>hertz (Hz)</strong>. f = 1/T (T = période en secondes).' },
+            { type: 'def', term: 'Hauteur d\'un son', text: 'La hauteur (grave/aigu) est liée à la <strong>fréquence</strong>. Plus f est grande → son plus aigu. Gamme audible humaine : 20 Hz – 20 000 Hz.' },
+            { type: 'table', headers: ['Type de son', 'Fréquence', 'Exemple'], rows: [
+              ['Infrasons', '< 20 Hz', 'Séismes, baleine'],
+              ['Sons audibles', '20 Hz – 20 kHz', 'Voix, musique'],
+              ['Ultrasons', '> 20 000 Hz', 'Échographie, chauve-souris'],
+            ]},
+          ]
+        },
+        {
+          title: '2. Intensité et niveau sonore', icon: '🔊',
+          content: [
+            { type: 'def', term: 'Intensité sonore I', text: 'Puissance sonore par unité de surface (W/m²). I₀ = 10⁻¹² W/m² (seuil d\'audibilité).' },
+            { type: 'formula', label: 'Niveau sonore L (décibels)', text: 'L = 10 × log(I/I₀)  [dB]\nI = I₀ × 10^(L/10)' },
+            { type: 'warn', text: 'Seuil de la douleur : L = 120 dB (I = 1 W/m²). Au-delà, risque de lésion auditive immédiate.' },
+          ]
+        },
+        {
+          title: '3. Timbre d\'un son', icon: '🎸',
+          content: [
+            { type: 'def', term: 'Son pur / Son complexe', text: 'Un son pur est une sinusoïde (une seule fréquence). Un son musical est complexe : il est la somme d\'une fréquence fondamentale et d\'harmoniques.' },
+            { type: 'def', term: 'Timbre', text: 'Ce qui distingue deux sons de même hauteur et même intensité. Lié à la forme du signal et aux harmoniques présents.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'La fréquence d\'un son est liée à sa :', opts: ['Intensité','Timbre','Hauteur (grave/aigu)','Vitesse de propagation'], ans: 2, exp: 'Hauteur ↔ fréquence. Son grave = faible fréquence. Son aigu = grande fréquence.' },
+      { q: 'L\'oreille humaine perçoit des sons de fréquences comprises entre :', opts: ['0 et 1000 Hz','20 Hz et 20 000 Hz','1 Hz et 100 Hz','1000 Hz et 100 000 Hz'], ans: 1, exp: 'Gamme audible : 20 Hz (grave) à 20 000 Hz (aigu). En dessous = infrasons, au-dessus = ultrasons.' },
+      { q: 'La période T et la fréquence f sont liées par :', opts: ['f = T','f = 1/T','f = T²','T = f²'], ans: 1, exp: 'f = 1/T. Si T = 0,01 s → f = 100 Hz. Si f = 440 Hz (La) → T = 1/440 ≈ 0,0023 s.' },
+      { q: 'Le niveau sonore L = 10 × log(I/I₀) s\'exprime en :', opts: ['Watts','Hertz','Décibels (dB)','Pascals'], ans: 2, exp: 'L est le niveau d\'intensité sonore, exprimé en décibels (dB). I₀ = 10⁻¹² W/m² est le seuil d\'audibilité.' },
+      { q: 'L = 60 dB correspond à I = ?', opts: ['I₀ × 10⁶','I₀ × 60','I₀ × 6','I₀ × 10⁶⁰'], ans: 0, exp: 'I = I₀ × 10^(L/10) = I₀ × 10^(60/10) = I₀ × 10⁶. L = 60 dB → un million de fois le seuil d\'audibilité.' },
+      { q: 'Les ultrasons ont une fréquence :', opts: ['Inférieure à 20 Hz','Entre 20 et 20 000 Hz','Supérieure à 20 000 Hz','Nulle'], ans: 2, exp: 'Ultrasons : f > 20 000 Hz = 20 kHz. Utilisés en échographie médicale, par les chauves-souris pour l\'écholocation.' },
+      { q: 'Le timbre d\'un son permet de :', opts: ['Mesurer sa fréquence','Distinguer deux instruments jouant la même note','Mesurer son intensité','Calculer sa vitesse'], ans: 1, exp: 'Le timbre différencie les sons de même hauteur et même intensité. Ex : même La joué par un piano ou une guitare → timbre différent.' },
+      { q: 'Un son grave a une fréquence :', opts: ['Élevée','Faible','Nulle','Supérieure à 20 kHz'], ans: 1, exp: 'Son grave = basse fréquence (ex: basse électrique ≈ 40-300 Hz). Son aigu = haute fréquence (ex: flûte ≈ 1000-4000 Hz).' },
+      { q: 'Le seuil de la douleur correspond à :', opts: ['L = 0 dB','L = 60 dB','L = 120 dB','L = 200 dB'], ans: 2, exp: 'Seuil de la douleur : L = 120 dB, soit I = 1 W/m². Au-delà, risque de lésion auditive immédiate et permanente.' },
+      { q: 'Un son pur est représenté par :', opts: ['Une droite horizontale','Une sinusoïde (courbe sinusoïdale)','Une droite verticale','Une courbe quelconque'], ans: 1, exp: 'Un son pur = une seule fréquence → représenté par une sinusoïde parfaite. Un son complexe est la somme de plusieurs sinusoïdes.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Sons, fréquence et niveau sonore', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Perception auditive et ultrasons', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Fréquence, période et intensité sonore', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S6', num: 'S6', title: 'Les ions', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Formation des ions', icon: '⚡',
+          content: [
+            { type: 'def', term: 'Ion', text: 'Atome ou groupe d\'atomes ayant perdu ou gagné des électrons. Possède une <strong>charge électrique non nulle</strong>.' },
+            { type: 'def', term: 'Cation (+)', text: 'Ion de charge positive. Formé par la <strong>perte d\'électrons</strong>. Ex : Na⁺, Ca²⁺, Fe³⁺.' },
+            { type: 'def', term: 'Anion (−)', text: 'Ion de charge négative. Formé par le <strong>gain d\'électrons</strong>. Ex : Cl⁻, O²⁻, SO₄²⁻.' },
+            { type: 'formula', label: 'Formation d\'un ion', text: 'Na → Na⁺ + e⁻  (perte d\'1 électron → cation)\nCl + e⁻ → Cl⁻  (gain d\'1 électron → anion)' },
+          ]
+        },
+        {
+          title: '2. Ions monoatomiques et polyatomiques', icon: '🔬',
+          content: [
+            { type: 'table', headers: ['Ion', 'Charge', 'Nom'], rows: [
+              ['Na⁺', '+1', 'Ion sodium'],
+              ['Ca²⁺', '+2', 'Ion calcium'],
+              ['Al³⁺', '+3', 'Ion aluminium'],
+              ['Cl⁻', '-1', 'Ion chlorure'],
+              ['O²⁻', '-2', 'Ion oxyde'],
+              ['SO₄²⁻', '-2', 'Ion sulfate'],
+              ['NO₃⁻', '-1', 'Ion nitrate'],
+              ['OH⁻', '-1', 'Ion hydroxyde'],
+            ]},
+          ]
+        },
+        {
+          title: '3. Électroneutralité des solutions', icon: '⚖️',
+          content: [
+            { type: 'def', term: 'Électroneutralité', text: 'Une solution ionique est toujours <strong>électriquement neutre</strong> : la somme des charges positives = la somme des charges négatives.' },
+            { type: 'formula', label: 'Condition d\'électroneutralité', text: 'Σ (n_cations × charge) = Σ (n_anions × |charge|)\nEx: solution de NaCl : [Na⁺] = [Cl⁻]' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Un cation est un ion :', opts: ['De charge négative','De charge positive','Sans charge','De masse nulle'], ans: 1, exp: 'Cation = ion positif (perte d\'électrons). Anion = ion négatif (gain d\'électrons). Moyen mnémotechnique : Anion = négatif (A négatif).' },
+      { q: 'L\'ion Na⁺ est formé quand l\'atome Na :', opts: ['Gagne 1 électron','Perd 1 électron','Gagne 1 proton','Perd 1 proton'], ans: 1, exp: 'Na (Z=11) : (K)2(L)8(M)1 → perd 1e⁻ de sa couche M → Na⁺ : (K)2(L)8 (configuration stable de Ne).' },
+      { q: 'L\'ion Cl⁻ est formé quand l\'atome Cl :', opts: ['Perd 1 électron','Gagne 1 électron','Perd 1 proton','Gagne 1 proton'], ans: 1, exp: 'Cl (Z=17) : (K)2(L)8(M)7 → gagne 1e⁻ → Cl⁻ : (K)2(L)8(M)8 (configuration stable de Ar).' },
+      { q: 'L\'ion sulfate est :', opts: ['SO₃²⁻','SO₄²⁻','S²⁻','SO₄⁻'], ans: 1, exp: 'SO₄²⁻ = ion sulfate (1 soufre + 4 oxygènes, charge -2). À distinguer de SO₃²⁻ (ion sulfite).' },
+      { q: 'Une solution ionique est électriquement :', opts: ['Chargée positivement','Chargée négativement','Neutre (électroneutralité)','Variable'], ans: 2, exp: 'Toute solution ionique est électriquement neutre : somme des charges + = somme des charges -.' },
+      { q: 'Dans une solution de CaCl₂, la condition d\'électroneutralité donne :', opts: ['[Ca²⁺] = [Cl⁻]','2[Ca²⁺] = [Cl⁻]','[Ca²⁺] = 2[Cl⁻]','[Ca²⁺]² = [Cl⁻]'], ans: 1, exp: 'Charges +: 2×[Ca²⁺]. Charges -: 1×[Cl⁻]. Électroneutralité: 2[Ca²⁺] = [Cl⁻].' },
+      { q: 'L\'ion hydroxyde est :', opts: ['H⁺','OH⁻','O²⁻','H₂O'], ans: 1, exp: 'OH⁻ = ion hydroxyde (charge -1). Présent dans les solutions basiques. H⁺ (ou H₃O⁺) est l\'ion hydrogène (oxonium).' },
+      { q: 'L\'ion Al³⁺ a perdu :', opts: ['1 électron','2 électrons','3 électrons','4 électrons'], ans: 2, exp: 'Al (Z=13): (K)2(L)8(M)3 → perd 3e⁻ de sa couche M → Al³⁺: (K)2(L)8 (configuration de Ne). Charge = +3.' },
+      { q: 'Un ion polyatomique est :', opts: ['Un atome ayant perdu des électrons','Un groupe d\'atomes portant une charge','Un atome neutre','Un proton isolé'], ans: 1, exp: 'Ion polyatomique = groupe de plusieurs atomes liés portant une charge globale. Ex: SO₄²⁻, NO₃⁻, OH⁻, NH₄⁺.' },
+      { q: 'La dissolution du NaCl dans l\'eau donne :', opts: ['Des molécules Na-Cl intactes','Des ions Na⁺ et Cl⁻ séparés','Uniquement Na⁺','Uniquement Cl⁻'], ans: 1, exp: 'NaCl(s) → Na⁺(aq) + Cl⁻(aq). Le sel se dissocie complètement en ions en solution aqueuse.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Ions et solutions ioniques', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Formation des ions et électroneutralité', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Ions monoatomiques et polyatomiques', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S7', num: 'S7', title: 'La classification périodique', category: 'chimie',
+    color: '#7c6af7', tag: 'Chimie', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Organisation du tableau périodique', icon: '🗂️',
+          content: [
+            { type: 'def', term: 'Tableau de Mendeleïev', text: 'Les éléments sont classés par <strong>numéro atomique Z croissant</strong>. Les propriétés chimiques se répètent périodiquement.' },
+            { type: 'def', term: 'Période (ligne horizontale)', text: 'Les éléments d\'une même période ont le <strong>même nombre de couches électroniques</strong>. Période 1 : couche K. Période 2 : couches K et L. Période 3 : K, L et M.' },
+            { type: 'def', term: 'Groupe (colonne verticale)', text: 'Les éléments d\'un même groupe ont le <strong>même nombre d\'électrons sur leur couche externe</strong> → propriétés chimiques similaires.' },
+          ]
+        },
+        {
+          title: '2. Familles d\'éléments importants', icon: '⚗️',
+          content: [
+            { type: 'table', headers: ['Groupe', 'Nom', 'Exemples', 'Caractéristique'], rows: [
+              ['1', 'Alcalins', 'Li, Na, K', '1 électron externe, très réactifs'],
+              ['2', 'Alcalino-terreux', 'Mg, Ca', '2 électrons externes'],
+              ['17', 'Halogènes', 'F, Cl, Br', '7 électrons externes, très réactifs'],
+              ['18', 'Gaz nobles', 'He, Ne, Ar', '8e⁻ externes (sauf He:2), inertes'],
+            ]},
+            { type: 'warn', text: 'Les gaz nobles (groupe 18) sont stables car leur couche externe est saturée → ils ne réagissent quasiment pas.' },
+          ]
+        },
+        {
+          title: '3. Lien structure–propriétés', icon: '🔗',
+          content: [
+            { type: 'def', term: 'Électrons de valence', text: 'Électrons de la couche externe. Ce sont eux qui participent aux liaisons chimiques et déterminent les propriétés de l\'élément.' },
+            { type: 'def', term: 'Position dans le tableau → propriétés', text: 'Même groupe = même nombre d\'électrons de valence = propriétés chimiques similaires. Ex : Na et K réagissent tous les deux violemment avec l\'eau.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Dans le tableau périodique, les éléments sont classés par :', opts: ['Masse atomique croissante','Numéro atomique Z croissant','Ordre alphabétique','Date de découverte'], ans: 1, exp: 'Mendeleïev avait classé par masse, mais le tableau moderne classe par numéro atomique Z croissant (de 1 à 118).' },
+      { q: 'Les éléments d\'une même période (ligne) ont :', opts: ['Le même nombre d\'électrons de valence','Le même nombre de couches électroniques','Les mêmes propriétés chimiques','Le même numéro atomique'], ans: 1, exp: 'Même période = même nombre de couches. Période 2 : 2 couches (K et L). Période 3 : 3 couches (K, L, M).' },
+      { q: 'Les éléments d\'un même groupe (colonne) ont :', opts: ['Le même nombre de couches','Le même nombre d\'électrons de valence','La même masse atomique','Le même nombre de neutrons'], ans: 1, exp: 'Même groupe = même nb d\'électrons de valence = propriétés chimiques similaires. Ex : Li, Na, K ont tous 1 électron de valence.' },
+      { q: 'Les gaz nobles (groupe 18) sont inertes chimiquement car :', opts: ['Ils ont trop de neutrons','Leur couche externe est saturée (octet complet)','Ils n\'ont pas de protons','Leur masse est trop grande'], ans: 1, exp: 'Les gaz nobles ont 8 électrons sur leur couche externe (sauf He : 2) → configuration stable → pas besoin de réagir.' },
+      { q: 'Les halogènes (groupe 17) ont sur leur couche externe :', opts: ['1 électron','7 électrons','8 électrons','17 électrons'], ans: 1, exp: 'Halogènes (F, Cl, Br, I) : 7 électrons de valence. Il leur manque 1 électron pour l\'octet → très réactifs, forment facilement des anions X⁻.' },
+      { q: 'Na et K ont des propriétés similaires car :', opts: ['Ils ont le même nombre de couches','Ils sont dans le même groupe (1 électron de valence)','Ils ont la même masse','Ils ont le même nombre de neutrons'], ans: 1, exp: 'Na et K sont dans le groupe 1 (alcalins) : 1 électron de valence chacun → mêmes propriétés chimiques (réaction violente avec l\'eau).' },
+      { q: 'Les alcalins (groupe 1) ont :', opts: ['8 électrons de valence','2 électrons de valence','1 électron de valence','7 électrons de valence'], ans: 2, exp: 'Alcalins : Li, Na, K, Rb, Cs → 1 électron de valence. Très réactifs car ils cèdent facilement cet électron.' },
+      { q: 'L\'oxygène O (Z=8) est dans la période :', opts: ['1','2','3','4'], ans: 1, exp: 'O (Z=8) : structure (K)2(L)6 → 2 couches → période 2.' },
+      { q: 'Le chlore Cl (Z=17) est dans le groupe :', opts: ['1','2','16','17'], ans: 3, exp: 'Cl : (K)2(L)8(M)7 → 7 électrons de valence → groupe 17 (halogènes).' },
+      { q: 'Les électrons de valence sont :', opts: ['Tous les électrons de l\'atome','Les électrons du noyau','Les électrons de la couche externe','Les protons libres'], ans: 2, exp: 'Électrons de valence = électrons de la couche externe. Ils participent aux liaisons chimiques et déterminent les propriétés.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Classification périodique et propriétés', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Groupes et périodes du tableau', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Électrons de valence et réactivité', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S17', num: 'S17', title: 'Synthèse d\'espèces chimiques', category: 'chimie',
+    color: '#4af79a', tag: 'Chimie organique', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Espèces naturelles vs synthétiques', icon: '🌿',
+          content: [
+            { type: 'def', term: 'Espèce naturelle', text: 'Espèce chimique extraite du milieu naturel (plante, animal, minéral). Ex : aspirine naturelle extraite de l\'écorce de saule.' },
+            { type: 'def', term: 'Espèce synthétique', text: 'Produite par synthèse chimique en laboratoire ou en industrie. Peut être <strong>identique</strong> à une espèce naturelle (même formule, mêmes propriétés).' },
+            { type: 'warn', text: 'Naturel ≠ forcément inoffensif. Synthétique ≠ forcément dangereux. Ce qui compte c\'est la molécule, pas son origine.' },
+          ]
+        },
+        {
+          title: '2. Étapes d\'une synthèse', icon: '🧪',
+          content: [
+            { type: 'def', term: '1. Réaction chimique', text: 'Mélanger les réactifs dans les bonnes conditions (température, catalyseur). On obtient le produit voulu mélangé à d\'autres espèces.' },
+            { type: 'def', term: '2. Séparation et purification', text: 'Éliminer les réactifs en excès, solvants et sous-produits. Techniques : décantation, filtration, distillation, extraction.' },
+            { type: 'def', term: '3. Identification', text: 'Vérifier que le produit obtenu est bien celui attendu : mesure de la température de fusion/ébullition, chromatographie (CCM), spectroscopie.' },
+          ]
+        },
+        {
+          title: '3. Rendement de la synthèse', icon: '📊',
+          content: [
+            { type: 'formula', label: 'Rendement η', text: 'η = (n_obtenu / n_théorique) × 100 (%)\nn_théorique : calculé à partir du réactif limitant\nToujours ≤ 100%' },
+            { type: 'def', term: 'Chromatographie sur couche mince (CCM)', text: 'Technique permettant d\'identifier et de vérifier la pureté d\'un produit en comparant sa migration avec un produit de référence.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Une espèce synthétique identique à une espèce naturelle a :', opts: ['Des propriétés différentes','Les mêmes propriétés physiques et chimiques','Une masse molaire différente','Une formule chimique différente'], ans: 1, exp: 'Même formule chimique = mêmes propriétés. Ex : la vanilline synthétique est identique à la vanilline naturelle extraite de la vanille.' },
+      { q: 'Le rendement d\'une synthèse est toujours :', opts: ['Égal à 100%','Supérieur à 100%','Inférieur ou égal à 100%','Négatif'], ans: 2, exp: 'η ≤ 100% car des pertes surviennent toujours (réactions parasites, pertes lors des manipulations).' },
+      { q: 'La CCM (chromatographie sur couche mince) permet de :', opts: ['Mesurer la masse molaire','Identifier une espèce et vérifier sa pureté','Mesurer le pH','Calculer le rendement'], ans: 1, exp: 'En CCM, on compare les migrations de l\'espèce synthétisée avec un produit de référence. Même tache = même espèce.' },
+      { q: 'Après une synthèse, l\'étape de purification sert à :', opts: ['Augmenter la quantité de produit','Éliminer les impuretés et réactifs en excès','Mesurer le rendement','Identifier le produit'], ans: 1, exp: 'Purification = élimination des impuretés (réactifs en excès, solvants, sous-produits) pour obtenir le produit pur.' },
+      { q: 'Si n_obtenu = 0,04 mol et n_théorique = 0,05 mol, le rendement est :', opts: ['80%','40%','125%','20%'], ans: 0, exp: 'η = (0,04/0,05) × 100 = 80%.' },
+      { q: 'La quantité théorique est calculée à partir de :', opts: ['Le réactif en excès','Le réactif limitant','La masse molaire du solvant','La température de réaction'], ans: 1, exp: 'Le réactif limitant détermine la quantité maximale de produit théoriquement obtenu (transformation totale).' },
+      { q: '"Naturel" signifie :', opts: ['Toujours inoffensif','Extrait du milieu naturel','Fabriqué en laboratoire','Plus efficace que le synthétique'], ans: 1, exp: 'Naturel = extrait de la nature. Mais certaines espèces naturelles sont toxiques (ex: venins, poisons de plantes).' },
+      { q: 'La distillation permet de séparer :', opts: ['Un solide d\'un liquide','Deux liquides de températures d\'ébullition différentes','Deux solides','Un gaz d\'un liquide'], ans: 1, exp: 'Distillation : exploitation de la différence de températures d\'ébullition. Le liquide le plus volatile distille en premier.' },
+      { q: 'Pour identifier un produit synthétisé, on peut mesurer :', opts: ['Sa masse totale','Sa température de fusion et la comparer aux tables','Sa couleur uniquement','Son volume'], ans: 1, exp: 'La température de fusion (ou ébullition) est caractéristique d\'une espèce pure. On la compare aux valeurs de référence.' },
+      { q: 'Un sous-produit de synthèse est :', opts: ['Le produit voulu','Une impureté formée lors de la réaction','Un réactif en excès','Le solvant utilisé'], ans: 1, exp: 'Sous-produit = espèce formée en parallèle lors de la réaction, en plus du produit voulu. Il faut l\'éliminer lors de la purification.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Synthèse et rendement', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Espèces naturelles et synthétiques', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Purification et identification d\'un produit', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S21', num: 'S21', title: 'Le circuit électrique', category: 'elec',
+    color: '#f75e7a', tag: 'Électricité', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Grandeurs électriques fondamentales', icon: '⚡',
+          content: [
+            { type: 'def', term: 'Intensité I', text: 'Débit de charges électriques. Unité : <strong>ampère (A)</strong>. Mesurée avec un <strong>ampèremètre</strong> (en série).' },
+            { type: 'def', term: 'Tension U', text: 'Différence de potentiel entre deux points. Unité : <strong>volt (V)</strong>. Mesurée avec un <strong>voltmètre</strong> (en dérivation).' },
+            { type: 'def', term: 'Résistance R', text: 'Opposition au passage du courant. Unité : <strong>ohm (Ω)</strong>.' },
+            { type: 'formula', label: 'Loi d\'Ohm', text: 'U = R × I\nU : tension (V), R : résistance (Ω), I : intensité (A)' },
+          ]
+        },
+        {
+          title: '2. Lois des circuits', icon: '🔌',
+          content: [
+            { type: 'def', term: 'Loi des nœuds (dérivation)', text: 'L\'intensité qui arrive à un nœud = somme des intensités qui en partent. <strong>I_entrée = ΣI_sortie</strong>' },
+            { type: 'def', term: 'Loi des mailles (tension)', text: 'La somme algébrique des tensions dans une maille fermée est nulle. <strong>ΣU = 0</strong>' },
+            { type: 'formula', label: 'Puissance électrique', text: 'P = U × I  [W]\nÉnergie : E = P × Δt  [J ou Wh]' },
+          ]
+        },
+        {
+          title: '3. Résistances en série / dérivation', icon: '📐',
+          content: [
+            { type: 'formula', label: 'En série', text: 'R_éq = R₁ + R₂ + ...\nMême intensité partout' },
+            { type: 'formula', label: 'En dérivation (parallèle)', text: '1/R_éq = 1/R₁ + 1/R₂ + ...\nMême tension aux bornes' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'L\'ampèremètre se branche :', opts: ['En dérivation (parallèle)','En série dans le circuit','N\'importe comment','Hors du circuit'], ans: 1, exp: 'L\'ampèremètre mesure l\'intensité en série : le courant passe À TRAVERS lui. Sa résistance interne est très faible.' },
+      { q: 'Le voltmètre se branche :', opts: ['En série dans le circuit','En dérivation (parallèle)','N\'importe où','En dehors du circuit'], ans: 1, exp: 'Le voltmètre mesure la tension entre deux points EN PARALLÈLE. Sa résistance interne est très grande.' },
+      { q: 'La loi d\'Ohm donne :', opts: ['U = I/R','U = R/I','U = R × I','R = U × I'], ans: 2, exp: 'U = R × I. R = U/I. I = U/R. À connaître dans les trois formes !' },
+      { q: 'Dans un circuit série, l\'intensité est :', opts: ['Différente pour chaque composant','La même partout','Nulle','Divisée entre les composants'], ans: 1, exp: 'En série, il n\'y a qu\'un seul chemin pour le courant → même intensité I dans tous les composants.' },
+      { q: 'En dérivation, les tensions aux bornes de chaque branche sont :', opts: ['Différentes','Les mêmes','Nulles','Additionnées'], ans: 1, exp: 'En dérivation (parallèle) : les branches ont leurs bornes aux mêmes nœuds → même tension U pour chaque branche.' },
+      { q: 'Deux résistances R₁ = 10 Ω et R₂ = 20 Ω en série : R_éq = ?', opts: ['30 Ω','6,7 Ω','200 Ω','10 Ω'], ans: 0, exp: 'En série : R_éq = R₁ + R₂ = 10 + 20 = 30 Ω.' },
+      { q: 'La puissance électrique s\'exprime en :', opts: ['Joules (J)','Watts (W)','Ohms (Ω)','Volts (V)'], ans: 1, exp: 'P = U × I en watts (W). L\'énergie E = P × Δt en joules (J) ou watt-heures (Wh).' },
+      { q: 'Un dipôle a U = 12 V et I = 3 A. Sa résistance est :', opts: ['36 Ω','4 Ω','0,25 Ω','15 Ω'], ans: 1, exp: 'R = U/I = 12/3 = 4 Ω.' },
+      { q: 'La loi des nœuds dit que :', opts: ['U_entrée = ΣU_sortie','I_entrée = ΣI_sortie','R_entrée = ΣR_sortie','P_entrée = ΣP_sortie'], ans: 1, exp: 'Conservation du courant : à un nœud, le courant qui arrive = la somme des courants qui partent.' },
+      { q: 'L\'énergie consommée par un appareil de 100 W pendant 2 heures est :', opts: ['50 Wh','100 Wh','200 Wh','400 Wh'], ans: 2, exp: 'E = P × Δt = 100 W × 2 h = 200 Wh = 0,2 kWh.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Circuits électriques et lois fondamentales', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Loi d\'Ohm et puissance électrique', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Montages série et dérivation', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+  {
+    id: 'S22', num: 'S22', title: 'Les capteurs', category: 'physique',
+    color: '#f75e7a', tag: 'Électricité', annee: 'seconde',
+    fiche: {
+      sections: [
+        {
+          title: '1. Définition et rôle d\'un capteur', icon: '📡',
+          content: [
+            { type: 'def', term: 'Capteur', text: 'Dispositif qui convertit une grandeur physique (température, lumière, pression...) en un signal électrique (tension ou intensité) mesurable.' },
+            { type: 'def', term: 'Grandeur d\'entrée → Grandeur de sortie', text: 'Entrée : grandeur physique à mesurer. Sortie : signal électrique (tension U ou intensité I). La relation entrée/sortie est la <strong>caractéristique du capteur</strong>.' },
+          ]
+        },
+        {
+          title: '2. Types de capteurs courants', icon: '🌡️',
+          content: [
+            { type: 'table', headers: ['Capteur', 'Mesure', 'Principe'], rows: [
+              ['Thermistance (CTN)', 'Température', 'Résistance diminue quand T augmente'],
+              ['Photorésistance (LDR)', 'Luminosité', 'Résistance diminue quand lumière augmente'],
+              ['Microphone', 'Son', 'Vibrations → signal électrique'],
+              ['Jauge de contrainte', 'Pression/Force', 'Déformation → variation de R'],
+              ['Capteur pH', 'Acidité', 'Potentiel électrique → pH'],
+            ]},
+          ]
+        },
+        {
+          title: '3. Exploitation des données', icon: '📊',
+          content: [
+            { type: 'def', term: 'Courbe de calibration', text: 'Relie la grandeur mesurée (en entrée) au signal électrique (en sortie). Permet de convertir U_mesurée en valeur physique.' },
+            { type: 'def', term: 'Résolution et précision', text: 'Résolution : plus petite variation détectable. Précision : écart entre valeur mesurée et valeur vraie.' },
+            { type: 'warn', text: 'Un capteur doit être étalonné avant utilisation pour garantir la fiabilité des mesures.' },
+          ]
+        }
+      ]
+    },
+    quiz: [
+      { q: 'Un capteur convertit :', opts: ['Une grandeur électrique en grandeur physique','Une grandeur physique en signal électrique','Un signal en image','De la chaleur en lumière'], ans: 1, exp: 'Capteur : grandeur physique (entrée) → signal électrique (sortie). Ex : thermistance : température → résistance → tension.' },
+      { q: 'Une thermistance CTN a une résistance qui :', opts: ['Augmente quand T augmente','Diminue quand T augmente','Ne dépend pas de T','Est toujours nulle'], ans: 1, exp: 'CTN = Coefficient de Température Négatif → R diminue quand T augmente. La résistance chute avec la chaleur.' },
+      { q: 'Une photorésistance (LDR) mesure :', opts: ['La température','L\'humidité','La luminosité','La pression'], ans: 2, exp: 'LDR (Light Dependent Resistor) : résistance varie avec l\'intensité lumineuse. R faible = forte lumière.' },
+      { q: 'La courbe de calibration d\'un capteur sert à :', opts: ['Alimenter le capteur','Convertir le signal électrique en valeur physique','Réparer le capteur','Mesurer la résistance interne'], ans: 1, exp: 'La courbe de calibration (ou d\'étalonnage) permet de lire la valeur physique correspondant à la tension mesurée par le capteur.' },
+      { q: 'Avant d\'utiliser un capteur, il faut :', opts: ['Le chauffer','L\'étalonner (calibrer)','Le mettre en parallèle','Mesurer son pH'], ans: 1, exp: 'L\'étalonnage établit la relation entre la grandeur physique et le signal électrique pour ce capteur spécifique.' },
+      { q: 'Un microphone convertit :', opts: ['Un signal électrique en son','Des vibrations sonores en signal électrique','La lumière en son','La chaleur en son'], ans: 1, exp: 'Le microphone capte les vibrations de l\'air (pression sonore) et les convertit en signal électrique. C\'est l\'inverse du haut-parleur.' },
+      { q: 'La résolution d\'un capteur est :', opts: ['Sa précision globale','La plus petite variation détectable','Son étendue de mesure','Sa sensibilité thermique'], ans: 1, exp: 'Résolution = plus petite variation de la grandeur d\'entrée que le capteur peut distinguer. Meilleure résolution = mesures plus fines.' },
+      { q: 'Un capteur de pH convertit :', opts: ['La température en pH','L\'acidité de la solution en potentiel électrique','La couleur en pH','La conductivité en pH'], ans: 1, exp: 'Le capteur pH (électrode) convertit l\'activité des ions H⁺ en une tension électrique, reliée au pH par une loi logarithmique.' },
+      { q: 'Dans un système de mesure, le capteur est placé :', opts: ['Après le système d\'acquisition','Entre la grandeur physique et le système d\'acquisition','À la fin de la chaîne','N\'importe où'], ans: 1, exp: 'Chaîne de mesure : Grandeur physique → Capteur → Conditionneur → Acquisition → Affichage/Traitement.' },
+      { q: 'Une jauge de contrainte mesure :', opts: ['La température','La luminosité','La pression ou la force (déformation)','Le son'], ans: 2, exp: 'La jauge de contrainte se déforme sous l\'effet d\'une force → sa résistance change → on mesure la pression ou la force appliquée.' },
+    ],
+    annales: [
+      { year: '2023', title: 'Capteurs et chaîne de mesure', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2022', title: 'Thermistance et capteur de luminosité', session: 'Seconde', link: 'https://www.labolycee.org' },
+      { year: '2021', title: 'Étalonnage et exploitation d\'un capteur', session: 'Seconde', link: 'https://www.labolycee.org' },
+    ]
+  },
+];
+
+const CHAPTERS_PREMIERE = [
+  { id: 'P1', num: 'P1', title: 'Constitution et transformations de la matière', category: 'chimie', color: '#7c6af7', tag: 'Chimie', annee: 'premiere', comingSoon: true },
+  { id: 'P2', num: 'P2', title: 'Modélisation des transformations chimiques', category: 'chimie', color: '#7c6af7', tag: 'Chimie', annee: 'premiere', comingSoon: true },
+  { id: 'P3', num: 'P3', title: 'Ondes et matière', category: 'physique', color: '#f74acd', tag: 'Physique', annee: 'premiere', comingSoon: true },
+  { id: 'P4', num: 'P4', title: 'Optique géométrique', category: 'physique', color: '#f74acd', tag: 'Physique', annee: 'premiere', comingSoon: true },
+  { id: 'P5', num: 'P5', title: 'Mécanique', category: 'mecanique', color: '#f7934a', tag: 'Mécanique', annee: 'premiere', comingSoon: true },
+  { id: 'P6', num: 'P6', title: 'Thermodynamique', category: 'thermo', color: '#4af79a', tag: 'Thermo', annee: 'premiere', comingSoon: true },
+];
+
 const CHAPTERS = [
   {
     id: 0, num: '00', title: 'Outils mathématiques & Nomenclature', category: 'chimie',
-    color: '#8b8bef', tag: 'Prérequis',
+    color: '#8b8bef', tag: 'Prérequis', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1577,7 +2515,7 @@ const CHAPTERS = [
   },
   {
     id: 1, num: '01', title: 'Acides et bases', category: 'chimie',
-    color: '#4f8ef7', tag: 'Chimie',
+    color: '#4f8ef7', tag: 'Chimie', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1634,7 +2572,7 @@ const CHAPTERS = [
   },
   {
     id: 2, num: '02', title: 'Sens d\'évolution spontanée', category: 'chimie',
-    color: '#4f8ef7', tag: 'Chimie',
+    color: '#4f8ef7', tag: 'Chimie', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1690,7 +2628,7 @@ const CHAPTERS = [
   },
   {
     id: 3, num: '03', title: 'Force des acides et des bases', category: 'chimie',
-    color: '#4f8ef7', tag: 'Chimie',
+    color: '#4f8ef7', tag: 'Chimie', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1741,7 +2679,7 @@ const CHAPTERS = [
   },
   {
     id: 4, num: '04', title: 'Phénomènes ondulatoires', category: 'physique',
-    color: '#a44ff7', tag: 'Physique des ondes',
+    color: '#a44ff7', tag: 'Physique des ondes', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1790,7 +2728,7 @@ const CHAPTERS = [
   },
   {
     id: 5, num: '05', title: 'Lunette astronomique', category: 'physique',
-    color: '#a44ff7', tag: 'Optique',
+    color: '#a44ff7', tag: 'Optique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1838,7 +2776,7 @@ const CHAPTERS = [
   },
   {
     id: 6, num: '06', title: 'Mesures physiques (pH, conductimétrie)', category: 'chimie',
-    color: '#4f8ef7', tag: 'Chimie analytique',
+    color: '#4f8ef7', tag: 'Chimie analytique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1890,7 +2828,7 @@ const CHAPTERS = [
   },
   {
     id: 7, num: '07', title: 'Mesures chimiques', category: 'chimie',
-    color: '#4f8ef7', tag: 'Chimie',
+    color: '#4f8ef7', tag: 'Chimie', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1938,7 +2876,7 @@ const CHAPTERS = [
   },
   {
     id: 8, num: '08', title: 'Mouvement et lois de Newton', category: 'mecanique',
-    color: '#f7a24f', tag: 'Mécanique',
+    color: '#f7a24f', tag: 'Mécanique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -1987,7 +2925,7 @@ const CHAPTERS = [
   },
   {
     id: 9, num: '09', title: 'Mouvement dans un champ uniforme', category: 'mecanique',
-    color: '#f7a24f', tag: 'Mécanique',
+    color: '#f7a24f', tag: 'Mécanique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -2029,7 +2967,7 @@ const CHAPTERS = [
   },
   {
     id: 10, num: '10', title: 'Mouvement dans un champ de gravitation', category: 'mecanique',
-    color: '#f7a24f', tag: 'Mécanique',
+    color: '#f7a24f', tag: 'Mécanique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -2076,7 +3014,7 @@ const CHAPTERS = [
   },
   {
     id: 11, num: '11', title: 'Évolution temporelle d\'un système chimique', category: 'chimie',
-    color: '#4f8ef7', tag: 'Chimie',
+    color: '#4f8ef7', tag: 'Chimie', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -2125,7 +3063,7 @@ const CHAPTERS = [
   },
   {
     id: 12, num: '12', title: 'Bilans thermiques et thermodynamique', category: 'thermo',
-    color: '#4fca7a', tag: 'Thermodynamique',
+    color: '#4fca7a', tag: 'Thermodynamique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -2173,7 +3111,7 @@ const CHAPTERS = [
   },
   {
     id: 13, num: '13', title: 'Dynamique d\'un système électrique', category: 'elec',
-    color: '#f75959', tag: 'Électricité',
+    color: '#f75959', tag: 'Électricité', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -2221,7 +3159,7 @@ const CHAPTERS = [
   },
   {
     id: 14, num: '14', title: 'Stratégie de la synthèse organique', category: 'organique',
-    color: '#f7d44f', tag: 'Chimie organique',
+    color: '#f7d44f', tag: 'Chimie organique', annee: 'terminale',
     fiche: {
       sections: [
         {
@@ -2289,14 +3227,23 @@ let state = {
   currentTab: 'cours',
   sidebarOpen: window.innerWidth > 768,
   quiz: { active: false, idx: 0, answers: {}, revealed: {} },
-  students: [],          // liste locale (code + pseudo)
-  activeStudentId: null, // id serveur de l'élève connecté
-  activeStudentData: {   // données chargées depuis le serveur
-    scores: {},          // { chapitre_id: score }
-    notes: [],
-    progression: []
-  }
+  students: [],
+  activeStudentId: null,
+  activeStudentClasse: 'terminale',
+  anneesAccessibles: ['terminale'],
+  activeStudentData: { scores: {}, notes: [], progression: [] }
 };
+
+// Retourne tous les chapitres visibles selon la classe de l'élève
+function allVisibleChapters() {
+  const annees = state.anneesAccessibles;
+  const all = [];
+  if (annees.includes('seconde'))   all.push(...CHAPTERS_SECONDE);
+  if (annees.includes('premiere'))  all.push(...CHAPTERS_PREMIERE);
+  all.push(...CHAPTERS.filter(ch => annees.includes(ch.annee || 'terminale')));
+  return all;
+}
+
 
 // ── Connexion au serveur ──────────────────────────────
 async function apiLogin(code) {
@@ -2408,18 +3355,39 @@ function saveStudents() {
 function buildNav() {
   const nav = document.getElementById('chapters-nav');
   nav.innerHTML = '';
-  CHAPTERS.forEach(ch => {
-    const d = getStudentData(state.activeStudentId);
-    const quizScore = d[`quiz_${ch.id}`];
-    const scoreLabel = quizScore !== undefined ? `${quizScore}/10` : '';
-    const scoreColor = quizScore >= 7 ? 'var(--green)' : quizScore >= 5 ? 'var(--yellow)' : quizScore !== undefined ? 'var(--red)' : 'var(--muted)';
-    nav.innerHTML += `
-      <div class="nav-item ch-${ch.category}" id="nav-ch-${ch.id}" onclick="openChapter(${ch.id})"
-           style="--dot-color:${ch.color}">
-        <span class="nav-dot"></span>
-        <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${ch.num}. ${ch.title}</span>
-        ${scoreLabel ? `<span class="quiz-score" style="color:${scoreColor}">${scoreLabel}</span>` : ''}
-      </div>`;
+  const annees = state.anneesAccessibles;
+  const sections = [
+    { key: 'seconde',   label: '2nde', chapters: CHAPTERS_SECONDE,  color: '#4af79a' },
+    { key: 'premiere',  label: '1ère', chapters: CHAPTERS_PREMIERE, color: '#f7934a' },
+    { key: 'terminale', label: 'Term', chapters: CHAPTERS,          color: '#7c6af7' },
+  ];
+
+  sections.forEach(sec => {
+    if (!annees.includes(sec.key)) return;
+    nav.innerHTML += `<div style="font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:${sec.color};padding:10px 8px 4px;opacity:.8">${sec.label}</div>`;
+
+    const chs = sec.key === 'terminale' ? sec.chapters : sec.chapters;
+    chs.forEach(ch => {
+      if (ch.comingSoon) {
+        nav.innerHTML += `
+          <div class="nav-item" style="--dot-color:${ch.color};opacity:.45;cursor:default">
+            <span class="nav-dot"></span>
+            <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${ch.num}. ${ch.title}</span>
+            <span style="font-size:.62rem;color:var(--muted)">Bientôt</span>
+          </div>`;
+        return;
+      }
+      const scores = state.activeStudentData.scores;
+      const quizScore = scores[ch.id];
+      const scoreLabel = quizScore !== undefined ? `${quizScore}/10` : '';
+      const scoreColor = quizScore >= 7 ? 'var(--green)' : quizScore >= 5 ? 'var(--yellow)' : quizScore !== undefined ? 'var(--red)' : 'var(--muted)';
+      nav.innerHTML += `
+        <div class="nav-item ch-${ch.category}" id="nav-ch-${ch.id}" onclick="openChapter('${ch.id}')" style="--dot-color:${ch.color}">
+          <span class="nav-dot"></span>
+          <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${ch.num}. ${ch.title}</span>
+          ${scoreLabel ? `<span class="quiz-score" style="color:${scoreColor}">${scoreLabel}</span>` : ''}
+        </div>`;
+    });
   });
 }
 
@@ -2560,6 +3528,11 @@ async function finishQuiz() {
   ch.quiz.forEach((question, i) => {
     if (q.answers[i] === question.ans) score++;
   });
+
+  // XP selon le score
+  const xpKey = score === 10 ? 'quiz_perfect' : score >= 8 ? 'quiz_great' : score >= 6 ? 'quiz_good' : score >= 5 ? 'quiz_ok' : 'quiz_try';
+  const xpGained = XP_REWARDS[xpKey];
+  addXP(xpGained, score === 10 ? 'Quiz parfait ! 🌟' : score >= 8 ? 'Très bon quiz !' : score >= 5 ? 'Quiz terminé !' : 'Continue d\'essayer !');
 
   // Sauvegarder
   state.activeStudentData.scores[ch.id] = score;
@@ -2813,27 +3786,70 @@ function showHome() {
   document.getElementById('tab-bar').style.display = 'none';
   document.getElementById('page-title').textContent = 'Accueil';
   setNavActive('nav-home');
-  document.getElementById('content').innerHTML = `
-    <div style="margin-bottom:20px">
-      <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">Bienvenue 👋</div>
-      <p style="color:var(--muted);font-size:.88rem">Cliquez sur un chapitre pour commencer à réviser.</p>
-    </div>
-    <div class="home-grid">
-      ${CHAPTERS.map(ch => {
-        const d = getStudentData(state.activeStudentId);
-        const score = d[`quiz_${ch.id}`];
-        const pct = score !== undefined ? (score/10)*100 : 0;
-        return `<div class="chapter-card" style="--card-color:${ch.color}" onclick="openChapter(${ch.id})">
+
+  const annees = state.anneesAccessibles;
+  const classeLabels = { seconde: '2nde', premiere: '1ère', terminale: 'Terminale' };
+  const classeColors = { seconde: '#4af79a', premiere: '#f7934a', terminale: '#7c6af7' };
+
+  const sections = [
+    { key: 'seconde',   chs: CHAPTERS_SECONDE  },
+    { key: 'premiere',  chs: CHAPTERS_PREMIERE },
+    { key: 'terminale', chs: CHAPTERS           },
+  ].filter(s => annees.includes(s.key));
+
+  const scores = state.activeStudentData.scores;
+
+  const sectionsHtml = sections.map(sec => {
+    const color = classeColors[sec.key];
+    const label = classeLabels[sec.key];
+    const cards = sec.chs.map(ch => {
+      if (ch.comingSoon) return `
+        <div class="chapter-card" style="--card-color:${ch.color};opacity:.5;cursor:not-allowed">
+          <div class="card-num">Chapitre ${ch.num}</div>
+          <div class="card-title">${ch.title}</div>
+          <span class="card-tag" style="background:${ch.color}22;color:${ch.color}">${ch.tag}</span>
+          <div style="margin-top:10px;font-size:.75rem;color:var(--muted);font-weight:700">🔜 En cours de préparation</div>
+        </div>`;
+      const score = scores[ch.id];
+      const pct = score !== undefined ? (score/10)*100 : 0;
+      const pc = score !== undefined ? (score>=7?'var(--green)':score>=5?'var(--yellow)':'var(--red)') : ch.color;
+      return `
+        <div class="chapter-card" style="--card-color:${ch.color}" onclick="openChapter('${ch.id}')">
           <div class="card-num">Chapitre ${ch.num}</div>
           <div class="card-title">${ch.title}</div>
           <span class="card-tag" style="background:${ch.color}22;color:${ch.color}">${ch.tag}</span>
           <div class="card-progress-row">
-            <div class="card-progress-bar"><div class="card-progress-fill" style="width:${pct}%"></div></div>
-            <div class="card-progress-text">${score !== undefined ? score+'/10' : '—'}</div>
+            <div class="card-progress-bar"><div class="card-progress-fill" style="width:${pct}%;background:${pc}"></div></div>
+            <div class="card-progress-text" style="color:${pc}">${score !== undefined ? score+'/10' : '—'}</div>
           </div>
         </div>`;
-      }).join('')}
+    }).join('');
+
+    return `
+      <div style="margin-bottom:28px">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <div style="width:4px;height:20px;border-radius:2px;background:${color}"></div>
+          <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:1.1rem;font-weight:900;color:${color}">${label}</div>
+          <div style="flex:1;height:1px;background:${color}22"></div>
+        </div>
+        <div class="home-grid">${cards}</div>
+      </div>`;
+  }).join('');
+
+  const student = getStudent();
+  document.getElementById('content').innerHTML = `
+    <div style="margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+      <div>
+        <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:2px">
+          ${student ? `Bonjour ${student.name} 👋` : 'Bienvenue 👋'}
+        </div>
+        <p style="color:var(--muted);font-size:.85rem">
+          ${student ? `Classe : <strong style="color:var(--accent)">${classeLabels[state.activeStudentClasse] || state.activeStudentClasse}</strong>` : 'Connectez-vous pour sauvegarder votre progression.'}
+        </p>
+      </div>
+      ${!student ? `<button class="btn-primary" onclick="openStudentModal()" style="font-size:.82rem;padding:8px 18px">Se connecter</button>` : ''}
     </div>
+    ${sectionsHtml}
   `;
 }
 
@@ -2843,46 +3859,6 @@ function showDashboard() {
   document.getElementById('page-title').textContent = 'Tableau de bord';
   setNavActive('nav-dashboard');
   document.getElementById('content').innerHTML = renderDashboard();
-}
-
-function openChapter(id) {
-  state.currentChapter = id;
-  state.currentTab = 'cours';
-  state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
-  const ch = CHAPTERS.find(c => c.id === id);
-  document.getElementById('page-title').textContent = `${ch.num}. ${ch.title}`;
-  document.getElementById('tab-bar').style.display = 'flex';
-  document.getElementById('tab-cours').classList.add('active');
-  document.getElementById('tab-quiz').classList.remove('active');
-  document.getElementById('tab-annales').classList.remove('active');
-  setNavActive(`nav-ch-${id}`);
-  document.getElementById('content').innerHTML = renderFiche(ch);
-  if (window.innerWidth <= 768) {
-    state.sidebarOpen = false;
-    document.getElementById('sidebar').classList.add('collapsed');
-  }
-  document.getElementById('content').scrollTop = 0;
-}
-
-function switchTab(tab) {
-  state.currentTab = tab;
-  if (state.currentChapter === null) return;
-  if (tab !== 'quiz') state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
-  ['cours','quiz','annales'].forEach(t => {
-    document.getElementById(`tab-${t}`).classList.toggle('active', t === tab);
-  });
-  refreshContent();
-}
-
-function refreshContent() {
-  const ch = CHAPTERS.find(c => c.id === state.currentChapter);
-  if (!ch) return;
-  let html = '';
-  if (state.currentTab === 'cours') html = renderFiche(ch);
-  else if (state.currentTab === 'quiz') html = renderQuiz(ch);
-  else if (state.currentTab === 'annales') html = renderAnnales(ch);
-  document.getElementById('content').innerHTML = html;
-  if (state.currentTab !== 'quiz') document.getElementById('content').scrollTop = 0;
 }
 
 // ═══════════════════════════════════════════════════
@@ -2949,47 +3925,385 @@ async function doStudentLogin() {
     return;
   }
 
-  // Connexion réussie
-  const { eleve, scores, notes } = result;
-  state.activeStudentId = eleve.id;
+  const { eleve, scores, notes, annees_accessibles } = result;
+  state.activeStudentId     = eleve.id;
+  state.activeStudentClasse = eleve.classe || 'terminale';
+  state.anneesAccessibles   = annees_accessibles || ['terminale'];
   state._savedCode = code;
   localStorage.setItem('physichim_active_code', code);
 
   // Stocker les données serveur
   state.activeStudentData = {
     scores: scores.reduce((acc, s) => { acc[s.chapitre_id] = s.score; return acc; }, {}),
-    notes: notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
+    notes:  notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
     progression: result.progression || []
   };
 
-  // Mettre à jour la liste locale
   const existing = state.students.find(s => s.id === eleve.id);
   if (!existing) {
-    state.students.push({ id: eleve.id, code: eleve.code, name: eleve.pseudo });
+    state.students.push({ id: eleve.id, code: eleve.code, name: eleve.pseudo, classe: eleve.classe });
     saveStudents();
   }
 
-  document.getElementById('badge-name').textContent = `${eleve.pseudo} (${eleve.code})`;
+  const classeLabels = { seconde: '2nde', premiere: '1ère', terminale: 'Terminale' };
+  document.getElementById('badge-name').textContent = `${eleve.pseudo} · ${classeLabels[eleve.classe] || eleve.classe}`;
+  updateXPBar();
   buildNav();
   closeStudentModal();
   if (state.currentChapter !== null) openChapter(state.currentChapter);
   else showHome();
 }
 
-function getStudentData(studentId) {
-  if (studentId !== state.activeStudentId) return {};
-  const d = state.activeStudentData;
-  const result = { grades: d.notes || [] };
-  Object.entries(d.scores || {}).forEach(([cid, score]) => {
-    result[`quiz_${cid}`] = score;
-  });
-  return result;
+
+
+// ═══════════════════════════════════════════════════
+// MOTEUR XP & NIVEAUX
+// ═══════════════════════════════════════════════════
+
+const XP_LEVELS = [
+  { level: 1,  name: 'Débutant',      emoji: '🌱', xpNeeded: 0   },
+  { level: 2,  name: 'Curieux',       emoji: '🔍', xpNeeded: 100 },
+  { level: 3,  name: 'Apprenti',      emoji: '📚', xpNeeded: 250 },
+  { level: 4,  name: 'Étudiant',      emoji: '✏️', xpNeeded: 450 },
+  { level: 5,  name: 'Compétent',     emoji: '⚗️', xpNeeded: 700 },
+  { level: 6,  name: 'Expérimenté',   emoji: '🔬', xpNeeded: 1000 },
+  { level: 7,  name: 'Expert',        emoji: '💡', xpNeeded: 1400 },
+  { level: 8,  name: 'Scientifique',  emoji: '🧪', xpNeeded: 1900 },
+  { level: 9,  name: 'Chercheur',     emoji: '🏅', xpNeeded: 2500 },
+  { level: 10, name: 'Maître',        emoji: '🏆', xpNeeded: 3200 },
+];
+
+const XP_REWARDS = {
+  quiz_perfect: 100,   // 10/10
+  quiz_great:   70,    // 8-9/10
+  quiz_good:    50,    // 6-7/10
+  quiz_ok:      30,    // 5/10
+  quiz_try:     15,    // < 5/10
+  flashcard_session: 20,
+  cours_read:   10,
+};
+
+function getXP() {
+  return parseInt(localStorage.getItem('physichim_xp') || '0');
 }
 
+function setXP(val) {
+  localStorage.setItem('physichim_xp', val);
+}
+
+function getCurrentLevel(xp) {
+  let lvl = XP_LEVELS[0];
+  for (const l of XP_LEVELS) {
+    if (xp >= l.xpNeeded) lvl = l;
+  }
+  return lvl;
+}
+
+function getNextLevel(xp) {
+  for (const l of XP_LEVELS) {
+    if (xp < l.xpNeeded) return l;
+  }
+  return null;
+}
+
+function addXP(amount, reason) {
+  const oldXP = getXP();
+  const oldLevel = getCurrentLevel(oldXP);
+  const newXP = oldXP + amount;
+  setXP(newXP);
+  const newLevel = getCurrentLevel(newXP);
+
+  updateXPBar();
+
+  // Toast
+  showXPToast(amount, reason);
+
+  // Level-up ?
+  if (newLevel.level > oldLevel.level) {
+    setTimeout(() => showLevelUp(newLevel), 1200);
+  }
+}
+
+function updateXPBar() {
+  const xp = getXP();
+  const current = getCurrentLevel(xp);
+  const next = getNextLevel(xp);
+  const wrapper = document.getElementById('xp-bar-wrapper');
+  if (!wrapper) return;
+
+  if (!state.activeStudentId) { wrapper.style.display = 'none'; return; }
+  wrapper.style.display = 'block';
+
+  const xpInLevel = xp - current.xpNeeded;
+  const xpNeededForNext = next ? next.xpNeeded - current.xpNeeded : 1;
+  const pct = next ? Math.min(100, (xpInLevel / xpNeededForNext) * 100) : 100;
+
+  document.getElementById('xp-level-label').textContent = `${current.emoji} Niv.${current.level} — ${current.name}`;
+  document.getElementById('xp-points-label').textContent = `${xp} XP`;
+  const fill = document.getElementById('xp-bar-fill');
+  fill.style.setProperty('--xp-pct', pct + '%');
+  fill.style.width = pct + '%';
+}
+
+function showXPToast(amount, label) {
+  const toast = document.getElementById('xp-toast');
+  document.getElementById('toast-xp-text').textContent = `+${amount} XP`;
+  document.getElementById('toast-xp-label').textContent = label;
+  toast.className = 'show';
+  clearTimeout(window._toastTimer);
+  window._toastTimer = setTimeout(() => {
+    toast.className = 'hide';
+    setTimeout(() => { toast.className = ''; }, 400);
+  }, 2500);
+}
+
+function showLevelUp(level) {
+  document.getElementById('lu-emoji').textContent = level.emoji;
+  document.getElementById('lu-title').textContent = `Niveau ${level.level} !`;
+  document.getElementById('lu-sub').textContent = `Tu es maintenant ${level.name} ! Continue comme ça !`;
+  document.getElementById('levelup-overlay').classList.add('open');
+}
 
 // ═══════════════════════════════════════════════════
-// VUE ENSEIGNANT — redirige vers admin.html
+// FLASHCARDS
 // ═══════════════════════════════════════════════════
+
+// Génère les flashcards d'un chapitre depuis le quiz et la fiche
+function buildFlashcards(ch) {
+  const cards = [];
+
+  // Depuis le quiz : question → bonne réponse
+  ch.quiz.forEach(q => {
+    cards.push({
+      question: q.q.replace(/\n/g, ' '),
+      answer: q.opts[q.ans],
+      hint: q.exp
+    });
+  });
+
+  // Depuis les définitions de la fiche
+  ch.fiche.sections.forEach(sec => {
+    sec.content.forEach(c => {
+      if (c.type === 'def') {
+        cards.push({
+          question: `Définition : ${c.term}`,
+          answer: c.text.replace(/<[^>]+>/g, ''),
+          hint: null
+        });
+      }
+      if (c.type === 'formula') {
+        cards.push({
+          question: `Formule : ${c.label}`,
+          answer: c.text.replace(/\n/g, ' — '),
+          hint: null,
+          isFormula: true
+        });
+      }
+    });
+  });
+
+  // Mélanger
+  return cards.sort(() => Math.random() - 0.5);
+}
+
+let fcState = {
+  cards: [],
+  index: 0,
+  flipped: false,
+  known: 0,
+  unknown: 0,
+  done: false
+};
+
+function renderFlashcards(ch) {
+  fcState = {
+    cards: buildFlashcards(ch),
+    index: 0, flipped: false, known: 0, unknown: 0, done: false
+  };
+  return renderFCView();
+}
+
+function renderFCView() {
+  if (fcState.done) return renderFCResults();
+
+  const total = fcState.cards.length;
+  const i = fcState.index;
+  const card = fcState.cards[i];
+  const pct = Math.round((i / total) * 100);
+  const ch = CHAPTERS.find(c => c.id === state.currentChapter);
+
+  return `
+    <div style="max-width:520px;margin:0 auto">
+      <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:1rem;font-weight:800;margin-bottom:16px">
+        🃏 Flashcards — ${ch.title}
+      </div>
+
+      <div class="fc-progress">
+        <div style="display:flex;justify-content:space-between;font-size:.75rem;color:var(--muted);margin-bottom:5px;font-weight:700">
+          <span>Carte ${i+1} / ${total}</span>
+          <span style="color:var(--green)">✓ ${fcState.known} su</span>
+          <span style="color:var(--red)">✗ ${fcState.unknown} à revoir</span>
+        </div>
+        <div class="fc-progress-bar">
+          <div class="fc-progress-fill" style="width:${pct}%"></div>
+        </div>
+      </div>
+
+      <div class="flashcard-scene">
+        <div class="flashcard ${fcState.flipped ? 'flipped' : ''}" onclick="flipCard()" id="fc-card">
+          <div class="flashcard-face">
+            ${!fcState.flipped ? `
+              <div class="fc-side-label question">❓ Question</div>
+              <div class="fc-content">${card.question}</div>
+              <div class="fc-tap-hint">Cliquer pour révéler →</div>
+            ` : `
+              <div class="fc-side-label answer">✓ Réponse</div>
+              ${card.isFormula
+                ? `<div class="fc-content">${card.answer.split('—')[0]}</div><div class="fc-formula">${card.answer}</div>`
+                : `<div class="fc-content">${card.answer}</div>`}
+              ${card.hint ? `<div style="font-size:.78rem;color:var(--muted);margin-top:12px;font-style:italic;max-width:400px">${card.hint.replace(/<[^>]+>/g,'')}</div>` : ''}
+            `}
+          </div>
+        </div>
+      </div>
+
+      ${fcState.flipped ? `
+        <div class="fc-verdict-row">
+          <button class="fc-verdict unknown" onclick="fcVerdict(false)">✗ À revoir</button>
+          <button class="fc-verdict known" onclick="fcVerdict(true)">✓ Je savais !</button>
+        </div>
+      ` : `
+        <div class="fc-verdict-row">
+          <button class="fc-btn" onclick="fcSkip()">Passer →</button>
+        </div>
+      `}
+    </div>
+  `;
+}
+
+function flipCard() {
+  fcState.flipped = !fcState.flipped;
+  refreshContent();
+}
+
+function fcVerdict(known) {
+  if (known) fcState.known++;
+  else fcState.unknown++;
+
+  fcState.index++;
+  fcState.flipped = false;
+
+  if (fcState.index >= fcState.cards.length) {
+    fcState.done = true;
+    addXP(XP_REWARDS.flashcard_session, 'Session flashcards !');
+  }
+  refreshContent();
+}
+
+function fcSkip() {
+  fcState.index++;
+  fcState.flipped = false;
+  if (fcState.index >= fcState.cards.length) { fcState.done = true; }
+  refreshContent();
+}
+
+function renderFCResults() {
+  const total = fcState.known + fcState.unknown;
+  const pct = total ? Math.round((fcState.known / total) * 100) : 0;
+  const cls = pct >= 70 ? 'great' : pct >= 50 ? 'ok' : 'bad';
+  const msg = pct >= 70 ? '🎉 Excellent !' : pct >= 50 ? '👍 Pas mal !' : '📚 Continue à réviser !';
+
+  return `
+    <div class="fc-results">
+      <div class="fc-donut ${cls}">${pct}%</div>
+      <div style="font-family:'Cabinet Grotesk',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:8px">${msg}</div>
+      <p style="color:var(--muted);margin-bottom:6px;font-weight:600">${fcState.known} cartes maîtrisées sur ${fcState.known + fcState.unknown}</p>
+      <p style="color:var(--green);font-size:.82rem;margin-bottom:24px;font-weight:700">+${XP_REWARDS.flashcard_session} XP gagnés !</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn-secondary" onclick="restartFlashcards()">🔄 Recommencer</button>
+        <button class="btn-primary" onclick="switchTab('quiz')">🧠 Faire le quiz</button>
+      </div>
+    </div>`;
+}
+
+function restartFlashcards() {
+  const ch = CHAPTERS.find(c => c.id === state.currentChapter);
+  fcState = { cards: buildFlashcards(ch), index: 0, flipped: false, known: 0, unknown: 0, done: false };
+  refreshContent();
+}
+
+// ═══════════════════════════════════════════════════
+// MISE À JOUR switchTab & refreshContent & openChapter
+// ═══════════════════════════════════════════════════
+
+function switchTab(tab) {
+  state.currentTab = tab;
+  if (state.currentChapter === null) return;
+  if (tab !== 'quiz') state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
+  ['cours','flashcards','quiz','annales'].forEach(t => {
+    const el = document.getElementById(`tab-${t}`);
+    if (el) el.classList.toggle('active', t === tab);
+  });
+  // XP pour lecture du cours
+  if (tab === 'cours') addXP(XP_REWARDS.cours_read, 'Cours consulté');
+  refreshContent();
+}
+
+function refreshContent() {
+  const ch = CHAPTERS.find(c => c.id == state.currentChapter)
+    || CHAPTERS_SECONDE.find(c => c.id == state.currentChapter)
+    || CHAPTERS_PREMIERE.find(c => c.id == state.currentChapter);
+  if (!ch) return;
+  let html = '';
+  if (state.currentTab === 'cours') html = renderFiche(ch);
+  else if (state.currentTab === 'flashcards') {
+    if (!fcState.cards.length || fcState._chapterId !== state.currentChapter) {
+      fcState = { cards: buildFlashcards(ch), index: 0, flipped: false, known: 0, unknown: 0, done: false, _chapterId: state.currentChapter };
+    }
+    html = renderFCView();
+  }
+  else if (state.currentTab === 'quiz') html = renderQuiz(ch);
+  else if (state.currentTab === 'annales') html = renderAnnales(ch);
+  document.getElementById('content').innerHTML = html;
+  if (state.currentTab !== 'quiz' && state.currentTab !== 'flashcards') {
+    document.getElementById('content').scrollTop = 0;
+  }
+}
+
+function openChapter(id) {
+  // Convertir en nombre si c'est un ID numérique
+  const numId = isNaN(id) ? id : Number(id);
+  state.currentChapter = numId;
+  state.currentTab = 'cours';
+  state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
+
+  // Chercher dans tous les tableaux de chapitres
+  const ch = CHAPTERS.find(c => c.id == numId)
+    || CHAPTERS_SECONDE.find(c => c.id === id)
+    || CHAPTERS_PREMIERE.find(c => c.id === id);
+
+  if (!ch || ch.comingSoon) return;
+
+  document.getElementById('page-title').textContent = `${ch.num}. ${ch.title}`;
+  document.getElementById('tab-bar').style.display = 'flex';
+  ['cours','flashcards','quiz','annales'].forEach(t => {
+    const el = document.getElementById(`tab-${t}`);
+    if (el) el.classList.toggle('active', t === 'cours');
+  });
+  setNavActive(`nav-ch-${ch.id}`);
+  document.getElementById('content').innerHTML = renderFiche(ch);
+  if (window.innerWidth <= 768) {
+    state.sidebarOpen = false;
+    document.getElementById('sidebar').classList.add('collapsed');
+  }
+  document.getElementById('content').scrollTop = 0;
+}
+
+// ═══════════════════════════════════════════════════
+// XP dans finishQuiz — remplace la fonction existante
+// ═══════════════════════════════════════════════════
+
+
 
 function showTeacher() {
   state.currentChapter = null;
@@ -3033,20 +4347,24 @@ loadState();
   if (savedCode && SERVER_URL) {
     const result = await apiLogin(savedCode);
     if (!result.error) {
-      const { eleve, scores, notes } = result;
-      state.activeStudentId = eleve.id;
+      const { eleve, scores, notes, annees_accessibles } = result;
+      state.activeStudentId     = eleve.id;
+      state.activeStudentClasse = eleve.classe || 'terminale';
+      state.anneesAccessibles   = annees_accessibles || ['terminale'];
       state._savedCode = savedCode;
       state.activeStudentData = {
         scores: scores.reduce((acc, s) => { acc[s.chapitre_id] = s.score; return acc; }, {}),
-        notes: notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
+        notes:  notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
         progression: result.progression || []
       };
       const existing = state.students.find(s => s.id === eleve.id);
-      if (!existing) state.students.push({ id: eleve.id, code: eleve.code, name: eleve.pseudo });
-      document.getElementById('badge-name').textContent = `${eleve.pseudo} (${eleve.code})`;
+      if (!existing) state.students.push({ id: eleve.id, code: eleve.code, name: eleve.pseudo, classe: eleve.classe });
+      const classeLabels = { seconde: '2nde', premiere: '1ère', terminale: 'Terminale' };
+      document.getElementById('badge-name').textContent = `${eleve.pseudo} · ${classeLabels[eleve.classe] || eleve.classe}`;
     }
   }
   buildNav();
+  updateXPBar();
   showHome();
 })();
 
