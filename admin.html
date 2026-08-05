@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhysiChim — Administration</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+  :root {
+    --bg:#0d0f14;--surface:#161922;--surface2:#1e2330;--border:#2a3040;
+    --accent:#4f8ef7;--accent2:#f7a24f;--green:#4fca7a;--red:#f75959;
+    --yellow:#f7d44f;--text:#e8ecf4;--muted:#7a8399;--radius:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:24px}
+  .logo{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .subtitle{font-size:.8rem;color:var(--muted);margin-top:2px}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px}
+  .header-left{}
+  .header-right{display:flex;gap:8px;align-items:center}
+
+  .login-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;max-width:420px;margin:80px auto}
+  .login-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:6px}
+  .login-sub{color:var(--muted);font-size:.85rem;margin-bottom:20px}
+  .form-group{display:flex;flex-direction:column;gap:4px;margin-bottom:14px}
+  .form-label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .form-input,.form-select{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .15s}
+  .form-input:focus,.form-select:focus{border-color:var(--accent)}
+  .form-select option{background:var(--surface2)}
+
+  .btn{padding:10px 20px;border-radius:8px;border:none;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .15s}
+  .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#3a7de8;transform:translateY(-1px)}
+  .btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-danger{background:rgba(247,89,89,.1);color:var(--red);border:1px solid rgba(247,89,89,.3)}.btn-danger:hover{background:rgba(247,89,89,.2)}
+  .btn-sm{padding:6px 12px;font-size:.78rem}
+
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+  .card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-bottom:20px}
+  .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px}
+  .stat-val{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800}
+  .stat-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+  .table-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.82rem}
+  th{background:var(--surface2);padding:8px 10px;text-align:left;font-size:.72rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+  td{padding:8px 10px;border-top:1px solid var(--border);vertical-align:middle}
+  tr:hover td{background:rgba(255,255,255,.02)}
+
+  .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.72rem;font-weight:600;font-family:'DM Mono',monospace}
+  .badge-green{background:rgba(79,202,122,.15);color:var(--green)}
+  .badge-yellow{background:rgba(247,212,79,.15);color:var(--yellow)}
+  .badge-red{background:rgba(247,89,89,.15);color:var(--red)}
+  .badge-gray{background:rgba(122,131,153,.15);color:var(--muted)}
+
+  .score-bar{display:flex;align-items:center;gap:6px}
+  .score-bar-bg{flex:1;height:4px;background:var(--border);border-radius:2px;min-width:60px}
+  .score-bar-fill{height:100%;border-radius:2px;transition:width .4s}
+  .score-val{font-family:'DM Mono',monospace;font-size:.75rem;min-width:30px;text-align:right}
+
+  .tabs{display:flex;gap:4px;background:var(--surface);border-radius:8px;padding:4px;margin-bottom:20px;width:fit-content}
+  .tab{padding:7px 16px;border-radius:6px;border:none;background:transparent;color:var(--muted);font-size:.82rem;font-family:'DM Sans',sans-serif;cursor:pointer;transition:all .15s;font-weight:500}
+  .tab.active{background:var(--surface2);color:var(--text)}
+
+  .add-eleve-row{display:flex;gap:8px;align-items:flex-end;margin-bottom:12px;flex-wrap:wrap}
+  .add-eleve-row .form-group{margin-bottom:0;min-width:120px}
+
+  .alert{padding:10px 14px;border-radius:8px;font-size:.84rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+  .alert-err{background:rgba(247,89,89,.1);border:1px solid rgba(247,89,89,.3);color:var(--red)}
+  .alert-ok{background:rgba(79,202,122,.1);border:1px solid rgba(79,202,122,.3);color:var(--green)}
+
+  .eleve-detail{display:none}
+  .eleve-detail.open{display:block}
+  .back-btn{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.85rem;cursor:pointer;margin-bottom:16px;border:none;background:none;font-family:'DM Sans',sans-serif}
+  .back-btn:hover{color:var(--accent)}
+
+  .progression-item{display:flex;gap:10px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--border);font-size:.82rem}
+  .prog-date{color:var(--muted);font-family:'DM Mono',monospace;font-size:.72rem;white-space:nowrap;margin-top:1px}
+
+  .home-grid-admin{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:4px}
+  .class-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:all .15s}
+  .class-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.25)}
+  .class-card-title{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;margin-bottom:10px}
+  .class-card-meta{display:flex;gap:8px;flex-wrap:wrap}
+
+  .chapter-check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
+  .chapter-check-item{display:flex;align-items:center;gap:8px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:.82rem;cursor:pointer;transition:border-color .15s}
+  .chapter-check-item:hover{border-color:var(--accent)}
+  .chapter-check-item input{accent-color:var(--accent);width:16px;height:16px;cursor:pointer;flex-shrink:0}
+
+  .link-muted{color:var(--muted);text-decoration:underline;cursor:pointer}
+  .link-muted:hover{color:var(--accent)}
+
+  ::-webkit-scrollbar{width:4px;height:4px}
+  ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+  @media(max-width:600px){
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .add-eleve-row{flex-direction:column}
+    .add-eleve-row .form-group{width:100%}
+  }
+</style>
+</head>
+<body>
+
+<div id="login-screen">
+  <div class="login-box" id="teacher-login-box">
+    <div class="logo">⚛ PhysiChim</div>
+    <div class="subtitle">Espace enseignant</div>
+    <br>
+    <div class="login-title">Connexion</div>
+    <div class="login-sub">Entrez votre identifiant et votre code.</div>
+    <div id="login-alert"></div>
+    <div class="form-group">
+      <label class="form-label">Identifiant</label>
+      <input class="form-input" id="teacher-identifiant" placeholder="ex : mjullien" autocomplete="username">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Code</label>
+      <input class="form-input" type="password" id="teacher-code" placeholder="Votre code" autocomplete="current-password">
+    </div>
+    <button class="btn btn-primary" onclick="doTeacherLogin()" style="width:100%">Se connecter</button>
+    <p style="font-size:.75rem;margin-top:14px;text-align:center">
+      <span class="link-muted" onclick="showSuperadminBox()">Vous êtes responsable de l'établissement ?</span>
+    </p>
+  </div>
+
+  <div class="login-box" id="superadmin-login-box" style="display:none">
+    <div class="logo">⚛ PhysiChim</div>
+    <div class="subtitle">Gestion des comptes enseignants</div>
+    <br>
+    <div class="login-title">Clé maître</div>
+    <div class="login-sub">Entrez la clé maître (ADMIN_KEY) pour créer ou supprimer les comptes enseignants (5 maximum).</div>
+    <div id="superadmin-alert"></div>
+    <div class="form-group">
+      <label class="form-label">Clé maître</label>
+      <input class="form-input" type="password" id="superadmin-key" placeholder="physichim-admin-2024">
+    </div>
+    <button class="btn btn-primary" onclick="doSuperadminLogin()" style="width:100%">Accéder</button>
+    <p style="font-size:.75rem;margin-top:14px;text-align:center">
+      <span class="link-muted" onclick="showTeacherBox()">← Retour à la connexion enseignant</span>
+    </p>
+  </div>
+</div>
+
+<div id="superadmin-screen" style="display:none">
+  <header>
+    <div class="header-left">
+      <div class="logo">⚛ PhysiChim</div>
+      <div class="subtitle">Comptes enseignants</div>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-secondary btn-sm" onclick="doSuperadminLogout()">Déconnexion</button>
+    </div>
+  </header>
+
+  <div class="card">
+    <div class="card-title">➕ Créer un compte enseignant (<span id="teacher-count">0</span>/5)</div>
+    <div class="add-eleve-row">
+      <div class="form-group">
+        <label class="form-label">Identifiant</label>
+        <input class="form-input" id="new-teacher-id" placeholder="mjullien">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Code</label>
+        <input class="form-input" id="new-teacher-code" placeholder="code secret">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Nom affiché</label>
+        <input class="form-input" id="new-teacher-nom" placeholder="M. Jullien">
+      </div>
+      <button class="btn btn-primary" onclick="addTeacher()">Créer</button>
+    </div>
+    <div id="teacher-add-alert"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">👥 Comptes enseignants</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Identifiant</th><th>Nom</th><th>Classes</th><th>Élèves</th><th>Dernière connexion</th><th>Actions</th></tr></thead>
+        <tbody id="teachers-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="main-screen" style="display:none">
+  <header>
+    <div class="header-left">
+      <div class="logo">⚛ PhysiChim</div>
+      <div class="subtitle" id="teacher-label">Administration</div>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-secondary btn-sm" onclick="exportCSV()">📥 Export CSV</button>
+      <button class="btn btn-secondary btn-sm" onclick="doLogout()">Déconnexion</button>
+    </div>
+  </header>
+
+  <!-- Vue liste -->
+  <div id="view-list">
+    <div class="stats-grid" id="stats-grid"></div>
+
+    <div class="tabs">
+      <button class="tab active" id="tab-classes" onclick="switchTab('classes')">🏷️ Classes</button>
+      <button class="tab" id="tab-eleves" onclick="switchTab('eleves')">👤 Élèves</button>
+      <button class="tab" id="tab-scores" onclick="switchTab('scores')">📊 Scores quiz</button>
+      <button class="tab" id="tab-notes" onclick="switchTab('notes')">📝 Notes</button>
+    </div>
+
+    <!-- Onglet Classes -->
+    <div id="pane-classes">
+      <div class="card">
+        <div class="card-title">➕ Créer une classe</div>
+        <div class="add-eleve-row">
+          <div class="form-group">
+            <label class="form-label">Nom de la classe</label>
+            <input class="form-input" id="new-classe-nom" placeholder="ex : Terminale 1">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Niveau</label>
+            <select class="form-select" id="new-classe-niveau">
+              <option value="2nde">Seconde</option>
+              <option value="1ere">Première</option>
+              <option value="tle">Terminale</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" onclick="addClasse()">Créer</button>
+        </div>
+        <div id="add-classe-alert"></div>
+      </div>
+      <div class="home-grid-admin" id="classes-grid"></div>
+    </div>
+
+    <!-- Onglet Élèves -->
+    <div id="pane-eleves" style="display:none">
+      <div class="card">
+        <div class="card-title">👥 Tous les élèves</div>
+        <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Pour ajouter un élève, ouvrez sa classe depuis l'onglet Classes.</p>
+        <div class="tabs" style="margin-bottom:14px">
+          <button class="tab active" id="eleves-niveau-all" onclick="setElevesNiveau('all')">Tous</button>
+          <button class="tab" id="eleves-niveau-2nde" onclick="setElevesNiveau('2nde')">Seconde</button>
+          <button class="tab" id="eleves-niveau-1ere" onclick="setElevesNiveau('1ere')">Première</button>
+          <button class="tab" id="eleves-niveau-tle" onclick="setElevesNiveau('tle')">Terminale</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Code</th><th>Pseudo</th><th>Classe</th><th>Dernière connexion</th>
+              <th>Quiz faits</th><th>Moy. quiz</th><th>Moy. notes</th><th>Actions</th>
+            </tr></thead>
+            <tbody id="eleves-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Onglet Scores -->
+    <div id="pane-scores" style="display:none">
+      <div class="card">
+        <div class="card-title">📊 Résultats quiz par chapitre</div>
+        <div class="tabs" style="margin-bottom:14px">
+          <button class="tab" id="scores-niveau-2nde" onclick="setScoresNiveau('2nde')">Seconde</button>
+          <button class="tab" id="scores-niveau-1ere" onclick="setScoresNiveau('1ere')">Première</button>
+          <button class="tab active" id="scores-niveau-tle" onclick="setScoresNiveau('tle')">Terminale</button>
+        </div>
+        <div class="table-wrap">
+          <table id="scores-table">
+            <thead><tr id="scores-head"></tr></thead>
+            <tbody id="scores-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Onglet Notes -->
+    <div id="pane-notes" style="display:none">
+      <div class="card">
+        <div class="card-title">📝 Toutes les notes de devoirs</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr>
+              <th>Code</th><th>Pseudo</th><th>Type</th><th>Intitulé</th><th>Note</th><th>Date</th>
+            </tr></thead>
+            <tbody id="notes-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vue détail classe -->
+  <div id="view-classe-detail" style="display:none">
+    <button class="back-btn" onclick="showList()">← Retour aux classes</button>
+    <div id="classe-detail-content"></div>
+  </div>
+
+  <!-- Vue détail élève -->
+  <div id="view-detail" style="display:none">
+    <button class="back-btn" onclick="backFromDetail()">← Retour</button>
+    <div id="detail-content"></div>
+  </div>
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────────────
+const SERVER = window.location.origin;
+let TOKEN = '';
+let SUPERKEY = '';
+let CURRENT_ADMIN = null;
+let DATA = [];
+let CLASSES = [];
+let currentClasseId = null;
+let detailReturnTo = 'list';
+// Métadonnées de tous les chapitres (Terminale ids 0-20, Seconde ids 21-44)
+const CH_META = [
+  { id: 0, name: 'Ch.00 Outils maths', niveau: 'tle' },
+  { id: 1, name: 'Ch.01 Acide-base', niveau: 'tle' },
+  { id: 2, name: 'Ch.02 Évolution spontanée', niveau: 'tle' },
+  { id: 3, name: 'Ch.03 Force acides/bases', niveau: 'tle' },
+  { id: 4, name: 'Ch.04 Interférences', niveau: 'tle' },
+  { id: 5, name: 'Ch.05 Lunette', niveau: 'tle' },
+  { id: 6, name: 'Ch.06 Méthodes physiques', niveau: 'tle' },
+  { id: 7, name: 'Ch.07 Titrage', niveau: 'tle' },
+  { id: 8, name: 'Ch.08 Description mvt', niveau: 'tle' },
+  { id: 9, name: 'Ch.09 Champ uniforme', niveau: 'tle' },
+  { id: 10, name: 'Ch.10 Gravitation', niveau: 'tle' },
+  { id: 11, name: 'Ch.11 Vitesse volumique', niveau: 'tle' },
+  { id: 12, name: 'Ch.12 Thermodynamique', niveau: 'tle' },
+  { id: 13, name: 'Ch.12bis Bilans thermiques', niveau: 'tle' },
+  { id: 14, name: 'Ch.13 Condensateurs', niveau: 'tle' },
+  { id: 15, name: 'Ch.14 Synthèse organique', niveau: 'tle' },
+  { id: 16, name: 'Ch.15 Doppler', niveau: 'tle' },
+  { id: 17, name: 'Ch.16 Nucléaire', niveau: 'tle' },
+  { id: 18, name: 'Ch.17 Forcer réaction', niveau: 'tle' },
+  { id: 19, name: 'Ch.18 Fluides', niveau: 'tle' },
+  { id: 20, name: 'Ch.19 Photoélectrique', niveau: 'tle' },
+  { id: 21, name: 'Ch.01 Identification physique', niveau: '2nde' },
+  { id: 22, name: 'Ch.02 Identification chimique', niveau: '2nde' },
+  { id: 23, name: 'Ch.02bis Signal sonore', niveau: '2nde' },
+  { id: 24, name: 'Ch.04 Solutions aqueuses', niveau: '2nde' },
+  { id: 25, name: "Ch.05a Structure de l'atome", niveau: '2nde' },
+  { id: 26, name: 'Ch.05b Dosage étalonnage', niveau: '2nde' },
+  { id: 27, name: "Ch.05c Perception d'un son", niveau: '2nde' },
+  { id: 28, name: 'Ch.06 Les ions', niveau: '2nde' },
+  { id: 29, name: 'Ch.07 Classification périodique', niveau: '2nde' },
+  { id: 30, name: 'Ch.08 Les molécules', niveau: '2nde' },
+  { id: 31, name: 'Ch.09 Transfo. physiques', niveau: '2nde' },
+  { id: 32, name: 'Ch.10 Transfo. nucléaires', niveau: '2nde' },
+  { id: 33, name: 'Ch.11 Transfo. chimiques', niveau: '2nde' },
+  { id: 34, name: 'Ch.12 Quantité de matière', niveau: '2nde' },
+  { id: 35, name: "Ch.13 Description d'un mvt", niveau: '2nde' },
+  { id: 36, name: 'Ch.14 Vecteur vitesse', niveau: '2nde' },
+  { id: 37, name: 'Ch.15 Les forces', niveau: '2nde' },
+  { id: 38, name: "Ch.16 Principe d'inertie", niveau: '2nde' },
+  { id: 39, name: "Ch.17 Synthèse d'espèces", niveau: '2nde' },
+  { id: 40, name: 'Ch.18 Analyse spectrale', niveau: '2nde' },
+  { id: 41, name: 'Ch.19 Propagation lumière', niveau: '2nde' },
+  { id: 42, name: "Ch.20 L'œil", niveau: '2nde' },
+  { id: 43, name: 'Ch.21 Circuit électrique', niveau: '2nde' },
+  { id: 44, name: 'Ch.22 Les capteurs', niveau: '2nde' },
+  { id: 45, name: "Ch.1 Composition chimique d'un système", niveau: '1ere' },
+  { id: 46, name: 'Ch.2 Composition chimique des solutions', niveau: '1ere' },
+  { id: 47, name: "Ch.3 Évolution d'un système chimique", niveau: '1ere' },
+  { id: 48, name: "Ch.4 Réactions d'oxydoréduction", niveau: '1ere' },
+  { id: 49, name: 'Ch.5 Quantité de matière par titrage', niveau: '1ere' },
+  { id: 50, name: "Ch.6 Structure à la polarité d'une entité", niveau: '1ere' },
+  { id: 51, name: "Ch.7 Propriétés d'une espèce chimique", niveau: '1ere' },
+  { id: 52, name: 'Ch.8 Structure des entités organiques', niveau: '1ere' },
+  { id: 53, name: "Ch.9 Synthèse d'espèces organiques", niveau: '1ere' },
+  { id: 54, name: "Ch.10 Conversions d'énergie (combustion)", niveau: '1ere' },
+  { id: 55, name: "Ch.11 Modélisation d'interactions fondamentales", niveau: '1ere' },
+  { id: 56, name: "Ch.12 Description d'un fluide au repos", niveau: '1ere' },
+  { id: 57, name: "Ch.13 Mouvement d'un système", niveau: '1ere' },
+  { id: 58, name: 'Ch.14 Études énergétiques en électricité', niveau: '1ere' },
+  { id: 59, name: 'Ch.15 Études énergétiques en mécanique', niveau: '1ere' },
+  { id: 60, name: 'Ch.16 Ondes mécaniques', niveau: '1ere' },
+  { id: 61, name: 'Ch.17 Images et couleurs', niveau: '1ere' },
+  { id: 62, name: 'Ch.18 Modèles ondulatoire et particulaire de la lumière', niveau: '1ere' },
+];
+
+// Ordre du plus ancien au plus récent : un niveau donné a accès à son année + les précédentes.
+const NIVEAU_ORDER = ['2nde', '1ere', 'tle'];
+const NIVEAU_LABELS = { '2nde': 'Seconde', '1ere': 'Première', tle: 'Terminale' };
+
+function chaptersForNiveau(niveau) {
+  return CH_META.filter(c => c.niveau === niveau);
+}
+function niveauxAccessibles(niveau) {
+  const idx = NIVEAU_ORDER.indexOf(niveau);
+  return idx === -1 ? [niveau] : NIVEAU_ORDER.slice(0, idx + 1);
+}
+function chaptersAccessibles(niveau) {
+  return niveauxAccessibles(niveau).flatMap(chaptersForNiveau);
+}
+function niveauLabel(niveau) {
+  return NIVEAU_LABELS[niveau] || 'Terminale';
+}
+
+// Échappe tout contenu saisi par un utilisateur (élève, prof) avant de l'insérer en innerHTML,
+// pour empêcher l'injection de balises/scripts (XSS stockée).
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+// Petit graphique d'évolution (une tentative = un point) pour l'historique des quiz.
+function sparklineSVG(attempts) {
+  const n = attempts.length;
+  const w = 100, h = 28, pad = 3;
+  const pts = attempts.map((a, i) => {
+    const x = n === 1 ? w / 2 : pad + (i / (n - 1)) * (w - 2 * pad);
+    const pct = a.score / (a.total || 10);
+    const y = h - pad - pct * (h - 2 * pad);
+    return { x, y, a };
+  });
+  const last = attempts[n - 1];
+  const lastPct = last.score / (last.total || 10);
+  const color = lastPct >= 0.7 ? 'var(--green)' : lastPct >= 0.5 ? 'var(--yellow)' : 'var(--red)';
+  const line = n > 1
+    ? `<polyline points="${pts.map(p => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ')}" style="fill:none;stroke:${color};stroke-width:1.5"/>`
+    : '';
+  const dots = pts.map(p => {
+    const label = `${p.a.score}/${p.a.total || 10} — ${new Date(p.a.date).toLocaleDateString('fr-FR')}`;
+    return `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2" style="fill:${color}"><title>${escapeHtml(label)}</title></circle>`;
+  }).join('');
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:90px;height:26px;overflow:visible;display:block">${line}${dots}</svg>`;
+}
+
+function headers() {
+  return { 'Content-Type':'application/json', 'Authorization':'Bearer '+TOKEN };
+}
+function superHeaders() {
+  return { 'Content-Type':'application/json', 'Authorization':'Bearer '+SUPERKEY };
+}
+
+// ── Connexion enseignant ─────────────────────────────────
+async function doTeacherLogin() {
+  const identifiant = document.getElementById('teacher-identifiant').value.trim();
+  const code = document.getElementById('teacher-code').value.trim();
+  if (!identifiant || !code) { showAlert('login-alert','Veuillez remplir tous les champs.','err'); return; }
+  try {
+    const r = await fetch(SERVER+'/api/admin/login', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({identifiant, code})
+    });
+    const d = await r.json();
+    if (!r.ok) { showAlert('login-alert', d.error || 'Erreur','err'); return; }
+    TOKEN = d.token;
+    CURRENT_ADMIN = d.admin;
+    localStorage.setItem('physichim_token', TOKEN);
+    localStorage.setItem('physichim_admin', JSON.stringify(CURRENT_ADMIN));
+    await enterMain();
+  } catch(e) {
+    showAlert('login-alert','Impossible de contacter le serveur : '+e.message,'err');
+  }
+}
+
+async function enterMain() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('superadmin-screen').style.display = 'none';
+  document.getElementById('main-screen').style.display = 'block';
+  document.getElementById('teacher-label').textContent = `${CURRENT_ADMIN.nom} (${CURRENT_ADMIN.identifiant})`;
+  await refreshClasses();
+  await refreshData();
+}
+
+function doLogout() {
+  localStorage.removeItem('physichim_token');
+  localStorage.removeItem('physichim_admin');
+  TOKEN = ''; CURRENT_ADMIN = null;
+  document.getElementById('main-screen').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'block';
+  showTeacherBox();
+}
+
+// ── Connexion super-admin (clé maître) ───────────────────
+function showSuperadminBox() {
+  document.getElementById('teacher-login-box').style.display = 'none';
+  document.getElementById('superadmin-login-box').style.display = 'block';
+}
+function showTeacherBox() {
+  document.getElementById('superadmin-login-box').style.display = 'none';
+  document.getElementById('teacher-login-box').style.display = 'block';
+}
+
+async function doSuperadminLogin() {
+  SUPERKEY = document.getElementById('superadmin-key').value.trim();
+  if (!SUPERKEY) return;
+  try {
+    const r = await fetch(SERVER+'/api/admin/teachers', { headers: superHeaders() });
+    if (r.status === 401) { showAlert('superadmin-alert','Clé maître incorrecte.','err'); return; }
+    if (!r.ok) throw new Error('Erreur '+r.status);
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('superadmin-screen').style.display = 'block';
+    await refreshTeachers();
+  } catch(e) {
+    showAlert('superadmin-alert','Impossible de contacter le serveur : '+e.message,'err');
+  }
+}
+
+function doSuperadminLogout() {
+  SUPERKEY = '';
+  document.getElementById('superadmin-screen').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'block';
+  showTeacherBox();
+}
+
+let TEACHERS = [];
+async function refreshTeachers() {
+  const r = await fetch(SERVER+'/api/admin/teachers', { headers: superHeaders() });
+  TEACHERS = await r.json();
+  document.getElementById('teacher-count').textContent = TEACHERS.length;
+  document.getElementById('teachers-tbody').innerHTML = TEACHERS.length ? TEACHERS.map(t => `
+    <tr>
+      <td><strong style="font-family:DM Mono,monospace">${escapeHtml(t.identifiant)}</strong></td>
+      <td>${escapeHtml(t.nom)}</td>
+      <td><span class="badge badge-gray">${t.nbClasses}</span></td>
+      <td><span class="badge badge-gray">${t.nbEleves}</span></td>
+      <td style="color:var(--muted);font-size:.78rem">${t.last_seen ? new Date(t.last_seen).toLocaleDateString('fr-FR') : 'Jamais'}</td>
+      <td><button class="btn btn-danger btn-sm" onclick="deleteTeacher('${t.id}')">✕ Supprimer</button></td>
+    </tr>`).join('') : '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">Aucun compte</td></tr>';
+}
+
+async function addTeacher() {
+  const identifiant = document.getElementById('new-teacher-id').value.trim();
+  const code = document.getElementById('new-teacher-code').value.trim();
+  const nom = document.getElementById('new-teacher-nom').value.trim() || identifiant;
+  if (!identifiant || !code) { showAlert('teacher-add-alert','Identifiant et code requis.','err'); return; }
+  const r = await fetch(SERVER+'/api/admin/teachers', { method:'POST', headers:superHeaders(), body:JSON.stringify({identifiant,code,nom}) });
+  const d = await r.json();
+  if (!r.ok) { showAlert('teacher-add-alert', d.error || 'Erreur','err'); return; }
+  showAlert('teacher-add-alert', `Compte ${identifiant} créé.`, 'ok');
+  document.getElementById('new-teacher-id').value = '';
+  document.getElementById('new-teacher-code').value = '';
+  document.getElementById('new-teacher-nom').value = '';
+  await refreshTeachers();
+}
+
+async function deleteTeacher(id) {
+  const t = TEACHERS.find(x => x.id === id);
+  const identifiant = t ? t.identifiant : id;
+  if (!confirm(`Supprimer le compte enseignant ${identifiant} ?\nSes classes seront supprimées. Les élèves seront conservés mais ne seront plus rattachés à aucune classe.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/teachers/${id}`, { method:'DELETE', headers:superHeaders() });
+  if (r.ok) await refreshTeachers();
+}
+
+// ── Rafraîchir données ────────────────────────────────────
+async function refreshData() {
+  const r = await fetch(SERVER+'/api/admin/eleves', { headers: headers() });
+  DATA = await r.json();
+  renderAll();
+}
+
+async function refreshClasses() {
+  const r = await fetch(SERVER+'/api/admin/classes', { headers: headers() });
+  CLASSES = await r.json();
+  renderClasses();
+}
+
+function renderAll() {
+  renderStats();
+  renderEleves();
+  renderScores();
+  renderNotes();
+}
+
+// ── Stats globales ───────────────────────────────────────
+function renderStats() {
+  const allScores = DATA.flatMap(e => e.scores || []);
+  const allNotes = DATA.flatMap(e => e.notes || []);
+  const avgQuiz = allScores.length ? (allScores.reduce((a,b)=>a+b.score,0)/allScores.length).toFixed(1) : '—';
+  const avgNote = allNotes.length ? (allNotes.reduce((a,b)=>a+b.valeur,0)/allNotes.length).toFixed(1) : '—';
+  const quizFaits = [...new Set(DATA.flatMap(e=>(e.scores||[]).map(s=>e.id+'_'+s.chapitre_id)))].length;
+
+  document.getElementById('stats-grid').innerHTML = `
+    <div class="stat-card"><div class="stat-val">${CLASSES.length}</div><div class="stat-lbl">Classes</div></div>
+    <div class="stat-card"><div class="stat-val">${DATA.length}</div><div class="stat-lbl">Élèves</div></div>
+    <div class="stat-card"><div class="stat-val">${quizFaits}</div><div class="stat-lbl">Quiz complétés</div></div>
+    <div class="stat-card"><div class="stat-val">${avgQuiz !== '—' ? avgQuiz+'/10' : '—'}</div><div class="stat-lbl">Moy. quiz</div></div>
+  `;
+}
+
+// ── Badges communs élève ─────────────────────────────────
+function eleveBadges(e) {
+  const scores = e.scores || [];
+  const notes = e.notes || [];
+  const avgQuiz = scores.length ? (scores.reduce((a,b)=>a+b.score,0)/scores.length).toFixed(1) : null;
+  const avgNote = notes.length ? (notes.reduce((a,b)=>a+b.valeur,0)/notes.length).toFixed(1) : null;
+  const lastSeen = e.last_seen ? new Date(e.last_seen).toLocaleDateString('fr-FR') : 'Jamais';
+  const qBadge = avgQuiz ? `<span class="badge ${parseFloat(avgQuiz)>=7?'badge-green':parseFloat(avgQuiz)>=5?'badge-yellow':'badge-red'}">${avgQuiz}/10</span>` : '<span class="badge badge-gray">—</span>';
+  const nBadge = avgNote ? `<span class="badge ${parseFloat(avgNote)>=10?'badge-green':'badge-red'}">${avgNote}/20</span>` : '<span class="badge badge-gray">—</span>';
+  return { scores, notes, avgQuiz, avgNote, lastSeen, qBadge, nBadge };
+}
+
+// ── Liste élèves (tous, onglet Élèves) ───────────────────
+let elevesNiveau = 'all';
+function setElevesNiveau(niveau) {
+  elevesNiveau = niveau;
+  ['all', ...NIVEAU_ORDER].forEach(n => {
+    document.getElementById('eleves-niveau-' + n).classList.toggle('active', n === niveau);
+  });
+  renderEleves();
+}
+
+function renderEleves() {
+  const tbody = document.getElementById('eleves-tbody');
+  const filtered = elevesNiveau === 'all'
+    ? DATA
+    : DATA.filter(e => (e.classe_niveau || 'tle') === elevesNiveau && e.classe_id);
+  if (!filtered.length) {
+    const msg = elevesNiveau === 'all'
+      ? 'Aucun élève. Créez une classe puis ajoutez des élèves depuis sa fiche.'
+      : `Aucun élève en ${niveauLabel(elevesNiveau)}.`;
+    tbody.innerHTML = `<tr><td colspan="8" style="color:var(--muted);text-align:center;padding:20px">${msg}</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(e => {
+    const b = eleveBadges(e);
+    const isOrphan = !e.classe_id;
+    const nbCh = isOrphan ? 0 : chaptersForNiveau(e.classe_niveau || 'tle').length;
+    const classeBadge = isOrphan
+      ? `<span class="badge badge-red">Sans classe</span>`
+      : `<span class="badge badge-gray">${escapeHtml(e.classe_nom)}</span> <span class="badge badge-gray">${niveauLabel(e.classe_niveau)}</span>`;
+    const assignSelect = isOrphan
+      ? `<select class="form-select" style="padding:4px 6px;font-size:.75rem" onchange="if(this.value) assignEleve('${e.id}', this.value)">
+          <option value="">Assigner à…</option>
+          ${CLASSES.map(c => `<option value="${c.id}">${escapeHtml(c.nom)} (${niveauLabel(c.niveau)})</option>`).join('')}
+        </select>`
+      : '';
+    return `<tr>
+      <td><strong style="font-family:DM Mono,monospace">${escapeHtml(e.code)}</strong></td>
+      <td>${escapeHtml(e.pseudo)}</td>
+      <td>${classeBadge}</td>
+      <td style="color:var(--muted);font-size:.78rem">${b.lastSeen}</td>
+      <td><span class="badge badge-gray">${b.scores.length}/${nbCh}</span></td>
+      <td>${b.qBadge}</td>
+      <td>${b.nBadge}</td>
+      <td style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <button class="btn btn-secondary btn-sm" onclick="showDetail('${e.id}')">Détail</button>
+        <button class="btn btn-danger btn-sm" onclick="resetEleve('${e.id}')">Reset</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteEleve('${e.id}')">✕</button>
+        ${assignSelect}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// Réaffecte un élève sans classe (classe supprimée) à une nouvelle classe du même enseignant.
+async function assignEleve(eleveId, classeId) {
+  const r = await fetch(`${SERVER}/api/admin/eleves/${eleveId}/classe`, { method:'PUT', headers:headers(), body: JSON.stringify({classe_id: classeId}) });
+  if (r.ok) { await refreshData(); await refreshClasses(); }
+}
+
+// ── Scores quiz ──────────────────────────────────────────
+let scoresNiveau = 'tle';
+function setScoresNiveau(niveau) {
+  scoresNiveau = niveau;
+  NIVEAU_ORDER.forEach(n => {
+    document.getElementById('scores-niveau-' + n).classList.toggle('active', n === niveau);
+  });
+  renderScores();
+}
+
+function renderScores() {
+  const head = document.getElementById('scores-head');
+  const tbody = document.getElementById('scores-tbody');
+  const chapters = chaptersForNiveau(scoresNiveau);
+  const students = DATA.filter(e => (e.classe_niveau || 'tle') === scoresNiveau);
+  head.innerHTML = '<th>Code</th><th>Pseudo</th>' + chapters.map(c=>`<th style="writing-mode:vertical-rl;transform:rotate(180deg);height:80px;font-size:.65rem">${c.name}</th>`).join('') + '<th>Moy.</th>';
+  tbody.innerHTML = students.map(e => {
+    const scoreMap = {};
+    (e.scores||[]).forEach(s => scoreMap[s.chapitre_id] = s.score);
+    const relevantScores = chapters.map(c => scoreMap[c.id]).filter(s => s !== undefined);
+    const avg = relevantScores.length ? (relevantScores.reduce((a,b)=>a+b,0)/relevantScores.length).toFixed(1) : null;
+    const cells = chapters.map(c => {
+      const sc = scoreMap[c.id];
+      if (sc === undefined) return '<td style="text-align:center;color:var(--border)">—</td>';
+      const color = sc>=7?'var(--green)':sc>=5?'var(--yellow)':'var(--red)';
+      return `<td style="text-align:center;font-family:DM Mono,monospace;font-size:.78rem;color:${color};font-weight:600">${sc}/10</td>`;
+    }).join('');
+    const avgBadge = avg ? `<span class="badge ${parseFloat(avg)>=7?'badge-green':parseFloat(avg)>=5?'badge-yellow':'badge-red'}">${avg}</span>` : '<span class="badge badge-gray">—</span>';
+    return `<tr><td><strong style="font-family:DM Mono,monospace">${escapeHtml(e.code)}</strong></td><td>${escapeHtml(e.pseudo)}</td>${cells}<td>${avgBadge}</td></tr>`;
+  }).join('') || `<tr><td colspan="${chapters.length + 3}" style="color:var(--muted);text-align:center;padding:20px">Aucun élève ${niveauLabel(scoresNiveau).toLowerCase()}</td></tr>`;
+}
+
+// ── Notes ────────────────────────────────────────────────
+function renderNotes() {
+  const allNotes = DATA.flatMap(e => (e.notes||[]).map(n => ({...n, code:e.code, pseudo:e.pseudo})));
+  allNotes.sort((a,b) => new Date(b.date)-new Date(a.date));
+  const tbody = document.getElementById('notes-tbody');
+  tbody.innerHTML = allNotes.map(n => {
+    const color = n.valeur>=10?'var(--green)':'var(--red)';
+    const date = new Date(n.date).toLocaleDateString('fr-FR');
+    return `<tr>
+      <td><strong style="font-family:DM Mono,monospace">${escapeHtml(n.code)}</strong></td>
+      <td>${escapeHtml(n.pseudo)}</td>
+      <td><span class="badge badge-gray">${escapeHtml(n.type)}</span></td>
+      <td>${escapeHtml(n.intitule)}</td>
+      <td style="font-family:DM Mono,monospace;font-weight:600;color:${color}">${n.valeur}/20</td>
+      <td style="color:var(--muted);font-size:.78rem">${date}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">Aucune note</td></tr>';
+}
+
+// ── Classes ───────────────────────────────────────────────
+function renderClasses() {
+  const grid = document.getElementById('classes-grid');
+  if (!CLASSES.length) { grid.innerHTML = '<p style="color:var(--muted);font-size:.85rem;padding:12px 0">Aucune classe. Créez-en une pour commencer à ajouter des élèves.</p>'; return; }
+  grid.innerHTML = CLASSES.map(c => {
+    const idsAnneeActuelle = new Set(chaptersForNiveau(c.niveau).map(ch => ch.id));
+    const nbChTotal = idsAnneeActuelle.size;
+    const nbChActives = c.chapitresAutorises.filter(id => idsAnneeActuelle.has(id)).length;
+    const cascadeAnterieure = niveauxAccessibles(c.niveau).filter(n => n !== c.niveau);
+    return `
+    <div class="class-card" onclick="openClasse('${c.id}')">
+      <div class="class-card-title">${escapeHtml(c.nom)}</div>
+      <div class="class-card-meta">
+        <span class="badge badge-gray">${niveauLabel(c.niveau)}</span>
+        <span class="badge badge-gray">${c.nbEleves} élève${c.nbEleves===1?'':'s'}</span>
+        <span class="badge ${nbChActives ? 'badge-green' : 'badge-yellow'}">${nbChActives}/${nbChTotal} chapitres</span>
+        ${cascadeAnterieure.length ? `<span class="badge badge-gray">+ ${cascadeAnterieure.map(niveauLabel).join('/')}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function addClasse() {
+  const nom = document.getElementById('new-classe-nom').value.trim();
+  const niveau = document.getElementById('new-classe-niveau').value;
+  if (!nom) { showAlert('add-classe-alert','Entrez un nom de classe.','err'); return; }
+  const r = await fetch(SERVER+'/api/admin/classes', { method:'POST', headers:headers(), body:JSON.stringify({nom, niveau}) });
+  const d = await r.json();
+  if (!r.ok) { showAlert('add-classe-alert', d.error || 'Erreur','err'); return; }
+  document.getElementById('new-classe-nom').value = '';
+  await refreshClasses();
+}
+
+async function deleteClasse(id) {
+  const c = CLASSES.find(x => x.id === id);
+  const nom = c ? c.nom : id;
+  if (!confirm(`Supprimer la classe ${nom} ?\nLes élèves seront conservés mais ne seront plus rattachés à aucune classe.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/classes/${id}`, { method:'DELETE', headers:headers() });
+  if (r.ok) { showList(); await refreshClasses(); await refreshData(); }
+}
+
+// Fait passer une classe au niveau supérieur en fin d'année (ex: Seconde -> Première).
+// Le programme de l'année terminée est marqué entièrement "déjà vu" ; celui de la nouvelle
+// année démarre décoché, à activer au fil de l'année comme pour une classe fraîchement créée.
+async function promouvoirClasse(id) {
+  const c = CLASSES.find(x => x.id === id);
+  if (!c) return;
+  const idx = NIVEAU_ORDER.indexOf(c.niveau);
+  const nouveauNiveau = NIVEAU_ORDER[idx + 1];
+  if (!nouveauNiveau) return;
+  if (!confirm(`Faire passer la classe ${c.nom} de ${niveauLabel(c.niveau)} à ${niveauLabel(nouveauNiveau)} ?\nLe programme de ${niveauLabel(c.niveau)} sera marqué comme entièrement vu.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/classes/${id}/promouvoir`, { method:'POST', headers:headers() });
+  if (r.ok) { await refreshClasses(); await refreshData(); openClasse(id); }
+  else { const body = await r.json().catch(()=>({})); alert(body.error || 'Erreur lors de la promotion.'); }
+}
+
+function openClasse(id) {
+  currentClasseId = id;
+  const c = CLASSES.find(x => x.id === id);
+  if (!c) return;
+  const eleves = DATA.filter(e => e.classe_id === id);
+
+  const accessibles = niveauxAccessibles(c.niveau);
+  const groupesChapitres = accessibles.map(n => ({
+    niveau: n,
+    dejaVu: n !== c.niveau,
+    chapitres: chaptersForNiveau(n)
+  }));
+
+  document.getElementById('classe-detail-content').innerHTML = `
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:10px">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="font-family:Syne,sans-serif;font-size:1.4rem;font-weight:800">${escapeHtml(c.nom)}</div>
+          <span class="badge badge-gray">${niveauLabel(c.niveau)}</span>
+        </div>
+        <div style="color:var(--muted);font-size:.82rem">${eleves.length} élève${eleves.length===1?'':'s'}</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-secondary btn-sm" onclick="exportCSV('${c.id}')">📥 Export CSV</button>
+        ${c.niveau !== 'tle' ? `<button class="btn btn-secondary btn-sm" onclick="promouvoirClasse('${c.id}')">🎓 Promouvoir en ${niveauLabel(NIVEAU_ORDER[NIVEAU_ORDER.indexOf(c.niveau)+1])}</button>` : ''}
+        <button class="btn btn-danger btn-sm" onclick="deleteClasse('${c.id}')">✕ Supprimer la classe</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📖 Chapitres autorisés pour cette classe</div>
+      <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Cochez les chapitres que les élèves de cette classe peuvent consulter. Les années précédentes sont pré-cochées (déjà vues) ; le programme de ${niveauLabel(c.niveau)} démarre décoché, à activer au fil de l'année.</p>
+      <div id="chapter-checks">
+        ${groupesChapitres.map(g => `
+          <div style="margin-bottom:16px">
+            <div style="font-size:.78rem;font-weight:600;color:${g.dejaVu ? 'var(--green)' : 'var(--accent)'};text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">
+              ${niveauLabel(g.niveau)}${g.dejaVu ? ' — déjà vu' : " — programme de l'année"}
+            </div>
+            <div class="chapter-check-grid">
+              ${g.chapitres.map(ch => `
+                <label class="chapter-check-item">
+                  <input type="checkbox" value="${ch.id}" ${c.chapitresAutorises.includes(ch.id) ? 'checked' : ''}>
+                  <span>${ch.name}</span>
+                </label>`).join('')}
+            </div>
+          </div>`).join('')}
+      </div>
+      <div style="margin-top:14px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-primary btn-sm" onclick="saveChapitres('${c.id}')">Enregistrer</button>
+        <button class="btn btn-secondary btn-sm" onclick="toggleAllChapitres(true)">Tout cocher</button>
+        <button class="btn btn-secondary btn-sm" onclick="toggleAllChapitres(false)">Tout décocher</button>
+        <span id="chapitres-save-alert"></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">➕ Ajouter un élève à cette classe</div>
+      <div class="add-eleve-row">
+        <div class="form-group">
+          <label class="form-label">Code (ex : E01)</label>
+          <input class="form-input" id="new-code" placeholder="E01" style="width:90px">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pseudo ou initiales</label>
+          <input class="form-input" id="new-pseudo" placeholder="ex : ML ou Marie L.">
+        </div>
+        <button class="btn btn-primary" onclick="addEleve()">Ajouter</button>
+      </div>
+      <div id="add-alert"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">👥 Élèves de la classe</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Code</th><th>Pseudo</th><th>Dernière connexion</th><th>Quiz faits</th><th>Moy. quiz</th><th>Actions</th></tr></thead>
+          <tbody>${eleves.length ? eleves.map(e => renderEleveRow(e)).join('') : '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:20px">Aucun élève dans cette classe</td></tr>'}</tbody>
+        </table>
+      </div>
+    </div>
+  `;
+  document.getElementById('view-list').style.display = 'none';
+  document.getElementById('view-detail').style.display = 'none';
+  document.getElementById('view-classe-detail').style.display = 'block';
+}
+
+function renderEleveRow(e) {
+  const b = eleveBadges(e);
+  const thisClasse = CLASSES.find(c => c.id === currentClasseId);
+  const otherClasses = CLASSES.filter(c => c.id !== currentClasseId && c.niveau === (thisClasse ? thisClasse.niveau : c.niveau));
+  const moveOptions = otherClasses.map(c => `<option value="${c.id}">${escapeHtml(c.nom)}</option>`).join('');
+  const nbCh = chaptersForNiveau(e.classe_niveau || 'tle').length;
+  return `<tr>
+    <td><strong style="font-family:DM Mono,monospace">${escapeHtml(e.code)}</strong></td>
+    <td>${escapeHtml(e.pseudo)}</td>
+    <td style="color:var(--muted);font-size:.78rem">${b.lastSeen}</td>
+    <td><span class="badge badge-gray">${b.scores.length}/${nbCh}</span></td>
+    <td>${b.qBadge}</td>
+    <td style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+      <button class="btn btn-secondary btn-sm" onclick="showDetail('${e.id}')">Détail</button>
+      <button class="btn btn-danger btn-sm" onclick="resetEleve('${e.id}')">Reset</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteEleve('${e.id}')">✕</button>
+      ${otherClasses.length ? `<select class="form-select" style="padding:4px 6px;font-size:.75rem" onchange="if(this.value) moveEleve('${e.id}', this.value)">
+        <option value="">Déplacer vers…</option>${moveOptions}
+      </select>` : ''}
+    </td>
+  </tr>`;
+}
+
+function toggleAllChapitres(state) {
+  document.querySelectorAll('#chapter-checks input[type=checkbox]').forEach(cb => cb.checked = state);
+}
+
+async function saveChapitres(classeId) {
+  const ids = Array.from(document.querySelectorAll('#chapter-checks input[type=checkbox]:checked')).map(cb => parseInt(cb.value,10));
+  const r = await fetch(`${SERVER}/api/admin/classes/${classeId}/chapitres`, { method:'PUT', headers:headers(), body: JSON.stringify({chapitre_ids: ids}) });
+  const alertEl = document.getElementById('chapitres-save-alert');
+  if (r.ok) {
+    if (alertEl) alertEl.innerHTML = '<span style="color:var(--green);font-size:.82rem">✓ Enregistré</span>';
+    setTimeout(() => { const el = document.getElementById('chapitres-save-alert'); if (el) el.innerHTML=''; }, 3000);
+    await refreshClasses();
+  } else if (alertEl) {
+    alertEl.innerHTML = '<span style="color:var(--red);font-size:.82rem">Erreur lors de l\'enregistrement</span>';
+  }
+}
+
+async function moveEleve(eleveId, classeId) {
+  const r = await fetch(`${SERVER}/api/admin/eleves/${eleveId}/classe`, { method:'PUT', headers:headers(), body: JSON.stringify({classe_id: classeId}) });
+  if (r.ok) { await refreshData(); await refreshClasses(); if (currentClasseId) openClasse(currentClasseId); }
+}
+
+// ── Détail élève ─────────────────────────────────────────
+function showDetail(id) {
+  const e = DATA.find(x => x.id === id);
+  if (!e) return;
+  detailReturnTo = currentClasseId ? 'classe' : 'list';
+  const scores = e.scores || [];
+  const notes = e.notes || [];
+  const avgQuiz = scores.length ? (scores.reduce((a,b)=>a+b.score,0)/scores.length).toFixed(1) : '—';
+  const avgNote = notes.length ? (notes.reduce((a,b)=>a+b.valeur,0)/notes.length).toFixed(1) : '—';
+
+  const scoreMap = {};
+  scores.forEach(s => scoreMap[s.chapitre_id] = s.score);
+
+  document.getElementById('detail-content').innerHTML = `
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px">
+      <div style="font-size:2.5rem">👤</div>
+      <div>
+        <div style="font-family:Syne,sans-serif;font-size:1.4rem;font-weight:800">${escapeHtml(e.pseudo)}</div>
+        <div style="color:var(--muted);font-size:.82rem">Code : <strong style="font-family:DM Mono,monospace;color:var(--accent)">${escapeHtml(e.code)}</strong> — Classe : <strong>${escapeHtml(e.classe_nom) || '—'}</strong> — Dernière connexion : ${e.last_seen ? new Date(e.last_seen).toLocaleString('fr-FR') : 'Jamais'}</div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-val">${scores.length}</div><div class="stat-lbl">Quiz complétés</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:${parseFloat(avgQuiz)>=7?'var(--green)':parseFloat(avgQuiz)>=5?'var(--yellow)':'var(--red)'}">${avgQuiz !== '—' ? avgQuiz+'/10' : '—'}</div><div class="stat-lbl">Moy. quiz</div></div>
+      <div class="stat-card"><div class="stat-val">${notes.length}</div><div class="stat-lbl">Notes</div></div>
+      <div class="stat-card"><div class="stat-val" style="color:${parseFloat(avgNote)>=10?'var(--green)':'var(--red)'}">${avgNote !== '—' ? avgNote+'/20' : '—'}</div><div class="stat-lbl">Moy. notes</div></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📊 Progression par chapitre</div>
+      ${niveauxAccessibles(e.classe_niveau || 'tle').map(n => `
+        <div style="margin-bottom:14px">
+          <div style="font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">${niveauLabel(n)}</div>
+          ${chaptersForNiveau(n).map(ch => {
+            const sc = scoreMap[ch.id];
+            const pct = sc !== undefined ? (sc/10)*100 : 0;
+            const color = sc === undefined ? 'var(--border)' : sc>=7?'var(--green)':sc>=5?'var(--yellow)':'var(--red)';
+            return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+              <div style="font-size:.78rem;min-width:200px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${ch.name}</div>
+              <div class="score-bar" style="flex:1">
+                <div class="score-bar-bg"><div class="score-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+                <div class="score-val" style="color:${color}">${sc !== undefined ? sc+'/10' : '—'}</div>
+              </div>
+            </div>`;
+          }).join('')}
+        </div>`).join('')}
+    </div>
+
+    <div class="card" id="historique-card" data-eleve="${e.id}">
+      <div class="card-title">📈 Historique des tentatives</div>
+      <p style="color:var(--muted);font-size:.85rem">Chargement…</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📝 Notes de devoirs</div>
+      ${notes.length ? `<div class="table-wrap"><table>
+        <thead><tr><th>Type</th><th>Intitulé</th><th>Note</th><th>Date</th></tr></thead>
+        <tbody>${notes.map(n => {
+          const color = n.valeur>=10?'var(--green)':'var(--red)';
+          return `<tr><td><span class="badge badge-gray">${escapeHtml(n.type)}</span></td><td>${escapeHtml(n.intitule)}</td>
+            <td style="font-family:DM Mono,monospace;font-weight:600;color:${color}">${n.valeur}/20</td>
+            <td style="color:var(--muted);font-size:.78rem">${new Date(n.date).toLocaleDateString('fr-FR')}</td></tr>`;
+        }).join('')}</tbody>
+      </table></div>` : '<p style="color:var(--muted);font-size:.85rem">Aucune note enregistrée.</p>'}
+    </div>
+  `;
+  document.getElementById('view-list').style.display = 'none';
+  document.getElementById('view-classe-detail').style.display = 'none';
+  document.getElementById('view-detail').style.display = 'block';
+  renderHistorique(id);
+}
+
+// Charge et affiche l'historique complet des tentatives (toutes, pas seulement le meilleur
+// score), avec un mini-graphique d'évolution par chapitre. Chargé après l'affichage de la
+// fiche pour ne pas bloquer l'ouverture ; data-eleve sert de garde contre une réponse tardive
+// qui arriverait après que l'admin a ouvert la fiche d'un autre élève.
+async function renderHistorique(eleveId) {
+  const r = await fetch(`${SERVER}/api/admin/eleves/${eleveId}/historique`, { headers: headers() });
+  const card = document.getElementById('historique-card');
+  if (!card || card.dataset.eleve !== eleveId) return;
+  if (!r.ok) {
+    card.innerHTML = `<div class="card-title">📈 Historique des tentatives</div><p style="color:var(--muted);font-size:.85rem">Impossible de charger l'historique.</p>`;
+    return;
+  }
+  const historique = await r.json();
+  if (!historique.length) {
+    card.innerHTML = `<div class="card-title">📈 Historique des tentatives</div><p style="color:var(--muted);font-size:.85rem">Aucun quiz passé pour l'instant.</p>`;
+    return;
+  }
+  const byChapitre = {};
+  historique.forEach(h => {
+    if (!byChapitre[h.chapitre_id]) byChapitre[h.chapitre_id] = [];
+    byChapitre[h.chapitre_id].push(h);
+  });
+  const rows = Object.keys(byChapitre).map(Number).sort((a, b) => a - b).map(chId => {
+    const attempts = byChapitre[chId];
+    const meta = CH_META.find(c => c.id === chId);
+    const chName = meta ? meta.name : `Chapitre ${chId}`;
+    const scoresText = attempts.map(a => `${a.score}/${a.total || 10}`).join(' → ');
+    return `<div style="display:flex;align-items:center;gap:14px;padding:8px 0;border-bottom:1px solid var(--border);flex-wrap:wrap">
+      <div style="flex:1;min-width:180px;font-size:.82rem">${escapeHtml(chName)}</div>
+      ${sparklineSVG(attempts)}
+      <div style="font-size:.75rem;color:var(--muted);font-family:DM Mono,monospace;white-space:nowrap">${escapeHtml(scoresText)}</div>
+      <div style="font-size:.72rem;color:var(--muted);white-space:nowrap">${attempts.length} tentative${attempts.length > 1 ? 's' : ''}</div>
+    </div>`;
+  }).join('');
+  card.innerHTML = `<div class="card-title">📈 Historique des tentatives</div>${rows}`;
+}
+
+function backFromDetail() {
+  document.getElementById('view-detail').style.display = 'none';
+  if (detailReturnTo === 'classe' && currentClasseId && CLASSES.find(c => c.id === currentClasseId)) {
+    openClasse(currentClasseId);
+  } else {
+    showList();
+  }
+}
+
+function showList() {
+  document.getElementById('view-detail').style.display = 'none';
+  document.getElementById('view-classe-detail').style.display = 'none';
+  document.getElementById('view-list').style.display = 'block';
+  currentClasseId = null;
+}
+
+// ── Actions élèves ───────────────────────────────────────
+async function addEleve() {
+  const code = document.getElementById('new-code').value.trim().toUpperCase();
+  const pseudo = document.getElementById('new-pseudo').value.trim() || code;
+  if (!code) { showAlert('add-alert','Entrez un code.','err'); return; }
+  if (!currentClasseId) { showAlert('add-alert','Aucune classe sélectionnée.','err'); return; }
+  const r = await fetch(SERVER+'/api/admin/eleves', { method:'POST', headers:headers(), body:JSON.stringify({code,pseudo,classe_id:currentClasseId}) });
+  const d = await r.json();
+  if (!r.ok) { showAlert('add-alert', d.error || 'Erreur','err'); return; }
+  showAlert('add-alert', `Élève ${code} créé avec succès.`, 'ok');
+  document.getElementById('new-code').value = '';
+  document.getElementById('new-pseudo').value = '';
+  await refreshData();
+  await refreshClasses();
+  openClasse(currentClasseId);
+}
+
+async function resetEleve(id) {
+  const e = DATA.find(x => x.id === id);
+  const pseudo = e ? e.pseudo : id;
+  if (!confirm(`Réinitialiser toutes les données de ${pseudo} ?\n(quiz, notes, progression)\nCette action est irréversible.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/eleves/${id}/reset`, { method:'POST', headers:headers() });
+  if (r.ok) { await refreshData(); if (currentClasseId) openClasse(currentClasseId); }
+}
+
+async function deleteEleve(id) {
+  const e = DATA.find(x => x.id === id);
+  const pseudo = e ? e.pseudo : id;
+  if (!confirm(`Supprimer définitivement l'élève ${pseudo} et toutes ses données ?`)) return;
+  const r = await fetch(`${SERVER}/api/admin/eleves/${id}`, { method:'DELETE', headers:headers() });
+  if (r.ok) {
+    await refreshData();
+    await refreshClasses();
+    if (currentClasseId) openClasse(currentClasseId);
+  }
+}
+
+function exportCSV(classeId) {
+  const fetchUrl = classeId ? `${SERVER}/api/admin/export?classe_id=${encodeURIComponent(classeId)}` : `${SERVER}/api/admin/export`;
+  const classe = classeId ? CLASSES.find(c => c.id === classeId) : null;
+  const slug = classe ? '_' + classe.nom.normalize('NFD').replace(/\p{Diacritic}/gu, '').replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '') : '';
+  fetch(fetchUrl, { headers: headers() })
+    .then(r => r.ok ? r.blob() : Promise.reject())
+    .then(blob => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `physichim_export${slug}_${new Date().toISOString().slice(0,10)}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    })
+    .catch(() => {});
+}
+
+// ── Tabs ─────────────────────────────────────────────────
+function switchTab(tab) {
+  ['classes','eleves','scores','notes'].forEach(t => {
+    document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+    document.getElementById('pane-'+t).style.display = t===tab ? 'block' : 'none';
+  });
+}
+
+// ── Alerts ───────────────────────────────────────────────
+function showAlert(id, msg, type) {
+  const el = document.getElementById(id);
+  el.innerHTML = `<div class="alert alert-${type==='err'?'err':'ok'}">${type==='err'?'⚠':'✓'} ${msg}</div>`;
+  setTimeout(() => { el.innerHTML = ''; }, 4000);
+}
+
+// ── Auto-login si session sauvegardée ────────────────────
+window.onload = () => {
+  const t = localStorage.getItem('physichim_token');
+  const a = localStorage.getItem('physichim_admin');
+  if (t && a) {
+    TOKEN = t;
+    try { CURRENT_ADMIN = JSON.parse(a); } catch(e) { CURRENT_ADMIN = null; }
+    if (CURRENT_ADMIN) {
+      fetch(SERVER+'/api/admin/classes', { headers: headers() })
+        .then(r => { if (r.ok) enterMain(); else doLogout(); })
+        .catch(() => {});
+    }
+  }
+};
+</script>
+</body>
+</html>

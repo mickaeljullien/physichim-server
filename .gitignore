@@ -1,0 +1,7 @@
+node_modules/
+.admin-key
+physichim.db
+physichim.db-shm
+physichim.db-wal
+.env
+.claude/
