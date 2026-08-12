@@ -17295,7 +17295,11 @@ const CAT_LABELS = {
 // STATE + API
 // ═══════════════════════════════════════════════════
 
-let SERVER_URL = localStorage.getItem('physichim_server') || '';
+// L'appli est servie directement par le serveur qui héberge ses données : l'URL du
+// serveur est donc toujours celle de la page elle-même. On ne demande plus à l'élève
+// de la saisir (physichim_server reste lu pour compatibilité avec d'anciennes sessions,
+// au cas où une valeur différente y aurait été enregistrée par le passé).
+let SERVER_URL = localStorage.getItem('physichim_server') || window.location.origin;
 
 let state = {
   currentChapter: null,
