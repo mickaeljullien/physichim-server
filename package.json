@@ -8,7 +8,6 @@
     "dev": "node server.js"
   },
   "dependencies": {
-    "better-sqlite3": "^12.11.1",
     "dotenv": "^17.4.2",
     "pg": "^8.23.0"
   },

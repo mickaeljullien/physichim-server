@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: physichim-server
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: ADMIN_KEY
+        sync: false
+      - key: APP_DATABASE_URL
+        sync: false
+      - key: STUDENT_DATABASE_URL
+        sync: false

@@ -1,18 +1,20 @@
 // ============================================================
-// PhysiChim — Serveur Node.js + SQLite + PostgreSQL
-// Déploiement : Railway.app
+// PhysiChim — Serveur Node.js + PostgreSQL (2 bases séparées)
+// Déploiement : Render.com (service web) + Neon (Postgres, gratuit)
 // ============================================================
 //
-// Deux bases, volontairement séparées :
-//   - SQLite (fichier local / volume Railway) : admins, classes, classe_chapitres
+// Deux bases PostgreSQL distinctes, volontairement séparées :
+//   - APP_DATABASE_URL   : admins, classes, classe_chapitres
 //     — la configuration de l'appli et des comptes enseignants.
-//   - PostgreSQL (service dédié) : eleves, quiz_scores, notes, progression
+//   - STUDENT_DATABASE_URL : eleves, quiz_scores, notes, progression
 //     — les données élèves proprement dites, isolées sur un service à part.
 // Conséquence : impossible de faire un JOIN SQL entre une classe et ses élèves
 // (bases différentes) ; ces jointures sont donc faites en mémoire, côté JS,
 // après avoir interrogé les deux bases séparément.
+// Aucun stockage sur disque local : Render (comme la plupart des hébergeurs
+// gratuits) ne garantit pas de disque persistant, tout vit donc en base.
 
-// Charge un .env local si présent (n'existe pas en production : Railway fournit les
+// Charge un .env local si présent (n'existe pas en production : Render fournit les
 // variables d'environnement directement, ce require reste alors un no-op silencieux).
 require('dotenv').config();
 
@@ -22,79 +24,62 @@ const path = require('path');
 const crypto = require('crypto');
 const { Pool } = require('pg');
 
-// ── Base SQLite (config appli : admins, classes, autorisations) ───────────
-let db;
-const DB_PATH = process.env.DB_PATH || './physichim.db';
-try {
-  const Database = require('better-sqlite3');
-  // Sur Railway, DB_PATH pointe vers le volume persistant (/data/physichim.db) : le
-  // dossier doit exister avant l'ouverture (mkdirSync est un no-op sans danger en local,
-  // où le dossier courant existe déjà).
-  fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
-  db = new Database(DB_PATH);
-  db.pragma('journal_mode = WAL');
-  initDB();
-  console.log('✅ Base de données appli (SQLite) initialisée :', DB_PATH);
-} catch (e) {
-  console.error('❌ Erreur SQLite :', e.message);
-  process.exit(1);
+// Petite fabrique de raccourcis .get()/.all()/.run(), pour garder le vocabulaire
+// concis dans les routes et éviter de dupliquer ce code pour les deux pools.
+function makeQueryHelpers(pool) {
+  return {
+    async get(sql, params = []) {
+      const r = await pool.query(sql, params);
+      return r.rows[0] || null;
+    },
+    async all(sql, params = []) {
+      const r = await pool.query(sql, params);
+      return r.rows;
+    },
+    async run(sql, params = []) {
+      return pool.query(sql, params);
+    }
+  };
 }
 
-function initDB() {
-  db.exec(`
+// ── Base appli (admins, classes, classe_chapitres) ─────────────────────────
+const APP_DB_URL = process.env.APP_DATABASE_URL;
+let appPool, appDb;
+
+async function initAppDB() {
+  await appPool.query(`
     CREATE TABLE IF NOT EXISTS admins (
       id TEXT PRIMARY KEY,
       identifiant TEXT UNIQUE NOT NULL,
       code TEXT NOT NULL,
       nom TEXT NOT NULL,
-      created_at TEXT DEFAULT (datetime('now')),
-      last_seen TEXT DEFAULT (datetime('now'))
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+      last_seen TIMESTAMPTZ NOT NULL DEFAULT now()
     );
 
     CREATE TABLE IF NOT EXISTS classes (
       id TEXT PRIMARY KEY,
-      admin_id TEXT NOT NULL,
+      admin_id TEXT NOT NULL REFERENCES admins(id),
       nom TEXT NOT NULL,
       niveau TEXT NOT NULL DEFAULT 'tle',
-      created_at TEXT DEFAULT (datetime('now')),
-      FOREIGN KEY (admin_id) REFERENCES admins(id)
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     );
 
     CREATE TABLE IF NOT EXISTS classe_chapitres (
-      classe_id TEXT NOT NULL,
+      classe_id TEXT NOT NULL REFERENCES classes(id),
       chapitre_id INTEGER NOT NULL,
-      PRIMARY KEY (classe_id, chapitre_id),
-      FOREIGN KEY (classe_id) REFERENCES classes(id)
+      PRIMARY KEY (classe_id, chapitre_id)
     );
   `);
-
-  // Migration : les données élèves ont déménagé vers PostgreSQL (cf. plus haut) — on
-  // supprime les anciennes tables SQLite correspondantes. Nécessaire, pas cosmétique :
-  // leur contrainte FOREIGN KEY vers classes(id) bloque sinon la suppression d'une classe
-  // encore référencée par ces lignes désormais orphelines et obsolètes.
-  db.exec(`
-    DROP TABLE IF EXISTS quiz_scores;
-    DROP TABLE IF EXISTS notes;
-    DROP TABLE IF EXISTS progression;
-    DROP TABLE IF EXISTS eleves;
-  `);
-
-  // Migration : ajouter classes.niveau si la colonne n'existe pas encore
-  const classeCols = db.prepare("PRAGMA table_info(classes)").all();
-  if (!classeCols.some(c => c.name === 'niveau')) {
-    db.exec("ALTER TABLE classes ADD COLUMN niveau TEXT NOT NULL DEFAULT 'tle'");
-  }
 }
 
-// ── Base PostgreSQL (données élèves : eleves, quiz_scores, notes, progression) ──
-// STUDENT_DATABASE_URL est obligatoire (pas de repli SQLite) : la séparation
-// physique des données élèves est le but de cette architecture, un repli
-// silencieux la rendrait illusoire. En local, pointer vers une instance
-// PostgreSQL installée sur la machine (ex: postgres://postgres:postgres@localhost:5432/physichim_eleves).
+// ── Base élèves (eleves, quiz_scores, notes, progression) ──────────────────
+// Obligatoire, comme APP_DATABASE_URL : pas de repli silencieux, la séparation
+// physique des données élèves est le but même de cette architecture.
 const STUDENT_DB_URL = process.env.STUDENT_DATABASE_URL || process.env.DATABASE_URL;
-let pgPool;
+let pgPool, studentDb;
 
-async function initPgDB() {
+async function initStudentDB() {
   await pgPool.query(`
     CREATE TABLE IF NOT EXISTS eleves (
       id TEXT PRIMARY KEY,
@@ -134,31 +119,15 @@ async function initPgDB() {
   `);
 }
 
-// Petits raccourcis pour retrouver le vocabulaire .get()/.all()/.run() de better-sqlite3
-// et limiter le bruit dans les routes (qui manipulent déjà les deux bases).
-async function pgGet(sql, params = []) {
-  const r = await pgPool.query(sql, params);
-  return r.rows[0] || null;
-}
-async function pgAll(sql, params = []) {
-  const r = await pgPool.query(sql, params);
-  return r.rows;
-}
-async function pgRun(sql, params = []) {
-  return pgPool.query(sql, params);
-}
-
 // ── Utilitaires ───────────────────────────────────────────
-// Clé maître : priorité à la variable d'environnement (obligatoire en production).
-// En local, si elle n'est pas définie, on génère une clé aléatoire unique à cette
-// installation et on la persiste dans un fichier — plutôt qu'un mot de passe par
-// défaut identique et deviné d'avance sur toutes les installations. Le fichier est
-// colocalisé avec la base de données (donc sur le volume persistant /data en
-// production si DB_PATH est configuré) pour survivre aux redéploiements même si
-// ADMIN_KEY n'a pas été explicitement définie.
+// Clé maître : priorité à la variable d'environnement (obligatoire en production —
+// sans disque persistant garanti, une génération locale ne survivrait pas à un
+// redéploiement). En local uniquement, si elle n'est pas définie, on en génère une
+// et on la persiste dans un fichier à côté du serveur, pour ne pas avoir à en
+// choisir une à la main à chaque session de dev.
 function resolveAdminKey() {
   if (process.env.ADMIN_KEY) return process.env.ADMIN_KEY;
-  const keyFile = path.join(path.dirname(DB_PATH), '.admin-key');
+  const keyFile = path.join(__dirname, '.admin-key');
   try {
     return fs.readFileSync(keyFile, 'utf8').trim();
   } catch {
@@ -201,7 +170,8 @@ function genId() {
 // ── Rate limiting simple en mémoire ─────────────────────────
 // Protège les points de connexion contre le bourrinage (essayer plein de codes/mots
 // de passe à la suite). Volontairement basique (pas de dépendance externe) : suffisant
-// pour un usage scolaire, à revoir si l'appli est un jour exposée massivement.
+// pour un usage scolaire, à revoir si l'appli est un jour exposée massivement. Se
+// réinitialise à chaque redémarrage/réveil du service — acceptable ici.
 const RATE_LIMIT_MAX_ATTEMPTS = 5;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const rateLimitBuckets = new Map();
@@ -250,7 +220,7 @@ function makeAdminToken(admin) {
   return Buffer.from(`${admin.id}:${admin.code}:${Date.now()}`, 'utf8').toString('base64');
 }
 
-function getAdminFromToken(req) {
+async function getAdminFromToken(req) {
   const auth = req.headers['authorization'] || '';
   const m = auth.match(/^Bearer (.+)$/);
   if (!m) return null;
@@ -265,7 +235,7 @@ function getAdminFromToken(req) {
   const code = decoded.slice(firstSep + 1, lastSep);
   const issuedAt = parseInt(decoded.slice(lastSep + 1), 10);
   if (!Number.isFinite(issuedAt) || Date.now() - issuedAt > ADMIN_TOKEN_MAX_AGE_MS) return null;
-  const admin = db.prepare('SELECT * FROM admins WHERE id = ?').get(id);
+  const admin = await appDb.get('SELECT * FROM admins WHERE id = $1', [id]);
   if (!admin || admin.code !== code) return null;
   return admin;
 }
@@ -292,11 +262,11 @@ function parseBody(req) {
   });
 }
 
-// Construit une map { classe_id -> classe } à partir de la base SQLite, pour fusionner
-// en mémoire avec les élèves (base Postgres) — remplace les anciens JOIN SQL devenus
+// Construit une map { classe_id -> classe } à partir de la base appli, pour fusionner
+// en mémoire avec les élèves (base élèves) — remplace les anciens JOIN SQL devenus
 // impossibles entre deux bases séparées.
-function classesMapParAdmin(adminId) {
-  const classes = db.prepare('SELECT * FROM classes WHERE admin_id = ?').all(adminId);
+async function classesMapParAdmin(adminId) {
+  const classes = await appDb.all('SELECT * FROM classes WHERE admin_id = $1', [adminId]);
   const map = new Map();
   classes.forEach(c => map.set(c.id, c));
   return map;
@@ -349,25 +319,26 @@ async function router(req, res) {
     const code = (body.code || '').toUpperCase().trim();
     if (!code) return json(res, 400, { error: 'Code manquant' });
 
-    const eleve = await pgGet('SELECT * FROM eleves WHERE code = $1', [code]);
+    const eleve = await studentDb.get('SELECT * FROM eleves WHERE code = $1', [code]);
     if (!eleve) {
       recordFailedAttempt(rlKey);
       return json(res, 404, { error: 'Code inconnu. Demandez votre code à votre enseignant.' });
     }
     clearRateLimit(rlKey);
 
-    await pgRun('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve.id]);
+    await studentDb.run('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve.id]);
 
-    const scores = await pgAll('SELECT chapitre_id, score, total, date FROM quiz_scores WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
-    const notes = await pgAll('SELECT id, type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
-    const progression = await pgAll('SELECT chapitre_id, action, date FROM progression WHERE eleve_id = $1 ORDER BY date DESC LIMIT 50', [eleve.id]);
+    const scores = await studentDb.all('SELECT chapitre_id, score, total, date FROM quiz_scores WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
+    const notes = await studentDb.all('SELECT id, type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
+    const progression = await studentDb.all('SELECT chapitre_id, action, date FROM progression WHERE eleve_id = $1 ORDER BY date DESC LIMIT 50', [eleve.id]);
 
     let classe = null;
     let chapitresAutorises = [];
     if (eleve.classe_id) {
-      classe = db.prepare('SELECT id, nom, niveau FROM classes WHERE id = ?').get(eleve.classe_id) || null;
+      classe = await appDb.get('SELECT id, nom, niveau FROM classes WHERE id = $1', [eleve.classe_id]);
       if (classe) {
-        chapitresAutorises = db.prepare('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = ?').all(eleve.classe_id).map(r => r.chapitre_id);
+        const rows = await appDb.all('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = $1', [eleve.classe_id]);
+        chapitresAutorises = rows.map(r => r.chapitre_id);
       }
     }
 
@@ -386,11 +357,11 @@ async function router(req, res) {
     if (!eleve_id || chapitre_id === undefined || score === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
     }
-    const eleve = await pgGet('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
+    const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
 
-    await pgRun('INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4)', [eleve_id, chapitre_id, score, total || 10]);
-    await pgRun('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve_id]);
+    await studentDb.run('INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4)', [eleve_id, chapitre_id, score, total || 10]);
+    await studentDb.run('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve_id]);
 
     return json(res, 201, { ok: true });
   }
@@ -403,10 +374,10 @@ async function router(req, res) {
     if (!eleve_id || !type || !intitule || valeur === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
     }
-    const eleve = await pgGet('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
+    const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
 
-    const inserted = await pgGet('INSERT INTO notes (eleve_id, type, intitule, valeur) VALUES ($1, $2, $3, $4) RETURNING id', [eleve_id, type, intitule, valeur]);
+    const inserted = await studentDb.get('INSERT INTO notes (eleve_id, type, intitule, valeur) VALUES ($1, $2, $3, $4) RETURNING id', [eleve_id, type, intitule, valeur]);
     return json(res, 201, { ok: true, id: inserted.id });
   }
 
@@ -415,12 +386,12 @@ async function router(req, res) {
   if (p.startsWith('/api/notes/') && method === 'DELETE') {
     const noteId = p.split('/')[3];
     const body = await parseBody(req);
-    const note = await pgGet('SELECT * FROM notes WHERE id = $1', [noteId]);
+    const note = await studentDb.get('SELECT * FROM notes WHERE id = $1', [noteId]);
     if (!note) return json(res, 404, { error: 'Note introuvable' });
     if (note.eleve_id !== body.eleve_id && !isSuperAdmin(req)) {
       return json(res, 403, { error: 'Non autorisé' });
     }
-    await pgRun('DELETE FROM notes WHERE id = $1', [noteId]);
+    await studentDb.run('DELETE FROM notes WHERE id = $1', [noteId]);
     return json(res, 200, { ok: true });
   }
 
@@ -432,7 +403,7 @@ async function router(req, res) {
     if (!eleve_id || chapitre_id === undefined || !action) {
       return json(res, 400, { error: 'Données manquantes' });
     }
-    await pgRun('INSERT INTO progression (eleve_id, chapitre_id, action) VALUES ($1, $2, $3)', [eleve_id, chapitre_id, action]);
+    await studentDb.run('INSERT INTO progression (eleve_id, chapitre_id, action) VALUES ($1, $2, $3)', [eleve_id, chapitre_id, action]);
     return json(res, 201, { ok: true });
   }
 
@@ -451,14 +422,14 @@ async function router(req, res) {
     const code = (body.code || '').trim();
     if (!identifiant || !code) return json(res, 400, { error: 'Identifiant et code requis' });
 
-    const admin = db.prepare('SELECT * FROM admins WHERE identifiant = ?').get(identifiant);
+    const admin = await appDb.get('SELECT * FROM admins WHERE identifiant = $1', [identifiant]);
     if (!admin || admin.code !== code) {
       recordFailedAttempt(rlKey);
       return json(res, 401, { error: 'Identifiant ou code incorrect' });
     }
     clearRateLimit(rlKey);
 
-    db.prepare("UPDATE admins SET last_seen = datetime('now') WHERE id = ?").run(admin.id);
+    await appDb.run('UPDATE admins SET last_seen = now() WHERE id = $1', [admin.id]);
 
     return json(res, 200, {
       token: makeAdminToken(admin),
@@ -480,14 +451,14 @@ async function router(req, res) {
     const nom = (body.nom || identifiant).trim();
     if (!identifiant || !code) return json(res, 400, { error: 'Identifiant et code requis' });
 
-    const count = db.prepare('SELECT COUNT(*) as n FROM admins').get().n;
-    if (count >= MAX_ADMINS) return json(res, 409, { error: `Limite de ${MAX_ADMINS} comptes enseignants atteinte` });
+    const countRow = await appDb.get('SELECT COUNT(*)::int as n FROM admins');
+    if (countRow.n >= MAX_ADMINS) return json(res, 409, { error: `Limite de ${MAX_ADMINS} comptes enseignants atteinte` });
 
-    const existing = db.prepare('SELECT id FROM admins WHERE identifiant = ?').get(identifiant);
+    const existing = await appDb.get('SELECT id FROM admins WHERE identifiant = $1', [identifiant]);
     if (existing) return json(res, 409, { error: 'Cet identifiant existe déjà' });
 
     const id = genId();
-    db.prepare('INSERT INTO admins (id, identifiant, code, nom) VALUES (?, ?, ?, ?)').run(id, identifiant, code, nom);
+    await appDb.run('INSERT INTO admins (id, identifiant, code, nom) VALUES ($1, $2, $3, $4)', [id, identifiant, code, nom]);
     return json(res, 201, { ok: true, id, identifiant, nom });
   }
 
@@ -502,12 +473,13 @@ async function router(req, res) {
       return json(res, 401, { error: 'Clé maître requise' });
     }
     clearRateLimit(rlKeySuper);
-    const admins = db.prepare('SELECT id, identifiant, nom, created_at, last_seen FROM admins ORDER BY identifiant').all();
+    const admins = await appDb.all('SELECT id, identifiant, nom, created_at, last_seen FROM admins ORDER BY identifiant');
     const result = await Promise.all(admins.map(async a => {
-      const nbClasses = db.prepare('SELECT COUNT(*) as n FROM classes WHERE admin_id = ?').get(a.id).n;
-      const classeIds = db.prepare('SELECT id FROM classes WHERE admin_id = ?').all(a.id).map(c => c.id);
-      const nbElevesRow = await pgGet('SELECT COUNT(*)::int as n FROM eleves WHERE classe_id = ANY($1::text[])', [classeIds]);
-      return { ...a, nbClasses, nbEleves: nbElevesRow.n };
+      const nbClassesRow = await appDb.get('SELECT COUNT(*)::int as n FROM classes WHERE admin_id = $1', [a.id]);
+      const classeRows = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [a.id]);
+      const classeIds = classeRows.map(c => c.id);
+      const nbElevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves WHERE classe_id = ANY($1::text[])', [classeIds]);
+      return { ...a, nbClasses: nbClassesRow.n, nbEleves: nbElevesRow.n };
     }));
     return json(res, 200, result);
   }
@@ -517,15 +489,14 @@ async function router(req, res) {
   if (p.startsWith('/api/admin/teachers/') && method === 'DELETE') {
     if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
     const adminId = p.split('/')[4];
-    const classeIds = db.prepare('SELECT id FROM classes WHERE admin_id = ?').all(adminId).map(c => c.id);
+    const classeRows = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [adminId]);
+    const classeIds = classeRows.map(c => c.id);
     if (classeIds.length) {
-      await pgRun('UPDATE eleves SET classe_id = NULL WHERE classe_id = ANY($1::text[])', [classeIds]);
+      await studentDb.run('UPDATE eleves SET classe_id = NULL WHERE classe_id = ANY($1::text[])', [classeIds]);
+      await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = ANY($1::text[])', [classeIds]);
     }
-    classeIds.forEach(cid => {
-      db.prepare('DELETE FROM classe_chapitres WHERE classe_id = ?').run(cid);
-    });
-    db.prepare('DELETE FROM classes WHERE admin_id = ?').run(adminId);
-    db.prepare('DELETE FROM admins WHERE id = ?').run(adminId);
+    await appDb.run('DELETE FROM classes WHERE admin_id = $1', [adminId]);
+    await appDb.run('DELETE FROM admins WHERE id = $1', [adminId]);
     return json(res, 200, { ok: true });
   }
 
@@ -536,7 +507,7 @@ async function router(req, res) {
   // ── Créer une classe ──
   // POST /api/admin/classes  { nom, niveau }
   if (p === '/api/admin/classes' && method === 'POST') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const body = await parseBody(req);
     const nom = (body.nom || '').trim();
@@ -545,13 +516,14 @@ async function router(req, res) {
     if (!isNiveauValide(niveau)) return json(res, 400, { error: 'Niveau invalide (2nde, 1ere ou tle attendu)' });
 
     const id = genId();
-    db.prepare('INSERT INTO classes (id, admin_id, nom, niveau) VALUES (?, ?, ?, ?)').run(id, admin.id, nom, niveau);
+    await appDb.run('INSERT INTO classes (id, admin_id, nom, niveau) VALUES ($1, $2, $3, $4)', [id, admin.id, nom, niveau]);
 
     // Pré-autorise automatiquement les chapitres des années précédentes (déjà vues) —
     // seul le programme de l'année en cours démarre décoché, à activer au fil de l'année.
-    const insertCh = db.prepare('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES (?, ?)');
     const chapitresPreAutorises = niveauxPrecedents(niveau).flatMap(chapitreIdsDuNiveau);
-    chapitresPreAutorises.forEach(cid => insertCh.run(id, cid));
+    for (const cid of chapitresPreAutorises) {
+      await appDb.run('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES ($1, $2)', [id, cid]);
+    }
 
     return json(res, 201, { ok: true, id, nom, niveau, chapitresAutorises: chapitresPreAutorises });
   }
@@ -559,14 +531,14 @@ async function router(req, res) {
   // ── Liste des classes de l'enseignant ──
   // GET /api/admin/classes
   if (p === '/api/admin/classes' && method === 'GET') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
 
-    const classes = db.prepare('SELECT * FROM classes WHERE admin_id = ? ORDER BY nom').all(admin.id);
+    const classes = await appDb.all('SELECT * FROM classes WHERE admin_id = $1 ORDER BY nom', [admin.id]);
     const result = await Promise.all(classes.map(async c => {
-      const nbElevesRow = await pgGet('SELECT COUNT(*)::int as n FROM eleves WHERE classe_id = $1', [c.id]);
-      const chapitresAutorises = db.prepare('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = ?').all(c.id).map(r => r.chapitre_id);
-      return { ...c, nbEleves: nbElevesRow.n, chapitresAutorises };
+      const nbElevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves WHERE classe_id = $1', [c.id]);
+      const rows = await appDb.all('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = $1', [c.id]);
+      return { ...c, nbEleves: nbElevesRow.n, chapitresAutorises: rows.map(r => r.chapitre_id) };
     }));
     return json(res, 200, result);
   }
@@ -574,18 +546,19 @@ async function router(req, res) {
   // ── Définir les chapitres autorisés pour une classe ──
   // PUT /api/admin/classes/:id/chapitres  { chapitre_ids: [0,1,2] }
   if (p.match(/^\/api\/admin\/classes\/[^/]+\/chapitres$/) && method === 'PUT') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const classeId = p.split('/')[4];
-    const classe = db.prepare('SELECT * FROM classes WHERE id = ?').get(classeId);
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
     const body = await parseBody(req);
     const ids = Array.isArray(body.chapitre_ids) ? body.chapitre_ids.filter(n => Number.isInteger(n) && n >= 0 && n <= 99) : [];
 
-    db.prepare('DELETE FROM classe_chapitres WHERE classe_id = ?').run(classeId);
-    const insertCh = db.prepare('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES (?, ?)');
-    ids.forEach(cid => insertCh.run(classeId, cid));
+    await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = $1', [classeId]);
+    for (const cid of ids) {
+      await appDb.run('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES ($1, $2)', [classeId, cid]);
+    }
 
     return json(res, 200, { ok: true, chapitresAutorises: ids });
   }
@@ -593,10 +566,10 @@ async function router(req, res) {
   // ── Promouvoir une classe au niveau supérieur (fin d'année) ──
   // POST /api/admin/classes/:id/promouvoir
   if (p.match(/^\/api\/admin\/classes\/[^/]+\/promouvoir$/) && method === 'POST') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const classeId = p.split('/')[4];
-    const classe = db.prepare('SELECT * FROM classes WHERE id = ?').get(classeId);
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
     const idx = NIVEAU_ORDER.indexOf(classe.niveau);
@@ -604,29 +577,30 @@ async function router(req, res) {
       return json(res, 400, { error: 'Cette classe est déjà au niveau maximal (Terminale)' });
     }
     const nouveauNiveau = NIVEAU_ORDER[idx + 1];
-    db.prepare('UPDATE classes SET niveau = ? WHERE id = ?').run(nouveauNiveau, classeId);
+    await appDb.run('UPDATE classes SET niveau = $1 WHERE id = $2', [nouveauNiveau, classeId]);
 
     // Le programme de l'année qui vient de se terminer est désormais entièrement « déjà vu » :
     // on l'auto-autorise en totalité, comme les années précédentes le sont à la création d'une classe.
-    const insertCh = db.prepare('INSERT OR IGNORE INTO classe_chapitres (classe_id, chapitre_id) VALUES (?, ?)');
-    chapitreIdsDuNiveau(classe.niveau).forEach(cid => insertCh.run(classeId, cid));
+    for (const cid of chapitreIdsDuNiveau(classe.niveau)) {
+      await appDb.run('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES ($1, $2) ON CONFLICT DO NOTHING', [classeId, cid]);
+    }
 
-    const chapitresAutorises = db.prepare('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = ?').all(classeId).map(r => r.chapitre_id);
-    return json(res, 200, { ok: true, niveau: nouveauNiveau, chapitresAutorises });
+    const rows = await appDb.all('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = $1', [classeId]);
+    return json(res, 200, { ok: true, niveau: nouveauNiveau, chapitresAutorises: rows.map(r => r.chapitre_id) });
   }
 
   // ── Supprimer une classe ──
   // DELETE /api/admin/classes/:id
   if (p.startsWith('/api/admin/classes/') && method === 'DELETE') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const classeId = p.split('/')[4];
-    const classe = db.prepare('SELECT * FROM classes WHERE id = ?').get(classeId);
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
-    await pgRun('UPDATE eleves SET classe_id = NULL WHERE classe_id = $1', [classeId]);
-    db.prepare('DELETE FROM classe_chapitres WHERE classe_id = ?').run(classeId);
-    db.prepare('DELETE FROM classes WHERE id = ?').run(classeId);
+    await studentDb.run('UPDATE eleves SET classe_id = NULL WHERE classe_id = $1', [classeId]);
+    await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = $1', [classeId]);
+    await appDb.run('DELETE FROM classes WHERE id = $1', [classeId]);
     return json(res, 200, { ok: true });
   }
 
@@ -637,7 +611,7 @@ async function router(req, res) {
   // ── Créer un élève dans une classe ──
   // POST /api/admin/eleves  { code, pseudo, classe_id }
   if (p === '/api/admin/eleves' && method === 'POST') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const body = await parseBody(req);
     const code = (body.code || '').toUpperCase().trim();
@@ -646,66 +620,66 @@ async function router(req, res) {
     if (!code) return json(res, 400, { error: 'Code manquant' });
     if (!classeId) return json(res, 400, { error: 'Classe manquante' });
 
-    const classe = db.prepare('SELECT * FROM classes WHERE id = ?').get(classeId);
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
-    const existing = await pgGet('SELECT id FROM eleves WHERE code = $1', [code]);
+    const existing = await studentDb.get('SELECT id FROM eleves WHERE code = $1', [code]);
     if (existing) return json(res, 409, { error: 'Ce code existe déjà' });
 
     const id = genId();
-    await pgRun('INSERT INTO eleves (id, code, pseudo, classe_id, admin_id) VALUES ($1, $2, $3, $4, $5)', [id, code, pseudo, classeId, admin.id]);
+    await studentDb.run('INSERT INTO eleves (id, code, pseudo, classe_id, admin_id) VALUES ($1, $2, $3, $4, $5)', [id, code, pseudo, classeId, admin.id]);
     return json(res, 201, { ok: true, id, code, pseudo, classe_id: classeId });
   }
 
   // ── Déplacer un élève vers une autre classe du même enseignant ──
   // PUT /api/admin/eleves/:id/classe  { classe_id }
   if (p.match(/^\/api\/admin\/eleves\/[^/]+\/classe$/) && method === 'PUT') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const eleveId = p.split('/')[4];
-    const eleve = await pgGet('SELECT * FROM eleves WHERE id = $1', [eleveId]);
+    const eleve = await studentDb.get('SELECT * FROM eleves WHERE id = $1', [eleveId]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     if (eleve.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
 
     const body = await parseBody(req);
     const newClasseId = (body.classe_id || '').trim();
-    const newClasse = db.prepare('SELECT * FROM classes WHERE id = ?').get(newClasseId);
+    const newClasse = await appDb.get('SELECT * FROM classes WHERE id = $1', [newClasseId]);
     if (!newClasse || newClasse.admin_id !== admin.id) return json(res, 404, { error: 'Classe cible introuvable' });
 
-    await pgRun('UPDATE eleves SET classe_id = $1 WHERE id = $2', [newClasseId, eleveId]);
+    await studentDb.run('UPDATE eleves SET classe_id = $1 WHERE id = $2', [newClasseId, eleveId]);
     return json(res, 200, { ok: true });
   }
 
   // ── Supprimer un élève ──
   // DELETE /api/admin/eleves/:id
   if (p.startsWith('/api/admin/eleves/') && method === 'DELETE') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const eleveId = p.split('/')[4];
-    const eleve = await pgGet('SELECT * FROM eleves WHERE id = $1', [eleveId]);
+    const eleve = await studentDb.get('SELECT * FROM eleves WHERE id = $1', [eleveId]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     if (eleve.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
 
     // ON DELETE CASCADE (Postgres) nettoie automatiquement quiz_scores/notes/progression.
-    await pgRun('DELETE FROM eleves WHERE id = $1', [eleveId]);
+    await studentDb.run('DELETE FROM eleves WHERE id = $1', [eleveId]);
     return json(res, 200, { ok: true });
   }
 
   // ── Liste des élèves de l'enseignant (toutes ses classes) ──
   // GET /api/admin/eleves
   if (p === '/api/admin/eleves' && method === 'GET') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
 
     // classe_id = NULL (classe supprimée) : l'élève reste rattaché à son enseignant via
     // admin_id et doit rester visible ici plutôt que de disparaître silencieusement.
-    const eleves = await pgAll('SELECT * FROM eleves WHERE admin_id = $1', [admin.id]);
-    const classesById = classesMapParAdmin(admin.id);
+    const eleves = await studentDb.all('SELECT * FROM eleves WHERE admin_id = $1', [admin.id]);
+    const classesById = await classesMapParAdmin(admin.id);
 
     const result = await Promise.all(eleves.map(async e => {
       const classe = e.classe_id ? classesById.get(e.classe_id) : null;
-      const scores = await pgAll('SELECT chapitre_id, MAX(score) as score, MAX(total) as total FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
-      const notes = await pgAll('SELECT type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [e.id]);
+      const scores = await studentDb.all('SELECT chapitre_id, MAX(score) as score, MAX(total) as total FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
+      const notes = await studentDb.all('SELECT type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [e.id]);
       return {
         ...e,
         classe_nom: classe ? classe.nom : null,
@@ -722,20 +696,20 @@ async function router(req, res) {
   // ── Admin : Export CSV complet ──
   // GET /api/admin/export  (optionnel : ?classe_id=... pour limiter à une classe)
   if (p === '/api/admin/export' && method === 'GET') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
 
     const classeIdFilter = url.searchParams.get('classe_id');
     let classeFilter = null;
     if (classeIdFilter) {
-      classeFilter = db.prepare('SELECT * FROM classes WHERE id = ?').get(classeIdFilter);
+      classeFilter = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeIdFilter]);
       if (!classeFilter || classeFilter.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
     }
 
     const eleves = classeFilter
-      ? await pgAll('SELECT * FROM eleves WHERE admin_id = $1 AND classe_id = $2', [admin.id, classeIdFilter])
-      : await pgAll('SELECT * FROM eleves WHERE admin_id = $1', [admin.id]);
-    const classesById = classesMapParAdmin(admin.id);
+      ? await studentDb.all('SELECT * FROM eleves WHERE admin_id = $1 AND classe_id = $2', [admin.id, classeIdFilter])
+      : await studentDb.all('SELECT * FROM eleves WHERE admin_id = $1', [admin.id]);
+    const classesById = await classesMapParAdmin(admin.id);
     eleves.forEach(e => {
       const classe = e.classe_id ? classesById.get(e.classe_id) : null;
       e.classe_nom = classe ? classe.nom : null;
@@ -750,8 +724,8 @@ async function router(req, res) {
     csv += ';Nb_notes;Moyenne_notes\n';
 
     for (const e of eleves) {
-      const scores = await pgAll('SELECT chapitre_id, MAX(score) as score FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
-      const notes = await pgAll('SELECT valeur FROM notes WHERE eleve_id = $1', [e.id]);
+      const scores = await studentDb.all('SELECT chapitre_id, MAX(score) as score FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
+      const notes = await studentDb.all('SELECT valeur FROM notes WHERE eleve_id = $1', [e.id]);
       const avgNote = notes.length ? (notes.reduce((a,b) => a + b.valeur, 0) / notes.length).toFixed(2) : '';
 
       const scoreMap = {};
@@ -777,36 +751,36 @@ async function router(req, res) {
   // ── Admin : Historique complet des tentatives de quiz d'un élève ──
   // GET /api/admin/eleves/:id/historique
   if (p.match(/^\/api\/admin\/eleves\/[^/]+\/historique$/) && method === 'GET') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const eleveId = p.split('/')[4];
-    const eleve = await pgGet('SELECT * FROM eleves WHERE id = $1', [eleveId]);
+    const eleve = await studentDb.get('SELECT * FROM eleves WHERE id = $1', [eleveId]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     if (eleve.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
 
-    const historique = await pgAll('SELECT chapitre_id, score, total, date FROM quiz_scores WHERE eleve_id = $1 ORDER BY date ASC', [eleveId]);
+    const historique = await studentDb.all('SELECT chapitre_id, score, total, date FROM quiz_scores WHERE eleve_id = $1 ORDER BY date ASC', [eleveId]);
     return json(res, 200, historique);
   }
 
   // ── Admin : Réinitialiser les données d'un élève ──
   // POST /api/admin/eleves/:id/reset
   if (p.match(/^\/api\/admin\/eleves\/[^/]+\/reset$/) && method === 'POST') {
-    const admin = getAdminFromToken(req);
+    const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const eleveId = p.split('/')[4];
-    const eleve = await pgGet('SELECT * FROM eleves WHERE id = $1', [eleveId]);
+    const eleve = await studentDb.get('SELECT * FROM eleves WHERE id = $1', [eleveId]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     if (eleve.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
 
-    await pgRun('DELETE FROM quiz_scores WHERE eleve_id = $1', [eleveId]);
-    await pgRun('DELETE FROM notes WHERE eleve_id = $1', [eleveId]);
-    await pgRun('DELETE FROM progression WHERE eleve_id = $1', [eleveId]);
+    await studentDb.run('DELETE FROM quiz_scores WHERE eleve_id = $1', [eleveId]);
+    await studentDb.run('DELETE FROM notes WHERE eleve_id = $1', [eleveId]);
+    await studentDb.run('DELETE FROM progression WHERE eleve_id = $1', [eleveId]);
     return json(res, 200, { ok: true });
   }
 
   // ── Health check ──
   if (p === '/health') {
-    const elevesRow = await pgGet('SELECT COUNT(*)::int as n FROM eleves');
+    const elevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves');
     return json(res, 200, { ok: true, uptime: process.uptime(), eleves: elevesRow.n });
   }
 
@@ -824,19 +798,30 @@ const server = http.createServer(async (req, res) => {
 });
 
 (async () => {
+  if (!APP_DB_URL) {
+    console.error('❌ APP_DATABASE_URL non définie — la base appli PostgreSQL est obligatoire.');
+    console.error('   En local : STUDENT_DATABASE_URL=postgres://postgres:MOTDEPASSE@localhost:5432/physichim_app');
+    process.exit(1);
+  }
   if (!STUDENT_DB_URL) {
     console.error('❌ STUDENT_DATABASE_URL (ou DATABASE_URL) non définie — la base élèves PostgreSQL est obligatoire.');
-    console.error('   En local : installez PostgreSQL puis définissez par ex.');
-    console.error('   STUDENT_DATABASE_URL=postgres://postgres:postgres@localhost:5432/physichim_eleves');
+    console.error('   En local : STUDENT_DATABASE_URL=postgres://postgres:MOTDEPASSE@localhost:5432/physichim_eleves');
     process.exit(1);
   }
   try {
+    appPool = new Pool({ connectionString: APP_DB_URL });
+    await appPool.query('SELECT 1'); // échoue vite si la base est injoignable
+    appDb = makeQueryHelpers(appPool);
+    await initAppDB();
+    console.log('✅ Base de données appli (PostgreSQL) initialisée');
+
     pgPool = new Pool({ connectionString: STUDENT_DB_URL });
-    await pgPool.query('SELECT 1'); // échoue vite si la base est injoignable
-    await initPgDB();
+    await pgPool.query('SELECT 1');
+    studentDb = makeQueryHelpers(pgPool);
+    await initStudentDB();
     console.log('✅ Base de données élèves (PostgreSQL) initialisée');
   } catch (e) {
-    console.error('❌ Erreur PostgreSQL (base élèves) :', e.message);
+    console.error('❌ Erreur PostgreSQL :', e.message);
     process.exit(1);
   }
 
