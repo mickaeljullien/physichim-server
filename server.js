@@ -825,7 +825,9 @@ const server = http.createServer(async (req, res) => {
     process.exit(1);
   }
 
-  server.listen(PORT, () => {
+  // '0.0.0.0' explicite : certains hébergeurs (dont Render) attendent une écoute sur
+  // toutes les interfaces pour détecter correctement le port ouvert.
+  server.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 PhysiChim Server — port ${PORT}`);
     console.log(`🔑 Clé admin : ${ADMIN_KEY}`);
     console.log(`📊 /api/admin/eleves — gestion des élèves`);
