@@ -566,6 +566,32 @@
   .score-num { font-size: 2rem; font-weight: 800; }
   .score-label { font-size: 0.75rem; color: var(--muted); }
 
+  .confetti-piece {
+    position: fixed;
+    top: -12px;
+    width: 8px; height: 14px;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 999;
+    animation: confettiFall linear forwards;
+  }
+  @keyframes confettiFall {
+    to { transform: translateY(110vh) rotate(var(--rot)); opacity: 0; }
+  }
+
+  .badges-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .badge-pill {
+    display: flex; align-items: center; gap: 6px;
+    background: linear-gradient(135deg, var(--surface2), var(--surface));
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 13px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    animation: popIn 0.4s cubic-bezier(0.34,1.15,0.64,1) backwards;
+  }
+  .badge-pill .badge-icon { font-size: 0.95rem; }
+
   /* ── TABLEAU DE BORD ── */
   .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 20px; }
   .stat-card {
@@ -17625,6 +17651,38 @@ function nextQuestion() {
   refreshContent();
 }
 
+// Messages variés (tirés au sort) pour ne pas répéter toujours la même phrase
+// après un quiz — un petit détail qui rend l'appli plus vivante.
+const QUIZ_MESSAGES = {
+  great: ['🎉 Excellent travail !', '🌟 Tu maîtrises ce chapitre !', '🚀 Impressionnant, continue comme ça !', '🏆 Score au top !', '✨ Sans faute ou presque !'],
+  ok: ['👍 Pas mal du tout !', '💪 Bon travail, encore un petit effort !', '📈 Tu progresses bien !', '🙂 Une bonne base, à consolider !'],
+  bad: ['📚 Ce chapitre mérite une deuxième lecture', "💡 Retourne voir le cours, tu vas y arriver", '🔄 Un peu d\'entraînement et ce sera bon', '🌱 Chaque essai te fait progresser']
+};
+function randomQuizMessage(cls) {
+  const arr = QUIZ_MESSAGES[cls];
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Petite pluie de confettis pour célébrer un bon score — CSS only, aucune dépendance.
+function launchConfetti() {
+  const colors = ['#4f8ef7', '#f7a24f', '#4fca7a', '#a44ff7', '#f7d44f', '#f75959'];
+  const count = 28;
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    const duration = 1.6 + Math.random() * 1.2;
+    const delay = Math.random() * 0.3;
+    el.style.left = (Math.random() * 100) + 'vw';
+    el.style.background = colors[Math.floor(Math.random() * colors.length)];
+    el.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+    el.style.animationDuration = duration + 's';
+    el.style.animationDelay = delay + 's';
+    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), (duration + delay) * 1000 + 200);
+  }
+}
+
 async function finishQuiz() {
   const ch = CHAPTERS.find(c => c.id === state.currentChapter);
   const q = state.quiz;
@@ -17640,8 +17698,9 @@ async function finishQuiz() {
   buildNav();
 
   const cls = score >= 7 ? 'great' : score >= 5 ? 'ok' : 'bad';
-  const msg = score >= 7 ? '🎉 Excellent !' : score >= 5 ? '👍 Bien !' : '📚 À retravailler';
+  const msg = randomQuizMessage(cls);
   const student = getStudent();
+  if (score >= 8) launchConfetti();
 
   document.getElementById('content').innerHTML = `
     <div class="quiz-results">
@@ -17710,6 +17769,17 @@ function renderDashboard() {
   const completed = scoreVals.length;
   const avgGrade  = notes.length ? (notes.reduce((a,b)=>a+parseFloat(b.val),0)/notes.length).toFixed(1) : '—';
 
+  // Petits badges de progression, calculés à partir des scores déjà chargés — aucune
+  // donnée supplémentaire à stocker, juste une lecture encourageante de ce qui existe.
+  const mastered = scoreVals.filter(s => s >= 7).length;
+  const perfect = scoreVals.some(s => s === 10);
+  const badges = [];
+  if (completed >= 1) badges.push({ icon: '🌟', label: 'Premier quiz complété' });
+  if (completed >= 5) badges.push({ icon: '🎯', label: '5 quiz complétés' });
+  if (completed >= 10) badges.push({ icon: '🔥', label: '10 quiz complétés' });
+  if (mastered >= 3) badges.push({ icon: '🏆', label: `${mastered} chapitres maîtrisés` });
+  if (perfect) badges.push({ icon: '💯', label: 'Score parfait obtenu' });
+
   return `
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
       <div style="font-size:2rem">👤</div>
@@ -17740,6 +17810,10 @@ function renderDashboard() {
         <div class="stat-value" style="color:${avgGrade!=='—'&&parseFloat(avgGrade)>=10?'var(--green)':'var(--red)'}">${avgGrade}<span class="stat-unit">/ 20</span></div>
       </div>
     </div>
+
+    ${badges.length ? `<div class="badges-row">
+      ${badges.map((b, i) => `<div class="badge-pill" style="animation-delay:${i*0.06}s"><span class="badge-icon">${b.icon}</span>${b.label}</div>`).join('')}
+    </div>` : ''}
 
     <div style="margin-bottom:20px">
       <div style="font-family:Syne,sans-serif;font-weight:700;margin-bottom:12px">📊 Résultats par chapitre</div>
@@ -17826,6 +17900,14 @@ async function deleteGrade(noteId) {
 // NAVIGATION
 // ═══════════════════════════════════════════════════
 
+// Salutation selon l'heure — un petit détail qui rend l'accueil moins générique.
+function greeting() {
+  const h = new Date().getHours();
+  if (h < 12) return 'Bonjour';
+  if (h < 18) return 'Bon après-midi';
+  return 'Bonsoir';
+}
+
 function showHome() {
   state.currentChapter = null;
   document.getElementById('tab-bar').style.display = 'none';
@@ -17833,10 +17915,12 @@ function showHome() {
   setNavActive('nav-home');
   const notConnected = !state.activeStudentId;
   const allLocked = state.activeStudentId && Array.isArray(state.activeStudentData.chapitresAutorises) && state.activeStudentData.chapitresAutorises.length === 0;
+  const student = getStudent();
+  const title = notConnected ? 'Bienvenue 👋' : `${greeting()}, ${escapeHtml(student ? student.name : '')} 👋`;
   document.getElementById('content').innerHTML = `
     <div style="margin-bottom:20px">
-      <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">Bienvenue 👋</div>
-      <p style="color:var(--muted);font-size:.88rem">${notConnected ? 'Connectez-vous avec votre code élève pour accéder aux fiches de cours et aux quiz.' : allLocked ? 'Votre professeur n\'a pas encore activé de chapitre pour votre classe. Revenez plus tard.' : 'Cliquez sur un chapitre pour commencer à réviser.'}</p>
+      <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">${title}</div>
+      <p style="color:var(--muted);font-size:.88rem">${notConnected ? 'Connectez-vous avec votre code élève pour accéder aux fiches de cours et aux quiz.' : allLocked ? 'Votre professeur n\'a pas encore activé de chapitre pour votre classe. Revenez plus tard.' : 'Choisissez un chapitre pour commencer à réviser.'}</p>
       ${notConnected ? `<button class="btn-primary" onclick="openStudentModal()" style="margin-top:8px">Se connecter</button>` : ''}
     </div>
     <div class="home-grid">
