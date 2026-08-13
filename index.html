@@ -430,6 +430,17 @@
   }
   .warn-box::before { content: '⚠'; color: var(--accent2); flex-shrink: 0; }
 
+  .schema-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 16px 14px;
+    margin: 12px 0;
+    text-align: center;
+  }
+  .schema-box svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+  .schema-caption { font-size: 0.78rem; color: var(--muted); margin-top: 10px; line-height: 1.4; }
+
   .table-wrapper { overflow-x: auto; margin: 8px 0; }
   .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
   .data-table th { background: var(--surface2); padding: 8px 12px; text-align: left; font-weight: 600; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
@@ -2425,6 +2436,11 @@ const CHAPTERS = [
               type: "formula",
               label: "Condition du modèle afocal",
               text: "Le foyer image de l'objectif F'₁ est confondu avec le foyer objet de l'oculaire F₂ :\nF'₁ = F₂"
+            },
+            {
+              type: "schema",
+              svg: "<svg viewBox=\"0 0 560 200\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"rayArrow5\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#1B2420\"/></marker></defs><line x1=\"10\" y1=\"100\" x2=\"550\" y2=\"100\" stroke=\"#B9C0AC\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"150\" y1=\"20\" x2=\"150\" y2=\"180\" stroke=\"#6E4FA0\" stroke-width=\"2.5\"/><path d=\"M143,20 L150,10 L157,20\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M143,180 L150,190 L157,180\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"150\" y=\"199\" text-anchor=\"middle\" font-size=\"11\" fill=\"#1B2420\">Objectif (f'₁)</text><line x1=\"430\" y1=\"70\" x2=\"430\" y2=\"130\" stroke=\"#6E4FA0\" stroke-width=\"2.5\"/><path d=\"M423,70 L430,60 L437,70\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M423,130 L430,140 L437,130\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"430\" y=\"199\" text-anchor=\"middle\" font-size=\"11\" fill=\"#1B2420\">Oculaire (f'₂)</text><circle cx=\"290\" cy=\"100\" r=\"3\" fill=\"#C0472F\"/><text x=\"290\" y=\"88\" text-anchor=\"middle\" font-size=\"11\" fill=\"#C0472F\">F'₁ = F₂</text><line x1=\"15\" y1=\"80\" x2=\"150\" y2=\"80\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"15\" y1=\"120\" x2=\"150\" y2=\"120\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"80\" x2=\"290\" y2=\"100\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"120\" x2=\"290\" y2=\"100\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"100\" x2=\"430\" y2=\"120\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"100\" x2=\"430\" y2=\"80\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"430\" y1=\"120\" x2=\"545\" y2=\"120\" stroke=\"#1B2420\" stroke-width=\"1.5\" marker-end=\"url(#rayArrow5)\"/><line x1=\"430\" y1=\"80\" x2=\"545\" y2=\"80\" stroke=\"#1B2420\" stroke-width=\"1.5\" marker-end=\"url(#rayArrow5)\"/><text x=\"12\" y=\"68\" font-size=\"10\" fill=\"#5C6B60\">Objet à l'infini</text></svg>",
+              caption: "Rayons parallèles issus d'un objet à l'infini : ils convergent vers le foyer commun F'₁ = F₂, puis ressortent parallèles entre eux après l'oculaire — d'où le nom de système afocal."
             }
           ]
         },
@@ -2984,6 +3000,11 @@ const CHAPTERS = [
               text: "On trace deux tangentes à la courbe pH = f(V), parallèles entre elles, de part et d'autre du saut de pH.\nOn trace la droite parallèle à ces deux tangentes et équidistante (médiatrice).\nL'abscisse du point d'intersection de cette médiatrice avec la courbe donne le volume équivalent Véq."
             },
             {
+              type: "schema",
+              svg: "<svg viewBox=\"0 0 500 320\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"280\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"50\" y1=\"280\" x2=\"470\" y2=\"280\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"18\" y=\"24\" font-size=\"11\" fill=\"#5C6B60\">pH</text><text x=\"420\" y=\"310\" font-size=\"11\" fill=\"#5C6B60\">V (mL)</text><text x=\"38\" y=\"284\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"end\">0</text><text x=\"38\" y=\"154\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"end\">7</text><text x=\"38\" y=\"24\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"end\">14</text><text x=\"50\" y=\"296\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">0</text><text x=\"218\" y=\"296\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">10</text><text x=\"386\" y=\"296\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">20</text><line x1=\"90\" y1=\"215\" x2=\"320\" y2=\"126\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"180\" y1=\"117\" x2=\"460\" y2=\"8\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"150\" y1=\"168\" x2=\"350\" y2=\"90\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><polyline points=\"50,226 84,211 117,200 151,192 184,182 218,170 235,159 243,146 252,128 260,102 268,87 285,76 319,66 386,59 470,55\" fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"2.5\"/><line x1=\"252\" y1=\"280\" x2=\"252\" y2=\"128\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"252\" cy=\"128\" r=\"3.5\" fill=\"#C0472F\"/><text x=\"252\" y=\"300\" font-size=\"10\" fill=\"#C0472F\" text-anchor=\"middle\">Véq = 12,0 mL</text><text x=\"60\" y=\"120\" font-size=\"10\" fill=\"#C0472F\">pH ≈ 8,2</text></svg>",
+              caption: "Titrage de l'acide éthanoïque (V₀ = 20,0 mL) par la soude (cB = 0,10 mol·L⁻¹) : les deux tangentes parallèles (gris) et leur médiatrice (rouge) coupent la courbe au point équivalent, ici Véq = 12,0 mL."
+            },
+            {
               type: "warn",
               text: "Au point d'équivalence, la valeur du pH n'est pas nécessairement égale à 7 : elle dépend de la nature acido-basique des espèces présentes en solution à cet instant (par exemple pH > 7 pour le titrage d'un acide faible par une base forte, car l'espèce majoritaire à l'équivalence est une base faible)."
             }
@@ -3454,6 +3475,11 @@ const CHAPTERS = [
               type: "formula",
               label: "Équation de la trajectoire",
               text: "En éliminant t (t = x / (v0 cosα)) :\ny(x) = -g x² / (2 v0² cos²α) + x tanα\n\nC'est l'équation d'une parabole : le mouvement est dit mouvement parabolique."
+            },
+            {
+              type: "schema",
+              svg: "<svg viewBox=\"0 0 500 280\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"vArrow9\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"gArrow9\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><line x1=\"60\" y1=\"240\" x2=\"470\" y2=\"240\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><line x1=\"60\" y1=\"240\" x2=\"60\" y2=\"30\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><text x=\"475\" y=\"244\" font-size=\"11\" fill=\"#5C6B60\">x</text><text x=\"55\" y=\"26\" font-size=\"11\" fill=\"#5C6B60\" text-anchor=\"middle\">y</text><text x=\"48\" y=\"252\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"end\">O</text><path d=\"M60,240 Q260,-80 460,240\" fill=\"none\" stroke=\"#3E7DBF\" stroke-width=\"2.5\"/><circle cx=\"460\" cy=\"240\" r=\"3\" fill=\"#3E7DBF\"/><line x1=\"60\" y1=\"240\" x2=\"124\" y2=\"240\" stroke=\"#5C6B60\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"124\" y1=\"240\" x2=\"124\" y2=\"163\" stroke=\"#5C6B60\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><text x=\"88\" y=\"253\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">v₀cosα</text><text x=\"131\" y=\"205\" font-size=\"10\" fill=\"#5C6B60\">v₀sinα</text><line x1=\"60\" y1=\"240\" x2=\"124\" y2=\"163\" stroke=\"#3E7DBF\" stroke-width=\"2.2\" marker-end=\"url(#vArrow9)\"/><text x=\"128\" y=\"158\" font-size=\"12\" fill=\"#3E7DBF\" font-weight=\"600\">v₀</text><path d=\"M95,240 A35,35 0 0,0 82,213\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1\"/><text x=\"88\" y=\"228\" font-size=\"10\" fill=\"#1B2420\">α</text><line x1=\"260\" y1=\"82\" x2=\"260\" y2=\"122\" stroke=\"#C0472F\" stroke-width=\"2.2\" marker-end=\"url(#gArrow9)\"/><text x=\"268\" y=\"112\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">g</text></svg>",
+              caption: "Trajectoire parabolique : le vecteur vitesse initiale v₀ se décompose en v₀cosα (horizontale) et v₀sinα (verticale). Le vecteur accélération g, constant et vertical, est responsable de la courbure de la trajectoire."
             },
             {
               type: "warn",
@@ -17550,8 +17576,9 @@ function renderContent(c) {
   if (c.type === 'def') return `<div class="key-def"><span class="def-term">${c.term}</span><br>${c.text}</div>`;
   if (c.type === 'formula') return `<div class="formula-box"><div class="formula-label">${c.label}</div>${c.text.replace(/\n/g,'<br>')}</div>`;
   if (c.type === 'warn') return `<div class="warn-box">${c.text}</div>`;
-  if (c.type === 'text') return `<p style="font-size:.88rem;line-height:1.6;color:#c8d0e0;margin:6px 0">${c.text}</p>`;
+  if (c.type === 'text') return `<p style="font-size:.88rem;line-height:1.6;color:#2E3A34;margin:6px 0">${c.text}</p>`;
   if (c.type === 'table') return `<div class="table-wrapper"><table class="data-table"><thead><tr>${c.headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${c.rows.map(r=>`<tr>${r.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  if (c.type === 'schema') return `<div class="schema-box">${c.svg}${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
   return '';
 }
 
