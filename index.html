@@ -5,34 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PhysiChim Terminale — Espace de révision</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Archivo+Black&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
 
   :root {
-    --bg: #0b0d12;
-    --surface: #161922;
-    --surface2: #1e2330;
-    --border: #2a3040;
-    --accent: #4f8ef7;
-    --accent2: #f7a24f;
-    --green: #4fca7a;
-    --red: #f75959;
-    --yellow: #f7d44f;
-    --text: #e8ecf4;
-    --muted: #7a8399;
-    --ch-chimie: #4f8ef7;
-    --ch-physique: #a44ff7;
-    --ch-meca: #f7a24f;
-    --ch-thermo: #4fca7a;
-    --ch-elec: #f75959;
-    --ch-organique: #f7d44f;
+    --bg: #F1F2ED;
+    --surface: #FAFAF5;
+    --surface2: #EBECE3;
+    --border: #D3D6C9;
+    --accent: #2F7D75;
+    --accent2: #C0472F;
+    --green: #3F7A3D;
+    --red: #B23A2E;
+    --yellow: #B8862E;
+    --text: #1B2420;
+    --muted: #5C6B60;
+    --ch-chimie: #2F7D75;
+    --ch-physique: #6E4FA0;
+    --ch-meca: #3E7DBF;
+    --ch-thermo: #C0472F;
+    --ch-elec: #B8862E;
+    --ch-organique: #5C8A3A;
     --radius-sm: 8px;
     --radius: 14px;
     --radius-lg: 20px;
     --transition: 0.22s cubic-bezier(0.34,1.15,0.64,1);
     --transition-fast: 0.15s cubic-bezier(0.4,0,0.2,1);
-    --shadow-sm: 0 2px 8px rgba(0,0,0,0.22);
-    --shadow-md: 0 8px 24px rgba(0,0,0,0.32);
-    --shadow-lg: 0 16px 44px rgba(0,0,0,0.4);
+    --shadow-sm: 0 2px 8px rgba(27,36,32,0.08);
+    --shadow-md: 0 8px 24px rgba(27,36,32,0.12);
+    --shadow-lg: 0 16px 44px rgba(27,36,32,0.16);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -40,9 +40,9 @@
   body {
     font-family: 'DM Sans', sans-serif;
     background:
-      radial-gradient(680px 420px at 8% -8%, rgba(79,142,247,0.10), transparent 60%),
-      radial-gradient(600px 380px at 108% 12%, rgba(247,162,79,0.08), transparent 60%),
-      radial-gradient(900px 600px at 50% 120%, rgba(164,79,247,0.06), transparent 60%),
+      radial-gradient(680px 420px at 8% -8%, rgba(47,125,117,0.07), transparent 60%),
+      radial-gradient(600px 380px at 108% 12%, rgba(192,71,47,0.05), transparent 60%),
+      radial-gradient(900px 600px at 50% 120%, rgba(110,79,160,0.04), transparent 60%),
       var(--bg);
     background-attachment: fixed;
     color: var(--text);
@@ -67,7 +67,7 @@
   #sidebar {
     width: 280px;
     min-width: 280px;
-    background: linear-gradient(180deg, var(--surface), #12151d);
+    background: linear-gradient(180deg, var(--surface), #E6E7DB);
     border-right: 1px solid var(--border);
     box-shadow: var(--shadow-md);
     display: flex;
@@ -85,7 +85,7 @@
   }
 
   .app-logo {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Archivo Black', sans-serif;
     font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: -0.02em;
@@ -111,7 +111,7 @@
     cursor: pointer;
     transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
   }
-  #student-badge:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(79,142,247,0.15); }
+  #student-badge:hover { border-color: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(47,125,117,0.15); }
   .logout-btn {
     background: transparent;
     border: none;
@@ -124,7 +124,7 @@
     flex-shrink: 0;
     transition: color var(--transition-fast), background var(--transition-fast);
   }
-  .logout-btn:hover { color: var(--red); background: rgba(247,89,89,0.12); }
+  .logout-btn:hover { color: var(--red); background: rgba(178,58,46,0.12); }
 
   #niveau-switcher {
     margin: 10px 20px 0;
@@ -149,7 +149,7 @@
     transition: all var(--transition-fast);
   }
   .niveau-btn:hover { color: var(--text); }
-  .niveau-btn.active { background: linear-gradient(135deg, var(--accent), #3a7de8); color: #fff; box-shadow: 0 2px 8px rgba(79,142,247,0.3); }
+  .niveau-btn.active { background: linear-gradient(135deg, var(--accent), #235850); color: #fff; box-shadow: 0 2px 8px rgba(47,125,117,0.3); }
   .niveau-btn:disabled { cursor: not-allowed; opacity: 0.4; }
   #student-badge .student-icon { font-size: 1.2rem; }
   #student-badge .student-info { flex: 1; min-width: 0; }
@@ -177,7 +177,7 @@
   }
 
   .nav-item:hover { background: var(--surface2); color: var(--text); transform: translateX(2px); }
-  .nav-item.active { background: linear-gradient(135deg, rgba(79,142,247,0.16), rgba(79,142,247,0.06)); color: var(--accent); border-color: rgba(79,142,247,0.25); font-weight: 500; box-shadow: 0 2px 10px rgba(79,142,247,0.12); }
+  .nav-item.active { background: linear-gradient(135deg, rgba(47,125,117,0.14), rgba(47,125,117,0.05)); color: var(--accent); border-color: rgba(47,125,117,0.28); font-weight: 500; box-shadow: 0 2px 10px rgba(47,125,117,0.12); }
   .nav-item.locked { opacity: 0.45; cursor: not-allowed; }
   .nav-item.locked:hover { background: transparent; transform: none; color: var(--muted); }
   .nav-item .nav-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
@@ -209,7 +209,7 @@
     align-items: center;
     padding: 0 24px;
     border-bottom: 1px solid var(--border);
-    background: rgba(22,25,34,0.6);
+    background: rgba(241,242,237,0.78);
     backdrop-filter: blur(8px);
     gap: 16px;
     flex-shrink: 0;
@@ -263,7 +263,7 @@
     transition: all var(--transition-fast);
     font-weight: 500;
   }
-  .tab-btn.active { background: linear-gradient(135deg, var(--accent), #3a7de8); color: #fff; box-shadow: 0 3px 12px rgba(79,142,247,0.35); }
+  .tab-btn.active { background: linear-gradient(135deg, var(--accent), #235850); color: #fff; box-shadow: 0 3px 12px rgba(47,125,117,0.32); }
   .tab-btn:hover:not(.active) { color: var(--text); background: var(--surface2); }
 
   /* ── CONTENT AREA ── */
@@ -306,18 +306,18 @@
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
-    height: 3px;
+    height: 4px;
     background: var(--card-color, var(--accent));
   }
   .chapter-card::after {
-    content: '';
+    content: attr(data-symbol);
     position: absolute;
-    top: -40%; right: -20%;
-    width: 140px; height: 140px;
-    background: var(--card-color, var(--accent));
+    top: -14px; right: 6px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--card-color, var(--accent));
     opacity: 0.08;
-    border-radius: 50%;
-    filter: blur(20px);
     pointer-events: none;
     transition: opacity var(--transition);
   }
@@ -326,11 +326,11 @@
   .chapter-card:active { transform: translateY(-1px) scale(0.995); }
   .chapter-card.locked { cursor: not-allowed; opacity: 0.5; filter: grayscale(0.5); }
   .chapter-card.locked:hover { transform: none; box-shadow: var(--shadow-sm); border-color: var(--border); }
-  .chapter-card.locked:hover::after { opacity: 0.08; }
+  .chapter-card.locked:hover::after { opacity: 0.06; }
   .chapter-lock-badge { position: absolute; top: 12px; right: 12px; font-size: 1rem; }
 
-  .card-num { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); margin-bottom: 6px; }
-  .card-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+  .card-num { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.03em; color: var(--card-color, var(--muted)); margin-bottom: 6px; position: relative; z-index: 1; }
+  .card-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; line-height: 1.3; margin-bottom: 10px; position: relative; z-index: 1; }
   .card-tag { display: inline-block; font-size: 0.68rem; padding: 2px 7px; border-radius: 4px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; }
 
   .card-progress-row { margin-top: 12px; display: flex; align-items: center; gap: 8px; }
@@ -348,7 +348,7 @@
     border-bottom: 1px solid var(--border);
   }
   .fiche-num {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Archivo Black', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     color: var(--muted);
@@ -368,7 +368,7 @@
     margin-bottom: 14px;
     transition: box-shadow var(--transition), border-color var(--transition);
   }
-  .section:hover { box-shadow: var(--shadow-md); border-color: #333a4d; }
+  .section:hover { box-shadow: var(--shadow-md); border-color: #B9C0AC; }
   .section-title {
     font-family: 'Syne', sans-serif;
     font-size: 1rem;
@@ -381,7 +381,7 @@
   .section-title .s-icon { font-size: 1rem; }
 
   .key-def {
-    background: linear-gradient(90deg, rgba(79,142,247,0.08), var(--surface2) 40%);
+    background: linear-gradient(90deg, rgba(47,125,117,0.10), var(--surface2) 40%);
     border-left: 3px solid var(--accent);
     padding: 10px 14px;
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -392,18 +392,18 @@
   .key-def .def-term { font-weight: 600; color: var(--accent); }
 
   .formula-box {
-    background: linear-gradient(160deg, #0e1017, #0a0c12);
-    border: 1px solid var(--border);
+    background: linear-gradient(160deg, #1B2420, #131A16);
+    border: 1px solid #2A3A32;
     border-radius: var(--radius-sm);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), var(--shadow-sm);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), var(--shadow-sm);
     padding: 12px 16px;
     font-family: 'DM Mono', monospace;
     font-size: 0.85rem;
     margin: 8px 0;
-    color: var(--accent2);
+    color: #E0A468;
     line-height: 1.8;
   }
-  .formula-box .formula-label { font-size: 0.72rem; color: var(--muted); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+  .formula-box .formula-label { font-size: 0.72rem; color: #8FA99A; font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
 
   .points-list { list-style: none; }
   .points-list li {
@@ -412,13 +412,13 @@
     padding: 5px 0;
     font-size: 0.88rem;
     line-height: 1.5;
-    color: #c8d0e0;
+    color: #2E3A34;
   }
   .points-list li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
 
   .warn-box {
-    background: rgba(247,162,79,0.08);
-    border: 1px solid rgba(247,162,79,0.3);
+    background: rgba(192,71,47,0.08);
+    border: 1px solid rgba(192,71,47,0.26);
     border-radius: 8px;
     padding: 10px 14px;
     font-size: 0.84rem;
@@ -433,7 +433,7 @@
   .table-wrapper { overflow-x: auto; margin: 8px 0; }
   .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
   .data-table th { background: var(--surface2); padding: 8px 12px; text-align: left; font-weight: 600; color: var(--muted); font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase; }
-  .data-table td { padding: 8px 12px; border-top: 1px solid var(--border); color: #c8d0e0; }
+  .data-table td { padding: 8px 12px; border-top: 1px solid var(--border); color: #2E3A34; }
   .data-table tr:hover td { background: var(--surface2); }
 
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -448,7 +448,7 @@
   .quiz-intro p { color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--accent), #3a7de8);
+    background: linear-gradient(135deg, var(--accent), #235850);
     color: #fff;
     border: none;
     padding: 12px 28px;
@@ -457,10 +457,10 @@
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(79,142,247,0.2);
+    box-shadow: 0 2px 10px rgba(47,125,117,0.22);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
   }
-  .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(79,142,247,0.4); }
+  .btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(47,125,117,0.38); }
   .btn-primary:active { transform: translateY(0) scale(0.98); }
   .btn-secondary {
     background: var(--surface2);
@@ -512,10 +512,10 @@
     font-size: 0.9rem;
     line-height: 1.4;
   }
-  .option:hover:not(.locked) { border-color: var(--accent); background: rgba(79,142,247,0.06); transform: translateX(2px); }
-  .option.selected { border-color: var(--accent); background: rgba(79,142,247,0.1); }
-  .option.correct { border-color: var(--green); background: rgba(79,202,122,0.1); box-shadow: 0 0 0 3px rgba(79,202,122,0.08); animation: popIn 0.3s cubic-bezier(0.34,1.15,0.64,1); }
-  .option.wrong { border-color: var(--red); background: rgba(247,89,89,0.1); animation: popIn 0.3s cubic-bezier(0.34,1.15,0.64,1); }
+  .option:hover:not(.locked) { border-color: var(--accent); background: rgba(47,125,117,0.07); transform: translateX(2px); }
+  .option.selected { border-color: var(--accent); background: rgba(47,125,117,0.10); }
+  .option.correct { border-color: var(--green); background: rgba(63,122,61,0.12); box-shadow: 0 0 0 3px rgba(63,122,61,0.10); animation: popIn 0.3s cubic-bezier(0.34,1.15,0.64,1); }
+  .option.wrong { border-color: var(--red); background: rgba(178,58,46,0.10); animation: popIn 0.3s cubic-bezier(0.34,1.15,0.64,1); }
   .option.locked { cursor: default; }
   .option.locked:hover { transform: none; }
   .option-letter {
@@ -539,7 +539,7 @@
     margin-top: 14px;
     font-size: 0.84rem;
     line-height: 1.6;
-    color: #c8d0e0;
+    color: #2E3A34;
     display: none;
   }
   .explanation.show { display: block; }
@@ -560,10 +560,10 @@
     font-family: 'Syne', sans-serif;
     animation: popIn 0.5s cubic-bezier(0.34,1.15,0.64,1);
   }
-  .score-circle.great { border-color: var(--green); background: rgba(79,202,122,0.1); box-shadow: 0 0 32px rgba(79,202,122,0.25); }
-  .score-circle.ok { border-color: var(--yellow); background: rgba(247,212,79,0.1); box-shadow: 0 0 32px rgba(247,212,79,0.2); }
-  .score-circle.bad { border-color: var(--red); background: rgba(247,89,89,0.1); box-shadow: 0 0 32px rgba(247,89,89,0.2); }
-  .score-num { font-size: 2rem; font-weight: 800; }
+  .score-circle.great { border-color: var(--green); background: rgba(63,122,61,0.12); box-shadow: 0 0 32px rgba(63,122,61,0.22); }
+  .score-circle.ok { border-color: var(--yellow); background: rgba(184,134,46,0.12); box-shadow: 0 0 32px rgba(184,134,46,0.20); }
+  .score-circle.bad { border-color: var(--red); background: rgba(178,58,46,0.10); box-shadow: 0 0 32px rgba(178,58,46,0.20); }
+  .score-num { font-family: 'Archivo Black', sans-serif; font-size: 1.8rem; font-weight: 400; }
   .score-label { font-size: 0.75rem; color: var(--muted); }
 
   .confetti-piece {
@@ -604,7 +604,7 @@
   }
   .stat-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
   .stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .stat-value { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; }
+  .stat-value { font-family: 'Archivo Black', sans-serif; font-size: 1.8rem; font-weight: 400; }
   .stat-unit { font-size: 0.8rem; color: var(--muted); margin-left: 4px; }
 
   .grades-section { margin-top: 20px; }
@@ -623,7 +623,7 @@
     margin-bottom: 8px;
     transition: transform var(--transition-fast), border-color var(--transition-fast);
   }
-  .grade-entry:hover { transform: translateX(2px); border-color: #333a4d; }
+  .grade-entry:hover { transform: translateX(2px); border-color: #B9C0AC; }
   .grade-type { font-size: 0.75rem; color: var(--muted); min-width: 80px; }
   .grade-name { flex: 1; font-size: 0.88rem; }
   .grade-value { font-family: 'DM Mono', monospace; font-size: 1rem; font-weight: 600; }
@@ -692,7 +692,7 @@
     transition: all var(--transition);
     cursor: pointer;
   }
-  .annale-link:hover { background: rgba(79,142,247,0.1); border-color: var(--accent); }
+  .annale-link:hover { background: rgba(47,125,117,0.10); border-color: var(--accent); }
 
   /* ── STUDENT MODAL ── */
   .modal-overlay {
@@ -734,7 +734,7 @@
     transition: all var(--transition-fast);
   }
   .student-item:hover { border-color: var(--accent); transform: translateX(2px); }
-  .student-item.active-student { border-color: var(--accent); background: rgba(79,142,247,0.1); box-shadow: 0 2px 10px rgba(79,142,247,0.12); }
+  .student-item.active-student { border-color: var(--accent); background: rgba(47,125,117,0.10); box-shadow: 0 2px 10px rgba(47,125,117,0.12); }
   .student-item .s-num { font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--muted); min-width: 40px; }
   .student-item .s-name { flex: 1; font-size: 0.88rem; }
   .student-item .s-del { color: var(--red); cursor: pointer; opacity: 0.4; transition: opacity var(--transition); font-size: 0.9rem; padding: 2px 6px; }
@@ -746,8 +746,8 @@
 
   /* ── RGPD notice ── */
   .rgpd-notice {
-    background: rgba(79,142,247,0.06);
-    border: 1px solid rgba(79,142,247,0.2);
+    background: rgba(47,125,117,0.06);
+    border: 1px solid rgba(47,125,117,0.18);
     border-radius: 8px;
     padding: 10px 14px;
     font-size: 0.78rem;
@@ -762,8 +762,8 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(79,202,122,0.1);
-    border: 1px solid rgba(79,202,122,0.3);
+    background: rgba(63,122,61,0.10);
+    border: 1px solid rgba(63,122,61,0.28);
     border-radius: 6px;
     padding: 3px 10px;
     font-size: 0.72rem;
@@ -773,7 +773,7 @@
     text-transform: uppercase;
   }
 
-  .data-table tbody tr:hover td { background: rgba(255,255,255,0.03); }
+  .data-table tbody tr:hover td { background: rgba(27,36,32,0.035); }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
@@ -883,7 +883,7 @@
         <span>🌐</span><span id="modal-server-display"></span>
         <span style="cursor:pointer;color:var(--accent);margin-left:auto" onclick="showServerSetup()">Changer</span>
       </div>
-      <div id="login-error" style="display:none;background:rgba(247,89,89,.1);border:1px solid rgba(247,89,89,.3);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--red);margin-bottom:12px"></div>
+      <div id="login-error" style="display:none;background:rgba(178,58,46,.1);border:1px solid rgba(178,58,46,.3);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--red);margin-bottom:12px"></div>
       <div class="form-group" style="margin-bottom:12px">
         <label class="form-label">Mon code élève</label>
         <input type="text" class="form-input" id="login-code" placeholder="ex: E01" style="width:100%;text-transform:uppercase;font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.1em" onkeydown="if(event.key==='Enter')doStudentLogin()">
@@ -17308,10 +17308,20 @@ const CHAPTERS = [
   }
 ];
 
+// Couleurs par catégorie façon "familles" du tableau périodique — source de vérité pour
+// l'accent de chaque chapitre à l'affichage (les hex individuels dans CHAPTERS restent
+// tels quels, on ne les relit jamais directement pour la couleur).
 const CAT_COLORS = {
-  chimie: '#4f8ef7', physique: '#a44ff7', mecanique: '#f7a24f',
-  thermo: '#4fca7a', elec: '#f75959', organique: '#f7d44f'
+  chimie: '#2F7D75', physique: '#6E4FA0', mecanique: '#3E7DBF',
+  thermo: '#C0472F', elec: '#B8862E', organique: '#5C8A3A'
 };
+// Abréviation façon "symbole d'élément" (2 lettres), dérivée du premier mot du titre —
+// pas de donnée supplémentaire à maintenir par chapitre.
+function chapterSymbol(title) {
+  const word = (title.match(/[A-Za-zÀ-ÖØ-öø-ÿ]+/) || [''])[0];
+  if (!word) return '?';
+  return word[0].toUpperCase() + (word[1] || '').toLowerCase();
+}
 const CAT_LABELS = {
   chimie: 'Chimie', physique: 'Physique', mecanique: 'Mécanique',
   thermo: 'Thermodynamique', elec: 'Électricité', organique: 'Chimie Organique'
@@ -17513,7 +17523,7 @@ function buildNav() {
     const scoreColor = quizScore >= 7 ? 'var(--green)' : quizScore >= 5 ? 'var(--yellow)' : quizScore !== undefined ? 'var(--red)' : 'var(--muted)';
     nav.innerHTML += `
       <div class="nav-item ch-${ch.category}${locked ? ' locked' : ''}" id="nav-ch-${ch.id}" onclick="openChapter(${ch.id})"
-           style="--dot-color:${ch.color}">
+           style="--dot-color:${CAT_COLORS[ch.category] || ch.color}">
         <span class="nav-dot"></span>
         <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${ch.num}. ${ch.title}</span>
         ${locked ? `<span class="nav-check" title="${state.activeStudentId ? 'Verrouillé par votre professeur' : 'Connectez-vous pour accéder à ce chapitre'}">🔒</span>` : (scoreLabel ? `<span class="quiz-score" style="color:${scoreColor}">${scoreLabel}</span>` : '')}
@@ -17552,7 +17562,7 @@ function renderFiche(ch) {
       <div>
         <div class="fiche-title">${ch.title}</div>
         <div class="fiche-subtitle">
-          <span class="card-tag" style="background:${ch.color}22;color:${ch.color}">${ch.tag}</span>
+          <span class="card-tag" style="background:${(CAT_COLORS[ch.category] || ch.color)}22;color:${CAT_COLORS[ch.category] || ch.color}">${ch.tag}</span>
         </div>
       </div>
     </div>
@@ -17665,7 +17675,7 @@ function randomQuizMessage(cls) {
 
 // Petite pluie de confettis pour célébrer un bon score — CSS only, aucune dépendance.
 function launchConfetti() {
-  const colors = ['#4f8ef7', '#f7a24f', '#4fca7a', '#a44ff7', '#f7d44f', '#f75959'];
+  const colors = ['#2F7D75', '#C0472F', '#3F7A3D', '#6E4FA0', '#B8862E', '#3E7DBF'];
   const count = 28;
   for (let i = 0; i < count; i++) {
     const el = document.createElement('div');
@@ -17929,11 +17939,11 @@ function showHome() {
         const d = getStudentData(state.activeStudentId);
         const score = d[`quiz_${ch.id}`];
         const pct = score !== undefined ? (score/10)*100 : 0;
-        return `<div class="chapter-card${locked ? ' locked' : ''}" style="--card-color:${ch.color}" onclick="openChapter(${ch.id})">
+        return `<div class="chapter-card${locked ? ' locked' : ''}" data-symbol="${chapterSymbol(ch.title)}" style="--card-color:${CAT_COLORS[ch.category] || ch.color}" onclick="openChapter(${ch.id})">
           ${locked ? `<span class="chapter-lock-badge" title="${state.activeStudentId ? 'Verrouillé par votre professeur' : 'Connectez-vous pour accéder à ce chapitre'}">🔒</span>` : ''}
           <div class="card-num">Chapitre ${ch.num}</div>
           <div class="card-title">${ch.title}</div>
-          <span class="card-tag" style="background:${ch.color}22;color:${ch.color}">${ch.tag}</span>
+          <span class="card-tag" style="background:${(CAT_COLORS[ch.category] || ch.color)}22;color:${CAT_COLORS[ch.category] || ch.color}">${ch.tag}</span>
           <div class="card-progress-row">
             <div class="card-progress-bar"><div class="card-progress-fill" style="width:${pct}%"></div></div>
             <div class="card-progress-text">${score !== undefined ? score+'/10' : '—'}</div>
