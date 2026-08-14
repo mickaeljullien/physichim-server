@@ -176,8 +176,12 @@ const RATE_LIMIT_MAX_ATTEMPTS = 5;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const rateLimitBuckets = new Map();
 
+// Render (comme la plupart des PaaS) proxifie les connexions : remoteAddress reflète
+// l'adresse interne du proxy, pas celle du visiteur. Le premier maillon de
+// X-Forwarded-For est l'IP réelle du client ; on retombe sur remoteAddress en local.
 function getClientIp(req) {
-  return req.socket.remoteAddress || 'unknown';
+  const xff = req.headers['x-forwarded-for'];
+  return (xff ? xff.split(',')[0].trim() : req.socket.remoteAddress) || 'unknown';
 }
 
 function checkRateLimit(key) {
@@ -211,33 +215,35 @@ function isSuperAdmin(req) {
 }
 
 // ── Auth enseignant (identifiant + code) ──
-// Le token embarque un horodatage d'émission et expire après ADMIN_TOKEN_MAX_AGE_MS :
-// un token volé (ex: via une faille XSS) ne reste donc pas valable indéfiniment, et
-// l'enseignant doit se reconnecter périodiquement.
+// Token signé (HMAC-SHA256, secret = ADMIN_KEY) plutôt qu'un simple encodage : le
+// payload ne contient que id+horodatage (jamais le code en clair), donc un token qui
+// fuite (poste partagé, faille XSS future) n'expose pas le mot de passe enseignant.
+// Expire après ADMIN_TOKEN_MAX_AGE_MS, forçant une reconnexion périodique.
 const ADMIN_TOKEN_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000; // 7 jours
 
+function signPayload(payload) {
+  return crypto.createHmac('sha256', ADMIN_KEY).update(payload).digest('hex');
+}
+
 function makeAdminToken(admin) {
-  return Buffer.from(`${admin.id}:${admin.code}:${Date.now()}`, 'utf8').toString('base64');
+  const payload = `${admin.id}:${Date.now()}`;
+  return Buffer.from(payload, 'utf8').toString('base64') + '.' + signPayload(payload);
 }
 
 async function getAdminFromToken(req) {
   const auth = req.headers['authorization'] || '';
   const m = auth.match(/^Bearer (.+)$/);
   if (!m) return null;
-  let decoded;
-  try { decoded = Buffer.from(m[1], 'base64').toString('utf8'); } catch { return null; }
-  const firstSep = decoded.indexOf(':');
-  const lastSep = decoded.lastIndexOf(':');
-  // Un seul ':' = ancien format sans horodatage (émis avant cette version) -> rejeté,
-  // ce qui force une reconnexion plutôt que d'accepter un token qui n'expire jamais.
-  if (firstSep === -1 || lastSep === firstSep) return null;
-  const id = decoded.slice(0, firstSep);
-  const code = decoded.slice(firstSep + 1, lastSep);
-  const issuedAt = parseInt(decoded.slice(lastSep + 1), 10);
-  if (!Number.isFinite(issuedAt) || Date.now() - issuedAt > ADMIN_TOKEN_MAX_AGE_MS) return null;
-  const admin = await appDb.get('SELECT * FROM admins WHERE id = $1', [id]);
-  if (!admin || admin.code !== code) return null;
-  return admin;
+  const [encoded, sig] = m[1].split('.');
+  if (!encoded || !sig) return null;
+  let payload;
+  try { payload = Buffer.from(encoded, 'base64').toString('utf8'); } catch { return null; }
+  const expected = signPayload(payload);
+  if (sig.length !== expected.length || !crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) return null;
+  const [id, issuedAtStr] = payload.split(':');
+  const issuedAt = parseInt(issuedAtStr, 10);
+  if (!id || !Number.isFinite(issuedAt) || Date.now() - issuedAt > ADMIN_TOKEN_MAX_AGE_MS) return null;
+  return appDb.get('SELECT * FROM admins WHERE id = $1', [id]);
 }
 
 function json(res, status, data) {
@@ -248,6 +254,15 @@ function json(res, status, data) {
     'Access-Control-Allow-Headers': 'Content-Type, Authorization'
   });
   res.end(JSON.stringify(data));
+}
+
+// Neutralise l'injection de formule (=,+,-,@ en tête -> Excel/Sheets l'exécuterait) et
+// entoure de guillemets si le champ contient le séparateur, des guillemets ou un saut de ligne.
+function csvField(v) {
+  let s = String(v ?? '');
+  if (/^[=+\-@]/.test(s)) s = "'" + s;
+  if (/[;"\n]/.test(s)) s = '"' + s.replace(/"/g, '""') + '"';
+  return s;
 }
 
 function parseBody(req) {
@@ -383,7 +398,7 @@ async function router(req, res) {
 
   // ── API : Supprimer une note ──
   // DELETE /api/notes/:id
-  if (p.startsWith('/api/notes/') && method === 'DELETE') {
+  if (p.match(/^\/api\/notes\/[^/]+$/) && method === 'DELETE') {
     const noteId = p.split('/')[3];
     const body = await parseBody(req);
     const note = await studentDb.get('SELECT * FROM notes WHERE id = $1', [noteId]);
@@ -451,14 +466,24 @@ async function router(req, res) {
     const nom = (body.nom || identifiant).trim();
     if (!identifiant || !code) return json(res, 400, { error: 'Identifiant et code requis' });
 
-    const countRow = await appDb.get('SELECT COUNT(*)::int as n FROM admins');
-    if (countRow.n >= MAX_ADMINS) return json(res, 409, { error: `Limite de ${MAX_ADMINS} comptes enseignants atteinte` });
-
-    const existing = await appDb.get('SELECT id FROM admins WHERE identifiant = $1', [identifiant]);
-    if (existing) return json(res, 409, { error: 'Cet identifiant existe déjà' });
-
+    // Limite de comptes + unicité de l'identifiant vérifiées dans la requête d'insertion
+    // elle-même (WHERE ... < MAX_ADMINS + contrainte UNIQUE) plutôt que par un
+    // COUNT/SELECT préalable séparé : deux créations concurrentes ne peuvent donc plus
+    // dépasser la limite (le check-then-insert précédent n'était pas atomique).
     const id = genId();
-    await appDb.run('INSERT INTO admins (id, identifiant, code, nom) VALUES ($1, $2, $3, $4)', [id, identifiant, code, nom]);
+    let inserted;
+    try {
+      inserted = await appDb.get(
+        `INSERT INTO admins (id, identifiant, code, nom)
+         SELECT $1, $2, $3, $4 WHERE (SELECT COUNT(*) FROM admins) < $5
+         RETURNING id`,
+        [id, identifiant, code, nom, MAX_ADMINS]
+      );
+    } catch (e) {
+      if (e.code === '23505') return json(res, 409, { error: 'Cet identifiant existe déjà' });
+      throw e;
+    }
+    if (!inserted) return json(res, 409, { error: `Limite de ${MAX_ADMINS} comptes enseignants atteinte` });
     return json(res, 201, { ok: true, id, identifiant, nom });
   }
 
@@ -486,7 +511,7 @@ async function router(req, res) {
 
   // ── Supprimer un compte enseignant (et ses classes) ──
   // DELETE /api/admin/teachers/:id
-  if (p.startsWith('/api/admin/teachers/') && method === 'DELETE') {
+  if (p.match(/^\/api\/admin\/teachers\/[^/]+$/) && method === 'DELETE') {
     if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
     const adminId = p.split('/')[4];
     const classeRows = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [adminId]);
@@ -591,7 +616,7 @@ async function router(req, res) {
 
   // ── Supprimer une classe ──
   // DELETE /api/admin/classes/:id
-  if (p.startsWith('/api/admin/classes/') && method === 'DELETE') {
+  if (p.match(/^\/api\/admin\/classes\/[^/]+$/) && method === 'DELETE') {
     const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const classeId = p.split('/')[4];
@@ -652,7 +677,7 @@ async function router(req, res) {
 
   // ── Supprimer un élève ──
   // DELETE /api/admin/eleves/:id
-  if (p.startsWith('/api/admin/eleves/') && method === 'DELETE') {
+  if (p.match(/^\/api\/admin\/eleves\/[^/]+$/) && method === 'DELETE') {
     const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
     const eleveId = p.split('/')[4];
@@ -723,7 +748,7 @@ async function router(req, res) {
     csv += chapitres.map(i => `Ch${String(i).padStart(2,'0')}_meilleur_score`).join(';');
     csv += ';Nb_notes;Moyenne_notes\n';
 
-    for (const e of eleves) {
+    const rows = await Promise.all(eleves.map(async e => {
       const scores = await studentDb.all('SELECT chapitre_id, MAX(score) as score FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
       const notes = await studentDb.all('SELECT valeur FROM notes WHERE eleve_id = $1', [e.id]);
       const avgNote = notes.length ? (notes.reduce((a,b) => a + b.valeur, 0) / notes.length).toFixed(2) : '';
@@ -732,10 +757,11 @@ async function router(req, res) {
       scores.forEach(s => scoreMap[s.chapitre_id] = s.score);
 
       const niveauLabelCsv = e.classe_niveau === '2nde' ? 'Seconde' : e.classe_niveau === '1ere' ? 'Première' : e.classe_niveau === 'tle' ? 'Terminale' : '';
-      csv += `${e.classe_nom || 'Sans classe'};${niveauLabelCsv};${e.code};${e.pseudo};${e.last_seen};`;
-      csv += chapitres.map(i => scoreMap[i] !== undefined ? scoreMap[i] : '').join(';');
-      csv += `;${notes.length};${avgNote}\n`;
-    }
+      const cells = [csvField(e.classe_nom || 'Sans classe'), niveauLabelCsv, csvField(e.code), csvField(e.pseudo), e.last_seen,
+        ...chapitres.map(i => scoreMap[i] !== undefined ? scoreMap[i] : ''), notes.length, avgNote];
+      return cells.join(';');
+    }));
+    csv += rows.join('\n') + '\n';
 
     const slug = classeFilter
       ? '_' + classeFilter.nom.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-zA-Z0-9]+/g, '_').replace(/^_+|_+$/g, '')

@@ -17883,8 +17883,8 @@ async function finishQuiz() {
     if (q.answers[i] === question.ans) score++;
   });
 
-  // Sauvegarder localement ET sur le serveur
-  state.activeStudentData.scores[ch.id] = score;
+  // Sauvegarder localement ET sur le serveur (on garde le meilleur score, jamais de régression affichée)
+  state.activeStudentData.scores[ch.id] = Math.max(score, state.activeStudentData.scores[ch.id] || 0);
   await apiSaveQuiz(ch.id, score);
   await apiLogProgression(ch.id, `quiz_${score}_10`);
   buildNav();
@@ -17901,7 +17901,7 @@ async function finishQuiz() {
         <div class="score-label">score</div>
       </div>
       <h2 style="font-family:Syne,sans-serif;font-size:1.3rem;margin-bottom:8px">${msg}</h2>
-      <p style="color:var(--muted);margin-bottom:8px">Score enregistré${student ? ' pour <strong>' + student.name + '</strong>' : ''} sur le serveur.</p>
+      <p style="color:var(--muted);margin-bottom:8px">Score enregistré${student ? ' pour <strong>' + escapeHtml(student.name) + '</strong>' : ''} sur le serveur.</p>
       <p style="color:var(--green);font-size:.82rem;margin-bottom:24px">✓ Synchronisé</p>
       <div style="display:flex;gap:12px;justify-content:center">
         <button class="btn-secondary" onclick="startQuiz()">Refaire le quiz</button>
