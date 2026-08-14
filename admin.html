@@ -888,6 +888,17 @@ function openClasse(id) {
     </div>
 
     <div class="card">
+      <div class="card-title">📋 Import en masse (coller depuis Excel)</div>
+      <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Collez une liste d'élèves (une ligne par élève, colonnes Prénom puis Nom — le collage direct depuis Excel fonctionne). Les codes sont générés automatiquement (initiale prénom + initiale nom + 4 chiffres, même principe que le classeur Excel).</p>
+      <textarea class="form-input" id="bulk-paste" rows="5" style="width:100%;font-family:'DM Mono',monospace;resize:vertical" placeholder="Camille	Martin&#10;Lucas	Petit&#10;..."></textarea>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-secondary btn-sm" onclick="previewBulkImport()">Prévisualiser</button>
+        <span id="bulk-count"></span>
+      </div>
+      <div id="bulk-preview"></div>
+    </div>
+
+    <div class="card">
       <div class="card-title">👥 Élèves de la classe</div>
       <div class="table-wrap">
         <table>
@@ -1085,6 +1096,74 @@ async function addEleve() {
   showAlert('add-alert', `Élève ${code} créé avec succès.`, 'ok');
   document.getElementById('new-code').value = '';
   document.getElementById('new-pseudo').value = '';
+  await refreshData();
+  await refreshClasses();
+  openClasse(currentClasseId);
+}
+
+// ── Import en masse (collage depuis Excel) ───────────────
+// Même principe de code que le classeur Excel fourni au prof : initiale prénom +
+// initiale nom + 4 chiffres dérivés du nom (pas un vrai aléatoire, pour rester stable).
+function genEleveCode(prenom, nom, seed, existingCodes) {
+  const ci = prenom.trim()[0].toUpperCase();
+  const ni = nom.trim()[0].toUpperCase();
+  let s = seed;
+  let code;
+  do {
+    const hash = ci.charCodeAt(0)*31 + ni.charCodeAt(0)*17 + prenom.trim().length*7919 + nom.trim().length*104729 + s*97;
+    const digits = String(((hash % 10000) + 10000) % 10000).padStart(4, '0');
+    code = ci + ni + digits;
+    s++;
+  } while (existingCodes.has(code));
+  existingCodes.add(code);
+  return code;
+}
+
+function parseBulkPaste(raw) {
+  const existingCodes = new Set(DATA.map(e => e.code));
+  return raw.split('\n').map(l => l.trim()).filter(Boolean).map((line, i) => {
+    const parts = line.split(/\t|;|,/).map(p => p.trim()).filter(Boolean);
+    let prenom, nom;
+    if (parts.length >= 2) { prenom = parts[0]; nom = parts.slice(1).join(' '); }
+    else { const words = line.split(/\s+/); prenom = words[0] || ''; nom = words.slice(1).join(' ') || ''; }
+    const valid = prenom && nom;
+    return { prenom, nom, valid, code: valid ? genEleveCode(prenom, nom, i + 1, existingCodes) : null };
+  });
+}
+
+let bulkImportRows = [];
+
+function previewBulkImport() {
+  const raw = document.getElementById('bulk-paste').value;
+  bulkImportRows = parseBulkPaste(raw);
+  const valid = bulkImportRows.filter(r => r.valid);
+  const invalid = bulkImportRows.filter(r => !r.valid);
+  document.getElementById('bulk-count').textContent = `${valid.length} élève${valid.length===1?'':'s'} reconnu${valid.length===1?'':'s'}${invalid.length ? `, ${invalid.length} ligne(s) ignorée(s)` : ''}`;
+  const preview = document.getElementById('bulk-preview');
+  if (!valid.length) { preview.innerHTML = ''; return; }
+  preview.innerHTML = `
+    <div class="table-wrap" style="margin-top:10px">
+      <table>
+        <thead><tr><th>Prénom</th><th>Nom</th><th>Code</th></tr></thead>
+        <tbody>${valid.map(r => `<tr><td>${escapeHtml(r.prenom)}</td><td>${escapeHtml(r.nom)}</td><td style="font-family:DM Mono,monospace">${escapeHtml(r.code)}</td></tr>`).join('')}</tbody>
+      </table>
+    </div>
+    <button class="btn btn-primary btn-sm" style="margin-top:10px" onclick="confirmBulkImport()">Importer ces ${valid.length} élève${valid.length===1?'':'s'}</button>
+    <span id="bulk-import-alert"></span>
+  `;
+}
+
+async function confirmBulkImport() {
+  const valid = bulkImportRows.filter(r => r.valid);
+  if (!valid.length || !currentClasseId) return;
+  let ok = 0, fail = 0;
+  for (const r of valid) {
+    const res = await fetch(SERVER+'/api/admin/eleves', { method:'POST', headers:headers(), body:JSON.stringify({ code: r.code, pseudo: `${r.prenom} ${r.nom}`, classe_id: currentClasseId }) });
+    if (res.ok) ok++; else fail++;
+  }
+  showAlert('bulk-import-alert', fail ? `${ok} élève(s) créé(s), ${fail} échec(s).` : `${ok} élève(s) créé(s) avec succès.`, fail ? 'err' : 'ok');
+  document.getElementById('bulk-paste').value = '';
+  bulkImportRows = [];
   await refreshData();
   await refreshClasses();
   openClasse(currentClasseId);
