@@ -193,10 +193,23 @@
       <div class="subtitle" id="teacher-label">Administration</div>
     </div>
     <div class="header-right">
+      <button class="btn btn-secondary btn-sm" onclick="toggleLienCard()">🔗 Lien élèves</button>
       <button class="btn btn-secondary btn-sm" onclick="exportCSV()">📥 Export CSV</button>
       <button class="btn btn-secondary btn-sm" onclick="doLogout()">Déconnexion</button>
     </div>
   </header>
+
+  <div class="card" id="lien-card" style="display:none">
+    <div class="card-title">🔗 Lien à projeter en classe</div>
+    <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+      <img id="lien-qr" width="140" height="140" style="border-radius:8px;background:#fff;padding:6px" alt="QR code du lien élèves">
+      <div style="flex:1;min-width:200px">
+        <div style="font-family:'DM Mono',monospace;font-size:1rem;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;margin-bottom:10px;word-break:break-all" id="lien-url"></div>
+        <button class="btn btn-primary btn-sm" onclick="copierLien()">Copier le lien</button>
+        <span id="lien-copied" style="color:var(--green);font-size:.82rem;margin-left:8px;display:none">✓ Copié</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Vue liste -->
   <div id="view-list">
@@ -244,6 +257,7 @@
           <button class="tab" id="eleves-niveau-1ere" onclick="setElevesNiveau('1ere')">Première</button>
           <button class="tab" id="eleves-niveau-tle" onclick="setElevesNiveau('tle')">Terminale</button>
         </div>
+        <input class="form-input" id="eleves-search" placeholder="🔍 Rechercher un élève (pseudo ou code)…" oninput="renderEleves()" style="margin-bottom:14px;max-width:320px">
         <div class="table-wrap">
           <table>
             <thead><tr>
@@ -313,6 +327,24 @@ let DATA = [];
 let CLASSES = [];
 let currentClasseId = null;
 let detailReturnTo = 'list';
+
+// ── Lien élèves (à projeter en classe) ───────────────────
+function toggleLienCard() {
+  const card = document.getElementById('lien-card');
+  const opening = card.style.display === 'none';
+  card.style.display = opening ? 'block' : 'none';
+  if (opening) {
+    document.getElementById('lien-url').textContent = SERVER;
+    document.getElementById('lien-qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=${encodeURIComponent(SERVER)}`;
+  }
+}
+function copierLien() {
+  navigator.clipboard.writeText(SERVER).then(() => {
+    const el = document.getElementById('lien-copied');
+    el.style.display = 'inline';
+    setTimeout(() => el.style.display = 'none', 2000);
+  });
+}
 // Métadonnées de tous les chapitres (Terminale ids 0-20, Seconde ids 21-44)
 const CH_META = [
   { id: 0, name: 'Ch.00 Outils maths', niveau: 'tle' },
@@ -611,14 +643,18 @@ function setElevesNiveau(niveau) {
 
 function renderEleves() {
   const tbody = document.getElementById('eleves-tbody');
-  const filtered = elevesNiveau === 'all'
+  let filtered = elevesNiveau === 'all'
     ? DATA
     : DATA.filter(e => (e.classe_niveau || 'tle') === elevesNiveau && e.classe_id);
+  const q = (document.getElementById('eleves-search')?.value || '').trim().toLowerCase();
+  if (q) filtered = filtered.filter(e => e.pseudo.toLowerCase().includes(q) || e.code.toLowerCase().includes(q));
   if (!filtered.length) {
-    const msg = elevesNiveau === 'all'
+    const msg = q
+      ? `Aucun élève ne correspond à « ${q} ».`
+      : elevesNiveau === 'all'
       ? 'Aucun élève. Créez une classe puis ajoutez des élèves depuis sa fiche.'
       : `Aucun élève en ${niveauLabel(elevesNiveau)}.`;
-    tbody.innerHTML = `<tr><td colspan="8" style="color:var(--muted);text-align:center;padding:20px">${msg}</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="8" style="color:var(--muted);text-align:center;padding:20px">${escapeHtml(msg)}</td></tr>`;
     return;
   }
 
