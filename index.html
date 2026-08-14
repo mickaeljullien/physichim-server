@@ -908,6 +908,21 @@
   </div>
 </div>
 
+<div class="modal-overlay" id="onboarding-overlay">
+  <div class="modal" style="text-align:center">
+    <div id="onboarding-content"></div>
+    <div style="display:flex;justify-content:center;gap:6px;margin:16px 0">
+      <span class="onb-dot" style="width:7px;height:7px;border-radius:50%;background:var(--border)"></span>
+      <span class="onb-dot" style="width:7px;height:7px;border-radius:50%;background:var(--border)"></span>
+      <span class="onb-dot" style="width:7px;height:7px;border-radius:50%;background:var(--border)"></span>
+    </div>
+    <div style="display:flex;justify-content:space-between;gap:10px">
+      <button class="btn-secondary" onclick="closeOnboarding()">Passer</button>
+      <button class="btn-primary" id="onboarding-next-btn" onclick="onboardingNext()">Suivant</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // ═══════════════════════════════════════════════════
 // DATA — CHAPITRES, FICHES, QUIZ, ANNALES
@@ -17754,6 +17769,9 @@ function renderFiche(ch) {
         ${sec.content.map(renderContent).join('')}
       </div>
     `).join('')}
+    <div style="text-align:center;margin-top:24px">
+      <a href="mailto:mickael.jullien@itech.fr?subject=${encodeURIComponent('PhysiChim - erreur dans le chapitre ' + ch.num)}&body=${encodeURIComponent('Bonjour,\n\nJe pense avoir repéré une erreur dans le chapitre "' + ch.title + '" :\n\n[décrivez ici]')}" style="color:var(--muted);font-size:.78rem;text-decoration:none">📩 Signaler une erreur dans ce chapitre</a>
+    </div>
   `;
 }
 
@@ -17960,6 +17978,7 @@ function renderDashboard() {
   const avgScore  = scoreVals.length ? (scoreVals.reduce((a,b)=>a+b,0)/scoreVals.length).toFixed(1) : '—';
   const completed = scoreVals.length;
   const avgGrade  = notes.length ? (notes.reduce((a,b)=>a+parseFloat(b.val),0)/notes.length).toFixed(1) : '—';
+  const notStarted = currentChapters().filter(ch => scores[ch.id] === undefined);
 
   // Petits badges de progression, calculés à partir des scores déjà chargés — aucune
   // donnée supplémentaire à stocker, juste une lecture encourageante de ce qui existe.
@@ -17991,7 +18010,7 @@ function renderDashboard() {
       </div>
       <div class="stat-card">
         <div class="stat-label">Moyenne quiz</div>
-        <div class="stat-value" style="color:${avgScore!=='—'&&parseFloat(avgScore)>=7?'var(--green)':avgScore!=='—'&&parseFloat(avgScore)>=5?'var(--yellow)':'inherit'}">${avgScore}<span class="stat-unit">/ 10</span></div>
+        <div class="stat-value" style="color:${avgScore!=='—'&&parseFloat(avgScore)>=7?'var(--green)':avgScore!=='—'&&parseFloat(avgScore)>=5?'var(--yellow)':'inherit'}">${avgScore!=='—'?(parseFloat(avgScore)>=7?'✓ ':parseFloat(avgScore)>=5?'~ ':'! '):''}${avgScore}<span class="stat-unit">/ 10</span></div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Notes enregistrées</div>
@@ -18007,6 +18026,11 @@ function renderDashboard() {
       ${badges.map((b, i) => `<div class="badge-pill" style="animation-delay:${i*0.06}s"><span class="badge-icon">${b.icon}</span>${b.label}</div>`).join('')}
     </div>` : ''}
 
+    ${notStarted.length ? `<div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div style="font-size:.85rem">📚 Il te reste <strong>${notStarted.length}</strong> chapitre${notStarted.length>1?'s':''} à découvrir</div>
+      <button class="btn-secondary" style="font-size:.78rem;padding:6px 14px" onclick="openChapter(${notStarted[0].id})">Commencer « ${notStarted[0].num}. ${notStarted[0].title} »</button>
+    </div>` : ''}
+
     <div style="margin-bottom:20px">
       <div style="font-family:Syne,sans-serif;font-weight:700;margin-bottom:12px">📊 Résultats par chapitre</div>
       ${currentChapters().map(ch => {
@@ -18016,7 +18040,7 @@ function renderDashboard() {
         return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
           <div style="font-size:.78rem;width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)">${ch.num}. ${ch.title}</div>
           <div class="card-progress-bar" style="flex:1"><div class="card-progress-fill" style="width:${pct}%;background:${color}"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:.78rem;min-width:36px;text-align:right;color:${color}">${score !== undefined ? score+'/10' : '—'}</div>
+          <div style="font-family:'DM Mono',monospace;font-size:.78rem;min-width:44px;text-align:right;color:${color}">${score !== undefined ? (score>=7?'✓':score>=5?'~':'!')+' '+score+'/10' : '—'}</div>
         </div>`;
       }).join('')}
     </div>
@@ -18051,7 +18075,7 @@ function renderDashboard() {
           <div class="grade-entry">
             <div class="grade-type">${escapeHtml(g.type)}</div>
             <div class="grade-name">${escapeHtml(g.name)}</div>
-            <div class="grade-value" style="color:${parseFloat(g.val)>=10?'var(--green)':'var(--red)'}">${parseFloat(g.val).toFixed(1)}/20</div>
+            <div class="grade-value" style="color:${parseFloat(g.val)>=10?'var(--green)':'var(--red)'}">${parseFloat(g.val)>=10?'✓':'!'} ${parseFloat(g.val).toFixed(1)}/20</div>
             <div class="grade-del" onclick="deleteGrade(${g.id})">🗑</div>
           </div>`).join('')
       }
@@ -18109,11 +18133,18 @@ function showHome() {
   const allLocked = state.activeStudentId && Array.isArray(state.activeStudentData.chapitresAutorises) && state.activeStudentData.chapitresAutorises.length === 0;
   const student = getStudent();
   const title = notConnected ? 'Bienvenue 👋' : `${greeting()}, ${escapeHtml(student ? student.name : '')} 👋`;
+  const progression = (!notConnected && Array.isArray(state.activeStudentData.progression)) ? state.activeStudentData.progression : [];
+  const lastChapterId = progression.length ? progression[0].chapitre_id : null;
+  const lastChapter = lastChapterId !== null ? CHAPTERS.find(c => c.id === lastChapterId) : null;
   document.getElementById('content').innerHTML = `
     <div style="margin-bottom:20px">
       <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">${title}</div>
       <p style="color:var(--muted);font-size:.88rem">${notConnected ? 'Connectez-vous avec votre code élève pour accéder aux fiches de cours et aux quiz.' : allLocked ? 'Votre professeur n\'a pas encore activé de chapitre pour votre classe. Revenez plus tard.' : 'Choisissez un chapitre pour commencer à réviser.'}</p>
       ${notConnected ? `<button class="btn-primary" onclick="openStudentModal()" style="margin-top:8px">Se connecter</button>` : ''}
+      ${lastChapter ? `<div style="margin-top:14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="font-size:.85rem">↩️ Reprendre où tu en étais : <strong>${lastChapter.num}. ${escapeHtml(lastChapter.title)}</strong></div>
+        <button class="btn-primary" style="font-size:.78rem;padding:6px 14px" onclick="openChapter(${lastChapter.id})">Reprendre</button>
+      </div>` : ''}
     </div>
     <div class="home-grid">
       ${currentChapters().map(ch => {
@@ -18160,6 +18191,8 @@ function openChapter(id) {
   document.getElementById('tab-annales').classList.remove('active');
   setNavActive(`nav-ch-${id}`);
   document.getElementById('content').innerHTML = renderFiche(ch);
+  apiLogProgression(id, 'open'); // pas d'await : sert uniquement à retrouver "reprendre où j'en étais", ne doit jamais ralentir la navigation
+  if (state.activeStudentData?.progression) state.activeStudentData.progression.unshift({ chapitre_id: id, action: 'open', date: new Date().toISOString() });
   if (window.innerWidth <= 768) {
     state.sidebarOpen = false;
     document.getElementById('sidebar').classList.add('collapsed');
@@ -18267,6 +18300,41 @@ function applyStudentLoginResult(result, code) {
   document.getElementById('badge-name').textContent = `${eleve.pseudo} (${eleve.code})`;
   document.getElementById('logout-btn').style.display = 'block';
   applyNiveauLock();
+  maybeShowOnboarding(eleve.id);
+}
+
+// ── Bienvenue au tout premier login (une fois par élève, jamais revu ensuite) ──
+const ONBOARDING_STEPS = [
+  { icon: '📚', title: 'Tes fiches de cours', text: 'Chaque chapitre résume le cours : définitions, formules, schémas. Clique sur un chapitre dans la liste pour l\'ouvrir.' },
+  { icon: '🧠', title: 'Teste-toi avec les quiz', text: 'À la fin d\'une fiche, un quiz de 10 questions vérifie ce que tu as retenu, avec une explication à chaque réponse.' },
+  { icon: '📊', title: 'Suis ta progression', text: 'Ton tableau de bord regroupe tes scores, tes badges, et te permet d\'ajouter toi-même tes notes de DS/DM.' }
+];
+let onboardingStep = 0;
+
+function maybeShowOnboarding(studentId) {
+  if (localStorage.getItem('physichim_onboarded_' + studentId)) return;
+  onboardingStep = 0;
+  renderOnboardingStep();
+  document.getElementById('onboarding-overlay').classList.add('open');
+}
+function renderOnboardingStep() {
+  const s = ONBOARDING_STEPS[onboardingStep];
+  document.getElementById('onboarding-content').innerHTML = `
+    <div style="font-size:3rem;margin-bottom:12px">${s.icon}</div>
+    <div class="modal-title">${s.title}</div>
+    <p style="color:var(--muted);font-size:.9rem;margin-top:8px">${s.text}</p>
+  `;
+  document.querySelectorAll('.onb-dot').forEach((d, i) => d.style.background = i === onboardingStep ? 'var(--accent)' : 'var(--border)');
+  document.getElementById('onboarding-next-btn').textContent = onboardingStep === ONBOARDING_STEPS.length - 1 ? 'Commencer' : 'Suivant';
+}
+function onboardingNext() {
+  onboardingStep++;
+  if (onboardingStep >= ONBOARDING_STEPS.length) { closeOnboarding(); return; }
+  renderOnboardingStep();
+}
+function closeOnboarding() {
+  document.getElementById('onboarding-overlay').classList.remove('open');
+  if (state.activeStudentId) localStorage.setItem('physichim_onboarded_' + state.activeStudentId, '1');
 }
 
 // Déconnecte l'élève courant sans toucher au serveur (juste l'état local du navigateur) —
