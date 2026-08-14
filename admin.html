@@ -601,6 +601,7 @@ function renderAll() {
   renderEleves();
   renderScores();
   renderNotes();
+  if (CLASSES.length) renderClasses(); // ré-affiche les cartes classe : leurs stats (actifs, quiz/élève) dépendent de DATA
 }
 
 // ── Stats globales ───────────────────────────────────────
@@ -610,25 +611,34 @@ function renderStats() {
   const avgQuiz = allScores.length ? (allScores.reduce((a,b)=>a+b.score,0)/allScores.length).toFixed(1) : '—';
   const avgNote = allNotes.length ? (allNotes.reduce((a,b)=>a+b.valeur,0)/allNotes.length).toFixed(1) : '—';
   const quizFaits = [...new Set(DATA.flatMap(e=>(e.scores||[]).map(s=>e.id+'_'+s.chapitre_id)))].length;
+  const nbInactifs = DATA.filter(isEleveInactif).length;
 
   document.getElementById('stats-grid').innerHTML = `
     <div class="stat-card"><div class="stat-val">${CLASSES.length}</div><div class="stat-lbl">Classes</div></div>
     <div class="stat-card"><div class="stat-val">${DATA.length}</div><div class="stat-lbl">Élèves</div></div>
     <div class="stat-card"><div class="stat-val">${quizFaits}</div><div class="stat-lbl">Quiz complétés</div></div>
     <div class="stat-card"><div class="stat-val">${avgQuiz !== '—' ? avgQuiz+'/10' : '—'}</div><div class="stat-lbl">Moy. quiz</div></div>
+    <div class="stat-card"><div class="stat-val" style="color:${nbInactifs?'var(--red)':'inherit'}">${nbInactifs}</div><div class="stat-lbl">Inactifs (${INACTIVITY_DAYS}j+)</div></div>
   `;
 }
 
 // ── Badges communs élève ─────────────────────────────────
+const INACTIVITY_DAYS = 7;
+function isEleveInactif(e) {
+  if (!e.last_seen) return true;
+  return (Date.now() - new Date(e.last_seen)) / 86400000 > INACTIVITY_DAYS;
+}
 function eleveBadges(e) {
   const scores = e.scores || [];
   const notes = e.notes || [];
   const avgQuiz = scores.length ? (scores.reduce((a,b)=>a+b.score,0)/scores.length).toFixed(1) : null;
   const avgNote = notes.length ? (notes.reduce((a,b)=>a+b.valeur,0)/notes.length).toFixed(1) : null;
-  const lastSeen = e.last_seen ? new Date(e.last_seen).toLocaleDateString('fr-FR') : 'Jamais';
+  const inactif = isEleveInactif(e);
+  const lastSeenLabel = e.last_seen ? new Date(e.last_seen).toLocaleDateString('fr-FR') : 'Jamais';
+  const lastSeen = inactif ? `<span class="badge badge-red">⚠ ${lastSeenLabel}</span>` : lastSeenLabel;
   const qBadge = avgQuiz ? `<span class="badge ${parseFloat(avgQuiz)>=7?'badge-green':parseFloat(avgQuiz)>=5?'badge-yellow':'badge-red'}">${avgQuiz}/10</span>` : '<span class="badge badge-gray">—</span>';
   const nBadge = avgNote ? `<span class="badge ${parseFloat(avgNote)>=10?'badge-green':'badge-red'}">${avgNote}/20</span>` : '<span class="badge badge-gray">—</span>';
-  return { scores, notes, avgQuiz, avgNote, lastSeen, qBadge, nBadge };
+  return { scores, notes, avgQuiz, avgNote, inactif, lastSeen, qBadge, nBadge };
 }
 
 // ── Liste élèves (tous, onglet Élèves) ───────────────────
@@ -755,6 +765,9 @@ function renderClasses() {
     const nbChTotal = idsAnneeActuelle.size;
     const nbChActives = c.chapitresAutorises.filter(id => idsAnneeActuelle.has(id)).length;
     const cascadeAnterieure = niveauxAccessibles(c.niveau).filter(n => n !== c.niveau);
+    const elevesClasse = DATA.filter(e => e.classe_id === c.id);
+    const pctActifs = elevesClasse.length ? Math.round(100 * elevesClasse.filter(e => !isEleveInactif(e)).length / elevesClasse.length) : null;
+    const quizMoyen = elevesClasse.length ? (elevesClasse.reduce((a,e) => a + (e.scores||[]).length, 0) / elevesClasse.length).toFixed(1) : null;
     return `
     <div class="class-card" onclick="openClasse('${c.id}')">
       <div class="class-card-title">${escapeHtml(c.nom)}</div>
@@ -763,6 +776,7 @@ function renderClasses() {
         <span class="badge badge-gray">${c.nbEleves} élève${c.nbEleves===1?'':'s'}</span>
         <span class="badge ${nbChActives ? 'badge-green' : 'badge-yellow'}">${nbChActives}/${nbChTotal} chapitres</span>
         ${cascadeAnterieure.length ? `<span class="badge badge-gray">+ ${cascadeAnterieure.map(niveauLabel).join('/')}</span>` : ''}
+        ${pctActifs !== null ? `<span class="badge ${pctActifs>=50?'badge-green':'badge-red'}">${pctActifs}% actifs (${INACTIVITY_DAYS}j)</span><span class="badge badge-gray">${quizMoyen} quiz/élève</span>` : ''}
       </div>
     </div>`;
   }).join('');
