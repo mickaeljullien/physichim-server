@@ -116,6 +116,16 @@ async function initStudentDB() {
       action TEXT NOT NULL,
       date TIMESTAMPTZ NOT NULL DEFAULT now()
     );
+
+    -- Journal des connexions élève (une ligne par connexion réussie), distinct de
+    -- eleves.last_seen (qui n'écrase qu'un seul horodatage) : nécessaire pour pouvoir
+    -- compter un nombre de visites sur une période, pas seulement connaître la dernière.
+    CREATE TABLE IF NOT EXISTS connexions (
+      id SERIAL PRIMARY KEY,
+      eleve_id TEXT NOT NULL REFERENCES eleves(id) ON DELETE CASCADE,
+      date TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+    CREATE INDEX IF NOT EXISTS idx_connexions_date ON connexions(date);
   `);
 }
 
@@ -342,6 +352,7 @@ async function router(req, res) {
     clearRateLimit(rlKey);
 
     await studentDb.run('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve.id]);
+    await studentDb.run('INSERT INTO connexions (eleve_id) VALUES ($1)', [eleve.id]);
 
     const scores = await studentDb.all('SELECT chapitre_id, score, total, date FROM quiz_scores WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
     const notes = await studentDb.all('SELECT id, type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
@@ -485,6 +496,67 @@ async function router(req, res) {
     }
     if (!inserted) return json(res, 409, { error: `Limite de ${MAX_ADMINS} comptes enseignants atteinte` });
     return json(res, 201, { ok: true, id, identifiant, nom });
+  }
+
+  // ── Rapport d'activité globale (toutes classes, tous enseignants) ──
+  // GET /api/admin/rapport-activite  (optionnel : ?depuis=ISO&jusqua=ISO, sinon 7 derniers jours)
+  if (p === '/api/admin/rapport-activite' && method === 'GET') {
+    const rlKeySuper = 'superadmin-login:' + getClientIp(req);
+    const rlSuper = checkRateLimit(rlKeySuper);
+    if (rlSuper.blocked) return json(res, 429, { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rlSuper.retryAfterSec / 60)} min.` });
+    if (!isSuperAdmin(req)) {
+      recordFailedAttempt(rlKeySuper);
+      return json(res, 401, { error: 'Clé maître requise' });
+    }
+    clearRateLimit(rlKeySuper);
+
+    const jusquaParam = url.searchParams.get('jusqua');
+    const depuisParam = url.searchParams.get('depuis');
+    const jusqua = jusquaParam ? new Date(jusquaParam) : new Date();
+    const depuis = depuisParam ? new Date(depuisParam) : new Date(jusqua.getTime() - 7 * 24 * 60 * 60 * 1000);
+
+    const visitesRow = await studentDb.get(
+      'SELECT COUNT(*)::int as n FROM connexions WHERE date >= $1 AND date < $2',
+      [depuis.toISOString(), jusqua.toISOString()]
+    );
+    const quizRows = await studentDb.all(
+      'SELECT eleve_id, COUNT(*)::int as nb_quiz FROM quiz_scores WHERE date >= $1 AND date < $2 GROUP BY eleve_id',
+      [depuis.toISOString(), jusqua.toISOString()]
+    );
+    const connexionRows = await studentDb.all(
+      'SELECT eleve_id, COUNT(*)::int as nb_connexions FROM connexions WHERE date >= $1 AND date < $2 GROUP BY eleve_id',
+      [depuis.toISOString(), jusqua.toISOString()]
+    );
+    const quizMap = new Map(quizRows.map(r => [r.eleve_id, r.nb_quiz]));
+    const connexionMap = new Map(connexionRows.map(r => [r.eleve_id, r.nb_connexions]));
+
+    // Tous les élèves sont inclus (même à 0 activité) : un élève inactif sur la
+    // période est une information utile pour l'enseignant, pas un cas à masquer.
+    const eleves = await studentDb.all('SELECT id, code, pseudo, classe_id, admin_id FROM eleves');
+    const classes = await appDb.all('SELECT id, nom, admin_id FROM classes');
+    const classesById = new Map(classes.map(c => [c.id, c]));
+    const admins = await appDb.all('SELECT id, nom FROM admins');
+    const adminsById = new Map(admins.map(a => [a.id, a]));
+
+    const result = eleves.map(e => {
+      const classe = e.classe_id ? classesById.get(e.classe_id) : null;
+      const admin = adminsById.get(e.admin_id) || (classe ? adminsById.get(classe.admin_id) : null);
+      return {
+        pseudo: e.pseudo,
+        code: e.code,
+        classe: classe ? classe.nom : 'Sans classe',
+        professeur: admin ? admin.nom : '',
+        nbQuiz: quizMap.get(e.id) || 0,
+        nbConnexions: connexionMap.get(e.id) || 0
+      };
+    });
+    result.sort((a, b) => a.classe.localeCompare(b.classe) || a.pseudo.localeCompare(b.pseudo));
+
+    return json(res, 200, {
+      periode: { depuis: depuis.toISOString(), jusqua: jusqua.toISOString() },
+      visitesGlobales: visitesRow.n,
+      eleves: result
+    });
   }
 
   // ── Liste des comptes enseignants ──
