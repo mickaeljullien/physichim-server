@@ -17989,8 +17989,8 @@ function renderQuiz(ch) {
   }
 
   const i = qz.idx;
-  const q = ch.quiz[i];
-  const totalQ = ch.quiz.length;
+  const q = qz.questions[i];
+  const totalQ = qz.questions.length;
   const revealed = qz.revealed[i];
   const selected = qz.answers[i];
 
@@ -18034,8 +18034,28 @@ function renderQuiz(ch) {
   `;
 }
 
+function shuffleArray(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// Mélange l'ordre des questions et, pour chaque question, l'ordre de ses options
+// (en réindexant la bonne réponse au passage) : un élève qui refait le quiz sur le
+// même chapitre ne retombe pas sur exactement le même enchaînement à chaque fois.
+function buildShuffledQuiz(ch) {
+  return shuffleArray(ch.quiz).map(q => {
+    const order = shuffleArray(q.opts.map((_, i) => i));
+    return { q: q.q, opts: order.map(i => q.opts[i]), ans: order.indexOf(q.ans), exp: q.exp };
+  });
+}
+
 function startQuiz() {
-  state.quiz = { active: true, idx: 0, answers: {}, revealed: {} };
+  const ch = CHAPTERS.find(c => c.id === state.currentChapter);
+  state.quiz = { active: true, idx: 0, answers: {}, revealed: {}, questions: buildShuffledQuiz(ch) };
   refreshContent();
 }
 
@@ -18090,7 +18110,7 @@ async function finishQuiz() {
   const ch = CHAPTERS.find(c => c.id === state.currentChapter);
   const q = state.quiz;
   let score = 0;
-  ch.quiz.forEach((question, i) => {
+  q.questions.forEach((question, i) => {
     if (q.answers[i] === question.ans) score++;
   });
 
