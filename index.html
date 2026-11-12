@@ -18751,14 +18751,18 @@ async function apiLogin(code) {
 }
 
 async function apiSaveQuiz(chapitreId, score) {
-  if (!state.activeStudentId || !SERVER_URL) return;
+  if (!state.activeStudentId || !SERVER_URL) return false;
   try {
-    await fetch(SERVER_URL + '/api/quiz', {
+    const r = await fetch(SERVER_URL + '/api/quiz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: 10 })
     });
-  } catch(e) { console.warn('Quiz non sauvegardé sur le serveur', e); }
+    return r.ok;
+  } catch(e) {
+    console.warn('Quiz non sauvegardé sur le serveur', e);
+    return false;
+  }
 }
 
 async function apiSaveNote(type, intitule, valeur) {
@@ -19031,6 +19035,31 @@ function launchConfetti() {
   }
 }
 
+// État de l'enregistrement du score : on n'affiche « Synchronisé » que si le serveur a
+// réellement confirmé (wifi coupé ou serveur endormi = score perdu sans que l'élève le sache).
+function quizSaveStatusHtml(saved, student) {
+  if (saved) {
+    return `<p style="color:var(--muted);margin-bottom:8px">Score enregistré${student ? ' pour <strong>' + escapeHtml(student.name) + '</strong>' : ''} sur le serveur.</p>
+      <p style="color:var(--green);font-size:.82rem;margin-bottom:24px">✓ Synchronisé</p>`;
+  }
+  return `<p style="color:var(--red);margin-bottom:8px">⚠ Ton score n'a pas pu être enregistré (connexion ou serveur indisponible).</p>
+      <p style="margin-bottom:24px"><button class="btn-secondary" id="quiz-retry-btn" onclick="retrySaveQuiz()">Réessayer l'enregistrement</button></p>`;
+}
+
+async function retrySaveQuiz() {
+  const pending = state.quiz.pendingSave;
+  if (!pending) return;
+  const btn = document.getElementById('quiz-retry-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
+  const saved = await apiSaveQuiz(pending.chapitreId, pending.score);
+  if (saved) {
+    state.quiz.pendingSave = null;
+    await apiLogProgression(pending.chapitreId, `quiz_${pending.score}_10`);
+  }
+  const el = document.getElementById('quiz-save-status');
+  if (el) el.innerHTML = quizSaveStatusHtml(saved, getStudent());
+}
+
 async function finishQuiz() {
   const ch = CHAPTERS.find(c => c.id === state.currentChapter);
   const q = state.quiz;
@@ -19041,8 +19070,9 @@ async function finishQuiz() {
 
   // Sauvegarder localement ET sur le serveur (on garde le meilleur score, jamais de régression affichée)
   state.activeStudentData.scores[ch.id] = Math.max(score, state.activeStudentData.scores[ch.id] || 0);
-  await apiSaveQuiz(ch.id, score);
-  await apiLogProgression(ch.id, `quiz_${score}_10`);
+  const saved = await apiSaveQuiz(ch.id, score);
+  if (saved) await apiLogProgression(ch.id, `quiz_${score}_10`);
+  else state.quiz.pendingSave = { chapitreId: ch.id, score };
   buildNav();
 
   const cls = score >= 7 ? 'great' : score >= 5 ? 'ok' : 'bad';
@@ -19057,8 +19087,7 @@ async function finishQuiz() {
         <div class="score-label">score</div>
       </div>
       <h2 style="font-family:Syne,sans-serif;font-size:1.3rem;margin-bottom:8px">${msg}</h2>
-      <p style="color:var(--muted);margin-bottom:8px">Score enregistré${student ? ' pour <strong>' + escapeHtml(student.name) + '</strong>' : ''} sur le serveur.</p>
-      <p style="color:var(--green);font-size:.82rem;margin-bottom:24px">✓ Synchronisé</p>
+      <div id="quiz-save-status">${quizSaveStatusHtml(saved, student)}</div>
       <div style="display:flex;gap:12px;justify-content:center">
         <button class="btn-secondary" onclick="startQuiz()">Refaire le quiz</button>
         <button class="btn-primary" onclick="switchTab('cours')">Revoir le cours</button>
@@ -19232,7 +19261,9 @@ async function addGrade() {
   if (!val || !state.activeStudentId) return;
 
   const valeur = parseFloat(val);
+  if (!Number.isFinite(valeur) || valeur < 0 || valeur > 20) { alert('La note doit être comprise entre 0 et 20.'); return; }
   const noteId = await apiSaveNote(type, name, valeur);
+  if (noteId === null) { alert("La note n'a pas pu être enregistrée. Vérifie ta connexion et réessaie."); return; }
 
   // Mettre à jour localement
   state.activeStudentData.notes.unshift({
@@ -19568,7 +19599,7 @@ function showTeacher() {
            <button class="btn-secondary" onclick="openStudentModal()">Configurer le serveur</button>`
       }
       <div class="rgpd-notice" style="margin-top:24px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
-        <strong>🔒 RGPD :</strong> L'interface admin est protégée par une clé secrète. Les données sont hébergées en Europe (Railway Frankfurt). Les élèves ne sont identifiés que par un code anonyme.
+        <strong>🔒 RGPD :</strong> L'interface admin est protégée par un identifiant et un code enseignant. Les données des élèves (nom ou pseudo saisi par l'enseignant, scores, notes) sont stockées dans une base hébergée en Europe (Neon, Francfort) et ne sont visibles que par leur enseignant. Chaque élève se connecte avec un code personnel.
       </div>
     </div>
   `;

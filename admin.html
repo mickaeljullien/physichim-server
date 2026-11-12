@@ -1107,13 +1107,12 @@ async function addEleve() {
 function genEleveCode(prenom, nom, seed, existingCodes) {
   const ci = prenom.trim()[0].toUpperCase();
   const ni = nom.trim()[0].toUpperCase();
-  let s = seed;
+  // 4 chiffres tirés au hasard (et non plus calculés à partir du nom) : un camarade qui
+  // connaît le prénom et le nom ne peut plus recalculer le code.
   let code;
   do {
-    const hash = ci.charCodeAt(0)*31 + ni.charCodeAt(0)*17 + prenom.trim().length*7919 + nom.trim().length*104729 + s*97;
-    const digits = String(((hash % 10000) + 10000) % 10000).padStart(4, '0');
+    const digits = String(crypto.getRandomValues(new Uint32Array(1))[0] % 10000).padStart(4, '0');
     code = ci + ni + digits;
-    s++;
   } while (existingCodes.has(code));
   existingCodes.add(code);
   return code;

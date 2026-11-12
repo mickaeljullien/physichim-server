@@ -167,6 +167,11 @@ function chapitreIdsDuNiveau(niveau) {
   return Array.from({ length: b - a + 1 }, (_, i) => a + i);
 }
 
+// Un chapitre_id reçu d'un élève doit correspondre à un chapitre existant d'un des niveaux.
+function isChapitreIdValide(id) {
+  return Number.isInteger(id) && Object.values(NIVEAU_RANGES).some(([a, b]) => id >= a && id <= b);
+}
+
 // Niveaux déjà couverts avant celui-ci (ex: 'tle' -> ['2nde', '1ere'])
 function niveauxPrecedents(niveau) {
   const idx = NIVEAU_ORDER.indexOf(niveau);
@@ -183,6 +188,10 @@ function genId() {
 // pour un usage scolaire, à revoir si l'appli est un jour exposée massivement. Se
 // réinitialise à chaque redémarrage/réveil du service — acceptable ici.
 const RATE_LIMIT_MAX_ATTEMPTS = 5;
+// Connexion élève : seuil bien plus large, car tout un lycée sort sur Internet avec la
+// même adresse IP — à 5, quelques codes mal tapés dans une salle bloquaient toute la
+// classe pendant 15 minutes, y compris les élèves ayant le bon code.
+const RATE_LIMIT_MAX_ATTEMPTS_ELEVE = 60;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const rateLimitBuckets = new Map();
 
@@ -194,11 +203,11 @@ function getClientIp(req) {
   return (xff ? xff.split(',')[0].trim() : req.socket.remoteAddress) || 'unknown';
 }
 
-function checkRateLimit(key) {
+function checkRateLimit(key, maxAttempts = RATE_LIMIT_MAX_ATTEMPTS) {
   const now = Date.now();
   const bucket = rateLimitBuckets.get(key);
   if (!bucket || now > bucket.resetAt) return { blocked: false };
-  if (bucket.count >= RATE_LIMIT_MAX_ATTEMPTS) {
+  if (bucket.count >= maxAttempts) {
     return { blocked: true, retryAfterSec: Math.ceil((bucket.resetAt - now) / 1000) };
   }
   return { blocked: false };
@@ -337,11 +346,11 @@ async function router(req, res) {
   // POST /api/login  { code: "E01" }
   if (p === '/api/login' && method === 'POST') {
     const rlKey = 'eleve-login:' + getClientIp(req);
-    const rl = checkRateLimit(rlKey);
+    const rl = checkRateLimit(rlKey, RATE_LIMIT_MAX_ATTEMPTS_ELEVE);
     if (rl.blocked) return json(res, 429, { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rl.retryAfterSec / 60)} min.` });
 
     const body = await parseBody(req);
-    const code = (body.code || '').toUpperCase().trim();
+    const code = String(body.code || '').toUpperCase().trim();
     if (!code) return json(res, 400, { error: 'Code manquant' });
 
     const eleve = await studentDb.get('SELECT * FROM eleves WHERE code = $1', [code]);
@@ -349,7 +358,8 @@ async function router(req, res) {
       recordFailedAttempt(rlKey);
       return json(res, 404, { error: 'Code inconnu. Demandez votre code à votre enseignant.' });
     }
-    clearRateLimit(rlKey);
+    // Pas de remise à zéro du compteur ici : l'IP est partagée par tout l'établissement,
+    // un seul code valide ne doit pas effacer les essais ratés des autres postes.
 
     await studentDb.run('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve.id]);
     await studentDb.run('INSERT INTO connexions (eleve_id) VALUES ($1)', [eleve.id]);
@@ -383,10 +393,18 @@ async function router(req, res) {
     if (!eleve_id || chapitre_id === undefined || score === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
     }
+    // Refuse les valeurs impossibles (999/10, texte, chapitre inexistant) : sans ce
+    // contrôle elles étaient enregistrées telles quelles ou faisaient planter la requête.
+    const totalQuiz = total === undefined ? 10 : total;
+    if (typeof eleve_id !== 'string' || !isChapitreIdValide(chapitre_id)
+      || !Number.isInteger(totalQuiz) || totalQuiz < 1 || totalQuiz > 100
+      || !Number.isInteger(score) || score < 0 || score > totalQuiz) {
+      return json(res, 400, { error: 'Données invalides' });
+    }
     const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
 
-    await studentDb.run('INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4)', [eleve_id, chapitre_id, score, total || 10]);
+    await studentDb.run('INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4)', [eleve_id, chapitre_id, score, totalQuiz]);
     await studentDb.run('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve_id]);
 
     return json(res, 201, { ok: true });
@@ -399,6 +417,11 @@ async function router(req, res) {
     const { eleve_id, type, intitule, valeur } = body;
     if (!eleve_id || !type || !intitule || valeur === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
+    }
+    if (typeof eleve_id !== 'string' || typeof type !== 'string' || type.length > 40
+      || typeof intitule !== 'string' || intitule.length > 120
+      || typeof valeur !== 'number' || !Number.isFinite(valeur) || valeur < 0 || valeur > 20) {
+      return json(res, 400, { error: 'Données invalides (note attendue entre 0 et 20)' });
     }
     const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
@@ -429,6 +452,12 @@ async function router(req, res) {
     if (!eleve_id || chapitre_id === undefined || !action) {
       return json(res, 400, { error: 'Données manquantes' });
     }
+    if (typeof eleve_id !== 'string' || !isChapitreIdValide(chapitre_id)
+      || typeof action !== 'string' || action.length > 60) {
+      return json(res, 400, { error: 'Données invalides' });
+    }
+    const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
+    if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     await studentDb.run('INSERT INTO progression (eleve_id, chapitre_id, action) VALUES ($1, $2, $3)', [eleve_id, chapitre_id, action]);
     return json(res, 201, { ok: true });
   }
