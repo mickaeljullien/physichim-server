@@ -22,6 +22,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const util = require('util');
 const { Pool } = require('pg');
 
 // Petite fabrique de raccourcis .get()/.all()/.run(), pour garder le vocabulaire
@@ -126,6 +127,9 @@ async function initStudentDB() {
       date TIMESTAMPTZ NOT NULL DEFAULT now()
     );
     CREATE INDEX IF NOT EXISTS idx_connexions_date ON connexions(date);
+    CREATE INDEX IF NOT EXISTS idx_quiz_scores_eleve ON quiz_scores(eleve_id);
+    CREATE INDEX IF NOT EXISTS idx_notes_eleve ON notes(eleve_id);
+    CREATE INDEX IF NOT EXISTS idx_eleves_admin ON eleves(admin_id);
   `);
 }
 
@@ -228,9 +232,44 @@ function clearRateLimit(key) {
 }
 
 // ── Clé maître (gestion des comptes enseignants uniquement) ──
+function safeEqual(a, b) {
+  const ba = Buffer.from(String(a)), bb = Buffer.from(String(b));
+  return ba.length === bb.length && crypto.timingSafeEqual(ba, bb);
+}
+
 function isSuperAdmin(req) {
   const auth = req.headers['authorization'] || '';
-  return auth === `Bearer ${ADMIN_KEY}`;
+  return safeEqual(auth, `Bearer ${ADMIN_KEY}`);
+}
+
+// ── Codes enseignants : stockés hachés (scrypt + sel), jamais en clair ──
+// Format en base : scrypt$<sel hex>$<empreinte hex>. Une fuite de la base ne révèle
+// donc plus les codes (souvent réutilisés ailleurs par leurs propriétaires).
+const scrypt = util.promisify(crypto.scrypt);
+const CODE_HASH_PREFIX = 'scrypt$';
+
+async function hashCode(code) {
+  const salt = crypto.randomBytes(16).toString('hex');
+  const hash = (await scrypt(code, salt, 32)).toString('hex');
+  return `${CODE_HASH_PREFIX}${salt}$${hash}`;
+}
+
+async function verifyCode(code, stored) {
+  const [scheme, salt, hash] = String(stored).split('$');
+  if (scheme !== 'scrypt' || !salt || !hash) return false;
+  const expected = Buffer.from(hash, 'hex');
+  const got = await scrypt(code, salt, expected.length || 32);
+  return got.length === expected.length && crypto.timingSafeEqual(got, expected);
+}
+
+// Au démarrage : hache les codes encore en clair (comptes créés avant ce changement).
+// Sans effet une fois tous les comptes migrés.
+async function migrerCodesEnseignants() {
+  const enClair = await appDb.all(`SELECT id, code FROM admins WHERE code NOT LIKE '${CODE_HASH_PREFIX}%'`);
+  for (const a of enClair) {
+    await appDb.run('UPDATE admins SET code = $1 WHERE id = $2', [await hashCode(a.code), a.id]);
+  }
+  if (enClair.length) console.log(`🔒 ${enClair.length} code(s) enseignant haché(s)`);
 }
 
 // ── Auth enseignant (identifiant + code) ──
@@ -284,16 +323,32 @@ function csvField(v) {
   return s;
 }
 
+const MAX_BODY_CHARS = 100000;
+
 function parseBody(req) {
   return new Promise((resolve, reject) => {
     let body = '';
-    req.on('data', chunk => body += chunk);
+    req.on('data', chunk => {
+      body += chunk;
+      // Aucune requête légitime n'approche cette taille : on coupe pour ne pas remplir la mémoire.
+      if (body.length > MAX_BODY_CHARS) { body = ''; req.destroy(); resolve({}); }
+    });
     req.on('end', () => {
       try { resolve(JSON.parse(body || '{}')); }
       catch { resolve({}); }
     });
     req.on('error', reject);
   });
+}
+
+// Regroupe des lignes SQL par valeur d'une colonne : Map { valeur -> [lignes] }.
+function groupBy(rows, key) {
+  const map = new Map();
+  for (const r of rows) {
+    if (!map.has(r[key])) map.set(r[key], []);
+    map.get(r[key]).push(r);
+  }
+  return map;
 }
 
 // Construit une map { classe_id -> classe } à partir de la base appli, pour fusionner
@@ -478,7 +533,7 @@ async function router(req, res) {
     if (!identifiant || !code) return json(res, 400, { error: 'Identifiant et code requis' });
 
     const admin = await appDb.get('SELECT * FROM admins WHERE identifiant = $1', [identifiant]);
-    if (!admin || admin.code !== code) {
+    if (!admin || !(await verifyCode(code, admin.code))) {
       recordFailedAttempt(rlKey);
       return json(res, 401, { error: 'Identifiant ou code incorrect' });
     }
@@ -517,7 +572,7 @@ async function router(req, res) {
         `INSERT INTO admins (id, identifiant, code, nom)
          SELECT $1, $2, $3, $4 WHERE (SELECT COUNT(*) FROM admins) < $5
          RETURNING id`,
-        [id, identifiant, code, nom, MAX_ADMINS]
+        [id, identifiant, await hashCode(code), nom, MAX_ADMINS]
       );
     } catch (e) {
       if (e.code === '23505') return json(res, 409, { error: 'Cet identifiant existe déjà' });
@@ -600,14 +655,43 @@ async function router(req, res) {
     }
     clearRateLimit(rlKeySuper);
     const admins = await appDb.all('SELECT id, identifiant, nom, created_at, last_seen FROM admins ORDER BY identifiant');
+    // Élèves comptés par admin_id (et non par classe) : ceux dont la classe a été
+    // supprimée restent rattachés à leur enseignant et doivent être comptés ici.
     const result = await Promise.all(admins.map(async a => {
       const nbClassesRow = await appDb.get('SELECT COUNT(*)::int as n FROM classes WHERE admin_id = $1', [a.id]);
-      const classeRows = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [a.id]);
-      const classeIds = classeRows.map(c => c.id);
-      const nbElevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves WHERE classe_id = ANY($1::text[])', [classeIds]);
+      const nbElevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves WHERE admin_id = $1', [a.id]);
       return { ...a, nbClasses: nbClassesRow.n, nbEleves: nbElevesRow.n };
     }));
+    // Élèves « fantômes » : rattachés à un compte enseignant qui n'existe plus (ou à aucun).
+    // Invisibles pour tout le monde tant qu'ils ne sont pas repris par un enseignant.
+    const orphelinsRow = await studentDb.get(
+      'SELECT COUNT(*)::int as n FROM eleves WHERE admin_id IS NULL OR NOT (admin_id = ANY($1::text[]))',
+      [admins.map(a => a.id)]
+    );
+    res.setHeader('X-Eleves-Sans-Enseignant', String(orphelinsRow.n));
     return json(res, 200, result);
+  }
+
+  // ── Rattacher les élèves sans enseignant à un compte existant ──
+  // POST /api/admin/teachers/:id/reprendre-orphelins
+  if (p.match(/^\/api\/admin\/teachers\/[^/]+\/reprendre-orphelins$/) && method === 'POST') {
+    if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
+    const adminId = p.split('/')[4];
+    const cible = await appDb.get('SELECT id FROM admins WHERE id = $1', [adminId]);
+    if (!cible) return json(res, 404, { error: 'Compte enseignant introuvable' });
+    const admins = await appDb.all('SELECT id FROM admins');
+    const classes = await appDb.all('SELECT id FROM classes');
+    // La classe d'origine n'existe plus forcément : on détache alors l'élève, que
+    // l'enseignant réaffectera depuis son onglet Élèves (« Assigner à… »).
+    await studentDb.run(
+      'UPDATE eleves SET classe_id = NULL WHERE (admin_id IS NULL OR NOT (admin_id = ANY($1::text[]))) AND classe_id IS NOT NULL AND NOT (classe_id = ANY($2::text[]))',
+      [admins.map(a => a.id), classes.map(c => c.id)]
+    );
+    const r = await studentDb.run(
+      'UPDATE eleves SET admin_id = $1 WHERE admin_id IS NULL OR NOT (admin_id = ANY($2::text[]))',
+      [adminId, admins.map(a => a.id)]
+    );
+    return json(res, 200, { ok: true, nbRepris: r.rowCount });
   }
 
   // ── Supprimer un compte enseignant (et ses classes) ──
@@ -615,13 +699,31 @@ async function router(req, res) {
   if (p.match(/^\/api\/admin\/teachers\/[^/]+$/) && method === 'DELETE') {
     if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
     const adminId = p.split('/')[4];
-    const classeRows = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [adminId]);
-    const classeIds = classeRows.map(c => c.id);
-    if (classeIds.length) {
-      await studentDb.run('UPDATE eleves SET classe_id = NULL WHERE classe_id = ANY($1::text[])', [classeIds]);
-      await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = ANY($1::text[])', [classeIds]);
+    const admin = await appDb.get('SELECT id FROM admins WHERE id = $1', [adminId]);
+    if (!admin) return json(res, 404, { error: 'Compte enseignant introuvable' });
+
+    // Un compte qui a encore des élèves ne peut être supprimé qu'en les transférant
+    // (avec ses classes) à un autre enseignant : sinon ils resteraient rattachés à un
+    // compte inexistant, invisibles pour tous, avec des codes bloqués à jamais.
+    const cibleId = url.searchParams.get('transferer_a');
+    const nbElevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves WHERE admin_id = $1', [adminId]);
+    if (nbElevesRow.n > 0 && !cibleId) {
+      return json(res, 409, { error: `Ce compte a encore ${nbElevesRow.n} élève(s) : choisissez l'enseignant qui les reprend.`, nbEleves: nbElevesRow.n });
     }
-    await appDb.run('DELETE FROM classes WHERE admin_id = $1', [adminId]);
+    if (cibleId) {
+      if (cibleId === adminId) return json(res, 400, { error: 'Le compte de reprise doit être un autre enseignant' });
+      const cible = await appDb.get('SELECT id FROM admins WHERE id = $1', [cibleId]);
+      if (!cible) return json(res, 404, { error: 'Compte de reprise introuvable' });
+      await appDb.run('UPDATE classes SET admin_id = $1 WHERE admin_id = $2', [cibleId, adminId]);
+      await studentDb.run('UPDATE eleves SET admin_id = $1 WHERE admin_id = $2', [cibleId, adminId]);
+    } else {
+      const classeRows = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [adminId]);
+      const classeIds = classeRows.map(c => c.id);
+      if (classeIds.length) {
+        await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = ANY($1::text[])', [classeIds]);
+      }
+      await appDb.run('DELETE FROM classes WHERE admin_id = $1', [adminId]);
+    }
     await appDb.run('DELETE FROM admins WHERE id = $1', [adminId]);
     return json(res, 200, { ok: true });
   }
@@ -661,10 +763,18 @@ async function router(req, res) {
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
 
     const classes = await appDb.all('SELECT * FROM classes WHERE admin_id = $1 ORDER BY nom', [admin.id]);
-    const result = await Promise.all(classes.map(async c => {
-      const nbElevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves WHERE classe_id = $1', [c.id]);
-      const rows = await appDb.all('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = $1', [c.id]);
-      return { ...c, nbEleves: nbElevesRow.n, chapitresAutorises: rows.map(r => r.chapitre_id) };
+    // Deux requêtes pour toutes les classes (au lieu de deux par classe).
+    const classeIds = classes.map(c => c.id);
+    const nbRows = await studentDb.all('SELECT classe_id, COUNT(*)::int as n FROM eleves WHERE classe_id = ANY($1::text[]) GROUP BY classe_id', [classeIds]);
+    const nbParClasse = new Map(nbRows.map(r => [r.classe_id, r.n]));
+    const chapParClasse = groupBy(
+      await appDb.all('SELECT classe_id, chapitre_id FROM classe_chapitres WHERE classe_id = ANY($1::text[])', [classeIds]),
+      'classe_id'
+    );
+    const result = classes.map(c => ({
+      ...c,
+      nbEleves: nbParClasse.get(c.id) || 0,
+      chapitresAutorises: (chapParClasse.get(c.id) || []).map(r => r.chapitre_id)
     }));
     return json(res, 200, result);
   }
@@ -802,18 +912,29 @@ async function router(req, res) {
     const eleves = await studentDb.all('SELECT * FROM eleves WHERE admin_id = $1', [admin.id]);
     const classesById = await classesMapParAdmin(admin.id);
 
-    const result = await Promise.all(eleves.map(async e => {
+    // Deux requêtes pour tous les élèves (au lieu de deux par élève : plus de 200
+    // allers-retours vers la base à chaque ouverture du tableau de bord).
+    const eleveIds = eleves.map(e => e.id);
+    const scoresParEleve = groupBy(
+      await studentDb.all('SELECT eleve_id, chapitre_id, MAX(score) as score, MAX(total) as total FROM quiz_scores WHERE eleve_id = ANY($1::text[]) GROUP BY eleve_id, chapitre_id', [eleveIds]),
+      'eleve_id'
+    );
+    const notesParEleve = groupBy(
+      await studentDb.all('SELECT eleve_id, type, intitule, valeur, date FROM notes WHERE eleve_id = ANY($1::text[]) ORDER BY date DESC', [eleveIds]),
+      'eleve_id'
+    );
+
+    const result = eleves.map(e => {
       const classe = e.classe_id ? classesById.get(e.classe_id) : null;
-      const scores = await studentDb.all('SELECT chapitre_id, MAX(score) as score, MAX(total) as total FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
-      const notes = await studentDb.all('SELECT type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [e.id]);
       return {
         ...e,
         classe_nom: classe ? classe.nom : null,
         classe_niveau: classe ? classe.niveau : null,
-        scores, notes,
+        scores: (scoresParEleve.get(e.id) || []).map(({ eleve_id, ...s }) => s),
+        notes: (notesParEleve.get(e.id) || []).map(({ eleve_id, ...n }) => n),
         lastSeen: e.last_seen
       };
-    }));
+    });
     // Tri équivalent à l'ancien ORDER BY c.nom, e.code : sans classe en dernier.
     result.sort((a, b) => (a.classe_nom || '￿').localeCompare(b.classe_nom || '￿') || a.code.localeCompare(b.code));
     return json(res, 200, result);
@@ -849,9 +970,19 @@ async function router(req, res) {
     csv += chapitres.map(i => `Ch${String(i).padStart(2,'0')}_meilleur_score`).join(';');
     csv += ';Nb_notes;Moyenne_notes\n';
 
-    const rows = await Promise.all(eleves.map(async e => {
-      const scores = await studentDb.all('SELECT chapitre_id, MAX(score) as score FROM quiz_scores WHERE eleve_id = $1 GROUP BY chapitre_id', [e.id]);
-      const notes = await studentDb.all('SELECT valeur FROM notes WHERE eleve_id = $1', [e.id]);
+    const eleveIds = eleves.map(e => e.id);
+    const scoresParEleve = groupBy(
+      await studentDb.all('SELECT eleve_id, chapitre_id, MAX(score) as score FROM quiz_scores WHERE eleve_id = ANY($1::text[]) GROUP BY eleve_id, chapitre_id', [eleveIds]),
+      'eleve_id'
+    );
+    const notesParEleve = groupBy(
+      await studentDb.all('SELECT eleve_id, valeur FROM notes WHERE eleve_id = ANY($1::text[])', [eleveIds]),
+      'eleve_id'
+    );
+
+    const rows = eleves.map(e => {
+      const scores = scoresParEleve.get(e.id) || [];
+      const notes = notesParEleve.get(e.id) || [];
       const avgNote = notes.length ? (notes.reduce((a,b) => a + b.valeur, 0) / notes.length).toFixed(2) : '';
 
       const scoreMap = {};
@@ -861,7 +992,7 @@ async function router(req, res) {
       const cells = [csvField(e.classe_nom || 'Sans classe'), niveauLabelCsv, csvField(e.code), csvField(e.pseudo), e.last_seen,
         ...chapitres.map(i => scoreMap[i] !== undefined ? scoreMap[i] : ''), notes.length, avgNote];
       return cells.join(';');
-    }));
+    });
     csv += rows.join('\n') + '\n';
 
     const slug = classeFilter
@@ -936,13 +1067,19 @@ const server = http.createServer(async (req, res) => {
     process.exit(1);
   }
   try {
+    // Neon coupe les connexions restées inactives : sans écouteur 'error', pg remonte
+    // l'événement comme une exception non gérée et le serveur redémarre. On se contente
+    // de le noter — le pool rouvre une connexion à la requête suivante.
     appPool = new Pool({ connectionString: APP_DB_URL });
+    appPool.on('error', e => console.error('Connexion inactive perdue (base appli) :', e.message));
     await appPool.query('SELECT 1'); // échoue vite si la base est injoignable
     appDb = makeQueryHelpers(appPool);
     await initAppDB();
+    await migrerCodesEnseignants();
     console.log('✅ Base de données appli (PostgreSQL) initialisée');
 
     pgPool = new Pool({ connectionString: STUDENT_DB_URL });
+    pgPool.on('error', e => console.error('Connexion inactive perdue (base élèves) :', e.message));
     await pgPool.query('SELECT 1');
     studentDb = makeQueryHelpers(pgPool);
     await initStudentDB();
@@ -956,7 +1093,8 @@ const server = http.createServer(async (req, res) => {
   // toutes les interfaces pour détecter correctement le port ouvert.
   server.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 PhysiChim Server — port ${PORT}`);
-    console.log(`🔑 Clé admin : ${ADMIN_KEY}`);
+    // La clé elle-même n'est jamais écrite dans les logs (ils sont conservés chez l'hébergeur).
+    console.log(process.env.ADMIN_KEY ? '🔑 Clé admin : définie par ADMIN_KEY' : '🔑 Clé admin locale : voir le fichier .admin-key');
     console.log(`📊 /api/admin/eleves — gestion des élèves`);
     console.log(`📥 /api/admin/export  — export CSV`);
   });

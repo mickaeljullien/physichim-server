@@ -155,6 +155,12 @@
     </div>
   </header>
 
+  <div class="card" id="orphelins-box" style="display:none">
+    <div class="alert alert-err">⚠ <span id="orphelins-count">0</span> élève(s) ne sont rattachés à aucun compte enseignant existant : personne ne les voit et leurs codes restent pris.
+      <button class="btn btn-secondary btn-sm" style="margin-left:8px" onclick="reprendreOrphelins()">Les rattacher à un enseignant</button>
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-title">➕ Créer un compte enseignant (<span id="teacher-count">0</span>/5)</div>
     <div class="add-eleve-row">
@@ -549,6 +555,10 @@ async function refreshTeachers() {
   const r = await fetch(SERVER+'/api/admin/teachers', { headers: superHeaders() });
   TEACHERS = await r.json();
   document.getElementById('teacher-count').textContent = TEACHERS.length;
+  const nbOrphelins = parseInt(r.headers.get('X-Eleves-Sans-Enseignant') || '0', 10);
+  const orphBox = document.getElementById('orphelins-box');
+  orphBox.style.display = nbOrphelins ? 'block' : 'none';
+  if (nbOrphelins) document.getElementById('orphelins-count').textContent = nbOrphelins;
   document.getElementById('teachers-tbody').innerHTML = TEACHERS.length ? TEACHERS.map(t => `
     <tr>
       <td><strong style="font-family:DM Mono,monospace">${escapeHtml(t.identifiant)}</strong></td>
@@ -578,9 +588,33 @@ async function addTeacher() {
 async function deleteTeacher(id) {
   const t = TEACHERS.find(x => x.id === id);
   const identifiant = t ? t.identifiant : id;
-  if (!confirm(`Supprimer le compte enseignant ${identifiant} ?\nSes classes seront supprimées. Les élèves seront conservés mais ne seront plus rattachés à aucune classe.`)) return;
-  const r = await fetch(`${SERVER}/api/admin/teachers/${id}`, { method:'DELETE', headers:superHeaders() });
-  if (r.ok) await refreshTeachers();
+  let query = '';
+  if (t && t.nbEleves > 0) {
+    // Un compte qui a encore des élèves ne se supprime qu'en les confiant (avec ses classes) à un collègue.
+    const autres = TEACHERS.filter(x => x.id !== id);
+    if (!autres.length) { alert(`${identifiant} a encore ${t.nbEleves} élève(s) et aucun autre compte enseignant n'existe pour les reprendre.`); return; }
+    const rep = prompt(`${identifiant} a encore ${t.nbEleves} élève(s).\nIdentifiant de l'enseignant qui reprend ses classes et ses élèves (${autres.map(a => a.identifiant).join(', ')}) :`);
+    if (!rep) return;
+    const cible = autres.find(a => a.identifiant === rep.trim());
+    if (!cible) { alert('Identifiant inconnu : suppression annulée.'); return; }
+    query = '?transferer_a=' + encodeURIComponent(cible.id);
+  } else if (!confirm(`Supprimer le compte enseignant ${identifiant} ?\nSes classes (vides) seront supprimées.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/teachers/${id}${query}`, { method:'DELETE', headers:superHeaders() });
+  if (!r.ok) { const d = await r.json().catch(() => ({})); alert(d.error || 'Suppression impossible.'); }
+  await refreshTeachers();
+}
+
+// Rattache à un enseignant les élèves dont le compte enseignant d'origine a été supprimé.
+async function reprendreOrphelins() {
+  if (!TEACHERS.length) return;
+  const rep = prompt(`Identifiant de l'enseignant qui reprend ces élèves (${TEACHERS.map(a => a.identifiant).join(', ')}) :`);
+  if (!rep) return;
+  const cible = TEACHERS.find(a => a.identifiant === rep.trim());
+  if (!cible) { alert('Identifiant inconnu.'); return; }
+  const r = await fetch(`${SERVER}/api/admin/teachers/${cible.id}/reprendre-orphelins`, { method:'POST', headers:superHeaders() });
+  const d = await r.json().catch(() => ({}));
+  alert(r.ok ? `${d.nbRepris} élève(s) rattaché(s) à ${cible.identifiant}. Ils apparaissent dans son onglet Élèves.` : (d.error || 'Erreur'));
+  await refreshTeachers();
 }
 
 // ── Rafraîchir données ────────────────────────────────────
