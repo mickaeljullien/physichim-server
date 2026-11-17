@@ -523,7 +523,8 @@
     line-height: 1.4;
   }
   .option:hover:not(.locked) { border-color: var(--accent); background: rgba(47,125,117,0.07); transform: translateX(2px); }
-  .option.selected { border-color: var(--accent); background: rgba(47,125,117,0.10); }
+  .option.selected { border-color: var(--accent); background: rgba(47,125,117,0.12); box-shadow: 0 0 0 2px rgba(47,125,117,0.25); }
+  .option.selected .option-letter { background: var(--accent); color: #fff; }
   .option.correct { border-color: var(--green); background: rgba(63,122,61,0.12); box-shadow: 0 0 0 3px rgba(63,122,61,0.10); animation: popIn 0.3s cubic-bezier(0.34,1.15,0.64,1); }
   .option.wrong { border-color: var(--red); background: rgba(178,58,46,0.10); animation: popIn 0.3s cubic-bezier(0.34,1.15,0.64,1); }
   .option.locked { cursor: default; }
@@ -787,16 +788,30 @@
   .data-table tbody tr:hover td { background: rgba(27,36,32,0.035); }
 
   /* ── RESPONSIVE ── */
+  #sidebar-overlay { display: none; }
   @media (max-width: 768px) {
     #sidebar { position: fixed; top: 0; left: 0; bottom: 0; transform: translateX(0); }
     #sidebar.collapsed { transform: translateX(-100%); width: 280px; }
+    #sidebar:not(.collapsed) + #sidebar-overlay { display: block; position: fixed; inset: 0; z-index: 99; background: rgba(27,36,32,0.35); }
     #content { padding: 16px; }
-    .two-col, .dashboard-grid { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr 1fr; }
     .home-grid { grid-template-columns: 1fr 1fr; }
+    /* Zones à toucher d'au moins ~44 px au doigt */
+    #menu-toggle { min-width: 44px; min-height: 44px; }
+    .logout-btn { padding: 10px 12px; }
+    .niveau-btn { min-height: 38px; }
   }
   @media (max-width: 480px) {
     .home-grid { grid-template-columns: 1fr; }
+    .section { padding: 16px 14px; }
+    /* Les simulations ont besoin de toute la largeur de l'écran pour ne pas être coupées */
+    .embed-box { padding: 10px 4px; margin-left: -8px; margin-right: -8px; }
+    .dashboard-grid { gap: 10px; }
+  }
+  /* Survol réservé aux souris : au doigt, il restait affiché et se confondait avec la réponse choisie */
+  @media (hover: none) {
+    .option:hover:not(.locked):not(.selected) { border-color: var(--border); background: transparent; transform: none; }
   }
 
   /* scrollbar */
@@ -832,15 +847,15 @@
 
     <div class="nav-section">
       <div class="nav-label">Navigation</div>
-      <div class="nav-item active" onclick="showHome()" id="nav-home">
+      <div class="nav-item active" onclick="showHome(); closeSidebarOnMobile()" id="nav-home">
         <span class="nav-dot" style="background:var(--accent)"></span>
         Accueil
       </div>
-      <div class="nav-item" onclick="showDashboard()" id="nav-dashboard">
+      <div class="nav-item" onclick="showDashboard(); closeSidebarOnMobile()" id="nav-dashboard">
         <span class="nav-dot" style="background:var(--accent2)"></span>
         Tableau de bord élève
       </div>
-      <div class="nav-item" onclick="showTeacher()" id="nav-teacher">
+      <div class="nav-item" onclick="showTeacher(); closeSidebarOnMobile()" id="nav-teacher">
         <span class="nav-dot" style="background:var(--green)"></span>
         Vue enseignant
       </div>
@@ -851,6 +866,8 @@
       <div id="chapters-nav"></div>
     </div>
   </nav>
+  <!-- Voile derrière le menu sur téléphone : un toucher à côté referme le menu. -->
+  <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
 
   <!-- MAIN -->
   <div id="main">
@@ -890,20 +907,21 @@
     <!-- Connexion par code -->
     <div id="modal-login-form">
       <div class="modal-sub">Entrez votre code élève fourni par votre enseignant.</div>
-      <div id="modal-server-info" style="font-size:.75rem;color:var(--muted);margin-bottom:12px;display:flex;align-items:center;gap:6px">
+      <!-- Masqué : l'adresse du serveur est détectée automatiquement, et un élève qui la « changeait » cassait son appli. -->
+      <div id="modal-server-info" style="font-size:.75rem;color:var(--muted);margin-bottom:12px;display:none;align-items:center;gap:6px">
         <span>🌐</span><span id="modal-server-display"></span>
         <span style="cursor:pointer;color:var(--accent);margin-left:auto" onclick="showServerSetup()">Changer</span>
       </div>
       <div id="login-error" style="display:none;background:rgba(178,58,46,.1);border:1px solid rgba(178,58,46,.3);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--red);margin-bottom:12px"></div>
       <div class="form-group" style="margin-bottom:12px">
         <label class="form-label">Mon code élève</label>
-        <input type="text" class="form-input" id="login-code" placeholder="ex: E01" style="width:100%;text-transform:uppercase;font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.1em" onkeydown="if(event.key==='Enter')doStudentLogin()">
+        <input type="text" class="form-input" id="login-code" placeholder="ex : AB1234" autocapitalize="characters" autocorrect="off" autocomplete="off" spellcheck="false" style="width:100%;text-transform:uppercase;font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.1em" onkeydown="if(event.key==='Enter')doStudentLogin()">
       </div>
       <button class="btn-primary" id="login-btn" onclick="doStudentLogin()" style="width:100%">Se connecter</button>
     </div>
 
     <div class="rgpd-notice" style="margin-top:12px">
-      <strong>🔒 RGPD :</strong> Votre code est anonyme. Seuls vos scores et notes sont transmis au serveur de votre établissement, hébergé en Europe.
+      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores et tes notes sont enregistrés sur un serveur hébergé en Europe et ne sont visibles que par ton enseignant.
     </div>
   </div>
 </div>
@@ -18848,6 +18866,13 @@ function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('collapsed', !state.sidebarOpen);
 }
 
+// Sur téléphone, le menu recouvre la page : on le referme dès qu'on choisit où aller.
+function closeSidebarOnMobile() {
+  if (window.innerWidth > 768 || !state.sidebarOpen) return;
+  state.sidebarOpen = false;
+  document.getElementById('sidebar').classList.add('collapsed');
+}
+
 function setNavActive(id) {
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   const el = document.getElementById(id);
@@ -18865,11 +18890,26 @@ function renderContent(c) {
   if (c.type === 'text') return `<p style="font-size:.88rem;line-height:1.6;color:#2E3A34;margin:6px 0">${c.text}</p>`;
   if (c.type === 'table') return `<div class="table-wrapper"><table class="data-table"><thead><tr>${c.headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${c.rows.map(r=>`<tr>${r.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   if (c.type === 'schema') return `<div class="schema-box">${c.svg}${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
-  if (c.type === 'embed') return `<div class="schema-box">${c.title ? `<div class="section-title" style="font-size:.95rem;margin-bottom:10px">${c.title}</div>` : ''}<iframe srcdoc="${escHtmlAttr(c.html)}" title="${escHtmlAttr(c.title || 'Contenu interactif')}" style="width:100%;height:${c.height || 2300}px;border:0;border-radius:12px;display:block" loading="lazy"></iframe>${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
+  if (c.type === 'embed') return `<div class="schema-box embed-box">${c.title ? `<div class="section-title" style="font-size:.95rem;margin-bottom:10px">${c.title}</div>` : ''}<iframe srcdoc="${escHtmlAttr(c.html)}" title="${escHtmlAttr(c.title || 'Contenu interactif')}" style="width:100%;height:${c.height || 2300}px;border:0;border-radius:12px;display:block" loading="lazy" onload="ajusterHauteurEmbed(this)"></iframe>${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
   return '';
 }
 
 // Échappement pour insérer du HTML complet dans un attribut srcdoc="..." (embed interactif).
+// Cale la hauteur d'une simulation sur son contenu : sur téléphone le contenu s'allonge
+// (colonnes empilées) et, avec une hauteur fixe, il fallait faire défiler un cadre dans la page.
+// Suit aussi les changements de contenu (onglets ou curseurs de la simulation).
+function ajusterHauteurEmbed(iframe) {
+  let doc;
+  try { doc = iframe.contentDocument; } catch (e) { return; }
+  if (!doc || !doc.body) return;
+  const ajuster = () => {
+    const h = doc.documentElement.scrollHeight;
+    if (h > 0 && Math.abs(h - iframe.offsetHeight) > 4) iframe.style.height = h + 'px';
+  };
+  ajuster();
+  if (window.ResizeObserver) new ResizeObserver(ajuster).observe(doc.body);
+}
+
 function escHtmlAttr(s) {
   return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
 }
@@ -19146,7 +19186,8 @@ function renderDashboard() {
   const avgScore  = scoreVals.length ? (scoreVals.reduce((a,b)=>a+b,0)/scoreVals.length).toFixed(1) : '—';
   const completed = scoreVals.length;
   const avgGrade  = notes.length ? (notes.reduce((a,b)=>a+parseFloat(b.val),0)/notes.length).toFixed(1) : '—';
-  const notStarted = currentChapters().filter(ch => scores[ch.id] === undefined);
+  // Seulement les chapitres ouverts à l'élève : proposer un chapitre verrouillé donnait un bouton qui ne faisait rien.
+  const notStarted = currentChapters().filter(ch => scores[ch.id] === undefined && !isChapterLocked(ch.id));
 
   // Petits badges de progression, calculés à partir des scores déjà chargés — aucune
   // donnée supplémentaire à stocker, juste une lecture encourageante de ce qui existe.
@@ -19348,7 +19389,9 @@ function renderDevoirsHome() {
           <strong>${NIVEAU_LABELS[ch.niveau] !== NIVEAU_LABELS[state.niveau] ? NIVEAU_LABELS[ch.niveau] + ' · ' : ''}${ch.num}. ${escapeHtml(ch.title)}</strong>
           <div style="color:${couleur};font-size:.8rem;margin-top:2px">${detail}</div>
         </div>
-        ${fait ? '' : `<button class="btn-primary" style="font-size:.78rem;padding:6px 14px" onclick="openDevoir(${ch.id})">Faire le quiz</button>`}
+        ${fait ? '' : isChapterLocked(ch.id)
+          ? `<span style="font-size:.75rem;color:var(--muted)">🔒 Chapitre fermé par ton professeur</span>`
+          : `<button class="btn-primary" style="font-size:.85rem;padding:10px 16px" onclick="openDevoir(${ch.id})">Faire le quiz</button>`}
       </div>`;
     }).join('')}
   </div>`;
@@ -19424,10 +19467,7 @@ function openChapter(id) {
   document.getElementById('content').innerHTML = renderFiche(ch);
   apiLogProgression(id, 'open'); // pas d'await : sert uniquement à retrouver "reprendre où j'en étais", ne doit jamais ralentir la navigation
   if (state.activeStudentData?.progression) state.activeStudentData.progression.unshift({ chapitre_id: id, action: 'open', date: new Date().toISOString() });
-  if (window.innerWidth <= 768) {
-    state.sidebarOpen = false;
-    document.getElementById('sidebar').classList.add('collapsed');
-  }
+  closeSidebarOnMobile();
   document.getElementById('content').scrollTop = 0;
 }
 

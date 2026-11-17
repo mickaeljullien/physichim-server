@@ -1095,6 +1095,16 @@ function toggleAllChapitres(state) {
 
 async function saveChapitres(classeId) {
   const ids = Array.from(document.querySelectorAll('#chapter-checks input[type=checkbox]:checked')).map(cb => parseInt(cb.value,10));
+  // Un devoir encore visible par les élèves sur un chapitre qu'on décoche deviendrait infaisable : on prévient.
+  const aujourdhui = dateIsoDansJours(0);
+  const devoirsBloques = DEVOIRS.filter(d => !ids.includes(d.chapitre_id) && d.date_limite >= dateIsoDansJours(-14) && (d.compte.a_faire + d.compte.non_fait) > 0);
+  if (devoirsBloques.length) {
+    const liste = devoirsBloques.map(d => {
+      const ch = CH_META.find(c => c.id === d.chapitre_id);
+      return `• ${ch ? ch.name : 'Chapitre ' + d.chapitre_id} (pour le ${dateFr(d.date_limite)}${d.date_limite < aujourdhui ? ', date passée' : ''})`;
+    }).join('\n');
+    if (!confirm(`Attention : ces chapitres ont un devoir que des élèves n'ont pas encore fait :\n${liste}\n\nSi vous les décochez, ces élèves ne pourront plus faire le devoir. Enregistrer quand même ?`)) return;
+  }
   const r = await fetch(`${SERVER}/api/admin/classes/${classeId}/chapitres`, { method:'PUT', headers:headers(), body: JSON.stringify({chapitre_ids: ids}) });
   const alertEl = document.getElementById('chapitres-save-alert');
   if (r.ok) {
