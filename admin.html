@@ -880,6 +880,26 @@ function openClasse(id) {
     </div>
 
     <div class="card">
+      <div class="card-title">📝 Devoirs</div>
+      <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Donnez un chapitre à travailler pour une date. Le devoir est validé dès que l'élève fait le quiz du chapitre après l'assignation ; il apparaît en haut de son accueil. Le chapitre est déverrouillé automatiquement pour la classe.</p>
+      <div class="add-eleve-row">
+        <div class="form-group">
+          <label class="form-label">Chapitre</label>
+          <select class="form-select" id="devoir-chapitre">
+            ${groupesChapitres.slice().reverse().map(g => `<optgroup label="${niveauLabel(g.niveau)}">${g.chapitres.map(ch => `<option value="${ch.id}">${escapeHtml(ch.name)}</option>`).join('')}</optgroup>`).join('')}
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">À faire pour le</label>
+          <input class="form-input" type="date" id="devoir-date" value="${dateIsoDansJours(7)}">
+        </div>
+        <button class="btn btn-primary" onclick="addDevoir('${c.id}')">Donner le devoir</button>
+      </div>
+      <div id="devoir-alert"></div>
+      <div id="devoirs-list" style="margin-top:14px"><p style="color:var(--muted);font-size:.82rem">Chargement…</p></div>
+    </div>
+
+    <div class="card">
       <div class="card-title">📖 Chapitres autorisés pour cette classe</div>
       <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Cochez les chapitres que les élèves de cette classe peuvent consulter. Les années précédentes sont pré-cochées (déjà vues) ; le programme de ${niveauLabel(c.niveau)} démarre décoché, à activer au fil de l'année.</p>
       <div id="chapter-checks">
@@ -945,6 +965,105 @@ function openClasse(id) {
   document.getElementById('view-list').style.display = 'none';
   document.getElementById('view-detail').style.display = 'none';
   document.getElementById('view-classe-detail').style.display = 'block';
+  loadDevoirs(id);
+}
+
+// ── Devoirs d'une classe ─────────────────────────────────
+let DEVOIRS = [];
+const DEVOIR_STATUTS = {
+  a_temps:   { label: 'Fait à temps',   badge: 'badge-green' },
+  en_retard: { label: 'Fait en retard', badge: 'badge-yellow' },
+  non_fait:  { label: 'Non fait',       badge: 'badge-red' },
+  a_faire:   { label: 'Pas encore fait', badge: 'badge-gray' }
+};
+// Ordre d'affichage du suivi : les élèves à relancer d'abord.
+const DEVOIR_STATUT_ORDRE = ['non_fait', 'a_faire', 'en_retard', 'a_temps'];
+
+function dateIsoDansJours(n) {
+  const d = new Date(Date.now() + n * 86400000);
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+}
+function dateFr(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { weekday: 'short', day: 'numeric', month: 'long' });
+}
+
+async function loadDevoirs(classeId) {
+  const r = await fetch(`${SERVER}/api/admin/classes/${classeId}/devoirs`, { headers: headers() });
+  if (currentClasseId !== classeId) return; // l'enseignant a changé de classe entre-temps
+  const box = document.getElementById('devoirs-list');
+  if (!box) return;
+  if (!r.ok) { box.innerHTML = '<p style="color:var(--red);font-size:.82rem">Impossible de charger les devoirs.</p>'; return; }
+  DEVOIRS = await r.json();
+  renderDevoirs();
+}
+
+function renderDevoirs() {
+  const box = document.getElementById('devoirs-list');
+  if (!box) return;
+  if (!DEVOIRS.length) { box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Aucun devoir donné à cette classe pour l\'instant.</p>'; return; }
+  box.innerHTML = DEVOIRS.map(d => {
+    const ch = CH_META.find(c => c.id === d.chapitre_id);
+    const nom = ch ? `${niveauLabel(ch.niveau)} — ${ch.name}` : `Chapitre ${d.chapitre_id}`;
+    const badges = DEVOIR_STATUT_ORDRE.slice().reverse()
+      .filter(s => d.compte[s])
+      .map(s => `<span class="badge ${DEVOIR_STATUTS[s].badge}">${d.compte[s]} ${DEVOIR_STATUTS[s].label.toLowerCase()}</span>`).join(' ');
+    const suivi = d.eleves.slice().sort((a, b) => DEVOIR_STATUT_ORDRE.indexOf(a.statut) - DEVOIR_STATUT_ORDRE.indexOf(b.statut) || a.pseudo.localeCompare(b.pseudo));
+    return `
+    <div style="border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+        <div>
+          <div style="font-weight:600">${escapeHtml(nom)}</div>
+          <div style="color:var(--muted);font-size:.78rem">Donné le ${new Date(d.created_at).toLocaleDateString('fr-FR')} · à faire pour le ${dateFr(d.date_limite)}</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <input class="form-input" type="date" value="${d.date_limite}" title="Changer la date limite" style="padding:4px 8px;font-size:.78rem" onchange="updateDevoirDate('${d.id}', this.value)">
+          <button class="btn btn-danger btn-sm" onclick="deleteDevoir('${d.id}')">✕ Supprimer</button>
+        </div>
+      </div>
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">${badges || '<span class="badge badge-gray">Aucun élève dans la classe</span>'}</div>
+      ${suivi.length ? `<details style="margin-top:8px">
+        <summary style="cursor:pointer;font-size:.8rem;color:var(--muted)">Voir le détail par élève</summary>
+        <div class="table-wrap" style="margin-top:8px"><table>
+          <thead><tr><th>Élève</th><th>Code</th><th>Statut</th><th>Quiz fait le</th></tr></thead>
+          <tbody>${suivi.map(e => `<tr>
+            <td>${escapeHtml(e.pseudo)}</td>
+            <td><strong style="font-family:DM Mono,monospace">${escapeHtml(e.code)}</strong></td>
+            <td><span class="badge ${DEVOIR_STATUTS[e.statut].badge}">${DEVOIR_STATUTS[e.statut].label}</span></td>
+            <td style="color:var(--muted);font-size:.78rem">${e.fait_le ? new Date(e.fait_le).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }) : '—'}</td>
+          </tr>`).join('')}</tbody>
+        </table></div>
+      </details>` : ''}
+    </div>`;
+  }).join('');
+}
+
+async function addDevoir(classeId) {
+  const chapitre_id = parseInt(document.getElementById('devoir-chapitre').value, 10);
+  const date_limite = document.getElementById('devoir-date').value;
+  if (!date_limite) { showAlert('devoir-alert', 'Choisissez une date limite.', 'err'); return; }
+  const r = await fetch(`${SERVER}/api/admin/classes/${classeId}/devoirs`, { method:'POST', headers:headers(), body: JSON.stringify({ chapitre_id, date_limite }) });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { showAlert('devoir-alert', escapeHtml(d.error || 'Erreur'), 'err'); return; }
+  // Le chapitre vient peut-être d'être déverrouillé : on recharge la classe pour mettre à jour ses cases.
+  await refreshClasses();
+  openClasse(classeId);
+}
+
+async function updateDevoirDate(devoirId, date_limite) {
+  if (!date_limite) return;
+  const r = await fetch(`${SERVER}/api/admin/devoirs/${devoirId}`, { method:'PUT', headers:headers(), body: JSON.stringify({ date_limite }) });
+  if (!r.ok) showAlert('devoir-alert', 'La date n\'a pas pu être modifiée.', 'err');
+  if (currentClasseId) await loadDevoirs(currentClasseId);
+}
+
+async function deleteDevoir(devoirId) {
+  const d = DEVOIRS.find(x => x.id === devoirId);
+  const ch = d && CH_META.find(c => c.id === d.chapitre_id);
+  if (!confirm(`Supprimer le devoir${ch ? ' « ' + ch.name + ' »' : ''} ?\nLes scores des élèves sont conservés.`)) return;
+  const r = await fetch(`${SERVER}/api/admin/devoirs/${devoirId}`, { method:'DELETE', headers:headers() });
+  if (!r.ok) showAlert('devoir-alert', 'Le devoir n\'a pas pu être supprimé.', 'err');
+  if (currentClasseId) await loadDevoirs(currentClasseId);
 }
 
 function renderEleveRow(e) {

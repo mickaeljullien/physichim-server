@@ -71,6 +71,19 @@ async function initAppDB() {
       chapitre_id INTEGER NOT NULL,
       PRIMARY KEY (classe_id, chapitre_id)
     );
+
+    -- Devoirs : un chapitre à travailler par toute une classe avant une date limite.
+    -- date_limite est une date civile (AAAA-MM-JJ, sans heure) : le devoir est « à temps »
+    -- jusqu'à la fin de cette journée, heure de Paris. created_at sert de point de départ :
+    -- seul un quiz fait après l'assignation valide le devoir.
+    CREATE TABLE IF NOT EXISTS devoirs (
+      id TEXT PRIMARY KEY,
+      classe_id TEXT NOT NULL REFERENCES classes(id) ON DELETE CASCADE,
+      chapitre_id INTEGER NOT NULL,
+      date_limite TEXT NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+    CREATE INDEX IF NOT EXISTS idx_devoirs_classe ON devoirs(classe_id);
   `);
 }
 
@@ -180,6 +193,57 @@ function isChapitreIdValide(id) {
 function niveauxPrecedents(niveau) {
   const idx = NIVEAU_ORDER.indexOf(niveau);
   return idx <= 0 ? [] : NIVEAU_ORDER.slice(0, idx);
+}
+
+// ── Devoirs ────────────────────────────────────────────────
+// Un devoir non fait reste affiché « en retard » à l'élève pendant ce délai après la date limite.
+const DEVOIR_AFFICHAGE_RETARD_JOURS = 14;
+
+function isDateIso(s) {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const d = new Date(s + 'T00:00:00Z');
+  return !Number.isNaN(d.getTime()) && d.toISOString().slice(0, 10) === s;
+}
+
+// Instant (ms) où se termine la journée `dateIso` à Paris, quel que soit le fuseau du serveur.
+function finJourneeParis(dateIso) {
+  const [y, m, d] = dateIso.split('-').map(Number);
+  const minuitUtc = Date.UTC(y, m - 1, d + 1);
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Europe/Paris', hourCycle: 'h23',
+    year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'
+  }).formatToParts(new Date(minuitUtc));
+  const v = Object.fromEntries(parts.filter(x => x.type !== 'literal').map(x => [x.type, Number(x.value)]));
+  const decalage = Date.UTC(v.year, v.month - 1, v.day, v.hour, v.minute, v.second) - minuitUtc;
+  return minuitUtc - decalage;
+}
+
+// Statut d'un devoir pour un élève, à partir des dates de ses quiz sur ce chapitre :
+//   a_temps   : quiz fait après l'assignation, avant la fin de la date limite
+//   en_retard : quiz fait après l'assignation, mais après la date limite
+//   a_faire   : pas encore fait, date limite pas dépassée
+//   non_fait  : pas fait, date limite dépassée
+function statutDevoir(devoir, datesQuiz, now) {
+  const debut = new Date(devoir.created_at).getTime();
+  const limite = finJourneeParis(devoir.date_limite);
+  const premier = datesQuiz.map(d => new Date(d).getTime()).filter(t => t >= debut).sort((a, b) => a - b)[0];
+  if (premier !== undefined) {
+    return { statut: premier < limite ? 'a_temps' : 'en_retard', fait_le: new Date(premier).toISOString() };
+  }
+  return { statut: now < limite ? 'a_faire' : 'non_fait', fait_le: null };
+}
+
+// Devoirs à montrer à un élève : un devoir fait reste visible jusqu'à sa date limite,
+// un devoir non fait reste visible (en retard) encore quelques jours après.
+function devoirsPourEleve(devoirs, scores, now) {
+  return devoirs.map(d => {
+    const dates = scores.filter(s => s.chapitre_id === d.chapitre_id).map(s => s.date);
+    return { id: d.id, chapitre_id: d.chapitre_id, date_limite: d.date_limite, ...statutDevoir(d, dates, now) };
+  }).filter(d => {
+    const limite = finJourneeParis(d.date_limite);
+    const fait = d.statut === 'a_temps' || d.statut === 'en_retard';
+    return now < (fait ? limite : limite + DEVOIR_AFFICHAGE_RETARD_JOURS * 86400000);
+  });
 }
 
 function genId() {
@@ -425,17 +489,20 @@ async function router(req, res) {
 
     let classe = null;
     let chapitresAutorises = [];
+    let devoirs = [];
     if (eleve.classe_id) {
       classe = await appDb.get('SELECT id, nom, niveau FROM classes WHERE id = $1', [eleve.classe_id]);
       if (classe) {
         const rows = await appDb.all('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = $1', [eleve.classe_id]);
         chapitresAutorises = rows.map(r => r.chapitre_id);
+        const devoirsClasse = await appDb.all('SELECT id, chapitre_id, date_limite, created_at FROM devoirs WHERE classe_id = $1 ORDER BY date_limite, created_at', [eleve.classe_id]);
+        devoirs = devoirsPourEleve(devoirsClasse, scores, Date.now());
       }
     }
 
     return json(res, 200, {
       eleve: { id: eleve.id, code: eleve.code, pseudo: eleve.pseudo },
-      classe, chapitresAutorises,
+      classe, chapitresAutorises, devoirs,
       scores, notes, progression
     });
   }
@@ -838,6 +905,88 @@ async function router(req, res) {
     await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = $1', [classeId]);
     await appDb.run('DELETE FROM classes WHERE id = $1', [classeId]);
     return json(res, 200, { ok: true });
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // ROUTES DEVOIRS (scoped à l'enseignant connecté)
+  // ══════════════════════════════════════════════════════════
+
+  // ── Donner un devoir à une classe ──
+  // POST /api/admin/classes/:id/devoirs  { chapitre_id, date_limite: "AAAA-MM-JJ" }
+  if (p.match(/^\/api\/admin\/classes\/[^/]+\/devoirs$/) && method === 'POST') {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    const classeId = p.split('/')[4];
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
+    if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
+
+    const body = await parseBody(req);
+    const { chapitre_id, date_limite } = body;
+    const chapitresDeLaClasse = [...niveauxPrecedents(classe.niveau), classe.niveau].flatMap(chapitreIdsDuNiveau);
+    if (!Number.isInteger(chapitre_id) || !chapitresDeLaClasse.includes(chapitre_id)) {
+      return json(res, 400, { error: 'Chapitre invalide pour cette classe' });
+    }
+    if (!isDateIso(date_limite)) return json(res, 400, { error: 'Date limite invalide (AAAA-MM-JJ attendu)' });
+
+    const id = genId();
+    await appDb.run('INSERT INTO devoirs (id, classe_id, chapitre_id, date_limite) VALUES ($1, $2, $3, $4)', [id, classeId, chapitre_id, date_limite]);
+    // Un devoir sur un chapitre verrouillé serait infaisable : on l'ouvre à la classe.
+    await appDb.run('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES ($1, $2) ON CONFLICT DO NOTHING', [classeId, chapitre_id]);
+    return json(res, 201, { ok: true, id, chapitre_id, date_limite });
+  }
+
+  // ── Devoirs d'une classe, avec le suivi élève par élève ──
+  // GET /api/admin/classes/:id/devoirs
+  if (p.match(/^\/api\/admin\/classes\/[^/]+\/devoirs$/) && method === 'GET') {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    const classeId = p.split('/')[4];
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
+    if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
+
+    const devoirs = await appDb.all('SELECT id, chapitre_id, date_limite, created_at FROM devoirs WHERE classe_id = $1 ORDER BY date_limite DESC, created_at DESC', [classeId]);
+    if (!devoirs.length) return json(res, 200, []);
+
+    const eleves = await studentDb.all('SELECT id, code, pseudo FROM eleves WHERE classe_id = $1 ORDER BY pseudo', [classeId]);
+    const tentatives = groupBy(
+      await studentDb.all(
+        'SELECT eleve_id, chapitre_id, date FROM quiz_scores WHERE eleve_id = ANY($1::text[]) AND chapitre_id = ANY($2::int[])',
+        [eleves.map(e => e.id), [...new Set(devoirs.map(d => d.chapitre_id))]]
+      ),
+      'eleve_id'
+    );
+    const now = Date.now();
+    const result = devoirs.map(d => {
+      const suivi = eleves.map(e => {
+        const dates = (tentatives.get(e.id) || []).filter(t => t.chapitre_id === d.chapitre_id).map(t => t.date);
+        return { id: e.id, code: e.code, pseudo: e.pseudo, ...statutDevoir(d, dates, now) };
+      });
+      const compte = { a_temps: 0, en_retard: 0, a_faire: 0, non_fait: 0 };
+      suivi.forEach(s => compte[s.statut]++);
+      return { ...d, compte, eleves: suivi };
+    });
+    return json(res, 200, result);
+  }
+
+  // ── Changer la date limite d'un devoir ──
+  // PUT /api/admin/devoirs/:id  { date_limite }
+  // ── Supprimer un devoir ──
+  // DELETE /api/admin/devoirs/:id
+  if (p.match(/^\/api\/admin\/devoirs\/[^/]+$/) && (method === 'PUT' || method === 'DELETE')) {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    const devoirId = p.split('/')[4];
+    const devoir = await appDb.get('SELECT d.id, c.admin_id FROM devoirs d JOIN classes c ON c.id = d.classe_id WHERE d.id = $1', [devoirId]);
+    if (!devoir || devoir.admin_id !== admin.id) return json(res, 404, { error: 'Devoir introuvable' });
+
+    if (method === 'DELETE') {
+      await appDb.run('DELETE FROM devoirs WHERE id = $1', [devoirId]);
+      return json(res, 200, { ok: true });
+    }
+    const body = await parseBody(req);
+    if (!isDateIso(body.date_limite)) return json(res, 400, { error: 'Date limite invalide (AAAA-MM-JJ attendu)' });
+    await appDb.run('UPDATE devoirs SET date_limite = $1 WHERE id = $2', [body.date_limite, devoirId]);
+    return json(res, 200, { ok: true, date_limite: body.date_limite });
   }
 
   // ══════════════════════════════════════════════════════════

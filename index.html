@@ -19055,6 +19055,7 @@ async function retrySaveQuiz() {
   if (saved) {
     state.quiz.pendingSave = null;
     await apiLogProgression(pending.chapitreId, `quiz_${pending.score}_10`);
+    marquerDevoirsFaits(pending.chapitreId);
   }
   const el = document.getElementById('quiz-save-status');
   if (el) el.innerHTML = quizSaveStatusHtml(saved, getStudent());
@@ -19071,7 +19072,7 @@ async function finishQuiz() {
   // Sauvegarder localement ET sur le serveur (on garde le meilleur score, jamais de régression affichée)
   state.activeStudentData.scores[ch.id] = Math.max(score, state.activeStudentData.scores[ch.id] || 0);
   const saved = await apiSaveQuiz(ch.id, score);
-  if (saved) await apiLogProgression(ch.id, `quiz_${score}_10`);
+  if (saved) { await apiLogProgression(ch.id, `quiz_${score}_10`); marquerDevoirsFaits(ch.id); }
   else state.quiz.pendingSave = { chapitreId: ch.id, score };
   buildNav();
 
@@ -19293,6 +19294,66 @@ function greeting() {
   return 'Bonsoir';
 }
 
+// ── Devoirs donnés par l'enseignant ──────────────────
+// Statuts renvoyés par le serveur : a_faire, non_fait (date dépassée), a_temps, en_retard (faits).
+function devoirFait(d) {
+  return d.statut === 'a_temps' || d.statut === 'en_retard';
+}
+
+// Un quiz enregistré valide tout de suite les devoirs en cours sur ce chapitre, sans
+// attendre la prochaine connexion (le serveur recalcule de toute façon le statut réel).
+function marquerDevoirsFaits(chapitreId) {
+  (state.activeStudentData.devoirs || []).forEach(d => {
+    if (d.chapitre_id !== chapitreId || devoirFait(d)) return;
+    d.statut = d.statut === 'non_fait' ? 'en_retard' : 'a_temps';
+  });
+}
+
+function dateDevoirFr(iso) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+}
+
+// Ouvre directement le quiz du chapitre d'un devoir, y compris s'il appartient à une
+// année précédente (le sélecteur de niveau suit, pour que la liste de gauche corresponde).
+function openDevoir(chapitreId) {
+  const ch = CHAPTERS.find(c => c.id === chapitreId);
+  if (!ch || isChapterLocked(chapitreId)) return;
+  if (ch.niveau !== state.niveau) {
+    state.niveau = ch.niveau;
+    localStorage.setItem('physichim_niveau', ch.niveau);
+    refreshNiveauButtons();
+    buildNav();
+  }
+  openChapter(chapitreId);
+  switchTab('quiz');
+}
+
+function renderDevoirsHome() {
+  if (!state.activeStudentId) return '';
+  const devoirs = (state.activeStudentData.devoirs || [])
+    .map(d => ({ d, ch: CHAPTERS.find(c => c.id === d.chapitre_id) }))
+    .filter(x => x.ch);
+  if (!devoirs.length) return '';
+  const reste = devoirs.filter(x => !devoirFait(x.d)).length;
+  return `<div style="margin-top:14px;background:var(--surface2);border:1px solid var(--border);border-left:4px solid ${reste ? 'var(--accent2)' : 'var(--green)'};border-radius:var(--radius-sm);padding:14px 16px">
+    <div style="font-family:Syne,sans-serif;font-weight:800;margin-bottom:8px">📝 ${reste ? `À faire (${reste})` : 'Devoirs terminés'}</div>
+    ${devoirs.map(({ d, ch }) => {
+      const fait = devoirFait(d);
+      const enRetard = d.statut === 'non_fait';
+      const detail = fait ? '✓ Fait' : enRetard ? `⚠ En retard — c'était pour le ${dateDevoirFr(d.date_limite)}` : `Pour le ${dateDevoirFr(d.date_limite)}`;
+      const couleur = fait ? 'var(--green)' : enRetard ? 'var(--red)' : 'var(--muted)';
+      return `<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0;border-top:1px solid var(--border)">
+        <div style="font-size:.85rem">
+          <strong>${NIVEAU_LABELS[ch.niveau] !== NIVEAU_LABELS[state.niveau] ? NIVEAU_LABELS[ch.niveau] + ' · ' : ''}${ch.num}. ${escapeHtml(ch.title)}</strong>
+          <div style="color:${couleur};font-size:.8rem;margin-top:2px">${detail}</div>
+        </div>
+        ${fait ? '' : `<button class="btn-primary" style="font-size:.78rem;padding:6px 14px" onclick="openDevoir(${ch.id})">Faire le quiz</button>`}
+      </div>`;
+    }).join('')}
+  </div>`;
+}
+
 function showHome() {
   state.currentChapter = null;
   document.getElementById('tab-bar').style.display = 'none';
@@ -19310,6 +19371,7 @@ function showHome() {
       <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">${title}</div>
       <p style="color:var(--muted);font-size:.88rem">${notConnected ? 'Connectez-vous avec votre code élève pour accéder aux fiches de cours et aux quiz.' : allLocked ? 'Votre professeur n\'a pas encore activé de chapitre pour votre classe. Revenez plus tard.' : 'Choisissez un chapitre pour commencer à réviser.'}</p>
       ${notConnected ? `<button class="btn-primary" onclick="openStudentModal()" style="margin-top:8px">Se connecter</button>` : ''}
+      ${renderDevoirsHome()}
       ${lastChapter ? `<div style="margin-top:14px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
         <div style="font-size:.85rem">↩️ Reprendre où tu en étais : <strong>${lastChapter.num}. ${escapeHtml(lastChapter.title)}</strong></div>
         <button class="btn-primary" style="font-size:.78rem;padding:6px 14px" onclick="openChapter(${lastChapter.id})">Reprendre</button>
@@ -19457,6 +19519,7 @@ function applyStudentLoginResult(result, code) {
     notes: notes.map(n => ({ id: n.id, type: n.type, name: n.intitule, val: n.valeur, date: n.date })),
     progression: result.progression || [],
     chapitresAutorises: result.chapitresAutorises || [],
+    devoirs: result.devoirs || [],
     classe: result.classe || null
   };
 
