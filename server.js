@@ -405,6 +405,30 @@ function parseBody(req) {
   });
 }
 
+// ── Pages HTML : lues une fois, puis servies avec une empreinte (ETag) ──
+// Le navigateur garde la page (~935 Ko) et se contente de demander « a-t-elle changé ? » :
+// si non, le serveur répond 304 sans renvoyer le contenu. Un nouveau déploiement change
+// l'empreinte, donc les élèves reçoivent toujours la dernière version.
+const pagesCache = new Map();
+function servirPage(req, res, fichier) {
+  let page = pagesCache.get(fichier);
+  if (!page) {
+    const htmlPath = path.join(__dirname, fichier);
+    if (!fs.existsSync(htmlPath)) return json(res, 404, { error: `${fichier} introuvable` });
+    const contenu = fs.readFileSync(htmlPath);
+    page = { contenu, etag: '"' + crypto.createHash('sha1').update(contenu).digest('hex').slice(0, 20) + '"' };
+    pagesCache.set(fichier, page);
+  }
+  const entetes = { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache', 'ETag': page.etag };
+  const demande = (req.headers['if-none-match'] || '').replace(/^W\//, '');
+  if (demande === page.etag) {
+    res.writeHead(304, entetes);
+    return res.end();
+  }
+  res.writeHead(200, entetes);
+  return res.end(page.contenu);
+}
+
 // Regroupe des lignes SQL par valeur d'une colonne : Map { valeur -> [lignes] }.
 function groupBy(rows, key) {
   const map = new Map();
@@ -442,24 +466,15 @@ async function router(req, res) {
   }
 
   // ── Servir le fichier HTML principal ──
-  if (p === '/' || p === '/index.html') {
-    const htmlPath = path.join(__dirname, 'index.html');
-    if (fs.existsSync(htmlPath)) {
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      return res.end(fs.readFileSync(htmlPath));
-    }
-    return json(res, 404, { error: 'index.html introuvable' });
-  }
+  if (p === '/' || p === '/index.html') return servirPage(req, res, 'index.html');
 
   // ── Servir l'interface admin ──
-  if (p === '/admin' || p === '/admin.html') {
-    const htmlPath = path.join(__dirname, 'admin.html');
-    if (fs.existsSync(htmlPath)) {
-      res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-      return res.end(fs.readFileSync(htmlPath));
-    }
-    return json(res, 404, { error: 'admin.html introuvable' });
-  }
+  if (p === '/admin' || p === '/admin.html') return servirPage(req, res, 'admin.html');
+
+  // ── Réveil : répond sans toucher aux bases ──
+  // Appelé régulièrement par la tâche GitHub « keep-alive » pour que Render ne mette pas
+  // le service en veille. Ne réveille pas Neon, qui peut continuer à s'endormir sans gêne.
+  if (p === '/ping') return json(res, 200, { ok: true });
 
   // ── API : Connexion élève par code ──
   // POST /api/login  { code: "E01" }

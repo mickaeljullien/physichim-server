@@ -1,0 +1,21 @@
+# Empêche le service gratuit Render de s'endormir pendant les heures où les élèves révisent.
+# Render met le service en veille après 15 min sans visite, et le réveil prend ~50 s :
+# on l'appelle donc toutes les 10 min, de 6 h à 23 h (heure de Paris environ, cron en UTC).
+# /ping ne touche pas aux bases Neon, qui peuvent continuer à s'endormir sans gêne.
+# Remarque : GitHub peut retarder ces appels de quelques minutes, et suspend les tâches
+# planifiées d'un dépôt resté 60 jours sans aucun commit (il suffit alors de la réactiver).
+name: keep-alive
+
+on:
+  schedule:
+    - cron: "*/10 5-21 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Réveiller le serveur
+        # Un échec ponctuel (déploiement en cours) ne doit pas déclencher d'e-mail d'alerte.
+        run: curl -fsS --retry 3 --retry-delay 20 --max-time 90 https://physichim-server.onrender.com/ping || true
