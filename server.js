@@ -263,12 +263,41 @@ const RATE_LIMIT_MAX_ATTEMPTS_ELEVE = 60;
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
 const rateLimitBuckets = new Map();
 
-// Render (comme la plupart des PaaS) proxifie les connexions : remoteAddress reflète
-// l'adresse interne du proxy, pas celle du visiteur. Le premier maillon de
-// X-Forwarded-For est l'IP réelle du client ; on retombe sur remoteAddress en local.
+// Limite supplémentaire par « préfixe » de code (les 2 initiales), qui ne dépend pas de
+// l'adresse IP : même un attaquant qui change d'adresse ne peut pas essayer plus de
+// 20 codes ratés par heure pour une même paire d'initiales. Elle ne vise que les anciens
+// codes courts (2 lettres + 4 chiffres, 10 000 possibilités par paire) : les nouveaux codes
+// longs sont hors de portée d'un essai systématique, et une attaque sur « ML » ne bloque
+// donc jamais les élèves qui ont un code long. Les élèves d'une même classe ont des
+// initiales variées : quelques fautes de frappe n'atteignent pas ce seuil.
+const RATE_LIMIT_MAX_FAILS_PREFIXE = 20;
+const RATE_LIMIT_WINDOW_PREFIXE_MS = 60 * 60 * 1000; // 1 heure
+const ANCIEN_CODE_ELEVE = /^\p{L}{2}\d{4}$/u;
+
+// Render passe par Cloudflare puis par son propre proxy : remoteAddress est l'adresse
+// interne du proxy, et X-Forwarded-For n'est pas fiable, car Render garde la valeur
+// envoyée par le client et y AJOUTE les maillons suivants. Sa PREMIÈRE valeur est donc
+// choisie par le client (contournement de la limite), et la dernière est celle du relais
+// Cloudflare, partagée par beaucoup de visiteurs.
+// On lit donc CF-Connecting-IP, que Cloudflare remplit lui-même avec l'adresse du visiteur
+// (et écrase si le client l'envoie) ; c'est ce que recommande le support de Render.
+// À défaut (si Render retirait Cloudflare), la DERNIÈRE valeur de X-Forwarded-For, celle
+// ajoutée par le proxy de Render ; et en local, remoteAddress.
+let ipSourceLogged = false;
 function getClientIp(req) {
+  const cf = req.headers['cf-connecting-ip'];
   const xff = req.headers['x-forwarded-for'];
-  return (xff ? xff.split(',')[0].trim() : req.socket.remoteAddress) || 'unknown';
+  let source, ip;
+  if (cf) { source = 'CF-Connecting-IP'; ip = String(cf).trim(); }
+  else if (xff) { source = 'dernière valeur de X-Forwarded-For'; ip = String(xff).split(',').pop().trim(); }
+  else { source = 'adresse de connexion directe'; ip = req.socket.remoteAddress; }
+  if (!ipSourceLogged) {
+    ipSourceLogged = true;
+    // Une seule ligne par démarrage, sans l'adresse elle-même : permet de vérifier dans
+    // les journaux Render quelle source est réellement utilisée en production.
+    console.log(`🔒 Limite de tentatives : IP du visiteur lue depuis ${source}.`);
+  }
+  return ip || 'unknown';
 }
 
 function checkRateLimit(key, maxAttempts = RATE_LIMIT_MAX_ATTEMPTS) {
@@ -281,11 +310,16 @@ function checkRateLimit(key, maxAttempts = RATE_LIMIT_MAX_ATTEMPTS) {
   return { blocked: false };
 }
 
-function recordFailedAttempt(key) {
+function recordFailedAttempt(key, windowMs = RATE_LIMIT_WINDOW_MS) {
   const now = Date.now();
+  // Ménage occasionnel des compteurs expirés, pour que la table ne grossisse pas
+  // indéfiniment entre deux redémarrages.
+  if (rateLimitBuckets.size > 5000) {
+    for (const [k, b] of rateLimitBuckets) if (now > b.resetAt) rateLimitBuckets.delete(k);
+  }
   const bucket = rateLimitBuckets.get(key);
   if (!bucket || now > bucket.resetAt) {
-    rateLimitBuckets.set(key, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    rateLimitBuckets.set(key, { count: 1, resetAt: now + windowMs });
   } else {
     bucket.count++;
   }
@@ -487,9 +521,16 @@ async function router(req, res) {
     const code = String(body.code || '').toUpperCase().trim();
     if (!code) return json(res, 400, { error: 'Code manquant' });
 
+    const rlKeyPrefixe = ANCIEN_CODE_ELEVE.test(code) ? 'eleve-login-prefixe:' + code.slice(0, 2) : null;
+    if (rlKeyPrefixe) {
+      const rlp = checkRateLimit(rlKeyPrefixe, RATE_LIMIT_MAX_FAILS_PREFIXE);
+      if (rlp.blocked) return json(res, 429, { error: `Trop de tentatives pour ce code. Réessayez dans ${Math.ceil(rlp.retryAfterSec / 60)} min, ou demandez de l'aide à votre enseignant.` });
+    }
+
     const eleve = await studentDb.get('SELECT * FROM eleves WHERE code = $1', [code]);
     if (!eleve) {
       recordFailedAttempt(rlKey);
+      if (rlKeyPrefixe) recordFailedAttempt(rlKeyPrefixe, RATE_LIMIT_WINDOW_PREFIXE_MS);
       return json(res, 404, { error: 'Code inconnu. Demandez votre code à votre enseignant.' });
     }
     // Pas de remise à zéro du compteur ici : l'IP est partagée par tout l'établissement,

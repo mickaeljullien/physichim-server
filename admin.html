@@ -931,8 +931,8 @@ function openClasse(id) {
       <div class="card-title">➕ Ajouter un élève à cette classe</div>
       <div class="add-eleve-row">
         <div class="form-group">
-          <label class="form-label">Code (ex : E01)</label>
-          <input class="form-input" id="new-code" placeholder="E01" style="width:90px">
+          <label class="form-label">Code (vide = généré)</label>
+          <input class="form-input" id="new-code" placeholder="auto" style="width:110px">
         </div>
         <div class="form-group">
           <label class="form-label">Pseudo ou initiales</label>
@@ -1251,9 +1251,11 @@ function showList() {
 
 // ── Actions élèves ───────────────────────────────────────
 async function addEleve() {
-  const code = document.getElementById('new-code').value.trim().toUpperCase();
-  const pseudo = document.getElementById('new-pseudo').value.trim() || code;
-  if (!code) { showAlert('add-alert','Entrez un code.','err'); return; }
+  const pseudoSaisi = document.getElementById('new-pseudo').value.trim();
+  // Code laissé vide : on en génère un long et aléatoire (recommandé).
+  const code = document.getElementById('new-code').value.trim().toUpperCase()
+    || genEleveCodeFromPseudo(pseudoSaisi, new Set(DATA.map(e => e.code)));
+  const pseudo = pseudoSaisi || code;
   if (!currentClasseId) { showAlert('add-alert','Aucune classe sélectionnée.','err'); return; }
   const r = await fetch(SERVER+'/api/admin/eleves', { method:'POST', headers:headers(), body:JSON.stringify({code,pseudo,classe_id:currentClasseId}) });
   const d = await r.json();
@@ -1267,20 +1269,45 @@ async function addEleve() {
 }
 
 // ── Import en masse (collage depuis Excel) ───────────────
-// Même principe de code que le classeur Excel fourni au prof : initiale prénom +
-// initiale nom + 4 chiffres dérivés du nom (pas un vrai aléatoire, pour rester stable).
+// Code élève = initiale du prénom + initiale du nom + 6 caractères tirés au hasard.
+// L'alphabet exclut les caractères qu'on confond à la lecture ou à la saisie
+// (O/0, I/1/L) : 31 symboles, soit près de 900 millions de codes par paire d'initiales
+// (contre 10 000 avec l'ancien format à 4 chiffres, qui reste accepté à la connexion).
+const CODE_ALPHABET = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+function randomCodeChars(n) {
+  let out = '';
+  while (out.length < n) {
+    // Tirage par rejet : on écarte les octets ≥ 248 (= 31 × 8) pour que chaque
+    // symbole ait exactement la même probabilité.
+    for (const b of crypto.getRandomValues(new Uint8Array(n * 2))) {
+      if (b < 248 && out.length < n) out += CODE_ALPHABET[b % 31];
+    }
+  }
+  return out;
+}
+
 function genEleveCode(prenom, nom, seed, existingCodes) {
-  const ci = prenom.trim()[0].toUpperCase();
-  const ni = nom.trim()[0].toUpperCase();
-  // 4 chiffres tirés au hasard (et non plus calculés à partir du nom) : un camarade qui
-  // connaît le prénom et le nom ne peut plus recalculer le code.
+  // Initiales sans accent (É → E) : plus simples à taper sur un téléphone.
+  const initiale = s => s.trim()[0].normalize('NFD').replace(/\p{M}/gu, '').toUpperCase();
+  const ci = initiale(prenom);
+  const ni = initiale(nom);
   let code;
   do {
-    const digits = String(crypto.getRandomValues(new Uint32Array(1))[0] % 10000).padStart(4, '0');
-    code = ci + ni + digits;
+    code = ci + ni + randomCodeChars(6);
   } while (existingCodes.has(code));
   existingCodes.add(code);
   return code;
+}
+
+// Ajout individuel sans code saisi : initiales prises dans le pseudo (« Marie L. » → ML),
+// ou deux lettres au hasard si le pseudo n'en fournit pas.
+function genEleveCodeFromPseudo(pseudo, existingCodes) {
+  const mots = (pseudo || '').split(/[\s.\-_]+/).filter(m => /^\p{L}/u.test(m));
+  let prenom, nom;
+  if (mots.length >= 2) { prenom = mots[0]; nom = mots[1]; }
+  else if (mots.length === 1 && /^\p{L}{2}/u.test(mots[0])) { prenom = mots[0][0]; nom = mots[0][1]; }
+  else { const r = randomCodeChars(2).replace(/\d/g, 'X'); prenom = r[0]; nom = r[1]; }
+  return genEleveCode(prenom, nom, 0, existingCodes);
 }
 
 function parseBulkPaste(raw) {
