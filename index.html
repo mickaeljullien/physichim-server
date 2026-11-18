@@ -671,6 +671,30 @@
   .form-input:focus, .form-select:focus { border-color: var(--accent); }
   .form-select option { background: var(--surface2); }
 
+  /* ── EXERCICES (3 niveaux, aides graduées, corrigé à débloquer) ── */
+  .ex-niveau-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 800; margin: 22px 0 10px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .ex-stars { color: var(--yellow); letter-spacing: 0.08em; }
+  .ex-niveau-nom { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+  .ex-card { scroll-margin-top: 12px; }
+  .ex-card.ex-cible { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(47,125,117,0.22), var(--shadow-md); }
+  .ex-card .section-title { align-items: baseline; }
+  .ex-num { font-family: 'DM Mono', monospace; font-size: 0.78rem; color: var(--accent); white-space: nowrap; }
+  .ex-contexte p { font-size: 0.88rem; line-height: 1.6; color: #2E3A34; margin: 6px 0; }
+  .ex-code { background: #1E2723; color: #E8EDE6; font-family: 'DM Mono', monospace; font-size: 0.78rem; line-height: 1.55; padding: 12px 14px; border-radius: var(--radius-sm); overflow-x: auto; margin: 10px 0; white-space: pre; }
+  .ex-questions { list-style: none; counter-reset: exq; margin: 14px 0 4px; padding: 0; }
+  .ex-question { counter-increment: exq; position: relative; padding: 8px 0 8px 30px; border-top: 1px solid var(--border); font-size: 0.88rem; line-height: 1.6; }
+  .ex-question::before { content: counter(exq); position: absolute; left: 0; top: 9px; width: 21px; height: 21px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .ex-aide { margin-top: 6px; background: linear-gradient(90deg, rgba(135,98,34,0.12), var(--surface2) 55%); border-left: 3px solid var(--yellow); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 7px 12px; font-size: 0.84rem; line-height: 1.5; }
+  .ex-aide-label { font-weight: 700; color: var(--yellow); margin-right: 4px; }
+  .ex-btn-aide { margin-top: 6px; background: transparent; border: 1px dashed var(--yellow); color: var(--yellow); border-radius: var(--radius-sm); padding: 8px 12px; min-height: 40px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
+  .ex-btn-aide:hover { background: rgba(135,98,34,0.08); }
+  .ex-fin { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .ex-confirm { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 0.86rem; }
+  .ex-confirm-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .ex-corrige { background: rgba(63,122,61,0.07); border: 1px solid rgba(63,122,61,0.28); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .ex-corrige-title { font-weight: 700; color: var(--green); font-size: 0.85rem; margin-bottom: 4px; }
+  .ex-corrige p { font-size: 0.86rem; line-height: 1.6; margin: 6px 0; color: #2E3A34; }
+
   /* ── ANNALES ── */
   .annales-list { display: flex; flex-direction: column; gap: 12px; }
   .annale-card {
@@ -813,6 +837,16 @@
     .embed-box { padding: 10px 4px; margin-left: -8px; margin-right: -8px; }
     .dashboard-grid { gap: 10px; }
   }
+  @media (max-width: 640px) {
+    /* 4 onglets (Cours, Quiz, Exercices, Annales) : on resserre pour qu'ils tiennent
+       sur un téléphone ; au pire la barre défile latéralement au lieu d'être coupée. */
+    #topbar { padding: 0 8px; gap: 6px; }
+    .tab-bar { gap: 2px; padding: 3px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab-btn { padding: 12px 7px; font-size: 0.74rem; white-space: nowrap; flex-shrink: 0; }
+    /* Plus de place pour le titre quand les onglets sont affichés : il ne restait qu'un « … ». */
+    #topbar:has(#tab-bar[style*="flex"]) #page-title { display: none; }
+  }
   /* Survol réservé aux souris : au doigt, il restait affiché et se confondait avec la réponse choisie */
   @media (hover: none) {
     .option:hover:not(.locked):not(.selected) { border-color: var(--border); background: transparent; transform: none; }
@@ -881,6 +915,7 @@
       <div class="tab-bar" id="tab-bar" style="display:none">
         <button class="tab-btn active" id="tab-cours" onclick="switchTab('cours')">📖 Cours</button>
         <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">🧠 Quiz</button>
+        <button class="tab-btn" id="tab-exercices" onclick="switchTab('exercices')" style="display:none">✏️ Exercices</button>
         <button class="tab-btn" id="tab-annales" onclick="switchTab('annales')">📝 Annales</button>
       </div>
     </div>
@@ -911,6 +946,8 @@
     <!-- Connexion par code -->
     <div id="modal-login-form">
       <div class="modal-sub">Entrez votre code élève fourni par votre enseignant.</div>
+      <!-- Affiché quand on arrive par un lien direct (QR code d'une fiche d'exercices). -->
+      <div id="login-lien-info" style="display:none;background:rgba(47,125,117,.08);border:1px solid rgba(47,125,117,.28);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--accent);margin-bottom:12px"></div>
       <!-- Masqué : l'adresse du serveur est détectée automatiquement, et un élève qui la « changeait » cassait son appli. -->
       <div id="modal-server-info" style="font-size:.75rem;color:var(--muted);margin-bottom:12px;display:none;align-items:center;gap:6px">
         <span>🌐</span><span id="modal-server-display"></span>
@@ -4140,6 +4177,158 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
         title: "Un polymère biodégradable — titrage pH-métrique",
         session: "Nouvelle-Calédonie · Jour 1",
         link: "https://www.labolycee.org/bac-2023-nouvelle-caledonie-jour-1"
+      }
+    ],
+    exercices: [
+      {
+        "id": "ex1",
+        "niveau": 1,
+        "titre": "Les mots du titrage",
+        "contexte": [
+          "Lina prépare son premier titrage en TP et relit ses notes. Aide-la à trier le vrai du faux."
+        ],
+        "questions": [
+          {
+            "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. À l'équivalence, seul le réactif titrant a été entièrement consommé.<br>b. La réaction support d'un titrage doit être unique, rapide et totale.<br>c. Ajouter de l'eau distillée dans le bécher avant le titrage modifie le volume équivalent.<br>d. Après l'équivalence, le réactif titrant versé est en excès.",
+            "aides": []
+          },
+          {
+            "texte": "Pour chacune des réactions support ci-dessous, écris la relation entre les quantités de matière à l'équivalence.<br>(i) CH₃COOH(aq) + HO⁻(aq) → CH₃COO⁻(aq) + H₂O(ℓ)<br>(ii) Ag⁺(aq) + Cl⁻(aq) → AgCl(s)<br>(iii) H₂C₂O₄(aq) + 2 HO⁻(aq) → C₂O₄²⁻(aq) + 2 H₂O(ℓ) (acide oxalique, présent dans certains détartrants)",
+            "aides": [
+              "Relis l'équation : les nombres stœchiométriques te disent « combien de l'un réagit avec combien de l'autre ».",
+              "À l'équivalence : n(titré) / a = n(titrant versé) / b pour une réaction a A + b B → …"
+            ]
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> a. FAUX : à l'équivalence, le réactif titré ET le réactif titrant ont été entièrement consommés ; ils ont été introduits dans les proportions stœchiométriques.",
+          "b. VRAI : sinon la quantité de titrant versée ne correspondrait pas uniquement au réactif titré, ou l'équivalence ne serait pas repérable.",
+          "c. FAUX : l'eau ne change pas la quantité de matière de réactif titré, donc ne change pas la quantité de titrant nécessaire (elle change seulement les concentrations et donc les valeurs de pH ou de σ).",
+          "d. VRAI : après l'équivalence, il n'y a plus de réactif titré à consommer ; le titrant versé s'accumule.",
+          "<strong>2.</strong> (i) n(CH₃COOH) initiale = n(HO⁻) versée à l'équivalence.",
+          "(ii) n(Cl⁻) initiale = n(Ag⁺) versée à l'équivalence.",
+          "(iii) n(H₂C₂O₄) initiale = n(HO⁻) versée à l'équivalence / 2 (on divise chaque quantité par son nombre stœchiométrique).",
+          "⚠ Erreur fréquente : écrire n(H₂C₂O₄) = 2 n(HO⁻) au lieu de 2 n(H₂C₂O₄) = n(HO⁻). Vérifie avec le bon sens : il faut deux fois plus d'ions HO⁻ que de molécules d'acide oxalique."
+        ]
+      },
+      {
+        "id": "ex2",
+        "niveau": 1,
+        "titre": "Le déboucheur de canalisations",
+        "contexte": [
+          "Un déboucheur de canalisations contient de la soude (Na⁺(aq) + HO⁻(aq)), très corrosive. Pour connaître sa concentration, on le dilue, puis on titre un volume V<sub>B</sub> = 10,0 mL de la solution diluée par de l'acide chlorhydrique (H₃O⁺(aq) + Cl⁻(aq)) de concentration c<sub>A</sub> = 0,100 mol·L⁻¹.",
+          "Le volume versé à l'équivalence est V<sub>E</sub> = 12,5 mL."
+        ],
+        "questions": [
+          {
+            "texte": "Écris l'équation de la réaction support du titrage.",
+            "aides": []
+          },
+          {
+            "texte": "Calcule la quantité de matière d'ions H₃O⁺ versée à l'équivalence.",
+            "aides": [
+              "La relation à utiliser est n = c × V.",
+              "Attention à l'unité : V<sub>E</sub> doit être en litres (12,5 mL = 12,5 × 10⁻³ L)."
+            ]
+          },
+          {
+            "texte": "Déduis-en la concentration c<sub>B</sub> en ions HO⁻ de la solution diluée.",
+            "aides": []
+          },
+          {
+            "texte": "Pourquoi a-t-on dilué le produit commercial avant de le titrer ? Donne deux raisons.",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> H₃O⁺(aq) + HO⁻(aq) → 2 H₂O(ℓ)",
+          "<strong>2.</strong> n(H₃O⁺)<sub>E</sub> = c<sub>A</sub> × V<sub>E</sub> = 0,100 × 12,5 × 10⁻³ = 1,25 × 10⁻³ mol.",
+          "<strong>3.</strong> À l'équivalence : n(HO⁻) initiale = n(H₃O⁺)<sub>E</sub>, donc c<sub>B</sub> = n(H₃O⁺)<sub>E</sub> / V<sub>B</sub> = 1,25 × 10⁻³ / (10,0 × 10⁻³) = 0,125 mol·L⁻¹.",
+          "<strong>4.</strong> Le produit commercial est très concentré : sans dilution, le volume équivalent serait bien plus grand que le contenu d'une burette de 25 mL. Et manipuler une solution diluée est plus sûr (produit corrosif).",
+          "⚠ Erreur fréquente : laisser les volumes en mL dans c = n / V. Convertis en litres (ou garde des mL partout dans le rapport c<sub>A</sub> × V<sub>E</sub> / V<sub>B</sub>, les unités se simplifient)."
+        ]
+      },
+      {
+        "id": "ex3",
+        "niveau": 1,
+        "titre": "Lire une courbe de titrage",
+        "contexte": [
+          "On titre V<sub>A</sub> = 10,0 mL d'un vinaigre dilué (solution d'acide éthanoïque CH₃COOH) par une solution de soude de concentration c<sub>B</sub> = 0,100 mol·L⁻¹, en suivant le pH. On obtient la courbe ci-dessous."
+        ],
+        "image": "<svg viewBox=\"0 0 420 260\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Courbe pH = f(V_B) du titrage du vinaigre dilué par la soude\" font-family=\"DM Sans, sans-serif\"><line x1=\"46.0\" y1=\"220.0\" x2=\"46.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"46.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">0</text><line x1=\"118.0\" y1=\"220.0\" x2=\"118.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"118.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">5</text><line x1=\"190.0\" y1=\"220.0\" x2=\"190.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"190.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">10</text><line x1=\"262.0\" y1=\"220.0\" x2=\"262.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"262.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">15</text><line x1=\"334.0\" y1=\"220.0\" x2=\"334.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"334.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">20</text><line x1=\"406.0\" y1=\"220.0\" x2=\"406.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"406.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">25</text><line x1=\"46\" y1=\"220.0\" x2=\"406.0\" y2=\"220.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"223.5\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">0</text><line x1=\"46\" y1=\"190.6\" x2=\"406.0\" y2=\"190.6\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"194.1\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">2</text><line x1=\"46\" y1=\"161.1\" x2=\"406.0\" y2=\"161.1\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"164.6\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">4</text><line x1=\"46\" y1=\"131.7\" x2=\"406.0\" y2=\"131.7\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"135.2\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">6</text><line x1=\"46\" y1=\"102.3\" x2=\"406.0\" y2=\"102.3\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"105.8\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">8</text><line x1=\"46\" y1=\"72.9\" x2=\"406.0\" y2=\"72.9\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"76.4\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">10</text><line x1=\"46\" y1=\"43.4\" x2=\"406.0\" y2=\"43.4\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"46.9\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">12</text><line x1=\"46\" y1=\"14.0\" x2=\"406.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"17.5\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">14</text><line x1=\"46.0\" y1=\"220.0\" x2=\"46.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"60.4\" y1=\"220.0\" x2=\"60.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"74.8\" y1=\"220.0\" x2=\"74.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"89.2\" y1=\"220.0\" x2=\"89.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"103.6\" y1=\"220.0\" x2=\"103.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"118.0\" y1=\"220.0\" x2=\"118.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"132.4\" y1=\"220.0\" x2=\"132.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"146.8\" y1=\"220.0\" x2=\"146.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"161.2\" y1=\"220.0\" x2=\"161.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"175.6\" y1=\"220.0\" x2=\"175.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"190.0\" y1=\"220.0\" x2=\"190.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"204.4\" y1=\"220.0\" x2=\"204.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"218.8\" y1=\"220.0\" x2=\"218.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"233.2\" y1=\"220.0\" x2=\"233.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"247.6\" y1=\"220.0\" x2=\"247.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"262.0\" y1=\"220.0\" x2=\"262.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"276.4\" y1=\"220.0\" x2=\"276.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"290.8\" y1=\"220.0\" x2=\"290.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"305.2\" y1=\"220.0\" x2=\"305.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"319.6\" y1=\"220.0\" x2=\"319.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"334.0\" y1=\"220.0\" x2=\"334.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"348.4\" y1=\"220.0\" x2=\"348.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"362.8\" y1=\"220.0\" x2=\"362.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"377.2\" y1=\"220.0\" x2=\"377.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"391.6\" y1=\"220.0\" x2=\"391.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"406.0\" y1=\"220.0\" x2=\"406.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"46\" y1=\"220\" x2=\"406.0\" y2=\"220\" stroke=\"#1B2420\"/><line x1=\"46\" y1=\"220\" x2=\"46\" y2=\"14\" stroke=\"#1B2420\"/><polyline fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"2\" points=\"46.0,178.7 49.6,173.9 53.2,170.4 56.8,168.0 60.4,166.2 64.0,164.7 67.6,163.4 71.2,162.3 74.8,161.4 78.4,160.5 82.0,159.7 85.6,158.9 89.2,158.2 92.8,157.6 96.4,157.0 100.0,156.4 103.6,155.8 107.2,155.3 110.8,154.7 114.4,154.2 118.0,153.7 121.6,153.2 125.2,152.7 128.8,152.3 132.4,151.8 136.0,151.3 139.6,150.9 143.2,150.4 146.8,150.0 150.4,149.5 154.0,149.0 157.6,148.6 161.2,148.1 164.8,147.6 168.4,147.2 172.0,146.7 175.6,146.2 179.2,145.7 182.8,145.2 186.4,144.7 190.0,144.1 193.6,143.5 197.2,142.9 200.8,142.3 204.4,141.7 208.0,141.0 211.6,140.2 215.2,139.4 218.8,138.5 222.4,137.5 223.1,137.3 223.8,137.1 224.6,136.9 225.3,136.6 226.0,136.4 226.7,136.2 227.4,135.9 228.2,135.7 228.9,135.4 229.6,135.1 230.3,134.8 231.0,134.5 231.8,134.2 232.5,133.9 233.2,133.6 233.9,133.2 234.6,132.8 235.4,132.5 236.1,132.0 236.8,131.6 237.5,131.1 238.2,130.6 239.0,130.1 239.7,129.5 240.4,128.9 241.1,128.2 241.8,127.4 242.6,126.5 243.3,125.5 244.0,124.4 244.7,122.9 245.4,121.0 246.2,118.4 246.9,114.0 247.6,91.1 248.3,68.2 249.0,63.8 249.8,61.2 250.5,59.4 251.2,57.9 251.9,56.8 252.6,55.8 253.4,55.0 254.1,54.2 254.8,53.6 255.5,53.0 256.2,52.4 257.0,51.9 257.7,51.5 258.4,51.1 259.1,50.7 259.8,50.3 260.6,49.9 261.3,49.6 262.0,49.3 262.7,49.0 263.4,48.7 264.2,48.4 264.9,48.2 265.6,47.9 266.3,47.7 267.0,47.5 267.8,47.2 268.5,47.0 269.2,46.8 269.9,46.6 270.6,46.4 271.4,46.2 272.1,46.1 272.8,45.9 273.5,45.7 274.2,45.6 275.0,45.4 275.7,45.3 276.4,45.1 280.0,44.4 283.6,43.8 287.2,43.3 290.8,42.8 294.4,42.3 298.0,41.9 301.6,41.5 305.2,41.1 308.8,40.8 312.4,40.5 316.0,40.2 319.6,39.9 323.2,39.7 326.8,39.4 330.4,39.2 334.0,39.0 337.6,38.8 341.2,38.6 344.8,38.4 348.4,38.2 352.0,38.1 355.6,37.9 359.2,37.7 362.8,37.6 366.4,37.4 370.0,37.3 373.6,37.1 377.2,37.0 380.8,36.9 384.4,36.8 388.0,36.6 391.6,36.5 395.2,36.4 398.8,36.3 402.4,36.2 406.0,36.1\"/><text x=\"406.0\" y=\"254\" font-size=\"10.5\" text-anchor=\"end\" fill=\"#1B2420\">V<tspan baseline-shift=\"sub\" font-size=\"8\">B</tspan> (mL)</text><text x=\"50\" y=\"11\" font-size=\"10.5\" fill=\"#1B2420\">pH</text></svg>",
+        "questions": [
+          {
+            "texte": "Relève le pH initial. La solution titrée est-elle acide ou basique ?",
+            "aides": []
+          },
+          {
+            "texte": "Repère le saut de pH et détermine graphiquement le volume équivalent V<sub>E</sub>.",
+            "aides": [
+              "Le saut de pH est la partie presque verticale de la courbe.",
+              "V<sub>E</sub> est l'abscisse du milieu du saut (ou méthode des tangentes parallèles)."
+            ]
+          },
+          {
+            "texte": "Calcule la concentration c<sub>A</sub> en acide éthanoïque du vinaigre dilué (réaction support : équation (i) de l'exercice 1).",
+            "aides": []
+          },
+          {
+            "texte": "Le pH à l'équivalence vaut-il 7 ? Lis sa valeur sur la courbe.",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> pH initial ≈ 2,8 &lt; 7 : la solution est acide.",
+          "<strong>2.</strong> Le saut de pH est centré sur V<sub>E</sub> = 14,0 mL (milieu du saut, ou méthode des tangentes parallèles ; on accepte 13,8 à 14,2 mL).",
+          "<strong>3.</strong> À l'équivalence : c<sub>A</sub> × V<sub>A</sub> = c<sub>B</sub> × V<sub>E</sub>, donc c<sub>A</sub> = 0,100 × 14,0 / 10,0 = 0,140 mol·L⁻¹.",
+          "<strong>4.</strong> Non : on lit pH<sub>E</sub> ≈ 8,8. À l'équivalence, le bécher contient des ions éthanoate CH₃COO⁻, base conjuguée de l'acide éthanoïque : la solution est basique."
+        ]
+      },
+      {
+        "id": "ex4",
+        "niveau": 2,
+        "titre": "Mon vinaigre est-il vraiment à 6° ?",
+        "contexte": [
+          "L'étiquette d'un vinaigre d'alcool indique « 6° », ce qui signifie : 6 g d'acide éthanoïque pour 100 g de vinaigre. Un élève veut le vérifier.",
+          "Il dilue le vinaigre 10 fois, prélève 10,0 mL de la solution diluée et la titre par de la soude de concentration c<sub>B</sub> = 0,100 mol·L⁻¹. Il trouve V<sub>E</sub> = 10,2 mL.",
+          "<strong>Données :</strong> masse volumique du vinaigre ρ = 1,01 g·mL⁻¹ ; M(CH₃COOH) = 60,05 g·mol⁻¹."
+        ],
+        "questions": [
+          {
+            "texte": "Décris précisément comment réaliser la dilution d'un facteur 10 (verrerie et gestes).",
+            "aides": []
+          },
+          {
+            "texte": "Détermine la concentration en acide éthanoïque de la solution diluée, puis celle du vinaigre commercial.",
+            "aides": [
+              "Commence par la solution diluée : à l'équivalence, n(acide) = n(HO⁻ versés).",
+              "La solution commerciale est 10 fois plus concentrée que la solution diluée."
+            ]
+          },
+          {
+            "texte": "Calcule la concentration en masse C<sub>m</sub> d'acide éthanoïque dans le vinaigre.",
+            "aides": []
+          },
+          {
+            "texte": "Déduis-en la masse d'acide éthanoïque dans 100 g de vinaigre, puis le degré du vinaigre.",
+            "aides": [
+              "Le degré se rapporte à 100 g de vinaigre, pas à 100 mL : quel volume occupent 100 g de vinaigre ?",
+              "V = m / ρ, puis m(acide) = C<sub>m</sub> × V (V en litres)."
+            ]
+          },
+          {
+            "texte": "Calcule l'écart relatif avec la valeur de l'étiquette et conclus.",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> Prélever 10,0 mL de vinaigre avec une pipette jaugée de 10,0 mL (et une propipette), les verser dans une fiole jaugée de 100,0 mL, compléter avec de l'eau distillée jusqu'au trait de jauge, boucher et agiter.",
+          "<strong>2.</strong> Solution diluée : c<sub>dil</sub> = c<sub>B</sub> × V<sub>E</sub> / V = 0,100 × 10,2 / 10,0 = 0,102 mol·L⁻¹. Vinaigre : c = 10 × c<sub>dil</sub> = 1,02 mol·L⁻¹.",
+          "<strong>3.</strong> C<sub>m</sub> = c × M = 1,02 × 60,05 = 61,3 g·L⁻¹ (61,25 avant arrondi).",
+          "<strong>4.</strong> Volume de 100 g de vinaigre : V = m / ρ = 100 / 1,01 = 99,0 mL. Masse d'acide : m = C<sub>m</sub> × V = 61,25 × 0,0990 = 6,06 g. Le vinaigre est à 6,1°.",
+          "<strong>5.</strong> Écart relatif = |6,06 − 6| / 6 = 1,1 % : la valeur de l'étiquette est vérifiée.",
+          "⚠ Erreur fréquente : oublier de multiplier par le facteur de dilution (on trouverait un vinaigre à 0,6°, ce qui devrait alerter)."
+        ]
       }
     ],
     niveau: "tle"
@@ -19143,6 +19332,197 @@ async function finishQuiz() {
 }
 
 // ═══════════════════════════════════════════════════
+// RENDERING EXERCICES
+// ═══════════════════════════════════════════════════
+// Champ optionnel `exercices` d'un chapitre (écrit par le générateur de fiches
+// différenciées) : [{ id, niveau: 1|2|3, titre, contexte: [html], image?: "<svg>",
+// code?: [lignes], contexte2?: [html], questions: [{ texte, aides: [0 à 3] }], corrige: [html] }].
+// Les aides ne se dévoilent qu'une par une, sur clic ; le corrigé ne se débloque
+// qu'après « J'ai terminé ». Lien direct (QR code) : ?chap=<id du chapitre>&ex=<id de l'exercice>.
+
+const EX_NIVEAUX = {
+  1: { etoiles: '★', nom: 'Découverte' },
+  2: { etoiles: '★★', nom: 'Application' },
+  3: { etoiles: '★★★', nom: 'Approfondissement' }
+};
+
+// Nombre d'aides dévoilées par question, gardé tant que la page reste ouverte
+// (changer d'onglet ne les recache pas). Clé : "chapitre|exercice|question".
+const exAidesVues = {};
+// Exercice dont l'élève est en train de confirmer « J'ai terminé ».
+let exConfirmEnCours = null;
+
+function exCleTermine(chId, exId) { return `physichim_ex_fini_${chId}_${exId}`; }
+function exEstTermine(chId, exId) {
+  try { return localStorage.getItem(exCleTermine(chId, exId)) === '1'; } catch (e) { return false; }
+}
+
+function chapitreAExercices(ch) {
+  return !!(ch && Array.isArray(ch.exercices) && ch.exercices.length);
+}
+
+function renderExercice(ch, ex, rang) {
+  const domId = `ex-${ch.id}-${ex.id}`;
+  const questions = (ex.questions || []).map((q, qi) => {
+    const aides = Array.isArray(q.aides) ? q.aides : [];
+    const vues = Math.min(exAidesVues[`${ch.id}|${ex.id}|${qi}`] || 0, aides.length);
+    return `<li class="ex-question">
+      <div>${q.texte}</div>
+      ${aides.slice(0, vues).map((a, ai) => `<div class="ex-aide"><span class="ex-aide-label">💡 Aide ${ai + 1}${aides.length > 1 ? '/' + aides.length : ''} :</span>${a}</div>`).join('')}
+      ${vues < aides.length ? `<button class="ex-btn-aide" onclick="exAfficherAide(${ch.id}, '${escHtmlAttr(ex.id)}', ${qi})">💡 Afficher l'aide ${vues + 1}</button>` : ''}
+    </li>`;
+  }).join('');
+
+  const termine = exEstTermine(ch.id, ex.id);
+  const enConfirmation = exConfirmEnCours === `${ch.id}|${ex.id}`;
+  let fin;
+  if (termine) {
+    fin = `<div class="ex-corrige"><div class="ex-corrige-title">✅ Corrigé</div>${(ex.corrige || []).map(p => `<p>${p}</p>`).join('')}</div>`;
+  } else if (enConfirmation) {
+    fin = `<div class="ex-confirm">As-tu vraiment terminé toutes les questions ? Le corrigé restera affiché ensuite.
+      <div class="ex-confirm-actions">
+        <button class="btn-primary" style="padding:10px 18px" onclick="exConfirmerTermine(${ch.id}, '${escHtmlAttr(ex.id)}')">Oui, voir le corrigé</button>
+        <button class="btn-secondary" style="padding:10px 18px" onclick="exAnnulerTermine()">Pas encore</button>
+      </div></div>`;
+  } else {
+    fin = `<button class="btn-secondary" onclick="exDemanderTermine(${ch.id}, '${escHtmlAttr(ex.id)}')">✔️ J'ai terminé — voir le corrigé</button>`;
+  }
+
+  return `<div class="section ex-card" id="${escHtmlAttr(domId)}">
+    <div class="section-title"><span class="ex-num">Ex. ${rang}</span>${ex.titre || ''}</div>
+    <div class="ex-contexte">${(ex.contexte || []).map(p => `<p>${p}</p>`).join('')}</div>
+    ${ex.image ? `<div class="schema-box">${ex.image}</div>` : ''}
+    ${Array.isArray(ex.code) && ex.code.length ? `<pre class="ex-code">${escapeHtml(ex.code.join('\n'))}</pre>` : ''}
+    ${Array.isArray(ex.contexte2) && ex.contexte2.length ? `<div class="ex-contexte">${ex.contexte2.map(p => `<p>${p}</p>`).join('')}</div>` : ''}
+    <ol class="ex-questions">${questions}</ol>
+    <div class="ex-fin">${fin}</div>
+  </div>`;
+}
+
+function renderExercices(ch) {
+  if (!chapitreAExercices(ch)) return '';
+  let rang = 0;
+  const parNiveau = [1, 2, 3].map(n => ({ n, liste: ch.exercices.filter(e => Number(e.niveau) === n) }))
+    .filter(g => g.liste.length);
+  return `
+    <div style="margin-bottom:8px">
+      <div style="font-family:Syne,sans-serif;font-size:1rem;font-weight:700;margin-bottom:4px">Exercices — ${ch.title}</div>
+      <p style="color:var(--muted);font-size:.84rem">Commence par le niveau conseillé par ton professeur. Bloqué(e) ? Dévoile les aides une par une, seulement si besoin. Le corrigé s'affiche quand tu as terminé l'exercice.</p>
+    </div>
+    ${parNiveau.map(g => `
+      <div class="ex-niveau-title"><span class="ex-stars">${EX_NIVEAUX[g.n].etoiles}</span>${EX_NIVEAUX[g.n].nom}</div>
+      ${g.liste.map(ex => renderExercice(ch, ex, ++rang)).join('')}
+    `).join('')}
+  `;
+}
+
+// Ré-affiche un seul exercice (sans toucher au reste ni à la position de défilement).
+function exRafraichir(chId, exId) {
+  const ch = CHAPTERS.find(c => c.id === chId);
+  if (!ch || state.currentChapter !== chId || state.currentTab !== 'exercices') return;
+  const idx = ch.exercices.findIndex(e => e.id === exId);
+  const el = document.getElementById(`ex-${chId}-${exId}`);
+  if (idx === -1 || !el) return;
+  // Le rang affiché suit l'ordre par niveau, comme dans renderExercices.
+  const ordre = [1, 2, 3].flatMap(n => ch.exercices.filter(e => Number(e.niveau) === n));
+  const cible = el.classList.contains('ex-cible');
+  el.outerHTML = renderExercice(ch, ch.exercices[idx], ordre.indexOf(ch.exercices[idx]) + 1);
+  if (cible) document.getElementById(`ex-${chId}-${exId}`).classList.add('ex-cible');
+}
+
+function exAfficherAide(chId, exId, qi) {
+  const cle = `${chId}|${exId}|${qi}`;
+  exAidesVues[cle] = (exAidesVues[cle] || 0) + 1;
+  exRafraichir(chId, exId);
+}
+
+function exDemanderTermine(chId, exId) {
+  exConfirmEnCours = `${chId}|${exId}`;
+  exRafraichir(chId, exId);
+}
+
+function exAnnulerTermine() {
+  const [chId, exId] = (exConfirmEnCours || '').split('|');
+  exConfirmEnCours = null;
+  if (exId) exRafraichir(Number(chId), exId);
+}
+
+function exConfirmerTermine(chId, exId) {
+  exConfirmEnCours = null;
+  try { localStorage.setItem(exCleTermine(chId, exId), '1'); } catch (e) {}
+  exRafraichir(chId, exId);
+}
+
+// ═══════════════════════════════════════════════════
+// LIEN DIRECT (QR code des fiches d'exercices)
+// ═══════════════════════════════════════════════════
+// Format : https://physichim-server.onrender.com/?chap=<id>&ex=<id exercice>
+// (<id> = champ `id` du chapitre dans CHAPTERS, pas son numéro affiché).
+// Le lien est gardé en attente tant que l'élève n'est pas connecté, puis ouvert
+// juste après la connexion par code.
+
+function lireLienDirect() {
+  let lien = null;
+  try {
+    const p = new URLSearchParams(window.location.search);
+    if (p.has('chap')) lien = { chap: parseInt(p.get('chap'), 10), ex: p.get('ex') || null };
+    else lien = JSON.parse(sessionStorage.getItem('physichim_lien_direct') || 'null');
+  } catch (e) {}
+  if (!lien || !Number.isInteger(lien.chap)) return null;
+  try { sessionStorage.setItem('physichim_lien_direct', JSON.stringify(lien)); } catch (e) {}
+  return lien;
+}
+
+function oublierLienDirect() {
+  state.lienDirect = null;
+  try { sessionStorage.removeItem('physichim_lien_direct'); } catch (e) {}
+  if (window.location.search) {
+    try { history.replaceState(null, '', window.location.pathname + window.location.hash); } catch (e) {}
+  }
+}
+
+// Renvoie true si le lien a été traité (ouvert ou abandonné), false s'il attend la connexion.
+function ouvrirLienDirect() {
+  const lien = state.lienDirect;
+  if (!lien) return false;
+  const ch = CHAPTERS.find(c => c.id === lien.chap);
+  if (!ch) { oublierLienDirect(); return false; }
+  if (!state.activeStudentId) {
+    openStudentModal();
+    const info = document.getElementById('login-lien-info');
+    if (info) {
+      info.textContent = `Connecte-toi pour ouvrir ${lien.ex ? "l'exercice" : 'le chapitre'} « ${ch.num}. ${ch.title} ».`;
+      info.style.display = 'block';
+    }
+    return false;
+  }
+  oublierLienDirect();
+  if (isChapterLocked(ch.id)) {
+    showHome();
+    document.getElementById('content').insertAdjacentHTML('afterbegin',
+      `<div class="warn-box" style="margin-bottom:16px">Le chapitre « ${ch.num}. ${escapeHtml(ch.title)} » n'est pas encore ouvert par ton professeur.</div>`);
+    return true;
+  }
+  if (ch.niveau !== state.niveau) {
+    state.niveau = ch.niveau;
+    localStorage.setItem('physichim_niveau', ch.niveau);
+    refreshNiveauButtons();
+    buildNav();
+  }
+  openChapter(ch.id);
+  if (lien.ex && chapitreAExercices(ch)) {
+    switchTab('exercices');
+    const el = document.getElementById(`ex-${ch.id}-${lien.ex}`);
+    if (el) {
+      el.classList.add('ex-cible');
+      // Après le rendu : sinon le défilement part d'une hauteur pas encore calculée.
+      requestAnimationFrame(() => el.scrollIntoView({ block: 'start' }));
+    }
+  }
+  return true;
+}
+
+// ═══════════════════════════════════════════════════
 // RENDERING ANNALES
 // ═══════════════════════════════════════════════════
 
@@ -19467,6 +19847,9 @@ function openChapter(id) {
   document.getElementById('tab-cours').classList.add('active');
   document.getElementById('tab-quiz').classList.remove('active');
   document.getElementById('tab-annales').classList.remove('active');
+  const tabEx = document.getElementById('tab-exercices');
+  tabEx.classList.remove('active');
+  tabEx.style.display = chapitreAExercices(ch) ? '' : 'none';
   setNavActive(`nav-ch-${id}`);
   document.getElementById('content').innerHTML = renderFiche(ch);
   apiLogProgression(id, 'open'); // pas d'await : sert uniquement à retrouver "reprendre où j'en étais", ne doit jamais ralentir la navigation
@@ -19479,7 +19862,7 @@ function switchTab(tab) {
   state.currentTab = tab;
   if (state.currentChapter === null) return;
   if (tab !== 'quiz') state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
-  ['cours','quiz','annales'].forEach(t => {
+  ['cours','quiz','exercices','annales'].forEach(t => {
     document.getElementById(`tab-${t}`).classList.toggle('active', t === tab);
   });
   refreshContent();
@@ -19491,6 +19874,7 @@ function refreshContent() {
   let html = '';
   if (state.currentTab === 'cours') html = renderFiche(ch);
   else if (state.currentTab === 'quiz') html = renderQuiz(ch);
+  else if (state.currentTab === 'exercices') html = renderExercices(ch);
   else if (state.currentTab === 'annales') html = renderAnnales(ch);
   document.getElementById('content').innerHTML = html;
   if (state.currentTab !== 'quiz') document.getElementById('content').scrollTop = 0;
@@ -19511,6 +19895,7 @@ function openStudentModal() {
     document.getElementById('login-code').value = state._savedCode || '';
   }
   document.getElementById('login-error').style.display = 'none';
+  document.getElementById('login-lien-info').style.display = 'none';
   document.getElementById('modal-overlay').classList.add('open');
   setTimeout(() => {
     const el = document.getElementById(SERVER_URL ? 'login-code' : 'server-url-input');
@@ -19663,6 +20048,7 @@ async function doStudentLogin() {
 
   buildNav();
   closeStudentModal();
+  if (state.lienDirect && ouvrirLienDirect()) return;
   if (state.currentChapter !== null) openChapter(state.currentChapter);
   else showHome();
 }
@@ -19717,6 +20103,7 @@ function showTeacher() {
 // ═══════════════════════════════════════════════════
 
 loadState();
+state.lienDirect = lireLienDirect(); // ?chap=…&ex=… (QR code), ouvert après la connexion
 
 // Reconnexion automatique si code sauvegardé
 (async () => {
@@ -19729,6 +20116,7 @@ loadState();
   refreshNiveauButtons();
   buildNav();
   showHome();
+  if (state.lienDirect) ouvrirLienDirect();
 })();
 
 // Fermer modal si clic sur l'overlay
