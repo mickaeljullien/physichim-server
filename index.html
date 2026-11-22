@@ -4998,114 +4998,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une lunette astronomique est constituée de :",
+        q: "Une lunette astronomique est constituée :",
         opts: [
-          "Un objectif divergent et un oculaire convergent",
-          "Deux lentilles convergentes : un objectif et un oculaire",
-          "Un seul miroir concave",
-          "Un objectif convergent et un oculaire divergent"
+          "d'un objectif divergent et d'un oculaire convergent",
+          "de deux lentilles convergentes : un objectif et un oculaire",
+          "d'un objectif convergent et d'un oculaire divergent",
+          "d'un objectif de petite focale et d'un oculaire de grande focale"
         ],
         ans: 1,
-        exp: "La lunette astronomique associe deux lentilles convergentes centrées sur le même axe : l'objectif et l'oculaire."
+        pieges: [
+          { code: "lunette-lentille-divergente", texte: "Croire que l'objectif est divergent : les deux lentilles d'une lunette astronomique sont convergentes" },
+          null,
+          { code: "lunette-oculaire-divergent", texte: "Croire que l'oculaire est divergent : il est convergent et joue le rôle d'une loupe" },
+          { code: "focales-objectif-oculaire-inversees", texte: "Inverser les focales : l'objectif a une grande distance focale, l'oculaire une petite" }
+        ],
+        exp: "Objectif et oculaire sont deux lentilles convergentes de même axe ; l'objectif a une grande distance focale f'₁, l'oculaire une petite f'₂. Attention : c'est f'₁ > f'₂ qui permet de grossir."
+      },
+      {
+        q: "Dans une lunette astronomique, l'objectif sert à :",
+        opts: [
+          "agrandir l'image comme une loupe",
+          "former une image intermédiaire réelle de l'objet observé",
+          "former l'image finale directement sur la rétine",
+          "collecter la lumière sans former d'image"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "roles-objectif-oculaire-inverses", texte: "Confondre les rôles : c'est l'oculaire qui joue le rôle de loupe" },
+          null,
+          { code: "image-finale-objectif", texte: "Croire que l'objectif forme l'image finale : il forme une image intermédiaire, observée à travers l'oculaire" },
+          { code: "objectif-sans-image", texte: "Croire que l'objectif ne forme pas d'image : il donne une image réelle dans son plan focal image" }
+        ],
+        exp: "L'objectif donne d'un objet très éloigné une image intermédiaire réelle A₁B₁, dans son plan focal image ; l'oculaire sert de loupe pour l'observer. Attention à ne pas inverser les rôles des deux lentilles."
       },
       {
         q: "Un système optique est dit afocal lorsque :",
         opts: [
-          "Il n'a pas de foyer du tout",
-          "Un faisceau de rayons parallèles en entrée ressort parallèle en sortie",
-          "Il ne comporte aucune lentille",
-          "L'image formée est toujours réelle sur un écran"
+          "il ne possède aucun foyer",
+          "un faisceau de rayons parallèles qui y entre en ressort parallèle",
+          "il forme une image réelle sur un écran",
+          "tous les rayons qui en sortent passent par un même point"
         ],
         ans: 1,
-        exp: "Un système afocal transforme un faisceau parallèle incident en un faisceau parallèle émergent (objet à l'infini → image à l'infini)."
+        pieges: [
+          { code: "afocal-sans-foyer", texte: "Prendre « afocal » au pied de la lettre : les deux lentilles ont des foyers, mais le système n'en a pas au sens global" },
+          null,
+          { code: "afocal-image-reelle", texte: "Croire que l'image finale est réelle : elle est rejetée à l'infini" },
+          { code: "afocal-faisceau-convergent", texte: "Croire que le faisceau sortant converge : il ressort parallèle, pour un œil au repos" }
+        ],
+        exp: "Un système afocal transforme un faisceau parallèle en un faisceau parallèle : un objet à l'infini donne une image à l'infini, observable sans accommoder. Attention : chaque lentille a bien des foyers."
       },
       {
-        q: "Dans le modèle afocal de la lunette, la condition sur les foyers est :",
+        q: "Dans le modèle afocal de la lunette, la position des deux lentilles est telle que :",
         opts: [
-          "F'₁ = F₂",
           "F₁ = F'₂",
           "F'₁ = F'₂",
-          "Aucune condition n'est nécessaire"
+          "F'₁ = F₂",
+          "la distance entre les lentilles vaut f'₁"
         ],
-        ans: 0,
-        exp: "Le modèle afocal impose que le foyer image de l'objectif F'₁ coïncide avec le foyer objet de l'oculaire F₂."
+        ans: 2,
+        pieges: [
+          { code: "foyers-objet-image-inverses", texte: "Confondre foyer objet et foyer image : c'est le foyer image de l'objectif qui coïncide avec le foyer objet de l'oculaire" },
+          { code: "foyers-images-confondus", texte: "Faire coïncider les deux foyers images : l'image intermédiaire doit être au foyer objet de l'oculaire" },
+          null,
+          { code: "oubli-focale-oculaire", texte: "Placer l'oculaire au foyer de l'objectif : il faut ajouter sa propre distance focale, O₁O₂ = f'₁ + f'₂" }
+        ],
+        exp: "Le foyer image F'₁ de l'objectif est confondu avec le foyer objet F₂ de l'oculaire : l'image intermédiaire, formée en F'₁, est donc au foyer objet de l'oculaire et son image est à l'infini. Attention à ne pas confondre foyer objet et foyer image."
       },
       {
-        q: "La formule du grossissement G d'une lunette astronomique (modèle afocal) est :",
+        q: "Une lunette afocale a un objectif de distance focale f'₁ = 700 mm et un oculaire de distance focale f'₂ = 10 mm. La distance O₁O₂ entre les deux lentilles vaut :",
         opts: [
-          "G = f'₁ × f'₂",
-          "G = f'₁ / f'₂",
-          "G = f'₂ / f'₁",
-          "G = f'₁ + f'₂"
+          "690 mm",
+          "710 mm",
+          "70 mm",
+          "700 mm"
         ],
         ans: 1,
-        exp: "Le grossissement vaut le rapport de la distance focale de l'objectif sur celle de l'oculaire : G = f'₁/f'₂."
+        pieges: [
+          { code: "focales-soustraites", texte: "Soustraire les distances focales : 700 − 10 = 690 mm" },
+          null,
+          { code: "grossissement-pris-pour-longueur", texte: "Calculer le grossissement f'₁ / f'₂ = 70 au lieu d'une distance" },
+          { code: "oubli-focale-oculaire", texte: "Oublier la distance focale de l'oculaire : O₁O₂ = f'₁ + f'₂" }
+        ],
+        exp: "Avec F'₁ = F₂ : O₁O₂ = O₁F'₁ + F₂O₂ = f'₁ + f'₂ = 700 + 10 = 710 mm. Attention : l'oculaire est placé une distance f'₂ après le foyer commun."
       },
       {
-        q: "Pour un objectif f'₁ = 700 mm et un oculaire f'₂ = 10 mm, le grossissement G vaut :",
+        q: "Le grossissement G d'une lunette est défini par :",
+        opts: [
+          "G = α / α'",
+          "G = taille de l'image / taille de l'objet",
+          "G = α' / α",
+          "G = α' − α"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "grossissement-inverse", texte: "Inverser le rapport : α' (angle à travers la lunette) est au numérateur" },
+          { code: "grossissement-vs-grandissement", texte: "Confondre grossissement (rapport d'angles) et grandissement (rapport de tailles)" },
+          null,
+          { code: "grossissement-difference", texte: "Faire une différence d'angles au lieu d'un rapport" }
+        ],
+        exp: "G = α' / α, où α est l'angle sous lequel on voit l'objet à l'œil nu et α' l'angle sous lequel on voit son image à travers la lunette. Attention : pour un objet à l'infini, on compare des angles, pas des tailles."
+      },
+      {
+        q: "Une lunette afocale a un objectif de distance focale f'₁ = 70 cm et un oculaire de distance focale f'₂ = 10 mm. Son grossissement G vaut :",
         opts: [
           "7",
-          "70",
-          "700",
-          "0,07"
+          "1,4 × 10⁻²",
+          "7,0 × 10³",
+          "70"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "unites-non-homogenes", texte: "Diviser sans convertir dans la même unité : 70 (cm) / 10 (mm) = 7" },
+          { code: "grossissement-inverse", texte: "Inverser le rapport : f'₂ / f'₁ = 10 / 700 = 1,4 × 10⁻²" },
+          { code: "grossissement-produit", texte: "Multiplier les distances focales au lieu de les diviser : 700 × 10" },
+          null
+        ],
+        exp: "G = f'₁ / f'₂ = 700 mm / 10 mm = 70. Attention : les deux distances focales doivent être dans la même unité ; G est sans unité."
+      },
+      {
+        q: "Avec le même objectif, on remplace l'oculaire par un oculaire de plus grande distance focale f'₂. Le grossissement :",
+        opts: [
+          "augmente, car G est proportionnel à f'₂",
+          "diminue, car G = f'₁ / f'₂",
+          "ne change pas, car il ne dépend que de l'objectif",
+          "augmente, car la lunette devient plus longue"
         ],
         ans: 1,
-        exp: "G = f'₁/f'₂ = 700/10 = 70."
-      },
-      {
-        q: "Avec le même objectif (f'₁ = 700 mm) mais un oculaire f'₂ = 25 mm, le grossissement G vaut :",
-        opts: [
-          "28",
-          "17,5",
-          "70",
-          "2,8"
+        pieges: [
+          { code: "grossissement-proportionnel-oculaire", texte: "Croire que G augmente avec f'₂ : f'₂ est au dénominateur" },
+          null,
+          { code: "grossissement-objectif-seul", texte: "Croire que G ne dépend que de l'objectif : il dépend des deux distances focales" },
+          { code: "grossissement-longueur-lunette", texte: "Croire qu'une lunette plus longue grossit forcément plus : seul le rapport f'₁ / f'₂ compte" }
         ],
-        ans: 0,
-        exp: "G = f'₁/f'₂ = 700/25 = 28."
+        exp: "G = f'₁ / f'₂ : si f'₂ augmente, G diminue (mais le champ observé est plus large). Attention : un oculaire de petite distance focale donne un fort grossissement."
       },
       {
-        q: "Si on augmente la distance focale de l'oculaire f'₂ (l'objectif restant fixe), le grossissement G :",
+        q: "Un faisceau de rayons parallèles, incliné d'un angle α sur l'axe optique, traverse une lunette afocale de grossissement G = 50. À la sortie de l'oculaire, le faisceau :",
         opts: [
-          "Augmente",
-          "Diminue",
-          "Reste constant",
-          "Devient infini"
+          "converge en un point, image de l'objet",
+          "ressort parallèle, incliné d'un angle α' = 50 α",
+          "ressort parallèle à l'axe optique",
+          "ressort parallèle, incliné du même angle α"
         ],
         ans: 1,
-        exp: "G = f'₁/f'₂ : si f'₂ augmente, G diminue puisque f'₁ est fixé."
+        pieges: [
+          { code: "afocal-faisceau-convergent", texte: "Croire que le faisceau sortant converge : il ressort parallèle, pour un œil au repos" },
+          null,
+          { code: "faisceau-sortie-axe", texte: "Croire que les rayons ressortent parallèles à l'axe : ils sont inclinés d'un angle α'" },
+          { code: "lunette-sans-grossissement", texte: "Oublier le grossissement : l'angle de sortie est α' = G × α, pas α" }
+        ],
+        exp: "Système afocal : le faisceau ressort parallèle ; il est incliné de α' = G × α, c'est ce qui fait voir l'objet plus grand. Attention : sans changement d'angle, la lunette ne grossirait pas."
       },
       {
-        q: "Le rôle de l'objectif dans une lunette astronomique est de :",
+        q: "Pour un objet à l'infini, l'image intermédiaire A₁B₁ donnée par l'objectif se forme :",
         opts: [
-          "Former une image intermédiaire réelle de l'objet observé",
-          "Agrandir l'image comme le fait une loupe",
-          "Réfléchir la lumière uniquement",
-          "Filtrer les couleurs de la lumière incidente"
+          "dans le plan focal image de l'objectif",
+          "dans le plan focal objet de l'objectif",
+          "au centre optique de l'oculaire",
+          "à l'infini"
         ],
         ans: 0,
-        exp: "L'objectif, de grande distance focale, forme une image intermédiaire réelle de l'objet observé, souvent situé à l'infini."
-      },
-      {
-        q: "Le rôle de l'oculaire dans une lunette astronomique est de :",
-        opts: [
-          "Capter uniquement la lumière de l'objet à l'infini",
-          "Jouer le rôle d'une loupe pour observer l'image intermédiaire formée par l'objectif",
-          "Réduire uniquement le diamètre du faisceau",
-          "Focaliser la lumière sur un capteur uniquement"
+        pieges: [
+          null,
+          { code: "foyers-objet-image-inverses", texte: "Confondre foyer objet et foyer image : un objet à l'infini donne une image dans le plan focal image" },
+          { code: "image-intermediaire-sur-oculaire", texte: "Placer l'image intermédiaire sur l'oculaire : elle est dans son plan focal objet, à la distance f'₂" },
+          { code: "image-intermediaire-infini", texte: "Confondre l'image intermédiaire et l'image finale, qui seule est à l'infini" }
         ],
-        ans: 1,
-        exp: "L'oculaire, de petite distance focale, sert de loupe pour observer l'image intermédiaire donnée par l'objectif."
-      },
-      {
-        q: "Le pouvoir séparateur d'une lunette astronomique est fondamentalement limité par :",
-        opts: [
-          "La diffraction, liée au diamètre de l'objectif",
-          "Uniquement la longueur du tube de la lunette",
-          "La couleur de l'oculaire",
-          "Le poids de l'instrument"
-        ],
-        ans: 0,
-        exp: "La diffraction, dont l'écart angulaire caractéristique dépend du diamètre de l'objectif (θ ≈ λ/D), limite le pouvoir séparateur."
+        exp: "Un objet à l'infini donne, par une lentille convergente, une image dans son plan focal image : A₁B₁ est en F'₁, qui est aussi le foyer objet F₂ de l'oculaire. Attention : seule l'image finale est à l'infini."
       }
     ],
     annales: [
@@ -5590,114 +5650,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Dans la loi de Kohlrausch σ = Σ λᵢ × [Xᵢ], que représente λᵢ ?",
+        q: "Dans la loi de Kohlrausch σ = Σ λᵢ × [Xᵢ], la grandeur λᵢ est :",
         opts: [
-          "La concentration molaire de l'ion i",
-          "La conductivité molaire ionique de l'ion i",
-          "La masse molaire de l'ion i",
-          "La charge de l'ion i"
-        ],
-        ans: 1,
-        exp: "λᵢ est la conductivité molaire ionique de l'ion i, exprimée en S·m²·mol⁻¹ ; elle traduit la contribution de cet ion à la conductivité totale."
-      },
-      {
-        q: "Quelle grandeur explique la forte conductivité d'une solution acide, même diluée ?",
-        opts: [
-          "La présence de l'ion Cl⁻",
-          "La conductivité molaire ionique élevée de H₃O⁺",
-          "La couleur de la solution",
-          "La température ambiante"
-        ],
-        ans: 1,
-        exp: "L'ion H₃O⁺ a une conductivité molaire ionique très élevée par rapport aux autres ions, ce qui explique la forte conductivité des solutions acides."
-      },
-      {
-        q: "Que mesure l'absorbance A en spectroscopie UV-visible ?",
-        opts: [
-          "La couleur exacte d'une solution",
-          "L'atténuation d'un faisceau de lumière monochromatique par la solution",
-          "La température de la solution",
-          "La masse volumique de l'espèce dissoute"
-        ],
-        ans: 1,
-        exp: "L'absorbance quantifie l'atténuation d'un faisceau lumineux monochromatique traversant la solution, selon la loi de Beer-Lambert."
-      },
-      {
-        q: "Dans la loi de Beer-Lambert A = ε × l × c, l'unité de l est :",
-        opts: [
-          "mol·L⁻¹",
-          "L·mol⁻¹·cm⁻¹",
-          "cm",
-          "S·m⁻¹"
+          "la concentration de l'ion i",
+          "la longueur d'onde associée à l'ion i",
+          "la conductivité molaire ionique de l'ion i",
+          "la conductivité de la solution"
         ],
         ans: 2,
-        exp: "l est la longueur de la cuve traversée par la lumière, exprimée en centimètres (cm)."
+        pieges: [
+          { code: "kohlrausch-lambda-vs-concentration", texte: "Confondre λᵢ avec la concentration [Xᵢ] de l'ion" },
+          { code: "lambda-longueur-onde", texte: "Confondre le symbole λ de la conductivité molaire ionique avec celui de la longueur d'onde" },
+          null,
+          { code: "kohlrausch-lambda-vs-sigma", texte: "Confondre la conductivité molaire ionique λᵢ d'un ion et la conductivité σ de la solution" }
+        ],
+        exp: "λᵢ est la conductivité molaire ionique de l'ion i, en S·m²·mol⁻¹ : la contribution d'une mole par m³ de cet ion à la conductivité σ (en S·m⁻¹). Attention : même symbole que la longueur d'onde, mais aucun rapport."
       },
       {
-        q: "Pourquoi mesure-t-on l'absorbance à la longueur d'onde λmax ?",
+        q: "Une solution de chlorure de sodium a une concentration c = 1,0 × 10⁻³ mol·L⁻¹. Avec λ(Na⁺) = 5,0 mS·m²·mol⁻¹ et λ(Cl⁻) = 7,6 mS·m²·mol⁻¹, sa conductivité σ vaut :",
         opts: [
-          "Parce que c'est obligatoire par convention",
-          "Parce que la sensibilité de la mesure y est optimale",
-          "Parce que la lumière y est blanche",
-          "Parce que c'est la seule longueur d'onde mesurable"
+          "1,3 × 10⁻² S·m⁻¹",
+          "1,3 × 10⁻⁵ S·m⁻¹",
+          "7,6 × 10⁻³ S·m⁻¹",
+          "13 S·m⁻¹"
         ],
-        ans: 1,
-        exp: "Au maximum d'absorption λmax, une petite variation de concentration entraîne une variation maximale d'absorbance : la mesure y est donc la plus sensible et la plus précise."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-mol-l-mol-m3", texte: "Oublier de convertir c en mol·m⁻³ : 1,0 × 10⁻³ mol·L⁻¹ = 1,0 mol·m⁻³" },
+          { code: "oubli-ions-spectateurs", texte: "Ne compter qu'un seul ion : tous les ions de la solution contribuent à σ" },
+          { code: "conversion-ms-s", texte: "Oublier de convertir les mS en S : 12,6 × 1,0 = 13" }
+        ],
+        exp: "c = 1,0 mol·m⁻³ ; σ = (λ(Na⁺) + λ(Cl⁻)) × c = (5,0 + 7,6) × 10⁻³ × 1,0 ≈ 1,3 × 10⁻² S·m⁻¹. Attention : concentrations en mol·m⁻³ et λ en S·m²·mol⁻¹."
       },
       {
-        q: "En spectroscopie infrarouge, une bande fine et intense vers 1700 cm⁻¹ est typique de la liaison :",
+        q: "À la même concentration, une solution d'acide chlorhydrique (H₃O⁺ + Cl⁻) conduit beaucoup mieux le courant qu'une solution de chlorure de sodium (Na⁺ + Cl⁻), car :",
         opts: [
-          "O-H",
-          "C=O",
-          "C-H",
-          "N-H"
+          "l'acide libère des électrons libres qui transportent le courant",
+          "λ(H₃O⁺) est beaucoup plus grande que λ(Na⁺)",
+          "l'acide libère plus d'ions par entité dissoute",
+          "la solution acide contient plus d'ions Cl⁻"
         ],
         ans: 1,
-        exp: "La liaison C=O donne une bande fine et intense caractéristique entre 1650 et 1730 cm⁻¹ sur un spectre IR."
+        pieges: [
+          { code: "electrons-dans-solution", texte: "Croire que des électrons circulent dans les solutions : ce sont des ions qui s'y déplacent" },
+          null,
+          { code: "conductivite-nombre-ions", texte: "Croire que l'acide libère plus d'ions : HCl et NaCl donnent chacun 2 ions" },
+          { code: "conductivite-cl-concentration", texte: "Croire que [Cl⁻] diffère : à concentration égale, les deux solutions ont la même concentration en Cl⁻" }
+        ],
+        exp: "Les deux solutions ont les mêmes concentrations d'ions, mais λ(H₃O⁺) ≈ 35 mS·m²·mol⁻¹ contre 5,0 pour Na⁺. Attention : σ dépend de la nature des ions, pas seulement de leur nombre."
       },
       {
-        q: "Un spectre infrarouge représente :",
+        q: "L'absorbance A d'une solution colorée :",
         opts: [
-          "L'absorbance en fonction de la longueur d'onde",
-          "La transmittance en fonction du nombre d'onde",
-          "La conductivité en fonction du temps",
-          "La concentration en fonction de l'absorbance"
+          "est sans unité et augmente avec la concentration",
+          "s'exprime en L·mol⁻¹·cm⁻¹ et augmente avec la concentration",
+          "est proportionnelle à la transmittance de la solution",
+          "est sans unité et diminue quand la concentration augmente"
         ],
-        ans: 1,
-        exp: "Un spectre IR trace la transmittance T (%) en fonction du nombre d'onde σ (cm⁻¹), généralement porté en abscisse décroissante."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "absorbance-vs-epsilon", texte: "Confondre l'absorbance A, sans unité, et le coefficient d'absorption molaire ε" },
+          { code: "absorbance-transmittance-proportionnelles", texte: "Croire que l'absorbance est proportionnelle à la transmittance : plus la solution absorbe, moins elle transmet" },
+          { code: "absorbance-vs-transmittance", texte: "Confondre absorbance et transmittance : une solution plus concentrée absorbe plus" }
+        ],
+        exp: "A = ε × l × c : A est sans unité et proportionnelle à c (solution diluée, lumière monochromatique). Attention : quand A augmente, la lumière transmise diminue."
       },
       {
-        q: "Dans un dosage par étalonnage, la courbe G = f(c) est tracée à partir :",
+        q: "Pour doser une espèce colorée par spectrophotométrie, on règle la longueur d'onde sur λmax parce que :",
         opts: [
-          "De la seule solution inconnue",
-          "D'une série de solutions étalons de concentrations connues",
-          "D'un seul point de mesure",
-          "Des données théoriques uniquement, sans mesure"
+          "c'est la longueur d'onde de la couleur de la solution",
+          "la solution y absorbe le moins, la lumière la traverse bien",
+          "la sensibilité de la mesure y est maximale",
+          "A ne dépend pas de la longueur d'onde choisie"
         ],
-        ans: 1,
-        exp: "On prépare plusieurs solutions étalons de concentrations connues, on mesure la grandeur physique pour chacune, puis on trace la courbe d'étalonnage."
+        ans: 2,
+        pieges: [
+          { code: "couleur-percue-vs-absorbee", texte: "Confondre couleur perçue et couleur absorbée : la solution absorbe surtout la couleur complémentaire de la sienne" },
+          { code: "lambda-max-absorption-minimale", texte: "Croire qu'on mesure là où la solution absorbe le moins : λmax est le maximum d'absorption" },
+          null,
+          { code: "epsilon-independant-lambda", texte: "Croire que A ne dépend pas de λ : ε, donc A, varie avec la longueur d'onde" }
+        ],
+        exp: "À λmax, ε est maximal : une petite variation de c donne la plus grande variation de A, la mesure est la plus précise. Attention : une solution bleue absorbe surtout dans l'orange, la couleur complémentaire."
       },
       {
-        q: "Que risque-t-on si l'on extrapole une courbe d'étalonnage en dehors du domaine des étalons mesurés ?",
+        q: "La droite d'étalonnage d'un dosage par spectrophotométrie a pour équation A = k × c, avec k = 2,40 × 10³ L·mol⁻¹. La solution inconnue a une absorbance A = 0,60. Sa concentration vaut :",
         opts: [
-          "Rien, l'extrapolation est toujours fiable",
-          "Une erreur, car la relation peut ne plus être linéaire hors de ce domaine",
-          "Un gain de précision",
-          "Une absorbance négative garantie"
+          "1,4 × 10³ mol·L⁻¹",
+          "2,5 × 10⁻⁴ mol·L⁻¹",
+          "4,0 × 10³ mol·L⁻¹",
+          "2,5 × 10⁻¹ mol·L⁻¹"
         ],
         ans: 1,
-        exp: "Hors du domaine de linéarité (validité de Beer-Lambert ou Kohlrausch), la relation entre la grandeur mesurée et la concentration n'est plus fiable : il ne faut jamais extrapoler."
+        pieges: [
+          { code: "multiplier-au-lieu-diviser", texte: "Multiplier au lieu de diviser : 0,60 × 2,40 × 10³" },
+          null,
+          { code: "rapport-inverse-etalonnage", texte: "Inverser le rapport : k / A = 4,0 × 10³" },
+          { code: "mmol-pris-pour-mol", texte: "Lire le résultat en mmol·L⁻¹ comme s'il était en mol·L⁻¹ : 0,25 mmol·L⁻¹ = 2,5 × 10⁻⁴ mol·L⁻¹" }
+        ],
+        exp: "c = A / k = 0,60 / 2,40 × 10³ = 2,5 × 10⁻⁴ mol·L⁻¹. Attention : un ordre de grandeur de 10³ mol·L⁻¹ est impossible pour une solution, ce qui signale une erreur de calcul."
       },
       {
-        q: "Pour une droite d'étalonnage A = k×c passant par l'origine avec k = 2400 L·mol⁻¹ et une mesure A = 0,60 sur la solution inconnue, la concentration est :",
+        q: "Les solutions étalons ont des absorbances comprises entre 0,24 et 1,20. La solution inconnue donne A = 2,1. Il faut :",
         opts: [
-          "0,60 mol·L⁻¹",
-          "2,5×10⁻⁴ mol·L⁻¹",
-          "1440 mol·L⁻¹",
-          "4,0×10⁻³ mol·L⁻¹"
+          "prolonger la droite d'étalonnage jusqu'à A = 2,1",
+          "calculer c = A / k, la loi de Beer-Lambert étant toujours valable",
+          "diluer la solution inconnue, puis refaire la mesure",
+          "garder le résultat, la mesure étant d'autant plus précise que A est grande"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "extrapolation-etalonnage", texte: "Extrapoler la courbe d'étalonnage hors du domaine des étalons" },
+          { code: "beer-lambert-hors-domaine", texte: "Utiliser la loi de Beer-Lambert hors de son domaine de validité : elle n'est linéaire que pour les solutions diluées" },
+          null,
+          { code: "grande-absorbance-precise", texte: "Croire qu'une grande absorbance donne une mesure plus précise : au-delà du domaine étalonné, la linéarité n'est plus garantie" }
+        ],
+        exp: "La mesure sort du domaine des étalons, où la relation A = k × c a été vérifiée : on dilue d'un facteur connu pour revenir dans ce domaine. Attention : on n'extrapole jamais une courbe d'étalonnage."
+      },
+      {
+        q: "Un spectre infrarouge représente en général :",
+        opts: [
+          "l'absorbance en fonction de la longueur d'onde",
+          "la transmittance en fonction de la longueur d'onde",
+          "la transmittance en fonction du nombre d'onde",
+          "l'absorbance en fonction du nombre d'onde, bandes vers le haut"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "spectre-ir-vs-uv-visible", texte: "Confondre spectre IR et spectre UV-visible (absorbance en fonction de λ)" },
+          { code: "nombre-onde-vs-longueur-onde", texte: "Confondre nombre d'onde σ = 1/λ (en cm⁻¹) et longueur d'onde" },
+          null,
+          { code: "bandes-ir-vers-haut", texte: "Chercher des bandes vers le haut : ce sont des creux de transmittance" }
+        ],
+        exp: "Spectre IR : transmittance T (%) en fonction du nombre d'onde σ = 1/λ (cm⁻¹), axe souvent décroissant ; les bandes d'absorption sont des creux. Attention à ne pas confondre avec un spectre UV-visible."
+      },
+      {
+        q: "Le spectre IR d'une espèce présente une bande forte et très large entre 2 500 et 3 200 cm⁻¹ et une bande forte et fine vers 1 710 cm⁻¹. Cette espèce est probablement :",
+        opts: [
+          "un alcool",
+          "un acide carboxylique",
+          "une cétone",
+          "une amine"
         ],
         ans: 1,
-        exp: "c = A/k = 0,60/2400 = 2,5×10⁻⁴ mol·L⁻¹, en appliquant directement la loi de Beer-Lambert linéaire."
+        pieges: [
+          { code: "ir-bande-co-ignoree", texte: "Ne voir que la bande O–H : la bande fine vers 1 710 cm⁻¹ révèle aussi un C=O" },
+          null,
+          { code: "ir-bande-oh-ignoree", texte: "Ne voir que la bande C=O : la bande très large entre 2 500 et 3 200 cm⁻¹ est un O–H d'acide" },
+          { code: "ir-oh-vs-nh", texte: "Confondre la bande O–H d'acide avec une bande N–H (moyenne, vers 3 100 – 3 500 cm⁻¹)" }
+        ],
+        exp: "Bande O–H très large et décalée (2 500 – 3 200 cm⁻¹) et bande C=O vers 1 710 cm⁻¹ : groupe carboxyle –COOH. Attention : il faut exploiter toutes les bandes, pas une seule."
+      },
+      {
+        q: "Pour tracer une courbe d'étalonnage, on mesure la grandeur physique (absorbance, conductivité) :",
+        opts: [
+          "de la solution inconnue diluée plusieurs fois",
+          "d'une même solution à plusieurs longueurs d'onde",
+          "du solvant seul, qui sert de référence",
+          "d'une série de solutions étalons de concentrations connues"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "etalons-vs-inconnue", texte: "Croire qu'on étalonne avec la solution inconnue : il faut des solutions de concentrations connues" },
+          { code: "etalonnage-vs-spectre", texte: "Confondre courbe d'étalonnage A = f(c) et spectre d'absorption A = f(λ)" },
+          { code: "blanc-vs-etalonnage", texte: "Confondre la mesure du blanc (réglage du zéro) et l'étalonnage" },
+          null
+        ],
+        exp: "On prépare des solutions étalons de concentrations connues (par dilution d'une solution mère), on mesure G pour chacune et on trace G = f(c). Attention : le blanc sert seulement à faire le zéro de l'appareil."
       }
     ],
     annales: [
@@ -6670,109 +6790,169 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "v = OM / t",
           "v = dOM/dt",
           "v = d²OM/dt²",
-          "v = OM × t"
+          "v = dt/dOM"
         ],
         ans: 1,
-        exp: "Le vecteur vitesse est la dérivée du vecteur position par rapport au temps : v(t) = dOM/dt."
+        pieges: [
+          { code: "vitesse-moyenne-vs-instantanee", texte: "Confondre vitesse instantanée (dérivée) et vitesse moyenne (rapport)" },
+          null,
+          { code: "vitesse-vs-acceleration", texte: "Confondre vitesse (dérivée première de la position) et accélération (dérivée seconde)" },
+          { code: "derivee-inversee", texte: "Inverser la dérivée : on dérive la position par rapport au temps" }
+        ],
+        exp: "v(t) = dOM/dt : la dérivée du vecteur position par rapport au temps. Attention : OM / t n'est pas une vitesse instantanée, et d²OM/dt² est l'accélération."
       },
       {
-        q: "À chaque instant, le vecteur vitesse est :",
+        q: "À chaque instant, le vecteur vitesse d'un point en mouvement est :",
         opts: [
-          "Perpendiculaire à la trajectoire",
-          "Tangent à la trajectoire",
-          "Toujours horizontal",
-          "Dirigé vers le centre de courbure"
+          "perpendiculaire à la trajectoire",
+          "dirigé vers le centre de courbure",
+          "tangent à la trajectoire, dans le sens du mouvement",
+          "toujours de même direction que le vecteur accélération"
         ],
-        ans: 1,
-        exp: "Le vecteur vitesse est, par construction, tangent à la trajectoire au point considéré et orienté dans le sens du mouvement."
+        ans: 2,
+        pieges: [
+          { code: "vitesse-perpendiculaire-trajectoire", texte: "Dessiner le vecteur vitesse perpendiculaire à la trajectoire : il lui est tangent" },
+          { code: "vitesse-vs-acceleration-circulaire", texte: "Confondre vitesse et accélération : dans un virage, c'est l'accélération qui pointe vers l'intérieur" },
+          null,
+          { code: "vitesse-acceleration-meme-direction", texte: "Croire que vitesse et accélération ont toujours la même direction" }
+        ],
+        exp: "Le vecteur vitesse est tangent à la trajectoire et orienté dans le sens du mouvement. Attention : l'accélération, elle, peut avoir une autre direction (vers le centre dans un virage)."
       },
       {
-        q: "Le vecteur accélération est défini par :",
+        q: "Un point se déplace sur un axe selon x(t) = 3,0 t² + 2,0 (x en m, t en s). La coordonnée vx de sa vitesse à t = 2,0 s vaut :",
         opts: [
-          "a = dOM/dt",
-          "a = dv/dt",
-          "a = v / t",
-          "a = OM / t²"
+          "14 m·s⁻¹",
+          "6,0 m·s⁻¹",
+          "7,0 m·s⁻¹",
+          "12 m·s⁻¹"
         ],
-        ans: 1,
-        exp: "Le vecteur accélération est la dérivée du vecteur vitesse par rapport au temps : a(t) = dv/dt = d²OM/dt²."
-      },
-      {
-        q: "Dans le repère de Frenet, le vecteur uN est dirigé :",
-        opts: [
-          "Dans le sens du mouvement, tangent à la trajectoire",
-          "Vers le centre de courbure de la trajectoire",
-          "Toujours vers le haut",
-          "Perpendiculairement au plan de la trajectoire"
+        ans: 3,
+        pieges: [
+          { code: "position-vs-vitesse", texte: "Calculer la position x(2,0) = 14 m au lieu de la vitesse" },
+          { code: "vitesse-vs-acceleration", texte: "Dériver deux fois : 6,0 m·s⁻² est l'accélération, pas la vitesse" },
+          { code: "vitesse-moyenne-vs-instantanee", texte: "Calculer x / t = 14 / 2,0 au lieu de la dérivée" },
+          null
         ],
-        ans: 1,
-        exp: "Le vecteur unitaire normal uN est perpendiculaire à uT et pointe vers le centre de courbure de la trajectoire."
-      },
-      {
-        q: "L'accélération tangentielle at = dv/dt est nulle lorsque :",
-        opts: [
-          "La trajectoire est circulaire",
-          "Le mouvement est uniforme",
-          "Le mouvement est rectiligne",
-          "La vitesse est nulle"
-        ],
-        ans: 1,
-        exp: "at traduit la variation de la norme de la vitesse : elle est nulle si et seulement si le mouvement est uniforme (v constante en norme)."
-      },
-      {
-        q: "L'accélération normale an = v²/R est nulle lorsque :",
-        opts: [
-          "Le mouvement est uniforme",
-          "Le mouvement est rectiligne",
-          "La vitesse est constante en direction et en norme",
-          "Le mobile est immobile uniquement"
-        ],
-        ans: 1,
-        exp: "an traduit la variation de la direction de la vitesse ; elle est nulle si le rayon de courbure est infini, c'est-à-dire si le mouvement est rectiligne."
+        exp: "vx(t) = dx/dt = 6,0 t, donc vx(2,0) = 6,0 × 2,0 = 12 m·s⁻¹. Attention : la vitesse instantanée est la dérivée de la position, pas le rapport x / t."
       },
       {
         q: "Dans un mouvement circulaire uniforme, le vecteur accélération est :",
         opts: [
-          "Nul en permanence",
-          "Tangent à la trajectoire, de norme constante",
-          "Uniquement normal, dirigé vers le centre du cercle",
-          "Dirigé dans le sens du mouvement"
+          "nul, car la valeur de la vitesse est constante",
+          "dirigé vers le centre du cercle",
+          "tangent à la trajectoire, dans le sens du mouvement",
+          "dirigé vers l'extérieur du cercle"
         ],
-        ans: 2,
-        exp: "Pour un MCU, la vitesse est constante en norme (at = 0) mais change de direction : l'accélération est purement normale (centripète), dirigée vers le centre."
+        ans: 1,
+        pieges: [
+          { code: "uniforme-acceleration-nulle", texte: "Croire que l'accélération est nulle si la valeur de la vitesse est constante : la direction de la vitesse change" },
+          null,
+          { code: "vitesse-acceleration-meme-direction", texte: "Croire que vitesse et accélération ont toujours la même direction" },
+          { code: "acceleration-centrifuge", texte: "Croire que l'accélération pointe vers l'extérieur (« force centrifuge ») : elle est centripète" }
+        ],
+        exp: "La valeur de v est constante (at = 0), mais sa direction tourne : a = (v²/R) uN, dirigée vers le centre. Attention : uniforme ne veut pas dire sans accélération."
       },
       {
-        q: "Pour un mobile parcourant un cercle de rayon R = 2,0 m à une vitesse constante v = 4,0 m·s⁻¹, l'accélération normale vaut :",
+        q: "Dans le repère de Frenet (M, uT, uN) d'un point en mouvement circulaire, le vecteur uN est :",
         opts: [
-          "0,5 m·s⁻²",
+          "tangent à la trajectoire, dans le sens du mouvement",
+          "dirigé vers le centre du cercle",
+          "dirigé vers l'extérieur du cercle",
+          "toujours vertical, vers le haut"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "ut-un-inverses", texte: "Confondre uN (normal) et uT (tangent à la trajectoire)" },
+          null,
+          { code: "un-vers-exterieur", texte: "Orienter uN vers l'extérieur : il pointe vers le centre de courbure" },
+          { code: "frenet-repere-fixe", texte: "Confondre le repère de Frenet, lié au point mobile, avec un repère fixe (vertical, horizontal)" }
+        ],
+        exp: "uT est tangent à la trajectoire (sens du mouvement), uN lui est perpendiculaire et pointe vers le centre du cercle. Attention : ce repère tourne avec le point M."
+      },
+      {
+        q: "Un mobile parcourt un cercle de rayon R = 2,0 m à la vitesse constante v = 4,0 m·s⁻¹. La valeur de son accélération vaut :",
+        opts: [
           "2,0 m·s⁻²",
           "8,0 m·s⁻²",
-          "16 m·s⁻²"
+          "16 m·s⁻²",
+          "0,50 m·s⁻²"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-carre-vitesse", texte: "Oublier le carré de la vitesse : v / R = 2,0" },
+          null,
+          { code: "oubli-division-rayon", texte: "Oublier de diviser par R : v² = 16" },
+          { code: "rapport-inverse-acceleration", texte: "Inverser le rapport : R / v = 0,50" }
+        ],
+        exp: "Mouvement circulaire uniforme : a = an = v² / R = 4,0² / 2,0 = 8,0 m·s⁻². Attention : la vitesse est au carré, et at = 0 puisque v est constante."
+      },
+      {
+        q: "L'accélération tangentielle dv/dt d'un mobile est nulle lorsque son mouvement est :",
+        opts: [
+          "rectiligne",
+          "circulaire",
+          "uniforme",
+          "arrêté à cet instant (v = 0)"
         ],
         ans: 2,
-        exp: "an = v²/R = (4,0)² / 2,0 = 16/2,0 = 8,0 m·s⁻²."
+        pieges: [
+          { code: "at-an-inverses", texte: "Confondre les deux composantes : c'est an = v²/R qui est nulle pour un mouvement rectiligne" },
+          { code: "circulaire-donc-uniforme", texte: "Croire qu'un mouvement circulaire est forcément uniforme" },
+          null,
+          { code: "vitesse-nulle-acceleration-nulle", texte: "Croire que l'accélération est nulle quand la vitesse est nulle (au sommet d'un lancer vertical, a = g)" }
+        ],
+        exp: "dv/dt traduit la variation de la valeur de la vitesse : elle est nulle si le mouvement est uniforme. Attention : une vitesse nulle à un instant n'implique pas une accélération nulle."
       },
       {
-        q: "La trajectoire d'un mobile :",
+        q: "L'accélération normale v²/R d'un mobile en mouvement est nulle à chaque instant lorsque son mouvement est :",
         opts: [
-          "Est indépendante du référentiel choisi",
-          "Dépend du référentiel d'étude",
-          "Est toujours une droite",
-          "Est toujours un cercle"
+          "uniforme",
+          "rectiligne",
+          "circulaire uniforme",
+          "ralenti"
         ],
         ans: 1,
-        exp: "La trajectoire (ensemble des positions successives) dépend du référentiel : un mouvement peut être rectiligne dans un référentiel et curviligne dans un autre."
+        pieges: [
+          { code: "at-an-inverses", texte: "Confondre les deux composantes : c'est dv/dt qui est nulle pour un mouvement uniforme" },
+          null,
+          { code: "uniforme-acceleration-nulle", texte: "Croire qu'un mouvement circulaire uniforme n'a pas d'accélération" },
+          { code: "ralenti-vs-direction", texte: "Associer an au ralentissement : an traduit le changement de direction de la vitesse" }
+        ],
+        exp: "an = v²/R traduit le changement de direction de la vitesse : elle est nulle si la trajectoire est rectiligne (rayon de courbure infini). Attention : un mouvement circulaire uniforme a une accélération normale non nulle."
       },
       {
-        q: "Un mobile a un vecteur vitesse dont la direction est constante mais dont la norme augmente. Son mouvement est :",
+        q: "La valve d'une roue de vélo décrit un cercle dans le référentiel du cadre du vélo. Dans le référentiel terrestre, quand le vélo avance, sa trajectoire est :",
         opts: [
-          "Circulaire uniforme",
-          "Rectiligne accéléré",
-          "Circulaire accéléré",
-          "Rectiligne uniforme"
+          "le même cercle, car la trajectoire ne dépend pas du référentiel",
+          "une droite parallèle à la route, comme celle du cadre",
+          "une courbe qui n'est pas un cercle (une cycloïde)",
+          "un point fixe, puisque la valve reste sur la roue"
         ],
-        ans: 1,
-        exp: "Direction de vitesse constante signifie trajectoire rectiligne ; norme croissante signifie mouvement accéléré : c'est donc un mouvement rectiligne accéléré."
+        ans: 2,
+        pieges: [
+          { code: "trajectoire-independante-referentiel", texte: "Croire que la trajectoire ne dépend pas du référentiel" },
+          { code: "trajectoire-objet-vs-point", texte: "Confondre la trajectoire du vélo (son cadre) et celle d'un point de la roue" },
+          null,
+          { code: "referentiel-inverse", texte: "Confondre les référentiels : la valve n'est immobile dans aucun des deux" }
+        ],
+        exp: "Dans le référentiel terrestre, la valve tourne et avance à la fois : sa trajectoire est une cycloïde. Attention : on précise toujours le référentiel d'étude avant de décrire un mouvement."
+      },
+      {
+        q: "Une nacelle de manège tourne sur un cercle de rayon R = 5,0 m à la vitesse constante v = 3,0 m·s⁻¹. La période de révolution T vaut environ :",
+        opts: [
+          "10 s",
+          "1,7 s",
+          "0,095 s",
+          "94 s"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oubli-2pi-perimetre", texte: "Oublier le périmètre : R / v = 1,7 s au lieu de 2πR / v" },
+          { code: "periode-vs-frequence", texte: "Calculer la fréquence v / (2πR) au lieu de la période" },
+          { code: "periode-produit", texte: "Multiplier au lieu de diviser : 2πR × v = 94" }
+        ],
+        exp: "En une période, la nacelle parcourt le périmètre 2πR : T = 2πR / v = 2π × 5,0 / 3,0 ≈ 10 s. Attention : la distance parcourue en un tour est 2πR, pas R."
       }
     ],
     annales: [
@@ -7187,114 +7367,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La deuxième loi de Newton s'écrit :",
+        q: "Dans un référentiel galiléen, la deuxième loi de Newton s'écrit :",
         opts: [
-          "ΣF = m × v",
+          "ΣF = m × v(G)",
           "ΣF = m × a(G)",
-          "ΣF = ½ m v²",
-          "ΣF = m × g uniquement"
+          "ΣF = m × g, quelles que soient les forces",
+          "ΣF = Δ(½ m v²)"
         ],
         ans: 1,
-        exp: "La deuxième loi de Newton relie la somme des forces extérieures à l'accélération du centre de masse : ΣF(ext) = m × a(G), valable dans un référentiel galiléen."
-      },
-      {
-        q: "Un référentiel galiléen est un référentiel dans lequel :",
-        opts: [
-          "Toutes les vitesses sont nulles",
-          "Le principe d'inertie est vérifié",
-          "Seule la pesanteur agit",
-          "Le temps s'écoule différemment"
+        pieges: [
+          { code: "force-proportionnelle-vitesse", texte: "Croire que la force est liée à la vitesse : elle est liée à la variation de la vitesse (l'accélération)" },
+          null,
+          { code: "newton-chute-libre-generalisee", texte: "Généraliser le cas de la chute libre : ΣF = m × g seulement si le poids est la seule force" },
+          { code: "newton-vs-energie-cinetique", texte: "Confondre la deuxième loi de Newton et le théorème de l'énergie cinétique" }
         ],
-        ans: 1,
-        exp: "Un référentiel galiléen est un référentiel où le principe d'inertie (première loi de Newton) est vérifié pour un système isolé ou pseudo-isolé."
+        exp: "ΣF(ext) = m × a(G) : les forces déterminent l'accélération du centre de masse, pas sa vitesse. Attention : un objet peut avoir une grande vitesse avec une somme des forces nulle."
       },
       {
-        q: "Lors d'une chute libre, le vecteur accélération d'un objet :",
+        q: "Un ballon est lancé vers le haut ; on néglige l'action de l'air. Pendant tout son vol, la somme des forces qui s'exercent sur lui est :",
         opts: [
-          "Dépend de sa masse",
-          "Est égal au champ de pesanteur g, indépendant de la masse",
-          "Est toujours nul",
-          "Dépend de sa vitesse initiale"
-        ],
-        ans: 1,
-        exp: "En chute libre, seule la force poids agit ; d'après la 2e loi de Newton, a = g, une accélération constante indépendante de la masse de l'objet."
-      },
-      {
-        q: "Dans le mouvement parabolique d'un projectile lancé avec une vitesse initiale v0 faisant un angle α avec l'horizontale, la composante horizontale de la vitesse vx(t) est :",
-        opts: [
-          "Constante et égale à v0 cosα",
-          "Variable, elle diminue avec g",
-          "Nulle en permanence",
-          "Égale à v0 sinα - g t"
+          "verticale vers le bas : c'est le poids",
+          "dirigée vers le haut pendant la montée, sinon il ne monterait pas",
+          "la force du lancer, puis le poids une fois qu'elle s'est épuisée",
+          "nulle au sommet de la trajectoire"
         ],
         ans: 0,
-        exp: "Comme ax = 0 (pas de force horizontale en l'absence de frottements), vx(t) reste constante et égale à sa valeur initiale v0 cosα."
+        pieges: [
+          null,
+          { code: "force-sens-mouvement", texte: "Croire qu'un mouvement nécessite une force dans son sens : le ballon monte sur sa lancée, en ralentissant" },
+          { code: "force-du-lancer", texte: "Croire que la force du lancer accompagne l'objet : elle cesse dès que le ballon quitte la main" },
+          { code: "acceleration-nulle-sommet", texte: "Croire qu'au sommet les forces (ou l'accélération) sont nulles : le poids agit pendant tout le vol" }
+        ],
+        exp: "Une fois lâché, le ballon n'est soumis qu'à son poids, vertical vers le bas, du début à la fin du vol. Attention : il monte parce qu'il a une vitesse initiale, pas parce qu'une force le pousse."
       },
       {
-        q: "L'équation de la trajectoire d'un mouvement parabolique, y(x) = -g x²/(2 v0² cos²α) + x tanα, montre que la trajectoire est :",
+        q: "Dans un champ de pesanteur uniforme, en chute libre, l'accélération d'un objet :",
         opts: [
-          "Une droite",
-          "Un cercle",
-          "Une parabole",
-          "Une ellipse"
+          "est plus grande pour un objet plus lourd",
+          "est égale à g seulement s'il est lâché sans vitesse initiale",
+          "est égale à g, quelle que soit sa masse",
+          "est toujours dirigée selon sa vitesse"
         ],
         ans: 2,
-        exp: "L'expression de y en fonction de x² caractérise une parabole, d'où le nom de mouvement parabolique."
-      },
-      {
-        q: "Dans un champ électrique uniforme E créé entre deux plaques distantes de d et soumises à une tension U, la norme du champ vaut :",
-        opts: [
-          "E = U × d",
-          "E = U / d",
-          "E = d / U",
-          "E = U + d"
+        pieges: [
+          { code: "lourd-tombe-plus-vite", texte: "Croire qu'un objet plus lourd tombe plus vite : en chute libre, a = g ne dépend pas de la masse" },
+          { code: "chute-libre-vitesse-initiale-nulle", texte: "Croire qu'une chute libre exige une vitesse initiale nulle : seule compte l'absence de forces autres que le poids" },
+          null,
+          { code: "vitesse-acceleration-meme-direction", texte: "Croire que vitesse et accélération ont toujours la même direction" }
         ],
-        ans: 1,
-        exp: "La relation entre le champ électrique uniforme et la tension entre les plaques est E = U/d, exprimée en V·m⁻¹."
+        exp: "Seul le poids agit : m × a = m × g, donc a = g, verticale vers le bas, indépendante de la masse et de la vitesse initiale. Attention : « chute libre » signifie « soumis à son seul poids »."
       },
       {
-        q: "Une particule de charge q > 0 placée dans un champ électrique uniforme E subit une force :",
+        q: "Un projectile est lancé avec une vitesse v₀ faisant un angle α avec l'horizontale (frottements négligés, axe Ox horizontal). La coordonnée vx de sa vitesse :",
         opts: [
-          "Perpendiculaire à E",
-          "F = qE, colinéaire et de même sens que E",
-          "F = qE, colinéaire et de sens opposé à E",
-          "Nulle si q est positive"
+          "est constante et égale à v₀ cos α",
+          "est constante et égale à v₀ sin α",
+          "diminue au cours du vol",
+          "s'annule au sommet de la trajectoire"
         ],
-        ans: 1,
-        exp: "La force électrique F = qE est colinéaire au champ E ; pour une charge positive, elle est de même sens que E."
-      },
-      {
-        q: "Le théorème de l'énergie cinétique s'écrit :",
-        opts: [
-          "Ec = m × a",
-          "ΔEc = Σ W(F)",
-          "Ec = q × U uniquement",
-          "ΔEc = ΣF"
+        ans: 0,
+        pieges: [
+          null,
+          { code: "cos-sin-inverses", texte: "Inverser cosinus et sinus : la composante horizontale est v₀ cos α (α mesuré depuis l'horizontale)" },
+          { code: "vitesse-horizontale-diminue", texte: "Croire que la vitesse horizontale s'épuise : aucune force horizontale n'agit, vx reste constante" },
+          { code: "vitesse-nulle-sommet", texte: "Croire que la vitesse est nulle au sommet : seule vy s'annule, vx reste égale à v₀ cos α" }
         ],
-        ans: 1,
-        exp: "Le théorème de l'énergie cinétique énonce que la variation d'énergie cinétique d'un système est égale à la somme des travaux des forces qui s'exercent sur lui."
+        exp: "ax = 0 (le poids est vertical), donc vx(t) = v₀ cos α à chaque instant. Attention : au sommet, seule la composante verticale vy est nulle."
       },
       {
-        q: "Un électron (q = -1,6×10⁻¹⁹ C, vitesse initiale nulle) est accéléré depuis le repos par une tension U = 1000 V dans un accélérateur linéaire. D'après le théorème de l'énergie cinétique, l'énergie cinétique finale acquise est :",
+        q: "Pour ce même projectile (axe Oy vertical vers le haut), la coordonnée verticale de la vitesse s'écrit :",
         opts: [
-          "1000 J",
-          "1,6×10⁻¹⁹ J",
-          "1,6×10⁻¹⁶ J",
-          "0 J"
+          "vy(t) = −g t",
+          "vy(t) = −½ g t² + v₀ sin α × t",
+          "vy(t) = g t + v₀ sin α",
+          "vy(t) = −g t + v₀ sin α"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "oubli-condition-initiale", texte: "Oublier la condition initiale : à t = 0, vy = v₀ sin α" },
+          { code: "position-vs-vitesse", texte: "Confondre l'équation horaire de la position y(t) et celle de la vitesse vy(t)" },
+          { code: "signe-axe-vertical", texte: "Se tromper de signe : avec Oy vers le haut, ay = −g" },
+          null
+        ],
+        exp: "ay = −g ; on intègre : vy(t) = −g t + C, et la condition initiale vy(0) = v₀ sin α donne C. Attention : la constante d'intégration vient des conditions initiales."
+      },
+      {
+        q: "Une balle est lancée avec v₀ = 10 m·s⁻¹ sous un angle α = 30° (g = 9,8 m·s⁻²). Elle atteint le sommet de sa trajectoire au bout de :",
+        opts: [
+          "0,51 s",
+          "0,88 s",
+          "1,0 s",
+          "5,0 s"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "cos-sin-inverses", texte: "Utiliser v₀ cos α au lieu de v₀ sin α : 10 × cos 30° / 9,8 = 0,88 s" },
+          { code: "sommet-vs-duree-vol", texte: "Confondre l'instant du sommet et la durée totale du vol (2 fois plus longue)" },
+          { code: "oubli-division-g", texte: "Oublier de diviser par g : v₀ sin α = 5,0" }
+        ],
+        exp: "Au sommet vy = 0 : −g t + v₀ sin α = 0, d'où t = v₀ sin α / g = 10 × 0,5 / 9,8 ≈ 0,51 s. Attention : la condition « sommet » porte sur vy seule."
+      },
+      {
+        q: "Deux plaques parallèles distantes de d = 4,0 cm sont soumises à une tension U = 2,0 kV. La valeur du champ électrique uniforme entre les plaques est :",
+        opts: [
+          "5,0 × 10² V·m⁻¹",
+          "80 V·m⁻¹",
+          "5,0 × 10⁴ V·m⁻¹",
+          "2,0 × 10⁻⁵ V·m⁻¹"
         ],
         ans: 2,
-        exp: "ΔEc = |q|×U = 1,6×10⁻¹⁹ × 1000 = 1,6×10⁻¹⁶ J, en valeur absolue du travail de la force électrique."
+        pieges: [
+          { code: "conversion-cm-m", texte: "Oublier de convertir d en mètres : 2 000 / 4,0 = 5,0 × 10²" },
+          { code: "champ-produit-u-d", texte: "Multiplier au lieu de diviser : U × d = 2 000 × 0,040 = 80" },
+          null,
+          { code: "champ-rapport-inverse", texte: "Inverser le rapport : d / U = 2,0 × 10⁻⁵" }
+        ],
+        exp: "E = U / d = 2,0 × 10³ / 4,0 × 10⁻² = 5,0 × 10⁴ V·m⁻¹. Attention : d en mètres et U en volts."
       },
       {
-        q: "Dans un accélérateur linéaire, si la vitesse initiale de la particule est colinéaire au champ électrique, le mouvement de la particule est :",
+        q: "Un électron (charge q = −e) est placé dans un champ électrique uniforme E. La force électrique qu'il subit est :",
         opts: [
-          "Circulaire",
-          "Parabolique",
-          "Rectiligne",
-          "Elliptique"
+          "de même sens que E",
+          "de sens opposé à E",
+          "perpendiculaire à E",
+          "négligeable, car l'électron est très léger"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "signe-charge-oublie", texte: "Oublier le signe de la charge : F = qE est de sens opposé à E quand q < 0" },
+          null,
+          { code: "force-perpendiculaire-champ", texte: "Croire que la force électrique est perpendiculaire au champ : F = qE lui est colinéaire" },
+          { code: "force-vs-masse", texte: "Confondre force et masse : la force électrique dépend de la charge, pas de la masse" }
+        ],
+        exp: "F = qE avec q = −e < 0 : la force est colinéaire au champ et de sens opposé. Attention : c'est le poids qui est négligeable devant la force électrique, pas l'inverse."
+      },
+      {
+        q: "Un électron (q = −1,6 × 10⁻¹⁹ C), parti du repos, est accéléré sous une tension U = 1,0 kV. D'après le théorème de l'énergie cinétique, son énergie cinétique finale vaut :",
+        opts: [
+          "1,0 × 10³ J",
+          "1,6 × 10⁻¹⁹ J",
+          "1,6 × 10⁻¹⁶ J",
+          "−1,6 × 10⁻¹⁶ J"
         ],
         ans: 2,
-        exp: "Lorsque la vitesse initiale est colinéaire à la force (donc à l'accélération), le mouvement reste rectiligne, ce qui est le principe de l'accélérateur linéaire."
+        pieges: [
+          { code: "energie-vs-tension", texte: "Confondre énergie et tension : il faut multiplier U par la charge" },
+          { code: "oubli-tension", texte: "Oublier de multiplier par U : 1,6 × 10⁻¹⁹ J est l'énergie gagnée sous 1 V" },
+          null,
+          { code: "energie-cinetique-negative", texte: "Garder un signe négatif : une énergie cinétique est toujours positive" }
+        ],
+        exp: "ΔEc = W(F) = |q| × U = 1,6 × 10⁻¹⁹ × 1,0 × 10³ = 1,6 × 10⁻¹⁶ J, et Ec initiale = 0. Attention : Ec = ½ m v² ne peut pas être négative ; le travail est moteur ici."
+      },
+      {
+        q: "Un proton (m = 1,67 × 10⁻²⁷ kg, q = 1,6 × 10⁻¹⁹ C), parti du repos, est accéléré sous une tension U = 1,0 kV. Avec ½ m v² = q U, sa vitesse finale vaut :",
+        opts: [
+          "1,9 × 10¹¹ m·s⁻¹",
+          "3,1 × 10⁵ m·s⁻¹",
+          "4,4 × 10⁵ m·s⁻¹",
+          "1,4 × 10⁴ m·s⁻¹"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-racine", texte: "Oublier la racine carrée : 2qU / m = 1,9 × 10¹¹ donne v², pas v" },
+          { code: "oubli-facteur-un-demi", texte: "Oublier le facteur ½ de l'énergie cinétique : v = √(qU / m)" },
+          null,
+          { code: "conversion-kv-v", texte: "Laisser U en kV : √(2 × 1,6 × 10⁻¹⁹ × 1,0 / 1,67 × 10⁻²⁷)" }
+        ],
+        exp: "v = √(2qU / m) = √(2 × 1,6 × 10⁻¹⁹ × 1,0 × 10³ / 1,67 × 10⁻²⁷) ≈ 4,4 × 10⁵ m·s⁻¹. Attention : U en volts, et ne pas oublier la racine (une vitesse supérieure à c = 3,0 × 10⁸ m·s⁻¹ est impossible)."
       }
     ],
     annales: [
@@ -7734,114 +7974,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Selon la première loi de Kepler, la trajectoire d'une planète autour du Soleil est :",
+        q: "D'après la première loi de Kepler, dans le référentiel héliocentrique, une planète décrit :",
         opts: [
-          "Un cercle centré sur le Soleil",
-          "Une ellipse dont le Soleil occupe un foyer",
-          "Une parabole",
-          "Une droite"
+          "un cercle centré sur le Soleil",
+          "une ellipse dont le Soleil occupe le centre",
+          "une ellipse dont le Soleil occupe un des foyers",
+          "une ellipse, quel que soit le référentiel d'étude"
         ],
-        ans: 1,
-        exp: "La première loi de Kepler énonce que les planètes décrivent des trajectoires elliptiques dont le Soleil occupe l'un des foyers."
+        ans: 2,
+        pieges: [
+          { code: "orbite-cercle-centre", texte: "Croire que les orbites sont des cercles centrés sur le Soleil : ce sont des ellipses (parfois presque circulaires)" },
+          { code: "ellipse-centre-vs-foyer", texte: "Placer le Soleil au centre de l'ellipse : il occupe un de ses foyers" },
+          null,
+          { code: "trajectoire-independante-referentiel", texte: "Oublier le référentiel : les lois de Kepler sont énoncées dans le référentiel héliocentrique" }
+        ],
+        exp: "Première loi : orbite elliptique dont le Soleil occupe un foyer, dans le référentiel héliocentrique. Attention : le Soleil n'est pas au centre de l'ellipse."
       },
       {
-        q: "La loi des aires (deuxième loi de Kepler) implique que la vitesse d'une planète est :",
+        q: "D'après la loi des aires (deuxième loi de Kepler), la vitesse d'une planète sur son orbite elliptique est :",
         opts: [
-          "Constante tout au long de sa trajectoire",
-          "Maximale au périhélie et minimale à l'aphélie",
-          "Maximale à l'aphélie et minimale au périhélie",
-          "Toujours nulle"
+          "constante, puisque les aires balayées en des durées égales sont égales",
+          "maximale à l'aphélie, minimale au périhélie",
+          "maximale au périhélie, minimale à l'aphélie",
+          "nulle à l'aphélie, où la planète fait demi-tour"
         ],
-        ans: 1,
-        exp: "Le rayon vecteur balaie des aires égales en durées égales : la planète va donc plus vite lorsqu'elle est proche du Soleil (périhélie) et plus lentement lorsqu'elle en est éloignée (aphélie)."
+        ans: 2,
+        pieges: [
+          { code: "aires-egales-vitesse-constante", texte: "Croire que des aires égales impliquent une vitesse constante : près du Soleil, l'arc parcouru est plus long" },
+          { code: "perihelie-aphelie-inverses", texte: "Inverser périhélie (point le plus proche du Soleil) et aphélie (le plus éloigné)" },
+          null,
+          { code: "vitesse-nulle-sommet", texte: "Croire que la vitesse s'annule au point le plus éloigné, comme au sommet d'un lancer : la planète ne s'arrête jamais" }
+        ],
+        exp: "Pour balayer la même aire en une même durée, la planète parcourt un arc plus long quand elle est proche du Soleil : elle va plus vite au périhélie. Attention : aires égales ne veut pas dire distances égales."
       },
       {
-        q: "La troisième loi de Kepler s'écrit :",
+        q: "La troisième loi de Kepler, pour des corps en orbite autour d'un astre de masse M, s'écrit :",
         opts: [
+          "T² / a³ = 4π² / (G × M)",
+          "T² / a³ = 4π² / (G × m), m masse du satellite",
           "T / a = constante",
-          "T² / a³ = constante",
-          "T³ / a² = constante",
-          "T × a = constante"
+          "T³ / a² = constante"
         ],
-        ans: 1,
-        exp: "La troisième loi de Kepler relie le carré de la période au cube du demi-grand axe : T²/a³ = 4π²/(GM), une constante qui ne dépend que de la masse de l'astre attracteur."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "orbite-depend-masse-satellite", texte: "Croire que l'orbite dépend de la masse du satellite : seule la masse M de l'astre attracteur intervient" },
+          { code: "kepler-proportionnalite-simple", texte: "Croire que T est proportionnelle à a : c'est T² qui est proportionnel à a³" },
+          { code: "kepler-exposants-inverses", texte: "Inverser les exposants : le carré porte sur la période, le cube sur le demi-grand axe" }
+        ],
+        exp: "T² / a³ = 4π² / (G M) : la constante ne dépend que de l'astre attracteur. Attention : tous les satellites d'un même astre ont la même valeur de T² / a³, quelle que soit leur masse."
       },
       {
-        q: "Pour un satellite en orbite circulaire autour de la Terre, le mouvement est uniforme car :",
+        q: "Un satellite décrit une orbite circulaire autour de la Terre. Son mouvement est uniforme car :",
         opts: [
-          "La force gravitationnelle a une composante tangentielle non nulle",
-          "La force gravitationnelle est purement centripète (normale)",
-          "Il n'y a aucune force appliquée",
-          "La masse du satellite varie"
+          "aucune force ne s'exerce sur lui dans le vide spatial",
+          "une force motrice compense l'attraction terrestre",
+          "la force centrifuge compense exactement son poids",
+          "la force de gravitation est à chaque instant perpendiculaire à sa vitesse"
         ],
-        ans: 1,
-        exp: "La force gravitationnelle, dirigée vers le centre de la Terre, est purement normale : l'accélération tangentielle est nulle, donc la norme de la vitesse est constante (mouvement uniforme)."
+        ans: 3,
+        pieges: [
+          { code: "pas-de-gravite-en-orbite", texte: "Croire qu'il n'y a pas de gravité en orbite : c'est elle qui courbe la trajectoire du satellite" },
+          { code: "force-sens-mouvement", texte: "Croire qu'un mouvement nécessite une force dans son sens : aucune force motrice n'est nécessaire" },
+          { code: "satellite-forces-compensees", texte: "Croire que les forces se compensent : si c'était le cas, le satellite irait en ligne droite" },
+          null
+        ],
+        exp: "La seule force est la gravitation, dirigée vers le centre de la Terre, donc perpendiculaire à la vitesse : at = 0 (v constante) et an = v²/r. Attention : les forces ne se compensent pas, sinon le mouvement serait rectiligne."
       },
       {
-        q: "Un satellite géostationnaire a une période de révolution égale à :",
+        q: "Pour un satellite en orbite circulaire de rayon r autour d'un astre de masse M, la vitesse vaut :",
         opts: [
-          "1 heure",
-          "Le jour sidéral (environ 23 h 56 min)",
-          "1 mois lunaire",
-          "1 an"
+          "v = G × M / r",
+          "v = √(G × M / r)",
+          "v = √(G × M / r²)",
+          "v = √(G × M × m / r)"
         ],
         ans: 1,
-        exp: "Un satellite géostationnaire a une période de révolution égale à la période de rotation propre de la Terre, le jour sidéral (≈ 86 164 s)."
+        pieges: [
+          { code: "oubli-racine", texte: "Oublier la racine carrée : G M / r donne v², pas v" },
+          null,
+          { code: "vitesse-vs-acceleration-gravitation", texte: "Confondre avec l'accélération G M / r² : on écrit v² / r = G M / r²" },
+          { code: "orbite-depend-masse-satellite", texte: "Faire intervenir la masse du satellite : elle se simplifie dans la deuxième loi de Newton" }
+        ],
+        exp: "La deuxième loi de Newton donne v² / r = G M / r², donc v = √(G M / r) : elle ne dépend pas de la masse du satellite. Attention à ne pas oublier la racine."
       },
       {
-        q: "L'orbite d'un satellite géostationnaire est :",
+        q: "Un satellite orbite à l'altitude h = 600 km au-dessus de la Terre (RT = 6 400 km, M = 5,97 × 10²⁴ kg, G = 6,67 × 10⁻¹¹ N·m²·kg⁻²). Sa vitesse vaut environ :",
         opts: [
-          "Polaire et elliptique",
-          "Équatoriale et circulaire",
-          "Quelconque, à toute altitude",
-          "Toujours au-dessus des pôles"
+          "7,5 × 10³ m·s⁻¹",
+          "5,7 × 10⁷ m·s⁻¹",
+          "2,6 × 10⁴ m·s⁻¹",
+          "2,4 × 10⁵ m·s⁻¹"
         ],
-        ans: 1,
-        exp: "Un satellite géostationnaire décrit une orbite circulaire, contenue dans le plan équatorial, et dans le même sens que la rotation de la Terre."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oubli-racine", texte: "Oublier la racine carrée : G M / r = 5,7 × 10⁷ donne v², pas v" },
+          { code: "altitude-vs-rayon-orbite", texte: "Prendre r = h au lieu de r = RT + h : la distance se mesure depuis le centre de la Terre" },
+          { code: "conversion-km-m", texte: "Oublier de convertir r en mètres : r = 7 000 au lieu de 7,0 × 10⁶ m" }
+        ],
+        exp: "r = RT + h = 7,0 × 10⁶ m ; v = √(G M / r) = √(6,67 × 10⁻¹¹ × 5,97 × 10²⁴ / 7,0 × 10⁶) ≈ 7,5 × 10³ m·s⁻¹. Attention : r est la distance au centre de la Terre, en mètres."
       },
       {
-        q: "L'altitude d'un satellite géostationnaire autour de la Terre :",
+        q: "Un satellite a un demi-grand axe a = 8,0 × 10³ km autour de la Terre (M = 5,97 × 10²⁴ kg, G = 6,67 × 10⁻¹¹ N·m²·kg⁻²). Avec T = 2π √(a³ / (G M)), sa période vaut environ :",
         opts: [
-          "Dépend de la masse du satellite",
-          "Est unique, environ 36 000 km, indépendante de sa masse",
-          "Varie selon la saison",
-          "Est toujours égale au rayon terrestre"
+          "7,1 × 10³ s",
+          "0,23 s",
+          "8,1 × 10⁶ s",
+          "1,1 × 10³ s"
         ],
-        ans: 1,
-        exp: "D'après la 3e loi de Kepler, T²/a³ ne dépend que de la masse de l'astre attracteur : tous les satellites géostationnaires ont donc la même altitude, environ 35 800 km."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-km-m", texte: "Oublier de convertir a en mètres : a = 8 000 m au lieu de 8,0 × 10⁶ m" },
+          { code: "oubli-racine", texte: "Oublier la racine carrée : 2π × a³ / (G M)" },
+          { code: "oubli-2pi", texte: "Oublier le facteur 2π : √(a³ / (G M)) = 1,1 × 10³ s" }
+        ],
+        exp: "a = 8,0 × 10⁶ m ; T = 2π √((8,0 × 10⁶)³ / (6,67 × 10⁻¹¹ × 5,97 × 10²⁴)) ≈ 7,1 × 10³ s, soit environ 2 h. Attention aux conversions : les distances en mètres."
       },
       {
-        q: "Pour un satellite en orbite circulaire de rayon r autour d'un astre de masse M, la vitesse orbitale s'écrit :",
+        q: "Un satellite géostationnaire :",
         opts: [
-          "v = G×M/r",
-          "v = √(G×M/r)",
-          "v = G×M×r",
-          "v = √(r/(G×M))"
+          "est immobile dans le référentiel géocentrique",
+          "a une orbite circulaire, dans le plan de l'équateur, de période égale à la rotation propre de la Terre",
+          "peut avoir une orbite polaire, si sa période vaut 24 h",
+          "a une orbite dont le plan peut être quelconque, si sa période vaut 24 h"
         ],
         ans: 1,
-        exp: "En écrivant l'égalité entre l'accélération centripète v²/r et l'accélération due à la gravitation G×M/r², on obtient v = √(GM/r)."
+        pieges: [
+          { code: "geostationnaire-referentiel", texte: "Confondre les référentiels : il est immobile dans le référentiel terrestre, mais tourne dans le référentiel géocentrique" },
+          null,
+          { code: "geostationnaire-orbite-polaire", texte: "Croire qu'une orbite polaire peut être géostationnaire : le satellite passerait au-dessus des pôles" },
+          { code: "geostationnaire-plan-quelconque", texte: "Croire que la période suffit : il faut aussi une orbite équatoriale, circulaire et dans le sens de rotation de la Terre" }
+        ],
+        exp: "Géostationnaire : orbite circulaire, équatoriale, parcourue dans le sens de rotation de la Terre, avec T = 1 jour sidéral (≈ 23 h 56 min). Attention : il est fixe pour un observateur terrestre, pas dans le référentiel géocentrique."
       },
       {
-        q: "Un satellite a un demi-grand axe a = 8,0×10³ km autour de la Terre (M = 5,97×10²⁴ kg, G = 6,67×10⁻¹¹ N·m²·kg⁻²). Sa période de révolution est proche de :",
+        q: "On veut placer en orbite géostationnaire un satellite deux fois plus lourd qu'un autre déjà en place. Il faut le placer :",
         opts: [
-          "24 h",
-          "Environ 2 h",
-          "Environ 6 min",
-          "Environ 100 jours"
+          "à la même altitude",
+          "plus bas, car il est plus attiré par la Terre",
+          "à n'importe quelle altitude, pourvu que l'orbite soit équatoriale",
+          "à la même altitude, mais avec une vitesse deux fois plus faible"
         ],
-        ans: 1,
-        exp: "T = 2π√(a³/(GM)) ≈ 2π×√(5,12×10²⁰ / 3,98×10¹⁴) ≈ 2π×1134 ≈ 7,1×10³ s, soit environ 2 heures."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "orbite-depend-masse-satellite", texte: "Croire que l'orbite dépend de la masse du satellite : seule la masse M de l'astre attracteur intervient" },
+          { code: "geostationnaire-plan-quelconque", texte: "Croire que l'orbite équatoriale suffit : la période impose aussi le rayon de l'orbite (3ᵉ loi de Kepler)" },
+          { code: "vitesse-depend-masse-satellite", texte: "Croire que la vitesse orbitale dépend de la masse du satellite : v = √(G M / r)" }
+        ],
+        exp: "T imposé (1 jour sidéral) et T² / a³ = 4π² / (G M) : le rayon de l'orbite est unique (altitude ≈ 36 000 km), sans faire intervenir la masse du satellite. Attention : plus lourd ne veut pas dire « tombe plus vite »."
       },
       {
-        q: "Les lois de Kepler, énoncées pour les planètes du système solaire, s'appliquent :",
+        q: "La Station spatiale internationale (ISS) orbite à environ 400 km d'altitude (RT = 6 400 km). À cette altitude, l'intensité de la pesanteur terrestre vaut :",
         opts: [
-          "Uniquement au Soleil et à ses planètes",
-          "À tout système à deux corps en interaction gravitationnelle (planète-satellite, Terre-Lune, etc.)",
-          "Uniquement aux satellites artificiels",
-          "Uniquement aux trajectoires circulaires"
+          "environ 89 % de sa valeur au sol",
+          "zéro : les astronautes flottent",
+          "zéro, car il n'y a plus d'air",
+          "zéro, car la force centrifuge compense le poids"
         ],
-        ans: 1,
-        exp: "Les lois de Kepler se généralisent à tout astre en orbite autour d'un corps attracteur plus massif : Lune et satellites autour de la Terre, par exemple."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "pas-de-gravite-en-orbite", texte: "Croire qu'il n'y a pas de gravité en orbite : les astronautes flottent parce qu'ils tombent avec la station" },
+          { code: "gravite-liee-atmosphere", texte: "Croire que la gravité est due à l'air : elle agit aussi dans le vide" },
+          { code: "satellite-forces-compensees", texte: "Croire que les forces se compensent : si c'était le cas, la station irait en ligne droite" }
+        ],
+        exp: "g ∝ 1/r² : g(h)/g₀ = (6 400 / 6 800)² ≈ 0,89. Les astronautes « flottent » car la station et eux tombent ensemble autour de la Terre, avec la même accélération. Attention : apesanteur ne veut pas dire absence de pesanteur."
       }
     ],
     annales: [
