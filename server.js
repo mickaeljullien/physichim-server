@@ -6,7 +6,7 @@
 // Deux bases PostgreSQL distinctes, volontairement séparées :
 //   - APP_DATABASE_URL   : admins, classes, classe_chapitres
 //     — la configuration de l'appli et des comptes enseignants.
-//   - STUDENT_DATABASE_URL : eleves, quiz_scores, notes, progression
+//   - STUDENT_DATABASE_URL : eleves, quiz_scores, notes, progression, connexions, erreurs_quiz
 //     — les données élèves proprement dites, isolées sur un service à part.
 // Conséquence : impossible de faire un JOIN SQL entre une classe et ses élèves
 // (bases différentes) ; ces jointures sont donc faites en mémoire, côté JS,
@@ -139,6 +139,19 @@ async function initStudentDB() {
       eleve_id TEXT NOT NULL REFERENCES eleves(id) ON DELETE CASCADE,
       date TIMESTAMPTZ NOT NULL DEFAULT now()
     );
+    -- Erreurs fréquentes : une ligne par mauvaise réponse de quiz qui correspond à un
+    -- « piège » connu (champ pieges des questions dans index.html). code = identifiant
+    -- stable de l'erreur (survit à une reformulation du texte), texte = libellé affiché.
+    -- date = celle du score enregistré dans le même envoi.
+    CREATE TABLE IF NOT EXISTS erreurs_quiz (
+      id SERIAL PRIMARY KEY,
+      eleve_id TEXT NOT NULL REFERENCES eleves(id) ON DELETE CASCADE,
+      chapitre_id INTEGER NOT NULL,
+      code TEXT NOT NULL,
+      texte TEXT NOT NULL,
+      date TIMESTAMPTZ NOT NULL DEFAULT now()
+    );
+    CREATE INDEX IF NOT EXISTS idx_erreurs_quiz_eleve_chapitre ON erreurs_quiz(eleve_id, chapitre_id, date);
     CREATE INDEX IF NOT EXISTS idx_connexions_date ON connexions(date);
     CREATE INDEX IF NOT EXISTS idx_quiz_scores_eleve ON quiz_scores(eleve_id);
     CREATE INDEX IF NOT EXISTS idx_notes_eleve ON notes(eleve_id);
@@ -187,6 +200,32 @@ function chapitreIdsDuNiveau(niveau) {
 // Un chapitre_id reçu d'un élève doit correspondre à un chapitre existant d'un des niveaux.
 function isChapitreIdValide(id) {
   return Number.isInteger(id) && Object.values(NIVEAU_RANGES).some(([a, b]) => id >= a && id <= b);
+}
+
+// ── Erreurs fréquentes aux quiz ────────────────────────────
+// Mêmes règles que index.html (normaliserPiege) et l'outil quiz_tool.js du skill.
+const PIEGE_CODE_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const PIEGE_CODE_MAX = 60;
+const PIEGE_TEXTE_MAX = 300;
+const MAX_ERREURS_PAR_QUIZ = 10;
+
+// Liste d'erreurs envoyée avec un score : [{ code, texte }]. Renvoie la liste nettoyée,
+// [] si absente, ou null si quoi que ce soit est invalide (tout l'envoi est alors refusé).
+// Pas plus d'erreurs que de mauvaises réponses (total - score).
+function erreursQuizValides(erreurs, nbMauvaises) {
+  if (erreurs === undefined) return [];
+  if (!Array.isArray(erreurs) || erreurs.length > MAX_ERREURS_PAR_QUIZ || erreurs.length > nbMauvaises) return null;
+  const out = [];
+  for (const e of erreurs) {
+    if (!e || typeof e !== 'object' || Array.isArray(e)) return null;
+    const { code, texte } = e;
+    if (typeof code !== 'string' || code.length > PIEGE_CODE_MAX || !PIEGE_CODE_RE.test(code)) return null;
+    if (typeof texte !== 'string') return null;
+    const t = texte.trim();
+    if (!t || t.length > PIEGE_TEXTE_MAX) return null;
+    out.push({ code, texte: t });
+  }
+  return out;
 }
 
 // Niveaux déjà couverts avant celui-ci (ex: 'tle' -> ['2nde', '1ere'])
@@ -563,8 +602,8 @@ async function router(req, res) {
     });
   }
 
-  // ── API : Sauvegarder un score de quiz ──
-  // POST /api/quiz  { eleve_id, chapitre_id, score, total }
+  // ── API : Sauvegarder un score de quiz (et les erreurs fréquentes commises) ──
+  // POST /api/quiz  { eleve_id, chapitre_id, score, total, erreurs?: [{ code, texte }] }
   if (p === '/api/quiz' && method === 'POST') {
     const body = await parseBody(req);
     const { eleve_id, chapitre_id, score, total } = body;
@@ -579,10 +618,25 @@ async function router(req, res) {
       || !Number.isInteger(score) || score < 0 || score > totalQuiz) {
       return json(res, 400, { error: 'Données invalides' });
     }
+    const erreurs = erreursQuizValides(body.erreurs, totalQuiz - score);
+    if (!erreurs) return json(res, 400, { error: 'Données invalides' });
     const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
 
-    await studentDb.run('INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4)', [eleve_id, chapitre_id, score, totalQuiz]);
+    if (erreurs.length) {
+      // Une seule requête : score et erreurs sont enregistrés ensemble ou pas du tout
+      // (sinon un échec sur les erreurs, suivi d'un « Réessayer », doublerait le score).
+      await studentDb.run(
+        `WITH s AS (
+           INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4) RETURNING date
+         )
+         INSERT INTO erreurs_quiz (eleve_id, chapitre_id, code, texte, date)
+         SELECT $1, $2, x.code, x.texte, (SELECT date FROM s) FROM unnest($5::text[], $6::text[]) AS x(code, texte)`,
+        [eleve_id, chapitre_id, score, totalQuiz, erreurs.map(e => e.code), erreurs.map(e => e.texte)]
+      );
+    } else {
+      await studentDb.run('INSERT INTO quiz_scores (eleve_id, chapitre_id, score, total) VALUES ($1, $2, $3, $4)', [eleve_id, chapitre_id, score, totalQuiz]);
+    }
     await studentDb.run('UPDATE eleves SET last_seen = now() WHERE id = $1', [eleve_id]);
 
     return json(res, 201, { ok: true });
@@ -1024,6 +1078,85 @@ async function router(req, res) {
     return json(res, 200, result);
   }
 
+  // ══════════════════════════════════════════════════════════
+  // ERREURS FRÉQUENTES AUX QUIZ (scoped à l'enseignant connecté)
+  // ══════════════════════════════════════════════════════════
+
+  // ── Erreurs fréquentes d'une classe ──
+  // GET /api/admin/classes/:id/erreurs?periode=tout|30j[&chapitre_id=7]
+  // Toujours : par chapitre, le nombre d'élèves distincts de la classe ayant commis au moins
+  // une erreur repérée. Avec chapitre_id : chaque erreur de ce chapitre, avec le nombre et le
+  // pourcentage d'élèves distincts concernés et leur liste, triée par fréquence.
+  if (p.match(/^\/api\/admin\/classes\/[^/]+\/erreurs$/) && method === 'GET') {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    const classeId = p.split('/')[4];
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
+    if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
+
+    const periode = url.searchParams.get('periode') || 'tout';
+    if (periode !== 'tout' && periode !== '30j') return json(res, 400, { error: 'Période invalide (tout ou 30j)' });
+    const chapitreParam = url.searchParams.get('chapitre_id');
+    const chapitreId = chapitreParam === null ? null : Number(chapitreParam);
+    if (chapitreParam !== null && (!/^\d{1,3}$/.test(chapitreParam) || !isChapitreIdValide(chapitreId))) {
+      return json(res, 400, { error: 'Chapitre invalide' });
+    }
+    const depuis = periode === '30j' ? new Date(Date.now() - 30 * 86400000).toISOString() : null;
+
+    const eleves = await studentDb.all('SELECT id, code, pseudo FROM eleves WHERE classe_id = $1 ORDER BY pseudo', [classeId]);
+    const eleveIds = eleves.map(e => e.id);
+    const nbEleves = eleves.length;
+    const pct = n => (nbEleves ? Math.round((100 * n) / nbEleves) : 0);
+
+    const parChapitre = await studentDb.all(
+      `SELECT chapitre_id, COUNT(DISTINCT eleve_id)::int AS nb_eleves, COUNT(*)::int AS nb_erreurs
+       FROM erreurs_quiz WHERE eleve_id = ANY($1::text[]) AND ($2::timestamptz IS NULL OR date >= $2)
+       GROUP BY chapitre_id ORDER BY nb_eleves DESC, chapitre_id`,
+      [eleveIds, depuis]
+    );
+    const result = {
+      classe: { id: classe.id, nom: classe.nom, niveau: classe.niveau },
+      periode, nbEleves,
+      chapitres: parChapitre.map(c => ({ ...c, pct: pct(c.nb_eleves) })),
+      chapitre: null
+    };
+
+    if (chapitreId !== null) {
+      const rows = await studentDb.all(
+        `SELECT eleve_id, code, texte, date FROM erreurs_quiz
+         WHERE eleve_id = ANY($1::text[]) AND chapitre_id = $2 AND ($3::timestamptz IS NULL OR date >= $3)
+         ORDER BY date DESC`,
+        [eleveIds, chapitreId, depuis]
+      );
+      const quizRow = await studentDb.get(
+        `SELECT COUNT(DISTINCT eleve_id)::int AS n FROM quiz_scores
+         WHERE eleve_id = ANY($1::text[]) AND chapitre_id = $2 AND ($3::timestamptz IS NULL OR date >= $3)`,
+        [eleveIds, chapitreId, depuis]
+      );
+      const elevesById = new Map(eleves.map(e => [e.id, e]));
+      const parCode = new Map();
+      for (const r of rows) {
+        if (!parCode.has(r.code)) parCode.set(r.code, { code: r.code, textes: new Map(), eleves: new Map(), nb_fois: 0 });
+        const g = parCode.get(r.code);
+        g.nb_fois++;
+        g.textes.set(r.texte, (g.textes.get(r.texte) || 0) + 1); // lignes triées par date décroissante
+        g.eleves.set(r.eleve_id, (g.eleves.get(r.eleve_id) || 0) + 1);
+      }
+      const erreurs = [...parCode.values()].map(g => {
+        // Libellé : le plus fréquent ; à égalité, le plus court, en général la formulation
+        // générale plutôt que le calcul erroné d'une question précise (même code dans plusieurs questions).
+        const texte = [...g.textes.entries()]
+          .reduce((a, b) => (b[1] > a[1] || (b[1] === a[1] && b[0].length < a[0].length) ? b : a))[0];
+        const liste = [...g.eleves.entries()]
+          .map(([id, nb]) => ({ id, code: elevesById.get(id).code, pseudo: elevesById.get(id).pseudo, nb_fois: nb }))
+          .sort((a, b) => b.nb_fois - a.nb_fois || a.pseudo.localeCompare(b.pseudo));
+        return { code: g.code, texte, nb_eleves: liste.length, pct: pct(liste.length), nb_fois: g.nb_fois, eleves: liste };
+      }).sort((a, b) => b.nb_eleves - a.nb_eleves || b.nb_fois - a.nb_fois || a.code.localeCompare(b.code));
+      result.chapitre = { chapitre_id: chapitreId, nb_eleves_quiz: quizRow ? quizRow.n : 0, erreurs };
+    }
+    return json(res, 200, result);
+  }
+
   // ── Changer la date limite d'un devoir ──
   // PUT /api/admin/devoirs/:id  { date_limite }
   // ── Supprimer un devoir ──
@@ -1101,7 +1234,8 @@ async function router(req, res) {
     if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     if (eleve.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
 
-    // ON DELETE CASCADE (Postgres) nettoie automatiquement quiz_scores/notes/progression.
+    // ON DELETE CASCADE (Postgres) nettoie automatiquement quiz_scores/notes/progression,
+    // connexions et erreurs_quiz.
     await studentDb.run('DELETE FROM eleves WHERE id = $1', [eleveId]);
     return json(res, 200, { ok: true });
   }
@@ -1173,7 +1307,7 @@ async function router(req, res) {
 
     let csv = 'Classe;Niveau;Code;Pseudo;Derniere_connexion;';
     csv += chapitres.map(i => `Ch${String(i).padStart(2,'0')}_meilleur_score`).join(';');
-    csv += ';Nb_notes;Moyenne_notes\n';
+    csv += ';Nb_notes;Moyenne_notes;Nb_erreurs_quiz;Erreurs_principales\n';
 
     const eleveIds = eleves.map(e => e.id);
     const scoresParEleve = groupBy(
@@ -1184,10 +1318,24 @@ async function router(req, res) {
       await studentDb.all('SELECT eleve_id, valeur FROM notes WHERE eleve_id = ANY($1::text[])', [eleveIds]),
       'eleve_id'
     );
+    // Erreurs fréquentes : total par élève et ses 3 erreurs les plus répétées (« Ch07 ph-7-equivalence ×3 »).
+    const erreursParEleve = groupBy(
+      await studentDb.all(
+        `SELECT eleve_id, chapitre_id, code, COUNT(*)::int AS n FROM erreurs_quiz
+         WHERE eleve_id = ANY($1::text[]) GROUP BY eleve_id, chapitre_id, code
+         ORDER BY n DESC, chapitre_id, code`,
+        [eleveIds]
+      ),
+      'eleve_id'
+    );
 
     const rows = eleves.map(e => {
       const scores = scoresParEleve.get(e.id) || [];
       const notes = notesParEleve.get(e.id) || [];
+      const erreurs = erreursParEleve.get(e.id) || [];
+      const nbErreurs = erreurs.reduce((a, r) => a + r.n, 0);
+      const erreursPrincipales = erreurs.slice(0, 3)
+        .map(r => `Ch${String(r.chapitre_id).padStart(2, '0')} ${r.code} ×${r.n}`).join(' | ');
       const avgNote = notes.length ? (notes.reduce((a,b) => a + b.valeur, 0) / notes.length).toFixed(2) : '';
 
       const scoreMap = {};
@@ -1195,7 +1343,8 @@ async function router(req, res) {
 
       const niveauLabelCsv = e.classe_niveau === '2nde' ? 'Seconde' : e.classe_niveau === '1ere' ? 'Première' : e.classe_niveau === 'tle' ? 'Terminale' : '';
       const cells = [csvField(e.classe_nom || 'Sans classe'), niveauLabelCsv, csvField(e.code), csvField(e.pseudo), e.last_seen,
-        ...chapitres.map(i => scoreMap[i] !== undefined ? scoreMap[i] : ''), notes.length, avgNote];
+        ...chapitres.map(i => scoreMap[i] !== undefined ? scoreMap[i] : ''), notes.length, avgNote,
+        nbErreurs, csvField(erreursPrincipales)];
       return cells.join(';');
     });
     csv += rows.join('\n') + '\n';
@@ -1236,6 +1385,7 @@ async function router(req, res) {
     if (eleve.admin_id !== admin.id) return json(res, 403, { error: 'Non autorisé' });
 
     await studentDb.run('DELETE FROM quiz_scores WHERE eleve_id = $1', [eleveId]);
+    await studentDb.run('DELETE FROM erreurs_quiz WHERE eleve_id = $1', [eleveId]);
     await studentDb.run('DELETE FROM notes WHERE eleve_id = $1', [eleveId]);
     await studentDb.run('DELETE FROM progression WHERE eleve_id = $1', [eleveId]);
     return json(res, 200, { ok: true });

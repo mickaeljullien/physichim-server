@@ -97,10 +97,34 @@
   ::-webkit-scrollbar{width:4px;height:4px}
   ::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 
+  /* Erreurs fréquentes */
+  .err-filtres{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px}
+  .err-filtres .form-group{margin-bottom:0;min-width:180px;flex:1}
+  .err-item{border:1px solid var(--border);border-radius:8px;margin-bottom:8px;background:var(--surface2)}
+  .err-head{display:flex;gap:12px;align-items:center;width:100%;padding:10px 12px;background:none;border:none;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.85rem;text-align:left;cursor:pointer;border-radius:8px}
+  .err-head:hover{background:rgba(255,255,255,.03)}
+  .err-head:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+  .err-texte{flex:1;min-width:0;line-height:1.4;overflow-wrap:anywhere}
+  .err-code{display:block;font-family:'DM Mono',monospace;font-size:.7rem;color:var(--muted);margin-top:2px}
+  .err-stat{display:flex;flex-direction:column;align-items:flex-end;gap:4px;min-width:96px}
+  .err-nb{font-family:'DM Mono',monospace;font-size:.8rem;font-weight:600;white-space:nowrap}
+  .err-bar{width:96px;height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+  .err-bar span{display:block;height:100%;background:var(--red);border-radius:3px}
+  .err-chev{color:var(--muted);font-size:.8rem;transition:transform .15s}
+  .err-head[aria-expanded="true"] .err-chev{transform:rotate(90deg)}
+  .err-eleves{padding:0 12px 10px 12px;display:flex;flex-wrap:wrap;gap:6px}
+  .err-eleves[hidden]{display:none}
+
   @media(max-width:600px){
     .stats-grid{grid-template-columns:1fr 1fr}
     .add-eleve-row{flex-direction:column}
     .add-eleve-row .form-group{width:100%}
+    .tabs{flex-wrap:wrap;width:auto}
+    .err-filtres .form-group{min-width:100%}
+    .err-head{flex-wrap:wrap}
+    .err-stat{flex-direction:row;align-items:center;min-width:0;width:100%;justify-content:space-between}
+    .err-bar{flex:1;width:auto;margin-left:8px}
+    .err-chev{display:none}
   }
 </style>
 </head>
@@ -228,6 +252,7 @@
       <button class="tab" id="tab-eleves" onclick="switchTab('eleves')">👤 Élèves</button>
       <button class="tab" id="tab-scores" onclick="switchTab('scores')">📊 Scores quiz</button>
       <button class="tab" id="tab-notes" onclick="switchTab('notes')">📝 Notes</button>
+      <button class="tab" id="tab-erreurs" onclick="switchTab('erreurs')">⚠️ Erreurs fréquentes</button>
     </div>
 
     <!-- Onglet Classes -->
@@ -308,6 +333,32 @@
             <tbody id="notes-tbody"></tbody>
           </table>
         </div>
+      </div>
+    </div>
+
+    <!-- Onglet Erreurs fréquentes -->
+    <div id="pane-erreurs" style="display:none">
+      <div class="card">
+        <div class="card-title">⚠️ Erreurs fréquentes aux quiz</div>
+        <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Chaque mauvaise réponse d'un quiz relu correspond à une erreur d'élève connue. Pour chaque erreur : le nombre d'élèves de la classe qui l'ont commise au moins une fois. Cliquez sur une erreur pour voir les élèves concernés. Seuls les chapitres dont le quiz identifie les erreurs sont suivis.</p>
+        <div class="err-filtres">
+          <div class="form-group">
+            <label class="form-label" for="err-classe">Classe</label>
+            <select class="form-select" id="err-classe" onchange="errChoix.classe = this.value; errChoix.chapitre = null; loadErreurs()"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="err-periode">Période</label>
+            <select class="form-select" id="err-periode" onchange="loadErreurs()">
+              <option value="tout">Depuis le début</option>
+              <option value="30j">30 derniers jours</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="err-chapitre">Chapitre</label>
+            <select class="form-select" id="err-chapitre" onchange="errChoix.chapitre = this.value ? Number(this.value) : null; loadErreurs()"></select>
+          </div>
+        </div>
+        <div id="err-resultats"></div>
       </div>
     </div>
   </div>
@@ -875,6 +926,7 @@ function openClasse(id) {
         <div style="color:var(--muted);font-size:.82rem">${eleves.length} élève${eleves.length===1?'':'s'}</div>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button class="btn btn-secondary btn-sm" onclick="voirErreursClasse('${c.id}')">⚠️ Erreurs fréquentes</button>
         <button class="btn btn-secondary btn-sm" onclick="exportCSV('${c.id}')">📥 Export CSV</button>
         ${c.niveau !== 'tle' ? `<button class="btn btn-secondary btn-sm" onclick="promouvoirClasse('${c.id}')">🎓 Promouvoir en ${niveauLabel(NIVEAU_ORDER[NIVEAU_ORDER.indexOf(c.niveau)+1])}</button>` : ''}
         <button class="btn btn-danger btn-sm" onclick="deleteClasse('${c.id}')">✕ Supprimer la classe</button>
@@ -1363,7 +1415,7 @@ async function confirmBulkImport() {
 async function resetEleve(id) {
   const e = DATA.find(x => x.id === id);
   const pseudo = e ? e.pseudo : id;
-  if (!confirm(`Réinitialiser toutes les données de ${pseudo} ?\n(quiz, notes, progression)\nCette action est irréversible.`)) return;
+  if (!confirm(`Réinitialiser toutes les données de ${pseudo} ?\n(quiz, erreurs fréquentes, notes, progression)\nCette action est irréversible.`)) return;
   const r = await fetch(`${SERVER}/api/admin/eleves/${id}/reset`, { method:'POST', headers:headers() });
   if (r.ok) { await refreshData(); if (currentClasseId) openClasse(currentClasseId); }
 }
@@ -1399,12 +1451,110 @@ function exportCSV(classeId) {
     .catch(() => {});
 }
 
+// ── Erreurs fréquentes ───────────────────────────────────
+// Choix courant (classe, chapitre) et dernière réponse du serveur.
+const errChoix = { classe: null, chapitre: null };
+let errDonnees = null;
+let errRequete = 0;
+
+function chapitreNom(id) {
+  const c = CH_META.find(x => x.id === id);
+  return c ? `${c.name} (${niveauLabel(c.niveau)})` : `Chapitre ${id}`;
+}
+
+// Ouvre l'onglet sur une classe donnée (bouton de la fiche classe).
+function voirErreursClasse(classeId) {
+  errChoix.classe = classeId;
+  errChoix.chapitre = null;
+  showList();
+  switchTab('erreurs');
+}
+
+function remplirClassesErreurs() {
+  const sel = document.getElementById('err-classe');
+  if (!CLASSES.length) { sel.innerHTML = '<option value="">Aucune classe</option>'; return false; }
+  if (!CLASSES.some(c => c.id === errChoix.classe)) errChoix.classe = CLASSES[0].id;
+  sel.innerHTML = CLASSES.map(c => `<option value="${escapeHtml(c.id)}" ${c.id === errChoix.classe ? 'selected' : ''}>${escapeHtml(c.nom)} — ${niveauLabel(c.niveau)}</option>`).join('');
+  return true;
+}
+
+async function loadErreurs() {
+  const box = document.getElementById('err-resultats');
+  if (!remplirClassesErreurs()) {
+    document.getElementById('err-chapitre').innerHTML = '';
+    box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Créez une classe pour suivre les erreurs de ses élèves.</p>';
+    return;
+  }
+  const periode = document.getElementById('err-periode').value;
+  const params = new URLSearchParams({ periode });
+  if (errChoix.chapitre !== null) params.set('chapitre_id', errChoix.chapitre);
+  const num = ++errRequete;
+  box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Chargement…</p>';
+  let r;
+  try { r = await fetch(`${SERVER}/api/admin/classes/${encodeURIComponent(errChoix.classe)}/erreurs?${params}`, { headers: headers() }); }
+  catch (e) { r = null; }
+  if (num !== errRequete) return; // un autre choix a été fait entre-temps
+  if (!r || !r.ok) { box.innerHTML = '<p style="color:var(--red);font-size:.82rem">Impossible de charger les erreurs.</p>'; return; }
+  errDonnees = await r.json();
+  // Sans chapitre choisi : on ouvre directement le chapitre où le plus d'élèves se trompent.
+  if (errChoix.chapitre === null && errDonnees.chapitres.length) {
+    errChoix.chapitre = errDonnees.chapitres[0].chapitre_id;
+    return loadErreurs();
+  }
+  renderErreurs();
+}
+
+function renderErreurs() {
+  const d = errDonnees;
+  const selChap = document.getElementById('err-chapitre');
+  const box = document.getElementById('err-resultats');
+  const chapitres = d.chapitres.slice();
+  // Chapitre choisi mais sans erreur sur la période : on le garde dans la liste.
+  if (errChoix.chapitre !== null && !chapitres.some(c => c.chapitre_id === errChoix.chapitre)) {
+    chapitres.push({ chapitre_id: errChoix.chapitre, nb_eleves: 0, pct: 0 });
+  }
+  selChap.innerHTML = chapitres.length
+    ? chapitres.map(c => `<option value="${c.chapitre_id}" ${c.chapitre_id === errChoix.chapitre ? 'selected' : ''}>${escapeHtml(chapitreNom(c.chapitre_id))} — ${c.nb_eleves} élève${c.nb_eleves === 1 ? '' : 's'}</option>`).join('')
+    : '<option value="">Aucun chapitre</option>';
+
+  const periodeTxt = d.periode === '30j' ? 'sur les 30 derniers jours' : 'depuis le début';
+  if (!d.nbEleves) { box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Aucun élève dans cette classe.</p>'; return; }
+  if (!d.chapitre || !d.chapitre.erreurs.length) {
+    box.innerHTML = `<p style="color:var(--muted);font-size:.82rem">Aucune erreur fréquente enregistrée pour cette classe ${periodeTxt}.</p>`;
+    return;
+  }
+  const ch = d.chapitre;
+  box.innerHTML = `
+    <p style="color:var(--muted);font-size:.8rem;margin-bottom:10px">${escapeHtml(chapitreNom(ch.chapitre_id))} · ${periodeTxt} · ${ch.nb_eleves_quiz} élève${ch.nb_eleves_quiz === 1 ? '' : 's'} sur ${d.nbEleves} ${ch.nb_eleves_quiz === 1 ? 'a' : 'ont'} fait le quiz. Pourcentages calculés sur ${d.nbEleves === 1 ? "l'unique élève" : `les ${d.nbEleves} élèves`} de la classe.</p>
+    ${ch.erreurs.map((e, i) => `
+      <div class="err-item">
+        <button class="err-head" aria-expanded="false" aria-controls="err-eleves-${i}" onclick="toggleErreurEleves(this)">
+          <span class="err-texte">${escapeHtml(e.texte)}<span class="err-code">${escapeHtml(e.code)} · commise ${e.nb_fois} fois</span></span>
+          <span class="err-stat">
+            <span class="err-nb">${e.nb_eleves} élève${e.nb_eleves === 1 ? '' : 's'} · ${e.pct} %</span>
+            <span class="err-bar"><span style="width:${Math.min(100, e.pct)}%"></span></span>
+          </span>
+          <span class="err-chev" aria-hidden="true">▶</span>
+        </button>
+        <div class="err-eleves" id="err-eleves-${i}" hidden>
+          ${e.eleves.map(el => `<span class="badge badge-gray" title="${escapeHtml(el.code)}">${escapeHtml(el.pseudo)}${el.nb_fois > 1 ? ' ×' + el.nb_fois : ''}</span>`).join('')}
+        </div>
+      </div>`).join('')}`;
+}
+
+function toggleErreurEleves(btn) {
+  const ouvert = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!ouvert));
+  document.getElementById(btn.getAttribute('aria-controls')).hidden = ouvert;
+}
+
 // ── Tabs ─────────────────────────────────────────────────
 function switchTab(tab) {
-  ['classes','eleves','scores','notes'].forEach(t => {
+  ['classes','eleves','scores','notes','erreurs'].forEach(t => {
     document.getElementById('tab-'+t).classList.toggle('active', t===tab);
     document.getElementById('pane-'+t).style.display = t===tab ? 'block' : 'none';
   });
+  if (tab === 'erreurs') loadErreurs();
 }
 
 // ── Alerts ───────────────────────────────────────────────

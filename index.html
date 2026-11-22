@@ -559,6 +559,19 @@
   }
   .explanation.show { display: block; }
   .explanation .exp-label { font-weight: 700; color: var(--green); margin-bottom: 4px; font-size: 0.8rem; }
+  /* Erreur fréquente révélée par la mauvaise réponse choisie (champ pieges du quiz) */
+  .piege-alert {
+    background: rgba(178,58,46,0.08);
+    border-left: 3px solid var(--red);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 10px;
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #2E3A34;
+    overflow-wrap: anywhere;
+  }
+  .piege-alert strong { color: var(--red); font-weight: 700; }
 
   .quiz-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px; }
 
@@ -962,7 +975,7 @@
     </div>
 
     <div class="rgpd-notice" style="margin-top:12px">
-      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores et tes notes sont enregistrés sur un serveur hébergé en Europe et ne sont visibles que par ton enseignant.
+      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores, tes notes et les erreurs fréquentes repérées dans tes réponses aux quiz sont enregistrés sur un serveur hébergé en Europe et ne sont visibles que par ton enseignant.
     </div>
   </div>
 </div>
@@ -6125,7 +6138,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "rapide et totale, même si une autre réaction consomme aussi le réactif titrant"
         ],
         ans: 0,
-        pieges: [null, "Croire qu'une réaction lente facilite le repérage de l'équivalence", "Croire qu'une réaction non totale suffit pour exploiter le volume versé", "Oublier la condition d'unicité : une réaction parasite fausse la quantité de titrant attribuée au titré"],
+        pieges: [
+          null,
+          { code: "reaction-lente", texte: "Croire qu'une réaction lente facilite le repérage de l'équivalence" },
+          { code: "reaction-non-totale", texte: "Croire qu'une réaction non totale suffit pour exploiter le volume versé" },
+          { code: "reaction-non-unique", texte: "Oublier la condition d'unicité : une réaction parasite fausse la quantité de titrant attribuée au titré" }
+        ],
         exp: "Totale (le réactif limitant disparaît), rapide (le système est à l'état final à chaque ajout) et unique (tout le titrant versé réagit avec le titré). Attention : sans l'unicité, une partie du titrant serait consommée par autre chose."
       },
       {
@@ -6137,7 +6155,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "les quantités de réactif titré et de titrant versé sont égales, quelle que soit l'équation"
         ],
         ans: 1,
-        pieges: ["Croire que l'équivalence marque seulement la fin du réactif titrant", null, "Croire qu'à l'équivalence le pH vaut toujours 7", "Oublier les nombres stœchiométriques de l'équation"],
+        pieges: [
+          { code: "equivalence-fin-titrant", texte: "Croire que l'équivalence marque seulement la fin du réactif titrant" },
+          null,
+          { code: "ph-7-equivalence", texte: "Croire qu'à l'équivalence le pH vaut toujours 7" },
+          { code: "oubli-stoechiometrie", texte: "Oublier les nombres stœchiométriques de l'équation" }
+        ],
         exp: "À l'équivalence, les réactifs ont été introduits dans les proportions stœchiométriques : ils sont tous les deux entièrement consommés. Attention : n(titré) = n(titrant) seulement si les nombres stœchiométriques sont égaux."
       },
       {
@@ -6149,7 +6172,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "w = m(soluté) / m(solution), sans unité"
         ],
         ans: 3,
-        pieges: ["Confondre titre massique et concentration en masse", "Confondre titre massique et concentration en quantité de matière", "Diviser par la masse du solvant au lieu de celle de la solution", null],
+        pieges: [
+          { code: "titre-massique-vs-cm", texte: "Confondre titre massique et concentration en masse" },
+          { code: "titre-massique-vs-c", texte: "Confondre titre massique et concentration en quantité de matière" },
+          { code: "masse-solvant-vs-solution", texte: "Diviser par la masse du solvant au lieu de celle de la solution" },
+          null
+        ],
         exp: "Le titre massique est un rapport de deux masses, donc sans unité (souvent donné en %). Attention : m(soluté) / V(solution) est la concentration en masse, en g·L⁻¹."
       },
       {
@@ -6161,7 +6189,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "2,5 × 10² mol·L⁻¹"
         ],
         ans: 1,
-        pieges: ["Oublier la densité : 0,28 × 1000 / 17 = 16 mol·L⁻¹", null, "Utiliser 28 au lieu de 0,28 : 28 × 900 / 17 = 1,5 × 10³", "Prendre la concentration en masse (0,28 × 900 = 252 g·L⁻¹) pour la concentration molaire"],
+        pieges: [
+          { code: "oubli-densite", texte: "Oublier la densité : 0,28 × 1000 / 17 = 16 mol·L⁻¹" },
+          null,
+          { code: "pourcentage-non-converti", texte: "Utiliser 28 au lieu de 0,28 : 28 × 900 / 17 = 1,5 × 10³" },
+          { code: "cm-pris-pour-c", texte: "Prendre la concentration en masse (0,28 × 900 = 252 g·L⁻¹) pour la concentration molaire" }
+        ],
         exp: "ρ(solution) = d × ρ(eau) = 900 g·L⁻¹, donc C_m = w × ρ = 0,28 × 900 = 252 g·L⁻¹, puis c = C_m / M = 252 / 17 = 15 mol·L⁻¹ (14,8). Attention : 28 % s'écrit 0,28 dans le calcul."
       },
       {
@@ -6173,7 +6206,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "double si l'on double le volume d'eau ajouté"
         ],
         ans: 2,
-        pieges: ["Croire que diluer modifie la quantité de matière de réactif titré", "Raisonner sur la concentration au lieu de la quantité de matière", null, "Croire que le volume équivalent est proportionnel au volume total"],
+        pieges: [
+          { code: "dilution-change-n", texte: "Croire que diluer modifie la quantité de matière de réactif titré" },
+          { code: "quantite-vs-concentration", texte: "Raisonner sur la concentration au lieu de la quantité de matière" },
+          null,
+          { code: "veq-proportionnel-volume", texte: "Croire que le volume équivalent est proportionnel au volume total" }
+        ],
         exp: "L'eau ne change pas la quantité de réactif titré, donc la quantité de titrant nécessaire est la même. Elle modifie seulement les valeurs mesurées (pH ou conductivité)."
       },
       {
@@ -6185,7 +6223,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "le volume pour lequel le pH atteint sa valeur la plus haute"
         ],
         ans: 1,
-        pieges: ["Croire qu'à l'équivalence le pH vaut toujours 7", null, "Confondre l'équivalence et la demi-équivalence", "Lire la fin de la courbe au lieu du saut de pH"],
+        pieges: [
+          { code: "ph-7-equivalence", texte: "Croire qu'à l'équivalence le pH vaut toujours 7" },
+          null,
+          { code: "equivalence-vs-demi-equivalence", texte: "Confondre l'équivalence et la demi-équivalence" },
+          { code: "lecture-fin-courbe", texte: "Lire la fin de la courbe au lieu du saut de pH" }
+        ],
         exp: "L'équivalence se situe au milieu du saut de pH, là où la courbe est la plus raide : maximum de la dérivée dpH/dV (ou méthode des tangentes parallèles). Le pH à l'équivalence n'est 7 que pour un titrage acide fort / base forte."
       },
       {
@@ -6197,7 +6240,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "les ions HO⁻ versés sont plus conducteurs que les ions H₃O⁺"
         ],
         ans: 0,
-        pieges: [null, "Oublier les ions spectateurs (Na⁺) apportés par la solution titrante", "Attribuer la variation de σ à la dilution plutôt qu'au remplacement des ions", "Inverser les conductivités ioniques molaires (λ(H₃O⁺) est la plus grande)"],
+        pieges: [
+          null,
+          { code: "oubli-ions-spectateurs", texte: "Oublier les ions spectateurs (Na⁺) apportés par la solution titrante" },
+          { code: "conductivite-dilution", texte: "Attribuer la variation de σ à la dilution plutôt qu'au remplacement des ions" },
+          { code: "lambda-inverses", texte: "Inverser les conductivités ioniques molaires (λ(H₃O⁺) est la plus grande)" }
+        ],
         exp: "Chaque ion H₃O⁺ (λ très élevée) consommé est remplacé par un ion Na⁺ (λ bien plus faible) : σ diminue. Après l'équivalence, les ions Na⁺ et HO⁻ s'accumulent et σ augmente."
       },
       {
@@ -6209,7 +6257,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "2,0 × 10⁻³ mol·L⁻¹"
         ],
         ans: 2,
-        pieges: ["Inverser les volumes : 0,20 × 20,0 / 10,0", "Recopier la concentration de la solution titrante", null, "Confondre quantité de matière et concentration : n = 0,20 × 10,0 × 10⁻³ = 2,0 × 10⁻³ mol"],
+        pieges: [
+          { code: "volumes-inverses", texte: "Inverser les volumes : 0,20 × 20,0 / 10,0" },
+          { code: "recopie-concentration-titrante", texte: "Recopier la concentration de la solution titrante" },
+          null,
+          { code: "quantite-vs-concentration", texte: "Confondre quantité de matière et concentration : n = 0,20 × 10,0 × 10⁻³ = 2,0 × 10⁻³ mol" }
+        ],
         exp: "À l'équivalence, c_A × V₀ = c_B × V_E, donc c_A = 0,20 × 10,0 / 20,0 = 0,10 mol·L⁻¹. Vérification de bon sens : il a fallu moins de soude que d'acide, la soude est donc plus concentrée."
       },
       {
@@ -6221,7 +6274,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "6,0 × 10⁻² mol·L⁻¹"
         ],
         ans: 3,
-        pieges: ["Oublier le nombre stœchiométrique 2 : 0,100 × 12,0 / 10,0", "Multiplier par 2 au lieu de diviser : n(acide) = 2 n(HO⁻)", "Inverser les volumes : 0,100 × 10,0 / (2 × 12,0)", null],
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique 2 : 0,100 × 12,0 / 10,0" },
+          { code: "stoechiometrie-inversee", texte: "Multiplier par 2 au lieu de diviser : n(acide) = 2 n(HO⁻)" },
+          { code: "volumes-inverses", texte: "Inverser les volumes : 0,100 × 10,0 / (2 × 12,0)" },
+          null
+        ],
         exp: "À l'équivalence, n(acide) = n(HO⁻) / 2, donc c = 0,100 × 12,0 / (2 × 10,0) = 6,0 × 10⁻² mol·L⁻¹. Bon sens : il faut deux ions HO⁻ par molécule d'acide."
       },
       {
@@ -6233,7 +6291,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "supérieur à 7, car la base conjuguée de l'acide est présente"
         ],
         ans: 3,
-        pieges: ["Croire qu'à l'équivalence le pH vaut toujours 7", "Croire que le milieu garde le caractère de la solution de départ", "Confondre l'équivalence et la demi-équivalence (pH = pKa)", null],
+        pieges: [
+          { code: "ph-7-equivalence", texte: "Croire qu'à l'équivalence le pH vaut toujours 7" },
+          { code: "caractere-solution-depart", texte: "Croire que le milieu garde le caractère de la solution de départ" },
+          { code: "equivalence-vs-demi-equivalence", texte: "Confondre l'équivalence et la demi-équivalence (pH = pKa)" },
+          null
+        ],
         exp: "À l'équivalence, l'acide a été transformé en sa base conjuguée (par exemple l'ion éthanoate), qui rend la solution basique : pH > 7. Le pH vaut pKa à la demi-équivalence, pas à l'équivalence."
       }
     ],
@@ -37541,13 +37604,15 @@ async function apiLogin(code) {
   }
 }
 
-async function apiSaveQuiz(chapitreId, score) {
+// `erreurs` : [{ code, texte }] des pièges tombés pendant ce quiz, envoyés avec le score
+// dans le même appel (tableau de bord enseignant « Erreurs fréquentes »).
+async function apiSaveQuiz(chapitreId, score, erreurs = []) {
   if (!state.activeStudentId || !SERVER_URL) return false;
   try {
     const r = await fetch(SERVER_URL + '/api/quiz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: 10 })
+      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: 10, erreurs })
     });
     return r.ok;
   } catch(e) {
@@ -37767,6 +37832,9 @@ function renderQuiz(ch) {
         <div class="exp-label">✓ Explication</div>
         ${q.exp}
       </div>
+      ${revealed && selected !== q.ans && q.pieges && q.pieges[selected]
+        ? `<div class="piege-alert" role="note"><strong>⚠ Erreur fréquente :</strong> ${escapeHtml(q.pieges[selected].texte)}</div>`
+        : ''}
     </div>
     <div class="quiz-actions">
       ${!revealed && selected !== undefined ? `<button class="btn-primary" onclick="revealAnswer()">Valider</button>` : ''}
@@ -37788,11 +37856,41 @@ function shuffleArray(arr) {
 // Mélange l'ordre des questions et, pour chaque question, l'ordre de ses options
 // (en réindexant la bonne réponse au passage) : un élève qui refait le quiz sur le
 // même chapitre ne retombe pas sur exactement le même enchaînement à chaque fois.
+// Les pièges (champ optionnel `pieges`, aligné sur `opts`) suivent leurs options dans le mélange.
 function buildShuffledQuiz(ch) {
   return shuffleArray(ch.quiz).map(q => {
     const order = shuffleArray(q.opts.map((_, i) => i));
-    return { q: q.q, opts: order.map(i => q.opts[i]), ans: order.indexOf(q.ans), exp: q.exp };
+    const pieges = Array.isArray(q.pieges) && q.pieges.length === q.opts.length
+      ? order.map(i => (i === q.ans ? null : normaliserPiege(q.pieges[i])))
+      : null;
+    return { q: q.q, opts: order.map(i => q.opts[i]), ans: order.indexOf(q.ans), exp: q.exp, pieges };
   });
+}
+
+// ── Erreurs fréquentes (pieges) ──
+// Deux formats acceptés pour chaque mauvaise réponse : { code, texte } (code stable, qui
+// survit à une reformulation du texte), ou l'ancien texte seul, dont on dérive alors le code.
+// Mêmes règles que server.js et l'outil quiz_tool.js du skill banque-questions-quiz.
+const PIEGE_CODE_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const PIEGE_CODE_MAX = 60, PIEGE_TEXTE_MAX = 300;
+function slugPiege(t) {
+  return String(t).normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase()
+    .replace(/œ/g, 'oe').replace(/æ/g, 'ae').replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+/, '').slice(0, PIEGE_CODE_MAX).replace(/-+$/, '') || 'piege';
+}
+function normaliserPiege(p) {
+  const texte = typeof p === 'string' ? p : (p && typeof p.texte === 'string' ? p.texte : '');
+  if (!texte.trim()) return null;
+  const code = p && typeof p.code === 'string' && PIEGE_CODE_RE.test(p.code) && p.code.length <= PIEGE_CODE_MAX
+    ? p.code : slugPiege(texte);
+  return { code, texte: texte.trim().slice(0, PIEGE_TEXTE_MAX) };
+}
+// Erreurs commises dans le quiz terminé : une par mauvaise réponse qui a un piège (10 au plus).
+function erreursDuQuiz(quiz) {
+  return quiz.questions.map((question, i) => {
+    const a = quiz.answers[i];
+    return a !== question.ans && question.pieges ? question.pieges[a] : null;
+  }).filter(Boolean).slice(0, 10);
 }
 
 function startQuiz() {
@@ -37864,7 +37962,7 @@ async function retrySaveQuiz() {
   if (!pending) return;
   const btn = document.getElementById('quiz-retry-btn');
   if (btn) { btn.disabled = true; btn.textContent = 'Envoi…'; }
-  const saved = await apiSaveQuiz(pending.chapitreId, pending.score);
+  const saved = await apiSaveQuiz(pending.chapitreId, pending.score, pending.erreurs);
   if (saved) {
     state.quiz.pendingSave = null;
     await apiLogProgression(pending.chapitreId, `quiz_${pending.score}_10`);
@@ -37884,9 +37982,10 @@ async function finishQuiz() {
 
   // Sauvegarder localement ET sur le serveur (on garde le meilleur score, jamais de régression affichée)
   state.activeStudentData.scores[ch.id] = Math.max(score, state.activeStudentData.scores[ch.id] || 0);
-  const saved = await apiSaveQuiz(ch.id, score);
+  const erreurs = erreursDuQuiz(q);
+  const saved = await apiSaveQuiz(ch.id, score, erreurs);
   if (saved) { await apiLogProgression(ch.id, `quiz_${score}_10`); marquerDevoirsFaits(ch.id); }
-  else state.quiz.pendingSave = { chapitreId: ch.id, score };
+  else state.quiz.pendingSave = { chapitreId: ch.id, score, erreurs };
   buildNav();
 
   const cls = score >= 7 ? 'great' : score >= 5 ? 'ok' : 'bad';
@@ -38672,7 +38771,7 @@ function showTeacher() {
            <button class="btn-secondary" onclick="openStudentModal()">Configurer le serveur</button>`
       }
       <div class="rgpd-notice" style="margin-top:24px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
-        <strong>🔒 RGPD :</strong> L'interface admin est protégée par un identifiant et un code enseignant. Les données des élèves (nom ou pseudo saisi par l'enseignant, scores, notes) sont stockées dans une base hébergée en Europe (Neon, Francfort) et ne sont visibles que par leur enseignant. Chaque élève se connecte avec un code personnel.
+        <strong>🔒 RGPD :</strong> L'interface admin est protégée par un identifiant et un code enseignant. Les données des élèves (nom ou pseudo saisi par l'enseignant, scores, notes, erreurs fréquentes repérées dans les réponses aux quiz) sont stockées dans une base hébergée en Europe (Neon, Francfort) et ne sont visibles que par leur enseignant. Chaque élève se connecte avec un code personnel.
       </div>
     </div>
   `;
