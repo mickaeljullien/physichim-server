@@ -22282,114 +22282,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Le vecteur vitesse instantanée en un point Mi se construit à partir :",
+        q: "En un point de la trajectoire, le vecteur vitesse instantanée est :",
         opts: [
-          "Uniquement du point Mi",
-          "Des deux points qui encadrent Mi, M(i-1) et M(i+1)",
-          "De la position finale du mobile uniquement",
-          "Du référentiel héliocentrique"
-        ],
-        ans: 1,
-        exp: "On utilise les deux positions immédiatement avant et après Mi pour approximer la vitesse instantanée en ce point."
-      },
-      {
-        q: "La formule du vecteur vitesse instantanée en Mi s'écrit :",
-        opts: [
-          "vi→ = M(i-1)Mi→ / τ",
-          "vi→ ≈ M(i-1)M(i+1)→ / (2τ)",
-          "vi→ = Mi M(i+1)→ × τ",
-          "vi→ ≈ M(i-1)M(i+1)→ × 2τ"
-        ],
-        ans: 1,
-        exp: "vi→ ≈ M(i-1)M(i+1)→ / (2τ), où τ est la durée entre deux positions consécutives."
-      },
-      {
-        q: "Dans une chronophotographie, τ désigne :",
-        opts: [
-          "La distance entre deux positions",
-          "La durée constante entre deux prises de vue successives",
-          "La vitesse instantanée",
-          "Le facteur d'échelle du document"
-        ],
-        ans: 1,
-        exp: "τ est la durée, constante, séparant deux positions successives enregistrées sur la chronophotographie."
-      },
-      {
-        q: "Parmi les caractéristiques suivantes, laquelle n'est PAS une caractéristique du vecteur vitesse ?",
-        opts: [
-          "Point d'application",
-          "Direction",
-          "Masse du mobile",
-          "Sens et norme"
+          "perpendiculaire à la trajectoire",
+          "dirigé vers le centre de la courbe",
+          "tangent à la trajectoire, dans le sens du mouvement",
+          "tangent à la trajectoire, dans le sens opposé au mouvement"
         ],
         ans: 2,
-        exp: "Le vecteur vitesse est caractérisé par son point d'application, sa direction, son sens et sa norme (valeur) ; la masse du mobile n'entre pas dans sa définition."
-      },
-      {
-        q: "La direction du vecteur vitesse instantanée en un point de la trajectoire est :",
-        opts: [
-          "Toujours verticale",
-          "Perpendiculaire à la trajectoire en ce point",
-          "Tangente à la trajectoire en ce point",
-          "Indépendante de la trajectoire"
+        pieges: [
+          { code: "vitesse-perpendiculaire-trajectoire", texte: "Dessiner le vecteur vitesse perpendiculaire à la trajectoire : il est tangent à la trajectoire" },
+          { code: "vitesse-vers-centre", texte: "Croire que la vitesse est dirigée vers le centre d'un virage : elle est tangente, c'est la variation de vitesse qui est tournée vers l'intérieur" },
+          null,
+          { code: "sens-vitesse-inverse", texte: "Se tromper de sens : le vecteur vitesse est orienté dans le sens du mouvement" }
         ],
-        ans: 2,
-        exp: "Le vecteur vitesse instantanée est toujours tangent à la trajectoire au point considéré."
+        exp: "Le vecteur vitesse est tangent à la trajectoire et orienté dans le sens du mouvement ; sa longueur, à l'échelle, représente la valeur de la vitesse."
       },
       {
-        q: "Sur une chronophotographie, si les points sont de plus en plus espacés le long de la trajectoire, le mouvement est :",
+        q: "Chronophotographie : τ = 40 ms entre deux images. Sur le document, M4M6 = 4,0 cm, et 1 cm sur le document représente 10 cm en réalité. La valeur de la vitesse en M5 vaut :",
         opts: [
-          "Ralenti",
-          "Accéléré",
-          "Uniforme",
-          "Immobile"
-        ],
-        ans: 1,
-        exp: "Un espacement croissant des points en un temps τ constant signifie que la distance parcourue augmente entre chaque intervalle : le mobile accélère."
-      },
-      {
-        q: "Une chronophotographie a une durée τ = 0,040 s entre deux positions. On mesure une distance réelle M4M6 = 0,30 m. La vitesse v5 vaut :",
-        opts: [
-          "7,5 m·s⁻¹",
-          "3,75 m·s⁻¹",
-          "0,30 m·s⁻¹",
-          "12,0 m·s⁻¹"
-        ],
-        ans: 1,
-        exp: "v5 = M4M6/(2τ) = 0,30/(2×0,040) = 0,30/0,080 = 3,75 m·s⁻¹."
-      },
-      {
-        q: "Si l'on double la durée τ entre deux prises de vue (positions M(i-1) et M(i+1) inchangées), la valeur calculée du vecteur vitesse en Mi est :",
-        opts: [
-          "Multipliée par 2",
-          "Divisée par 2",
-          "Inchangée",
-          "Divisée par 4"
-        ],
-        ans: 1,
-        exp: "v = distance/(2τ) : si τ double, le dénominateur double, donc la valeur calculée est divisée par 2."
-      },
-      {
-        q: "Sur une trajectoire rectiligne, les vecteurs vitesse successifs d'un mobile ont tous :",
-        opts: [
-          "La même direction",
-          "Des directions différentes à chaque point",
-          "Une norme nulle",
-          "Un point d'application identique"
+          "5,0 m·s⁻¹",
+          "10 m·s⁻¹",
+          "0,50 m·s⁻¹",
+          "5,0×10⁻³ m·s⁻¹"
         ],
         ans: 0,
-        exp: "Sur une trajectoire rectiligne, la tangente est la droite elle-même en tout point : tous les vecteurs vitesse ont donc la même direction (celle de la droite)."
+        pieges: [
+          null,
+          { code: "oubli-facteur-2-tau", texte: "Diviser par τ au lieu de 2τ : entre M4 et M6, il s'écoule deux intervalles τ" },
+          { code: "echelle-oubliee", texte: "Oublier l'échelle du document : 4,0 cm sur le document représentent 40 cm en réalité" },
+          { code: "conversion-ms-s", texte: "Oublier de convertir les millisecondes en secondes : τ = 40 ms = 0,040 s" }
+        ],
+        exp: "Distance réelle : 4,0 × 10 = 40 cm = 0,40 m ; durée : 2τ = 0,080 s ; v5 = 0,40 / 0,080 = 5,0 m·s⁻¹. Attention : échelle, conversions et 2τ."
       },
       {
-        q: "Le point d'application du vecteur vitesse instantanée en Mi est :",
+        q: "Une voiture fait un tour de rond-point à vitesse de valeur constante. Ses vecteurs vitesse successifs :",
         opts: [
-          "Le point M(i-1)",
-          "Le point M(i+1)",
-          "Le point Mi lui-même",
-          "Un point quelconque de la trajectoire"
+          "sont tous identiques, puisque la vitesse est constante",
+          "sont tous dirigés vers le centre du rond-point",
+          "ont la même longueur mais changent de direction",
+          "s'allongent, puisque leur direction change"
         ],
         ans: 2,
-        exp: "Le vecteur vitesse instantanée est représenté avec pour point d'application le point Mi étudié, même s'il est calculé à partir des points voisins M(i-1) et M(i+1)."
+        pieges: [
+          { code: "vecteur-constant-si-valeur-constante", texte: "Croire qu'un vecteur est constant si sa valeur l'est : sa direction change à chaque instant dans un virage" },
+          { code: "vitesse-vers-centre", texte: "Croire que la vitesse est dirigée vers le centre : elle est tangente au cercle" },
+          null,
+          { code: "direction-vs-valeur", texte: "Confondre direction et valeur : la direction change, mais la longueur (la valeur) reste la même" }
+        ],
+        exp: "Valeur constante : les flèches ont la même longueur ; trajectoire circulaire : leur direction, tangente au cercle, change. Attention : un vecteur constant doit garder direction, sens et valeur."
+      },
+      {
+        q: "Le vecteur vitesse en M5, calculé à partir de M4 et M6, se dessine avec pour origine :",
+        opts: [
+          "le point M4",
+          "le milieu du segment M4M6",
+          "l'origine du repère",
+          "le point M5"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "point-application-mal-place", texte: "Partir d'un point voisin : le vecteur vitesse en M5 a pour origine M5" },
+          { code: "point-application-milieu-segment", texte: "Dessiner le vecteur sur le segment M4M6 : on reporte sa direction, mais on le trace à partir de M5" },
+          { code: "vecteur-depuis-origine", texte: "Tracer le vecteur depuis l'origine du repère : il part du point où l'on étudie la vitesse" },
+          null
+        ],
+        exp: "On trace le vecteur v5 à partir du point M5, parallèle à M4M6, dans le sens du mouvement. Attention : M4 et M6 servent au calcul, pas à placer le vecteur."
+      },
+      {
+        q: "Un mobile ralentit sur une trajectoire rectiligne. Ses vecteurs vitesse successifs :",
+        opts: [
+          "gardent la même direction et raccourcissent",
+          "gardent la même direction et s'allongent",
+          "changent de sens, puisque le mobile freine",
+          "restent identiques, puisque la trajectoire est droite"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "valeur-vitesse-inverse", texte: "Inverser le lien : quand la vitesse diminue, la flèche raccourcit" },
+          { code: "ralenti-change-sens", texte: "Croire qu'un mobile qui freine a une vitesse dirigée vers l'arrière : il avance toujours, mais moins vite" },
+          { code: "rectiligne-donc-uniforme", texte: "Confondre rectiligne et uniforme : la trajectoire est droite, mais la valeur de la vitesse diminue" }
+        ],
+        exp: "Direction : celle de la droite ; sens : celui du mouvement ; longueur : de plus en plus courte, car la vitesse diminue. Attention : rectiligne ne veut pas dire uniforme."
+      },
+      {
+        q: "Pour représenter les vitesses, on choisit l'échelle 1 cm pour 2 m·s⁻¹. Une vitesse de 5,0 m·s⁻¹ est représentée par une flèche de :",
+        opts: [
+          "10 cm",
+          "5,0 cm",
+          "2,5 cm",
+          "0,40 cm"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "echelle-multipliee", texte: "Multiplier par l'échelle au lieu de diviser : 5,0 m·s⁻¹ / (2 m·s⁻¹ par cm) = 2,5 cm" },
+          { code: "echelle-oubliee", texte: "Oublier l'échelle : 1 cm représente 2 m·s⁻¹, pas 1 m·s⁻¹" },
+          null,
+          { code: "echelle-rapport-inverse", texte: "Inverser le rapport : 2 / 5,0 = 0,40 ; il faut 5,0 / 2" }
+        ],
+        exp: "Longueur = 5,0 / 2 = 2,5 cm. Attention : chaque centimètre représente 2 m·s⁻¹."
+      },
+      {
+        q: "Sur une chronophotographie, la distance M(i−1)M(i+1) ne change pas, mais la durée τ entre deux images est deux fois plus grande. La vitesse calculée en Mi est :",
+        opts: [
+          "multipliée par 2",
+          "inchangée, puisque la distance est la même",
+          "divisée par 4",
+          "divisée par 2"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "proportionnalite-inverse", texte: "Croire que la vitesse augmente avec la durée : la même distance parcourue en plus de temps correspond à une vitesse plus faible" },
+          { code: "tau-sans-effet", texte: "Oublier la durée : la vitesse dépend de la distance et de la durée, v = M(i−1)M(i+1) / (2τ)" },
+          { code: "facteur-2-compte-deux-fois", texte: "Compter deux fois le facteur 2 : si τ double, 2τ double aussi, la vitesse est divisée par 2" },
+          null
+        ],
+        exp: "v = M(i−1)M(i+1) / (2τ) : si τ double, le dénominateur double, donc v est divisée par 2. La même distance parcourue en deux fois plus de temps : le mobile va deux fois moins vite."
+      },
+      {
+        q: "Une caméra prend 25 images par seconde. La durée τ entre deux images vaut :",
+        opts: [
+          "25 s",
+          "0,040 s",
+          "0,40 s",
+          "40 s"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "periode-vs-frequence", texte: "Confondre le nombre d'images par seconde et la durée entre deux images : τ = 1 / 25" },
+          null,
+          { code: "puissance-de-dix-erronee", texte: "Mal calculer 1 / 25 : 1 / 25 = 0,040, pas 0,40" },
+          { code: "conversion-ms-s", texte: "Confondre millisecondes et secondes : 1 / 25 s = 40 ms = 0,040 s" }
+        ],
+        exp: "25 images par seconde : τ = 1 / 25 = 0,040 s = 40 ms. Attention : 40 ms, ce n'est pas 40 s."
+      },
+      {
+        q: "Entre M(i−1) et M(i+1), séparés de 2τ = 0,20 s, un mobile parcourt 12 cm. La valeur de sa vitesse en Mi vaut :",
+        opts: [
+          "0,60 m·s⁻¹",
+          "1,2 m·s⁻¹",
+          "60 m·s⁻¹",
+          "2,4×10⁻² m·s⁻¹"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oubli-facteur-2-tau", texte: "Diviser par τ au lieu de 2τ : la durée entre M(i−1) et M(i+1) est déjà 0,20 s" },
+          { code: "conversion-cm-m", texte: "Oublier de convertir les centimètres en mètres : 12 / 0,20 = 60" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 0,12 × 0,20" }
+        ],
+        exp: "v = 0,12 / 0,20 = 0,60 m·s⁻¹. Attention : distance en mètres, et la durée 2τ est ici déjà donnée."
+      },
+      {
+        q: "Une pierre tourne au bout d'une fronde. On lâche la fronde : juste après, la pierre part :",
+        opts: [
+          "perpendiculairement au cercle, vers l'extérieur",
+          "en continuant à tourner en cercle",
+          "vers le centre du cercle",
+          "selon la tangente au cercle au point de lâcher"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "vitesse-perpendiculaire-trajectoire", texte: "Croire que la vitesse est perpendiculaire à la trajectoire : la pierre part selon sa vitesse, tangente au cercle" },
+          { code: "memoire-trajectoire-circulaire", texte: "Croire que l'objet « garde » un mouvement circulaire : sans la fronde, rien ne le fait plus tourner" },
+          { code: "vitesse-vers-centre", texte: "Croire que la vitesse est dirigée vers le centre : elle est tangente au cercle" },
+          null
+        ],
+        exp: "Au moment du lâcher, la vitesse de la pierre est tangente au cercle : elle part dans cette direction. Attention : sans la fronde, plus rien ne courbe sa trajectoire."
       }
     ],
     annales: [],
@@ -22850,114 +22910,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une force peut modéliser une action :",
+        q: "La Terre attire la Lune avec une force de valeur 2,0×10²⁰ N. La Lune attire la Terre avec une force :",
         opts: [
-          "Uniquement de contact",
-          "Uniquement à distance",
-          "De contact ou à distance",
-          "Uniquement électrique"
+          "beaucoup plus faible, car la Lune est moins massive",
+          "de 2,0×10²⁰ N, dans le sens opposé",
+          "nulle : c'est la Terre qui attire la Lune",
+          "de 2,0×10²⁰ N, dans le même sens"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "reciproque-plus-massif-plus-fort", texte: "Croire que l'objet le plus massif exerce la plus grande force : les deux forces réciproques ont toujours la même valeur" },
+          null,
+          { code: "action-a-sens-unique", texte: "Croire qu'une interaction va dans un seul sens : si A agit sur B, B agit aussi sur A" },
+          { code: "reciproque-meme-sens", texte: "Oublier que les forces réciproques sont de sens opposés : chaque astre attire l'autre vers lui" }
+        ],
+        exp: "Principe des actions réciproques : F(Lune/Terre) a la même direction et la même valeur que F(Terre/Lune), mais un sens opposé. Attention : la Lune bouge plus car elle est moins massive, pas parce qu'elle subit une force plus grande."
+      },
+      {
+        q: "Un camion percute une petite voiture. Pendant le choc :",
+        opts: [
+          "le camion exerce sur la voiture une force plus grande que l'inverse",
+          "la voiture, plus abîmée, a subi une force plus grande que celle qu'elle exerce",
+          "seul le camion exerce une force : la voiture la subit",
+          "les deux véhicules exercent l'un sur l'autre des forces de même valeur"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "reciproque-plus-massif-plus-fort", texte: "Croire que l'objet le plus massif exerce la plus grande force : les deux forces réciproques ont toujours la même valeur" },
+          { code: "degats-vs-force", texte: "Juger la force aux dégâts : la voiture est plus abîmée parce qu'elle est plus fragile et plus légère, pas parce que la force est plus grande" },
+          { code: "action-a-sens-unique", texte: "Croire qu'une interaction va dans un seul sens : si A agit sur B, B agit aussi sur A" },
+          null
+        ],
+        exp: "Principe des actions réciproques : F(camion/voiture) et F(voiture/camion) ont la même valeur et des sens opposés. Les effets diffèrent parce que les véhicules n'ont ni la même masse ni la même solidité."
+      },
+      {
+        q: "Un livre est posé, immobile, sur une table. Le poids du livre et la force exercée par la table sur le livre :",
+        opts: [
+          "forment un couple d'actions réciproques",
+          "se compensent, mais ne sont pas des actions réciproques",
+          "n'existent pas tous les deux : une table n'exerce pas de force",
+          "ne se compensent pas : la table pousse plus fort"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "equilibre-vs-reciproque", texte: "Confondre forces qui se compensent et actions réciproques : les deux forces s'exercent ici sur le même objet (le livre) ; la réciproque du poids s'exerce sur la Terre" },
+          null,
+          { code: "support-sans-force", texte: "Croire qu'un support passif n'exerce pas de force : la table empêche le livre de tomber, elle exerce une force vers le haut" },
+          { code: "support-plus-fort", texte: "Croire que le support doit pousser plus fort que le poids : le livre étant immobile, les deux forces ont la même valeur" }
+        ],
+        exp: "Les deux forces s'exercent sur le livre et se compensent (il est immobile). La réciproque du poids est la force exercée par le livre sur la Terre ; celle de la force de la table est la force du livre sur la table."
+      },
+      {
+        q: "Quel est le poids d'un objet de masse 500 g sur Terre (g = 9,8 N·kg⁻¹) ?",
+        opts: [
+          "4,9×10³ N",
+          "4,9 N",
+          "0,051 N",
+          "0,50 kg"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 500 × 9,8 ; il faut 0,500 kg" },
+          null,
+          { code: "poids-m-sur-g", texte: "Diviser au lieu de multiplier : P = m × g, pas m / g" },
+          { code: "masse-vs-poids", texte: "Confondre masse (en kg) et poids (une force, en N)" }
+        ],
+        exp: "P = m × g = 0,500 × 9,8 = 4,9 N. Attention : la masse s'exprime en kg, le poids en newtons."
+      },
+      {
+        q: "Un astronaute a une masse de 80 kg sur Terre. Sur la Lune (g = 1,6 N·kg⁻¹) :",
+        opts: [
+          "sa masse vaut environ 13 kg",
+          "son poids vaut 784 N, comme sur Terre",
+          "sa masse vaut 80 kg et son poids 128 N",
+          "sa masse vaut 128 N"
         ],
         ans: 2,
-        exp: "Une force modélise une action mécanique, qu'elle soit de contact (ex. poussée) ou à distance (ex. gravitation)."
+        pieges: [
+          { code: "masse-depend-astre", texte: "Croire que la masse change d'un astre à l'autre : seule la valeur du poids change, la masse reste 80 kg" },
+          { code: "poids-independant-astre", texte: "Croire que le poids ne dépend pas de l'astre : P = m × g, et g est environ 6 fois plus faible sur la Lune" },
+          null,
+          { code: "masse-vs-poids", texte: "Confondre masse (en kg) et poids (une force, en N)" }
+        ],
+        exp: "La masse ne dépend pas du lieu : 80 kg. Le poids, oui : P = 80 × 1,6 = 128 N sur la Lune (contre 80 × 9,8 = 784 N sur Terre)."
       },
       {
-        q: "Les quatre caractéristiques d'une force sont :",
+        q: "Une personne de 60 kg est à la surface de la Terre (mT = 5,98×10²⁴ kg, rayon R = 6 370 km, G = 6,67×10⁻¹¹ N·m²·kg⁻²). La force d'attraction de la Terre sur elle vaut environ :",
         opts: [
-          "Masse, direction, sens, couleur",
-          "Point d'application, direction, sens, valeur",
-          "Point d'application, vitesse, sens, durée",
-          "Direction, sens, masse, accélération"
+          "5,9×10² N",
+          "5,9×10⁸ N",
+          "3,8×10⁹ N",
+          "9,8 N"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-km-m", texte: "Oublier de convertir le rayon en mètres : R = 6 370 km = 6,37×10⁶ m" },
+          { code: "oubli-carre-distance", texte: "Oublier le carré de la distance : F = G × mT × m / R², pas / R" },
+          { code: "oubli-masse-objet", texte: "Oublier la masse de la personne : G × mT / R² ≈ 9,8 N·kg⁻¹ est l'intensité de la pesanteur g, pas une force" }
+        ],
+        exp: "F = G × mT × m / R² = 6,67×10⁻¹¹ × 5,98×10²⁴ × 60 / (6,37×10⁶)² ≈ 5,9×10² N : c'est son poids, P = m × g ≈ 60 × 9,8. Attention : distance en mètres, et au carré."
+      },
+      {
+        q: "Si la distance entre deux astres double, la force d'attraction gravitationnelle entre eux est :",
+        opts: [
+          "divisée par 2",
+          "multipliée par 2",
+          "inchangée",
+          "divisée par 4"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "proportionnalite-au-carre", texte: "Oublier le carré : F est inversement proportionnelle à d², donc divisée par 2² = 4" },
+          { code: "force-augmente-distance", texte: "Croire que la force augmente avec la distance : plus les astres sont éloignés, plus elle est faible" },
+          { code: "force-independante-distance", texte: "Croire que la force ne dépend que des masses : elle dépend aussi de la distance (d² au dénominateur)" },
+          null
+        ],
+        exp: "F = G × m1 × m2 / d² : si d est multipliée par 2, d² est multipliée par 4, donc F est divisée par 4. Attention au carré."
+      },
+      {
+        q: "Un pèse-personne réglé pour la Terre affiche 50 kg pour Léo. Sur la Lune (g = 1,6 N·kg⁻¹ au lieu de 9,8), il afficherait pour Léo environ :",
+        opts: [
+          "50 kg, puisque la masse ne change pas",
+          "8 kg",
+          "300 kg",
+          "0 kg, puisqu'il n'y a pas de gravité sur la Lune"
         ],
         ans: 1,
-        exp: "Une force est caractérisée par son point d'application, sa direction, son sens et sa valeur (en newton)."
-      },
-      {
-        q: "Le principe des actions réciproques s'applique :",
-        opts: [
-          "Uniquement aux forces de contact",
-          "Uniquement aux forces à distance",
-          "À toutes les forces, de contact et à distance",
-          "Uniquement au poids"
+        pieges: [
+          { code: "pese-personne-mesure-masse", texte: "Croire qu'un pèse-personne mesure une masse : il mesure une force (le poids) et la divise par le g terrestre" },
+          null,
+          { code: "rapport-g-inverse", texte: "Inverser le rapport des g : 50 × 9,8 / 1,6 ; le poids est plus faible sur la Lune, l'affichage aussi" },
+          { code: "pas-de-gravite-lune", texte: "Croire qu'il n'y a pas de gravité sur la Lune : elle est environ 6 fois plus faible que sur Terre, pas nulle" }
         ],
-        ans: 2,
-        exp: "Le principe des actions réciproques (3ᵉ loi de Newton) s'applique à toutes les forces, qu'elles soient de contact ou à distance, comme l'attraction gravitationnelle."
+        exp: "Le pèse-personne mesure le poids (50 × 1,6 = 80 N sur la Lune) puis divise par 9,8 : il affiche environ 8 kg. La masse de Léo, elle, reste 50 kg."
       },
       {
-        q: "Si A exerce sur B une force FA→B, alors B exerce sur A une force FB→A telle que :",
+        q: "Le poids d'un objet posé sur une pente est représenté par une flèche :",
         opts: [
-          "FB→A a même direction, même sens et même valeur que FA→B",
-          "FB→A a même direction, même valeur, mais un sens opposé à FA→B",
-          "FB→A est toujours nulle",
-          "FB→A n'existe que si A et B sont en contact"
+          "verticale, vers le bas",
+          "perpendiculaire à la pente",
+          "parallèle à la pente, dans le sens où il glisserait",
+          "sans direction : le poids est une masse"
         ],
-        ans: 1,
-        exp: "FA→B = − FB→A : même direction, même valeur, sens opposés."
-      },
-      {
-        q: "Un pèse-personne (balance électronique) mesure en réalité :",
-        opts: [
-          "Une masse directement",
-          "Une force (le poids), convertie ensuite en masse affichée",
-          "Un volume",
-          "Une accélération"
+        ans: 0,
+        pieges: [
+          null,
+          { code: "poids-perpendiculaire-support", texte: "Confondre le poids et la force exercée par le support : le poids est toujours vertical, vers le centre de la Terre" },
+          { code: "force-sens-mouvement", texte: "Croire que la force est dans le sens du mouvement possible : le poids est vertical, quel que soit le mouvement" },
+          { code: "masse-vs-poids", texte: "Confondre poids et masse : le poids est une force, avec une direction et un sens" }
         ],
-        ans: 1,
-        exp: "Un pèse-personne est un dynamomètre : il mesure une force (le poids) et affiche une masse après division par g."
+        exp: "Le poids est vertical, orienté vers le bas (vers le centre de la Terre), appliqué au centre de l'objet, quelle que soit la pente. Attention : la force du support, elle, est perpendiculaire à la pente si l'on néglige les frottements."
       },
       {
-        q: "La masse d'un astronaute sur la Terre et sur la Lune est :",
+        q: "Un parachutiste vient de sauter d'un avion. La Terre exerce sur lui une force :",
         opts: [
-          "Différente, car la gravité change",
-          "La même, car la masse ne dépend pas du lieu",
-          "Nulle sur la Lune",
-          "Deux fois plus grande sur la Lune"
+          "seulement quand il touche le sol",
+          "à distance, sans contact",
+          "grâce à l'air qui le pousse vers le bas",
+          "seulement parce qu'il est en mouvement"
         ],
         ans: 1,
-        exp: "La masse est une propriété intrinsèque de l'objet : elle ne dépend pas du lieu, contrairement au poids."
-      },
-      {
-        q: "La relation entre le poids P et la masse m d'un objet s'écrit :",
-        opts: [
-          "P = m / g",
-          "P = m + g",
-          "P = m × g",
-          "P = g / m"
+        pieges: [
+          { code: "force-exige-contact", texte: "Croire qu'une force exige un contact : l'attraction gravitationnelle agit à distance" },
+          null,
+          { code: "gravite-liee-atmosphere", texte: "Croire que la gravité est due à l'air : elle existe aussi dans le vide (sur la Lune, sans atmosphère, les objets tombent)" },
+          { code: "force-exige-mouvement", texte: "Croire qu'un objet n'est soumis à une force que s'il bouge : un objet immobile a aussi un poids" }
         ],
-        ans: 2,
-        exp: "P = m × g, avec g l'intensité de la pesanteur du lieu (en N·kg⁻¹)."
-      },
-      {
-        q: "La loi de gravitation universelle donne la valeur de la force entre deux corps de masses m1 et m2 séparés de d par :",
-        opts: [
-          "F = G × (m1 + m2) / d",
-          "F = G × m1 × m2 / d²",
-          "F = G × m1 × m2 × d",
-          "F = G / (m1 × m2 × d²)"
-        ],
-        ans: 1,
-        exp: "F = G × m1 × m2 / d², avec G ≈ 6,67×10⁻¹¹ N·m²·kg⁻²."
-      },
-      {
-        q: "Avec mT = 5,98×10²⁴ kg, mL = 7,36×10²² kg et d = 3,84×10⁸ m, la force gravitationnelle Terre-Lune vaut environ :",
-        opts: [
-          "2,0×10¹⁶ N",
-          "2,0×10²⁰ N",
-          "6,67×10⁻¹¹ N",
-          "5,98×10²⁴ N"
-        ],
-        ans: 1,
-        exp: "FTerre/Lune = G×mT×mL/d² = (6,67×10⁻¹¹ × 5,98×10²⁴ × 7,36×10²²)/(3,84×10⁸)² ≈ 2,0×10²⁰ N."
-      },
-      {
-        q: "La force que la Lune exerce sur la Terre, par rapport à celle que la Terre exerce sur la Lune, est :",
-        opts: [
-          "Beaucoup plus faible",
-          "De même valeur, même direction, sens opposé",
-          "Beaucoup plus forte",
-          "Nulle, la Lune n'exerce aucune force"
-        ],
-        ans: 1,
-        exp: "D'après le principe des actions réciproques, les deux forces d'interaction gravitationnelle ont la même valeur et la même direction, mais des sens opposés."
+        exp: "Le poids modélise une action à distance : la Terre attire le parachutiste sans contact. Attention : l'air, lui, exerce une force de contact qui freine la chute."
       }
     ],
     annales: [],
@@ -23372,114 +23492,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Le principe d'inertie énonce que si les forces qui s'exercent sur un système se compensent, alors :",
+        q: "On lance un palet sur une glace horizontale ; on néglige tout frottement. Une fois lâché, le palet :",
         opts: [
-          "Le système accélère uniformément",
-          "Le système est immobile ou en mouvement rectiligne uniforme",
-          "Le système suit une trajectoire circulaire",
-          "Le système change nécessairement de direction"
+          "ralentit puis s'arrête, puisque plus rien ne le pousse",
+          "continue en ligne droite à vitesse constante",
+          "accélère, puisque rien ne le freine",
+          "continue, car la force du lancer l'accompagne"
         ],
         ans: 1,
-        exp: "Si ΣF→ext = 0→, le système est immobile ou en mouvement rectiligne uniforme (vitesse constante)."
+        pieges: [
+          { code: "sans-force-arret", texte: "Croire qu'un objet s'arrête s'il n'est plus poussé : sans frottement, rien ne le ralentit (principe d'inertie)" },
+          null,
+          { code: "absence-frein-accelere", texte: "Croire que l'absence de frein fait accélérer : pour accélérer, il faudrait une force non compensée vers l'avant" },
+          { code: "force-du-lancer", texte: "Croire que la force du lancer accompagne l'objet : elle cesse dès que le palet quitte la crosse" }
+        ],
+        exp: "Poids et réaction de la glace se compensent : d'après le principe d'inertie, le palet garde un mouvement rectiligne uniforme. Attention : il n'y a pas besoin de force pour continuer à avancer."
       },
       {
-        q: "La contraposée du principe d'inertie s'applique lorsque :",
+        q: "Un parachutiste descend verticalement à vitesse constante. Les forces qui s'exercent sur lui :",
         opts: [
-          "Le mouvement est rectiligne uniforme",
-          "Le système est immobile",
-          "Le mouvement n'est pas rectiligne uniforme",
-          "Le système n'est soumis à aucune force"
+          "ne se compensent pas : le poids l'emporte, puisqu'il descend",
+          "se compensent",
+          "sont nulles : il n'a plus de poids",
+          "ne se compensent pas : sinon il serait immobile"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "force-sens-mouvement", texte: "Croire qu'un mouvement nécessite une force dans son sens : à vitesse constante en ligne droite, les forces se compensent" },
+          null,
+          { code: "compense-vs-aucune-force", texte: "Confondre forces qui se compensent et absence de force : le poids existe toujours, il est compensé par l'action de l'air" },
+          { code: "compense-donc-immobile", texte: "Croire que des forces compensées imposent l'immobilité : elles permettent aussi un mouvement rectiligne uniforme" }
+        ],
+        exp: "Mouvement rectiligne uniforme : d'après le principe d'inertie, les forces se compensent ; l'action de l'air sur le parachute compense le poids. Attention : on peut avancer sans force « motrice »."
+      },
+      {
+        q: "Une voiture prend un virage à vitesse de valeur constante. Les forces qui s'exercent sur elle :",
+        opts: [
+          "se compensent, puisque la valeur de la vitesse ne change pas",
+          "ont une somme dirigée vers l'avant, dans le sens du mouvement",
+          "ne se compensent pas, puisque la direction de la vitesse change",
+          "ne peuvent pas être étudiées sans connaître la masse"
         ],
         ans: 2,
-        exp: "Si le mouvement n'est pas rectiligne uniforme, alors les forces ne se compensent pas (ΣF→ext ≠ 0→) : c'est la contraposée du principe d'inertie."
+        pieges: [
+          { code: "circulaire-uniforme-compense", texte: "Croire qu'une vitesse de valeur constante suffit : le mouvement n'est pas rectiligne, donc les forces ne se compensent pas" },
+          { code: "force-sens-mouvement", texte: "Croire que la somme des forces est dans le sens du mouvement : dans un virage, elle est tournée vers l'intérieur" },
+          null,
+          { code: "masse-necessaire-inertie", texte: "Croire qu'il faut la masse pour appliquer le principe d'inertie : il suffit de savoir si le mouvement est rectiligne uniforme" }
+        ],
+        exp: "Le mouvement n'est pas rectiligne : il n'est pas rectiligne uniforme. D'après la contraposée du principe d'inertie, les forces ne se compensent pas. Attention : « uniforme » ne suffit pas, il faut aussi « rectiligne »."
       },
       {
-        q: "Le diagramme objet-interactions (DOI) sert à :",
+        q: "Une balle lâchée sans vitesse initiale tombe verticalement en accélérant (frottements négligés). On peut affirmer que :",
         opts: [
-          "Calculer directement la vitesse d'un système",
-          "Faire l'inventaire des interactions, donc des forces, qui s'exercent sur le système",
-          "Mesurer la masse du système",
-          "Tracer la trajectoire du système"
+          "les forces se compensent, puisque la trajectoire est rectiligne",
+          "aucune force ne s'exerce : la balle tombe naturellement",
+          "les forces ne se compensent pas, puisque la vitesse augmente",
+          "le poids augmente pendant la chute"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "rectiligne-donc-compense", texte: "Croire qu'une trajectoire rectiligne suffit : il faut aussi que la vitesse soit constante" },
+          { code: "chute-naturelle-sans-force", texte: "Croire qu'un objet tombe « naturellement », sans force : il tombe parce que la Terre l'attire (poids)" },
+          null,
+          { code: "poids-augmente-chute", texte: "Croire que le poids augmente pendant la chute : P = m × g reste constant, c'est la vitesse qui augmente" }
+        ],
+        exp: "La vitesse augmente : le mouvement n'est pas uniforme, donc (contraposée) les forces ne se compensent pas. La seule force est le poids, non compensé."
+      },
+      {
+        q: "Une lampe est suspendue au plafond par un fil, immobile. Dans le diagramme objet-interactions de la lampe, on trouve :",
+        opts: [
+          "seulement le fil, puisque la lampe ne bouge pas",
+          "la Terre (à distance) et le fil (contact)",
+          "la Terre, le fil et le plafond",
+          "aucune interaction, puisque la lampe est immobile"
         ],
         ans: 1,
-        exp: "Le DOI permet d'identifier tous les objets qui interagissent avec le système étudié, pour en déduire l'inventaire des forces qui s'exercent sur lui."
+        pieges: [
+          { code: "oubli-poids-doi", texte: "Oublier l'interaction à distance avec la Terre : tout objet a un poids, même immobile" },
+          null,
+          { code: "doi-objet-non-en-contact", texte: "Ajouter le plafond, qui ne touche pas la lampe : il agit sur le fil, pas directement sur la lampe" },
+          { code: "immobile-sans-force", texte: "Croire qu'un objet immobile ne subit aucune force : les forces qui s'exercent sur lui se compensent" }
+        ],
+        exp: "La lampe interagit avec la Terre (à distance : poids) et avec le fil (contact : tension). Attention : on n'indique que les objets qui agissent directement sur le système."
       },
       {
-        q: "Une balle glisse en mouvement rectiligne uniforme sur un sol horizontal (frottements négligés). Le poids P→ et la réaction du sol R→ vérifient :",
+        q: "Cette lampe immobile a un poids de 5,0 N. La force exercée par le fil sur la lampe vaut :",
         opts: [
-          "P→ + R→ = 0→",
-          "P→ = R→ (même sens)",
-          "P→ et R→ n'ont aucun lien",
-          "R→ = 2 × P→"
+          "5,0 N, verticale vers le haut",
+          "plus de 5,0 N, sinon la lampe tomberait",
+          "0 N : un fil ne fait que suspendre",
+          "moins de 5,0 N, car le plafond porte une partie du poids"
         ],
         ans: 0,
-        exp: "Le mouvement étant rectiligne uniforme, les forces se compensent : P→ + R→ = 0→, donc même direction, même valeur, sens opposés."
+        pieges: [
+          null,
+          { code: "support-plus-fort", texte: "Croire que le support doit être plus fort que le poids : la lampe étant immobile, les deux forces ont la même valeur" },
+          { code: "support-sans-force", texte: "Croire qu'un support passif n'exerce pas de force : le fil tire la lampe vers le haut" },
+          { code: "partage-force-plafond", texte: "Croire que le plafond agit directement sur la lampe : il agit sur le fil ; sur la lampe, seuls le poids et le fil agissent" }
+        ],
+        exp: "Lampe immobile : les forces se compensent (principe d'inertie), donc la force du fil a la même valeur que le poids, 5,0 N, verticale vers le haut."
       },
       {
-        q: "Une balle est lâchée sans vitesse initiale et tombe verticalement en accélérant. On peut affirmer que :",
+        q: "Un ballon est lancé verticalement vers le haut ; on néglige l'action de l'air. Pendant tout son vol, le vecteur variation de vitesse Δv entre deux instants proches est :",
         opts: [
-          "Les forces se compensent car la trajectoire est rectiligne",
-          "Les forces ne se compensent pas, car la vitesse varie en valeur",
-          "Aucune force ne s'exerce sur la balle",
-          "Le poids est nul pendant la chute"
+          "toujours vertical vers le bas, comme le poids",
+          "vers le haut pendant la montée, vers le bas pendant la descente",
+          "nul au sommet, où le ballon s'arrête",
+          "nul pendant la montée, qui se fait en ligne droite"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "delta-v-sens-mouvement", texte: "Confondre le sens de Δv et le sens du mouvement : Δv a le sens de la somme des forces, ici le poids" },
+          { code: "acceleration-nulle-sommet", texte: "Croire qu'au sommet la vitesse ne varie plus : le poids agit toujours, la vitesse continue de changer" },
+          { code: "rectiligne-donc-compense", texte: "Croire qu'une trajectoire rectiligne suffit pour que la vitesse ne varie pas : le ballon ralentit pendant la montée" }
+        ],
+        exp: "La seule force est le poids, vertical vers le bas : Δv a donc toujours cette direction et ce sens. À la montée, le ballon ralentit ; à la descente, il accélère."
+      },
+      {
+        q: "Le mouvement d'un système n'est pas rectiligne uniforme. On peut en déduire que :",
+        opts: [
+          "aucune force ne s'exerce sur lui",
+          "les forces qui s'exercent sur lui ne se compensent pas",
+          "il n'est soumis qu'à une seule force",
+          "la somme des forces est dans le sens de sa vitesse"
         ],
         ans: 1,
-        exp: "Bien que la trajectoire soit une droite, la vitesse augmente : le mouvement n'est pas uniforme, donc d'après la contraposée, les forces ne se compensent pas."
+        pieges: [
+          { code: "principe-inertie-inverse", texte: "Inverser le principe : sans force (ou avec des forces compensées), le mouvement serait rectiligne uniforme" },
+          null,
+          { code: "une-seule-force", texte: "Conclure trop vite : il peut y avoir plusieurs forces, simplement elles ne se compensent pas" },
+          { code: "force-sens-mouvement", texte: "Croire que la somme des forces est dans le sens de la vitesse : elle a le sens de la variation de vitesse Δv" }
+        ],
+        exp: "C'est la contraposée du principe d'inertie : si le mouvement n'est pas rectiligne uniforme, les forces ne se compensent pas. On ne sait pas pour autant combien de forces agissent."
       },
       {
-        q: "Lors d'une chute libre avec vitesse initiale horizontale, la trajectoire observée est :",
+        q: "Entre deux instants proches, le vecteur variation de vitesse Δv d'un système est nul. On peut en déduire que :",
         opts: [
-          "Une droite verticale",
-          "Une droite horizontale",
-          "Une parabole",
-          "Un cercle"
+          "les forces qui s'exercent sur lui ne se compensent pas",
+          "le système est forcément immobile",
+          "les forces qui s'exercent sur lui se compensent",
+          "aucune force ne s'exerce sur lui"
         ],
         ans: 2,
-        exp: "Avec une vitesse initiale horizontale, la balle combine avancée horizontale et chute verticale : la trajectoire est parabolique."
+        pieges: [
+          { code: "principe-inertie-inverse", texte: "Inverser le principe : une vitesse qui ne change pas correspond à des forces qui se compensent" },
+          { code: "compense-donc-immobile", texte: "Croire que des forces compensées imposent l'immobilité : la vitesse est constante, pas forcément nulle" },
+          null,
+          { code: "compense-vs-aucune-force", texte: "Confondre forces qui se compensent et absence de force : des forces peuvent s'exercer, leur somme est nulle" }
+        ],
+        exp: "Δv = 0 : la vitesse ne change pas (en valeur ni en direction) ; d'après le principe d'inertie, les forces se compensent. Le système peut être immobile ou en mouvement rectiligne uniforme."
       },
       {
-        q: "Dans le cas d'une chute libre avec vitesse initiale (trajectoire parabolique), les forces qui s'exercent sur l'objet (frottements négligés) :",
+        q: "La Lune est attirée par la Terre. Elle ne tombe pas sur la Terre parce que :",
         opts: [
-          "Se compensent, car le mouvement est régulier",
-          "Ne se compensent pas, car le mouvement n'est pas rectiligne uniforme",
-          "Sont nulles",
-          "Ne peuvent pas être déterminées"
+          "il n'y a pas de gravité dans l'espace",
+          "l'attraction de la Lune sur la Terre compense celle de la Terre sur la Lune",
+          "sa vitesse, combinée à l'attraction terrestre, la fait tourner autour de la Terre",
+          "une force vers l'extérieur compense exactement l'attraction"
         ],
-        ans: 1,
-        exp: "La trajectoire parabolique n'est pas rectiligne uniforme (la vitesse change en direction et en valeur) : d'après la contraposée, les forces ne se compensent pas, ΣF→ext = P→ ≠ 0→."
-      },
-      {
-        q: "Que la chute libre soit avec ou sans vitesse initiale, la ou les forces qui s'exercent sur l'objet en l'air (frottements négligés) sont :",
-        opts: [
-          "Différentes dans les deux cas",
-          "Identiques : uniquement le poids",
-          "Nulles dans les deux cas",
-          "Le poids et la réaction du sol"
+        ans: 2,
+        pieges: [
+          { code: "pas-de-gravite-en-orbite", texte: "Croire qu'il n'y a pas de gravité dans l'espace : c'est elle qui retient la Lune autour de la Terre" },
+          { code: "reciproques-se-compensent", texte: "Croire que deux actions réciproques se compensent : elles s'exercent sur deux objets différents" },
+          null,
+          { code: "force-centrifuge-compense", texte: "Croire que des forces compensées agissent sur la Lune : son mouvement n'est pas rectiligne, donc la force de la Terre n'est pas compensée" }
         ],
-        ans: 1,
-        exp: "Dans les deux cas, seule la Terre interagit à distance avec l'objet en l'air : la seule force est le poids P→."
-      },
-      {
-        q: "Si le vecteur variation de vitesse Δv→ = v→(i+1) − v→i est nul entre deux instants proches, on peut en déduire que :",
-        opts: [
-          "Les forces ne se compensent pas",
-          "Les forces se compensent (ΣF→ext = 0→)",
-          "Le système est en train d'accélérer",
-          "Le référentiel choisi n'est pas adapté"
-        ],
-        ans: 1,
-        exp: "Δv→ = 0→ signifie que la vitesse ne change pas : d'après le principe d'inertie, cela correspond à des forces qui se compensent."
-      },
-      {
-        q: "Un système soumis à une seule force non nulle (comme une balle en chute libre) a nécessairement :",
-        opts: [
-          "Un mouvement rectiligne uniforme",
-          "Un mouvement qui n'est pas rectiligne uniforme",
-          "Une vitesse nulle en permanence",
-          "Une masse nulle"
-        ],
-        ans: 1,
-        exp: "Une seule force non nulle ne peut pas être compensée : ΣF→ext ≠ 0→, donc d'après la contraposée, le mouvement ne peut pas être rectiligne uniforme."
+        exp: "La force de la Terre n'est pas compensée : elle courbe sans cesse la trajectoire de la Lune, qui a une vitesse tangente. Sans cette force, la Lune partirait en ligne droite (principe d'inertie)."
       }
     ],
     annales: [],
@@ -23991,114 +24171,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une espèce chimique synthétique est une espèce :",
+        q: "La vanilline fabriquée en usine est identique à celle contenue dans les gousses de vanille. Cette vanilline d'usine est une espèce :",
         opts: [
-          "Qui n'existe pas dans la nature",
-          "Fabriquée en laboratoire mais identique à une espèce existant dans la nature",
-          "Toujours plus chère qu'une espèce naturelle",
-          "Obligatoirement toxique"
+          "artificielle",
+          "synthétique",
+          "naturelle, puisqu'elle existe dans la nature",
+          "imitée, aux propriétés un peu différentes"
         ],
         ans: 1,
-        exp: "Une espèce synthétique est fabriquée en laboratoire mais possède la même formule et les mêmes propriétés que l'espèce naturelle correspondante."
-      },
-      {
-        q: "Une espèce artificielle est une espèce chimique :",
-        opts: [
-          "Extraite d'une plante",
-          "Identique à une espèce naturelle",
-          "Fabriquée en laboratoire et sans équivalent dans la nature",
-          "Toujours gazeuse"
+        pieges: [
+          { code: "synthetique-vs-artificielle", texte: "Confondre synthétique et artificielle : une espèce artificielle n'existe pas dans la nature, la vanilline si" },
+          null,
+          { code: "origine-ignoree", texte: "Oublier l'origine : on dit « naturelle » pour une espèce extraite de la nature, pas fabriquée en usine" },
+          { code: "naturel-different-synthetique", texte: "Croire qu'une espèce synthétique diffère de l'espèce naturelle : c'est la même molécule, aux mêmes propriétés" }
         ],
-        ans: 2,
-        exp: "Une espèce artificielle est fabriquée par l'être humain et n'a aucun équivalent naturel connu."
+        exp: "Fabriquée par l'être humain mais existant aussi dans la nature : c'est une espèce synthétique, identique à l'espèce naturelle. Une espèce artificielle, elle, n'existe pas dans la nature."
       },
       {
-        q: "Quel est le rôle du chauffage à reflux ?",
+        q: "On compare l'acétate de linalyle pur extrait de la lavande et celui synthétisé au laboratoire. Ils ont :",
         opts: [
-          "Refroidir le mélange réactionnel",
-          "Accélérer la réaction en chauffant sans perte de matière",
-          "Filtrer le solide obtenu",
-          "Identifier l'espèce synthétisée"
-        ],
-        ans: 1,
-        exp: "Le réfrigérant condense les vapeurs qui retombent dans le ballon, ce qui permet de chauffer (donc d'accélérer la réaction) sans perdre de matière."
-      },
-      {
-        q: "Dans un montage à reflux, à quoi sert la pierre ponce ?",
-        opts: [
-          "À catalyser la réaction",
-          "À colorer le mélange",
-          "À régulariser l'ébullition et éviter les projections",
-          "À condenser les vapeurs"
-        ],
-        ans: 2,
-        exp: "La pierre ponce évite une ébullition brutale (à-coups) et les projections de liquide chaud."
-      },
-      {
-        q: "L'extraction liquide-liquide utilise :",
-        opts: [
-          "Un réfrigérant",
-          "Une ampoule à décanter",
-          "Un entonnoir Büchner",
-          "Une plaque de CCM"
-        ],
-        ans: 1,
-        exp: "L'extraction liquide-liquide se réalise dans une ampoule à décanter, à l'aide d'un solvant extracteur non miscible avec l'eau."
-      },
-      {
-        q: "La filtration sous vide (Büchner) permet de :",
-        opts: [
-          "Séparer rapidement un solide d'un liquide",
-          "Séparer deux liquides non miscibles",
-          "Chauffer le mélange réactionnel",
-          "Mesurer la masse volumique d'un solide"
+          "les mêmes propriétés : c'est la même molécule",
+          "des propriétés différentes : le naturel est plus sain",
+          "des odeurs différentes, car l'un est « chimique »",
+          "des formules différentes, mais la même odeur"
         ],
         ans: 0,
-        exp: "La filtration sous vide, plus rapide qu'une filtration simple, sépare un solide d'un liquide grâce à la dépression créée par une trompe à eau ou une pompe."
-      },
-      {
-        q: "La chromatographie sur couche mince (CCM) permet de :",
-        opts: [
-          "Chauffer un mélange à reflux",
-          "Vérifier la pureté et l'identité d'une espèce chimique",
-          "Mesurer l'intensité d'un courant électrique",
-          "Séparer un solide d'un liquide par aspiration"
+        pieges: [
+          null,
+          { code: "naturel-plus-sain", texte: "Croire qu'une molécule naturelle est meilleure que la même molécule synthétisée : ce sont exactement les mêmes molécules" },
+          { code: "naturel-vs-chimique", texte: "Opposer « naturel » et « chimique » : toute matière est faite d'espèces chimiques, naturelles ou non" },
+          { code: "meme-espece-formule-differente", texte: "Croire que deux espèces identiques peuvent avoir des formules différentes : même espèce = même formule = mêmes propriétés" }
         ],
-        ans: 1,
-        exp: "En comparant les taches obtenues (Rf) à des références, la CCM permet de vérifier la pureté et d'identifier une espèce chimique."
+        exp: "L'espèce synthétique est rigoureusement la même molécule (C₁₂H₂₀O₂) que l'espèce naturelle : mêmes propriétés physiques et chimiques. Seule l'origine diffère."
       },
       {
-        q: "L'acétate de linalyle est la molécule responsable de l'odeur :",
+        q: "Le chauffage à reflux permet :",
         opts: [
-          "Du citron",
-          "De la vanille",
-          "De la lavande",
-          "De la banane"
+          "de refroidir le mélange pour qu'il ne bouille pas",
+          "de séparer le produit formé par distillation",
+          "de chauffer pour accélérer la réaction, sans perte de matière",
+          "d'obtenir un produit différent de celui obtenu à froid"
         ],
         ans: 2,
-        exp: "L'acétate de linalyle est le principal composant odorant de la lavande."
+        pieges: [
+          { code: "reflux-refroidit-melange", texte: "Croire que le réfrigérant refroidit le mélange : il condense seulement les vapeurs, le mélange reste chaud" },
+          { code: "reflux-vs-distillation", texte: "Confondre reflux et distillation : au reflux, les vapeurs condensées retombent dans le ballon" },
+          null,
+          { code: "facteur-cinetique-etat-final", texte: "Croire que chauffer change les produits : la température accélère la réaction, elle ne change pas ce qui se forme" }
+        ],
+        exp: "On chauffe pour accélérer la transformation ; le réfrigérant condense les vapeurs, qui retombent dans le ballon : aucune perte de matière. Attention : le produit formé est le même qu'à froid, il se forme plus vite."
       },
       {
-        q: "Lors de la synthèse de l'acétate de linalyle, la CCM du produit obtenu doit donner :",
+        q: "Dans le réfrigérant à eau d'un montage à reflux, l'eau froide doit :",
         opts: [
-          "Plusieurs taches à des hauteurs différentes de la référence",
-          "Une tache unique au même Rf que la référence",
-          "Aucune tache",
-          "Une tache colorée en bleu"
+          "entrer par le haut, pour couler plus facilement",
+          "entrer par le bas et sortir par le haut",
+          "entrer dans le ballon pour refroidir le mélange",
+          "circuler dans n'importe quel sens"
         ],
         ans: 1,
-        exp: "Un produit pur et identique à la référence donne une tache unique migrant à la même hauteur (même Rf) que la référence."
+        pieges: [
+          { code: "sens-eau-refrigerant", texte: "Faire entrer l'eau par le haut : le réfrigérant se viderait en partie ; l'eau entre par le bas pour le remplir entièrement" },
+          null,
+          { code: "refrigerant-eau-dans-ballon", texte: "Croire que l'eau du réfrigérant va dans le ballon : elle circule dans une enveloppe séparée, sans toucher le mélange" },
+          { code: "sens-eau-sans-importance", texte: "Croire que le sens de circulation n'a pas d'importance : par le haut, le réfrigérant ne serait pas rempli d'eau" }
+        ],
+        exp: "L'eau entre par le bas et sort par le haut : le réfrigérant reste plein d'eau froide et condense efficacement les vapeurs. Attention : elle ne se mélange jamais au contenu du ballon."
       },
       {
-        q: "Par rapport à l'extraction d'une espèce naturelle, la synthèse en laboratoire permet souvent :",
+        q: "Pourquoi ne faut-il jamais boucher le haut du réfrigérant d'un montage à reflux ?",
         opts: [
-          "D'obtenir une molécule aux propriétés différentes",
-          "D'obtenir une plus grande quantité à moindre coût",
-          "D'éviter toute réaction chimique",
-          "De supprimer le besoin de vérifier la pureté"
+          "pour que les vapeurs puissent s'échapper du montage",
+          "parce que la pression augmenterait dans le montage chauffé",
+          "pour pouvoir ajouter des réactifs pendant la réaction",
+          "pour que l'eau de refroidissement puisse entrer"
         ],
         ans: 1,
-        exp: "La synthèse permet généralement d'obtenir de plus grandes quantités de produit, à moindre coût, tout en conservant les mêmes propriétés que l'espèce naturelle."
+        pieges: [
+          { code: "reflux-laisse-echapper", texte: "Croire que les vapeurs doivent s'échapper : elles sont condensées et retombent dans le ballon" },
+          null,
+          { code: "ajout-pendant-reflux", texte: "Croire que le haut ouvert sert à ajouter des réactifs : il sert à éviter une surpression" },
+          { code: "refrigerant-eau-dans-ballon", texte: "Croire que l'eau du réfrigérant passe par le haut ouvert : elle circule dans une enveloppe séparée" }
+        ],
+        exp: "Un montage fermé et chauffé verrait sa pression augmenter, avec un risque d'explosion. Le haut reste ouvert ; les vapeurs, condensées, ne s'échappent pas pour autant."
+      },
+      {
+        q: "Dans un montage à reflux, on ajoute quelques grains de pierre ponce dans le ballon pour :",
+        opts: [
+          "régulariser l'ébullition",
+          "catalyser la réaction",
+          "condenser les vapeurs",
+          "absorber l'eau formée"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "pierre-ponce-catalyseur", texte: "Croire que la pierre ponce est un catalyseur : elle ne participe pas à la réaction, elle évite l'ébullition brutale" },
+          { code: "role-refrigerant-confondu", texte: "Confondre avec le rôle du réfrigérant, qui condense les vapeurs" },
+          { code: "pierre-ponce-dessechant", texte: "Croire que la pierre ponce absorbe l'eau : elle sert seulement à régulariser l'ébullition" }
+        ],
+        exp: "La pierre ponce, poreuse, permet une ébullition régulière et évite les projections de liquide bouillant. Elle ne réagit pas."
+      },
+      {
+        q: "Dans un protocole de synthèse, l'extraction liquide-liquide sert à :",
+        opts: [
+          "transformer les réactifs en produit",
+          "identifier le produit obtenu",
+          "accélérer la transformation",
+          "séparer le produit du reste du mélange"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "etapes-synthese-confondues", texte: "Confondre les étapes : la transformation a lieu dans le ballon, l'extraction vient après" },
+          { code: "isolement-vs-analyse", texte: "Confondre isolement et analyse : l'identification se fait ensuite, par exemple par CCM" },
+          { code: "extraction-accelere", texte: "Croire que l'extraction agit sur la vitesse de réaction : elle sert seulement à isoler le produit" },
+          null
+        ],
+        exp: "Les étapes d'une synthèse : transformation (reflux), isolement (extraction, filtration), purification, puis analyse (CCM). L'extraction isole le produit du mélange réactionnel."
+      },
+      {
+        q: "Pour extraire un produit d'une solution aqueuse, le solvant extracteur doit être :",
+        opts: [
+          "miscible à l'eau, pour bien se mélanger",
+          "non miscible à l'eau, le produit y étant très soluble",
+          "plus dense que l'eau, sinon l'extraction échoue",
+          "non miscible à l'eau, le produit y étant peu soluble"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "solvant-miscible", texte: "Choisir un solvant miscible : on n'obtiendrait qu'une phase, impossible à séparer dans l'ampoule à décanter" },
+          null,
+          { code: "solvant-densite-obligatoire", texte: "Croire que le solvant doit être plus dense : sa densité dit seulement si sa phase est en haut ou en bas" },
+          { code: "solubilite-inversee", texte: "Inverser le critère : le produit doit être très soluble dans le solvant extracteur pour passer dans sa phase" }
+        ],
+        exp: "Le solvant doit former une phase séparée (non miscible) et bien dissoudre le produit. Sa densité indique seulement s'il sera en haut ou en bas de l'ampoule."
+      },
+      {
+        q: "CCM : l'extrait naturel de lavande donne trois taches ; le produit de synthèse, une seule tache, à la hauteur de la référence d'acétate de linalyle. On peut conclure que :",
+        opts: [
+          "le produit de synthèse est impur, car il ne donne pas les trois taches de l'extrait naturel",
+          "l'extrait naturel ne contient pas d'acétate de linalyle, puisqu'il donne plusieurs taches",
+          "le produit de synthèse est probablement de l'acétate de linalyle pur",
+          "le produit de synthèse est une autre espèce, puisqu'il a été fabriqué"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "naturel-reference-purete", texte: "Prendre l'extrait naturel pour la référence de pureté : c'est un mélange de plusieurs espèces" },
+          { code: "melange-exclut-espece", texte: "Croire qu'un mélange ne peut pas contenir l'espèce cherchée : une de ses taches est à la hauteur de la référence" },
+          null,
+          { code: "naturel-different-synthetique", texte: "Croire qu'une espèce synthétique diffère de l'espèce naturelle : même Rf que la référence, c'est probablement la même molécule" }
+        ],
+        exp: "Une seule tache, au même Rf que la référence : le produit est probablement pur et identique à la référence. L'extrait naturel, mélange, contient aussi cette espèce (une tache à la même hauteur)."
+      },
+      {
+        q: "À la fin d'une synthèse, le produit est un solide dispersé dans un liquide. Pour le récupérer rapidement, on utilise :",
+        opts: [
+          "une ampoule à décanter",
+          "une filtration sous vide (Büchner)",
+          "une évaporation complète du liquide",
+          "un chauffage à reflux"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "decantation-vs-filtration", texte: "Utiliser l'ampoule à décanter, qui sépare deux liquides non miscibles, pas un solide d'un liquide" },
+          null,
+          { code: "evaporation-recupere-impuretes", texte: "Évaporer tout le liquide : les espèces dissoutes resteraient mélangées au solide" },
+          { code: "reflux-vs-separation", texte: "Croire que le reflux sépare : il sert à réaliser la transformation, pas à isoler le produit" }
+        ],
+        exp: "La filtration sous vide sépare rapidement un solide d'un liquide. L'ampoule à décanter sert à séparer deux liquides non miscibles."
       }
     ],
     annales: [],
@@ -24539,114 +24779,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Dans un milieu transparent et homogène, la lumière se propage :",
+        q: "La lumière d'une lampe spectrale au sodium (gaz à basse pression) donne :",
         opts: [
-          "En ligne courbe",
-          "En ligne droite",
-          "De façon aléatoire",
-          "Uniquement la nuit"
+          "un spectre continu",
+          "un spectre de raies d'émission",
+          "un spectre de raies d'absorption",
+          "aucun spectre : un gaz n'émet pas de lumière"
         ],
         ans: 1,
-        exp: "Dans un milieu transparent et homogène, la propagation de la lumière est rectiligne."
+        pieges: [
+          { code: "continu-vs-raies-source", texte: "Confondre les sources : un corps chaud dense donne un spectre continu, un gaz à basse pression excité donne des raies" },
+          null,
+          { code: "emission-vs-absorption", texte: "Confondre émission et absorption : la lampe émet sa propre lumière, ses raies sont colorées sur fond noir" },
+          { code: "gaz-n-emet-pas", texte: "Croire qu'un gaz ne peut pas émettre de lumière : un gaz excité (lampe spectrale, néon) émet des raies" }
+        ],
+        exp: "Un gaz à basse pression excité émet un spectre de raies d'émission : raies colorées sur fond noir, caractéristiques de l'élément (ici le doublet jaune du sodium)."
       },
       {
-        q: "La vitesse de la lumière dans le vide vaut environ :",
+        q: "On augmente la température du filament d'une lampe à incandescence. Son spectre :",
         opts: [
-          "3,00 × 10³ m/s",
-          "3,00 × 10⁵ m/s",
-          "3,00 × 10⁸ m/s",
-          "3,00 × 10¹⁰ m/s"
+          "s'enrichit vers le rouge",
+          "ne change pas : seule l'intensité augmente",
+          "devient un spectre de raies",
+          "s'enrichit en radiations bleues et violettes"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "wien-inverse", texte: "Inverser la loi de Wien : plus un corps est chaud, plus son spectre s'enrichit vers le bleu et le violet" },
+          { code: "temperature-intensite-seule", texte: "Croire que la température ne change que l'intensité : la couleur dominante se déplace aussi vers le bleu" },
+          { code: "temperature-change-type-spectre", texte: "Croire qu'un corps chaud plus chaud donne des raies : le spectre d'un corps chaud dense reste continu" },
+          null
+        ],
+        exp: "Loi de Wien (qualitative) : plus la température augmente, plus le spectre d'un corps chaud s'enrichit en radiations de courte longueur d'onde (bleu, violet). La lumière passe du rouge-orangé au blanc."
+      },
+      {
+        q: "L'étoile Rigel est bleutée, l'étoile Bételgeuse rouge-orangé. Laquelle a la température de surface la plus élevée ?",
+        opts: [
+          "Bételgeuse : le rouge est la couleur du chaud",
+          "aucune : la couleur dépend de la distance de l'étoile",
+          "Rigel",
+          "on ne peut pas savoir sans connaître leur taille"
         ],
         ans: 2,
-        exp: "c ≈ 3,00 × 10⁸ m/s (valeur exacte 299 792 458 m/s)."
+        pieges: [
+          { code: "rouge-chaud", texte: "Associer le rouge au chaud (comme les robinets) : en physique, un corps rouge est moins chaud qu'un corps bleu" },
+          { code: "couleur-distance", texte: "Croire que la couleur d'une étoile dépend de sa distance : elle dépend de sa température de surface" },
+          null,
+          { code: "couleur-taille", texte: "Croire que la couleur dépend de la taille : c'est la température de surface qui la fixe" }
+        ],
+        exp: "D'après la loi de Wien, une étoile bleutée est plus chaude en surface (environ 10 000 K et plus) qu'une étoile rouge-orangé (environ 3 000 K)."
       },
       {
-        q: "Un spectre continu est émis par :",
+        q: "Le spectre d'absorption de l'hydrogène présente des raies noires :",
         opts: [
-          "Un gaz à basse pression uniquement",
-          "Un corps chaud (solide, liquide ou gaz sous pression)",
-          "Uniquement le Soleil",
-          "Un gaz froid traversé par de la lumière blanche"
+          "aux mêmes longueurs d'onde que ses raies d'émission",
+          "exactement là où l'hydrogène n'émet pas",
+          "à des positions qui dépendent de la lumière blanche utilisée",
+          "sur un fond noir"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "raies-absorption-complementaires", texte: "Croire que le gaz absorbe ce qu'il n'émet pas : il absorbe exactement les radiations qu'il est capable d'émettre" },
+          { code: "raies-dependent-source", texte: "Croire que les raies dépendent de la source de lumière blanche : elles sont caractéristiques du gaz traversé" },
+          { code: "emission-vs-absorption", texte: "Confondre émission et absorption : les raies d'absorption sont noires sur un fond coloré continu" }
+        ],
+        exp: "Un élément absorbe exactement les radiations qu'il peut émettre : les raies noires d'absorption sont aux mêmes longueurs d'onde que les raies colorées d'émission."
+      },
+      {
+        q: "Une lampe donne des raies à 405, 436, 546, 579, 589 et 590 nm. Mercure : 405, 436, 546, 579 nm ; sodium : 589, 590 nm ; hydrogène : 410, 434, 486, 656 nm. La lampe contient :",
+        opts: [
+          "du mercure seulement : les deux autres raies sont des défauts",
+          "de l'hydrogène, puisqu'il y a une raie violette et une raie bleue",
+          "un élément inconnu : aucun élément du tableau n'a six raies",
+          "du mercure et du sodium"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "raies-en-trop-ignorees", texte: "Ignorer les raies qui ne collent pas : chaque raie doit être attribuée, ici 589 et 590 nm sont celles du sodium" },
+          { code: "identification-par-couleur", texte: "Identifier par les couleurs au lieu des longueurs d'onde exactes : 405 et 436 nm ne sont pas 410 et 434 nm" },
+          { code: "melange-non-envisage", texte: "Oublier qu'une source peut contenir plusieurs éléments : son spectre réunit alors leurs raies" },
+          null
+        ],
+        exp: "Les quatre premières raies sont celles du mercure, les deux dernières celles du sodium : la lampe contient les deux éléments. Attention : on compare les longueurs d'onde exactes, pas les couleurs."
+      },
+      {
+        q: "Le spectre de la lumière du Soleil présente des raies noires à 589 et 590 nm. On en déduit que :",
+        opts: [
+          "l'atmosphère du Soleil contient du sodium",
+          "le Soleil n'émet aucune lumière jaune",
+          "le sodium du Soleil émet ces deux raies",
+          "on ne peut rien déduire : le Soleil est trop loin"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "absorption-totale-couleur", texte: "Croire qu'une raie noire supprime toute une couleur : seules deux longueurs d'onde précises sont absorbées" },
+          { code: "emission-vs-absorption", texte: "Confondre émission et absorption : des raies noires sur fond coloré sont des raies d'absorption" },
+          { code: "distance-empeche-analyse", texte: "Croire que la distance empêche l'analyse : c'est justement le spectre qui permet de connaître la composition des étoiles" }
+        ],
+        exp: "Ces raies d'absorption sont celles du sodium : les gaz de l'atmosphère du Soleil absorbent ces radiations. C'est ainsi qu'on connaît la composition des étoiles."
+      },
+      {
+        q: "La lumière du Soleil parcourt 1,5×10⁸ km jusqu'à la Terre, à c = 3,0×10⁸ m·s⁻¹. Elle met :",
+        opts: [
+          "0,50 s",
+          "500 s, soit environ 8 min",
+          "4,5×10¹⁹ s",
+          "2,0×10⁻³ s"
         ],
         ans: 1,
-        exp: "Un spectre continu (toutes les couleurs du rouge au violet) est émis par un corps chaud, quel que soit son état."
+        pieges: [
+          { code: "conversion-km-m", texte: "Oublier de convertir les kilomètres en mètres : 1,5×10⁸ km = 1,5×10¹¹ m" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : la durée vaut t = d / c" },
+          { code: "vitesse-rapport-inverse", texte: "Inverser le rapport : c / d ; il faut t = d / c" }
+        ],
+        exp: "t = d / c = 1,5×10¹¹ / 3,0×10⁸ = 500 s, soit environ 8 min. Attention : la distance doit être en mètres."
       },
       {
-        q: "D'après la loi de Wien (qualitative), quand la température d'un corps chaud augmente, son spectre :",
+        q: "La lumière se propage :",
         opts: [
-          "Ne change pas",
-          "S'enrichit vers le rouge",
-          "S'enrichit vers le bleu",
-          "Disparaît"
+          "plus vite dans l'eau que dans l'air, comme le son",
+          "à la même vitesse dans tous les milieux",
+          "moins vite dans l'eau que dans l'air",
+          "seulement dans un milieu matériel, pas dans le vide"
         ],
         ans: 2,
-        exp: "Plus un corps est chaud, plus son spectre est riche en radiations de courte longueur d'onde (bleu, violet)."
+        pieges: [
+          { code: "lumiere-comme-son", texte: "Appliquer à la lumière ce qui est vrai du son : la lumière est plus lente dans l'eau (2,25×10⁸ m·s⁻¹) que dans l'air" },
+          { code: "vitesse-lumiere-universelle", texte: "Croire que la vitesse de la lumière est la même partout : c = 3,00×10⁸ m·s⁻¹ dans le vide seulement" },
+          null,
+          { code: "lumiere-besoin-milieu", texte: "Croire que la lumière a besoin d'un milieu : elle se propage dans le vide (lumière des étoiles)" }
+        ],
+        exp: "La lumière va le plus vite dans le vide (et presque autant dans l'air), moins vite dans l'eau ou le verre. Attention : c'est l'inverse du son, qui ne se propage pas dans le vide."
       },
       {
-        q: "Une étoile bleue a, par rapport à une étoile rouge :",
+        q: "Une radiation de longueur d'onde 1 000 nm dans le vide est :",
         opts: [
-          "Une température de surface plus basse",
-          "Une température de surface plus élevée",
-          "La même température",
-          "Pas de lien entre couleur et température"
+          "visible, de couleur violette",
+          "ultraviolette",
+          "visible, de couleur rouge",
+          "infrarouge, invisible"
         ],
-        ans: 1,
-        exp: "Une étoile bleue est plus chaude en surface qu'une étoile rouge (loi de Wien)."
+        ans: 3,
+        pieges: [
+          { code: "lambda-couleurs-inverses", texte: "Inverser l'ordre des couleurs : le violet est vers 400 nm, le rouge vers 800 nm" },
+          { code: "uv-ir-inverses", texte: "Inverser ultraviolet et infrarouge : au-delà de 800 nm (après le rouge), c'est l'infrarouge" },
+          { code: "domaine-visible-mal-connu", texte: "Oublier les limites du visible : environ 400 nm à 800 nm ; 1 000 nm est au-delà" },
+          null
+        ],
+        exp: "Le domaine visible s'étend d'environ 400 nm (violet) à 800 nm (rouge). À 1 000 nm, au-delà du rouge, la radiation est infrarouge, invisible."
       },
       {
-        q: "Un spectre de raies d'émission est constitué de :",
+        q: "La raie rouge de l'hydrogène a une longueur d'onde de 656 nm. En mètres, cela fait :",
         opts: [
-          "Raies noires sur fond coloré",
-          "Raies colorées sur fond noir",
-          "Un fond continu sans raies",
-          "Une seule raie blanche"
+          "6,56×10⁻⁷ m",
+          "6,56×10⁻⁴ m",
+          "6,56×10¹¹ m",
+          "6,56×10⁻⁹ m"
         ],
-        ans: 1,
-        exp: "Le spectre de raies d'émission présente des raies colorées, fines, sur un fond noir."
-      },
-      {
-        q: "Un spectre de raies d'absorption est obtenu lorsque :",
-        opts: [
-          "Un gaz chaud émet de la lumière",
-          "Une lumière blanche traverse un gaz froid",
-          "Un solide est chauffé à haute température",
-          "On observe directement une lampe spectrale"
+        ans: 0,
+        pieges: [
+          null,
+          { code: "nm-vs-um", texte: "Confondre nanomètre (10⁻⁹ m) et micromètre (10⁻⁶ m)" },
+          { code: "signe-exposant-oublie", texte: "Oublier le signe moins de l'exposant : 1 nm = 10⁻⁹ m, une longueur minuscule" },
+          { code: "notation-scientifique-mantisse", texte: "Changer la mantisse sans changer la puissance : 656×10⁻⁹ = 6,56×10² × 10⁻⁹ = 6,56×10⁻⁷" }
         ],
-        ans: 1,
-        exp: "Le spectre d'absorption apparaît quand une lumière blanche (spectre continu) traverse un gaz froid qui absorbe certaines radiations, créant des raies noires."
-      },
-      {
-        q: "Le spectre de raies d'un élément chimique permet de :",
-        opts: [
-          "Déterminer sa masse volumique",
-          "L'identifier de façon caractéristique",
-          "Mesurer sa température exacte uniquement",
-          "Connaître sa vitesse de propagation"
-        ],
-        ans: 1,
-        exp: "Chaque élément possède un spectre de raies unique, qui sert de signature pour l'identifier."
-      },
-      {
-        q: "Un spectre de raies présente des raies à 405 nm, 436 nm, 546 nm et 579 nm. D'après le tableau de référence, il s'agit de :",
-        opts: [
-          "Sodium",
-          "Hydrogène",
-          "Mercure",
-          "Hélium"
-        ],
-        ans: 2,
-        exp: "Ces quatre longueurs d'onde correspondent exactement aux raies caractéristiques du mercure."
-      },
-      {
-        q: "Le doublet jaune à 589-590 nm est caractéristique de :",
-        opts: [
-          "L'hydrogène",
-          "Le mercure",
-          "Le sodium",
-          "L'hélium"
-        ],
-        ans: 2,
-        exp: "Le sodium présente un doublet de raies jaunes caractéristique à 589 nm et 590 nm."
+        exp: "656 nm = 656×10⁻⁹ m = 6,56×10⁻⁷ m. Attention : en divisant 656 par 100, il faut multiplier la puissance de dix par 100."
       }
     ],
     annales: [],
