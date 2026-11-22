@@ -14340,114 +14340,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Un corps pur est une espèce chimique qui :",
+        q: "L'étiquette d'une eau minérale limpide indique la présence d'ions calcium, magnésium et hydrogénocarbonate. Cette eau est :",
         opts: [
-          "Contient plusieurs sortes d'entités chimiques",
-          "Ne contient qu'une seule sorte d'entité chimique",
-          "Est toujours liquide à température ambiante",
-          "Est toujours transparente"
-        ],
-        ans: 1,
-        exp: "Un corps pur ne contient qu'une seule sorte d'entité chimique (atomes, ions ou molécules), contrairement à un mélange qui en contient au moins deux."
-      },
-      {
-        q: "Un volume d'air contient environ 78 % de diazote, 21 % de dioxygène et :",
-        opts: [
-          "1 % de dioxyde de carbone",
-          "1 % d'argon",
-          "10 % de vapeur d'eau",
-          "5 % d'hydrogène"
-        ],
-        ans: 1,
-        exp: "L'air contient environ 78 % de N₂, 21 % d'O₂ et environ 1 % d'argon. Le dioxyde de carbone n'est présent qu'à l'état de trace (environ 0,04 %), bien en dessous de 1 %."
-      },
-      {
-        q: "Sous une pression donnée, le changement d'état d'un corps pur s'effectue :",
-        opts: [
-          "À une température qui augmente progressivement",
-          "À une température constante caractéristique de l'espèce",
-          "Toujours à 0 °C",
-          "De manière aléatoire selon l'échantillon"
-        ],
-        ans: 1,
-        exp: "C'est une propriété caractéristique très utile pour identifier un corps pur : la température reste constante pendant tout le changement d'état."
-      },
-      {
-        q: "La masse volumique ρ d'une espèce chimique se calcule par la formule :",
-        opts: [
-          "ρ = V / m",
-          "ρ = m × V",
-          "ρ = m / V",
-          "ρ = m + V"
-        ],
-        ans: 2,
-        exp: "La masse volumique est le quotient de la masse par le volume : ρ = m / V, exprimée en kg·m⁻³ ou en g·mL⁻¹."
-      },
-      {
-        q: "Parmi les masses volumiques suivantes, laquelle correspond approximativement au mercure ?",
-        opts: [
-          "0,79 g·mL⁻¹",
-          "1,00 g·mL⁻¹",
-          "0,92 g·mL⁻¹",
-          "13,6 g·mL⁻¹"
-        ],
-        ans: 3,
-        exp: "Le mercure a une masse volumique très élevée, environ 13,6 g·mL⁻¹, ce qui en fait un liquide métallique particulièrement dense."
-      },
-      {
-        q: "La densité d'un liquide se calcule en divisant sa masse volumique par :",
-        opts: [
-          "La masse volumique de l'air",
-          "La masse volumique de l'eau",
-          "Son propre volume",
-          "La masse volumique du mercure"
-        ],
-        ans: 1,
-        exp: "La densité d = ρ / ρ(eau) est une grandeur sans unité, obtenue en comparant la masse volumique de l'espèce à celle de l'eau."
-      },
-      {
-        q: "Deux liquides non miscibles forment :",
-        opts: [
-          "Un mélange homogène",
-          "Un corps pur",
-          "Un mélange hétérogène avec deux phases distinctes",
-          "Une solution aqueuse unique"
-        ],
-        ans: 2,
-        exp: "Des liquides non miscibles ne se mélangent pas de façon homogène : ils forment deux phases distinctes, visibles à l'œil nu (mélange hétérogène)."
-      },
-      {
-        q: "Dans un mélange de deux liquides non miscibles, le liquide le plus dense se trouve :",
-        opts: [
-          "En position supérieure",
-          "En position inférieure",
-          "Toujours au milieu",
-          "Réparti uniformément"
-        ],
-        ans: 1,
-        exp: "Le liquide ayant la plus grande densité (ou masse volumique) est le plus lourd par unité de volume : il se dépose en dessous de l'autre liquide."
-      },
-      {
-        q: "Pour identifier la présence d'eau dans un échantillon, on utilise :",
-        opts: [
-          "De l'eau de chaux",
-          "Une bûchette incandescente",
-          "Du sulfate de cuivre anhydre (poudre blanche qui devient bleue)",
-          "Un test à la flamme avec détonation"
-        ],
-        ans: 2,
-        exp: "Le sulfate de cuivre anhydre est blanc et devient bleu au contact de l'eau : c'est le test caractéristique de la présence d'eau."
-      },
-      {
-        q: "Quel test permet d'identifier le dioxygène ?",
-        opts: [
-          "Une bûchette incandescente qui se ravive",
-          "Une détonation à l'approche d'une flamme",
-          "Le trouble de l'eau de chaux",
-          "Le changement de couleur du sulfate de cuivre"
+          "un mélange homogène",
+          "un corps pur, car on ne voit qu'une seule phase",
+          "un mélange hétérogène, car elle contient plusieurs espèces",
+          "un corps pur, car c'est une eau naturelle de source"
         ],
         ans: 0,
-        exp: "Le dioxygène ravive la combustion : une bûchette incandescente approchée d'un flacon de dioxygène se rallume."
+        pieges: [
+          null,
+          { code: "homogene-vs-corps-pur", texte: "Confondre mélange homogène et corps pur : une seule phase visible ne veut pas dire une seule espèce chimique" },
+          { code: "melange-donc-heterogene", texte: "Croire qu'un mélange est forcément hétérogène : on parle d'hétérogène seulement si l'on distingue plusieurs phases" },
+          { code: "naturel-donc-pur", texte: "Croire que « naturel » veut dire « pur » : une eau de source contient de nombreux ions dissous" }
+        ],
+        exp: "L'eau minérale contient de l'eau et des ions dissous (plusieurs espèces) que l'œil ne distingue pas : c'est un mélange homogène. Attention : limpide ou naturelle ne veut pas dire corps pur."
+      },
+      {
+        q: "L'air contient, en volume, environ 78 % de diazote et 21 % de dioxygène. Quel volume de dioxygène y a-t-il dans 10 L d'air ?",
+        opts: [
+          "7,8 L",
+          "2,1 L",
+          "21 L",
+          "10 L"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "air-n2-o2-inverses", texte: "Inverser diazote et dioxygène : le gaz majoritaire de l'air est le diazote (78 %), pas le dioxygène" },
+          null,
+          { code: "pourcentage-pris-pour-valeur", texte: "Prendre le pourcentage pour le résultat : 21 % de 10 L, c'est 10 × 21 / 100 = 2,1 L, pas 21 L" },
+          { code: "air-egal-dioxygene", texte: "Croire que l'air est du dioxygène : il n'en contient qu'environ 21 % en volume" }
+        ],
+        exp: "V(O₂) = 10 × 21 / 100 = 2,1 L. Attention : le constituant majoritaire de l'air est le diazote (78 %) ; le dioxyde de carbone n'est qu'à l'état de trace (0,04 %)."
+      },
+      {
+        q: "On dissout 10 g de sucre dans 90 g d'eau. Quel est le pourcentage massique de sucre dans la solution obtenue ?",
+        opts: [
+          "11 %",
+          "90 %",
+          "10 %",
+          "0,10 %"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "masse-solvant-vs-solution", texte: "Diviser par la masse du solvant au lieu de la masse totale : 10 / 90 × 100 ≈ 11 %" },
+          { code: "constituant-inverse", texte: "Calculer le pourcentage de l'autre constituant (l'eau) : 90 / 100 × 100 = 90 %" },
+          null,
+          { code: "oubli-facteur-100", texte: "Oublier de multiplier par 100 : 10 / 100 = 0,10 est une fraction, soit 10 %" }
+        ],
+        exp: "La masse totale vaut 10 + 90 = 100 g, donc %massique = 10 / 100 × 100 = 10 %. Attention : on divise par la masse totale du mélange, pas par la masse d'eau."
+      },
+      {
+        q: "Sous la pression atmosphérique normale, pendant toute la solidification de l'eau pure, sa température :",
+        opts: [
+          "diminue régulièrement jusqu'à ce que toute l'eau soit gelée",
+          "reste constante, à une valeur qui dépend de la masse d'eau",
+          "reste constante à 0 °C",
+          "reste constante à 0 °C, comme pour tous les corps purs"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "palier-temperature-varie", texte: "Croire que la température d'un corps pur varie pendant un changement d'état : elle reste constante (palier)" },
+          { code: "temperature-depend-quantite", texte: "Croire que la température de changement d'état dépend de la quantité : elle est caractéristique de l'espèce, pas de sa masse" },
+          null,
+          { code: "temperature-changement-etat-universelle", texte: "Croire que tous les corps purs changent d'état à la même température : chaque espèce a la sienne (l'éthanol bout à 78 °C)" }
+        ],
+        exp: "Pour un corps pur, sous une pression donnée, le changement d'état se fait à température constante, caractéristique de l'espèce : 0 °C pour l'eau. Attention : c'est ce palier qui permet d'identifier une espèce."
+      },
+      {
+        q: "Pendant l'ébullition d'un liquide incolore, la température passe de 78 °C à 85 °C. Données : l'éthanol pur bout à 78 °C. On peut conclure que ce liquide est :",
+        opts: [
+          "de l'éthanol pur, car l'ébullition commence à 78 °C",
+          "un mélange",
+          "un corps pur, puisqu'il bout",
+          "un corps pur, dont la température monte parce qu'on le chauffe"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "debut-palier-suffit", texte: "Ne regarder que le début de l'ébullition : pour un corps pur, la température doit rester constante pendant tout le changement d'état" },
+          null,
+          { code: "ebullition-preuve-purete", texte: "Croire que bouillir prouve qu'un liquide est pur : un mélange bout aussi, mais sans palier de température" },
+          { code: "palier-temperature-varie", texte: "Croire que la température d'un corps pur varie pendant un changement d'état : elle reste constante (palier)" }
+        ],
+        exp: "La température varie pendant l'ébullition : il n'y a pas de palier, donc ce n'est pas un corps pur, c'est un mélange. Attention : un corps pur chauffé garde une température constante tant qu'il bout."
+      },
+      {
+        q: "Un petit bloc de métal a une masse de 54 g et un volume de 20 mL. Sa masse volumique vaut :",
+        opts: [
+          "0,37 g·mL⁻¹",
+          "1 080 g·mL⁻¹",
+          "2,7 kg·m⁻³",
+          "2,7 g·mL⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "masse-volumique-inverse", texte: "Inverser le rapport : ρ = V / m = 20 / 54 ≈ 0,37 au lieu de ρ = m / V" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 54 × 20 = 1 080" },
+          { code: "unite-changee-sans-conversion", texte: "Changer d'unité sans convertir : 2,7 g·mL⁻¹ = 2 700 kg·m⁻³, pas 2,7 kg·m⁻³" },
+          null
+        ],
+        exp: "ρ = m / V = 54 / 20 = 2,7 g·mL⁻¹ (soit 2 700 kg·m⁻³). Attention : la masse volumique est une masse divisée par un volume, et changer d'unité oblige à convertir la valeur."
+      },
+      {
+        q: "L'huile alimentaire a une masse volumique ρ = 0,92 g·mL⁻¹ ; celle de l'eau vaut 1,00 g·mL⁻¹. La densité de l'huile est :",
+        opts: [
+          "0,92",
+          "0,92 g·mL⁻¹",
+          "920",
+          "1,09"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "densite-avec-unite", texte: "Donner une unité à la densité : c'est un quotient de deux masses volumiques, elle n'a pas d'unité" },
+          { code: "densite-unites-differentes", texte: "Diviser deux masses volumiques exprimées dans des unités différentes : 920 kg·m⁻³ / 1,00 g·mL⁻¹ = 920" },
+          { code: "densite-inverse", texte: "Inverser le rapport : 1,00 / 0,92 ≈ 1,09 au lieu de d = ρ / ρ(eau)" }
+        ],
+        exp: "d = ρ / ρ(eau) = 0,92 / 1,00 = 0,92, sans unité. Attention : les deux masses volumiques doivent être dans la même unité."
+      },
+      {
+        q: "Le cyclohexane (densité 0,78) et l'eau ne sont pas miscibles. On verse 20 mL de cyclohexane et 100 mL d'eau dans une ampoule à décanter. On observe :",
+        opts: [
+          "une seule phase, car on a beaucoup plus d'eau",
+          "deux phases, le cyclohexane en haut",
+          "deux phases, le cyclohexane en bas",
+          "deux phases, l'eau en haut car son volume est le plus grand"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "non-miscible-homogene", texte: "Oublier que deux liquides non miscibles forment toujours deux phases, quelles que soient les quantités" },
+          null,
+          { code: "plus-dense-en-haut", texte: "Inverser la règle : le liquide le moins dense (densité la plus petite) se place au-dessus" },
+          { code: "position-selon-quantite", texte: "Croire que la position des phases dépend des volumes versés : elle dépend seulement des densités" }
+        ],
+        exp: "Non miscibles : deux phases. Le cyclohexane, moins dense que l'eau (0,78 < 1,00), forme la phase supérieure. Attention : la quantité versée ne change pas l'ordre des phases."
+      },
+      {
+        q: "On introduit une bûchette incandescente (sans flamme) dans un tube rempli d'un gaz incolore : elle se rallume. Ce gaz est :",
+        opts: [
+          "du dihydrogène",
+          "du dioxyde de carbone",
+          "de la vapeur d'eau",
+          "du dioxygène"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "test-h2-vs-o2", texte: "Confondre les tests : le dihydrogène produit une petite détonation avec une flamme ; c'est le dioxygène qui ravive une bûchette" },
+          { code: "test-co2-vs-o2", texte: "Confondre les tests : le dioxyde de carbone trouble l'eau de chaux et n'entretient pas la combustion" },
+          { code: "test-eau-vs-o2", texte: "Confondre les tests : l'eau se détecte avec le sulfate de cuivre anhydre, qui devient bleu" },
+          null
+        ],
+        exp: "Le dioxygène entretient la combustion : il ravive une bûchette incandescente. Attention : la détonation (« pop ») à l'approche d'une flamme est le test du dihydrogène."
+      },
+      {
+        q: "Pour savoir si un liquide incolore contient de l'eau, on peut :",
+        opts: [
+          "y ajouter du sulfate de cuivre anhydre, qui devient bleu",
+          "vérifier qu'il est incolore et sans odeur",
+          "y faire buller de l'eau de chaux, qui se trouble",
+          "approcher une flamme et vérifier qu'il ne brûle pas"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "identification-par-aspect", texte: "Croire que l'aspect suffit à identifier une espèce : beaucoup de liquides incolores et inodores ne sont pas de l'eau" },
+          { code: "test-co2-vs-eau", texte: "Confondre les tests : l'eau de chaux se trouble en présence de dioxyde de carbone, pas d'eau" },
+          { code: "ininflammable-donc-eau", texte: "Croire qu'un liquide qui ne brûle pas est de l'eau : ce n'est pas un test caractéristique de l'eau" }
+        ],
+        exp: "Le sulfate de cuivre anhydre, poudre blanche, devient bleu au contact de l'eau : c'est le test caractéristique. Attention : un liquide incolore n'est pas forcément de l'eau."
       }
     ],
     annales: [],
@@ -14852,114 +14912,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "L'ajout de nitrate d'argent à une solution contenant des ions chlorure produit :",
+        q: "On ajoute quelques gouttes de soude à une solution de chlorure de fer (III). On observe :",
         opts: [
-          "Un précipité bleu",
-          "Un précipité vert",
-          "Un précipité blanc qui noircit à la lumière",
-          "Un dégagement gazeux"
+          "un précipité vert",
+          "un précipité rouille",
+          "un précipité blanc qui noircit à la lumière",
+          "un précipité bleu"
         ],
-        ans: 2,
-        exp: "Les ions Cl⁻ forment avec les ions Ag⁺ un précipité blanc de chlorure d'argent AgCl, qui noircit à la lumière."
+        ans: 1,
+        pieges: [
+          { code: "fe2-fe3-inverses", texte: "Inverser les couleurs des deux ions du fer : fer (II) → précipité vert, fer (III) → précipité rouille" },
+          null,
+          { code: "soude-revele-chlorure", texte: "Croire que la soude révèle les ions chlorure : c'est le nitrate d'argent qui donne le précipité blanc" },
+          { code: "couleurs-precipites-confondues", texte: "Confondre avec le précipité bleu, qui révèle les ions cuivre (II)" }
+        ],
+        exp: "Les ions Fe³⁺ forment avec les ions hydroxyde HO⁻ de la soude un précipité rouille. Attention : le précipité vert est celui des ions Fe²⁺."
       },
       {
-        q: "L'ajout de soude (ions hydroxyde) à une solution contenant des ions cuivre (II) produit :",
+        q: "Pour mettre en évidence les ions chlorure Cl⁻ dans une eau, on y ajoute :",
         opts: [
-          "Un précipité bleu",
-          "Un précipité rouille",
-          "Un précipité vert",
-          "Aucune réaction visible"
+          "de la soude",
+          "de l'eau de chaux",
+          "quelques gouttes de nitrate d'argent",
+          "du sulfate de cuivre anhydre"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "soude-revele-chlorure", texte: "Croire que la soude révèle les ions chlorure : elle révèle les ions métalliques (Fe²⁺, Fe³⁺, Cu²⁺)" },
+          { code: "test-co2-pour-ion", texte: "Confondre avec le test du dioxyde de carbone : l'eau de chaux ne révèle pas d'ion" },
+          null,
+          { code: "test-eau-pour-ion", texte: "Confondre avec le test de l'eau : le sulfate de cuivre anhydre bleuit au contact de l'eau, pas des ions chlorure" }
+        ],
+        exp: "Les ions argent Ag⁺ forment avec les ions Cl⁻ un précipité blanc de chlorure d'argent, qui noircit à la lumière. Attention : la soude sert à identifier les ions métalliques."
+      },
+      {
+        q: "On ajoute de la soude à une solution inconnue : un précipité vert apparaît. La solution contient :",
+        opts: [
+          "des ions fer (II) Fe²⁺",
+          "des ions fer (III) Fe³⁺",
+          "des ions cuivre (II) Cu²⁺",
+          "des ions hydroxyde HO⁻"
         ],
         ans: 0,
-        exp: "Les ions Cu²⁺ réagissent avec les ions hydroxyde HO⁻ pour former un précipité bleu d'hydroxyde de cuivre (II)."
-      },
-      {
-        q: "Un précipité rouille obtenu avec la soude indique la présence :",
-        opts: [
-          "D'ions fer (II)",
-          "D'ions cuivre (II)",
-          "D'ions fer (III)",
-          "D'ions chlorure"
+        pieges: [
+          null,
+          { code: "fe2-fe3-inverses", texte: "Inverser les couleurs des deux ions du fer : fer (II) → précipité vert, fer (III) → précipité rouille" },
+          { code: "couleurs-precipites-confondues", texte: "Confondre les couleurs : le précipité obtenu avec les ions cuivre (II) est bleu" },
+          { code: "precipite-revele-reactif", texte: "Croire que le test révèle le réactif ajouté : les ions HO⁻ viennent de la soude, le test révèle l'ion de la solution" }
         ],
-        ans: 2,
-        exp: "Les ions Fe³⁺ forment avec la soude un précipité de couleur rouille (hydroxyde de fer III), à distinguer du précipité vert du fer (II)."
+        exp: "Un précipité vert avec la soude révèle les ions Fe²⁺. Attention : les ions hydroxyde sont apportés par la soude, ils ne sont pas ce que l'on cherche."
       },
       {
-        q: "En chromatographie, la phase mobile est aussi appelée :",
+        q: "Lors de l'élution d'une chromatographie sur couche mince, l'éluant :",
         opts: [
-          "Le révélateur",
-          "L'éluant",
-          "Le dépôt",
-          "Le support poreux"
+          "reste immobile : c'est la plaque qui entraîne les espèces",
+          "rend visibles les taches des espèces incolores",
+          "entraîne toutes les espèces à la même vitesse",
+          "monte par capillarité et entraîne les espèces à des vitesses différentes"
         ],
-        ans: 1,
-        exp: "La phase mobile, appelée éluant, est le solvant qui migre le long de la phase fixe et entraîne les espèces chimiques du mélange."
-      },
-      {
-        q: "Quelle est la phase fixe la plus courante en chromatographie sur couche mince ?",
-        opts: [
-          "Un papier filtre imbibé d'eau",
-          "Une plaque de silice ou d'alumine",
-          "Un verre de montre",
-          "Un tube à essai"
+        ans: 3,
+        pieges: [
+          { code: "phases-fixe-mobile-inversees", texte: "Inverser les rôles : la plaque est la phase fixe, l'éluant est la phase mobile qui monte" },
+          { code: "elution-vs-revelation", texte: "Confondre élution et révélation : on rend les taches visibles après l'élution, par exemple sous lampe UV" },
+          { code: "meme-vitesse-migration", texte: "Croire que toutes les espèces migrent ensemble : c'est parce qu'elles migrent à des vitesses différentes qu'on les sépare" },
+          null
         ],
-        ans: 1,
-        exp: "La CCM utilise une plaque recouverte d'une fine couche de silice (SiO₂) ou d'alumine (Al₂O₃), un support poreux qui constitue la phase fixe."
+        exp: "L'éluant (phase mobile) monte le long de la plaque (phase fixe) par capillarité ; chaque espèce est entraînée à sa propre vitesse, ce qui les sépare. Attention : l'éluant ne rend pas les taches visibles."
       },
       {
-        q: "Quel est l'ordre correct des trois étapes d'une chromatographie sur couche mince ?",
+        q: "Au début d'une chromatographie sur couche mince, le niveau de l'éluant dans la cuve doit se trouver :",
         opts: [
-          "Révélation, dépôt, élution",
-          "Dépôt, élution, révélation",
-          "Élution, révélation, dépôt",
-          "Dépôt, révélation, élution"
+          "au-dessus de la ligne des dépôts, pour bien les mouiller",
+          "sous la ligne des dépôts",
+          "jusqu'en haut de la plaque, pour gagner du temps",
+          "à n'importe quelle hauteur : seul le choix de l'éluant compte"
         ],
         ans: 1,
-        exp: "On dépose d'abord l'échantillon, puis on laisse l'éluant migrer (élution), et enfin on révèle les taches non visibles à l'œil nu."
-      },
-      {
-        q: "Le rapport frontal Rf d'une espèce chimique se calcule par :",
-        opts: [
-          "Rf = H / h",
-          "Rf = h × H",
-          "Rf = h / H",
-          "Rf = h + H"
+        pieges: [
+          { code: "depot-immerge", texte: "Croire qu'il faut immerger les dépôts : ils se dissoudraient dans l'éluant de la cuve au lieu de migrer sur la plaque" },
+          null,
+          { code: "plaque-immergee", texte: "Croire que l'élution consiste à plonger la plaque : l'éluant doit monter seul, par capillarité" },
+          { code: "niveau-eluant-sans-importance", texte: "Négliger la position des dépôts : s'ils trempent dans l'éluant, la chromatographie est ratée" }
         ],
-        ans: 2,
-        exp: "Rf est le rapport de la distance parcourue par l'espèce chimique (h) sur la distance parcourue par l'éluant (H)."
+        exp: "Les dépôts (à environ 1 cm du bas) doivent rester au-dessus de l'éluant, qui monte ensuite par capillarité. Attention : des dépôts immergés se dissolvent dans la cuve."
       },
       {
-        q: "Le rapport frontal Rf est toujours compris entre :",
+        q: "Sur une plaque de CCM, la ligne des dépôts est à 1,0 cm du bas. Après élution, une tache est à 4,0 cm du bas et le front de l'éluant à 8,5 cm du bas. Le rapport frontal de l'espèce vaut :",
         opts: [
-          "0 et 1",
-          "1 et 10",
-          "-1 et 1",
-          "0 et 100"
+          "0,40",
+          "2,5",
+          "0,47",
+          "0,40 cm"
         ],
         ans: 0,
-        exp: "Comme h est toujours inférieur ou égal à H (l'espèce ne peut pas dépasser le front de l'éluant), Rf est compris entre 0 et 1."
-      },
-      {
-        q: "Sur un chromatogramme, deux taches situées à la même hauteur (même Rf) suggèrent que :",
-        opts: [
-          "Ce sont forcément la même espèce chimique",
-          "Il s'agit probablement de la même espèce chimique, à confirmer avec un autre éluant",
-          "Le résultat est toujours ininterprétable",
-          "L'expérience a échoué"
+        pieges: [
+          null,
+          { code: "rf-inverse", texte: "Inverser le rapport : H / h = 7,5 / 3,0 = 2,5, alors que Rf = h / H est toujours inférieur à 1" },
+          { code: "rf-mesure-depuis-bord", texte: "Mesurer depuis le bas de la plaque au lieu de la ligne des dépôts : 4,0 / 8,5 ≈ 0,47" },
+          { code: "rf-avec-unite", texte: "Donner une unité au rapport frontal : c'est un quotient de deux distances, il est sans unité" }
         ],
-        ans: 1,
-        exp: "Un même Rf est un indice fort mais pas une preuve absolue : deux espèces différentes peuvent exceptionnellement migrer à la même hauteur, d'où l'intérêt de tester un autre éluant."
+        exp: "Distances mesurées depuis la ligne des dépôts : h = 4,0 − 1,0 = 3,0 cm et H = 8,5 − 1,0 = 7,5 cm, donc Rf = h / H = 3,0 / 7,5 = 0,40. Attention : Rf est sans unité et compris entre 0 et 1."
       },
       {
-        q: "Un échantillon donnant une seule tache en chromatographie est :",
+        q: "Sur un même chromatogramme, la tache de l'espèce A est montée plus haut que celle de l'espèce B. Cela signifie que :",
         opts: [
-          "Un mélange homogène de deux espèces",
-          "Un mélange hétérogène",
-          "Un corps pur",
-          "Impossible à interpréter"
+          "A est plus lourde que B",
+          "A a été déposée en plus grande quantité que B",
+          "A est entraînée plus facilement par l'éluant que B",
+          "A a un rapport frontal plus petit que B"
         ],
         ans: 2,
-        exp: "Une seule tache signifie qu'une seule espèce chimique a migré : l'échantillon est donc un corps pur."
+        pieges: [
+          { code: "tache-haute-lourde", texte: "Croire que la hauteur de migration dépend de la masse des espèces : elle dépend de leur affinité pour l'éluant et pour la plaque" },
+          { code: "hauteur-selon-quantite", texte: "Croire que la hauteur dépend de la quantité déposée : une espèce migre à la même hauteur quelle que soit sa quantité" },
+          null,
+          { code: "rf-hauteur-inverse", texte: "Inverser le lien : plus une tache monte haut, plus h est grand, donc plus son Rf est grand" }
+        ],
+        exp: "Plus une espèce a d'affinité pour l'éluant, plus elle est entraînée loin : sa tache monte plus haut et son Rf est plus grand. Attention : la masse des espèces n'est pas ce qui compte."
+      },
+      {
+        q: "Sur une même plaque, on dépose un mélange M et trois espèces témoins A, B et C. M donne trois taches : une à la hauteur de A, une à la hauteur de C et une à une hauteur qu'aucun témoin n'atteint. Le mélange M contient :",
+        opts: [
+          "A, B et C, puisqu'il donne trois taches",
+          "seulement A et C",
+          "au moins trois espèces, dont probablement A et C",
+          "on ne peut rien dire sans calculer chaque Rf"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "nombre-taches-egal-temoins", texte: "Associer chaque tache à un témoin sans comparer les hauteurs : B ne correspond à aucune tache de M" },
+          { code: "oubli-tache-inconnue", texte: "Oublier la tache qui ne correspond à aucun témoin : c'est une espèce présente dans M mais non identifiée" },
+          null,
+          { code: "rf-calcul-obligatoire", texte: "Croire qu'il faut calculer les Rf : sur une même plaque, comparer les hauteurs des taches suffit" }
+        ],
+        exp: "Trois taches : au moins trois espèces. Deux sont à la hauteur de A et de C (même Rf) : M contient probablement A et C, plus une espèce inconnue. Attention : sur une même plaque, on compare directement les hauteurs."
+      },
+      {
+        q: "Le rapport frontal Rf d'une espèce chimique dépend :",
+        opts: [
+          "seulement de l'espèce : il est le même avec tous les éluants",
+          "de l'éluant et de la phase fixe utilisés",
+          "de la quantité d'espèce déposée",
+          "de la durée de l'élution"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "rf-independant-eluant", texte: "Croire que Rf ne dépend que de l'espèce : il change si l'on change d'éluant ou de phase fixe" },
+          null,
+          { code: "hauteur-selon-quantite", texte: "Croire que la migration dépend de la quantité déposée : une espèce a le même Rf quelle que soit sa quantité" },
+          { code: "rf-depend-duree", texte: "Croire que Rf change avec la durée : h et H augmentent ensemble, leur rapport reste le même" }
+        ],
+        exp: "Rf caractérise une espèce pour un couple (éluant, phase fixe) donné. C'est pourquoi on confirme une identification avec un autre éluant. Attention : Rf est un rapport, il ne dépend pas de la durée de l'élution."
+      },
+      {
+        q: "Après l'élution, une espèce incolore déposée sur la plaque ne donne aucune tache visible. Il faut :",
+        opts: [
+          "conclure qu'elle n'a pas migré",
+          "conclure qu'elle n'était pas présente dans l'échantillon",
+          "prolonger l'élution jusqu'à ce que la tache apparaisse",
+          "révéler la plaque, par exemple sous une lampe UV"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "invisible-pas-migre", texte: "Croire qu'une tache invisible n'a pas migré : une espèce incolore migre aussi, mais on ne la voit pas sans révélation" },
+          { code: "invisible-absent", texte: "Croire qu'une espèce invisible est absente : il faut d'abord révéler la plaque" },
+          { code: "elution-vs-revelation", texte: "Confondre élution et révélation : on rend les taches visibles après l'élution, par exemple sous lampe UV" },
+          null
+        ],
+        exp: "Les espèces incolores migrent comme les autres ; on les rend visibles par révélation (lampe UV, vapeurs de diiode). Attention : ne pas conclure avant d'avoir révélé la plaque."
       }
     ],
     annales: [],
@@ -15348,114 +15468,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Un son est produit par :",
+        q: "Quand le son d'une guitare se propage dans l'air jusqu'à l'oreille :",
         opts: [
-          "Un changement de couleur d'un objet",
-          "La vibration mécanique d'une source",
-          "Le déplacement d'un aimant",
-          "Un changement de température brutal"
-        ],
-        ans: 1,
-        exp: "Un son résulte de la mise en vibration d'une source sonore, qui transmet ensuite cette vibration au milieu environnant."
-      },
-      {
-        q: "Le rôle de la caisse de résonance d'une guitare est de :",
-        opts: [
-          "Empêcher le son de se propager",
-          "Amplifier et enrichir le son produit par les cordes",
-          "Transformer le son en lumière",
-          "Réduire la fréquence du son"
-        ],
-        ans: 1,
-        exp: "La caisse de résonance, en entrant en résonance avec la vibration des cordes, amplifie et enrichit le son émis par l'instrument."
-      },
-      {
-        q: "Un son peut-il se propager dans le vide ?",
-        opts: [
-          "Oui, comme la lumière",
-          "Non, il a besoin d'un milieu matériel",
-          "Oui, mais seulement à haute fréquence",
-          "Non, sauf dans le vide spatial"
-        ],
-        ans: 1,
-        exp: "Le son est une onde mécanique : il nécessite un milieu matériel (solide, liquide ou gaz) pour se propager, contrairement à la lumière."
-      },
-      {
-        q: "Dans l'expérience de la cloche à vide, que se passe-t-il quand on aspire l'air progressivement ?",
-        opts: [
-          "Le son devient plus aigu",
-          "Le son s'atténue puis disparaît",
-          "Le son devient plus grave",
-          "Rien ne change"
-        ],
-        ans: 1,
-        exp: "Au fur et à mesure que l'air est retiré, le milieu de propagation disparaît : le son s'atténue puis n'est plus entendu du tout, bien que le marteau vibre toujours visiblement."
-      },
-      {
-        q: "Dans quel type de milieu le son se propage-t-il le plus vite ?",
-        opts: [
-          "Dans les gaz",
-          "Dans les liquides",
-          "Dans les solides",
-          "Le milieu n'a aucune influence"
+          "l'air proche des cordes est transporté jusqu'à l'oreille",
+          "la vibration se transmet instantanément jusqu'à l'oreille",
+          "la vibration se transmet de proche en proche, sans transport d'air",
+          "des particules de son voyagent entre les molécules d'air"
         ],
         ans: 2,
-        exp: "La célérité du son est la plus élevée dans les solides (molécules très proches), intermédiaire dans les liquides, et la plus faible dans les gaz comme l'air."
+        pieges: [
+          { code: "onde-transporte-matiere", texte: "Croire qu'une onde transporte de la matière : l'air vibre sur place et transmet la vibration à l'air voisin" },
+          { code: "propagation-instantanee", texte: "Croire que le son arrive instantanément : il met du temps à se propager (environ 340 m par seconde dans l'air)" },
+          null,
+          { code: "son-fait-de-particules", texte: "Croire que le son est fait de particules qui voyagent : c'est une vibration du milieu matériel lui-même" }
+        ],
+        exp: "Le son est une onde mécanique : chaque couche d'air vibre sur place et transmet sa vibration à la suivante. Attention : l'air ne voyage pas de la guitare jusqu'à l'oreille."
       },
       {
-        q: "La célérité du son dans l'air, à 20 °C, vaut environ :",
+        q: "Une sonnerie électrique est placée sous une cloche dont on aspire l'air peu à peu. Le son entendu :",
         opts: [
-          "3,4 m·s⁻¹",
-          "34 m·s⁻¹",
-          "340 m·s⁻¹",
-          "340 000 m·s⁻¹"
+          "ne change pas, puisque la sonnerie vibre toujours",
+          "s'atténue puis disparaît",
+          "disparaît parce que le marteau s'arrête de vibrer",
+          "devient plus fort, car l'air ne le freine plus"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "vibration-suffit", texte: "Croire qu'une source qui vibre suffit : sans milieu matériel autour d'elle, le son ne se propage pas" },
+          null,
+          { code: "vide-arrete-source", texte: "Croire que le vide arrête la source : le marteau vibre toujours, c'est la propagation qui devient impossible" },
+          { code: "son-dans-le-vide", texte: "Croire que le son se propage dans le vide (ou mieux sans air) : il a besoin d'un milieu matériel" }
+        ],
+        exp: "En retirant l'air, on supprime le milieu de propagation : le son s'atténue puis n'est plus entendu, alors que le marteau vibre toujours. Attention : contrairement à la lumière, le son ne se propage pas dans le vide."
+      },
+      {
+        q: "Dans quel ordre la vitesse du son augmente-t-elle, de la plus petite à la plus grande ?",
+        opts: [
+          "acier, eau, air",
+          "air, eau, acier",
+          "eau, air, acier",
+          "elle est la même dans ces trois milieux"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "son-plus-vite-dans-air", texte: "Croire que le son va plus vite dans l'air, « moins encombré » : il est plus rapide dans les liquides et encore plus dans les solides" },
+          null,
+          { code: "son-lent-dans-eau", texte: "Croire que le son est plus lent dans l'eau que dans l'air : environ 1 500 m·s⁻¹ dans l'eau contre 340 m·s⁻¹ dans l'air" },
+          { code: "vitesse-son-universelle", texte: "Croire que la vitesse du son ne dépend pas du milieu : elle en dépend beaucoup" }
+        ],
+        exp: "Environ 340 m·s⁻¹ dans l'air, 1 500 m·s⁻¹ dans l'eau et plusieurs milliers de m·s⁻¹ dans l'acier. Attention : le son va plus vite dans les milieux où les particules sont proches."
+      },
+      {
+        q: "Un coup de marteau sur un rail est entendu 0,20 s plus tard par une personne qui colle l'oreille au rail, à 1,2 km de là. La vitesse du son dans le rail vaut :",
+        opts: [
+          "6,0 m·s⁻¹",
+          "240 m·s⁻¹",
+          "1,7×10⁻⁴ m·s⁻¹",
+          "6,0×10³ m·s⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "conversion-km-m", texte: "Oublier de convertir les kilomètres en mètres : 1,2 / 0,20 = 6,0" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 1 200 × 0,20 = 240" },
+          { code: "vitesse-rapport-inverse", texte: "Inverser le rapport : t / d = 0,20 / 1 200 au lieu de v = d / t" },
+          null
+        ],
+        exp: "v = d / t = 1 200 / 0,20 = 6,0×10³ m·s⁻¹. Attention : la distance doit être en mètres et la durée en secondes."
+      },
+      {
+        q: "Face à une falaise, un randonneur crie et entend l'écho 2,0 s plus tard. Le son se propage à 340 m·s⁻¹. La falaise est à :",
+        opts: [
+          "680 m",
+          "340 m",
+          "170 m",
+          "5,9×10⁻³ m"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-aller-retour", texte: "Oublier l'aller-retour : en 2,0 s le son parcourt 680 m, mais il va à la falaise et revient" },
+          null,
+          { code: "distance-v-sur-t", texte: "Diviser la vitesse par la durée : 340 / 2,0 = 170 ; la distance vaut d = v × t" },
+          { code: "vitesse-rapport-inverse", texte: "Inverser le rapport : t / v = 2,0 / 340 au lieu de d = v × t" }
+        ],
+        exp: "En 2,0 s, le son parcourt d = v × t = 340 × 2,0 = 680 m, soit un aller et un retour : la falaise est à 680 / 2 = 340 m. Attention : l'écho fait l'aller-retour."
+      },
+      {
+        q: "Pendant un orage, on entend le tonnerre 3,0 s après avoir vu l'éclair. Le son se propage à 340 m·s⁻¹. L'orage est à environ :",
+        opts: [
+          "1,0 km",
+          "113 m",
+          "2,0 km",
+          "9×10⁸ m"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "distance-v-sur-t", texte: "Diviser la vitesse par la durée : 340 / 3,0 ≈ 113 ; la distance vaut d = v × t" },
+          { code: "aller-retour-a-tort", texte: "Compter un aller-retour qui n'existe pas : le son du tonnerre ne fait qu'un aller jusqu'à nous" },
+          { code: "vitesse-lumiere-vs-son", texte: "Utiliser la vitesse de la lumière (3×10⁸ m·s⁻¹) : la lumière arrive presque instantanément, c'est le retard du son qu'on mesure" }
+        ],
+        exp: "La lumière arrive presque instantanément ; le son met 3,0 s : d = v × t = 340 × 3,0 ≈ 1,0×10³ m, soit 1,0 km. Attention : ici pas d'aller-retour, contrairement à l'écho."
+      },
+      {
+        q: "La fréquence d'un son périodique est :",
+        opts: [
+          "la durée d'un motif élémentaire",
+          "le nombre de motifs qui se répètent en une seconde",
+          "la hauteur maximale de la courbe du signal",
+          "la vitesse à laquelle le son se propage"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "periode-vs-frequence", texte: "Confondre période et fréquence : la période est la durée d'un motif, la fréquence le nombre de motifs par seconde (f = 1 / T)" },
+          null,
+          { code: "frequence-vs-amplitude", texte: "Confondre fréquence et amplitude : l'amplitude est la hauteur de la courbe, la fréquence dit combien de motifs par seconde" },
+          { code: "frequence-vs-celerite", texte: "Confondre fréquence et vitesse de propagation : la fréquence s'exprime en hertz, la vitesse en m·s⁻¹" }
+        ],
+        exp: "La fréquence f (en hertz) est le nombre de motifs par seconde ; c'est l'inverse de la période : f = 1 / T. Attention : la période est une durée, la fréquence un nombre par seconde."
+      },
+      {
+        q: "Sur un oscillogramme, 3 motifs complets occupent 6,0 divisions horizontales. La base de temps est réglée sur 0,5 ms par division. La période du signal vaut :",
+        opts: [
+          "3,0 ms",
+          "12 ms",
+          "1,0 ms",
+          "2,0 ms"
         ],
         ans: 2,
-        exp: "Dans l'air, à température ambiante, la vitesse de propagation du son vaut environ 340 m·s⁻¹."
-      },
-      {
-        q: "Quelle formule permet de calculer la vitesse de propagation d'un son ?",
-        opts: [
-          "v = d × t",
-          "v = d / t",
-          "v = t / d",
-          "v = d + t"
+        pieges: [
+          { code: "lecture-plusieurs-periodes", texte: "Oublier de diviser par le nombre de motifs : 6,0 × 0,5 = 3,0 ms est la durée de 3 périodes" },
+          { code: "sensibilite-divisee", texte: "Diviser par la base de temps au lieu de multiplier : 6,0 / 0,5 = 12" },
+          null,
+          { code: "divisions-prises-pour-duree", texte: "Oublier la base de temps : 6,0 / 3 = 2,0 divisions, pas 2,0 ms" }
         ],
-        ans: 1,
-        exp: "La vitesse (célérité) est le quotient de la distance parcourue par la durée de propagation : v = d / t."
+        exp: "Les 3 motifs durent 6,0 × 0,5 = 3,0 ms, donc T = 3,0 / 3 = 1,0 ms. Attention : on mesure souvent plusieurs périodes pour être plus précis, puis on divise."
       },
       {
-        q: "La période T d'un signal sonore périodique est :",
+        q: "La période d'un son vaut T = 2,5 ms. Sa fréquence vaut :",
         opts: [
-          "Le nombre de motifs par seconde",
-          "La durée d'un motif élémentaire qui se répète",
-          "La vitesse de propagation du son",
-          "L'amplitude du signal"
-        ],
-        ans: 1,
-        exp: "La période est la durée d'un motif élémentaire (un cycle) qui se répète identique à lui-même."
-      },
-      {
-        q: "La relation entre fréquence f et période T est :",
-        opts: [
-          "f = T",
-          "f = 1 / T",
-          "f = T²",
-          "f = 2T"
-        ],
-        ans: 1,
-        exp: "La fréquence, exprimée en hertz, est l'inverse de la période exprimée en secondes : f = 1 / T."
-      },
-      {
-        q: "Sur un oscillogramme, un motif périodique dure 2,5×10⁻³ s. Quelle est la fréquence du signal ?",
-        opts: [
-          "2,5 Hz",
-          "40 Hz",
+          "0,40 Hz",
           "400 Hz",
-          "4000 Hz"
+          "2,5×10⁻³ Hz",
+          "2 500 Hz"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "conversion-ms-s", texte: "Oublier de convertir les millisecondes en secondes : 1 / 2,5 = 0,40" },
+          null,
+          { code: "periode-vs-frequence", texte: "Confondre période et fréquence : f = 1 / T, pas f = T" },
+          { code: "inverse-oublie", texte: "Convertir au lieu d'inverser : 2,5 × 1 000 = 2 500 ; il faut calculer f = 1 / T" }
+        ],
+        exp: "T = 2,5 ms = 2,5×10⁻³ s, donc f = 1 / T = 1 / (2,5×10⁻³) = 400 Hz. Attention : la période doit être en secondes pour obtenir des hertz."
+      },
+      {
+        q: "Un diapason émet un son de fréquence 440 Hz. Cela signifie que :",
+        opts: [
+          "le son parcourt 440 m en une seconde",
+          "un motif du signal dure 440 s",
+          "le motif du signal se répète 440 fois par seconde",
+          "le son est 440 fois plus fort qu'un son de 1 Hz"
         ],
         ans: 2,
-        exp: "f = 1 / T = 1 / (2,5×10⁻³) = 400 Hz."
+        pieges: [
+          { code: "frequence-vs-celerite", texte: "Confondre fréquence et vitesse de propagation : la fréquence s'exprime en hertz, la vitesse en m·s⁻¹" },
+          { code: "periode-vs-frequence", texte: "Confondre période et fréquence : ici T = 1 / 440 ≈ 2,3×10⁻³ s" },
+          null,
+          { code: "frequence-vs-amplitude", texte: "Confondre fréquence et intensité : la fréquence dit combien de motifs par seconde, pas si le son est fort" }
+        ],
+        exp: "440 Hz : 440 motifs par seconde, donc une période T = 1 / 440 ≈ 2,3 ms. Attention : la fréquence ne renseigne ni sur la vitesse du son ni sur son intensité."
       }
     ],
     annales: [],
@@ -15839,114 +16019,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La concentration en masse d'une solution se calcule par la formule :",
+        q: "On dissout 5,0 g de sel dans de l'eau et on obtient 250 mL de solution. La concentration en masse du sel vaut :",
         opts: [
-          "cm = V / m",
-          "cm = m(soluté) / V(solution)",
-          "cm = m × V",
-          "cm = m(solvant) / V(solution)"
+          "20 g·L⁻¹",
+          "0,020 g·L⁻¹",
+          "0,050 g·L⁻¹",
+          "1,25 g·L⁻¹"
         ],
-        ans: 1,
-        exp: "La concentration en masse est le quotient de la masse de soluté dissous par le volume total de la solution obtenue."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 5,0 / 250 = 0,020" },
+          { code: "cm-rapport-inverse", texte: "Inverser le rapport : V / m = 0,250 / 5,0 = 0,050 au lieu de cm = m / V" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 5,0 × 0,250 = 1,25" }
+        ],
+        exp: "cm = m(soluté) / V(solution) = 5,0 / 0,250 = 20 g·L⁻¹. Attention : le volume doit être en litres pour obtenir des g·L⁻¹."
       },
       {
-        q: "La masse volumique et la concentration en masse :",
+        q: "Pour préparer 50 mL de sérum physiologique à 9 g·L⁻¹ de chlorure de sodium, la masse de sel à peser est :",
         opts: [
-          "Sont exactement la même grandeur",
-          "S'expriment dans la même unité mais ne représentent pas la même grandeur",
-          "N'ont jamais la même unité",
-          "Ne peuvent jamais être calculées pour la même solution"
-        ],
-        ans: 1,
-        exp: "Les deux grandeurs peuvent s'exprimer en g·L⁻¹, mais la masse volumique concerne la masse totale de l'échantillon alors que la concentration en masse ne concerne que le soluté dissous."
-      },
-      {
-        q: "Pour préparer 50 mL d'une solution de NaCl à 9 g·L⁻¹, la masse de NaCl à peser est :",
-        opts: [
-          "0,045 g",
+          "450 g",
+          "180 g",
           "0,45 g",
-          "4,5 g",
-          "45 g"
-        ],
-        ans: 1,
-        exp: "m = cm × V = 9 × 0,050 = 0,45 g."
-      },
-      {
-        q: "Lors d'une dissolution, après avoir dissous le solide dans un peu d'eau distillée dans la fiole jaugée, il faut :",
-        opts: [
-          "Ajouter de l'acide jusqu'au trait de jauge",
-          "Compléter avec de l'eau distillée jusqu'au trait de jauge",
-          "Chauffer la fiole jusqu'à évaporation totale",
-          "Ajouter directement le solide sans eau"
-        ],
-        ans: 1,
-        exp: "On complète ensuite avec de l'eau distillée jusqu'au trait de jauge, puis on homogénéise en bouchant et retournant la fiole."
-      },
-      {
-        q: "Lors d'une dilution, quelle grandeur reste constante entre la solution mère prélevée et la solution fille obtenue ?",
-        opts: [
-          "Le volume",
-          "La concentration en masse",
-          "La masse de soluté",
-          "La couleur de la solution"
+          "5,6×10⁻³ g"
         ],
         ans: 2,
-        exp: "Lors d'une dilution, on ne fait qu'ajouter du solvant : la masse de soluté prélevée dans la solution mère se retrouve intégralement dans la solution fille."
-      },
-      {
-        q: "Le facteur de dilution F est défini par :",
-        opts: [
-          "F = cm(fille) / cm(mère)",
-          "F = cm(mère) / cm(fille)",
-          "F = cm(mère) × cm(fille)",
-          "F = V(mère) × V(fille)"
+        pieges: [
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 9 × 50 = 450" },
+          { code: "masse-cm-sur-v", texte: "Diviser la concentration par le volume : 9 / 0,050 = 180 ; il faut m = cm × V" },
+          null,
+          { code: "masse-v-sur-cm", texte: "Diviser le volume par la concentration : 0,050 / 9 ≈ 5,6×10⁻³ ; il faut m = cm × V" }
         ],
-        ans: 1,
-        exp: "F est le rapport de la concentration de la solution mère sur celle de la solution fille ; comme la fille est moins concentrée, F est toujours supérieur à 1."
+        exp: "m = cm × V = 9 × 0,050 = 0,45 g. Attention : convertir 50 mL en 0,050 L avant de calculer."
       },
       {
-        q: "Quelle verrerie utilise-t-on pour prélever précisément un volume de solution mère lors d'une dilution ?",
+        q: "On dissout 9 g de sel dans de l'eau pour obtenir 1,0 L d'eau salée. Ce litre de solution a une masse de 1 006 g. La concentration en masse du sel vaut :",
         opts: [
-          "Un bécher",
-          "Une éprouvette graduée",
-          "Une pipette jaugée",
-          "Un verre à pied"
+          "1 006 g·L⁻¹",
+          "997 g·L⁻¹",
+          "9 g·L⁻¹",
+          "9×10⁻³ g·L⁻¹"
         ],
         ans: 2,
-        exp: "La pipette jaugée, munie d'une propipette, permet de prélever un volume précis et reproductible de solution mère."
+        pieges: [
+          { code: "cm-vs-masse-volumique", texte: "Confondre concentration en masse et masse volumique : 1 006 g·L⁻¹ est la masse volumique de la solution" },
+          { code: "solvant-au-lieu-solute", texte: "Utiliser la masse du solvant (1 006 − 9 = 997 g) au lieu de la masse du soluté dissous" },
+          null,
+          { code: "conversion-ml-l", texte: "Exprimer le volume en mL : 9 / 1 000 = 9×10⁻³, ce sont des g·mL⁻¹ et non des g·L⁻¹" }
+        ],
+        exp: "cm = m(soluté) / V(solution) = 9 / 1,0 = 9 g·L⁻¹. Attention : 1 006 g·L⁻¹ est la masse volumique de la solution (masse totale / volume), une autre grandeur dans la même unité."
       },
       {
-        q: "On dilue 5 fois une solution mère de concentration 4,0×10⁻² g·L⁻¹. Quelle est la concentration de la solution fille ?",
+        q: "Pour préparer une solution par dissolution, on a introduit le solide pesé dans une fiole jaugée de 100,0 mL. Ensuite, on :",
         opts: [
-          "2,0×10⁻¹ g·L⁻¹",
-          "8,0×10⁻³ g·L⁻¹",
-          "2,0×10⁻² g·L⁻¹",
-          "4,0×10⁻² g·L⁻¹"
+          "remplit d'eau aux deux tiers, agite pour dissoudre, puis complète au trait",
+          "ajoute 100,0 mL d'eau mesurés à l'éprouvette graduée",
+          "complète tout de suite au trait de jauge, puis agite pour dissoudre",
+          "remplit d'eau jusqu'à ce que le haut du ménisque touche le trait"
         ],
-        ans: 1,
-        exp: "cm(fille) = cm(mère) / F = 4,0×10⁻² / 5 = 8,0×10⁻³ g·L⁻¹."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "volume-solvant-vs-solution", texte: "Confondre volume de solvant et volume de solution : on complète jusqu'à 100,0 mL de solution, on n'ajoute pas 100,0 mL d'eau" },
+          { code: "completer-avant-dissoudre", texte: "Compléter avant d'avoir dissous le solide : on dissout d'abord, car le volume peut varier pendant la dissolution" },
+          { code: "menisque-haut", texte: "Lire le haut du ménisque : c'est le bas du ménisque qui doit affleurer le trait de jauge" }
+        ],
+        exp: "On dissout le solide dans environ deux tiers d'eau, puis on complète jusqu'au trait (bas du ménisque) et on homogénéise. Attention : le volume final est celui de la solution, pas celui de l'eau ajoutée."
       },
       {
-        q: "Pour obtenir 50 mL d'une solution fille à partir d'une solution mère 5 fois plus concentrée, le volume de solution mère à prélever est :",
+        q: "Lors d'une dilution, pour prélever avec précision 10,0 mL de solution mère, on utilise :",
         opts: [
-          "5 mL",
-          "10 mL",
-          "25 mL",
-          "50 mL"
+          "une éprouvette graduée de 10 mL",
+          "une pipette jaugée de 10,0 mL",
+          "un bécher gradué",
+          "une fiole jaugée de 10,0 mL"
         ],
         ans: 1,
-        exp: "V(mère) = V(fille) / F = 50 / 5 = 10 mL."
+        pieges: [
+          { code: "eprouvette-precise", texte: "Croire que l'éprouvette graduée est précise : elle sert pour des volumes approximatifs" },
+          null,
+          { code: "becher-mesure-volume", texte: "Croire qu'un bécher mesure un volume : ses graduations sont très approximatives" },
+          { code: "fiole-pour-prelever", texte: "Confondre fiole jaugée et pipette jaugée : la fiole contient un volume précis, la pipette en prélève un" }
+        ],
+        exp: "La pipette jaugée (avec une propipette) prélève un volume précis ; la fiole jaugée sert à obtenir le volume final précis. Attention : éprouvette et bécher ne sont pas assez précis."
       },
       {
-        q: "Une fiole jaugée sert principalement à :",
+        q: "Lors d'une dilution, la masse de soluté présente dans la solution fille, par rapport à celle du volume de solution mère prélevé :",
         opts: [
-          "Peser une masse solide",
-          "Mesurer précisément un volume final de solution",
-          "Chauffer une solution",
-          "Prélever un petit volume goutte à goutte"
+          "est plus petite, car on a ajouté de l'eau",
+          "est plus grande, car le volume a augmenté",
+          "est divisée par le facteur de dilution",
+          "est la même"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "dilution-change-masse", texte: "Croire que la dilution enlève du soluté : on ajoute seulement du solvant, la masse de soluté ne change pas" },
+          { code: "masse-augmente-avec-volume", texte: "Croire que la masse de soluté augmente avec le volume : l'eau ajoutée n'apporte pas de soluté" },
+          { code: "facteur-applique-a-masse", texte: "Appliquer le facteur de dilution à la masse : c'est la concentration qui est divisée par F, pas la masse" },
+          null
+        ],
+        exp: "On n'ajoute que de l'eau : la masse de soluté prélevée se retrouve entièrement dans la solution fille, d'où cm(mère) × V(mère) = cm(fille) × V(fille). Attention : seules la concentration et le volume changent."
+      },
+      {
+        q: "Une solution mère a une concentration en masse de 4,0×10⁻² g·L⁻¹ ; la solution fille, 8,0×10⁻³ g·L⁻¹. Le facteur de dilution vaut :",
+        opts: [
+          "0,20",
+          "5,0",
+          "3,2×10⁻⁴",
+          "3,2×10⁻²"
         ],
         ans: 1,
-        exp: "La fiole jaugée permet d'obtenir un volume final précis de solution, grâce à son trait de jauge, lors d'une dissolution ou d'une dilution."
+        pieges: [
+          { code: "facteur-dilution-inverse", texte: "Inverser le rapport : cm(fille) / cm(mère) = 0,20 ; F est toujours supérieur à 1" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 4,0×10⁻² × 8,0×10⁻³ = 3,2×10⁻⁴" },
+          { code: "difference-au-lieu-quotient", texte: "Soustraire au lieu de diviser : 4,0×10⁻² − 8,0×10⁻³ = 3,2×10⁻²" }
+        ],
+        exp: "F = cm(mère) / cm(fille) = 4,0×10⁻² / 8,0×10⁻³ = 5,0 : la concentration a été divisée par 5. Attention : F est toujours supérieur à 1."
+      },
+      {
+        q: "On prélève 10,0 mL d'une solution mère à 2,5 g·L⁻¹ et on complète à 100,0 mL avec de l'eau distillée. La concentration en masse de la solution fille vaut :",
+        opts: [
+          "25 g·L⁻¹",
+          "2,5 g·L⁻¹",
+          "0,23 g·L⁻¹",
+          "0,25 g·L⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "multiplier-au-lieu-diviser", texte: "Multiplier par le facteur de dilution au lieu de diviser : 2,5 × 10 = 25" },
+          { code: "dilution-concentration-inchangee", texte: "Croire que la concentration ne change pas : la même masse de soluté est répartie dans un volume 10 fois plus grand" },
+          { code: "dilution-volume-final-additionne", texte: "Ajouter 100,0 mL au volume prélevé : 2,5 × 10,0 / 110,0 ≈ 0,23 ; on complète jusqu'à 100,0 mL au total" },
+          null
+        ],
+        exp: "F = V(fille) / V(mère) = 100,0 / 10,0 = 10, donc cm(fille) = 2,5 / 10 = 0,25 g·L⁻¹. Attention : on complète jusqu'au trait de 100,0 mL, on n'ajoute pas 100,0 mL d'eau."
+      },
+      {
+        q: "On veut 50,0 mL d'une solution fille cinq fois moins concentrée que la solution mère. Le volume de solution mère à prélever est :",
+        opts: [
+          "250 mL",
+          "10,0 mL",
+          "40,0 mL",
+          "5,0 mL"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "multiplier-au-lieu-diviser", texte: "Multiplier par le facteur de dilution au lieu de diviser : 50,0 × 5 = 250" },
+          null,
+          { code: "volume-eau-vs-volume-mere", texte: "Donner le volume d'eau à ajouter (50,0 − 10,0 = 40,0 mL) au lieu du volume de solution mère à prélever" },
+          { code: "facteur-pris-pour-volume", texte: "Prendre le facteur de dilution pour un volume : F = 5 ne veut pas dire prélever 5 mL" }
+        ],
+        exp: "V(mère) = V(fille) / F = 50,0 / 5 = 10,0 mL, prélevés à la pipette jaugée, puis complétés à 50,0 mL en fiole jaugée. Attention : on prélève un volume plus petit que le volume final."
+      },
+      {
+        q: "Pour diluer une solution 20 fois avec précision, on peut utiliser :",
+        opts: [
+          "une pipette jaugée de 20,0 mL et une fiole jaugée de 100,0 mL",
+          "une pipette jaugée de 5,0 mL, puis ajouter 100,0 mL d'eau",
+          "une pipette jaugée de 5,0 mL et une fiole jaugée de 100,0 mL",
+          "une éprouvette de 5 mL et un bécher de 100 mL"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "facteur-pris-pour-volume", texte: "Prendre le facteur de dilution pour un volume : 100,0 / 20,0 = 5, cette verrerie dilue 5 fois et non 20 fois" },
+          { code: "dilution-volume-final-additionne", texte: "Ajouter 100,0 mL d'eau au prélèvement : le volume final serait 105,0 mL, soit F = 21" },
+          null,
+          { code: "eprouvette-precise", texte: "Utiliser une verrerie imprécise : éprouvette et bécher ne conviennent pas pour une dilution précise" }
+        ],
+        exp: "F = V(fille) / V(mère) = 100,0 / 5,0 = 20 : pipette jaugée de 5,0 mL et fiole jaugée de 100,0 mL. Attention : le facteur est le rapport des deux volumes, pas le volume prélevé."
       }
     ],
     annales: [],
@@ -16329,114 +16569,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La structure de l'atome est dite lacunaire car :",
+        q: "On dit que l'atome a une structure lacunaire. Cela signifie que :",
         opts: [
-          "Il est entièrement plein de matière",
-          "Il est essentiellement constitué de vide",
-          "Il ne contient que des électrons",
-          "Il n'a pas de noyau"
-        ],
-        ans: 1,
-        exp: "L'atome est presque entièrement vide : le noyau, minuscule, concentre presque toute la masse, tandis que les électrons se déplacent dans un très grand volume autour de lui."
-      },
-      {
-        q: "La charge élémentaire e vaut environ :",
-        opts: [
-          "1,6×10⁻¹⁹ C",
-          "9,1×10⁻³¹ C",
-          "6,0×10²³ C",
-          "3,0×10⁸ C"
+          "il est essentiellement constitué de vide",
+          "ses électrons sont collés contre le noyau",
+          "ses électrons se trouvent dans le noyau",
+          "la matière remplit tout son volume, comme une bille pleine"
         ],
         ans: 0,
-        exp: "La charge élémentaire, portée par le proton (+e) et l'électron (−e), vaut environ 1,6×10⁻¹⁹ coulomb."
-      },
-      {
-        q: "Dans la notation ᴬZX, la lettre A représente :",
-        opts: [
-          "Le numéro atomique (nombre de protons)",
-          "Le nombre de masse (nombre de nucléons)",
-          "Le nombre d'électrons",
-          "La charge de l'atome"
+        pieges: [
+          null,
+          { code: "electrons-colles-noyau", texte: "Croire que les électrons sont collés au noyau : ils se déplacent dans un volume environ 100 000 fois plus grand que lui" },
+          { code: "electrons-dans-noyau", texte: "Croire que les électrons sont dans le noyau : le noyau ne contient que des protons et des neutrons" },
+          { code: "atome-plein", texte: "Se représenter l'atome comme une bille pleine : entre le noyau et les électrons, il n'y a que du vide" }
         ],
-        ans: 1,
-        exp: "A est le nombre de masse, c'est-à-dire le nombre total de nucléons (protons + neutrons) présents dans le noyau."
+        exp: "Le noyau, minuscule, est entouré d'électrons qui occupent un volume immense par rapport à lui : l'atome est essentiellement vide. Attention : les électrons ne sont pas dans le noyau."
       },
       {
-        q: "Un noyau de carbone ¹²₆C contient :",
+        q: "Le noyau de l'atome de sodium se note ²³₁₁Na. L'atome de sodium contient :",
         opts: [
-          "6 protons et 12 neutrons",
-          "12 protons et 6 neutrons",
-          "6 protons et 6 neutrons",
-          "12 protons et 12 neutrons"
+          "23 protons, 12 neutrons et 23 électrons",
+          "11 protons, 23 neutrons et 11 électrons",
+          "11 protons, 12 neutrons et 23 électrons",
+          "11 protons, 12 neutrons et 11 électrons"
         ],
-        ans: 2,
-        exp: "Z = 6 protons, et N = A − Z = 12 − 6 = 6 neutrons."
-      },
-      {
-        q: "L'atome est environ combien de fois plus grand que son noyau ?",
-        opts: [
-          "Environ 100 fois",
-          "Environ 1000 fois",
-          "Environ 100 000 fois",
-          "Environ 10 fois"
+        ans: 3,
+        pieges: [
+          { code: "z-a-inverses", texte: "Inverser Z et A : le nombre du bas (Z = 11) compte les protons, celui du haut (A = 23) les nucléons" },
+          { code: "neutrons-egal-a", texte: "Prendre A pour le nombre de neutrons : N = A − Z = 23 − 11 = 12" },
+          { code: "electrons-egal-a", texte: "Prendre A pour le nombre d'électrons : un atome neutre a autant d'électrons que de protons (Z = 11)" },
+          null
         ],
-        ans: 2,
-        exp: "Avec un atome de l'ordre de 10⁻¹⁰ m et un noyau de l'ordre de 10⁻¹⁵ m, le rapport de taille est de l'ordre de 10⁵, soit environ 100 000."
+        exp: "Z = 11 protons ; N = A − Z = 23 − 11 = 12 neutrons ; l'atome est neutre, donc 11 électrons. Attention : A compte tous les nucléons, protons et neutrons."
       },
       {
-        q: "Si le noyau d'un atome avait la taille d'une bille de 1 cm, l'atome entier aurait environ la taille :",
+        q: "Le numéro atomique Z d'un atome est :",
         opts: [
-          "D'une pièce de monnaie",
-          "D'un ballon de football",
-          "D'un stade",
-          "D'un continent"
+          "le nombre de nucléons de son noyau",
+          "le nombre de neutrons de son noyau",
+          "le nombre de protons de son noyau",
+          "le nombre de ses électrons de valence"
         ],
         ans: 2,
-        exp: "Le rapport d'échelle d'environ 100 000 entre l'atome et son noyau correspond, pour une bille de 1 cm, à un atome de la taille d'un stade (environ 1 km)."
+        pieges: [
+          { code: "z-a-inverses", texte: "Confondre Z et A : A est le nombre de nucléons, Z le nombre de protons" },
+          { code: "z-vs-n", texte: "Confondre Z et N : N = A − Z est le nombre de neutrons" },
+          null,
+          { code: "z-vs-valence", texte: "Confondre Z et le nombre d'électrons de valence : Z compte les protons (et tous les électrons de l'atome neutre)" }
+        ],
+        exp: "Z est le nombre de protons ; il caractérise l'élément chimique. Attention : A = Z + N est le nombre de nucléons."
       },
       {
-        q: "La masse d'un atome est essentiellement concentrée :",
+        q: "Un atome a une taille de l'ordre de 10⁻¹⁰ m et son noyau de l'ordre de 10⁻¹⁵ m. L'atome est plus grand que son noyau d'un facteur de l'ordre de :",
         opts: [
-          "Dans le nuage électronique",
-          "Dans le noyau",
-          "Répartie uniformément dans tout l'atome",
-          "Dans le vide qui entoure l'atome"
+          "5",
+          "10⁵",
+          "10⁻⁵",
+          "10²⁵"
         ],
         ans: 1,
-        exp: "La masse d'un électron est négligeable devant celle d'un proton ou d'un neutron : la masse de l'atome est donc presque entièrement portée par le noyau."
+        pieges: [
+          { code: "ecart-exposants-pris-pour-rapport", texte: "Prendre l'écart des exposants pour le rapport : 10⁻¹⁰ / 10⁻¹⁵ = 10⁵, pas 5" },
+          null,
+          { code: "puissance-rapport-inverse", texte: "Inverser le rapport : 10⁻¹⁵ / 10⁻¹⁰ = 10⁻⁵, alors que l'atome est plus grand que le noyau" },
+          { code: "exposants-mal-soustraits", texte: "Mal combiner les exposants (10 + 15 = 25) : 10⁻¹⁰ / 10⁻¹⁵ = 10⁻¹⁰⁺¹⁵ = 10⁵" }
+        ],
+        exp: "10⁻¹⁰ / 10⁻¹⁵ = 10⁻¹⁰⁻⁽⁻¹⁵⁾ = 10⁵ : l'atome est environ 100 000 fois plus grand que son noyau. Attention à la règle 10ᵃ / 10ᵇ = 10ᵃ⁻ᵇ."
       },
       {
-        q: "Dans la configuration électronique, la sous-couche p contient au maximum :",
+        q: "La masse d'un atome est :",
         opts: [
-          "2 électrons",
-          "6 électrons",
-          "8 électrons",
-          "18 électrons"
+          "concentrée presque entièrement dans son noyau",
+          "surtout portée par les électrons, qui occupent presque tout le volume",
+          "répartie à peu près à égalité entre le noyau et les électrons",
+          "surtout portée par les électrons, plus nombreux que les protons"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "masse-suit-volume", texte: "Croire que la masse suit le volume occupé : le nuage électronique est immense mais presque sans masse" },
+          { code: "masse-electron-non-negligeable", texte: "Croire que les électrons pèsent autant que les nucléons : un électron est environ 2 000 fois plus léger qu'un proton" },
+          { code: "electrons-plus-nombreux", texte: "Croire qu'il y a plus d'électrons que de protons : un atome neutre en a autant" }
+        ],
+        exp: "Un électron est environ 2 000 fois plus léger qu'un proton ou qu'un neutron : la masse de l'atome est presque entièrement celle de son noyau. Attention : le noyau est minuscule mais contient presque toute la masse."
+      },
+      {
+        q: "Un atome est électriquement neutre parce que :",
+        opts: [
+          "il a autant de neutrons que de protons",
+          "il a autant d'électrons que de protons",
+          "ses électrons ne portent pas de charge",
+          "ses neutrons portent une charge négative"
         ],
         ans: 1,
-        exp: "La sous-couche s contient au maximum 2 électrons, la sous-couche p au maximum 6 électrons."
+        pieges: [
+          { code: "neutralite-par-neutrons", texte: "Croire que les neutrons compensent la charge des protons : ils ne sont pas chargés, ce sont les électrons qui la compensent" },
+          null,
+          { code: "electron-neutre", texte: "Croire que l'électron n'est pas chargé : il porte la charge −e" },
+          { code: "neutron-charge-negative", texte: "Croire que le neutron est chargé négativement : il est électriquement neutre" }
+        ],
+        exp: "Chaque proton porte +e et chaque électron −e : avec autant d'électrons que de protons, les charges se compensent. Attention : les neutrons ne portent pas de charge."
       },
       {
-        q: "La configuration électronique du chlore (Z = 17) est :",
+        q: "Le noyau d'oxygène se note ¹⁶₈O ; la charge élémentaire vaut e = 1,6×10⁻¹⁹ C. La charge de ce noyau vaut :",
         opts: [
-          "1s² 2s² 2p⁵",
-          "1s² 2s² 2p⁶ 3s² 3p⁵",
+          "2,6×10⁻¹⁸ C",
+          "1,3×10⁻¹⁸ C",
+          "0 C",
+          "−1,3×10⁻¹⁸ C"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "charge-avec-a", texte: "Compter tous les nucléons : 16 × 1,6×10⁻¹⁹ ; les neutrons ne sont pas chargés, seuls les 8 protons comptent" },
+          null,
+          { code: "noyau-neutre", texte: "Confondre noyau et atome : l'atome est neutre, mais le noyau est chargé positivement" },
+          { code: "signe-charge-noyau", texte: "Se tromper de signe : le noyau contient des protons, il est chargé positivement" }
+        ],
+        exp: "Le noyau contient Z = 8 protons de charge +e : q = 8 × 1,6×10⁻¹⁹ ≈ 1,3×10⁻¹⁸ C. Attention : c'est l'atome entier qui est neutre, pas son noyau."
+      },
+      {
+        q: "Quelle est la configuration électronique de l'atome de soufre (Z = 16) ?",
+        opts: [
           "1s² 2s² 2p⁶ 3s² 3p⁶",
-          "1s² 2s² 2p⁶ 3s¹"
-        ],
-        ans: 1,
-        exp: "Avec 17 électrons, on remplit 1s²(2) 2s²(2) 2p⁶(6) 3s²(2) 3p⁵(5), soit un total de 2+2+6+2+5 = 17 électrons."
-      },
-      {
-        q: "Les électrons de valence sont, pour Z ≤ 18 :",
-        opts: [
-          "Tous les électrons de l'atome",
-          "Les électrons du noyau",
-          "Les électrons de la couche de plus grand nombre n",
-          "Uniquement les électrons de la sous-couche 1s"
+          "1s² 2s² 2p⁸ 3s² 3p²",
+          "1s² 2s² 2p⁶ 3s² 3p⁴",
+          "1s² 2s² 2p⁶ 3s¹ 3p⁵"
         ],
         ans: 2,
-        exp: "Les électrons de valence occupent la couche électronique de plus grand nombre n (la couche externe), et déterminent les propriétés chimiques de l'atome."
+        pieges: [
+          { code: "couche-completee-a-tort", texte: "Compléter la dernière sous-couche : 3p⁶ donne 18 électrons, alors que le soufre n'en a que 16" },
+          { code: "p-max-8", texte: "Croire qu'une sous-couche p peut contenir 8 électrons : elle en contient au maximum 6" },
+          null,
+          { code: "ordre-remplissage", texte: "Commencer 3p avant d'avoir rempli 3s : les sous-couches se remplissent dans l'ordre 1s, 2s, 2p, 3s, 3p" }
+        ],
+        exp: "16 électrons : 1s² (2), 2s² (2), 2p⁶ (6), 3s² (2), puis les 4 restants en 3p : 1s² 2s² 2p⁶ 3s² 3p⁴. Attention : s contient au plus 2 électrons, p au plus 6."
+      },
+      {
+        q: "La configuration électronique du chlore est 1s² 2s² 2p⁶ 3s² 3p⁵. Combien a-t-il d'électrons de valence ?",
+        opts: [
+          "5",
+          "17",
+          "7",
+          "8"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "valence-derniere-sous-couche", texte: "Ne compter que la dernière sous-couche (3p⁵) : la couche de valence n = 3 contient 3s² et 3p⁵, soit 7 électrons" },
+          { code: "valence-tous-electrons", texte: "Compter tous les électrons : seuls ceux de la couche de plus grand n sont des électrons de valence" },
+          null,
+          { code: "valence-toujours-8", texte: "Croire qu'un atome a toujours 8 électrons de valence : 8 est le nombre d'une couche n = 2 ou n = 3 remplie (s et p)" }
+        ],
+        exp: "La couche de plus grand n est n = 3 : 3s² 3p⁵, soit 2 + 5 = 7 électrons de valence. Attention : on compte toute la couche, pas seulement la dernière sous-couche."
+      },
+      {
+        q: "L'électron porte une charge électrique égale à :",
+        opts: [
+          "+1,6×10⁻¹⁹ C",
+          "9,1×10⁻³¹ C",
+          "−1,6×10⁻¹⁹ C",
+          "0 C"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "signe-charge-electron", texte: "Oublier le signe : l'électron porte −e, c'est le proton qui porte +e" },
+          { code: "masse-prise-pour-charge", texte: "Confondre la masse de l'électron (9,1×10⁻³¹ kg) et sa charge" },
+          null,
+          { code: "electron-neutre", texte: "Croire que l'électron n'est pas chargé : il porte la charge −e" }
+        ],
+        exp: "L'électron porte la charge −e = −1,6×10⁻¹⁹ C ; le proton porte +e et le neutron n'est pas chargé. Attention à ne pas confondre charge (en C) et masse (en kg)."
       }
     ],
     annales: [],
