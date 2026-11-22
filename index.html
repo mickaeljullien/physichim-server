@@ -11440,114 +11440,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Le niveau d'intensité sonore L se calcule par la formule :",
+        q: "Un son a une intensité I = 1,0 × 10⁻⁵ W·m⁻² (I₀ = 1,0 × 10⁻¹² W·m⁻²). Son niveau d'intensité sonore L = 10 log(I / I₀) vaut :",
         opts: [
-          "L = 10·log(I₀ / I)",
-          "L = 10·log(I / I₀)",
-          "L = log(I / I₀)",
-          "L = 10·I / I₀"
-        ],
-        ans: 1,
-        exp: "L = 10·log(I / I₀), avec I₀ = 1,0×10⁻¹² W·m⁻² l'intensité de référence."
-      },
-      {
-        q: "Si l'intensité sonore I est multipliée par 10, le niveau L :",
-        opts: [
-          "double",
-          "augmente de 3 dB",
-          "augmente de 10 dB",
-          "reste constant"
+          "−70 dB",
+          "7,0 dB",
+          "70 dB",
+          "1,0 × 10⁸ dB"
         ],
         ans: 2,
-        exp: "Une multiplication de I par 10 correspond à log(10)=1, donc L augmente de 10×1 = 10 dB."
+        pieges: [
+          { code: "niveau-rapport-inverse", texte: "Inverser le rapport : 10 log(I₀ / I) = −70 dB" },
+          { code: "niveau-oubli-facteur-10", texte: "Oublier le facteur 10 : log(I / I₀) = 7,0" },
+          null,
+          { code: "niveau-oubli-log", texte: "Oublier le logarithme : 10 × I / I₀ = 1,0 × 10⁸" }
+        ],
+        exp: "L = 10 log(1,0 × 10⁻⁵ / 1,0 × 10⁻¹²) = 10 log(10⁷) = 70 dB. Attention : l'échelle des décibels est logarithmique."
       },
       {
-        q: "Pour une source ponctuelle émettant une onde sphérique, l'intensité sonore décroît avec la distance r selon :",
+        q: "Une source sonore produit un niveau L = 60 dB en un point. On allume une seconde source identique au même endroit. Le niveau sonore devient :",
         opts: [
-          "1/r",
-          "1/r²",
-          "1/r³",
-          "log(r)"
+          "120 dB, le niveau double",
+          "environ 63 dB",
+          "70 dB",
+          "60 dB, chaque source ayant le même niveau"
         ],
         ans: 1,
-        exp: "La puissance se répartit sur une sphère de surface 4πr², donc I(r) = P/(4πr²), soit une décroissance en 1/r²."
-      },
-      {
-        q: "L'atténuation par absorption d'une onde dépend :",
-        opts: [
-          "uniquement de la distance parcourue dans le vide",
-          "du milieu matériel traversé",
-          "uniquement de la fréquence de la source",
-          "de rien, elle est toujours nulle"
+        pieges: [
+          { code: "niveau-double-avec-source", texte: "Croire que doubler la source double le niveau : ce sont les intensités qui s'ajoutent, pas les niveaux" },
+          null,
+          { code: "doubler-vs-decupler", texte: "Confondre ×2 et ×10 : +10 dB correspond à une intensité multipliée par 10" },
+          { code: "intensites-ne-s-ajoutent-pas", texte: "Croire que deux sources identiques ne changent rien : leurs intensités s'additionnent" }
         ],
-        ans: 1,
-        exp: "L'atténuation par absorption est liée aux pertes d'énergie dans le milieu matériel traversé (frottements, absorption), contrairement à l'atténuation géométrique."
+        exp: "L'intensité double : L' = L + 10 log 2 ≈ 60 + 3 = 63 dB. Attention : doubler l'intensité ajoute environ 3 dB ; la multiplier par 10 ajoute 10 dB."
       },
       {
-        q: "Une source sonore qui se rapproche d'un observateur immobile produit un son perçu :",
+        q: "Pour une source ponctuelle sans absorption, quand on double la distance r à la source, l'intensité sonore I = P / (4πr²) est :",
         opts: [
-          "plus grave",
-          "plus aigu",
-          "de même hauteur",
-          "silencieux"
-        ],
-        ans: 1,
-        exp: "Lors d'un rapprochement, la fréquence reçue f' est supérieure à f émise : le son perçu est plus aigu."
-      },
-      {
-        q: "Le décalage Doppler relatif pour une onde électromagnétique s'écrit :",
-        opts: [
-          "Δf/f = v/c",
-          "Δf/f = c/v",
-          "Δf = v",
-          "Δf/f = v²/c"
+          "divisée par 4",
+          "divisée par 2",
+          "inchangée, car rien n'absorbe l'onde",
+          "divisée par 4, comme le niveau sonore L"
         ],
         ans: 0,
-        exp: "Pour une onde électromagnétique, Δf/f = ± v/c, où c est la célérité de la lumière et v la vitesse relative source/observateur."
+        pieges: [
+          null,
+          { code: "intensite-inverse-distance", texte: "Croire que I varie en 1/r : la puissance se répartit sur une surface 4πr², donc en 1/r²" },
+          { code: "attenuation-geometrique-vs-absorption", texte: "Oublier l'atténuation géométrique : même sans absorption, la puissance s'étale sur une surface plus grande" },
+          { code: "niveau-proportionnel-intensite", texte: "Croire que L est proportionnel à I : diviser I par 4 retire seulement 6 dB environ" }
+        ],
+        exp: "I = P / (4πr²) : r doublée, I divisée par 2² = 4 (le niveau baisse d'environ 6 dB). Attention : l'atténuation géométrique existe même sans absorption."
       },
       {
-        q: "Le décalage vers le rouge (redshift) observé pour la lumière de galaxies lointaines indique que ces galaxies :",
+        q: "L'atténuation géométrique d'une onde sonore :",
         opts: [
-          "se rapprochent de la Terre",
-          "s'éloignent de la Terre",
-          "sont immobiles",
-          "émettent plus de photons"
+          "est due à l'absorption de l'énergie sonore par l'air traversé",
+          "vient de l'étalement de la puissance sur une surface croissante",
+          "fait baisser la fréquence du son, qui devient plus grave",
+          "n'existe que dans les milieux denses, liquides ou solides"
         ],
         ans: 1,
-        exp: "Un décalage vers le rouge (fréquence reçue plus faible que la fréquence émise) correspond à un éloignement, preuve de l'expansion de l'Univers."
+        pieges: [
+          { code: "attenuation-geometrique-vs-absorption", texte: "Confondre atténuation géométrique (étalement) et atténuation par absorption (pertes dans le milieu)" },
+          null,
+          { code: "attenuation-change-frequence", texte: "Croire que l'atténuation change la hauteur du son : elle diminue l'intensité, pas la fréquence" },
+          { code: "attenuation-milieu-dense", texte: "Croire que l'atténuation n'existe que dans les milieux denses" }
+        ],
+        exp: "L'atténuation géométrique vient de l'étalement de la puissance sur une sphère de plus en plus grande ; l'absorption, elle, dépend du milieu. Attention : un son qui s'atténue n'en devient pas plus grave."
       },
       {
-        q: "Un radar Doppler permet de mesurer la vitesse d'un véhicule en exploitant :",
+        q: "Une ambulance passe devant un piéton immobile. Le son de sa sirène :",
         opts: [
-          "l'intensité de l'onde réfléchie",
+          "est émis plus aigu quand l'ambulance approche",
+          "garde la même fréquence émise ; seule la fréquence perçue change",
+          "est perçu plus aigu quand l'ambulance s'éloigne",
+          "est perçu plus grave car moins intense quand elle s'éloigne"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "doppler-frequence-emise", texte: "Croire que la fréquence émise change : c'est la fréquence perçue qui est modifiée" },
+          null,
+          { code: "doppler-sens-inverse", texte: "Inverser l'effet : le son est perçu plus aigu à l'approche, plus grave à l'éloignement" },
+          { code: "hauteur-vs-intensite", texte: "Confondre hauteur (fréquence) et intensité sonore" }
+        ],
+        exp: "La sirène émet toujours la même fréquence ; le mouvement relatif modifie la fréquence perçue : plus aiguë à l'approche, plus grave à l'éloignement. Attention : la hauteur ne dépend pas de l'intensité."
+      },
+      {
+        q: "Une source de fréquence f = 440 Hz se rapproche d'un observateur immobile à v = 20 m·s⁻¹ (v_son = 340 m·s⁻¹). Avec Δf / f = v / v_son, la fréquence perçue vaut environ :",
+        opts: [
+          "414 Hz",
+          "26 Hz",
+          "7,5 × 10³ Hz",
+          "466 Hz"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "doppler-sens-inverse", texte: "Se tromper de signe : en rapprochement, la fréquence perçue est plus grande que la fréquence émise" },
+          { code: "decalage-vs-frequence-percue", texte: "Donner le décalage Δf = 26 Hz au lieu de la fréquence perçue f' = f + Δf" },
+          { code: "doppler-rapport-inverse", texte: "Inverser le rapport : f × v_son / v" },
+          null
+        ],
+        exp: "Δf = f × v / v_son = 440 × 20 / 340 ≈ 26 Hz ; en rapprochement f' = f + Δf ≈ 466 Hz. Attention : Δf est un décalage, pas la fréquence perçue."
+      },
+      {
+        q: "La lumière reçue d'une galaxie lointaine est décalée vers le rouge (fréquences reçues plus faibles). On en déduit que cette galaxie :",
+        opts: [
+          "se rapproche de nous",
+          "s'éloigne de nous",
+          "émet une lumière de couleur rouge",
+          "a perdu de l'énergie lumineuse à cause de la distance"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "doppler-sens-inverse", texte: "Inverser l'effet : une fréquence reçue plus faible correspond à un éloignement" },
+          null,
+          { code: "decalage-vs-couleur-propre", texte: "Confondre décalage vers le rouge et couleur de l'astre : toutes les raies sont décalées" },
+          { code: "decalage-vs-attenuation", texte: "Attribuer le décalage à la distance : la distance diminue l'intensité reçue, pas la fréquence" }
+        ],
+        exp: "Fréquence reçue plus faible que la fréquence émise : la source s'éloigne (effet Doppler). C'est l'un des indices de l'expansion de l'Univers."
+      },
+      {
+        q: "Les raies d'une galaxie ont une fréquence relative diminuée de Δf / f = 1,0 × 10⁻³. Avec Δf / f = v / c (c = 3,0 × 10⁸ m·s⁻¹), sa vitesse d'éloignement vaut :",
+        opts: [
+          "3,0 × 10⁵ m·s⁻¹",
+          "3,0 × 10¹¹ m·s⁻¹",
+          "0,34 m·s⁻¹",
+          "3,0 × 10² m·s⁻¹"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "doppler-rapport-inverse", texte: "Inverser la relation : c / (Δf / f) = 3,0 × 10¹¹ m·s⁻¹, plus que la vitesse de la lumière" },
+          { code: "celerite-son-vs-lumiere", texte: "Utiliser la célérité du son (340 m·s⁻¹) pour une onde lumineuse" },
+          { code: "conversion-km-m", texte: "Prendre c en km·s⁻¹ (3,0 × 10⁵) au lieu de m·s⁻¹" }
+        ],
+        exp: "v = c × Δf / f = 3,0 × 10⁸ × 1,0 × 10⁻³ = 3,0 × 10⁵ m·s⁻¹. Attention : pour la lumière, c est la célérité de la lumière ; une vitesse supérieure à c est impossible."
+      },
+      {
+        q: "Un radar routier mesure la vitesse d'un véhicule en exploitant :",
+        opts: [
           "le décalage de fréquence de l'onde réfléchie par le véhicule",
-          "la couleur du véhicule",
-          "l'atténuation de l'onde"
-        ],
-        ans: 1,
-        exp: "Le radar émet une onde, la reçoit après réflexion sur le véhicule en mouvement : le décalage de fréquence (effet Doppler) donne accès à la vitesse du véhicule."
-      },
-      {
-        q: "Le seuil d'audibilité correspond à une intensité de référence I₀ égale à :",
-        opts: [
-          "1,0×10⁻¹² W·m⁻²",
-          "1,0×10⁻⁶ W·m⁻²",
-          "1,0 W·m⁻²",
-          "1,0×10¹² W·m⁻²"
+          "l'intensité de l'onde réfléchie, plus grande si le véhicule va vite",
+          "la durée de l'aller-retour de l'onde",
+          "l'atténuation de l'onde réfléchie"
         ],
         ans: 0,
-        exp: "Par convention, I₀ = 1,0×10⁻¹² W·m⁻² correspond au seuil d'audibilité de l'oreille humaine (L = 0 dB)."
+        pieges: [
+          null,
+          { code: "doppler-vs-intensite", texte: "Croire que l'intensité reçue dépend de la vitesse : c'est la fréquence qui est décalée" },
+          { code: "duree-aller-retour-vs-vitesse", texte: "Confondre mesure de distance (durée d'aller-retour) et mesure de vitesse (effet Doppler)" },
+          { code: "doppler-vs-attenuation", texte: "Confondre atténuation et effet Doppler" }
+        ],
+        exp: "L'onde réfléchie par un véhicule en mouvement revient avec une fréquence décalée, proportionnelle à sa vitesse : c'est l'effet Doppler. La durée d'aller-retour, elle, donne une distance."
       },
       {
-        q: "L'échographie Doppler utilisée en médecine permet de mesurer :",
+        q: "Un son a une intensité I égale à l'intensité de référence I₀. Son niveau d'intensité sonore vaut :",
         opts: [
-          "la température du sang",
-          "la vitesse du sang dans les vaisseaux",
-          "l'intensité sonore du cœur",
-          "la longueur des vaisseaux"
+          "1 dB",
+          "10 dB",
+          "0 dB",
+          "1,0 × 10⁻¹² dB"
         ],
-        ans: 1,
-        exp: "Le décalage de fréquence des ultrasons réfléchis par les globules rouges en mouvement permet de déterminer la vitesse du flux sanguin."
+        ans: 2,
+        pieges: [
+          { code: "niveau-oubli-log", texte: "Oublier le logarithme : I / I₀ = 1, mais L = 10 log 1 = 0" },
+          { code: "niveau-log-un", texte: "Croire que log 1 = 1 : log 1 = 0" },
+          null,
+          { code: "intensite-vs-niveau", texte: "Confondre l'intensité (en W·m⁻²) et le niveau (en dB)" }
+        ],
+        exp: "L = 10 log(I₀ / I₀) = 10 log 1 = 0 dB : c'est le seuil d'audibilité. Attention : 0 dB ne veut pas dire « aucun son »."
       }
     ],
     annales: [
@@ -12016,29 +12076,58 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Les lois de Soddy stipulent la conservation, lors d'une réaction nucléaire, de :",
+        q: "Lors d'une réaction nucléaire, les lois de Soddy imposent la conservation :",
         opts: [
-          "la masse et la charge électrique uniquement",
-          "le nombre de masse A et le numéro atomique Z",
-          "l'énergie cinétique et la vitesse",
-          "le nombre de protons uniquement"
+          "de la masse et de la charge électrique",
+          "du nombre de masse A et du nombre de charge Z",
+          "du nombre de neutrons et du nombre de protons, séparément",
+          "de l'élément chimique, comme dans une réaction chimique"
         ],
         ans: 1,
-        exp: "Les lois de Soddy imposent la conservation du nombre de masse A (nucléons) et du numéro atomique Z (charge) au cours d'une réaction nucléaire."
-      },
-      {
-        q: "Lors d'une désintégration α, le noyau émet :",
-        opts: [
-          "un électron",
-          "un positon",
-          "un noyau d'hélium ⁴₂He",
-          "un photon"
+        pieges: [
+          { code: "conservation-masse-nucleaire", texte: "Croire que la masse se conserve : une réaction nucléaire s'accompagne d'une perte de masse" },
+          null,
+          { code: "conservation-n-et-z", texte: "Croire que N et Z se conservent séparément : en β⁻, un neutron devient un proton" },
+          { code: "nucleaire-vs-chimique", texte: "Confondre réaction nucléaire et chimique : dans une réaction nucléaire, l'élément change" }
         ],
-        ans: 2,
-        exp: "La radioactivité α correspond à l'émission d'un noyau d'hélium ⁴₂He, ce qui diminue A de 4 et Z de 2."
+        exp: "Soddy : conservation du nombre total de nucléons A et de la charge Z. Attention : contrairement à une réaction chimique, l'élément chimique change."
       },
       {
-        q: "Un noyau présentant un excès de neutrons par rapport à la vallée de stabilité est susceptible de subir une radioactivité :",
+        q: "L'uranium ²³⁸₉₂U subit une désintégration α (émission de ⁴₂He). Le noyau fils est :",
+        opts: [
+          "²³⁴₉₂U",
+          "²³⁴₉₀Th",
+          "²³⁶₉₀Th",
+          "²⁴²₉₄Pu"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-conservation-z", texte: "Oublier la conservation de Z : le noyau fils perd 2 protons" },
+          null,
+          { code: "a-z-meme-variation", texte: "Retirer 2 à A comme à Z : A diminue de 4" },
+          { code: "ajout-au-lieu-retrait", texte: "Ajouter la particule émise au lieu de la retrancher" }
+        ],
+        exp: "A : 238 = 234 + 4 ; Z : 92 = 90 + 2. Le noyau fils a Z = 90 : c'est le thorium ²³⁴₉₀Th. Attention : Z change, donc l'élément change."
+      },
+      {
+        q: "Le carbone 14 (¹⁴₆C) est radioactif β⁻ (émission d'un électron ⁰₋₁e). Le noyau fils est :",
+        opts: [
+          "¹⁴₇N",
+          "¹⁴₅B",
+          "¹³₆C",
+          "¹⁴₆C, l'électron venant du cortège électronique"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "beta-moins-signe-z", texte: "Se tromper de signe : en β⁻, Z augmente de 1 (6 = Z − 1)" },
+          { code: "beta-perte-neutron", texte: "Croire qu'un neutron est éjecté : en β⁻, un neutron se transforme en proton, A ne change pas" },
+          { code: "beta-electron-cortege", texte: "Croire que l'électron émis vient du cortège : il est créé dans le noyau" }
+        ],
+        exp: "A : 14 = 14 + 0 ; Z : 6 = Z − 1, donc Z = 7 : azote ¹⁴₇N. Attention : l'électron β⁻ est créé dans le noyau, lorsqu'un neutron se transforme en proton."
+      },
+      {
+        q: "Un noyau situé au-dessus de la vallée de stabilité (excès de neutrons) subit le plus probablement une désintégration :",
         opts: [
           "α",
           "β⁻",
@@ -12046,84 +12135,115 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "γ"
         ],
         ans: 1,
-        exp: "La radioactivité β⁻ (émission d'un électron) convertit un neutron en proton, ce qui rapproche le noyau de la vallée de stabilité en cas d'excès de neutrons."
+        pieges: [
+          { code: "alpha-vs-exces-neutrons", texte: "Associer tout noyau instable à la radioactivité α, propre aux noyaux lourds" },
+          null,
+          { code: "beta-plus-vs-beta-moins", texte: "Inverser β⁺ et β⁻ : β⁺ concerne les noyaux qui ont trop de protons" },
+          { code: "gamma-change-noyau", texte: "Croire que γ change la composition du noyau : c'est une désexcitation, A et Z ne changent pas" }
+        ],
+        exp: "En β⁻, un neutron se transforme en proton : le noyau se rapproche de la vallée de stabilité. Attention : β⁺ concerne l'excès de protons."
       },
       {
-        q: "La loi de décroissance radioactive s'écrit :",
+        q: "Un échantillon contient N₀ noyaux radioactifs. Au bout de deux demi-vies, il en reste :",
         opts: [
-          "N(t) = N₀·e^(λt)",
-          "N(t) = N₀·λt",
-          "N(t) = N₀·e^(−λt)",
-          "N(t) = N₀ − λt"
+          "N₀ / 4",
+          "aucun, deux moitiés faisant le tout",
+          "un nombre impossible à prévoir, la désintégration étant aléatoire",
+          "N₀ / 2, la demi-vie s'allongeant quand il reste moins de noyaux"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "deux-demi-vies-tout", texte: "Croire que deux demi-vies font disparaître tout l'échantillon : à chaque t½, il reste la moitié de ce qu'il y avait" },
+          { code: "aleatoire-vs-statistique", texte: "Croire qu'on ne peut rien prévoir : sur un grand nombre de noyaux, la décroissance suit une loi précise" },
+          { code: "demi-vie-depend-n", texte: "Croire que la demi-vie dépend du nombre de noyaux : elle est caractéristique du noyau" }
+        ],
+        exp: "Après t½ il reste N₀/2, après 2t½ il reste N₀/4. Attention : la demi-vie ne dépend pas de la quantité de noyaux."
+      },
+      {
+        q: "La constante radioactive du carbone 14 vaut λ = 1,2 × 10⁻⁴ an⁻¹. Avec t½ = ln 2 / λ, sa demi-vie vaut environ :",
+        opts: [
+          "5,8 × 10³ ans",
+          "8,3 × 10³ ans",
+          "8,3 × 10⁻⁵ an",
+          "4,2 × 10³ ans"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oubli-ln2", texte: "Oublier ln 2 : 1 / λ = 8,3 × 10³ ans" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : λ × ln 2" },
+          { code: "demi-vie-un-sur-2k", texte: "Remplacer ln 2 par 1/2 : 1 / (2λ)" }
+        ],
+        exp: "t½ = ln 2 / λ = 0,693 / 1,2 × 10⁻⁴ ≈ 5,8 × 10³ ans. Attention : 1 / λ n'est pas la demi-vie."
+      },
+      {
+        q: "Un échantillon contient N = 1,0 × 10¹⁵ noyaux radioactifs de constante λ = 2,0 × 10⁻⁶ s⁻¹. Son activité vaut :",
+        opts: [
+          "5,0 × 10²⁰ Bq",
+          "2,0 × 10⁹ Bq",
+          "1,0 × 10¹⁵ Bq",
+          "2,0 × 10⁻⁶ Bq"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "activite-rapport-inverse", texte: "Diviser N par λ au lieu de multiplier" },
+          null,
+          { code: "activite-vs-nombre-noyaux", texte: "Confondre l'activité (désintégrations par seconde) et le nombre de noyaux" },
+          { code: "activite-vs-constante", texte: "Confondre l'activité et la constante radioactive λ" }
+        ],
+        exp: "A = λ × N = 2,0 × 10⁻⁶ × 1,0 × 10¹⁵ = 2,0 × 10⁹ Bq (désintégrations par seconde). Attention : A = λN, et non N / λ."
+      },
+      {
+        q: "Un échantillon d'os a une activité en carbone 14 quatre fois plus faible que celle d'un organisme vivant (t½ = 5 730 ans). Son âge est d'environ :",
+        opts: [
+          "5 730 ans",
+          "2,3 × 10⁴ ans",
+          "1,1 × 10⁴ ans",
+          "2,9 × 10³ ans"
         ],
         ans: 2,
-        exp: "N(t) = N₀·e^(−λt) est la loi exponentielle décroissante du nombre de noyaux radioactifs restants."
-      },
-      {
-        q: "La relation entre le temps de demi-vie t₁/₂ et la constante radioactive λ est :",
-        opts: [
-          "t₁/₂ = λ / ln 2",
-          "t₁/₂ = ln 2 / λ",
-          "t₁/₂ = 1/λ²",
-          "t₁/₂ = λ·ln 2"
+        pieges: [
+          { code: "une-demi-vie-seulement", texte: "Compter une seule demi-vie : il faut deux divisions par 2 pour diviser par 4" },
+          { code: "rapport-vs-nombre-demi-vies", texte: "Prendre le rapport 4 pour le nombre de demi-vies : 4 × 5 730" },
+          null,
+          { code: "demi-vie-divisee", texte: "Diviser la demi-vie au lieu de la multiplier : 5 730 / 2" }
         ],
-        ans: 1,
-        exp: "t₁/₂ = ln(2)/λ. Ce temps est indépendant de la quantité initiale de matière."
+        exp: "A₀ / A = 4 = 2² : deux demi-vies, t = 2 × 5 730 ≈ 1,1 × 10⁴ ans. Attention : diviser par 4, c'est diviser deux fois par 2."
       },
       {
-        q: "L'activité A(t) d'un échantillon radioactif est reliée au nombre de noyaux N(t) par :",
+        q: "Pour un noyau radioactif donné, on peut affirmer :",
         opts: [
-          "A(t) = N(t)/λ",
-          "A(t) = λ·N(t)",
-          "A(t) = λ + N(t)",
-          "A(t) = N(t)²"
+          "qu'on ne peut pas prévoir l'instant de sa désintégration",
+          "qu'il se désintègre au bout d'une durée égale à sa demi-vie",
+          "qu'il se désintègre plus vite si l'on chauffe l'échantillon",
+          "qu'il rend radioactifs les objets qu'il touche"
         ],
-        ans: 1,
-        exp: "L'activité, exprimée en becquerels (Bq), vaut A(t) = λ·N(t) : c'est le nombre de désintégrations par seconde."
-      },
-      {
-        q: "Le temps de demi-vie du carbone 14 est d'environ :",
-        opts: [
-          "5730 jours",
-          "5730 ans",
-          "5730 secondes",
-          "14 ans"
+        ans: 0,
+        pieges: [
+          null,
+          { code: "demi-vie-vs-duree-de-vie", texte: "Croire que t½ est la durée de vie de chaque noyau : c'est une durée statistique pour un grand nombre de noyaux" },
+          { code: "radioactivite-temperature", texte: "Croire que la température modifie la désintégration : elle ne dépend pas des conditions extérieures" },
+          { code: "radioactivite-contagieuse", texte: "Croire que la radioactivité est contagieuse : un objet irradié ne devient pas radioactif" }
         ],
-        ans: 1,
-        exp: "Le carbone 14 a un temps de demi-vie t₁/₂ ≈ 5730 ans, ce qui en fait un outil de datation adapté aux échelles archéologiques."
+        exp: "La désintégration d'un noyau est aléatoire et ne dépend ni de la température ni de la pression ; seule la décroissance d'un grand nombre de noyaux est prévisible. Attention : irradiation n'est pas contamination."
       },
       {
-        q: "Un échantillon d'os présente une activité résiduelle A quatre fois plus faible que l'activité initiale A₀ d'un organisme vivant. Sachant que t₁/₂(¹⁴C) = 5730 ans, quel est approximativement l'âge de l'échantillon ?",
+        q: "Un échantillon d'iode 131 (t½ = 8 jours) a une activité A₀ = 800 Bq. Au bout de 24 jours, son activité vaut :",
         opts: [
-          "2865 ans",
-          "5730 ans",
-          "11460 ans",
-          "22920 ans"
+          "267 Bq",
+          "400 Bq",
+          "100 Bq",
+          "50 Bq"
         ],
         ans: 2,
-        exp: "A₀/A = 4 = 2², ce qui correspond exactement à 2 demi-vies : t = 2 × 5730 = 11460 ans (on retrouve ce résultat avec t = (t₁/₂/ln2)·ln(A₀/A) = 8267×ln(4) ≈ 11460 ans)."
-      },
-      {
-        q: "Au-delà de Z = 83 (bismuth), les noyaux atomiques sont :",
-        opts: [
-          "tous stables",
-          "tous instables (radioactifs)",
-          "stables uniquement si N = Z",
-          "stables uniquement s'ils émettent des positons"
+        pieges: [
+          { code: "division-par-nombre-demi-vies", texte: "Diviser par le nombre de demi-vies (3) au lieu de diviser 3 fois par 2" },
+          { code: "une-demi-vie-seulement", texte: "Ne diviser qu'une fois par 2 : 24 jours font 3 demi-vies" },
+          null,
+          { code: "compte-demi-vies", texte: "Compter une demi-vie de trop : 800 / 2⁴ = 50 Bq, alors que 24 jours font 3 demi-vies" }
         ],
-        ans: 1,
-        exp: "Tous les noyaux de numéro atomique Z > 83 sont radioactifs : la répulsion électrique entre protons rend impossible une configuration stable."
-      },
-      {
-        q: "La fission nucléaire et la fusion nucléaire ont en commun :",
-        opts: [
-          "de ne libérer aucune énergie",
-          "de respecter les lois de conservation de Soddy (A et Z)",
-          "de n'impliquer que des noyaux légers",
-          "de ne jamais émettre de neutrons"
-        ],
-        ans: 1,
-        exp: "Que ce soit pour la fission (scission d'un noyau lourd) ou la fusion (union de noyaux légers), les nombres de masse A et les numéros atomiques Z sont conservés (lois de Soddy)."
+        exp: "24 jours = 3 demi-vies : A = 800 / 2³ = 100 Bq. Attention : chaque demi-vie divise l'activité par 2."
       }
     ],
     annales: [
@@ -12611,114 +12731,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Dans une pile électrochimique en fonctionnement, le quotient de réaction Qr :",
-        opts: [
-          "est toujours égal à K",
-          "évolue vers K (Qr < K, réaction spontanée)",
-          "s'éloigne de K",
-          "est indépendant de K"
-        ],
-        ans: 1,
-        exp: "La pile fonctionne tant que la réaction est spontanée, c'est-à-dire Qr < K ; le système évolue vers l'équilibre, Qr se rapproche de K."
-      },
-      {
         q: "Une électrolyse est une transformation :",
         opts: [
-          "spontanée, comme dans une pile",
+          "spontanée, comme celle qui se produit dans une pile",
           "forcée par un apport d'énergie électrique",
-          "qui ne nécessite aucune énergie",
-          "uniquement possible avec des gaz"
+          "qui produit de l'énergie électrique",
+          "simplement accélérée par le passage d'un courant"
         ],
         ans: 1,
-        exp: "L'électrolyse force un système chimique à évoluer dans le sens inverse de son évolution spontanée, grâce à l'énergie électrique fournie par un générateur."
+        pieges: [
+          { code: "electrolyse-vs-pile", texte: "Confondre électrolyse (forcée) et pile (spontanée)" },
+          null,
+          { code: "electrolyse-conversion-inverse", texte: "Inverser la conversion : l'électrolyse consomme de l'énergie électrique" },
+          { code: "forcer-vs-accelerer", texte: "Confondre « forcer » (changer le sens d'évolution) et « accélérer » (rôle d'un catalyseur)" }
+        ],
+        exp: "Un générateur impose au système d'évoluer dans le sens inverse de son sens spontané : l'énergie électrique est convertie en énergie chimique. Attention : une pile fait l'inverse."
       },
       {
-        q: "Dans une cellule d'électrolyse, l'anode (siège de l'oxydation) est reliée :",
+        q: "Pendant une électrolyse, le quotient de réaction Qr de la réaction qui se produit :",
         opts: [
-          "à la borne négative du générateur",
-          "à la borne positive du générateur",
-          "à rien, elle est isolée",
-          "à la cathode directement"
+          "tend vers la constante d'équilibre K",
+          "s'éloigne de K",
+          "reste égal à K",
+          "n'est pas défini, la réaction étant forcée"
         ],
         ans: 1,
-        exp: "Contrairement à la pile, dans l'électrolyse l'anode est la borne positive, reliée au pôle + du générateur qui impose le sens de la réaction."
+        pieges: [
+          { code: "electrolyse-vs-pile", texte: "Confondre électrolyse et pile : dans une pile, Qr évolue vers K" },
+          null,
+          { code: "equilibre-pendant-electrolyse", texte: "Croire que le système reste à l'équilibre : le générateur l'en écarte" },
+          { code: "qr-non-defini", texte: "Croire que Qr n'a pas de sens pour une transformation forcée" }
+        ],
+        exp: "Le générateur force la transformation dans le sens non spontané : Qr s'éloigne de K. Dans une pile, au contraire, Qr évolue spontanément vers K."
       },
       {
-        q: "La capacité d'un accumulateur, exprimée en ampère-heure (A·h), correspond à :",
+        q: "Dans une cellule d'électrolyse, l'anode est :",
         opts: [
-          "la tension qu'il peut délivrer",
-          "la quantité d'électricité maximale qu'il peut fournir lors d'une décharge",
-          "sa masse",
-          "sa durée de vie en années"
+          "le siège d'une oxydation, reliée à la borne + du générateur",
+          "le siège d'une oxydation, reliée à la borne −, comme dans une pile",
+          "le siège d'une réduction, reliée à la borne +",
+          "l'électrode par laquelle le courant sort de la cellule"
         ],
-        ans: 1,
-        exp: "La capacité Q = I·Δt représente la quantité d'électricité totale disponible lors d'une décharge complète de l'accumulateur."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "polarite-anode-pile-electrolyse", texte: "Transposer la polarité de la pile : en électrolyse, l'anode est reliée au pôle + du générateur" },
+          { code: "anode-reduction", texte: "Associer anode et réduction : l'anode est toujours le siège de l'oxydation" },
+          { code: "sens-courant-electrolyse", texte: "Se tromper de sens : le courant entre dans la cellule par l'anode, reliée à la borne +" }
+        ],
+        exp: "Anode = oxydation, toujours. En électrolyse, le générateur arrache des électrons à l'anode : elle est reliée à sa borne +. Attention : dans une pile, l'anode est la borne −."
       },
       {
-        q: "La relation entre la charge électrique Q ayant traversé une cellule d'électrolyse et la quantité de matière d'électrons échangés n(e⁻) est :",
+        q: "Une électrolyse dure Δt = 965 s sous une intensité I = 2,0 A (F = 96 500 C·mol⁻¹). La quantité d'électrons échangés vaut :",
         opts: [
-          "Q = n(e⁻) / F",
-          "Q = n(e⁻) · F",
-          "Q = n(e⁻) + F",
-          "Q = F / n(e⁻)"
+          "1,9 × 10⁸ mol",
+          "1,0 × 10⁻² mol",
+          "50 mol",
+          "2,0 × 10⁻² mol"
         ],
-        ans: 1,
-        exp: "Q = n(e⁻)·F, avec F ≈ 96 500 C·mol⁻¹ la constante de Faraday, charge portée par une mole d'électrons."
+        ans: 3,
+        pieges: [
+          { code: "faraday-multiplie", texte: "Multiplier par F au lieu de diviser : n(e⁻) = I Δt / F" },
+          { code: "oubli-intensite", texte: "Oublier l'intensité : Δt / F" },
+          { code: "faraday-rapport-inverse", texte: "Inverser le rapport : F / (I Δt)" },
+          null
+        ],
+        exp: "Q = I Δt = 2,0 × 965 = 1 930 C ; n(e⁻) = Q / F = 1 930 / 96 500 = 2,0 × 10⁻² mol. Attention : F est la charge d'une mole d'électrons, on divise par F."
       },
       {
-        q: "Un accumulateur se distingue d'une pile primaire (jetable) car :",
+        q: "Dans cette électrolyse, du cuivre se dépose à la cathode (Cu²⁺ + 2 e⁻ → Cu ; M(Cu) = 63,5 g·mol⁻¹) avec n(e⁻) = 2,0 × 10⁻² mol. La masse de cuivre déposée vaut :",
         opts: [
-          "il ne produit jamais de courant",
-          "sa réaction chimique peut être inversée par charge électrique",
-          "il ne contient pas de réaction chimique",
-          "il fonctionne uniquement à l'aide de photons"
+          "1,3 g",
+          "0,64 g",
+          "1,6 × 10⁻⁴ g",
+          "1,0 × 10⁻² g"
         ],
         ans: 1,
-        exp: "L'accumulateur est rechargeable : on impose un courant externe pour inverser la réaction (charge), qui se produit ensuite spontanément lors de la décharge."
+        pieges: [
+          { code: "oubli-electrons-echanges", texte: "Oublier que chaque ion Cu²⁺ capte 2 électrons : n(Cu) = n(e⁻) / 2" },
+          null,
+          { code: "masse-molaire-divisee", texte: "Diviser par la masse molaire au lieu de multiplier : m = n × M" },
+          { code: "quantite-vs-masse", texte: "Confondre quantité de matière et masse" }
+        ],
+        exp: "n(Cu) = n(e⁻) / 2 = 1,0 × 10⁻² mol ; m = n × M = 1,0 × 10⁻² × 63,5 ≈ 0,64 g. Attention : 2 électrons par atome de cuivre déposé."
       },
       {
-        q: "L'électrolyse de l'eau produit :",
+        q: "Un accumulateur se distingue d'une pile jetable car :",
         opts: [
-          "du dioxyde de carbone et de l'eau",
-          "du dihydrogène et du dioxygène",
-          "uniquement de la vapeur d'eau",
-          "du chlore et du sodium"
+          "sa réaction peut être inversée, lors de la charge, par une électrolyse",
+          "il stocke des électrons, qu'il libère ensuite",
+          "pendant la charge, il fonctionne comme une pile",
+          "sa capacité est illimitée"
         ],
-        ans: 1,
-        exp: "L'équation-bilan de l'électrolyse de l'eau est 2 H₂O → 2 H₂ + O₂ : production de dihydrogène à la cathode et de dioxygène à l'anode."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "accumulateur-stocke-electrons", texte: "Croire qu'un accumulateur stocke des électrons : il stocke de l'énergie sous forme chimique" },
+          { code: "charge-vs-decharge", texte: "Confondre charge (transformation forcée) et décharge (fonctionnement en pile)" },
+          { code: "capacite-illimitee", texte: "Croire que la capacité est illimitée : elle est fixée par la quantité de réactifs" }
+        ],
+        exp: "À la décharge, l'accumulateur fonctionne comme une pile (réaction spontanée) ; à la charge, un générateur force la réaction inverse. Il stocke de l'énergie chimique, pas des électrons."
       },
       {
-        q: "La photosynthèse peut être vue comme une transformation forcée car :",
+        q: "La capacité d'un accumulateur de téléphone vaut Q = 2,0 A·h. En coulombs, cela fait :",
         opts: [
-          "elle est spontanée sans apport d'énergie",
-          "l'énergie lumineuse des photons force la synthèse de molécules riches en énergie",
-          "elle consomme de l'énergie électrique d'un générateur",
-          "elle ne stocke aucune énergie"
+          "120 C",
+          "2,0 C",
+          "7,2 × 10³ C",
+          "5,6 × 10⁻⁴ C"
         ],
-        ans: 1,
-        exp: "Comme dans une électrolyse, un apport d'énergie externe (ici lumineuse, et non électrique) force une transformation chimique non spontanée, stockant l'énergie solaire sous forme chimique."
+        ans: 2,
+        pieges: [
+          { code: "conversion-heure-minute", texte: "Convertir les heures en minutes au lieu de secondes : 2,0 × 60" },
+          { code: "ah-vs-coulomb", texte: "Croire que 1 A·h = 1 C : 1 A·h = 1 A × 3 600 s" },
+          null,
+          { code: "conversion-heure-inverse", texte: "Diviser par 3 600 au lieu de multiplier" }
+        ],
+        exp: "Q = I × Δt : 1 A·h = 1 A × 3 600 s = 3 600 C, donc 2,0 A·h = 7,2 × 10³ C. Attention : la capacité est une charge électrique, pas une énergie."
       },
       {
-        q: "Dans une pile, l'anode (siège de l'oxydation) constitue la borne :",
+        q: "L'électrolyse de l'eau a pour équation 2 H₂O → 2 H₂ + O₂. Elle produit :",
         opts: [
-          "positive",
-          "négative",
-          "neutre",
-          "variable selon le courant"
+          "autant de dihydrogène que de dioxygène",
+          "deux fois plus de dihydrogène que de dioxygène",
+          "deux fois plus de dioxygène que de dihydrogène",
+          "de la vapeur d'eau, l'eau étant chauffée par le courant"
         ],
         ans: 1,
-        exp: "Dans une pile, l'anode est la borne négative (à l'inverse de l'électrolyse où l'anode est la borne positive)."
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier les nombres stœchiométriques de l'équation" },
+          null,
+          { code: "stoechiometrie-inversee", texte: "Inverser les nombres stœchiométriques : 2 H₂ pour 1 O₂" },
+          { code: "electrolyse-vs-ebullition", texte: "Confondre électrolyse (transformation chimique) et ébullition (changement d'état)" }
+        ],
+        exp: "Pour 2 H₂O décomposées : 2 H₂ (à la cathode) et 1 O₂ (à l'anode), soit deux fois plus de dihydrogène. Attention : c'est une transformation chimique, pas une ébullition."
       },
       {
-        q: "Le dihydrogène produit par électrolyse de l'eau peut être qualifié de :",
+        q: "La photosynthèse est une transformation forcée car :",
         opts: [
-          "polluant sans intérêt",
-          "vecteur énergétique, restituant l'énergie stockée via une pile à combustible",
-          "catalyseur de la réaction inverse uniquement",
-          "isolant électrique"
+          "l'énergie lumineuse force la synthèse de molécules riches en énergie",
+          "elle se produit seule dans la nature, sans apport extérieur",
+          "elle libère de l'énergie, comme une combustion",
+          "elle nécessite un générateur électrique naturel"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "naturel-donc-spontane", texte: "Croire que tout ce qui se produit dans la nature est spontané : la photosynthèse exige l'énergie de la lumière" },
+          { code: "photosynthese-vs-respiration", texte: "Confondre photosynthèse (stocke de l'énergie) et respiration ou combustion (libèrent de l'énergie)" },
+          { code: "forcer-energie-electrique", texte: "Croire que seule l'énergie électrique peut forcer une transformation : la lumière aussi" }
+        ],
+        exp: "La lumière apporte l'énergie qui force la synthèse du glucose à partir de CO₂ et H₂O : l'énergie solaire est stockée sous forme chimique. Attention : la respiration fait l'inverse."
+      },
+      {
+        q: "Le dihydrogène produit par électrolyse de l'eau est :",
+        opts: [
+          "une source d'énergie primaire, disponible dans la nature",
+          "un vecteur d'énergie, qui restitue dans une pile à combustible l'énergie stockée",
+          "un carburant dont l'utilisation rejette du CO₂",
+          "une énergie gratuite, qui restitue plus que l'énergie de l'électrolyse"
         ],
         ans: 1,
-        exp: "Le dihydrogène stocke sous forme chimique l'énergie électrique consommée lors de l'électrolyse ; cette énergie peut être restituée ultérieurement, par exemple via une pile à combustible."
+        pieges: [
+          { code: "vecteur-vs-source-energie", texte: "Confondre vecteur et source d'énergie : il faut produire H₂, il n'existe pas libre dans la nature" },
+          null,
+          { code: "h2-rejette-co2", texte: "Croire que H₂ rejette du CO₂ en réagissant : sa réaction avec O₂ ne produit que de l'eau" },
+          { code: "energie-creee", texte: "Croire qu'on récupère plus d'énergie qu'on en a fourni : l'énergie se conserve et une partie est perdue" }
+        ],
+        exp: "H₂ stocke l'énergie électrique fournie lors de l'électrolyse ; une pile à combustible en restitue une partie. C'est un vecteur d'énergie, pas une source. Attention : on ne récupère jamais plus que ce qu'on a fourni."
       }
     ],
     annales: [
@@ -13189,114 +13369,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La poussée d'Archimède exercée sur un corps immergé est égale au poids :",
+        q: "La poussée d'Archimède exercée sur un corps totalement immergé a pour valeur :",
         opts: [
-          "du corps lui-même",
-          "du volume de fluide déplacé",
-          "du fluide contenu dans le récipient",
-          "de l'air ambiant"
+          "le poids du corps",
+          "le poids du volume de fluide déplacé",
+          "le poids de tout le fluide contenu dans le récipient",
+          "une valeur qui augmente avec la profondeur d'immersion"
         ],
         ans: 1,
-        exp: "F = ρ_fluide × V_immergé × g : la poussée d'Archimède correspond au poids du volume de fluide déplacé par le corps immergé."
-      },
-      {
-        q: "Une particule de fluide est un volume :",
-        opts: [
-          "ponctuel au sens mathématique strict",
-          "mésoscopique : grand devant les molécules, petit devant l'écoulement",
-          "toujours égal à 1 m³",
-          "uniquement défini pour les gaz"
+        pieges: [
+          { code: "archimede-poids-corps", texte: "Confondre poussée d'Archimède et poids du corps : ils ne sont égaux que si le corps flotte" },
+          null,
+          { code: "archimede-tout-le-fluide", texte: "Prendre tout le fluide du récipient au lieu du seul volume déplacé" },
+          { code: "archimede-profondeur", texte: "Croire que la poussée augmente avec la profondeur : pour un corps totalement immergé, elle ne dépend que du volume déplacé" }
         ],
-        ans: 1,
-        exp: "La particule de fluide est un volume mésoscopique, suffisamment grand pour moyenner les grandeurs microscopiques, suffisamment petit pour être local à l'échelle de l'écoulement."
+        exp: "F = ρ(fluide) × V(immergé) × g : poids du fluide déplacé. Attention : il ne dépend ni de la masse du corps ni de la profondeur une fois le corps totalement immergé."
       },
       {
-        q: "L'équation de continuité (conservation du débit volumique) pour un fluide incompressible s'écrit :",
+        q: "Un objet en fer (ρ = 7,9 × 10³ kg·m⁻³) de volume 2,0 L est totalement immergé dans l'eau (ρ = 1,0 × 10³ kg·m⁻³, g = 9,8 N·kg⁻¹). La poussée d'Archimède vaut environ :",
         opts: [
-          "S₁ + v₁ = S₂ + v₂",
-          "S₁·v₁ = S₂·v₂",
-          "S₁/v₁ = S₂/v₂",
-          "S₁ = S₂ uniquement"
+          "2,0 × 10⁴ N",
+          "2,0 N",
+          "1,5 × 10² N",
+          "20 N"
         ],
-        ans: 1,
-        exp: "Le débit volumique Dv = S·v se conserve le long d'une conduite : S₁·v₁ = S₂·v₂."
-      },
-      {
-        q: "Si la section d'une conduite diminue, la vitesse d'un fluide incompressible en écoulement :",
-        opts: [
-          "diminue",
-          "augmente",
-          "reste constante",
-          "devient nulle"
+        ans: 3,
+        pieges: [
+          { code: "conversion-l-m3", texte: "Oublier de convertir le volume en m³ : 2,0 L = 2,0 × 10⁻³ m³" },
+          { code: "oubli-g", texte: "Oublier g : ρ × V donne une masse, pas une force" },
+          { code: "masse-volumique-corps-vs-fluide", texte: "Utiliser la masse volumique du corps au lieu de celle du fluide" },
+          null
         ],
-        ans: 1,
-        exp: "D'après la conservation du débit (Dv = S·v = cste), une diminution de section S entraîne une augmentation de la vitesse v."
+        exp: "F = ρ(eau) × V × g = 1,0 × 10³ × 2,0 × 10⁻³ × 9,8 ≈ 20 N. Attention : c'est la masse volumique du fluide qui intervient, pas celle du corps."
       },
       {
-        q: "La relation de Bernoulli, valable pour un fluide parfait en écoulement stationnaire, s'écrit :",
+        q: "Un corps plein lâché dans un liquide flotte si :",
         opts: [
-          "P + ρv + gz = cste",
-          "P + ½ρv² + ρgz = cste",
-          "P·v = cste",
-          "P − ρv² = cste"
+          "sa masse volumique est inférieure à celle du liquide",
+          "sa masse volumique est supérieure à celle du liquide",
+          "sa masse est faible, quel que soit son volume",
+          "il est de forme plate"
         ],
-        ans: 1,
-        exp: "La relation de Bernoulli : P + ½ρv² + ρgz = constante le long d'une ligne de courant."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "flottaison-inversee", texte: "Inverser la condition : un corps plus dense que le liquide coule" },
+          { code: "masse-vs-masse-volumique", texte: "Confondre masse et masse volumique : un gros navire très lourd flotte" },
+          { code: "flottaison-forme", texte: "Croire que la forme décide de la flottaison d'un corps plein : seule compte la masse volumique moyenne" }
+        ],
+        exp: "Le corps flotte si la poussée d'Archimède peut équilibrer son poids, c'est-à-dire si ρ(corps) < ρ(liquide). Attention : c'est la masse volumique qui compte, pas la masse."
       },
       {
-        q: "Dans l'exemple du cours (eau, écoulement horizontal, v₁ = 1,0 m·s⁻¹, S₁ = 8,0 cm², S₂ = 2,0 cm²), la vitesse v₂ au point 2 vaut :",
+        q: "De l'eau s'écoule à la vitesse v = 3,0 m·s⁻¹ dans un tuyau de section S = 2,0 cm². Le débit volumique vaut :",
         opts: [
-          "1,0 m·s⁻¹",
-          "2,0 m·s⁻¹",
-          "4,0 m·s⁻¹",
-          "8,0 m·s⁻¹"
+          "6,0 m³·s⁻¹",
+          "6,0 × 10⁻² m³·s⁻¹",
+          "6,0 × 10⁻⁴ m³·s⁻¹",
+          "1,5 × 10⁴ m³·s⁻¹"
         ],
         ans: 2,
-        exp: "Conservation du débit : v₂ = v₁ × S₁/S₂ = 1,0 × 8,0/2,0 = 4,0 m·s⁻¹."
+        pieges: [
+          { code: "conversion-cm2-m2", texte: "Oublier de convertir la section : 2,0 cm² = 2,0 × 10⁻⁴ m²" },
+          { code: "conversion-cm2-puissance", texte: "Convertir les cm² comme des cm : 1 cm² = 10⁻⁴ m², et non 10⁻² m²" },
+          null,
+          { code: "debit-rapport", texte: "Diviser v par S au lieu de multiplier : Dv = S × v" }
+        ],
+        exp: "Dv = S × v = 2,0 × 10⁻⁴ × 3,0 = 6,0 × 10⁻⁴ m³·s⁻¹ (0,6 L par seconde). Attention : 1 cm² = 10⁻⁴ m²."
       },
       {
-        q: "Dans ce même exemple, sachant P₁ = 1,20×10⁵ Pa, la pression P₂ dans la section rétrécie (z₁ = z₂) vaut environ :",
+        q: "Un fluide incompressible s'écoule dans une conduite dont la section diminue. Dans la partie étroite :",
         opts: [
-          "1,20×10⁵ Pa (inchangée)",
-          "1,13×10⁵ Pa (diminuée)",
-          "1,28×10⁵ Pa (augmentée)",
-          "0 Pa"
+          "la vitesse augmente",
+          "la vitesse diminue, le passage étant plus difficile",
+          "la vitesse ne change pas",
+          "le débit volumique augmente"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "retrecissement-ralentit", texte: "Croire qu'un rétrécissement ralentit le fluide : le débit se conserve, donc v augmente" },
+          { code: "vitesse-independante-section", texte: "Oublier la conservation du débit : S × v reste constant" },
+          { code: "debit-vs-vitesse", texte: "Confondre débit et vitesse : c'est le débit qui reste constant" }
+        ],
+        exp: "Dv = S × v se conserve : si S diminue, v augmente (comme quand on pince un tuyau d'arrosage). Attention : le débit, lui, ne change pas."
+      },
+      {
+        q: "Une conduite passe d'un diamètre d₁ = 4,0 cm à un diamètre d₂ = 2,0 cm. Si l'eau entre à v₁ = 1,0 m·s⁻¹, elle sort à :",
+        opts: [
+          "2,0 m·s⁻¹",
+          "0,25 m·s⁻¹",
+          "4,0 m·s⁻¹",
+          "0,50 m·s⁻¹"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "diametre-vs-section", texte: "Utiliser le rapport des diamètres au lieu de celui des sections : S est proportionnelle à d²" },
+          { code: "continuite-inverse", texte: "Inverser le rapport : v₂ = v₁ × S₁ / S₂, plus grande que v₁" },
+          null,
+          { code: "diametre-et-rapport-inverses", texte: "Utiliser les diamètres et inverser le rapport" }
+        ],
+        exp: "S ∝ d² : S₁ / S₂ = (4,0 / 2,0)² = 4, donc v₂ = v₁ × S₁ / S₂ = 4,0 m·s⁻¹. Attention : diviser le diamètre par 2 divise la section par 4."
+      },
+      {
+        q: "De l'eau (ρ = 1,0 × 10³ kg·m⁻³) s'écoule horizontalement : P₁ = 1,20 × 10⁵ Pa, v₁ = 1,0 m·s⁻¹ et, dans le rétrécissement, v₂ = 4,0 m·s⁻¹. D'après la relation de Bernoulli, P₂ vaut environ :",
+        opts: [
+          "1,28 × 10⁵ Pa",
+          "1,20 × 10⁵ Pa",
+          "1,13 × 10⁵ Pa",
+          "1,19 × 10⁵ Pa"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "bernoulli-signe", texte: "Se tromper de signe : là où la vitesse augmente, la pression diminue" },
+          { code: "pression-independante-vitesse", texte: "Croire que la pression ne change pas dans une conduite horizontale" },
+          null,
+          { code: "oubli-carre-vitesse", texte: "Oublier de mettre les vitesses au carré : 500 × (1,0 − 4,0)" }
+        ],
+        exp: "P₂ = P₁ + ½ ρ (v₁² − v₂²) = 1,20 × 10⁵ + 500 × (1,0 − 16) ≈ 1,13 × 10⁵ Pa. Attention : les vitesses sont au carré, et la pression baisse là où le fluide accélère."
+      },
+      {
+        q: "L'effet Venturi désigne, dans un rétrécissement de conduite :",
+        opts: [
+          "une surpression, le fluide étant comprimé",
+          "une dépression, liée à l'augmentation de la vitesse",
+          "une diminution du débit",
+          "une diminution de la vitesse"
         ],
         ans: 1,
-        exp: "P₂ = P₁ + ½ρ(v₁² − v₂²) = 1,20×10⁵ + 500×(1 − 16) = 1,20×10⁵ − 7500 ≈ 1,13×10⁵ Pa : la pression diminue là où la vitesse augmente."
-      },
-      {
-        q: "L'effet Venturi désigne :",
-        opts: [
-          "une augmentation de pression dans un rétrécissement",
-          "une dépression liée à l'augmentation de vitesse dans un rétrécissement de section",
-          "une diminution du débit dans un rétrécissement",
-          "l'absence d'effet d'un rétrécissement sur l'écoulement"
+        pieges: [
+          { code: "venturi-surpression", texte: "Croire que le fluide est « comprimé » dans le rétrécissement : sa pression diminue" },
+          null,
+          { code: "debit-vs-vitesse", texte: "Confondre débit et vitesse : le débit se conserve" },
+          { code: "retrecissement-ralentit", texte: "Croire qu'un rétrécissement ralentit le fluide : le débit se conserve, donc v augmente" }
         ],
-        ans: 1,
-        exp: "Dans un rétrécissement, la vitesse augmente (conservation du débit) donc la pression diminue (Bernoulli) : c'est l'effet Venturi."
+        exp: "Dans le rétrécissement, v augmente (conservation du débit), donc P diminue (Bernoulli) : c'est l'effet Venturi. Attention : l'intuition « ça serre donc ça presse » est fausse."
       },
       {
-        q: "Un corps flotte à la surface d'un liquide si :",
+        q: "La relation de Bernoulli P + ½ ρ v² + ρ g z = constante s'applique à :",
         opts: [
-          "sa masse volumique moyenne est supérieure à celle du liquide",
-          "sa masse volumique moyenne est inférieure à celle du liquide",
-          "il est immobile",
-          "sa forme est sphérique"
+          "un fluide incompressible et non visqueux, en écoulement stationnaire",
+          "tout fluide, même très visqueux comme le miel",
+          "uniquement un fluide au repos",
+          "uniquement les gaz"
         ],
-        ans: 1,
-        exp: "Un corps flotte lorsque la poussée d'Archimède peut équilibrer son poids, ce qui nécessite ρ_corps < ρ_fluide."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "bernoulli-hors-domaine", texte: "Utiliser la relation hors de son domaine de validité : la viscosité dissipe de l'énergie" },
+          { code: "bernoulli-vs-statique", texte: "Confondre avec la loi de la statique des fluides : Bernoulli décrit un écoulement" },
+          { code: "bernoulli-gaz-seulement", texte: "Croire qu'elle ne vaut que pour les gaz : elle suppose au contraire un fluide incompressible" }
+        ],
+        exp: "Fluide parfait (non visqueux), incompressible, écoulement stationnaire, le long d'une ligne de courant. Attention : pour un fluide au repos (v = 0), on retrouve la loi de la statique."
       },
       {
-        q: "Un débitmètre à effet Venturi permet de mesurer un débit à partir de :",
+        q: "Un débitmètre à effet Venturi détermine le débit d'une canalisation à partir de :",
         opts: [
-          "la couleur du fluide",
           "la différence de pression entre une section large et une section étroite",
-          "la température du fluide",
-          "la masse totale du fluide"
+          "la pression dans la section étroite, qui augmente avec le débit",
+          "la température du fluide, qui augmente avec le débit",
+          "la masse de fluide contenue dans la conduite"
         ],
-        ans: 1,
-        exp: "La différence de pression mesurée entre une section large et une section rétrécie, combinée à la relation de Bernoulli et à la conservation du débit, permet de remonter à la valeur du débit."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "venturi-surpression", texte: "Croire que la pression augmente dans la section étroite : elle diminue" },
+          { code: "debit-temperature", texte: "Croire que le débit se mesure par l'échauffement du fluide" },
+          { code: "debit-vs-masse", texte: "Confondre débit (volume par seconde) et quantité de fluide contenue" }
+        ],
+        exp: "La différence P₁ − P₂, avec Bernoulli et la conservation du débit, donne les vitesses donc le débit. Attention : plus le débit est grand, plus la dépression dans la partie étroite est forte."
       }
     ],
     annales: [
@@ -13742,114 +13982,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "L'énergie d'un photon est donnée par la relation :",
+        q: "L'énergie d'un photon de longueur d'onde λ = 500 nm vaut (h = 6,63 × 10⁻³⁴ J·s, c = 3,00 × 10⁸ m·s⁻¹) :",
         opts: [
-          "E = h/ν",
-          "E = h·ν",
-          "E = h·c",
-          "E = ν/h"
+          "4,0 × 10⁻¹⁹ J",
+          "4,0 × 10⁻²⁸ J",
+          "3,3 × 10⁻⁴⁰ J",
+          "2,0 × 10⁻²⁵ J"
         ],
-        ans: 1,
-        exp: "E = h·ν = h·c/λ, avec h la constante de Planck (h ≈ 6,63×10⁻³⁴ J·s)."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-nm-m", texte: "Oublier de convertir λ en mètres : 500 nm = 5,00 × 10⁻⁷ m" },
+          { code: "energie-photon-h-lambda", texte: "Multiplier h par λ au lieu de calculer h c / λ" },
+          { code: "oubli-longueur-onde", texte: "Oublier de diviser par λ : h × c" }
+        ],
+        exp: "E = h c / λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 5,00 × 10⁻⁷ ≈ 4,0 × 10⁻¹⁹ J (environ 2,5 eV). Attention : λ en mètres."
       },
       {
-        q: "Un atome ne peut absorber un photon que si :",
+        q: "Un atome isolé absorbe un photon seulement si l'énergie de ce photon :",
         opts: [
-          "le photon a n'importe quelle énergie",
-          "l'énergie du photon correspond exactement à un écart entre deux niveaux d'énergie de l'atome",
-          "le photon est rouge",
-          "l'atome est déjà excité"
+          "a n'importe quelle valeur",
+          "est égale à l'écart entre deux de ses niveaux d'énergie",
+          "est supérieure ou égale à un certain seuil",
+          "est grande parce que la lumière est intense"
         ],
         ans: 1,
-        exp: "L'absorption d'un photon nécessite que son énergie E = hν corresponde exactement à la différence d'énergie entre deux niveaux permis de l'atome (quantification)."
+        pieges: [
+          { code: "energie-atome-continue", texte: "Croire que l'atome peut absorber n'importe quelle énergie : ses niveaux sont quantifiés" },
+          null,
+          { code: "absorption-vs-seuil-photoelectrique", texte: "Confondre absorption par un atome (énergie exacte) et effet photoélectrique (énergie supérieure à un seuil)" },
+          { code: "energie-photon-intensite", texte: "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence" }
+        ],
+        exp: "Les niveaux d'énergie de l'atome sont quantifiés : seul un photon d'énergie exactement égale à un écart entre niveaux peut être absorbé. D'où les raies des spectres."
       },
       {
-        q: "Dans l'effet photoélectrique, l'énergie cinétique des électrons éjectés est donnée par :",
+        q: "Dans l'effet photoélectrique (ν ≥ ν₀), l'énergie cinétique maximale des électrons émis s'écrit :",
         opts: [
-          "Ec = h·ν + W₀",
-          "Ec = h·ν − W₀",
-          "Ec = W₀ − h·ν",
-          "Ec = h·ν × W₀"
+          "Ec = h ν + W₀",
+          "Ec = h ν − W₀",
+          "Ec = W₀ − h ν",
+          "Ec = h ν"
         ],
         ans: 1,
-        exp: "Ec = h·ν − W₀ (valable pour ν ≥ ν₀) : l'énergie du photon sert à extraire l'électron (W₀) puis lui communique une énergie cinétique."
+        pieges: [
+          { code: "photoelectrique-signe-w0", texte: "Ajouter le travail d'extraction au lieu de le retrancher : W₀ est l'énergie dépensée pour arracher l'électron" },
+          null,
+          { code: "photoelectrique-ordre-inverse", texte: "Inverser l'ordre : avec ν ≥ ν₀, hν ≥ W₀ et Ec ≥ 0" },
+          { code: "oubli-travail-extraction", texte: "Oublier le travail d'extraction : une partie de l'énergie du photon sert à arracher l'électron" }
+        ],
+        exp: "L'énergie du photon sert d'abord à arracher l'électron (W₀), le reste devient énergie cinétique : Ec = hν − W₀. Attention : Ec n'est jamais négative."
       },
       {
-        q: "La fréquence seuil ν₀ de l'effet photoélectrique est reliée au travail d'extraction W₀ par :",
+        q: "Un métal a un travail d'extraction W₀ = 2,3 eV. Il est éclairé par des photons d'énergie 3,1 eV. L'énergie cinétique maximale des électrons émis vaut :",
         opts: [
-          "ν₀ = W₀ × h",
-          "ν₀ = W₀ / h",
-          "ν₀ = h / W₀",
-          "ν₀ = W₀ + h"
+          "5,4 eV",
+          "−0,8 eV",
+          "3,1 eV",
+          "0,8 eV"
         ],
-        ans: 1,
-        exp: "ν₀ = W₀/h : la fréquence seuil est la fréquence minimale pour laquelle un photon a juste assez d'énergie pour extraire un électron (Ec = 0)."
+        ans: 3,
+        pieges: [
+          { code: "photoelectrique-signe-w0", texte: "Ajouter W₀ au lieu de le retrancher : 3,1 + 2,3" },
+          { code: "photoelectrique-ordre-inverse", texte: "Inverser la soustraction : W₀ − hν" },
+          { code: "oubli-travail-extraction", texte: "Oublier le travail d'extraction" },
+          null
+        ],
+        exp: "Ec = hν − W₀ = 3,1 − 2,3 = 0,8 eV. Attention : une énergie cinétique négative est impossible."
       },
       {
-        q: "En dessous de la fréquence seuil, augmenter l'intensité lumineuse (nombre de photons) permet :",
+        q: "Un métal est éclairé par une lumière de fréquence inférieure à sa fréquence seuil ν₀. Si l'on augmente l'intensité lumineuse :",
         opts: [
-          "d'obtenir davantage d'électrons éjectés",
-          "de rien : aucun électron n'est émis, quelle que soit l'intensité",
-          "d'augmenter l'énergie cinétique des électrons",
-          "de diminuer le travail d'extraction"
+          "des électrons finissent par être émis",
+          "les électrons sont émis après un temps d'accumulation d'énergie",
+          "aucun électron n'est émis, quelle que soit l'intensité",
+          "les électrons émis sont plus rapides"
         ],
-        ans: 1,
-        exp: "Sous le seuil, chaque photon pris individuellement n'a pas assez d'énergie pour arracher un électron ; augmenter leur nombre (intensité) n'y change rien."
+        ans: 2,
+        pieges: [
+          { code: "intensite-depasse-seuil", texte: "Croire qu'une lumière plus intense finit par arracher des électrons : chaque photon reste trop peu énergétique" },
+          { code: "accumulation-energie-ondulatoire", texte: "Raisonner avec le modèle ondulatoire (accumulation d'énergie) : l'énergie arrive par paquets, les photons" },
+          null,
+          { code: "energie-photon-intensite", texte: "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence" }
+        ],
+        exp: "Chaque photon a une énergie hν < W₀ : aucun ne peut arracher un électron, et augmenter leur nombre n'y change rien. Seul le modèle du photon explique ce seuil."
       },
       {
-        q: "Le comportement de l'effet photoélectrique sous le seuil de fréquence s'explique par :",
+        q: "Au-dessus de la fréquence seuil, on augmente l'intensité lumineuse sans changer la fréquence. Alors :",
         opts: [
-          "le modèle ondulatoire seul de la lumière",
-          "le modèle corpusculaire (photon) de la lumière",
-          "l'absence de tout modèle physique",
-          "la théorie de la relativité uniquement"
+          "le nombre d'électrons émis augmente, pas leur énergie cinétique maximale",
+          "l'énergie cinétique des électrons émis augmente",
+          "le nombre d'électrons et leur énergie cinétique augmentent",
+          "rien ne change"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "energie-photon-intensite", texte: "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence" },
+          { code: "intensite-augmente-tout", texte: "Croire que l'intensité agit sur l'énergie des électrons : elle n'agit que sur le nombre de photons" },
+          { code: "intensite-sans-effet", texte: "Croire que l'intensité n'a aucun effet : plus de photons arrachent plus d'électrons" }
+        ],
+        exp: "Plus intense = plus de photons par seconde, chacun d'énergie hν inchangée : plus d'électrons émis, avec la même Ec max = hν − W₀."
+      },
+      {
+        q: "Un métal a un travail d'extraction W₀ = 3,3 × 10⁻¹⁹ J (h = 6,63 × 10⁻³⁴ J·s). Sa fréquence seuil vaut environ :",
+        opts: [
+          "5,0 × 10¹⁴ Hz",
+          "2,2 × 10⁻⁵² Hz",
+          "2,0 × 10⁻¹⁵ Hz",
+          "6,0 × 10⁻⁷ Hz"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier W₀ par h au lieu de diviser" },
+          { code: "seuil-rapport-inverse", texte: "Inverser le rapport : h / W₀" },
+          { code: "frequence-vs-longueur-onde", texte: "Donner la longueur d'onde seuil (en m) au lieu de la fréquence" }
+        ],
+        exp: "ν₀ = W₀ / h = 3,3 × 10⁻¹⁹ / 6,63 × 10⁻³⁴ ≈ 5,0 × 10¹⁴ Hz (λ₀ = c / ν₀ ≈ 600 nm). Attention aux unités : une fréquence s'exprime en Hz."
+      },
+      {
+        q: "L'existence d'une fréquence seuil, indépendante de l'intensité lumineuse, s'explique par :",
+        opts: [
+          "le modèle ondulatoire de la lumière",
+          "le modèle du photon : l'énergie arrive par paquets hν",
+          "la transformation des photons en électrons",
+          "l'échauffement du métal par la lumière"
         ],
         ans: 1,
-        exp: "Seul le modèle corpusculaire, où l'énergie est portée par des photons individuels d'énergie hν, explique l'existence d'un seuil de fréquence indépendant de l'intensité."
+        pieges: [
+          { code: "modele-ondulatoire-seuil", texte: "Croire que le modèle ondulatoire explique le seuil : il prévoit qu'une onde assez intense arrache des électrons" },
+          null,
+          { code: "photon-vs-electron", texte: "Confondre photon et électron : le photon est absorbé, l'électron vient du métal" },
+          { code: "photoelectrique-vs-thermique", texte: "Confondre effet photoélectrique et effet thermique" }
+        ],
+        exp: "Chaque électron est arraché par un seul photon d'énergie hν : il faut hν ≥ W₀, quelle que soit l'intensité. Le modèle ondulatoire ne l'explique pas."
+      },
+      {
+        q: "Une cellule photovoltaïque de surface 1,6 m² reçoit un éclairement de 800 W·m⁻² et fournit une puissance électrique de 240 W. Son rendement vaut environ :",
+        opts: [
+          "30 %",
+          "19 %",
+          "530 %",
+          "81 %"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-surface", texte: "Oublier la surface : 240 / 800 compare une puissance à un éclairement (W·m⁻²)" },
+          null,
+          { code: "rendement-inverse", texte: "Inverser le rapport : P(reçue) / P(électrique), un rendement ne dépasse pas 100 %" },
+          { code: "rendement-vs-pertes", texte: "Calculer la part perdue (1 − η) au lieu du rendement" }
+        ],
+        exp: "P(reçue) = 800 × 1,6 = 1 280 W ; η = 240 / 1 280 ≈ 0,19 = 19 %. Attention : l'éclairement est une puissance par m², il faut multiplier par la surface."
       },
       {
         q: "Une cellule photovoltaïque convertit :",
         opts: [
-          "l'énergie électrique en énergie lumineuse",
-          "l'énergie lumineuse en énergie électrique",
-          "l'énergie chimique en énergie lumineuse",
-          "l'énergie mécanique en énergie lumineuse"
+          "de l'énergie électrique en énergie lumineuse",
+          "de l'énergie lumineuse en énergie électrique",
+          "la chaleur du Soleil en énergie électrique",
+          "de l'énergie lumineuse en énergie chimique"
         ],
         ans: 1,
-        exp: "Une cellule photovoltaïque exploite l'absorption de photons par un semi-conducteur pour produire directement un courant électrique : conversion lumière → électricité."
-      },
-      {
-        q: "Le rendement d'une cellule photovoltaïque se définit comme :",
-        opts: [
-          "P_reçue / P_élec",
-          "P_élec / P_reçue",
-          "P_élec × P_reçue",
-          "P_élec − P_reçue"
+        pieges: [
+          { code: "conversion-inverse-led", texte: "Inverser la conversion : c'est une diode électroluminescente qui convertit l'électricité en lumière" },
+          null,
+          { code: "photovoltaique-vs-thermique", texte: "Confondre panneau photovoltaïque (lumière → électricité) et capteur solaire thermique" },
+          { code: "photovoltaique-vs-photosynthese", texte: "Confondre cellule photovoltaïque et photosynthèse (lumière → énergie chimique)" }
         ],
-        ans: 1,
-        exp: "η = P_élec / P_reçue, rapport entre la puissance électrique produite et la puissance lumineuse reçue par la cellule."
-      },
-      {
-        q: "Une cellule photovoltaïque de surface 1,6 m² reçoit un éclairement de 800 W·m⁻² et fournit 240 W électriques. Son rendement est d'environ :",
-        opts: [
-          "5 %",
-          "19 %",
-          "30 %",
-          "80 %"
-        ],
-        ans: 1,
-        exp: "P_reçue = 800 × 1,6 = 1280 W. η = 240/1280 ≈ 0,1875, soit environ 19 %."
-      },
-      {
-        q: "Les cellules photovoltaïques commerciales au silicium ont typiquement un rendement de l'ordre de :",
-        opts: [
-          "1 % à 2 %",
-          "15 % à 22 %",
-          "50 % à 60 %",
-          "95 % à 100 %"
-        ],
-        ans: 1,
-        exp: "Les cellules photovoltaïques au silicium commercialisées atteignent généralement un rendement compris entre 15 % et 22 %."
+        exp: "Les photons absorbés par le semi-conducteur libèrent des porteurs de charge : la lumière est directement convertie en énergie électrique. Attention : un panneau chaud produit d'ailleurs moins bien."
       }
     ],
     annales: [
