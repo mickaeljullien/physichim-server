@@ -4055,114 +4055,124 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Que doit vérifier la réaction support d'un titrage ?",
+        q: "La réaction support d'un titrage doit être :",
         opts: [
-          "Être lente et incomplète",
-          "Être totale, rapide et unique",
-          "Être réversible et lente",
-          "Ne dépendre que de la température"
+          "totale, rapide et unique",
+          "totale et lente, pour bien repérer l'équivalence",
+          "rapide, mais elle peut rester partielle",
+          "rapide et totale, même si une autre réaction consomme aussi le réactif titrant"
         ],
-        ans: 1,
-        exp: "Une réaction support de titrage doit être totale (avancement maximal), rapide (quasi instantanée) et unique (sans réaction parasite) pour permettre une exploitation fiable du titrage."
+        ans: 0,
+        pieges: [null, "Croire qu'une réaction lente facilite le repérage de l'équivalence", "Croire qu'une réaction non totale suffit pour exploiter le volume versé", "Oublier la condition d'unicité : une réaction parasite fausse la quantité de titrant attribuée au titré"],
+        exp: "Totale (le réactif limitant disparaît), rapide (le système est à l'état final à chaque ajout) et unique (tout le titrant versé réagit avec le titré). Attention : sans l'unicité, une partie du titrant serait consommée par autre chose."
       },
       {
-        q: "À l'équivalence d'un titrage, on a :",
+        q: "À l'équivalence d'un titrage :",
         opts: [
-          "Un excès de réactif titrant",
-          "Les réactifs mélangés dans les proportions stœchiométriques",
-          "Un excès de réactif titré",
-          "Toujours un pH égal à 7"
+          "seul le réactif titrant a été entièrement consommé",
+          "le réactif titré et le réactif titrant versé ont été entièrement consommés",
+          "le pH de la solution est toujours égal à 7",
+          "les quantités de réactif titré et de titrant versé sont égales, quelle que soit l'équation"
         ],
         ans: 1,
-        exp: "L'équivalence correspond au moment où les réactifs titrant et titré ont été introduits dans les proportions stœchiométriques de l'équation de la réaction support."
+        pieges: ["Croire que l'équivalence marque seulement la fin du réactif titrant", null, "Croire qu'à l'équivalence le pH vaut toujours 7", "Oublier les nombres stœchiométriques de l'équation"],
+        exp: "À l'équivalence, les réactifs ont été introduits dans les proportions stœchiométriques : ils sont tous les deux entièrement consommés. Attention : n(titré) = n(titrant) seulement si les nombres stœchiométriques sont égaux."
       },
       {
-        q: "Le titre massique t d'une solution est défini par :",
+        q: "Le titre massique w d'un soluté dans une solution est :",
         opts: [
-          "t = n(soluté) / V(solution)",
-          "t = m(soluté) / V(solution)",
-          "t = m(soluté) / m(solution)",
-          "t = c(soluté) × V(solution)"
+          "w = m(soluté) / V(solution), en g·L⁻¹",
+          "w = n(soluté) / V(solution), en mol·L⁻¹",
+          "w = m(soluté) / m(solvant), sans unité",
+          "w = m(soluté) / m(solution), sans unité"
+        ],
+        ans: 3,
+        pieges: ["Confondre titre massique et concentration en masse", "Confondre titre massique et concentration en quantité de matière", "Diviser par la masse du solvant au lieu de celle de la solution", null],
+        exp: "Le titre massique est un rapport de deux masses, donc sans unité (souvent donné en %). Attention : m(soluté) / V(solution) est la concentration en masse, en g·L⁻¹."
+      },
+      {
+        q: "Une solution commerciale d'ammoniac a un titre massique w = 28 % et une densité d = 0,90. Avec M(NH₃) = 17 g·mol⁻¹ et ρ(eau) = 1,0 × 10³ g·L⁻¹, sa concentration en ammoniac est :",
+        opts: [
+          "16 mol·L⁻¹",
+          "15 mol·L⁻¹",
+          "1,5 × 10³ mol·L⁻¹",
+          "2,5 × 10² mol·L⁻¹"
         ],
         ans: 1,
-        exp: "Le titre massique est la masse de soluté dissoute par litre de solution, exprimée en g·L⁻¹."
+        pieges: ["Oublier la densité : 0,28 × 1000 / 17 = 16 mol·L⁻¹", null, "Utiliser 28 au lieu de 0,28 : 28 × 900 / 17 = 1,5 × 10³", "Prendre la concentration en masse (0,28 × 900 = 252 g·L⁻¹) pour la concentration molaire"],
+        exp: "ρ(solution) = d × ρ(eau) = 900 g·L⁻¹, donc C_m = w × ρ = 0,28 × 900 = 252 g·L⁻¹, puis c = C_m / M = 252 / 17 = 15 mol·L⁻¹ (14,8). Attention : 28 % s'écrit 0,28 dans le calcul."
       },
       {
-        q: "Une solution commerciale d'ammoniac a un titre massique t = 68 g·L⁻¹ (M(NH₃) = 17 g·mol⁻¹). Sa concentration molaire est :",
+        q: "Avant un titrage, on ajoute 50 mL d'eau distillée dans le bécher qui contient la solution titrée. Le volume équivalent :",
         opts: [
-          "0,25 mol·L⁻¹",
-          "4,0 mol·L⁻¹",
-          "1156 mol·L⁻¹",
-          "17 mol·L⁻¹"
-        ],
-        ans: 1,
-        exp: "c = t / M = 68 / 17 = 4,0 mol·L⁻¹."
-      },
-      {
-        q: "Dans un titrage pH-métrique, la méthode des tangentes permet de déterminer :",
-        opts: [
-          "Le pH initial de la solution",
-          "Le volume équivalent Véq",
-          "La constante d'acidité Ka",
-          "La température de la solution"
-        ],
-        ans: 1,
-        exp: "La méthode des tangentes exploite le point d'inflexion de la courbe pH = f(V) pour déterminer graphiquement le volume équivalent Véq."
-      },
-      {
-        q: "Dans la méthode des tangentes, après avoir tracé les deux tangentes parallèles, on trace :",
-        opts: [
-          "Une droite perpendiculaire à l'une des tangentes",
-          "La droite parallèle et équidistante aux deux tangentes",
-          "Une droite horizontale passant par pH = 7",
-          "La tangente à l'origine de la courbe"
-        ],
-        ans: 1,
-        exp: "On trace la droite (médiatrice) parallèle aux deux tangentes et équidistante d'elles ; son intersection avec la courbe donne Véq."
-      },
-      {
-        q: "Lors d'un titrage conductimétrique, la rupture de pente observée sur la courbe σ = f(V) correspond :",
-        opts: [
-          "Au début du titrage",
-          "Au volume équivalent",
-          "À un artefact expérimental à ignorer",
-          "À la moitié du volume équivalent"
-        ],
-        ans: 1,
-        exp: "La rupture de pente marque le changement de comportement des ions en solution une fois l'équivalence atteinte : elle permet de repérer Véq par intersection des deux droites."
-      },
-      {
-        q: "Pourquoi utilise-t-on parfois une solution titrante beaucoup plus concentrée que la solution titrée lors d'un titrage conductimétrique ?",
-        opts: [
-          "Pour accélérer la réaction chimique",
-          "Pour rendre la dilution du milieu réactionnel négligeable",
-          "Pour changer la couleur de la solution",
-          "Pour éviter d'utiliser un agitateur magnétique"
-        ],
-        ans: 1,
-        exp: "Une solution titrante très concentrée permet de verser un faible volume, rendant la dilution de la solution titrée négligeable et les portions de courbe bien rectilignes."
-      },
-      {
-        q: "On titre V₀ = 20,0 mL d'une solution d'acide par une solution de soude à cB = 0,20 mol·L⁻¹. L'équivalence est obtenue pour Véq = 10,0 mL. La concentration de l'acide (réaction 1:1) est :",
-        opts: [
-          "0,050 mol·L⁻¹",
-          "0,10 mol·L⁻¹",
-          "0,20 mol·L⁻¹",
-          "0,40 mol·L⁻¹"
-        ],
-        ans: 1,
-        exp: "c(A) = (cB × Véq) / V₀ = (0,20 × 10,0) / 20,0 = 0,10 mol·L⁻¹."
-      },
-      {
-        q: "Pour un titrage pH-métrique d'un acide faible par une base forte, le pH à l'équivalence est généralement :",
-        opts: [
-          "Inférieur à 7",
-          "Égal à 7",
-          "Supérieur à 7",
-          "Toujours égal à pKa"
+          "augmente, car la solution titrée est plus diluée",
+          "diminue, car la concentration du réactif titré a baissé",
+          "ne change pas, car la quantité de réactif titré ne change pas",
+          "double si l'on double le volume d'eau ajouté"
         ],
         ans: 2,
-        exp: "À l'équivalence, l'espèce majoritaire est la base conjuguée faible de l'acide titré, ce qui rend le milieu basique (pH > 7)."
+        pieges: ["Croire que diluer modifie la quantité de matière de réactif titré", "Raisonner sur la concentration au lieu de la quantité de matière", null, "Croire que le volume équivalent est proportionnel au volume total"],
+        exp: "L'eau ne change pas la quantité de réactif titré, donc la quantité de titrant nécessaire est la même. Elle modifie seulement les valeurs mesurées (pH ou conductivité)."
+      },
+      {
+        q: "Sur une courbe de titrage pH = f(V), le volume équivalent est :",
+        opts: [
+          "l'abscisse du point où le pH vaut 7",
+          "l'abscisse du point où la pente est maximale (maximum de dpH/dV)",
+          "l'abscisse du point où le pH est égal au pKa",
+          "le volume pour lequel le pH atteint sa valeur la plus haute"
+        ],
+        ans: 1,
+        pieges: ["Croire qu'à l'équivalence le pH vaut toujours 7", null, "Confondre l'équivalence et la demi-équivalence", "Lire la fin de la courbe au lieu du saut de pH"],
+        exp: "L'équivalence se situe au milieu du saut de pH, là où la courbe est la plus raide : maximum de la dérivée dpH/dV (ou méthode des tangentes parallèles). Le pH à l'équivalence n'est 7 que pour un titrage acide fort / base forte."
+      },
+      {
+        q: "On titre de l'acide chlorhydrique (H₃O⁺ + Cl⁻) par de la soude (Na⁺ + HO⁻). Avant l'équivalence, la conductivité diminue car :",
+        opts: [
+          "les ions H₃O⁺ consommés sont remplacés par des ions Na⁺, moins conducteurs",
+          "les ions consommés disparaissent sans être remplacés par d'autres ions",
+          "la solution se dilue au fur et à mesure des ajouts de soude",
+          "les ions HO⁻ versés sont plus conducteurs que les ions H₃O⁺"
+        ],
+        ans: 0,
+        pieges: [null, "Oublier les ions spectateurs (Na⁺) apportés par la solution titrante", "Attribuer la variation de σ à la dilution plutôt qu'au remplacement des ions", "Inverser les conductivités ioniques molaires (λ(H₃O⁺) est la plus grande)"],
+        exp: "Chaque ion H₃O⁺ (λ très élevée) consommé est remplacé par un ion Na⁺ (λ bien plus faible) : σ diminue. Après l'équivalence, les ions Na⁺ et HO⁻ s'accumulent et σ augmente."
+      },
+      {
+        q: "On titre V₀ = 20,0 mL d'une solution d'acide par de la soude de concentration c_B = 0,20 mol·L⁻¹ (réaction 1 pour 1). L'équivalence est obtenue pour V_E = 10,0 mL. La concentration de l'acide est :",
+        opts: [
+          "0,40 mol·L⁻¹",
+          "0,20 mol·L⁻¹",
+          "0,10 mol·L⁻¹",
+          "2,0 × 10⁻³ mol·L⁻¹"
+        ],
+        ans: 2,
+        pieges: ["Inverser les volumes : 0,20 × 20,0 / 10,0", "Recopier la concentration de la solution titrante", null, "Confondre quantité de matière et concentration : n = 0,20 × 10,0 × 10⁻³ = 2,0 × 10⁻³ mol"],
+        exp: "À l'équivalence, c_A × V₀ = c_B × V_E, donc c_A = 0,20 × 10,0 / 20,0 = 0,10 mol·L⁻¹. Vérification de bon sens : il a fallu moins de soude que d'acide, la soude est donc plus concentrée."
+      },
+      {
+        q: "On titre V₀ = 10,0 mL d'acide oxalique par de la soude à 0,100 mol·L⁻¹ selon H₂C₂O₄ + 2 HO⁻ → C₂O₄²⁻ + 2 H₂O. Avec V_E = 12,0 mL, la concentration en acide oxalique est :",
+        opts: [
+          "0,12 mol·L⁻¹",
+          "0,24 mol·L⁻¹",
+          "4,2 × 10⁻² mol·L⁻¹",
+          "6,0 × 10⁻² mol·L⁻¹"
+        ],
+        ans: 3,
+        pieges: ["Oublier le nombre stœchiométrique 2 : 0,100 × 12,0 / 10,0", "Multiplier par 2 au lieu de diviser : n(acide) = 2 n(HO⁻)", "Inverser les volumes : 0,100 × 10,0 / (2 × 12,0)", null],
+        exp: "À l'équivalence, n(acide) = n(HO⁻) / 2, donc c = 0,100 × 12,0 / (2 × 10,0) = 6,0 × 10⁻² mol·L⁻¹. Bon sens : il faut deux ions HO⁻ par molécule d'acide."
+      },
+      {
+        q: "Lors du titrage d'un acide faible par une base forte, le pH à l'équivalence est :",
+        opts: [
+          "égal à 7, comme pour tout titrage acide-base",
+          "inférieur à 7, car la solution titrée était acide",
+          "égal au pKa du couple de l'acide titré",
+          "supérieur à 7, car la base conjuguée de l'acide est présente"
+        ],
+        ans: 3,
+        pieges: ["Croire qu'à l'équivalence le pH vaut toujours 7", "Croire que le milieu garde le caractère de la solution de départ", "Confondre l'équivalence et la demi-équivalence (pH = pKa)", null],
+        exp: "À l'équivalence, l'acide a été transformé en sa base conjuguée (par exemple l'ion éthanoate), qui rend la solution basique : pH > 7. Le pH vaut pKa à la demi-équivalence, pas à l'équivalence."
       }
     ],
     annales: [
