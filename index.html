@@ -1246,112 +1246,172 @@ const CHAPTERS = [
       {
         q: "Pour faire du mortier, 5 kg de ciment nécessitent 18 kg de sable. Combien faut-il de sable pour 25 kg de ciment ?",
         opts: [
-          "72 kg",
+          "6,9 kg",
           "90 kg",
-          "45 kg",
-          "100 kg"
+          "38 kg",
+          "3,6 kg"
         ],
         ans: 1,
-        exp: "Produit en croix : x = 25 × 18 / 5 = 90 kg. Le rapport sable/ciment est toujours 18/5 = 3,6. 25 × 3,6 = 90 ✓"
+        pieges: [
+          { code: "produit-croix-inverse", texte: "Croiser à l'envers : 25 × 5 / 18 = 6,9 kg" },
+          null,
+          { code: "raisonnement-additif", texte: "Raisonner par différence au lieu de proportionnalité : 18 − 5 = 13, donc 25 + 13 = 38 kg" },
+          { code: "produit-croix-mauvais-termes", texte: "Multiplier les mauvais termes : 18 × 5 / 25 = 3,6 kg" }
+        ],
+        exp: "Produit en croix : x = 25 × 18 / 5 = 90 kg ; le rapport sable/ciment reste 18/5 = 3,6 (90/25 = 3,6 ✓). Attention : deux grandeurs proportionnelles ont un rapport constant, pas une différence constante."
       },
       {
         q: "10³ × 10⁻² est égal à :",
         opts: [
-          "10⁶",
+          "10⁻⁶",
           "10⁵",
           "10¹",
-          "10⁻⁵"
+          "10⁰"
         ],
         ans: 2,
-        exp: "Quand on multiplie des puissances de 10, on additionne les exposants : 3 + (−2) = 1. Donc 10¹ = 10."
+        pieges: [
+          { code: "exposants-multiplies", texte: "Multiplier les exposants au lieu de les additionner : 3 × (−2) = −6" },
+          { code: "signe-exposant-oublie", texte: "Oublier le signe moins de l'exposant : 3 + 2 = 5" },
+          null,
+          { code: "puissance-negative-mal-ecrite", texte: "Écrire 10⁻² = 0,001 (un zéro de trop) : 1 000 × 0,001 = 1" }
+        ],
+        exp: "Pour multiplier des puissances de 10, on additionne les exposants : 3 + (−2) = 1, donc 10¹ = 10. Attention : on additionne les exposants, on ne les multiplie pas."
       },
       {
-        q: "0,00056 s'écrit en notation scientifique :",
+        q: "0,000 56 s'écrit en notation scientifique :",
         opts: [
           "56 × 10⁻⁵",
           "5,6 × 10⁻⁴",
-          "0,56 × 10⁻³",
-          "5,6 × 10⁴"
+          "5,6 × 10⁴",
+          "5,6 × 10⁻³"
         ],
         ans: 1,
-        exp: "On déplace la virgule de 4 rangs vers la droite pour avoir un seul chiffre avant la virgule : 5,6 × 10⁻⁴."
+        pieges: [
+          { code: "notation-scientifique-mantisse", texte: "Laisser plusieurs chiffres avant la virgule : en notation scientifique, 1 ≤ a < 10" },
+          null,
+          { code: "signe-exposant-petit-nombre", texte: "Mettre un exposant positif à un nombre plus petit que 1" },
+          { code: "compte-rangs-virgule", texte: "Mal compter les déplacements de la virgule (3 au lieu de 4)" }
+        ],
+        exp: "On déplace la virgule de 4 rangs vers la droite pour n'avoir qu'un chiffre non nul avant la virgule : 5,6 × 10⁻⁴. Attention : un nombre plus petit que 1 a toujours un exposant négatif."
       },
       {
         q: "1 μm (micromètre) correspond à :",
         opts: [
-          "0,001 m",
-          "0,000 001 m",
-          "0,000 000 001 m",
-          "1 000 m"
-        ],
-        ans: 1,
-        exp: "Le préfixe micro (μ) = 10⁻⁶. Donc 1 μm = 10⁻⁶ m = 0,000 001 m. Taille typique d'une bactérie."
-      },
-      {
-        q: "Quel groupe caractéristique contient –OH ?",
-        opts: [
-          "Un acide carboxylique",
-          "Un aldéhyde",
-          "Un alcool",
-          "Une cétone"
-        ],
-        ans: 2,
-        exp: "Le groupe –OH (hydroxyle) est caractéristique des alcools. La formule générale est R–OH (ex : éthanol CH₃CH₂OH)."
-      },
-      {
-        q: "Le groupe carbonyle (C=O) situé en bout de chaîne caractérise :",
-        opts: [
-          "Une cétone",
-          "Un alcool",
-          "Un ester",
-          "Un aldéhyde"
+          "1 × 10⁻³ m",
+          "1 × 10⁻⁹ m",
+          "1 × 10⁶ m",
+          "1 × 10⁻⁶ m"
         ],
         ans: 3,
-        exp: "C=O en bout de chaîne → aldéhyde (–CHO). C=O au milieu de la chaîne → cétone. C'est la position qui change tout !"
+        pieges: [
+          { code: "confusion-milli-micro", texte: "Confondre micro (10⁻⁶) et milli (10⁻³)" },
+          { code: "confusion-nano-micro", texte: "Confondre micro (10⁻⁶) et nano (10⁻⁹)" },
+          { code: "confusion-micro-mega", texte: "Confondre micro (μ, 10⁻⁶) et méga (M, 10⁶)" },
+          null
+        ],
+        exp: "Le préfixe micro (μ) vaut 10⁻⁶ : 1 μm = 10⁻⁶ m, la taille d'une bactérie. Attention : milli = 10⁻³, micro = 10⁻⁶, nano = 10⁻⁹."
       },
       {
-        q: "La chaîne principale de l'hexane contient combien de carbones ?",
+        q: "On calcule v = d / t avec d = 12,5 m et t = 4,2 s. La calculatrice affiche 2,976190476. On écrit :",
         opts: [
-          "4",
-          "5",
-          "6",
-          "7"
+          "v = 2,976190476 m·s⁻¹",
+          "v = 2,98 m·s⁻¹",
+          "v = 3,0 m·s⁻¹",
+          "v = 3 m·s⁻¹"
         ],
         ans: 2,
-        exp: "Hex- = 6 carbones. Rappel : méth(1), éth(2), prop(3), but(4), pent(5), hex(6), hept(7), oct(8)..."
-      },
-      {
-        q: "Dans la formule topologique, chaque angle du dessin représente :",
-        opts: [
-          "Un atome d'hydrogène",
-          "Un atome d'oxygène",
-          "Un atome de carbone",
-          "Une double liaison"
+        pieges: [
+          { code: "recopie-calculatrice", texte: "Recopier tous les chiffres affichés par la calculatrice" },
+          { code: "cs-donnee-plus-precise", texte: "Garder le nombre de chiffres significatifs de la donnée la plus précise (3 au lieu de 2)" },
+          null,
+          { code: "cs-trop-peu", texte: "Arrondir trop : 1 seul chiffre significatif alors que les données en ont au moins 2" }
         ],
-        ans: 2,
-        exp: "Dans la formule topologique, chaque sommet (angle ou extrémité) représente un carbone. Les H sont implicites."
+        exp: "Le résultat garde le nombre de chiffres significatifs de la donnée la moins précise : t = 4,2 s en a 2, d'où v = 3,0 m·s⁻¹. Attention : recopier la calculatrice donne une précision qui n'existe pas."
       },
       {
-        q: "L'acide éthanoïque a pour formule CH₃–COOH. Sa famille est :",
+        q: "Le groupe caractéristique des acides carboxyliques est :",
         opts: [
-          "Alcool",
-          "Ester",
-          "Acide carboxylique",
-          "Aldéhyde"
-        ],
-        ans: 2,
-        exp: "Le groupe –COOH (carboxyle) est caractéristique des acides carboxyliques. Ici CH₃–COOH = acide éthanoïque (vinaigre !)."
-      },
-      {
-        q: "Un ester est formé par la réaction entre :",
-        opts: [
-          "Deux acides",
-          "Un acide carboxylique et un alcool",
-          "Un alcool et une amine",
-          "Deux alcools"
+          "–OH",
+          "–COOH",
+          "–CHO",
+          "–COO–"
         ],
         ans: 1,
-        exp: "Estérification : acide carboxylique + alcool → ester + eau. Ex : acide éthanoïque + éthanol → éthanoate d'éthyle + H₂O."
+        pieges: [
+          { code: "alcool-vs-acide-carboxylique", texte: "Confondre alcool et acide carboxylique : un –OH seul, sans C=O sur le même carbone, est un alcool" },
+          null,
+          { code: "aldehyde-vs-acide-carboxylique", texte: "Confondre le groupe aldéhyde –CHO et le groupe carboxyle –COOH" },
+          { code: "ester-vs-acide-carboxylique", texte: "Confondre le groupe ester –COO– (entre deux chaînes) et le groupe carboxyle –COOH" }
+        ],
+        exp: "Le groupe carboxyle –COOH porte sur le même carbone un C=O et un –OH. Attention : un –OH seul (sans C=O sur le même carbone) est le groupe hydroxyle des alcools."
+      },
+      {
+        q: "Un groupe carbonyle C=O situé en bout de chaîne carbonée (–CHO) caractérise :",
+        opts: [
+          "une cétone",
+          "un aldéhyde",
+          "un acide carboxylique",
+          "un ester"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "aldehyde-vs-cetone", texte: "Confondre aldéhyde (C=O en bout de chaîne) et cétone (C=O au milieu de la chaîne)" },
+          null,
+          { code: "aldehyde-vs-acide-carboxylique", texte: "Confondre le groupe aldéhyde –CHO et le groupe carboxyle –COOH" },
+          { code: "ester-carbonyle", texte: "Croire que tout C=O en bout de chaîne est un ester, sans chercher le second atome d'oxygène" }
+        ],
+        exp: "C=O en bout de chaîne (lié à un H) : aldéhyde ; C=O au milieu de la chaîne : cétone. Attention : c'est la position du C=O qui distingue ces deux familles."
+      },
+      {
+        q: "Le nom de la molécule CH₃–CH(CH₃)–CH₂–CH₃ est :",
+        opts: [
+          "3-méthylbutane",
+          "2-éthylpropane",
+          "2-méthylbutane",
+          "pentane"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "numerotation-chaine", texte: "Numéroter la chaîne dans le mauvais sens : on donne au substituant le plus petit numéro" },
+          { code: "chaine-pas-la-plus-longue", texte: "Choisir une chaîne principale qui n'est pas la plus longue (3 carbones au lieu de 4)" },
+          null,
+          { code: "isomere-nomme-par-formule-brute", texte: "Nommer d'après le nombre total de carbones (C₅H₁₂) sans tenir compte de la ramification" }
+        ],
+        exp: "La chaîne la plus longue a 4 carbones (butane) ; le méthyle est porté par le carbone 2 en numérotant pour avoir le plus petit indice : 2-méthylbutane. Attention : toujours chercher la chaîne la plus longue, puis numéroter pour donner le plus petit numéro."
+      },
+      {
+        q: "Une formule topologique est un zigzag de 4 segments (5 sommets et extrémités), sans autre atome dessiné. La formule brute de la molécule est :",
+        opts: [
+          "C₄H₁₀",
+          "C₅H₁₂",
+          "C₅H₁₀",
+          "C₃H₈"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "topologique-segments-carbones", texte: "Compter les segments au lieu des sommets et extrémités : chaque sommet et chaque extrémité est un carbone" },
+          null,
+          { code: "h-implicites-mal-comptes", texte: "Attribuer 2 H à chaque carbone : les carbones en bout de chaîne en portent 3" },
+          { code: "topologique-extremites-oubliees", texte: "Ne compter que les angles du zigzag en oubliant les deux extrémités" }
+        ],
+        exp: "Chaque angle et chaque extrémité représente un carbone : 5 C. Chaque carbone complète ses 4 liaisons avec des H implicites : 3 + 2 + 2 + 2 + 3 = 12 H, d'où C₅H₁₂. Attention : les extrémités du zigzag sont aussi des carbones."
+      },
+      {
+        q: "Le groupe caractéristique –CO–NH– caractérise la famille des :",
+        opts: [
+          "amines",
+          "cétones",
+          "esters",
+          "amides"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "amine-vs-amide", texte: "Confondre amine (–NH₂ seul) et amide (–NH– lié à un C=O)" },
+          { code: "cetone-vs-amide", texte: "Ne voir que le C=O et oublier l'atome d'azote voisin" },
+          { code: "ester-vs-amide", texte: "Confondre amide (–CO–NH–) et ester (–CO–O–)" },
+          null
+        ],
+        exp: "Un amide associe un C=O et un atome d'azote lié à ce même carbone : –CO–NH–. Attention : une amine a un azote sans C=O voisin (–NH₂)."
       }
     ],
     annales: [
@@ -1811,114 +1871,174 @@ const CHAPTERS = [
     },
     quiz: [
       {
-        q: "Selon Brønsted, une base est une espèce qui :",
+        q: "Selon Brønsted, une base est une espèce capable de :",
         opts: [
-          "Capte un proton H⁺",
-          "Cède un proton H⁺",
-          "Capte un électron",
-          "Cède un électron"
+          "capter un proton H⁺",
+          "céder un proton H⁺",
+          "capter un électron",
+          "libérer des ions HO⁻ dans l'eau"
         ],
         ans: 0,
-        exp: "Une base de Brønsted capte un proton H⁺ ; c'est le symétrique de la définition de l'acide."
-      },
-      {
-        q: "Quel couple correspond à l'acide carbonique ?",
-        opts: [
-          "(CO₂,H₂O) / HCO₃⁻",
-          "HCO₃⁻ / CO₃²⁻",
-          "CH₃COOH / CH₃COO⁻",
-          "H₃O⁺ / H₂O"
+        pieges: [
+          null,
+          { code: "acide-base-inverses", texte: "Inverser les définitions : c'est l'acide qui cède un proton H⁺" },
+          { code: "confusion-acide-base-redox", texte: "Confondre acide-base (échange de H⁺) et oxydoréduction (échange d'électrons)" },
+          { code: "base-liberer-ho", texte: "Croire qu'une base doit libérer HO⁻ : NH₃ est une base sans contenir de HO⁻" }
         ],
-        ans: 0,
-        exp: "L'acide carbonique forme le couple (CO₂,H₂O)/HCO₃⁻, explicitement au programme."
+        exp: "Une base de Brønsted capte un proton H⁺ ; un acide en cède un. Attention : NH₃ est une base sans contenir HO⁻, et capter un électron relève de l'oxydoréduction."
       },
       {
-        q: "Une réaction acide-base met en jeu :",
+        q: "La base conjuguée de l'acide éthanoïque CH₃COOH est :",
         opts: [
-          "Un seul couple",
-          "Deux couples acide-base",
-          "Trois couples minimum",
-          "Aucun couple, seulement des ions libres"
+          "CH₃COOH₂⁺",
+          "CH₃COO⁻",
+          "H₂O",
+          "HO⁻"
         ],
         ans: 1,
-        exp: "Une réaction acide-base fait toujours intervenir deux couples : l'acide de l'un réagit avec la base de l'autre."
+        pieges: [
+          { code: "ajout-h-au-lieu-retrait", texte: "Ajouter un H⁺ au lieu d'en retirer : la base conjuguée a un H⁺ de moins que l'acide" },
+          null,
+          { code: "base-conjuguee-vs-reactif", texte: "Confondre la base conjuguée avec l'eau, qui est la base d'un autre couple dans la réaction avec l'eau" },
+          { code: "base-conjuguee-toujours-ho", texte: "Croire que la base conjuguée de tout acide est HO⁻" }
+        ],
+        exp: "Acide et base conjugués ne diffèrent que d'un H⁺ : CH₃COOH ⇌ CH₃COO⁻ + H⁺. Attention : on retire le H⁺ à l'acide, on ne lui en ajoute pas."
+      },
+      {
+        q: "Le couple acide-base de l'acide carbonique s'écrit :",
+        opts: [
+          "HCO₃⁻ / CO₃²⁻",
+          "(CO₂,H₂O) / HCO₃⁻",
+          "HCO₃⁻ / (CO₂,H₂O)",
+          "(CO₂,H₂O) / CO₃²⁻"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "couples-carbonates-confondus", texte: "Confondre les deux couples carbonatés : HCO₃⁻/CO₃²⁻ est le couple de l'ion hydrogénocarbonate" },
+          null,
+          { code: "couple-ordre-inverse", texte: "Écrire le couple dans l'ordre base / acide : on écrit toujours acide / base" },
+          { code: "couple-deux-protons", texte: "Associer deux espèces qui diffèrent de deux H⁺ : un couple ne diffère que d'un H⁺" }
+        ],
+        exp: "L'acide carbonique (CO₂,H₂O) cède un H⁺ pour donner l'ion hydrogénocarbonate HCO₃⁻. Attention : on écrit le couple acide / base, et les deux espèces ne diffèrent que d'un seul H⁺."
+      },
+      {
+        q: "L'équation de la réaction entre l'acide éthanoïque et l'ammoniac est :",
+        opts: [
+          "CH₃COOH + NH₃ → CH₃COO⁻ + NH₄⁺",
+          "CH₃COOH + NH₃ → CH₃COOH₂⁺ + NH₂⁻",
+          "CH₃COOH + NH₃ → CH₃COO⁻ + NH₃ + H⁺",
+          "CH₃COOH + NH₃ → CH₃COO⁻ + H₃O⁺"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "transfert-h-sens-inverse", texte: "Faire passer le H⁺ de la base vers l'acide : c'est l'acide qui cède son H⁺ à la base" },
+          { code: "proton-libre", texte: "Laisser un H⁺ libre : le proton passe directement de l'acide à la base, il n'existe pas seul en solution" },
+          { code: "acide-reagit-toujours-eau", texte: "Croire qu'un acide réagit toujours avec l'eau : ici il réagit avec la base NH₃" }
+        ],
+        exp: "L'acide CH₃COOH du couple CH₃COOH/CH₃COO⁻ cède un H⁺ à la base NH₃ du couple NH₄⁺/NH₃. Attention : une réaction acide-base met en jeu deux couples et le H⁺ n'apparaît jamais libre."
       },
       {
         q: "Une espèce amphotère (ampholyte) est une espèce qui :",
         opts: [
-          "N'appartient à aucun couple acide-base",
-          "Appartient à un seul couple acide-base",
-          "Appartient à deux couples acide-base différents",
-          "Est toujours un acide fort"
+          "est à la fois l'acide et la base d'un même couple",
+          "n'est ni un acide ni une base",
+          "est l'acide d'un couple et la base d'un autre couple",
+          "réagit totalement avec l'eau"
         ],
         ans: 2,
-        exp: "Une espèce amphotère appartient à deux couples différents : elle peut jouer le rôle d'acide dans l'un et de base dans l'autre."
+        pieges: [
+          { code: "ampholyte-meme-couple", texte: "Croire qu'un ampholyte est l'acide et la base d'un même couple : il appartient à deux couples différents" },
+          { code: "ampholyte-neutre", texte: "Confondre « amphotère » et « neutre »" },
+          null,
+          { code: "ampholyte-vs-fort", texte: "Confondre caractère amphotère et force d'un acide ou d'une base" }
+        ],
+        exp: "Un ampholyte appartient à deux couples : acide dans l'un, base dans l'autre. Exemples : H₂O (H₃O⁺/H₂O et H₂O/HO⁻) et HCO₃⁻. Attention : un couple contient deux espèces différentes."
       },
       {
-        q: "Une solution d'acide chlorhydrique (acide fort) a une concentration c = 1,0×10⁻³ mol·L⁻¹. Quel est son pH ?",
+        q: "Une solution d'acide chlorhydrique (acide fort) a une concentration c = 1,0 × 10⁻³ mol·L⁻¹. Son pH vaut :",
         opts: [
-          "2,0",
+          "−3,0",
           "3,0",
-          "4,0",
-          "1,0"
+          "11,0",
+          "1,0 × 10⁻³"
         ],
         ans: 1,
-        exp: "Acide fort totalement dissocié : [H₃O⁺] = c = 1,0×10⁻³ mol·L⁻¹, donc pH = −log(1,0×10⁻³) = 3,0."
+        pieges: [
+          { code: "oubli-signe-moins-log", texte: "Oublier le signe moins : pH = −log([H₃O⁺]/c°)" },
+          null,
+          { code: "acide-traite-comme-base", texte: "Calculer 14 − 3 comme pour une base" },
+          { code: "ph-pris-pour-concentration", texte: "Confondre le pH et la concentration en ions H₃O⁺" }
+        ],
+        exp: "Acide fort : [H₃O⁺] = c = 1,0 × 10⁻³ mol·L⁻¹, donc pH = −log(1,0 × 10⁻³) = 3,0. Attention au signe moins de la définition : un pH est positif pour une solution usuelle."
       },
       {
-        q: "Une solution a un pH = 5,0. Quelle est la concentration [H₃O⁺] ?",
+        q: "Une solution a un pH = 5,0. Sa concentration en ions oxonium [H₃O⁺] vaut :",
         opts: [
-          "1,0×10⁻⁵ mol·L⁻¹",
+          "1,0 × 10⁵ mol·L⁻¹",
           "5,0 mol·L⁻¹",
-          "1,0×10⁵ mol·L⁻¹",
-          "5,0×10⁻¹ mol·L⁻¹"
+          "0,70 mol·L⁻¹",
+          "1,0 × 10⁻⁵ mol·L⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "oubli-signe-moins-log", texte: "Oublier le signe moins : [H₃O⁺] = c° × 10⁻ᵖᴴ" },
+          { code: "ph-pris-pour-concentration", texte: "Confondre le pH et la concentration en ions H₃O⁺" },
+          { code: "log-au-lieu-de-puissance", texte: "Prendre log(5,0) = 0,70 au lieu de calculer 10⁻⁵" },
+          null
+        ],
+        exp: "[H₃O⁺] = c° × 10⁻ᵖᴴ = 1 × 10⁻⁵,⁰ = 1,0 × 10⁻⁵ mol·L⁻¹. Attention : pour revenir du pH à la concentration, on calcule une puissance de 10, pas un logarithme."
+      },
+      {
+        q: "On dilue 10 fois une solution d'acide fort de pH = 2,0. Le pH de la solution diluée vaut :",
+        opts: [
+          "3,0",
+          "2,0",
+          "1,0",
+          "0,20"
         ],
         ans: 0,
-        exp: "[H₃O⁺] = c° × 10⁻ᵖᴴ = 1 × 10⁻⁵ = 1,0×10⁻⁵ mol·L⁻¹."
-      },
-      {
-        q: "Le facteur de dilution F d'une solution vérifie :",
-        opts: [
-          "F = V₀/V₁",
-          "F = V₁/V₀ = c₀/c₁",
-          "F = c₀ × c₁",
-          "F = V₀ × V₁"
+        pieges: [
+          null,
+          { code: "dilution-ph-inchange", texte: "Croire que la dilution ne change pas le pH" },
+          { code: "dilution-ph-diminue", texte: "Croire que diluer rend la solution plus acide (pH plus petit)" },
+          { code: "ph-proportionnel-concentration", texte: "Croire que le pH est proportionnel à la concentration : 2,0 / 10" }
         ],
-        ans: 1,
-        exp: "F est le rapport du volume final sur le volume prélevé, égal aussi au rapport des concentrations c₀/c₁."
+        exp: "[H₃O⁺] est divisée par 10, donc pH = 2,0 + log(10) = 3,0. Attention : le pH n'est pas proportionnel à la concentration ; diviser [H₃O⁺] par 10 augmente le pH d'une unité."
       },
       {
-        q: "On dilue 10 fois une solution d'acide fort de pH = 2,0. Quel est le nouveau pH ?",
+        q: "On prélève V₀ = 10,0 mL de solution mère et on complète à V₁ = 250,0 mL avec de l'eau. Le facteur de dilution F vaut :",
         opts: [
-          "1,0",
-          "2,0",
-          "3,0",
-          "4,0"
+          "0,040",
+          "24",
+          "25",
+          "26"
         ],
         ans: 2,
-        exp: "Diluer un acide fort d'un facteur 10 divise [H₃O⁺] par 10, ce qui augmente le pH d'une unité : pH = 3,0."
+        pieges: [
+          { code: "facteur-dilution-inverse", texte: "Inverser le rapport : F = V₀ / V₁ = 0,040 (F est toujours supérieur à 1)" },
+          { code: "dilution-volume-eau-ajoutee", texte: "Diviser le volume d'eau ajoutée par V₀ : 240 / 10,0 = 24" },
+          null,
+          { code: "dilution-volume-final-additionne", texte: "Ajouter V₀ au volume final : (250,0 + 10,0) / 10,0 = 26" }
+        ],
+        exp: "F = V₁ / V₀ = 250,0 / 10,0 = 25, avec V₁ le volume final de la fiole. Attention : V₁ est le volume total après ajout d'eau, pas le volume d'eau ajoutée."
       },
       {
-        q: "D'après le tableau des couples, HCO₃⁻ est la base conjuguée de :",
+        q: "Une solution A a un pH = 3, une solution B a un pH = 5. On peut affirmer que :",
         opts: [
-          "CO₃²⁻",
-          "(CO₂,H₂O)",
-          "NH₄⁺",
-          "H₂O"
+          "B est plus acide que A, car son pH est plus grand",
+          "[H₃O⁺] est 100 fois plus grande dans A que dans B",
+          "[H₃O⁺] est 2 fois plus grande dans A que dans B",
+          "A contient forcément plus d'acide apporté que B"
         ],
         ans: 1,
-        exp: "Le couple (CO₂,H₂O)/HCO₃⁻ montre que HCO₃⁻ est la base conjuguée de l'acide carbonique (CO₂,H₂O)."
-      },
-      {
-        q: "Le proton H⁺ existe-t-il sous forme libre en solution aqueuse ?",
-        opts: [
-          "Vrai, il reste stable en solution",
-          "Faux, il est immédiatement capté par l'eau pour former H₃O⁺",
-          "Vrai, mais uniquement en solution très acide",
-          "Faux, il se transforme en HO⁻"
+        pieges: [
+          { code: "ph-eleve-plus-acide", texte: "Croire qu'un pH élevé signifie « beaucoup d'acide » : plus le pH est petit, plus la solution est acide" },
+          null,
+          { code: "ph-proportionnel-concentration", texte: "Raisonner comme si le pH était proportionnel à la concentration (5 − 3 = 2)" },
+          { code: "force-vs-concentration", texte: "Confondre [H₃O⁺] et concentration en acide apporté : un acide faible concentré peut avoir le même pH qu'un acide fort dilué" }
         ],
-        ans: 1,
-        exp: "En solution aqueuse, H⁺ n'existe pas libre : il est capté par une molécule d'eau pour former l'ion oxonium H₃O⁺."
+        exp: "[H₃O⁺]A / [H₃O⁺]B = 10⁻³ / 10⁻⁵ = 100. Attention : une unité de pH correspond à un facteur 10 sur [H₃O⁺], et le pH ne dit rien seul de la quantité d'acide apportée."
       }
     ],
     annales: [
@@ -2399,114 +2519,174 @@ const CHAPTERS = [
     },
     quiz: [
       {
-        q: "Pour la réaction aA + bB ⇌ cC + dD, l'expression correcte du quotient de réaction est :",
+        q: "Pour la réaction aA + bB ⇌ cC + dD (espèces dissoutes), le quotient de réaction s'écrit :",
         opts: [
-          "Qr = ([A]ᵃ[B]ᵇ)/([C]ᶜ[D]ᵈ)",
-          "Qr = ([C]ᶜ[D]ᵈ)/([A]ᵃ[B]ᵇ)",
-          "Qr = [A]+[B]",
-          "Qr = [C]×[D]×[A]×[B]"
-        ],
-        ans: 1,
-        exp: "Qr se calcule comme le rapport des produits sur les réactifs, chacun élevé à la puissance de son coefficient stœchiométrique."
-      },
-      {
-        q: "La constante d'équilibre K(T) dépend :",
-        opts: [
-          "Uniquement de la température",
-          "Des concentrations initiales",
-          "Du volume du système",
-          "De Qr,i"
-        ],
-        ans: 0,
-        exp: "K(T) est une caractéristique de la réaction à une température donnée ; elle ne dépend ni des concentrations initiales ni du volume."
-      },
-      {
-        q: "Si Qr,i < K(T), le système évolue spontanément :",
-        opts: [
-          "Dans le sens indirect",
-          "Dans le sens direct",
-          "Il n'évolue pas",
-          "On ne peut pas conclure"
-        ],
-        ans: 1,
-        exp: "Le critère d'évolution spontanée indique que si Qr,i < K(T), la transformation se produit dans le sens direct (→)."
-      },
-      {
-        q: "Si Qr,i = K(T), on peut affirmer que :",
-        opts: [
-          "Le système évolue rapidement dans le sens direct",
-          "Le système évolue dans le sens indirect",
-          "Le système est déjà à l'équilibre",
-          "La réaction est totale"
+          "Qr = ([A]ᵃ × [B]ᵇ) / ([C]ᶜ × [D]ᵈ)",
+          "Qr = ([C] × [D]) / ([A] × [B])",
+          "Qr = ([C]ᶜ × [D]ᵈ) / ([A]ᵃ × [B]ᵇ)",
+          "Qr = (c[C] × d[D]) / (a[A] × b[B])"
         ],
         ans: 2,
-        exp: "Qr,i = K(T) signifie que le quotient de réaction a déjà atteint sa valeur d'équilibre : il n'y a plus d'évolution nette."
-      },
-      {
-        q: "Le rôle du pont salin dans une pile est de :",
-        opts: [
-          "Empêcher tout passage d'ions entre les demi-piles",
-          "Assurer l'électroneutralité des solutions en permettant la migration d'ions",
-          "Fournir directement les électrons du circuit extérieur",
-          "Empêcher la pile de fonctionner"
+        pieges: [
+          { code: "qr-inverse", texte: "Inverser le quotient : les produits sont au numérateur, les réactifs au dénominateur" },
+          { code: "qr-oubli-exposants", texte: "Oublier d'élever chaque concentration à la puissance de son nombre stœchiométrique" },
+          null,
+          { code: "qr-coefficients-facteurs", texte: "Multiplier les concentrations par les nombres stœchiométriques au lieu de les mettre en exposant" }
         ],
-        ans: 1,
-        exp: "Le pont salin ferme le circuit électrique en assurant l'électroneutralité des deux demi-piles par migration ionique."
+        exp: "Qr = produits sur réactifs, chaque concentration (rapportée à c°) étant élevée à la puissance de son nombre stœchiométrique. Attention : les nombres stœchiométriques sont des exposants, pas des facteurs."
       },
       {
-        q: "La tension à vide d'une pile est mesurée :",
+        q: "Pour la réaction Zn(s) + Cu²⁺(aq) ⇌ Zn²⁺(aq) + Cu(s), le quotient de réaction s'écrit :",
         opts: [
-          "Avec un ampèremètre en court-circuit",
-          "Au voltmètre, sans débit de courant",
-          "Toujours égale à 1,5 V",
-          "En calculant Qr uniquement"
-        ],
-        ans: 1,
-        exp: "La tension à vide se mesure au voltmètre (grande impédance d'entrée), donc sans que la pile ne débite de courant."
-      },
-      {
-        q: "À l'électrode négative (anode) d'une pile en fonctionnement se produit :",
-        opts: [
-          "Une réduction",
-          "Une oxydation",
-          "Aucune réaction",
-          "Une dilution"
-        ],
-        ans: 1,
-        exp: "Par convention, l'anode est le siège d'une oxydation ; c'est le pôle négatif de la pile en fonctionnement spontané."
-      },
-      {
-        q: "Dans le circuit extérieur d'une pile, les électrons circulent :",
-        opts: [
-          "Du pôle + vers le pôle −",
-          "Du pôle − vers le pôle +",
-          "Ils ne circulent pas dans le circuit extérieur",
-          "De façon aléatoire"
-        ],
-        ans: 1,
-        exp: "Les électrons, libérés par l'oxydation à l'anode (pôle −), circulent dans le circuit extérieur vers la cathode (pôle +)."
-      },
-      {
-        q: "Pour la pile Daniell avec [Zn²⁺]ᵢ = 1,0×10⁻² mol·L⁻¹ et [Cu²⁺]ᵢ = 1,0×10⁻¹ mol·L⁻¹, la valeur de Qr,i est :",
-        opts: [
-          "0,10",
-          "10",
-          "1,0×10⁻³",
-          "1,0"
+          "Qr = [Zn²⁺] / [Cu²⁺]",
+          "Qr = [Cu²⁺] / [Zn²⁺]",
+          "Qr = ([Zn²⁺] × [Cu]) / ([Cu²⁺] × [Zn])",
+          "Qr = [Zn²⁺] × [Cu²⁺]"
         ],
         ans: 0,
-        exp: "Qr,i = [Zn²⁺]ᵢ/[Cu²⁺]ᵢ = 1,0×10⁻²/1,0×10⁻¹ = 0,10 (les solides Zn et Cu ne figurent pas dans Qr)."
+        pieges: [
+          null,
+          { code: "qr-inverse", texte: "Inverser le quotient : les produits sont au numérateur, les réactifs au dénominateur" },
+          { code: "qr-solides-inclus", texte: "Faire figurer les solides dans Qr : les solides et le solvant n'y apparaissent pas" },
+          { code: "qr-produit-concentrations", texte: "Multiplier toutes les concentrations au lieu de faire le rapport produits / réactifs" }
+        ],
+        exp: "Les solides Zn et Cu n'apparaissent pas dans Qr : Qr = [Zn²⁺] / [Cu²⁺] (concentrations rapportées à c°). Attention : on n'écrit dans Qr que les espèces dissoutes (et les gaz)."
       },
       {
-        q: "Dans la pile Daniell, les couples oxydant/réducteur mis en jeu sont :",
+        q: "Pour Zn(s) + Cu²⁺(aq) ⇌ Zn²⁺(aq) + Cu(s), l'état initial est : [Zn²⁺]ᵢ = 0,050 mol·L⁻¹ et [Cu²⁺]ᵢ = 0,20 mol·L⁻¹. La valeur de Qr,i est :",
         opts: [
-          "Zn²⁺/Zn et Cu²⁺/Cu",
-          "Ag⁺/Ag et Zn²⁺/Zn",
-          "Fe²⁺/Fe et Cu²⁺/Cu",
-          "H⁺/H₂ et Zn²⁺/Zn"
+          "4,0",
+          "0,25",
+          "1,0 × 10⁻²",
+          "0"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "qr-inverse", texte: "Inverser le quotient : 0,20 / 0,050 = 4,0" },
+          null,
+          { code: "qr-produit-concentrations", texte: "Multiplier les concentrations : 0,050 × 0,20 = 1,0 × 10⁻²" },
+          { code: "qri-nul-avant-reaction", texte: "Croire que Qr,i = 0 parce que la réaction n'a pas commencé : Zn²⁺ est déjà présent" }
+        ],
+        exp: "Qr,i = [Zn²⁺]ᵢ / [Cu²⁺]ᵢ = 0,050 / 0,20 = 0,25. Attention : Qr,i est nul seulement si un produit dissous est absent de l'état initial."
+      },
+      {
+        q: "Pour une réaction de constante K(T), on calcule Qr,i < K(T). Le système :",
+        opts: [
+          "évolue spontanément dans le sens indirect",
+          "évolue spontanément dans le sens direct",
+          "évolue dans le sens direct jusqu'à disparition du réactif limitant",
+          "ne peut pas être prévu sans connaître la vitesse"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "qr-k-inverses", texte: "Inverser le critère : Qr,i < K donne une évolution dans le sens direct" },
+          null,
+          { code: "equilibre-vs-totale", texte: "Croire que toute transformation est totale : le système évolue jusqu'à l'équilibre, où Qr = K" },
+          { code: "sens-vs-vitesse", texte: "Confondre sens d'évolution et vitesse : le critère Qr,i / K donne le sens, pas la durée" }
+        ],
+        exp: "Si Qr,i < K, Qr doit augmenter pour atteindre K : les produits se forment, sens direct. L'évolution s'arrête quand Qr = K. Attention : le critère indique le sens, pas la vitesse, et l'état final n'est pas forcément total."
+      },
+      {
+        q: "Un système est à l'équilibre chimique. À l'échelle microscopique :",
+        opts: [
+          "les réactions directe et inverse se produisent à la même vitesse",
+          "plus aucune réaction ne se produit",
+          "les réactifs ont été entièrement consommés",
+          "les concentrations des réactifs et des produits sont égales"
         ],
         ans: 0,
-        exp: "La pile Daniell classique associe le couple Zn²⁺/Zn (pôle −) et le couple Cu²⁺/Cu (pôle +)."
+        pieges: [
+          null,
+          { code: "equilibre-statique", texte: "Croire que plus rien ne se passe à l'équilibre : c'est un équilibre dynamique" },
+          { code: "equilibre-vs-totale", texte: "Croire que toute transformation est totale : à l'équilibre, réactifs et produits coexistent" },
+          { code: "equilibre-concentrations-egales", texte: "Croire qu'à l'équilibre les concentrations sont égales : elles sont seulement constantes" }
+        ],
+        exp: "L'équilibre est dynamique : les deux réactions se produisent simultanément, à la même vitesse, donc les concentrations ne varient plus. Attention : constantes ne veut pas dire égales."
+      },
+      {
+        q: "La constante d'équilibre K(T) d'une réaction dépend :",
+        opts: [
+          "des concentrations initiales",
+          "de l'avancement de la réaction",
+          "uniquement de la température",
+          "de la présence d'un catalyseur"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "k-depend-etat-initial", texte: "Croire que K dépend de la composition initiale du système" },
+          { code: "k-vs-qr", texte: "Confondre K, constante, et Qr, qui varie au cours de la transformation" },
+          null,
+          { code: "catalyseur-modifie-etat-final", texte: "Croire qu'un catalyseur modifie l'état final : il ne change que la vitesse" }
+        ],
+        exp: "K(T) ne dépend que de la réaction et de la température. Attention : c'est Qr qui varie au cours de la transformation, jusqu'à atteindre K."
+      },
+      {
+        q: "Dans une pile, le pont salin sert à :",
+        opts: [
+          "laisser passer les électrons d'une solution à l'autre",
+          "assurer l'électroneutralité des solutions par migration d'ions",
+          "mélanger les deux solutions pour qu'elles réagissent",
+          "fournir les électrons du circuit extérieur"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "electrons-dans-solution", texte: "Croire que les électrons circulent dans les solutions : ce sont des ions qui s'y déplacent" },
+          null,
+          { code: "pont-salin-melange", texte: "Croire qu'il faut mélanger les réactifs : on les sépare pour forcer les électrons à passer par le circuit extérieur" },
+          { code: "pont-salin-source-electrons", texte: "Croire que le pont salin fournit les électrons : ils viennent de l'oxydation à l'électrode négative" }
+        ],
+        exp: "Le pont salin ferme le circuit : ses ions migrent pour garder les solutions électriquement neutres, sans mélanger les réactifs. Attention : les électrons ne circulent que dans les électrodes et les fils."
+      },
+      {
+        q: "À l'électrode négative d'une pile qui débite se produit :",
+        opts: [
+          "une oxydation, qui libère des électrons",
+          "une réduction, qui libère des électrons",
+          "une oxydation, qui consomme des électrons",
+          "une réduction, qui consomme des électrons"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oxydation-reduction-inversees", texte: "Confondre oxydation (perte d'électrons) et réduction (gain d'électrons)" },
+          { code: "oxydation-gain-electrons", texte: "Croire qu'une oxydation consomme des électrons : elle en libère" },
+          { code: "poles-pile-inverses", texte: "Placer la réduction au pôle négatif : elle a lieu au pôle positif, où arrivent les électrons" }
+        ],
+        exp: "Au pôle −, le réducteur s'oxyde (Red₁ → Ox₁ + n e⁻) et libère les électrons qui partent dans le circuit extérieur. Attention : oxydation = perte d'électrons, réduction = gain d'électrons."
+      },
+      {
+        q: "Dans le circuit extérieur d'une pile qui débite :",
+        opts: [
+          "électrons et courant vont tous deux du pôle + au pôle −",
+          "les électrons vont du pôle + au pôle −, le courant du pôle − au pôle +",
+          "les électrons vont du pôle − au pôle +, le courant du pôle + au pôle −",
+          "les ions du pont salin circulent dans les fils"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "sens-courant-vs-electrons", texte: "Croire que les électrons circulent dans le sens conventionnel du courant : ils vont en sens inverse" },
+          { code: "poles-pile-inverses", texte: "Inverser les pôles : les électrons partent du pôle −, où se produit l'oxydation" },
+          null,
+          { code: "ions-dans-les-fils", texte: "Croire que des ions circulent dans les fils : les porteurs de charge y sont des électrons" }
+        ],
+        exp: "Les électrons, libérés au pôle −, rejoignent le pôle + par le circuit extérieur ; le sens conventionnel du courant est l'inverse. Attention : dans les fils, seuls les électrons circulent."
+      },
+      {
+        q: "Une pile Daniell contient 0,010 mol d'ions Cu²⁺, réactif limitant (Cu²⁺ + 2 e⁻ → Cu). Avec F = 96 500 C·mol⁻¹, sa capacité électrique Q vaut environ :",
+        opts: [
+          "9,7 × 10² C",
+          "4,8 × 10² C",
+          "2,1 × 10⁻⁷ C",
+          "1,9 × 10³ C"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "oubli-electrons-echanges", texte: "Oublier que chaque ion Cu²⁺ échange 2 électrons : 0,010 × 96 500 = 9,7 × 10² C" },
+          { code: "electrons-echanges-inverse", texte: "Diviser par 2 au lieu de multiplier : 0,010 × 96 500 / 2 = 4,8 × 10² C" },
+          { code: "faraday-divise", texte: "Diviser par F au lieu de multiplier : 2 × 0,010 / 96 500 = 2,1 × 10⁻⁷ C" },
+          null
+        ],
+        exp: "n(e⁻) = 2 × n(Cu²⁺) = 0,020 mol, d'où Q = n(e⁻) × F = 0,020 × 96 500 ≈ 1,9 × 10³ C. Attention : on compte les électrons échangés, pas les ions."
       }
     ],
     annales: [
@@ -2989,114 +3169,174 @@ const CHAPTERS = [
     },
     quiz: [
       {
-        q: "Un acide fort est un acide dont la réaction avec l'eau est :",
+        q: "Un acide fort est un acide :",
         opts: [
-          "Totale",
-          "Limitée",
-          "Inexistante",
-          "Réversible avec K ≪ 1"
+          "dont la réaction avec l'eau est totale",
+          "très concentré",
+          "dont le pKa est très grand",
+          "dont la réaction avec l'eau conduit à un équilibre"
         ],
         ans: 0,
-        exp: "Un acide fort réagit totalement avec l'eau, contrairement à un acide faible dont la réaction est limitée (équilibre)."
-      },
-      {
-        q: "L'expression correcte de la constante d'acidité Ka pour AH + H₂O ⇌ A⁻ + H₃O⁺ est :",
-        opts: [
-          "Ka = [AH]/([A⁻][H₃O⁺])",
-          "Ka = ([A⁻][H₃O⁺])/[AH] (rapporté à c°)",
-          "Ka = [A⁻]+[H₃O⁺]−[AH]",
-          "Ka = [H₃O⁺]/[A⁻]"
+        pieges: [
+          null,
+          { code: "force-vs-concentration", texte: "Confondre force (réaction totale avec l'eau) et concentration" },
+          { code: "pka-force-inverse", texte: "Croire qu'un grand pKa signifie un acide fort : plus le pKa est petit, plus l'acide est fort" },
+          { code: "fort-faible-inverses", texte: "Inverser les définitions : la réaction d'un acide faible avec l'eau conduit à un équilibre" }
         ],
-        ans: 1,
-        exp: "Ka est le rapport des concentrations des produits sur celle du réactif acide, à l'équilibre."
+        exp: "Un acide fort réagit totalement avec l'eau : AH + H₂O → A⁻ + H₃O⁺. Attention : « fort » ne veut pas dire « concentré » ; un acide fort très dilué reste fort."
       },
       {
-        q: "À 25°C, quelle est la valeur du produit ionique de l'eau Ke ?",
+        q: "Une solution d'un acide AH de concentration apportée c = 5,0 × 10⁻² mol·L⁻¹ a un pH = 3,0. L'acide AH est :",
         opts: [
-          "1,0×10⁻⁷",
-          "1,0×10⁻¹⁴",
-          "1,0×10⁷",
-          "7,0"
-        ],
-        ans: 1,
-        exp: "À 25°C, Ke = [H₃O⁺][HO⁻] = 1,0×10⁻¹⁴, soit pKe = 14,0."
-      },
-      {
-        q: "Sur un diagramme de prédominance, si pH > pKa, quelle est la forme prédominante du couple AH/A⁻ ?",
-        opts: [
-          "La forme acide AH",
-          "La forme basique A⁻",
-          "Les deux formes en quantités égales",
-          "Cela dépend uniquement de Ke"
-        ],
-        ans: 1,
-        exp: "Quand pH > pKa, la forme basique A⁻ est majoritaire dans la solution."
-      },
-      {
-        q: "Une solution tampon est caractérisée par :",
-        opts: [
-          "Un pH qui varie fortement à la moindre dilution",
-          "Un mélange en proportions comparables d'un acide faible et de sa base conjuguée, dont le pH varie peu par ajout modéré d'acide/base ou par dilution",
-          "Une solution d'acide fort pur",
-          "Un pH toujours égal à 7"
-        ],
-        ans: 1,
-        exp: "Une solution tampon associe un acide faible et sa base conjuguée en quantités comparables, ce qui stabilise le pH."
-      },
-      {
-        q: "Pour un acide de pKa = 4,8, la valeur de Ka est environ :",
-        opts: [
-          "1,6×10⁻⁵",
-          "1,6×10⁻⁴",
-          "4,8×10⁻¹⁴",
-          "1,6×10⁵"
-        ],
-        ans: 0,
-        exp: "Ka = 10⁻ᵖᴷᵃ = 10⁻⁴·⁸ ≈ 1,6×10⁻⁵."
-      },
-      {
-        q: "Pour calculer la composition d'une solution d'acide faible de concentration c, on résout l'équation :",
-        opts: [
-          "Ka·c° = x²/(c−x)",
-          "Ka = x + c",
-          "Ka·c° = x/(c+x)",
-          "Ka = c/x²"
-        ],
-        ans: 0,
-        exp: "En posant [A⁻]éq = [H₃O⁺]éq = x et [AH]éq = c−x, la définition de Ka conduit à Ka·c° = x²/(c−x)."
-      },
-      {
-        q: "Pour l'acide éthanoïque à c = 1,0×10⁻² mol·L⁻¹ (pKa = 4,8), la résolution de l'équation du second degré donne un pH d'environ :",
-        opts: [
-          "2,0",
-          "3,4",
-          "4,8",
-          "7,0"
-        ],
-        ans: 1,
-        exp: "La résolution donne x ≈ 3,9×10⁻⁴ mol·L⁻¹, soit pH ≈ 3,4, cohérent avec un acide faiblement dissocié (τ ≈ 3,9 %)."
-      },
-      {
-        q: "Parmi les espèces suivantes, laquelle est un acide fort usuel ?",
-        opts: [
-          "CH₃COOH",
-          "NH₃",
-          "HCl",
-          "NaOH"
+          "fort, car le pH de la solution est inférieur à 7",
+          "faible, car la solution est peu concentrée",
+          "faible, car [H₃O⁺] = 1,0 × 10⁻³ mol·L⁻¹ est inférieure à c",
+          "impossible à classer sans la valeur de son pKa"
         ],
         ans: 2,
-        exp: "HCl (acide chlorhydrique) est un acide fort, totalement dissocié dans l'eau."
+        pieges: [
+          { code: "acide-fort-ph-inferieur-7", texte: "Croire qu'un pH inférieur à 7 suffit pour dire qu'un acide est fort" },
+          { code: "force-vs-concentration", texte: "Confondre force et concentration : la dilution ne rend pas un acide faible" },
+          null,
+          { code: "force-necessite-pka", texte: "Croire qu'il faut le pKa : comparer [H₃O⁺] et c suffit" }
+        ],
+        exp: "Si l'acide était fort, on aurait [H₃O⁺] = c = 5,0 × 10⁻² mol·L⁻¹ (pH ≈ 1,3). Ici [H₃O⁺] = 10⁻³ mol·L⁻¹ < c : la réaction avec l'eau est limitée, l'acide est faible. Attention : toute solution acide a un pH < 7, que l'acide soit fort ou faible."
       },
       {
-        q: "Le couple NH₄⁺/NH₃ a un pKa d'environ :",
+        q: "Pour le couple AH/A⁻ (AH + H₂O ⇌ A⁻ + H₃O⁺), la constante d'acidité s'écrit :",
         opts: [
-          "4,8",
-          "9,2",
-          "14,0",
-          "7,0"
+          "Ka = ([AH] × c°) / ([A⁻] × [H₃O⁺])",
+          "Ka = ([A⁻] × [H₃O⁺]) / ([AH] × [H₂O])",
+          "Ka = [H₃O⁺] × [HO⁻] / (c°)²",
+          "Ka = ([A⁻] × [H₃O⁺]) / ([AH] × c°)"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "ka-inverse", texte: "Inverser le rapport : les produits A⁻ et H₃O⁺ sont au numérateur" },
+          { code: "solvant-dans-quotient", texte: "Faire figurer l'eau, solvant, dans l'expression : elle n'y apparaît pas" },
+          { code: "ka-vs-ke", texte: "Confondre la constante d'acidité Ka et le produit ionique de l'eau Ke" },
+          null
+        ],
+        exp: "Ka est la constante d'équilibre de la réaction de l'acide avec l'eau, concentrations à l'équilibre : Ka = [A⁻]éq × [H₃O⁺]éq / ([AH]éq × c°). Attention : l'eau, solvant, n'apparaît pas."
+      },
+      {
+        q: "Acide méthanoïque : pKa = 3,8 ; acide éthanoïque : pKa = 4,8. On peut affirmer que :",
+        opts: [
+          "l'acide éthanoïque est le plus fort, car son pKa est le plus grand",
+          "l'acide méthanoïque est le plus fort, car son pKa est le plus petit",
+          "le plus fort est celui dont la solution est la plus concentrée",
+          "ils ont la même force, car ce sont deux acides faibles"
         ],
         ans: 1,
-        exp: "Le pKa du couple ion ammonium / ammoniac vaut environ 9,2, ce qui fait de NH₃ une base faible."
+        pieges: [
+          { code: "pka-force-inverse", texte: "Croire qu'un grand pKa signifie un acide fort : plus le pKa est petit, plus l'acide est fort" },
+          null,
+          { code: "force-vs-concentration", texte: "Confondre force (Ka) et concentration de la solution" },
+          { code: "faibles-meme-force", texte: "Croire que tous les acides faibles ont la même force : on les classe par leur pKa" }
+        ],
+        exp: "Plus Ka est grand, donc plus pKa est petit, plus l'acide réagit avec l'eau : l'acide méthanoïque (pKa = 3,8) est le plus fort. Attention : la force ne dépend pas de la concentration."
+      },
+      {
+        q: "Le couple CH₃COOH/CH₃COO⁻ a un pKa = 4,8. Sa constante d'acidité Ka vaut environ :",
+        opts: [
+          "6,3 × 10⁴",
+          "−0,68",
+          "1,6 × 10⁻⁵",
+          "−48"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-signe-moins-log", texte: "Oublier le signe moins : Ka = 10⁻ᵖᴷᵃ et non 10ᵖᴷᵃ" },
+          { code: "log-au-lieu-de-puissance", texte: "Calculer −log(4,8) au lieu de 10⁻⁴·⁸" },
+          null,
+          { code: "puissance-vs-produit", texte: "Calculer 10 × (−4,8) au lieu de la puissance 10⁻⁴·⁸" }
+        ],
+        exp: "pKa = −log Ka, donc Ka = 10⁻ᵖᴷᵃ = 10⁻⁴·⁸ ≈ 1,6 × 10⁻⁵. Attention : on remonte du pKa à Ka avec une puissance de 10, pas avec un logarithme."
+      },
+      {
+        q: "À 25 °C (Ke = 1,0 × 10⁻¹⁴), une solution d'hydroxyde de sodium (base forte) de concentration c = 1,0 × 10⁻² mol·L⁻¹ a un pH égal à :",
+        opts: [
+          "2,0",
+          "12,0",
+          "16,0",
+          "1,0 × 10⁻¹²"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "base-traitee-comme-acide", texte: "Calculer pH = −log c comme pour un acide : ici c est la concentration en HO⁻, pas en H₃O⁺" },
+          null,
+          { code: "ke-signe-log", texte: "Se tromper de signe : pH = 14 + 2 au lieu de 14 − 2" },
+          { code: "ph-pris-pour-concentration", texte: "Donner [H₃O⁺] = 1,0 × 10⁻¹² mol·L⁻¹ au lieu du pH" }
+        ],
+        exp: "Base forte : [HO⁻] = c = 1,0 × 10⁻² mol·L⁻¹, donc [H₃O⁺] = Ke / [HO⁻] = 1,0 × 10⁻¹² mol·L⁻¹ et pH = 12,0. Attention : pour une base, on passe par Ke pour obtenir [H₃O⁺]."
+      },
+      {
+        q: "L'acide éthanoïque (pKa = 4,8) est dans une solution de pH = 7,0. L'espèce prédominante du couple est :",
+        opts: [
+          "CH₃COOH, car pH > pKa",
+          "CH₃COO⁻, car pH > pKa",
+          "aucune : à pH = 7, les deux formes sont en quantités égales",
+          "CH₃COOH, car un acide reste sous sa forme acide"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "predominance-inversee", texte: "Inverser le diagramme : pour pH > pKa, c'est la forme basique qui prédomine" },
+          null,
+          { code: "ph-7-egalite-formes", texte: "Croire qu'à pH = 7 les deux formes sont égales : c'est à pH = pKa" },
+          { code: "acide-reste-acide", texte: "Croire qu'un acide garde sa forme acide quel que soit le pH" }
+        ],
+        exp: "pH = 7,0 > pKa = 4,8 : la forme basique CH₃COO⁻ prédomine. Les deux formes sont en quantités égales seulement à pH = pKa. Attention à ne pas inverser le diagramme de prédominance."
+      },
+      {
+        q: "Dans une solution, [CH₃COO⁻] = 10 × [CH₃COOH] (pKa = 4,8). Avec pH = pKa + log([A⁻]/[AH]), le pH vaut :",
+        opts: [
+          "3,8",
+          "4,8",
+          "5,8",
+          "15"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "log-rapport-inverse", texte: "Inverser le rapport : log([AH]/[A⁻]) = −1, d'où 3,8" },
+          { code: "ph-egal-pka-toujours", texte: "Croire que pH = pKa dans toute solution contenant un acide et sa base conjuguée" },
+          null,
+          { code: "oubli-log", texte: "Ajouter le rapport sans prendre son logarithme : 4,8 + 10" }
+        ],
+        exp: "pH = 4,8 + log(10) = 4,8 + 1 = 5,8 : la base est majoritaire, le pH est supérieur au pKa. Attention : pH = pKa seulement si [A⁻] = [AH]."
+      },
+      {
+        q: "Une solution tampon est une solution dont le pH :",
+        opts: [
+          "reste exactement constant, quoi qu'on ajoute",
+          "varie peu par ajout modéré d'acide, de base ou par dilution",
+          "est toujours égal à 7",
+          "est fixé par un acide fort et sa base conjuguée"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "tampon-ph-constant", texte: "Croire que le pH d'un tampon ne varie pas du tout : il varie peu, pour des ajouts modérés" },
+          null,
+          { code: "tampon-neutre", texte: "Croire qu'un tampon est neutre : son pH est proche du pKa du couple" },
+          { code: "tampon-acide-fort", texte: "Croire qu'un tampon utilise un acide fort : il faut un acide faible et sa base conjuguée" }
+        ],
+        exp: "Un tampon contient un acide faible et sa base conjuguée en quantités comparables (pH ≈ pKa) ; son pH varie peu lors d'ajouts modérés ou d'une dilution. Attention : peu ne veut pas dire pas du tout."
+      },
+      {
+        q: "Une solution d'acide éthanoïque de concentration apportée c = 1,0 × 10⁻² mol·L⁻¹ a un pH = 3,4. Le taux d'avancement final τ de la réaction de l'acide avec l'eau vaut environ :",
+        opts: [
+          "τ = 1",
+          "τ ≈ 0,040",
+          "τ ≈ 25",
+          "τ ≈ 4,0 × 10⁻⁴"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "acide-faible-total", texte: "Croire que la réaction est totale : τ = 1 seulement pour un acide fort" },
+          null,
+          { code: "taux-avancement-inverse", texte: "Inverser le rapport : c / [H₃O⁺] = 25 (τ ne dépasse jamais 1)" },
+          { code: "taux-vs-concentration", texte: "Confondre τ et [H₃O⁺]éq = 10⁻³·⁴ ≈ 4,0 × 10⁻⁴ mol·L⁻¹" }
+        ],
+        exp: "τ = xf / xmax = [H₃O⁺]éq / c = 10⁻³·⁴ / 1,0 × 10⁻² ≈ 0,040 (4 %). Attention : τ est un rapport sans unité compris entre 0 et 1."
       }
     ],
     annales: [
@@ -4065,114 +4305,174 @@ root.style.display="flex";root.style.flexDirection="column";root.style.gap="20px
     },
     quiz: [
       {
-        q: "La diffraction d'une onde est marquée lorsque :",
+        q: "La diffraction d'une onde par une ouverture de largeur a est marquée lorsque :",
         opts: [
-          "La taille de l'ouverture a est très supérieure à λ",
-          "a est du même ordre de grandeur que λ",
-          "L'ouverture a est nulle",
-          "L'onde ne rencontre aucun obstacle"
+          "a est très grande devant la longueur d'onde λ",
+          "a est de l'ordre de λ ou plus petite",
+          "l'onde est une onde lumineuse",
+          "l'onde est très intense"
         ],
         ans: 1,
-        exp: "La diffraction devient sensible quand la dimension de l'ouverture ou de l'obstacle est comparable à la longueur d'onde."
-      },
-      {
-        q: "L'écart angulaire caractéristique de diffraction θ est donné par :",
-        opts: [
-          "θ ≈ λ/a",
-          "θ ≈ a/λ",
-          "θ ≈ λ×a",
-          "θ ≈ a²/λ"
+        pieges: [
+          { code: "diffraction-augmente-avec-ouverture", texte: "Croire que la diffraction augmente quand l'ouverture s'agrandit : elle est marquée pour a ≲ λ" },
+          null,
+          { code: "diffraction-lumiere-seulement", texte: "Croire que seule la lumière diffracte : toutes les ondes diffractent (son, vagues…)" },
+          { code: "diffraction-intensite", texte: "Croire que la diffraction dépend de l'intensité de l'onde : elle dépend du rapport λ / a" }
         ],
-        ans: 0,
-        exp: "La formule de l'écart angulaire caractéristique de diffraction est θ ≈ λ/a (en radians)."
+        exp: "La diffraction est importante quand la dimension a de l'ouverture est du même ordre de grandeur que λ, ou plus petite ; si a ≫ λ, elle devient négligeable. Attention : plus l'ouverture est petite, plus l'onde s'étale."
       },
       {
-        q: "La condition d'interférence constructive sur la différence de marche δ est :",
+        q: "Un laser de longueur d'onde λ = 650 nm éclaire une fente de largeur a = 0,10 mm. L'écart angulaire de diffraction θ = λ / a vaut :",
         opts: [
-          "δ = k×λ",
-          "δ = (k+1/2)×λ",
-          "δ = λ/2 uniquement",
-          "δ = 0 uniquement"
+          "1,5 × 10² rad",
+          "6,5 rad",
+          "6,5 × 10⁻³ rad",
+          "6,5 × 10⁻⁶ rad"
         ],
-        ans: 0,
-        exp: "Une interférence est constructive quand la différence de marche est un multiple entier de la longueur d'onde : δ = kλ."
+        ans: 2,
+        pieges: [
+          { code: "rapport-inverse-diffraction", texte: "Inverser le rapport : a / λ = 1,5 × 10² (θ = λ / a)" },
+          { code: "unites-non-homogenes", texte: "Diviser sans convertir dans la même unité : 650 (nm) / 100 (μm) = 6,5" },
+          null,
+          { code: "conversion-mm-m", texte: "Oublier de convertir a en mètres : 650 × 10⁻⁹ / 0,10 = 6,5 × 10⁻⁶" }
+        ],
+        exp: "θ = λ / a = 650 × 10⁻⁹ / 0,10 × 10⁻³ = 6,5 × 10⁻³ rad. Attention : λ et a doivent être exprimées dans la même unité avant de faire le rapport."
       },
       {
-        q: "La condition d'interférence destructive sur δ est :",
+        q: "On remplace la fente par une fente deux fois plus fine, sans changer le laser. La tache centrale de diffraction devient :",
         opts: [
-          "δ = k×λ",
-          "δ = (k+1/2)×λ",
-          "δ = 2×λ uniquement",
-          "Il n'existe pas de condition"
+          "deux fois moins large",
+          "inchangée, car λ ne change pas",
+          "quatre fois plus large",
+          "deux fois plus large"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "diffraction-augmente-avec-ouverture", texte: "Croire que la diffraction diminue quand l'ouverture rétrécit : θ = λ / a augmente quand a diminue" },
+          { code: "diffraction-independante-ouverture", texte: "Croire que la diffraction ne dépend que de λ : elle dépend du rapport λ / a" },
+          { code: "proportionnalite-au-carre", texte: "Appliquer une dépendance au carré : θ est inversement proportionnel à a, pas à a²" },
+          null
+        ],
+        exp: "θ = λ / a : si a est divisée par 2, θ et donc la largeur de la tache sont multipliés par 2. Attention : plus l'ouverture est fine, plus la diffraction est marquée."
+      },
+      {
+        q: "Deux sources d'ondes sont cohérentes si elles ont :",
+        opts: [
+          "la même amplitude",
+          "la même fréquence et un déphasage constant",
+          "la même fréquence, quel que soit leur déphasage",
+          "été allumées au même instant"
         ],
         ans: 1,
-        exp: "Une interférence est destructive quand δ est un multiple demi-entier de λ : δ = (k+1/2)λ."
-      },
-      {
-        q: "La formule de l'interfrange dans le dispositif des fentes de Young est :",
-        opts: [
-          "i = λD/a",
-          "i = λa/D",
-          "i = aD/λ",
-          "i = λ/(aD)"
+        pieges: [
+          { code: "coherence-vs-amplitude", texte: "Confondre cohérence et amplitude : l'amplitude ne joue que sur le contraste des franges" },
+          null,
+          { code: "coherence-sans-dephasage-constant", texte: "Oublier la condition de déphasage constant : deux lampes de même couleur ne sont pas cohérentes" },
+          { code: "coherence-allumage-simultane", texte: "Croire qu'allumer deux sources en même temps suffit à les rendre cohérentes" }
         ],
-        ans: 0,
-        exp: "L'interfrange s'exprime i = λD/a, avec D la distance fentes-écran et a l'écart entre les fentes."
+        exp: "Cohérence = même fréquence et déphasage constant dans le temps ; c'est la condition pour observer des interférences stables. Attention : deux lampes identiques ne sont pas cohérentes, d'où l'usage d'une source unique et de deux fentes."
       },
       {
-        q: "Pour a = 0,20 mm, D = 2,0 m et λ = 633 nm, l'interfrange i vaut environ :",
+        q: "Deux ondes cohérentes, émises en phase, interfèrent de façon constructive en un point M si leur différence de marche δ vérifie :",
         opts: [
-          "0,63 mm",
+          "δ = (k + 1/2) × λ, avec k entier",
+          "δ = k × λ / 2, avec k entier",
+          "δ = 0 uniquement",
+          "δ = k × λ, avec k entier"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "constructive-destructive-inverses", texte: "Inverser les conditions : δ = (k + 1/2)λ correspond à une interférence destructive" },
+          { code: "demi-longueur-onde", texte: "Croire que tout multiple de λ/2 donne une interférence constructive : les multiples impairs de λ/2 donnent une extinction" },
+          { code: "constructive-centre-seulement", texte: "Croire que seule la frange centrale est brillante : δ = λ, 2λ… donnent aussi des franges brillantes" },
+          null
+        ],
+        exp: "Constructive : δ multiple entier de λ (les ondes arrivent en phase). Destructive : δ = (k + 1/2)λ (opposition de phase). Attention à ne pas inverser les deux conditions."
+      },
+      {
+        q: "Deux sources en phase émettent des ondes de longueur d'onde λ = 2,0 cm. En un point M, situé à d₁ = 10,0 cm de S₁ et d₂ = 13,0 cm de S₂, les interférences sont :",
+        opts: [
+          "constructives, car δ = 3,0 cm est un nombre entier",
+          "destructives, car δ = 1,5 λ",
+          "constructives, car δ = (1 + 1/2) λ",
+          "impossibles à prévoir sans la distance S₁S₂"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "delta-vs-delta-sur-lambda", texte: "Regarder si δ est entier en cm : il faut comparer δ à λ en calculant δ / λ" },
+          null,
+          { code: "constructive-destructive-inverses", texte: "Inverser les conditions : δ = (k + 1/2)λ correspond à une interférence destructive" },
+          { code: "interference-donnee-manquante", texte: "Croire qu'il manque une donnée : δ et λ suffisent" }
+        ],
+        exp: "δ = d₂ − d₁ = 3,0 cm et δ / λ = 1,5 : δ est un multiple demi-entier de λ, les interférences sont destructives. Attention : c'est le rapport δ / λ qui compte, pas la valeur de δ dans une unité."
+      },
+      {
+        q: "Dans l'expérience des fentes de Young, a = 0,20 mm (distance entre les fentes), D = 2,0 m et λ = 633 nm. L'interfrange i = λD / a vaut :",
+        opts: [
           "6,3 mm",
-          "63 mm",
-          "0,063 mm"
-        ],
-        ans: 1,
-        exp: "i = λD/a = (633×10⁻⁹×2,0)/(0,20×10⁻³) ≈ 6,3×10⁻³ m = 6,3 mm."
-      },
-      {
-        q: "Deux sources sont dites cohérentes si :",
-        opts: [
-          "Elles ont des fréquences différentes",
-          "Elles ont la même fréquence et un déphasage constant",
-          "Elles émettent uniquement des ondes sonores",
-          "Elles sont toujours rigoureusement en phase nulle"
-        ],
-        ans: 1,
-        exp: "La cohérence exige une même fréquence et un déphasage constant dans le temps entre les deux sources."
-      },
-      {
-        q: "Le principe d'Huygens-Fresnel énonce que :",
-        opts: [
-          "Chaque point atteint par une onde devient une source secondaire émettant une ondelette sphérique",
-          "Seule la source primaire émet une onde",
-          "La diffraction ne dépend pas de la longueur d'onde",
-          "Ce principe ne s'applique qu'à la lumière visible"
+          "6,3 μm",
+          "6,3 × 10⁻¹¹ m",
+          "13 mm"
         ],
         ans: 0,
-        exp: "Selon Huygens-Fresnel, chaque point du front d'onde se comporte comme une source secondaire d'ondelette sphérique."
+        pieges: [
+          null,
+          { code: "conversion-mm-m", texte: "Oublier de convertir a en mètres : 633 × 10⁻⁹ × 2,0 / 0,20 = 6,3 × 10⁻⁶ m" },
+          { code: "interfrange-formule-inversee", texte: "Inverser a et D dans la formule : λa / D = 6,3 × 10⁻¹¹ m" },
+          { code: "interfrange-vs-tache-centrale", texte: "Confondre l'interfrange avec la largeur de la tache centrale de diffraction (2λD / a)" }
+        ],
+        exp: "i = λD / a = 633 × 10⁻⁹ × 2,0 / 0,20 × 10⁻³ ≈ 6,3 × 10⁻³ m = 6,3 mm. Attention : toutes les longueurs doivent être converties en mètres."
       },
       {
-        q: "Si la longueur d'onde λ augmente, a et D restant fixes, l'interfrange i :",
+        q: "Dans l'expérience des fentes de Young, on remplace le laser rouge par un laser vert, sans rien changer d'autre. L'interfrange :",
         opts: [
-          "Diminue",
-          "Augmente",
-          "Reste constant",
-          "Devient nul"
+          "augmente, car λ(vert) > λ(rouge)",
+          "reste le même, car il ne dépend que de a et D",
+          "diminue, car λ(vert) < λ(rouge)",
+          "augmente, car i est inversement proportionnel à λ"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "ordre-longueurs-onde-couleurs", texte: "Inverser l'ordre des longueurs d'onde : le vert (≈ 530 nm) a une longueur d'onde plus petite que le rouge (≈ 650 nm)" },
+          { code: "interfrange-independant-lambda", texte: "Oublier que l'interfrange dépend de λ : i = λD / a" },
+          null,
+          { code: "interfrange-inverse-lambda", texte: "Croire que i est inversement proportionnel à λ : il lui est proportionnel" }
+        ],
+        exp: "i = λD / a est proportionnel à λ ; λ(vert) < λ(rouge), donc les franges se resserrent. Attention : le rouge a la plus grande longueur d'onde du visible."
+      },
+      {
+        q: "En un point où deux ondes arrivent en opposition de phase, on observe une extinction totale à condition que les deux ondes :",
+        opts: [
+          "arrivent en phase",
+          "aient la même amplitude",
+          "proviennent de deux sources non cohérentes",
+          "aient une grande amplitude"
         ],
         ans: 1,
-        exp: "Puisque i = λD/a, i est proportionnel à λ : si λ augmente, i augmente aussi."
+        pieges: [
+          { code: "constructive-destructive-inverses", texte: "Confondre les deux cas : deux ondes en phase s'ajoutent (interférence constructive)" },
+          null,
+          { code: "sources-incoherentes-extinction", texte: "Croire que des sources non cohérentes peuvent s'éteindre : sans cohérence, pas de figure d'interférences stable" },
+          { code: "extinction-grande-amplitude", texte: "Croire que l'extinction dépend de l'amplitude de chaque onde : il faut des amplitudes égales" }
+        ],
+        exp: "En opposition de phase, les amplitudes se soustraient ; le résultat est nul seulement si elles sont égales. Sinon l'amplitude est minimale mais non nulle. Attention : en phase, les ondes s'ajoutent."
       },
       {
-        q: "Pour qu'il y ait extinction totale (interférence destructive parfaite) en un point, il faut en plus que :",
+        q: "Sur l'écran des fentes de Young, au milieu d'une frange sombre :",
         opts: [
-          "Les deux ondes qui interfèrent aient la même amplitude",
-          "Les deux ondes aient des fréquences différentes",
-          "La distance D soit nulle",
-          "L'ouverture a soit très grande devant λ"
+          "aucune lumière issue des fentes n'arrive",
+          "la lumière a été absorbée par l'écran",
+          "les deux ondes arrivent en opposition de phase et se compensent",
+          "une seule des deux ondes arrive"
         ],
-        ans: 0,
-        exp: "L'extinction totale (amplitude résultante nulle) nécessite que les deux ondes en opposition de phase aient la même amplitude."
+        ans: 2,
+        pieges: [
+          { code: "frange-sombre-sans-lumiere", texte: "Croire qu'aucune lumière n'arrive dans les franges sombres : les deux ondes y arrivent, mais s'annulent" },
+          { code: "frange-sombre-absorption", texte: "Attribuer les franges sombres à une absorption par l'écran" },
+          null,
+          { code: "frange-sombre-une-onde", texte: "Croire qu'une seule onde arrive en ces points : les deux fentes éclairent tout l'écran grâce à la diffraction" }
+        ],
+        exp: "Les deux ondes, diffractées par les fentes, atteignent tout l'écran ; dans une frange sombre, elles arrivent en opposition de phase et leurs effets s'annulent. Attention : lumière + lumière peut donner de l'obscurité."
       }
     ],
     annales: [
