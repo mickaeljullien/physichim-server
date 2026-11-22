@@ -8369,114 +8369,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Comment définit-on la vitesse volumique de réaction v(t) ?",
+        q: "La vitesse volumique de réaction v(t) d'un système de volume V constant est définie par :",
         opts: [
           "v(t) = V × dξ/dt",
           "v(t) = (1/V) × dξ/dt",
           "v(t) = dξ/dt",
-          "v(t) = ξ(t)/V"
+          "v(t) = ξ(t) / V"
         ],
         ans: 1,
-        exp: "La vitesse volumique de réaction est v(t) = (1/V) × (dξ/dt), où V est le volume du système supposé constant."
-      },
-      {
-        q: "Quelle est l'unité usuelle de la vitesse volumique de réaction ?",
-        opts: [
-          "mol·s⁻¹",
-          "mol·L⁻¹·s⁻¹",
-          "L·mol⁻¹·s⁻¹",
-          "s⁻¹"
+        pieges: [
+          { code: "vitesse-volumique-volume-multiplie", texte: "Multiplier par le volume au lieu de diviser : la vitesse est ramenée à l'unité de volume" },
+          null,
+          { code: "vitesse-volumique-sans-volume", texte: "Oublier de diviser par V : dξ/dt n'est pas une vitesse volumique" },
+          { code: "vitesse-vs-avancement", texte: "Confondre la vitesse (dérivée de ξ) avec l'avancement volumique ξ / V" }
         ],
-        ans: 1,
-        exp: "v s'exprime en mol·L⁻¹·s⁻¹ (concentration par unité de temps)."
+        exp: "v(t) = (1/V) × dξ/dt, en mol·L⁻¹·s⁻¹ : c'est une dérivée, ramenée à l'unité de volume. Attention : ξ / V est un avancement volumique, pas une vitesse."
       },
       {
-        q: "Un facteur cinétique est un paramètre qui :",
+        q: "On suit la concentration d'un réactif R (nombre stœchiométrique 1). Sa vitesse volumique de disparition à l'instant t est :",
         opts: [
-          "Modifie l'état final du système",
-          "Modifie la rapidité de la réaction sans changer l'état final",
-          "Déplace l'équilibre chimique",
-          "Change les proportions stœchiométriques"
-        ],
-        ans: 1,
-        exp: "Un facteur cinétique (concentration, température) modifie la vitesse de la réaction, mais pas l'état final atteint par le système."
-      },
-      {
-        q: "Selon la théorie des collisions, un choc entre entités est efficace si :",
-        opts: [
-          "Il a lieu à basse température",
-          "Il possède une énergie suffisante et une orientation favorable",
-          "Les entités sont dans des phases différentes",
-          "Il n'implique qu'une seule entité"
-        ],
-        ans: 1,
-        exp: "Un choc efficace nécessite à la fois une énergie suffisante (> Ea) et une orientation favorable des molécules."
-      },
-      {
-        q: "Un catalyseur agit en :",
-        opts: [
-          "Augmentant l'énergie d'activation",
-          "Abaissant l'énergie d'activation par un nouveau chemin réactionnel",
-          "Étant consommé au cours de la réaction",
-          "Déplaçant l'état d'équilibre final"
-        ],
-        ans: 1,
-        exp: "Le catalyseur ouvre un nouveau chemin réactionnel d'énergie d'activation plus faible ; il est régénéré en fin de réaction."
-      },
-      {
-        q: "Le pot catalytique d'une voiture (catalyseur solide sur gaz d'échappement) relève de la catalyse :",
-        opts: [
-          "Homogène",
-          "Hétérogène",
-          "Enzymatique",
-          "Aucune des trois"
-        ],
-        ans: 1,
-        exp: "Le catalyseur solide est dans une phase différente des réactifs gazeux : c'est de la catalyse hétérogène."
-      },
-      {
-        q: "Le temps de demi-réaction t½ correspond à la durée au bout de laquelle :",
-        opts: [
-          "La réaction est totalement terminée",
-          "L'avancement atteint la moitié de sa valeur finale",
-          "La vitesse de réaction est nulle",
-          "La concentration du produit est maximale"
-        ],
-        ans: 1,
-        exp: "Par définition, ξ(t½) = ξf / 2."
-      },
-      {
-        q: "Pour une réaction d'ordre 1, l'évolution de [A](t) est :",
-        opts: [
-          "Linéaire",
-          "Exponentielle décroissante",
-          "Constante",
-          "Parabolique"
-        ],
-        ans: 1,
-        exp: "[A](t) = [A]₀ × exp(−kt) : la concentration décroît exponentiellement pour une cinétique d'ordre 1."
-      },
-      {
-        q: "Pour une cinétique d'ordre 1, le temps de demi-réaction t½ = ln(2)/k :",
-        opts: [
-          "Dépend de la concentration initiale",
-          "Est indépendant de la concentration initiale",
-          "Est proportionnel à [A]₀",
-          "N'existe pas"
-        ],
-        ans: 1,
-        exp: "Propriété caractéristique de l'ordre 1 : t½ ne dépend pas de [A]₀, contrairement aux autres ordres."
-      },
-      {
-        q: "Dans un mécanisme réactionnel, l'étape cinétiquement déterminante est :",
-        opts: [
-          "La première étape systématiquement",
-          "L'étape la plus rapide",
-          "L'étape la plus lente, qui impose sa vitesse à la réaction globale",
-          "Une étape sans intermédiaire réactionnel"
+          "la valeur de [R] lue à l'instant t",
+          "le coefficient directeur de la tangente à la courbe [R] = f(t) à l'instant t",
+          "l'opposé du coefficient directeur de la tangente à la courbe [R] = f(t) à l'instant t",
+          "le coefficient directeur de la droite joignant le point initial au point d'abscisse t"
         ],
         ans: 2,
-        exp: "L'étape la plus lente du mécanisme limite et impose la vitesse globale de la réaction."
+        pieges: [
+          { code: "vitesse-vs-concentration", texte: "Confondre la vitesse et la concentration lue sur la courbe" },
+          { code: "signe-vitesse-disparition", texte: "Oublier le signe moins : [R] diminue, la pente est négative, mais une vitesse de disparition est positive" },
+          null,
+          { code: "vitesse-moyenne-vs-instantanee", texte: "Calculer une vitesse moyenne (corde) au lieu de la vitesse instantanée (tangente)" }
+        ],
+        exp: "Vitesse de disparition : v = −d[R]/dt, donc l'opposé de la pente de la tangente en t. Attention : la tangente donne la vitesse instantanée, la corde depuis l'origine une vitesse moyenne."
+      },
+      {
+        q: "Pour la réaction 2 H₂O₂ → 2 H₂O + O₂, la tangente à la courbe [H₂O₂] = f(t) à t = 10 min a un coefficient directeur de −4,0 × 10⁻³ mol·L⁻¹·min⁻¹. La vitesse volumique de réaction v vaut :",
+        opts: [
+          "4,0 × 10⁻³ mol·L⁻¹·min⁻¹",
+          "−2,0 × 10⁻³ mol·L⁻¹·min⁻¹",
+          "8,0 × 10⁻³ mol·L⁻¹·min⁻¹",
+          "2,0 × 10⁻³ mol·L⁻¹·min⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier de diviser par le nombre stœchiométrique 2 de H₂O₂" },
+          { code: "signe-vitesse-disparition", texte: "Oublier le signe moins : pour un réactif, v = −(1/2) d[H₂O₂]/dt est positive" },
+          { code: "stoechiometrie-inversee", texte: "Multiplier par 2 au lieu de diviser : 4,0 × 10⁻³ × 2" },
+          null
+        ],
+        exp: "v = −(1/2) × d[H₂O₂]/dt = −(1/2) × (−4,0 × 10⁻³) = 2,0 × 10⁻³ mol·L⁻¹·min⁻¹. Attention : on divise par le nombre stœchiométrique, et une vitesse de réaction est positive."
+      },
+      {
+        q: "Une augmentation de la température du milieu réactionnel :",
+        opts: [
+          "augmente la vitesse, car les chocs sont plus fréquents et plus énergétiques",
+          "augmente la quantité de produit obtenue à l'état final",
+          "diminue la vitesse, car les entités restent moins longtemps en contact",
+          "augmente la vitesse, car les molécules grossissent et se heurtent davantage"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "facteur-cinetique-etat-final", texte: "Croire qu'un facteur cinétique modifie l'état final : il ne change que la durée pour l'atteindre" },
+          { code: "temperature-ralentit", texte: "Croire que l'agitation thermique gêne la réaction : elle rend les chocs plus nombreux et plus efficaces" },
+          { code: "dilatation-des-particules", texte: "Croire que les molécules grossissent quand la température augmente : seule leur agitation change" }
+        ],
+        exp: "La température est un facteur cinétique : l'agitation thermique augmente la fréquence des chocs et la proportion de chocs efficaces. Attention : l'état final, lui, n'est pas modifié."
+      },
+      {
+        q: "Dans un mécanisme réactionnel, un intermédiaire réactionnel est une espèce :",
+        opts: [
+          "formée lors d'un acte élémentaire, puis consommée lors d'un acte suivant",
+          "qui accélère la réaction et se retrouve intacte à la fin",
+          "qui figure comme réactif dans l'équation de la réaction",
+          "qui est le produit principal, formé à la dernière étape"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "intermediaire-vs-catalyseur", texte: "Confondre intermédiaire réactionnel (formé puis consommé) et catalyseur (consommé puis régénéré)" },
+          { code: "intermediaire-dans-bilan", texte: "Croire qu'un intermédiaire apparaît dans l'équation de la réaction : il n'y figure pas" },
+          { code: "intermediaire-vs-produit", texte: "Confondre intermédiaire réactionnel et produit final" }
+        ],
+        exp: "Un intermédiaire est formé dans une étape puis consommé dans une suivante : il n'apparaît pas dans l'équation de la réaction. Un catalyseur, lui, est consommé puis régénéré."
+      },
+      {
+        q: "Un catalyseur :",
+        opts: [
+          "est consommé au cours de la réaction, comme un réactif",
+          "augmente la vitesse de la réaction et est régénéré en fin de réaction",
+          "augmente la quantité de produit obtenue",
+          "rend possible une réaction qui ne se produirait pas spontanément"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "catalyseur-consomme", texte: "Croire que le catalyseur est consommé : il est régénéré et n'apparaît pas dans l'équation" },
+          null,
+          { code: "catalyseur-modifie-etat-final", texte: "Croire qu'un catalyseur modifie l'état final : il ne change que la vitesse" },
+          { code: "catalyseur-rend-possible", texte: "Croire qu'un catalyseur rend possible une réaction non spontanée : il accélère seulement une réaction possible" }
+        ],
+        exp: "Le catalyseur accélère la réaction en ouvrant un autre chemin réactionnel ; il est régénéré et ne modifie ni l'état final ni le sens d'évolution. Attention : il n'augmente pas la quantité de produit."
+      },
+      {
+        q: "Le temps de demi-réaction t½ est la durée au bout de laquelle :",
+        opts: [
+          "la moitié de la durée totale de la réaction s'est écoulée",
+          "l'avancement atteint la moitié de sa valeur finale",
+          "le réactif en excès a été consommé à moitié",
+          "l'avancement atteint ξmax / 2, même si la réaction n'est pas totale"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "demi-reaction-moitie-duree", texte: "Croire que t½ est la moitié de la durée de la réaction : une transformation dure environ 5 à 10 t½" },
+          null,
+          { code: "demi-reaction-reactif-exces", texte: "Raisonner sur le réactif en excès : t½ est défini à partir de l'avancement final" },
+          { code: "xf-vs-xmax", texte: "Confondre avancement final ξf et avancement maximal ξmax pour une réaction non totale" }
+        ],
+        exp: "Par définition, ξ(t½) = ξf / 2. Attention : t½ n'est pas la moitié de la durée de la réaction, qui est bien plus longue (plusieurs t½)."
+      },
+      {
+        q: "Une réaction suit une loi de vitesse d'ordre 1, de constante k = 0,023 min⁻¹. Avec t½ = ln 2 / k, le temps de demi-réaction vaut :",
+        opts: [
+          "30 min",
+          "1,6 × 10⁻² min",
+          "43 min",
+          "22 min"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : k × ln 2 = 1,6 × 10⁻²" },
+          { code: "oubli-ln2", texte: "Oublier ln 2 : 1 / k = 43 min" },
+          { code: "demi-vie-un-sur-2k", texte: "Remplacer ln 2 par 1/2 : 1 / (2k) = 22 min" }
+        ],
+        exp: "t½ = ln 2 / k = 0,693 / 0,023 ≈ 30 min. Attention : 1 / k est un temps caractéristique, mais ce n'est pas t½."
+      },
+      {
+        q: "Une réaction est d'ordre 1 par rapport au réactif A. On recommence l'expérience avec une concentration initiale [A]₀ deux fois plus grande. Le temps de demi-réaction :",
+        opts: [
+          "double, car il y a deux fois plus de réactif à consommer",
+          "est divisé par deux, car la réaction est plus rapide",
+          "ne change pas",
+          "double, car la vitesse initiale est divisée par deux"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "t12-proportionnel-a0", texte: "Croire que t½ est proportionnel à [A]₀ : à l'ordre 1, t½ = ln 2 / k ne dépend pas de [A]₀" },
+          { code: "t12-inverse-a0", texte: "Croire que t½ diminue quand [A]₀ augmente : à l'ordre 1, il ne dépend pas de [A]₀" },
+          null,
+          { code: "vitesse-initiale-a0", texte: "Croire que la vitesse initiale diminue : à l'ordre 1, v₀ = k [A]₀ double" }
+        ],
+        exp: "À l'ordre 1, t½ = ln 2 / k est indépendant de [A]₀ : la vitesse double, mais il y a deux fois plus de réactif. Attention : c'est une propriété caractéristique de l'ordre 1."
+      },
+      {
+        q: "Une réaction est d'ordre 1 par rapport au réactif A lorsque :",
+        opts: [
+          "la vitesse de disparition de A est proportionnelle à [A]",
+          "[A] diminue proportionnellement au temps",
+          "le temps de demi-réaction double quand [A]₀ double",
+          "A disparaît en un seul acte élémentaire"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "ordre1-decroissance-lineaire", texte: "Croire que [A] décroît linéairement : à l'ordre 1, la décroissance est exponentielle" },
+          { code: "t12-proportionnel-a0", texte: "Croire que t½ est proportionnel à [A]₀ : à l'ordre 1, t½ = ln 2 / k ne dépend pas de [A]₀" },
+          { code: "ordre1-vs-acte-elementaire", texte: "Confondre ordre 1 et acte élémentaire unique : l'ordre est une loi expérimentale" }
+        ],
+        exp: "Ordre 1 : −d[A]/dt = k × [A], d'où [A](t) = [A]₀ × e^(−kt), décroissance exponentielle. Attention : une droite [A] = f(t) correspondrait à une vitesse constante, pas à l'ordre 1."
       }
     ],
     annales: [
@@ -8990,112 +9050,172 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
       {
         q: "Un système fermé est un système qui :",
         opts: [
-          "N'échange ni matière ni énergie",
-          "Échange de la matière mais pas d'énergie",
-          "Échange de l'énergie mais pas de matière",
-          "Échange matière et énergie"
+          "n'échange ni matière ni énergie avec l'extérieur",
+          "échange de la matière mais pas d'énergie",
+          "échange de l'énergie mais pas de matière",
+          "échange de la matière et de l'énergie"
         ],
         ans: 2,
-        exp: "Un système fermé peut échanger de l'énergie (travail, transfert thermique) avec l'extérieur, mais pas de matière."
+        pieges: [
+          { code: "ferme-vs-isole", texte: "Confondre système fermé et système isolé (qui n'échange ni matière ni énergie)" },
+          { code: "systeme-matiere-sans-energie", texte: "Croire qu'un système peut échanger de la matière sans énergie : la matière transporte de l'énergie" },
+          null,
+          { code: "ferme-vs-ouvert", texte: "Confondre système fermé et système ouvert (qui échange matière et énergie)" }
+        ],
+        exp: "Fermé : pas d'échange de matière, mais échanges d'énergie possibles (travail W, transfert thermique Q). Isolé : aucun échange. Ouvert : échanges de matière et d'énergie."
       },
       {
-        q: "L'énergie interne U d'un système correspond, à l'échelle microscopique, à :",
+        q: "À l'échelle microscopique, l'énergie interne U d'un système correspond :",
         opts: [
-          "Uniquement l'énergie cinétique macroscopique",
-          "La somme de l'énergie cinétique d'agitation thermique et de l'énergie potentielle d'interaction",
-          "L'énergie potentielle de pesanteur",
-          "Le travail des forces extérieures"
+          "à l'énergie cinétique du système qui se déplace dans son ensemble",
+          "à l'énergie potentielle de pesanteur du système dans le champ terrestre",
+          "à l'agitation thermique des particules et à leurs interactions",
+          "à la quantité de chaleur contenue dans le système à cette température"
         ],
-        ans: 1,
-        exp: "U regroupe l'énergie cinétique microscopique (agitation thermique) et l'énergie potentielle d'interaction entre particules."
+        ans: 2,
+        pieges: [
+          { code: "energie-interne-vs-cinetique-macro", texte: "Confondre énergie interne (microscopique) et énergie cinétique du mouvement d'ensemble" },
+          { code: "energie-interne-vs-pesanteur", texte: "Confondre énergie interne et énergie potentielle de pesanteur, qui sont des énergies macroscopiques" },
+          null,
+          { code: "chaleur-contenue", texte: "Croire qu'un corps « contient de la chaleur » : la chaleur (Q) est un transfert, pas une énergie stockée" }
+        ],
+        exp: "U regroupe les énergies microscopiques : agitation thermique des particules et interactions entre elles. Attention : Q désigne un transfert d'énergie, un corps ne « contient » pas de chaleur."
       },
       {
-        q: "L'équation d'état du gaz parfait s'écrit :",
+        q: "Un gaz parfait (n = 0,10 mol) occupe un volume V = 2,0 L à la température θ = 27 °C. Avec R = 8,314 J·mol⁻¹·K⁻¹, sa pression vaut environ :",
         opts: [
-          "PV = nRT",
-          "PV = RT",
-          "P = nRTV",
-          "PT = nRV"
+          "1,2 × 10² Pa",
+          "1,1 × 10⁴ Pa",
+          "1,2 × 10⁵ Pa",
+          "8,0 × 10⁻⁶ Pa"
         ],
-        ans: 0,
-        exp: "L'équation d'état des gaz parfaits est PV = nRT, avec R = 8,314 J·mol⁻¹·K⁻¹."
+        ans: 2,
+        pieges: [
+          { code: "conversion-l-m3", texte: "Oublier de convertir V en m³ : 2,0 L = 2,0 × 10⁻³ m³" },
+          { code: "celsius-au-lieu-kelvin", texte: "Utiliser la température en °C au lieu de kelvins : T = 27 + 273 = 300 K" },
+          null,
+          { code: "gaz-parfait-rapport-inverse", texte: "Inverser la relation : V / (nRT) au lieu de nRT / V" }
+        ],
+        exp: "T = 300 K et V = 2,0 × 10⁻³ m³ : P = nRT / V = 0,10 × 8,314 × 300 / 2,0 × 10⁻³ ≈ 1,2 × 10⁵ Pa. Attention : dans PV = nRT, P en Pa, V en m³ et T en K."
       },
       {
         q: "Dans le modèle du gaz parfait, les particules sont supposées :",
         opts: [
-          "Ponctuelles et en interaction forte entre elles",
-          "Ponctuelles et sans interaction entre elles (hors chocs)",
-          "De volume propre non négligeable",
-          "Immobiles"
+          "ponctuelles et immobiles",
+          "ponctuelles et sans interaction entre elles, hors chocs",
+          "en forte interaction attractive les unes avec les autres",
+          "de volume croissant quand la température augmente"
         ],
         ans: 1,
-        exp: "Le gaz parfait modélise des particules ponctuelles n'interagissant pas entre elles, sauf lors de chocs élastiques."
+        pieges: [
+          { code: "particules-gaz-immobiles", texte: "Croire que les particules d'un gaz sont immobiles : elles sont en agitation permanente" },
+          null,
+          { code: "gaz-parfait-interactions", texte: "Croire que le modèle du gaz parfait tient compte des interactions : il les néglige" },
+          { code: "dilatation-des-particules", texte: "Croire que les particules grossissent quand la température augmente : seule leur agitation change" }
+        ],
+        exp: "Gaz parfait : particules ponctuelles, en agitation désordonnée, sans interaction entre elles en dehors des chocs. Attention : quand on chauffe un gaz, ses particules s'agitent davantage, elles ne grossissent pas."
       },
       {
-        q: "Le modèle du gaz parfait devient le moins fiable dans quelles conditions ?",
+        q: "Le modèle du gaz parfait décrit mal le comportement d'un gaz réel :",
         opts: [
-          "Basse pression et haute température",
-          "Haute pression et basse température",
-          "Pression et température modérées",
-          "Le modèle est toujours exact"
+          "à basse pression et à haute température",
+          "à haute pression et à basse température",
+          "jamais : il est exact pour tous les gaz",
+          "dès que le récipient est petit, quelle que soit la quantité de gaz"
         ],
         ans: 1,
-        exp: "À haute pression et basse température, les interactions entre molécules et leur volume propre ne sont plus négligeables : le modèle du gaz parfait s'écarte du comportement réel."
-      },
-      {
-        q: "Dans l'équation de van der Waals, le terme correctif n·b appliqué au volume tient compte :",
-        opts: [
-          "Des forces d'interaction attractives entre molécules",
-          "Du volume propre non négligeable des molécules",
-          "De la température du gaz",
-          "De la constante des gaz parfaits"
+        pieges: [
+          { code: "limites-gaz-parfait-inversees", texte: "Inverser les conditions : à basse pression, les particules sont éloignées et le modèle est bon" },
+          null,
+          { code: "gaz-parfait-toujours-exact", texte: "Croire que le modèle est exact : c'est une approximation, mise en défaut près de la liquéfaction" },
+          { code: "volume-recipient-vs-densite", texte: "Raisonner sur la taille du récipient : c'est la densité de particules (la pression) qui compte" }
         ],
-        ans: 1,
-        exp: "Le terme n·b corrige le volume disponible en tenant compte du volume propre (non nul) des molécules du gaz réel."
+        exp: "À haute pression et basse température, les particules sont proches : leur volume propre et leurs interactions ne sont plus négligeables. Attention : c'est le cas au voisinage de la liquéfaction."
       },
       {
-        q: "Le premier principe de la thermodynamique s'écrit, pour un système fermé :",
+        q: "Pour un système fermé au repos, le premier principe de la thermodynamique s'écrit :",
         opts: [
           "ΔU = W − Q",
-          "ΔU = W × Q",
-          "ΔU = W + Q",
-          "U = W + Q"
+          "ΔU = Q, le travail n'intervenant pas",
+          "U = W + Q",
+          "ΔU = W + Q"
         ],
-        ans: 2,
-        exp: "Le premier principe relie la variation d'énergie interne à la somme du travail et du transfert thermique reçus : ΔU = W + Q."
+        ans: 3,
+        pieges: [
+          { code: "convention-signe-q", texte: "Se tromper de convention : W et Q sont tous deux comptés positivement quand le système les reçoit" },
+          { code: "oubli-travail", texte: "Oublier le travail W : un système peut aussi échanger de l'énergie par travail" },
+          { code: "u-vs-delta-u", texte: "Écrire U au lieu de ΔU : seule la variation d'énergie interne est accessible" },
+          null
+        ],
+        exp: "ΔU = W + Q : la variation d'énergie interne est égale à la somme des énergies reçues par travail et par transfert thermique. Attention : convention du banquier, énergie reçue positive."
       },
       {
-        q: "Selon la convention de signe utilisée en thermodynamique, une énergie reçue par le système est comptée :",
+        q: "Un gaz reçoit un travail W = 200 J et cède un transfert thermique de 50 J au milieu extérieur. La variation de son énergie interne vaut :",
         opts: [
-          "Positivement",
-          "Négativement",
-          "Nulle",
-          "Cela dépend du système"
+          "250 J",
+          "150 J",
+          "−150 J",
+          "200 J"
         ],
-        ans: 0,
-        exp: "Convention du banquier : énergie reçue = positive, énergie cédée = négative."
+        ans: 1,
+        pieges: [
+          { code: "convention-signe-q", texte: "Compter positivement l'énergie cédée : Q = −50 J puisque le gaz la cède" },
+          null,
+          { code: "convention-banquier-inversee", texte: "Inverser la convention : l'énergie reçue par le système est comptée positivement" },
+          { code: "oubli-transfert-thermique", texte: "Oublier le transfert thermique Q dans le bilan" }
+        ],
+        exp: "W = +200 J (reçu), Q = −50 J (cédé) : ΔU = W + Q = 200 − 50 = 150 J. Attention : une énergie cédée par le système est négative."
       },
       {
-        q: "Pour un système isolé, on a nécessairement :",
+        q: "Pour un système isolé, on peut affirmer que :",
         opts: [
-          "ΔU > 0",
-          "ΔU < 0",
           "ΔU = 0",
-          "ΔU indéterminé"
-        ],
-        ans: 2,
-        exp: "Un système isolé n'échange ni matière ni énergie : W = Q = 0, donc ΔU = 0 (conservation de l'énergie interne)."
-      },
-      {
-        q: "La capacité thermique massique de l'eau liquide vaut environ :",
-        opts: [
-          "4185 J·kg⁻¹·K⁻¹",
-          "42 J·kg⁻¹·K⁻¹",
-          "4185 J·K⁻¹",
-          "1 J·kg⁻¹·K⁻¹"
+          "U = 0",
+          "sa température reste forcément constante",
+          "Q = 0, mais W peut être non nul"
         ],
         ans: 0,
-        exp: "c(eau) ≈ 4185 J·kg⁻¹·K⁻¹, valeur à connaître car très utilisée dans les bilans thermiques."
+        pieges: [
+          null,
+          { code: "u-vs-delta-u", texte: "Confondre U et ΔU : U se conserve, elle n'est pas nulle" },
+          { code: "delta-u-nul-temperature-constante", texte: "Croire que ΔU = 0 impose une température constante : une transformation chimique interne peut la modifier" },
+          { code: "isole-vs-adiabatique", texte: "Confondre isolé (W = 0 et Q = 0) et sans transfert thermique (Q = 0 seulement)" }
+        ],
+        exp: "Un système isolé n'échange ni travail ni transfert thermique : W = Q = 0, donc ΔU = 0, son énergie interne se conserve. Attention : U est conservée, pas nulle."
+      },
+      {
+        q: "On chauffe 500 g d'eau liquide de 20 °C à 70 °C (c = 4 185 J·kg⁻¹·K⁻¹). L'énergie reçue par l'eau vaut environ :",
+        opts: [
+          "1,0 × 10⁸ J",
+          "1,5 × 10⁵ J",
+          "2,1 × 10³ J",
+          "1,0 × 10⁵ J"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 500 au lieu de 0,500" },
+          { code: "temperature-vs-variation", texte: "Utiliser la température finale (70) au lieu de la variation ΔT = 50 °C" },
+          { code: "oubli-variation-temperature", texte: "Oublier de multiplier par ΔT : m × c = 2,1 × 10³" },
+          null
+        ],
+        exp: "Q = m × c × ΔT = 0,500 × 4 185 × (70 − 20) ≈ 1,0 × 10⁵ J. Attention : masse en kg et variation de température (une variation de 50 °C vaut 50 K)."
+      },
+      {
+        q: "La capacité thermique C d'un corps incompressible de masse m et de capacité thermique massique c :",
+        opts: [
+          "vaut C = c, elle ne dépend pas de la masse",
+          "vaut C = m × c et s'exprime en J·K⁻¹",
+          "vaut C = c / m et s'exprime en J·K⁻¹",
+          "vaut C = m × c et s'exprime en J·kg⁻¹·K⁻¹"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "capacite-vs-capacite-massique", texte: "Confondre capacité thermique C (du corps) et capacité thermique massique c (du matériau)" },
+          null,
+          { code: "capacite-rapport-inverse", texte: "Diviser par la masse au lieu de multiplier" },
+          { code: "unite-capacite-thermique", texte: "Donner à C l'unité de c : C = m × c s'exprime en J·K⁻¹" }
+        ],
+        exp: "C = m × c, en J·K⁻¹ : énergie à fournir au corps pour élever sa température de 1 K. c, en J·kg⁻¹·K⁻¹, caractérise le matériau. Attention à ne pas confondre les deux."
       }
     ],
     annales: [
@@ -9571,114 +9691,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Quel mode de transfert thermique peut se propager dans le vide ?",
+        q: "Quel mode de transfert thermique peut se faire à travers le vide ?",
         opts: [
-          "Conduction",
-          "Convection",
-          "Rayonnement",
-          "Aucun"
+          "la conduction",
+          "la convection",
+          "le rayonnement",
+          "aucun : tout transfert thermique exige de la matière"
         ],
         ans: 2,
-        exp: "Le rayonnement thermique (ondes électromagnétiques) est le seul mode de transfert thermique ne nécessitant aucun support matériel."
-      },
-      {
-        q: "La convection thermique se caractérise par :",
-        opts: [
-          "Une transmission de proche en proche sans déplacement de matière",
-          "Un déplacement macroscopique de matière dans un fluide",
-          "Une propagation uniquement dans le vide",
-          "Une émission d'ondes électromagnétiques"
+        pieges: [
+          { code: "conduction-dans-vide", texte: "Croire que la conduction traverse le vide : elle se fait de proche en proche dans la matière" },
+          { code: "convection-dans-vide", texte: "Croire que la convection traverse le vide : elle exige un fluide en mouvement" },
+          null,
+          { code: "transfert-exige-matiere", texte: "Croire que tout transfert thermique exige de la matière : le rayonnement du Soleil traverse le vide" }
         ],
-        ans: 1,
-        exp: "La convection correspond à un transfert thermique associé au déplacement macroscopique de matière dans un fluide."
+        exp: "Le rayonnement est un transfert par ondes électromagnétiques, sans support matériel : c'est ainsi que l'énergie du Soleil nous parvient. Conduction et convection exigent de la matière."
       },
       {
-        q: "La résistance thermique d'une paroi plane s'écrit :",
+        q: "Une cuillère métallique trempe dans un thé chaud ; son manche devient chaud. L'énergie est arrivée jusqu'à la main par :",
         opts: [
-          "Rth = λ × S / e",
-          "Rth = e / (λ × S)",
-          "Rth = e × λ × S",
-          "Rth = S / (λ × e)"
-        ],
-        ans: 1,
-        exp: "Rth = e / (λS) : la résistance thermique augmente avec l'épaisseur et diminue avec la conductivité et la surface."
-      },
-      {
-        q: "La relation entre flux thermique φ et résistance thermique Rth est l'analogue thermique de :",
-        opts: [
-          "La loi de Coulomb",
-          "La loi d'Ohm (U = RI)",
-          "La loi de Boyle-Mariotte",
-          "La loi de Snell-Descartes"
-        ],
-        ans: 1,
-        exp: "φ = ΔT / Rth est l'exact analogue de la loi d'Ohm en électricité (I = U/R), avec φ↔I, ΔT↔U et Rth↔R."
-      },
-      {
-        q: "La constante de Stefan-Boltzmann σ intervient dans :",
-        opts: [
-          "La loi de conduction de Fourier",
-          "La puissance radiative émise par un corps : φ = σT⁴",
-          "La loi de refroidissement de Newton uniquement",
-          "La capacité thermique massique"
-        ],
-        ans: 1,
-        exp: "La loi de Stefan-Boltzmann donne la puissance surfacique rayonnée par un corps à température T : φ = σT⁴."
-      },
-      {
-        q: "L'albédo terrestre A ≈ 0,3 représente :",
-        opts: [
-          "La fraction du rayonnement solaire absorbée par la Terre",
-          "La fraction du rayonnement solaire réfléchie par la Terre",
-          "La température moyenne de la Terre",
-          "Le flux solaire incident total"
-        ],
-        ans: 1,
-        exp: "L'albédo est la fraction du rayonnement solaire incident réfléchie sans être absorbée (nuages, glace, etc.)."
-      },
-      {
-        q: "Dans le bilan radiatif terrestre, le facteur 4 apparaît car :",
-        opts: [
-          "La Terre reçoit le rayonnement sur un disque mais en réémet sur toute sa sphère",
-          "L'albédo vaut 4 fois la constante solaire",
-          "Il y a 4 saisons",
-          "La constante de Stefan-Boltzmann vaut 4"
+          "conduction, de proche en proche dans le métal",
+          "convection, par déplacement du métal",
+          "rayonnement du thé vers le manche",
+          "le froid de la main, qui s'est déplacé vers le thé"
         ],
         ans: 0,
-        exp: "La Terre absorbe le rayonnement solaire sur son disque apparent (πR²) mais rayonne sur toute sa surface sphérique (4πR²), d'où le facteur 1/4."
+        pieges: [
+          null,
+          { code: "conduction-vs-convection", texte: "Confondre conduction (sans déplacement de matière) et convection (déplacement d'un fluide)" },
+          { code: "rayonnement-vs-conduction", texte: "Attribuer au rayonnement un transfert qui se fait au sein d'un solide" },
+          { code: "froid-substance", texte: "Croire que le « froid » est une substance qui se déplace : c'est l'énergie qui va du chaud vers le froid" }
+        ],
+        exp: "Dans un solide, l'agitation thermique se transmet de proche en proche, sans déplacement de matière : c'est la conduction. Attention : l'énergie va toujours spontanément du corps chaud vers le corps froid."
       },
       {
-        q: "La température d'équilibre radiatif théorique de la Terre sans atmosphère (sans effet de serre) est d'environ :",
+        q: "Une vitre a une résistance thermique Rth = 0,010 K·W⁻¹. Il fait 20 °C à l'intérieur et 5,0 °C à l'extérieur. Le flux thermique à travers la vitre vaut :",
         opts: [
-          "+15°C",
-          "−18°C",
-          "0°C",
-          "+100°C"
+          "0,15 W",
+          "1,5 × 10³ W",
+          "2,0 × 10³ W",
+          "6,7 × 10⁻⁴ W"
         ],
         ans: 1,
-        exp: "Le calcul du bilan radiatif donne T ≈ 255 K ≈ −18°C, très inférieure à la température moyenne réelle (+15°C) grâce à l'effet de serre."
+        pieges: [
+          { code: "flux-produit", texte: "Multiplier au lieu de diviser : ΔT × Rth = 0,15" },
+          null,
+          { code: "temperature-vs-ecart", texte: "Utiliser une seule température au lieu de l'écart : 20 / 0,010" },
+          { code: "flux-rapport-inverse", texte: "Inverser le rapport : Rth / ΔT" }
+        ],
+        exp: "φ = ΔT / Rth = (20 − 5,0) / 0,010 = 1,5 × 10³ W. Attention : c'est l'écart de température qui fait circuler l'énergie, comme une tension fait circuler un courant."
       },
       {
-        q: "L'effet de serre est dû au fait que certains gaz atmosphériques :",
+        q: "Un bon isolant thermique est un matériau qui :",
         opts: [
-          "Réfléchissent tout le rayonnement solaire",
-          "Absorbent le rayonnement infrarouge terrestre et le renvoient vers le sol",
-          "Bloquent totalement la lumière visible",
-          "Diminuent la constante solaire"
+          "a une grande conductivité thermique λ, donc une grande résistance thermique",
+          "a une faible conductivité thermique λ, donc une grande résistance thermique",
+          "empêche le froid extérieur d'entrer",
+          "produit de la chaleur pour compenser les pertes"
         ],
         ans: 1,
-        exp: "Les gaz à effet de serre (CO₂, H₂O...) absorbent le rayonnement infrarouge réémis par la Terre et en renvoient une partie vers la surface, augmentant la température."
+        pieges: [
+          { code: "conductivite-vs-resistance-thermique", texte: "Confondre conductivité et résistance thermiques : Rth = e / (λS) diminue quand λ augmente" },
+          null,
+          { code: "froid-substance", texte: "Croire que le « froid » est une substance qui entre : c'est l'énergie qui sort vers l'extérieur plus froid" },
+          { code: "isolant-source-chaleur", texte: "Croire qu'un isolant (un pull, une couverture) produit de la chaleur : il ralentit seulement les pertes" }
+        ],
+        exp: "Rth = e / (λS) : un isolant a une faible conductivité thermique λ, donc une grande résistance thermique ; il ralentit le transfert. Attention : un pull ne chauffe pas, il limite les pertes."
       },
       {
-        q: "Selon la loi de refroidissement de Newton, T(t) = Text + (T₀ − Text)×exp(−t/τ) : au bout d'une durée t = τ, l'écart de température initial a été réduit d'un facteur :",
+        q: "Un mur est fait d'une couche de béton (Rth₁ = 2,0 × 10⁻² K·W⁻¹) accolée à une couche d'isolant (Rth₂ = 8,0 × 10⁻² K·W⁻¹). La résistance thermique totale du mur vaut :",
         opts: [
-          "2",
-          "e (≈2,7)",
-          "10",
-          "π"
+          "1,6 × 10⁻² K·W⁻¹",
+          "8,0 × 10⁻² K·W⁻¹",
+          "1,0 × 10⁻¹ K·W⁻¹",
+          "5,0 × 10⁻² K·W⁻¹"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "resistances-serie-vs-parallele", texte: "Utiliser la formule des résistances en parallèle : des couches accolées sont traversées l'une après l'autre (en série)" },
+          { code: "seule-plus-grande-resistance", texte: "Ne garder que la plus grande résistance : toutes les couches comptent" },
+          null,
+          { code: "resistances-moyenne", texte: "Faire la moyenne des résistances au lieu de leur somme" }
+        ],
+        exp: "Les couches accolées sont traversées successivement par le flux : leurs résistances s'ajoutent, Rth = 2,0 × 10⁻² + 8,0 × 10⁻² = 1,0 × 10⁻¹ K·W⁻¹. Attention : c'est l'analogue de résistances électriques en série."
+      },
+      {
+        q: "L'albédo de la Terre (A ≈ 0,3) est :",
+        opts: [
+          "la fraction du rayonnement solaire absorbée par la Terre",
+          "la fraction du rayonnement solaire réfléchie par la Terre",
+          "la fraction de l'énergie émise par la Terre sous forme d'infrarouge",
+          "la fraction du rayonnement terrestre retenue par l'effet de serre"
         ],
         ans: 1,
-        exp: "Après une durée τ, exp(−1) ≈ 0,37, donc l'écart a été réduit d'un facteur e ≈ 2,7 par rapport à l'écart initial."
+        pieges: [
+          { code: "albedo-absorbe-reflechi", texte: "Confondre fraction réfléchie (albédo) et fraction absorbée (1 − A)" },
+          null,
+          { code: "reflexion-vs-emission", texte: "Confondre réflexion du rayonnement solaire et émission infrarouge par la Terre" },
+          { code: "albedo-vs-effet-de-serre", texte: "Confondre albédo et effet de serre" }
+        ],
+        exp: "L'albédo est la fraction de la puissance solaire incidente renvoyée sans être absorbée (nuages, glace) ; la Terre absorbe donc la fraction 1 − A ≈ 0,7. Attention à ne pas confondre réflexion et émission."
+      },
+      {
+        q: "Dans le bilan radiatif de la Terre, S (1 − A) / 4 = σ T⁴, le facteur 4 vient du fait que la Terre :",
+        opts: [
+          "reçoit le rayonnement solaire sur un disque d'aire πR² et rayonne sur toute sa surface 4πR²",
+          "ne reçoit le rayonnement solaire que sur la moitié de sa surface, 2πR²",
+          "voit son atmosphère absorber les trois quarts du rayonnement solaire",
+          "reçoit le rayonnement solaire sur toute sa surface 4πR²"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "hemisphere-vs-disque", texte: "Prendre la surface de l'hémisphère éclairé (2πR²) au lieu de celle du disque intercepté (πR²)" },
+          { code: "facteur-4-absorption", texte: "Attribuer le facteur 4 à une absorption par l'atmosphère : il est purement géométrique" },
+          { code: "surface-reception-sphere", texte: "Croire que la Terre reçoit le rayonnement sur toute sa surface : seul le disque face au Soleil l'intercepte" }
+        ],
+        exp: "La Terre intercepte le flux solaire sur son disque apparent (πR²) et émet sur toute sa sphère (4πR²) : rapport 4πR² / πR² = 4. Attention : ce facteur est géométrique."
+      },
+      {
+        q: "Avec S = 1 361 W·m⁻², A = 0,30 et σ = 5,67 × 10⁻⁸ W·m⁻²·K⁻⁴, la relation S (1 − A) / 4 = σ T⁴ donne une température d'équilibre de la Terre sans effet de serre de :",
+        opts: [
+          "255 K",
+          "2,1 × 10² K",
+          "3,6 × 10² K",
+          "−18 K"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "albedo-absorbe-reflechi", texte: "Utiliser A au lieu de 1 − A : c'est la fraction absorbée qui chauffe la Terre" },
+          { code: "oubli-facteur-4", texte: "Oublier le facteur 4 du bilan : [S (1 − A) / σ]^(1/4)" },
+          { code: "kelvin-vs-celsius", texte: "Mélanger kelvins et degrés Celsius : 255 K ≈ −18 °C, et non −18 K" }
+        ],
+        exp: "T = [1 361 × 0,70 / (4 × 5,67 × 10⁻⁸)]^(1/4) ≈ 255 K ≈ −18 °C. La température réelle moyenne (≈ 15 °C) est plus élevée à cause de l'effet de serre. Attention : T est en kelvins dans la loi de Stefan-Boltzmann."
+      },
+      {
+        q: "Les gaz à effet de serre (CO₂, H₂O, CH₄…) :",
+        opts: [
+          "absorbent une partie du rayonnement infrarouge émis par la Terre et en réémettent vers le sol",
+          "réfléchissent une partie du rayonnement solaire vers l'espace",
+          "absorbent l'essentiel de la lumière visible venant du Soleil",
+          "détruisent la couche d'ozone, qui protège de la chaleur"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "effet-de-serre-vs-albedo", texte: "Confondre effet de serre et réflexion du rayonnement solaire (albédo)" },
+          { code: "effet-de-serre-visible", texte: "Croire que l'effet de serre agit sur le visible : il porte sur l'infrarouge émis par la Terre" },
+          { code: "effet-de-serre-vs-ozone", texte: "Confondre effet de serre et trou de la couche d'ozone (qui concerne les UV)" }
+        ],
+        exp: "L'atmosphère laisse passer l'essentiel du rayonnement solaire visible, mais ses gaz à effet de serre absorbent une partie de l'infrarouge émis par la surface et en renvoient vers elle. Attention : rien à voir avec la couche d'ozone."
+      },
+      {
+        q: "Un corps refroidit selon T(t) = Text + (T₀ − Text) × e^(−t/τ). Au bout d'une durée τ, l'écart T − Text vaut environ :",
+        opts: [
+          "37 % de l'écart initial",
+          "50 % de l'écart initial",
+          "63 % de l'écart initial",
+          "0 : le corps est à la température extérieure"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "tau-vs-demi-vie", texte: "Confondre τ et la durée de demi-décroissance : au bout de τ, l'écart est multiplié par e⁻¹ ≈ 0,37" },
+          { code: "37-vs-63-pour-cent", texte: "Confondre la fraction restante (37 %) et la fraction déjà parcourue (63 %)" },
+          { code: "tau-duree-totale", texte: "Croire que l'évolution est terminée au bout de τ : il faut environ 5τ" }
+        ],
+        exp: "Pour t = τ : e⁻¹ ≈ 0,37, l'écart restant est 37 % de l'écart initial (63 % du chemin est parcouru). Attention : l'équilibre est pratiquement atteint au bout d'environ 5τ."
       }
     ],
     annales: [
@@ -10136,114 +10316,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La relation entre la charge q d'un condensateur et la tension u à ses bornes est :",
+        q: "La charge q d'un condensateur de capacité C et la tension u à ses bornes sont liées par :",
         opts: [
-          "q = C/u",
+          "q = u / C",
           "q = C × u",
-          "q = u/C",
-          "q = C + u"
+          "q = ½ C u²",
+          "q = C / u"
         ],
         ans: 1,
-        exp: "La relation fondamentale du condensateur est q = C × u, avec C en farads."
-      },
-      {
-        q: "L'énergie stockée dans un condensateur de capacité C sous tension u vaut :",
-        opts: [
-          "E = C × u",
-          "E = (1/2) C u²",
-          "E = C² × u",
-          "E = u² / C"
+        pieges: [
+          { code: "charge-rapport-inverse", texte: "Inverser la relation : q = C × u, donc une grande capacité stocke plus de charge sous la même tension" },
+          null,
+          { code: "charge-vs-energie", texte: "Confondre la charge q et l'énergie stockée ½ C u²" },
+          { code: "charge-c-sur-u", texte: "Diviser C par u : la charge augmente avec la tension, elle ne diminue pas" }
         ],
-        ans: 1,
-        exp: "L'énergie électrostatique stockée est E = (1/2) × C × u²."
+        exp: "q = C × u, avec q en coulombs, C en farads et u en volts. Attention : q est proportionnelle à u."
       },
       {
-        q: "Pour un condensateur plan, la capacité C = εS/e dépend de :",
+        q: "Un condensateur chargé porte :",
         opts: [
-          "Uniquement de la tension appliquée",
-          "La surface des armatures et la distance qui les sépare",
-          "Uniquement de la fréquence du signal",
-          "La résistance du circuit"
-        ],
-        ans: 1,
-        exp: "La capacité d'un condensateur plan dépend de sa géométrie : surface S des armatures en regard et distance e qui les sépare (et de la permittivité ε du diélectrique)."
-      },
-      {
-        q: "Lors de la charge d'un condensateur à travers une résistance R sous tension E, l'équation différentielle vérifiée par u(t) est :",
-        opts: [
-          "RC du/dt + u = E",
-          "RC du/dt = 0",
-          "u = E × t",
-          "RC u = E"
+          "une charge +q sur une armature et −q sur l'autre",
+          "une charge q sur une armature et aucune sur l'autre",
+          "la même charge +q sur ses deux armatures",
+          "des charges qui traversent l'isolant d'une armature à l'autre"
         ],
         ans: 0,
-        exp: "La loi des mailles combinée à q = Cu donne l'équation différentielle du premier ordre RC(du/dt) + u = E."
+        pieges: [
+          null,
+          { code: "armature-non-chargee", texte: "Croire qu'une seule armature est chargée : les deux portent des charges opposées" },
+          { code: "armatures-meme-signe", texte: "Croire que les deux armatures portent la même charge : elles portent des charges opposées" },
+          { code: "courant-traverse-condensateur", texte: "Croire que le courant traverse le condensateur : l'isolant empêche le passage des charges" }
+        ],
+        exp: "Les armatures portent des charges opposées +q et −q ; aucune charge ne traverse l'isolant. Attention : le courant circule dans le circuit, pas à travers le condensateur."
       },
       {
-        q: "La solution de l'équation de charge d'un condensateur (initialement déchargé) est :",
+        q: "La tension aux bornes d'un condensateur de capacité C = 10 μF augmente régulièrement de 2,0 V par seconde. L'intensité du courant dans le circuit vaut :",
         opts: [
-          "u(t) = E × exp(−t/τ)",
-          "u(t) = E × [1 − exp(−t/τ)]",
-          "u(t) = E × t/τ",
-          "u(t) = E constant"
+          "20 A",
+          "2,0 × 10⁻⁵ A",
+          "2,0 × 10⁵ A",
+          "0 A, car aucun courant ne traverse un condensateur"
         ],
         ans: 1,
-        exp: "u(t) = E[1 − exp(−t/τ)] : u part de 0 et tend asymptotiquement vers E."
+        pieges: [
+          { code: "conversion-microfarad", texte: "Oublier de convertir les μF en F : 10 × 2,0 = 20" },
+          null,
+          { code: "intensite-rapport-inverse", texte: "Inverser la relation : (du/dt) / C au lieu de C × du/dt" },
+          { code: "pas-de-courant-condensateur", texte: "Croire qu'aucun courant ne circule dans une branche contenant un condensateur : il circule pendant la charge" }
+        ],
+        exp: "i = dq/dt = C × du/dt = 10 × 10⁻⁶ × 2,0 = 2,0 × 10⁻⁵ A. Attention : le courant ne traverse pas le condensateur, mais il circule dans le circuit tant que la charge varie."
       },
       {
-        q: "Lors de la décharge d'un condensateur initialement chargé sous U₀, la tension évolue selon :",
+        q: "Un condensateur, initialement déchargé, se charge à travers une résistance R sous une tension constante E. La tension u à ses bornes vérifie :",
         opts: [
-          "u(t) = U₀ × exp(−t/τ)",
-          "u(t) = U₀ × [1 − exp(−t/τ)]",
-          "u(t) = U₀ constant",
-          "u(t) = U₀ × t/τ"
+          "RC × du/dt = E",
+          "du/dt + RC × u = E",
+          "RC × du/dt + u = E",
+          "RC × du/dt − u = E"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "equa-diff-oubli-u", texte: "Oublier la tension u du condensateur dans la loi des mailles : E = uR + u" },
+          { code: "equa-diff-tau-mal-place", texte: "Placer RC devant u au lieu de du/dt" },
+          null,
+          { code: "equa-diff-signe", texte: "Se tromper de signe dans la loi des mailles : E = Ri + u avec i = C du/dt" }
+        ],
+        exp: "Loi des mailles : E = R i + u, avec i = C du/dt, d'où RC du/dt + u = E. Attention : u figure dans l'équation, c'est elle qui ralentit la charge quand elle s'approche de E."
+      },
+      {
+        q: "La solution de l'équation de charge (condensateur initialement déchargé) est :",
+        opts: [
+          "u(t) = E × e^(−t/τ)",
+          "u(t) = E × (1 − e^(−t/τ))",
+          "u(t) = E × t / τ",
+          "u(t) = E × (1 − e^(−τ/t))"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "charge-vs-decharge", texte: "Confondre charge et décharge : E × e^(−t/τ) décroît, c'est la tension de décharge" },
+          null,
+          { code: "charge-lineaire", texte: "Croire que la charge est linéaire : u tend vers E de plus en plus lentement" },
+          { code: "exposant-inverse", texte: "Inverser le rapport dans l'exponentielle : c'est −t/τ" }
+        ],
+        exp: "u(0) = 0 et u tend vers E : u(t) = E (1 − e^(−t/τ)). Attention : E e^(−t/τ) est la décharge, qui part de E et tend vers 0."
+      },
+      {
+        q: "Un circuit comporte une résistance R = 10 kΩ et un condensateur de capacité C = 100 μF. La constante de temps τ = RC vaut :",
+        opts: [
+          "1,0 s",
+          "1,0 × 10⁻³ s",
+          "1,0 × 10⁸ s",
+          "1,0 × 10⁶ s"
         ],
         ans: 0,
-        exp: "La décharge suit une exponentielle décroissante : u(t) = U₀ × exp(−t/τ)."
-      },
-      {
-        q: "Le temps caractéristique τ d'un circuit RC est donné par :",
-        opts: [
-          "τ = R/C",
-          "τ = R × C",
-          "τ = C/R",
-          "τ = R + C"
+        pieges: [
+          null,
+          { code: "conversion-kilo-ohm", texte: "Oublier de convertir les kΩ en Ω : 10 × 100 × 10⁻⁶" },
+          { code: "tau-r-sur-c", texte: "Diviser R par C au lieu de les multiplier" },
+          { code: "conversion-microfarad", texte: "Oublier de convertir les μF en F : 10 × 10³ × 100" }
         ],
-        ans: 1,
-        exp: "τ = R × C, homogène à un temps (Ω × F = s)."
+        exp: "τ = R × C = 10 × 10³ × 100 × 10⁻⁶ = 1,0 s. Attention : R en ohms et C en farads pour obtenir τ en secondes."
       },
       {
-        q: "Graphiquement, lors de la charge, la tension u(t) atteint environ quel pourcentage de sa valeur finale à t = τ ?",
+        q: "Pendant la charge, à l'instant t = τ, la tension u aux bornes du condensateur vaut environ :",
         opts: [
-          "37%",
-          "50%",
-          "63%",
-          "99%"
+          "37 % de E",
+          "50 % de E",
+          "63 % de E",
+          "E : la charge est terminée"
         ],
         ans: 2,
-        exp: "À t = τ, exp(−1) ≈ 0,37, donc u(τ) = E(1 − 0,37) ≈ 0,63 E, soit environ 63% de la valeur finale."
+        pieges: [
+          { code: "37-vs-63-pour-cent", texte: "Confondre charge et décharge : 37 % est la fraction restante lors d'une décharge" },
+          { code: "tau-vs-demi-vie", texte: "Confondre τ avec la durée pour atteindre la moitié de la valeur finale" },
+          null,
+          { code: "tau-duree-totale", texte: "Croire que la charge est terminée au bout de τ : il faut environ 5τ" }
+        ],
+        exp: "u(τ) = E (1 − e⁻¹) ≈ 0,63 E. On lit ainsi τ sur la courbe ; la charge est pratiquement complète au bout de 5τ. Attention : 37 % correspond à la décharge."
       },
       {
-        q: "Un écran tactile capacitif détecte la position d'un doigt car celui-ci :",
+        q: "Pendant la charge du condensateur à travers R sous une tension constante E, l'intensité du courant :",
         opts: [
-          "Chauffe localement l'écran",
-          "Modifie localement la capacité du réseau d'électrodes",
-          "Émet un signal radio",
-          "Bloque la lumière de l'écran"
+          "reste constante pendant toute la charge",
+          "est maximale à t = 0, puis tend vers 0",
+          "est nulle à t = 0, puis augmente jusqu'à E / R",
+          "tend vers E / R quand le condensateur est chargé"
         ],
         ans: 1,
-        exp: "Le doigt, conducteur, modifie localement la capacité entre électrodes transparentes, ce qui permet de localiser le contact."
+        pieges: [
+          { code: "courant-charge-constant", texte: "Croire que le courant est constant pendant la charge : il diminue à mesure que u se rapproche de E" },
+          null,
+          { code: "courant-vs-tension-condensateur", texte: "Confondre l'évolution de i avec celle de u : c'est u qui part de 0" },
+          { code: "courant-final-condensateur", texte: "Croire que le courant final vaut E / R : une fois chargé, le condensateur bloque le courant" }
+        ],
+        exp: "i = (E − u) / R : à t = 0, u = 0 et i = E / R est maximale ; quand u tend vers E, i tend vers 0. Attention : i et u n'évoluent pas de la même façon."
       },
       {
-        q: "Les capacités typiques mises en jeu dans les capteurs capacitifs intégrés (écrans tactiles, accéléromètres MEMS) sont de l'ordre :",
+        q: "Un écran tactile capacitif repère la position d'un doigt car celui-ci :",
         opts: [
-          "Du farad (F)",
-          "Du millifarad (mF)",
-          "Du picofarad (pF)",
-          "Du kilofarad (kF)"
+          "modifie localement la capacité du réseau d'électrodes",
+          "chauffe localement l'écran",
+          "appuie et ferme un contact électrique",
+          "bloque la lumière émise par l'écran"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "capteur-capacitif-vs-thermique", texte: "Confondre capteur capacitif et capteur de température" },
+          { code: "capteur-capacitif-vs-pression", texte: "Confondre écran capacitif et écran à contact par pression (résistif) : un effleurement suffit" },
+          { code: "capteur-capacitif-vs-optique", texte: "Confondre capteur capacitif et capteur optique" }
+        ],
+        exp: "Le doigt, conducteur, modifie localement la capacité entre électrodes transparentes ; l'électronique repère où la capacité a changé. Attention : aucune pression n'est nécessaire."
+      },
+      {
+        q: "Les capacités mises en jeu dans les capteurs capacitifs des smartphones (écran tactile, accéléromètre) sont de l'ordre :",
+        opts: [
+          "du farad (F)",
+          "du millifarad (mF)",
+          "du picofarad (pF)",
+          "du microfarad (μF), comme au laboratoire"
         ],
         ans: 2,
-        exp: "Ces capteurs mettent en jeu des capacités très faibles, de l'ordre du picofarad (10⁻¹² F) à quelques dizaines de pF."
+        pieges: [
+          { code: "ordre-grandeur-farad", texte: "Croire que le farad est une unité de taille courante : 1 F est une capacité énorme" },
+          { code: "confusion-prefixe-milli-pico", texte: "Se tromper de préfixe : milli = 10⁻³, pico = 10⁻¹²" },
+          null,
+          { code: "capteur-vs-condensateur-labo", texte: "Transposer les valeurs des condensateurs de TP (μF) aux capteurs miniatures" }
+        ],
+        exp: "Les capteurs intégrés ont des armatures minuscules : C de l'ordre du picofarad (10⁻¹² F). Attention : au laboratoire, on utilise plutôt des μF ; 1 F est une capacité très grande."
       }
     ],
     annales: [
@@ -10822,114 +11062,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Le rendement d'une synthèse est défini comme :",
+        q: "Synthèse de l'éthanoate d'éthyle (M = 88 g·mol⁻¹) : l'acide éthanoïque (0,20 mol, M = 60 g·mol⁻¹) est le réactif limitant, l'éthanol (0,30 mol) est en excès ; l'équation est 1 pour 1. On obtient 13,2 g d'ester. Le rendement vaut :",
         opts: [
-          "La masse du produit brut obtenu",
-          "Le rapport entre la quantité de produit obtenue et la quantité théorique maximale",
-          "La durée de la réaction",
-          "Le nombre d'étapes de la synthèse"
+          "50 %",
+          "75 %",
+          "133 %",
+          "110 %"
         ],
         ans: 1,
-        exp: "Le rendement η = n(obtenu)/n(théorique max), souvent exprimé en pourcentage."
+        pieges: [
+          { code: "rendement-reactif-exces", texte: "Calculer le rendement à partir du réactif en excès : 0,15 / 0,30 = 50 %" },
+          null,
+          { code: "rendement-inverse", texte: "Inverser le rapport : 0,20 / 0,15 = 133 %, un rendement ne dépasse pas 100 %" },
+          { code: "masse-molaire-reactif-vs-produit", texte: "Utiliser la masse molaire de l'acide (60) au lieu de celle de l'ester (88) : 13,2 / 60 / 0,20" }
+        ],
+        exp: "n(ester) = 13,2 / 88 = 0,150 mol ; n max = 0,20 mol (réactif limitant) ; η = 0,150 / 0,20 = 75 %. Attention : le rendement se calcule à partir du réactif limitant."
       },
       {
-        q: "Une réaction d'addition se caractérise par :",
+        q: "Un élève trouve un rendement de 115 % pour sa synthèse. La cause la plus probable est que :",
         opts: [
-          "La disparition d'une liaison multiple entre deux réactifs qui se combinent en un seul produit",
-          "Le remplacement d'un atome par un autre",
-          "La formation de deux produits à partir d'un seul réactif",
-          "La libération systématique d'eau"
+          "le produit pesé contient encore du solvant ou des impuretés",
+          "la synthèse a été particulièrement efficace",
+          "le réactif en excès a fait dépasser 100 % au rendement",
+          "la réaction a été accélérée par le chauffage"
         ],
         ans: 0,
-        exp: "Dans une addition, une liaison multiple (double ou triple) disparaît et les réactifs se combinent en une seule molécule produite."
+        pieges: [
+          null,
+          { code: "rendement-superieur-100", texte: "Accepter un rendement supérieur à 100 % : on ne peut pas obtenir plus que la quantité maximale" },
+          { code: "exces-depasse-100", texte: "Croire qu'un excès de réactif permet de dépasser 100 % : la quantité maximale est fixée par le réactif limitant" },
+          { code: "vitesse-vs-rendement", texte: "Confondre vitesse et rendement : chauffer accélère, mais ne crée pas de produit en plus" }
+        ],
+        exp: "Le rendement ne peut pas dépasser 100 % : un produit humide ou impur pèse plus que le produit pur. Il faut le sécher ou le purifier avant de le peser."
       },
       {
-        q: "La déshydratation de l'éthanol en éthène (CH₃CH₂OH → CH₂=CH₂ + H₂O) est une réaction :",
+        q: "Une réaction d'élimination se reconnaît à :",
         opts: [
-          "D'addition",
-          "De substitution",
-          "D'élimination",
-          "De polymérisation"
+          "la formation d'une liaison multiple, une molécule donnant deux produits",
+          "la disparition d'une liaison multiple, deux réactifs donnant un seul produit",
+          "le remplacement d'un atome ou d'un groupe par un autre",
+          "l'élimination du réactif en excès par distillation"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "addition-vs-elimination", texte: "Confondre élimination et addition (qui fait disparaître une liaison multiple)" },
+          { code: "substitution-vs-elimination", texte: "Confondre élimination et substitution (un groupe en remplace un autre)" },
+          { code: "elimination-vs-separation", texte: "Confondre la réaction d'élimination avec une technique de séparation" }
+        ],
+        exp: "Élimination : une molécule perd un petit fragment (souvent H₂O) et une liaison multiple se forme, par exemple CH₃–CH₂OH → CH₂=CH₂ + H₂O. C'est l'inverse d'une addition."
+      },
+      {
+        q: "La réaction CH₃–Br + HO⁻ → CH₃–OH + Br⁻ est :",
+        opts: [
+          "une addition, car il y a deux réactifs",
+          "une élimination, car l'ion bromure est éliminé",
+          "une substitution",
+          "une réaction acide-base, car HO⁻ est une base"
         ],
         ans: 2,
-        exp: "Une molécule (éthanol) se scinde en deux produits (éthène + eau) avec formation d'une double liaison : c'est une élimination."
+        pieges: [
+          { code: "substitution-vs-addition", texte: "Croire qu'une réaction à deux réactifs est une addition : aucune liaison multiple ne disparaît" },
+          { code: "substitution-vs-elimination", texte: "Confondre élimination et substitution : aucune liaison multiple ne se forme" },
+          null,
+          { code: "ho-toujours-acide-base", texte: "Croire que HO⁻ réagit toujours en base : ici aucun H⁺ n'est échangé" }
+        ],
+        exp: "Le groupe –OH remplace l'atome de brome : c'est une substitution. Attention : on classe une réaction d'après l'évolution des liaisons du substrat, pas d'après le nombre de réactifs."
       },
       {
-        q: "Dans la réaction CH₃−Br + HO⁻ → CH₃−OH + Br⁻, il s'agit d'une réaction de :",
+        q: "La CCM du produit synthétisé montre deux taches, dont l'une est à la même hauteur que la tache du produit de référence. On peut conclure que le produit :",
         opts: [
-          "Addition",
-          "Élimination",
-          "Substitution",
-          "Polycondensation"
+          "contient l'espèce attendue, mais n'est pas pur",
+          "est pur, puisqu'une tache correspond à la référence",
+          "ne contient pas l'espèce attendue, puisqu'il y a deux taches",
+          "ne peut pas être analysé sans connaître la masse de chaque espèce"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "purete-une-tache-suffit", texte: "Conclure à la pureté alors qu'il y a deux taches : un produit pur ne donne qu'une tache" },
+          { code: "deux-taches-echec", texte: "Croire que deux taches signifient l'absence du produit : l'une d'elles est au même Rf que la référence" },
+          { code: "ccm-masse-espece", texte: "Croire que la migration dépend de la masse des espèces : elle dépend de leur affinité pour l'éluant et la plaque" }
+        ],
+        exp: "Même Rf que la référence : l'espèce attendue est présente ; une seconde tache : il y a une autre espèce (impureté, réactif restant). Attention : la hauteur d'une tache ne dépend pas de la masse de l'espèce."
+      },
+      {
+        q: "Le chauffage à reflux permet :",
+        opts: [
+          "d'augmenter la quantité de produit à l'état final",
+          "d'accélérer la réaction sans perte de matière",
+          "de séparer le produit du mélange réactionnel",
+          "de refroidir le mélange réactionnel"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "facteur-cinetique-etat-final", texte: "Croire que chauffer modifie l'état final : la température est un facteur cinétique" },
+          null,
+          { code: "reflux-vs-distillation", texte: "Confondre chauffage à reflux et distillation : au reflux, rien ne quitte le ballon" },
+          { code: "reflux-refroidit-melange", texte: "Croire que le réfrigérant refroidit le mélange : il condense seulement les vapeurs" }
+        ],
+        exp: "On chauffe pour accélérer la réaction ; le réfrigérant condense les vapeurs qui retombent dans le ballon : aucune perte de matière. Attention : le reflux ne sépare rien et ne change pas l'état final."
+      },
+      {
+        q: "Pour augmenter le rendement d'une estérification, réaction non totale :",
+        opts: [
+          "on ajoute un catalyseur",
+          "on chauffe davantage",
+          "on introduit les réactifs dans les proportions stœchiométriques",
+          "on met un réactif en excès ou on élimine l'eau formée"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "catalyseur-modifie-etat-final", texte: "Croire qu'un catalyseur modifie l'état final : il ne change que la vitesse" },
+          { code: "facteur-cinetique-etat-final", texte: "Croire que chauffer augmente le rendement : la température accélère l'atteinte de l'état final" },
+          { code: "proportions-stoechiometriques-rendement", texte: "Croire que les proportions stœchiométriques maximisent le rendement : pour une réaction non totale, l'excès déplace l'équilibre" },
+          null
+        ],
+        exp: "Un excès de réactif ou l'élimination d'un produit déplace l'équilibre dans le sens direct (Qr < K). Catalyseur et chauffage ne font qu'accélérer l'atteinte du même état final."
+      },
+      {
+        q: "En synthèse, protéger un groupe caractéristique consiste à :",
+        opts: [
+          "le détruire définitivement, car il gêne",
+          "le rendre temporairement non réactif, puis le régénérer",
+          "augmenter sa réactivité pour l'étape suivante",
+          "protéger le manipulateur d'un réactif dangereux"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "protection-irreversible", texte: "Croire que la protection est définitive : on régénère le groupe par déprotection" },
+          null,
+          { code: "protection-vs-activation", texte: "Confondre protection (rendre inerte) et activation (rendre plus réactif)" },
+          { code: "protection-vs-securite", texte: "Confondre protection d'un groupe caractéristique et règles de sécurité" }
+        ],
+        exp: "On transforme temporairement le groupe en un groupe inerte pour qu'il ne réagisse pas lors d'une étape visant un autre site, puis on le régénère (déprotection)."
+      },
+      {
+        q: "Pour former sélectivement une liaison amide entre l'acide carboxylique d'un acide aminé A et l'amine d'un acide aminé B, la première étape est de :",
+        opts: [
+          "mélanger directement A et B",
+          "protéger l'acide carboxylique de A",
+          "protéger l'amine de A",
+          "déprotéger l'amine de B"
         ],
         ans: 2,
-        exp: "Le groupe OH remplace l'atome de brome : c'est une substitution (ici nucléophile)."
+        pieges: [
+          { code: "oubli-reactions-parasites", texte: "Oublier les réactions parasites : l'amine de A peut aussi réagir avec l'acide de B" },
+          { code: "mauvais-groupe-protege", texte: "Protéger le groupe qui doit réagir : c'est l'amine de A, qui ne doit pas réagir, qu'on protège" },
+          null,
+          { code: "ordre-protection-deprotection", texte: "Inverser l'ordre des étapes : la déprotection vient à la fin" }
+        ],
+        exp: "L'amine de A ne doit pas réagir : on la protège d'abord, puis on fait réagir l'acide de A avec l'amine de B, et on déprotège à la fin. Attention : on protège le groupe qui ne doit pas réagir."
       },
       {
-        q: "La polycondensation se distingue de la polyaddition car elle :",
+        q: "Parmi ces choix, lequel respecte un principe de la chimie verte ?",
         opts: [
-          "Ne produit jamais de macromolécule",
-          "S'accompagne de l'élimination d'une petite molécule (souvent H₂O)",
-          "Nécessite uniquement des monomères à liaison double C=C",
-          "Ne concerne que les polymères naturels"
+          "choisir une réaction dont la plupart des atomes des réactifs se retrouvent dans le produit",
+          "chauffer longtemps pour obtenir le rendement le plus élevé possible",
+          "utiliser un large excès de réactif pour améliorer le rendement",
+          "choisir le solvant qui dissout le mieux, quelle que soit sa toxicité"
         ],
-        ans: 1,
-        exp: "La polycondensation élimine une petite molécule (souvent l'eau) à chaque liaison formée entre monomères, contrairement à la polyaddition."
-      },
-      {
-        q: "La protection d'un groupe caractéristique a pour but de :",
-        opts: [
-          "Détruire définitivement ce groupe",
-          "Le rendre temporairement inerte pour éviter qu'il ne réagisse lors d'une étape ultérieure",
-          "Augmenter sa réactivité",
-          "Le remplacer définitivement par un autre groupe"
+        ans: 0,
+        pieges: [
+          null,
+          { code: "chimie-verte-rendement-seul", texte: "Croire que seul le rendement compte : la chimie verte limite aussi l'énergie consommée" },
+          { code: "exces-sans-dechet", texte: "Oublier qu'un large excès de réactif devient un déchet" },
+          { code: "solvant-toxicite", texte: "Choisir un solvant sans tenir compte de sa toxicité" }
         ],
-        ans: 1,
-        exp: "La protection rend un groupe réactif temporairement inerte, le temps qu'une autre transformation ait lieu ailleurs sur la molécule ; elle est réversible (déprotection)."
-      },
-      {
-        q: "Parmi les principes de la chimie verte figure :",
-        opts: [
-          "Maximiser la quantité de déchets pour purifier le produit",
-          "Privilégier l'économie d'atomes pour limiter les sous-produits",
-          "Utiliser systématiquement des solvants très toxiques pour accélérer la réaction",
-          "Éviter tout usage de catalyseur"
-        ],
-        ans: 1,
-        exp: "L'économie d'atomes, qui vise à limiter les sous-produits et déchets, est un principe central de la chimie verte, avec le choix de solvants moins toxiques et l'usage de catalyseurs."
-      },
-      {
-        q: "Dans l'exemple guidé de synthèse d'une liaison peptidique, quelle est la première étape ?",
-        opts: [
-          "Le couplage direct des deux acides aminés",
-          "La protection de la fonction amine non concernée",
-          "La déprotection finale",
-          "La distillation du produit"
-        ],
-        ans: 1,
-        exp: "On protège d'abord la fonction amine du premier acide aminé pour éviter une réaction parasite, avant d'activer l'acide et de réaliser le couplage."
-      },
-      {
-        q: "La liaison peptidique (amide) formée lors du couplage acide/amine correspond au groupe :",
-        opts: [
-          "−COOH",
-          "−CO−NH−",
-          "−OH",
-          "−NH₂"
-        ],
-        ans: 1,
-        exp: "La liaison peptidique, ou liaison amide, correspond au groupement −CO−NH−, formé entre l'acide carboxylique activé et l'amine."
-      },
-      {
-        q: "Un réactif en excès dans une synthèse permet généralement de :",
-        opts: [
-          "Diminuer le rendement",
-          "Déplacer la réaction dans le sens direct et augmenter le rendement en réactif limitant",
-          "Ralentir systématiquement la réaction",
-          "Empêcher la formation du produit visé"
-        ],
-        ans: 1,
-        exp: "Utiliser un réactif en excès déplace l'équilibre (ou favorise la réaction) dans le sens de la formation des produits, augmentant le rendement par rapport au réactif limitant."
+        exp: "L'économie d'atomes limite les sous-produits et déchets. La chimie verte cherche aussi des solvants peu toxiques, des catalyseurs et des conditions douces. Attention : un bon rendement ne suffit pas."
       }
     ],
     annales: [
