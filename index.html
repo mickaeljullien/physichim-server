@@ -38490,114 +38490,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une onde mécanique progressive se propage dans un milieu matériel avec transport...",
+        q: "Un bouchon flotte sur un étang. Une vague passe à son niveau. Le bouchon :",
         opts: [
-          "de matière, sans transport d'énergie",
-          "d'énergie, sans transport de matière",
-          "à la fois de matière et d'énergie",
-          "ni de matière ni d'énergie"
+          "avance avec la vague jusqu'au bord",
+          "monte puis redescend, à peu près sur place",
+          "reste immobile, la vague passe sous lui",
+          "oscille horizontalement, dans le sens de la propagation"
         ],
         ans: 1,
-        exp: "Une onde mécanique progressive transporte de l'énergie mais ne déplace pas la matière du milieu : chaque point du milieu oscille autour de sa position d'équilibre."
-      },
-      {
-        q: "Une onde le long d'une corde tendue est une onde...",
-        opts: [
-          "longitudinale",
-          "transversale",
-          "ni transversale ni longitudinale",
-          "sonore"
+        pieges: [
+          { code: "onde-transporte-matiere", texte: "Croire qu'une onde transporte de la matière : le bouchon oscille sur place, seule la perturbation (et l'énergie) avance" },
+          null,
+          { code: "point-milieu-immobile", texte: "Croire que le milieu reste immobile : chaque point du milieu reproduit la perturbation quand l'onde l'atteint" },
+          { code: "transversale-longitudinale-confondues", texte: "Confondre onde transversale et longitudinale : à la surface de l'eau, la perturbation est surtout verticale" }
         ],
-        ans: 1,
-        exp: "Sur une corde, la perturbation (déplacement vertical) est perpendiculaire à la direction de propagation (horizontale) : l'onde est transversale."
+        exp: "Une onde mécanique progressive transporte de l'énergie sans transport de matière : le bouchon monte et redescend quand l'onde passe, puis revient à sa position."
       },
       {
-        q: "Le son émis par un haut-parleur est une onde...",
+        q: "Le son qui se propage dans l'air est une onde :",
         opts: [
           "transversale",
+          "électromagnétique, comme la lumière",
           "longitudinale",
-          "électromagnétique",
-          "stationnaire"
+          "qui transporte l'air jusqu'à l'oreille"
         ],
-        ans: 1,
-        exp: "Le son correspond à une succession de compressions et de détentes de l'air, parallèles à la direction de propagation : c'est une onde longitudinale."
+        ans: 2,
+        pieges: [
+          { code: "transversale-longitudinale-confondues", texte: "Confondre onde transversale et longitudinale : dans le son, l'air est comprimé et détendu dans la direction de propagation" },
+          { code: "son-electromagnetique", texte: "Confondre son et lumière : le son est une onde mécanique, il lui faut un milieu matériel" },
+          null,
+          { code: "onde-transporte-matiere", texte: "Croire qu'une onde transporte de la matière : l'air vibre sur place et transmet la vibration à l'air voisin" }
+        ],
+        exp: "Le son est une succession de compressions et de détentes de l'air, parallèles à la direction de propagation : c'est une onde mécanique longitudinale."
       },
       {
-        q: "Une onde se propage le long d'une corde à v = 8,0 m/s. La corde mesure d = 3,2 m. Quel est le retard τ avec lequel l'onde atteint l'extrémité ?",
+        q: "Une perturbation se propage à la célérité v = 12 m·s⁻¹ le long d'une corde de 480 cm. Elle atteint l'autre extrémité avec un retard τ = d / v de :",
         opts: [
-          "0,25 s",
+          "40 s",
           "0,40 s",
-          "2,5 s",
-          "4,0 s"
+          "58 s",
+          "2,5 s"
         ],
         ans: 1,
-        exp: "τ = d/v = 3,2/8,0 = 0,40 s."
+        pieges: [
+          { code: "conversion-cm-m", texte: "Oublier de convertir les centimètres en mètres : d = 480 cm = 4,80 m" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 4,80 × 12 ; il faut τ = d / v" },
+          { code: "retard-rapport-inverse", texte: "Inverser le rapport : v / d = 12 / 4,80 ; le retard est la distance divisée par la célérité" }
+        ],
+        exp: "τ = d / v = 4,80 / 12 = 0,40 s. Attention : la distance doit être en mètres."
       },
       {
-        q: "Si la longueur de la corde double (à célérité inchangée), le retard τ...",
+        q: "Dans quel milieu le son se propage-t-il le plus vite ?",
         opts: [
-          "est divisé par deux",
-          "reste inchangé",
-          "double",
-          "est multiplié par quatre"
+          "Dans l'air, moins dense",
+          "À la même vitesse dans tous les milieux",
+          "Dans le vide, sans obstacle",
+          "Dans l'acier"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "son-plus-vite-dans-air", texte: "Croire que le son va plus vite dans l'air, « moins encombré » : il est plus rapide dans les liquides et encore plus dans les solides" },
+          { code: "vitesse-son-universelle", texte: "Croire que la vitesse du son ne dépend pas du milieu : environ 340 m·s⁻¹ dans l'air, 1 500 dans l'eau, 5 000 dans l'acier" },
+          { code: "son-dans-le-vide", texte: "Croire que le son se propage dans le vide : c'est une onde mécanique, il lui faut un milieu matériel" },
+          null
+        ],
+        exp: "Le son se propage d'autant plus vite que le milieu transmet bien la perturbation : environ 340 m·s⁻¹ dans l'air, 1 500 m·s⁻¹ dans l'eau, 5 000 m·s⁻¹ dans l'acier, et pas du tout dans le vide."
+      },
+      {
+        q: "Une onde sonore a une fréquence f = 250 Hz. Sa période vaut :",
+        opts: [
+          "250 s",
+          "4,0 s",
+          "4,0 ms",
+          "4,0×10⁻³ ms"
         ],
         ans: 2,
-        exp: "τ = d/v : à célérité constante, τ est proportionnel à la distance d. Si d double, τ double aussi."
-      },
-      {
-        q: "Une onde sonore a une fréquence f = 440 Hz et se propage dans l'air à v = 340 m/s. Quelle est sa période T ?",
-        opts: [
-          "2,3 ms",
-          "4,4 ms",
-          "44 ms",
-          "0,23 ms"
+        pieges: [
+          { code: "periode-vs-frequence", texte: "Confondre période et fréquence : T = 1 / f, la période est une durée" },
+          { code: "puissance-de-dix-erronee", texte: "Mal calculer 1 / 250 : 1 / 250 = 4,0×10⁻³ s, pas 4,0 s" },
+          null,
+          { code: "conversion-s-ms-inverse", texte: "Convertir dans le mauvais sens : 4,0×10⁻³ s = 4,0 ms" }
         ],
-        ans: 0,
-        exp: "T = 1/f = 1/440 ≈ 2,27×10⁻³ s ≈ 2,3 ms."
+        exp: "T = 1 / f = 1 / 250 = 4,0×10⁻³ s = 4,0 ms. Attention : 1 s = 1 000 ms."
       },
       {
-        q: "Pour cette même onde (f = 440 Hz, v = 340 m/s), quelle est sa longueur d'onde λ dans l'air ?",
+        q: "Une onde sonore de fréquence f = 680 Hz se propage dans l'air à v = 340 m·s⁻¹. Sa longueur d'onde vaut λ = v / f, soit :",
         opts: [
-          "7,7 cm",
-          "34 cm",
-          "77 cm",
-          "150 cm"
+          "2,3×10⁵ m",
+          "2,0 m",
+          "0,50 s",
+          "0,50 m"
         ],
-        ans: 2,
-        exp: "λ = v×T = 340 × 2,27×10⁻³ ≈ 0,773 m ≈ 77 cm."
+        ans: 3,
+        pieges: [
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 340 × 680 ; il faut λ = v / f = v × T" },
+          { code: "lambda-rapport-inverse", texte: "Inverser le rapport : f / v = 680 / 340 ; la longueur d'onde est v / f" },
+          { code: "lambda-vs-periode", texte: "Confondre longueur d'onde et période : λ est une distance (en m), T une durée (en s)" },
+          null
+        ],
+        exp: "λ = v / f = 340 / 680 = 0,50 m : c'est la distance parcourue par l'onde pendant une période. Attention : λ est une distance, pas une durée."
       },
       {
-        q: "Deux microphones distants de d = 2,00 m enregistrent un même signal sonore avec un décalage τ = 5,9 ms. Quelle célérité du son en déduit-on ?",
+        q: "La longueur d'onde d'une onde périodique est :",
         opts: [
-          "170 m/s",
-          "339 m/s",
-          "678 m/s",
-          "5,9 m/s"
+          "la durée d'une oscillation",
+          "la distance parcourue par l'onde pendant une période",
+          "la hauteur maximale de la perturbation",
+          "la distance parcourue par un point du milieu pendant une période"
         ],
         ans: 1,
-        exp: "v = d/τ = 2,00 / (5,9×10⁻³) ≈ 339 m/s, très proche de la valeur tabulée (340 m/s)."
+        pieges: [
+          { code: "lambda-vs-periode", texte: "Confondre longueur d'onde et période : la durée d'une oscillation est la période T" },
+          null,
+          { code: "lambda-vs-amplitude", texte: "Confondre longueur d'onde et amplitude : l'amplitude est la hauteur de la perturbation" },
+          { code: "lambda-deplacement-point", texte: "Croire que λ est le chemin d'un point du milieu : chaque point oscille sur place, c'est l'onde qui avance de λ" }
+        ],
+        exp: "La longueur d'onde λ est la distance parcourue par l'onde pendant une période T (λ = v × T) ; c'est aussi la plus petite distance entre deux points qui vibrent de la même façon."
       },
       {
-        q: "Un capteur à ultrasons (v = 340 m/s) mesure une durée aller-retour Δt = 24 ms entre l'émission et la réception de l'écho sur un obstacle. Quelle est la distance capteur-obstacle ?",
+        q: "Deux microphones distants de 1,50 m enregistrent le même claquement avec un décalage de 4,4 ms. La célérité du son vaut v = d / τ, soit environ :",
+        opts: [
+          "6,6×10⁻³ m·s⁻¹",
+          "2,9×10⁻³ m·s⁻¹",
+          "3,4×10² m·s⁻¹",
+          "0,34 m·s⁻¹"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 1,50 × 4,4×10⁻³ ; il faut v = d / τ" },
+          { code: "vitesse-rapport-inverse", texte: "Inverser le rapport : τ / d au lieu de v = d / τ" },
+          null,
+          { code: "conversion-ms-s", texte: "Oublier de convertir les millisecondes en secondes : 4,4 ms = 4,4×10⁻³ s" }
+        ],
+        exp: "v = d / τ = 1,50 / 4,4×10⁻³ ≈ 3,4×10² m·s⁻¹, proche de la valeur tabulée (340 m·s⁻¹ dans l'air). Attention : τ en secondes."
+      },
+      {
+        q: "Un télémètre à ultrasons (v = 340 m·s⁻¹) reçoit l'écho d'un obstacle 12 ms après l'émission. L'obstacle est à :",
         opts: [
           "4,08 m",
-          "8,16 m",
           "2,04 m",
-          "16,32 m"
-        ],
-        ans: 0,
-        exp: "Distance aller-retour = v×Δt = 340 × 0,024 = 8,16 m. La distance capteur-obstacle est la moitié : 8,16/2 = 4,08 m."
-      },
-      {
-        q: "Pourquoi utilise-t-on des ultrasons plutôt que des sons audibles pour un télémètre ?",
-        opts: [
-          "car ils se propagent plus vite dans l'air",
-          "car ils sont inaudibles pour l'oreille humaine, évitant toute gêne",
-          "car ils ne subissent pas de réflexion",
-          "car leur longueur d'onde est plus grande"
+          "2,04×10³ m",
+          "1,02 m"
         ],
         ans: 1,
-        exp: "Les ultrasons (fréquence supérieure à 20 kHz) sont inaudibles par l'oreille humaine, ce qui évite toute gêne sonore, tout en se propageant dans l'air comme n'importe quelle onde sonore."
+        pieges: [
+          { code: "oubli-aller-retour", texte: "Oublier l'aller-retour : en 12 ms, les ultrasons vont jusqu'à l'obstacle et reviennent, d = v Δt / 2" },
+          null,
+          { code: "conversion-ms-s", texte: "Oublier de convertir les millisecondes en secondes : 12 ms = 0,012 s" },
+          { code: "aller-retour-compte-deux-fois", texte: "Diviser deux fois par 2 : la durée mesurée correspond à un seul aller-retour" }
+        ],
+        exp: "Les ultrasons parcourent 340 × 0,012 = 4,08 m en tout, pour un aller-retour : l'obstacle est à 4,08 / 2 = 2,04 m. Attention à l'aller-retour."
+      },
+      {
+        q: "Pendant un orage, on entend le tonnerre 6,0 s après avoir vu l'éclair (son : 340 m·s⁻¹). L'orage est à environ :",
+        opts: [
+          "2,0 km",
+          "1,8×10⁶ km",
+          "57 m",
+          "4,1 km"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "celerite-son-vs-lumiere", texte: "Utiliser la célérité de la lumière : le retard vient du son, la lumière arrive quasi instantanément" },
+          { code: "vitesse-rapport-inverse", texte: "Inverser le rapport : 340 / 6,0 ; la distance est d = v × τ" },
+          { code: "aller-retour-a-tort", texte: "Compter un aller-retour qui n'existe pas : le son du tonnerre ne fait qu'un aller jusqu'à nous ; ici 2 × 340 × 6,0" }
+        ],
+        exp: "La lumière arrive presque instantanément ; le son met 6,0 s : d = v × τ = 340 × 6,0 ≈ 2,0×10³ m = 2,0 km (environ 3 s par kilomètre)."
       }
     ],
     annales: [],
@@ -39093,114 +39153,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La vergence d'une lentille convergente de distance focale f' = 25 cm vaut :",
+        q: "La vergence d'une lentille convergente de distance focale f' = 20 cm vaut C = 1 / f', soit :",
         opts: [
-          "0,25 δ",
-          "4,0 δ",
-          "2,5 δ",
-          "40 δ"
-        ],
-        ans: 1,
-        exp: "f' = 25 cm = 0,25 m. C = 1/f' = 1/0,25 = 4,0 δ."
-      },
-      {
-        q: "Un objet est placé en OA = −40 cm devant une lentille convergente de distance focale f' = 15 cm. Où se forme l'image (OA') ?",
-        opts: [
-          "OA' = −24 cm",
-          "OA' = 15 cm",
-          "OA' = 24 cm",
-          "OA' = 40 cm"
-        ],
-        ans: 2,
-        exp: "1/OA' = 1/f' + 1/OA = 1/0,15 + 1/(−0,40) ≈ 4,167, donc OA' ≈ 0,24 m = 24 cm."
-      },
-      {
-        q: "Dans la situation précédente, l'image formée est :",
-        opts: [
-          "virtuelle, car OA' < 0",
-          "réelle, car OA' > 0",
-          "virtuelle, car OA' > 0",
-          "impossible à déterminer"
-        ],
-        ans: 1,
-        exp: "OA' = 24 cm > 0 : l'image est réelle."
-      },
-      {
-        q: "Pour cette même situation, avec AB = 2,0 cm, OA = −40 cm et OA' = 24 cm, quel est le grandissement γ ?",
-        opts: [
-          "+0,60",
-          "−0,60",
-          "+1,67",
-          "−1,67"
-        ],
-        ans: 1,
-        exp: "γ = OA'/OA = 24/(−40) = −0,60."
-      },
-      {
-        q: "Le grandissement étant négatif dans cet exemple, l'image est :",
-        opts: [
-          "droite et de même taille que l'objet",
-          "droite et agrandie",
-          "renversée",
-          "virtuelle uniquement"
-        ],
-        ans: 2,
-        exp: "Un grandissement négatif signifie que l'image est renversée par rapport à l'objet."
-      },
-      {
-        q: "Quelle est la taille de l'image A'B' dans cette situation (AB = 2,0 cm, γ = −0,60) ?",
-        opts: [
-          "1,2 cm, image renversée",
-          "3,3 cm, image droite",
-          "0,60 cm, image renversée",
-          "2,0 cm, image droite"
+          "5,0 δ",
+          "0,050 δ",
+          "0,20 δ",
+          "−5,0 δ"
         ],
         ans: 0,
-        exp: "A'B' = γ×AB = −0,60×2,0 = −1,2 cm. En valeur absolue, la taille est 1,2 cm et le signe négatif confirme une image renversée."
+        pieges: [
+          null,
+          { code: "conversion-cm-m", texte: "Garder la distance focale en centimètres : 1 / 20 ; f' = 20 cm = 0,20 m" },
+          { code: "vergence-egale-focale", texte: "Confondre vergence et distance focale : C est l'inverse de f', exprimé en dioptries (m⁻¹)" },
+          { code: "vergence-signe-convergente", texte: "Donner un signe négatif : une lentille convergente a une vergence positive" }
+        ],
+        exp: "C = 1 / f' = 1 / 0,20 = 5,0 δ. Attention : f' en mètres ; une lentille convergente a une vergence positive."
       },
       {
-        q: "On éclaire un écran blanc simultanément avec de la lumière rouge et de la lumière verte. Quelle couleur perçoit-on ?",
+        q: "Un objet est placé en OA = −30 cm devant une lentille convergente de distance focale f' = 10 cm. Avec 1/OA' − 1/OA = 1/f', l'image se forme en :",
         opts: [
-          "cyan",
-          "magenta",
-          "jaune",
-          "blanc"
+          "OA' = 7,5 cm",
+          "OA' = 15 cm",
+          "OA' = 6,7 cm",
+          "OA' = −15 cm"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oa-sans-signe", texte: "Oublier le signe de OA : l'objet est avant la lentille, OA = −0,30 m" },
+          null,
+          { code: "oubli-inverse-conjugaison", texte: "Donner 1/OA' = 6,7 m⁻¹ au lieu de OA' : il faut encore prendre l'inverse, OA' = 1 / 6,7 ≈ 0,15 m" },
+          { code: "image-cote-objet", texte: "Se tromper de signe sur OA' : ici 1/OA' > 0, l'image est après la lentille" }
+        ],
+        exp: "1/OA' = 1/f' + 1/OA = 1/0,10 + 1/(−0,30) ≈ 6,7 m⁻¹, donc OA' ≈ 0,15 m = 15 cm. Attention : grandeurs algébriques (OA < 0) et ne pas oublier de prendre l'inverse."
+      },
+      {
+        q: "Avec OA' = +15 cm, l'image formée par la lentille est :",
+        opts: [
+          "virtuelle, car OA' est positive",
+          "réelle, car elle est plus petite que l'objet",
+          "réelle, observable sur un écran placé après la lentille",
+          "impossible à caractériser sans la taille de l'objet"
         ],
         ans: 2,
-        exp: "La superposition de rouge et de vert (synthèse additive) donne du jaune."
+        pieges: [
+          { code: "reelle-virtuelle-inverses", texte: "Inverser réelle et virtuelle : OA' > 0, l'image est après la lentille, on peut la recueillir sur un écran" },
+          { code: "reelle-car-petite", texte: "Relier réelle à la taille : une image réelle peut être plus grande ou plus petite que l'objet" },
+          null,
+          { code: "nature-image-taille", texte: "Croire qu'il faut la taille de l'objet : le signe de OA' suffit à dire si l'image est réelle" }
+        ],
+        exp: "OA' > 0 : l'image se forme après la lentille, là où les rayons se croisent réellement ; on peut l'observer sur un écran : elle est réelle."
       },
       {
-        q: "Ce mélange de lumières colorées relève de :",
+        q: "Pour OA = −30 cm et OA' = 15 cm, le grandissement γ = OA' / OA vaut :",
         opts: [
-          "la synthèse soustractive",
-          "la synthèse additive",
-          "la diffraction",
-          "la réfraction"
+          "+0,50",
+          "−2,0",
+          "−0,50",
+          "−0,50 cm"
         ],
-        ans: 1,
-        exp: "L'addition de deux lumières colorées sur un écran (ou une surface blanche) est un exemple de synthèse additive."
+        ans: 2,
+        pieges: [
+          { code: "signe-gamma-ignore", texte: "Ignorer le signe : OA est négatif, donc γ = 15 / (−30) est négatif" },
+          { code: "grandissement-inverse", texte: "Inverser le rapport : γ = OA' / OA = 15 / (−30), pas OA / OA'" },
+          null,
+          { code: "gamma-avec-unite", texte: "Donner une unité au grandissement : c'est un rapport de deux longueurs, il est sans unité" }
+        ],
+        exp: "γ = OA' / OA = 15 / (−30) = −0,50 (sans unité). Attention : avec les grandeurs algébriques, le signe de γ a un sens."
       },
       {
-        q: "Un filtre magenta placé devant une lumière blanche laisse passer :",
+        q: "Un objet AB = 3,0 cm donne, avec γ = −0,50, une image A'B' :",
         opts: [
-          "uniquement le vert",
-          "le rouge et le bleu",
-          "uniquement le rouge",
-          "le vert et le bleu"
+          "de 1,5 cm, renversée",
+          "de 1,5 cm, droite",
+          "de 6,0 cm, renversée",
+          "de 1,5 cm, virtuelle car γ est négatif"
         ],
-        ans: 1,
-        exp: "Un filtre magenta absorbe le vert et laisse passer le rouge et le bleu."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "signe-gamma-ignore", texte: "Ignorer le signe de γ : un grandissement négatif indique une image renversée" },
+          { code: "grandissement-inverse", texte: "Diviser au lieu de multiplier : |A'B'| = |γ| × AB = 0,50 × 3,0 cm" },
+          { code: "renversee-vs-virtuelle", texte: "Confondre renversée et virtuelle : le signe de γ donne le sens de l'image, le signe de OA' sa nature" }
+        ],
+        exp: "|A'B'| = |γ| × AB = 0,50 × 3,0 = 1,5 cm ; γ < 0 : l'image est renversée. Attention : le signe de γ indique le sens, pas la nature réelle ou virtuelle."
       },
       {
-        q: "Un œil hypermétrope non corrigé a une vergence C_œil = 63,0 δ (œil normal : 64,0 δ). Quel type de lentille correctrice faut-il utiliser ?",
+        q: "Dans le modèle de l'œil réduit, quand on passe de la vision d'un objet lointain à celle d'un objet proche, l'image reste nette sur la rétine car :",
         opts: [
-          "une lentille divergente, de vergence −1,0 δ",
-          "une lentille convergente, de vergence +1,0 δ",
-          "une lentille convergente, de vergence +4,0 δ",
-          "aucune lentille n'est nécessaire"
+          "la rétine s'éloigne du cristallin",
+          "la vergence du cristallin augmente",
+          "la vergence du cristallin diminue",
+          "la pupille se contracte"
         ],
         ans: 1,
-        exp: "C_lentille = C_normal − C_œil = 64,0 − 63,0 = 1,0 δ. Une vergence positive correspond à une lentille convergente, qui compense le déficit de convergence de l'œil hypermétrope."
+        pieges: [
+          { code: "accommodation-retine-bouge", texte: "Croire que la rétine se déplace : la distance cristallin-rétine est fixe, c'est le cristallin qui se déforme" },
+          null,
+          { code: "accommodation-sens-inverse", texte: "Inverser le sens de l'accommodation : pour un objet proche, l'œil doit être plus convergent" },
+          { code: "accommodation-vs-pupille", texte: "Confondre accommodation et adaptation à la lumière : la pupille règle la quantité de lumière, pas la netteté" }
+        ],
+        exp: "La distance cristallin-rétine est fixe : pour un objet plus proche, le cristallin se bombe et sa vergence augmente, afin que l'image reste sur la rétine. C'est l'accommodation."
+      },
+      {
+        q: "On éclaire un écran blanc à la fois en lumière rouge et en lumière verte. La zone éclairée par les deux paraît :",
+        opts: [
+          "marron",
+          "blanche",
+          "noire",
+          "jaune"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "additive-vs-soustractive", texte: "Raisonner comme avec des peintures : superposer des lumières, c'est la synthèse additive" },
+          { code: "deux-couleurs-donnent-blanc", texte: "Croire que deux lumières colorées donnent du blanc : il faut rouge, vert et bleu" },
+          { code: "lumiere-plus-lumiere-noir", texte: "Croire que des lumières superposées s'annulent : en synthèse additive, la lumière s'ajoute" },
+          null
+        ],
+        exp: "Synthèse additive : rouge + vert = jaune ; rouge + vert + bleu = blanc. Attention : mélanger des peintures (synthèse soustractive) ne donne pas le même résultat."
+      },
+      {
+        q: "La lumière blanche traverse un filtre jaune, puis un filtre cyan. La lumière qui sort est :",
+        opts: [
+          "verte",
+          "blanche",
+          "noire",
+          "cyan"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "filtres-ajoutent", texte: "Croire que les filtres ajoutent de la lumière : chaque filtre absorbe une partie de la lumière qu'il reçoit" },
+          { code: "deux-filtres-noir", texte: "Croire que deux filtres bloquent tout : le vert est transmis par le jaune et par le cyan" },
+          { code: "dernier-filtre-gagne", texte: "Croire que seul le dernier filtre compte : le cyan ne reçoit déjà plus que le rouge et le vert" }
+        ],
+        exp: "Le filtre jaune transmet le rouge et le vert ; le filtre cyan transmet le vert et le bleu. Seul le vert traverse les deux : la lumière qui sort est verte (synthèse soustractive)."
+      },
+      {
+        q: "Une tomate, rouge en lumière blanche, est éclairée uniquement en lumière verte. Elle paraît :",
+        opts: [
+          "verte",
+          "rouge",
+          "noire",
+          "jaune"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "objet-prend-couleur-lumiere", texte: "Croire que l'objet prend la couleur de la lumière : la tomate absorbe le vert, elle ne le diffuse pas" },
+          { code: "couleur-propriete-objet", texte: "Croire que la couleur appartient à l'objet seul : elle dépend aussi de la lumière qui l'éclaire" },
+          null,
+          { code: "additive-objet", texte: "Additionner la couleur de l'objet et celle de la lumière : l'objet ne diffuse que ce qu'il reçoit et n'absorbe pas" }
+        ],
+        exp: "La tomate diffuse le rouge et absorbe les autres couleurs. Éclairée en vert, elle absorbe tout et ne renvoie rien : elle paraît noire. La couleur perçue dépend de l'objet et de la lumière."
+      },
+      {
+        q: "Un filtre magenta éclairé en lumière blanche :",
+        opts: [
+          "ajoute du magenta à la lumière blanche",
+          "absorbe le rouge et le bleu, transmet le vert",
+          "transmet une seule radiation, de couleur magenta",
+          "absorbe le vert, transmet le rouge et le bleu"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "filtre-colore-la-lumiere", texte: "Croire qu'un filtre colore la lumière : il absorbe une partie de la lumière blanche et transmet le reste" },
+          { code: "absorbe-transmet-inverses", texte: "Inverser absorbé et transmis : le filtre magenta laisse passer les couleurs qui forment le magenta (rouge et bleu)" },
+          { code: "magenta-radiation-unique", texte: "Croire que le magenta est une radiation unique : c'est le mélange de rouge et de bleu" },
+          null
+        ],
+        exp: "Le magenta est la superposition du rouge et du bleu : un filtre magenta transmet le rouge et le bleu et absorbe le vert. Attention : un filtre ne crée pas de couleur, il en retire."
       }
     ],
     annales: [],
@@ -39682,114 +39802,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La diffraction de la lumière est un phénomène caractéristique de :",
+        q: "Dans le modèle particulaire, un photon est :",
         opts: [
-          "son caractère particulaire uniquement",
-          "son caractère ondulatoire",
-          "sa vitesse dans le vide",
-          "sa polarisation"
+          "un électron émis par la source de lumière",
+          "un grain d'énergie lumineuse, d'énergie E = h × f",
+          "une petite particule de matière, de masse non nulle",
+          "l'énergie totale transportée par un faisceau"
         ],
         ans: 1,
-        exp: "La diffraction (comme les interférences) ne s'explique que par le modèle ondulatoire de la lumière."
-      },
-      {
-        q: "Un faisceau laser de longueur d'onde λ = 633 nm traverse une fente de largeur a = 0,10 mm. Quel est l'écart angulaire de diffraction θ (en rad) ?",
-        opts: [
-          "6,33×10⁻³ rad",
-          "6,33×10⁻⁵ rad",
-          "1,58×10² rad",
-          "3,17×10⁻³ rad"
+        pieges: [
+          { code: "photon-vs-electron", texte: "Confondre photon et électron : le photon est un grain de lumière, sans charge électrique" },
+          null,
+          { code: "photon-particule-matiere", texte: "Croire que le photon est un grain de matière : c'est un « paquet » d'énergie, de masse nulle" },
+          { code: "photon-vs-faisceau", texte: "Confondre un photon et le faisceau : un faisceau transporte un très grand nombre de photons" }
         ],
-        ans: 0,
-        exp: "θ = λ/a = 633×10⁻⁹ / 1,0×10⁻⁴ = 6,33×10⁻³ rad."
+        exp: "La lumière peut être décrite comme un flux de photons, grains d'énergie E = h × f = h c / λ. Attention : un photon n'est pas un électron, et un faisceau en contient un nombre immense."
       },
       {
-        q: "Si l'on utilise une fente deux fois plus étroite (a divisé par 2), l'écart angulaire de diffraction θ...",
+        q: "L'énergie d'un photon de longueur d'onde λ = 600 nm vaut E = h c / λ (h = 6,63×10⁻³⁴ J·s ; c = 3,00×10⁸ m·s⁻¹), soit :",
         opts: [
-          "est divisé par deux",
-          "reste inchangé",
-          "double",
-          "est multiplié par quatre"
+          "3,32×10⁻²⁸ J",
+          "3,98×10⁻⁴⁰ J",
+          "3,32×10⁻¹⁹ J",
+          "1,99×10⁻²⁵ J"
         ],
         ans: 2,
-        exp: "θ = λ/a est inversement proportionnel à a : si a est divisé par deux, θ double."
-      },
-      {
-        q: "Dans le modèle particulaire, la lumière est constituée de grains d'énergie appelés :",
-        opts: [
-          "électrons",
-          "photons",
-          "phonons",
-          "quanta de matière"
+        pieges: [
+          { code: "conversion-nm-m", texte: "Oublier de convertir λ en mètres : 600 nm = 6,00×10⁻⁷ m" },
+          { code: "energie-photon-h-lambda", texte: "Multiplier h par λ au lieu de calculer h c / λ" },
+          null,
+          { code: "oubli-longueur-onde", texte: "Oublier de diviser par λ : h × c" }
         ],
-        ans: 1,
-        exp: "Le photon est le grain d'énergie associé à la lumière dans le modèle particulaire."
+        exp: "E = h c / λ = 6,63×10⁻³⁴ × 3,00×10⁸ / 6,00×10⁻⁷ ≈ 3,32×10⁻¹⁹ J. Attention : λ en mètres (1 nm = 10⁻⁹ m)."
       },
       {
-        q: "Une radiation de longueur d'onde λ = 500 nm dans le vide a pour énergie de photon (h = 6,63×10⁻³⁴ J·s, c = 3,00×10⁸ m/s) :",
+        q: "Quel photon transporte le plus d'énergie : un photon rouge (λ = 700 nm) ou un photon violet (λ = 400 nm) ?",
         opts: [
-          "3,98×10⁻¹⁹ J",
-          "3,98×10⁻²⁵ J",
-          "1,33×10⁻⁶ J",
-          "6,63×10⁻³⁴ J"
+          "Le rouge, car E est proportionnelle à λ",
+          "Les deux transportent la même énergie",
+          "Le violet, car E est inversement proportionnelle à λ",
+          "Cela dépend de l'intensité de la lumière"
         ],
-        ans: 0,
-        exp: "f = c/λ = 3,00×10⁸/500×10⁻⁹ = 6,00×10¹⁴ Hz. E = h×f = 6,63×10⁻³⁴×6,00×10¹⁴ ≈ 3,98×10⁻¹⁹ J."
+        ans: 2,
+        pieges: [
+          { code: "energie-proportionnelle-lambda", texte: "Croire que E est proportionnelle à λ : E = h c / λ, une petite longueur d'onde donne une grande énergie" },
+          { code: "energie-photon-constante", texte: "Croire que tous les photons ont la même énergie : elle dépend de la fréquence de la radiation" },
+          null,
+          { code: "energie-photon-intensite", texte: "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence" }
+        ],
+        exp: "E = h c / λ : plus λ est petite, plus le photon est énergétique. E(violet) ≈ 4,97×10⁻¹⁹ J > E(rouge) ≈ 2,84×10⁻¹⁹ J. L'intensité change le nombre de photons, pas l'énergie de chacun."
       },
       {
-        q: "Entre un photon de lumière rouge (λ = 700 nm) et un photon de lumière violette (λ = 400 nm), lequel transporte le plus d'énergie ?",
+        q: "Une radiation de longueur d'onde λ = 300 nm dans le vide appartient au domaine :",
         opts: [
-          "le photon rouge, car E est proportionnelle à λ",
-          "le photon violet, car E est inversement proportionnelle à λ",
-          "les deux transportent la même énergie",
-          "cela dépend de l'intensité lumineuse"
+          "infrarouge",
+          "visible, violet",
+          "ultraviolet",
+          "des ondes radio"
         ],
-        ans: 1,
-        exp: "E = hc/λ : l'énergie est inversement proportionnelle à λ. Le photon violet (λ plus petite) transporte donc plus d'énergie (≈ 4,97×10⁻¹⁹ J contre ≈ 2,84×10⁻¹⁹ J pour le rouge)."
+        ans: 2,
+        pieges: [
+          { code: "uv-ir-inverses", texte: "Inverser ultraviolet et infrarouge : en dessous de 400 nm (avant le violet), c'est l'ultraviolet" },
+          { code: "visible-mal-borne", texte: "Mal placer les limites du visible : il s'étend d'environ 400 nm (violet) à 800 nm (rouge)" },
+          null,
+          { code: "domaines-ondes-inverses", texte: "Inverser l'échelle : les ondes radio ont des longueurs d'onde bien plus grandes (du cm au km)" }
+        ],
+        exp: "Le visible va d'environ 400 nm (violet) à 800 nm (rouge). En dessous de 400 nm : ultraviolet ; au-dessus de 800 nm : infrarouge. 300 nm est donc dans l'ultraviolet."
       },
       {
-        q: "Le spectre d'un filament de lampe à incandescence est :",
-        opts: [
-          "un spectre de raies d'émission",
-          "un spectre continu",
-          "un spectre de raies d'absorption",
-          "un spectre discret"
-        ],
-        ans: 1,
-        exp: "Le filament incandescent produit un spectre continu : toutes les couleurs se succèdent sans interruption."
-      },
-      {
-        q: "Quel type de spectre permet d'identifier avec certitude un élément chimique ?",
-        opts: [
-          "le spectre continu",
-          "le spectre de raies, propre à chaque élément",
-          "les deux de façon équivalente",
-          "aucun des deux"
-        ],
-        ans: 1,
-        exp: "Le spectre de raies est une signature propre à chaque élément chimique, liée à ses niveaux d'énergie quantifiés, ce qui permet de l'identifier avec certitude. Le spectre continu ne renseigne que sur la température de la source."
-      },
-      {
-        q: "Une transition électronique dans l'atome d'hydrogène s'accompagne de l'émission d'un photon de longueur d'onde λ = 486 nm (raie Hβ). Ce photon transporte une énergie d'environ :",
-        opts: [
-          "4,09×10⁻¹⁹ J",
-          "4,09×10⁻²⁵ J",
-          "2,05×10⁻¹⁹ J",
-          "8,18×10⁻¹⁹ J"
-        ],
-        ans: 0,
-        exp: "f = c/λ ≈ 6,17×10¹⁴ Hz. E = h×f ≈ 6,63×10⁻³⁴×6,17×10¹⁴ ≈ 4,09×10⁻¹⁹ J."
-      },
-      {
-        q: "Le fait que l'énergie d'un photon émis corresponde exactement à une différence d'énergie entre deux niveaux atomiques prouve que :",
+        q: "L'énergie d'un photon émis par un atome correspond exactement à l'écart entre deux de ses niveaux d'énergie. Cela montre que :",
         opts: [
           "l'énergie de l'atome peut prendre n'importe quelle valeur",
-          "les niveaux d'énergie de l'atome sont quantifiés (valeurs discrètes)",
-          "l'atome n'émet jamais de lumière",
-          "le photon n'a pas d'énergie propre"
+          "tous les photons émis ont la même énergie",
+          "l'énergie du photon est la somme des énergies des deux niveaux",
+          "l'énergie de l'atome ne peut prendre que certaines valeurs"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "energie-atome-continue", texte: "Croire que l'atome peut absorber ou émettre n'importe quelle énergie : ses niveaux sont quantifiés" },
+          { code: "photons-tous-identiques", texte: "Croire qu'un atome n'émet qu'un seul type de photon : chaque transition entre deux niveaux donne une raie" },
+          { code: "delta-e-somme-niveaux", texte: "Additionner les énergies des niveaux : l'énergie du photon est l'écart ΔE = |E₂ − E₁|" },
+          null
+        ],
+        exp: "Les niveaux d'énergie d'un atome sont quantifiés : seules certaines valeurs sont permises. Un photon émis a l'énergie ΔE = |E₂ − E₁| d'une transition, d'où des raies de longueurs d'onde bien précises."
+      },
+      {
+        q: "Un atome passe du niveau E₂ = −5,45×10⁻¹⁹ J au niveau E₁ = −2,18×10⁻¹⁸ J en émettant un photon (h c = 1,99×10⁻²⁵ J·m). Sa longueur d'onde vaut λ = h c / ΔE, soit environ :",
+        opts: [
+          "91 nm",
+          "73 nm",
+          "122 nm",
+          "1,22×10⁻⁷ nm"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "niveau-au-lieu-ecart", texte: "Utiliser l'énergie d'un seul niveau (2,18×10⁻¹⁸ J) au lieu de l'écart ΔE = 1,64×10⁻¹⁸ J" },
+          { code: "delta-e-somme-niveaux", texte: "Additionner les valeurs absolues des niveaux : ΔE = |E₂ − E₁| est une différence" },
+          null,
+          { code: "conversion-m-nm", texte: "Mal convertir : 1,22×10⁻⁷ m = 122 nm" }
+        ],
+        exp: "ΔE = E₂ − E₁ = −5,45×10⁻¹⁹ − (−2,18×10⁻¹⁸) ≈ 1,64×10⁻¹⁸ J, donc λ = 1,99×10⁻²⁵ / 1,64×10⁻¹⁸ ≈ 1,22×10⁻⁷ m = 122 nm (ultraviolet). Attention : c'est l'écart entre les niveaux qui compte."
+      },
+      {
+        q: "Lorsqu'un atome émet un photon, il passe :",
+        opts: [
+          "d'un niveau d'énergie à un niveau plus élevé",
+          "d'un niveau d'énergie à un niveau plus bas",
+          "à un niveau quelconque, l'énergie du photon s'ajustant",
+          "d'un niveau à l'autre en perdant un électron"
         ],
         ans: 1,
-        exp: "Seules certaines valeurs discrètes d'énergie sont permises pour l'atome : ses niveaux d'énergie sont quantifiés, et non répartis en continuum."
+        pieges: [
+          { code: "emission-absorption-inversees", texte: "Inverser émission et absorption : en émettant, l'atome perd de l'énergie, il descend vers un niveau plus bas" },
+          null,
+          { code: "energie-atome-continue", texte: "Croire que l'atome peut aller à n'importe quel niveau : seuls les niveaux permis existent" },
+          { code: "photon-vs-electron", texte: "Confondre photon et électron : l'atome émet un photon, il garde ses électrons" }
+        ],
+        exp: "En émission, l'atome passe d'un niveau élevé à un niveau plus bas et cède l'écart d'énergie au photon. En absorption, c'est l'inverse : le photon absorbé fait monter l'atome."
+      },
+      {
+        q: "Quel spectre permet d'identifier les éléments chimiques présents dans une source ?",
+        opts: [
+          "Son spectre de raies",
+          "Son spectre continu",
+          "La longueur d'onde du maximum d'émission",
+          "L'intensité totale de la lumière émise"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "spectre-continu-composition", texte: "Croire qu'un spectre continu renseigne sur la composition : il dépend seulement de la température de la source" },
+          { code: "wien-identifie-element", texte: "Confondre les informations : le maximum d'émission d'un spectre continu donne la température, pas la composition" },
+          { code: "intensite-identifie", texte: "Croire que l'intensité identifie un élément : ce sont les longueurs d'onde des raies, propres à chaque élément" }
+        ],
+        exp: "Chaque élément a un spectre de raies qui lui est propre (signature de ses niveaux d'énergie) : c'est ainsi qu'on l'identifie. Le spectre continu d'un corps chaud renseigne seulement sur sa température."
+      },
+      {
+        q: "Le spectre de la lumière du Soleil présente de fines raies sombres. Elles sont dues :",
+        opts: [
+          "à des éléments que le Soleil ne contient pas",
+          "à l'absorption de certaines radiations par les gaz de l'atmosphère du Soleil",
+          "à des couleurs entières supprimées par le Soleil",
+          "à des radiations que ces gaz sont incapables d'émettre"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "raies-elements-absents", texte: "Inverser l'interprétation : une raie d'absorption révèle la présence de l'élément qui absorbe" },
+          null,
+          { code: "absorption-totale-couleur", texte: "Croire qu'une raie noire supprime toute une couleur : seules des longueurs d'onde précises sont absorbées" },
+          { code: "raies-absorption-complementaires", texte: "Croire que le gaz absorbe ce qu'il n'émet pas : il absorbe exactement les radiations qu'il est capable d'émettre" }
+        ],
+        exp: "La lumière émise par la surface du Soleil traverse son atmosphère : les entités présentes absorbent les radiations correspondant à leurs transitions. Ces raies sombres permettent d'identifier les éléments présents."
+      },
+      {
+        q: "La fréquence d'une radiation de longueur d'onde λ = 500 nm dans le vide (c = 3,00×10⁸ m·s⁻¹) vaut f = c / λ, soit :",
+        opts: [
+          "6,00×10⁵ Hz",
+          "6,00×10¹⁴ Hz",
+          "1,67×10⁻¹⁵ Hz",
+          "150 Hz"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "conversion-nm-m", texte: "Oublier de convertir λ en mètres : 500 nm = 5,00×10⁻⁷ m" },
+          null,
+          { code: "frequence-rapport-inverse", texte: "Inverser le rapport : λ / c ; il faut f = c / λ" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : c × λ = 3,00×10⁸ × 5,00×10⁻⁷" }
+        ],
+        exp: "f = c / λ = 3,00×10⁸ / 5,00×10⁻⁷ = 6,00×10¹⁴ Hz. Attention : λ en mètres."
       }
     ],
     annales: [],
