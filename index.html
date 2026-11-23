@@ -27563,114 +27563,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La réfraction est :",
+        q: "La réfraction de la lumière est :",
         opts: [
-          "Un changement de direction en restant dans le même milieu",
-          "Un changement de direction en passant d'un milieu à un autre",
-          "L'absorption totale de la lumière",
-          "La création de lumière colorée"
-        ],
-        ans: 1,
-        exp: "La réfraction correspond au changement de direction d'un rayon lumineux qui change de milieu de propagation."
-      },
-      {
-        q: "Les angles d'incidence, de réfraction et de réflexion se mesurent par rapport :",
-        opts: [
-          "À la surface de séparation",
-          "À la normale au point d'incidence",
-          "Au rayon réfléchi uniquement",
-          "À l'horizontale du sol"
-        ],
-        ans: 1,
-        exp: "Tous ces angles sont définis entre le rayon considéré et la normale à la surface, pas entre le rayon et la surface."
-      },
-      {
-        q: "La loi de Snell-Descartes pour la réflexion s'écrit :",
-        opts: [
-          "n₁ sin(i₁) = n₂ sin(i₂)",
-          "i₁ = i_R",
-          "n₁ = n₂",
-          "i₁ + i₂ = 90°"
-        ],
-        ans: 1,
-        exp: "Pour la réflexion, l'angle d'incidence est égal à l'angle de réflexion : i₁ = i_R."
-      },
-      {
-        q: "La loi de Snell-Descartes pour la réfraction s'écrit :",
-        opts: [
-          "n₁ × sin(i₁) = n₂ × sin(i₂)",
-          "n₁ + i₁ = n₂ + i₂",
-          "sin(n₁)/i₁ = sin(n₂)/i₂",
-          "n₁ × i₁ = n₂ × i₂"
-        ],
-        ans: 0,
-        exp: "La loi de la réfraction relie les indices et les angles par n₁ × sin(i₁) = n₂ × sin(i₂)."
-      },
-      {
-        q: "L'indice de réfraction d'un milieu transparent est toujours :",
-        opts: [
-          "Négatif",
-          "Compris entre 0 et 1",
-          "Supérieur ou égal à 1",
-          "Exprimé en mètres"
+          "un changement de direction en restant dans le même milieu",
+          "la décomposition de la lumière blanche en couleurs",
+          "un changement de direction quand la lumière change de milieu",
+          "le passage d'un milieu à un autre sans changement de direction"
         ],
         ans: 2,
-        exp: "L'indice de réfraction est un nombre sans unité, toujours supérieur ou égal à 1 (1 pour le vide)."
+        pieges: [
+          { code: "reflexion-vs-refraction", texte: "Confondre réfraction et réflexion : la réflexion renvoie la lumière dans le premier milieu" },
+          { code: "dispersion-vs-refraction", texte: "Confondre réfraction et dispersion : la dispersion est une conséquence de la réfraction quand l'indice dépend de la couleur" },
+          null,
+          { code: "refraction-sans-deviation", texte: "Croire que la lumière garde sa direction en changeant de milieu : elle est déviée (sauf sous incidence nulle)" }
+        ],
+        exp: "La réfraction est le changement de direction d'un rayon qui passe d'un milieu transparent à un autre (air → eau, par exemple). Attention : la réflexion, elle, renvoie le rayon dans le premier milieu."
       },
       {
-        q: "Un rayon passe de l'air (n=1,00) à l'eau (n=1,33) avec un angle d'incidence de 40°. L'angle de réfraction vaut environ :",
+        q: "Un rayon lumineux arrive sur la surface de l'eau en faisant un angle de 30° avec cette surface. L'angle d'incidence vaut :",
         opts: [
-          "19°",
+          "30°",
+          "60°",
+          "150°",
+          "on ne peut pas le savoir sans les indices"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "angle-vs-surface", texte: "Mesurer l'angle par rapport à la surface : les angles se mesurent par rapport à la normale, donc 90° − 30° = 60°" },
+          null,
+          { code: "angle-supplementaire", texte: "Prendre l'angle supplémentaire (180° − 30°) : l'angle d'incidence est entre le rayon et la normale, il est inférieur à 90°" },
+          { code: "angle-depend-indices", texte: "Croire que l'angle d'incidence dépend des milieux : il se lit sur le rayon incident, avant toute réfraction" }
+        ],
+        exp: "La normale est perpendiculaire à la surface : l'angle entre le rayon et la normale vaut 90° − 30° = 60°. Attention : les angles se mesurent toujours par rapport à la normale."
+      },
+      {
+        q: "Un rayon arrive sur un miroir plan avec un angle d'incidence de 35°. L'angle de réflexion vaut :",
+        opts: [
+          "55°",
+          "70°",
+          "35°",
+          "il dépend de l'indice du verre du miroir"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "angle-vs-surface", texte: "Mesurer l'angle par rapport à la surface : les angles se mesurent par rapport à la normale" },
+          { code: "reflexion-angle-double", texte: "Doubler l'angle : 70° est l'angle entre le rayon incident et le rayon réfléchi, pas l'angle de réflexion" },
+          null,
+          { code: "reflexion-avec-indices", texte: "Appliquer la loi de la réfraction à la réflexion : l'angle de réflexion est égal à l'angle d'incidence, sans indice" }
+        ],
+        exp: "Loi de la réflexion : i_R = i₁ = 35°. Attention : l'angle entre les deux rayons vaut 2 × 35° = 70°, mais ce n'est pas l'angle de réflexion."
+      },
+      {
+        q: "Un rayon passe de l'air (n₁ = 1,00) à l'eau (n₂ = 1,33) avec un angle d'incidence de 40°. L'angle de réfraction vaut environ :",
+        opts: [
           "29°",
+          "59°",
           "40°",
-          "53°"
+          "35°"
         ],
-        ans: 1,
-        exp: "sin(i₂) = 1,00×sin(40°)/1,33 ≈ 0,483, donc i₂ ≈ 29°."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "indices-inverses-snell", texte: "Inverser les indices : sin(i₂) = n₁ × sin(i₁) / n₂, pas n₂ × sin(i₁) / n₁" },
+          { code: "refraction-sans-deviation", texte: "Croire que la lumière garde sa direction en changeant de milieu : elle est déviée" },
+          { code: "angle-vs-surface", texte: "Prendre l'angle par rapport à la surface (50°) au lieu de l'angle par rapport à la normale (40°)" }
+        ],
+        exp: "sin(i₂) = n₁ × sin(i₁) / n₂ = 1,00 × sin(40°) / 1,33 ≈ 0,483, donc i₂ ≈ 29°. Le rayon se rapproche de la normale en entrant dans l'eau, plus réfringente."
       },
       {
-        q: "Quand un rayon passe d'un milieu moins réfringent vers un milieu plus réfringent, il :",
+        q: "Un rayon passe de l'eau (n = 1,33) dans l'air (n = 1,00), avec un angle d'incidence de 20°. Le rayon réfracté :",
         opts: [
-          "S'éloigne de la normale",
-          "Se rapproche de la normale",
-          "Reste dans la même direction",
-          "Est totalement réfléchi"
+          "se rapproche de la normale, comme lors de toute réfraction",
+          "n'est pas dévié, car l'air est transparent",
+          "s'éloigne de la normale",
+          "n'est dévié que sous incidence nulle"
         ],
-        ans: 1,
-        exp: "En entrant dans un milieu d'indice plus élevé, le rayon réfracté se rapproche de la normale."
+        ans: 2,
+        pieges: [
+          { code: "normale-toujours-rapproche", texte: "Croire que le rayon se rapproche toujours de la normale : il s'en éloigne en passant dans un milieu moins réfringent" },
+          { code: "refraction-sans-deviation", texte: "Croire que la lumière garde sa direction en changeant de milieu : elle est déviée dès que les indices diffèrent" },
+          null,
+          { code: "incidence-nulle-deviee", texte: "Inverser le cas particulier : sous incidence nulle (rayon perpendiculaire), le rayon n'est pas dévié" }
+        ],
+        exp: "n₁ > n₂ : sin(i₂) = 1,33 × sin(20°) / 1,00 ≈ 0,455, i₂ ≈ 27° > 20° : le rayon s'éloigne de la normale. Attention : il ne se rapproche de la normale que vers un milieu plus réfringent."
       },
       {
-        q: "La dispersion de la lumière blanche est :",
+        q: "L'indice de réfraction d'un milieu transparent :",
         opts: [
-          "La disparition totale de la lumière",
-          "La séparation des différentes radiations colorées qui la composent",
-          "Un phénomène qui ne concerne que le prisme",
-          "Identique à la réflexion"
+          "est un nombre sans unité, supérieur ou égal à 1",
+          "s'exprime en m·s⁻¹ : c'est la vitesse de la lumière",
+          "est compris entre 0 et 1",
+          "est le même pour tous les milieux transparents"
         ],
-        ans: 1,
-        exp: "La dispersion sépare les différentes couleurs (longueurs d'onde) contenues dans la lumière blanche."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "indice-vs-vitesse", texte: "Confondre indice et vitesse : l'indice est sans unité ; il est d'autant plus grand que la lumière est lente dans le milieu" },
+          { code: "indice-inferieur-1", texte: "Croire que l'indice est inférieur à 1 : il vaut 1 dans le vide et plus dans les autres milieux" },
+          { code: "indice-universel", texte: "Croire que tous les milieux ont le même indice : eau 1,33, verre 1,50, diamant 2,42" }
+        ],
+        exp: "L'indice n est sans unité et vaut au moins 1 (1 pour le vide, environ 1,00 pour l'air, 1,33 pour l'eau). Attention : plus n est grand, plus la lumière est lente dans le milieu."
       },
       {
-        q: "Un prisme disperse la lumière blanche car :",
+        q: "Un rayon passe de l'air (n = 1,00) dans un milieu inconnu : i₁ = 45° et i₂ = 28°. L'indice du milieu vaut environ :",
         opts: [
-          "Il absorbe toutes les couleurs sauf le rouge",
-          "L'indice de réfraction du verre dépend de la longueur d'onde",
-          "Il ne laisse passer que le violet",
-          "Il réfléchit la lumière comme un miroir"
+          "0,66",
+          "1,6",
+          "1,5",
+          "0,80"
         ],
-        ans: 1,
-        exp: "Le verre du prisme est un milieu dispersif : son indice varie avec la longueur d'onde, donc chaque couleur est réfractée différemment."
+        ans: 2,
+        pieges: [
+          { code: "indices-inverses-snell", texte: "Inverser le rapport : sin(28°) / sin(45°) ≈ 0,66 ; il faut n₂ = n₁ × sin(i₁) / sin(i₂)" },
+          { code: "oubli-sinus", texte: "Oublier les sinus : 45 / 28 ≈ 1,6 ; la loi relie les sinus des angles, pas les angles" },
+          null,
+          { code: "angle-vs-surface", texte: "Mesurer i₂ par rapport à la surface (90° − 28° = 62°) : sin(45°) / sin(62°) ≈ 0,80" }
+        ],
+        exp: "n₂ = n₁ × sin(i₁) / sin(i₂) = 1,00 × sin(45°) / sin(28°) ≈ 0,707 / 0,469 ≈ 1,5 : c'est probablement du verre. Attention : un indice inférieur à 1 est impossible."
       },
       {
-        q: "Dans un prisme, par rapport à la lumière rouge, la lumière violette est :",
+        q: "Quand la lumière blanche traverse un prisme, la radiation la plus déviée est :",
         opts: [
-          "Moins déviée",
-          "Plus déviée",
-          "Déviée de façon identique",
-          "Non déviée du tout"
+          "la violette",
+          "la rouge",
+          "aucune : toutes sont déviées de la même façon",
+          "aucune : le prisme colore la lumière sans la dévier"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "dispersion-rouge-plus-devie", texte: "Inverser l'ordre : l'indice du verre est plus grand pour le violet, qui est donc le plus dévié" },
+          { code: "dispersion-niee", texte: "Croire que toutes les couleurs sont déviées pareil : c'est justement parce qu'elles ne le sont pas qu'elles se séparent" },
+          { code: "prisme-colore-lumiere", texte: "Croire que le prisme ajoute des couleurs : elles sont déjà dans la lumière blanche, le prisme les sépare" }
+        ],
+        exp: "L'indice du verre est un peu plus grand pour le violet que pour le rouge : le violet est plus dévié. Attention : le prisme ne crée pas les couleurs, il les sépare."
+      },
+      {
+        q: "Un prisme sépare les couleurs de la lumière blanche parce que :",
+        opts: [
+          "il ajoute des couleurs à la lumière blanche",
+          "il absorbe certaines couleurs et laisse passer les autres",
+          "il réfléchit chaque couleur sur une face différente",
+          "l'indice du verre dépend de la longueur d'onde"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "prisme-colore-lumiere", texte: "Croire que le prisme ajoute des couleurs : elles sont déjà dans la lumière blanche, le prisme les sépare" },
+          { code: "dispersion-vs-absorption", texte: "Confondre dispersion et absorption : toutes les couleurs ressortent, mais dans des directions différentes" },
+          { code: "reflexion-vs-refraction", texte: "Confondre réflexion et réfraction : la lumière traverse le prisme, elle est réfractée" },
+          null
+        ],
+        exp: "Le verre est un milieu dispersif : son indice dépend de la longueur d'onde, donc chaque radiation est réfractée différemment et les couleurs se séparent."
+      },
+      {
+        q: "On envoie le faisceau d'un laser rouge (lumière monochromatique) sur un prisme. On observe :",
+        opts: [
+          "un spectre allant du rouge au violet",
+          "un faisceau rouge dévié, sans autre couleur",
+          "un faisceau rouge non dévié, puisqu'il n'a qu'une couleur",
+          "un faisceau rouge étalé en plusieurs nuances de rouge"
         ],
         ans: 1,
-        exp: "L'indice de réfraction du verre est plus grand pour le violet que pour le rouge, donc le violet est davantage dévié."
+        pieges: [
+          { code: "prisme-colore-lumiere", texte: "Croire que le prisme crée des couleurs : il ne peut séparer que celles qui sont déjà présentes" },
+          null,
+          { code: "monochromatique-non-devie", texte: "Croire qu'une lumière monochromatique n'est pas déviée : elle est réfractée, mais ne se décompose pas" },
+          { code: "monochromatique-disperse", texte: "Croire qu'une lumière monochromatique se décompose : elle ne contient qu'une radiation" }
+        ],
+        exp: "Une lumière monochromatique ne contient qu'une radiation : le prisme la dévie (réfraction) sans la décomposer. Attention : la dispersion ne fait que séparer des couleurs déjà présentes."
       }
     ],
     annales: [],
@@ -28139,114 +28199,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une lentille convergente fait converger un faisceau de rayons parallèles vers :",
+        q: "Un rayon lumineux arrive sur une lentille convergente parallèlement à l'axe optique. Il ressort :",
         opts: [
-          "Le centre optique",
-          "Le foyer image F'",
-          "L'infini",
-          "La rétine uniquement"
+          "en passant par le foyer objet F",
+          "sans être dévié",
+          "en restant parallèle à l'axe optique",
+          "en passant par le foyer image F'"
         ],
-        ans: 1,
-        exp: "Par définition, une lentille convergente concentre les rayons parallèles à l'axe optique vers le foyer image F'."
+        ans: 3,
+        pieges: [
+          { code: "foyers-objet-image-inverses", texte: "Confondre foyer objet F et foyer image F' : un rayon parallèle à l'axe ressort par F', situé de l'autre côté de la lentille" },
+          { code: "rayons-remarquables-confondus", texte: "Confondre les rayons remarquables : seul le rayon passant par le centre optique O n'est pas dévié" },
+          { code: "parallele-reste-parallele", texte: "Croire qu'un rayon parallèle à l'axe le reste : c'est le rayon passant par F qui ressort parallèle à l'axe" },
+          null
+        ],
+        exp: "Un rayon parallèle à l'axe optique ressort en passant par le foyer image F'. Les deux autres rayons remarquables : par O, non dévié ; par F, ressort parallèle à l'axe."
       },
       {
-        q: "Un rayon lumineux passant par le centre optique O d'une lentille mince :",
+        q: "Un rayon lumineux passe par le foyer objet F d'une lentille convergente. Il ressort :",
         opts: [
-          "Est dévié de 90°",
-          "N'est pas dévié",
-          "Passe obligatoirement par F'",
-          "Est réfléchi"
+          "parallèle à l'axe optique",
+          "en passant par le foyer image F'",
+          "sans être dévié",
+          "en passant par le centre optique O"
         ],
-        ans: 1,
-        exp: "Le rayon passant par le centre optique O traverse la lentille sans être dévié."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "rayon-par-f-vers-f-prime", texte: "Croire qu'un rayon passant par F ressort par F' : c'est le rayon arrivant parallèle à l'axe qui ressort par F'" },
+          { code: "rayons-remarquables-confondus", texte: "Confondre les rayons remarquables : seul le rayon passant par le centre optique O n'est pas dévié" },
+          { code: "foyer-vs-centre-optique", texte: "Confondre foyer et centre optique : le centre optique O est au milieu de la lentille, les foyers de part et d'autre" }
+        ],
+        exp: "Un rayon passant par le foyer objet F ressort parallèle à l'axe optique. C'est le « retour » du rayon parallèle qui passe par F'."
       },
       {
-        q: "La distance focale f' d'une lentille est :",
+        q: "La distance focale f' d'une lentille convergente est la distance :",
         opts: [
-          "La distance entre les deux foyers",
-          "La distance OF' entre le centre optique et le foyer image",
-          "Toujours égale à 17 mm",
-          "Indépendante de la lentille"
+          "entre les deux foyers F et F'",
+          "entre le centre optique O et le foyer image F'",
+          "entre l'objet et la lentille",
+          "entre la lentille et l'image, quel que soit l'objet"
         ],
         ans: 1,
-        exp: "f' = OF', la distance entre le centre optique O et le foyer image F'."
+        pieges: [
+          { code: "focale-entre-foyers", texte: "Prendre la distance entre les deux foyers : FF' = 2f' ; la distance focale est OF'" },
+          null,
+          { code: "focale-vs-distance-objet", texte: "Confondre distance focale et distance de l'objet : f' est une caractéristique de la lentille, elle ne dépend pas de l'objet" },
+          { code: "image-toujours-au-foyer", texte: "Croire que l'image se forme toujours au foyer : c'est le cas seulement pour un objet très éloigné" }
+        ],
+        exp: "f' = OF' : c'est une caractéristique de la lentille. L'image d'un objet se forme au foyer F' seulement si l'objet est très éloigné."
       },
       {
-        q: "Dans le modèle de l'œil réduit, la rétine joue le rôle :",
+        q: "On forme sur un écran l'image nette d'un paysage très lointain avec une lentille convergente. La distance entre la lentille et l'écran est alors égale :",
         opts: [
-          "De lentille convergente",
-          "D'écran",
-          "De foyer objet",
-          "De centre optique"
+          "à la distance focale f'",
+          "à deux fois la distance focale",
+          "à la distance entre le paysage et la lentille",
+          "à rien de précis : on ne peut pas former l'image d'un objet si lointain"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "focale-entre-foyers", texte: "Confondre f' et FF' = 2f' : l'image d'un objet très lointain se forme au foyer image F'" },
+          { code: "distance-image-egale-objet", texte: "Croire que l'image est à la même distance que l'objet : elle se forme au foyer F', tout près de la lentille" },
+          { code: "objet-lointain-sans-image", texte: "Croire qu'un objet très lointain ne donne pas d'image : ses rayons arrivent parallèles et convergent en F'" }
+        ],
+        exp: "Les rayons venant d'un objet très éloigné arrivent parallèles : ils convergent dans le plan du foyer image. L'écran est donc à la distance f' : c'est une méthode simple pour mesurer f'."
+      },
+      {
+        q: "Un objet de 3,0 cm est placé à 30 cm d'une lentille ; son image nette se forme à 15 cm de la lentille. La taille de l'image vaut :",
+        opts: [
+          "6,0 cm",
+          "1,5 cm",
+          "0,50 cm",
+          "45 cm"
         ],
         ans: 1,
-        exp: "La rétine est modélisée par un écran sur lequel se forme l'image."
-      },
-      {
-        q: "L'accommodation de l'œil correspond à :",
-        opts: [
-          "Un déplacement de la rétine",
-          "Une déformation du cristallin qui modifie sa vergence",
-          "Un changement de couleur de l'iris",
-          "Une augmentation de la distance cristallin-rétine"
+        pieges: [
+          { code: "grandissement-inverse", texte: "Inverser le rapport des distances : |γ| = OA' / OA = 15 / 30 = 0,50, pas 30 / 15" },
+          null,
+          { code: "gamma-pris-pour-taille", texte: "Donner le grandissement comme taille : |γ| = 0,50 est sans unité, A'B' = 0,50 × 3,0 cm" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier la distance de l'image par la taille de l'objet : il faut A'B' = AB × OA' / OA" }
         ],
-        ans: 1,
-        exp: "Le cristallin se déforme grâce aux muscles ciliaires pour modifier sa vergence et garder une image nette sur la rétine."
+        exp: "En valeur absolue : A'B' / AB = OA' / OA = 15 / 30 = 0,50, donc A'B' = 0,50 × 3,0 = 1,5 cm. Attention : |γ| est sans unité."
       },
       {
-        q: "La formule du grandissement d'une lentille mince est :",
+        q: "Pour une image formée par une lentille convergente, on trouve un grandissement γ = −0,5. L'image est :",
         opts: [
-          "γ = OA' + OA",
-          "γ = − OA' / OA",
-          "γ = OA / OA'",
-          "γ = OA' × OA"
-        ],
-        ans: 1,
-        exp: "Le grandissement se calcule par γ = A'B'/AB = −OA'/OA."
-      },
-      {
-        q: "Un objet de 4 cm est placé à OA = 24 cm d'une lentille ; l'image nette se forme à OA' = 12 cm. La taille de l'image est :",
-        opts: [
-          "8 cm",
-          "4 cm",
-          "2 cm",
-          "1 cm"
+          "droite et deux fois plus petite que l'objet",
+          "renversée et deux fois plus grande que l'objet",
+          "renversée et deux fois plus petite que l'objet",
+          "droite et deux fois plus grande que l'objet"
         ],
         ans: 2,
-        exp: "γ = −12/24 = −0,5, donc A'B' = −0,5 × 4 = −2 cm (2 cm en valeur absolue)."
+        pieges: [
+          { code: "signe-gamma-ignore", texte: "Ignorer le signe de γ : un grandissement négatif indique une image renversée" },
+          { code: "gamma-inverse-taille", texte: "Mal lire la valeur de γ : |γ| = 0,5 < 1 signifie que l'image est deux fois plus petite" },
+          null,
+          { code: "gamma-mal-interprete", texte: "Mal interpréter γ : le signe indique le sens (négatif : renversée), la valeur absolue la taille (0,5 : deux fois plus petite)" }
+        ],
+        exp: "γ < 0 : image renversée ; |γ| = 0,5 < 1 : image deux fois plus petite que l'objet. Attention : on lit séparément le signe et la valeur."
       },
       {
-        q: "Un grandissement γ négatif signifie que l'image est :",
+        q: "On cache la moitié supérieure d'une lentille avec un carton. L'image de l'objet sur l'écran :",
         opts: [
-          "Droite par rapport à l'objet",
-          "Renversée par rapport à l'objet",
-          "De la même couleur que l'objet",
-          "Virtuelle uniquement"
+          "perd sa moitié inférieure",
+          "perd sa moitié supérieure",
+          "disparaît complètement",
+          "reste entière, mais moins lumineuse"
         ],
-        ans: 1,
-        exp: "Un grandissement négatif traduit une image renversée par rapport à l'objet."
+        ans: 3,
+        pieges: [
+          { code: "lentille-masquee-moitie-image", texte: "Croire que masquer une partie de la lentille coupe une partie de l'image : chaque point de la lentille reçoit de la lumière de tout l'objet" },
+          { code: "lentille-masquee-moitie-image", texte: "Croire que masquer une partie de la lentille coupe une partie de l'image : chaque point de la lentille reçoit de la lumière de tout l'objet" },
+          { code: "lentille-masquee-plus-image", texte: "Croire qu'une lentille partiellement masquée ne forme plus d'image : la partie libre suffit à former toute l'image" },
+          null
+        ],
+        exp: "Chaque point de l'objet envoie des rayons sur toute la lentille ; la moitié libre suffit à former l'image entière, mais elle reçoit deux fois moins de lumière : l'image est moins lumineuse."
       },
       {
-        q: "Dans la myopie, l'image d'un objet éloigné se forme :",
+        q: "L'image d'un objet est nette sur un écran. On rapproche l'écran de la lentille, sans rien changer d'autre. L'image :",
         opts: [
-          "Exactement sur la rétine",
-          "En avant de la rétine",
-          "En arrière de la rétine",
-          "Il n'y a pas d'image formée"
+          "reste nette, mais devient plus petite",
+          "devient floue",
+          "reste nette, mais devient plus lumineuse",
+          "disparaît : l'écran ne reçoit plus de lumière"
         ],
         ans: 1,
-        exp: "Chez un œil myope, l'image d'un objet éloigné se forme avant la rétine (œil trop long ou cristallin trop convergent)."
+        pieges: [
+          { code: "image-nette-partout", texte: "Croire que l'image est nette à toute distance : elle n'est nette qu'à une position précise de l'écran" },
+          null,
+          { code: "luminosite-vs-nettete", texte: "Confondre luminosité et netteté : hors de la position de l'image, la lumière s'étale en une tache floue" },
+          { code: "flou-vs-absence", texte: "Confondre image floue et absence d'image : l'écran reçoit toujours de la lumière, mais étalée" }
+        ],
+        exp: "Pour un objet et une lentille donnés, l'image nette se forme à une seule distance. Ailleurs, l'écran reçoit une tache floue. C'est pourquoi l'œil doit accommoder."
       },
       {
-        q: "L'hypermétropie se corrige avec :",
+        q: "Dans le modèle de l'œil réduit, le cristallin est modélisé par :",
         opts: [
-          "Une lentille divergente",
-          "Une lentille convergente",
-          "Un prisme",
-          "Aucune correction possible"
+          "l'écran",
+          "une lentille mince convergente",
+          "une lentille divergente",
+          "le diaphragme qui règle la quantité de lumière"
         ],
         ans: 1,
-        exp: "L'hypermétropie (image formée en arrière de la rétine) se corrige avec une lentille convergente supplémentaire."
+        pieges: [
+          { code: "cristallin-vs-retine", texte: "Confondre cristallin et rétine : la rétine est l'écran, le cristallin la lentille" },
+          null,
+          { code: "oeil-divergent", texte: "Croire que le cristallin est divergent : il fait converger la lumière pour former une image sur la rétine" },
+          { code: "cristallin-vs-iris", texte: "Confondre cristallin et iris : c'est l'iris (diaphragme) qui règle la quantité de lumière" }
+        ],
+        exp: "Œil réduit : le cristallin est une lentille mince convergente, la rétine un écran, l'iris un diaphragme. L'image sur la rétine est réelle et renversée."
+      },
+      {
+        q: "On lève les yeux d'un livre pour regarder un paysage lointain. Pour que l'image reste nette sur la rétine :",
+        opts: [
+          "la rétine se rapproche du cristallin",
+          "la pupille se dilate",
+          "le cristallin change de forme",
+          "rien ne change : l'image est nette à toutes les distances"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "accommodation-retine-bouge", texte: "Croire que la rétine se déplace : la distance cristallin-rétine est fixe, c'est le cristallin qui se déforme" },
+          { code: "accommodation-vs-pupille", texte: "Confondre accommodation et adaptation à la lumière : la pupille règle la quantité de lumière, pas la netteté" },
+          null,
+          { code: "image-nette-partout", texte: "Croire que l'image est nette à toute distance : sans accommodation, l'image d'un objet proche ou lointain serait floue" }
+        ],
+        exp: "La distance cristallin-rétine est fixe : c'est le cristallin qui se déforme (accommodation) pour que l'image se forme toujours sur la rétine."
       }
     ],
     annales: [],
@@ -28698,114 +28818,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La tension électrique se mesure avec :",
+        q: "Une pile alimente une lampe et une résistance en série. Un ampèremètre placé avant la lampe indique 0,25 A. Placé juste après la lampe, il indique :",
         opts: [
-          "Un ampèremètre branché en série",
-          "Un voltmètre branché en dérivation",
-          "Un ohmmètre branché en série",
-          "Un thermomètre"
-        ],
-        ans: 1,
-        exp: "Le voltmètre mesure la tension et se branche en dérivation (en parallèle) aux bornes du dipôle."
-      },
-      {
-        q: "L'intensité du courant électrique se mesure avec :",
-        opts: [
-          "Un voltmètre en dérivation",
-          "Un ampèremètre branché en série",
-          "Un ohmmètre en dérivation",
-          "Un multimètre débranché"
-        ],
-        ans: 1,
-        exp: "L'ampèremètre, branché en série dans le circuit, mesure l'intensité du courant qui le traverse."
-      },
-      {
-        q: "La loi d'Ohm pour un conducteur ohmique s'écrit :",
-        opts: [
-          "U = R + I",
-          "U = R × I",
-          "U = R / I",
-          "R = U + I"
-        ],
-        ans: 1,
-        exp: "La loi d'Ohm relie la tension à ses bornes et l'intensité qui le traverse par U = R × I."
-      },
-      {
-        q: "Un conducteur ohmique de résistance R = 100 Ω est traversé par I = 0,20 A. La tension à ses bornes vaut :",
-        opts: [
-          "5 V",
-          "20 V",
-          "100,2 V",
-          "500 V"
-        ],
-        ans: 1,
-        exp: "U = R × I = 100 × 0,20 = 20 V."
-      },
-      {
-        q: "En série, deux résistances R1 et R2 :",
-        opts: [
-          "Ont la même tension à leurs bornes",
-          "Sont traversées par la même intensité",
-          "S'annulent entre elles",
-          "Ne peuvent pas être associées"
-        ],
-        ans: 1,
-        exp: "En série, l'intensité est la même dans toutes les résistances ; ce sont les tensions qui s'additionnent."
-      },
-      {
-        q: "La résistance équivalente de deux résistances R1 = 20 Ω et R2 = 30 Ω placées en série vaut :",
-        opts: [
-          "10 Ω",
-          "12 Ω",
-          "50 Ω",
-          "600 Ω"
+          "moins de 0,25 A, car la lampe consomme du courant",
+          "0 A, car le courant est transformé en lumière",
+          "0,25 A",
+          "0,125 A, car le courant se partage entre les deux dipôles"
         ],
         ans: 2,
-        exp: "En série, Req = R1 + R2 = 20 + 30 = 50 Ω."
-      },
-      {
-        q: "En dérivation (parallèle), plusieurs résistances :",
-        opts: [
-          "Ont la même tension à leurs bornes",
-          "Sont traversées par la même intensité",
-          "Ont une résistance équivalente supérieure à chacune d'elles",
-          "Ne respectent pas la loi des nœuds"
+        pieges: [
+          { code: "courant-consomme", texte: "Croire que le courant est consommé par les dipôles : dans un circuit série, l'intensité est la même partout" },
+          { code: "courant-transforme-en-lumiere", texte: "Croire que le courant se transforme en lumière : c'est l'énergie qui est convertie, le courant continue de circuler" },
+          null,
+          { code: "partage-en-serie", texte: "Croire que le courant se partage en série : il ne se partage qu'aux nœuds d'un circuit en dérivation" }
         ],
-        ans: 0,
-        exp: "En dérivation, toutes les branches ont la même tension à leurs bornes ; les intensités, elles, s'additionnent (loi des nœuds)."
+        exp: "Dans un circuit série, l'intensité est la même en tout point : 0,25 A avant et après la lampe. Attention : la lampe convertit de l'énergie, elle ne « consomme » pas le courant."
       },
       {
-        q: "Pour deux résistances en dérivation, la résistance équivalente Req vérifie :",
+        q: "Pour mesurer la tension aux bornes d'une lampe, on branche un voltmètre :",
         opts: [
-          "Req = R1 + R2",
-          "1/Req = 1/R1 + 1/R2",
-          "Req = R1 × R2",
-          "Req est toujours supérieure à R1 et R2"
+          "en série avec la lampe",
+          "en dérivation aux bornes de la lampe",
+          "aux bornes de la pile : c'est la même tension",
+          "on utilise plutôt un ampèremètre en série"
         ],
         ans: 1,
-        exp: "En dérivation, on utilise 1/Req = 1/R1 + 1/R2, ce qui donne une Req toujours plus petite que la plus petite des deux résistances."
+        pieges: [
+          { code: "voltmetre-en-serie", texte: "Brancher le voltmètre en série : il se branche en dérivation, entre les deux bornes du dipôle" },
+          null,
+          { code: "tension-pile-egale-lampe", texte: "Croire que la tension d'un dipôle est toujours celle de la pile : en série, la tension de la pile se répartit entre les dipôles" },
+          { code: "tension-vs-intensite", texte: "Confondre tension et intensité : l'ampèremètre mesure l'intensité, le voltmètre la tension" }
+        ],
+        exp: "Le voltmètre se branche en dérivation, aux bornes du dipôle étudié ; l'ampèremètre, en série. Attention : tension et intensité sont deux grandeurs différentes."
       },
       {
-        q: "La puissance électrique d'un dipôle se calcule par :",
+        q: "Une intensité de 0,50 A arrive à un nœud. Une première branche emporte 0,20 A. L'intensité dans la seconde branche vaut :",
         opts: [
-          "P = U + I",
-          "P = U × I",
-          "P = U / I",
-          "P = R × I²  seulement"
+          "0,70 A",
+          "0,25 A",
+          "0,30 A",
+          "0,50 A"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "noeuds-addition-erronee", texte: "Additionner au lieu de soustraire : la somme des intensités qui partent est égale à l'intensité qui arrive" },
+          { code: "partage-egal", texte: "Croire que le courant se partage toujours à parts égales : ici une branche emporte déjà 0,20 A" },
+          null,
+          { code: "courant-identique-partout", texte: "Croire que l'intensité est la même dans toutes les branches : en dérivation, elle se partage entre les branches" }
+        ],
+        exp: "Loi des nœuds : 0,50 = 0,20 + I₂, donc I₂ = 0,30 A. Attention : le courant se partage aux nœuds, pas forcément à parts égales."
+      },
+      {
+        q: "Une pile de 9,0 V alimente une lampe et une résistance en série. La tension aux bornes de la résistance vaut 3,5 V. Celle aux bornes de la lampe vaut :",
+        opts: [
+          "9,0 V",
+          "5,5 V",
+          "12,5 V",
+          "3,5 V"
         ],
         ans: 1,
-        exp: "La puissance électrique s'exprime par P = U × I, en watts."
+        pieges: [
+          { code: "tension-pile-egale-lampe", texte: "Croire que la tension d'un dipôle est toujours celle de la pile : en série, la tension de la pile se répartit entre les dipôles" },
+          null,
+          { code: "mailles-addition-erronee", texte: "Additionner la tension de la pile et celle de la résistance : loi des mailles, 9,0 = 3,5 + U(lampe)" },
+          { code: "tension-meme-en-serie", texte: "Croire que les dipôles en série ont la même tension : c'est l'intensité qui est la même en série" }
+        ],
+        exp: "Loi des mailles : U(pile) = U(résistance) + U(lampe), donc U(lampe) = 9,0 − 3,5 = 5,5 V. Attention : en série, l'intensité est commune, les tensions s'additionnent."
       },
       {
-        q: "Une lampe fonctionne sous U = 12 V avec une intensité I = 0,5 A. Sa puissance vaut :",
+        q: "Deux lampes différentes sont branchées en dérivation sur une pile de 4,5 V. La tension aux bornes de chaque lampe vaut :",
         opts: [
-          "6 W",
-          "12,5 W",
-          "24 W",
-          "60 W"
+          "2,25 V chacune",
+          "4,5 V chacune",
+          "plus pour la lampe la plus puissante",
+          "4,5 V pour la première, moins pour la seconde"
         ],
-        ans: 0,
-        exp: "P = U × I = 12 × 0,5 = 6 W."
+        ans: 1,
+        pieges: [
+          { code: "partage-tension-derivation", texte: "Partager la tension entre les branches : en dérivation, chaque branche a la même tension que la pile" },
+          null,
+          { code: "tension-depend-dipole-derivation", texte: "Croire que la tension dépend de la lampe en dérivation : c'est l'intensité qui diffère d'une branche à l'autre" },
+          { code: "raisonnement-sequentiel", texte: "Raisonner « dans l'ordre du circuit » : la première lampe ne prend rien à la seconde, les deux branches sont branchées sur les mêmes points" }
+        ],
+        exp: "Loi des mailles : chaque lampe en dérivation est branchée entre les mêmes points que la pile, elle a donc la même tension, 4,5 V. Ce sont les intensités qui diffèrent."
+      },
+      {
+        q: "Un conducteur ohmique de résistance R = 220 Ω est traversé par un courant de 15 mA. La tension à ses bornes vaut :",
+        opts: [
+          "3 300 V",
+          "3,3 V",
+          "1,5×10⁴ V",
+          "6,8×10⁻⁵ V"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "conversion-ma-a", texte: "Oublier de convertir les milliampères en ampères : 15 mA = 0,015 A" },
+          null,
+          { code: "ohm-r-sur-i", texte: "Diviser R par I : 220 / 0,015 ; la loi d'Ohm s'écrit U = R × I" },
+          { code: "ohm-i-sur-r", texte: "Diviser I par R : 0,015 / 220 ; la loi d'Ohm s'écrit U = R × I" }
+        ],
+        exp: "U = R × I = 220 × 0,015 = 3,3 V. Attention : l'intensité doit être en ampères."
+      },
+      {
+        q: "Un conducteur ohmique est soumis à une tension de 6,0 V ; il est traversé par un courant de 30 mA. Sa résistance vaut :",
+        opts: [
+          "0,18 Ω",
+          "5,0×10⁻³ Ω",
+          "0,20 Ω",
+          "200 Ω"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "ohm-produit", texte: "Multiplier U par I : la résistance vaut R = U / I" },
+          { code: "ohm-i-sur-u", texte: "Inverser le rapport : I / U ; la résistance vaut R = U / I" },
+          { code: "conversion-ma-a", texte: "Oublier de convertir les milliampères en ampères : 30 mA = 0,030 A" },
+          null
+        ],
+        exp: "R = U / I = 6,0 / 0,030 = 200 Ω. Attention : I en ampères pour obtenir des ohms."
+      },
+      {
+        q: "La caractéristique U = f(I) d'un dipôle est une droite qui ne passe pas par l'origine. Ce dipôle :",
+        opts: [
+          "est un conducteur ohmique, puisque c'est une droite",
+          "n'a pas un comportement ohmique",
+          "est ohmique, puisque la pente de la droite est positive",
+          "a une résistance égale à l'ordonnée à l'origine"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "proportionnel-vs-affine", texte: "Confondre droite et proportionnalité : un dipôle est ohmique si U est proportionnelle à I, donc si la droite passe par l'origine" },
+          null,
+          { code: "ohmique-pente-positive", texte: "Croire qu'une pente positive suffit : il faut que la droite passe par l'origine (U = R × I)" },
+          { code: "ordonnee-origine-resistance", texte: "Prendre l'ordonnée à l'origine pour la résistance : pour un conducteur ohmique, R est le coefficient directeur" }
+        ],
+        exp: "Comportement ohmique : U = R × I, une droite passant par l'origine, de coefficient directeur R. Une droite qui ne passe pas par l'origine n'est pas une proportionnalité."
+      },
+      {
+        q: "Dans un circuit série alimenté par une pile, on ajoute une deuxième résistance en série. L'intensité du courant :",
+        opts: [
+          "reste la même : une pile débite toujours la même intensité",
+          "augmente : il y a plus de dipôles à alimenter",
+          "diminue seulement après la nouvelle résistance",
+          "diminue dans tout le circuit"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "pile-intensite-constante", texte: "Croire qu'une pile débite toujours la même intensité : l'intensité dépend du circuit branché" },
+          { code: "dipoles-ajoutent-courant", texte: "Croire que plus de dipôles appellent plus de courant : une résistance en série de plus freine le courant" },
+          { code: "raisonnement-sequentiel", texte: "Raisonner « dans l'ordre du circuit » : un changement en un point modifie l'intensité partout dans la boucle" },
+          null
+        ],
+        exp: "La résistance totale augmente : l'intensité diminue, et elle reste la même en tout point du circuit série. Attention : la pile impose une tension, pas une intensité."
+      },
+      {
+        q: "Un élève branche un ampèremètre en dérivation aux bornes d'une lampe allumée. Que se passe-t-il ?",
+        opts: [
+          "il mesure l'intensité qui traverse la lampe",
+          "il mesure la tension aux bornes de la lampe",
+          "rien : le branchement n'a pas d'importance",
+          "la lampe s'éteint : l'ampèremètre la court-circuite"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "amperemetre-en-derivation", texte: "Croire qu'un ampèremètre se branche en dérivation : il se branche en série, pour être traversé par le courant à mesurer" },
+          { code: "tension-vs-intensite", texte: "Confondre tension et intensité : un ampèremètre ne mesure pas une tension" },
+          { code: "branchement-sans-importance", texte: "Croire que le branchement n'a pas d'importance : un ampèremètre en dérivation crée un court-circuit" },
+          null
+        ],
+        exp: "Un ampèremètre a une résistance très faible : en dérivation, le courant passe par lui plutôt que par la lampe, qui s'éteint (court-circuit, risque pour l'appareil). Il se branche toujours en série."
       }
     ],
     annales: [],
@@ -29267,114 +29447,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Un capteur est un dispositif qui :",
+        q: "Une thermistance est un capteur résistif de température. Elle convertit :",
         opts: [
-          "Amplifie uniquement un signal électrique",
-          "Convertit une grandeur physique en signal électrique exploitable",
-          "Ne mesure que la température",
-          "Fonctionne uniquement sans électricité"
+          "une résistance en température",
+          "une température en une valeur de résistance",
+          "de l'énergie électrique en chaleur",
+          "un courant électrique en une température affichée"
         ],
         ans: 1,
-        exp: "Un capteur transforme une grandeur physique (température, lumière, pression...) en un signal électrique exploitable."
+        pieges: [
+          { code: "capteur-sens-conversion", texte: "Inverser le rôle du capteur : il part de la grandeur physique (la température) et donne un signal électrique (une résistance)" },
+          null,
+          { code: "capteur-vs-actionneur", texte: "Confondre capteur et actionneur : un radiateur convertit l'énergie électrique en chaleur, un capteur mesure" },
+          { code: "capteur-vs-afficheur", texte: "Confondre capteur et affichage : l'affichage est la dernière étape de la chaîne de mesure" }
+        ],
+        exp: "Un capteur convertit une grandeur physique (ici la température) en un signal électrique (ici une résistance). L'affichage vient ensuite, après conditionnement."
       },
       {
-        q: "Une thermistance est un capteur qui mesure :",
+        q: "Pour une thermistance CTN, quand la température augmente :",
         opts: [
-          "La pression",
-          "La température",
-          "La position",
-          "L'intensité lumineuse"
+          "sa résistance augmente",
+          "sa résistance diminue",
+          "sa résistance reste constante, comme celle d'un conducteur ohmique",
+          "elle produit une tension de plus en plus grande"
         ],
         ans: 1,
-        exp: "La thermistance est un capteur de température : sa résistance varie avec la température."
-      },
-      {
-        q: "Pour une thermistance CTN, quand la température augmente, la résistance :",
-        opts: [
-          "Augmente",
-          "Diminue",
-          "Reste constante",
-          "Devient nulle"
+        pieges: [
+          { code: "ctn-sens-inverse", texte: "Inverser le sens de variation : pour une CTN (coefficient de température négatif), R diminue quand θ augmente" },
+          null,
+          { code: "capteur-resistance-fixe", texte: "Croire que la résistance du capteur est fixe : c'est justement sa variation qui permet de mesurer" },
+          { code: "capteur-source-tension", texte: "Croire qu'un capteur résistif produit une tension : il faut l'alimenter ; seule sa résistance varie" }
         ],
-        ans: 1,
-        exp: "Une thermistance CTN (coefficient de température négatif) voit sa résistance diminuer quand la température augmente."
+        exp: "CTN : coefficient de température négatif, la résistance diminue quand la température augmente (par exemple 9 000 Ω à 0 °C, 750 Ω à 60 °C)."
       },
       {
-        q: "Une photorésistance (LDR) est un capteur dont la résistance :",
+        q: "Étalonnage d'une thermistance : 9 000 Ω à 0 °C ; 3 300 Ω à 20 °C ; 1 500 Ω à 40 °C ; 750 Ω à 60 °C. On mesure 750 Ω. La température vaut :",
         opts: [
-          "Diminue quand l'éclairement augmente",
-          "Augmente quand l'éclairement augmente",
-          "Ne dépend pas de la lumière",
-          "Ne dépend que de la température"
-        ],
-        ans: 0,
-        exp: "La résistance d'une photorésistance diminue lorsque l'intensité lumineuse reçue augmente."
-      },
-      {
-        q: "Dans une chaîne de mesure, quelle est la première étape ?",
-        opts: [
-          "L'affichage",
-          "Le traitement informatique",
-          "Le capteur",
-          "L'étalonnage"
+          "0 °C",
+          "750 °C",
+          "60 °C",
+          "on ne peut pas savoir sans thermomètre"
         ],
         ans: 2,
-        exp: "La chaîne de mesure commence par le capteur, qui convertit la grandeur physique en signal électrique."
+        pieges: [
+          { code: "ctn-sens-inverse", texte: "Associer petite résistance et basse température : pour une CTN, la plus petite résistance correspond à la plus haute température" },
+          { code: "lecture-colonne-confondue", texte: "Recopier la valeur mesurée comme résultat : on lit la température qui correspond à 750 Ω" },
+          null,
+          { code: "etalonnage-inutile", texte: "Oublier le rôle de l'étalonnage : une fois établi, il permet de trouver la température sans thermomètre" }
+        ],
+        exp: "D'après l'étalonnage, R = 750 Ω correspond à θ = 60 °C. C'est tout l'intérêt de l'étalonnage : une mesure de résistance suffit ensuite."
       },
       {
-        q: "Le rôle du conditionnement dans une chaîne de mesure est de :",
+        q: "On éclaire davantage une photorésistance (LDR). Sa résistance :",
         opts: [
-          "Remplacer le capteur",
-          "Transformer le signal du capteur en une tension facilement mesurable",
-          "Supprimer le besoin d'étalonnage",
-          "Chauffer le capteur"
+          "diminue",
+          "augmente",
+          "ne change pas : elle ne dépend que de la température",
+          "devient nulle en pleine lumière"
         ],
-        ans: 1,
-        exp: "Le conditionnement (par exemple un diviseur de tension) transforme le signal du capteur (souvent une résistance) en une tension exploitable."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "ldr-sens-inverse", texte: "Inverser le sens de variation : la résistance d'une photorésistance diminue quand l'éclairement augmente" },
+          { code: "ldr-vs-thermistance", texte: "Confondre photorésistance et thermistance : la LDR est sensible à la lumière" },
+          { code: "ldr-resistance-nulle", texte: "Croire que la résistance devient nulle : en pleine lumière, elle vaut encore quelques centaines d'ohms" }
+        ],
+        exp: "Plus la photorésistance reçoit de lumière, plus sa résistance est faible : plusieurs centaines de kΩ dans le noir, quelques centaines d'ohms en pleine lumière."
       },
       {
-        q: "Étalonner un capteur consiste à :",
+        q: "Pour mesurer directement la résistance d'une thermistance, débranchée du circuit, on utilise :",
         opts: [
-          "Le nettoyer avant utilisation",
-          "Établir la relation entre la grandeur physique et le signal électrique délivré",
-          "Le brancher en série dans le circuit",
-          "Mesurer sa masse"
+          "un voltmètre",
+          "un ampèremètre",
+          "un ohmmètre",
+          "un thermomètre"
         ],
-        ans: 1,
-        exp: "L'étalonnage établit la relation (souvent une courbe) entre la grandeur mesurée et le signal électrique du capteur, à l'aide de valeurs de référence connues."
+        ans: 2,
+        pieges: [
+          { code: "mesure-resistance-voltmetre", texte: "Utiliser un voltmètre : il mesure une tension ; la résistance se mesure à l'ohmmètre" },
+          { code: "mesure-resistance-amperemetre", texte: "Utiliser un ampèremètre : il mesure une intensité ; la résistance se mesure à l'ohmmètre" },
+          null,
+          { code: "grandeur-vs-signal", texte: "Confondre la grandeur physique (la température) et le signal du capteur (sa résistance)" }
+        ],
+        exp: "La résistance se mesure à l'ohmmètre, dipôle débranché. Attention : le thermomètre de référence sert à l'étalonnage, pour mesurer la température des bains."
       },
       {
-        q: "Pour étalonner une thermistance, on peut :",
+        q: "Pour étalonner une thermistance, on :",
         opts: [
-          "La relier directement à une prise secteur",
-          "La plonger dans des bains à températures connues et relever la tension correspondante",
-          "Mesurer uniquement sa masse",
-          "La placer dans l'obscurité totale"
+          "mesure sa résistance à une seule température connue",
+          "mesure sa résistance dans plusieurs bains de températures connues",
+          "mesure la température avec la thermistance seule",
+          "vérifie que sa résistance ne varie pas"
         ],
         ans: 1,
-        exp: "On compare la réponse du capteur (tension) à des températures de référence connues pour établir la courbe d'étalonnage."
+        pieges: [
+          { code: "etalonnage-un-point", texte: "Croire qu'une seule mesure suffit : il faut plusieurs points pour tracer la courbe d'étalonnage" },
+          null,
+          { code: "etalonnage-sans-reference", texte: "Oublier la référence : on compare la résistance à des températures connues, mesurées avec un thermomètre" },
+          { code: "capteur-resistance-fixe", texte: "Croire que la résistance du capteur est fixe : c'est justement sa variation qui permet de mesurer" }
+        ],
+        exp: "On relève la résistance (ou la tension du montage) pour plusieurs températures connues, mesurées avec un thermomètre de référence, puis on trace la courbe d'étalonnage."
       },
       {
-        q: "Une fois la courbe d'étalonnage U = f(θ) établie pour une thermistance, elle permet de :",
+        q: "Courbe d'étalonnage d'un montage à thermistance : U = 2,8 V à 0 °C ; 1,9 V à 20 °C ; 1,3 V à 40 °C ; 0,9 V à 60 °C. On mesure U = 1,6 V. La température vaut :",
         opts: [
-          "Remplacer définitivement le capteur",
-          "Déterminer une température inconnue à partir d'une mesure de tension",
-          "Mesurer uniquement des tensions négatives",
-          "Supprimer la nécessité du capteur"
+          "1,6 °C",
+          "environ 30 °C",
+          "entre 40 et 60 °C",
+          "on ne peut rien dire : 1,6 V n'est pas dans le tableau"
         ],
         ans: 1,
-        exp: "La courbe d'étalonnage permet ensuite de convertir une tension mesurée en une valeur de température, sans thermomètre de référence."
+        pieges: [
+          { code: "lecture-colonne-confondue", texte: "Recopier la valeur mesurée comme résultat : on lit la température qui correspond à 1,6 V" },
+          null,
+          { code: "sens-courbe-inverse", texte: "Se tromper de sens : ici la tension diminue quand la température augmente ; 1,6 V est entre 1,9 V (20 °C) et 1,3 V (40 °C)" },
+          { code: "interpolation-refusee", texte: "Croire qu'on ne peut lire que les points mesurés : la courbe d'étalonnage permet de lire entre eux" }
+        ],
+        exp: "1,6 V est entre 1,9 V (20 °C) et 1,3 V (40 °C) : par lecture sur la courbe, θ ≈ 30 °C. La courbe sert justement à lire entre les points mesurés."
       },
       {
-        q: "Lequel de ces capteurs convertit une grandeur physique en signal électrique par variation de résistance ?",
+        q: "Un capteur a été étalonné de 0 °C à 60 °C. On mesure une valeur qui correspondrait à une température bien au-delà de 60 °C. On peut :",
         opts: [
-          "Un voltmètre",
-          "Une thermistance",
-          "Un ampèremètre",
-          "Une pile"
+          "prolonger la courbe en ligne droite pour lire la température",
+          "annoncer 60 °C, la valeur la plus proche",
+          "conclure que la thermistance est cassée",
+          "seulement dire que θ > 60 °C, sans valeur fiable"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "extrapolation-hors-gamme", texte: "Prolonger la courbe hors de la plage étalonnée : la relation n'est pas une droite, rien ne garantit son prolongement" },
+          { code: "valeur-etalon-recopiee", texte: "Recopier la valeur de l'étalon le plus proche : la mesure est en dehors de la plage, pas égale à sa limite" },
+          { code: "hors-gamme-panne", texte: "Croire qu'une valeur hors plage signifie une panne : le capteur fonctionne, il faudrait l'étalonner plus loin" },
+          null
+        ],
+        exp: "Hors de la plage d'étalonnage, on sait seulement que θ dépasse 60 °C. Pour mesurer, il faudrait étendre l'étalonnage. La courbe n'étant pas une droite, on ne la prolonge pas."
+      },
+      {
+        q: "Dans la chaîne de mesure d'un thermomètre électronique, le diviseur de tension associé à la thermistance sert à :",
+        opts: [
+          "traduire la résistance en une tension",
+          "se passer de l'étalonnage du capteur",
+          "mesurer directement la température",
+          "afficher la valeur de la température"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conditionnement-remplace-etalonnage", texte: "Croire que le conditionnement dispense d'étalonner : il faut toujours relier la tension obtenue à la température" },
+          { code: "conditionnement-vs-capteur", texte: "Confondre conditionnement et capteur : c'est la thermistance qui réagit à la température" },
+          { code: "conditionnement-vs-affichage", texte: "Confondre conditionnement et affichage : l'affichage est la dernière étape" }
+        ],
+        exp: "Chaîne de mesure : capteur (résistance qui varie) → conditionnement (diviseur de tension : tension qui varie) → affichage ou traitement. L'étalonnage relie la tension finale à la température."
+      },
+      {
+        q: "Pour allumer automatiquement l'éclairage d'une rue à la tombée de la nuit, on utilise :",
+        opts: [
+          "une thermistance",
+          "une photorésistance",
+          "un ampèremètre",
+          "une lampe plus puissante"
         ],
         ans: 1,
-        exp: "La thermistance (comme la photorésistance) convertit une grandeur physique en une variation de résistance électrique."
+        pieges: [
+          { code: "capteur-mal-choisi", texte: "Choisir un capteur qui ne mesure pas la bonne grandeur : à la tombée de la nuit, c'est l'éclairement qui baisse" },
+          null,
+          { code: "capteur-vs-appareil-mesure", texte: "Confondre capteur et appareil de mesure électrique : l'ampèremètre mesure une intensité, pas l'éclairement" },
+          { code: "capteur-vs-actionneur", texte: "Confondre capteur et actionneur : la lampe est commandée, c'est le capteur qui détecte la nuit" }
+        ],
+        exp: "La photorésistance détecte la baisse de l'éclairement : sa résistance augmente à la tombée de la nuit, ce qui commande l'allumage. Il faut un capteur sensible à la grandeur qui change."
       }
     ],
     annales: [],
