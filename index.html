@@ -6475,17 +6475,17 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           content: [
             {
               type: "def",
-              term: "Titre massique t",
-              text: "Masse de soluté dissoute par litre de solution : t = m(soluté) / V(solution), exprimé en g·L⁻¹."
+              term: "Titre massique w",
+              text: "Rapport de la masse de soluté à la masse de la solution : w = m(soluté) / m(solution). C'est un rapport de deux masses : il est sans unité et souvent donné en pourcentage (w = 28 % signifie 28 g de soluté dans 100 g de solution)."
             },
             {
               type: "formula",
-              label: "Lien avec la concentration molaire",
-              text: "t = c × M\nc : concentration molaire du soluté (mol·L⁻¹)\nM : masse molaire du soluté (g·mol⁻¹)"
+              label: "Lien avec la concentration en quantité de matière",
+              text: "c = w × ρ(solution) / M   avec   ρ(solution) = d × ρ(eau)\nw : titre massique (sans unité)\nρ(solution) : masse volumique de la solution (g·L⁻¹)\nd : densité de la solution (sans unité) ; ρ(eau) = 1,0 × 10³ g·L⁻¹\nM : masse molaire du soluté (g·mol⁻¹)"
             },
             {
-              type: "text",
-              text: "Le titre massique est souvent indiqué sur les étiquettes des solutions commerciales (par exemple les flacons d'eau de Javel ou de solutions d'ammoniac), parfois sous forme de degré ou de pourcentage massique."
+              type: "warn",
+              text: "Ne pas confondre le titre massique w = m(soluté) / m(solution), sans unité, avec la concentration en masse cm = m(soluté) / V(solution), en g·L⁻¹. Les étiquettes des solutions commerciales (ammoniac, acide chlorhydrique, eau oxygénée…) indiquent le titre massique, souvent en pourcentage, et la densité."
             }
           ]
         },
@@ -17193,8 +17193,8 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           content: [
             {
               type: "def",
-              term: "Concentration en masse (ou titre massique)",
-              text: "Quotient de la masse de soluté dissous par le volume de la solution obtenue. Notée cm ou t."
+              term: "Concentration en masse",
+              text: "Quotient de la masse de soluté dissous par le volume de la solution obtenue. Notée cm. (À ne pas confondre avec le titre massique, vu en Terminale, qui est un rapport de deux masses.)"
             },
             {
               type: "formula",
@@ -20206,11 +20206,11 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
             {
               type: "formula",
               label: "Méthode",
-              text: "Numéro de la période = valeur de n de la couche de valence (couche externe)\nNuméro de la colonne = nombre d'électrons de valence (pour les blocs s et p)"
+              text: "Numéro de la période = valeur de n de la couche de valence (couche externe)\nBloc s : numéro de la colonne = nombre d'électrons de valence (colonnes 1 et 2)\nBloc p : numéro de la colonne = 10 + nombre d'électrons de valence (colonnes 13 à 18)\nCas particulier : l'hélium (2 électrons de valence) est placé dans la colonne 18, avec les gaz nobles."
             },
             {
               type: "text",
-              text: "Exemple : le chlore a pour configuration électronique (K)² (L)⁸ (M)⁷. Sa couche externe est M, donc n = 3 : le chlore est situé en période 3. Il possède 7 électrons de valence : il est donc situé dans la colonne 17 (bloc p)."
+              text: "Exemple : le chlore a pour configuration électronique (K)² (L)⁸ (M)⁷. Sa couche externe est M, donc n = 3 : le chlore est situé en période 3. Il possède 7 électrons de valence et appartient au bloc p : il est donc situé dans la colonne 10 + 7 = 17."
             }
           ]
         }
@@ -28143,17 +28143,12 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           ]
         },
         {
-          title: "4. Relation de conjugaison, grandissement et théorème de Thalès",
+          title: "4. Grandissement et théorème de Thalès",
           icon: "📐",
           content: [
             {
               type: "text",
-              text: "La position de l'image A' d'un objet A, formée par une lentille mince convergente, est donnée par la relation de conjugaison."
-            },
-            {
-              type: "formula",
-              label: "Relation de conjugaison",
-              text: "1 / OA' − 1 / OA = 1 / f'"
+              text: "Les distances sont des grandeurs algébriques, mesurées à partir du centre optique O sur l'axe orienté dans le sens de la lumière (de l'objet vers l'écran) : un objet placé avant la lentille a une abscisse OA négative, une image réelle formée après la lentille a une abscisse OA' positive."
             },
             {
               type: "text",
@@ -28162,16 +28157,21 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
             {
               type: "formula",
               label: "Grandissement",
-              text: "γ = A'B' / AB = − OA' / OA"
+              text: "γ = A'B' / AB = OA' / OA   (grandeurs algébriques)"
             },
             {
               type: "text",
-              text: "Exemple chiffré : un objet AB de 4 cm de haut est placé devant une lentille convergente, à une distance OA = 24 cm. L'image nette se forme sur un écran situé à OA' = 12 cm."
+              text: "Exemple chiffré : un objet AB de 4 cm de haut est placé 24 cm avant une lentille convergente : OA = − 24 cm. L'image nette se forme sur un écran situé 12 cm après la lentille : OA' = + 12 cm."
             },
             {
               type: "formula",
               label: "Calcul du grandissement",
-              text: "γ = − OA' / OA = − 12 / 24 = − 0,5\nA'B' = γ × AB = − 0,5 × 4 = − 2 cm"
+              text: "γ = OA' / OA = 12 / (− 24) = − 0,5\nA'B' = γ × AB = − 0,5 × 4 = − 2 cm"
+            },
+            {
+              type: "formula",
+              label: "Pour aller plus loin (programme de Première) : relation de conjugaison",
+              text: "1 / OA' − 1 / OA = 1 / f'\nAvec l'exemple : 1 / 12 − 1 / (− 24) = 3 / 24 = 1 / 8, donc f' = 8 cm."
             },
             {
               type: "warn",
@@ -28451,7 +28451,7 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
             "aides": []
           },
           {
-            "texte": "Le grandissement est γ = A'B' / AB. Calcule γ, puis vérifie qu'il est égal à − OA' / OA. Que signifient le signe et la valeur de γ ?",
+            "texte": "Le grandissement est γ = A'B' / AB. Calcule γ, puis vérifie qu'il est égal à OA' / OA en grandeurs algébriques (l'objet est avant la lentille : OA = − 24 cm). Que signifient le signe et la valeur de γ ?",
             "aides": []
           }
         ],
@@ -28461,7 +28461,7 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "<strong>3.</strong> Le rayon issu de B passant par F coupe la lentille 1 carreau sous l'axe, puis émerge parallèle à l'axe : il passe bien par B'. Les trois rayons sont concourants en B' (bonne vérification de la construction).",
           "<strong>4.</strong> OA' = 6 carreaux = 6 × 2 = 12 cm ; A'B' = − 1 carreau = − 2 cm (image renversée, de taille 2 cm). Yanis doit placer l'écran à 12 cm de la lentille, de l'autre côté de l'objet.",
           "<strong>5.</strong> L'image est réelle (on peut la recueillir sur un écran), renversée, plus petite que l'objet.",
-          "<strong>6.</strong> γ = A'B' / AB = − 2 / 4 = − 0,5. Avec les distances : − OA' / OA = − 12 / 24 = − 0,5 : on retrouve la même valeur. γ &lt; 0 : l'image est renversée ; |γ| = 0,5 &lt; 1 : l'image est deux fois plus petite que l'objet.",
+          "<strong>6.</strong> γ = A'B' / AB = − 2 / 4 = − 0,5. Avec les grandeurs algébriques : OA' / OA = 12 / (− 24) = − 0,5 : on retrouve la même valeur. γ &lt; 0 : l'image est renversée ; |γ| = 0,5 &lt; 1 : l'image est deux fois plus petite que l'objet.",
           "<em>⚠ Erreur fréquente : oublier de convertir les carreaux en centimètres (1 carreau = 2 cm) et répondre « OA' = 6 cm ».</em>"
         ]
       },
@@ -28547,7 +28547,7 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
             "texte": "Dans le vrai vidéoprojecteur du CDI, la matrice mesure 1,5 cm de haut et se trouve à 2,5 cm de l'objectif ; l'image nette sur le mur mesure 1,20 m de haut. Calcule le grandissement, puis la distance entre l'objectif et le mur. Le résultat te paraît-il réaliste ? Pourquoi la matrice affiche-t-elle l'image « à l'envers » ?",
             "aides": [
               "La taille de l'image sur le mur s'écrit avec un signe « − » (image renversée), et AB et A'B' doivent être dans la même unité.",
-              "γ = A'B' / AB ; puis utilise γ = − OA' / OA pour trouver OA' à partir de OA = 2,5 cm."
+              "γ = A'B' / AB ; puis utilise γ = OA' / OA, avec OA = − 2,5 cm (la matrice est avant l'objectif), pour trouver OA'."
             ]
           }
         ],
@@ -28555,9 +28555,9 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "<strong>1.</strong> f' = 4,0 cm = 4 carreaux : F' sur l'axe 4 carreaux à droite de O (côté où sort la lumière), F son symétrique, 4 carreaux à gauche de O (entre O et A, puisque OA = 6 cm).",
           "<strong>2.</strong> Rayon B → O : non dévié. Rayon issu de B parallèle à l'axe (1,5 carreau au-dessus de l'axe) : émerge en passant par F'. Rayon issu de B passant par F : coupe la lentille 3 carreaux sous l'axe, émerge parallèle à l'axe. Les trois rayons se coupent en B', 12 carreaux à droite de O et 3 carreaux sous l'axe.",
           "<strong>3.</strong> OA' = 12 cm ; A'B' = − 3,0 cm. L'image est réelle (de l'autre côté de la lentille, on peut la recueillir sur un écran), renversée et agrandie (3,0 cm contre 1,5 cm).",
-          "<strong>4.</strong> γ = A'B' / AB = − 3,0 / 1,5 = − 2,0. γ = − OA' / OA = − 12 / 6,0 = − 2,0. Les deux calculs concordent : l'image est renversée et 2 fois plus grande que l'objet.",
-          "<strong>5.</strong> Les droites (AB) et (A'B') sont parallèles (perpendiculaires à l'axe) et les droites (AA') et (BB') se coupent en O. Théorème de Thalès : OA' / OA = OB' / OB = A'B' / AB (en longueurs). Donc la taille de l'image vaut AB × OA' / OA = 1,5 × 12 / 6,0 = 3,0 cm : on retrouve la mesure. C'est ce qui justifie γ = − OA' / OA (le signe « − » traduit le renversement).",
-          "<strong>6.</strong> L'image est renversée : A'B' = − 1,20 m = − 120 cm. γ = A'B' / AB = − 120 / 1,5 = − 80. Avec γ = − OA' / OA : OA' = 80 × OA = 80 × 2,5 = 200 cm = 2,0 m. Une distance de 2 m entre un vidéoprojecteur et le mur est réaliste dans une salle. Comme l'image donnée par la lentille est renversée, la matrice affiche l'image à l'envers pour qu'elle apparaisse à l'endroit sur le mur.",
+          "<strong>4.</strong> γ = A'B' / AB = − 3,0 / 1,5 = − 2,0. γ = OA' / OA = 12 / (− 6,0) = − 2,0 (OA est négatif : l'objet est avant la lentille). Les deux calculs concordent : l'image est renversée et 2 fois plus grande que l'objet.",
+          "<strong>5.</strong> Les droites (AB) et (A'B') sont parallèles (perpendiculaires à l'axe) et les droites (AA') et (BB') se coupent en O. Théorème de Thalès : OA' / OA = OB' / OB = A'B' / AB (en longueurs). Donc la taille de l'image vaut AB × OA' / OA = 1,5 × 12 / 6,0 = 3,0 cm : on retrouve la mesure. C'est ce qui justifie γ = OA' / OA en grandeurs algébriques : OA est négatif et OA' positif, donc γ est négatif, ce qui traduit le renversement.",
+          "<strong>6.</strong> L'image est renversée : A'B' = − 1,20 m = − 120 cm. γ = A'B' / AB = − 120 / 1,5 = − 80. Avec γ = OA' / OA et OA = − 2,5 cm : OA' = γ × OA = (− 80) × (− 2,5) = 200 cm = 2,0 m. Une distance de 2 m entre un vidéoprojecteur et le mur est réaliste dans une salle. Comme l'image donnée par la lentille est renversée, la matrice affiche l'image à l'envers pour qu'elle apparaisse à l'endroit sur le mur.",
           "<em>⚠ Erreur fréquente : placer F' du côté de l'objet, ou mélanger les unités en 6 (1,20 m et 1,5 cm) : on trouverait γ = 0,8, ce qui donnerait une image plus petite que la matrice, absurde pour un projecteur.</em>"
         ]
       },
@@ -28612,7 +28612,7 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "<strong>1.</strong> Lentille → cristallin ; écran → rétine. L'écran est fixe car, dans l'œil, la distance cristallin–rétine ne change pas (environ 17 mm).",
           "<strong>2.</strong> Le rayon B → O n'est pas dévié ; il coupe l'écran (6 carreaux après O) en B', 1,5 carreau sous l'axe. Taille de l'image : A'B' = − 1,5 cm (image renversée de 1,5 cm). Par Thalès : AB × OA' / OA = 3,0 × 6,0 / 12 = 1,5 cm.",
           "<strong>3.</strong> Le rayon issu de B parallèle à l'axe atteint la lentille 3 carreaux au-dessus de l'axe ; on le prolonge jusqu'à B'. Il coupe l'axe optique en F', 4 carreaux après O. Donc f' = OF' = 4,0 cm.",
-          "<strong>4.</strong> γ = A'B' / AB = − 1,5 / 3,0 = − 0,50 (ou γ = − OA' / OA = − 6,0 / 12 = − 0,50).",
+          "<strong>4.</strong> γ = A'B' / AB = − 1,5 / 3,0 = − 0,50 (ou γ = OA' / OA = 6,0 / (− 12) = − 0,50, avec OA négatif).",
           "<strong>5.</strong> Pour un objet très éloigné, les rayons arrivent parallèles à l'axe et l'image se forme au foyer image F', à 4,0 cm de la lentille : elle est devant l'écran, donc floue sur l'écran. Pour qu'elle soit nette, il faut F' sur l'écran : f' = 6,0 cm. Bilan : pour un objet proche, il faut une distance focale plus petite (4,0 cm) que pour un objet lointain (6,0 cm). L'œil fait de même : quand on regarde de près, les muscles ciliaires bombent le cristallin, ce qui diminue sa distance focale, alors que la distance cristallin–rétine reste fixe : c'est l'accommodation.",
           "<strong>6.</strong> Tableau : A'B' = AB × OA' / OA = 6,0 cm × 17 mm / 5,0 m = 0,060 × 0,017 / 5,0 = 2,04 × 10⁻⁴ m ≈ 0,20 mm. Téléphone : 2,0 mm × 17 mm / 250 mm ≈ 0,14 mm. La lettre du tableau donne une image 1,5 fois plus grande : elle paraît plus grande, même si elle est 20 fois plus loin (5,0 m contre 0,25 m).",
           "<strong>7.</strong> Pour un objet proche, l'image se forme plus loin derrière l'objectif (comme dans l'ex 2 et la question 3 : l'image d'un objet proche est plus loin que F') : on éloigne l'objectif du capteur jusqu'à ce que l'image soit nette sur le capteur. L'œil, lui, ne peut pas modifier la distance cristallin–rétine : il modifie la distance focale du cristallin (accommodation).",
