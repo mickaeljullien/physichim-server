@@ -35720,114 +35720,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "D'après la loi de gravitation universelle, l'interaction entre deux masses est toujours :",
+        q: "Deux corps s'attirent par interaction gravitationnelle. Si la distance qui les sépare double, la valeur de la force :",
         opts: [
-          "attractive",
-          "répulsive",
-          "attractive ou répulsive selon les masses",
-          "nulle si les masses sont égales"
-        ],
-        ans: 0,
-        exp: "L'interaction gravitationnelle entre deux corps massiques est toujours attractive, contrairement à l'interaction électrostatique."
-      },
-      {
-        q: "La Terre (M_T = 5,97×10²⁴ kg) et la Lune (M_L = 7,35×10²² kg) sont distantes de d = 3,84×10⁸ m. Quelle est la valeur de la force gravitationnelle entre elles (G = 6,67×10⁻¹¹ N·m²·kg⁻²) ?",
-        opts: [
-          "≈1,98×10¹⁸ N",
-          "≈1,98×10²⁰ N",
-          "≈1,98×10²² N",
-          "≈1,98×10²⁴ N"
-        ],
-        ans: 1,
-        exp: "F = G·M_T·M_L/d² = 6,67×10⁻¹¹ × 5,97×10²⁴ × 7,35×10²² / (3,84×10⁸)² ≈ 1,98×10²⁰ N."
-      },
-      {
-        q: "D'après le principe des actions réciproques, la force exercée par la Lune sur la Terre est :",
-        opts: [
-          "nulle",
-          "de valeur différente et de sens opposé",
-          "de même valeur, même direction, sens opposé",
-          "de même valeur et même sens"
+          "est divisée par 2",
+          "double",
+          "est divisée par 4",
+          "est multipliée par 4"
         ],
         ans: 2,
-        exp: "Les deux corps exercent l'un sur l'autre des forces de même valeur, de même direction mais de sens opposés (principe des actions réciproques)."
+        pieges: [
+          { code: "oubli-carre-distance", texte: "Oublier le carré de la distance : F = G m₁ m₂ / r², doubler r divise F par 2² = 4" },
+          { code: "force-augmente-avec-distance", texte: "Croire que la force augmente avec la distance : plus les corps sont éloignés, plus ils s'attirent faiblement" },
+          null,
+          { code: "carre-sens-inverse", texte: "Multiplier au lieu de diviser : r est au dénominateur, la force diminue quand r augmente" }
+        ],
+        exp: "F = G m₁ m₂ / r² : si r double, r² est multiplié par 4, donc F est divisée par 4. Attention : la distance est au carré et au dénominateur."
       },
       {
-        q: "Un objet de masse m = 2,5 kg a pour poids sur Terre (g = 9,81 N/kg) P ≈ 24,5 N. Sur la Lune (g_Lune ≈ 1,62 N/kg), son poids devient environ :",
+        q: "Terre : M = 5,97×10²⁴ kg ; Lune : m = 7,35×10²² kg ; distance d = 3,84×10⁵ km ; G = 6,67×10⁻¹¹ N·m²·kg⁻². La force d'attraction gravitationnelle entre la Terre et la Lune vaut environ :",
         opts: [
-          "24,5 N (inchangé)",
-          "4,05 N",
-          "1,62 N",
-          "40,5 N"
+          "1,98×10²⁰ N",
+          "7,62×10²⁸ N",
+          "1,98×10²⁶ N",
+          "2,73×10⁻³ N"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oubli-carre-distance", texte: "Oublier le carré de la distance : G M m / d ; il faut diviser par d²" },
+          { code: "conversion-km-m", texte: "Oublier de convertir les kilomètres en mètres : d = 3,84×10⁸ m" },
+          { code: "masses-additionnees", texte: "Additionner les masses au lieu de les multiplier : F = G × M × m / d²" }
+        ],
+        exp: "F = G M m / d² = 6,67×10⁻¹¹ × 5,97×10²⁴ × 7,35×10²² / (3,84×10⁸)² ≈ 1,98×10²⁰ N. Attention : d en mètres et au carré."
+      },
+      {
+        q: "La Terre attire la Lune avec une force de valeur F. La force exercée par la Lune sur la Terre :",
+        opts: [
+          "est bien plus faible, car la Lune est moins massive",
+          "a la même valeur F, mais un sens opposé",
+          "est nulle : seule la Terre attire",
+          "a la même valeur F et le même sens"
         ],
         ans: 1,
-        exp: "P_Lune = m × g_Lune = 2,5 × 1,62 = 4,05 N : le poids diminue car il dépend du champ de pesanteur local, contrairement à la masse qui reste inchangée."
+        pieges: [
+          { code: "reciproque-plus-massif-plus-fort", texte: "Croire que l'objet le plus massif exerce la plus grande force : les deux forces réciproques ont toujours la même valeur" },
+          null,
+          { code: "attraction-a-sens-unique", texte: "Croire que seul le plus gros corps attire : l'interaction est réciproque, chaque corps attire l'autre" },
+          { code: "reciproque-meme-sens", texte: "Oublier que les forces réciproques sont de sens opposés : chaque astre attire l'autre vers lui" }
+        ],
+        exp: "Les deux forces ont même direction (la droite Terre-Lune), même valeur G M m / d², et des sens opposés : chaque astre attire l'autre vers lui. Attention : la masse de chacun intervient dans la même formule."
       },
       {
-        q: "Deux charges q1 = +2,0×10⁻⁶ C et q2 = −3,0×10⁻⁶ C, séparées de r = 0,50 m, exercent l'une sur l'autre une force :",
+        q: "Un objet de masse 2,5 kg pèse 24,5 N sur Terre (g = 9,81 N·kg⁻¹). Sur la Lune (g = 1,62 N·kg⁻¹), son poids vaut :",
+        opts: [
+          "24,5 N",
+          "1,62 N",
+          "15,1 N",
+          "4,05 N"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "poids-independant-astre", texte: "Croire que le poids ne dépend pas de l'astre : P = m × g, et g est environ 6 fois plus faible sur la Lune" },
+          { code: "poids-egal-g", texte: "Prendre g pour le poids : P = m × g = 2,5 × 1,62" },
+          { code: "rapport-g-inverse", texte: "Inverser le rapport des g : 2,5 × 9,81 / 1,62 ; le poids est plus faible sur la Lune" },
+          null
+        ],
+        exp: "P = m × g(Lune) = 2,5 × 1,62 ≈ 4,05 N. La masse (2,5 kg) ne change pas ; le poids dépend du champ de pesanteur de l'astre."
+      },
+      {
+        q: "Deux charges q₁ = +2,0 μC et q₂ = −3,0 μC sont proches l'une de l'autre. L'interaction entre elles est :",
         opts: [
           "répulsive, car les charges sont différentes",
           "attractive, car les charges sont de signes opposés",
-          "nulle, car les charges se compensent",
-          "répulsive, car q1 est positive"
+          "répulsive, car |q₂| est la plus grande",
+          "nulle, car les charges se compensent presque"
         ],
         ans: 1,
-        exp: "Des charges de signes opposés s'attirent : l'interaction est attractive."
-      },
-      {
-        q: "Quelle est la valeur de cette force électrostatique (k = 9,0×10⁹ N·m²·C⁻²) ?",
-        opts: [
-          "≈0,0216 N",
-          "≈0,216 N",
-          "≈2,16 N",
-          "≈216 N"
+        pieges: [
+          { code: "signes-charges-regle-inversee", texte: "Inverser la règle : des charges de signes opposés s'attirent, des charges de même signe se repoussent" },
+          null,
+          { code: "charge-plus-grande-repousse", texte: "Croire que la charge la plus grande repousse l'autre : seul le signe des charges fixe le sens de l'interaction" },
+          { code: "charges-se-compensent", texte: "Croire que deux charges de signes opposés s'annulent : elles restent distinctes et s'attirent" }
         ],
-        ans: 1,
-        exp: "F = k·|q1×q2|/r² = 9,0×10⁹ × 6,0×10⁻¹² / 0,25 ≈ 0,216 N."
+        exp: "Des charges de signes opposés s'attirent ; de même signe, elles se repoussent. Attention : la valeur des charges fixe l'intensité de la force, pas son sens."
       },
       {
-        q: "Deux plaques planes parallèles distantes de d = 5,0 cm sont soumises à une tension U = 250 V. Quelle est la valeur du champ électrostatique E entre elles ?",
+        q: "Deux charges de valeurs |q₁| = 2,0 μC et |q₂| = 3,0 μC sont distantes de 50 cm (k = 9,0×10⁹ N·m²·C⁻²). La valeur de la force électrostatique vaut :",
         opts: [
-          "50 V/m",
-          "500 V/m",
-          "5,0×10³ V/m",
-          "5,0×10⁴ V/m"
-        ],
-        ans: 2,
-        exp: "E = U/d = 250 / 0,050 = 5,0×10³ V/m."
-      },
-      {
-        q: "Une charge q = 4,0×10⁻⁹ C placée dans ce champ subit une force de valeur :",
-        opts: [
-          "2,0×10⁻⁵ N",
-          "2,0×10⁻⁶ N",
-          "4,0×10⁻⁵ N",
-          "2,0×10⁻⁴ N"
+          "0,22 N",
+          "0,11 N",
+          "2,2×10¹¹ N",
+          "2,2×10⁻⁵ N"
         ],
         ans: 0,
-        exp: "F = q × E = 4,0×10⁻⁹ × 5,0×10³ = 2,0×10⁻⁵ N."
-      },
-      {
-        q: "Dans l'atome d'hydrogène, le rapport FE/FG entre force électrostatique et force gravitationnelle proton-électron est de l'ordre de 10³⁹. Qu'en conclure ?",
-        opts: [
-          "Les deux interactions sont comparables",
-          "L'interaction gravitationnelle domine largement à l'échelle atomique",
-          "L'interaction électrostatique domine très largement à l'échelle atomique",
-          "Aucune des deux interactions n'existe à cette échelle"
+        pieges: [
+          null,
+          { code: "oubli-carre-distance", texte: "Oublier le carré de la distance : k |q₁ q₂| / r ; il faut diviser par r² = 0,25 m²" },
+          { code: "conversion-microcoulomb", texte: "Oublier de convertir les microcoulombs : 1 μC = 1×10⁻⁶ C" },
+          { code: "conversion-cm-m", texte: "Garder la distance en centimètres : r = 50 cm = 0,50 m" }
         ],
-        ans: 2,
-        exp: "Un rapport aussi grand montre que l'interaction électrostatique est très largement dominante devant la gravitation à l'échelle atomique."
+        exp: "F = k |q₁ q₂| / r² = 9,0×10⁹ × 2,0×10⁻⁶ × 3,0×10⁻⁶ / 0,50² ≈ 0,22 N. Attention : charges en coulombs, distance en mètres et au carré."
       },
       {
-        q: "Pourtant, à l'échelle du système solaire, c'est l'interaction gravitationnelle qui domine. Pourquoi ?",
+        q: "Deux plaques planes parallèles, distantes de 5,0 cm, sont soumises à une tension U = 250 V. Le champ électrostatique entre elles vaut E = U / d, soit :",
         opts: [
-          "Les charges électriques disparaissent à grande distance",
-          "La matière est globalement neutre électriquement, les forces électrostatiques s'annulent en moyenne, alors que les masses s'additionnent toujours",
-          "La constante G devient plus grande à grande distance",
-          "La loi de Coulomb ne s'applique plus au-delà de quelques mètres"
+          "50 V·m⁻¹",
+          "5,0×10³ V·m⁻¹",
+          "12,5 V·m",
+          "2,0×10⁻⁴ m·V⁻¹"
         ],
         ans: 1,
-        exp: "La matière étant globalement neutre (autant de charges positives que négatives), les interactions électrostatiques s'annulent en moyenne à grande échelle, alors que les masses s'additionnent toujours : l'interaction gravitationnelle, cumulée sur d'énormes masses, devient dominante."
+        pieges: [
+          { code: "conversion-cm-m", texte: "Garder la distance en centimètres : 250 / 5,0 ; d = 5,0 cm = 0,050 m" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 250 × 0,050 ; il faut E = U / d" },
+          { code: "champ-rapport-inverse", texte: "Inverser le rapport : d / U ; il faut E = U / d, en V·m⁻¹" }
+        ],
+        exp: "E = U / d = 250 / 0,050 = 5,0×10³ V·m⁻¹. Attention : la distance doit être en mètres."
+      },
+      {
+        q: "Entre deux plaques planes parallèles chargées, les lignes du champ électrostatique sont :",
+        opts: [
+          "parallèles, régulièrement espacées, orientées de la plaque + vers la plaque −",
+          "parallèles, régulièrement espacées, orientées de la plaque − vers la plaque +",
+          "plus resserrées près des plaques qu'au milieu",
+          "absentes entre les plaques : le champ n'existe que sur les plaques"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "sens-champ-inverse", texte: "Inverser le sens du champ : il est orienté de la plaque positive vers la plaque négative" },
+          { code: "champ-plus-fort-pres-plaque", texte: "Croire que le champ est plus intense près des plaques : entre deux plaques parallèles, il est uniforme (même valeur partout)" },
+          { code: "champ-seulement-sur-plaques", texte: "Croire que le champ n'existe que sur les plaques : il existe dans tout l'espace entre elles" }
+        ],
+        exp: "Le champ entre deux plaques parallèles est uniforme : ses lignes sont parallèles, régulièrement espacées et orientées de la plaque + vers la plaque −. Attention : uniforme signifie même valeur, même direction et même sens partout."
+      },
+      {
+        q: "Un électron (charge négative) est placé entre ces plaques. La force électrique qu'il subit est :",
+        opts: [
+          "de même sens que le champ E",
+          "perpendiculaire au champ E",
+          "nulle, car l'électron est très léger",
+          "de sens opposé au champ E"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "signe-charge-force-champ", texte: "Oublier le signe de la charge : F = q × E, avec q < 0 la force est de sens opposé au champ" },
+          { code: "force-perpendiculaire-champ", texte: "Croire que la force électrique est perpendiculaire au champ : F = q E lui est colinéaire" },
+          { code: "masse-annule-force", texte: "Confondre masse et charge : la force électrique dépend de la charge, pas de la masse" },
+          null
+        ],
+        exp: "F = q × E : pour une charge négative, la force a la direction du champ mais le sens opposé ; l'électron est attiré vers la plaque positive. Attention au signe de la charge."
+      },
+      {
+        q: "Dans l'atome, la force électrostatique est environ 10³⁹ fois plus intense que la force gravitationnelle. Pourquoi est-ce pourtant la gravitation qui gouverne le mouvement des planètes ?",
+        opts: [
+          "La loi de Coulomb ne s'applique pas à grande distance",
+          "La force électrostatique diminue plus vite avec la distance",
+          "Les astres sont trop massifs pour porter des charges",
+          "Les astres sont globalement neutres, alors que les masses s'additionnent"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "coulomb-portee-limitee", texte: "Croire que la loi de Coulomb a une portée limitée : elle s'applique à toute distance" },
+          { code: "decroissance-differente", texte: "Croire que les deux forces décroissent différemment : toutes deux varient en 1 / r²" },
+          { code: "masse-empeche-charge", texte: "Croire que la masse empêche de porter des charges : un astre contient autant de charges + que de charges −" },
+          null
+        ],
+        exp: "La matière contient autant de charges positives que négatives : à grande échelle, les forces électrostatiques se compensent. Les masses, toujours positives, s'additionnent : la gravitation domine. Les deux forces varient pourtant en 1 / r²."
       }
     ],
     annales: [],
@@ -36267,114 +36327,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une force pressante F = 500 N s'exerce uniformément sur une surface S = 0,25 m². Quelle est la pression exercée ?",
+        q: "Une personne exerce une force pressante de 600 N sur le sol par une surface de 30 cm². La pression exercée vaut :",
         opts: [
-          "125 Pa",
-          "2,0×10² Pa",
+          "20 Pa",
           "2,0×10³ Pa",
-          "2,0×10⁴ Pa"
+          "2,0×10⁵ Pa",
+          "1,8 Pa"
         ],
         ans: 2,
-        exp: "P = F/S = 500 / 0,25 = 2000 Pa = 2,0×10³ Pa."
+        pieges: [
+          { code: "conversion-cm2-m2", texte: "Oublier de convertir la surface : 30 cm² = 30×10⁻⁴ m² = 3,0×10⁻³ m²" },
+          { code: "conversion-cm2-puissance", texte: "Convertir les cm² comme des cm : 1 cm² = 10⁻⁴ m², et non 10⁻² m²" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 600 × 3,0×10⁻³ ; il faut P = F / S" }
+        ],
+        exp: "S = 30 cm² = 3,0×10⁻³ m², donc P = F / S = 600 / 3,0×10⁻³ = 2,0×10⁵ Pa. Attention : 1 cm² = 10⁻⁴ m²."
       },
       {
-        q: "Cette pression exprimée en bar vaut :",
+        q: "Une pression de 2,0×10⁵ Pa, exprimée en bar (1 bar = 10⁵ Pa), vaut :",
         opts: [
-          "0,0020 bar",
-          "0,020 bar",
+          "2,0 bar",
           "0,20 bar",
-          "2,0 bar"
+          "2,0×10¹⁰ bar",
+          "2,0×10² bar"
         ],
-        ans: 1,
-        exp: "1 bar = 10⁵ Pa, donc P = 2000 / 10⁵ = 0,020 bar."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-bar-puissance", texte: "Se tromper de puissance de dix : 2,0×10⁵ / 10⁵ = 2,0" },
+          { code: "conversion-bar-inverse", texte: "Multiplier au lieu de diviser : pour passer des Pa aux bar, on divise par 10⁵" },
+          { code: "bar-vs-hectopascal", texte: "Confondre bar et hectopascal : 1 hPa = 10² Pa, mais 1 bar = 10⁵ Pa" }
+        ],
+        exp: "2,0×10⁵ Pa / 10⁵ = 2,0 bar, soit environ deux fois la pression atmosphérique. Attention : 1 bar = 10⁵ Pa = 1 000 hPa."
       },
       {
-        q: "À h = 2,5 m de profondeur dans une piscine (P0 = 1,013×10⁵ Pa, ρ(eau) = 1,00×10³ kg/m³, g = 9,81 N/kg), la pression vaut environ :",
+        q: "À 2,5 m de profondeur dans une piscine : P₀ = 1,013×10⁵ Pa ; ρ(eau) = 1,00×10³ kg·m⁻³ ; g = 9,81 N·kg⁻¹. La pression vaut P = P₀ + ρ g h, soit :",
         opts: [
-          "1,013×10⁵ Pa",
-          "1,258×10⁵ Pa",
-          "2,452×10⁴ Pa",
-          "1,5×10⁵ Pa"
+          "2,45×10⁴ Pa",
+          "7,68×10⁴ Pa",
+          "1,26×10⁵ Pa",
+          "1,01×10⁵ Pa"
         ],
-        ans: 1,
-        exp: "P = P0 + ρ·g·h = 1,013×10⁵ + 1,00×10³ × 9,81 × 2,5 ≈ 1,013×10⁵ + 2,45×10⁴ ≈ 1,258×10⁵ Pa."
+        ans: 2,
+        pieges: [
+          { code: "oubli-pression-atmospherique", texte: "Oublier la pression atmosphérique : ρ g h donne seulement l'écart de pression avec la surface" },
+          { code: "signe-profondeur-inverse", texte: "Retrancher au lieu d'ajouter : la pression augmente avec la profondeur" },
+          null,
+          { code: "masse-volumique-non-convertie", texte: "Prendre ρ = 1,00 (en g·cm⁻³ ou kg·L⁻¹) : il faut ρ = 1,00×10³ kg·m⁻³" }
+        ],
+        exp: "P = 1,013×10⁵ + 1,00×10³ × 9,81 × 2,5 ≈ 1,013×10⁵ + 2,45×10⁴ ≈ 1,26×10⁵ Pa. Attention : ρ en kg·m⁻³, et la pression atmosphérique s'ajoute."
       },
       {
-        q: "Cette pression dépend-elle de la forme du bassin ?",
+        q: "Un vase large et un tube étroit sont remplis d'eau jusqu'à la même hauteur. Au fond, la pression est :",
         opts: [
-          "Oui, un bassin large donne une pression plus faible",
-          "Non, elle ne dépend que de la profondeur h (et de P0, ρ, g)",
-          "Oui, un bassin profond et étroit augmente toujours la pression",
-          "Non, la pression est toujours égale à P0"
+          "plus grande dans le vase large, qui contient plus d'eau",
+          "la même dans les deux récipients",
+          "plus grande dans le tube étroit, où l'eau est resserrée",
+          "impossible à comparer sans la masse d'eau"
         ],
         ans: 1,
-        exp: "La pression en un point d'un fluide au repos ne dépend que de la profondeur, pas de la forme du récipient."
+        pieges: [
+          { code: "pression-depend-volume", texte: "Croire que la pression dépend de la quantité de liquide : elle ne dépend que de la profondeur (et de ρ, g, P₀)" },
+          null,
+          { code: "pression-depend-forme", texte: "Croire que la pression dépend de la forme du récipient : à même profondeur, la pression est la même" },
+          { code: "pression-besoin-masse", texte: "Croire qu'il faut la masse de liquide : P = P₀ + ρ g h ne fait intervenir que la profondeur" }
+        ],
+        exp: "P = P₀ + ρ g h ne dépend que de la profondeur h, pas de la forme ni du volume du récipient : même hauteur d'eau, même pression au fond."
       },
       {
-        q: "Un objet de volume V = 800 cm³ est totalement immergé dans l'eau (ρ = 1,00×10³ kg/m³, g = 9,81 N/kg). Quelle est la valeur de la poussée d'Archimède ?",
+        q: "Un plongeur descend de 5,0 m à 15,0 m de profondeur en mer (ρ = 1,03×10³ kg·m⁻³ ; g = 9,81 N·kg⁻¹). La pression autour de lui augmente de :",
         opts: [
-          "≈0,785 N",
-          "≈7,85 N",
-          "≈78,5 N",
-          "≈785 N"
+          "1,52×10⁵ Pa",
+          "1,01×10⁵ Pa",
+          "2,02×10⁵ Pa",
+          "1,01×10² Pa"
         ],
         ans: 1,
-        exp: "V = 8,0×10⁻⁴ m³ ; F_A = ρ×V×g = 1,00×10³ × 8,0×10⁻⁴ × 9,81 ≈ 7,85 N."
-      },
-      {
-        q: "Si la masse de cet objet est m = 0,60 kg (poids ≈5,89 N), l'objet :",
-        opts: [
-          "coule, car son poids est supérieur à la poussée d'Archimède",
-          "flotte, car la poussée d'Archimède (≈7,85 N) est supérieure à son poids (≈5,89 N)",
-          "reste en équilibre exactement entre deux eaux",
-          "ni ne coule ni ne flotte, l'information est insuffisante"
+        pieges: [
+          { code: "profondeur-au-lieu-ecart", texte: "Utiliser la profondeur finale (15,0 m) au lieu de l'écart de profondeur (10,0 m)" },
+          null,
+          { code: "profondeurs-additionnees", texte: "Additionner les profondeurs : l'écart de pression dépend de la différence z₁ − z₂ = 10,0 m" },
+          { code: "masse-volumique-non-convertie", texte: "Prendre ρ = 1,03 : la masse volumique doit être en kg·m⁻³ (1,03×10³)" }
         ],
-        ans: 1,
-        exp: "F_A ≈ 7,85 N > P ≈ 5,89 N : la poussée d'Archimède l'emporte, l'objet remonte et flotte."
+        exp: "ΔP = ρ g Δh = 1,03×10³ × 9,81 × 10,0 ≈ 1,01×10⁵ Pa : environ 1 bar de plus tous les 10 m. Attention : c'est l'écart de profondeur qui compte."
       },
       {
-        q: "Un gaz occupe V1 = 400 mL sous P1 = 1,00×10⁵ Pa. On le comprime à température constante jusqu'à V2 = 250 mL. Quelle est la nouvelle pression P2 ?",
+        q: "Un gaz occupe 400 mL sous 1,00×10⁵ Pa. On le comprime, à température constante, jusqu'à 250 mL. Sa nouvelle pression vaut :",
         opts: [
           "6,25×10⁴ Pa",
           "1,00×10⁵ Pa",
-          "1,60×10⁵ Pa",
-          "2,50×10⁵ Pa"
+          "4,00×10⁷ Pa",
+          "1,60×10⁵ Pa"
         ],
-        ans: 2,
-        exp: "P1×V1 = P2×V2, donc P2 = P1×V1/V2 = 1,00×10⁵ × 400 / 250 = 1,60×10⁵ Pa."
+        ans: 3,
+        pieges: [
+          { code: "mariotte-rapport-inverse", texte: "Inverser le rapport des volumes : P₂ = P₁ × V₁ / V₂ ; comprimer un gaz augmente sa pression" },
+          { code: "pression-independante-volume", texte: "Croire que la pression ne change pas : à température constante, P × V reste constant" },
+          { code: "mariotte-oubli-v2", texte: "Calculer P₁ × V₁ sans diviser par V₂ : 1,00×10⁵ × 400" },
+          null
+        ],
+        exp: "Loi de Mariotte : P₁ V₁ = P₂ V₂, donc P₂ = 1,00×10⁵ × 400 / 250 = 1,60×10⁵ Pa. Attention : volume plus petit, pression plus grande."
       },
       {
-        q: "Un ballon-sonde contient V1 = 5,0 m³ de gaz à P1 = 1,0×10⁵ Pa au sol. Quel volume V2 occupe ce gaz lorsque la pression extérieure atteint P2 = 2,0×10⁴ Pa (température constante) ?",
+        q: "À l'échelle microscopique, la pression exercée par un gaz sur une paroi est due :",
         opts: [
-          "1,0 m³",
-          "5,0 m³",
-          "25 m³",
-          "50 m³"
-        ],
-        ans: 2,
-        exp: "P1×V1 = P2×V2, donc V2 = P1×V1/P2 = 1,0×10⁵ × 5,0 / (2,0×10⁴) = 25 m³."
-      },
-      {
-        q: "Le ballon éclate si son volume dépasse 30 m³. À quelle pression minimale éclate-t-il ?",
-        opts: [
-          "≈1,0×10⁴ Pa",
-          "≈1,67×10⁴ Pa",
-          "≈3,0×10⁴ Pa",
-          "≈6,0×10⁴ Pa"
+          "au poids des particules posées sur la paroi",
+          "aux chocs des particules en mouvement sur la paroi",
+          "à la dilatation des particules",
+          "à la répulsion entre particules immobiles"
         ],
         ans: 1,
-        exp: "P1×V1 = P_éclate×30, donc P_éclate = 1,0×10⁵ × 5,0 / 30 ≈ 1,67×10⁴ Pa."
+        pieges: [
+          { code: "pression-poids-particules", texte: "Croire que la pression vient du poids des particules : un gaz exerce une pression sur toutes les parois, même le plafond" },
+          null,
+          { code: "dilatation-des-particules", texte: "Croire que les particules se dilatent : leur taille ne change pas, c'est leur mouvement qui compte" },
+          { code: "particules-immobiles", texte: "Croire que les particules d'un gaz sont immobiles : elles sont en mouvement désordonné permanent" }
+        ],
+        exp: "Les particules d'un gaz, en mouvement désordonné, frappent sans cesse les parois : ces chocs exercent la force pressante. Attention : la pression s'exerce dans toutes les directions, pas seulement vers le bas."
       },
       {
-        q: "Pourquoi la pression atmosphérique diminue-t-elle avec l'altitude ?",
+        q: "On chauffe un gaz enfermé dans un récipient rigide (volume constant). Sa pression augmente, car :",
         opts: [
-          "Car la température de l'air augmente en altitude",
-          "Car il y a de moins en moins d'air au-dessus d'un point donné en montant, ce qui diminue le poids d'air exercé",
-          "Car la loi de Boyle-Mariotte l'impose directement",
-          "Car l'air devient plus chaud et se dilate en altitude"
+          "les particules grossissent et occupent plus de place",
+          "le chauffage crée de nouvelles particules",
+          "le volume du gaz augmente",
+          "les particules, plus rapides, frappent les parois plus souvent et plus fort"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "dilatation-des-particules", texte: "Croire que les particules se dilatent : leur taille ne change pas, leur vitesse augmente" },
+          { code: "chauffage-cree-particules", texte: "Croire que le chauffage crée des particules : leur nombre reste le même dans un récipient fermé" },
+          { code: "volume-change-recipient-rigide", texte: "Croire que le volume du gaz augmente : il occupe tout le récipient rigide, son volume ne change pas" },
+          null
+        ],
+        exp: "La température mesure l'agitation des particules : plus chaudes, elles sont plus rapides et frappent les parois plus souvent et plus fort, d'où une pression plus grande. Leur nombre et leur taille ne changent pas."
+      },
+      {
+        q: "Un ballon-sonde contient 5,0 m³ de gaz sous 1,0×10⁵ Pa au sol. Son enveloppe éclate au-delà de 30 m³. En supposant la température constante, il éclate quand la pression extérieure descend à :",
+        opts: [
+          "6,0×10⁵ Pa",
+          "1,7×10⁴ Pa",
+          "1,0×10⁵ Pa",
+          "3,0×10⁶ Pa"
         ],
         ans: 1,
-        exp: "La pression en un point résulte du poids de l'air situé au-dessus de ce point ; en montant en altitude, la masse d'air restant au-dessus diminue, donc la pression diminue aussi."
+        pieges: [
+          { code: "mariotte-rapport-inverse", texte: "Inverser le rapport des volumes : P = P₁ × V₁ / V ; quand le volume augmente, la pression diminue" },
+          null,
+          { code: "pression-independante-volume", texte: "Croire que la pression ne change pas : à température constante, P × V reste constant" },
+          { code: "mariotte-oubli-v2", texte: "Calculer P₁ × V sans diviser : P × V = constante donne P = P₁ V₁ / V" }
+        ],
+        exp: "P₁ V₁ = P V, donc P = 1,0×10⁵ × 5,0 / 30 ≈ 1,7×10⁴ Pa. Le ballon gonfle en montant, car la pression extérieure diminue."
+      },
+      {
+        q: "Pourquoi la pression atmosphérique diminue-t-elle quand l'altitude augmente ?",
+        opts: [
+          "Parce que l'air est plus chaud en altitude",
+          "Parce que la quantité d'air située au-dessus diminue",
+          "Parce que la gravité disparaît en altitude",
+          "Parce que les particules d'air rétrécissent en altitude"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "altitude-plus-chaud", texte: "Croire que l'air est plus chaud en altitude : il est en général plus froid, et ce n'est pas la cause" },
+          null,
+          { code: "gravite-nulle-altitude", texte: "Croire que la gravité disparaît en altitude : elle diminue très peu sur quelques kilomètres" },
+          { code: "dilatation-des-particules", texte: "Croire que la taille des particules change : c'est leur nombre par unité de volume qui diminue" }
+        ],
+        exp: "La pression de l'air en un point est liée au poids de la colonne d'air située au-dessus : en montant, cette colonne diminue, donc la pression aussi (comme dans l'eau, mais avec un fluide compressible)."
       }
     ],
     annales: [],
@@ -36792,114 +36912,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Un passager assis dans un train roulant à vitesse constante observe une bille posée sur la tablette devant lui. Dans le référentiel du train, la bille est :",
+        q: "Un passager est assis dans un train qui roule. Il est immobile par rapport au train. Par rapport au quai, il est :",
         opts: [
-          "en mouvement rectiligne",
-          "immobile",
-          "en mouvement circulaire",
-          "impossible à déterminer"
-        ],
-        ans: 1,
-        exp: "Dans le référentiel du train, la position de la bille par rapport au train ne change pas : elle est immobile."
-      },
-      {
-        q: "Dans le référentiel terrestre, cette même bille est :",
-        opts: [
-          "immobile, comme dans le train",
-          "en mouvement, car elle se déplace avec le train par rapport au sol",
-          "impossible à décrire",
-          "en mouvement circulaire uniquement"
-        ],
-        ans: 1,
-        exp: "Par rapport au sol (référentiel terrestre), la bille se déplace avec le train : elle est donc en mouvement dans ce référentiel, alors qu'elle est immobile dans celui du train."
-      },
-      {
-        q: "Que peut-on conclure de cet exemple sur la notion de mouvement ?",
-        opts: [
-          "Le mouvement est absolu, indépendant de tout référentiel",
-          "Le mouvement est relatif : il doit toujours être décrit par rapport à un référentiel précisé",
-          "Un objet est toujours en mouvement, quel que soit le référentiel",
-          "Seul le référentiel terrestre est valable pour décrire un mouvement"
-        ],
-        ans: 1,
-        exp: "Un même objet peut être immobile dans un référentiel et en mouvement dans un autre : le mouvement est relatif, il doit toujours être précisé par rapport à un référentiel."
-      },
-      {
-        q: "Sur un enregistrement de période τ = 20 ms, les positions M4 et M6 sont distantes de 4,8 cm. Quelle est la vitesse approchée v5 ≈ M4M6/(2τ) ?",
-        opts: [
-          "0,24 m/s",
-          "1,2 m/s",
-          "2,4 m/s",
-          "12 m/s"
-        ],
-        ans: 1,
-        exp: "v5 = 4,8×10⁻² / (2×0,020) = 4,8×10⁻² / 0,040 = 1,2 m/s."
-      },
-      {
-        q: "Un solide de masse m = 2,0 kg est soumis à une force résultante F = 6,0 N. Quelle est la valeur de son accélération (ΣF = m×a) ?",
-        opts: [
-          "1,5 m/s²",
-          "3,0 m/s²",
-          "6,0 m/s²",
-          "12 m/s²"
-        ],
-        ans: 1,
-        exp: "a = F/m = 6,0 / 2,0 = 3,0 m/s²."
-      },
-      {
-        q: "Si la masse du solide double, à force résultante inchangée, l'accélération :",
-        opts: [
-          "double aussi",
-          "reste identique",
-          "est divisée par deux",
-          "est divisée par quatre"
+          "immobile aussi : on est immobile ou on ne l'est pas",
+          "immobile, car il ne marche pas",
+          "en mouvement : le mouvement dépend du référentiel",
+          "en mouvement seulement si le train accélère"
         ],
         ans: 2,
-        exp: "a' = F/m' = 6,0/4,0 = 1,5 m/s² : l'accélération est inversement proportionnelle à la masse, donc elle est divisée par deux quand la masse double."
-      },
-      {
-        q: "Sur un enregistrement chronophotographique, les distances entre positions successives d'un mobile sont toutes égales et la trajectoire est une droite. Ce mouvement est :",
-        opts: [
-          "rectiligne uniformément varié",
-          "rectiligne uniforme",
-          "circulaire uniforme",
-          "curviligne quelconque"
+        pieges: [
+          { code: "mouvement-absolu", texte: "Oublier que le mouvement est relatif : il faut toujours préciser par rapport à quoi on est immobile" },
+          { code: "mouvement-sans-referentiel", texte: "Croire qu'on bouge seulement si l'on se déplace soi-même : par rapport au quai, le passager avance avec le train" },
+          null,
+          { code: "mouvement-si-acceleration", texte: "Croire qu'il n'y a mouvement que si la vitesse change : à vitesse constante, le passager se déplace par rapport au quai" }
         ],
-        ans: 1,
-        exp: "Des distances égales parcourues en durées égales sur une trajectoire rectiligne correspondent à un mouvement rectiligne uniforme (vitesse constante)."
+        exp: "Le passager est immobile dans le référentiel du train et en mouvement dans le référentiel terrestre (le quai). Attention : on décrit toujours un mouvement par rapport à un référentiel précisé."
       },
       {
-        q: "Dans ce cas, d'après la deuxième loi de Newton, la somme vectorielle des forces appliquées au système est :",
+        q: "Sur une chronophotographie de période τ = 40 ms, les positions M₃ et M₅ sont distantes de 6,0 cm. La vitesse au point M₄ vaut environ v₄ = M₃M₅ / (2τ), soit :",
         opts: [
-          "maximale",
-          "égale au poids seul",
-          "nulle",
-          "égale à m×g"
-        ],
-        ans: 2,
-        exp: "Le vecteur accélération est nul dans un mouvement rectiligne uniforme ; d'après ΣF = m×a, la somme vectorielle des forces appliquées est donc nulle."
-      },
-      {
-        q: "Un skieur de masse m = 70 kg accélère sur une portion rectiligne avec a = 2,5 m/s² (frottements de l'air négligés). Quelle est la valeur de la résultante des forces qui s'exercent sur lui ?",
-        opts: [
-          "17,5 N",
-          "28 N",
-          "70 N",
-          "175 N"
+          "1,5 m·s⁻¹",
+          "7,5×10⁻⁴ m·s⁻¹",
+          "75 m·s⁻¹",
+          "0,75 m·s⁻¹"
         ],
         ans: 3,
-        exp: "ΣF = m×a = 70 × 2,5 = 175 N."
+        pieges: [
+          { code: "oubli-facteur-2-tau", texte: "Diviser par τ au lieu de 2τ : entre M₃ et M₅, il s'écoule deux intervalles τ" },
+          { code: "conversion-ms-s", texte: "Oublier de convertir les millisecondes : 2τ = 80 ms = 0,080 s" },
+          { code: "conversion-cm-m", texte: "Oublier de convertir les centimètres : M₃M₅ = 6,0 cm = 0,060 m" },
+          null
+        ],
+        exp: "v₄ = M₃M₅ / (2τ) = 0,060 / 0,080 = 0,75 m·s⁻¹. Attention : deux intervalles séparent M₃ et M₅, et les unités doivent être en m et en s."
       },
       {
-        q: "Sur cette portion, la direction et le sens de la somme des forces appliquées au skieur sont :",
+        q: "En un point de la trajectoire, le vecteur vitesse est :",
         opts: [
-          "opposés à ceux de l'accélération",
-          "perpendiculaires à l'accélération",
-          "colinéaires et de même sens que l'accélération",
-          "indéterminables sans plus d'information"
+          "tangent à la trajectoire, dans le sens du mouvement",
+          "perpendiculaire à la trajectoire",
+          "dirigé vers le centre du virage",
+          "tangent, mais orienté vers la position précédente"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "vitesse-perpendiculaire-trajectoire", texte: "Dessiner le vecteur vitesse perpendiculaire à la trajectoire : il est tangent à la trajectoire" },
+          { code: "vitesse-vers-centre", texte: "Croire que la vitesse est dirigée vers le centre d'un virage : elle est tangente, c'est la variation de vitesse qui pointe vers l'intérieur" },
+          { code: "sens-vitesse-inverse", texte: "Se tromper de sens : le vecteur vitesse est orienté dans le sens du mouvement" }
+        ],
+        exp: "Le vecteur vitesse est tangent à la trajectoire et orienté dans le sens du mouvement ; sa longueur représente la valeur de la vitesse (à l'échelle choisie)."
+      },
+      {
+        q: "Un point se déplace sur un cercle à vitesse de valeur constante. Le vecteur variation de vitesse Δv entre deux instants voisins est :",
+        opts: [
+          "nul, car la valeur de la vitesse ne change pas",
+          "tangent à la trajectoire, dans le sens du mouvement",
+          "dirigé vers le centre du cercle",
+          "dirigé vers l'extérieur du cercle"
         ],
         ans: 2,
-        exp: "D'après ΣF = m×a, la somme vectorielle des forces est colinéaire au vecteur accélération et de même sens que lui, puisque m > 0."
+        pieges: [
+          { code: "uniforme-acceleration-nulle", texte: "Croire que Δv est nul si la valeur de la vitesse est constante : la direction du vecteur vitesse change" },
+          { code: "vitesse-acceleration-meme-direction", texte: "Croire que Δv a la direction de la vitesse : dans un virage, il est dirigé vers l'intérieur" },
+          null,
+          { code: "acceleration-centrifuge", texte: "Croire que Δv pointe vers l'extérieur (« force centrifuge ») : il est dirigé vers le centre" }
+        ],
+        exp: "La valeur de la vitesse est constante, mais sa direction tourne : Δv n'est pas nul et pointe vers le centre du cercle, comme la somme des forces (m Δv / Δt ≈ ΣF)."
+      },
+      {
+        q: "D'après la relation m × Δv / Δt ≈ ΣF, si la somme des forces appliquées à un système est nulle, son vecteur vitesse :",
+        opts: [
+          "diminue jusqu'à s'annuler",
+          "ne varie pas",
+          "est forcément nul",
+          "change de direction sans changer de valeur"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "sans-force-arret", texte: "Croire qu'un objet s'arrête s'il n'est plus poussé : sans force (ou avec des forces compensées), sa vitesse ne change pas" },
+          null,
+          { code: "compense-donc-immobile", texte: "Croire que des forces compensées imposent l'immobilité : elles permettent aussi un mouvement rectiligne uniforme" },
+          { code: "circulaire-uniforme-compense", texte: "Croire qu'un changement de direction est possible sans force : tourner exige une somme des forces non nulle" }
+        ],
+        exp: "Si ΣF = 0, Δv = 0 : le vecteur vitesse est constant (en valeur et en direction). Le système est immobile ou en mouvement rectiligne uniforme (principe d'inertie)."
+      },
+      {
+        q: "Entre deux instants voisins, le vecteur variation de vitesse Δv d'un système a toujours la même direction et le même sens que :",
+        opts: [
+          "le vecteur vitesse",
+          "le poids",
+          "la somme des forces appliquées",
+          "la force de frottement"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "vitesse-acceleration-meme-direction", texte: "Confondre v et Δv : un objet qui freine a une vitesse vers l'avant et un Δv vers l'arrière" },
+          { code: "newton-chute-libre-generalisee", texte: "Généraliser le cas de la chute libre : Δv a la direction du poids seulement si le poids est la seule force" },
+          null,
+          { code: "delta-v-force-isolee", texte: "Ne retenir qu'une force : c'est la somme de toutes les forces qui fixe la direction de Δv" }
+        ],
+        exp: "m × Δv / Δt ≈ ΣF, avec m > 0 : Δv a la direction et le sens de la somme des forces. Attention : il n'a pas forcément la direction de la vitesse."
+      },
+      {
+        q: "Un skieur de 70 kg descend une pente en ligne droite ; sa vitesse passe de 4,0 m·s⁻¹ à 6,5 m·s⁻¹ en 1,0 s. La somme des forces qui s'exercent sur lui vaut environ ΣF ≈ m × Δv / Δt, soit :",
+        opts: [
+          "455 N",
+          "175 N",
+          "28 N",
+          "3,6×10⁻² N"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "vitesse-au-lieu-variation", texte: "Utiliser la vitesse finale (6,5 m·s⁻¹) au lieu de la variation Δv = 2,5 m·s⁻¹" },
+          null,
+          { code: "masse-sur-delta-v", texte: "Inverser le rapport : m / Δv = 70 / 2,5 ; il faut m × Δv / Δt" },
+          { code: "quotient-au-lieu-produit", texte: "Diviser par la masse au lieu de multiplier : Δv / (m Δt) = 2,5 / 70" }
+        ],
+        exp: "Δv = 6,5 − 4,0 = 2,5 m·s⁻¹, donc ΣF ≈ 70 × 2,5 / 1,0 = 175 N, dirigée vers le bas de la pente. Attention : c'est la variation de vitesse qui compte, pas la vitesse."
+      },
+      {
+        q: "Une même somme des forces s'exerce, pendant la même durée, sur deux chariots ; l'un a une masse double de l'autre. Pour le chariot le plus lourd, la variation de vitesse Δv est :",
+        opts: [
+          "deux fois plus grande",
+          "la même",
+          "deux fois plus petite",
+          "quatre fois plus petite"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "masse-plus-grande-plus-rapide", texte: "Croire qu'un objet plus lourd prend plus de vitesse : à force égale, Δv = ΣF Δt / m est plus petit" },
+          { code: "delta-v-independante-masse", texte: "Croire que Δv ne dépend pas de la masse : à force égale, un objet plus massif est plus difficile à mettre en mouvement" },
+          null,
+          { code: "proportionnalite-au-carre", texte: "Appliquer une dépendance au carré : Δv est inversement proportionnel à m, pas à m²" }
+        ],
+        exp: "Δv ≈ ΣF × Δt / m : à force et durée égales, doubler la masse divise Δv par deux. Attention : la masse s'oppose à la variation de vitesse."
+      },
+      {
+        q: "Une voiture roule à vitesse constante sur une route droite et horizontale. La somme des forces qui s'exercent sur elle est :",
+        opts: [
+          "dirigée vers l'avant, sinon la voiture ralentirait",
+          "nulle, les forces se compensent",
+          "égale au poids de la voiture",
+          "nulle, car aucune force ne s'exerce sur la voiture"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "force-sens-mouvement", texte: "Croire qu'un mouvement exige une force vers l'avant : à vitesse constante en ligne droite, Δv = 0 donc ΣF = 0" },
+          null,
+          { code: "somme-forces-egale-poids", texte: "Confondre la somme des forces et le poids : le poids est compensé par l'action de la route" },
+          { code: "compense-vs-aucune-force", texte: "Confondre forces qui se compensent et absence de force : poids, réaction de la route, frottements et force motrice existent" }
+        ],
+        exp: "Le vecteur vitesse est constant (Δv = 0) : la somme des forces est nulle. La force motrice compense les frottements, l'action de la route compense le poids. Attention : nulle ne veut pas dire absente."
+      },
+      {
+        q: "Une balle est lancée verticalement vers le haut (frottements négligés). Pendant la montée, le vecteur variation de vitesse Δv est dirigé :",
+        opts: [
+          "vers le haut, à cause de la force du lancer",
+          "vers le bas, comme le poids",
+          "vers le haut, dans le sens du mouvement",
+          "nul, tant que la balle monte"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "force-du-lancer", texte: "Croire que la force du lancer accompagne la balle : elle cesse dès que la balle quitte la main" },
+          null,
+          { code: "delta-v-sens-mouvement", texte: "Confondre le sens de Δv et le sens du mouvement : Δv a le sens de la somme des forces, ici le poids" },
+          { code: "acceleration-nulle-montee", texte: "Croire que la vitesse ne varie pas pendant la montée : la balle ralentit, Δv n'est pas nul" }
+        ],
+        exp: "Après le lancer, seul le poids agit : Δv est vertical, vers le bas, pendant toute la montée (la balle ralentit) et la descente (elle accélère). Attention : Δv n'a pas le sens du mouvement."
       }
     ],
     annales: [],
@@ -37327,114 +37507,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une lampe traversée par I = 0,25 A sous U = 12 V reçoit une puissance électrique :",
+        q: "Une lampe est soumise à une tension U = 12 V et traversée par un courant I = 250 mA. Elle reçoit une puissance électrique P = U × I de :",
         opts: [
-          "0,48 W",
+          "3,0×10³ W",
           "3,0 W",
-          "12,25 W",
-          "48 W"
+          "48 W",
+          "2,1×10⁻² W"
         ],
         ans: 1,
-        exp: "P = U×I = 12 × 0,25 = 3,0 W."
-      },
-      {
-        q: "Cette lampe fonctionne pendant t = 3,0 h. Quelle énergie électrique consomme-t-elle ?",
-        opts: [
-          "1,0 Wh = 0,0010 kWh",
-          "9,0 Wh = 0,0090 kWh",
-          "36 Wh = 0,036 kWh",
-          "3,0 Wh = 0,0030 kWh"
+        pieges: [
+          { code: "conversion-ma-a", texte: "Oublier de convertir les milliampères en ampères : 250 mA = 0,250 A" },
+          null,
+          { code: "quotient-au-lieu-produit", texte: "Diviser au lieu de multiplier : U / I = 12 / 0,250 ; il faut P = U × I" },
+          { code: "puissance-rapport-inverse", texte: "Calculer I / U = 0,250 / 12 : la puissance est le produit U × I" }
         ],
-        ans: 1,
-        exp: "E = P×t = 3,0 × 3,0 = 9,0 Wh = 0,0090 kWh."
+        exp: "P = U × I = 12 × 0,250 = 3,0 W. Attention : l'intensité doit être en ampères."
       },
       {
-        q: "Un radiateur contient une résistance R = 24 Ω parcourue par I = 8,0 A. Quelle puissance est dissipée par effet Joule ?",
+        q: "Un four de puissance 2 500 W fonctionne pendant 45 min. L'énergie électrique qu'il reçoit vaut :",
         opts: [
-          "192 W",
-          "768 W",
-          "1536 W",
-          "3072 W"
-        ],
-        ans: 2,
-        exp: "P_Joule = R×I² = 24 × 8,0² = 24 × 64 = 1536 W ≈ 1,5×10³ W."
-      },
-      {
-        q: "Dans le cas de ce radiateur, cette puissance dissipée par effet Joule correspond à :",
-        opts: [
-          "une perte à minimiser à tout prix",
-          "la puissance utile recherchée, car on veut produire de la chaleur",
-          "une erreur de conception",
-          "une puissance nécessairement nulle"
-        ],
-        ans: 1,
-        exp: "Pour un radiateur, la finalité recherchée est justement de produire de la chaleur : la puissance dissipée par effet Joule constitue donc ici la puissance utile, et non une perte."
-      },
-      {
-        q: "Un four électrique de puissance P = 2500 W fonctionne pendant 45 min. Le prix du kWh est 0,22 €. Quel est le coût de cette utilisation ?",
-        opts: [
-          "≈0,17 €",
-          "≈0,41 €",
-          "≈0,55 €",
-          "≈1,875 €"
-        ],
-        ans: 1,
-        exp: "t = 0,75 h ; E = P×t = 2500 × 0,75 = 1875 Wh = 1,875 kWh ; coût = 1,875 × 0,22 ≈ 0,41 €."
-      },
-      {
-        q: "Une perceuse reçoit P_élec = 500 W et fournit P_utile = 380 W. Quel est son rendement ?",
-        opts: [
-          "57 %",
-          "66 %",
-          "76 %",
-          "88 %"
-        ],
-        ans: 2,
-        exp: "η = P_utile/P_élec × 100 = 380/500 × 100 = 76 %."
-      },
-      {
-        q: "La puissance perdue par cette perceuse (120 W) est due principalement à :",
-        opts: [
-          "l'effet Joule dans les enroulements et aux frottements mécaniques",
-          "une fuite de courant vers la terre",
-          "la loi de Boyle-Mariotte",
-          "une surtension du secteur"
+          "1,9 kWh",
+          "112,5 kWh",
+          "1,1 kWh",
+          "1 875 kWh"
         ],
         ans: 0,
-        exp: "Les pertes dans un moteur électrique proviennent principalement de l'effet Joule dans les enroulements et des frottements mécaniques des pièces en mouvement."
-      },
-      {
-        q: "Une bouilloire (rendement η = 92 %) doit chauffer m = 1,0 kg d'eau (c = 4185 J·kg⁻¹·K⁻¹) de 18 °C à 100 °C. Quelle énergie thermique utile Q est nécessaire ?",
-        opts: [
-          "≈3,43×10⁴ J",
-          "≈3,43×10⁵ J",
-          "≈4,185×10⁵ J",
-          "≈8,2×10³ J"
+        pieges: [
+          null,
+          { code: "conversion-minute-heure", texte: "Laisser la durée en minutes : 2,5 × 45 ; pour des kWh, la durée doit être en heures (0,75 h)" },
+          { code: "conversion-heure-minute", texte: "Écrire 45 min = 0,45 h : 45 min = 45 / 60 = 0,75 h" },
+          { code: "conversion-w-kw", texte: "Oublier de convertir les watts en kilowatts : 2 500 W = 2,5 kW" }
         ],
-        ans: 1,
-        exp: "Q = m×c×ΔT = 1,0 × 4185 × (100 − 18) = 1,0 × 4185 × 82 ≈ 3,43×10⁵ J."
+        exp: "E = P × t = 2,5 kW × 0,75 h ≈ 1,9 kWh. Attention : 45 min = 0,75 h, et 2 500 W = 2,5 kW."
       },
       {
-        q: "Compte tenu du rendement η = 92 %, quelle énergie électrique totale E_élec la bouilloire doit-elle consommer (η = Q/E_élec) ?",
+        q: "Une résistance R = 24 Ω est parcourue par un courant I = 8,0 A. La puissance dissipée par effet Joule vaut P = R × I², soit :",
         opts: [
-          "≈3,15×10⁵ J",
-          "≈3,43×10⁵ J",
-          "≈3,73×10⁵ J",
-          "≈4,0×10⁵ J"
+          "192 W",
+          "3,0 W",
+          "1,5×10³ W",
+          "4,6×10³ W"
         ],
         ans: 2,
-        exp: "E_élec = Q/η = 3,43×10⁵ / 0,92 ≈ 3,73×10⁵ J."
+        pieges: [
+          { code: "oubli-carre-intensite", texte: "Oublier le carré de l'intensité : R × I = 24 × 8,0 ; il faut R × I² = 24 × 64" },
+          { code: "quotient-au-lieu-produit", texte: "Diviser au lieu de multiplier : R / I = 24 / 8,0 ; il faut P = R × I²" },
+          null,
+          { code: "carre-mauvaise-grandeur", texte: "Mettre le carré sur R au lieu de I : R² × I = 24² × 8,0 ; c'est l'intensité qui est au carré" }
+        ],
+        exp: "P = R × I² = 24 × 8,0² = 24 × 64 ≈ 1,5×10³ W. Attention : seule l'intensité est au carré ; doubler I quadruple la puissance dissipée."
       },
       {
-        q: "Sachant que la bouilloire a une puissance P = 2200 W, quelle est la durée de chauffe nécessaire (E_élec = P × t) ?",
+        q: "Dans lequel de ces appareils l'effet Joule est-il l'effet utile recherché ?",
         opts: [
-          "≈85 s",
-          "≈170 s",
-          "≈255 s",
-          "≈340 s"
+          "Aucun : l'effet Joule est toujours une perte",
+          "Le moteur d'une perceuse",
+          "Une lampe à LED",
+          "Un radiateur électrique"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "joule-toujours-perte", texte: "Croire que l'effet Joule est toujours une perte : dans un radiateur ou une bouilloire, la chaleur produite est l'effet recherché" },
+          { code: "joule-utile-moteur", texte: "Confondre énergie utile et énergie perdue : dans un moteur, l'énergie utile est mécanique, l'effet Joule est une perte" },
+          { code: "joule-utile-lampe", texte: "Croire que la chaleur d'une lampe est utile : une lampe sert à éclairer, l'effet Joule y est une perte" },
+          null
+        ],
+        exp: "Dans un radiateur, l'énergie électrique est convertie en énergie thermique par effet Joule : c'est le but. Dans un moteur ou une lampe, l'effet Joule est une perte qui diminue le rendement."
+      },
+      {
+        q: "Une perceuse reçoit une puissance électrique de 500 W et fournit une puissance mécanique utile de 380 W. Son rendement vaut :",
+        opts: [
+          "132 %",
+          "24 %",
+          "76 %",
+          "0,76 %"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "rendement-inverse", texte: "Inverser le rapport : 500 / 380 ≈ 132 % ; un rendement ne dépasse jamais 100 %" },
+          { code: "rendement-vs-pertes", texte: "Calculer la part perdue (120 / 500 = 24 %) au lieu du rendement" },
+          null,
+          { code: "oubli-facteur-100", texte: "Oublier de multiplier par 100 : 380 / 500 = 0,76, soit 76 %" }
+        ],
+        exp: "η = P(utile) / P(reçue) = 380 / 500 = 0,76, soit 76 %. Attention : le rendement est toujours inférieur à 1 (100 %)."
+      },
+      {
+        q: "Cette perceuse reçoit 500 W et fournit 380 W de puissance mécanique. Les 120 W restants :",
+        opts: [
+          "sont détruits dans le moteur",
+          "s'accumulent dans la perceuse",
+          "sont transférés à l'environnement",
+          "retournent au réseau électrique"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "energie-detruite", texte: "Croire que l'énergie disparaît : elle se conserve ; la part non utile est transférée à l'environnement" },
+          { code: "energie-stockee-appareil", texte: "Croire que l'énergie s'accumule dans l'appareil : elle est transférée à l'air ambiant (la perceuse chauffe)" },
+          null,
+          { code: "energie-retour-secteur", texte: "Croire que l'énergie non utilisée retourne au réseau : elle est dissipée par effet Joule et par les frottements" }
+        ],
+        exp: "L'énergie se conserve : 500 W = 380 W (mécanique, utile) + 120 W transférés à l'environnement, par effet Joule dans les bobinages et par les frottements. C'est pourquoi la perceuse chauffe."
+      },
+      {
+        q: "Une bouilloire de rendement 92 % doit fournir à l'eau une énergie Q = 3,43×10⁵ J. L'énergie électrique qu'elle doit recevoir vaut :",
+        opts: [
+          "3,16×10⁵ J",
+          "3,43×10⁵ J",
+          "3,73×10⁵ J",
+          "3,7×10³ J"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "rendement-multiplie", texte: "Multiplier par le rendement : 3,43×10⁵ × 0,92 ; l'énergie reçue est plus grande que l'énergie utile" },
+          { code: "rendement-ignore", texte: "Oublier le rendement : une partie de l'énergie reçue est perdue, il faut en recevoir plus que 3,43×10⁵ J" },
+          null,
+          { code: "pourcentage-non-converti", texte: "Utiliser 92 au lieu de 0,92 : 3,43×10⁵ / 92" }
+        ],
+        exp: "η = Q / E(élec), donc E(élec) = Q / η = 3,43×10⁵ / 0,92 ≈ 3,73×10⁵ J. Attention : l'énergie reçue est toujours supérieure à l'énergie utile."
+      },
+      {
+        q: "Cette bouilloire, de puissance 2 200 W, doit recevoir 3,73×10⁵ J. La durée de chauffe vaut t = E / P, soit :",
+        opts: [
+          "170 s",
+          "8,2×10⁸ s",
+          "5,9×10⁻³ s",
+          "0,17 s"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 3,73×10⁵ × 2 200 ; il faut t = E / P" },
+          { code: "duree-rapport-inverse", texte: "Inverser le rapport : P / E = 2 200 / 3,73×10⁵ ; il faut t = E / P" },
+          { code: "conversion-w-kw-inverse", texte: "Mélanger les unités : 2 200 W ne fait pas 2,2×10⁶ W ; avec E en J et P en W, t est en s" }
+        ],
+        exp: "t = E / P = 3,73×10⁵ / 2 200 ≈ 170 s, soit un peu moins de 3 minutes. Attention : avec E en joules et P en watts, la durée est en secondes."
+      },
+      {
+        q: "Une charge électrique Q = 30 C traverse une section d'un fil en 2,0 min. L'intensité du courant vaut I = Q / Δt, soit :",
+        opts: [
+          "15 A",
+          "0,25 A",
+          "3,6×10³ A",
+          "4,0 A"
         ],
         ans: 1,
-        exp: "t = E_élec/P = 3,73×10⁵ / 2200 ≈ 170 s ≈ 2 min 50 s."
+        pieges: [
+          { code: "conversion-min-s", texte: "Oublier de convertir les minutes en secondes : 2,0 min = 120 s" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 30 × 120 ; il faut I = Q / Δt" },
+          { code: "intensite-charge-rapport-inverse", texte: "Inverser le rapport : Δt / Q = 120 / 30 ; l'intensité est une charge par seconde" }
+        ],
+        exp: "I = Q / Δt = 30 / 120 = 0,25 A : l'intensité est le débit de charges électriques, en coulombs par seconde (ampères). Attention : Δt en secondes."
+      },
+      {
+        q: "Une pile de force électromotrice E = 4,5 V et de résistance interne r = 1,5 Ω débite un courant I = 0,40 A. La tension à ses bornes vaut U = E − r × I, soit :",
+        opts: [
+          "5,1 V",
+          "4,5 V",
+          "3,9 V",
+          "0,60 V"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "source-reelle-signe", texte: "Ajouter au lieu de retrancher : une partie de la tension est « perdue » dans la résistance interne, U < E" },
+          { code: "pile-tension-constante", texte: "Croire que la tension d'une pile est toujours égale à E : elle diminue quand le courant débité augmente" },
+          null,
+          { code: "chute-tension-pour-u", texte: "Donner r × I = 0,60 V, la tension perdue dans la pile, au lieu de la tension disponible U = E − r I" }
+        ],
+        exp: "U = E − r × I = 4,5 − 1,5 × 0,40 = 3,9 V. Une source réelle n'est pas idéale : plus elle débite, plus sa tension diminue, et une partie de l'énergie est dissipée par effet Joule dans la pile."
       }
     ],
     annales: [],
@@ -37893,114 +38133,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "L'énergie cinétique d'un système dépend de sa masse et...",
+        q: "Si la vitesse d'une voiture double, son énergie cinétique :",
         opts: [
-          "de sa vitesse",
-          "du carré de sa vitesse",
-          "de son altitude",
-          "de son poids"
+          "double",
+          "est multipliée par 4",
+          "ne change pas, la masse est la même",
+          "est multipliée par √2"
         ],
         ans: 1,
-        exp: "Ec = ½×m×v² : l'énergie cinétique dépend du carré de la valeur de la vitesse."
-      },
-      {
-        q: "Une voiture de masse m = 1200 kg roule à v = 90 km/h (soit 25 m/s). Quelle est son énergie cinétique ?",
-        opts: [
-          "3,0×10⁴ J",
-          "1,5×10⁵ J",
-          "3,75×10⁵ J",
-          "7,5×10⁵ J"
+        pieges: [
+          { code: "ec-proportionnelle-v", texte: "Croire que l'énergie cinétique est proportionnelle à la vitesse : Ec = ½ m v², elle dépend du carré de v" },
+          null,
+          { code: "ec-depend-masse-seule", texte: "Croire que l'énergie cinétique ne dépend que de la masse : elle dépend aussi (et surtout) de la vitesse" },
+          { code: "racine-au-lieu-carre", texte: "Prendre la racine au lieu du carré : Ec ∝ v², donc ×2² = ×4" }
         ],
-        ans: 2,
-        exp: "Ec = ½×m×v² = ½×1200×25² = ½×1200×625 = 375 000 J = 3,75×10⁵ J."
+        exp: "Ec = ½ m v² : si v double, v² est multiplié par 4, donc Ec aussi. C'est pourquoi la distance de freinage augmente très vite avec la vitesse."
       },
       {
-        q: "Un objet de masse m = 3,0 kg est à une altitude z = 15 m (référence au sol). Quelle est son énergie potentielle de pesanteur (g ≈ 9,81 N/kg) ?",
+        q: "Une voiture de 1 000 kg roule à 72 km·h⁻¹. Son énergie cinétique vaut :",
         opts: [
-          "44 J",
-          "147 J",
-          "441 J",
-          "1470 J"
+          "2,6×10⁶ J",
+          "2,0×10⁵ J",
+          "4,0×10⁵ J",
+          "1,0×10⁴ J"
         ],
-        ans: 2,
-        exp: "Epp = m×g×z = 3,0 × 9,81 × 15 ≈ 441 J."
-      },
-      {
-        q: "Si cet objet descend jusqu'à z = 5,0 m, son énergie potentielle de pesanteur...",
-        opts: [
-          "reste constante",
-          "augmente",
-          "diminue",
-          "devient nulle"
+        ans: 1,
+        pieges: [
+          { code: "conversion-kmh-ms-oubliee", texte: "Garder la vitesse en km·h⁻¹ : 72 km·h⁻¹ = 72 / 3,6 = 20 m·s⁻¹" },
+          null,
+          { code: "oubli-facteur-un-demi", texte: "Oublier le facteur ½ : Ec = ½ m v² = ½ × 1 000 × 20²" },
+          { code: "oubli-carre-vitesse", texte: "Oublier le carré de la vitesse : ½ × 1 000 × 20 ; il faut v² = 400" }
         ],
-        ans: 2,
-        exp: "À z = 5,0 m, Epp ≈ 147 J, contre 441 J à z = 15 m : l'énergie potentielle diminue lorsque l'objet descend (mais elle n'est pas nulle car z n'est pas nulle)."
+        exp: "v = 72 / 3,6 = 20 m·s⁻¹, donc Ec = ½ × 1 000 × 20² = 2,0×10⁵ J. Attention : v en m·s⁻¹, au carré, et le facteur ½."
       },
       {
-        q: "Un skieur de masse 60 kg part du sommet d'une piste sans frottement à z1 = 40 m avec une vitesse quasi nulle. Quelle est sa vitesse au bas de la piste (z2 = 0) ?",
+        q: "Un objet de 3,0 kg descend de l'altitude 15 m à l'altitude 5,0 m (g = 9,81 N·kg⁻¹). Son énergie potentielle de pesanteur :",
         opts: [
-          "9,8 m/s",
-          "19,8 m/s",
-          "28,0 m/s",
-          "40,0 m/s"
+          "augmente de 294 J",
+          "diminue de 441 J",
+          "diminue de 30 J",
+          "diminue de 294 J"
         ],
-        ans: 2,
-        exp: "Par conservation de l'énergie mécanique : ½×m×v² = m×g×z1, donc v = √(2×g×z1) = √(2×9,81×40) ≈ 28,0 m/s."
+        ans: 3,
+        pieges: [
+          { code: "signe-variation-inverse", texte: "Se tromper de signe : quand l'altitude diminue, l'énergie potentielle de pesanteur diminue" },
+          { code: "altitude-au-lieu-variation", texte: "Utiliser l'altitude de départ (15 m) au lieu de la variation d'altitude (10 m)" },
+          { code: "oubli-g", texte: "Oublier g : Epp = m × g × z, et non m × z" },
+          null
+        ],
+        exp: "ΔEpp = m g (z₂ − z₁) = 3,0 × 9,81 × (5,0 − 15) ≈ −294 J : l'énergie potentielle diminue de 294 J. Attention : c'est la variation d'altitude qui compte."
       },
       {
-        q: "Le théorème de l'énergie cinétique énonce que, dans un référentiel galiléen, la variation d'énergie cinétique d'un système entre deux instants est égale à...",
+        q: "Une force constante de 50 N tire une luge sur 10 m ; elle fait un angle de 60° avec le déplacement. Son travail W = F × d × cos α vaut :",
         opts: [
-          "la somme des travaux des forces qui s'exercent sur lui",
-          "son énergie potentielle initiale",
-          "le produit de sa masse par la gravité",
-          "la moitié de son énergie mécanique"
+          "500 J",
+          "250 J",
+          "433 J",
+          "5,0 J"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-cos", texte: "Oublier le cosinus : seule la composante de la force le long du déplacement travaille, W = F d cos α" },
+          null,
+          { code: "cos-sin-inverses", texte: "Utiliser le sinus au lieu du cosinus : W = F d cos 60° = F d × 0,5" },
+          { code: "quotient-au-lieu-produit", texte: "Diviser au lieu de multiplier : F / d ; le travail est un produit, en joules" }
+        ],
+        exp: "W = F × d × cos α = 50 × 10 × cos 60° = 50 × 10 × 0,5 = 250 J. Attention : α est l'angle entre la force et le déplacement."
+      },
+      {
+        q: "Un traîneau avance sur la neige. Le travail de la force de frottement exercée par la neige sur le traîneau est :",
+        opts: [
+          "négatif, car la force s'oppose au déplacement",
+          "positif, comme tout travail",
+          "nul, car la force est horizontale",
+          "nul, si le traîneau avance à vitesse constante"
         ],
         ans: 0,
-        exp: "C'est l'énoncé du théorème de l'énergie cinétique : ΔEc = ΣW(F)."
+        pieges: [
+          null,
+          { code: "travail-toujours-positif", texte: "Croire qu'un travail est toujours positif : une force opposée au déplacement (α = 180°) a un travail négatif" },
+          { code: "travail-nul-horizontal", texte: "Croire qu'une force horizontale ne travaille pas : c'est une force perpendiculaire au déplacement qui ne travaille pas" },
+          { code: "vitesse-constante-travail-nul", texte: "Croire que chaque travail est nul à vitesse constante : c'est la somme des travaux qui est nulle (ΔEc = 0)" }
+        ],
+        exp: "Le frottement est opposé au déplacement (α = 180°, cos α = −1) : son travail est négatif, la force est résistante. Attention : à vitesse constante, c'est la somme des travaux qui est nulle."
       },
       {
-        q: "Un objet de masse 5,0 kg, initialement au repos, est soumis à une force qui effectue un travail W = 250 J. Quelle est sa vitesse finale ?",
+        q: "Un objet de 2,0 kg, initialement au repos, reçoit un travail total de 100 J. D'après le théorème de l'énergie cinétique, sa vitesse finale vaut :",
         opts: [
-          "5,0 m/s",
-          "10 m/s",
-          "25 m/s",
-          "50 m/s"
+          "100 m·s⁻¹",
+          "10 m·s⁻¹",
+          "7,1 m·s⁻¹",
+          "50 m·s⁻¹"
         ],
         ans: 1,
-        exp: "D'après le TEC, Ec(finale) = W = 250 J (Ec initiale nulle). v = √(2×Ec/m) = √(2×250/5,0) = √100 = 10 m/s."
+        pieges: [
+          { code: "oubli-racine", texte: "Oublier la racine : 2 W / m = 100 donne v², donc v = √100 = 10 m·s⁻¹" },
+          null,
+          { code: "oubli-facteur-un-demi", texte: "Oublier le facteur ½ de l'énergie cinétique : v = √(W / m) ; il faut v = √(2 W / m)" },
+          { code: "v-egal-w-sur-m", texte: "Diviser le travail par la masse, sans facteur 2 ni racine : W / m = 50" }
+        ],
+        exp: "ΔEc = W, avec Ec initiale nulle : ½ m v² = 100 J, donc v = √(2 × 100 / 2,0) = √100 = 10 m·s⁻¹. Attention à la racine et au facteur ½."
       },
       {
-        q: "Une bille de masse 0,20 kg est lâchée d'une hauteur z1 = 3,0 m. En raison des frottements de l'air, sa vitesse au sol est 6,5 m/s au lieu de la vitesse théorique sans frottement. Que peut-on dire de l'énergie mécanique de la bille entre le départ et l'arrivée au sol ?",
+        q: "Un skieur part sans vitesse du haut d'une piste, 20 m au-dessus du bas (frottements négligés, g = 9,81 N·kg⁻¹). En bas, sa vitesse vaut :",
         opts: [
-          "elle est restée rigoureusement constante",
-          "elle a augmenté, car les frottements apportent de l'énergie",
-          "elle a diminué, une partie ayant été dissipée sous forme thermique",
-          "elle est devenue nulle"
+          "392 m·s⁻¹",
+          "14,0 m·s⁻¹",
+          "19,8 m·s⁻¹",
+          "plus grande pour un skieur plus lourd"
         ],
         ans: 2,
-        exp: "Em1 ≈ 5,89 J et Em2 ≈ 4,23 J : ΔEm ≈ −1,66 J. L'énergie mécanique diminue, l'énergie manquante étant dissipée sous forme thermique par frottement avec l'air."
+        pieges: [
+          { code: "oubli-racine", texte: "Oublier la racine : 2 g h = 392 est la valeur de v², pas de v" },
+          { code: "oubli-facteur-un-demi", texte: "Oublier le facteur ½ de l'énergie cinétique : m v² = m g h donne √(g h) ; il faut v = √(2 g h)" },
+          null,
+          { code: "lourd-tombe-plus-vite", texte: "Croire qu'un objet plus lourd va plus vite : la masse se simplifie, v = √(2 g h) ne dépend pas de m" }
+        ],
+        exp: "Sans frottement, Em se conserve : ½ m v² = m g h, donc v = √(2 g h) = √(2 × 9,81 × 20) ≈ 19,8 m·s⁻¹, quelle que soit la masse. Attention à la racine."
       },
       {
-        q: "Dans quelles conditions l'énergie mécanique d'un système se conserve-t-elle au cours du mouvement ?",
+        q: "Une bille tombe en subissant les frottements de l'air. Entre le départ et l'arrivée au sol, son énergie mécanique :",
         opts: [
-          "toujours, quelle que soit la situation",
-          "uniquement en l'absence de frottement (forces non conservatives)",
-          "uniquement si la vitesse est nulle",
-          "uniquement si l'altitude est nulle"
+          "reste constante, car l'énergie se conserve toujours",
+          "augmente, car les frottements chauffent la bille",
+          "devient nulle à l'arrivée",
+          "diminue : une partie est transférée sous forme thermique"
         ],
-        ans: 1,
-        exp: "L'énergie mécanique se conserve seulement si les seules forces qui travaillent sont conservatives (absence de frottement)."
+        ans: 3,
+        pieges: [
+          { code: "em-toujours-conservee", texte: "Confondre énergie totale et énergie mécanique : l'énergie se conserve, mais l'énergie mécanique diminue avec des frottements" },
+          { code: "frottements-apportent-energie", texte: "Croire que les frottements apportent de l'énergie au système : leur travail est négatif, ils en retirent" },
+          { code: "em-nulle-au-sol", texte: "Croire que l'énergie mécanique s'annule au sol : la bille y a encore une vitesse, donc une énergie cinétique" },
+          null
+        ],
+        exp: "Avec frottements, ΔEm = W(frottements) < 0 : l'énergie mécanique diminue, la part perdue est transférée à l'air et à la bille sous forme thermique. L'énergie totale, elle, se conserve."
       },
       {
-        q: "L'énergie mécanique est définie comme :",
+        q: "Une balle est lancée verticalement vers le haut (frottements négligés). Au sommet de sa trajectoire :",
         opts: [
-          "Em = Ec − Epp",
-          "Em = Ec × Epp",
-          "Em = Ec + Epp",
-          "Em = Epp − Ec"
+          "Ec est nulle, Epp est maximale, Em est inchangée",
+          "Ec et Epp sont toutes deux nulles",
+          "Em est nulle, car la balle est immobile",
+          "Ec est maximale, car la balle a fini de monter"
         ],
-        ans: 2,
-        exp: "L'énergie mécanique est la somme de l'énergie cinétique et de l'énergie potentielle de pesanteur : Em = Ec + Epp."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "epp-nulle-sommet", texte: "Croire que Epp est nulle au sommet : l'altitude y est maximale, donc Epp aussi" },
+          { code: "em-nulle-si-immobile", texte: "Croire que l'énergie mécanique est nulle quand la vitesse est nulle : Em = Ec + Epp, et Epp est maximale" },
+          { code: "ec-max-sommet", texte: "Inverser les variations : en montant, la balle ralentit, son énergie cinétique diminue jusqu'à 0 au sommet" }
+        ],
+        exp: "Au sommet, v = 0 donc Ec = 0, et l'altitude est maximale donc Epp aussi ; sans frottement, Em = Ec + Epp garde sa valeur de départ : l'énergie cinétique s'est convertie en énergie potentielle."
+      },
+      {
+        q: "Une luge de 50 kg descend d'une hauteur de 10 m, partant à l'arrêt, et arrive en bas à 12 m·s⁻¹ (g = 9,81 N·kg⁻¹). Le travail des frottements vaut ΔEm, soit environ :",
+        opts: [
+          "+1,3×10³ J",
+          "3,6×10³ J",
+          "−4,6×10³ J",
+          "−1,3×10³ J"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "signe-variation-inverse", texte: "Se tromper de signe : l'énergie mécanique diminue, ΔEm = Em(finale) − Em(initiale) < 0" },
+          { code: "ec-finale-pour-travail", texte: "Donner l'énergie cinétique finale (½ × 50 × 12²) : le travail des frottements est la variation d'énergie mécanique" },
+          { code: "oubli-carre-vitesse", texte: "Oublier le carré de la vitesse : ½ × 50 × 12 = 300 J au lieu de ½ × 50 × 12² = 3 600 J" },
+          null
+        ],
+        exp: "Em(initiale) = m g h = 50 × 9,81 × 10 ≈ 4 905 J ; Em(finale) = ½ × 50 × 12² = 3 600 J ; ΔEm ≈ −1,3×10³ J = W(frottements). Attention : un travail résistant est négatif."
       }
     ],
     annales: [],
