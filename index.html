@@ -18400,114 +18400,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "À l'échelle macroscopique, une espèce chimique désigne :",
+        q: "Sur l'étiquette d'une bouteille, le mot « eau » désigne :",
         opts: [
-          "Une seule entité chimique isolée",
-          "Une collection d'un très grand nombre d'entités identiques",
-          "Uniquement un ion",
-          "Uniquement un atome"
+          "une seule molécule H₂O, toujours la même",
+          "un très grand nombre de molécules H₂O",
+          "l'élément chimique « eau »",
+          "un très grand nombre d'« atomes d'eau »"
         ],
         ans: 1,
-        exp: "À l'échelle macroscopique on manipule des quantités de matière contenant un très grand nombre d'entités identiques (atomes, molécules ou ions)."
-      },
-      {
-        q: "Le principe d'électroneutralité de la matière impose que :",
-        opts: [
-          "Tout échantillon de matière est chargé positivement",
-          "Tout échantillon de matière est électriquement neutre",
-          "Les anions sont toujours plus nombreux que les cations",
-          "Seuls les gaz sont neutres"
+        pieges: [
+          { code: "espece-vs-entite", texte: "Confondre espèce chimique (échelle macroscopique) et entité chimique (une seule molécule)" },
+          null,
+          { code: "espece-vs-element", texte: "Confondre espèce chimique et élément chimique : l'eau est formée des éléments hydrogène et oxygène" },
+          { code: "molecule-vs-atome", texte: "Croire que l'eau est faite d'« atomes d'eau » : H₂O est une molécule formée de trois atomes" }
         ],
-        ans: 1,
-        exp: "Un composé ionique, comme tout échantillon de matière, est globalement neutre : les charges positives des cations compensent exactement les charges négatives des anions."
+        exp: "À l'échelle macroscopique, une espèce chimique est une collection d'un très grand nombre d'entités identiques ; ici des molécules H₂O. Attention : une molécule seule est une entité, pas une espèce."
       },
       {
-        q: "Dans le chlorure de calcium CaCl₂, pour respecter l'électroneutralité :",
+        q: "Le chlorure de magnésium solide est formé d'ions Mg²⁺ et Cl⁻. Un cristal contient 1,0×10²⁰ ions Mg²⁺. Il contient :",
         opts: [
-          "Il y a autant d'ions Ca²⁺ que d'ions Cl⁻",
-          "Il y a deux fois plus d'ions Cl⁻ que d'ions Ca²⁺",
-          "Il y a deux fois plus d'ions Ca²⁺ que d'ions Cl⁻",
-          "Il n'y a pas d'ions Cl⁻"
-        ],
-        ans: 1,
-        exp: "Chaque ion Ca²⁺ apportant deux charges positives, il faut deux ions Cl⁻ (une charge négative chacun) pour compenser, d'où la formule CaCl₂."
-      },
-      {
-        q: "La solubilité d'une espèce chimique correspond à :",
-        opts: [
-          "Sa masse volumique",
-          "La masse maximale que l'on peut dissoudre dans un litre de solvant à une température donnée",
-          "Sa concentration minimale dans une solution",
-          "Le temps nécessaire pour la dissoudre"
-        ],
-        ans: 1,
-        exp: "La solubilité est la masse maximale de soluté que le solvant peut dissoudre, à une température donnée ; au-delà, la solution est saturée."
-      },
-      {
-        q: "Environ quelle masse de NaCl peut-on dissoudre au maximum dans 1 L d'eau à 20 °C ?",
-        opts: [
-          "3,5 g",
-          "35 g",
-          "350 g",
-          "3500 g"
+          "1,0×10²⁰ ions Cl⁻",
+          "5,0×10¹⁹ ions Cl⁻",
+          "2,0×10²⁰ ions Cl⁻",
+          "3,0×10²⁰ ions Cl⁻"
         ],
         ans: 2,
-        exp: "La solubilité du chlorure de sodium dans l'eau à 20 °C est d'environ 350 g par litre."
+        pieges: [
+          { code: "neutralite-non-verifiee", texte: "Prendre autant d'anions que de cations sans vérifier la charge globale : (+2) + (−1) ≠ 0" },
+          { code: "rapport-charges-inverse", texte: "Inverser le rapport : chaque Mg²⁺ apporte deux charges +, il faut donc deux fois plus d'ions Cl⁻" },
+          null,
+          { code: "ions-totaux-vs-chlorure", texte: "Compter tous les ions du motif MgCl₂ (3) au lieu des seuls ions chlorure (2)" }
+        ],
+        exp: "Électroneutralité : (+2) + 2 × (−1) = 0, donc deux ions Cl⁻ par ion Mg²⁺ (formule MgCl₂) : 2 × 1,0×10²⁰ = 2,0×10²⁰ ions Cl⁻. Attention : la charge globale d'un solide ionique est nulle."
       },
       {
-        q: "La méthode par échelle de teintes permet d'obtenir :",
+        q: "On peut dissoudre au maximum environ 350 g de sel dans 1 L d'eau à 20 °C. On verse 50 g de sel dans 100 mL d'eau à 20 °C et on agite longtemps. On observe :",
         opts: [
-          "Une valeur exacte et précise de la concentration",
-          "Un encadrement approché de la concentration par comparaison visuelle",
-          "Uniquement la masse volumique de la solution",
-          "La formule chimique du soluté"
+          "tout le sel se dissout, car 50 g est bien moins que 350 g",
+          "environ 35 g se dissolvent et environ 15 g restent au fond",
+          "tout le sel finit par se dissoudre si l'on agite assez",
+          "aucun gramme ne se dissout, car on dépasse la solubilité"
         ],
         ans: 1,
-        exp: "L'échelle de teintes est une méthode qualitative : elle permet seulement d'encadrer la concentration par comparaison visuelle des couleurs, sans donner une valeur précise."
-      },
-      {
-        q: "Dans un dosage par étalonnage, la courbe (ou droite) d'étalonnage représente :",
-        opts: [
-          "La concentration en fonction du temps",
-          "Une grandeur physique mesurée en fonction de la concentration des solutions étalons",
-          "Le volume en fonction de la masse",
-          "La température en fonction du pH"
+        pieges: [
+          { code: "solubilite-sans-volume", texte: "Comparer à 350 g sans tenir compte du volume : 100 mL d'eau ne peuvent dissoudre que 350 × 0,100 = 35 g" },
+          null,
+          { code: "agitation-depasse-solubilite", texte: "Croire qu'agiter permet de dépasser la solubilité : l'agitation accélère la dissolution, elle ne change pas la masse maximale" },
+          { code: "saturation-tout-ou-rien", texte: "Croire qu'au-delà de la solubilité rien ne se dissout : la solution se sature et seul l'excès reste solide" }
         ],
-        ans: 1,
-        exp: "On trace la grandeur physique mesurée (masse volumique, absorbance...) en fonction de la concentration connue de chaque solution étalon, pour obtenir la droite d'étalonnage."
+        exp: "100 mL d'eau dissolvent au plus 350 × 0,100 = 35 g : la solution est saturée et 50 − 35 = 15 g restent solides. Attention : la solubilité est une masse maximale par litre, il faut tenir compte du volume."
       },
       {
-        q: "Une fois la droite d'étalonnage tracée, comment détermine-t-on la concentration d'une solution inconnue ?",
+        q: "La solubilité d'une espèce chimique dans l'eau est :",
         opts: [
-          "En mesurant sa masse",
-          "En mesurant la même grandeur physique puis en la reportant graphiquement sur la droite",
-          "En la comparant à l'œil avec la solution mère",
-          "En calculant son pH"
+          "la masse volumique de sa solution saturée",
+          "la masse minimale à dissoudre pour obtenir une solution",
+          "la même quelle que soit la température",
+          "la masse maximale que l'on peut dissoudre par litre, à une température donnée"
         ],
-        ans: 1,
-        exp: "On mesure la grandeur physique choisie dans la solution inconnue, puis on reporte cette valeur sur la droite d'étalonnage pour en déduire graphiquement la concentration correspondante."
+        ans: 3,
+        pieges: [
+          { code: "solubilite-vs-masse-volumique", texte: "Confondre solubilité et masse volumique : la solubilité ne concerne que le soluté dissous" },
+          { code: "solubilite-minimale", texte: "Croire que la solubilité est une masse minimale : c'est la masse maximale qu'on peut dissoudre" },
+          { code: "solubilite-independante-temperature", texte: "Croire que la solubilité ne dépend pas de la température : elle se donne toujours à une température précise" },
+          null
+        ],
+        exp: "La solubilité est la concentration en masse maximale d'une espèce dissoute, à une température donnée ; au-delà, la solution est saturée. Attention : elle change avec la température."
       },
       {
-        q: "D'après une droite d'étalonnage masse volumique / concentration, une solution de masse volumique 1,028 g·mL⁻¹ a une concentration approximative de :",
+        q: "Échelle de teintes : S1 à 2,0 mg·L⁻¹, S2 à 4,0 mg·L⁻¹, S3 à 6,0 mg·L⁻¹, S4 à 8,0 mg·L⁻¹. Une solution inconnue est plus foncée que S2 et plus claire que S3. On peut conclure que sa concentration :",
         opts: [
-          "20 g·L⁻¹",
-          "40 g·L⁻¹",
-          "70 g·L⁻¹",
-          "100 g·L⁻¹"
+          "est comprise entre 4,0 et 6,0 mg·L⁻¹",
+          "vaut exactement 5,0 mg·L⁻¹",
+          "est comprise entre 2 et 3 mg·L⁻¹",
+          "vaut 4,0 mg·L⁻¹, celle de S2"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "teintes-valeur-exacte", texte: "Croire que l'échelle de teintes donne une valeur précise : la comparaison à l'œil ne donne qu'un encadrement" },
+          { code: "numero-pris-pour-concentration", texte: "Prendre le numéro des solutions (S2, S3) pour leur concentration" },
+          { code: "valeur-etalon-recopiee", texte: "Recopier la concentration d'un étalon : la teinte est différente de celle de S2, on ne peut donner qu'un encadrement" }
+        ],
+        exp: "La teinte est encadrée par celles de S2 et S3 : 4,0 mg·L⁻¹ < c < 6,0 mg·L⁻¹. Attention : c'est une méthode visuelle, elle donne un encadrement et non une valeur exacte."
+      },
+      {
+        q: "Dans une échelle de teintes de permanganate de potassium, la solution la plus foncée est :",
+        opts: [
+          "la plus diluée",
+          "celle dont le facteur de dilution est le plus grand",
+          "la plus concentrée",
+          "celle qui a le plus grand volume"
         ],
         ans: 2,
-        exp: "Par lecture graphique entre les points (60 g·L⁻¹ ; 1,024) et (80 g·L⁻¹ ; 1,032) de la droite d'étalonnage, la valeur ρ = 1,028 g·mL⁻¹ correspond à une concentration d'environ 70 g·L⁻¹."
+        pieges: [
+          { code: "teinte-intensite-inverse", texte: "Inverser le lien : plus une solution colorée est concentrée, plus sa teinte est foncée" },
+          { code: "grand-facteur-plus-concentre", texte: "Croire qu'un grand facteur de dilution donne une solution plus concentrée : la concentration est divisée par F" },
+          null,
+          { code: "teinte-depend-volume", texte: "Croire que la teinte dépend du volume : on compare des tubes de même diamètre, la teinte dépend de la concentration" }
+        ],
+        exp: "Plus la concentration en espèce colorée est grande, plus la teinte est intense. Attention : la solution la plus diluée (F le plus grand) est la plus claire."
       },
       {
-        q: "Un atome et un ion sont tous deux des entités chimiques, mais :",
+        q: "On pèse 10,0 mL d'une solution étalon : leur masse vaut 10,16 g. La masse volumique de cette solution vaut :",
         opts: [
-          "Un ion est toujours plus gros qu'un atome",
-          "Un atome est électriquement neutre, un ion est chargé électriquement",
-          "Un atome contient toujours plus de neutrons qu'un ion",
-          "Il n'existe aucune différence entre eux"
+          "1,016 g·mL⁻¹",
+          "0,984 g·mL⁻¹",
+          "1 016 g·mL⁻¹",
+          "101,6 g·mL⁻¹"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "masse-volumique-inverse", texte: "Inverser le rapport : V / m = 10,0 / 10,16 ≈ 0,984 au lieu de ρ = m / V" },
+          { code: "conversion-ml-l", texte: "Mélanger les unités : 10,16 / 0,0100 L = 1 016 g·L⁻¹, ce ne sont pas des g·mL⁻¹" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 10,16 × 10,0 ≈ 101,6" }
+        ],
+        exp: "ρ = m / V = 10,16 / 10,0 = 1,016 g·mL⁻¹ (soit 1 016 g·L⁻¹). Attention à garder la même unité de volume du début à la fin."
+      },
+      {
+        q: "Droite d'étalonnage : ρ = 1,024 g·mL⁻¹ pour cm = 60 g·L⁻¹ et ρ = 1,032 g·mL⁻¹ pour cm = 80 g·L⁻¹ (et 1,040 g·mL⁻¹ pour 100 g·L⁻¹). Une solution inconnue a ρ = 1,030 g·mL⁻¹. Sa concentration en masse vaut environ :",
+        opts: [
+          "99 g·L⁻¹",
+          "75 g·L⁻¹",
+          "80 g·L⁻¹",
+          "1,03×10³ g·L⁻¹"
         ],
         ans: 1,
-        exp: "L'atome est électriquement neutre (autant de protons que d'électrons), tandis qu'un ion a gagné ou perdu un ou plusieurs électrons, ce qui lui confère une charge électrique."
+        pieges: [
+          { code: "proportionnel-vs-affine", texte: "Croire que ρ est proportionnelle à cm : 1,030 / 1,040 × 100 ≈ 99 ; la droite ne passe pas par l'origine (l'eau pure a ρ = 1,000)" },
+          null,
+          { code: "valeur-etalon-recopiee", texte: "Prendre la concentration de l'étalon le plus proche (80 g·L⁻¹) au lieu de lire sur la droite" },
+          { code: "cm-vs-masse-volumique", texte: "Confondre masse volumique de la solution (1 030 g·L⁻¹) et concentration en masse du soluté" }
+        ],
+        exp: "Sur la droite, ρ augmente de 0,008 g·mL⁻¹ pour 20 g·L⁻¹ ; 1,030 − 1,024 = 0,006, soit 15 g·L⁻¹ de plus que 60 : cm ≈ 75 g·L⁻¹. Attention : la droite d'étalonnage ne passe pas par l'origine, ce n'est pas une proportionnalité."
+      },
+      {
+        q: "Une solution trop concentrée a été diluée 2 fois avant la mesure ; sur la droite d'étalonnage, on lit alors 60 g·L⁻¹. La concentration de la solution de départ vaut :",
+        opts: [
+          "30 g·L⁻¹",
+          "60 g·L⁻¹",
+          "on ne peut plus la connaître : la dilution a changé la masse de soluté",
+          "120 g·L⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "diviser-au-lieu-multiplier", texte: "Diviser par le facteur de dilution : c'est la solution diluée qui vaut 60 g·L⁻¹, la solution de départ est 2 fois plus concentrée" },
+          { code: "oubli-facteur-dilution", texte: "Oublier la dilution : 60 g·L⁻¹ est la concentration de la solution diluée, pas celle de départ" },
+          { code: "dilution-change-masse", texte: "Croire que la dilution enlève du soluté : on ajoute seulement du solvant, la masse de soluté prélevée ne change pas" },
+          null
+        ],
+        exp: "La solution mesurée est 2 fois moins concentrée que celle de départ : c = 60 × 2 = 120 g·L⁻¹. Attention : on multiplie la valeur lue par le facteur de dilution."
+      },
+      {
+        q: "Pour un dosage par étalonnage avec une droite d'étalonnage, on mesure une même grandeur physique (par exemple la masse volumique) :",
+        opts: [
+          "sur la solution inconnue seulement, puis on calcule",
+          "sur des solutions étalons de concentrations connues, puis sur la solution inconnue",
+          "sur des solutions étalons seulement : la droite donne directement le résultat",
+          "sur la solution inconnue diluée plusieurs fois, sans solution étalon"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "etalonnage-sans-etalons", texte: "Oublier les étalons : sans solutions de concentrations connues, on ne peut pas tracer la droite" },
+          null,
+          { code: "etalonnage-sans-mesure-inconnue", texte: "Oublier de mesurer la solution inconnue : c'est sa valeur que l'on reporte sur la droite" },
+          { code: "etalons-vs-dilutions-inconnue", texte: "Confondre étalons et dilutions de l'inconnue : les étalons ont des concentrations connues" }
+        ],
+        exp: "On mesure la grandeur pour chaque étalon (concentration connue), on trace la droite, puis on mesure la solution inconnue et on lit sa concentration par projection. Attention : il faut les deux séries de mesures."
       }
     ],
     annales: [],
@@ -18960,114 +19020,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La hauteur d'un son dépend directement de :",
+        q: "Une chanteuse passe d'une note grave à une note aiguë. La grandeur qui augmente est :",
         opts: [
-          "Son intensité sonore",
-          "Sa fréquence",
-          "Sa durée",
-          "Son timbre"
-        ],
-        ans: 1,
-        exp: "La hauteur d'un son est la sensation auditive liée à sa fréquence."
-      },
-      {
-        q: "Un son grave correspond à :",
-        opts: [
-          "Une fréquence élevée",
-          "Une fréquence faible",
-          "Un niveau sonore élevé",
-          "Un niveau sonore faible"
-        ],
-        ans: 1,
-        exp: "Plus la fréquence est faible, plus le son est perçu comme grave."
-      },
-      {
-        q: "Le timbre d'un son permet de :",
-        opts: [
-          "Mesurer sa fréquence",
-          "Distinguer deux sons de même hauteur émis par des sources différentes",
-          "Mesurer son intensité en décibels",
-          "Déterminer sa vitesse de propagation"
-        ],
-        ans: 1,
-        exp: "Le timbre permet de reconnaître la source (instrument, voix) de deux sons de même hauteur."
-      },
-      {
-        q: "Le domaine des fréquences audibles par l'oreille humaine est environ :",
-        opts: [
-          "0 Hz à 200 Hz",
-          "20 Hz à 20 000 Hz",
-          "200 Hz à 2 000 Hz",
-          "20 000 Hz à 200 000 Hz"
-        ],
-        ans: 1,
-        exp: "L'oreille humaine perçoit les fréquences entre 20 Hz et 20 000 Hz."
-      },
-      {
-        q: "Un son dont la fréquence est supérieure à 20 000 Hz est appelé :",
-        opts: [
-          "Un infrason",
-          "Un ultrason",
-          "Un son grave",
-          "Un son pur"
-        ],
-        ans: 1,
-        exp: "Au-delà de 20 000 Hz, on parle d'ultrason, inaudible pour l'être humain."
-      },
-      {
-        q: "Le niveau sonore se mesure en :",
-        opts: [
-          "Watts",
-          "Hertz",
-          "Décibels",
-          "Newtons"
+          "le niveau sonore",
+          "la période du son",
+          "la fréquence du son",
+          "la vitesse de propagation du son"
         ],
         ans: 2,
-        exp: "Le niveau sonore L s'exprime en décibels (dB)."
+        pieges: [
+          { code: "hauteur-vs-intensite", texte: "Confondre hauteur et intensité : un son aigu n'est pas forcément plus fort" },
+          { code: "periode-vs-frequence", texte: "Confondre période et fréquence : f = 1 / T, donc quand la fréquence augmente, la période diminue" },
+          null,
+          { code: "aigu-plus-rapide", texte: "Croire que les sons aigus se propagent plus vite : dans l'air, tous les sons vont à environ 340 m·s⁻¹" }
+        ],
+        exp: "La hauteur est liée à la fréquence : plus la fréquence est élevée, plus le son est aigu. Attention : aigu ne veut pas dire fort."
       },
       {
-        q: "Le niveau sonore correspondant à une conversation normale est environ :",
+        q: "Le son A a une période de 2,0 ms, le son B une période de 5,0 ms. Lequel est le plus aigu ?",
         opts: [
-          "6 dB",
-          "60 dB",
-          "160 dB",
-          "600 dB"
+          "B, car sa période est plus grande",
+          "A",
+          "aucun : ils ont la même hauteur s'ils ont le même niveau sonore",
+          "on ne peut pas savoir sans connaître leur timbre"
         ],
         ans: 1,
-        exp: "Une conversation normale correspond à un niveau sonore d'environ 60 dB."
+        pieges: [
+          { code: "periode-vs-frequence", texte: "Confondre période et fréquence : la plus grande période donne la plus petite fréquence, donc le son le plus grave" },
+          null,
+          { code: "hauteur-vs-intensite", texte: "Confondre hauteur et intensité : la hauteur dépend de la fréquence, pas du niveau sonore" },
+          { code: "hauteur-vs-timbre", texte: "Confondre hauteur et timbre : la hauteur est fixée par la fréquence, le timbre par la forme du signal" }
+        ],
+        exp: "f(A) = 1 / (2,0×10⁻³) = 500 Hz et f(B) = 1 / (5,0×10⁻³) = 200 Hz : A a la plus grande fréquence, il est le plus aigu. Attention : plus la période est courte, plus le son est aigu."
       },
       {
-        q: "Le seuil de douleur auditive se situe autour de :",
+        q: "Un sifflet pour chien émet un son de période 25 µs. Pour un être humain, ce son est :",
         opts: [
-          "20 dB",
-          "60 dB",
-          "120 dB",
-          "300 dB"
+          "un ultrason, inaudible",
+          "un infrason, inaudible",
+          "un son audible très aigu",
+          "un son audible très grave"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "ultrason-infrason-inverses", texte: "Inverser ultrasons et infrasons : au-dessus de 20 000 Hz ce sont des ultrasons, en dessous de 20 Hz des infrasons" },
+          { code: "domaine-audible-mal-connu", texte: "Oublier la limite du domaine audible : f = 1 / (25×10⁻⁶) = 40 000 Hz, au-delà de 20 000 Hz" },
+          { code: "periode-courte-grave", texte: "Croire qu'une période courte donne un son grave : une période courte correspond à une fréquence élevée" }
+        ],
+        exp: "f = 1 / T = 1 / (25×10⁻⁶) = 40 000 Hz, au-delà de 20 000 Hz : c'est un ultrason, inaudible pour l'être humain. Attention : 1 µs = 10⁻⁶ s."
+      },
+      {
+        q: "On souffle plus fort dans un sifflet à ultrasons. Un être humain :",
+        opts: [
+          "l'entend, car le son est devenu plus intense",
+          "l'entend, mais comme un son très grave",
+          "ne l'entend toujours pas",
+          "l'entend, car le son est devenu plus aigu"
         ],
         ans: 2,
-        exp: "Le seuil de douleur est atteint vers 120 dB."
+        pieges: [
+          { code: "intensite-rend-audible", texte: "Croire qu'un son inaudible devient audible s'il est plus fort : l'audibilité dépend d'abord de la fréquence" },
+          { code: "ultrason-infrason-inverses", texte: "Inverser ultrasons et infrasons : un ultrason a une fréquence très élevée, au-delà du domaine audible" },
+          null,
+          { code: "hauteur-vs-intensite", texte: "Confondre hauteur et intensité : souffler plus fort rend le son plus intense, pas plus aigu" }
+        ],
+        exp: "Souffler plus fort augmente l'intensité, pas la fréquence : le son reste au-delà de 20 000 Hz, donc inaudible. Attention : le domaine audible (20 Hz à 20 000 Hz) concerne la fréquence."
       },
       {
-        q: "Une exposition prolongée à un son supérieur à 85 dB peut :",
+        q: "Un son a une fréquence fondamentale de 220 Hz. Les fréquences de ses harmoniques peuvent être :",
         opts: [
-          "Améliorer l'audition",
-          "Endommager irréversiblement les cellules ciliées de l'oreille interne",
-          "N'avoir aucun effet",
-          "Réduire la fréquence perçue"
+          "110 Hz et 55 Hz",
+          "440 Hz et 660 Hz",
+          "230 Hz et 240 Hz",
+          "220 Hz uniquement, comme la fondamentale"
         ],
         ans: 1,
-        exp: "Au-delà de 85 dB, une exposition prolongée abîme durablement l'oreille interne."
+        pieges: [
+          { code: "harmoniques-sous-multiples", texte: "Diviser au lieu de multiplier : les harmoniques ont des fréquences multiples de la fondamentale (2f, 3f…)" },
+          null,
+          { code: "harmoniques-additifs", texte: "Ajouter une valeur fixe : les harmoniques sont 2 × 220, 3 × 220…, pas 220 + 10, 220 + 20" },
+          { code: "son-reel-pur", texte: "Croire qu'un son d'instrument est un son pur : il contient des harmoniques, qui font son timbre" }
+        ],
+        exp: "Les harmoniques ont des fréquences multiples de la fondamentale : 2 × 220 = 440 Hz, 3 × 220 = 660 Hz… Attention : c'est leur proportion qui donne le timbre ; la hauteur reste fixée par la fondamentale."
       },
       {
-        q: "Deux instruments jouent la même note (même fréquence fondamentale) à la même intensité. Ce qui permet de les différencier à l'oreille est :",
+        q: "Deux instruments jouent la même note, avec la même fréquence fondamentale et le même niveau sonore. On les distingue à l'oreille grâce :",
         opts: [
-          "La hauteur",
-          "Le niveau sonore",
-          "Le timbre",
-          "La longueur d'onde"
+          "à leur hauteur",
+          "à leur timbre",
+          "à leur fréquence fondamentale",
+          "à leur niveau sonore"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "hauteur-vs-timbre", texte: "Confondre hauteur et timbre : même note = même hauteur ; c'est le timbre qui distingue les instruments" },
+          null,
+          { code: "fondamentale-vs-harmoniques", texte: "Croire que la fondamentale diffère : elle est la même, ce sont les harmoniques (leur proportion) qui changent" },
+          { code: "intensite-vs-timbre", texte: "Confondre timbre et intensité : les deux sons ont ici le même niveau sonore" }
+        ],
+        exp: "À hauteur et niveau sonore égaux, seul le timbre (la forme du signal, liée aux harmoniques) distingue un piano d'une flûte. Attention : le timbre n'est ni la hauteur ni l'intensité."
+      },
+      {
+        q: "Deux signaux sonores ont la même forme et la même période ; l'amplitude du second est deux fois plus grande. Le second son est :",
+        opts: [
+          "plus aigu",
+          "de timbre différent",
+          "de fréquence double",
+          "de même hauteur, mais plus intense"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "hauteur-vs-intensite", texte: "Confondre hauteur et intensité : une amplitude plus grande donne un son plus fort, pas plus aigu" },
+          { code: "amplitude-vs-timbre", texte: "Croire que l'amplitude change le timbre : le timbre dépend de la forme du signal, ici identique" },
+          { code: "frequence-vs-amplitude", texte: "Confondre fréquence et amplitude : même période, donc même fréquence" },
+          null
+        ],
+        exp: "Même période, donc même fréquence et même hauteur ; même forme, donc même timbre ; amplitude plus grande, donc son plus intense. Attention : l'amplitude se lit verticalement, la période horizontalement."
+      },
+      {
+        q: "Un sonomètre affiche 60 dB, puis 90 dB. On peut dire que :",
+        opts: [
+          "le son est devenu plus aigu",
+          "l'intensité sonore vaut maintenant 90 W·m⁻²",
+          "le son est devenu plus intense",
+          "l'intensité sonore a été multipliée par 1,5"
         ],
         ans: 2,
-        exp: "À hauteur et intensité identiques, seul le timbre distingue les deux sons."
+        pieges: [
+          { code: "hauteur-vs-intensite", texte: "Confondre hauteur et intensité : le niveau sonore renseigne sur l'intensité, pas sur la fréquence" },
+          { code: "intensite-vs-niveau", texte: "Confondre intensité sonore (en W·m⁻²) et niveau sonore (en dB)" },
+          null,
+          { code: "niveau-proportionnel-intensite", texte: "Croire que le niveau sonore est proportionnel à l'intensité : +30 dB correspond à une intensité 1 000 fois plus grande, pas 1,5 fois" }
+        ],
+        exp: "Le niveau sonore (en dB) augmente quand l'intensité sonore (en W·m⁻²) augmente. Attention : ce n'est pas une proportionnalité ; +30 dB correspond à une intensité 1 000 fois plus grande."
+      },
+      {
+        q: "Le niveau sonore dans une discothèque est d'environ 100 dB. Sans protection :",
+        opts: [
+          "on peut y rester 8 h sans risque, car c'est sous le seuil de douleur",
+          "on ne devrait y rester que quelques minutes",
+          "on ne risque rien : l'oreille s'habitue au bruit",
+          "le risque est le même pour 5 minutes ou pour 5 heures"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "danger-seulement-si-douleur", texte: "Croire qu'un son n'est dangereux que s'il fait mal : au-delà de 85 dB, une exposition prolongée abîme l'oreille sans douleur" },
+          null,
+          { code: "oreille-s-habitue", texte: "Croire que l'oreille s'habitue : l'impression de moins entendre est déjà le signe d'une fatigue ou d'une lésion" },
+          { code: "dose-sans-duree", texte: "Oublier la durée : plus le niveau est élevé, plus la durée d'exposition sans risque est courte" }
+        ],
+        exp: "La dose de bruit dépend du niveau et de la durée : environ 8 h à 85 dB, mais seulement quelques minutes à 100 dB. Attention : les lésions peuvent apparaître sans aucune douleur."
+      },
+      {
+        q: "Un son de niveau sonore 0 dB :",
+        opts: [
+          "a une intensité sonore nulle",
+          "correspond au seuil de douleur",
+          "correspond au son le plus grave audible, 20 Hz",
+          "est à la limite de ce que l'oreille peut percevoir"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "zero-db-intensite-nulle", texte: "Croire que 0 dB veut dire « aucun son » : c'est le seuil d'audibilité, l'intensité n'est pas nulle" },
+          { code: "echelle-niveaux-inversee", texte: "Inverser l'échelle : 0 dB est le seuil d'audibilité, le seuil de douleur est vers 120 dB" },
+          { code: "niveau-vs-frequence", texte: "Confondre niveau sonore (en dB) et fréquence (en Hz)" },
+          null
+        ],
+        exp: "0 dB correspond au seuil d'audibilité : le son le plus faible que l'oreille perçoit. Attention : son intensité n'est pas nulle, elle est simplement très faible."
       }
     ],
     annales: [],
@@ -19533,112 +19653,172 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
       {
         q: "Un cation est un ion :",
         opts: [
-          "Chargé négativement, formé par gain d'électrons",
-          "Chargé positivement, formé par perte d'électrons",
-          "Chargé positivement, formé par gain d'électrons",
-          "Neutre"
-        ],
-        ans: 1,
-        exp: "Un cation est un ion positif, obtenu par perte d'un ou plusieurs électrons."
-      },
-      {
-        q: "Un anion est un ion :",
-        opts: [
-          "Chargé positivement",
-          "Chargé négativement, formé par gain d'électrons",
-          "Chargé négativement, formé par perte de protons",
-          "Toujours instable"
-        ],
-        ans: 1,
-        exp: "Un anion est un ion négatif, obtenu par gain d'un ou plusieurs électrons."
-      },
-      {
-        q: "Le symbole Ca²⁺ correspond à :",
-        opts: [
-          "L'ion calcium",
-          "L'ion chlorure",
-          "L'ion carbone",
-          "L'ion cuivre"
-        ],
-        ans: 0,
-        exp: "Ca²⁺ est l'ion calcium, un cation portant deux charges positives."
-      },
-      {
-        q: "L'ion Cl⁻ est appelé :",
-        opts: [
-          "Ion chlore",
-          "Ion chlorure",
-          "Ion chlorate",
-          "Ion calcium"
-        ],
-        ans: 1,
-        exp: "Cl⁻ est l'ion chlorure."
-      },
-      {
-        q: "Les gaz nobles sont chimiquement très stables car :",
-        opts: [
-          "Ils sont radioactifs",
-          "Leur couche électronique externe est saturée (duet ou octet)",
-          "Ils n'ont pas d'électrons",
-          "Ils sont toujours liquides"
-        ],
-        ans: 1,
-        exp: "La saturation de la couche externe (2 ou 8 électrons) rend les gaz nobles très peu réactifs."
-      },
-      {
-        q: "L'atome de sodium Na (Z = 11) forme l'ion Na⁺ en :",
-        opts: [
-          "Gagnant un électron",
-          "Perdant un électron",
-          "Gagnant un proton",
-          "Perdant un neutron"
-        ],
-        ans: 1,
-        exp: "Le sodium perd son unique électron de valence pour former Na⁺, comme le néon."
-      },
-      {
-        q: "L'atome de chlore Cl (Z = 17) forme l'ion Cl⁻ en :",
-        opts: [
-          "Perdant un électron",
-          "Gagnant un électron",
-          "Perdant un proton",
-          "Gagnant un neutron"
-        ],
-        ans: 1,
-        exp: "Le chlore gagne un électron pour compléter son octet, comme l'argon."
-      },
-      {
-        q: "Dans le composé ionique CaCl₂, pour que la neutralité électrique soit respectée, il faut :",
-        opts: [
-          "1 ion Ca²⁺ pour 1 ion Cl⁻",
-          "1 ion Ca²⁺ pour 2 ions Cl⁻",
-          "2 ions Ca²⁺ pour 1 ion Cl⁻",
-          "2 ions Ca²⁺ pour 2 ions Cl⁻"
-        ],
-        ans: 1,
-        exp: "(+2) + 2×(−1) = 0 : il faut un ion Ca²⁺ pour deux ions Cl⁻."
-      },
-      {
-        q: "Parmi les ions suivants, lequel est un cation ?",
-        opts: [
-          "F⁻",
-          "Cl⁻",
-          "Mg²⁺",
-          "O²⁻"
+          "chargé positivement, formé par gain d'électrons",
+          "chargé positivement, formé par gain de protons",
+          "chargé positivement, formé par perte d'électrons",
+          "chargé négativement, formé par perte d'électrons"
         ],
         ans: 2,
-        exp: "Mg²⁺ est chargé positivement : c'est un cation."
+        pieges: [
+          { code: "ion-signe-inverse", texte: "Se tromper sur le signe : gagner des électrons (négatifs) rend l'ion négatif ; en perdre le rend positif" },
+          { code: "ion-par-protons", texte: "Croire qu'un ion se forme en gagnant ou perdant des protons : le noyau ne change pas, seuls les électrons s'échangent" },
+          null,
+          { code: "cation-anion-inverses", texte: "Inverser cation et anion : le cation est positif, l'anion est négatif" }
+        ],
+        exp: "Un atome qui perd des électrons a plus de protons que d'électrons : il devient un ion positif, un cation. Attention : le nombre de protons ne change jamais lors de la formation d'un ion."
       },
       {
-        q: "L'ion H⁺ est appelé :",
+        q: "Un ion possède 8 protons et 10 électrons. Sa charge est :",
         opts: [
-          "Ion hélium",
-          "Ion hydrogène",
-          "Ion hydroxyde",
-          "Ion hydrure"
+          "2+",
+          "2−",
+          "10−",
+          "8+"
         ],
         ans: 1,
-        exp: "H⁺ est l'ion hydrogène."
+        pieges: [
+          { code: "ion-signe-inverse", texte: "Se tromper sur le signe : il y a plus d'électrons (négatifs) que de protons, l'ion est négatif" },
+          null,
+          { code: "electrons-pris-pour-charge", texte: "Prendre le nombre d'électrons pour la charge : la charge est l'écart 8 − 10 = −2" },
+          { code: "protons-pris-pour-charge", texte: "Prendre le nombre de protons pour la charge : les électrons compensent une partie des charges des protons" }
+        ],
+        exp: "Charge = (nombre de protons − nombre d'électrons) × e = (8 − 10) e = −2e : l'ion porte la charge 2− (c'est l'ion oxyde O²⁻). Attention : un électron en trop donne une charge négative."
+      },
+      {
+        q: "L'atome de magnésium Mg (Z = 12) forme l'ion Mg²⁺. Combien d'électrons possède cet ion ?",
+        opts: [
+          "14",
+          "12",
+          "10",
+          "2"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "ion-signe-inverse", texte: "Se tromper sur le sens : la charge 2+ signifie que l'atome a perdu 2 électrons, pas qu'il en a gagné" },
+          { code: "charge-ignoree", texte: "Oublier que la charge modifie le nombre d'électrons : 12 est le nombre d'électrons de l'atome neutre" },
+          null,
+          { code: "charge-prise-pour-electrons", texte: "Prendre la charge pour le nombre d'électrons : 2+ indique 2 électrons perdus, il en reste 12 − 2" }
+        ],
+        exp: "L'atome neutre a 12 électrons ; Mg²⁺ en a perdu 2 : il lui en reste 12 − 2 = 10, comme le néon. Attention : la charge indique combien d'électrons ont été perdus ou gagnés."
+      },
+      {
+        q: "L'atome d'oxygène (Z = 8) a 6 électrons sur sa couche externe. Pour respecter la règle de l'octet, il forme :",
+        opts: [
+          "l'ion O²⁻, en gagnant 2 électrons",
+          "l'ion O⁶⁺, en perdant ses 6 électrons externes",
+          "l'ion O²⁺, en gagnant 2 électrons",
+          "l'ion O²⁻, en gagnant 2 protons"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "perte-electrons-valence-toujours", texte: "Croire qu'un atome perd toujours ses électrons externes : il est plus simple d'en gagner 2 que d'en perdre 6" },
+          { code: "ion-signe-inverse", texte: "Se tromper sur le signe : gagner 2 électrons donne une charge 2−" },
+          { code: "ion-par-protons", texte: "Croire qu'un ion se forme en gagnant ou perdant des protons : le noyau ne change pas, seuls les électrons s'échangent" }
+        ],
+        exp: "En gagnant 2 électrons, l'oxygène obtient 8 électrons sur sa couche externe, comme le néon : il forme l'ion O²⁻. Attention : gagner des électrons donne un ion négatif."
+      },
+      {
+        q: "L'ion Mg²⁺ (10 électrons) a la même structure électronique que l'atome :",
+        opts: [
+          "argon (Z = 18)",
+          "hélium (Z = 2)",
+          "sodium (Z = 11)",
+          "néon (Z = 10)"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "gaz-noble-mauvaise-periode", texte: "Prendre le gaz noble de la même ligne que l'atome : Mg²⁺ a 10 électrons, comme le néon" },
+          { code: "duet-vs-octet", texte: "Appliquer la règle du duet (hélium) à un atome de Z > 4 : le magnésium suit la règle de l'octet" },
+          { code: "gaz-noble-mal-identifie", texte: "Croire que l'ion imite un élément voisin quelconque : il prend la structure d'un gaz noble, et le sodium n'en est pas un" },
+          null
+        ],
+        exp: "Mg²⁺ a 12 − 2 = 10 électrons, comme le néon (Z = 10), gaz noble le plus proche. Attention : on compare le nombre d'électrons de l'ion à celui d'un gaz noble."
+      },
+      {
+        q: "L'atome de lithium (Z = 3) a un seul électron sur sa couche externe (n = 2). Il forme l'ion :",
+        opts: [
+          "Li⁵⁻, en gagnant 5 électrons pour avoir un octet",
+          "Li⁺, qui a la structure de l'hélium",
+          "Li⁺, qui a la structure du néon",
+          "Li⁻, en gagnant 1 électron"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "duet-vs-octet", texte: "Appliquer la règle de l'octet à un atome proche de l'hélium (Z ≤ 4) : il suit la règle du duet" },
+          null,
+          { code: "gaz-noble-mauvaise-periode", texte: "Prendre le gaz noble de la même ligne que l'atome : Li⁺ a 2 électrons, comme l'hélium" },
+          { code: "gain-au-lieu-perte", texte: "Croire que l'atome gagne un électron : avec un seul électron externe, il est plus simple de le perdre" }
+        ],
+        exp: "En perdant son électron externe, le lithium garde 2 électrons, comme l'hélium (règle du duet) : il forme Li⁺. Attention : pour Z ≤ 4, la règle est celle du duet."
+      },
+      {
+        q: "L'ion Cl⁻ s'appelle :",
+        opts: [
+          "l'ion chlore",
+          "l'ion chlorate",
+          "l'ion chlorure",
+          "l'ion calcium"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "nom-anion-ure", texte: "Garder le nom de l'atome : les anions monoatomiques se terminent en « -ure » (chlorure, fluorure)" },
+          { code: "chlorure-vs-chlorate", texte: "Confondre chlorure (Cl⁻) et chlorate (ClO₃⁻, un ion formé de plusieurs atomes)" },
+          null,
+          { code: "symboles-confondus", texte: "Confondre les symboles Cl (chlore) et Ca (calcium)" }
+        ],
+        exp: "Cl⁻ est l'ion chlorure ; de même, F⁻ est l'ion fluorure. Attention : « ion chlore » n'est pas le nom correct."
+      },
+      {
+        q: "Le fluorure de calcium est un solide ionique formé d'ions Ca²⁺ et F⁻. Sa formule est :",
+        opts: [
+          "CaF",
+          "Ca₂F",
+          "CaF₂",
+          "Ca₂F₂"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "neutralite-non-verifiee", texte: "Prendre autant d'anions que de cations sans vérifier la charge globale : (+2) + (−1) ≠ 0" },
+          { code: "rapport-charges-inverse", texte: "Inverser le rapport : chaque Ca²⁺ apporte deux charges +, il faut donc deux ions F⁻" },
+          null,
+          { code: "neutralite-non-verifiee", texte: "Ne pas vérifier la charge globale : 2 × (+2) + 2 × (−1) = +2 ≠ 0" }
+        ],
+        exp: "(+2) + 2 × (−1) = 0 : un ion Ca²⁺ pour deux ions F⁻, d'où CaF₂. Attention : la formule d'un composé ionique doit toujours être électriquement neutre."
+      },
+      {
+        q: "Le sel de cuisine solide (chlorure de sodium) est formé :",
+        opts: [
+          "de molécules NaCl",
+          "d'atomes de sodium et de chlore neutres",
+          "d'ions Na⁺ et Cl⁻ en nombres égaux",
+          "d'ions Na⁺ et Cl⁻, avec plus d'ions Cl⁻"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "ionique-vs-moleculaire", texte: "Croire qu'un solide ionique est formé de molécules : NaCl indique seulement la proportion des ions" },
+          { code: "ions-vs-atomes-neutres", texte: "Croire que le sel contient des atomes neutres : il est formé d'ions Na⁺ et Cl⁻" },
+          null,
+          { code: "neutralite-non-verifiee", texte: "Oublier l'électroneutralité : avec des charges +1 et −1, il faut autant d'ions de chaque sorte" }
+        ],
+        exp: "Le chlorure de sodium est un empilement d'ions Na⁺ et Cl⁻ en nombres égaux, ce qui le rend neutre. Attention : un solide ionique n'est pas fait de molécules."
+      },
+      {
+        q: "Les gaz nobles (hélium, néon, argon) sont chimiquement très stables parce que :",
+        opts: [
+          "leur couche externe est saturée (2 ou 8 électrons)",
+          "ce sont des gaz, et les gaz ne réagissent pas",
+          "ils ont 8 électrons au total",
+          "ils ont autant de protons que d'électrons"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "gaz-donc-inerte", texte: "Croire que l'état gazeux explique la stabilité : le dioxygène ou le dichlore sont des gaz très réactifs" },
+          { code: "octet-total-vs-externe", texte: "Confondre 8 électrons au total et 8 électrons sur la couche externe : l'argon en a 18 au total" },
+          { code: "neutralite-vs-stabilite", texte: "Confondre neutralité et stabilité : tous les atomes ont autant de protons que d'électrons" }
+        ],
+        exp: "Leur couche externe contient 2 électrons (hélium) ou 8 électrons (néon, argon) : elle est saturée, ce qui les rend très peu réactifs. Attention : tous les atomes sont neutres, mais tous ne sont pas stables."
       }
     ],
     annales: [],
@@ -20038,114 +20218,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Dans le tableau périodique, les éléments sont rangés par :",
+        q: "Dans le tableau périodique actuel, les éléments sont rangés par :",
         opts: [
-          "Ordre alphabétique",
-          "Masse atomique croissante",
-          "Numéro atomique Z croissant",
-          "Nombre de neutrons croissant"
-        ],
-        ans: 2,
-        exp: "Le rangement se fait par numéro atomique Z croissant."
-      },
-      {
-        q: "Les lignes du tableau périodique sont appelées :",
-        opts: [
-          "Familles",
-          "Périodes",
-          "Blocs",
-          "Groupes atomiques"
+          "masse croissante",
+          "numéro atomique Z croissant",
+          "nombre de neutrons croissant",
+          "nombre d'électrons de valence croissant"
         ],
         ans: 1,
-        exp: "Les lignes du tableau périodique sont les périodes."
+        pieges: [
+          { code: "rangement-par-masse", texte: "Croire qu'on range les éléments par masse : c'était l'idée de départ de Mendeleïev, le tableau actuel suit Z" },
+          null,
+          { code: "rangement-par-neutrons", texte: "Croire qu'on range par nombre de neutrons : c'est le nombre de protons Z qui définit l'élément" },
+          { code: "rangement-par-valence", texte: "Croire qu'on range par électrons de valence : leur nombre se répète d'une ligne à l'autre, c'est ce qui forme les colonnes" }
+        ],
+        exp: "Les éléments sont rangés par numéro atomique Z croissant, de gauche à droite et de haut en bas. Attention : le nombre d'électrons de valence est commun aux éléments d'une même colonne."
       },
       {
-        q: "Les colonnes du tableau périodique sont appelées :",
+        q: "Le soufre a pour configuration électronique 1s² 2s² 2p⁶ 3s² 3p⁴. Il se trouve :",
         opts: [
-          "Périodes",
-          "Blocs",
-          "Familles chimiques",
-          "Lignes"
+          "période 3, colonne 6",
+          "période 6, colonne 3",
+          "période 3, colonne 16",
+          "période 4, colonne 16"
         ],
         ans: 2,
-        exp: "Les colonnes du tableau périodique sont les familles chimiques."
-      },
-      {
-        q: "Le tableau périodique actuel comporte :",
-        opts: [
-          "4 périodes et 8 familles",
-          "7 périodes et 18 familles",
-          "10 périodes et 20 familles",
-          "3 périodes et 12 familles"
+        pieges: [
+          { code: "colonne-p-egale-valence", texte: "Prendre le nombre d'électrons de valence (6) pour le numéro de colonne : dans le bloc p, la colonne vaut 10 + 6 = 16" },
+          { code: "ligne-colonne-inverses", texte: "Inverser période et colonne : la période est donnée par n de la couche externe (n = 3)" },
+          null,
+          { code: "periode-vs-derniere-sous-couche", texte: "Prendre le nombre d'électrons de la dernière sous-couche (3p⁴) pour la période : la période est donnée par n = 3" }
         ],
-        ans: 1,
-        exp: "Le tableau périodique actuel compte 7 périodes (lignes) et 18 familles (colonnes)."
+        exp: "Couche externe n = 3 : période 3. 6 électrons de valence (3s² 3p⁴), bloc p : colonne 16. Attention : dans le bloc p, le numéro de colonne (de 13 à 18) vaut 10 + le nombre d'électrons de valence."
       },
       {
-        q: "Le bloc s correspond aux colonnes :",
+        q: "Le magnésium a pour configuration électronique 1s² 2s² 2p⁶ 3s². Il se trouve :",
         opts: [
-          "1 et 2",
-          "3 à 12",
-          "13 à 18",
-          "17 et 18"
+          "période 3, colonne 2, bloc s",
+          "période 2, colonne 2, bloc s",
+          "période 3, colonne 12, bloc s",
+          "période 3, colonne 2, bloc p"
         ],
         ans: 0,
-        exp: "Le bloc s regroupe les colonnes 1 et 2."
+        pieges: [
+          null,
+          { code: "periode-vs-valence", texte: "Prendre le nombre d'électrons de valence (2) pour la période : la période est donnée par n de la couche externe (n = 3)" },
+          { code: "colonne-s-plus-10", texte: "Ajouter 10 pour un élément du bloc s : on ajoute 10 seulement dans le bloc p (colonnes 13 à 18)" },
+          { code: "bloc-mal-identifie", texte: "Se tromper de bloc : la dernière sous-couche remplie est 3s, c'est le bloc s" }
+        ],
+        exp: "Couche externe n = 3 : période 3 ; 2 électrons de valence en 3s : bloc s, colonne 2. Attention : le bloc est donné par la sous-couche en cours de remplissage."
       },
       {
-        q: "Le bloc p correspond aux colonnes :",
+        q: "Le phosphore se trouve dans la période 3, colonne 15. Sa configuration électronique est :",
         opts: [
-          "1 et 2",
-          "3 à 12",
-          "13 à 18",
-          "1 à 12"
+          "1s² 2s² 2p³",
+          "1s² 2s² 2p⁶ 3s² 3p⁵",
+          "1s² 2s² 2p⁶ 3s² 3p³",
+          "1s² 2s² 2p⁶ 3s⁵"
         ],
         ans: 2,
-        exp: "Le bloc p regroupe les colonnes 13 à 18."
+        pieges: [
+          { code: "periode-vs-n", texte: "Placer les électrons de valence sur la couche n = 2 : la période 3 correspond à n = 3" },
+          { code: "colonne-mal-convertie", texte: "Colonne 15 = 5 électrons de valence au total (3s² 3p³), pas 5 électrons dans la seule sous-couche 3p" },
+          null,
+          { code: "s-max-2", texte: "Mettre plus de 2 électrons dans une sous-couche s : elle en contient au maximum 2" }
+        ],
+        exp: "Colonne 15 du bloc p : 15 − 10 = 5 électrons de valence, sur la couche n = 3 (période 3) : 3s² 3p³, d'où 1s² 2s² 2p⁶ 3s² 3p³ (15 électrons). Attention : les électrons de valence sont ceux de toute la couche externe."
       },
       {
-        q: "Les éléments d'une même colonne ont en commun :",
+        q: "Le lithium, le sodium et le potassium ont des propriétés chimiques voisines parce que :",
         opts: [
-          "Le même numéro atomique",
-          "Le même nombre d'électrons de valence",
-          "Le même nombre de neutrons",
-          "La même masse atomique"
+          "ils ont le même nombre total d'électrons",
+          "ils sont dans la même période",
+          "ils ont des masses voisines",
+          "ils ont le même nombre d'électrons de valence"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "famille-meme-nombre-electrons", texte: "Croire que les éléments d'une famille ont le même nombre d'électrons : ils ont le même nombre d'électrons de valence" },
+          { code: "ligne-colonne-inverses", texte: "Confondre période (ligne) et famille (colonne) : ces trois éléments sont dans la même colonne" },
+          { code: "proprietes-par-masse", texte: "Croire que les propriétés chimiques dépendent de la masse : elles dépendent des électrons de valence" },
+          null
+        ],
+        exp: "Ils sont dans la même colonne (colonne 1) : même nombre d'électrons de valence (1), donc propriétés chimiques voisines. C'est une famille chimique. Attention : la famille est une colonne, pas une ligne."
+      },
+      {
+        q: "L'hélium (1s²) est placé dans la colonne 18, avec les gaz nobles, parce que :",
+        opts: [
+          "il a 8 électrons de valence",
+          "sa couche externe est saturée, comme celle des autres gaz nobles",
+          "il a 18 électrons",
+          "c'est un gaz, comme les autres éléments de cette colonne"
         ],
         ans: 1,
-        exp: "Une même colonne regroupe des éléments ayant le même nombre d'électrons de valence."
+        pieges: [
+          { code: "valence-toujours-8", texte: "Croire qu'un gaz noble a toujours 8 électrons de valence : l'hélium n'en a que 2 (duet)" },
+          null,
+          { code: "colonne-egale-z", texte: "Prendre le numéro de colonne pour le nombre total d'électrons : l'hélium n'en a que 2" },
+          { code: "gaz-donc-inerte", texte: "Croire que l'état gazeux explique le classement : le dioxygène ou le dichlore sont des gaz très réactifs" }
+        ],
+        exp: "La couche n = 1 ne peut contenir que 2 électrons : celle de l'hélium est saturée (duet), ce qui le rend très stable comme les autres gaz nobles. Attention : saturée veut dire 2 électrons pour n = 1, 8 pour n = 2 ou 3."
       },
       {
-        q: "La famille des gaz nobles correspond à la colonne :",
+        q: "Un élément de la colonne 2 forme en général l'ion :",
         opts: [
-          "1",
-          "8",
-          "18",
-          "13"
+          "X²⁻",
+          "X⁶⁻",
+          "X²⁺",
+          "X⁺"
         ],
         ans: 2,
-        exp: "Les gaz nobles occupent la colonne 18 du tableau périodique."
+        pieges: [
+          { code: "ion-signe-inverse", texte: "Se tromper sur le signe : perdre 2 électrons (négatifs) rend l'ion positif" },
+          { code: "gain-au-lieu-perte", texte: "Croire que l'atome gagne 6 électrons pour compléter l'octet : il est bien plus simple d'en perdre 2" },
+          null,
+          { code: "charge-sans-lien-colonne", texte: "Ne pas relier la charge aux électrons de valence : 2 électrons de valence à perdre donnent la charge 2+" }
+        ],
+        exp: "Les éléments de la colonne 2 ont 2 électrons de valence ; en les perdant, ils obtiennent la structure d'un gaz noble : ion X²⁺ (Mg²⁺, Ca²⁺). Attention : perdre des électrons donne un ion positif."
       },
       {
-        q: "Le magnésium Mg a pour configuration électronique (K)² (L)⁸ (M)². Dans quelle période se situe-t-il ?",
+        q: "Les éléments d'une même période (ligne) ont en commun :",
         opts: [
-          "Période 1",
-          "Période 2",
-          "Période 3",
-          "Période 4"
+          "le même nombre d'électrons de valence",
+          "la même couche externe (même valeur de n)",
+          "des propriétés chimiques voisines",
+          "le même nombre de neutrons"
         ],
-        ans: 2,
-        exp: "La couche externe est M (n = 3) : le magnésium est en période 3."
+        ans: 1,
+        pieges: [
+          { code: "ligne-colonne-inverses", texte: "Confondre période (ligne) et famille (colonne) : c'est dans une colonne qu'on a le même nombre d'électrons de valence" },
+          null,
+          { code: "ligne-proprietes-communes", texte: "Croire que les éléments d'une ligne se ressemblent : ce sont ceux d'une même colonne qui ont des propriétés voisines" },
+          { code: "rangement-par-neutrons", texte: "Croire que le tableau classe les éléments par nombre de neutrons : seul Z compte" }
+        ],
+        exp: "Dans une période, les électrons de valence sont sur la même couche n (n = 3 pour la période 3). Attention : les propriétés voisines sont celles d'une même colonne."
       },
       {
-        q: "Un atome ayant 6 électrons de valence dans un bloc p se situe dans la colonne :",
+        q: "Après le néon (Z = 10), le sodium (Z = 11) commence la période 3 parce que :",
         opts: [
-          "6",
-          "13",
-          "16",
-          "18"
+          "chaque période contient 10 éléments",
+          "le néon est un gaz et le sodium un métal",
+          "le sodium a 3 électrons de valence",
+          "son électron externe occupe une nouvelle couche, n = 3"
         ],
-        ans: 2,
-        exp: "Pour les blocs s et p, le numéro de colonne correspond au nombre d'électrons de valence : ici colonne 16."
+        ans: 3,
+        pieges: [
+          { code: "periode-nombre-fixe", texte: "Croire que toutes les périodes ont la même longueur : la période 1 compte 2 éléments, les périodes 2 et 3 en comptent 8" },
+          { code: "etat-physique-classement", texte: "Croire que le tableau classe selon l'état physique : il suit Z et le remplissage des couches électroniques" },
+          { code: "periode-vs-valence", texte: "Prendre le numéro de la période pour le nombre d'électrons de valence : le sodium n'en a qu'un (3s¹)" },
+          null
+        ],
+        exp: "Na : 1s² 2s² 2p⁶ 3s¹. Son électron externe est sur la couche n = 3 : une nouvelle période commence. Attention : la période donne n, la colonne renseigne sur les électrons de valence."
+      },
+      {
+        q: "Le bloc p du tableau périodique regroupe les colonnes :",
+        opts: [
+          "13 à 18",
+          "1 et 2",
+          "3 à 12",
+          "1 à 6"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "blocs-s-p-inverses", texte: "Inverser les blocs : les colonnes 1 et 2 forment le bloc s" },
+          { code: "bloc-d-vs-p", texte: "Confondre avec le bloc d (colonnes 3 à 12), qui n'est pas étudié en Seconde" },
+          { code: "colonnes-p-de-1-a-6", texte: "Croire que le bloc p occupe les colonnes 1 à 6 parce que p contient 6 électrons : ce sont les 6 colonnes 13 à 18" }
+        ],
+        exp: "Bloc s : colonnes 1 et 2 (sous-couche s, 2 électrons au plus) ; bloc p : colonnes 13 à 18 (sous-couche p, 6 électrons au plus). Attention : pour le bloc p, colonne = 10 + nombre d'électrons de valence."
       }
     ],
     annales: [],
@@ -20594,114 +20834,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une liaison covalente correspond à :",
+        q: "Une liaison covalente entre deux atomes correspond à :",
         opts: [
-          "Le transfert complet d'un électron d'un atome à l'autre",
-          "La mise en commun de deux électrons entre deux atomes",
-          "La perte de deux électrons par un atome",
-          "Une attraction entre deux ions"
+          "le transfert d'un électron d'un atome à l'autre",
+          "la mise en commun de deux électrons, un apporté par chaque atome",
+          "la mise en commun d'un seul électron entre les deux atomes",
+          "l'attraction directe entre les deux noyaux, sans électrons"
         ],
         ans: 1,
-        exp: "Une liaison covalente résulte du partage d'un doublet d'électrons entre deux atomes."
-      },
-      {
-        q: "Le nombre de liaisons covalentes que forme un atome de carbone est :",
-        opts: [
-          "1",
-          "2",
-          "3",
-          "4"
+        pieges: [
+          { code: "covalente-vs-ionique", texte: "Confondre liaison covalente et formation d'ions : dans une liaison covalente, les électrons sont partagés, pas transférés" },
+          null,
+          { code: "liaison-un-electron", texte: "Croire qu'une liaison partage un seul électron : un doublet liant contient deux électrons" },
+          { code: "liaison-sans-electrons", texte: "Oublier le rôle des électrons : ce sont eux, mis en commun, qui lient les atomes" }
         ],
-        ans: 3,
-        exp: "Le carbone a 4 électrons de valence et forme donc 4 liaisons covalentes."
+        exp: "Une liaison covalente est un doublet liant : deux électrons de valence mis en commun, chaque atome en fournissant un. Attention : il n'y a pas de transfert d'électron comme pour les ions."
       },
       {
-        q: "Un doublet non liant est :",
+        q: "L'atome d'oxygène a 6 électrons de valence. Dans une molécule, il établit :",
         opts: [
-          "Une paire d'électrons partagée entre deux atomes",
-          "Une paire d'électrons appartenant à un seul atome, ne formant pas de liaison",
-          "Un électron célibataire",
-          "Une liaison triple"
-        ],
-        ans: 1,
-        exp: "Un doublet non liant (ou doublet libre) appartient à un seul atome."
-      },
-      {
-        q: "Dans la molécule d'eau H₂O, l'atome d'oxygène possède :",
-        opts: [
-          "2 doublets liants et 2 doublets non liants",
-          "4 doublets liants et 0 doublet non liant",
-          "1 doublet liant et 3 doublets non liants",
-          "0 doublet liant et 4 doublets non liants"
-        ],
-        ans: 0,
-        exp: "L'oxygène de l'eau forme 2 liaisons avec les atomes d'hydrogène et conserve 2 doublets non liants."
-      },
-      {
-        q: "La formule brute d'une molécule renseigne sur :",
-        opts: [
-          "La géométrie de la molécule",
-          "La nature et le nombre des atomes uniquement",
-          "L'énergie de liaison",
-          "Les doublets non liants"
-        ],
-        ans: 1,
-        exp: "La formule brute indique seulement quels atomes et en quel nombre, sans autre information."
-      },
-      {
-        q: "Dans la formule semi-développée, on ne représente pas :",
-        opts: [
-          "Les liaisons entre atomes de carbone",
-          "Les liaisons avec les atomes d'hydrogène",
-          "Les atomes d'oxygène",
-          "Les doublets non liants uniquement"
-        ],
-        ans: 1,
-        exp: "Dans la formule semi-développée, le nombre d'atomes d'hydrogène est indiqué en indice sans représenter leurs liaisons."
-      },
-      {
-        q: "L'énergie de liaison est l'énergie :",
-        opts: [
-          "Libérée quand on forme une liaison",
-          "Nécessaire pour rompre une liaison",
-          "Perdue par un atome neutre",
-          "Contenue uniquement dans un doublet non liant"
-        ],
-        ans: 1,
-        exp: "L'énergie de liaison correspond à l'énergie qu'il faut fournir pour rompre la liaison."
-      },
-      {
-        q: "Former une liaison covalente entre deux atomes est un processus :",
-        opts: [
-          "Endothermique (consomme de l'énergie)",
-          "Exothermique (libère de l'énergie)",
-          "Toujours nucléaire",
-          "Sans échange d'énergie"
-        ],
-        ans: 1,
-        exp: "La formation d'une liaison covalente libère de l'énergie : c'est exothermique."
-      },
-      {
-        q: "Dans l'ammoniac NH₃, l'atome d'azote possède :",
-        opts: [
-          "3 doublets liants et 1 doublet non liant",
-          "4 doublets liants et 0 doublet non liant",
-          "2 doublets liants et 2 doublets non liants",
-          "1 doublet liant et 3 doublets non liants"
-        ],
-        ans: 0,
-        exp: "L'azote forme 3 liaisons avec les atomes d'hydrogène et conserve 1 doublet non liant."
-      },
-      {
-        q: "Seul ce mode de représentation permet de visualiser la géométrie réelle d'une molécule dans l'espace :",
-        opts: [
-          "La formule brute",
-          "La formule développée",
-          "Le modèle moléculaire",
-          "La formule semi-développée"
+          "6 liaisons covalentes",
+          "8 liaisons covalentes",
+          "2 liaisons covalentes",
+          "4 liaisons covalentes"
         ],
         ans: 2,
-        exp: "Le modèle moléculaire, avec ses sphères et bâtonnets, restitue la géométrie 3D de la molécule."
+        pieges: [
+          { code: "liaisons-egal-valence", texte: "Prendre le nombre d'électrons de valence pour le nombre de liaisons : il faut compter les électrons qui manquent pour l'octet (8 − 6 = 2)" },
+          { code: "octet-pris-pour-liaisons", texte: "Prendre 8 (l'octet) pour le nombre de liaisons : 8 est le nombre d'électrons visé autour de l'atome" },
+          null,
+          { code: "doublets-total-pris-pour-liaisons", texte: "Compter tous les doublets (4) comme des liaisons : l'oxygène a 2 doublets liants et 2 doublets non liants" }
+        ],
+        exp: "Il manque 8 − 6 = 2 électrons à l'oxygène pour respecter l'octet : il établit 2 liaisons covalentes. Attention : ses 4 autres électrons forment 2 doublets non liants."
+      },
+      {
+        q: "Dans le schéma de Lewis de la molécule d'eau H₂O, l'atome d'oxygène porte :",
+        opts: [
+          "2 doublets liants et 2 doublets non liants",
+          "4 doublets liants et aucun doublet non liant",
+          "2 doublets liants et 4 doublets non liants",
+          "2 doublets liants et aucun doublet non liant"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "doublets-total-pris-pour-liaisons", texte: "Compter tous les doublets comme des liaisons : l'oxygène ne forme que 2 liaisons, avec les 2 atomes d'hydrogène" },
+          { code: "electrons-vs-doublets", texte: "Compter des électrons au lieu de doublets : 4 électrons non liants forment 2 doublets" },
+          { code: "oubli-doublets-non-liants", texte: "Oublier les doublets non liants : il reste 4 électrons de valence sur l'oxygène, soit 2 doublets non liants" }
+        ],
+        exp: "L'oxygène forme 2 liaisons O—H (2 doublets liants) ; ses 6 − 2 = 4 autres électrons de valence forment 2 doublets non liants. Au total 4 doublets : l'octet est respecté."
+      },
+      {
+        q: "Dans le schéma de Lewis de la molécule HCl, l'atome de chlore (7 électrons de valence) porte :",
+        opts: [
+          "7 doublets non liants",
+          "aucun doublet non liant",
+          "4 doublets non liants",
+          "3 doublets non liants"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "electrons-vs-doublets", texte: "Compter des électrons au lieu de doublets : les 6 électrons non liants forment 3 doublets" },
+          { code: "oubli-doublets-non-liants", texte: "Oublier les doublets non liants : il reste 6 électrons de valence sur le chlore, soit 3 doublets" },
+          { code: "liant-compte-non-liant", texte: "Compter le doublet liant avec les doublets non liants : le chlore a 4 doublets au total, dont 1 liant" },
+          null
+        ],
+        exp: "Le chlore forme 1 liaison H—Cl ; ses 7 − 1 = 6 autres électrons de valence forment 3 doublets non liants. Au total 4 doublets : octet respecté."
+      },
+      {
+        q: "Dans une molécule, un atome d'hydrogène établit :",
+        opts: [
+          "2 liaisons, pour obtenir un duet",
+          "1 liaison et aucun doublet non liant",
+          "1 liaison et 1 doublet non liant",
+          "4 liaisons, pour respecter l'octet"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "duet-pris-pour-liaisons", texte: "Prendre 2 (le duet) pour le nombre de liaisons : une seule liaison (2 électrons partagés) suffit à H" },
+          null,
+          { code: "doublet-non-liant-sur-h", texte: "Mettre un doublet non liant sur H : son unique électron est engagé dans la liaison, il n'en reste aucun" },
+          { code: "duet-vs-octet", texte: "Appliquer la règle de l'octet à l'hydrogène : il suit la règle du duet (2 électrons)" }
+        ],
+        exp: "H a 1 électron de valence ; avec une liaison, il partage 2 électrons, comme l'hélium (duet). Attention : l'hydrogène ne porte jamais de doublet non liant."
+      },
+      {
+        q: "Une molécule est formée d'un atome d'azote (5 électrons de valence) et d'atomes d'hydrogène. Sa formule est :",
+        opts: [
+          "NH₅",
+          "NH₄",
+          "N₃H",
+          "NH₃"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "liaisons-egal-valence", texte: "Prendre le nombre d'électrons de valence pour le nombre de liaisons : il manque 8 − 5 = 3 électrons à l'azote" },
+          { code: "doublets-total-pris-pour-liaisons", texte: "Compter tous les doublets comme des liaisons : l'azote a 4 doublets, dont 1 non liant" },
+          { code: "indice-mal-place", texte: "Mettre l'indice sur le mauvais atome : il y a un atome d'azote et trois atomes d'hydrogène" },
+          null
+        ],
+        exp: "Il manque 3 électrons à l'azote pour l'octet : il établit 3 liaisons, avec 3 atomes d'hydrogène, d'où NH₃ (l'ammoniac), avec 1 doublet non liant sur N."
+      },
+      {
+        q: "Pour rompre une liaison covalente :",
+        opts: [
+          "il faut fournir de l'énergie",
+          "de l'énergie est libérée",
+          "aucune énergie n'est nécessaire",
+          "il faut ajouter des électrons aux atomes"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "rupture-libere-energie", texte: "Croire que casser une liaison libère de l'énergie : rompre une liaison en consomme, c'est la former qui en libère" },
+          { code: "rupture-sans-energie", texte: "Croire qu'une liaison se casse sans énergie : l'énergie de liaison est justement l'énergie à fournir" },
+          { code: "rupture-par-electrons", texte: "Croire qu'on rompt une liaison en ajoutant des électrons : il faut lui fournir de l'énergie" }
+        ],
+        exp: "L'énergie de liaison est l'énergie à fournir pour rompre la liaison. Attention : à l'inverse, former une liaison libère de l'énergie."
+      },
+      {
+        q: "Une combustion libère de l'énergie. L'explication à l'échelle des molécules est :",
+        opts: [
+          "rompre les liaisons du combustible libère l'énergie qu'elles contiennent",
+          "former les liaisons des produits libère plus d'énergie qu'il n'en faut pour rompre celles des réactifs",
+          "les atomes du combustible sont détruits et transformés en énergie",
+          "le dioxygène apporte la chaleur qu'il contient déjà"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "rupture-libere-energie", texte: "Croire que casser une liaison libère de l'énergie : rompre une liaison en consomme, c'est la former qui en libère" },
+          null,
+          { code: "atomes-detruits", texte: "Croire que les atomes sont détruits : lors d'une réaction chimique, ils se réarrangent et se conservent" },
+          { code: "chaleur-contenue-substance", texte: "Croire que la chaleur est contenue dans une substance : l'énergie libérée vient du bilan entre liaisons rompues et formées" }
+        ],
+        exp: "Rompre les liaisons des réactifs consomme de l'énergie ; former celles des produits en libère. Si l'énergie libérée est plus grande, la transformation dégage de l'énergie. Attention : les atomes, eux, se conservent."
+      },
+      {
+        q: "Le schéma de Lewis de l'eau s'écrit souvent H—O—H, sur une ligne. La molécule d'eau est-elle linéaire ?",
+        opts: [
+          "oui, puisque les atomes sont alignés sur le schéma",
+          "oui, car les deux H se repoussent au maximum",
+          "non, elle est coudée : le schéma de Lewis ne donne pas la géométrie",
+          "non, elle a la forme d'une pyramide, comme NH₃"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "schema-plan-donne-geometrie", texte: "Croire qu'un schéma écrit à plat montre la forme réelle : seul le modèle moléculaire montre la géométrie" },
+          { code: "doublets-non-liants-sans-place", texte: "Oublier que les 2 doublets non liants de l'oxygène occupent aussi de la place autour de lui" },
+          null,
+          { code: "geometries-confondues", texte: "Confondre les géométries : NH₃ (3 liaisons, 1 doublet non liant) est pyramidale, H₂O (2 liaisons, 2 doublets) est coudée" }
+        ],
+        exp: "L'oxygène est entouré de 4 doublets (2 liants, 2 non liants) répartis dans l'espace : la molécule d'eau est coudée. Attention : le schéma de Lewis et la formule développée ne renseignent pas sur la géométrie."
+      },
+      {
+        q: "Une molécule est :",
+        opts: [
+          "un assemblage d'ions de charges opposées",
+          "un ensemble d'atomes qui sont tous identiques",
+          "un atome qui a gagné ou perdu des électrons",
+          "un assemblage neutre d'atomes liés par covalence"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "ionique-vs-moleculaire", texte: "Confondre molécule et solide ionique : une molécule est faite d'atomes liés par des liaisons covalentes, pas d'ions" },
+          { code: "molecule-atomes-identiques", texte: "Croire qu'une molécule ne contient qu'une sorte d'atome : H₂O contient de l'hydrogène et de l'oxygène" },
+          { code: "molecule-vs-ion", texte: "Confondre molécule et ion : un ion est chargé, une molécule est neutre" },
+          null
+        ],
+        exp: "Une molécule est un assemblage neutre d'un nombre limité d'atomes liés par des liaisons covalentes (H₂O, CO₂, O₂…). Attention : elle n'est pas chargée, contrairement à un ion."
       }
     ],
     annales: [],
