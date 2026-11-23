@@ -32865,114 +32865,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Dans la molécule H2O, combien de doublets non liants porte l'atome d'oxygène ?",
+        q: "Dans le schéma de Lewis de l'ammoniac NH₃, combien de doublets non liants porte l'atome d'azote ?",
         opts: [
           "0",
           "1",
           "2",
           "3"
         ],
-        ans: 2,
-        exp: "L'oxygène de H2O possède 2 doublets liants O–H et 2 doublets non liants."
-      },
-      {
-        q: "Le méthane CH4 possède 4 doublets liants et aucun doublet non liant autour du carbone. Sa géométrie est :",
-        opts: [
-          "Coudée",
-          "Pyramidale",
-          "Tétraédrique",
-          "Linéaire"
+        ans: 1,
+        pieges: [
+          { code: "doublets-non-liants-oublies", texte: "Oublier les doublets non liants : N a 5 électrons de valence, 3 sont engagés dans les liaisons, les 2 restants forment un doublet" },
+          null,
+          { code: "electrons-vs-doublets", texte: "Compter des électrons au lieu de doublets : 2 électrons non liants forment 1 doublet" },
+          { code: "liants-non-liants-confondus", texte: "Confondre doublets liants et non liants : les 3 doublets N–H sont liants" }
         ],
-        ans: 2,
-        exp: "4 doublets liants et 0 doublet non liant autour de l'atome central donnent une géométrie tétraédrique."
+        exp: "N a 5 électrons de valence : 3 forment les liaisons N–H, les 2 autres forment 1 doublet non liant, ce qui complète l'octet. Attention : on compte des doublets (paires d'électrons)."
       },
       {
-        q: "NH3 possède 3 doublets liants et 1 doublet non liant autour de l'azote. Sa géométrie est :",
+        q: "Nombre d'électrons de valence : C : 4 ; O : 6. Le nombre total d'électrons de valence à répartir dans le schéma de Lewis de CO₂ est :",
         opts: [
-          "Tétraédrique",
-          "Pyramidale",
-          "Coudée",
-          "Linéaire"
+          "10",
+          "8",
+          "22",
+          "16"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "oubli-indice", texte: "Oublier l'indice 2 : 4 + 6 = 10 ; il y a deux atomes d'oxygène, soit 4 + 2 × 6 = 16" },
+          { code: "electrons-vs-doublets", texte: "Donner le nombre de doublets (8) au lieu du nombre d'électrons (16)" },
+          { code: "valence-tous-electrons", texte: "Compter tous les électrons (6 + 8 + 8 = 22) : seuls les électrons de valence entrent dans le schéma de Lewis" },
+          null
+        ],
+        exp: "4 + 2 × 6 = 16 électrons de valence, soit 8 doublets répartis en liants et non liants. Attention : ne compter que les électrons de valence, et chaque atome autant de fois que son indice."
+      },
+      {
+        q: "Dans le sulfure d'hydrogène H₂S, l'atome de soufre est entouré de 2 doublets liants et de 2 doublets non liants. La géométrie de la molécule est :",
+        opts: [
+          "linéaire",
+          "coudée",
+          "tétraédrique",
+          "pyramidale"
         ],
         ans: 1,
-        exp: "Avec 3 doublets liants et 1 non liant, la géométrie est pyramidale : le doublet non liant déforme la structure tétraédrique de base."
+        pieges: [
+          { code: "geometrie-sans-non-liants", texte: "Oublier les doublets non liants : ils occupent de la place et repoussent les doublets liants, la molécule n'est pas linéaire" },
+          null,
+          { code: "geometrie-doublets-vs-atomes", texte: "Décrire la répartition des 4 doublets au lieu de la position des atomes : seuls 2 atomes H entourent S, la molécule est coudée" },
+          { code: "geometries-confondues", texte: "Confondre les géométries : pyramidale correspond à 3 liaisons et 1 doublet non liant (NH₃), pas à 2 et 2" }
+        ],
+        exp: "Comme H₂O, H₂S a 2 doublets liants et 2 non liants autour de l'atome central : la molécule est coudée. Attention : la géométrie décrit la position des atomes, mais les doublets non liants la déforment."
+      },
+      {
+        q: "CH₄ et NH₃ ont chacun 4 doublets autour de l'atome central. Pourquoi NH₃ n'est-il pas tétraédrique ?",
+        opts: [
+          "Un des 4 doublets est non liant : seuls 3 atomes H entourent N",
+          "L'azote est plus électronégatif que le carbone",
+          "NH₃ n'a que 3 doublets autour de l'azote",
+          "Les 3 atomes H se repoussent et forment un triangle plan"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "electronegativite-fixe-geometrie", texte: "Croire que l'électronégativité fixe la géométrie : c'est le nombre de doublets liants et non liants qui la détermine" },
+          { code: "doublets-non-liants-oublies", texte: "Oublier le doublet non liant de N : il y a bien 4 doublets (3 liants + 1 non liant)" },
+          { code: "geometrie-sans-non-liants", texte: "Oublier que le doublet non liant occupe un emplacement : il repousse les liaisons N–H, la molécule est pyramidale, pas plane" }
+        ],
+        exp: "Les 4 doublets de NH₃ se répartissent comme dans CH₄, mais l'un est non liant : les atomes forment une pyramide (N au sommet, 3 H à la base). Attention : un doublet non liant compte dans la répartition des doublets."
       },
       {
         q: "L'électronégativité d'un atome mesure :",
         opts: [
-          "sa masse molaire",
+          "sa capacité à céder le doublet d'une liaison",
+          "son nombre d'électrons de valence",
           "sa capacité à attirer le doublet d'une liaison covalente",
-          "le nombre de doublets non liants qu'il porte",
-          "sa charge électrique totale"
-        ],
-        ans: 1,
-        exp: "Par définition, l'électronégativité traduit la capacité d'un atome à attirer vers lui le doublet d'électrons d'une liaison covalente."
-      },
-      {
-        q: "Avec H = 2,2, C = 2,5, N = 3,0 et O = 3,5, quel classement par polarité croissante des liaisons C–H, N–H, O–H est correct ?",
-        opts: [
-          "O–H < N–H < C–H",
-          "C–H < N–H < O–H",
-          "N–H < C–H < O–H",
-          "C–H < O–H < N–H"
-        ],
-        ans: 1,
-        exp: "Les écarts d'électronégativité valent 0,3 (C–H), 0,8 (N–H) et 1,3 (O–H) : la polarité croît donc dans l'ordre C–H < N–H < O–H."
-      },
-      {
-        q: "Dans la liaison O–H, quel atome porte la charge partielle δ⁻ ?",
-        opts: [
-          "L'hydrogène, car il est le plus léger",
-          "L'oxygène, car il est le plus électronégatif",
-          "Aucun, la liaison n'est pas polarisée",
-          "Les deux, également"
-        ],
-        ans: 1,
-        exp: "L'oxygène (3,5) est plus électronégatif que l'hydrogène (2,2) : il attire davantage le doublet liant et porte la charge partielle négative δ⁻."
-      },
-      {
-        q: "L'ion chlorure Cl⁻ est entouré, dans son schéma de Lewis, de :",
-        opts: [
-          "4 doublets liants",
-          "2 doublets liants et 1 non liant",
-          "4 doublets non liants",
-          "1 doublet liant et 3 non liants"
+          "sa masse : plus un atome est lourd, plus il attire"
         ],
         ans: 2,
-        exp: "Cl⁻ ne forme aucune liaison : il est entouré de 4 doublets non liants, la charge négative étant localisée sur l'atome de chlore."
+        pieges: [
+          { code: "electronegativite-inverse", texte: "Inverser la définition : un atome électronégatif attire vers lui le doublet de la liaison, il ne le cède pas" },
+          { code: "electronegativite-nombre-electrons", texte: "Confondre électronégativité et nombre d'électrons de valence : Cl (7) et N (5) ont la même électronégativité (3,0)" },
+          null,
+          { code: "electronegativite-masse", texte: "Croire que l'atome le plus lourd est le plus électronégatif : O (3,5) est plus léger que Cl (3,0)" }
+        ],
+        exp: "L'électronégativité mesure la capacité d'un atome à attirer vers lui le doublet d'une liaison covalente ; elle augmente de gauche à droite et de bas en haut du tableau. Attention : elle ne dépend pas de la masse."
       },
       {
-        q: "CO2 possède deux liaisons C=O polarisées mais est une molécule apolaire. Comment l'expliquer ?",
+        q: "Électronégativités : C : 2,5 ; Cl : 3,0. Dans la liaison C–Cl :",
         opts: [
-          "Les liaisons C=O ne sont en fait pas polarisées",
-          "La molécule est linéaire et symétrique : les effets des deux liaisons s'annulent",
-          "Le carbone est plus électronégatif que l'oxygène",
-          "CO2 n'a pas de doublets non liants"
+          "Cl porte δ⁻, car il est plus électronégatif",
+          "C porte δ⁻, car il est moins électronégatif",
+          "aucun atome ne porte de charge : c'est une liaison covalente",
+          "C porte δ⁻, car il est l'atome central"
         ],
-        ans: 1,
-        exp: "La géométrie linéaire et symétrique de CO2 fait que les barycentres des charges partielles positives et négatives coïncident : la molécule est donc apolaire malgré ses liaisons polarisées."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "delta-signes-inverses", texte: "Inverser les charges partielles : l'atome le plus électronégatif attire le doublet, il porte δ⁻" },
+          { code: "covalente-jamais-polarisee", texte: "Croire qu'une liaison covalente n'est jamais polarisée : dès que les électronégativités diffèrent, elle l'est" },
+          { code: "atome-central-charge", texte: "Attribuer la charge selon la position dans la molécule : seule l'électronégativité compte" }
+        ],
+        exp: "Cl (3,0) est plus électronégatif que C (2,5) : il attire le doublet liant et porte la charge partielle δ⁻, C porte δ⁺. Attention à ne pas inverser les signes."
       },
       {
-        q: "H2O possède des liaisons O–H polarisées, tout comme CO2 possède des liaisons C=O polarisées, mais H2O est polaire. Pourquoi ?",
+        q: "Électronégativités : H : 2,2 ; C : 2,5 ; Cl : 3,0 ; O : 3,5. Quelle liaison est la plus polarisée ?",
         opts: [
-          "H2O n'a pas de doublets non liants",
-          "La géométrie coudée de H2O empêche les effets des liaisons polarisées de s'annuler",
-          "L'oxygène de H2O n'est pas électronégatif",
-          "H2O n'a qu'une seule liaison O–H"
+          "O=O",
+          "C–Cl",
+          "O–H",
+          "C–H"
         ],
-        ans: 1,
-        exp: "Contrairement à CO2 qui est linéaire, H2O est coudée : les barycentres des charges positives et négatives ne coïncident pas, la molécule est donc polaire."
+        ans: 2,
+        pieges: [
+          { code: "polarisation-atomes-electronegatifs", texte: "Croire qu'une liaison entre atomes très électronégatifs est très polarisée : c'est l'écart qui compte, nul pour O=O" },
+          { code: "electronegativite-masse", texte: "Choisir la liaison avec l'atome le plus lourd (Cl) : l'écart C–Cl (0,5) est plus petit que l'écart O–H (1,3)" },
+          null,
+          { code: "polarisation-liaison-avec-h", texte: "Croire que les liaisons avec H sont toujours très polarisées : l'écart C–H n'est que de 0,3" }
+        ],
+        exp: "La polarisation dépend de l'écart d'électronégativité : O–H 1,3 ; C–Cl 0,5 ; C–H 0,3 ; O=O 0. La liaison O–H est la plus polarisée. Attention : on regarde l'écart, pas la valeur de chaque atome."
       },
       {
-        q: "Pourquoi l'huile (apolaire) ne se dissout-elle pas dans l'eau (polaire) ?",
+        q: "CO₂ possède deux liaisons C=O polarisées, mais c'est une molécule apolaire. Pourquoi ?",
         opts: [
-          "Parce que l'huile est trop dense",
-          "Parce que « qui se ressemble s'assemble » : une espèce apolaire se dissout mal dans un solvant polaire",
-          "Parce que l'eau n'a pas de doublets non liants",
-          "Parce que l'huile réagit chimiquement avec l'eau"
+          "Les liaisons C=O ne sont pas vraiment polarisées",
+          "CO₂ ne possède pas de doublet non liant",
+          "CO₂ est un gaz",
+          "CO₂ est linéaire : les barycentres des charges partielles coïncident"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "liaisons-non-polarisees", texte: "Nier la polarisation des liaisons : l'écart C (2,5) – O (3,5) vaut 1,0, les liaisons C=O sont polarisées" },
+          { code: "polarite-doublets-non-liants", texte: "Relier la polarité aux doublets non liants : chaque O de CO₂ en porte deux ; c'est la géométrie qui compte" },
+          { code: "gaz-donc-apolaire", texte: "Croire qu'un gaz est forcément apolaire : l'état physique ne dit rien de la polarité (H₂O gazeuse reste polaire)" },
+          null
+        ],
+        exp: "CO₂ est linéaire et symétrique : les barycentres des charges δ⁺ et δ⁻ sont confondus sur le carbone, la molécule est apolaire. Attention : liaisons polarisées ne veut pas dire molécule polaire."
+      },
+      {
+        q: "Le tétrachlorométhane CCl₄ est tétraédrique, avec quatre liaisons C–Cl polarisées identiques. Cette molécule est :",
+        opts: [
+          "polaire, car ses liaisons sont polarisées",
+          "apolaire, car les barycentres des charges coïncident",
+          "polaire, car elle contient des doublets non liants",
+          "apolaire, car le chlore n'est pas électronégatif"
         ],
         ans: 1,
-        exp: "La règle qualitative « qui se ressemble s'assemble » explique que l'huile, apolaire, interagit peu avec l'eau, polaire, d'où leur non-miscibilité."
+        pieges: [
+          { code: "liaison-polarisee-donc-molecule-polaire", texte: "Croire qu'une molécule à liaisons polarisées est forcément polaire : dans CCl₄, symétrique, les effets s'annulent" },
+          null,
+          { code: "polarite-doublets-non-liants", texte: "Relier la polarité aux doublets non liants : ce sont les barycentres des charges partielles qui comptent" },
+          { code: "liaisons-non-polarisees", texte: "Nier la polarisation : Cl (3,0) est plus électronégatif que C (2,5) ; la molécule est apolaire grâce à sa symétrie" }
+        ],
+        exp: "Les quatre liaisons C–Cl sont polarisées, mais la molécule tétraédrique est symétrique : le barycentre des δ⁻ (les 4 Cl) coïncide avec celui des δ⁺ (C). CCl₄ est apolaire, comme CO₂."
+      },
+      {
+        q: "Le diiode I₂ est une molécule apolaire. Il se dissout mieux :",
+        opts: [
+          "dans le cyclohexane, apolaire",
+          "dans l'eau, polaire",
+          "dans l'eau, qui dissout toutes les espèces",
+          "autant dans les deux solvants"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "polarite-solubilite-inversee", texte: "Inverser la règle : « qui se ressemble s'assemble », une espèce apolaire se dissout mieux dans un solvant apolaire" },
+          { code: "eau-solvant-universel", texte: "Croire que l'eau dissout tout : les espèces apolaires (huiles, diiode) s'y dissolvent mal" },
+          { code: "solubilite-independante-solvant", texte: "Croire que la solubilité ne dépend pas du solvant : elle dépend de la polarité du soluté et du solvant" }
+        ],
+        exp: "« Qui se ressemble s'assemble » : le diiode, apolaire, est bien plus soluble dans le cyclohexane, apolaire, que dans l'eau, polaire. Attention : l'eau ne dissout bien que les espèces polaires ou ioniques."
       }
     ],
     annales: [],
@@ -33436,114 +33496,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La cohésion du chlorure de sodium NaCl(s) est assurée par :",
+        q: "La cohésion du chlorure de sodium solide NaCl(s) est assurée par :",
         opts: [
-          "des liaisons hydrogène",
-          "des interactions de Van der Waals",
+          "des liaisons hydrogène entre les ions",
           "des interactions électrostatiques entre ions de charges opposées",
-          "des liaisons covalentes entre ions"
+          "des liaisons covalentes entre Na et Cl",
+          "des interactions de Van der Waals entre molécules NaCl"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "pont-h-partout", texte: "Voir des liaisons hydrogène partout : il faut un atome H lié à O, N ou F ; NaCl n'en contient pas" },
+          null,
+          { code: "covalente-vs-ionique", texte: "Confondre liaison covalente et interaction entre ions : Na⁺ et Cl⁻ ne partagent pas d'électrons" },
+          { code: "ionique-vs-moleculaire", texte: "Croire qu'un solide ionique est formé de molécules : NaCl indique seulement la proportion des ions Na⁺ et Cl⁻" }
+        ],
+        exp: "NaCl(s) est un solide ionique : sa cohésion est assurée par les interactions électrostatiques attractives entre ions Na⁺ et Cl⁻. Attention : il ne contient pas de molécules NaCl."
+      },
+      {
+        q: "La cohésion de la glace H₂O(s) est assurée par des interactions de Van der Waals et surtout par :",
+        opts: [
+          "les liaisons covalentes O–H entre molécules voisines",
+          "des interactions entre ions H⁺ et O²⁻",
+          "des liaisons hydrogène entre molécules",
+          "rien d'autre : comme pour I₂, seulement Van der Waals"
         ],
         ans: 2,
-        exp: "NaCl est un solide ionique : sa cohésion est assurée par les interactions électrostatiques attractives entre l'ion Na⁺ et l'ion Cl⁻."
+        pieges: [
+          { code: "intra-vs-intermoleculaire", texte: "Confondre liaison covalente (à l'intérieur d'une molécule) et interaction entre molécules : la fusion ne casse pas les liaisons O–H" },
+          { code: "eau-solide-ionique", texte: "Croire que la glace est un solide ionique : elle est formée de molécules H₂O" },
+          null,
+          { code: "pont-h-oublie", texte: "Oublier les liaisons hydrogène : H est lié à O, très électronégatif, ce qui permet des ponts H entre molécules" }
+        ],
+        exp: "Dans la glace, un atome H d'une molécule lié à O interagit avec un doublet non liant de l'O d'une molécule voisine : c'est une liaison hydrogène, plus intense que les interactions de Van der Waals."
       },
       {
-        q: "La cohésion du diiode solide I2(s), constitué de molécules apolaires, est assurée par :",
+        q: "Entre les molécules de laquelle de ces espèces peut-il s'établir des liaisons hydrogène ?",
         opts: [
-          "des interactions électrostatiques entre ions",
-          "des interactions de Van der Waals",
-          "des liaisons hydrogène uniquement",
-          "aucune interaction, les molécules sont libres"
+          "Le méthane CH₄",
+          "Le dioxyde de carbone CO₂",
+          "Le diiode I₂",
+          "L'ammoniac NH₃"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "pont-h-tout-h", texte: "Croire qu'il suffit d'un atome H : il faut un H lié à O, N ou F ; dans CH₄, H est lié à C, peu électronégatif" },
+          { code: "pont-h-avec-o", texte: "Croire que la présence de O suffit : CO₂ n'a aucun atome H" },
+          { code: "pont-h-partout", texte: "Voir des liaisons hydrogène partout : I₂ n'a pas d'hydrogène, ses molécules ne sont liées que par Van der Waals" },
+          null
+        ],
+        exp: "Une liaison hydrogène s'établit entre un atome H lié à O, N ou F et un doublet non liant d'un atome électronégatif voisin. Dans NH₃, H est lié à N : c'est possible. Attention : un atome H ne suffit pas."
+      },
+      {
+        q: "L'eau H₂O bout à 100 °C, le sulfure d'hydrogène H₂S (M = 34 g·mol⁻¹) à −60 °C. Comment expliquer cet écart ?",
+        opts: [
+          "L'ébullition de l'eau casse les liaisons O–H, très solides",
+          "Les liaisons hydrogène entre molécules d'eau sont plus intenses",
+          "Les molécules d'eau sont plus lourdes que celles de H₂S",
+          "L'eau est un solide ionique, H₂S un solide moléculaire"
         ],
         ans: 1,
-        exp: "I2(s) est un solide moléculaire apolaire : sa cohésion repose uniquement sur les interactions de Van der Waals entre molécules de I2."
+        pieges: [
+          { code: "changement-etat-nouvelle-espece", texte: "Croire qu'un changement d'état casse les molécules : la vapeur d'eau est formée de molécules H₂O intactes" },
+          null,
+          { code: "masse-explique-ebullition", texte: "Expliquer par la masse : H₂O (18 g·mol⁻¹) est plus légère que H₂S (34 g·mol⁻¹), et bout pourtant bien plus haut" },
+          { code: "eau-solide-ionique", texte: "Croire que l'eau est ionique : H₂O et H₂S sont deux espèces moléculaires" }
+        ],
+        exp: "Pour vaporiser l'eau, il faut rompre les liaisons hydrogène entre molécules, plus intenses que les interactions de Van der Waals qui lient les molécules de H₂S (S est peu électronégatif). Les liaisons O–H, elles, restent intactes."
       },
       {
-        q: "En plus des interactions de Van der Waals, la cohésion de la glace (H2O(s)) est renforcée par :",
+        q: "L'équation de dissolution du chlorure de calcium CaCl₂(s) dans l'eau s'écrit :",
         opts: [
-          "des interactions électrostatiques entre ions",
-          "des liaisons hydrogène (pont H)",
-          "des liaisons covalentes intermoléculaires",
-          "la pression atmosphérique"
+          "CaCl₂(s) → Ca²⁺(aq) + Cl₂²⁻(aq)",
+          "CaCl₂(s) → Ca²⁺(aq) + Cl⁻(aq)",
+          "CaCl₂(s) → CaCl₂(aq)",
+          "CaCl₂(s) → Ca²⁺(aq) + 2 Cl⁻(aq)"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "indice-garde-dans-ion", texte: "Garder l'indice dans l'ion : le solide libère deux ions chlorure Cl⁻ séparés, pas un ion Cl₂²⁻" },
+          { code: "conservation-charge-oubliee", texte: "Oublier de conserver les éléments et la charge : à gauche 2 Cl et une charge nulle, il faut 2 Cl⁻ à droite" },
+          { code: "dissolution-sans-dissociation", texte: "Croire que le solide ionique se dissout en « molécules » : les ions se séparent et sont solvatés" },
+          null
+        ],
+        exp: "Le solide ionique se dissocie : CaCl₂(s) → Ca²⁺(aq) + 2 Cl⁻(aq). Attention : l'indice 2 devient un nombre stœchiométrique, et la charge totale (nulle) est conservée."
+      },
+      {
+        q: "On dissout n = 2,00×10⁻² mol de CaCl₂ dans de l'eau pour obtenir 200 mL de solution. La concentration en ions chlorure vaut :",
+        opts: [
+          "0,100 mol·L⁻¹",
+          "0,200 mol·L⁻¹",
+          "5,00×10⁻² mol·L⁻¹",
+          "2,00×10⁻⁴ mol·L⁻¹"
         ],
         ans: 1,
-        exp: "Les atomes d'hydrogène de H2O étant liés à un atome d'oxygène, des liaisons hydrogène (pont H) s'ajoutent aux interactions de Van der Waals pour assurer la cohésion de la glace."
-      },
-      {
-        q: "On dissout m = 3,725 g de chlorure de potassium KCl (M = 74,5 g/mol) dans V = 250 mL d'eau. Quelle est la concentration en ions K⁺ obtenue ?",
-        opts: [
-          "0,0500 mol/L",
-          "0,100 mol/L",
-          "0,200 mol/L",
-          "0,400 mol/L"
+        pieges: [
+          { code: "oubli-indice", texte: "Oublier que chaque CaCl₂ libère 2 ions Cl⁻ : n(Cl⁻) = 2 × 2,00×10⁻² = 4,00×10⁻² mol" },
+          null,
+          { code: "stoechiometrie-inversee", texte: "Diviser par 2 au lieu de multiplier : il y a deux fois plus d'ions Cl⁻ que de CaCl₂ dissous" },
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 4,00×10⁻² / 200 ; 200 mL = 0,200 L" }
         ],
-        ans: 2,
-        exp: "n(KCl) = 3,725/74,5 = 0,0500 mol. Comme KCl(s) → K⁺(aq) + Cl⁻(aq), [K⁺] = n/V = 0,0500/0,250 = 0,200 mol/L."
+        exp: "n(Cl⁻) = 2 × n(CaCl₂) = 4,00×10⁻² mol, donc [Cl⁻] = 4,00×10⁻² / 0,200 = 0,200 mol·L⁻¹ (et [Ca²⁺] = 0,100 mol·L⁻¹). Attention au coefficient 2 de l'équation de dissolution."
       },
       {
-        q: "La solubilité d'une espèce chimique dans un solvant correspond à :",
+        q: "Lors de la dissolution de NaCl, les molécules d'eau entourent les ions Na⁺ en tournant vers eux :",
         opts: [
-          "la masse de solvant nécessaire pour dissoudre 1 g de soluté",
-          "la masse maximale de cette espèce que l'on peut dissoudre dans un litre de ce solvant",
-          "le volume de solution obtenu après dissolution",
-          "la vitesse à laquelle l'espèce se dissout"
-        ],
-        ans: 1,
-        exp: "La solubilité est, par définition, la masse maximale d'une espèce que l'on peut dissoudre dans un litre d'un solvant donné."
-      },
-      {
-        q: "On mélange de l'huile (apolaire) et de l'eau (polaire) dans un tube à essai. Que peut-on affirmer ?",
-        opts: [
-          "Elles sont miscibles et forment une seule phase",
-          "Elles ne sont pas miscibles ; on observe 2 phases, l'huile au-dessus (ρ ≈ 0,92 g/mL < ρ(eau))",
-          "Elles ne sont pas miscibles ; l'huile coule au fond",
-          "Elles réagissent chimiquement ensemble"
-        ],
-        ans: 1,
-        exp: "Huile (apolaire) et eau (polaire) ne sont pas miscibles (« qui se ressemble s'assemble ») : on observe 2 phases, l'huile, moins dense (ρ ≈ 0,92 g/mL), se plaçant au-dessus de l'eau (ρ = 1,00 g/mL)."
-      },
-      {
-        q: "Pour extraire un colorant apolaire dissous dans l'eau, on dispose d'un solvant A (polaire, miscible à l'eau) et d'un solvant B (apolaire, non miscible à l'eau). Lequel choisir comme solvant extracteur ?",
-        opts: [
-          "Le solvant A, car il est polaire comme l'eau",
-          "Le solvant B, car il est non miscible à l'eau et dissout mieux le colorant apolaire",
-          "Les deux fonctionnent aussi bien l'un que l'autre",
-          "Aucun des deux ne convient"
-        ],
-        ans: 1,
-        exp: "Un bon solvant extracteur doit être non miscible avec le solvant initial (pour permettre la séparation des phases) et dissoudre mieux le soluté : le solvant B, apolaire et non miscible à l'eau, convient (règle « qui se ressemble s'assemble »)."
-      },
-      {
-        q: "Pourquoi l'éthanol, bien que très bon solvant du diiode, ne convient-il pas comme solvant extracteur du diiode dissous dans l'eau ?",
-        opts: [
-          "Il est trop cher",
-          "Il est miscible à l'eau, donc aucune séparation de phases n'est possible",
-          "Il ne dissout pas du tout le diiode",
-          "Il réagit chimiquement avec le diiode"
-        ],
-        ans: 1,
-        exp: "L'éthanol est miscible à l'eau : mélangé à la phase aqueuse, il ne formerait qu'une seule phase, rendant impossible toute séparation à l'ampoule à décanter."
-      },
-      {
-        q: "Lors de l'extraction du diiode par le cyclohexane (ρ = 0,78 g/mL, non miscible à l'eau), après décantation, quelle est la position de la phase organique ?",
-        opts: [
-          "Au-dessus, car le cyclohexane est moins dense que l'eau",
-          "En dessous, car le cyclohexane est plus dense que l'eau",
-          "Elle se mélange à la phase aqueuse",
-          "Sa position est imprévisible"
+          "leur atome d'oxygène, porteur de δ⁻",
+          "leurs atomes d'hydrogène, porteurs de δ⁺",
+          "n'importe quel côté : l'eau sépare les ions par agitation",
+          "des ions HO⁻ formés par l'eau"
         ],
         ans: 0,
-        exp: "Le cyclohexane (ρ = 0,78 g/mL) est moins dense que l'eau (ρ = 1,00 g/mL) : la phase organique (violette) se place au-dessus, la phase aqueuse en dessous."
+        pieges: [
+          null,
+          { code: "solvatation-orientation-inverse", texte: "Inverser l'orientation : un cation (+) attire le côté δ⁻ de la molécule d'eau, l'oxygène" },
+          { code: "dissolution-mecanique", texte: "Croire que la dissolution est purement mécanique : les ions sont attirés et entourés par les molécules d'eau polaires" },
+          { code: "eau-forme-ions", texte: "Croire que l'eau se transforme en ions : ce sont des molécules H₂O entières qui entourent les ions (solvatation)" }
+        ],
+        exp: "L'eau est polaire : O porte δ⁻ et les H portent δ⁺. Autour de Na⁺, les molécules d'eau tournent leur oxygène vers l'ion ; autour de Cl⁻, elles tournent leurs hydrogènes. C'est la solvatation."
       },
       {
-        q: "Une molécule de savon est dite amphiphile car elle possède :",
+        q: "Pour extraire le diiode d'une solution aqueuse, quel solvant choisir ? (le diiode est très soluble dans l'éthanol et dans le cyclohexane ; l'éthanol est miscible à l'eau, le cyclohexane ne l'est pas)",
         opts: [
-          "deux têtes ioniques polaires",
-          "une longue chaîne carbonée apolaire (lipophile) et une tête ionique polaire (hydrophile)",
-          "uniquement une chaîne carbonée apolaire",
-          "uniquement une tête ionique polaire"
+          "L'éthanol, car le diiode y est très soluble",
+          "Le cyclohexane, non miscible à l'eau, où le diiode est très soluble",
+          "De l'eau supplémentaire, pour diluer le diiode",
+          "N'importe quel solvant plus dense que l'eau"
         ],
         ans: 1,
-        exp: "Une molécule de savon est amphiphile : elle associe une chaîne carbonée apolaire (lipophile) à une tête ionique polaire (hydrophile), ce qui lui confère son pouvoir lavant via la formation de micelles."
+        pieges: [
+          { code: "solvant-miscible", texte: "Choisir un solvant miscible : on n'obtiendrait qu'une phase, impossible à séparer dans l'ampoule à décanter" },
+          null,
+          { code: "solubilite-inversee", texte: "Inverser le critère : le soluté doit être plus soluble dans le solvant extracteur que dans le solvant initial" },
+          { code: "solvant-densite-obligatoire", texte: "Croire que le solvant doit être plus dense : sa densité dit seulement si sa phase est en haut ou en bas" }
+        ],
+        exp: "Un solvant extracteur doit être non miscible avec le solvant initial et mieux dissoudre le soluté : le cyclohexane convient. Attention : l'éthanol dissout bien le diiode, mais il est miscible à l'eau."
+      },
+      {
+        q: "On extrait le diiode d'une solution aqueuse avec du dichlorométhane (ρ = 1,33 g·mL⁻¹, non miscible à l'eau). Après décantation, la phase organique se trouve :",
+        opts: [
+          "au-dessus : une phase organique est toujours au-dessus",
+          "mélangée à la phase aqueuse après agitation",
+          "en dessous, car le dichlorométhane est plus dense que l'eau",
+          "au-dessus, car le dichlorométhane est apolaire"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "phase-organique-toujours-dessus", texte: "Croire que la phase organique est toujours au-dessus : c'est vrai pour le cyclohexane (0,78), pas pour le dichlorométhane (1,33)" },
+          { code: "agitation-melange-phases", texte: "Croire que l'agitation mélange définitivement les phases : deux liquides non miscibles se séparent toujours au repos" },
+          null,
+          { code: "polarite-position-phases", texte: "Relier la position des phases à la polarité : seule la masse volumique compte, le plus dense est en bas" }
+        ],
+        exp: "Le dichlorométhane (1,33 g·mL⁻¹) est plus dense que l'eau (1,00 g·mL⁻¹) : la phase organique est en dessous. Attention : avec le cyclohexane (0,78 g·mL⁻¹), elle serait au-dessus."
+      },
+      {
+        q: "Dans l'eau, les molécules de savon s'organisent en micelles autour d'une goutte de graisse. Les chaînes carbonées des molécules de savon :",
+        opts: [
+          "sont tournées vers l'eau, qu'elles attirent",
+          "sont tournées vers l'intérieur, au contact de la graisse",
+          "se dissolvent dans l'eau, ce qui entraîne la graisse",
+          "réagissent avec la graisse pour la détruire"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "hydrophile-lipophile-inverses", texte: "Inverser les rôles : la chaîne carbonée, apolaire, est lipophile ; c'est la tête ionique qui est hydrophile" },
+          null,
+          { code: "chaine-apolaire-soluble-eau", texte: "Croire que la chaîne carbonée se dissout dans l'eau : apolaire, elle fuit l'eau et se tourne vers la graisse" },
+          { code: "savon-detruit-graisse", texte: "Croire que le savon détruit la graisse : il l'entoure et l'entraîne dans l'eau, sans transformation chimique" }
+        ],
+        exp: "La molécule de savon est amphiphile : la chaîne carbonée, lipophile, pénètre dans la graisse ; la tête ionique, hydrophile, reste au contact de l'eau. La micelle emprisonne la graisse, éliminée au rinçage."
       }
     ],
     annales: [],
@@ -34067,114 +34187,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La formule semi-développée d'une molécule organique :",
+        q: "La formule brute du propan-1-ol CH₃–CH₂–CH₂–OH est :",
         opts: [
-          "explicite toutes les liaisons, y compris C–H",
-          "n'explicite pas les liaisons C–H",
-          "ne représente que le squelette carboné sans les atomes",
-          "indique uniquement la nature et le nombre d'atomes"
+          "C₃H₇O",
+          "C₃H₈O",
+          "C₃H₇OH",
+          "C₃H₈"
         ],
         ans: 1,
-        exp: "La formule semi-développée représente les liaisons entre atomes autres qu'hydrogène, mais n'explicite pas les liaisons C–H (contrairement à la formule développée)."
-      },
-      {
-        q: "Quelle est la formule brute de la molécule CH3–CH2–CH2–OH ?",
-        opts: [
-          "C3H6O",
-          "C3H8O",
-          "C2H8O",
-          "C3H8O2"
+        pieges: [
+          { code: "oubli-h-hydroxyle", texte: "Oublier l'atome H du groupe –OH : 3 + 2 + 2 + 1 = 8 atomes H" },
+          null,
+          { code: "formule-brute-vs-semi-developpee", texte: "Garder le groupe –OH à part : une formule brute regroupe tous les atomes d'un même élément (C₃H₈O)" },
+          { code: "oubli-heteroatome", texte: "Oublier l'atome d'oxygène : la formule brute compte tous les atomes de la molécule" }
         ],
-        ans: 1,
-        exp: "En comptant les atomes : 3 carbones, 8 hydrogènes (2+2+2+1 sur les CH2/CH3 et l'OH) et 1 oxygène : formule brute C3H8O."
+        exp: "On compte tous les atomes : 3 C, 3 + 2 + 2 + 1 = 8 H et 1 O, d'où C₃H₈O. Attention à l'hydrogène du groupe hydroxyle."
       },
       {
-        q: "Dans CH3–CH2–CH2–OH, quel groupe caractéristique est présent et quelle est la famille associée ?",
+        q: "Dans une formule topologique, l'extrémité d'un trait ou un sommet sans symbole représente :",
         opts: [
-          "Groupe carboxyle –COOH, famille des acides carboxyliques",
-          "Groupe hydroxyle –OH, famille des alcools",
-          "Groupe carbonyle >C=O, famille des cétones",
-          "Groupe amine –NH2, famille des amines"
-        ],
-        ans: 1,
-        exp: "Le groupe –OH terminal est un groupe hydroxyle : la molécule appartient à la famille des alcools (ici le propan-1-ol)."
-      },
-      {
-        q: "Le squelette carboné de CH3–CH2–CH2–OH est :",
-        opts: [
-          "ramifié",
-          "cyclique",
-          "linéaire",
-          "insaturé"
+          "un atome d'hydrogène",
+          "un atome de carbone, sans aucun hydrogène",
+          "un atome de carbone et ses atomes H sous-entendus",
+          "une liaison double"
         ],
         ans: 2,
-        exp: "La chaîne carbonée n'est pas ramifiée et n'est pas fermée sur elle-même : elle est linéaire."
-      },
-      {
-        q: "Dans CH3–COOH, le groupe caractéristique présent est :",
-        opts: [
-          "l'hydroxyle –OH (alcool)",
-          "le carboxyle –COOH (acide carboxylique)",
-          "le carbonyle >C=O (cétone)",
-          "l'amine –NH2"
+        pieges: [
+          { code: "sommet-hydrogene", texte: "Prendre les sommets pour des atomes H : ce sont des atomes de carbone ; les H liés aux C ne sont pas dessinés" },
+          { code: "h-implicites-oublies", texte: "Oublier les H sous-entendus : chaque carbone porte autant de H qu'il faut pour faire 4 liaisons" },
+          null,
+          { code: "sommet-liaison-double", texte: "Confondre sommet et liaison double : une liaison double est représentée par un double trait" }
         ],
-        ans: 1,
-        exp: "CH3–COOH (acide éthanoïque) possède le groupe carboxyle –COOH, caractéristique de la famille des acides carboxyliques."
+        exp: "Chaque sommet ou extrémité est un atome de carbone ; les atomes H liés aux carbones sont sous-entendus (4 liaisons par carbone). Les autres atomes (O, N…) et leurs H sont écrits."
       },
       {
-        q: "Dans CH3–CO–CH3, le carbone du groupe carbonyle est lié à deux atomes de carbone : cette molécule appartient à la famille des :",
+        q: "Dans la formule topologique du butane (zigzag de 4 sommets), combien d'atomes H porte le deuxième carbone ?",
         opts: [
-          "alcools",
+          "0",
+          "3",
+          "4",
+          "2"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "h-implicites-oublies", texte: "Oublier les H sous-entendus : un carbone fait toujours 4 liaisons, ici 2 avec des C et 2 avec des H" },
+          { code: "h-carbone-interne-comme-extremite", texte: "Compter comme pour un carbone d'extrémité (CH₃) : un carbone lié à 2 autres carbones ne porte que 2 H" },
+          { code: "valence-sans-liaisons-cc", texte: "Oublier que les liaisons C–C occupent 2 des 4 liaisons du carbone : il reste 4 − 2 = 2 H" },
+          null
+        ],
+        exp: "Le 2ᵉ carbone est lié à 2 carbones : il lui reste 4 − 2 = 2 liaisons avec des H (CH₂). Les carbones d'extrémité, liés à un seul C, portent 3 H."
+      },
+      {
+        q: "La molécule CH₃–CH₂–COOH appartient à la famille des :",
+        opts: [
+          "alcools, car elle contient –OH",
+          "cétones, car elle contient C=O",
+          "acides carboxyliques",
+          "aldéhydes, car C=O est en bout de chaîne"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "alcool-vs-acide-carboxylique", texte: "Confondre alcool et acide carboxylique : un –OH porté par un carbone qui porte aussi C=O forme le groupe carboxyle" },
+          { code: "cetone-vs-acide-carboxylique", texte: "Voir seulement le C=O : quand il est sur le même carbone que –OH, c'est le groupe carboxyle –COOH" },
+          null,
+          { code: "aldehyde-vs-acide-carboxylique", texte: "Confondre –CHO et –COOH : l'aldéhyde a un H sur le carbone du C=O, l'acide un –OH" }
+        ],
+        exp: "Le groupe –COOH (carboxyle : C=O et –OH sur le même carbone) caractérise les acides carboxyliques ; ici l'acide propanoïque. Attention : ce n'est ni un alcool ni une cétone."
+      },
+      {
+        q: "La molécule CH₃–CH₂–CHO appartient à la famille des :",
+        opts: [
           "aldéhydes",
           "cétones",
+          "alcools, car elle contient un atome O",
           "acides carboxyliques"
         ],
-        ans: 2,
-        exp: "Le groupe carbonyle >C=O porté par un carbone lié à deux autres carbones (et non à un hydrogène) caractérise la famille des cétones (ici la propanone)."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "aldehyde-cetone-confondus", texte: "Confondre aldéhyde et cétone : C=O en bout de chaîne (carbone lié à un H) donne un aldéhyde ; au milieu de la chaîne, une cétone" },
+          { code: "o-donc-alcool", texte: "Croire qu'un atome O suffit pour un alcool : il faut un groupe –OH, absent ici" },
+          { code: "aldehyde-vs-acide-carboxylique", texte: "Confondre –CHO et –COOH : il n'y a qu'un atome O, pas de groupe –OH" }
+        ],
+        exp: "Le groupe –CHO (carbonyle en bout de chaîne, le carbone portant un H) caractérise les aldéhydes : c'est le propanal. Attention : un groupe carbonyle entre deux carbones caractérise une cétone."
       },
       {
-        q: "Le squelette carboné de l'éthyne CH≡CH est :",
+        q: "Le cyclohexane C₆H₁₂ (six carbones formant un cycle, uniquement des liaisons simples) a un squelette :",
         opts: [
-          "saturé, car il ne contient que 2 carbones",
-          "insaturé, car il contient une liaison triple C≡C",
-          "saturé, car il ne contient pas d'hétéroatome",
-          "impossible à déterminer sans formule brute"
+          "cyclique et insaturé, car il a moins de H que l'hexane",
+          "linéaire et saturé",
+          "cyclique et saturé",
+          "ramifié et saturé"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "insature-car-moins-h", texte: "Croire qu'un squelette avec moins de H est insaturé : insaturé signifie avec une liaison double ou triple, absente ici" },
+          { code: "cyclique-vs-lineaire", texte: "Confondre cyclique et linéaire : la chaîne est fermée sur elle-même" },
+          null,
+          { code: "ramifie-vs-cyclique", texte: "Confondre cyclique et ramifié : une chaîne ramifiée porte des chaînes latérales, une chaîne cyclique est fermée" }
+        ],
+        exp: "La chaîne est fermée (cyclique) et ne comporte que des liaisons simples C–C (saturée). Attention : le cycle explique les 2 H de moins que l'hexane C₆H₁₄, sans liaison double."
+      },
+      {
+        q: "Quel est le nom de l'alcane CH₃–CH(CH₃)–CH₂–CH₃ ?",
+        opts: [
+          "3-méthylbutane",
+          "2-méthylbutane",
+          "pentane",
+          "2-éthylpropane"
         ],
         ans: 1,
-        exp: "Un squelette est insaturé dès qu'il comporte au moins une liaison double ou triple : la liaison triple C≡C de l'éthyne rend son squelette insaturé."
+        pieges: [
+          { code: "numerotation-chaine", texte: "Numéroter la chaîne dans le mauvais sens : on donne au groupe méthyle le plus petit numéro (2 et non 3)" },
+          null,
+          { code: "isomere-nomme-par-formule-brute", texte: "Nommer d'après le nombre total de carbones : le pentane est linéaire, cette molécule est ramifiée" },
+          { code: "chaine-pas-la-plus-longue", texte: "Choisir une chaîne principale qui n'est pas la plus longue (3 carbones au lieu de 4)" }
+        ],
+        exp: "Chaîne la plus longue : 4 carbones (butane) ; numérotée pour donner le plus petit indice au méthyle : 2-méthylbutane (C₅H₁₂). Attention : chaîne la plus longue et plus petit indice."
+      },
+      {
+        q: "La formule semi-développée du 3-méthylpentane est :",
+        opts: [
+          "CH₃–CH(CH₃)–CH₂–CH₂–CH₃",
+          "CH₃–CH₂–CH(CH₃)–CH₃",
+          "CH₃–CH₂–CH₂–CH₂–CH₂–CH₃",
+          "CH₃–CH₂–CH(CH₃)–CH₂–CH₃"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "position-ramification-erronee", texte: "Placer le méthyle sur le mauvais carbone : 3- indique le 3ᵉ carbone de la chaîne de 5 (ici, c'est le 2-méthylpentane)" },
+          { code: "prefixe-chaine-mal-lu", texte: "Mal lire le préfixe : « pent » désigne une chaîne principale de 5 carbones, sans compter la ramification" },
+          { code: "ramification-comptee-dans-chaine", texte: "Ajouter le méthyle au bout de la chaîne : on obtient l'hexane, linéaire ; le méthyle est une ramification" },
+          null
+        ],
+        exp: "Pentane : chaîne de 5 carbones ; 3-méthyl : un groupe CH₃ sur le carbone 3 : CH₃–CH₂–CH(CH₃)–CH₂–CH₃ (C₆H₁₄). Attention : le méthyle est une ramification, pas un carbone de la chaîne principale."
       },
       {
         q: "Deux isomères de constitution ont :",
         opts: [
           "la même formule brute et la même formule semi-développée",
-          "la même formule brute mais des formules développées différentes",
-          "des formules brutes différentes mais la même formule semi-développée",
-          "aucun point commun"
+          "la même formule brute, mais des enchaînements d'atomes différents",
+          "forcément le même groupe caractéristique",
+          "le même nombre de carbones, quelle que soit la formule brute"
         ],
         ans: 1,
-        exp: "Par définition, deux isomères de constitution possèdent la même formule brute mais diffèrent par l'enchaînement des atomes (formules développées différentes), comme le butane et le méthylpropane (C4H10)."
-      },
-      {
-        q: "Le propan-1-ol (CH3–CH2–CH2–OH) et le propan-2-ol (CH3–CH(OH)–CH3) ont tous deux pour formule brute C3H8O mais des formules semi-développées différentes. Que peut-on en conclure ?",
-        opts: [
-          "Ce sont la même molécule représentée différemment",
-          "Ce sont des isomères de constitution",
-          "Ils appartiennent à des familles chimiques différentes",
-          "L'un des deux a une formule brute incorrecte"
+        pieges: [
+          { code: "isomeres-meme-molecule", texte: "Croire que des isomères ont la même formule semi-développée : ce serait la même molécule" },
+          null,
+          { code: "isomeres-meme-famille", texte: "Croire que des isomères sont forcément de la même famille : C₃H₆O peut être un aldéhyde (propanal) ou une cétone (propanone)" },
+          { code: "isomeres-meme-nb-carbones", texte: "Croire que le même nombre de carbones suffit : il faut la même formule brute, donc aussi les mêmes nombres de H, O…" }
         ],
-        ans: 1,
-        exp: "Même formule brute (C3H8O) mais formules semi-développées différentes (position du groupe –OH) : le propan-1-ol et le propan-2-ol sont des isomères de constitution."
+        exp: "Des isomères de constitution ont la même formule brute mais des enchaînements d'atomes différents (chaîne, position ou nature du groupe caractéristique). Attention : ils peuvent appartenir à des familles différentes."
       },
       {
-        q: "La molécule CH3–CH(CH3)–CH2–CH3 est nommée :",
+        q: "Quelle molécule est un isomère de constitution du butan-1-ol CH₃–CH₂–CH₂–CH₂–OH ?",
         opts: [
-          "butane",
-          "2-méthylpropane",
-          "2-méthylbutane",
-          "3-méthylbutane"
+          "HO–CH₂–CH₂–CH₂–CH₃",
+          "CH₃–CH₂–CH₂–OH",
+          "CH₃–CH(OH)–CH₂–CH₃",
+          "CH₃–CH₂–CH₂–CHO"
         ],
         ans: 2,
-        exp: "La chaîne principale comporte 4 carbones (butane) avec un groupe méthyle sur le carbone 2 (numérotation donnant le plus petit indice) : la molécule est le 2-méthylbutane."
+        pieges: [
+          { code: "isomeres-meme-molecule", texte: "Prendre la même molécule écrite à l'envers pour un isomère : l'enchaînement des atomes est identique" },
+          { code: "isomeres-meme-famille", texte: "Croire qu'être de la même famille suffit : le propan-1-ol (C₃H₈O) n'a pas la même formule brute (C₄H₁₀O)" },
+          null,
+          { code: "isomeres-meme-nb-carbones", texte: "Croire que 4 carbones suffisent : le butanal C₄H₈O n'a pas la même formule brute que C₄H₁₀O" }
+        ],
+        exp: "Le butan-2-ol CH₃–CH(OH)–CH₂–CH₃ a la même formule brute C₄H₁₀O, mais le groupe –OH est sur le carbone 2 : c'est un isomère de constitution. Attention : HO–CH₂–CH₂–CH₂–CH₃ est le butan-1-ol lui-même."
       }
     ],
     annales: [],
@@ -34629,114 +34809,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Quel est l'ordre correct des étapes d'une synthèse organique ?",
+        q: "Au cours d'une synthèse, l'étape d'isolement consiste à :",
         opts: [
-          "Isolement → transformation chimique → identification → purification",
-          "Transformation chimique → isolement → purification → identification et contrôle de pureté",
-          "Purification → transformation chimique → isolement → identification",
-          "Identification → transformation chimique → purification → isolement"
+          "rendre le produit plus pur, par exemple par recristallisation",
+          "séparer le produit du milieu réactionnel (extraction, filtration)",
+          "vérifier l'identité du produit par CCM",
+          "faire réagir les réactifs, par exemple au reflux"
         ],
         ans: 1,
-        exp: "Une synthèse organique suit l'ordre : transformation chimique des réactifs, isolement du produit formé, purification, puis identification et contrôle de la pureté."
-      },
-      {
-        q: "Quel est le rôle du réfrigérant à eau dans un montage à reflux ?",
-        opts: [
-          "Il refroidit directement les réactifs pour ralentir la réaction",
-          "Il condense les vapeurs qui s'élèvent et les fait retomber dans le ballon, évitant toute perte de matière",
-          "Il sert uniquement à mesurer la température",
-          "Il catalyse la réaction chimique"
+        pieges: [
+          { code: "isolement-vs-purification", texte: "Confondre isolement et purification : on sépare d'abord le produit du mélange, puis on élimine les impuretés qu'il contient" },
+          null,
+          { code: "isolement-vs-identification", texte: "Confondre isolement et identification : la CCM vient à la fin, pour contrôler l'identité et la pureté" },
+          { code: "etapes-synthese-confondues", texte: "Confondre les étapes : la transformation a lieu dans le ballon, l'isolement vient après" }
         ],
-        ans: 1,
-        exp: "Placé à la verticale au-dessus du ballon, le réfrigérant condense les vapeurs qui retombent dans le milieu réactionnel : la réaction peut ainsi être accélérée par chauffage prolongé sans perte de matière."
+        exp: "Les quatre étapes sont : transformation, isolement (séparer le produit du milieu réactionnel), purification, puis identification et contrôle de pureté. Attention : isoler n'est pas encore purifier."
       },
       {
-        q: "Pourquoi ajoute-t-on des pierres ponces dans le ballon lors d'un chauffage à reflux ?",
+        q: "Dans un montage de chauffage à reflux, le réfrigérant à eau sert à :",
         opts: [
-          "Pour catalyser la réaction",
-          "Pour régulariser l'ébullition et éviter les projections (retard à l'ébullition)",
-          "Pour absorber les vapeurs toxiques",
-          "Pour accélérer le refroidissement"
-        ],
-        ans: 1,
-        exp: "Les pierres ponces régularisent l'ébullition du mélange et évitent les projections violentes liées à un retard à l'ébullition."
-      },
-      {
-        q: "Le rendement d'une synthèse se calcule par la formule :",
-        opts: [
-          "η = m(théorique) / m(obtenue) × 100",
-          "η = m(obtenue) / m(théorique) × 100",
-          "η = m(obtenue) − m(théorique)",
-          "η = m(obtenue) × m(théorique)"
-        ],
-        ans: 1,
-        exp: "Le rendement compare la masse réellement obtenue à la masse théorique maximale, exprimée en pourcentage : η = m(obtenue)/m(théorique) × 100."
-      },
-      {
-        q: "Lors d'une synthèse, m(théorique) = 12,4 g et m(obtenue) = 8,9 g après purification. Quel est le rendement ?",
-        opts: [
-          "Environ 58 %",
-          "Environ 72 %",
-          "Environ 84 %",
-          "Environ 139 %"
-        ],
-        ans: 1,
-        exp: "η = 8,9/12,4 × 100 ≈ 71,8 %, soit environ 72 %."
-      },
-      {
-        q: "Le rapport frontal Rf en chromatographie sur couche mince se calcule par :",
-        opts: [
-          "Rf = distance parcourue par l'éluant / distance parcourue par l'espèce",
-          "Rf = distance parcourue par l'espèce / distance parcourue par l'éluant",
-          "Rf = distance parcourue par l'espèce × distance parcourue par l'éluant",
-          "Rf = masse de l'espèce / masse de l'éluant"
-        ],
-        ans: 1,
-        exp: "Le rapport frontal se définit comme le rapport de la distance parcourue par l'espèce sur la distance parcourue par l'éluant."
-      },
-      {
-        q: "Sur une plaque de CCM, l'éluant parcourt 7,0 cm et une tache de produit synthétisé parcourt 4,2 cm, comme la tache de référence (produit commercial pur). Quel est le Rf du produit synthétisé ?",
-        opts: [
-          "0,42",
-          "0,60",
-          "0,70",
-          "1,67"
-        ],
-        ans: 1,
-        exp: "Rf = 4,2/7,0 = 0,60. Ce Rf, identique à celui de la référence, indique qu'il s'agit très probablement de la même espèce."
-      },
-      {
-        q: "Sur cette même plaque, une seconde tache (attribuée à un réactif) apparaît sur la ligne du produit synthétisé, à Rf = 0,30, en plus de la tache à Rf = 0,60. Que peut-on conclure sur la pureté du produit synthétisé ?",
-        opts: [
-          "Il est pur, car une des taches correspond à la référence",
-          "Il n'est pas pur, car plusieurs taches apparaissent sur sa ligne de dépôt",
-          "Il est plus pur que la référence",
-          "La pureté ne peut pas être évaluée par CCM"
-        ],
-        ans: 1,
-        exp: "Une espèce pure ne révèle qu'une seule tache en CCM. La présence d'une seconde tache (réactif résiduel à Rf = 0,30) indique que le produit synthétisé n'est pas pur."
-      },
-      {
-        q: "Lors du TP de synthèse de l'acétate d'isoamyle, la masse théorique attendue est m(théorique) = 9,5 g et la masse obtenue est m(obtenue) = 6,8 g. Quel est le rendement de la synthèse ?",
-        opts: [
-          "Environ 40 %",
-          "Environ 58 %",
-          "Environ 72 %",
-          "Environ 90 %"
+          "refroidir le mélange pour ralentir la réaction",
+          "séparer le produit en le recueillant dans un autre récipient",
+          "condenser les vapeurs, qui retombent dans le ballon",
+          "empêcher le mélange de bouillir"
         ],
         ans: 2,
-        exp: "η = 6,8/9,5 × 100 ≈ 71,6 %, soit environ 72 %."
+        pieges: [
+          { code: "reflux-refroidit-melange", texte: "Croire que le réfrigérant refroidit le mélange : il condense seulement les vapeurs, le mélange reste chaud" },
+          { code: "reflux-vs-distillation", texte: "Confondre reflux et distillation : au reflux, les vapeurs condensées retombent dans le ballon" },
+          null,
+          { code: "reflux-empeche-ebullition", texte: "Croire que le réfrigérant empêche l'ébullition : le mélange bout, mais les vapeurs sont condensées et ne sont pas perdues" }
+        ],
+        exp: "Le réfrigérant vertical condense les vapeurs, qui retombent dans le ballon : on peut chauffer longtemps sans perte de matière. Attention : il ne refroidit pas le mélange réactionnel."
       },
       {
-        q: "Pourquoi le rendement d'une synthèse organique est-il presque toujours inférieur à 100 % ?",
+        q: "Pourquoi chauffe-t-on le mélange réactionnel lors d'une synthèse ?",
         opts: [
-          "Car la formule du rendement est mal définie",
-          "Car la réaction n'est pas nécessairement totale et des pertes de matière ont lieu lors des étapes d'isolement et de purification",
-          "Car les produits se transforment spontanément en réactifs",
-          "Car le chauffage à reflux détruit une partie du produit"
+          "Pour accélérer la transformation",
+          "Pour obtenir davantage de produit à l'état final",
+          "Pour faire fondre tous les réactifs",
+          "Pour éliminer l'eau du mélange"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "facteur-cinetique-etat-final", texte: "Croire que chauffer change l'état final : la température accélère la transformation, elle ne fixe pas la quantité de produit" },
+          { code: "chauffage-pour-fondre", texte: "Croire que le chauffage sert à faire fondre les réactifs : il sert à rendre la transformation plus rapide" },
+          { code: "chauffage-evapore-eau", texte: "Croire que le chauffage élimine l'eau : avec le reflux, les vapeurs retombent dans le ballon" }
+        ],
+        exp: "La température est un facteur cinétique : chauffer accélère une transformation lente. Attention : chauffer ne permet pas d'obtenir plus de produit que xmax ne l'autorise."
+      },
+      {
+        q: "Pourquoi ajoute-t-on quelques grains de pierre ponce dans le ballon ?",
+        opts: [
+          "Pour catalyser la transformation",
+          "Pour absorber l'eau formée",
+          "Pour refroidir le mélange",
+          "Pour régulariser l'ébullition"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "pierre-ponce-catalyseur", texte: "Croire que la pierre ponce est un catalyseur : elle ne participe pas à la réaction, elle évite l'ébullition brutale" },
+          { code: "pierre-ponce-dessechant", texte: "Croire que la pierre ponce absorbe l'eau : elle sert seulement à régulariser l'ébullition" },
+          { code: "pierre-ponce-refroidit", texte: "Croire que la pierre ponce refroidit le mélange : elle favorise la formation de petites bulles régulières" },
+          null
+        ],
+        exp: "La pierre ponce, poreuse, favorise la formation de petites bulles : l'ébullition est régulière, sans projections. Elle ne participe pas à la transformation."
+      },
+      {
+        q: "La purification d'un solide par recristallisation repose sur le fait que :",
+        opts: [
+          "le solide est beaucoup plus soluble à chaud qu'à froid",
+          "le solide est plus soluble à froid qu'à chaud",
+          "les impuretés cristallisent, le produit reste dissous",
+          "le solvant détruit les impuretés par une réaction"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "recristallisation-solubilite-inversee", texte: "Inverser l'effet de la température : on dissout à chaud, puis le produit, moins soluble à froid, recristallise" },
+          { code: "recristallisation-impuretes-cristallisent", texte: "Inverser les rôles : c'est le produit qui recristallise, les impuretés, peu abondantes, restent dissoutes" },
+          { code: "purification-par-reaction", texte: "Croire que la purification détruit les impuretés : elle les sépare du produit, sans réaction chimique" }
+        ],
+        exp: "On dissout le solide à chaud dans un minimum de solvant, puis on refroidit : le produit, moins soluble à froid, recristallise ; les impuretés restent en solution. On filtre ensuite."
+      },
+      {
+        q: "La transformation peut former au maximum 4,0×10⁻² mol de produit (M = 130 g·mol⁻¹, soit m(théorique) = 5,2 g). On en obtient 3,9 g. Le rendement vaut :",
+        opts: [
+          "133 %",
+          "75 %",
+          "98 %",
+          "3,0 %"
         ],
         ans: 1,
-        exp: "Le rendement est inférieur à 100 % car la transformation n'est pas toujours totale (équilibre chimique) et parce que des pertes de matière surviennent lors des transvasements, extractions et purifications successives."
+        pieges: [
+          { code: "rendement-inverse", texte: "Inverser le rapport : 5,2 / 3,9 = 133 % ; un rendement ne dépasse jamais 100 %" },
+          null,
+          { code: "masse-vs-quantite-matiere", texte: "Comparer une masse à une quantité de matière : 3,9 / 4,0×10⁻² n'a pas de sens, il faut comparer 3,9 g à 5,2 g" },
+          { code: "rendement-sans-quantite-maximale", texte: "Prendre n(obtenue) = 3,9 / 130 = 3,0×10⁻² mol pour le rendement : il faut le diviser par nmax = 4,0×10⁻² mol" }
+        ],
+        exp: "η = m(obtenue) / m(théorique) = 3,9 / 5,2 = 0,75, soit 75 % (de même n(obtenue) / nmax = 3,0×10⁻² / 4,0×10⁻²). Attention : on compare deux masses ou deux quantités de matière."
+      },
+      {
+        q: "Sur une plaque de CCM, l'éluant a parcouru 8,0 cm et une tache 3,0 cm. Son rapport frontal vaut :",
+        opts: [
+          "0,38",
+          "2,7",
+          "3,0",
+          "0,63"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "rf-inverse", texte: "Inverser le rapport : 8,0 / 3,0 ≈ 2,7, alors que Rf = h / H est toujours inférieur à 1" },
+          { code: "rf-hauteur-tache", texte: "Prendre la distance parcourue par la tache pour le Rf : il faut la diviser par celle de l'éluant" },
+          { code: "rf-distance-restante", texte: "Utiliser la distance entre la tache et le front de l'éluant : (8,0 − 3,0) / 8,0 ; Rf se mesure depuis la ligne de dépôt" }
+        ],
+        exp: "Rf = distance parcourue par l'espèce / distance parcourue par l'éluant = 3,0 / 8,0 ≈ 0,38. Attention : les deux distances se mesurent depuis la ligne de dépôt ; Rf est sans unité et inférieur à 1."
+      },
+      {
+        q: "Sur la ligne du produit synthétisé, la CCM révèle deux taches : l'une à la hauteur du produit commercial, l'autre à la hauteur du réactif A. On en conclut :",
+        opts: [
+          "le produit est pur, car une tache correspond au produit commercial",
+          "le produit attendu n'a pas été formé",
+          "le produit attendu est présent, mais il reste du réactif A",
+          "il s'est formé deux espèces nouvelles"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "une-tache-commune-donc-pur", texte: "Croire qu'une tache commune suffit : une espèce pure ne donne qu'une seule tache ; la seconde montre une impureté" },
+          { code: "deux-taches-pas-de-produit", texte: "Croire que le produit n'est pas formé : la tache commune avec le produit commercial montre sa présence" },
+          null,
+          { code: "taches-nouvelles-especes", texte: "Oublier de comparer aux références : la seconde tache est à la même hauteur que le réactif A, c'est du réactif restant" }
+        ],
+        exp: "La tache commune avec le produit commercial montre que le produit attendu est formé ; la tache à la hauteur du réactif A montre qu'il en reste : le produit n'est pas pur. Attention : on identifie une tache par comparaison."
+      },
+      {
+        q: "Le solide synthétisé fond sur le banc Kofler entre 118 °C et 124 °C ; la température de fusion tabulée du produit attendu est 122 °C. On en conclut :",
+        opts: [
+          "le produit est pur, car 122 °C est dans l'intervalle",
+          "le produit contient probablement des impuretés",
+          "ce n'est pas l'espèce attendue",
+          "il faut le chauffer plus longtemps pour le purifier"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "tfus-intervalle-pur", texte: "Croire qu'un intervalle contenant la valeur tabulée suffit : un solide pur fond à une température précise, pas sur 6 °C" },
+          null,
+          { code: "impur-donc-autre-espece", texte: "Confondre impur et autre espèce : le produit attendu est sans doute présent, mais mélangé à des impuretés" },
+          { code: "chauffage-purifie", texte: "Croire que chauffer purifie : il faut une technique de purification, comme la recristallisation" }
+        ],
+        exp: "Un solide pur fond à une température précise. Une fusion étalée sur plusieurs degrés indique un mélange : le produit contient des impuretés et doit être purifié (recristallisation par exemple)."
+      },
+      {
+        q: "Pourquoi le rendement d'une synthèse est-il presque toujours inférieur à 100 % ?",
+        opts: [
+          "Parce qu'on utilise un réactif en excès",
+          "Parce que la masse ne se conserve pas pendant la transformation",
+          "Parce que le catalyseur est consommé",
+          "Parce que la transformation peut être non totale et que l'on perd du produit"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "exces-diminue-rendement", texte: "Croire que l'excès d'un réactif diminue le rendement : le rendement se calcule à partir du réactif limitant" },
+          { code: "masse-non-conservee", texte: "Croire que la masse ne se conserve pas : les atomes se réarrangent, la masse totale reste la même" },
+          { code: "catalyseur-consomme", texte: "Croire que le catalyseur est consommé : il est régénéré et ne limite pas la quantité de produit" },
+          null
+        ],
+        exp: "La transformation n'est pas toujours totale, et on perd du produit lors des transvasements, de l'isolement et de la purification. Attention : la masse se conserve, ce n'est pas la cause."
       }
     ],
     annales: [],
@@ -35177,114 +35417,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une combustion est une réaction chimique :",
+        q: "Une combustion est une transformation chimique :",
         opts: [
-          "endothermique, entre deux comburants",
+          "endothermique, car il faut chauffer pour l'allumer",
           "exothermique, entre un combustible et un comburant",
-          "athermique, entre deux combustibles",
-          "exothermique, sans transfert d'énergie"
+          "exothermique, dont le dioxygène est le combustible",
+          "physique : le combustible change seulement d'état"
         ],
         ans: 1,
-        exp: "Une combustion libère de l'énergie (exothermique) lors de la réaction entre un combustible et un comburant, le plus souvent le dioxygène de l'air."
-      },
-      {
-        q: "Quelle est l'équation équilibrée de la combustion complète du propane C3H8(g) dans le dioxygène (produits gazeux : CO2 et H2O) ?",
-        opts: [
-          "C3H8 + 3 O2 → 3 CO2 + 4 H2O",
-          "C3H8 + 5 O2 → 3 CO2 + 4 H2O",
-          "C3H8 + 5 O2 → 3 CO2 + 3 H2O",
-          "2 C3H8 + 5 O2 → 6 CO2 + 4 H2O"
+        pieges: [
+          { code: "combustion-endothermique-allumage", texte: "Confondre l'allumage et le bilan : une petite énergie amorce la combustion, qui libère ensuite bien plus d'énergie" },
+          null,
+          { code: "combustible-comburant-inverses", texte: "Inverser combustible et comburant : le dioxygène est le comburant, le bois ou le gaz est le combustible" },
+          { code: "combustion-changement-etat", texte: "Confondre combustion et changement d'état : de nouvelles espèces (CO₂, H₂O) se forment" }
         ],
-        ans: 1,
-        exp: "L'équilibrage donne C3H8(g) + 5 O2(g) → 3 CO2(g) + 4 H2O(g) : 3 carbones, 8 hydrogènes et 10 oxygènes de chaque côté."
+        exp: "Une combustion est une transformation chimique exothermique entre un combustible et un comburant (souvent le dioxygène de l'air). Attention : l'énergie d'allumage ne fait que la déclencher."
       },
       {
-        q: "Un volume V = 250 mL d'eau (ρ = 1,00 g/mL) voit sa température passer de 18,0 °C à 32,0 °C. Quelle est l'énergie thermique Q reçue par cette eau (c(eau) = 4185 J·kg⁻¹·K⁻¹) ?",
+        q: "L'équation de la combustion complète de l'éthanol C₂H₆O dans le dioxygène est :",
         opts: [
-          "≈1,46×10² J",
-          "≈1,46×10³ J",
-          "≈1,46×10⁴ J",
-          "≈1,46×10⁵ J"
+          "C₂H₆O + 2 O₂ → 2 CO₂ + 3 H₂O",
+          "C₂H₆O + 3 O₂ → 2 CO₂ + 6 H₂O",
+          "2 C₂H₆O + 7 O₂ → 4 CO₂ + 6 H₂O",
+          "C₂H₆O + 3 O₂ → 2 CO₂ + 3 H₂O"
         ],
-        ans: 2,
-        exp: "m = 0,250 kg ; Q = m·c·ΔT = 0,250 × 4185 × 14,0 ≈ 1,46×10⁴ J."
-      },
-      {
-        q: "La combustion de m = 15,0 g de bois libère Q = 225 kJ. Quel est le pouvoir calorifique de ce bois ?",
-        opts: [
-          "1,5 MJ/kg",
-          "15,0 MJ/kg",
-          "150 MJ/kg",
-          "0,15 MJ/kg"
+        ans: 3,
+        pieges: [
+          { code: "ajustement-partiel", texte: "N'ajuster que C et H : il y a 1 + 4 = 5 O à gauche et 4 + 3 = 7 O à droite" },
+          { code: "indice-pris-pour-coefficient", texte: "Prendre l'indice 6 de H pour le nombre de H₂O : 6 H forment 3 molécules H₂O" },
+          { code: "oubli-oxygene-combustible", texte: "Oublier l'atome O de l'éthanol : il apporte déjà 1 des 7 atomes O des produits" },
+          null
         ],
-        ans: 1,
-        exp: "PC = Q/m = 225 000 / 0,0150 = 1,50×10⁷ J/kg = 15,0 MJ/kg."
+        exp: "2 C donnent 2 CO₂, 6 H donnent 3 H₂O ; à droite 4 + 3 = 7 O, dont 1 apporté par l'éthanol : il faut 6 O, soit 3 O₂. Attention : le combustible contient lui-même un atome d'oxygène."
       },
       {
-        q: "Avec ce même bois (PC = 15,0 MJ/kg), quelle masse faut-il brûler pour libérer une énergie de 9,0 MJ ?",
+        q: "Lorsque le dioxygène manque, la combustion d'un hydrocarbure peut produire :",
         opts: [
-          "0,60 kg",
-          "0,60 g",
-          "6,0 kg",
-          "1,5 kg"
+          "du monoxyde de carbone CO, gaz toxique",
+          "seulement moins de dioxyde de carbone",
+          "rien : sans assez de dioxygène, rien ne brûle",
+          "seulement de l'eau, le carbone disparaissant"
         ],
         ans: 0,
-        exp: "m = Q/PC = 9,0 / 15,0 = 0,60 kg."
+        pieges: [
+          null,
+          { code: "incomplete-moins-de-co2", texte: "Croire que la combustion incomplète produit simplement moins de CO₂ : elle forme d'autres espèces, CO et carbone (suies)" },
+          { code: "combustion-tout-ou-rien", texte: "Croire que la combustion n'a pas lieu : elle se fait, mais de façon incomplète" },
+          { code: "carbone-disparait", texte: "Croire que le carbone disparaît : les éléments se conservent, le carbone se retrouve dans CO, CO₂ ou les suies" }
+        ],
+        exp: "En manque de dioxygène, la combustion est incomplète : elle forme du monoxyde de carbone CO, gaz inodore et très toxique, et des particules de carbone (suies). Attention : les éléments se conservent."
       },
       {
-        q: "Dans un calorimètre contenant 300 g d'eau à 19,5 °C, on brûle 1,20 g d'éthanol ; la température atteint 34,3 °C. Quelle énergie thermique Q l'eau a-t-elle reçue ?",
+        q: "Au cours d'une combustion, d'où vient l'énergie libérée ?",
         opts: [
-          "≈1,86×10² J",
-          "≈1,86×10³ J",
-          "≈1,86×10⁴ J",
-          "≈1,86×10⁵ J"
+          "De la rupture des liaisons des réactifs, qui libère de l'énergie",
+          "De la flamme d'allumage, qui est restituée",
+          "Des liaisons formées, qui libèrent plus d'énergie que la rupture n'en consomme",
+          "Du dioxygène seul, qui contient l'énergie"
         ],
         ans: 2,
-        exp: "Q = m(eau)·c·ΔT = 0,300 × 4185 × 14,8 ≈ 1,86×10⁴ J ≈ 18,6 kJ."
+        pieges: [
+          { code: "rupture-libere-energie", texte: "Croire que casser une liaison libère de l'énergie : rompre une liaison en consomme, c'est la former qui en libère" },
+          { code: "energie-vient-allumage", texte: "Croire que l'énergie vient de l'allumage : la combustion libère bien plus d'énergie qu'il n'en faut pour l'allumer" },
+          null,
+          { code: "chaleur-contenue-substance", texte: "Croire que l'énergie est contenue dans une substance : elle vient du bilan entre liaisons rompues et liaisons formées" }
+        ],
+        exp: "Rompre les liaisons des réactifs consomme de l'énergie ; former celles des produits (C=O, O–H) en libère davantage : le bilan est une énergie libérée. Attention : rompre une liaison ne libère jamais d'énergie."
       },
       {
-        q: "Quel est alors le pouvoir calorifique expérimental de cet éthanol ?",
+        q: "On chauffe 500 mL d'eau (ρ = 1,00 g·mL⁻¹ ; c = 4 185 J·kg⁻¹·K⁻¹) de 20,0 °C à 45,0 °C. L'énergie reçue par l'eau vaut Q = m × c × ΔT, soit :",
         opts: [
-          "≈1,55 MJ/kg",
-          "≈15,5 MJ/kg",
-          "≈27 MJ/kg",
-          "≈155 MJ/kg"
+          "5,23×10⁷ J",
+          "9,42×10⁴ J",
+          "6,24×10⁵ J",
+          "5,23×10⁴ J"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 500 × 4 185 × 25,0 ; 500 g = 0,500 kg" },
+          { code: "temperature-vs-variation", texte: "Utiliser la température finale (45,0) au lieu de la variation ΔT = 25,0 °C" },
+          { code: "delta-t-plus-273", texte: "Ajouter 273 à l'écart de température : un écart de 25,0 °C est aussi un écart de 25,0 K" },
+          null
+        ],
+        exp: "m = 0,500 kg et ΔT = 45,0 − 20,0 = 25,0 °C = 25,0 K, donc Q = 0,500 × 4 185 × 25,0 ≈ 5,23×10⁴ J. Attention : masse en kg et écart de température, pas température finale."
+      },
+      {
+        q: "La combustion de 15,0 g de bois libère 225 kJ. Le pouvoir calorifique de ce bois vaut :",
+        opts: [
+          "1,50×10⁴ MJ·kg⁻¹",
+          "15,0 MJ·kg⁻¹",
+          "3,4 kJ·kg",
+          "6,7×10⁻² kg·MJ⁻¹"
         ],
         ans: 1,
-        exp: "PC = Q/m(éthanol) = 18 600 / 0,00120 ≈ 1,55×10⁷ J/kg ≈ 15,5 MJ/kg."
-      },
-      {
-        q: "La valeur tabulée du pouvoir calorifique de l'éthanol est d'environ 27 MJ/kg, nettement supérieure à la valeur expérimentale trouvée (≈15,5 MJ/kg). Comment expliquer cet écart ?",
-        opts: [
-          "L'éthanol utilisé n'était pas pur",
-          "Une partie de l'énergie libérée est perdue vers l'air et absorbée par le calorimètre, non transmise à l'eau",
-          "La loi Q = m·c·ΔT est fausse",
-          "Le pouvoir calorifique tabulé est une erreur d'imprimerie"
+        pieges: [
+          { code: "conversion-g-kg", texte: "Garder la masse en grammes : 225×10³ / 15,0 = 1,50×10⁴ J·g⁻¹, ce ne sont pas des MJ·kg⁻¹" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 225 × 0,0150 ; il faut PC = Q / m" },
+          { code: "pc-rapport-inverse", texte: "Inverser le rapport : m / Q = 0,0150 / 0,225 ; le PC est une énergie par kilogramme" }
         ],
-        ans: 1,
-        exp: "Le calorimètre n'est jamais parfaitement isolé : une partie de l'énergie est perdue vers l'air ambiant et absorbée par le calorimètre lui-même, sans être transmise à l'eau, d'où une valeur expérimentale plus faible."
+        exp: "PC = Q / m = 225×10³ J / 0,0150 kg = 1,50×10⁷ J·kg⁻¹ = 15,0 MJ·kg⁻¹. Attention : la masse doit être en kg."
       },
       {
-        q: "Un poêle à bois de rendement η = 75 % doit fournir 40 MJ d'énergie utile. Quelle énergie totale doit-il libérer par combustion ?",
+        q: "Avec un bois de pouvoir calorifique 15,0 MJ·kg⁻¹, quelle masse faut-il brûler pour libérer 9,0 MJ ?",
         opts: [
-          "30 MJ",
-          "40 MJ",
-          "53,3 MJ",
-          "75 MJ"
+          "135 kg",
+          "1,7 kg",
+          "0,60 kg",
+          "0,60 g"
         ],
         ans: 2,
-        exp: "η = énergie utile / énergie totale, donc énergie totale = énergie utile / η = 40 / 0,75 ≈ 53,3 MJ."
+        pieges: [
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 9,0 × 15,0 = 135 ; il faut m = Q / PC" },
+          { code: "pc-rapport-inverse", texte: "Inverser le rapport : PC / Q = 15,0 / 9,0 ≈ 1,7 ; il faut m = Q / PC" },
+          null,
+          { code: "unite-masse-pc", texte: "Se tromper d'unité : le PC est en MJ par kilogramme, Q / PC donne donc des kilogrammes" }
+        ],
+        exp: "m = Q / PC = 9,0 / 15,0 = 0,60 kg. Attention : avec un PC en MJ·kg⁻¹, le résultat est en kilogrammes."
       },
       {
-        q: "Pourquoi le rendement d'un poêle à bois est-il toujours inférieur à 100 % ?",
+        q: "On brûle 1,20 g d'éthanol sous une canette contenant 300 g d'eau, qui passe de 19,5 °C à 34,3 °C (c = 4 185 J·kg⁻¹·K⁻¹). Le pouvoir calorifique expérimental de l'éthanol vaut :",
         opts: [
-          "Car le bois brûle mal",
-          "Car une partie de l'énergie libérée est perdue dans l'environnement (fumées, parois)",
-          "Car le bois contient de l'eau",
-          "Car la loi de Mariotte l'impose"
+          "15,5 MJ·kg⁻¹",
+          "1,55×10⁻² MJ·kg⁻¹",
+          "35,9 MJ·kg⁻¹",
+          "6,2×10⁻² MJ·kg⁻¹"
         ],
-        ans: 1,
-        exp: "Une partie de l'énergie libérée par la combustion est perdue dans l'environnement (chaleur évacuée par les fumées, pertes thermiques par les parois du poêle), et n'est donc pas transmise utilement à la pièce."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse d'éthanol en kg : 1,86×10⁴ / 1,20 ; 1,20 g = 1,20×10⁻³ kg" },
+          { code: "temperature-vs-variation", texte: "Utiliser la température finale (34,3 °C) au lieu de la variation ΔT = 14,8 °C" },
+          { code: "masse-combustible-dans-q", texte: "Utiliser la masse d'éthanol dans Q = m c ΔT : c'est l'eau qui s'échauffe, m est la masse d'eau" }
+        ],
+        exp: "Q = 0,300 × 4 185 × 14,8 ≈ 1,86×10⁴ J reçus par l'eau, donc PC = 1,86×10⁴ / 1,20×10⁻³ ≈ 1,55×10⁷ J·kg⁻¹ = 15,5 MJ·kg⁻¹. Attention : Q se calcule avec la masse d'eau."
+      },
+      {
+        q: "La valeur tabulée du pouvoir calorifique de l'éthanol (≈ 27 MJ·kg⁻¹) est bien supérieure à la valeur mesurée (15,5 MJ·kg⁻¹). Pourquoi ?",
+        opts: [
+          "Le pouvoir calorifique dépend de la masse brûlée",
+          "Une partie de l'énergie a été détruite pendant la combustion",
+          "Une partie de l'énergie libérée n'a pas chauffé l'eau",
+          "L'eau a reçu plus d'énergie que la combustion n'en a libéré"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "pc-depend-masse", texte: "Croire que le pouvoir calorifique dépend de la masse brûlée : c'est une énergie par kilogramme, caractéristique du combustible" },
+          { code: "energie-detruite", texte: "Croire que l'énergie disparaît : elle se conserve ; une partie a été transférée à l'air et à la canette" },
+          null,
+          { code: "recu-superieur-libere", texte: "Inverser le bilan : l'eau reçoit moins que l'énergie libérée, d'où une valeur mesurée trop faible" }
+        ],
+        exp: "Une partie de l'énergie libérée chauffe l'air, la canette et les fumées au lieu de l'eau : l'énergie reçue par l'eau, et donc le PC calculé, est trop faible. L'énergie n'est pas détruite, elle est transférée ailleurs."
+      },
+      {
+        q: "Une chaudière de rendement η = 80 % doit fournir 36 MJ d'énergie utile. Quelle énergie la combustion doit-elle libérer ?",
+        opts: [
+          "28,8 MJ",
+          "36 MJ",
+          "45 MJ",
+          "0,45 MJ"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "rendement-multiplie", texte: "Multiplier par le rendement : 36 × 0,80 ; l'énergie libérée est plus grande que l'énergie utile" },
+          { code: "rendement-ignore", texte: "Oublier le rendement : une partie de l'énergie libérée est perdue (fumées, parois), il faut en libérer plus que 36 MJ" },
+          null,
+          { code: "pourcentage-non-converti", texte: "Utiliser 80 au lieu de 0,80 : 36 / 80 = 0,45" }
+        ],
+        exp: "η = E(utile) / E(libérée), donc E(libérée) = 36 / 0,80 = 45 MJ. Attention : l'énergie libérée est toujours supérieure à l'énergie utile."
       }
     ],
     annales: [],
