@@ -30082,114 +30082,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Que représente la constante d'Avogadro NA ?",
+        q: "Que représente la constante d'Avogadro NA = 6,02×10²³ mol⁻¹ ?",
         opts: [
           "Le nombre d'entités contenues dans une mole",
-          "La masse d'une mole d'atomes",
+          "La masse d'une mole d'atomes de carbone",
           "Le volume occupé par une mole de gaz",
-          "La concentration d'une solution"
+          "Le nombre d'atomes contenus dans 1 g de matière"
         ],
         ans: 0,
-        exp: "NA = 6,02×10²³ mol⁻¹ est le nombre d'entités (atomes, ions, molécules) contenues dans une mole de matière, quelle que soit l'entité considérée."
-      },
-      {
-        q: "Quelle est la masse molaire de l'eau H2O ? (M(H) = 1,0 g/mol ; M(O) = 16,0 g/mol)",
-        opts: [
-          "17,0 g/mol",
-          "16,0 g/mol",
-          "18,0 g/mol",
-          "34,0 g/mol"
+        pieges: [
+          null,
+          { code: "mole-masse-fixe", texte: "Croire qu'une mole est une masse fixe : NA est un nombre d'entités ; la masse d'une mole (M) dépend de l'espèce" },
+          { code: "mole-volume", texte: "Confondre NA et le volume molaire : NA compte des entités, Vm est un volume (en L·mol⁻¹)" },
+          { code: "mole-pese-1g", texte: "Croire qu'une mole pèse 1 g : 1 g d'hydrogène et 1 g de fer ne contiennent pas le même nombre d'atomes" }
         ],
-        ans: 2,
-        exp: "M(H2O) = 2×M(H) + M(O) = 2×1,0 + 16,0 = 18,0 g/mol."
+        exp: "Une mole contient toujours NA = 6,02×10²³ entités (atomes, ions, molécules), quelle que soit l'espèce. Attention : la mole est un nombre d'entités, ce n'est ni une masse ni un volume."
       },
       {
-        q: "Quelle relation permet de calculer une quantité de matière n à partir d'une masse m et d'une masse molaire M ?",
+        q: "M(H) = 1,0 g·mol⁻¹ ; M(C) = 12,0 g·mol⁻¹ ; M(O) = 16,0 g·mol⁻¹. La masse molaire de l'éthanol C₂H₆O vaut :",
         opts: [
-          "n = m × M",
-          "n = m / M",
-          "n = M / m",
-          "n = m + M"
+          "29,0 g·mol⁻¹",
+          "46,0 g·mol⁻¹",
+          "37,0 g·mol⁻¹",
+          "2,30×10³ g·mol⁻¹"
         ],
         ans: 1,
-        exp: "La relation fondamentale est n = m/M, avec n en mol, m en g et M en g/mol."
-      },
-      {
-        q: "Un flacon contient une masse m = 117 g de chlorure de sodium NaCl (M(NaCl) = 58,5 g/mol). Quelle est la quantité de matière de NaCl dans le flacon ?",
-        opts: [
-          "0,500 mol",
-          "1,00 mol",
-          "2,00 mol",
-          "6,8×10⁻² mol"
+        pieges: [
+          { code: "oubli-indice", texte: "Oublier les indices : 12,0 + 1,0 + 16,0 = 29,0 ; la molécule contient 2 atomes C et 6 atomes H" },
+          null,
+          { code: "indices-additionnes", texte: "Ajouter les indices au lieu de les multiplier : (12,0 + 2) + (1,0 + 6) + 16,0 = 37,0" },
+          { code: "masses-multipliees", texte: "Multiplier les masses molaires entre elles : on les additionne, chacune multipliée par son indice" }
         ],
-        ans: 2,
-        exp: "n = m/M = 117 / 58,5 = 2,00 mol."
+        exp: "M(C₂H₆O) = 2 × M(C) + 6 × M(H) + M(O) = 24,0 + 6,0 + 16,0 = 46,0 g·mol⁻¹. Attention : chaque masse molaire atomique est multipliée par l'indice de l'élément."
       },
       {
-        q: "Avec n(NaCl) = 2,00 mol dans le flacon précédent, combien d'ions Cl⁻ contient-il ?",
+        q: "Un comprimé contient 500 mg de paracétamol (M = 151 g·mol⁻¹). La quantité de matière de paracétamol vaut :",
         opts: [
-          "2,00×10²³ ions",
-          "6,02×10²³ ions",
-          "1,20×10²⁴ ions",
-          "58,5×10²³ ions"
-        ],
-        ans: 2,
-        exp: "N(Cl⁻) = n × NA = 2,00 × 6,02×10²³ = 1,20×10²⁴ ions (un ion Cl⁻ pour un NaCl)."
-      },
-      {
-        q: "Dans les conditions usuelles de température et de pression (20 °C ; 1013 hPa), le volume molaire d'un gaz vaut environ :",
-        opts: [
-          "1,0 L/mol",
-          "12,0 L/mol",
-          "24,0 L/mol",
-          "22,4 mL/mol"
-        ],
-        ans: 2,
-        exp: "Dans les conditions usuelles, Vm ≈ 24,0 L/mol pour tout gaz."
-      },
-      {
-        q: "Une bombe aérosol contient V = 250 mL de butane C4H10 gazeux dans les conditions usuelles. Quelle est la quantité de matière de butane ?",
-        opts: [
-          "1,04×10⁻² mol",
-          "0,250 mol",
-          "6,0 mol",
-          "24,0 mol"
-        ],
-        ans: 0,
-        exp: "n = V/Vm = 0,250 / 24,0 = 1,04×10⁻² mol."
-      },
-      {
-        q: "Le sérum physiologique est une solution aqueuse de NaCl à 9,0 g/L. Quelle masse de NaCl contient une poche de V = 500 mL ?",
-        opts: [
-          "9,0 g",
-          "0,90 g",
-          "4,5 g",
-          "18,0 g"
-        ],
-        ans: 2,
-        exp: "m = c(masse) × V = 9,0 × 0,500 = 4,5 g."
-      },
-      {
-        q: "Un comprimé effervescent contient m = 1,68 g d'hydrogénocarbonate de sodium NaHCO3 (M = 84,0 g/mol). Quelle est la quantité de matière de NaHCO3 dans le comprimé ?",
-        opts: [
-          "2,00×10⁻² mol",
-          "1,68×10⁻² mol",
-          "84,0 mol",
-          "2,00×10² mol"
-        ],
-        ans: 0,
-        exp: "n = m/M = 1,68 / 84,0 = 2,00×10⁻² mol."
-      },
-      {
-        q: "Pour déterminer la quantité de matière de cuivre dans un alliage de laiton (mélange), quelle démarche adopte-t-on ?",
-        opts: [
-          "Mesurer directement le volume de l'alliage",
-          "Identifier la masse de cuivre dans le mélange puis appliquer n = m/M(Cu)",
-          "Utiliser uniquement le volume molaire des gaz",
-          "Diviser la masse totale de l'alliage par NA"
+          "3,31 mol",
+          "3,31×10⁻³ mol",
+          "3,31×10⁻⁶ mol",
+          "302 mol"
         ],
         ans: 1,
-        exp: "Pour un mélange, on identifie d'abord la masse (ou le volume pour un gaz) de l'espèce considérée à partir de sa composition, puis on applique n = m/M (ou n = V/Vm pour un gaz). Exemple : dans 50,0 g de laiton à 65 % de cuivre, m(Cu) = 32,5 g puis n(Cu) = 32,5/63,5 = 0,512 mol."
+        pieges: [
+          { code: "conversion-mg-g", texte: "Oublier de convertir les milligrammes en grammes : 500 / 151 ≈ 3,31 ; 500 mg = 0,500 g" },
+          null,
+          { code: "masse-en-kg-avec-m-en-g", texte: "Convertir la masse en kg alors que M est en g·mol⁻¹ : 5,00×10⁻⁴ / 151 ; m doit être en g" },
+          { code: "masse-molaire-rapport-inverse", texte: "Inverser le rapport : M / m = 151 / 0,500 = 302 ; il faut n = m / M" }
+        ],
+        exp: "m = 500 mg = 0,500 g, donc n = m / M = 0,500 / 151 ≈ 3,31×10⁻³ mol. Attention : avec M en g·mol⁻¹, la masse doit être en grammes."
+      },
+      {
+        q: "Quelle masse de chlorure de sodium NaCl (M = 58,5 g·mol⁻¹) faut-il peser pour disposer de n = 0,200 mol ?",
+        opts: [
+          "3,42×10⁻³ g",
+          "0,200 g",
+          "58,5 g",
+          "11,7 g"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "masse-molaire-divisee", texte: "Diviser par la masse molaire au lieu de multiplier : 0,200 / 58,5 ; il faut m = n × M" },
+          { code: "masse-vs-quantite-matiere", texte: "Confondre masse et quantité de matière : 0,200 mol ne pèse pas 0,200 g" },
+          { code: "masse-molaire-prise-pour-masse", texte: "Prendre la masse molaire pour la masse cherchée : 58,5 g est la masse d'une mole, pas de 0,200 mol" },
+          null
+        ],
+        exp: "m = n × M = 0,200 × 58,5 = 11,7 g. Attention : la masse molaire est la masse d'une mole ; pour 0,200 mol, il faut la multiplier par 0,200."
+      },
+      {
+        q: "Un échantillon contient n = 0,10 mol de chlorure de magnésium MgCl₂. Combien contient-il d'ions chlorure Cl⁻ ? (NA = 6,02×10²³ mol⁻¹)",
+        opts: [
+          "6,0×10²² ions",
+          "1,2×10²³ ions",
+          "1,7×10⁻²⁵ ions",
+          "6,02×10²³ ions"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-indice", texte: "Oublier l'indice 2 : chaque MgCl₂ apporte 2 ions Cl⁻, donc n(Cl⁻) = 2 × 0,10 = 0,20 mol" },
+          null,
+          { code: "n-sur-na", texte: "Diviser au lieu de multiplier : 0,10 / 6,02×10²³ ; il faut N = n × NA" },
+          { code: "na-pour-toute-quantite", texte: "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement" }
+        ],
+        exp: "n(Cl⁻) = 2 × n(MgCl₂) = 0,20 mol, donc N = n × NA = 0,20 × 6,02×10²³ ≈ 1,2×10²³ ions. Attention à l'indice : un MgCl₂ contient deux ions Cl⁻."
+      },
+      {
+        q: "Dans les conditions usuelles (20 °C ; 1 013 hPa), une mole de dihydrogène H₂ et une mole de dioxyde de carbone CO₂ occupent :",
+        opts: [
+          "le même volume, environ 24 L",
+          "22,4 L chacune",
+          "un volume plus grand pour CO₂, plus lourd",
+          "un volume plus grand pour CO₂, de plus grosses molécules"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "vm-22-4", texte: "Prendre 22,4 L·mol⁻¹ : c'est le volume molaire à 0 °C ; à 20 °C et 1 013 hPa, Vm ≈ 24,0 L·mol⁻¹" },
+          { code: "vm-depend-masse-gaz", texte: "Croire que le volume molaire dépend de la masse du gaz : à mêmes T et P, tous les gaz ont le même Vm" },
+          { code: "vm-depend-taille-molecules", texte: "Croire que le volume d'un gaz vient de la taille des molécules : il est surtout fait de vide entre elles" }
+        ],
+        exp: "À température et pression données, tous les gaz ont (quasiment) le même volume molaire : Vm ≈ 24,0 L·mol⁻¹ dans les conditions usuelles. Attention : 22,4 L·mol⁻¹ correspond à 0 °C, pas à 20 °C."
+      },
+      {
+        q: "Un ballon contient 600 mL d'hélium dans les conditions usuelles (Vm = 24,0 L·mol⁻¹). Sa quantité de matière d'hélium vaut :",
+        opts: [
+          "25,0 mol",
+          "14,4 mol",
+          "40,0 mol",
+          "2,50×10⁻² mol"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 600 / 24,0 = 25,0 ; 600 mL = 0,600 L" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 0,600 × 24,0 = 14,4 ; il faut n = V / Vm" },
+          { code: "vm-rapport-inverse", texte: "Inverser le rapport : Vm / V = 24,0 / 0,600 = 40,0 ; il faut n = V / Vm" },
+          null
+        ],
+        exp: "n = V / Vm = 0,600 / 24,0 = 2,50×10⁻² mol. Attention : Vm est en L·mol⁻¹, le volume doit donc être en litres."
+      },
+      {
+        q: "On prélève 100 mL d'eau liquide (ρ = 1,00 g·mL⁻¹ ; M(H₂O) = 18,0 g·mol⁻¹). La quantité de matière d'eau prélevée vaut :",
+        opts: [
+          "5,56 mol",
+          "4,17×10⁻³ mol",
+          "1,80×10³ mol",
+          "5,56×10⁻² mol"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "vm-pour-liquide", texte: "Utiliser le volume molaire pour un liquide : 0,100 / 24,0 ; Vm ne s'applique qu'aux gaz" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 100 × 18,0 = 1,80×10³ ; il faut n = m / M" },
+          { code: "masse-volumique-prise-pour-masse", texte: "Prendre la masse volumique pour la masse : 1,00 / 18,0 ; il faut d'abord m = ρ × V = 100 g" }
+        ],
+        exp: "Pour un liquide : m = ρ × V = 1,00 × 100 = 100 g, puis n = m / M = 100 / 18,0 ≈ 5,56 mol. Attention : le volume molaire Vm ne concerne que les gaz."
+      },
+      {
+        q: "Un bijou en or « 18 carats » de masse 6,0 g contient 75 % en masse d'or (M(Au) = 197 g·mol⁻¹). Sa quantité de matière d'or vaut :",
+        opts: [
+          "3,0×10⁻² mol",
+          "2,3 mol",
+          "7,6×10⁻³ mol",
+          "2,3×10⁻² mol"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "masse-totale-au-lieu-espece", texte: "Utiliser la masse totale du bijou : 6,0 / 197 ; seule la masse d'or (0,75 × 6,0 = 4,5 g) compte" },
+          { code: "pourcentage-non-converti", texte: "Utiliser 75 au lieu de 0,75 : 75 × 6,0 / 197 ≈ 2,3" },
+          { code: "constituant-inverse", texte: "Calculer avec l'autre constituant (25 %) : 0,25 × 6,0 / 197 ; l'or représente 75 % de la masse" },
+          null
+        ],
+        exp: "m(Au) = 0,75 × 6,0 = 4,5 g, puis n(Au) = 4,5 / 197 ≈ 2,3×10⁻² mol. Attention : dans un mélange, on calcule d'abord la masse de l'espèce, pas celle du mélange."
+      },
+      {
+        q: "On compare 1,0 g de dihydrogène H₂ (M = 2,0 g·mol⁻¹) et 1,0 g de dioxygène O₂ (M = 32,0 g·mol⁻¹). Quel échantillon contient le plus de molécules ?",
+        opts: [
+          "Les deux, car ils ont la même masse",
+          "Le dioxygène, car ses molécules sont plus lourdes",
+          "Le dihydrogène, 16 fois plus de molécules",
+          "Le dioxygène, 16 fois plus de molécules"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "masse-egale-meme-nombre", texte: "Croire que même masse veut dire même nombre de molécules : les molécules n'ont pas toutes la même masse" },
+          { code: "lourd-plus-entites", texte: "Croire qu'à masse égale l'espèce la plus lourde a plus de molécules : c'est l'inverse, il en faut moins pour faire 1,0 g" },
+          null,
+          { code: "masse-molaire-rapport-inverse", texte: "Inverser le lien entre n et M : n = m / M est d'autant plus petit que M est grand" }
+        ],
+        exp: "n(H₂) = 1,0 / 2,0 = 0,50 mol et n(O₂) = 1,0 / 32,0 ≈ 3,1×10⁻² mol : 16 fois plus de molécules de H₂. Attention : à masse égale, plus M est grand, moins il y a d'entités."
       }
     ],
     annales: [],
@@ -30623,7 +30683,7 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Comment définit-on la concentration en quantité de matière C d'un soluté ?",
+        q: "La concentration en quantité de matière C d'un soluté dans une solution est définie par :",
         opts: [
           "C = n × V",
           "C = n / V",
@@ -30631,106 +30691,166 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "C = m / V"
         ],
         ans: 1,
-        exp: "La concentration en quantité de matière est le quotient de la quantité de matière n de soluté par le volume V de solution : C = n/V."
+        pieges: [
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : C est une quantité de matière par litre de solution, C = n / V" },
+          null,
+          { code: "c-rapport-inverse", texte: "Inverser le rapport : V / n s'exprimerait en L·mol⁻¹ ; C = n / V s'exprime en mol·L⁻¹" },
+          { code: "cm-pris-pour-c", texte: "Confondre C = n / V (en mol·L⁻¹) et la concentration en masse cm = m / V (en g·L⁻¹)" }
+        ],
+        exp: "C = n / V, avec n en mol, V en L et C en mol·L⁻¹. Attention : m / V est la concentration en masse (g·L⁻¹), une autre grandeur."
       },
       {
-        q: "On dissout m = 4,0 g de NaCl (M = 58,5 g/mol) dans V = 200 mL de solution. Quelle est la quantité de matière de NaCl dissoute ?",
+        q: "On dissout 2,34 g de chlorure de sodium (M = 58,5 g·mol⁻¹, soit n = 4,00×10⁻² mol) dans de l'eau pour obtenir 250 mL de solution. La concentration en NaCl vaut :",
         opts: [
-          "6,8×10⁻² mol",
-          "0,34 mol",
-          "4,0 mol",
-          "58,5 mol"
+          "1,60×10⁻⁴ mol·L⁻¹",
+          "9,36 mol·L⁻¹",
+          "0,160 mol·L⁻¹",
+          "1,00×10⁻² mol·L⁻¹"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 4,00×10⁻² / 250 ; 250 mL = 0,250 L" },
+          { code: "cm-pris-pour-c", texte: "Calculer m / V = 2,34 / 0,250 = 9,36 : c'est la concentration en masse, en g·L⁻¹" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 4,00×10⁻² × 0,250 ; il faut C = n / V" }
+        ],
+        exp: "C = n / V = 4,00×10⁻² / 0,250 = 0,160 mol·L⁻¹. Attention : le volume doit être en litres pour obtenir des mol·L⁻¹."
+      },
+      {
+        q: "Une solution de glucose a une concentration C = 0,25 mol·L⁻¹. Quel volume faut-il prélever pour disposer de n = 1,0×10⁻² mol de glucose ?",
+        opts: [
+          "40 mL",
+          "4,0 mL",
+          "2,5 mL",
+          "25 L"
         ],
         ans: 0,
-        exp: "n = m/M = 4,0 / 58,5 = 6,8×10⁻² mol."
+        pieges: [
+          null,
+          { code: "conversion-l-ml", texte: "Mal convertir : 4,0×10⁻² L = 40 mL (1 L = 1 000 mL), et non 4,0 mL" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 0,25 × 1,0×10⁻² = 2,5×10⁻³ L ; il faut V = n / C" },
+          { code: "volume-rapport-inverse", texte: "Inverser le rapport : C / n = 0,25 / 1,0×10⁻² = 25 ; il faut V = n / C" }
+        ],
+        exp: "V = n / C = 1,0×10⁻² / 0,25 = 4,0×10⁻² L = 40 mL. Attention à la conversion finale : 1 L = 1 000 mL."
       },
       {
-        q: "Pour la solution précédente (n = 6,8×10⁻² mol dans V = 200 mL), quelle est la concentration en quantité de matière ?",
+        q: "Une solution absorbe surtout la lumière bleue (vers 450 nm). Éclairée en lumière blanche, elle paraît :",
         opts: [
-          "0,034 mol/L",
-          "0,34 mol/L",
-          "3,4 mol/L",
-          "6,8 mol/L"
+          "bleue",
+          "jaune",
+          "violette",
+          "noire"
         ],
         ans: 1,
-        exp: "C = n/V = 6,8×10⁻² / 0,200 = 0,34 mol/L."
+        pieges: [
+          { code: "couleur-percue-vs-absorbee", texte: "Confondre couleur perçue et couleur absorbée : la lumière bleue est absorbée, elle n'arrive pas à l'œil" },
+          null,
+          { code: "couleur-voisine-vs-complementaire", texte: "Prendre une couleur voisine du bleu : la couleur perçue est la complémentaire, diamétralement opposée sur le cercle chromatique" },
+          { code: "absorbe-donc-noire", texte: "Croire qu'une solution qui absorbe paraît noire : elle n'absorbe qu'une partie du spectre, le reste est transmis" }
+        ],
+        exp: "La couleur perçue est la couleur complémentaire de la couleur la plus absorbée : le complémentaire du bleu est le jaune. Attention : la couleur absorbée est justement celle que l'on ne voit pas."
       },
       {
-        q: "La couleur perçue d'une solution correspond à :",
+        q: "Pour une solution diluée, à longueur d'onde et cuve fixées, on double la concentration de l'espèce colorée. D'après la loi de Beer-Lambert, l'absorbance :",
         opts: [
-          "la couleur de la lumière la plus absorbée",
-          "la couleur complémentaire de la lumière la plus absorbée",
-          "la couleur de la lumière de plus faible longueur d'onde",
-          "toujours le bleu pour les solutions aqueuses"
+          "est divisée par deux",
+          "ne change pas",
+          "double",
+          "diminue, car la solution transmet moins"
         ],
-        ans: 1,
-        exp: "La couleur perçue par l'œil est la couleur complémentaire de la radiation la plus absorbée par la solution."
+        ans: 2,
+        pieges: [
+          { code: "beer-lambert-inverse", texte: "Croire que A est inversement proportionnelle à C : A = k × C, l'absorbance augmente avec la concentration" },
+          { code: "absorbance-independante-concentration", texte: "Croire que l'absorbance ne dépend que de l'espèce : à λ fixée, elle est proportionnelle à sa concentration" },
+          null,
+          { code: "absorbance-vs-transmittance", texte: "Confondre absorbance et transmittance : une solution plus concentrée transmet moins, donc absorbe plus" }
+        ],
+        exp: "A = k × C : l'absorbance est proportionnelle à la concentration, elle double donc. Attention : plus une solution est concentrée, plus elle absorbe (et moins elle transmet)."
       },
       {
-        q: "On dispose d'une solution de glucose de concentration C = 0,25 mol/L. Quel volume faut-il prélever pour obtenir n = 1,0×10⁻² mol de glucose ?",
+        q: "Une gamme d'étalons donne (C en mmol·L⁻¹ ; A) : (0,10 ; 0,15), (0,20 ; 0,30), (0,40 ; 0,60). Le coefficient k de la relation A = k × C vaut :",
         opts: [
-          "4,0 mL",
-          "40 mL",
-          "0,25 L",
-          "2,5 mL"
+          "0,67 mmol·L⁻¹",
+          "0,15 L·mmol⁻¹",
+          "1,5 (sans unité)",
+          "1,5 L·mmol⁻¹"
         ],
-        ans: 1,
-        exp: "V = n/C = 1,0×10⁻² / 0,25 = 4,0×10⁻² L = 40 mL."
+        ans: 3,
+        pieges: [
+          { code: "rapport-inverse-etalonnage", texte: "Inverser le rapport : C / A = 0,10 / 0,15 ≈ 0,67 ; k = A / C" },
+          { code: "absorbance-prise-pour-k", texte: "Prendre l'absorbance du premier étalon pour k : k est le rapport A / C, le même pour tous les étalons" },
+          { code: "k-sans-unite", texte: "Croire que k est sans unité comme A : k = A / C s'exprime en L·mmol⁻¹" },
+          null
+        ],
+        exp: "A / C est constant : 0,15 / 0,10 = 0,30 / 0,20 = 0,60 / 0,40 = 1,5 L·mmol⁻¹. Attention : A est sans unité, mais k = A / C a l'unité inverse d'une concentration."
       },
       {
-        q: "La loi de Beer-Lambert énonce que, à longueur d'onde donnée et en solution diluée :",
+        q: "Avec la droite d'étalonnage A = 1,5 × C (C en mmol·L⁻¹), une solution inconnue a une absorbance A = 0,48. Sa concentration vaut :",
         opts: [
-          "l'absorbance est inversement proportionnelle à la concentration",
-          "l'absorbance est proportionnelle à la concentration",
-          "la concentration est constante quelle que soit l'absorbance",
-          "l'absorbance ne dépend pas de la concentration"
+          "0,32 mmol·L⁻¹",
+          "0,72 mmol·L⁻¹",
+          "3,1 mmol·L⁻¹",
+          "0,48 mmol·L⁻¹"
         ],
-        ans: 1,
-        exp: "La loi de Beer-Lambert s'écrit A = k × C : l'absorbance est proportionnelle à la concentration de l'espèce colorée."
+        ans: 0,
+        pieges: [
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 1,5 × 0,48 = 0,72 ; il faut C = A / k" },
+          { code: "rapport-inverse-etalonnage", texte: "Inverser le rapport : k / A = 1,5 / 0,48 ≈ 3,1 ; il faut C = A / k" },
+          { code: "absorbance-prise-pour-concentration", texte: "Prendre l'absorbance pour la concentration : A = 0,48 est sans unité, il faut la diviser par k" }
+        ],
+        exp: "C = A / k = 0,48 / 1,5 = 0,32 mmol·L⁻¹. Attention : on divise l'absorbance par le coefficient directeur de la droite."
       },
       {
-        q: "Une gamme étalon donne les couples (C en mmol/L ; A) suivants : (0,20 ; 0,10), (0,40 ; 0,20), (0,60 ; 0,30), (0,80 ; 0,40). Quelle est la valeur du coefficient k ?",
+        q: "Pourquoi règle-t-on le spectrophotomètre à la longueur d'onde λmax du maximum d'absorption ?",
         opts: [
-          "0,20 L/mmol",
-          "0,50 L/mmol",
-          "2,0 L/mmol",
-          "5,0 L/mmol"
+          "Parce que la solution y absorbe le moins, la lumière passe mieux",
+          "Parce que la mesure y est la plus sensible aux variations de C",
+          "Parce que c'est la longueur d'onde de la couleur perçue",
+          "Parce que l'absorbance n'y dépend plus de la concentration"
         ],
         ans: 1,
-        exp: "Le rapport A/C est constant : 0,10/0,20 = 0,20/0,40 = ... = 0,50 mmol⁻¹·L, donc k = 0,50 L/mmol."
+        pieges: [
+          { code: "lambda-max-absorption-minimale", texte: "Croire qu'on mesure là où la solution absorbe le moins : λmax est le maximum d'absorption" },
+          null,
+          { code: "couleur-percue-vs-absorbee", texte: "Confondre couleur perçue et couleur absorbée : λmax correspond à la couleur complémentaire de celle perçue" },
+          { code: "absorbance-independante-concentration", texte: "Croire que l'absorbance ne dépend pas de C à λmax : c'est là qu'elle en dépend le plus fortement" }
+        ],
+        exp: "À λmax, l'absorbance est la plus grande et varie le plus avec la concentration : la mesure est la plus sensible. Attention : λmax correspond à la couleur absorbée, complémentaire de la couleur perçue."
       },
       {
-        q: "Avec le coefficient k = 0,50 L/mmol de la question précédente, quelle concentration correspond à une absorbance A = 0,25 ?",
+        q: "Les étalons vont de A = 0,14 à A = 0,70. La solution inconnue donne A = 1,9. Que faut-il faire pour déterminer sa concentration ?",
         opts: [
-          "0,125 mmol/L",
-          "0,50 mmol/L",
-          "2,0 mmol/L",
-          "0,25 mmol/L"
+          "Prolonger la droite d'étalonnage jusqu'à A = 1,9",
+          "Lui attribuer la concentration de l'étalon le plus concentré",
+          "Diluer la solution d'un facteur connu, puis mesurer de nouveau",
+          "Choisir une autre longueur d'onde où elle absorbe encore plus"
         ],
-        ans: 1,
-        exp: "C = A/k = 0,25 / 0,50 = 0,50 mmol/L."
+        ans: 2,
+        pieges: [
+          { code: "beer-lambert-hors-domaine", texte: "Extrapoler la droite : la loi de Beer-Lambert n'est vérifiée que dans le domaine étalonné (solutions diluées)" },
+          { code: "valeur-etalon-recopiee", texte: "Recopier la concentration d'un étalon : l'absorbance de l'inconnue est bien plus grande, sa concentration aussi" },
+          null,
+          { code: "grande-absorbance-precise", texte: "Croire qu'une grande absorbance donne une mesure plus précise : il faut au contraire revenir dans le domaine étalonné" }
+        ],
+        exp: "On dilue la solution d'un facteur connu pour ramener A dans le domaine des étalons, puis on multiplie la concentration lue par le facteur de dilution. Attention : on n'extrapole pas la droite hors du domaine étalonné."
       },
       {
-        q: "Pourquoi réalise-t-on les mesures d'absorbance à la longueur d'onde λmax du maximum d'absorption ?",
+        q: "Une série de N = 4 mesures indépendantes d'un même volume a un écart-type s = 0,20 mL. L'incertitude-type de type A sur la moyenne vaut u = s / √N, soit :",
         opts: [
-          "Parce que c'est obligatoire par convention",
-          "Parce que la sensibilité de la mesure y est maximale",
-          "Parce que l'absorbance y est nulle",
-          "Parce que la couleur y est complémentaire du blanc"
+          "0,050 mL",
+          "0,10 mL",
+          "0,20 mL",
+          "0,40 mL"
         ],
         ans: 1,
-        exp: "À λmax, l'absorbance varie le plus fortement avec la concentration, ce qui rend la mesure la plus sensible et la plus précise."
-      },
-      {
-        q: "Une eau minérale, analysée par une méthode de dosage colorimétrique du fer avec la droite d'étalonnage A = 1,8 × C (C en mmol/L), présente une absorbance A = 0,63, soit C = 0,35 mmol/L ≈ 19,5 mg/L en fer. Si le critère de conformité est une teneur inférieure à 0,3 mg/L, que peut-on conclure ?",
-        opts: [
-          "L'eau est conforme, la teneur est très inférieure à la limite",
-          "L'eau n'est pas conforme, la teneur dépasse largement la limite",
-          "On ne peut rien conclure sans connaître le volume d'eau",
-          "La teneur en fer est nulle"
+        pieges: [
+          { code: "oubli-racine", texte: "Oublier la racine : s / N = 0,20 / 4 = 0,050 ; il faut diviser par √4 = 2" },
+          null,
+          { code: "incertitude-egale-ecart-type", texte: "Confondre écart-type et incertitude-type sur la moyenne : u = s / √N est plus petite que s" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 0,20 × √4 = 0,40 ; plus on fait de mesures, plus u diminue" }
         ],
-        ans: 1,
-        exp: "19,5 mg/L est très supérieur à 0,3 mg/L : la teneur en fer de cette eau dépasse largement la limite fixée, l'eau ne serait pas conforme à ce critère."
+        exp: "u = s / √N = 0,20 / √4 = 0,20 / 2 = 0,10 mL. Attention : on divise par la racine du nombre de mesures ; multiplier les mesures réduit l'incertitude."
       }
     ],
     annales: [],
@@ -31201,114 +31321,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "L'avancement x d'une transformation chimique vaut, à l'état initial :",
+        q: "L'avancement maximal xmax d'une transformation correspond :",
         opts: [
-          "xmax",
-          "0",
-          "n0",
-          "1 mol"
+          "à la disparition de tous les réactifs",
+          "à la disparition totale du réactif limitant",
+          "à la quantité initiale du réactif le plus abondant",
+          "à la somme des quantités initiales des réactifs"
         ],
         ans: 1,
-        exp: "Par définition, l'avancement est nul à l'état initial : x = 0 à t = 0."
+        pieges: [
+          { code: "tous-reactifs-consommes", texte: "Croire que tous les réactifs disparaissent : seul le réactif limitant est épuisé, sauf mélange stœchiométrique" },
+          null,
+          { code: "xmax-plus-grande-quantite", texte: "Prendre la plus grande quantité : la transformation s'arrête dès que le premier réactif est épuisé" },
+          { code: "xmax-somme-quantites", texte: "Additionner les quantités des réactifs : xmax est la plus petite valeur de x qui annule une quantité de réactif" }
+        ],
+        exp: "xmax est la plus petite valeur de x qui annule la quantité d'un réactif : celui-ci, le réactif limitant, a alors entièrement disparu. Attention : l'autre réactif, en excès, n'est pas épuisé."
       },
       {
-        q: "L'avancement maximal xmax est défini comme :",
+        q: "Pour 4 Al(s) + 3 O₂(g) → 2 Al₂O₃(s), on part de n₀(Al) = 0,40 mol et n₀(O₂) = 0,36 mol. Le réactif limitant est :",
         opts: [
-          "la plus grande valeur possible de x",
-          "la plus petite valeur de x qui annule une quantité de matière dans le tableau d'avancement",
-          "la valeur de x à mi-réaction",
-          "une constante universelle"
+          "O₂, car sa quantité initiale est la plus petite",
+          "O₂, car son nombre stœchiométrique est le plus petit",
+          "aucun : le mélange est stœchiométrique",
+          "Al, car 0,40 / 4 est plus petit que 0,36 / 3"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "limitant-plus-petite-quantite", texte: "Désigner le réactif en plus petite quantité sans tenir compte des nombres stœchiométriques : il faut comparer n₀ / coefficient" },
+          { code: "limitant-par-coefficient", texte: "Choisir le réactif selon son seul nombre stœchiométrique : il faut comparer les rapports n₀ / coefficient" },
+          { code: "stoechiometrique-quantites-proches", texte: "Croire que des quantités voisines forment un mélange stœchiométrique : il faut des rapports n₀ / coefficient égaux (0,10 ≠ 0,12)" },
+          null
+        ],
+        exp: "n₀(Al) / 4 = 0,10 mol et n₀(O₂) / 3 = 0,12 mol : le plus petit rapport désigne Al, réactif limitant, bien qu'il soit introduit en plus grande quantité. Attention : on compare toujours n₀ / coefficient."
+      },
+      {
+        q: "Pour la même transformation (4 Al + 3 O₂ → 2 Al₂O₃ ; n₀(Al) = 0,40 mol, n₀(O₂) = 0,36 mol), l'avancement maximal vaut :",
+        opts: [
+          "0,40 mol",
+          "0,12 mol",
+          "0,10 mol",
+          "1,6 mol"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique : 0,40 − 4 xmax = 0 donne xmax = 0,40 / 4" },
+          { code: "produit-avec-reactif-exces", texte: "Calculer avec le réactif en excès : 0,36 / 3 = 0,12 ; c'est la plus petite valeur (0,10) qui compte" },
+          null,
+          { code: "stoechiometrie-inversee", texte: "Multiplier par le nombre stœchiométrique au lieu de diviser : 0,40 × 4 = 1,6" }
+        ],
+        exp: "0,40 − 4 xmax = 0 donne 0,10 mol ; 0,36 − 3 xmax = 0 donne 0,12 mol. La plus petite valeur l'emporte : xmax = 0,10 mol. Attention : on divise n₀ par le nombre stœchiométrique."
+      },
+      {
+        q: "Toujours pour 4 Al + 3 O₂ → 2 Al₂O₃ (n₀(O₂) = 0,36 mol, xmax = 0,10 mol, transformation totale), la quantité de O₂ restant à l'état final vaut :",
+        opts: [
+          "0,26 mol",
+          "0,06 mol",
+          "0 mol",
+          "0,30 mol"
         ],
         ans: 1,
-        exp: "xmax correspond à la disparition totale du réactif limitant : c'est la plus petite valeur de x qui annule une des quantités de matière du tableau."
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique : 0,36 − 0,10 ; il disparaît 3 xmax = 0,30 mol de O₂" },
+          null,
+          { code: "tous-reactifs-consommes", texte: "Croire que tous les réactifs disparaissent : O₂ est en excès, il en reste à l'état final" },
+          { code: "consomme-vs-restant", texte: "Confondre quantité consommée et quantité restante : 3 xmax = 0,30 mol a réagi, il reste 0,36 − 0,30" }
+        ],
+        exp: "n(O₂) final = n₀(O₂) − 3 xmax = 0,36 − 0,30 = 0,06 mol. Attention : la quantité consommée est 3 xmax, pas xmax."
       },
       {
-        q: "Pour la réaction Fe(s) + Cu²⁺(aq) → Fe²⁺(aq) + Cu(s), avec n0(Fe) = 0,050 mol et n0(Cu²⁺) = 0,080 mol, quel est le réactif limitant ?",
+        q: "Pour 4 Al + 3 O₂ → 2 Al₂O₃ avec xmax = 0,10 mol, la quantité d'oxyde d'aluminium Al₂O₃ formée vaut :",
         opts: [
-          "Fe",
-          "Cu²⁺",
-          "Les deux à la fois",
-          "Aucun, la réaction est non totale"
+          "0,10 mol",
+          "0,050 mol",
+          "0,20 mol",
+          "0,76 mol"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique 2 du produit : n(Al₂O₃) = 2 xmax" },
+          { code: "stoechiometrie-inversee", texte: "Diviser par le nombre stœchiométrique au lieu de multiplier : 0,10 / 2" },
+          null,
+          { code: "quantite-matiere-conservee", texte: "Croire que la quantité de matière se conserve (0,40 + 0,36) : c'est la masse qui se conserve, pas le nombre de moles" }
+        ],
+        exp: "Dans le tableau d'avancement, n(Al₂O₃) = 2 x ; à l'état final, n = 2 xmax = 0,20 mol. Attention : le nombre stœchiométrique du produit multiplie l'avancement."
+      },
+      {
+        q: "Pour CH₄ + 2 O₂ → CO₂ + 2 H₂O, on introduit n₀(CH₄) = 0,20 mol et n₀(O₂) = 0,40 mol. Ce mélange est-il stœchiométrique ?",
+        opts: [
+          "Non, car les deux quantités ne sont pas égales",
+          "Oui, car n₀(CH₄) / 1 = n₀(O₂) / 2",
+          "Non, O₂ est en excès car 0,40 > 0,20",
+          "Non, CH₄ est en excès car son coefficient est plus petit"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "stoechiometrique-quantites-egales", texte: "Croire qu'un mélange stœchiométrique contient des quantités égales : ce sont les rapports n₀ / coefficient qui sont égaux" },
+          null,
+          { code: "limitant-plus-petite-quantite", texte: "Comparer les quantités sans les nombres stœchiométriques : il faut 2 O₂ par CH₄, soit 0,40 mol pour 0,20 mol" },
+          { code: "limitant-par-coefficient", texte: "Raisonner sur le seul nombre stœchiométrique : il faut comparer les rapports n₀ / coefficient" }
+        ],
+        exp: "n₀(CH₄) / 1 = 0,20 et n₀(O₂) / 2 = 0,20 : les rapports sont égaux, le mélange est stœchiométrique ; les deux réactifs disparaissent en même temps si la transformation est totale."
+      },
+      {
+        q: "Le calcul donne xmax = 0,040 mol, mais la mesure indique un avancement final xf = 0,031 mol. On en conclut que :",
+        opts: [
+          "la transformation est totale",
+          "la transformation est non totale, il ne reste plus de réactifs",
+          "la transformation est non totale, réactifs et produits coexistent",
+          "c'est impossible : xf est toujours égal à xmax"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "total-non-total-inverses", texte: "Confondre totale et non totale : une transformation totale a xf = xmax ; ici xf < xmax" },
+          { code: "non-totale-sans-reactifs", texte: "Croire qu'il ne reste plus de réactifs : si xf < xmax, le réactif limitant n'a pas entièrement disparu" },
+          null,
+          { code: "xf-toujours-xmax", texte: "Croire que xf vaut toujours xmax : xmax est une valeur théorique ; beaucoup de transformations s'arrêtent avant" }
+        ],
+        exp: "xf < xmax : la transformation est non totale ; à l'état final, réactifs et produits coexistent. Attention : xmax n'est atteint que pour une transformation totale."
+      },
+      {
+        q: "Pour 2 H₂ + O₂ → 2 H₂O, la quantité de dihydrogène, pour un avancement x, s'écrit :",
+        opts: [
+          "n₀(H₂) − x",
+          "n₀(H₂) + 2 x",
+          "n₀(H₂) − 2 x",
+          "2 n₀(H₂) − x"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique : 2 moles de H₂ disparaissent quand x augmente de 1 mol" },
+          { code: "signe-avancement-reactif", texte: "Ajouter au lieu de retrancher : un réactif est consommé, sa quantité diminue quand x augmente" },
+          null,
+          { code: "coefficient-applique-a-n0", texte: "Multiplier la quantité initiale par le nombre stœchiométrique : le coefficient multiplie x, pas n₀" }
+        ],
+        exp: "Pour un réactif de nombre stœchiométrique a : n = n₀ − a x, ici n(H₂) = n₀(H₂) − 2 x. Attention : le coefficient multiplie l'avancement, et le signe est « − » pour un réactif."
+      },
+      {
+        q: "Zn(s) + 2 H⁺(aq) → Zn²⁺(aq) + H₂(g), transformation totale, avec n₀(H⁺) = 1,0×10⁻² mol (H⁺ limitant). Le volume de dihydrogène formé dans les conditions usuelles (Vm = 24,0 L·mol⁻¹) vaut :",
+        opts: [
+          "0,24 L",
+          "0,12 L",
+          "0,48 L",
+          "2,1×10⁻⁴ L"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique 2 de H⁺ : xmax = 1,0×10⁻² / 2, donc n(H₂) = 5,0×10⁻³ mol" },
+          null,
+          { code: "stoechiometrie-inversee", texte: "Multiplier par 2 au lieu de diviser : 2 × 1,0×10⁻² × 24,0 = 0,48" },
+          { code: "quotient-au-lieu-produit", texte: "Diviser au lieu de multiplier : 5,0×10⁻³ / 24,0 ; il faut V = n × Vm" }
+        ],
+        exp: "xmax = n₀(H⁺) / 2 = 5,0×10⁻³ mol, n(H₂) = xmax, donc V = n × Vm = 5,0×10⁻³ × 24,0 = 0,12 L. Attention : 2 H⁺ sont nécessaires pour former 1 H₂."
+      },
+      {
+        q: "Un programme Python calcule xmax = min(nA / a, nB / b) pour la réaction a A + b B → produits. Pourquoi la fonction min ?",
+        opts: [
+          "La transformation s'arrête dès qu'un réactif est épuisé",
+          "Le limitant est toujours le réactif en plus petite quantité",
+          "Le résultat donne directement la quantité de produit formé",
+          "La transformation s'arrête quand tous les réactifs sont épuisés"
         ],
         ans: 0,
-        exp: "On compare 0,050/1 = 0,050 et 0,080/1 = 0,080 : le plus petit rapport correspond à Fe, qui est donc le réactif limitant."
-      },
-      {
-        q: "Pour la même réaction, quel est l'avancement maximal xmax ?",
-        opts: [
-          "0,030 mol",
-          "0,050 mol",
-          "0,080 mol",
-          "0,130 mol"
+        pieges: [
+          null,
+          { code: "limitant-plus-petite-quantite", texte: "Croire que le limitant est le réactif en plus petite quantité : le programme compare nA / a et nB / b, pas nA et nB" },
+          { code: "xmax-vs-quantite-produit", texte: "Confondre xmax et quantité de produit : un produit de coefficient c a pour quantité c × xmax" },
+          { code: "tous-reactifs-consommes", texte: "Croire que tous les réactifs s'épuisent : il faudrait alors max, or la transformation s'arrête au premier réactif épuisé" }
         ],
-        ans: 1,
-        exp: "Le réactif limitant est Fe avec n0(Fe) = 0,050 mol (coefficient 1), donc xmax = 0,050 mol."
-      },
-      {
-        q: "Toujours pour cette réaction supposée totale, quelle est la quantité de matière de Cu²⁺ à l'état final ?",
-        opts: [
-          "0 mol",
-          "0,030 mol",
-          "0,050 mol",
-          "0,080 mol"
-        ],
-        ans: 1,
-        exp: "n(Cu²⁺) final = n0(Cu²⁺) − xmax = 0,080 − 0,050 = 0,030 mol."
-      },
-      {
-        q: "Une transformation est dite totale lorsque :",
-        opts: [
-          "xf > xmax",
-          "xf = xmax",
-          "xf < xmax",
-          "xf = 0"
-        ],
-        ans: 1,
-        exp: "Une transformation totale se caractérise par un avancement final égal à l'avancement maximal (xf = xmax) : le réactif limitant a entièrement disparu."
-      },
-      {
-        q: "Pour la combustion du méthane CH4(g) + 2 O2(g) → CO2(g) + 2 H2O(g), avec n0(CH4) = 0,20 mol et n0(O2) = 0,40 mol, peut-on dire que le mélange est stœchiométrique ?",
-        opts: [
-          "Non, car les quantités initiales ne sont pas égales",
-          "Oui, car n0(CH4)/1 = n0(O2)/2 = 0,20",
-          "Non, il manque des informations sur la température",
-          "Oui, mais seulement si la transformation est non totale"
-        ],
-        ans: 1,
-        exp: "Les rapports n0/coefficient sont égaux : n0(CH4)/1 = 0,20 et n0(O2)/2 = 0,20. Le mélange est donc stœchiométrique : les deux réactifs disparaissent simultanément."
-      },
-      {
-        q: "Pour cette même réaction, si l'on introduit maintenant n0(O2) = 0,50 mol (n0(CH4) restant à 0,20 mol), quel devient le réactif limitant ?",
-        opts: [
-          "O2, car sa quantité initiale est plus grande",
-          "CH4, car son rapport n0/coefficient (0,20) est plus petit que celui de O2 (0,25)",
-          "Aucun changement, CH4 reste limitant",
-          "Les deux réactifs sont limitants simultanément"
-        ],
-        ans: 1,
-        exp: "Les rapports deviennent 0,20/1 = 0,20 pour CH4 et 0,50/2 = 0,25 pour O2 : le plus petit rapport (0,20) correspond à CH4, qui devient le réactif limitant."
-      },
-      {
-        q: "Pour une transformation, le calcul donne xmax = 0,040 mol mais la mesure expérimentale montre qu'à l'état final xf = 0,031 mol. Que peut-on en conclure ?",
-        opts: [
-          "La transformation est totale",
-          "La transformation est non totale, car xf < xmax",
-          "Il y a eu une erreur de calcul obligatoirement",
-          "xmax a été mal défini"
-        ],
-        ans: 1,
-        exp: "Puisque xf = 0,031 mol est strictement inférieur à xmax = 0,040 mol, la transformation est non totale : réactifs et produits coexistent à l'état final."
-      },
-      {
-        q: "On fait réagir V = 20,0 mL d'une solution d'acide chlorhydrique à C = 0,50 mol/L (apportant les ions H⁺) avec un excès de zinc, selon Zn(s) + 2 H⁺(aq) → Zn²⁺(aq) + H2(g), transformation totale. Sachant que n0(H⁺) = 1,0×10⁻² mol et que H⁺ est limitant, quel volume de dihydrogène se forme dans les conditions usuelles (Vm = 24,0 L/mol) ?",
-        opts: [
-          "1,0×10⁻² L",
-          "0,12 L",
-          "0,24 L",
-          "5,0×10⁻³ L"
-        ],
-        ans: 1,
-        exp: "H⁺ étant limitant avec le coefficient 2, xmax = n0(H⁺)/2 = 1,0×10⁻²/2 = 5,0×10⁻³ mol. Comme n(H2) = xmax, V(H2) = xmax × Vm = 5,0×10⁻³ × 24,0 = 0,12 L = 120 mL."
+        exp: "Chaque rapport n / coefficient est la valeur de x qui épuise ce réactif ; la transformation s'arrête à la première atteinte, donc à la plus petite : xmax = min(…). Attention : on compare les rapports, pas les quantités."
       }
     ],
     annales: [],
@@ -31756,112 +31936,172 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
       {
         q: "Un oxydant est une espèce chimique capable de :",
         opts: [
-          "céder des électrons",
-          "capter des électrons",
-          "céder des protons",
-          "capter des neutrons"
+          "céder un ou plusieurs électrons",
+          "capter un ou plusieurs électrons",
+          "céder un ion hydrogène H⁺",
+          "céder des atomes d'oxygène"
         ],
         ans: 1,
-        exp: "Un oxydant capte un ou plusieurs électrons ; un réducteur en cède."
-      },
-      {
-        q: "Dans le couple Zn²⁺ / Zn, quelle est l'espèce oxydante ?",
-        opts: [
-          "Zn²⁺",
-          "Zn",
-          "Les deux espèces sont oxydantes",
-          "Aucune des deux"
+        pieges: [
+          { code: "oxydant-reducteur-inverses", texte: "Inverser oxydant et réducteur : c'est le réducteur qui cède des électrons, l'oxydant les capte" },
+          null,
+          { code: "confusion-acide-base-redox", texte: "Confondre oxydoréduction (échange d'électrons) et acide-base (échange d'ions H⁺)" },
+          { code: "oxydant-contient-oxygene", texte: "Croire qu'un oxydant contient forcément de l'oxygène : Cu²⁺, Ag⁺ ou Cl₂ sont des oxydants sans oxygène" }
         ],
-        ans: 0,
-        exp: "Dans un couple Ox/Red noté ainsi, l'oxydant est toujours écrit en premier : ici Zn²⁺ est l'oxydant et Zn le réducteur."
+        exp: "Un oxydant capte des électrons ; un réducteur en cède. Attention : le mot « oxydant » ne veut pas dire « qui contient de l'oxygène »."
       },
       {
-        q: "Quelle est la demi-équation électronique du couple Fe²⁺ / Fe ?",
+        q: "Une oxydation est :",
         opts: [
-          "Fe²⁺ = Fe + 2 e⁻",
-          "Fe²⁺ + 2 e⁻ = Fe",
-          "Fe + 2 e⁻ = Fe²⁺",
-          "2 Fe²⁺ + e⁻ = Fe"
-        ],
-        ans: 1,
-        exp: "Pour équilibrer les charges (2+ à gauche, 0 à droite), il faut ajouter 2 électrons du côté de l'oxydant : Fe²⁺ + 2 e⁻ = Fe."
-      },
-      {
-        q: "On plonge une lame de fer dans une solution de nitrate d'argent : les couples en jeu sont Ag⁺/Ag et Fe²⁺/Fe. Quelle est l'équation de la réaction, une fois les électrons équilibrés ?",
-        opts: [
-          "Fe + Ag⁺ → Fe²⁺ + Ag",
-          "Fe + 2 Ag⁺ → Fe²⁺ + 2 Ag",
-          "2 Fe + Ag⁺ → 2 Fe²⁺ + Ag",
-          "Fe²⁺ + 2 Ag → Fe + 2 Ag⁺"
-        ],
-        ans: 1,
-        exp: "Fe = Fe²⁺ + 2 e⁻ (oxydation) et Ag⁺ + e⁻ = Ag (réduction) ; en multipliant la demi-équation de l'argent par 2 puis en additionnant : Fe + 2 Ag⁺ → Fe²⁺ + 2 Ag."
-      },
-      {
-        q: "Dans la réaction précédente, quel dépôt métallique observe-t-on sur la lame de fer ?",
-        opts: [
-          "Un dépôt de fer",
-          "Un dépôt d'argent",
-          "Un dépôt de zinc",
-          "Aucun dépôt, seulement un dégagement gazeux"
-        ],
-        ans: 1,
-        exp: "Les ions Ag⁺ sont réduits en argent métallique Ag, qui se dépose sur la lame de fer."
-      },
-      {
-        q: "On mélange une solution contenant des ions Fe³⁺ avec une solution contenant du cuivre métallique Cu : on observe la formation d'ions Fe²⁺ et de cuivre (II) Cu²⁺. Quelle espèce est le réducteur oxydé ?",
-        opts: [
-          "Fe³⁺",
-          "Fe²⁺",
-          "Cu",
-          "Cu²⁺"
+          "un gain d'électrons",
+          "une réaction avec le dioxygène",
+          "une perte d'électrons",
+          "la transformation subie par un oxydant"
         ],
         ans: 2,
-        exp: "Le cuivre métallique Cu cède des électrons (il est oxydé en Cu²⁺) : c'est le réducteur. Les ions Fe³⁺ captent des électrons (réduits en Fe²⁺) : c'est l'oxydant."
+        pieges: [
+          { code: "oxydation-reduction-inversees", texte: "Confondre oxydation (perte d'électrons) et réduction (gain d'électrons)" },
+          { code: "oxydation-reaction-o2", texte: "Croire qu'une oxydation fait toujours intervenir le dioxygène : Zn → Zn²⁺ + 2 e⁻ est une oxydation sans O₂" },
+          null,
+          { code: "oxydation-de-l-oxydant", texte: "Croire que l'oxydant s'oxyde : l'oxydant est réduit, c'est le réducteur qui est oxydé" }
+        ],
+        exp: "Une oxydation est une perte d'électrons, subie par un réducteur (ex. : Fe = Fe²⁺ + 2 e⁻). Attention : l'oxydant, lui, est réduit."
       },
       {
-        q: "Quelle est l'équation bilan de la réaction entre le cuivre métallique et les ions Fe³⁺ (couples Fe³⁺/Fe²⁺ et Cu²⁺/Cu) ?",
+        q: "La demi-équation électronique du couple Al³⁺ / Al s'écrit :",
+        opts: [
+          "Al³⁺ = Al + 3 e⁻",
+          "Al³⁺ + e⁻ = Al",
+          "Al³⁺ + 3 e⁻ = Al",
+          "Al³⁺ − 3 e⁻ = Al"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "electrons-cote-reducteur", texte: "Placer les électrons du côté du réducteur : l'oxydant Al³⁺ capte les électrons, ils sont de son côté" },
+          { code: "charges-non-equilibrees", texte: "Ne pas équilibrer les charges : à gauche 3+ − 1 = 2+, à droite 0 ; il faut 3 électrons" },
+          null,
+          { code: "electrons-soustraits", texte: "Retrancher des électrons : on écrit toujours « + n e⁻ » du côté de l'oxydant" }
+        ],
+        exp: "L'oxydant Al³⁺ capte 3 électrons pour donner Al : Al³⁺ + 3 e⁻ = Al (charge 0 de chaque côté). Attention : les électrons se placent du côté de l'oxydant."
+      },
+      {
+        q: "Une lame de fer plongée dans une solution de nitrate d'argent se couvre d'argent et des ions Fe²⁺ se forment (couples Ag⁺/Ag et Fe²⁺/Fe). L'équation de la réaction est :",
+        opts: [
+          "Fe + 2 Ag⁺ → Fe²⁺ + 2 Ag",
+          "Fe + Ag⁺ → Fe²⁺ + Ag",
+          "Fe + 2 Ag⁺ + 2 e⁻ → Fe²⁺ + 2 Ag",
+          "Fe²⁺ + 2 Ag → Fe + 2 Ag⁺"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "electrons-non-equilibres", texte: "Ne pas équilibrer les électrons échangés : Fe en cède 2, Ag⁺ n'en capte qu'un, il faut 2 Ag⁺ (charges : 1+ ≠ 2+)" },
+          { code: "electrons-dans-bilan", texte: "Laisser des électrons dans l'équation : ils s'annulent quand on additionne les demi-équations" },
+          { code: "reactifs-produits-inverses", texte: "Inverser réactifs et produits : le fer métallique est consommé et l'argent se dépose" }
+        ],
+        exp: "Fe = Fe²⁺ + 2 e⁻ et Ag⁺ + e⁻ = Ag (×2) ; en additionnant : Fe + 2 Ag⁺ → Fe²⁺ + 2 Ag. Attention : on multiplie les demi-équations pour que le nombre d'électrons cédés soit égal au nombre captés."
+      },
+      {
+        q: "Dans la réaction Cu + 2 Fe³⁺ → Cu²⁺ + 2 Fe²⁺, quelle espèce est l'oxydant qui réagit ?",
+        opts: [
+          "Cu",
+          "Fe³⁺",
+          "Cu²⁺",
+          "Fe²⁺"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oxydant-reducteur-inverses", texte: "Inverser oxydant et réducteur : Cu cède des électrons (Cu = Cu²⁺ + 2 e⁻), c'est le réducteur" },
+          null,
+          { code: "oxydant-forme-vs-reactif", texte: "Prendre un produit pour le réactif : Cu²⁺ est formé par la réaction, il ne réagit pas" },
+          { code: "espece-reduite-vs-oxydant", texte: "Prendre la forme réduite pour l'oxydant : Fe²⁺ est obtenu quand l'oxydant Fe³⁺ a capté un électron" }
+        ],
+        exp: "Fe³⁺ capte un électron (Fe³⁺ + e⁻ = Fe²⁺) : c'est l'oxydant réactif, il est réduit. Cu cède deux électrons : c'est le réducteur réactif, il est oxydé."
+      },
+      {
+        q: "Couples Fe³⁺/Fe²⁺ et Cu²⁺/Cu : le cuivre métallique réagit avec les ions Fe³⁺. L'équation de la réaction est :",
         opts: [
           "Cu + Fe³⁺ → Cu²⁺ + Fe²⁺",
           "Cu + 2 Fe³⁺ → Cu²⁺ + 2 Fe²⁺",
           "2 Cu + Fe³⁺ → 2 Cu²⁺ + Fe²⁺",
-          "Cu²⁺ + 2 Fe²⁺ → Cu + 2 Fe³⁺"
+          "Cu + 2 Fe³⁺ → Cu²⁺ + 2 Fe"
         ],
         ans: 1,
-        exp: "Cu = Cu²⁺ + 2 e⁻ (oxydation) et Fe³⁺ + e⁻ = Fe²⁺ (réduction, à multiplier par 2 pour équilibrer les électrons) : bilan Cu + 2 Fe³⁺ → Cu²⁺ + 2 Fe²⁺."
-      },
-      {
-        q: "Dans la pile Daniell (compartiment zinc / compartiment cuivre reliés par un pont salin), quelle est l'équation de la réaction globale de fonctionnement ?",
-        opts: [
-          "Zn²⁺ + Cu → Zn + Cu²⁺",
-          "Zn + Cu²⁺ → Zn²⁺ + Cu",
-          "Zn + Cu → Zn²⁺ + Cu²⁺",
-          "Zn²⁺ + Cu²⁺ → Zn + Cu"
+        pieges: [
+          { code: "electrons-non-equilibres", texte: "Ne pas équilibrer les électrons : Cu en cède 2, Fe³⁺ n'en capte qu'un (charges : 3+ ≠ 4+)" },
+          null,
+          { code: "facteur-mauvaise-demi-equation", texte: "Multiplier la mauvaise demi-équation : c'est celle de Fe³⁺ (1 électron) qu'il faut multiplier par 2" },
+          { code: "couples-fer-confondus", texte: "Confondre les couples Fe³⁺/Fe²⁺ et Fe²⁺/Fe : ici Fe³⁺ est réduit en Fe²⁺, pas en fer métallique" }
         ],
-        ans: 1,
-        exp: "Le zinc s'oxyde (Zn = Zn²⁺ + 2 e⁻) et les ions Cu²⁺ se réduisent (Cu²⁺ + 2 e⁻ = Cu) ; les deux demi-équations échangeant déjà 2 électrons, le bilan est Zn + Cu²⁺ → Zn²⁺ + Cu."
+        exp: "Cu = Cu²⁺ + 2 e⁻ et Fe³⁺ + e⁻ = Fe²⁺ (×2) : Cu + 2 Fe³⁺ → Cu²⁺ + 2 Fe²⁺ (charge 6+ de chaque côté). Attention : on multiplie la demi-équation qui échange le moins d'électrons."
       },
       {
-        q: "Lorsque la pile Daniell fonctionne, que peut-on dire de la masse des électrodes ?",
+        q: "Une lame de zinc est plongée dans une solution bleue de sulfate de cuivre (II). Au bout de quelques minutes, on observe :",
         opts: [
-          "Les deux masses augmentent",
-          "Les deux masses diminuent",
-          "La masse de l'électrode de zinc diminue, celle de l'électrode de cuivre augmente",
-          "La masse de l'électrode de zinc augmente, celle de l'électrode de cuivre diminue"
+          "un dépôt de zinc et une solution plus bleue",
+          "un dépôt rouge de cuivre, la solution reste aussi bleue",
+          "un dépôt rouge de cuivre et une solution qui se décolore",
+          "aucun changement : deux métaux ne réagissent pas"
         ],
         ans: 2,
-        exp: "Le zinc s'oxyde et passe en solution sous forme d'ions Zn²⁺ : la lame de zinc perd de la matière. Les ions Cu²⁺ se réduisent en cuivre métallique qui se dépose sur l'électrode de cuivre : sa masse augmente."
+        pieges: [
+          { code: "reactifs-produits-inverses", texte: "Inverser le sens : le zinc est oxydé et passe en solution, les ions Cu²⁺ sont réduits en cuivre" },
+          { code: "couleur-solution-inchangee", texte: "Oublier que les ions Cu²⁺, responsables de la couleur bleue, sont consommés : la solution se décolore" },
+          null,
+          { code: "ions-pas-reactifs", texte: "Croire que seuls les métaux comptent : la réaction a lieu entre le métal Zn et les ions Cu²⁺ de la solution" }
+        ],
+        exp: "Zn + Cu²⁺ → Zn²⁺ + Cu : le cuivre se dépose (rouge) et les ions Cu²⁺, bleus, disparaissent ; les ions Zn²⁺ formés sont incolores. Attention : la décoloration montre que Cu²⁺ est consommé."
       },
       {
-        q: "Parmi les indices expérimentaux suivants, lequel ne permet PAS de mettre en évidence une réaction d'oxydoréduction ?",
+        q: "Du zinc réagit avec l'acide chlorhydrique (H⁺ + Cl⁻) selon Zn + 2 H⁺ → Zn²⁺ + H₂. Le gaz qui se dégage est :",
         opts: [
-          "Un changement de couleur de la solution",
-          "L'apparition d'un dépôt métallique",
-          "Un dégagement gazeux",
-          "Une augmentation de la température ambiante du laboratoire"
+          "du dihydrogène",
+          "du dioxygène",
+          "du dichlore",
+          "de la vapeur d'eau"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "gaz-o2-par-defaut", texte: "Croire qu'un dégagement gazeux est forcément du dioxygène : l'équation montre que H⁺ est réduit en H₂" },
+          { code: "spectateurs-reagissent", texte: "Croire que les ions Cl⁻ réagissent : ce sont des ions spectateurs, ils n'apparaissent pas dans l'équation" },
+          { code: "gaz-vapeur-eau", texte: "Confondre les bulles avec de la vapeur d'eau : la solution ne bout pas, le gaz est un produit de la réaction" }
+        ],
+        exp: "Les ions H⁺ captent des électrons (2 H⁺ + 2 e⁻ = H₂) : il se forme du dihydrogène, qui détonne à l'approche d'une flamme. Attention : les ions Cl⁻ sont spectateurs."
+      },
+      {
+        q: "Parmi ces espèces, laquelle est un réducteur usuel ?",
+        opts: [
+          "Le dichlore Cl₂",
+          "L'ion zinc Zn²⁺",
+          "L'eau de Javel",
+          "Le zinc métallique Zn"
         ],
         ans: 3,
-        exp: "Les indices caractéristiques d'une oxydoréduction sont le changement de couleur, l'apparition/disparition d'un dépôt métallique, un dégagement gazeux ou la disparition d'un solide. La température ambiante du laboratoire n'est pas un indice pertinent."
+        pieges: [
+          { code: "oxydant-usuel-pris-pour-reducteur", texte: "Prendre un oxydant usuel pour un réducteur : le dichlore capte des électrons (Cl₂ + 2 e⁻ = 2 Cl⁻)" },
+          { code: "ion-metallique-vs-metal", texte: "Confondre l'ion métallique et le métal : Zn²⁺ est l'oxydant du couple, c'est le métal Zn qui cède des électrons" },
+          { code: "oxydant-usuel-pris-pour-reducteur", texte: "Prendre un oxydant usuel pour un réducteur : l'eau de Javel est un oxydant (désinfectant, décolorant)" },
+          null
+        ],
+        exp: "Les métaux sont des réducteurs : leurs atomes cèdent des électrons en formant des cations (Zn = Zn²⁺ + 2 e⁻). Le dichlore, l'eau de Javel et le dioxygène sont des oxydants usuels."
+      },
+      {
+        q: "Une solution brune de diiode I₂ est décolorée par de la vitamine C (acide ascorbique) : le diiode est transformé en ions iodure I⁻, incolores. On en déduit que :",
+        opts: [
+          "le diiode est oxydé, il perd des électrons",
+          "le diiode est réduit, il capte des électrons",
+          "l'acide ascorbique capte les électrons du diiode",
+          "il n'y a pas d'oxydoréduction, seule la couleur change"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oxydation-reduction-inversees", texte: "Confondre oxydation et réduction : I₂ + 2 e⁻ = 2 I⁻, le diiode gagne des électrons, il est réduit" },
+          null,
+          { code: "oxydant-reducteur-inverses", texte: "Inverser les rôles : le diiode est l'oxydant ; l'acide ascorbique, réducteur, lui cède des électrons" },
+          { code: "couleur-sans-reaction", texte: "Croire qu'une décoloration n'est pas une transformation : I₂ disparaît et I⁻ se forme, c'est une réaction" }
+        ],
+        exp: "I₂ + 2 e⁻ = 2 I⁻ : le diiode capte des électrons, il est réduit ; l'acide ascorbique (vitamine C), réducteur usuel, les lui cède. Attention : réduction = gain d'électrons."
       }
     ],
     annales: [],
@@ -32271,111 +32511,171 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
         q: "Dans un titrage, le réactif titrant est :",
         opts: [
           "l'espèce dont on cherche la quantité de matière",
-          "le réactif de concentration connue, versé progressivement",
-          "toujours un solide",
-          "toujours incolore"
+          "le réactif de concentration connue, versé à la burette",
+          "le réactif toujours en excès dans le bécher",
+          "forcément une espèce colorée"
         ],
         ans: 1,
-        exp: "Le réactif titrant est apporté par la solution titrante, de concentration connue, et versé progressivement (souvent à la burette). Le réactif titré est l'espèce à doser."
-      },
-      {
-        q: "L'équivalence d'un titrage correspond à :",
-        opts: [
-          "l'instant où l'on verse la première goutte de titrant",
-          "l'instant où les réactifs sont en proportions stœchiométriques (changement de réactif limitant)",
-          "l'instant où toute la solution titrante a été versée",
-          "l'instant où la solution devient totalement transparente"
+        pieges: [
+          { code: "titrant-titre-inverses", texte: "Inverser titrant et titré : l'espèce à doser est le réactif titré, placé dans le bécher" },
+          null,
+          { code: "titrant-toujours-exces", texte: "Croire que le titrant est toujours en excès : avant l'équivalence, c'est lui le réactif limitant" },
+          { code: "titrant-forcement-colore", texte: "Croire que le titrant est forcément coloré : il suffit qu'une espèce (titrant, titré ou produit) change la couleur à l'équivalence" }
         ],
-        ans: 1,
-        exp: "À l'équivalence, les réactifs titrant et titré ont été introduits en proportions stœchiométriques : c'est le moment où le réactif limitant change de statut."
+        exp: "Le réactif titrant est apporté par une solution de concentration connue, versée progressivement à la burette ; le réactif titré est l'espèce à doser. Attention à ne pas inverser les deux."
       },
       {
-        q: "On titre V0 = 10,0 mL d'une solution d'acide oxalique par une solution de permanganate de potassium à C = 4,0×10⁻² mol/L. L'équivalence est obtenue pour Véq = 12,5 mL. Quelle est la quantité de matière de permanganate versée à l'équivalence ?",
+        q: "L'équivalence d'un titrage est atteinte lorsque :",
         opts: [
-          "5,0×10⁻⁴ mol",
-          "4,0×10⁻² mol",
-          "1,25×10⁻³ mol",
-          "3,2×10⁻³ mol"
-        ],
-        ans: 0,
-        exp: "n(MnO4⁻)éq = C × Véq = 4,0×10⁻² × 12,5×10⁻³ = 5,0×10⁻⁴ mol."
-      },
-      {
-        q: "Sachant que la réaction support de ce titrage a pour coefficients stœchiométriques 5 (acide oxalique) et 2 (permanganate), quelle est la quantité de matière d'acide oxalique initialement présente ?",
-        opts: [
-          "5,0×10⁻⁴ mol",
-          "2,0×10⁻⁴ mol",
-          "1,25×10⁻³ mol",
-          "2,5×10⁻³ mol"
+          "on a versé autant de moles de titrant qu'il y avait de titré",
+          "toute la solution de la burette a été versée",
+          "les réactifs titrant et titré ont été introduits dans les proportions stœchiométriques",
+          "le réactif titrant commence à réagir"
         ],
         ans: 2,
-        exp: "À l'équivalence, n0(acide)/5 = n(MnO4⁻)éq/2, donc n0 = (5/2) × 5,0×10⁻⁴ = 1,25×10⁻³ mol."
-      },
-      {
-        q: "Quelle est alors la concentration en acide oxalique de la solution titrée (V0 = 10,0 mL) ?",
-        opts: [
-          "0,050 mol/L",
-          "0,125 mol/L",
-          "1,25 mol/L",
-          "0,0125 mol/L"
+        pieges: [
+          { code: "equivalence-quantites-egales", texte: "Croire qu'à l'équivalence les quantités sont égales : elles sont dans le rapport des nombres stœchiométriques" },
+          { code: "equivalence-burette-vide", texte: "Croire que l'équivalence correspond à la burette vide : le volume équivalent dépend de la quantité de titré" },
+          null,
+          { code: "pas-de-reaction-avant-equivalence", texte: "Croire que la réaction commence à l'équivalence : le titrant réagit dès la première goutte" }
         ],
-        ans: 1,
-        exp: "C0 = n0/V0 = 1,25×10⁻³ / 10,0×10⁻³ = 0,125 mol/L."
+        exp: "À l'équivalence, titrant et titré ont été introduits dans les proportions stœchiométriques : le réactif limitant change (titrant avant, titré après). Attention : « stœchiométriques » ne veut pas dire « égales »."
       },
       {
-        q: "Lors d'un titrage suivi par colorimétrie, le mélange reste incolore de V = 0 à V = 14,8 mL puis se colore progressivement en rose au-delà. Quel volume à l'équivalence peut-on retenir ?",
+        q: "Avant l'équivalence, dans le bécher, le réactif limitant est :",
         opts: [
-          "0 mL",
-          "environ 7,4 mL",
-          "environ 14,8 mL",
-          "on ne peut pas le déterminer"
+          "le réactif titré",
+          "aucun : avant l'équivalence il n'y a pas de réaction",
+          "les deux réactifs, en proportions stœchiométriques",
+          "le réactif titrant"
         ],
-        ans: 2,
-        exp: "Le volume à l'équivalence correspond au dernier volume versé avant l'apparition durable de la coloration, soit environ 14,8 mL."
-      },
-      {
-        q: "Pour prélever précisément le volume V0 de la solution à titrer, quel matériel utilise-t-on ?",
-        opts: [
-          "Une éprouvette graduée",
-          "Une pipette jaugée",
-          "Un bécher",
-          "Une burette graduée"
+        ans: 3,
+        pieges: [
+          { code: "limitant-avant-apres-inverses", texte: "Inverser avant et après : avant l'équivalence, le titrant versé est entièrement consommé, il est limitant" },
+          { code: "pas-de-reaction-avant-equivalence", texte: "Croire que la réaction attend l'équivalence : chaque goutte de titrant réagit aussitôt" },
+          { code: "stoechiometrique-tout-le-long", texte: "Croire que les proportions sont stœchiométriques pendant tout le titrage : elles ne le sont qu'à l'équivalence" },
+          null
         ],
-        ans: 1,
-        exp: "La pipette jaugée permet un prélèvement précis d'un volume donné, contrairement à l'éprouvette graduée qui est moins précise."
+        exp: "Avant l'équivalence, le titrant versé est entièrement consommé : il est limitant et le titré est en excès. Après l'équivalence, c'est l'inverse."
       },
       {
-        q: "Pourquoi ne doit-on pas utiliser une éprouvette graduée pour un titrage précis ?",
+        q: "On verse une solution de permanganate de potassium de concentration C = 2,0×10⁻² mol·L⁻¹ ; l'équivalence est obtenue pour Véq = 12,5 mL. La quantité d'ions MnO₄⁻ versée à l'équivalence vaut :",
         opts: [
-          "Elle ne peut pas contenir de liquides colorés",
-          "Son incertitude de mesure est nettement plus élevée que celle d'une pipette jaugée ou d'une burette",
-          "Elle est trop grande",
-          "Elle ne peut pas être utilisée avec des solutions acides"
-        ],
-        ans: 1,
-        exp: "L'éprouvette graduée présente une incertitude de mesure bien supérieure à celle de la pipette jaugée ou de la burette graduée, verreries de précision adaptées au titrage."
-      },
-      {
-        q: "On titre V0 = 10,0 mL de vinaigre dilué 10 fois par une solution d'hydroxyde de sodium à C = 0,10 mol/L, selon CH3COOH + HO⁻ → CH3COO⁻ + H2O (coefficients 1:1). L'équivalence est obtenue pour Véq = 8,4 mL. Quelle est la quantité de matière d'ions hydroxyde versée à l'équivalence ?",
-        opts: [
-          "8,4×10⁻⁴ mol",
-          "8,4×10⁻² mol",
-          "1,0×10⁻³ mol",
-          "0,84 mol"
+          "2,5×10⁻⁴ mol",
+          "0,25 mol",
+          "1,6 mol",
+          "2,0×10⁻² mol"
         ],
         ans: 0,
-        exp: "n(HO⁻)éq = C × Véq = 0,10 × 8,4×10⁻³ = 8,4×10⁻⁴ mol."
+        pieges: [
+          null,
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 2,0×10⁻² × 12,5 = 0,25 ; 12,5 mL = 12,5×10⁻³ L" },
+          { code: "quotient-au-lieu-produit", texte: "Diviser au lieu de multiplier : 2,0×10⁻² / 12,5×10⁻³ = 1,6 ; il faut n = C × V" },
+          { code: "recopie-concentration-titrante", texte: "Recopier la concentration de la solution titrante : 2,0×10⁻² est en mol·L⁻¹, il faut la multiplier par Véq" }
+        ],
+        exp: "n(MnO₄⁻)éq = C × Véq = 2,0×10⁻² × 12,5×10⁻³ = 2,5×10⁻⁴ mol. Attention : le volume doit être converti en litres."
       },
       {
-        q: "Sachant que le rapport stœchiométrique est 1:1 et que le vinaigre analysé était dilué 10 fois, quelle est la concentration en acide acétique du vinaigre non dilué ?",
+        q: "Ce permanganate titre de l'acide oxalique selon 2 MnO₄⁻ + 5 H₂C₂O₄ + 6 H⁺ → 2 Mn²⁺ + 10 CO₂ + 8 H₂O. Avec n(MnO₄⁻)éq = 2,5×10⁻⁴ mol, la quantité d'acide oxalique titrée vaut :",
         opts: [
-          "8,4×10⁻² mol/L",
-          "0,84 mol/L",
-          "8,4 mol/L",
-          "8,4×10⁻⁴ mol/L"
+          "2,5×10⁻⁴ mol",
+          "1,0×10⁻⁴ mol",
+          "6,3×10⁻⁴ mol",
+          "1,3×10⁻³ mol"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier les nombres stœchiométriques : à l'équivalence, n(acide) / 5 = n(MnO₄⁻) / 2" },
+          { code: "stoechiometrie-inversee", texte: "Inverser le rapport stœchiométrique : 2,5×10⁻⁴ × 2 / 5 ; il faut × 5 / 2" },
+          null,
+          { code: "coefficient-titre-seul", texte: "Multiplier par 5 sans diviser par 2 : 5 × 2,5×10⁻⁴ ; les deux nombres stœchiométriques comptent" }
+        ],
+        exp: "À l'équivalence : n(acide) / 5 = n(MnO₄⁻)éq / 2, donc n(acide) = 5 / 2 × 2,5×10⁻⁴ ≈ 6,3×10⁻⁴ mol. Attention : chaque quantité est divisée par son propre nombre stœchiométrique."
+      },
+      {
+        q: "Cette quantité n = 6,3×10⁻⁴ mol d'acide oxalique était contenue dans V₀ = 10,0 mL de solution. Sa concentration vaut :",
+        opts: [
+          "6,3×10⁻⁵ mol·L⁻¹",
+          "6,3×10⁻² mol·L⁻¹",
+          "6,3×10⁻⁶ mol·L⁻¹",
+          "1,6×10¹ mol·L⁻¹"
         ],
         ans: 1,
-        exp: "n0(acide) = n(HO⁻)éq = 8,4×10⁻⁴ mol, donc C(dilué) = 8,4×10⁻⁴/10,0×10⁻³ = 8,4×10⁻² mol/L. Le vinaigre ayant été dilué 10 fois : C(vinaigre) = 10 × 8,4×10⁻² = 0,84 mol/L."
+        pieges: [
+          { code: "conversion-ml-l", texte: "Oublier de convertir les mL en L : 6,3×10⁻⁴ / 10,0 ; 10,0 mL = 1,00×10⁻² L" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 6,3×10⁻⁴ × 1,00×10⁻² ; il faut C = n / V" },
+          { code: "c-rapport-inverse", texte: "Inverser le rapport : V / n = 1,00×10⁻² / 6,3×10⁻⁴ ≈ 16 ; il faut C = n / V" }
+        ],
+        exp: "C₀ = n / V₀ = 6,3×10⁻⁴ / 1,00×10⁻² = 6,3×10⁻² mol·L⁻¹. Attention : V₀ en litres."
+      },
+      {
+        q: "On titre des ions Fe²⁺ (solution quasi incolore) par le permanganate de potassium (violet). L'équivalence est repérée :",
+        opts: [
+          "quand le mélange se décolore",
+          "à la première goutte qui donne une teinte rose persistante",
+          "quand la burette est vide",
+          "dès la première goutte, qui colore le mélange"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "couleur-equivalence-inversee", texte: "Inverser le changement de couleur : le mélange est incolore avant l'équivalence et devient rose après" },
+          null,
+          { code: "equivalence-burette-vide", texte: "Croire que l'équivalence correspond à la burette vide : elle dépend de la quantité de Fe²⁺ à titrer" },
+          { code: "coloration-avant-equivalence", texte: "Croire que la coloration apparaît dès le début : tant qu'il reste des ions Fe²⁺, les ions MnO₄⁻ versés sont consommés" }
+        ],
+        exp: "Avant l'équivalence, MnO₄⁻ est limitant et disparaît aussitôt : le mélange reste incolore. Juste après, MnO₄⁻ est en excès : la teinte rose persiste. Attention au sens du changement de couleur."
+      },
+      {
+        q: "Pendant ce titrage, pourquoi le mélange reste-t-il incolore avant l'équivalence ?",
+        opts: [
+          "Les ions MnO₄⁻ n'ont pas encore commencé à réagir",
+          "Les ions Fe²⁺ sont le réactif limitant",
+          "Les ions MnO₄⁻ versés sont entièrement consommés",
+          "La solution est trop diluée pour être colorée"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "pas-de-reaction-avant-equivalence", texte: "Croire que la réaction attend l'équivalence : chaque goutte de MnO₄⁻ réagit aussitôt avec Fe²⁺" },
+          { code: "limitant-avant-apres-inverses", texte: "Inverser le réactif limitant : avant l'équivalence, Fe²⁺ est en excès et MnO₄⁻ est limitant" },
+          null,
+          { code: "dilution-efface-couleur", texte: "Attribuer l'absence de couleur à la dilution : après l'équivalence, le mélange, aussi dilué, devient rose" }
+        ],
+        exp: "Avant l'équivalence, MnO₄⁻ (violet) est le réactif limitant : il est entièrement consommé et se transforme en Mn²⁺, quasi incolore. La couleur n'apparaît que lorsqu'il est en excès."
+      },
+      {
+        q: "Pour prélever précisément V₀ = 10,0 mL de la solution à titrer, on utilise :",
+        opts: [
+          "une éprouvette graduée",
+          "une fiole jaugée",
+          "une pipette jaugée",
+          "un bécher gradué"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "eprouvette-precise", texte: "Croire que l'éprouvette graduée est précise : son incertitude est bien plus grande que celle d'une pipette jaugée" },
+          { code: "fiole-pour-prelever", texte: "Confondre fiole jaugée et pipette jaugée : la fiole contient un volume précis, la pipette en prélève un" },
+          null,
+          { code: "becher-mesure-volume", texte: "Croire qu'un bécher mesure un volume : ses graduations sont très approximatives" }
+        ],
+        exp: "La pipette jaugée prélève un volume précis ; la burette graduée verse le titrant et mesure Véq. Attention : l'éprouvette et le bécher ne conviennent pas à un titrage."
+      },
+      {
+        q: "Avant de titrer, on ajoute 20 mL d'eau distillée dans le bécher qui contient V₀ = 10,0 mL de solution à titrer. Le volume versé à l'équivalence :",
+        opts: [
+          "augmente, car le volume total est plus grand",
+          "ne change pas",
+          "diminue, car la solution est diluée",
+          "ne peut plus être exploité"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "veq-proportionnel-volume", texte: "Croire que le volume équivalent dépend du volume total : il dépend de la quantité de réactif titré" },
+          null,
+          { code: "dilution-change-n", texte: "Croire que diluer modifie la quantité de réactif titré : l'eau n'apporte ni n'enlève de réactif" },
+          { code: "eau-fausse-titrage", texte: "Croire que l'eau ajoutée fausse le titrage : seule compte la quantité de titré, mesurée par V₀" }
+        ],
+        exp: "L'eau ne change pas la quantité de réactif titré (n₀ = C₀ × V₀) : il faut toujours la même quantité de titrant, donc le même Véq. Attention : c'est la quantité qui compte, pas la concentration dans le bécher."
       }
     ],
     annales: [],
