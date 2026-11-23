@@ -21431,114 +21431,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une transformation physique se caractérise par :",
+        q: "Dans une casserole d'eau pure qui bout, les grosses bulles qui montent du fond contiennent :",
         opts: [
-          "La formation d'une nouvelle espèce chimique",
-          "L'absence de formation d'une nouvelle espèce chimique",
-          "Une réaction nucléaire",
-          "Un changement de couleur uniquement"
+          "de l'air qui était dissous dans l'eau",
+          "de la vapeur d'eau",
+          "du dihydrogène et du dioxygène",
+          "du vide : ce sont des trous dans le liquide"
         ],
         ans: 1,
-        exp: "Une transformation physique ne forme jamais de nouvelle espèce chimique."
-      },
-      {
-        q: "La fusion correspond au passage de l'état :",
-        opts: [
-          "Liquide à gazeux",
-          "Solide à liquide",
-          "Gazeux à liquide",
-          "Solide à gazeux"
+        pieges: [
+          { code: "bulles-ebullition-air", texte: "Croire que les bulles d'ébullition sont de l'air : c'est l'eau elle-même qui passe à l'état gazeux" },
+          null,
+          { code: "changement-etat-nouvelle-espece", texte: "Croire qu'un changement d'état casse les molécules : la vapeur d'eau est toujours formée de molécules H₂O" },
+          { code: "bulles-vides", texte: "Croire que les bulles sont vides : elles contiennent de l'eau à l'état gazeux" }
         ],
-        ans: 1,
-        exp: "La fusion est le passage de l'état solide à l'état liquide."
+        exp: "À l'ébullition, de l'eau liquide se vaporise au sein du liquide : les bulles contiennent de la vapeur d'eau, toujours des molécules H₂O. Attention : un changement d'état ne crée pas de nouvelle espèce."
       },
       {
-        q: "Une transformation endothermique est une transformation qui :",
+        q: "Lors de la fusion de la glace, les molécules d'eau :",
         opts: [
-          "Libère de l'énergie vers le milieu extérieur",
-          "Absorbe de l'énergie du milieu extérieur",
-          "Ne met en jeu aucune énergie",
-          "Se produit uniquement en chimie nucléaire"
-        ],
-        ans: 1,
-        exp: "Une transformation endothermique absorbe de l'énergie, ce qui refroidit le milieu extérieur."
-      },
-      {
-        q: "Parmi les changements d'état suivants, lequel est exothermique ?",
-        opts: [
-          "Vaporisation",
-          "Fusion",
-          "Solidification",
-          "Sublimation"
-        ],
-        ans: 2,
-        exp: "La solidification (liquide → solide) est exothermique."
-      },
-      {
-        q: "L'énergie massique de changement d'état L s'exprime en :",
-        opts: [
-          "J·kg⁻¹",
-          "W·m⁻²",
-          "kg·m⁻³",
-          "J·s⁻¹"
+          "restent les mêmes, mais se déplacent plus librement",
+          "fondent elles aussi",
+          "se cassent en atomes d'hydrogène et d'oxygène",
+          "deviennent plus grosses"
         ],
         ans: 0,
-        exp: "L s'exprime en joules par kilogramme (J·kg⁻¹)."
+        pieges: [
+          null,
+          { code: "particules-fondent", texte: "Attribuer aux molécules les propriétés de l'objet : une molécule ne fond pas, c'est leur arrangement qui change" },
+          { code: "changement-etat-nouvelle-espece", texte: "Croire qu'un changement d'état casse les molécules : l'eau liquide est toujours formée de molécules H₂O" },
+          { code: "dilatation-des-particules", texte: "Croire que les molécules changent de taille : c'est leur agitation et leur disposition qui changent" }
+        ],
+        exp: "Dans la glace, les molécules H₂O sont ordonnées et liées ; dans l'eau liquide, ce sont les mêmes molécules, mais plus mobiles. Attention : une molécule ne fond pas et ne grossit pas."
       },
       {
-        q: "La formule reliant l'énergie transférée Q, la masse m et l'énergie massique L est :",
+        q: "L'équation de la sublimation du diiode s'écrit :",
         opts: [
-          "Q = m / L",
-          "Q = m × L",
-          "Q = L / m",
-          "Q = m + L"
+          "I₂(s) → I₂(ℓ)",
+          "I₂(g) → I₂(s)",
+          "I₂(s) → 2 I(g)",
+          "I₂(s) → I₂(g)"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "sublimation-vs-fusion", texte: "Confondre sublimation (solide → gaz) et fusion (solide → liquide)" },
+          { code: "sens-changement-etat-inverse", texte: "Écrire le changement d'état dans le mauvais sens : gaz → solide est une condensation" },
+          { code: "changement-etat-nouvelle-espece", texte: "Croire qu'un changement d'état casse les molécules : seul l'état physique change, l'espèce I₂ reste la même" },
+          null
+        ],
+        exp: "La sublimation est le passage direct de l'état solide à l'état gazeux ; l'espèce ne change pas : I₂(s) → I₂(g). Attention : on n'écrit que l'état physique qui change."
+      },
+      {
+        q: "Un morceau de sucre « disparaît » dans un café chaud. Il s'agit :",
+        opts: [
+          "d'une fusion : le sucre devient liquide",
+          "d'une dissolution : le sucre se disperse entre les molécules d'eau",
+          "d'une transformation chimique : le sucre est détruit",
+          "d'une vaporisation : le sucre part avec la vapeur"
         ],
         ans: 1,
-        exp: "La relation est Q = m × L."
-      },
-      {
-        q: "Quelle énergie faut-il fournir pour faire fondre 100 g de glace, sachant que L = 3,34 × 10⁵ J·kg⁻¹ ?",
-        opts: [
-          "3,34 × 10³ J",
-          "3,34 × 10⁴ J",
-          "3,34 × 10⁵ J",
-          "3,34 × 10⁶ J"
+        pieges: [
+          { code: "fusion-vs-dissolution", texte: "Confondre fusion et dissolution : le sucre ne fond qu'à environ 186 °C ; dans le café, il se disperse dans l'eau" },
+          null,
+          { code: "dissolution-disparition", texte: "Croire que le soluté disparaît : il est toujours là (le café est sucré), dispersé entre les molécules d'eau" },
+          { code: "dissolution-vaporisation", texte: "Croire que le soluté s'évapore : le sucre reste dans le liquide, c'est pourquoi le café est sucré" }
         ],
-        ans: 1,
-        exp: "Q = m × L = 0,100 × 3,34 × 10⁵ = 3,34 × 10⁴ J."
+        exp: "Le sucre se disperse entre les molécules d'eau : c'est une dissolution, transformation physique qui n'est pas un changement d'état. Attention : on ne voit plus le sucre, mais il est toujours là."
       },
       {
-        q: "La dissolution du sucre dans l'eau est :",
+        q: "On dissout complètement 5 g de sucre dans 200 g d'eau. La masse de la solution obtenue est :",
         opts: [
-          "Une transformation chimique",
-          "Un changement d'état comme la fusion",
-          "Une transformation physique, de mécanisme différent de la fusion",
-          "Une transformation nucléaire"
+          "200 g",
+          "un peu moins de 205 g, car le sucre a fondu",
+          "205 g",
+          "plus de 205 g, car la solution est plus dense que l'eau"
         ],
         ans: 2,
-        exp: "La dissolution est physique (pas de nouvelle espèce) mais ce n'est pas un changement d'état."
-      },
-      {
-        q: "Lors de la fusion de la glace, la température du mélange eau-glace :",
-        opts: [
-          "Augmente continûment",
-          "Diminue continûment",
-          "Reste constante tant que les deux états coexistent",
-          "Devient négative"
+        pieges: [
+          { code: "dissolution-disparition", texte: "Croire que le soluté dissous ne pèse plus rien : sa masse s'ajoute à celle de l'eau" },
+          { code: "fusion-vs-dissolution", texte: "Confondre dissolution et fusion ; de toute façon, aucune des deux ne change la masse" },
+          null,
+          { code: "masse-vs-masse-volumique", texte: "Confondre masse et masse volumique : la solution est plus dense, mais sa masse est la somme des masses" }
         ],
-        ans: 2,
-        exp: "La température reste constante pendant tout le changement d'état."
+        exp: "La masse se conserve : 5 + 200 = 205 g. Attention : le sucre dissous est invisible, mais il est toujours là et il pèse toujours 5 g."
       },
       {
-        q: "Un glaçon qui fond et du sucre qui se dissout dans l'eau ont en commun :",
+        q: "En sortant de la piscine, on a froid, même au soleil. L'évaporation de l'eau sur la peau est :",
         opts: [
-          "Ce sont tous deux des changements d'état",
-          "Aucune nouvelle espèce chimique n'est formée dans les deux cas",
-          "Ils se produisent tous deux à température constante caractéristique",
-          "Ce sont des transformations nucléaires"
+          "exothermique : elle libère du froid sur la peau",
+          "endothermique : elle prend de l'énergie à la peau",
+          "exothermique : elle prend de l'énergie à la peau",
+          "sans échange d'énergie : seul le vent refroidit"
         ],
         ans: 1,
-        exp: "Fusion et dissolution sont deux transformations physiques : aucune espèce chimique nouvelle n'apparaît."
+        pieges: [
+          { code: "froid-substance", texte: "Croire que le froid est une substance qui se transmet : c'est la peau qui perd de l'énergie" },
+          null,
+          { code: "endo-exo-inverses", texte: "Inverser endothermique et exothermique : une transformation qui reçoit de l'énergie est endothermique" },
+          { code: "changement-etat-sans-energie", texte: "Croire qu'un changement d'état se fait sans énergie : la vaporisation en demande, prise ici à la peau" }
+        ],
+        exp: "La vaporisation est endothermique : l'eau qui s'évapore reçoit de l'énergie de la peau, qui se refroidit. Attention : le froid n'est pas une substance, c'est un manque d'énergie."
+      },
+      {
+        q: "Dans un congélateur, de l'eau liquide à 0 °C se transforme en glace. Pendant cette solidification, l'eau :",
+        opts: [
+          "reçoit du froid venant du congélateur",
+          "reçoit de l'énergie, car la solidification est endothermique",
+          "cède de l'énergie au milieu extérieur",
+          "n'échange pas d'énergie, puisque sa température reste à 0 °C"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "froid-substance", texte: "Croire que le froid est une substance qui se transmet : c'est l'eau qui cède de l'énergie" },
+          { code: "endo-exo-inverses", texte: "Inverser endothermique et exothermique : la solidification libère de l'énergie, elle est exothermique" },
+          null,
+          { code: "palier-sans-transfert", texte: "Croire qu'une température constante signifie aucun échange d'énergie : pendant le palier, l'eau cède de l'énergie sans changer de température" }
+        ],
+        exp: "La solidification est exothermique : l'eau cède de l'énergie au congélateur, tout en restant à 0 °C tant que la glace et l'eau coexistent. Attention : température constante ne veut pas dire absence de transfert."
+      },
+      {
+        q: "Un glaçon fond dans un verre d'eau. Tant qu'il reste de la glace, la température du mélange eau-glace :",
+        opts: [
+          "reste à 0 °C, car le mélange ne reçoit plus d'énergie",
+          "augmente progressivement",
+          "descend sous 0 °C, car la glace refroidit l'eau",
+          "reste à 0 °C, bien que le mélange reçoive de l'énergie"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "palier-sans-transfert", texte: "Croire qu'une température constante signifie aucun échange d'énergie : l'énergie reçue sert à faire fondre la glace" },
+          { code: "palier-temperature-varie", texte: "Croire que la température d'un corps pur varie pendant un changement d'état : elle reste constante (palier)" },
+          { code: "froid-substance", texte: "Croire que la glace « donne du froid » : c'est l'eau plus chaude qui cède de l'énergie à la glace" },
+          null
+        ],
+        exp: "Pendant la fusion, l'énergie reçue sert au changement d'état : la température reste à 0 °C tant que glace et eau coexistent. Attention : le palier n'est pas une absence d'échange d'énergie."
+      },
+      {
+        q: "L'énergie massique de vaporisation de l'eau vaut L = 2,26×10⁶ J·kg⁻¹. L'énergie nécessaire pour vaporiser 250 g d'eau vaut :",
+        opts: [
+          "5,65×10⁵ J",
+          "5,65×10⁸ J",
+          "9,04×10⁶ J",
+          "1,1×10⁻⁷ J"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 250 × 2,26×10⁶ = 5,65×10⁸" },
+          { code: "l-sur-m", texte: "Diviser L par la masse : 2,26×10⁶ / 0,250 ; il faut Q = m × L" },
+          { code: "m-sur-l", texte: "Diviser la masse par L : 0,250 / 2,26×10⁶ ; il faut Q = m × L" }
+        ],
+        exp: "Q = m × L = 0,250 × 2,26×10⁶ = 5,65×10⁵ J. Attention : L est en J·kg⁻¹, la masse doit être en kilogrammes."
+      },
+      {
+        q: "On dispose de 6,68×10⁴ J pour faire fondre de la glace à 0 °C ; L(fusion) = 3,34×10⁵ J·kg⁻¹. La masse de glace que l'on peut faire fondre vaut :",
+        opts: [
+          "5,0 kg",
+          "0,200 kg",
+          "2,23×10¹⁰ kg",
+          "0,200 g"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "l-sur-q", texte: "Inverser le rapport : L / Q = 3,34×10⁵ / 6,68×10⁴ = 5,0 ; il faut m = Q / L" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 6,68×10⁴ × 3,34×10⁵" },
+          { code: "unite-kg-vs-g", texte: "Se tromper d'unité : avec L en J·kg⁻¹, Q / L donne une masse en kilogrammes (0,200 kg = 200 g)" }
+        ],
+        exp: "m = Q / L = 6,68×10⁴ / 3,34×10⁵ = 0,200 kg, soit 200 g. Attention : avec L en J·kg⁻¹, le résultat est en kilogrammes."
       }
     ],
     annales: [],
@@ -21983,114 +22043,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Des atomes isotopes ont :",
+        q: "Les noyaux ¹²₆C et ¹⁴₆C sont isotopes. Ils ont :",
         opts: [
-          "Le même nombre de neutrons",
-          "Le même numéro atomique Z et un nombre de neutrons différent",
-          "Le même nombre de nucléons A",
-          "Des propriétés chimiques différentes"
-        ],
-        ans: 1,
-        exp: "Les isotopes ont le même Z (même nombre de protons) mais un nombre de neutrons différent."
-      },
-      {
-        q: "Lors d'une transformation nucléaire, contrairement à une transformation chimique :",
-        opts: [
-          "Les éléments chimiques sont conservés",
-          "Les éléments chimiques ne sont pas nécessairement conservés",
-          "Il n'y a jamais d'énergie libérée",
-          "Le nombre de nucléons n'est jamais conservé"
-        ],
-        ans: 1,
-        exp: "Une transformation nucléaire peut changer la nature de l'élément chimique (Z change), contrairement à une transformation chimique."
-      },
-      {
-        q: "Les lois de conservation de Soddy imposent la conservation de :",
-        opts: [
-          "La masse et le volume",
-          "Le nombre de nucléons A et le numéro atomique Z",
-          "La température et la pression",
-          "Le nombre de neutrons uniquement"
-        ],
-        ans: 1,
-        exp: "Les lois de Soddy imposent la conservation du nombre de nucléons A et de la charge (numéro atomique Z)."
-      },
-      {
-        q: "Lors d'une désintégration α, le noyau émet :",
-        opts: [
-          "Un électron",
-          "Un positon",
-          "Un noyau d'hélium",
-          "Un rayonnement X"
+          "le même nombre de nucléons",
+          "le même nombre de neutrons, mais pas de protons",
+          "le même nombre de protons, mais pas de neutrons",
+          "des propriétés chimiques différentes"
         ],
         ans: 2,
-        exp: "La désintégration α correspond à l'émission d'un noyau d'hélium ⁴₂He."
+        pieges: [
+          { code: "isotopes-meme-a", texte: "Croire que des isotopes ont le même A : ils ont le même Z, mais des A différents (12 et 14)" },
+          { code: "isotopes-meme-n", texte: "Inverser protons et neutrons : des isotopes ont le même nombre de protons (Z), pas de neutrons" },
+          null,
+          { code: "isotopes-chimie-differente", texte: "Croire que des isotopes réagissent différemment : ils ont les mêmes électrons, donc les mêmes propriétés chimiques" }
+        ],
+        exp: "Même Z = 6 : 6 protons (même élément, le carbone) ; N = 12 − 6 = 6 et N = 14 − 6 = 8 neutrons. Attention : des isotopes ont les mêmes propriétés chimiques."
       },
       {
-        q: "Lors d'une désintégration β⁻, le numéro atomique Z du noyau :",
+        q: "Lequel de ces noyaux est un isotope de l'oxygène 16, ¹⁶₈O ?",
         opts: [
-          "Diminue de 1",
-          "Augmente de 1",
-          "Diminue de 2",
-          "Reste inchangé"
+          "¹⁶₇N",
+          "¹⁸₈O",
+          "¹⁷₉F",
+          "l'ion oxyde O²⁻"
         ],
         ans: 1,
-        exp: "La désintégration β⁻ émet un électron et Z augmente de 1."
+        pieges: [
+          { code: "isotopes-meme-a", texte: "Croire que des isotopes ont le même A : ¹⁶₇N a 7 protons, c'est un autre élément" },
+          null,
+          { code: "isotopes-meme-n", texte: "Chercher le même nombre de neutrons : ¹⁷₉F a 8 neutrons comme ¹⁶₈O, mais 9 protons, c'est un autre élément" },
+          { code: "isotopes-vs-ions", texte: "Confondre isotope et ion : un ion a gagné ou perdu des électrons, son noyau ne change pas" }
+        ],
+        exp: "Un isotope de ¹⁶₈O a le même Z = 8 et un A différent : ¹⁸₈O (10 neutrons). Attention : des isotopes diffèrent par leurs neutrons, des ions par leurs électrons."
       },
       {
-        q: "Lors d'une désintégration β⁺, le numéro atomique Z du noyau :",
+        q: "Combien de neutrons contient le noyau de carbone 14, ¹⁴₆C ?",
         opts: [
-          "Diminue de 1",
-          "Augmente de 1",
-          "Diminue de 2",
-          "Reste inchangé"
+          "14",
+          "6",
+          "20",
+          "8"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "neutrons-egal-a", texte: "Prendre A pour le nombre de neutrons : N = A − Z = 14 − 6" },
+          { code: "z-vs-n", texte: "Confondre Z et N : Z = 6 est le nombre de protons" },
+          { code: "a-plus-z", texte: "Additionner A et Z : A compte déjà les protons, N = A − Z" },
+          null
+        ],
+        exp: "N = A − Z = 14 − 6 = 8 neutrons. Attention : A est le nombre total de nucléons (protons + neutrons)."
+      },
+      {
+        q: "Laquelle de ces écritures traduit une transformation nucléaire ?",
+        opts: [
+          "C + O₂ → CO₂",
+          "²³⁵U(s) → ²³⁵U(ℓ)",
+          "¹⁴₆C → ¹⁴₇N + ⁰₋₁e",
+          "Na → Na⁺ + e⁻"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "nucleaire-vs-chimique", texte: "Confondre transformation chimique et nucléaire : dans C + O₂ → CO₂, les éléments sont conservés" },
+          { code: "uranium-donc-nucleaire", texte: "Croire que tout ce qui concerne l'uranium est nucléaire : ici c'est une fusion (changement d'état), une transformation physique" },
+          null,
+          { code: "ion-vs-nucleaire", texte: "Croire que perdre un électron est nucléaire : le noyau ne change pas, c'est la formation d'un ion" }
+        ],
+        exp: "Dans ¹⁴₆C → ¹⁴₇N + ⁰₋₁e, le noyau change d'élément (Z passe de 6 à 7) : c'est nucléaire. Attention : le mot « fusion » désigne aussi un simple changement d'état."
+      },
+      {
+        q: "Dans une centrale : ²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + x ¹₀n. Le nombre x de neutrons formés vaut :",
+        opts: [
+          "2",
+          "1, comme le neutron qui a provoqué la fission",
+          "3",
+          "0, car Z est déjà conservé"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "oubli-neutron-incident", texte: "Oublier le neutron incident dans les réactifs : A = 235 + 1 = 236 à gauche, donc 236 = 141 + 92 + x" },
+          { code: "neutrons-entree-sortie", texte: "Croire qu'il ressort autant de neutrons qu'il en entre : c'est la conservation de A qui donne x" },
+          null,
+          { code: "oubli-conservation-a", texte: "Ne vérifier que Z : il faut aussi conserver le nombre de nucléons A" }
+        ],
+        exp: "Conservation de A : 235 + 1 = 141 + 92 + x, donc x = 3 ; Z : 92 = 56 + 36 (les neutrons ont Z = 0). Attention : on conserve à la fois A et Z."
+      },
+      {
+        q: "Le carbone 11 se désintègre : ¹¹₆C → ¹¹₅B + X. La particule X est :",
+        opts: [
+          "un électron ⁰₋₁e",
+          "un positon ⁰₊₁e",
+          "un noyau d'hélium ⁴₂He",
+          "un neutron ¹₀n"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "signe-z-particule", texte: "Mal conserver Z : 6 = 5 + z donne z = +1, la particule est un positon" },
+          null,
+          { code: "oubli-conservation-a", texte: "Ne pas vérifier A : avec ⁴₂He on aurait 11 = 11 + 4, impossible" },
+          { code: "oubli-conservation-z", texte: "Oublier de conserver Z : avec un neutron, on aurait 6 = 5 + 0" }
+        ],
+        exp: "A : 11 = 11 + a, donc a = 0 ; Z : 6 = 5 + z, donc z = +1 : X = ⁰₊₁e, un positon. Attention : on applique les deux lois de conservation pour identifier la particule."
+      },
+      {
+        q: "Le polonium 210 émet un noyau d'hélium : ²¹⁰₈₄Po → X + ⁴₂He. Le noyau X est :",
+        opts: [
+          "²¹⁴₈₆Rn",
+          "²⁰⁶₈₄Po",
+          "²⁰⁶₈₂Pb",
+          "²⁰⁸₈₂Pb"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "conservation-addition", texte: "Ajouter au lieu de soustraire : A(X) = 210 − 4 et Z(X) = 84 − 2" },
+          { code: "oubli-conservation-z", texte: "Oublier de conserver Z : le noyau perd 2 protons, il change d'élément" },
+          null,
+          { code: "a-z-melanges", texte: "Retirer à A le Z de la particule : A(X) = 210 − 4 = 206, pas 210 − 2" }
+        ],
+        exp: "A : 210 = A + 4, donc A = 206 ; Z : 84 = Z + 2, donc Z = 82 (plomb) : X = ²⁰⁶₈₂Pb. Attention : Z change, donc l'élément change."
+      },
+      {
+        q: "L'énergie rayonnée par le Soleil provient :",
+        opts: [
+          "de la fusion de noyaux d'hydrogène en hélium",
+          "de la fission de noyaux lourds, comme dans une centrale",
+          "d'une gigantesque combustion de gaz",
+          "de la chaleur stockée lors de sa formation"
         ],
         ans: 0,
-        exp: "La désintégration β⁺ émet un positon et Z diminue de 1."
-      },
-      {
-        q: "La fusion nucléaire est la réaction qui se produit :",
-        opts: [
-          "Dans les réacteurs des centrales nucléaires",
-          "Au cœur du Soleil",
-          "Lors d'une combustion",
-          "Lors d'une dissolution"
+        pieges: [
+          null,
+          { code: "fusion-fission-inverses", texte: "Confondre fusion (noyaux légers qui s'assemblent, dans le Soleil) et fission (noyau lourd qui se scinde, dans les centrales)" },
+          { code: "soleil-combustion", texte: "Croire que le Soleil « brûle » : il n'y a pas de combustion (réaction chimique) mais des réactions nucléaires" },
+          { code: "soleil-reserve-chaleur", texte: "Croire que le Soleil vide une réserve de chaleur : son énergie est produite en permanence par fusion nucléaire" }
         ],
-        ans: 1,
-        exp: "La fusion nucléaire se produit naturellement au cœur du Soleil et des étoiles."
+        exp: "Au cœur du Soleil, des noyaux d'hydrogène fusionnent en noyaux d'hélium en libérant une énergie énorme. Attention : ce n'est ni une combustion, ni une fission."
       },
       {
-        q: "La fission nucléaire consiste en :",
+        q: "Dans le réacteur d'une centrale nucléaire, un noyau d'uranium 235 qui absorbe un neutron :",
         opts: [
-          "L'association de deux noyaux légers",
-          "La scission d'un noyau lourd en deux noyaux plus légers",
-          "La perte d'un électron par un atome",
-          "Un changement d'état"
-        ],
-        ans: 1,
-        exp: "La fission scinde un noyau lourd fissile en deux noyaux plus légers."
-      },
-      {
-        q: "L'équation 2 Na + Cl₂ → 2 NaCl est un exemple de :",
-        opts: [
-          "Transformation physique",
-          "Transformation chimique",
-          "Transformation nucléaire",
-          "Transformation isotopique"
-        ],
-        ans: 1,
-        exp: "De nouvelles espèces chimiques (NaCl) sont formées à partir des réactifs : c'est une transformation chimique."
-      },
-      {
-        q: "L'équation ²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He est un exemple de :",
-        opts: [
-          "Transformation physique",
-          "Transformation chimique",
-          "Transformation nucléaire (désintégration α)",
-          "Dissolution"
+          "fusionne avec un autre noyau d'uranium",
+          "brûle en produisant du dioxyde de carbone",
+          "se scinde en deux noyaux plus légers et libère des neutrons",
+          "devient un isotope plus lourd, qui reste stable"
         ],
         ans: 2,
-        exp: "Le numéro atomique change (92 → 90) : c'est une transformation nucléaire, ici une désintégration α."
+        pieges: [
+          { code: "fusion-fission-inverses", texte: "Confondre fusion et fission : dans une centrale, un noyau lourd se scinde (fission)" },
+          { code: "nucleaire-vs-chimique", texte: "Confondre réaction nucléaire et combustion (réaction chimique) : une centrale nucléaire ne rejette pas de CO₂ par réaction" },
+          null,
+          { code: "fission-absorption-seule", texte: "Croire que le noyau garde simplement le neutron : l'uranium 235 se scinde, ce qui libère l'énergie" }
+        ],
+        exp: "C'est la fission : le noyau d'uranium 235 se scinde en deux noyaux plus légers et libère 2 ou 3 neutrons, qui peuvent provoquer d'autres fissions (réaction en chaîne)."
+      },
+      {
+        q: "À masse égale, la fission de l'uranium 235 libère, par rapport à la combustion du charbon :",
+        opts: [
+          "à peu près autant d'énergie",
+          "environ 10 fois plus d'énergie",
+          "environ un million de fois plus d'énergie",
+          "moins d'énergie, mais sans rejeter de CO₂"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "nucleaire-energie-comparable", texte: "Croire que réactions nucléaires et chimiques libèrent des énergies comparables : le nucléaire libère des énergies bien plus grandes" },
+          { code: "ordre-grandeur-sous-estime", texte: "Sous-estimer l'écart : c'est de l'ordre d'un million (10⁶), pas de 10" },
+          null,
+          { code: "nucleaire-moins-energie", texte: "Croire que le nucléaire libère moins d'énergie : à masse égale, il en libère environ un million de fois plus" }
+        ],
+        exp: "La fission d'une masse d'uranium 235 libère environ un million de fois plus d'énergie que la combustion de la même masse de charbon. Attention : les énergies nucléaires sont sans commune mesure avec les énergies chimiques."
       }
     ],
     annales: [],
@@ -22546,114 +22666,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Une transformation chimique correspond au passage :",
+        q: "Pour ajuster l'équation H₂ + O₂ → H₂O, on écrit :",
         opts: [
-          "D'un état final à un état initial sans formation de nouvelles espèces",
-          "D'un état initial à un état final avec formation de nouvelles espèces chimiques",
-          "D'un état solide à un état liquide uniquement",
-          "D'un système à l'équilibre thermique"
-        ],
-        ans: 1,
-        exp: "Une transformation chimique est le passage d'un état initial (réactifs) à un état final (produits) avec formation de nouvelles espèces chimiques."
-      },
-      {
-        q: "Dans l'équation d'une réaction chimique, on peut ajuster :",
-        opts: [
-          "Les indices des formules chimiques",
-          "Les nombres stœchiométriques placés devant les formules",
-          "Les symboles chimiques des éléments",
-          "Les états physiques des espèces"
-        ],
-        ans: 1,
-        exp: "On ajuste uniquement les nombres stœchiométriques placés devant les formules chimiques, jamais les indices à l'intérieur des formules."
-      },
-      {
-        q: "L'équation ajustée de la combustion complète du méthane est :",
-        opts: [
-          "CH4 + O2 → CO2 + H2O",
-          "CH4 + 2 O2 → CO2 + 2 H2O",
-          "2 CH4 + O2 → 2 CO2 + H2O",
-          "CH4 + 2 O2 → CO2 + H2O2"
-        ],
-        ans: 1,
-        exp: "CH4 + 2 O2 → CO2 + 2 H2O : on vérifie 1 C, 4 H et 4 O de chaque côté."
-      },
-      {
-        q: "L'équation de l'action d'un acide sur le calcaire (carbonate de calcium) s'écrit :",
-        opts: [
-          "CaCO3 + H⁺ → Ca²⁺ + H2O + CO2",
-          "CaCO3(s) + 2 H⁺(aq) → Ca²⁺(aq) + H2O(l) + CO2(g)",
-          "Ca²⁺ + CO2 → CaCO3 + H⁺",
-          "CaCO3 + 2 HO⁻ → Ca²⁺ + H2O + CO2"
-        ],
-        ans: 1,
-        exp: "CaCO3(s) + 2 H⁺(aq) → Ca²⁺(aq) + H2O(l) + CO2(g) : il faut 2 ions H⁺ pour équilibrer les 2 charges négatives de l'ion carbonate."
-      },
-      {
-        q: "Dans la réaction HCl(aq) + NaOH(aq) → NaCl(aq) + H2O(l), les ions spectateurs sont :",
-        opts: [
-          "H⁺ et HO⁻",
-          "Cl⁻ et Na⁺",
-          "H⁺ et Na⁺",
-          "Cl⁻ et HO⁻"
-        ],
-        ans: 1,
-        exp: "Les ions Cl⁻ et Na⁺ sont présents avant et après la réaction sans être transformés : ce sont les ions spectateurs. La réaction utile est H⁺ + HO⁻ → H2O."
-      },
-      {
-        q: "Le réactif limitant d'une transformation chimique est celui qui :",
-        opts: [
-          "Est en excès à la fin de la réaction",
-          "Est totalement consommé et arrête la réaction",
-          "N'apparaît pas dans l'équation de réaction",
-          "A la plus grande masse molaire"
-        ],
-        ans: 1,
-        exp: "Le réactif limitant est totalement consommé le premier, ce qui arrête la transformation chimique."
-      },
-      {
-        q: "Une transformation exothermique est une transformation qui :",
-        opts: [
-          "Absorbe de l'énergie du milieu extérieur",
-          "Libère de l'énergie vers le milieu extérieur, dont la température augmente",
-          "Ne modifie pas la température du milieu extérieur",
-          "Se produit uniquement à haute température"
-        ],
-        ans: 1,
-        exp: "Une transformation exothermique libère de l'énergie vers le milieu extérieur, ce qui provoque une augmentation de sa température."
-      },
-      {
-        q: "On fait réagir n(Zn) = 0,20 mol de zinc avec n(HCl) = 0,50 mol d'acide chlorhydrique selon Zn + 2 HCl → ZnCl2 + H2. Quel est le réactif limitant ?",
-        opts: [
-          "Le zinc, car 0,20/1 = 0,20 < 0,50/2 = 0,25",
-          "L'acide chlorhydrique, car 0,50/2 = 0,25 < 0,20/1 = 0,20",
-          "Aucun, les réactifs sont en proportions stœchiométriques",
-          "Impossible à déterminer sans les masses molaires"
-        ],
-        ans: 0,
-        exp: "On compare n/coefficient : Zn → 0,20/1 = 0,20 mol ; HCl → 0,50/2 = 0,25 mol. Le plus petit rapport (0,20) désigne le zinc comme réactif limitant."
-      },
-      {
-        q: "En reprenant l'exercice précédent (Zn + 2 HCl → ZnCl2 + H2, réactif limitant = zinc, n(Zn) = 0,20 mol), quelle quantité maximale de dihydrogène H2 peut se former ?",
-        opts: [
-          "0,10 mol",
-          "0,20 mol",
-          "0,40 mol",
-          "0,50 mol"
-        ],
-        ans: 1,
-        exp: "D'après les coefficients stœchiométriques, 1 mol de Zn produit 1 mol de H2 : n(H2) formé = n(Zn) consommé = 0,20 mol."
-      },
-      {
-        q: "Une transformation chimique qui se traduit par un refroidissement du milieu réactionnel est qualifiée de :",
-        opts: [
-          "Exothermique",
-          "Athermique",
-          "Endothermique",
-          "Isotherme"
+          "H₂ + O₂ → H₂O₂",
+          "H₂ + O → H₂O",
+          "2 H₂ + O₂ → 2 H₂O",
+          "2 H₂ + O₂ → H₂O"
         ],
         ans: 2,
-        exp: "Une transformation endothermique reçoit de l'énergie du milieu extérieur, dont la température diminue : le milieu se refroidit."
+        pieges: [
+          { code: "indices-ajustes", texte: "Modifier les indices d'une formule : on obtient une autre espèce (H₂O₂ est l'eau oxygénée), on ne change que les nombres devant" },
+          { code: "formule-reactif-modifiee", texte: "Modifier la formule d'un réactif : le dioxygène est formé de molécules O₂" },
+          null,
+          { code: "ajustement-partiel", texte: "N'ajuster qu'un élément : avec 2 H₂ + O₂ → H₂O, il y a 4 H à gauche et 2 à droite" }
+        ],
+        exp: "2 H₂ + O₂ → 2 H₂O : 4 H et 2 O de chaque côté. Attention : on n'ajuste que les nombres stœchiométriques, jamais les indices."
+      },
+      {
+        q: "Combustion du propane : C₃H₈ + … O₂ → 3 CO₂ + 4 H₂O. Le nombre stœchiométrique de O₂ est :",
+        opts: [
+          "10",
+          "5",
+          "7",
+          "2"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "atomes-vs-molecules", texte: "Compter les atomes O au lieu des molécules O₂ : 10 atomes O correspondent à 5 molécules O₂" },
+          null,
+          { code: "molecules-au-lieu-atomes", texte: "Compter les molécules de produits (3 + 4) au lieu des atomes O : 3 × 2 + 4 × 1 = 10 atomes O" },
+          { code: "recopie-equation-methane", texte: "Recopier le coefficient de la combustion du méthane : il faut refaire le décompte pour le propane" }
+        ],
+        exp: "À droite : 3 × 2 + 4 × 1 = 10 atomes O ; il faut donc 10 / 2 = 5 molécules O₂. Équation : C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O."
+      },
+      {
+        q: "On mélange de l'acide chlorhydrique (ions H⁺ et Cl⁻) et de la soude (ions Na⁺ et HO⁻). L'équation de la réaction s'écrit :",
+        opts: [
+          "Na⁺ + Cl⁻ → NaCl",
+          "H⁺ + HO⁻ → H₂O",
+          "H⁺ + HO⁻ → H₂O + NaCl",
+          "H⁺ + Cl⁻ + Na⁺ + HO⁻ → H₂O"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "spectateurs-reagissent", texte: "Croire que Na⁺ et Cl⁻ réagissent : ils restent dispersés dans l'eau, ce sont des ions spectateurs" },
+          null,
+          { code: "conservation-non-verifiee", texte: "Ajouter un produit sans vérifier la conservation : Na et Cl n'apparaissent pas parmi les réactifs" },
+          { code: "spectateurs-dans-equation", texte: "Écrire les ions spectateurs dans l'équation : ils n'y figurent pas (et ici les éléments ne seraient pas conservés)" }
+        ],
+        exp: "Seuls H⁺ et HO⁻ réagissent : H⁺ + HO⁻ → H₂O. Les ions Na⁺ et Cl⁻ sont spectateurs : présents avant et après, ils ne figurent pas dans l'équation."
+      },
+      {
+        q: "Action d'un acide sur le calcaire : CaCO₃(s) + … H⁺(aq) → Ca²⁺(aq) + H₂O(ℓ) + CO₂(g). Le nombre devant H⁺ est :",
+        opts: [
+          "1",
+          "2",
+          "3, pour équilibrer les 3 atomes O",
+          "aucun : on écrit H₂⁺"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "conservation-charge-oubliee", texte: "Oublier la conservation de la charge : à droite la charge vaut 2+, il faut donc 2 H⁺ à gauche (et 2 H dans H₂O)" },
+          null,
+          { code: "mauvais-element-ajuste", texte: "Ajuster le mauvais élément : les O sont déjà équilibrés (3 de chaque côté), ce sont H et la charge qui imposent 2" },
+          { code: "indices-ajustes", texte: "Modifier la formule d'une espèce : on ne touche jamais aux indices, seulement aux nombres placés devant" }
+        ],
+        exp: "Avec 2 H⁺ : 2 H et une charge 2+ de chaque côté. Attention : une équation conserve les éléments et la charge électrique."
+      },
+      {
+        q: "Zn + 2 HCl → ZnCl₂ + H₂. On mélange 0,20 mol de zinc et 0,30 mol de chlorure d'hydrogène. Le réactif limitant est :",
+        opts: [
+          "le zinc, car 0,20 mol est inférieur à 0,30 mol",
+          "le zinc, car son nombre stœchiométrique est le plus petit",
+          "aucun : à la fin, il reste un peu des deux réactifs",
+          "le chlorure d'hydrogène HCl"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "limitant-plus-petite-quantite", texte: "Désigner le réactif en plus petite quantité sans tenir compte des nombres stœchiométriques : il faut comparer 0,20 / 1 et 0,30 / 2" },
+          { code: "limitant-par-coefficient", texte: "Choisir le réactif selon son seul nombre stœchiométrique : il faut comparer les rapports n / coefficient" },
+          { code: "limitant-reste-des-deux", texte: "Croire qu'il reste des deux réactifs : lors d'une transformation totale, le réactif limitant est entièrement consommé" },
+          null
+        ],
+        exp: "Zn : 0,20 / 1 = 0,20 ; HCl : 0,30 / 2 = 0,15. Le plus petit rapport est celui de HCl : c'est le réactif limitant. Attention : il faut 2 HCl pour 1 Zn."
+      },
+      {
+        q: "Zn + 2 HCl → ZnCl₂ + H₂. On mélange 0,20 mol de zinc et 0,30 mol de HCl ; la transformation est totale. La quantité de dihydrogène formée vaut :",
+        opts: [
+          "0,15 mol",
+          "0,30 mol",
+          "0,20 mol",
+          "0,60 mol"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "oubli-stoechiometrie", texte: "Oublier le nombre stœchiométrique 2 de HCl : 0,30 mol de HCl donnent 0,30 / 2 = 0,15 mol de H₂" },
+          { code: "produit-avec-reactif-exces", texte: "Calculer avec le zinc, qui est en excès : c'est le réactif limitant (HCl) qui fixe la quantité de produit" },
+          { code: "stoechiometrie-inversee", texte: "Inverser le rapport stœchiométrique : 0,30 × 2 au lieu de 0,30 / 2" }
+        ],
+        exp: "HCl est limitant (0,30 / 2 = 0,15 < 0,20 / 1) ; 2 mol de HCl donnent 1 mol de H₂ : n(H₂) = 0,30 / 2 = 0,15 mol. Attention : c'est le réactif limitant qui fixe la quantité de produit."
+      },
+      {
+        q: "On fait réagir du calcaire avec de l'acide dans un bécher ouvert posé sur une balance. La masse affichée diminue car :",
+        opts: [
+          "la matière disparaît au cours d'une réaction chimique",
+          "le dioxyde de carbone formé s'échappe dans l'air",
+          "les atomes du calcaire sont détruits",
+          "les gaz formés n'ont pas de masse"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "masse-non-conservee", texte: "Croire que la masse ne se conserve pas : les atomes se réarrangent, la masse totale reste la même" },
+          null,
+          { code: "atomes-detruits", texte: "Croire que les atomes sont détruits : lors d'une réaction chimique, ils se réarrangent et se conservent" },
+          { code: "gaz-sans-masse", texte: "Croire qu'un gaz n'a pas de masse : le CO₂ a une masse, qui quitte le bécher avec lui" }
+        ],
+        exp: "La masse totale se conserve, mais le CO₂ gazeux quitte le bécher : la balance ne le pèse plus. Dans un récipient fermé, la masse resterait constante."
+      },
+      {
+        q: "Dans CH₄ + 2 O₂ → CO₂ + 2 H₂O, le nombre 2 placé devant O₂ signifie que :",
+        opts: [
+          "il réagit 2 molécules de O₂ pour 1 molécule de CH₄",
+          "il faut introduire exactement 2 mol de O₂ dans le réacteur",
+          "la molécule de dioxygène contient 2 atomes",
+          "le dioxygène est deux fois plus lourd que le méthane"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "coefficients-quantites-initiales", texte: "Croire que les nombres stœchiométriques donnent les quantités introduites : ils donnent les proportions dans lesquelles les espèces réagissent" },
+          { code: "coefficient-vs-indice", texte: "Confondre nombre stœchiométrique et indice : le 2 de O₂ (indice) indique 2 atomes, le 2 placé devant indique 2 molécules" },
+          { code: "coefficient-masse", texte: "Croire que le nombre stœchiométrique renseigne sur la masse : il indique un nombre d'entités" }
+        ],
+        exp: "Les nombres stœchiométriques donnent les proportions de la réaction : 1 CH₄ réagit avec 2 O₂. Attention : ils ne disent rien des quantités introduites au départ."
+      },
+      {
+        q: "Dans une poche de froid, du nitrate d'ammonium se dissout dans l'eau et la poche se refroidit. Cette transformation est :",
+        opts: [
+          "exothermique : elle produit du froid",
+          "exothermique, car la température change",
+          "sans échange d'énergie avec l'extérieur",
+          "endothermique"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "froid-substance", texte: "Croire que le froid est une substance qui se transmet : c'est le milieu extérieur (la main) qui cède de l'énergie" },
+          { code: "endo-exo-inverses", texte: "Inverser endothermique et exothermique : si le milieu extérieur se refroidit, la transformation reçoit de l'énergie, elle est endothermique" },
+          { code: "changement-temperature-sans-transfert", texte: "Croire que la température peut baisser sans transfert d'énergie : le refroidissement montre que de l'énergie est absorbée" },
+          null
+        ],
+        exp: "La transformation reçoit de l'énergie du milieu extérieur, qui se refroidit : elle est endothermique. Attention : le froid n'est pas produit, c'est de l'énergie qui est absorbée."
+      },
+      {
+        q: "Parmi ces transformations, laquelle est une transformation chimique ?",
+        opts: [
+          "la fusion de la cire d'une bougie",
+          "la combustion de la mèche et de la cire d'une bougie",
+          "la dissolution du sel dans l'eau",
+          "l'évaporation de l'eau d'une flaque"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "fusion-vs-chimique", texte: "Croire que fondre est une transformation chimique : la cire liquide est toujours de la cire" },
+          null,
+          { code: "dissolution-vs-chimique", texte: "Croire que la dissolution forme une nouvelle espèce : le sel est dispersé dans l'eau, sans être transformé" },
+          { code: "changement-etat-nouvelle-espece", texte: "Croire qu'un changement d'état crée une nouvelle espèce : la vapeur est toujours de l'eau" }
+        ],
+        exp: "Lors de la combustion, de nouvelles espèces apparaissent (dioxyde de carbone, eau) : c'est chimique. Fusion, dissolution et évaporation sont physiques."
       }
     ],
     annales: [],
@@ -23105,114 +23285,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "La mole est une unité qui permet de :",
+        q: "Une mole de molécules d'eau, c'est :",
         opts: [
-          "Mesurer une masse directement en kg",
-          "Compter les entités chimiques par paquets de 6,02×10²³",
-          "Mesurer un volume de solution",
-          "Exprimer une température"
-        ],
-        ans: 1,
-        exp: "La mole regroupe les entités chimiques par paquets de 6,02×10²³, comme on regroupe les œufs par douzaine."
-      },
-      {
-        q: "La valeur approchée de la constante d'Avogadro NA est :",
-        opts: [
-          "6,02×10²³ mol⁻¹",
-          "3,00×10⁸ mol⁻¹",
-          "9,81×10² mol⁻¹",
-          "1,60×10⁻¹⁹ mol⁻¹"
-        ],
-        ans: 0,
-        exp: "NA ≈ 6,02×10²³ mol⁻¹ est le nombre d'entités contenues dans une mole."
-      },
-      {
-        q: "La relation entre le nombre d'entités N et la quantité de matière n s'écrit :",
-        opts: [
-          "N = n / NA",
-          "N = NA × n",
-          "N = NA + n",
-          "N = NA - n"
-        ],
-        ans: 1,
-        exp: "N = NA × n : le nombre d'entités est égal au produit de la constante d'Avogadro par la quantité de matière."
-      },
-      {
-        q: "La masse molaire moléculaire d'une espèce chimique se calcule en :",
-        opts: [
-          "Divisant la masse d'une molécule par NA",
-          "Additionnant les masses molaires atomiques des atomes qui la composent",
-          "Multipliant sa masse volumique par son volume molaire",
-          "Divisant sa masse par son volume"
-        ],
-        ans: 1,
-        exp: "La masse molaire moléculaire s'obtient en additionnant les masses molaires atomiques de tous les atomes constituant la molécule."
-      },
-      {
-        q: "La relation entre la masse m, la quantité de matière n et la masse molaire M s'écrit :",
-        opts: [
-          "m = n / M",
-          "m = M / n",
-          "m = n × M",
-          "m = n + M"
+          "une masse de 1 g d'eau",
+          "un volume de 1 L d'eau",
+          "6,02×10²³ molécules d'eau",
+          "une seule molécule d'eau"
         ],
         ans: 2,
-        exp: "m = n × M, soit n = m / M : la masse est le produit de la quantité de matière par la masse molaire."
-      },
-      {
-        q: "Une capsule contient m = 125 mg de carbone (M(C) = 12,0 g·mol⁻¹). La quantité de matière de carbone est :",
-        opts: [
-          "1,04×10⁻² mol",
-          "1,04×10² mol",
-          "1,50×10⁻³ mol",
-          "12,0 mol"
+        pieges: [
+          { code: "mole-pese-1g", texte: "Croire qu'une mole pèse 1 g : la mole est un nombre d'entités ; sa masse dépend de l'espèce" },
+          { code: "mole-volume", texte: "Croire qu'une mole est un volume : c'est un « paquet » de 6,02×10²³ entités" },
+          null,
+          { code: "mole-une-entite", texte: "Confondre une mole et une entité : une mole contient 6,02×10²³ entités" }
         ],
-        ans: 0,
-        exp: "n = m/M = (125×10⁻³)/12,0 ≈ 1,04×10⁻² mol."
-      },
-      {
-        q: "En reprenant n ≈ 1,04×10⁻² mol de carbone, le nombre d'atomes N correspondant est environ :",
-        opts: [
-          "6,02×10²³",
-          "1,73×10²¹",
-          "6,25×10²¹",
-          "1,04×10⁻²"
-        ],
-        ans: 2,
-        exp: "N = NA × n = 6,02×10²³ × 1,04×10⁻² ≈ 6,25×10²¹ atomes."
-      },
-      {
-        q: "La masse molaire de l'eau H2O est M(H2O) = 18,0 g·mol⁻¹. La quantité de matière contenue dans m = 9,0 g d'eau est :",
-        opts: [
-          "0,50 mol",
-          "5,0 mol",
-          "1,62×10² mol",
-          "162 mol"
-        ],
-        ans: 0,
-        exp: "n = m/M = 9,0/18,0 = 0,50 mol."
-      },
-      {
-        q: "La concentration en masse cm d'une espèce dissoute, en fonction de la quantité de matière n, de la masse molaire M et du volume V, s'écrit :",
-        opts: [
-          "cm = V / (n×M)",
-          "cm = n × M / V",
-          "cm = n / (M×V)",
-          "cm = M / (n×V)"
-        ],
-        ans: 1,
-        exp: "Comme m = n×M et cm = m/V, on obtient cm = n×M/V."
+        exp: "Une mole est un paquet de NA = 6,02×10²³ entités, ici des molécules d'eau. Attention : la mole compte des entités, ce n'est ni une masse ni un volume."
       },
       {
         q: "Une mole d'atomes de carbone et une mole d'atomes de soufre contiennent :",
         opts: [
-          "Le même nombre d'entités mais pas la même masse",
-          "Le même nombre d'entités et la même masse",
-          "Un nombre d'entités différent mais la même masse",
-          "Ni le même nombre d'entités ni la même masse"
+          "le même nombre d'atomes et ont la même masse",
+          "le même nombre d'atomes, mais n'ont pas la même masse",
+          "des nombres d'atomes différents, mais ont la même masse",
+          "plus d'atomes pour le soufre, dont les atomes sont plus gros"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "mole-meme-masse", texte: "Croire que toutes les moles ont la même masse : un atome de soufre est plus lourd qu'un atome de carbone" },
+          null,
+          { code: "mole-masse-fixe", texte: "Croire qu'une mole est une masse fixe : c'est un nombre fixe d'entités (NA)" },
+          { code: "na-depend-espece", texte: "Croire que NA dépend de l'espèce : une mole contient toujours 6,02×10²³ entités" }
+        ],
+        exp: "Une mole contient toujours NA = 6,02×10²³ entités, quelle que soit l'espèce ; mais les atomes de soufre étant plus lourds, une mole de soufre a une masse plus grande."
+      },
+      {
+        q: "Masses : m(H) = 1,67×10⁻²⁷ kg, m(O) = 2,66×10⁻²⁶ kg. La masse d'une molécule d'eau H₂O vaut :",
+        opts: [
+          "2,83×10⁻²⁶ kg",
+          "2,99×10⁻²⁶ kg",
+          "5,49×10⁻²⁶ kg",
+          "8,88×10⁻⁵³ kg"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-indice", texte: "Oublier l'indice 2 : la molécule contient 2 atomes H, soit 2 × 1,67×10⁻²⁷ + 2,66×10⁻²⁶" },
+          null,
+          { code: "indice-mal-applique", texte: "Appliquer l'indice au mauvais atome : 1,67×10⁻²⁷ + 2 × 2,66×10⁻²⁶ ; H₂O contient 2 H et 1 O" },
+          { code: "masses-multipliees", texte: "Multiplier les masses des atomes au lieu de les additionner" }
+        ],
+        exp: "m(H₂O) = 2 × m(H) + m(O) = 2 × 1,67×10⁻²⁷ + 2,66×10⁻²⁶ ≈ 2,99×10⁻²⁶ kg. Attention : l'indice 2 porte sur l'atome qui le précède, H."
+      },
+      {
+        q: "Un clou en fer a une masse de 1,00 g ; un atome de fer a une masse de 9,27×10⁻²⁶ kg. Le clou contient environ :",
+        opts: [
+          "1,08×10²⁵ atomes",
+          "9,27×10⁻²³ atomes",
+          "9,27×10⁻²⁹ atomes",
+          "1,08×10²² atomes"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 1,00 / 9,27×10⁻²⁶ ; il faut 1,00×10⁻³ kg" },
+          { code: "nombre-entites-rapport-inverse", texte: "Inverser le rapport : m(atome) / m(échantillon) ; il faut N = m(échantillon) / m(atome)" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 1,00×10⁻³ × 9,27×10⁻²⁶" },
+          null
+        ],
+        exp: "N = m(clou) / m(atome) = 1,00×10⁻³ / 9,27×10⁻²⁶ ≈ 1,08×10²² atomes. Attention : les deux masses doivent être dans la même unité (kg)."
+      },
+      {
+        q: "Un échantillon contient 3,01×10²³ molécules. Sa quantité de matière vaut :",
+        opts: [
+          "0,500 mol",
+          "1,81×10⁴⁷ mol",
+          "2,00 mol",
+          "3,01×10²³ mol"
         ],
         ans: 0,
-        exp: "Une mole contient toujours NA entités, quelle que soit l'espèce chimique ; en revanche, la masse d'une mole dépend de la masse molaire de l'espèce, donc diffère entre le carbone et le soufre."
+        pieges: [
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : N × NA ; il faut n = N / NA" },
+          { code: "n-rapport-inverse", texte: "Inverser le rapport : NA / N = 2,00 ; il faut n = N / NA" },
+          { code: "nombre-pris-pour-quantite", texte: "Confondre nombre d'entités N (sans unité) et quantité de matière n (en mol)" }
+        ],
+        exp: "n = N / NA = 3,01×10²³ / 6,02×10²³ = 0,500 mol. Attention : N est un nombre d'entités, n un nombre de moles."
+      },
+      {
+        q: "Combien d'atomes contiennent 0,20 mol de fer ? (NA = 6,02×10²³ mol⁻¹)",
+        opts: [
+          "3,3×10⁻²⁵",
+          "3,0×10²⁴",
+          "6,02×10²³, comme tout échantillon de fer",
+          "1,2×10²³"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "n-sur-na", texte: "Diviser au lieu de multiplier : n / NA ; il faut N = n × NA" },
+          { code: "n-rapport-inverse", texte: "Inverser le rapport : NA / n ; il faut N = n × NA" },
+          { code: "na-pour-toute-quantite", texte: "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement" },
+          null
+        ],
+        exp: "N = n × NA = 0,20 × 6,02×10²³ ≈ 1,2×10²³ atomes. Attention : NA est le nombre d'entités dans une mole, pas dans n'importe quel échantillon."
+      },
+      {
+        q: "Une molécule de CO₂ a une masse de 7,31×10⁻²⁶ kg. La quantité de matière de CO₂ dans 22,0 g de ce gaz vaut :",
+        opts: [
+          "3,01×10²³ mol",
+          "0,500 mol",
+          "500 mol",
+          "1,81×10⁴⁷ mol"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "nombre-pris-pour-quantite", texte: "S'arrêter au nombre de molécules N : il faut ensuite calculer n = N / NA" },
+          null,
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 22,0 / 7,31×10⁻²⁶ donne 1 000 fois trop de molécules" },
+          { code: "produit-au-lieu-quotient", texte: "Multiplier par NA au lieu de diviser : n = N / NA" }
+        ],
+        exp: "N = 22,0×10⁻³ / 7,31×10⁻²⁶ ≈ 3,01×10²³ molécules, puis n = N / NA ≈ 0,500 mol. Attention : deux étapes, et la masse en kg."
+      },
+      {
+        q: "Une molécule d'eau a une masse de 2,99×10⁻²⁶ kg. Une goutte d'eau de 0,050 g contient environ :",
+        opts: [
+          "un millier de molécules",
+          "1,7×10²¹ molécules",
+          "6,02×10²³ molécules, une mole",
+          "1,7×10²⁴ molécules"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "nombre-entites-sous-estime", texte: "Sous-estimer le nombre d'entités : même une goutte en contient des milliards de milliards" },
+          null,
+          { code: "na-pour-toute-quantite", texte: "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement" },
+          { code: "conversion-g-kg", texte: "Oublier de convertir la masse en kg : 0,050 / 2,99×10⁻²⁶ ; il faut 0,050×10⁻³ kg" }
+        ],
+        exp: "N = 0,050×10⁻³ / 2,99×10⁻²⁶ ≈ 1,7×10²¹ molécules. C'est pour compter des nombres aussi grands qu'on utilise la mole."
+      },
+      {
+        q: "Les chimistes comptent les entités en moles parce que :",
+        opts: [
+          "les entités ont toutes la même masse",
+          "la mole est une unité de masse plus précise que le gramme",
+          "les nombres d'entités dans un échantillon sont gigantesques",
+          "le nombre d'entités par mole change selon l'espèce, ce qui simplifie les calculs"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "entites-meme-masse", texte: "Croire que toutes les entités ont la même masse : un atome de fer est bien plus lourd qu'un atome d'hydrogène" },
+          { code: "mole-unite-masse", texte: "Croire que la mole est une unité de masse : c'est une unité de quantité de matière (un nombre de paquets)" },
+          null,
+          { code: "na-depend-espece", texte: "Croire que NA dépend de l'espèce : une mole contient toujours 6,02×10²³ entités" }
+        ],
+        exp: "Un échantillon courant contient de l'ordre de 10²⁰ à 10²⁵ entités : on les regroupe par paquets de 6,02×10²³, comme on compte les œufs par douzaines."
+      },
+      {
+        q: "Un atome de fer est environ 4,7 fois plus lourd qu'un atome de carbone. On compare 1,0 g de carbone et 1,0 g de fer :",
+        opts: [
+          "le fer contient plus d'atomes, car il est plus lourd",
+          "ils contiennent le même nombre d'atomes, car ils ont la même masse",
+          "le carbone contient plus d'atomes",
+          "ils contiennent tous les deux NA atomes"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "lourd-plus-entites", texte: "Croire qu'à masse égale l'élément le plus lourd a plus d'atomes : c'est l'inverse, il en faut moins pour faire 1,0 g" },
+          { code: "masse-egale-meme-nombre", texte: "Croire que même masse veut dire même nombre d'atomes : les atomes n'ont pas tous la même masse" },
+          null,
+          { code: "na-pour-toute-quantite", texte: "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement" }
+        ],
+        exp: "N = m / m(atome) : à masse égale, plus l'atome est léger, plus il y en a. Le carbone contient environ 4,7 fois plus d'atomes que le fer."
       }
     ],
     annales: [],
@@ -23614,114 +23854,174 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
     },
     quiz: [
       {
-        q: "Le référentiel est :",
+        q: "Pour décrire un mouvement, le référentiel est :",
         opts: [
-          "L'objet dont on étudie le mouvement",
-          "L'objet ou ensemble d'objets par rapport auquel on décrit le mouvement",
-          "La trajectoire suivie par le système",
-          "La distance parcourue par le système"
-        ],
-        ans: 1,
-        exp: "Le référentiel est l'objet considéré comme fixe par rapport auquel on décrit le mouvement du système étudié."
-      },
-      {
-        q: "Le mouvement d'un système est :",
-        opts: [
-          "Absolu, identique dans tous les référentiels",
-          "Relatif, il dépend du référentiel choisi",
-          "Toujours rectiligne",
-          "Toujours uniforme"
-        ],
-        ans: 1,
-        exp: "Le mouvement est relatif : un objet peut être immobile dans un référentiel et en mouvement dans un autre."
-      },
-      {
-        q: "Un passager assis dans un train en mouvement est, par rapport au référentiel terrestre :",
-        opts: [
-          "Immobile",
-          "En mouvement",
-          "Impossible à déterminer",
-          "Toujours au repos"
-        ],
-        ans: 1,
-        exp: "Par rapport au sol (référentiel terrestre), le passager se déplace avec le train, donc il est en mouvement, même s'il est immobile par rapport au référentiel du train."
-      },
-      {
-        q: "La trajectoire d'un système est :",
-        opts: [
-          "La vitesse instantanée du système",
-          "L'ensemble des positions successives occupées par le système",
-          "Le référentiel d'étude",
-          "La durée du mouvement"
-        ],
-        ans: 1,
-        exp: "La trajectoire est l'ensemble des positions successives occupées par le système au cours du temps, dans un référentiel donné."
-      },
-      {
-        q: "Le vecteur déplacement M1M2→ relie :",
-        opts: [
-          "Deux référentiels différents",
-          "La position initiale M1 à la position finale M2",
-          "Le vecteur vitesse au vecteur accélération",
-          "Deux trajectoires différentes"
-        ],
-        ans: 1,
-        exp: "Le vecteur déplacement relie la position M1 à l'instant t1 à la position M2 à l'instant t2."
-      },
-      {
-        q: "La vitesse moyenne v se calcule par la relation :",
-        opts: [
-          "v = d × Δt",
-          "v = d / Δt",
-          "v = Δt / d",
-          "v = d + Δt"
-        ],
-        ans: 1,
-        exp: "La vitesse moyenne est le rapport de la distance parcourue d sur la durée Δt du parcours."
-      },
-      {
-        q: "Un TGV parcourt d = 300 km en Δt = 1 h. Sa vitesse moyenne est :",
-        opts: [
-          "30 km·h⁻¹",
-          "150 km·h⁻¹",
-          "300 km·h⁻¹",
-          "600 km·h⁻¹"
+          "l'objet dont on étudie le mouvement",
+          "la trajectoire suivie par l'objet",
+          "l'objet supposé fixe par rapport auquel on décrit le mouvement",
+          "toujours le sol, quel que soit le mouvement"
         ],
         ans: 2,
-        exp: "v = d/Δt = 300/1 = 300 km·h⁻¹."
+        pieges: [
+          { code: "systeme-vs-referentiel", texte: "Confondre système et référentiel : le système est l'objet étudié, le référentiel l'objet de référence" },
+          { code: "trajectoire-vs-referentiel", texte: "Confondre trajectoire et référentiel : la trajectoire dépend du référentiel choisi" },
+          null,
+          { code: "referentiel-toujours-sol", texte: "Croire que le référentiel est toujours le sol : on peut choisir un train, la Terre, le Soleil…" }
+        ],
+        exp: "Le référentiel est l'objet de référence, considéré comme fixe, par rapport auquel on décrit le mouvement du système. Attention : il faut toujours le préciser."
       },
       {
-        q: "Un athlète parcourt 100 m en 10,0 s. Sa vitesse moyenne en m·s⁻¹ est :",
+        q: "Léa est assise dans un train qui roule. Elle est :",
         opts: [
-          "1,00 m·s⁻¹",
-          "10,0 m·s⁻¹",
-          "100 m·s⁻¹",
-          "1000 m·s⁻¹"
+          "immobile, puisqu'elle ne quitte pas son siège",
+          "immobile par rapport au train, en mouvement par rapport au sol",
+          "en mouvement par rapport au train, immobile par rapport au sol",
+          "en mouvement seulement si elle se lève"
         ],
         ans: 1,
-        exp: "v = d/Δt = 100/10,0 = 10,0 m·s⁻¹."
+        pieges: [
+          { code: "mouvement-absolu", texte: "Oublier que le mouvement est relatif : on doit dire par rapport à quoi Léa est immobile" },
+          null,
+          { code: "referentiels-inverses", texte: "Inverser les référentiels : Léa ne bouge pas par rapport au train, mais se déplace par rapport au sol" },
+          { code: "mouvement-sans-referentiel", texte: "Croire qu'on bouge seulement si l'on se déplace soi-même : par rapport au sol, Léa avance avec le train" }
+        ],
+        exp: "Le mouvement est relatif : immobile dans le référentiel du train, Léa est en mouvement dans le référentiel terrestre. Attention : « immobile » n'a de sens que par rapport à un référentiel."
       },
       {
-        q: "Le vecteur vitesse moyenne a :",
+        q: "Un passager marche vers l'avant d'un train à 5 km·h⁻¹ par rapport au train. Le train roule à 100 km·h⁻¹. Par rapport au sol, la vitesse du passager vaut :",
         opts: [
-          "Une direction opposée au vecteur déplacement",
-          "La même direction et le même sens que le vecteur déplacement",
-          "Toujours une direction verticale",
-          "Une norme indépendante de la distance parcourue"
+          "5 km·h⁻¹",
+          "95 km·h⁻¹",
+          "100 km·h⁻¹",
+          "105 km·h⁻¹"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "mouvement-absolu", texte: "Donner la vitesse dans le référentiel du train : par rapport au sol, il faut ajouter celle du train" },
+          { code: "sens-vitesses-inverse", texte: "Soustraire les vitesses : le passager marche dans le même sens que le train, les vitesses s'ajoutent" },
+          { code: "vitesse-propre-ignoree", texte: "Oublier la marche du passager : il avance de 5 km·h⁻¹ de plus que le train" },
+          null
+        ],
+        exp: "Par rapport au sol, le passager avance avec le train et marche en plus vers l'avant : 100 + 5 = 105 km·h⁻¹. Attention : la vitesse dépend du référentiel."
+      },
+      {
+        q: "On observe la valve d'une roue de vélo qui avance en ligne droite. La trajectoire de la valve est :",
+        opts: [
+          "un cercle pour le cycliste, une autre courbe pour un piéton au bord de la route",
+          "un cercle, pour le cycliste comme pour le piéton",
+          "une droite, pour le cycliste comme pour le piéton, comme celle du vélo",
+          "une droite pour le cycliste, un cercle pour le piéton"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "trajectoire-independante-referentiel", texte: "Croire que la trajectoire ne dépend pas du référentiel : pour le piéton, la valve avance en plus avec le vélo" },
+          { code: "trajectoire-objet-vs-point", texte: "Confondre la trajectoire du vélo et celle d'un point de la roue : la valve tourne autour de l'axe en plus d'avancer" },
+          { code: "referentiels-inverses", texte: "Inverser les référentiels : c'est pour le cycliste (lié au vélo) que la valve décrit un cercle" }
+        ],
+        exp: "Dans le référentiel du vélo, la valve tourne autour de l'axe : cercle. Dans le référentiel terrestre, elle tourne et avance à la fois : la courbe est différente. La trajectoire dépend du référentiel."
+      },
+      {
+        q: "Un automobiliste parcourt 120 km en 1 h 30 min. Sa vitesse moyenne vaut :",
+        opts: [
+          "92 km·h⁻¹",
+          "80 km·h⁻¹",
+          "180 km·h⁻¹",
+          "1,25×10⁻² km·h⁻¹"
         ],
         ans: 1,
-        exp: "Le vecteur vitesse moyenne est colinéaire au vecteur déplacement : même direction, même sens."
+        pieges: [
+          { code: "conversion-heure-minute", texte: "Écrire 1 h 30 min = 1,30 h : 30 min = 0,5 h, donc 1 h 30 min = 1,5 h" },
+          null,
+          { code: "produit-au-lieu-quotient", texte: "Multiplier au lieu de diviser : 120 × 1,5 ; il faut v = d / Δt" },
+          { code: "vitesse-rapport-inverse", texte: "Inverser le rapport : Δt / d = 1,5 / 120 ; il faut v = d / Δt" }
+        ],
+        exp: "Δt = 1 h 30 min = 1,5 h, donc v = d / Δt = 120 / 1,5 = 80 km·h⁻¹. Attention : 30 min, c'est une demi-heure, soit 0,5 h."
+      },
+      {
+        q: "Cet automobiliste a roulé à 80 km·h⁻¹ de vitesse moyenne. Peut-on affirmer que son compteur a affiché 80 km·h⁻¹ pendant tout le trajet ?",
+        opts: [
+          "oui : la vitesse moyenne est la vitesse à chaque instant",
+          "non : c'est une moyenne, sa vitesse a pu varier",
+          "non : il a forcément roulé à 120 km·h⁻¹",
+          "non : il roulait à 80 km·h⁻¹ seulement à mi-parcours"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "vitesse-moyenne-vs-instantanee", texte: "Confondre vitesse moyenne et vitesse instantanée : la voiture a pu ralentir puis accélérer" },
+          null,
+          { code: "distance-prise-pour-vitesse", texte: "Prendre la distance (120 km) pour une vitesse" },
+          { code: "moyenne-a-mi-parcours", texte: "Croire que la vitesse moyenne est atteinte à mi-parcours : rien ne permet de le dire" }
+        ],
+        exp: "La vitesse moyenne d / Δt ne dit rien de la vitesse à chaque instant : la voiture a pu s'arrêter, puis rouler plus vite. Attention : le compteur indique la vitesse instantanée."
+      },
+      {
+        q: "Un athlète court à 10,0 m·s⁻¹. En km·h⁻¹, sa vitesse vaut :",
+        opts: [
+          "2,78 km·h⁻¹",
+          "0,0100 km·h⁻¹",
+          "36,0 km·h⁻¹",
+          "0,600 km·h⁻¹"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "conversion-kmh-ms-inverse", texte: "Diviser par 3,6 au lieu de multiplier : pour passer des m·s⁻¹ aux km·h⁻¹, on multiplie par 3,6" },
+          { code: "conversion-incomplete", texte: "Convertir les mètres en kilomètres sans convertir les secondes en heures : 10,0 m·s⁻¹ = 0,0100 km·s⁻¹" },
+          null,
+          { code: "heure-60-secondes", texte: "Compter 60 s dans une heure : une heure dure 3 600 s, donc 10,0 × 3 600 / 1 000 = 36,0" }
+        ],
+        exp: "En une heure (3 600 s), il parcourt 10,0 × 3 600 = 36 000 m = 36,0 km : v = 36,0 km·h⁻¹. Attention : m·s⁻¹ → km·h⁻¹, on multiplie par 3,6."
+      },
+      {
+        q: "Sur une chronophotographie (images prises à intervalles de temps égaux), les positions successives d'un palet sont de plus en plus espacées. Son mouvement est :",
+        opts: [
+          "ralenti",
+          "uniforme, car les intervalles de temps sont égaux",
+          "curviligne, car les points s'écartent",
+          "accéléré"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "ecart-points-inverse", texte: "Inverser la lecture : des positions de plus en plus espacées pendant des durées égales indiquent une vitesse qui augmente" },
+          { code: "intervalle-temps-vs-distance", texte: "Confondre intervalles de temps et distances : les durées sont égales, mais les distances parcourues augmentent" },
+          { code: "forme-vs-vitesse", texte: "Confondre la forme de la trajectoire et l'évolution de la vitesse : l'espacement renseigne sur la vitesse" },
+          null
+        ],
+        exp: "Pendant des durées égales, le palet parcourt des distances de plus en plus grandes : sa vitesse augmente, le mouvement est accéléré. Attention : la forme de la trajectoire se lit sur l'alignement des points, pas sur leur écart."
+      },
+      {
+        q: "Une voiture tourne dans un rond-point à la vitesse constante de 30 km·h⁻¹. Son mouvement dans le référentiel terrestre est :",
+        opts: [
+          "rectiligne et uniforme",
+          "circulaire et uniforme",
+          "circulaire, mais pas uniforme puisqu'elle tourne",
+          "immobile, puisque sa vitesse ne change pas"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "uniforme-vs-rectiligne", texte: "Confondre uniforme (vitesse de valeur constante) et rectiligne (trajectoire en ligne droite)" },
+          null,
+          { code: "tourner-pas-uniforme", texte: "Croire qu'un mouvement qui tourne ne peut pas être uniforme : « uniforme » concerne la valeur de la vitesse" },
+          { code: "vitesse-constante-immobile", texte: "Confondre vitesse constante et vitesse nulle : la voiture avance à 30 km·h⁻¹" }
+        ],
+        exp: "Trajectoire en arc de cercle : circulaire ; valeur de la vitesse constante : uniforme. Attention : « rectiligne » décrit la trajectoire, « uniforme » la valeur de la vitesse."
       },
       {
         q: "Pour étudier le mouvement de la Lune autour de la Terre, le référentiel le plus adapté est le référentiel :",
         opts: [
-          "Terrestre",
-          "Géocentrique",
-          "Héliocentrique",
-          "Du laboratoire"
+          "héliocentrique",
+          "terrestre",
+          "de la Lune elle-même",
+          "géocentrique"
         ],
-        ans: 1,
-        exp: "Le référentiel géocentrique, centré sur la Terre, est adapté à l'étude du mouvement de satellites ou de la Lune autour de la Terre."
+        ans: 3,
+        pieges: [
+          { code: "referentiels-geo-helio-inverses", texte: "Confondre géocentrique (centré sur la Terre) et héliocentrique (centré sur le Soleil)" },
+          { code: "terrestre-vs-geocentrique", texte: "Confondre terrestre et géocentrique : le référentiel terrestre tourne avec la Terre sur elle-même en 24 h" },
+          { code: "systeme-vs-referentiel", texte: "Prendre le système comme référentiel : dans son propre référentiel, la Lune est immobile" },
+          null
+        ],
+        exp: "Le référentiel géocentrique (centre de la Terre et étoiles lointaines) est adapté aux mouvements autour de la Terre : Lune, satellites. Pour les planètes autour du Soleil, on choisit le référentiel héliocentrique."
       }
     ],
     annales: [],
