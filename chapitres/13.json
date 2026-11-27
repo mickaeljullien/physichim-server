@@ -1,0 +1,729 @@
+{
+  "id": 13,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Les trois modes de transfert thermique",
+        "icon": "🔥",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Mode",
+              "Support",
+              "Description"
+            ],
+            "rows": [
+              [
+                "Conduction",
+                "Milieu matériel (solide surtout)",
+                "Transfert d'agitation thermique de proche en proche, sans déplacement de matière"
+              ],
+              [
+                "Convection",
+                "Fluide (liquide ou gaz)",
+                "Transfert par déplacement macroscopique de matière (mouvement du fluide)"
+              ],
+              [
+                "Rayonnement",
+                "Aucun support nécessaire (se propage dans le vide)",
+                "Transfert par ondes électromagnétiques émises par tout corps à température T > 0 K"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Ces trois modes peuvent coexister : par exemple un radiateur chauffe une pièce par rayonnement et convection, tandis que la chaleur traverse la vitre par conduction."
+          }
+        ]
+      },
+      {
+        "title": "2. Flux thermique et résistance thermique",
+        "icon": "🧱",
+        "content": [
+          {
+            "type": "def",
+            "term": "Flux thermique φ",
+            "text": "Puissance thermique transférée à travers une surface, exprimée en watts (W)."
+          },
+          {
+            "type": "def",
+            "term": "Résistance thermique Rth",
+            "text": "Grandeur caractérisant l'aptitude d'une paroi à s'opposer au transfert thermique par conduction, en K·W⁻¹."
+          },
+          {
+            "type": "formula",
+            "label": "Analogie électrique (loi de Fourier / loi d'Ohm thermique)",
+            "text": "φ = ΔT / Rth   (à comparer à I = U / R en électricité)\nRth = e / (λ × S)\navec e l'épaisseur de la paroi (m), λ sa conductivité thermique (W·m⁻¹·K⁻¹) et S sa surface (m²)."
+          },
+          {
+            "type": "text",
+            "text": "Plus λ est grand (bon conducteur thermique, ex : métal), plus Rth est faible. Un isolant thermique (ex : laine de verre) a au contraire une faible conductivité λ, donc une grande résistance thermique."
+          },
+          {
+            "type": "text",
+            "text": "Pour plusieurs parois accolées, les résistances thermiques s'additionnent comme des résistances électriques en série : Rth,totale = ΣRth,i."
+          }
+        ]
+      },
+      {
+        "title": "3. Bilan radiatif terrestre",
+        "icon": "🌍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi de Stefan-Boltzmann",
+            "text": "Un corps à la température T (en K) émet, par unité de surface, une puissance radiative φ = σ × T⁴, avec σ = 5,67 × 10⁻⁸ W·m⁻²·K⁻⁴ (constante de Stefan-Boltzmann)."
+          },
+          {
+            "type": "def",
+            "term": "Albédo A",
+            "text": "Fraction de la puissance solaire incidente réfléchie par la Terre (nuages, glace, océans...) sans être absorbée. Pour la Terre, A ≈ 0,3 (30% du rayonnement solaire est réfléchi)."
+          },
+          {
+            "type": "text",
+            "text": "La Terre reçoit le rayonnement solaire sur son <strong>disque</strong> apparent (aire π×R²) mais réémet son propre rayonnement thermique sur toute sa <strong>surface sphérique</strong> (aire 4×π×R²), ce qui introduit un facteur 4 dans le bilan."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 220\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"rIn13\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#C0472F\"/></marker><marker id=\"rOut13\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#3E7DBF\"/></marker></defs><line x1=\"15\" y1=\"70.6\" x2=\"72.0\" y2=\"70.6\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><line x1=\"15\" y1=\"83.8\" x2=\"72.0\" y2=\"83.8\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><line x1=\"15\" y1=\"96.9\" x2=\"72.0\" y2=\"96.9\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><line x1=\"15\" y1=\"110.0\" x2=\"72.0\" y2=\"110.0\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><line x1=\"15\" y1=\"123.1\" x2=\"72.0\" y2=\"123.1\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><line x1=\"15\" y1=\"136.3\" x2=\"72.0\" y2=\"136.3\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><line x1=\"15\" y1=\"149.4\" x2=\"72.0\" y2=\"149.4\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#rIn13)\"/><circle cx=\"110\" cy=\"110\" r=\"42\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"68\" x2=\"60\" y2=\"152\" stroke=\"#1B2420\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><line x1=\"56\" y1=\"68\" x2=\"64\" y2=\"68\" stroke=\"#1B2420\" stroke-width=\"1\"/><line x1=\"56\" y1=\"152\" x2=\"64\" y2=\"152\" stroke=\"#1B2420\" stroke-width=\"1\"/><text x=\"48\" y=\"113\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\">2R</text><text x=\"110\" y=\"185\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Rayonnement reçu</text><text x=\"110\" y=\"199\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">disque apparent : aire = π R²</text><line x1=\"396.0\" y1=\"110.0\" x2=\"424.0\" y2=\"110.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"382.5\" y1=\"142.5\" x2=\"402.3\" y2=\"162.3\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"350.0\" y1=\"156.0\" x2=\"350.0\" y2=\"184.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"317.5\" y1=\"142.5\" x2=\"297.7\" y2=\"162.3\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"304.0\" y1=\"110.0\" x2=\"276.0\" y2=\"110.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"317.5\" y1=\"77.5\" x2=\"297.7\" y2=\"57.7\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"350.0\" y1=\"64.0\" x2=\"350.0\" y2=\"36.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><line x1=\"382.5\" y1=\"77.5\" x2=\"402.3\" y2=\"57.7\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#rOut13)\"/><circle cx=\"350\" cy=\"110\" r=\"42\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><text x=\"350\" y=\"185\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Rayonnement émis</text><text x=\"350\" y=\"199\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">surface sphérique : aire = 4π R²</text></svg>",
+            "caption": "La Terre intercepte le rayonnement solaire sur son disque apparent (aire π R²) mais réémet son propre rayonnement dans toutes les directions depuis sa surface sphérique (aire 4π R²) — d'où le facteur 4 entre puissance absorbée et puissance émise dans le bilan à l'équilibre."
+          },
+          {
+            "type": "def",
+            "term": "Effet de serre",
+            "text": "Phénomène par lequel certains gaz atmosphériques (CO₂, H₂O, CH₄...) absorbent une partie du rayonnement infrarouge réémis par la surface terrestre et le renvoient vers le sol, augmentant la température d'équilibre réelle par rapport à celle calculée sans atmosphère."
+          }
+        ]
+      },
+      {
+        "title": "4. Exemple chiffré : température d'équilibre radiatif de la Terre",
+        "icon": "🧮",
+        "content": [
+          {
+            "type": "text",
+            "text": "On modélise l'équilibre radiatif de la Terre (sans effet de serre) en égalant la puissance solaire absorbée et la puissance réémise par rayonnement."
+          },
+          {
+            "type": "formula",
+            "label": "Bilan de puissance à l'équilibre",
+            "text": "Puissance absorbée = S × π R² × (1 − A)\nPuissance émise = σ × T⁴ × 4π R²\nÀ l'équilibre : S(1 − A) / 4 = σ T⁴"
+          },
+          {
+            "type": "formula",
+            "label": "Application numérique",
+            "text": "Avec S = 1361 W·m⁻² (constante solaire) et A = 0,3 :\nT = [S(1 − A) / (4σ)]^(1/4) = [1361 × 0,7 / (4 × 5,67×10⁻⁸)]^(1/4) ≈ 255 K ≈ −18°C"
+          },
+          {
+            "type": "warn",
+            "text": "Cette température théorique (−18°C environ) est bien inférieure à la température moyenne réellement observée à la surface de la Terre (+15°C environ). L'écart d'environ 33°C est attribué à l'<strong>effet de serre</strong> naturel de l'atmosphère."
+          }
+        ]
+      },
+      {
+        "title": "5. Loi de refroidissement de Newton",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi de Newton",
+            "text": "Pour un corps de température T(t) plongé dans un milieu extérieur de température constante Text, la vitesse de variation de température est proportionnelle à l'écart de température."
+          },
+          {
+            "type": "formula",
+            "label": "Équation différentielle",
+            "text": "dT/dt = −(T − Text) / τ\navec τ le temps caractéristique du système (en s), qui dépend de la capacité thermique du corps et de sa résistance thermique avec le milieu extérieur : τ = Rth × C."
+          },
+          {
+            "type": "formula",
+            "label": "Solution (refroidissement à partir de T₀)",
+            "text": "T(t) = Text + (T₀ − Text) × exp(−t/τ)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"axArrow13b\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#1B2420\"/></marker></defs><line x1=\"50\" y1=\"220\" x2=\"465\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"1.3\" marker-end=\"url(#axArrow13b)\"/><line x1=\"50\" y1=\"220\" x2=\"50\" y2=\"20\" stroke=\"#1B2420\" stroke-width=\"1.3\" marker-end=\"url(#axArrow13b)\"/><text x=\"450\" y=\"238\" font-size=\"11\" fill=\"#1B2420\">t</text><text x=\"35\" y=\"26\" font-size=\"11\" fill=\"#1B2420\">T</text><line x1=\"50\" y1=\"40\" x2=\"60\" y2=\"40\" stroke=\"#1B2420\" stroke-width=\"1\"/><text x=\"30\" y=\"44\" font-size=\"10\" fill=\"#1B2420\">T₀</text><line x1=\"50\" y1=\"190\" x2=\"460\" y2=\"190\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"24\" y=\"194\" font-size=\"10\" fill=\"#5C6B60\">Text</text><polyline points=\"60.0,40.0 98.0,99.0 136.0,134.8 174.0,156.5 212.0,169.7 288.0,182.5 364.0,187.3 440.0,189.0\" fill=\"none\" stroke=\"#4f8ef7\" stroke-width=\"2.2\"/><line x1=\"136\" y1=\"220\" x2=\"136\" y2=\"134.8\" stroke=\"#C0472F\" stroke-width=\"1.2\" stroke-dasharray=\"3 2\"/><line x1=\"50\" y1=\"134.8\" x2=\"136\" y2=\"134.8\" stroke=\"#C0472F\" stroke-width=\"1.2\" stroke-dasharray=\"3 2\"/><circle cx=\"136\" cy=\"134.8\" r=\"4\" fill=\"#C0472F\"/><text x=\"136\" y=\"234\" font-size=\"11\" fill=\"#C0472F\" text-anchor=\"middle\">τ</text></svg>",
+            "caption": "Courbe de refroidissement T(t) : décroissance exponentielle depuis T₀ vers l'asymptote Text. Au temps t = τ, l'écart (T − Text) a été réduit d'un facteur e (≈ 2,7) par rapport à l'écart initial."
+          },
+          {
+            "type": "text",
+            "text": "Le temps caractéristique τ correspond à la durée au bout de laquelle l'écart initial (T₀ − Text) a été réduit d'un facteur e (≈ 2,7) ; on considère le régime permanent atteint au bout d'environ 5τ."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Quel mode de transfert thermique peut se faire à travers le vide ?",
+      "opts": [
+        "la conduction",
+        "la convection",
+        "le rayonnement",
+        "aucun : tout transfert thermique exige de la matière"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conduction-dans-vide",
+          "texte": "Croire que la conduction traverse le vide : elle se fait de proche en proche dans la matière"
+        },
+        {
+          "code": "convection-dans-vide",
+          "texte": "Croire que la convection traverse le vide : elle exige un fluide en mouvement"
+        },
+        null,
+        {
+          "code": "transfert-exige-matiere",
+          "texte": "Croire que tout transfert thermique exige de la matière : le rayonnement du Soleil traverse le vide"
+        }
+      ],
+      "exp": "Le rayonnement est un transfert par ondes électromagnétiques, sans support matériel : c'est ainsi que l'énergie du Soleil nous parvient. Conduction et convection exigent de la matière."
+    },
+    {
+      "q": "Une cuillère métallique trempe dans un thé chaud ; son manche devient chaud. L'énergie est arrivée jusqu'à la main par :",
+      "opts": [
+        "conduction, de proche en proche dans le métal",
+        "convection, par déplacement du métal",
+        "rayonnement du thé vers le manche",
+        "le froid de la main, qui s'est déplacé vers le thé"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conduction-vs-convection",
+          "texte": "Confondre conduction (sans déplacement de matière) et convection (déplacement d'un fluide)"
+        },
+        {
+          "code": "rayonnement-vs-conduction",
+          "texte": "Attribuer au rayonnement un transfert qui se fait au sein d'un solide"
+        },
+        {
+          "code": "froid-substance",
+          "texte": "Croire que le « froid » est une substance qui se déplace : c'est l'énergie qui va du chaud vers le froid"
+        }
+      ],
+      "exp": "Dans un solide, l'agitation thermique se transmet de proche en proche, sans déplacement de matière : c'est la conduction. Attention : l'énergie va toujours spontanément du corps chaud vers le corps froid."
+    },
+    {
+      "q": "Une vitre a une résistance thermique Rth = 0,010 K·W⁻¹. Il fait 20 °C à l'intérieur et 5,0 °C à l'extérieur. Le flux thermique à travers la vitre vaut :",
+      "opts": [
+        "0,15 W",
+        "1,5 × 10³ W",
+        "2,0 × 10³ W",
+        "6,7 × 10⁻⁴ W"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "flux-produit",
+          "texte": "Multiplier au lieu de diviser : ΔT × Rth = 0,15"
+        },
+        null,
+        {
+          "code": "temperature-vs-ecart",
+          "texte": "Utiliser une seule température au lieu de l'écart : 20 / 0,010"
+        },
+        {
+          "code": "flux-rapport-inverse",
+          "texte": "Inverser le rapport : Rth / ΔT"
+        }
+      ],
+      "exp": "φ = ΔT / Rth = (20 − 5,0) / 0,010 = 1,5 × 10³ W. Attention : c'est l'écart de température qui fait circuler l'énergie, comme une tension fait circuler un courant."
+    },
+    {
+      "q": "Un bon isolant thermique est un matériau qui :",
+      "opts": [
+        "a une grande conductivité thermique λ, donc une grande résistance thermique",
+        "a une faible conductivité thermique λ, donc une grande résistance thermique",
+        "empêche le froid extérieur d'entrer",
+        "produit de la chaleur pour compenser les pertes"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conductivite-vs-resistance-thermique",
+          "texte": "Confondre conductivité et résistance thermiques : Rth = e / (λS) diminue quand λ augmente"
+        },
+        null,
+        {
+          "code": "froid-substance",
+          "texte": "Croire que le « froid » est une substance qui entre : c'est l'énergie qui sort vers l'extérieur plus froid"
+        },
+        {
+          "code": "isolant-source-chaleur",
+          "texte": "Croire qu'un isolant (un pull, une couverture) produit de la chaleur : il ralentit seulement les pertes"
+        }
+      ],
+      "exp": "Rth = e / (λS) : un isolant a une faible conductivité thermique λ, donc une grande résistance thermique ; il ralentit le transfert. Attention : un pull ne chauffe pas, il limite les pertes."
+    },
+    {
+      "q": "Un mur est fait d'une couche de béton (Rth₁ = 2,0 × 10⁻² K·W⁻¹) accolée à une couche d'isolant (Rth₂ = 8,0 × 10⁻² K·W⁻¹). La résistance thermique totale du mur vaut :",
+      "opts": [
+        "1,6 × 10⁻² K·W⁻¹",
+        "8,0 × 10⁻² K·W⁻¹",
+        "1,0 × 10⁻¹ K·W⁻¹",
+        "5,0 × 10⁻² K·W⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "resistances-serie-vs-parallele",
+          "texte": "Utiliser la formule des résistances en parallèle : des couches accolées sont traversées l'une après l'autre (en série)"
+        },
+        {
+          "code": "seule-plus-grande-resistance",
+          "texte": "Ne garder que la plus grande résistance : toutes les couches comptent"
+        },
+        null,
+        {
+          "code": "resistances-moyenne",
+          "texte": "Faire la moyenne des résistances au lieu de leur somme"
+        }
+      ],
+      "exp": "Les couches accolées sont traversées successivement par le flux : leurs résistances s'ajoutent, Rth = 2,0 × 10⁻² + 8,0 × 10⁻² = 1,0 × 10⁻¹ K·W⁻¹. Attention : c'est l'analogue de résistances électriques en série."
+    },
+    {
+      "q": "L'albédo de la Terre (A ≈ 0,3) est :",
+      "opts": [
+        "la fraction du rayonnement solaire absorbée par la Terre",
+        "la fraction du rayonnement solaire réfléchie par la Terre",
+        "la fraction de l'énergie émise par la Terre sous forme d'infrarouge",
+        "la fraction du rayonnement terrestre retenue par l'effet de serre"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "albedo-absorbe-reflechi",
+          "texte": "Confondre fraction réfléchie (albédo) et fraction absorbée (1 − A)"
+        },
+        null,
+        {
+          "code": "reflexion-vs-emission",
+          "texte": "Confondre réflexion du rayonnement solaire et émission infrarouge par la Terre"
+        },
+        {
+          "code": "albedo-vs-effet-de-serre",
+          "texte": "Confondre albédo et effet de serre"
+        }
+      ],
+      "exp": "L'albédo est la fraction de la puissance solaire incidente renvoyée sans être absorbée (nuages, glace) ; la Terre absorbe donc la fraction 1 − A ≈ 0,7. Attention à ne pas confondre réflexion et émission."
+    },
+    {
+      "q": "Dans le bilan radiatif de la Terre, S (1 − A) / 4 = σ T⁴, le facteur 4 vient du fait que la Terre :",
+      "opts": [
+        "reçoit le rayonnement solaire sur un disque d'aire πR² et rayonne sur toute sa surface 4πR²",
+        "ne reçoit le rayonnement solaire que sur la moitié de sa surface, 2πR²",
+        "voit son atmosphère absorber les trois quarts du rayonnement solaire",
+        "reçoit le rayonnement solaire sur toute sa surface 4πR²"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "hemisphere-vs-disque",
+          "texte": "Prendre la surface de l'hémisphère éclairé (2πR²) au lieu de celle du disque intercepté (πR²)"
+        },
+        {
+          "code": "facteur-4-absorption",
+          "texte": "Attribuer le facteur 4 à une absorption par l'atmosphère : il est purement géométrique"
+        },
+        {
+          "code": "surface-reception-sphere",
+          "texte": "Croire que la Terre reçoit le rayonnement sur toute sa surface : seul le disque face au Soleil l'intercepte"
+        }
+      ],
+      "exp": "La Terre intercepte le flux solaire sur son disque apparent (πR²) et émet sur toute sa sphère (4πR²) : rapport 4πR² / πR² = 4. Attention : ce facteur est géométrique."
+    },
+    {
+      "q": "Avec S = 1 361 W·m⁻², A = 0,30 et σ = 5,67 × 10⁻⁸ W·m⁻²·K⁻⁴, la relation S (1 − A) / 4 = σ T⁴ donne une température d'équilibre de la Terre sans effet de serre de :",
+      "opts": [
+        "255 K",
+        "2,1 × 10² K",
+        "3,6 × 10² K",
+        "−18 K"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "albedo-absorbe-reflechi",
+          "texte": "Utiliser A au lieu de 1 − A : c'est la fraction absorbée qui chauffe la Terre"
+        },
+        {
+          "code": "oubli-facteur-4",
+          "texte": "Oublier le facteur 4 du bilan : [S (1 − A) / σ]^(1/4)"
+        },
+        {
+          "code": "kelvin-vs-celsius",
+          "texte": "Mélanger kelvins et degrés Celsius : 255 K ≈ −18 °C, et non −18 K"
+        }
+      ],
+      "exp": "T = [1 361 × 0,70 / (4 × 5,67 × 10⁻⁸)]^(1/4) ≈ 255 K ≈ −18 °C. La température réelle moyenne (≈ 15 °C) est plus élevée à cause de l'effet de serre. Attention : T est en kelvins dans la loi de Stefan-Boltzmann."
+    },
+    {
+      "q": "Les gaz à effet de serre (CO₂, H₂O, CH₄…) :",
+      "opts": [
+        "absorbent une partie du rayonnement infrarouge émis par la Terre et en réémettent vers le sol",
+        "réfléchissent une partie du rayonnement solaire vers l'espace",
+        "absorbent l'essentiel de la lumière visible venant du Soleil",
+        "détruisent la couche d'ozone, qui protège de la chaleur"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "effet-de-serre-vs-albedo",
+          "texte": "Confondre effet de serre et réflexion du rayonnement solaire (albédo)"
+        },
+        {
+          "code": "effet-de-serre-visible",
+          "texte": "Croire que l'effet de serre agit sur le visible : il porte sur l'infrarouge émis par la Terre"
+        },
+        {
+          "code": "effet-de-serre-vs-ozone",
+          "texte": "Confondre effet de serre et trou de la couche d'ozone (qui concerne les UV)"
+        }
+      ],
+      "exp": "L'atmosphère laisse passer l'essentiel du rayonnement solaire visible, mais ses gaz à effet de serre absorbent une partie de l'infrarouge émis par la surface et en renvoient vers elle. Attention : rien à voir avec la couche d'ozone."
+    },
+    {
+      "q": "Un corps refroidit selon T(t) = Text + (T₀ − Text) × e^(−t/τ). Au bout d'une durée τ, l'écart T − Text vaut environ :",
+      "opts": [
+        "37 % de l'écart initial",
+        "50 % de l'écart initial",
+        "63 % de l'écart initial",
+        "0 : le corps est à la température extérieure"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "tau-vs-demi-vie",
+          "texte": "Confondre τ et la durée de demi-décroissance : au bout de τ, l'écart est multiplié par e⁻¹ ≈ 0,37"
+        },
+        {
+          "code": "37-vs-63-pour-cent",
+          "texte": "Confondre la fraction restante (37 %) et la fraction déjà parcourue (63 %)"
+        },
+        {
+          "code": "tau-duree-totale",
+          "texte": "Croire que l'évolution est terminée au bout de τ : il faut environ 5τ"
+        }
+      ],
+      "exp": "Pour t = τ : e⁻¹ ≈ 0,37, l'écart restant est 37 % de l'écart initial (63 % du chemin est parcouru). Attention : l'équilibre est pratiquement atteint au bout d'environ 5τ."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Bicycle Moto cross — flux thermique",
+      "session": "Amérique du Nord · Jour 2",
+      "link": "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-2"
+    },
+    {
+      "year": "2023",
+      "title": "Four à céramique — transferts thermiques",
+      "session": "Centres étrangers · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-centres-etrangers-1-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Conduction, convection ou rayonnement ?",
+      "contexte": [
+        "Pendant que les pâtes cuisent, Yanis observe tout ce qui chauffe ou refroidit autour de lui."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque situation, indique le mode de transfert thermique principal (conduction, convection ou rayonnement).<br>a. Le manche métallique de la casserole devient chaud alors que seul le fond touche la plaque.<br>b. L'eau de la casserole chauffe aussi en surface : on voit des mouvements d'eau monter puis redescendre.<br>c. Assis à deux mètres du four ouvert, Yanis sent la chaleur sur son visage.<br>d. L'énergie du Soleil arrive jusqu'à la Terre.",
+          "aides": [
+            "Pose-toi deux questions : y a-t-il un contact ? La matière se déplace-t-elle ?",
+            "Contact sans déplacement de matière : conduction. Fluide en mouvement : convection. Ni contact ni support nécessaire : rayonnement."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie en une phrase.<br>a. Un transfert thermique spontané se fait du corps le plus froid vers le corps le plus chaud.<br>b. La conduction thermique s'accompagne d'un déplacement de matière.<br>c. Un mur à 20 °C n'émet aucun rayonnement.<br>d. Dans une bouteille isotherme, le vide entre les deux parois supprime la conduction et la convection, mais pas le rayonnement.",
+          "aides": []
+        },
+        {
+          "texte": "Le flux thermique φ à travers une paroi vaut 50 W. Que représente cette valeur ? Quelle énergie traverse la paroi en une minute ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Conduction : l'agitation thermique se transmet de proche en proche dans le métal, sans déplacement de matière.",
+        "b. Convection : l'eau chaude, moins dense, monte ; l'eau froide descend : il y a déplacement macroscopique du fluide.",
+        "c. Rayonnement : la chaleur arrive par ondes électromagnétiques (infrarouges) à travers l'air, sans passer par un contact.",
+        "d. Rayonnement : c'est le seul mode qui se propage dans le vide spatial.",
+        "<strong>2.</strong> a. FAUX : le transfert thermique spontané se fait toujours du corps chaud vers le corps froid.",
+        "b. FAUX : la conduction se fait sans déplacement de matière (c'est la convection qui en nécessite un).",
+        "c. FAUX : tout corps de température T &gt; 0 K émet un rayonnement ; à 20 °C (293 K), il est surtout infrarouge, donc invisible.",
+        "d. VRAI : sans matière, ni conduction ni convection ; le rayonnement passe dans le vide (on le limite avec des parois argentées, réfléchissantes).",
+        "<strong>3.</strong> φ = 50 W signifie que 50 J traversent la paroi chaque seconde. En 1 min : Q = φ·Δt = 50 × 60 = 3,0 × 10³ J.",
+        "<em>⚠ Erreur fréquente : confondre conduction et convection. Question à se poser : la matière se déplace-t-elle ? Si oui, c'est de la convection.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La glacière du pique-nique",
+      "contexte": [
+        "Pour un pique-nique d'été, Inès range les boissons dans une glacière en polystyrène expansé. On modélise ses parois par une paroi plane unique de surface totale S = 0,50 m², d'épaisseur e = 3,0 cm, et de conductivité thermique λ = 0,035 W·m⁻¹·K⁻¹.",
+        "Dehors, il fait 30 °C ; l'intérieur de la glacière est maintenu à 5 °C par des pains de glace."
+      ],
+      "questions": [
+        {
+          "texte": "Dans quel sens se fait le transfert thermique à travers les parois ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la résistance thermique R<sub>th</sub> des parois de la glacière, avec R<sub>th</sub> = e / (λ·S).",
+          "aides": [
+            "Convertis d'abord toutes les grandeurs dans les unités du SI (m, m², W·m⁻¹·K⁻¹).",
+            "L'épaisseur vaut 3,0 × 10⁻² m. Calcule d'abord le produit λ·S au dénominateur."
+          ]
+        },
+        {
+          "texte": "Calcule le flux thermique φ qui traverse les parois.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle énergie Q entre dans la glacière en 4,0 h ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète l'analogie électrique : φ joue le rôle de …, ΔT joue le rôle de …, R<sub>th</sub> joue le rôle de … Que devient φ si l'on double l'épaisseur des parois ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Du milieu chaud (air extérieur à 30 °C) vers le milieu froid (intérieur à 5 °C) : la glacière reçoit de l'énergie, ce qui fait fondre peu à peu la glace.",
+        "<strong>2.</strong> R<sub>th</sub> = e / (λ·S) = 3,0 × 10⁻² / (0,035 × 0,50) = 1,7 K·W⁻¹ (1,714 avant arrondi).",
+        "<strong>3.</strong> ΔT = 30 − 5 = 25 °C = 25 K. φ = ΔT / R<sub>th</sub> = 25 / 1,714 = 15 W (14,6 W).",
+        "<strong>4.</strong> Δt = 4,0 × 3600 = 1,44 × 10⁴ s. Q = φ·Δt = 14,6 × 1,44 × 10⁴ = 2,1 × 10⁵ J.",
+        "<strong>5.</strong> φ ↔ intensité I ; ΔT ↔ tension U ; R<sub>th</sub> ↔ résistance R (φ = ΔT / R<sub>th</sub> comme I = U / R). Si e double, R<sub>th</sub> double (3,4 K·W⁻¹) et φ est divisé par deux : environ 7,3 W.",
+        "<em>⚠ Erreur fréquente : laisser e en centimètres. Avec λ en W·m⁻¹·K⁻¹, l'épaisseur doit être en mètres (3,0 cm = 3,0 × 10⁻² m).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Mon café refroidit",
+      "contexte": [
+        "Un élève verse un café chaud dans une tasse et enregistre sa température avec une sonde thermométrique, dans une pièce à température constante. Il obtient la courbe ci-dessous.",
+        "D'après la loi de refroidissement de Newton : T(t) = T<sub>ext</sub> + (T<sub>0</sub> − T<sub>ext</sub>) × exp(−t/τ)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"101.8\" y1=\"30\" x2=\"101.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"123.7\" y1=\"30\" x2=\"123.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"145.5\" y1=\"30\" x2=\"145.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"167.3\" y1=\"30\" x2=\"167.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"189.2\" y1=\"30\" x2=\"189.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"189.2\" y=\"428\" text-anchor=\"middle\">10</text><line x1=\"211.0\" y1=\"30\" x2=\"211.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"232.8\" y1=\"30\" x2=\"232.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"254.7\" y1=\"30\" x2=\"254.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"276.5\" y1=\"30\" x2=\"276.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"298.3\" y1=\"30\" x2=\"298.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"428\" text-anchor=\"middle\">20</text><line x1=\"320.2\" y1=\"30\" x2=\"320.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"342.0\" y1=\"30\" x2=\"342.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"363.8\" y1=\"30\" x2=\"363.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"385.7\" y1=\"30\" x2=\"385.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"428\" text-anchor=\"middle\">30</text><line x1=\"429.3\" y1=\"30\" x2=\"429.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"451.2\" y1=\"30\" x2=\"451.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"473.0\" y1=\"30\" x2=\"473.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"494.8\" y1=\"30\" x2=\"494.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"516.7\" y1=\"30\" x2=\"516.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"428\" text-anchor=\"middle\">40</text><line x1=\"538.5\" y1=\"30\" x2=\"538.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"560.3\" y1=\"30\" x2=\"560.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"582.2\" y1=\"30\" x2=\"582.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"604.0\" y1=\"30\" x2=\"604.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"625.8\" y1=\"30\" x2=\"625.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"625.8\" y=\"428\" text-anchor=\"middle\">50</text><line x1=\"647.7\" y1=\"30\" x2=\"647.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"669.5\" y1=\"30\" x2=\"669.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"691.3\" y1=\"30\" x2=\"691.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"713.2\" y1=\"30\" x2=\"713.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">60</text><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"387.0\" x2=\"735\" y2=\"387.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"366.0\" x2=\"735\" y2=\"366.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"371.0\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"345.0\" x2=\"735\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"324.0\" x2=\"735\" y2=\"324.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"329.0\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"303.0\" x2=\"735\" y2=\"303.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"282.0\" x2=\"735\" y2=\"282.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"287.0\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"261.0\" x2=\"735\" y2=\"261.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"240.0\" x2=\"735\" y2=\"240.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"245.0\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"219.0\" x2=\"735\" y2=\"219.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"198.0\" x2=\"735\" y2=\"198.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"203.0\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"177.0\" x2=\"735\" y2=\"177.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"156.0\" x2=\"735\" y2=\"156.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"161.0\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"135.0\" x2=\"735\" y2=\"135.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"114.0\" x2=\"735\" y2=\"114.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"119.0\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"93.0\" x2=\"735\" y2=\"93.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"72.0\" x2=\"735\" y2=\"72.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"77.0\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"51.0\" x2=\"735\" y2=\"51.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">90</text><rect x=\"80\" y=\"30\" width=\"655\" height=\"378\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,72.0 82.7,77.2 85.5,82.3 88.2,87.3 90.9,92.1 93.6,96.9 96.4,101.6 99.1,106.2 101.8,110.7 104.6,115.1 107.3,119.4 110.0,123.6 112.8,127.7 115.5,131.8 118.2,135.8 120.9,139.6 123.7,143.4 126.4,147.2 129.1,150.8 131.9,154.4 134.6,157.9 137.3,161.3 140.0,164.7 142.8,167.9 145.5,171.2 148.2,174.3 151.0,177.4 153.7,180.4 156.4,183.4 159.1,186.3 161.9,189.1 164.6,191.9 167.3,194.6 170.1,197.3 172.8,199.9 175.5,202.5 178.2,205.0 181.0,207.4 183.7,209.8 186.4,212.2 189.2,214.5 191.9,216.7 194.6,219.0 197.4,221.1 200.1,223.2 202.8,225.3 205.5,227.4 208.3,229.3 211.0,231.3 213.7,233.2 216.5,235.1 219.2,236.9 221.9,238.7 224.6,240.5 227.4,242.2 230.1,243.9 232.8,245.5 235.6,247.1 238.3,248.7 241.0,250.3 243.8,251.8 246.5,253.3 249.2,254.7 251.9,256.2 254.7,257.6 257.4,258.9 260.1,260.3 262.9,261.6 265.6,262.9 268.3,264.1 271.0,265.4 273.8,266.6 276.5,267.8 279.2,268.9 282.0,270.1 284.7,271.2 287.4,272.3 290.1,273.3 292.9,274.4 295.6,275.4 298.3,276.4 301.1,277.4 303.8,278.3 306.5,279.3 309.2,280.2 312.0,281.1 314.7,282.0 317.4,282.9 320.2,283.7 322.9,284.5 325.6,285.4 328.4,286.2 331.1,286.9 333.8,287.7 336.5,288.4 339.3,289.2 342.0,289.9 344.7,290.6 347.5,291.3 350.2,292.0 352.9,292.6 355.6,293.3 358.4,293.9 361.1,294.5 363.8,295.1 366.6,295.7 369.3,296.3 372.0,296.9 374.8,297.4 377.5,298.0 380.2,298.5 382.9,299.0 385.7,299.6 388.4,300.1 391.1,300.6 393.9,301.0 396.6,301.5 399.3,302.0 402.0,302.4 404.8,302.9 407.5,303.3 410.2,303.7 413.0,304.2 415.7,304.6 418.4,305.0 421.1,305.4 423.9,305.7 426.6,306.1 429.3,306.5 432.1,306.9 434.8,307.2 437.5,307.6 440.3,307.9 443.0,308.2 445.7,308.5 448.4,308.9 451.2,309.2 453.9,309.5 456.6,309.8 459.4,310.1 462.1,310.4 464.8,310.6 467.5,310.9 470.3,311.2 473.0,311.5 475.7,311.7 478.5,312.0 481.2,312.2 483.9,312.5 486.6,312.7 489.4,312.9 492.1,313.2 494.8,313.4 497.6,313.6 500.3,313.8 503.0,314.0 505.8,314.2 508.5,314.4 511.2,314.6 513.9,314.8 516.7,315.0 519.4,315.2 522.1,315.4 524.9,315.6 527.6,315.7 530.3,315.9 533.0,316.1 535.8,316.2 538.5,316.4 541.2,316.5 544.0,316.7 546.7,316.9 549.4,317.0 552.1,317.1 554.9,317.3 557.6,317.4 560.3,317.6 563.1,317.7 565.8,317.8 568.5,317.9 571.2,318.1 574.0,318.2 576.7,318.3 579.4,318.4 582.2,318.5 584.9,318.7 587.6,318.8 590.4,318.9 593.1,319.0 595.8,319.1 598.5,319.2 601.3,319.3 604.0,319.4 606.7,319.5 609.5,319.6 612.2,319.7 614.9,319.8 617.6,319.8 620.4,319.9 623.1,320.0 625.8,320.1 628.6,320.2 631.3,320.3 634.0,320.3 636.8,320.4 639.5,320.5 642.2,320.6 644.9,320.6 647.7,320.7 650.4,320.8 653.1,320.8 655.9,320.9 658.6,321.0 661.3,321.0 664.0,321.1 666.8,321.1 669.5,321.2 672.2,321.3 675.0,321.3 677.7,321.4 680.4,321.4 683.1,321.5 685.9,321.5 688.6,321.6 691.3,321.6 694.1,321.7 696.8,321.7 699.5,321.8 702.2,321.8 705.0,321.9 707.7,321.9 710.4,322.0 713.2,322.0 715.9,322.0 718.6,322.1 721.4,322.1 724.1,322.2 726.8,322.2 729.5,322.2 732.3,322.3 735.0,322.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">durée t (min)</text><text transform=\"translate(24,219.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">température T (°C)</text></svg>",
+      "questions": [
+        {
+          "texte": "Relève la température initiale T<sub>0</sub> du café et la température T<sub>ext</sub> de la pièce (vers quelle valeur la courbe tend-elle ?).",
+          "aides": []
+        },
+        {
+          "texte": "Le café refroidit-il plus vite au début ou à la fin de l'enregistrement ? Justifie avec la courbe.",
+          "aides": []
+        },
+        {
+          "texte": "Au bout d'une durée τ, l'écart T − T<sub>ext</sub> a été divisé par e ≈ 2,7 (il vaut 37 % de l'écart initial). Calcule la température atteinte à t = τ, puis lis τ sur la courbe.",
+          "aides": [
+            "L'écart initial vaut T<sub>0</sub> − T<sub>ext</sub>. Prends-en 37 %.",
+            "Ajoute T<sub>ext</sub> au résultat pour obtenir T(τ), puis cherche sur la courbe l'abscisse du point qui a cette ordonnée."
+          ]
+        },
+        {
+          "texte": "Au bout de combien de temps peut-on considérer que le café est à la température de la pièce ?",
+          "aides": []
+        },
+        {
+          "texte": "Lis la durée nécessaire pour que le café atteigne 50 °C.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> On lit T<sub>0</sub> = 80 °C. La courbe tend vers une asymptote horizontale : T<sub>ext</sub> = 20 °C.",
+        "<strong>2.</strong> Plus vite au début : la pente de la courbe y est la plus forte. La vitesse de refroidissement est proportionnelle à l'écart T − T<sub>ext</sub>, qui diminue au cours du temps.",
+        "<strong>3.</strong> Écart initial : 80 − 20 = 60 °C ; à t = τ : 60 × 0,37 = 22 °C, donc T(τ) = 20 + 22 = 42 °C. On lit sur la courbe τ ≈ 12 min.",
+        "<strong>4.</strong> Au bout d'environ 5τ = 5 × 12 = 60 min (l'écart n'est plus que 0,4 °C).",
+        "<strong>5.</strong> On lit t ≈ 8 min (calcul : t = τ × ln 2 = 8,3 min).",
+        "<em>⚠ Erreur fréquente : chercher τ là où T vaut 37 % de T<sub>0</sub> (soit 30 °C). C'est l'écart T − T<sub>ext</sub> qui est réduit à 37 %, pas la température elle-même.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Isoler un mur de la maison",
+      "contexte": [
+        "Le mur nord d'une maison (5,0 m × 2,4 m) est en béton d'épaisseur 20 cm (λ = 1,75 W·m⁻¹·K⁻¹). Les propriétaires veulent y ajouter, côté intérieur, une couche de laine de verre de 12 cm (λ = 0,035 W·m⁻¹·K⁻¹).",
+        "Les couches d'air au contact des deux faces du mur se comportent comme une résistance thermique supplémentaire R<sub>s</sub> = 1,4 × 10⁻² K·W⁻¹, placée en série. La maison est chauffée à 19 °C ; il fait 5 °C dehors. Prix de l'électricité supposé : 0,25 € par kWh."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la résistance thermique R<sub>b</sub> de la couche de béton et R<sub>l</sub> de la couche de laine de verre.",
+          "aides": [
+            "La relation R<sub>th</sub> = e / (λ·S) est dans l'encadré des données. Quelle est la surface du mur ?",
+            "S = 5,0 × 2,4 m² ; les épaisseurs doivent être en mètres."
+          ]
+        },
+        {
+          "texte": "Calcule la résistance thermique totale du mur sans isolant, puis avec isolant. Quelle couche limite le plus les pertes ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le flux thermique perdu à travers le mur sans isolant, puis avec isolant. Par combien les pertes sont-elles divisées ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule, en kWh, l'énergie perdue en une journée dans chaque cas, puis l'économie réalisée en euros par jour (pour un écart de température constant).",
+          "aides": [
+            "Une énergie en kWh s'obtient en multipliant une puissance en kW par une durée en h.",
+            "Convertis φ en kW (÷ 1000), multiplie par 24 h, puis fais la différence entre les deux cas."
+          ]
+        },
+        {
+          "texte": "Quelle épaisseur minimale de laine de verre faudrait-il pour que les pertes ne dépassent pas 30 W ?",
+          "aides": [
+            "Pars de la fin : quelle résistance totale faut-il pour que φ = 30 W avec ΔT = 14 K ?",
+            "Retire de cette résistance totale celle du mur sans isolant : il reste la résistance que doit apporter la laine de verre, puis utilise e = R<sub>l</sub>·λ·S."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> S = 5,0 × 2,4 = 12 m². R<sub>b</sub> = e / (λ·S) = 0,20 / (1,75 × 12) = 9,5 × 10⁻³ K·W⁻¹. R<sub>l</sub> = 0,12 / (0,035 × 12) = 0,29 K·W⁻¹ (0,286).",
+        "<strong>2.</strong> Les couches sont en série : les résistances s'additionnent. Sans isolant : R<sub>1</sub> = R<sub>s</sub> + R<sub>b</sub> = 1,4 × 10⁻² + 9,5 × 10⁻³ = 2,35 × 10⁻² K·W⁻¹. Avec isolant : R<sub>2</sub> = R<sub>s</sub> + R<sub>b</sub> + R<sub>l</sub> = 0,309 K·W⁻¹. La laine de verre représente 92 % de la résistance totale : c'est elle qui limite les pertes.",
+        "<strong>3.</strong> ΔT = 19 − 5 = 14 K. Sans isolant : φ<sub>1</sub> = 14 / 2,35 × 10⁻² = 6,0 × 10² W (595 W). Avec isolant : φ<sub>2</sub> = 14 / 0,309 = 45 W. Les pertes sont divisées par environ 13.",
+        "<strong>4.</strong> E = φ·Δt avec Δt = 24 h : E<sub>1</sub> = 595 W × 24 h = 14,3 kWh ; E<sub>2</sub> = 45,3 W × 24 h = 1,09 kWh. Économie : 13,2 kWh par jour, soit 13,2 × 0,25 = 3,3 € par jour (pour ce seul mur).",
+        "<strong>5.</strong> φ ≤ 30 W impose R<sub>tot</sub> ≥ 14 / 30 = 0,467 K·W⁻¹, donc R<sub>l</sub> ≥ 0,467 − 0,0235 = 0,443 K·W⁻¹ et e = R<sub>l</sub>·λ·S = 0,443 × 0,035 × 12 = 0,19 m. Il faut au moins 19 cm de laine de verre.",
+        "<em>⚠ Erreur fréquente : additionner les conductivités λ ou les flux. En série, ce sont les résistances thermiques qui s'ajoutent ; on calcule ensuite un seul flux φ = ΔT / R<sub>tot</sub>.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Terre, Mars, Vénus : qui a un effet de serre ?",
+      "contexte": [
+        "Une planète de rayon R reçoit du Soleil une puissance surfacique S (perpendiculairement aux rayons) sur son disque apparent d'aire π·R². Elle en réfléchit une fraction A (albédo) et absorbe le reste. Elle émet par rayonnement, sur toute sa surface 4π·R², la puissance surfacique σ·T⁴.",
+        "Données (valeurs arrondies) :",
+        "Terre : S = 1361 W·m⁻² ; A = 0,30 ; température moyenne de surface observée ≈ 288 K.",
+        "Mars : S = 586 W·m⁻² ; A = 0,25 ; température moyenne de surface observée ≈ 210 K ; atmosphère très peu dense.",
+        "Vénus : S = 2601 W·m⁻² ; A = 0,76 ; température moyenne de surface observée ≈ 737 K ; atmosphère très dense, riche en CO₂."
+      ],
+      "questions": [
+        {
+          "texte": "Exprime la puissance absorbée P<sub>abs</sub> et la puissance émise P<sub>em</sub> par une planète en fonction de S, A, R, σ et T.",
+          "aides": []
+        },
+        {
+          "texte": "À l'équilibre radiatif, montre que S·(1 − A) / 4 = σ·T⁴. D'où vient le facteur 4 ?",
+          "aides": [
+            "Écris P<sub>abs</sub> = P<sub>em</sub> avec les expressions de la question 1.",
+            "Divise les deux membres par π·R² : il reste un 4 d'un seul côté."
+          ]
+        },
+        {
+          "texte": "Calcule la température d'équilibre radiatif T<sub>eq</sub> de chaque planète (en K et en °C).",
+          "aides": [
+            "Isole T⁴, puis prends la racine quatrième (touche x^(1/4) ou deux racines carrées successives).",
+            "Pour la Terre, calcule d'abord S·(1 − A) / 4 = 1361 × 0,70 / 4, puis divise par σ."
+          ]
+        },
+        {
+          "texte": "Compare T<sub>eq</sub> aux températures observées. Pour quelle(s) planète(s) l'effet de serre est-il important ? Relie ta réponse à la composition des atmosphères.",
+          "aides": []
+        },
+        {
+          "texte": "Vénus reçoit presque deux fois plus d'énergie solaire que la Terre, et pourtant sa T<sub>eq</sub> est plus basse. Explique.",
+          "aides": []
+        },
+        {
+          "texte": "Sur Terre, la fonte des glaces diminue l'albédo. Calcule T<sub>eq</sub> pour A = 0,29 et conclus sur le sens de l'effet.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> P<sub>abs</sub> = S·(1 − A)·π·R² ; P<sub>em</sub> = σ·T⁴·4π·R².",
+        "<strong>2.</strong> Équilibre : P<sub>abs</sub> = P<sub>em</sub>, soit S·(1 − A)·π·R² = σ·T⁴·4π·R² ; on simplifie par π·R² : S·(1 − A) / 4 = σ·T⁴. Le facteur 4 vient de ce que la planète capte le rayonnement sur un disque (π·R²) mais émet sur toute sa sphère (4π·R²).",
+        "<strong>3.</strong> T<sub>eq</sub> = [S·(1 − A) / (4σ)]^(1/4). Terre : [1361 × 0,70 / (4 × 5,67 × 10⁻⁸)]^(1/4) = 255 K, soit −18 °C. Mars : [586 × 0,75 / (4σ)]^(1/4) = 210 K, soit −63 °C. Vénus : [2601 × 0,24 / (4σ)]^(1/4) = 229 K, soit −44 °C.",
+        "<strong>4.</strong> Terre : 288 − 255 = 33 K d'écart, effet de serre naturel notable. Mars : écart quasi nul, l'atmosphère très ténue ne produit presque pas d'effet de serre. Vénus : 737 − 229 ≈ 508 K d'écart, effet de serre considérable dû à l'atmosphère épaisse riche en CO₂, qui absorbe le rayonnement infrarouge émis par le sol et en renvoie une partie vers lui.",
+        "<strong>5.</strong> Son albédo est très élevé (0,76) : elle réfléchit 76 % du rayonnement reçu (nuages épais). Elle n'absorbe que 2601 × 0,24 / 4 = 156 W·m⁻², contre 238 W·m⁻² pour la Terre.",
+        "<strong>6.</strong> A = 0,29 : T<sub>eq</sub> = 255,5 K, soit environ +0,9 K par rapport à A = 0,30. Moins de réflexion, donc plus d'absorption : la température augmente, ce qui fait fondre encore plus de glace (effet amplificateur).",
+        "<em>⚠ Erreur fréquente : oublier la racine quatrième, ou faire le calcul en °C. La loi de Stefan-Boltzmann s'utilise avec T en kelvins.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "La bouillotte tiendra-t-elle toute la nuit ?",
+      "contexte": [
+        "Doc. 1 — La bouillotte. Lou remplit une bouillotte de 1,50 L d'eau à 70 °C et la pose sur son lit, dans une chambre à T<sub>ext</sub> = 20 °C. On choisit pour système l'eau de la bouillotte (on néglige la capacité thermique de l'enveloppe en caoutchouc). Le volume de l'eau ne varie pas.",
+        "Doc. 2 — Loi de Newton (modèle). Le flux thermique cédé par l'eau à l'air de la chambre s'écrit φ = (T − T<sub>ext</sub>) / R<sub>th</sub>, où T est la température de l'eau à l'instant t et R<sub>th</sub> la résistance thermique entre l'eau et l'air, supposée constante.",
+        "Doc. 3 — Mesures. Un élève suit la température de l'eau avec une sonde (points) ; la courbe représente le modèle ajusté."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"98.2\" y1=\"30\" x2=\"98.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"116.4\" y1=\"30\" x2=\"116.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"134.6\" y1=\"30\" x2=\"134.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"152.8\" y1=\"30\" x2=\"152.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"152.8\" y=\"428\" text-anchor=\"middle\">40</text><line x1=\"171.0\" y1=\"30\" x2=\"171.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"189.2\" y1=\"30\" x2=\"189.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"207.4\" y1=\"30\" x2=\"207.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"225.6\" y1=\"30\" x2=\"225.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"225.6\" y=\"428\" text-anchor=\"middle\">80</text><line x1=\"243.8\" y1=\"30\" x2=\"243.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"261.9\" y1=\"30\" x2=\"261.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"280.1\" y1=\"30\" x2=\"280.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"298.3\" y1=\"30\" x2=\"298.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"428\" text-anchor=\"middle\">120</text><line x1=\"316.5\" y1=\"30\" x2=\"316.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"334.7\" y1=\"30\" x2=\"334.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"352.9\" y1=\"30\" x2=\"352.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"371.1\" y1=\"30\" x2=\"371.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"371.1\" y=\"428\" text-anchor=\"middle\">160</text><line x1=\"389.3\" y1=\"30\" x2=\"389.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"425.7\" y1=\"30\" x2=\"425.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"443.9\" y1=\"30\" x2=\"443.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"443.9\" y=\"428\" text-anchor=\"middle\">200</text><line x1=\"462.1\" y1=\"30\" x2=\"462.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"480.3\" y1=\"30\" x2=\"480.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"498.5\" y1=\"30\" x2=\"498.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"516.7\" y1=\"30\" x2=\"516.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"428\" text-anchor=\"middle\">240</text><line x1=\"534.9\" y1=\"30\" x2=\"534.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"553.1\" y1=\"30\" x2=\"553.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"571.2\" y1=\"30\" x2=\"571.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"589.4\" y1=\"30\" x2=\"589.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"589.4\" y=\"428\" text-anchor=\"middle\">280</text><line x1=\"607.6\" y1=\"30\" x2=\"607.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"625.8\" y1=\"30\" x2=\"625.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"644.0\" y1=\"30\" x2=\"644.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"662.2\" y1=\"30\" x2=\"662.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"662.2\" y=\"428\" text-anchor=\"middle\">320</text><line x1=\"680.4\" y1=\"30\" x2=\"680.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"698.6\" y1=\"30\" x2=\"698.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"716.8\" y1=\"30\" x2=\"716.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">360</text><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"398.6\" x2=\"735\" y2=\"398.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"389.1\" x2=\"735\" y2=\"389.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"379.6\" x2=\"735\" y2=\"379.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"370.2\" x2=\"735\" y2=\"370.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"360.8\" x2=\"735\" y2=\"360.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"365.8\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"351.3\" x2=\"735\" y2=\"351.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"341.9\" x2=\"735\" y2=\"341.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"332.4\" x2=\"735\" y2=\"332.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"322.9\" x2=\"735\" y2=\"322.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"313.5\" x2=\"735\" y2=\"313.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"318.5\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"304.1\" x2=\"735\" y2=\"304.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"294.6\" x2=\"735\" y2=\"294.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"285.1\" x2=\"735\" y2=\"285.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"275.7\" x2=\"735\" y2=\"275.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"266.2\" x2=\"735\" y2=\"266.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"271.2\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"256.8\" x2=\"735\" y2=\"256.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"247.3\" x2=\"735\" y2=\"247.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"237.9\" x2=\"735\" y2=\"237.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"228.5\" x2=\"735\" y2=\"228.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"219.0\" x2=\"735\" y2=\"219.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"224.0\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"209.5\" x2=\"735\" y2=\"209.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"200.1\" x2=\"735\" y2=\"200.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"190.7\" x2=\"735\" y2=\"190.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"181.2\" x2=\"735\" y2=\"181.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"171.8\" x2=\"735\" y2=\"171.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"176.8\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"162.3\" x2=\"735\" y2=\"162.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"152.8\" x2=\"735\" y2=\"152.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"143.4\" x2=\"735\" y2=\"143.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"133.9\" x2=\"735\" y2=\"133.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"124.5\" x2=\"735\" y2=\"124.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"129.5\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"115.1\" x2=\"735\" y2=\"115.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"105.6\" x2=\"735\" y2=\"105.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"96.2\" x2=\"735\" y2=\"96.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"86.7\" x2=\"735\" y2=\"86.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"77.2\" x2=\"735\" y2=\"77.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"82.2\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"67.8\" x2=\"735\" y2=\"67.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"58.3\" x2=\"735\" y2=\"58.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"48.9\" x2=\"735\" y2=\"48.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"39.4\" x2=\"735\" y2=\"39.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">80</text><rect x=\"80\" y=\"30\" width=\"655\" height=\"378\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,77.2 81.8,79.6 83.6,81.9 85.5,84.2 87.3,86.5 89.1,88.8 90.9,91.0 92.7,93.2 94.6,95.4 96.4,97.6 98.2,99.7 100.0,101.9 101.8,104.0 103.7,106.0 105.5,108.1 107.3,110.2 109.1,112.2 110.9,114.2 112.8,116.2 114.6,118.1 116.4,120.1 118.2,122.0 120.0,123.9 121.8,125.8 123.7,127.7 125.5,129.5 127.3,131.3 129.1,133.2 130.9,134.9 132.8,136.7 134.6,138.5 136.4,140.2 138.2,141.9 140.0,143.7 141.9,145.3 143.7,147.0 145.5,148.7 147.3,150.3 149.1,151.9 151.0,153.5 152.8,155.1 154.6,156.7 156.4,158.3 158.2,159.8 160.1,161.3 161.9,162.9 163.7,164.4 165.5,165.8 167.3,167.3 169.2,168.8 171.0,170.2 172.8,171.6 174.6,173.0 176.4,174.4 178.2,175.8 180.1,177.2 181.9,178.6 183.7,179.9 185.5,181.2 187.3,182.5 189.2,183.8 191.0,185.1 192.8,186.4 194.6,187.7 196.4,188.9 198.3,190.2 200.1,191.4 201.9,192.6 203.7,193.8 205.5,195.0 207.4,196.2 209.2,197.3 211.0,198.5 212.8,199.6 214.6,200.8 216.5,201.9 218.3,203.0 220.1,204.1 221.9,205.2 223.7,206.3 225.6,207.3 227.4,208.4 229.2,209.4 231.0,210.5 232.8,211.5 234.7,212.5 236.5,213.5 238.3,214.5 240.1,215.5 241.9,216.5 243.8,217.4 245.6,218.4 247.4,219.3 249.2,220.3 251.0,221.2 252.8,222.1 254.7,223.0 256.5,223.9 258.3,224.8 260.1,225.7 261.9,226.6 263.8,227.5 265.6,228.3 267.4,229.2 269.2,230.0 271.0,230.8 272.9,231.6 274.7,232.5 276.5,233.3 278.3,234.1 280.1,234.9 282.0,235.6 283.8,236.4 285.6,237.2 287.4,237.9 289.2,238.7 291.1,239.4 292.9,240.2 294.7,240.9 296.5,241.6 298.3,242.3 300.2,243.1 302.0,243.8 303.8,244.4 305.6,245.1 307.4,245.8 309.2,246.5 311.1,247.2 312.9,247.8 314.7,248.5 316.5,249.1 318.3,249.8 320.2,250.4 322.0,251.0 323.8,251.6 325.6,252.3 327.4,252.9 329.3,253.5 331.1,254.1 332.9,254.7 334.7,255.2 336.5,255.8 338.4,256.4 340.2,257.0 342.0,257.5 343.8,258.1 345.6,258.6 347.5,259.2 349.3,259.7 351.1,260.3 352.9,260.8 354.7,261.3 356.6,261.8 358.4,262.3 360.2,262.9 362.0,263.4 363.8,263.9 365.7,264.3 367.5,264.8 369.3,265.3 371.1,265.8 372.9,266.3 374.8,266.7 376.6,267.2 378.4,267.7 380.2,268.1 382.0,268.6 383.8,269.0 385.7,269.5 387.5,269.9 389.3,270.3 391.1,270.8 392.9,271.2 394.8,271.6 396.6,272.0 398.4,272.4 400.2,272.9 402.0,273.3 403.9,273.7 405.7,274.1 407.5,274.4 409.3,274.8 411.1,275.2 413.0,275.6 414.8,276.0 416.6,276.4 418.4,276.7 420.2,277.1 422.1,277.5 423.9,277.8 425.7,278.2 427.5,278.5 429.3,278.9 431.2,279.2 433.0,279.5 434.8,279.9 436.6,280.2 438.4,280.6 440.3,280.9 442.1,281.2 443.9,281.5 445.7,281.8 447.5,282.2 449.3,282.5 451.2,282.8 453.0,283.1 454.8,283.4 456.6,283.7 458.4,284.0 460.3,284.3 462.1,284.6 463.9,284.9 465.7,285.1 467.5,285.4 469.4,285.7 471.2,286.0 473.0,286.3 474.8,286.5 476.6,286.8 478.5,287.1 480.3,287.3 482.1,287.6 483.9,287.8 485.7,288.1 487.6,288.3 489.4,288.6 491.2,288.8 493.0,289.1 494.8,289.3 496.7,289.6 498.5,289.8 500.3,290.0 502.1,290.3 503.9,290.5 505.8,290.7 507.6,291.0 509.4,291.2 511.2,291.4 513.0,291.6 514.8,291.9 516.7,292.1 518.5,292.3 520.3,292.5 522.1,292.7 523.9,292.9 525.8,293.1 527.6,293.3 529.4,293.5 531.2,293.7 533.0,293.9 534.9,294.1 536.7,294.3 538.5,294.5 540.3,294.7 542.1,294.9 544.0,295.1 545.8,295.2 547.6,295.4 549.4,295.6 551.2,295.8 553.1,296.0 554.9,296.1 556.7,296.3 558.5,296.5 560.3,296.6 562.2,296.8 564.0,297.0 565.8,297.1 567.6,297.3 569.4,297.5 571.2,297.6 573.1,297.8 574.9,297.9 576.7,298.1 578.5,298.2 580.3,298.4 582.2,298.5 584.0,298.7 585.8,298.8 587.6,299.0 589.4,299.1 591.3,299.3 593.1,299.4 594.9,299.6 596.7,299.7 598.5,299.8 600.4,300.0 602.2,300.1 604.0,300.2 605.8,300.4 607.6,300.5 609.5,300.6 611.3,300.8 613.1,300.9 614.9,301.0 616.7,301.1 618.6,301.3 620.4,301.4 622.2,301.5 624.0,301.6 625.8,301.7 627.7,301.9 629.5,302.0 631.3,302.1 633.1,302.2 634.9,302.3 636.8,302.4 638.6,302.5 640.4,302.6 642.2,302.8 644.0,302.9 645.8,303.0 647.7,303.1 649.5,303.2 651.3,303.3 653.1,303.4 654.9,303.5 656.8,303.6 658.6,303.7 660.4,303.8 662.2,303.9 664.0,304.0 665.9,304.1 667.7,304.2 669.5,304.2 671.3,304.3 673.1,304.4 675.0,304.5 676.8,304.6 678.6,304.7 680.4,304.8 682.2,304.9 684.1,305.0 685.9,305.0 687.7,305.1 689.5,305.2 691.3,305.3 693.2,305.4 695.0,305.5 696.8,305.5 698.6,305.6 700.4,305.7 702.2,305.8 704.1,305.8 705.9,305.9 707.7,306.0 709.5,306.1 711.3,306.1 713.2,306.2 715.0,306.3 716.8,306.4 718.6,306.4 720.4,306.5 722.3,306.6 724.1,306.6 725.9,306.7 727.7,306.8 729.5,306.8 731.4,306.9 733.2,307.0 735.0,307.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><circle cx=\"80.0\" cy=\"77.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"116.4\" cy=\"120.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"152.8\" cy=\"155.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"189.2\" cy=\"184.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"225.6\" cy=\"207.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"261.9\" cy=\"226.6\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"298.3\" cy=\"242.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"334.7\" cy=\"255.4\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"371.1\" cy=\"265.8\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"407.5\" cy=\"274.3\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"443.9\" cy=\"281.4\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"480.3\" cy=\"287.5\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"516.7\" cy=\"292.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"553.1\" cy=\"296.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"589.4\" cy=\"299.3\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"625.8\" cy=\"301.7\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"662.2\" cy=\"304.1\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"698.6\" cy=\"305.5\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"735.0\" cy=\"306.9\" r=\"4.5\" fill=\"#B5523B\"/><text x=\"725\" y=\"54\" text-anchor=\"end\" fill=\"#B5523B\">● mesures   <tspan fill=\"#1F4E5A\">— modèle</tspan></text><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">durée t (min)</text><text transform=\"translate(24,219.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">température de l’eau T (°C)</text></svg>",
+      "questions": [
+        {
+          "texte": "Le système échange-t-il du travail avec l'extérieur ? Écris le premier principe pour l'eau et précise le signe du transfert thermique Q au cours du refroidissement.",
+          "aides": []
+        },
+        {
+          "texte": "Entre t et t + dt, l'eau cède l'énergie φ·dt. En effectuant un bilan d'énergie, montre que la température vérifie : dT/dt = −(T − T<sub>ext</sub>) / (R<sub>th</sub>·C), où C est la capacité thermique de l'eau.",
+          "aides": [
+            "Pendant dt, la variation d'énergie interne de l'eau s'écrit dU = C·dT. Quelle énergie l'eau perd-elle pendant dt ?",
+            "Écris dU = −φ·dt, remplace φ par l'expression du doc. 2, puis divise par C·dt."
+          ]
+        },
+        {
+          "texte": "Vérifie que T(t) = T<sub>ext</sub> + (T<sub>0</sub> − T<sub>ext</sub>) × exp(−t/τ) est solution de cette équation, avec la bonne condition initiale, et exprime τ en fonction de R<sub>th</sub> et C.",
+          "aides": [
+            "Dérive T(t) : la dérivée de exp(−t/τ) est −(1/τ)·exp(−t/τ).",
+            "Remarque que (T<sub>0</sub> − T<sub>ext</sub>)·exp(−t/τ) = T − T<sub>ext</sub>, puis compare au résultat de la question 2."
+          ]
+        },
+        {
+          "texte": "Détermine graphiquement τ à l'aide du doc. 3 en expliquant ta méthode.",
+          "aides": [
+            "Comme pour le café (exercice 3) : quel écart reste-t-il à t = τ ?",
+            "Calcule T<sub>ext</sub> + 0,37 × (T<sub>0</sub> − T<sub>ext</sub>) et cherche l'abscisse correspondante sur la courbe."
+          ]
+        },
+        {
+          "texte": "Calcule C, puis déduis-en la résistance thermique R<sub>th</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le flux thermique cédé à t = 0. Calcule l'énergie cédée par l'eau lorsqu'elle passe de 70 °C à 30 °C, et lis la durée correspondante.",
+          "aides": []
+        },
+        {
+          "texte": "Lou glisse la bouillotte dans une housse polaire, qui ajoute en série une résistance thermique R<sub>h</sub> = 1,0 K·W⁻¹. Lou s'endort 5 h après avoir rempli la bouillotte ; on considère qu'elle ne chauffe plus assez en dessous de 30 °C. La bouillotte dans sa housse tient-elle jusque-là ? Justifie.",
+          "aides": [
+            "Les résistances thermiques en série s'additionnent. Calcule la nouvelle valeur de τ.",
+            "Dans T(t), t n'intervient que par t/τ : si τ est multiplié par un facteur k, la durée pour atteindre 30 °C est multipliée par k."
+          ]
+        },
+        {
+          "texte": "Donne deux limites du modèle utilisé.",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : montre que ln(T − T<sub>ext</sub>) est une fonction affine du temps, et explique comment on pourrait en déduire τ à partir des mesures.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le volume de l'eau ne varie pas : W = 0. Premier principe : ΔU = W + Q = Q. L'eau refroidit (ΔT &lt; 0) donc ΔU = C·ΔT &lt; 0 : Q &lt; 0, l'eau cède de l'énergie à l'air de la chambre.",
+        "<strong>2.</strong> Entre t et t + dt : dU = C·dT = −φ·dt (l'eau perd l'énergie φ·dt). Donc C·dT/dt = −(T − T<sub>ext</sub>) / R<sub>th</sub>, soit dT/dt = −(T − T<sub>ext</sub>) / (R<sub>th</sub>·C).",
+        "<strong>3.</strong> dT/dt = −(T<sub>0</sub> − T<sub>ext</sub>)/τ × exp(−t/τ) = −(T − T<sub>ext</sub>)/τ : c'est l'équation du 2. à condition que τ = R<sub>th</sub>·C. À t = 0 : T(0) = T<sub>ext</sub> + (T<sub>0</sub> − T<sub>ext</sub>) = T<sub>0</sub>, la condition initiale est respectée.",
+        "<strong>4.</strong> Méthode des 37 % : à t = τ, T − T<sub>ext</sub> = 0,37 × (70 − 20) = 18,4 °C, donc T(τ) = 38,4 °C. On lit τ ≈ 100 min = 6,0 × 10³ s (on accepte aussi la tangente à l'origine, qui coupe l'asymptote T = 20 °C à t = τ).",
+        "<strong>5.</strong> m = 1,50 kg ; C = m·c = 1,50 × 4180 = 6,27 × 10³ J·K⁻¹. R<sub>th</sub> = τ / C = 6,0 × 10³ / 6,27 × 10³ = 0,96 K·W⁻¹.",
+        "<strong>6.</strong> φ<sub>0</sub> = (T<sub>0</sub> − T<sub>ext</sub>) / R<sub>th</sub> = 50 / 0,957 = 52 W. Énergie : ΔU = C·(T<sub>f</sub> − T<sub>0</sub>) = 6,27 × 10³ × (30 − 70) = −2,5 × 10⁵ J ; l'eau cède 2,5 × 10⁵ J. On lit T = 30 °C pour t ≈ 160 min (calcul : t = τ·ln 5 = 161 min).",
+        "<strong>7.</strong> Avec la housse : R<sub>th</sub>' = 0,96 + 1,0 = 1,96 K·W⁻¹ ; τ' = R<sub>th</sub>'·C = 1,96 × 6,27 × 10³ = 1,2 × 10⁴ s ≈ 205 min, soit 2,0 fois plus que τ. Toutes les durées sont multipliées par ce même facteur : la bouillotte atteint 30 °C au bout de 161 × 2,045 = 329 min ≈ 5,5 h &gt; 5 h. Oui, elle tient jusqu'à ce que Lou s'endorme (de justesse).",
+        "<strong>8.</strong> Éléments attendus (deux parmi) : T<sub>ext</sub> n'est pas vraiment constante (le lit et les draps se réchauffent) ; R<sub>th</sub> dépend de la position (couverture, contact avec le corps) ; la capacité thermique de l'enveloppe est négligée ; une partie des échanges se fait par rayonnement, qui n'est pas exactement proportionnel à T − T<sub>ext</sub> ; la température de l'eau n'est pas uniforme.",
+        "<strong>9.</strong> Pour aller plus loin : T − T<sub>ext</sub> = (T<sub>0</sub> − T<sub>ext</sub>)·exp(−t/τ), donc ln(T − T<sub>ext</sub>) = ln(T<sub>0</sub> − T<sub>ext</sub>) − t/τ : droite de pente −1/τ. En traçant ln(T − T<sub>ext</sub>) en fonction de t à partir des mesures, on obtient une droite de pente −1,0 × 10⁻² min⁻¹, d'où τ = 100 min.",
+        "<em>⚠ Erreur fréquente : additionner R<sub>th</sub> et R<sub>h</sub> puis oublier que τ = R<sub>th</sub>·C change aussi ; ou appliquer la méthode des 37 % à T (37 % de 70 °C) au lieu de l'écart T − T<sub>ext</sub>.</em>"
+      ]
+    }
+  ]
+}

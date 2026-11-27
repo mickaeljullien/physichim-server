@@ -1,0 +1,806 @@
+{
+  "id": 0,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La proportionnalité — le \"produit en croix\"",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "text",
+            "text": "En physique-chimie, on a très souvent besoin de trouver une valeur inconnue quand on sait que deux grandeurs sont proportionnelles. La méthode du <strong>produit en croix</strong> (ou règle de trois) permet de le faire en 2 secondes."
+          },
+          {
+            "type": "def",
+            "term": "💡 La règle à retenir",
+            "text": "Si deux grandeurs sont proportionnelles, le rapport entre elles est toujours le même :<br><br><strong>colonne 1 : colonne 2 = même rapport partout</strong><br><br>On croise et on multiplie : la valeur inconnue = (les deux valeurs qui se font face × l'une sur l'autre)."
+          },
+          {
+            "type": "formula",
+            "label": "📐 Exemple concret du cours : mortier",
+            "text": "Ciment (kg) :  5   →   20  →  25  →   ?\nSable  (kg)  : 18   →   ?   →  ?   → 180\n\nSi 5 kg de ciment → 18 kg de sable\nAlors 20 kg de ciment → x = 20 × 18 / 5 = 72 kg de sable"
+          },
+          {
+            "type": "warn",
+            "text": "Astuce : on peut toujours vérifier ! Le rapport sable/ciment doit être le même partout : 18/5 = 3,6. Donc 72/20 = 3,6 ✓"
+          }
+        ]
+      },
+      {
+        "title": "2. Les puissances de 10 — écrire très grand ou très petit",
+        "icon": "🔢",
+        "content": [
+          {
+            "type": "text",
+            "text": "En chimie et physique, on travaille avec des tailles d'atomes (0,000 000 001 m) ou des distances astronomiques (1 500 000 000 000 m). Écrire tous ces zéros est fastidieux et source d'erreurs. Les <strong>puissances de 10</strong> sont là pour ça."
+          },
+          {
+            "type": "def",
+            "term": "🧠 Idée simple",
+            "text": "10³ veut dire \"1 suivi de 3 zéros\" = 1 000<br>10⁻³ veut dire \"1 divisé 3 fois par 10\" = 0,001<br><br>L'exposant = le nombre de fois qu'on multiplie (ou divise) par 10."
+          },
+          {
+            "type": "formula",
+            "label": "🔁 Règles de calcul (avec exemples)",
+            "text": "Multiplier → les exposants s'ADDITIONNENT\n   10³ × 10² = 10⁵   (ex : 1000 × 100 = 100 000)\n\nDiviser → les exposants se SOUSTRAIENT\n   10⁵ / 10³ = 10²   (ex : 100 000 / 1 000 = 100)\n\nExposant négatif → c'est l'inverse\n   10⁻³ = 1/10³ = 1/1000 = 0,001"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Préfixe",
+              "Symbole",
+              "Valeur",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "giga",
+                "G",
+                "10⁹ = 1 000 000 000",
+                "1 Go (gigaoctet)"
+              ],
+              [
+                "méga",
+                "M",
+                "10⁶ = 1 000 000",
+                "1 MHz (mégahertz)"
+              ],
+              [
+                "kilo",
+                "k",
+                "10³ = 1 000",
+                "1 km = 1000 m"
+              ],
+              [
+                "— (rien)",
+                "—",
+                "10⁰ = 1",
+                "l'unité de base"
+              ],
+              [
+                "milli",
+                "m",
+                "10⁻³ = 0,001",
+                "1 mm = 0,001 m"
+              ],
+              [
+                "micro",
+                "μ",
+                "10⁻⁶ = 0,000 001",
+                "1 μm (taille d'une bactérie)"
+              ],
+              [
+                "nano",
+                "n",
+                "10⁻⁹ = 0,000 000 001",
+                "1 nm (taille d'un atome)"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. La notation scientifique — s'écrire proprement",
+        "icon": "✍️",
+        "content": [
+          {
+            "type": "text",
+            "text": "La notation scientifique, c'est la façon <strong>standard et universelle</strong> d'écrire un nombre en sciences. Elle permet d'éviter les erreurs de zéros et de comparer facilement des valeurs."
+          },
+          {
+            "type": "def",
+            "term": "📏 La règle : a × 10ⁿ avec 1 ≤ a < 10",
+            "text": "On écrit toujours un seul chiffre (non nul) avant la virgule, puis on ajuste l'exposant de 10.<br><br><strong>3,00 × 10⁸</strong> ✓ (c'est la vitesse de la lumière en m/s)<br><strong>30 × 10⁷</strong> ✗ (pas valide : il faut 1 chiffre avant la virgule)"
+          },
+          {
+            "type": "formula",
+            "label": "🔄 Comment convertir — la méthode",
+            "text": "GRAND nombre → exposant POSITIF\n   835 = 8,35 × 10²  (virgule déplace de 2 rangs vers la gauche)\n\nPETIT nombre → exposant NÉGATIF\n   0,0000012 = 1,2 × 10⁻⁶  (virgule déplace de 6 rangs vers la droite)\n\nAstuces : compter le nombre de \"sauts\" de la virgule = valeur de l'exposant"
+          },
+          {
+            "type": "warn",
+            "text": "Les chiffres significatifs = les chiffres du nombre \"a\". Exemple : 5,143 × 10¹ g possède 4 chiffres significatifs. Ton résultat ne peut pas avoir PLUS de chiffres significatifs que la donnée la moins précise."
+          }
+        ]
+      },
+      {
+        "title": "4. Les groupes fonctionnels en chimie organique",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une molécule organique, c'est une chaîne de carbones (le squelette) sur laquelle sont accrochés des <strong>groupes caractéristiques</strong> qui donnent ses propriétés chimiques. Reconnaître ces groupes, c'est comprendre ce que la molécule peut faire."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Famille",
+              "Groupe caractéristique",
+              "Formule générale",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "Alcool",
+                "–OH (hydroxyle)",
+                "R–OH",
+                "éthanol CH₃–CH₂–OH"
+              ],
+              [
+                "Aldéhyde",
+                "–CHO (carbonyle en bout)",
+                "R–CHO",
+                "méthanal HCHO"
+              ],
+              [
+                "Cétone",
+                ">C=O (carbonyle au milieu)",
+                "R–CO–R'",
+                "propanone (acétone)"
+              ],
+              [
+                "Acide carboxylique",
+                "–COOH (carboxyle)",
+                "R–COOH",
+                "acide éthanoïque CH₃COOH"
+              ],
+              [
+                "Ester",
+                "–COO– (entre deux R)",
+                "R–COO–R'",
+                "éthanoate d'éthyle"
+              ],
+              [
+                "Amine",
+                "–NH₂ (amino)",
+                "R–NH₂",
+                "méthanamine CH₃–NH₂"
+              ],
+              [
+                "Amide",
+                "–CO–NH– ",
+                "R–CO–NH₂",
+                "éthanamide CH₃–CO–NH₂"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Moyen mnémotechnique : AACA-EAA → Alcool, Aldéhyde, Cétone, Acide, Ester, Amine, Amide. Chacun a une \"signature\" visuelle (cherche le O, le N, le double trait =)."
+          }
+        ]
+      },
+      {
+        "title": "5. Nommer une molécule — la nomenclature",
+        "icon": "🏷️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Nommer une molécule organique suit des règles précises comme une langue. Voici la méthode en 3 étapes :"
+          },
+          {
+            "type": "def",
+            "term": "🔑 Étape 1 — trouver la chaîne principale",
+            "text": "C'est la chaîne carbonée la plus longue qui contient le groupe fonctionnel principal.<br>Le nombre de C donne le nom de base : 1=méth, 2=éth, 3=prop, 4=but, 5=pent, 6=hex, 7=hept, 8=oct..."
+          },
+          {
+            "type": "def",
+            "term": "🔑 Étape 2 — identifier et localiser le groupe fonctionnel",
+            "text": "On numérote la chaîne depuis le bout le plus proche du groupe fonctionnel.<br>Le numéro du carbone portant le groupe s'ajoute devant le suffixe.<br>Alcool → <strong>-ol</strong> | Aldéhyde → <strong>-al</strong> | Cétone → <strong>-one</strong> | Acide → <strong>acide …-oïque</strong>"
+          },
+          {
+            "type": "def",
+            "term": "🔑 Étape 3 — nommer les ramifications (substituants)",
+            "text": "Les groupes alkyles sur la chaîne sont nommés avec leur position :<br>–CH₃ = méthyle | –C₂H₅ = éthyle | –C₃H₇ = propyle<br>Exemple : <strong>3-éthyl-5-méthylhexane</strong> = chaîne de 6C avec éthyle en C3 et méthyle en C5."
+          },
+          {
+            "type": "formula",
+            "label": "📝 Exemple complet — Ester",
+            "text": "Un ester = acide carboxylique + alcool (réaction d'estérification)\n\nNom : [alcane de R' sans \"e\"]-yl + [acide oïque → -oate]\nEx : pentanoate d'éthyle\n  → vient de l'acide pentanoïque (5C) + éthanol"
+          }
+        ]
+      },
+      {
+        "title": "6. Les 3 façons de représenter une molécule",
+        "icon": "🖊️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Formule développée",
+            "text": "On trace <strong>TOUTES les liaisons</strong> entre tous les atomes (même C–H). La plus détaillée, la plus longue à écrire."
+          },
+          {
+            "type": "def",
+            "term": "Formule semi-développée",
+            "text": "On trace les liaisons C–C (squelette) mais on regroupe les H autour de chaque C. Ex : CH₃–CH₂–OH pour l'éthanol."
+          },
+          {
+            "type": "def",
+            "term": "Formule topologique",
+            "text": "La plus rapide : chaque angle ou bout de trait = un carbone. Les H sont implicites. On ne montre que les hétéroatomes (O, N, Cl...) et leurs H. Très utilisée en chimie organique."
+          },
+          {
+            "type": "warn",
+            "text": "À l'examen, la formule topologique est souvent utilisée. Rappelle-toi : chaque angle = 1 carbone, et un carbone \"ordinaire\" porte autant de H que nécessaire pour avoir 4 liaisons."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Pour faire du mortier, 5 kg de ciment nécessitent 18 kg de sable. Combien faut-il de sable pour 25 kg de ciment ?",
+      "opts": [
+        "6,9 kg",
+        "90 kg",
+        "38 kg",
+        "3,6 kg"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "produit-croix-inverse",
+          "texte": "Croiser à l'envers : 25 × 5 / 18 = 6,9 kg"
+        },
+        null,
+        {
+          "code": "raisonnement-additif",
+          "texte": "Raisonner par différence au lieu de proportionnalité : 18 − 5 = 13, donc 25 + 13 = 38 kg"
+        },
+        {
+          "code": "produit-croix-mauvais-termes",
+          "texte": "Multiplier les mauvais termes : 18 × 5 / 25 = 3,6 kg"
+        }
+      ],
+      "exp": "Produit en croix : x = 25 × 18 / 5 = 90 kg ; le rapport sable/ciment reste 18/5 = 3,6 (90/25 = 3,6 ✓). Attention : deux grandeurs proportionnelles ont un rapport constant, pas une différence constante."
+    },
+    {
+      "q": "10³ × 10⁻² est égal à :",
+      "opts": [
+        "10⁻⁶",
+        "10⁵",
+        "10¹",
+        "10⁰"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "exposants-multiplies",
+          "texte": "Multiplier les exposants au lieu de les additionner : 3 × (−2) = −6"
+        },
+        {
+          "code": "signe-exposant-oublie",
+          "texte": "Oublier le signe moins de l'exposant : 3 + 2 = 5"
+        },
+        null,
+        {
+          "code": "puissance-negative-mal-ecrite",
+          "texte": "Écrire 10⁻² = 0,001 (un zéro de trop) : 1 000 × 0,001 = 1"
+        }
+      ],
+      "exp": "Pour multiplier des puissances de 10, on additionne les exposants : 3 + (−2) = 1, donc 10¹ = 10. Attention : on additionne les exposants, on ne les multiplie pas."
+    },
+    {
+      "q": "0,000 56 s'écrit en notation scientifique :",
+      "opts": [
+        "56 × 10⁻⁵",
+        "5,6 × 10⁻⁴",
+        "5,6 × 10⁴",
+        "5,6 × 10⁻³"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "notation-scientifique-mantisse",
+          "texte": "Laisser plusieurs chiffres avant la virgule : en notation scientifique, 1 ≤ a < 10"
+        },
+        null,
+        {
+          "code": "signe-exposant-petit-nombre",
+          "texte": "Mettre un exposant positif à un nombre plus petit que 1"
+        },
+        {
+          "code": "compte-rangs-virgule",
+          "texte": "Mal compter les déplacements de la virgule (3 au lieu de 4)"
+        }
+      ],
+      "exp": "On déplace la virgule de 4 rangs vers la droite pour n'avoir qu'un chiffre non nul avant la virgule : 5,6 × 10⁻⁴. Attention : un nombre plus petit que 1 a toujours un exposant négatif."
+    },
+    {
+      "q": "1 μm (micromètre) correspond à :",
+      "opts": [
+        "1 × 10⁻³ m",
+        "1 × 10⁻⁹ m",
+        "1 × 10⁶ m",
+        "1 × 10⁻⁶ m"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "confusion-milli-micro",
+          "texte": "Confondre micro (10⁻⁶) et milli (10⁻³)"
+        },
+        {
+          "code": "confusion-nano-micro",
+          "texte": "Confondre micro (10⁻⁶) et nano (10⁻⁹)"
+        },
+        {
+          "code": "confusion-micro-mega",
+          "texte": "Confondre micro (μ, 10⁻⁶) et méga (M, 10⁶)"
+        },
+        null
+      ],
+      "exp": "Le préfixe micro (μ) vaut 10⁻⁶ : 1 μm = 10⁻⁶ m, la taille d'une bactérie. Attention : milli = 10⁻³, micro = 10⁻⁶, nano = 10⁻⁹."
+    },
+    {
+      "q": "On calcule v = d / t avec d = 12,5 m et t = 4,2 s. La calculatrice affiche 2,976190476. On écrit :",
+      "opts": [
+        "v = 2,976190476 m·s⁻¹",
+        "v = 2,98 m·s⁻¹",
+        "v = 3,0 m·s⁻¹",
+        "v = 3 m·s⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "recopie-calculatrice",
+          "texte": "Recopier tous les chiffres affichés par la calculatrice"
+        },
+        {
+          "code": "cs-donnee-plus-precise",
+          "texte": "Garder le nombre de chiffres significatifs de la donnée la plus précise (3 au lieu de 2)"
+        },
+        null,
+        {
+          "code": "cs-trop-peu",
+          "texte": "Arrondir trop : 1 seul chiffre significatif alors que les données en ont au moins 2"
+        }
+      ],
+      "exp": "Le résultat garde le nombre de chiffres significatifs de la donnée la moins précise : t = 4,2 s en a 2, d'où v = 3,0 m·s⁻¹. Attention : recopier la calculatrice donne une précision qui n'existe pas."
+    },
+    {
+      "q": "Le groupe caractéristique des acides carboxyliques est :",
+      "opts": [
+        "–OH",
+        "–COOH",
+        "–CHO",
+        "–COO–"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "alcool-vs-acide-carboxylique",
+          "texte": "Confondre alcool et acide carboxylique : un –OH seul, sans C=O sur le même carbone, est un alcool"
+        },
+        null,
+        {
+          "code": "aldehyde-vs-acide-carboxylique",
+          "texte": "Confondre le groupe aldéhyde –CHO et le groupe carboxyle –COOH"
+        },
+        {
+          "code": "ester-vs-acide-carboxylique",
+          "texte": "Confondre le groupe ester –COO– (entre deux chaînes) et le groupe carboxyle –COOH"
+        }
+      ],
+      "exp": "Le groupe carboxyle –COOH porte sur le même carbone un C=O et un –OH. Attention : un –OH seul (sans C=O sur le même carbone) est le groupe hydroxyle des alcools."
+    },
+    {
+      "q": "Un groupe carbonyle C=O situé en bout de chaîne carbonée (–CHO) caractérise :",
+      "opts": [
+        "une cétone",
+        "un aldéhyde",
+        "un acide carboxylique",
+        "un ester"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "aldehyde-vs-cetone",
+          "texte": "Confondre aldéhyde (C=O en bout de chaîne) et cétone (C=O au milieu de la chaîne)"
+        },
+        null,
+        {
+          "code": "aldehyde-vs-acide-carboxylique",
+          "texte": "Confondre le groupe aldéhyde –CHO et le groupe carboxyle –COOH"
+        },
+        {
+          "code": "ester-carbonyle",
+          "texte": "Croire que tout C=O en bout de chaîne est un ester, sans chercher le second atome d'oxygène"
+        }
+      ],
+      "exp": "C=O en bout de chaîne (lié à un H) : aldéhyde ; C=O au milieu de la chaîne : cétone. Attention : c'est la position du C=O qui distingue ces deux familles."
+    },
+    {
+      "q": "Le nom de la molécule CH₃–CH(CH₃)–CH₂–CH₃ est :",
+      "opts": [
+        "3-méthylbutane",
+        "2-éthylpropane",
+        "2-méthylbutane",
+        "pentane"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "numerotation-chaine",
+          "texte": "Numéroter la chaîne dans le mauvais sens : on donne au substituant le plus petit numéro"
+        },
+        {
+          "code": "chaine-pas-la-plus-longue",
+          "texte": "Choisir une chaîne principale qui n'est pas la plus longue (3 carbones au lieu de 4)"
+        },
+        null,
+        {
+          "code": "isomere-nomme-par-formule-brute",
+          "texte": "Nommer d'après le nombre total de carbones (C₅H₁₂) sans tenir compte de la ramification"
+        }
+      ],
+      "exp": "La chaîne la plus longue a 4 carbones (butane) ; le méthyle est porté par le carbone 2 en numérotant pour avoir le plus petit indice : 2-méthylbutane. Attention : toujours chercher la chaîne la plus longue, puis numéroter pour donner le plus petit numéro."
+    },
+    {
+      "q": "Une formule topologique est un zigzag de 4 segments (5 sommets et extrémités), sans autre atome dessiné. La formule brute de la molécule est :",
+      "opts": [
+        "C₄H₁₀",
+        "C₅H₁₂",
+        "C₅H₁₀",
+        "C₃H₈"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "topologique-segments-carbones",
+          "texte": "Compter les segments au lieu des sommets et extrémités : chaque sommet et chaque extrémité est un carbone"
+        },
+        null,
+        {
+          "code": "h-implicites-mal-comptes",
+          "texte": "Attribuer 2 H à chaque carbone : les carbones en bout de chaîne en portent 3"
+        },
+        {
+          "code": "topologique-extremites-oubliees",
+          "texte": "Ne compter que les angles du zigzag en oubliant les deux extrémités"
+        }
+      ],
+      "exp": "Chaque angle et chaque extrémité représente un carbone : 5 C. Chaque carbone complète ses 4 liaisons avec des H implicites : 3 + 2 + 2 + 2 + 3 = 12 H, d'où C₅H₁₂. Attention : les extrémités du zigzag sont aussi des carbones."
+    },
+    {
+      "q": "Le groupe caractéristique –CO–NH– caractérise la famille des :",
+      "opts": [
+        "amines",
+        "cétones",
+        "esters",
+        "amides"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "amine-vs-amide",
+          "texte": "Confondre amine (–NH₂ seul) et amide (–NH– lié à un C=O)"
+        },
+        {
+          "code": "cetone-vs-amide",
+          "texte": "Ne voir que le C=O et oublier l'atome d'azote voisin"
+        },
+        {
+          "code": "ester-vs-amide",
+          "texte": "Confondre amide (–CO–NH–) et ester (–CO–O–)"
+        },
+        null
+      ],
+      "exp": "Un amide associe un C=O et un atome d'azote lié à ce même carbone : –CO–NH–. Attention : une amine a un azote sans C=O voisin (–NH₂)."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Sujet complet — Lunette, satellites, diffraction (prérequis transverses)",
+      "session": "Métropole · Jour 1",
+      "link": "https://www.labolycee.org/metropole-2023-jour-1"
+    },
+    {
+      "year": "2021",
+      "title": "Sujet complet — Amérique du Nord",
+      "session": "Amérique du Nord · Sujet 1",
+      "link": "https://www.labolycee.org/bac-2021-amerique-du-nord-sujet-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Mon smartphone en puissances de dix",
+      "contexte": [
+        "Fiche technique d'un smartphone (données fictives vraisemblables) : finesse de gravure du processeur : 3 nm ; fréquence du processeur : 3,2 GHz ; mémoire de stockage : 256 Go (gigaoctets) ; épaisseur : 7,8 mm."
+      ],
+      "questions": [
+        {
+          "texte": "Écris chacune de ces quatre grandeurs dans l'unité de base (mètre, hertz, octet), en notation scientifique.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une ligne.<br>a. 10³ × 10⁻² = 10¹<br>b. 10⁵ / 10⁻³ = 10²<br>c. « 32 × 10⁸ Hz » est une écriture en notation scientifique.<br>d. 0,000 001 2 m = 1,2 μm",
+          "aides": []
+        },
+        {
+          "texte": "Une bactérie mesure environ 2 μm. Combien de fois est-elle plus grande que la finesse de gravure du processeur ? Donne un ordre de grandeur.",
+          "aides": [
+            "Il faut diviser la taille de la bactérie par la finesse de gravure, toutes deux en mètres.",
+            "Divise d'abord 2 par 3, puis traite les puissances de dix : pour une division, on soustrait les exposants."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Gravure : 3 nm = 3 × 10⁻⁹ m ; fréquence : 3,2 GHz = 3,2 × 10⁹ Hz ; stockage : 256 Go = 256 × 10⁹ octets = 2,56 × 10¹¹ octets ; épaisseur : 7,8 mm = 7,8 × 10⁻³ m.",
+        "<strong>2.</strong> a. VRAI : on additionne les exposants, 3 + (−2) = 1.",
+        "b. FAUX : on soustrait les exposants, 5 − (−3) = 8, donc 10⁵ / 10⁻³ = 10⁸.",
+        "c. FAUX : il faut un seul chiffre non nul avant la virgule : 32 × 10⁸ Hz = 3,2 × 10⁹ Hz.",
+        "d. VRAI : la virgule se déplace de 6 rangs vers la droite : 0,000 001 2 m = 1,2 × 10⁻⁶ m = 1,2 μm.",
+        "<strong>3.</strong> Rapport = 2 × 10⁻⁶ / (3 × 10⁻⁹) = (2/3) × 10³ (car −6 − (−9) = 3) = 0,67 × 10³ ≈ 7 × 10² : la bactérie est environ 700 fois plus grande (les données n'ont qu'un chiffre significatif).",
+        "<em>⚠ Erreur fréquente : écrire 10⁻⁶ / 10⁻⁹ = 10⁻¹⁵ en additionnant les exposants au lieu de les soustraire.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "L'huile d'olive de la mayonnaise",
+      "contexte": [
+        "Un élève mesure, avec une éprouvette graduée et une balance, la masse m de différents volumes V d'huile d'olive. Il reporte ses mesures sur le graphique ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"109.5\" y1=\"25\" x2=\"109.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"139.1\" y1=\"25\" x2=\"139.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"139.1\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"168.6\" y1=\"25\" x2=\"168.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"198.2\" y1=\"25\" x2=\"198.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"198.2\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"227.7\" y1=\"25\" x2=\"227.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"257.3\" y1=\"25\" x2=\"257.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"257.3\" y=\"430\" text-anchor=\"middle\">30</text><line x1=\"286.8\" y1=\"25\" x2=\"286.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"316.4\" y1=\"25\" x2=\"316.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"316.4\" y=\"430\" text-anchor=\"middle\">40</text><line x1=\"345.9\" y1=\"25\" x2=\"345.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"375.5\" y1=\"25\" x2=\"375.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"375.5\" y=\"430\" text-anchor=\"middle\">50</text><line x1=\"405.0\" y1=\"25\" x2=\"405.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"434.5\" y1=\"25\" x2=\"434.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"434.5\" y=\"430\" text-anchor=\"middle\">60</text><line x1=\"464.1\" y1=\"25\" x2=\"464.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"493.6\" y1=\"25\" x2=\"493.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"493.6\" y=\"430\" text-anchor=\"middle\">70</text><line x1=\"523.2\" y1=\"25\" x2=\"523.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"552.7\" y1=\"25\" x2=\"552.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"552.7\" y=\"430\" text-anchor=\"middle\">80</text><line x1=\"582.3\" y1=\"25\" x2=\"582.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"611.8\" y1=\"25\" x2=\"611.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"611.8\" y=\"430\" text-anchor=\"middle\">90</text><line x1=\"641.4\" y1=\"25\" x2=\"641.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"670.9\" y1=\"25\" x2=\"670.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"670.9\" y=\"430\" text-anchor=\"middle\">100</text><line x1=\"700.5\" y1=\"25\" x2=\"700.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"730.0\" y1=\"25\" x2=\"730.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"730.0\" y=\"430\" text-anchor=\"middle\">110</text><line x1=\"80\" y1=\"410.0\" x2=\"730\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"390.8\" x2=\"730\" y2=\"390.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"371.5\" x2=\"730\" y2=\"371.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"376.5\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"352.2\" x2=\"730\" y2=\"352.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"333.0\" x2=\"730\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"338.0\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"313.8\" x2=\"730\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"294.5\" x2=\"730\" y2=\"294.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"299.5\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"275.2\" x2=\"730\" y2=\"275.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"256.0\" x2=\"730\" y2=\"256.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"261.0\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"236.8\" x2=\"730\" y2=\"236.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"217.5\" x2=\"730\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"198.2\" x2=\"730\" y2=\"198.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"179.0\" x2=\"730\" y2=\"179.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"184.0\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"159.8\" x2=\"730\" y2=\"159.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"140.5\" x2=\"730\" y2=\"140.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"145.5\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"121.2\" x2=\"730\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"102.0\" x2=\"730\" y2=\"102.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"107.0\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"82.8\" x2=\"730\" y2=\"82.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"63.5\" x2=\"730\" y2=\"63.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"68.5\" text-anchor=\"end\">90</text><line x1=\"80\" y1=\"44.2\" x2=\"730\" y2=\"44.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"25.0\" x2=\"730\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">100</text><rect x=\"80\" y=\"25\" width=\"650\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"80.0\" y1=\"410.0\" x2=\"718.2\" y2=\"27.5\" stroke=\"#1F4E5A\" stroke-width=\"2.4\"/><circle cx=\"198.2\" cy=\"339.2\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"316.4\" cy=\"268.3\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"434.5\" cy=\"197.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"552.7\" cy=\"126.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"670.9\" cy=\"55.8\" r=\"5\" fill=\"#B5523B\"/><text x=\"405.0\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Volume d'huile V (mL)</text><text transform=\"translate(24,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Masse m (g)</text></svg>",
+      "questions": [
+        {
+          "texte": "La masse m est-elle proportionnelle au volume V ? Justifie à partir du graphique.",
+          "aides": []
+        },
+        {
+          "texte": "Lis sur le graphique la masse de 60 mL d'huile.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le coefficient de proportionnalité k = m / V, avec son unité. Quelle grandeur physique représente-t-il ?",
+          "aides": []
+        },
+        {
+          "texte": "Une recette de mayonnaise demande 25 cL d'huile. Calcule la masse d'huile correspondante (produit en croix), puis vérifie ton résultat avec le rapport m / V.",
+          "aides": [
+            "Commence par convertir 25 cL en mL (1 cL = 10 mL).",
+            "Construis le tableau : 100 mL ↔ 92,0 g ; 250 mL ↔ ? Puis croise et multiplie."
+          ]
+        },
+        {
+          "texte": "Pour une vinaigrette, il faut 46 g d'huile. Quel volume faut-il mesurer ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Oui : les points sont alignés sur une droite qui passe par l'origine. La masse est proportionnelle au volume.",
+        "<strong>2.</strong> Pour V = 60 mL, on lit m ≈ 55 g (55,2 g).",
+        "<strong>3.</strong> k = m / V = 92,0 / 100 = 0,92 g·mL⁻¹ (même rapport pour chaque point). C'est la masse volumique ρ de l'huile d'olive.",
+        "<strong>4.</strong> 25 cL = 250 mL. Produit en croix : 100 mL → 92,0 g, donc 250 mL → m = 250 × 92,0 / 100 = 230 g. Vérification : 230 / 250 = 0,92 g·mL⁻¹ ✓",
+        "<strong>5.</strong> V = 46 × 100 / 92,0 = 50 mL.",
+        "<em>⚠ Erreur fréquente : utiliser directement « 25 » sans convertir les centilitres en millilitres.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Les familles chimiques de la salle de bains et de la cuisine",
+      "contexte": [
+        "Voici des molécules présentes dans des produits du quotidien :",
+        "① éthanol CH₃–CH₂–OH (gel hydroalcoolique) ; ② propanone CH₃–CO–CH₃ (dissolvant à vernis) ; ③ acide éthanoïque CH₃–COOH (vinaigre) ; ④ éthanoate d'éthyle CH₃–COO–CH₂–CH₃ (colle, dissolvant) ; ⑤ éthanal CH₃–CHO (présent dans certains fruits) ; ⑥ méthanamine CH₃–NH₂ ; ⑦ éthanamide CH₃–CO–NH₂."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque molécule, recopie le groupe caractéristique et donne le nom de sa famille fonctionnelle.",
+          "aides": [
+            "Cherche les atomes O et N, et les doubles liaisons C=O : ce sont eux qui signent la famille.",
+            "Regarde ce qui est accroché au carbone du C=O : un H (aldéhyde), deux C (cétone), un OH (acide), un O lié à une autre chaîne (ester), un N (amide)."
+          ]
+        },
+        {
+          "texte": "Les molécules ② et ⑤ contiennent toutes les deux un groupe C=O. Qu'est-ce qui les distingue ?",
+          "aides": []
+        },
+        {
+          "texte": "Vérifie que le nombre d'atomes de carbone de ①, ② et ⑥ est bien cohérent avec le début de leur nom.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> ① –OH : alcool ; ② &gt;C=O au milieu de la chaîne : cétone ; ③ –COOH : acide carboxylique ; ④ –COO– entre deux chaînes : ester ; ⑤ –CHO : aldéhyde ; ⑥ –NH₂ : amine ; ⑦ –CO–NH₂ : amide.",
+        "<strong>2.</strong> Dans l'éthanal ⑤, le C=O est en bout de chaîne (le carbone porte un H) : aldéhyde. Dans la propanone ②, le C=O est au milieu, entre deux carbones : cétone.",
+        "<strong>3.</strong> ① éth- = 2 C : CH₃–CH₂–OH a bien 2 C ; ② prop- = 3 C : CH₃–CO–CH₃ a 3 C ; ⑥ méth- = 1 C : CH₃–NH₂ a 1 C.",
+        "<em>⚠ Erreur fréquente : classer l'éthanamide ⑦ parmi les amines (à cause du N) ou les cétones (à cause du C=O). Quand C=O et N sont liés sur le même carbone, c'est un amide. De même, –COO– lié à deux chaînes carbonées est un ester, pas un acide.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Combien de caféine dans une canette ?",
+      "contexte": [
+        "L'étiquette d'une boisson énergisante indique : « caféine : 32 mg pour 100 mL ». Une canette contient 250 mL.",
+        "Repère de sécurité (avis de l'Autorité européenne de sécurité des aliments, EFSA, 2015) : pour un adolescent, un apport de caféine jusqu'à environ 3,0 mg par kilogramme de masse corporelle et par jour ne pose pas de problème de sécurité.",
+        "Formule brute de la caféine : C₈H₁₀N₄O₂."
+      ],
+      "questions": [
+        {
+          "texte": "Exprime la concentration en masse de caféine de la boisson en g·L⁻¹.",
+          "aides": [
+            "1 mg = 10⁻³ g et 100 mL = 10⁻¹ L.",
+            "C<sub>m</sub> = m / V avec m en g et V en L."
+          ]
+        },
+        {
+          "texte": "Calcule la masse de caféine contenue dans une canette, en mg puis en g (notation scientifique).",
+          "aides": []
+        },
+        {
+          "texte": "Un adolescent de 50 kg boit ces canettes. Combien de canettes peut-il boire au maximum par jour en restant sous le repère de l'EFSA ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse molaire de la caféine, puis la quantité de matière de caféine dans une canette.",
+          "aides": [
+            "M se calcule à partir de la formule brute : additionne les masses molaires de tous les atomes.",
+            "Puis n = m / M, avec m en grammes."
+          ]
+        },
+        {
+          "texte": "Déduis-en le nombre de molécules de caféine dans une canette.",
+          "aides": []
+        },
+        {
+          "texte": "Un élève écrit : « n = 4,119464 × 10⁻⁴ mol ». Commente ce résultat.",
+          "aides": [
+            "Combien de chiffres significatifs a la donnée « 32 mg » ?",
+            "Le résultat ne peut pas être plus précis que la donnée la moins précise."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C<sub>m</sub> = 32 mg / 100 mL = 32 × 10⁻³ g / (100 × 10⁻³ L) = 0,32 g·L⁻¹ = 3,2 × 10⁻¹ g·L⁻¹.",
+        "<strong>2.</strong> Proportionnalité : m = 32 × 250 / 100 = 80 mg = 8,0 × 10¹ mg = 8,0 × 10⁻² g.",
+        "<strong>3.</strong> Apport maximal : 3,0 × 50 = 1,5 × 10² mg par jour. Nombre de canettes : 150 / 80 ≈ 1,9 : au plus une canette par jour (deux canettes, 160 mg, dépassent déjà le repère).",
+        "<strong>4.</strong> M = 8 × 12,01 + 10 × 1,008 + 4 × 14,01 + 2 × 16,00 = 194,2 g·mol⁻¹. n = m / M = 8,0 × 10⁻² / 194,2 = 4,1 × 10⁻⁴ mol.",
+        "<strong>5.</strong> N = n × N<sub>A</sub> = 4,12 × 10⁻⁴ × 6,022 × 10²³ = 2,5 × 10²⁰ molécules.",
+        "<strong>6.</strong> Le calcul est juste, mais le résultat a 7 chiffres significatifs alors que la donnée la moins précise (32 mg) n'en a que 2 : il faut écrire n = 4,1 × 10⁻⁴ mol.",
+        "<em>⚠ Erreur fréquente : garder la masse en mg dans n = m / M (on trouverait 0,41 mol, mille fois trop). M est en g·mol⁻¹ : la masse doit être en grammes.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Arômes et formules topologiques",
+      "contexte": [
+        "Les molécules A à D ci-dessous, représentées en formule topologique, entrent dans la composition d'arômes ou de solvants. La molécule D donne son odeur de banane à de nombreux bonbons."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"8\" y=\"8\" width=\"364\" height=\"219\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"24\" y=\"38\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">A</text><line x1=\"125.1\" y1=\"162.5\" x2=\"168.4\" y2=\"137.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"168.4\" y1=\"137.5\" x2=\"211.7\" y2=\"162.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"211.7\" y1=\"162.5\" x2=\"254.9\" y2=\"137.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"168.4\" y1=\"137.5\" x2=\"168.4\" y2=\"87.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"159.4\" y=\"74.5\" width=\"36\" height=\"26\" fill=\"#fff\"/><text x=\"160.4\" y=\"95.5\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">OH</text><rect x=\"388\" y=\"8\" width=\"364\" height=\"219\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"404\" y=\"38\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">B</text><line x1=\"505.1\" y1=\"162.5\" x2=\"548.4\" y2=\"137.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"548.4\" y1=\"137.5\" x2=\"591.6\" y2=\"162.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"591.6\" y1=\"162.5\" x2=\"635.0\" y2=\"137.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"548.4\" y1=\"137.5\" x2=\"548.4\" y2=\"87.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"555.4\" y1=\"137.5\" x2=\"555.4\" y2=\"87.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"539.4\" y=\"74.5\" width=\"18\" height=\"26\" fill=\"#fff\"/><text x=\"540.4\" y=\"95.5\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">O</text><rect x=\"8\" y=\"243\" width=\"364\" height=\"219\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"24\" y=\"273\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">C</text><line x1=\"125.1\" y1=\"372.5\" x2=\"168.4\" y2=\"347.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"168.4\" y1=\"347.5\" x2=\"211.7\" y2=\"372.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"168.4\" y1=\"347.5\" x2=\"168.4\" y2=\"297.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"211.7\" y1=\"372.5\" x2=\"211.7\" y2=\"422.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"204.7\" y1=\"372.5\" x2=\"204.7\" y2=\"422.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"211.7\" y1=\"372.5\" x2=\"254.9\" y2=\"347.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"202.7\" y=\"409.5\" width=\"18\" height=\"26\" fill=\"#fff\"/><text x=\"203.7\" y=\"430.5\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">O</text><rect x=\"245.9\" y=\"334.5\" width=\"36\" height=\"26\" fill=\"#fff\"/><text x=\"246.9\" y=\"355.5\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">OH</text><rect x=\"388\" y=\"243\" width=\"364\" height=\"219\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"404\" y=\"273\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">D</text><line x1=\"440.1\" y1=\"397.5\" x2=\"483.4\" y2=\"372.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"483.4\" y1=\"372.5\" x2=\"483.4\" y2=\"322.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"490.4\" y1=\"372.5\" x2=\"490.4\" y2=\"322.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"483.4\" y1=\"372.5\" x2=\"526.7\" y2=\"397.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"526.7\" y1=\"397.5\" x2=\"570.0\" y2=\"372.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"570.0\" y1=\"372.5\" x2=\"613.3\" y2=\"397.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"613.3\" y1=\"397.5\" x2=\"656.6\" y2=\"372.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"656.6\" y1=\"372.5\" x2=\"656.6\" y2=\"322.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"656.6\" y1=\"372.5\" x2=\"699.9\" y2=\"397.5\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><rect x=\"474.4\" y=\"309.5\" width=\"18\" height=\"26\" fill=\"#fff\"/><text x=\"475.4\" y=\"330.5\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">O</text><rect x=\"517.7\" y=\"384.5\" width=\"18\" height=\"26\" fill=\"#fff\"/><text x=\"518.7\" y=\"405.5\" font-size=\"22\" font-weight=\"bold\" fill=\"#B5523B\">O</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour chaque molécule, repère le groupe caractéristique et donne la famille fonctionnelle.",
+          "aides": []
+        },
+        {
+          "texte": "Écris la formule semi-développée et la formule brute de A et de C.",
+          "aides": [
+            "Chaque sommet et chaque extrémité de trait est un atome de carbone.",
+            "Chaque carbone porte autant d'atomes H qu'il faut pour avoir 4 liaisons au total (une double liaison compte pour 2)."
+          ]
+        },
+        {
+          "texte": "Nomme les molécules A, B et C.",
+          "aides": []
+        },
+        {
+          "texte": "Un élève nomme A « butan-3-ol ». Explique son erreur.",
+          "aides": [
+            "Dans quel sens numérote-t-on la chaîne principale ?",
+            "On part de l'extrémité la plus proche du groupe caractéristique."
+          ]
+        },
+        {
+          "texte": "Justifie le nom de D, « éthanoate de 3-méthylbutyle », en repérant la partie qui provient de l'acide et celle qui provient de l'alcool.",
+          "aides": [
+            "Coupe la molécule au niveau de l'atome O qui est entre deux carbones (pas celui du C=O).",
+            "Le côté qui porte le C=O vient de l'acide (nom en « -oate ») ; l'autre côté vient de l'alcool (nom en « -yle »), numéroté à partir du carbone lié à O."
+          ]
+        },
+        {
+          "texte": "Écris la formule semi-développée de la pentan-2-one, puis celle de la propan-1-amine.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : groupe hydroxyle –OH, alcool ; B : groupe carbonyle C=O au milieu de la chaîne, cétone ; C : groupe carboxyle –COOH, acide carboxylique ; D : groupe –COO– entre deux chaînes carbonées, ester.",
+        "<strong>2.</strong> A : CH₃–CH(OH)–CH₂–CH₃, formule brute C₄H₁₀O. C : CH₃–CH(CH₃)–COOH, formule brute C₄H₈O₂ (chaque sommet est un C qui porte assez de H pour avoir 4 liaisons).",
+        "<strong>3.</strong> A : butan-2-ol (4 C, OH sur le carbone 2). B : butanone (4 C ; le C=O ne peut être qu'en position 2, on peut aussi écrire butan-2-one). C : acide 2-méthylpropanoïque (chaîne principale de 3 C contenant le carbone du groupe –COOH, numéroté 1 ; méthyle sur le carbone 2).",
+        "<strong>4.</strong> On numérote la chaîne à partir de l'extrémité la plus proche du groupe caractéristique : le OH est alors sur le carbone 2, pas 3. « Butan-3-ol » et « butan-2-ol » désignent la même molécule, mais seul le plus petit numéro est correct.",
+        "<strong>5.</strong> D = CH₃–COO–CH₂–CH₂–CH(CH₃)–CH₃. Partie acide : CH₃–CO– (2 C) vient de l'acide éthanoïque → « éthanoate ». Partie alcool : –CH₂–CH₂–CH(CH₃)–CH₃, chaîne de 4 C (but-) numérotée à partir du C lié à l'oxygène, avec un méthyle sur le carbone 3 → « 3-méthylbutyle ». Elle vient du 3-méthylbutan-1-ol.",
+        "<strong>6.</strong> Pentan-2-one : CH₃–CO–CH₂–CH₂–CH₃. Propan-1-amine : CH₃–CH₂–CH₂–NH₂.",
+        "<em>⚠ Erreur fréquente : oublier les atomes de carbone situés en bout de trait dans la formule topologique (chaque extrémité est un C), ou oublier les H implicites en écrivant la formule brute.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Synthétiser un arôme de banane",
+      "contexte": [
+        "Doc. 1 — L'arôme de banane. L'éthanoate de 3-méthylbutyle (molécule D de l'exercice 5) est obtenu en laboratoire par réaction entre l'acide éthanoïque et le 3-méthylbutan-1-ol : acide + alcool → ester + eau.",
+        "Doc. 2 — Protocole d'un groupe d'élèves. Dans un ballon, on introduit 11,5 mL d'acide éthanoïque et 21,8 mL de 3-méthylbutan-1-ol, avec quelques gouttes d'acide sulfurique, puis on chauffe à reflux. Après traitement, on recueille 17,0 g d'ester.",
+        "Doc. 3 — Données. Masses volumiques : acide éthanoïque : 1,05 g·mL⁻¹ ; 3-méthylbutan-1-ol : 0,810 g·mL⁻¹. Rendement : η = m(obtenue) / m(maximale), où m(maximale) est la masse d'ester obtenue si le réactif limitant était entièrement consommé (une molécule d'acide réagit avec une molécule d'alcool).",
+        "Doc. 4 — En confiserie (données fictives). Un fabricant ajoute 0,20 g d'arôme de banane par kilogramme de pâte à bonbons. Un bonbon a une masse de 4,0 g."
+      ],
+      "questions": [
+        {
+          "texte": "Écris les formules semi-développées de l'acide éthanoïque et du 3-méthylbutan-1-ol, et entoure (ou nomme) leurs groupes caractéristiques.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule les masses molaires des deux réactifs et de l'ester (formule brute C₇H₁₄O₂).",
+          "aides": [
+            "Écris d'abord la formule brute de chaque réactif à partir de sa formule semi-développée.",
+            "M = somme des masses molaires atomiques, chacune multipliée par le nombre d'atomes."
+          ]
+        },
+        {
+          "texte": "Calcule les quantités de matière initiales des deux réactifs et identifie le réactif limitant.",
+          "aides": [
+            "Le doc. 3 donne les masses volumiques : passe du volume à la masse.",
+            "m = ρ × V, puis n = m / M. Comme les réactifs réagissent mole à mole, le limitant est celui dont n est le plus petit."
+          ]
+        },
+        {
+          "texte": "Calcule la masse maximale d'ester attendue, puis le rendement de la synthèse.",
+          "aides": [
+            "La quantité maximale d'ester est égale à la quantité initiale du réactif limitant.",
+            "m(maximale) = n(limitant) × M(ester), puis η = m(obtenue) / m(maximale)."
+          ]
+        },
+        {
+          "texte": "Quelle masse de bonbons le fabricant peut-il aromatiser avec les 17,0 g d'ester obtenus ?",
+          "aides": []
+        },
+        {
+          "texte": "Combien de molécules d'arôme un bonbon contient-il ? Donne le résultat en notation scientifique avec un nombre de chiffres significatifs adapté.",
+          "aides": [
+            "Calcule d'abord la masse d'arôme dans un bonbon : attention, la dose est donnée par kilogramme (4,0 g = 4,0 × 10⁻³ kg).",
+            "Puis n = m / M et N = n × N<sub>A</sub>."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : l'acide lactique CH₃–CH(OH)–COOH porte deux groupes caractéristiques. Son nom systématique est « acide 2-hydroxypropanoïque ». Explique comment ce nom est construit.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Acide éthanoïque : CH₃–COOH (groupe carboxyle –COOH). 3-méthylbutan-1-ol : HO–CH₂–CH₂–CH(CH₃)–CH₃ (groupe hydroxyle –OH sur le carbone 1, méthyle sur le carbone 3).",
+        "<strong>2.</strong> M(C₂H₄O₂) = 2 × 12,01 + 4 × 1,008 + 2 × 16,00 = 60,05 g·mol⁻¹ ; M(C₅H₁₂O) = 5 × 12,01 + 12 × 1,008 + 16,00 = 88,15 g·mol⁻¹ ; M(C₇H₁₄O₂) = 7 × 12,01 + 14 × 1,008 + 2 × 16,00 = 130,2 g·mol⁻¹.",
+        "<strong>3.</strong> m = ρ × V. Acide : m = 1,05 × 11,5 = 12,08 g ; n = 12,08 / 60,05 = 0,2011 mol. Alcool : m = 0,810 × 21,8 = 17,66 g ; n = 17,66 / 88,15 = 0,2003 mol (on garde 4 chiffres pour comparer, résultat final 0,200 mol). Les réactifs réagissent mole à mole : l'alcool (0,200 mol) est le réactif limitant, de très peu (mélange quasi stœchiométrique).",
+        "<strong>4.</strong> n(ester) max = n(alcool) = 0,2003 mol ; m(maximale) = 0,2003 × 130,2 = 26,1 g (26,08 g). η = 17,0 / 26,08 = 0,652, soit 65,2 %.",
+        "<strong>5.</strong> Proportionnalité : 0,20 g → 1 kg, donc 17,0 g → 17,0 / 0,20 = 85 kg de bonbons.",
+        "<strong>6.</strong> Masse d'arôme dans un bonbon : 0,20 g·kg⁻¹ × 4,0 × 10⁻³ kg = 8,0 × 10⁻⁴ g. n = 8,0 × 10⁻⁴ / 130,2 = 6,1 × 10⁻⁶ mol. N = n × N<sub>A</sub> = 6,14 × 10⁻⁶ × 6,022 × 10²³ = 3,7 × 10¹⁸ molécules (2 chiffres significatifs, comme 0,20 g et 4,0 g).",
+        "<strong>7.</strong> Pour aller plus loin : la chaîne principale a 3 C et contient le groupe prioritaire –COOH → « acide propanoïque », le carbone du –COOH étant numéroté 1. Le groupe –OH, devenu secondaire, est nommé comme un substituant, « hydroxy », placé en préfixe avec sa position : carbone 2 → « acide 2-hydroxypropanoïque ».",
+        "<em>⚠ Erreur fréquente : calculer n à partir du volume (n = V / M) en oubliant de passer d'abord par la masse m = ρ × V ; ou garder la masse du bonbon en grammes alors que la dose est donnée par kilogramme.</em>"
+      ]
+    }
+  ]
+}

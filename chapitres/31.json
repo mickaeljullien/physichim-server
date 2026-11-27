@@ -1,0 +1,707 @@
+{
+  "id": 31,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Qu'est-ce qu'une transformation physique ?",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "def",
+            "term": "Transformation physique",
+            "text": "Transformation au cours de laquelle une espèce chimique change d'état physique (solide, liquide, gazeux) sans former de nouvelle espèce chimique : les espèces présentes avant et après la transformation sont les mêmes."
+          },
+          {
+            "type": "text",
+            "text": "Un changement d'état est un exemple de transformation physique : la molécule d'eau reste de l'eau (H₂O), qu'elle soit sous forme de glace, de liquide ou de vapeur."
+          }
+        ]
+      },
+      {
+        "title": "2. Les changements d'état",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Changement d'état",
+              "Sens",
+              "Type énergétique"
+            ],
+            "rows": [
+              [
+                "Fusion",
+                "Solide → liquide",
+                "Endothermique (Q > 0)"
+              ],
+              [
+                "Vaporisation",
+                "Liquide → gaz",
+                "Endothermique (Q > 0)"
+              ],
+              [
+                "Sublimation",
+                "Solide → gaz",
+                "Endothermique (Q > 0)"
+              ],
+              [
+                "Solidification",
+                "Liquide → solide",
+                "Exothermique (Q < 0)"
+              ],
+              [
+                "Liquéfaction",
+                "Gaz → liquide",
+                "Exothermique (Q < 0)"
+              ],
+              [
+                "Condensation",
+                "Gaz → solide",
+                "Exothermique (Q < 0)"
+              ]
+            ]
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 520 220\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"chArrowR31\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker><marker id=\"chArrowL31\" markerWidth=\"8\" markerHeight=\"8\" refX=\"2\" refY=\"4\" orient=\"auto\"><path d=\"M8,0 L0,4 L8,8 Z\" fill=\"#2F7D75\"/></marker></defs><rect x=\"30\" y=\"130\" width=\"110\" height=\"50\" rx=\"8\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"85\" y=\"160\" font-size=\"14\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Solide</text><rect x=\"205\" y=\"130\" width=\"110\" height=\"50\" rx=\"8\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"260\" y=\"160\" font-size=\"14\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Liquide</text><rect x=\"380\" y=\"130\" width=\"110\" height=\"50\" rx=\"8\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"435\" y=\"160\" font-size=\"14\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Gaz</text><line x1=\"140\" y1=\"142\" x2=\"203\" y2=\"142\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#chArrowR31)\"/><text x=\"171\" y=\"136\" font-size=\"10\" fill=\"#C0472F\" text-anchor=\"middle\">fusion</text><line x1=\"203\" y1=\"168\" x2=\"140\" y2=\"168\" stroke=\"#2F7D75\" stroke-width=\"2\" marker-end=\"url(#chArrowL31)\"/><text x=\"171\" y=\"183\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\">solidification</text><line x1=\"315\" y1=\"142\" x2=\"378\" y2=\"142\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#chArrowR31)\"/><text x=\"346\" y=\"136\" font-size=\"10\" fill=\"#C0472F\" text-anchor=\"middle\">vaporisation</text><line x1=\"378\" y1=\"168\" x2=\"315\" y2=\"168\" stroke=\"#2F7D75\" stroke-width=\"2\" marker-end=\"url(#chArrowL31)\"/><text x=\"346\" y=\"183\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\">liquéfaction</text><path d=\"M105,128 Q260,42 415,128\" fill=\"none\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#chArrowR31)\"/><text x=\"260\" y=\"58\" font-size=\"10\" fill=\"#C0472F\" text-anchor=\"middle\">sublimation</text><path d=\"M415,116 Q260,20 105,116\" fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"2\" marker-end=\"url(#chArrowL31)\"/><text x=\"260\" y=\"18\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\">condensation</text></svg>",
+            "caption": "Les six changements d'état : en orange les transformations endothermiques (absorbent de l'énergie), en vert les transformations exothermiques (libèrent de l'énergie)."
+          },
+          {
+            "type": "def",
+            "term": "Transformation endothermique",
+            "text": "Transformation qui absorbe de l'énergie : le système reçoit de l'énergie du milieu extérieur, qui se refroidit."
+          },
+          {
+            "type": "def",
+            "term": "Transformation exothermique",
+            "text": "Transformation qui libère de l'énergie : le système cède de l'énergie au milieu extérieur, qui se réchauffe."
+          },
+          {
+            "type": "warn",
+            "text": "Lors d'un changement d'état, la température d'un corps pur reste constante (température de changement d'état caractéristique de l'espèce), tant que les deux états coexistent."
+          }
+        ]
+      },
+      {
+        "title": "3. Énergie massique de changement d'état",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie massique de changement d'état (L)",
+            "text": "Énergie transférée lors du changement d'état d'un kilogramme d'une espèce chimique donnée, exprimée en joules par kilogramme (J·kg⁻¹). On l'appelle aussi chaleur latente de changement d'état."
+          },
+          {
+            "type": "formula",
+            "label": "Formule",
+            "text": "Q = m × L\nQ : énergie transférée (J)\nm : masse de l'espèce qui change d'état (kg)\nL : énergie massique de changement d'état (J·kg⁻¹)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : l'énergie massique de fusion de la glace vaut L = 3,34 × 10⁵ J·kg⁻¹. Calculons l'énergie nécessaire pour faire fondre un glaçon de masse m = 50 g = 0,050 kg à 0 °C :\nQ = m × L = 0,050 × 3,34 × 10⁵ = 1,67 × 10⁴ J, soit environ 16,7 kJ."
+          }
+        ]
+      },
+      {
+        "title": "4. Ne pas confondre fusion et dissolution",
+        "icon": "🍬",
+        "content": [
+          {
+            "type": "warn",
+            "text": "Fusion et dissolution sont deux phénomènes physiques (aucune nouvelle espèce chimique n'est formée dans les deux cas), mais ce sont deux mécanismes très différents, souvent confondus par erreur !"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "",
+              "Fusion (ex. glaçon)",
+              "Dissolution (ex. sucre dans l'eau)"
+            ],
+            "rows": [
+              [
+                "Définition",
+                "Changement d'état solide → liquide d'un corps pur",
+                "Dispersion d'une espèce solide dans un liquide (le solvant), sans changement d'état"
+              ],
+              [
+                "Température",
+                "Se produit à une température caractéristique constante (0 °C pour l'eau)",
+                "Peut se produire à température ambiante, sans valeur caractéristique fixe"
+              ],
+              [
+                "Résultat",
+                "Le corps pur est toujours présent, mais à l'état liquide",
+                "Le soluté (sucre) est dispersé entre les molécules du solvant, formant une solution"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Quand un glaçon fond, l'eau solide devient de l'eau liquide : c'est une fusion (changement d'état). Quand on dissout du sucre dans de l'eau, le sucre solide disparaît progressivement à l'échelle macroscopique en se dispersant entre les molécules d'eau : c'est une dissolution, un mécanisme physique différent, qui ne correspond à aucun changement d'état du sucre lui-même."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans une casserole d'eau pure qui bout, les grosses bulles qui montent du fond contiennent :",
+      "opts": [
+        "de l'air qui était dissous dans l'eau",
+        "de la vapeur d'eau",
+        "du dihydrogène et du dioxygène",
+        "du vide : ce sont des trous dans le liquide"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "bulles-ebullition-air",
+          "texte": "Croire que les bulles d'ébullition sont de l'air : c'est l'eau elle-même qui passe à l'état gazeux"
+        },
+        null,
+        {
+          "code": "changement-etat-nouvelle-espece",
+          "texte": "Croire qu'un changement d'état casse les molécules : la vapeur d'eau est toujours formée de molécules H₂O"
+        },
+        {
+          "code": "bulles-vides",
+          "texte": "Croire que les bulles sont vides : elles contiennent de l'eau à l'état gazeux"
+        }
+      ],
+      "exp": "À l'ébullition, de l'eau liquide se vaporise au sein du liquide : les bulles contiennent de la vapeur d'eau, toujours des molécules H₂O. Attention : un changement d'état ne crée pas de nouvelle espèce."
+    },
+    {
+      "q": "Lors de la fusion de la glace, les molécules d'eau :",
+      "opts": [
+        "restent les mêmes, mais se déplacent plus librement",
+        "fondent elles aussi",
+        "se cassent en atomes d'hydrogène et d'oxygène",
+        "deviennent plus grosses"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "particules-fondent",
+          "texte": "Attribuer aux molécules les propriétés de l'objet : une molécule ne fond pas, c'est leur arrangement qui change"
+        },
+        {
+          "code": "changement-etat-nouvelle-espece",
+          "texte": "Croire qu'un changement d'état casse les molécules : l'eau liquide est toujours formée de molécules H₂O"
+        },
+        {
+          "code": "dilatation-des-particules",
+          "texte": "Croire que les molécules changent de taille : c'est leur agitation et leur disposition qui changent"
+        }
+      ],
+      "exp": "Dans la glace, les molécules H₂O sont ordonnées et liées ; dans l'eau liquide, ce sont les mêmes molécules, mais plus mobiles. Attention : une molécule ne fond pas et ne grossit pas."
+    },
+    {
+      "q": "L'équation de la sublimation du diiode s'écrit :",
+      "opts": [
+        "I₂(s) → I₂(ℓ)",
+        "I₂(g) → I₂(s)",
+        "I₂(s) → 2 I(g)",
+        "I₂(s) → I₂(g)"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "sublimation-vs-fusion",
+          "texte": "Confondre sublimation (solide → gaz) et fusion (solide → liquide)"
+        },
+        {
+          "code": "sens-changement-etat-inverse",
+          "texte": "Écrire le changement d'état dans le mauvais sens : gaz → solide est une condensation"
+        },
+        {
+          "code": "changement-etat-nouvelle-espece",
+          "texte": "Croire qu'un changement d'état casse les molécules : seul l'état physique change, l'espèce I₂ reste la même"
+        },
+        null
+      ],
+      "exp": "La sublimation est le passage direct de l'état solide à l'état gazeux ; l'espèce ne change pas : I₂(s) → I₂(g). Attention : on n'écrit que l'état physique qui change."
+    },
+    {
+      "q": "Un morceau de sucre « disparaît » dans un café chaud. Il s'agit :",
+      "opts": [
+        "d'une fusion : le sucre devient liquide",
+        "d'une dissolution : le sucre se disperse entre les molécules d'eau",
+        "d'une transformation chimique : le sucre est détruit",
+        "d'une vaporisation : le sucre part avec la vapeur"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "fusion-vs-dissolution",
+          "texte": "Confondre fusion et dissolution : le sucre ne fond qu'à environ 186 °C ; dans le café, il se disperse dans l'eau"
+        },
+        null,
+        {
+          "code": "dissolution-disparition",
+          "texte": "Croire que le soluté disparaît : il est toujours là (le café est sucré), dispersé entre les molécules d'eau"
+        },
+        {
+          "code": "dissolution-vaporisation",
+          "texte": "Croire que le soluté s'évapore : le sucre reste dans le liquide, c'est pourquoi le café est sucré"
+        }
+      ],
+      "exp": "Le sucre se disperse entre les molécules d'eau : c'est une dissolution, transformation physique qui n'est pas un changement d'état. Attention : on ne voit plus le sucre, mais il est toujours là."
+    },
+    {
+      "q": "On dissout complètement 5 g de sucre dans 200 g d'eau. La masse de la solution obtenue est :",
+      "opts": [
+        "200 g",
+        "un peu moins de 205 g, car le sucre a fondu",
+        "205 g",
+        "plus de 205 g, car la solution est plus dense que l'eau"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "dissolution-disparition",
+          "texte": "Croire que le soluté dissous ne pèse plus rien : sa masse s'ajoute à celle de l'eau"
+        },
+        {
+          "code": "fusion-vs-dissolution",
+          "texte": "Confondre dissolution et fusion ; de toute façon, aucune des deux ne change la masse"
+        },
+        null,
+        {
+          "code": "masse-vs-masse-volumique",
+          "texte": "Confondre masse et masse volumique : la solution est plus dense, mais sa masse est la somme des masses"
+        }
+      ],
+      "exp": "La masse se conserve : 5 + 200 = 205 g. Attention : le sucre dissous est invisible, mais il est toujours là et il pèse toujours 5 g."
+    },
+    {
+      "q": "En sortant de la piscine, on a froid, même au soleil. L'évaporation de l'eau sur la peau est :",
+      "opts": [
+        "exothermique : elle libère du froid sur la peau",
+        "endothermique : elle prend de l'énergie à la peau",
+        "exothermique : elle prend de l'énergie à la peau",
+        "sans échange d'énergie : seul le vent refroidit"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "froid-substance",
+          "texte": "Croire que le froid est une substance qui se transmet : c'est la peau qui perd de l'énergie"
+        },
+        null,
+        {
+          "code": "endo-exo-inverses",
+          "texte": "Inverser endothermique et exothermique : une transformation qui reçoit de l'énergie est endothermique"
+        },
+        {
+          "code": "changement-etat-sans-energie",
+          "texte": "Croire qu'un changement d'état se fait sans énergie : la vaporisation en demande, prise ici à la peau"
+        }
+      ],
+      "exp": "La vaporisation est endothermique : l'eau qui s'évapore reçoit de l'énergie de la peau, qui se refroidit. Attention : le froid n'est pas une substance, c'est un manque d'énergie."
+    },
+    {
+      "q": "Dans un congélateur, de l'eau liquide à 0 °C se transforme en glace. Pendant cette solidification, l'eau :",
+      "opts": [
+        "reçoit du froid venant du congélateur",
+        "reçoit de l'énergie, car la solidification est endothermique",
+        "cède de l'énergie au milieu extérieur",
+        "n'échange pas d'énergie, puisque sa température reste à 0 °C"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "froid-substance",
+          "texte": "Croire que le froid est une substance qui se transmet : c'est l'eau qui cède de l'énergie"
+        },
+        {
+          "code": "endo-exo-inverses",
+          "texte": "Inverser endothermique et exothermique : la solidification libère de l'énergie, elle est exothermique"
+        },
+        null,
+        {
+          "code": "palier-sans-transfert",
+          "texte": "Croire qu'une température constante signifie aucun échange d'énergie : pendant le palier, l'eau cède de l'énergie sans changer de température"
+        }
+      ],
+      "exp": "La solidification est exothermique : l'eau cède de l'énergie au congélateur, tout en restant à 0 °C tant que la glace et l'eau coexistent. Attention : température constante ne veut pas dire absence de transfert."
+    },
+    {
+      "q": "Un glaçon fond dans un verre d'eau. Tant qu'il reste de la glace, la température du mélange eau-glace :",
+      "opts": [
+        "reste à 0 °C, car le mélange ne reçoit plus d'énergie",
+        "augmente progressivement",
+        "descend sous 0 °C, car la glace refroidit l'eau",
+        "reste à 0 °C, bien que le mélange reçoive de l'énergie"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "palier-sans-transfert",
+          "texte": "Croire qu'une température constante signifie aucun échange d'énergie : l'énergie reçue sert à faire fondre la glace"
+        },
+        {
+          "code": "palier-temperature-varie",
+          "texte": "Croire que la température d'un corps pur varie pendant un changement d'état : elle reste constante (palier)"
+        },
+        {
+          "code": "froid-substance",
+          "texte": "Croire que la glace « donne du froid » : c'est l'eau plus chaude qui cède de l'énergie à la glace"
+        },
+        null
+      ],
+      "exp": "Pendant la fusion, l'énergie reçue sert au changement d'état : la température reste à 0 °C tant que glace et eau coexistent. Attention : le palier n'est pas une absence d'échange d'énergie."
+    },
+    {
+      "q": "L'énergie massique de vaporisation de l'eau vaut L = 2,26×10⁶ J·kg⁻¹. L'énergie nécessaire pour vaporiser 250 g d'eau vaut :",
+      "opts": [
+        "5,65×10⁵ J",
+        "5,65×10⁸ J",
+        "9,04×10⁶ J",
+        "1,1×10⁻⁷ J"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 250 × 2,26×10⁶ = 5,65×10⁸"
+        },
+        {
+          "code": "l-sur-m",
+          "texte": "Diviser L par la masse : 2,26×10⁶ / 0,250 ; il faut Q = m × L"
+        },
+        {
+          "code": "m-sur-l",
+          "texte": "Diviser la masse par L : 0,250 / 2,26×10⁶ ; il faut Q = m × L"
+        }
+      ],
+      "exp": "Q = m × L = 0,250 × 2,26×10⁶ = 5,65×10⁵ J. Attention : L est en J·kg⁻¹, la masse doit être en kilogrammes."
+    },
+    {
+      "q": "On dispose de 6,68×10⁴ J pour faire fondre de la glace à 0 °C ; L(fusion) = 3,34×10⁵ J·kg⁻¹. La masse de glace que l'on peut faire fondre vaut :",
+      "opts": [
+        "5,0 kg",
+        "0,200 kg",
+        "2,23×10¹⁰ kg",
+        "0,200 g"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "l-sur-q",
+          "texte": "Inverser le rapport : L / Q = 3,34×10⁵ / 6,68×10⁴ = 5,0 ; il faut m = Q / L"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 6,68×10⁴ × 3,34×10⁵"
+        },
+        {
+          "code": "unite-kg-vs-g",
+          "texte": "Se tromper d'unité : avec L en J·kg⁻¹, Q / L donne une masse en kilogrammes (0,200 kg = 200 g)"
+        }
+      ],
+      "exp": "m = Q / L = 6,68×10⁴ / 3,34×10⁵ = 0,200 kg, soit 200 g. Attention : avec L en J·kg⁻¹, le résultat est en kilogrammes."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Les changements d'état autour de nous",
+      "contexte": [
+        "Le schéma ci-dessous représente les trois états physiques de la matière. Chaque flèche numérotée correspond à un changement d'état."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"c9f1\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker></defs><rect x=\"295.0\" y=\"58.0\" width=\"170\" height=\"54\" rx=\"10\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"380\" y=\"92\" text-anchor=\"middle\" font-size=\"21\" font-weight=\"bold\" fill=\"#1F4E5A\">GAZ</text><rect x=\"55.0\" y=\"368.0\" width=\"170\" height=\"54\" rx=\"10\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"140\" y=\"402\" text-anchor=\"middle\" font-size=\"21\" font-weight=\"bold\" fill=\"#1F4E5A\">SOLIDE</text><rect x=\"535.0\" y=\"368.0\" width=\"170\" height=\"54\" rx=\"10\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"620\" y=\"402\" text-anchor=\"middle\" font-size=\"21\" font-weight=\"bold\" fill=\"#1F4E5A\">LIQUIDE</text><line x1=\"240.0\" y1=\"381.0\" x2=\"520.0\" y2=\"381.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\" marker-end=\"url(#c9f1)\"/><circle cx=\"380.0\" cy=\"353.0\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"380.0\" y=\"359.0\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">1</text><line x1=\"520.0\" y1=\"409.0\" x2=\"240.0\" y2=\"409.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\" marker-end=\"url(#c9f1)\"/><circle cx=\"380.0\" cy=\"437.0\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"380.0\" y=\"443.0\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">2</text><line x1=\"571.0\" y1=\"354.5\" x2=\"406.9\" y2=\"142.6\" stroke=\"#1F4E5A\" stroke-width=\"2.5\" marker-end=\"url(#c9f1)\"/><circle cx=\"466.8\" cy=\"265.7\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"466.8\" y=\"271.7\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">3</text><line x1=\"429.0\" y1=\"125.5\" x2=\"593.1\" y2=\"337.4\" stroke=\"#1F4E5A\" stroke-width=\"2.5\" marker-end=\"url(#c9f1)\"/><circle cx=\"533.2\" cy=\"214.3\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"533.2\" y=\"220.3\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">4</text><line x1=\"189.0\" y1=\"354.5\" x2=\"353.1\" y2=\"142.6\" stroke=\"#1F4E5A\" stroke-width=\"2.5\" marker-end=\"url(#c9f1)\"/><circle cx=\"293.2\" cy=\"265.7\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"293.2\" y=\"271.7\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">5</text><line x1=\"331.0\" y1=\"125.5\" x2=\"166.9\" y2=\"337.4\" stroke=\"#1F4E5A\" stroke-width=\"2.5\" marker-end=\"url(#c9f1)\"/><circle cx=\"226.8\" cy=\"214.3\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"226.8\" y=\"220.3\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">6</text><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">Chaque flèche numérotée représente un changement d'état.</text></svg>",
+      "questions": [
+        {
+          "texte": "Donne le nom du changement d'état représenté par chacune des flèches 1 à 6.",
+          "aides": [
+            "Regarde d'où part et où arrive chaque flèche : par exemple, la flèche 1 va du solide vers le liquide.",
+            "Aide-toi du tableau du cours : six changements d'état, chacun a un nom. Attention, gaz → liquide et gaz → solide ont des noms différents."
+          ]
+        },
+        {
+          "texte": "Associe chaque situation à un numéro de flèche et au nom du changement d'état.<br>a. De la buée apparaît sur le miroir de la salle de bain après la douche.<br>b. Une flaque d'eau disparaît au soleil.<br>c. Du chocolat fond au bain-marie.<br>d. Un morceau de carboglace (dioxyde de carbone solide) disparaît sans laisser de liquide.<br>e. Un matin d'hiver, du givre se dépose sur le pare-brise directement à partir de la vapeur d'eau de l'air.<br>f. Dans un nuage d'orage, des gouttes d'eau se transforment en grêlons.<br>g. Dans l'atmosphère, la vapeur d'eau forme les gouttelettes d'un nuage.",
+          "aides": []
+        },
+        {
+          "texte": "L'écriture symbolique de la fusion de la glace est : H₂O(s) → H₂O(l). En t'inspirant de cet exemple, écris l'écriture symbolique des changements d'état des situations a et d.",
+          "aides": [
+            "Repère l'espèce chimique de chaque situation : eau dans la situation a, dioxyde de carbone (CO₂) dans la situation d.",
+            "Écris l'état de départ à gauche de la flèche et l'état d'arrivée à droite : (s) solide, (l) liquide, (g) gaz."
+          ]
+        },
+        {
+          "texte": "Classe les six changements d'état en deux groupes : endothermiques et exothermiques.",
+          "aides": []
+        },
+        {
+          "texte": "Situation c : le chocolat reçoit-il ou cède-t-il de l'énergie ? Qui la lui fournit ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : fusion (solide → liquide) ; 2 : solidification (liquide → solide) ; 3 : vaporisation (liquide → gaz) ; 4 : liquéfaction (gaz → liquide) ; 5 : sublimation (solide → gaz) ; 6 : condensation (gaz → solide).",
+        "<strong>2.</strong> a. Flèche 4 : liquéfaction (la vapeur d'eau devient liquide au contact du miroir froid).",
+        "b. Flèche 3 : vaporisation (l'eau liquide devient vapeur).",
+        "c. Flèche 1 : fusion.",
+        "d. Flèche 5 : sublimation (le solide passe directement à l'état gazeux).",
+        "e. Flèche 6 : condensation (gaz → solide).",
+        "f. Flèche 2 : solidification.",
+        "g. Flèche 4 : liquéfaction.",
+        "<strong>3.</strong> a. H₂O(g) → H₂O(l). d. CO₂(s) → CO₂(g). L'espèce chimique est la même de chaque côté de la flèche : seul son état physique change.",
+        "<strong>4.</strong> Endothermiques (le système reçoit de l'énergie) : fusion, vaporisation, sublimation. Exothermiques (le système cède de l'énergie) : solidification, liquéfaction, condensation.",
+        "<strong>5.</strong> La fusion est endothermique : le chocolat reçoit de l'énergie. Elle lui est fournie par l'eau chaude du bain-marie (à travers le récipient), qui se refroidit.",
+        "<em>⚠ Erreur fréquente : appeler « condensation » le passage gaz → liquide (buée). Dans ce cours, gaz → liquide est la liquéfaction, et gaz → solide la condensation.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Fondre ou se dissoudre ?",
+      "contexte": [
+        "Léa prend un thé glacé sucré à la cafétéria. Elle affirme : « Le glaçon fond dans mon thé, et le sucre aussi ! ». Pour l'aider à y voir clair, on a représenté ci-dessous, à l'échelle microscopique, de l'eau dans trois états différents (A, B, C) et de l'eau sucrée (D)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"102.0\" y=\"46\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">A</text><rect x=\"22\" y=\"60\" width=\"160\" height=\"250\" fill=\"#fbf9f5\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"42.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"42.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"277.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"42.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"257.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"42.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"237.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"42.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"217.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"42.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"197.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"42.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"62.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"82.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"102.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"122.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"142.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"162.0\" cy=\"177.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><text x=\"287.0\" y=\"46\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">B</text><rect x=\"207\" y=\"60\" width=\"160\" height=\"250\" fill=\"#fbf9f5\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"207\" y1=\"132\" x2=\"367\" y2=\"132\" stroke=\"#1F4E5A\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><circle cx=\"220.7\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"255.1\" cy=\"298.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"281.2\" cy=\"294.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"312.3\" cy=\"297.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"336.6\" cy=\"297.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"226.9\" cy=\"275.9\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"301.8\" cy=\"277.3\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"325.4\" cy=\"280.8\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"262.0\" cy=\"256.4\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"293.2\" cy=\"259.4\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"319.3\" cy=\"256.9\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"354.6\" cy=\"263.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"226.6\" cy=\"237.1\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"304.4\" cy=\"240.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"325.1\" cy=\"237.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"240.9\" cy=\"219.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"282.0\" cy=\"219.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"355.4\" cy=\"222.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"231.2\" cy=\"199.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"267.7\" cy=\"202.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"305.6\" cy=\"199.1\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"326.4\" cy=\"201.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"255.2\" cy=\"186.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"280.5\" cy=\"184.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"317.9\" cy=\"183.4\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"353.2\" cy=\"183.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"231.9\" cy=\"164.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"269.7\" cy=\"163.1\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"302.4\" cy=\"168.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"327.9\" cy=\"165.9\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><text x=\"472.0\" y=\"46\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">C</text><rect x=\"392\" y=\"60\" width=\"160\" height=\"250\" fill=\"#fbf9f5\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"486.7\" cy=\"288.5\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"452.8\" cy=\"105.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"417.4\" cy=\"197.4\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"497.9\" cy=\"88.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"465.6\" cy=\"230.3\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"506.9\" cy=\"159.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"407.7\" cy=\"113.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"409.8\" cy=\"294.5\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"409.4\" cy=\"246.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><text x=\"657.0\" y=\"46\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">D</text><rect x=\"577\" y=\"60\" width=\"160\" height=\"250\" fill=\"#fbf9f5\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"577\" y1=\"132\" x2=\"737\" y2=\"132\" stroke=\"#1F4E5A\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><circle cx=\"626.0\" cy=\"202.0\" r=\"13\" fill=\"#C8962E\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"681.8\" cy=\"190.8\" r=\"13\" fill=\"#C8962E\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"650.8\" cy=\"237.0\" r=\"13\" fill=\"#C8962E\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"619.8\" cy=\"272.0\" r=\"13\" fill=\"#C8962E\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"688.0\" cy=\"258.0\" r=\"13\" fill=\"#C8962E\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"589.7\" cy=\"300.3\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"629.7\" cy=\"301.8\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"651.9\" cy=\"300.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"683.9\" cy=\"300.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"720.9\" cy=\"295.0\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"655.0\" cy=\"280.1\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"593.4\" cy=\"256.5\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"602.7\" cy=\"237.8\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"713.9\" cy=\"241.5\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"590.2\" cy=\"220.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"668.0\" cy=\"220.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"725.9\" cy=\"219.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"599.3\" cy=\"201.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"654.6\" cy=\"205.7\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"713.3\" cy=\"199.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"607.3\" cy=\"180.8\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"649.2\" cy=\"183.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"703.9\" cy=\"182.2\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"620.9\" cy=\"165.6\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"677.9\" cy=\"166.4\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"711.2\" cy=\"162.1\" r=\"9\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"1\"/><circle cx=\"150\" cy=\"370\" r=\"9\" fill=\"#1F4E5A\"/><text x=\"168\" y=\"376\">molécule d'eau</text><circle cx=\"420\" cy=\"370\" r=\"13\" fill=\"#C8962E\"/><text x=\"442\" y=\"376\">molécule de saccharose (sucre)</text><text x=\"380\" y=\"420\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">Modèles microscopiques (les molécules sont représentées par des disques ;</text><text x=\"380\" y=\"442\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">les tailles et distances ne sont pas à l'échelle).</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe chacun des modèles A, B et C à un état physique de l'eau (solide, liquide, gaz). Justifie en décrivant la disposition des molécules (ordonnée ou désordonnée, rapprochées ou dispersées).",
+          "aides": [
+            "Dans un solide, les molécules sont rangées et serrées ; dans un gaz, elles sont très éloignées les unes des autres.",
+            "Le liquide est entre les deux : les molécules se touchent, mais elles sont en désordre."
+          ]
+        },
+        {
+          "texte": "La fusion de la glace fait passer d'un modèle à un autre : lesquels ? Les molécules d'eau sont-elles modifiées ? Qu'est-ce qui change ? Explique pourquoi c'est une transformation physique.",
+          "aides": []
+        },
+        {
+          "texte": "Indique si chaque affirmation est vraie ou fausse, et justifie.<br>a. « Le sucre fond dans le thé. »<br>b. « Dans le modèle D, le sucre est à l'état liquide. »<br>c. « Fusion et dissolution sont deux transformations physiques : aucune nouvelle espèce chimique n'apparaît. »<br>d. « Le sucre se dissout à température ambiante, alors que la glace ne fond qu'à une température bien précise, 0 °C. »<br>e. « Tant qu'il reste des glaçons dans un verre d'eau, le mélange eau-glace reste à une température voisine de 0 °C. »",
+          "aides": [
+            "Une fusion est un changement d'état d'UNE espèce chimique (solide → liquide). Une dissolution est la dispersion d'une espèce (le soluté) dans un liquide (le solvant).",
+            "Dans le modèle D, regarde où sont les molécules de sucre : forment-elles un liquide à elles seules, ou sont-elles dispersées entre les molécules d'eau ?"
+          ]
+        },
+        {
+          "texte": "Corrige la phrase de Léa en utilisant les mots « fusion » et « dissolution ».",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : solide (molécules ordonnées, rangées régulièrement et très rapprochées). B : liquide (molécules désordonnées mais rapprochées, au contact les unes des autres ; le liquide a une surface libre). C : gaz (molécules désordonnées et très dispersées, elles occupent tout le récipient).",
+        "<strong>2.</strong> La fusion fait passer du modèle A (solide) au modèle B (liquide). Les molécules d'eau restent les mêmes (H₂O) : seule leur disposition change (elles deviennent désordonnées). Aucune nouvelle espèce chimique n'est formée : c'est une transformation physique.",
+        "<strong>3.</strong> a. FAUX : le sucre ne change pas d'état, il se disperse entre les molécules d'eau : c'est une dissolution.",
+        "b. FAUX : dans le modèle D, les molécules de sucre sont dispersées, une à une, entre les molécules d'eau : c'est une solution (eau sucrée). Le sucre n'est pas liquide ; le solvant (l'eau) est liquide.",
+        "c. VRAI : dans les deux cas, on retrouve les mêmes espèces chimiques (eau, saccharose) avant et après.",
+        "d. VRAI : la fusion d'un corps pur se produit à une température caractéristique (0 °C pour l'eau) ; la dissolution n'a pas de température caractéristique.",
+        "e. VRAI : pendant un changement d'état, la température d'un corps pur reste constante tant que les deux états coexistent.",
+        "<strong>4.</strong> « Le glaçon fond dans mon thé (fusion : l'eau passe de l'état solide à l'état liquide), et le sucre se dissout (dissolution : il se disperse dans l'eau, sans changer d'état). »",
+        "<em>⚠ Erreur fréquente : dire que le sucre « fond » dans l'eau. Pour faire fondre du sucre, il faut le chauffer seul vers 185 °C (c'est ce qu'on fait au début d'un caramel).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Des glaçons pour l'été",
+      "contexte": [
+        "Pour faire fondre de la glace à 0 °C, il faut lui fournir de l'énergie. L'énergie Q nécessaire est donnée par la relation : Q = m × L<sub>fus</sub>, avec Q en joules (J), m la masse de glace en kilogrammes (kg) et L<sub>fus</sub> = 3,34 × 10⁵ J·kg⁻¹ l'énergie massique de fusion de la glace."
+      ],
+      "questions": [
+        {
+          "texte": "Un glaçon a une masse m = 20 g. Convertis cette masse en kilogrammes, puis calcule l'énergie nécessaire pour le faire fondre.",
+          "aides": [
+            "1 kg = 1000 g : pour passer des grammes aux kilogrammes, on divise par 1000.",
+            "Remplace ensuite m (en kg) et L<sub>fus</sub> dans la relation Q = m × L<sub>fus</sub>."
+          ]
+        },
+        {
+          "texte": "Recopie et complète le tableau suivant. Masse de glace m : 20 g ; 40 g ; 100 g ; 200 g. Énergie de fusion Q : … J. Que remarques-tu ? Comment s'appelle cette relation entre Q et m ?",
+          "aides": []
+        },
+        {
+          "texte": "Théo calcule l'énergie pour faire fondre un glaçon de 50 g et écrit : « Q = 50 × 3,34 × 10⁵ = 1,67 × 10⁷ J ». Trouve son erreur et donne le bon résultat. Combien de fois son résultat est-il trop grand ?",
+          "aides": [
+            "Dans quelle unité doit être la masse quand L est en J·kg⁻¹ ?",
+            "Refais le calcul avec m = 0,050 kg, puis divise le résultat de Théo par le tien."
+          ]
+        },
+        {
+          "texte": "On place un bac à glaçons contenant 200 g d'eau liquide à 0 °C dans le congélateur. L'eau se solidifie. Calcule l'énergie Q échangée par l'eau (utilise l'encadré « Données »). L'eau reçoit-elle ou cède-t-elle de l'énergie ? La transformation est-elle endothermique ou exothermique ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> m = 20 g = 20 / 1000 kg = 0,020 kg. Q = m × L<sub>fus</sub> = 0,020 × 3,34 × 10⁵ = 6,68 × 10³ J (soit environ 6,7 kJ).",
+        "<strong>2.</strong> 20 g → 6,68 × 10³ J ; 40 g → 1,34 × 10⁴ J ; 100 g → 3,34 × 10⁴ J ; 200 g → 6,68 × 10⁴ J.",
+        "Quand la masse est multipliée par 2 (ou par 5, par 10), l'énergie est multipliée par 2 (ou par 5, par 10) : Q est proportionnelle à m, et le coefficient de proportionnalité est L<sub>fus</sub>.",
+        "<strong>3.</strong> Théo a laissé la masse en grammes. Il faut m = 50 g = 0,050 kg : Q = 0,050 × 3,34 × 10⁵ = 1,67 × 10⁴ J. Son résultat est 1000 fois trop grand (1,67 × 10⁷ / 1,67 × 10⁴ = 1000).",
+        "<strong>4.</strong> Q = m × L<sub>solidification</sub> = m × (− L<sub>fus</sub>) = 0,200 × (− 3,34 × 10⁵) = − 6,68 × 10⁴ J. Q &lt; 0 : l'eau cède de l'énergie (à l'air froid du congélateur). La solidification est exothermique.",
+        "<em>⚠ Erreur fréquente : oublier de convertir la masse en kilogrammes, car L est exprimée en J·kg⁻¹.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Quelle est cette poudre blanche ?",
+      "contexte": [
+        "Au laboratoire, Ayoub trouve un flacon de poudre blanche dont l'étiquette est effacée. Il sait seulement que c'est un « acide gras » utilisé pour fabriquer des bougies ou des savons.",
+        "Protocole : il chauffe 25,0 g de poudre dans un tube à essais au bain-marie jusqu'à obtenir un liquide à 85 °C. Il plonge alors le tube dans un bécher d'eau froide et relève la température θ toutes les minutes, en agitant doucement avec le thermomètre. Il obtient la courbe ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"400.6\" x2=\"730\" y2=\"400.6\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"393.3\" x2=\"730\" y2=\"393.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"385.9\" x2=\"730\" y2=\"385.9\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"378.6\" x2=\"730\" y2=\"378.6\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"371.2\" x2=\"730\" y2=\"371.2\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"363.8\" x2=\"730\" y2=\"363.8\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"356.5\" x2=\"730\" y2=\"356.5\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"349.1\" x2=\"730\" y2=\"349.1\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"341.8\" x2=\"730\" y2=\"341.8\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"334.4\" x2=\"730\" y2=\"334.4\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"327.0\" x2=\"730\" y2=\"327.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"319.7\" x2=\"730\" y2=\"319.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"312.3\" x2=\"730\" y2=\"312.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"305.0\" x2=\"730\" y2=\"305.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"297.6\" x2=\"730\" y2=\"297.6\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"290.2\" x2=\"730\" y2=\"290.2\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"282.9\" x2=\"730\" y2=\"282.9\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"275.5\" x2=\"730\" y2=\"275.5\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"268.2\" x2=\"730\" y2=\"268.2\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"260.8\" x2=\"730\" y2=\"260.8\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"253.4\" x2=\"730\" y2=\"253.4\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"246.1\" x2=\"730\" y2=\"246.1\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"238.7\" x2=\"730\" y2=\"238.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"231.4\" x2=\"730\" y2=\"231.4\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"224.0\" x2=\"730\" y2=\"224.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"216.6\" x2=\"730\" y2=\"216.6\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"209.3\" x2=\"730\" y2=\"209.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"201.9\" x2=\"730\" y2=\"201.9\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"194.6\" x2=\"730\" y2=\"194.6\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"187.2\" x2=\"730\" y2=\"187.2\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"179.8\" x2=\"730\" y2=\"179.8\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"172.5\" x2=\"730\" y2=\"172.5\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"165.1\" x2=\"730\" y2=\"165.1\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"157.8\" x2=\"730\" y2=\"157.8\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"150.4\" x2=\"730\" y2=\"150.4\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"143.0\" x2=\"730\" y2=\"143.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"135.7\" x2=\"730\" y2=\"135.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"128.3\" x2=\"730\" y2=\"128.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"121.0\" x2=\"730\" y2=\"121.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"113.6\" x2=\"730\" y2=\"113.6\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"106.2\" x2=\"730\" y2=\"106.2\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"98.9\" x2=\"730\" y2=\"98.9\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"91.5\" x2=\"730\" y2=\"91.5\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"84.2\" x2=\"730\" y2=\"84.2\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"76.8\" x2=\"730\" y2=\"76.8\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"69.4\" x2=\"730\" y2=\"69.4\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"62.1\" x2=\"730\" y2=\"62.1\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"54.7\" x2=\"730\" y2=\"54.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"47.4\" x2=\"730\" y2=\"47.4\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"40.0\" x2=\"730\" y2=\"40.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85.0\" y1=\"40\" x2=\"85.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"117.2\" y1=\"40\" x2=\"117.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"149.5\" y1=\"40\" x2=\"149.5\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"181.8\" y1=\"40\" x2=\"181.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"214.0\" y1=\"40\" x2=\"214.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"246.2\" y1=\"40\" x2=\"246.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"278.5\" y1=\"40\" x2=\"278.5\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"310.8\" y1=\"40\" x2=\"310.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"343.0\" y1=\"40\" x2=\"343.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"375.2\" y1=\"40\" x2=\"375.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"407.5\" y1=\"40\" x2=\"407.5\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"439.8\" y1=\"40\" x2=\"439.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"472.0\" y1=\"40\" x2=\"472.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"504.2\" y1=\"40\" x2=\"504.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"536.5\" y1=\"40\" x2=\"536.5\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"568.8\" y1=\"40\" x2=\"568.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"601.0\" y1=\"40\" x2=\"601.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"633.2\" y1=\"40\" x2=\"633.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"665.5\" y1=\"40\" x2=\"665.5\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"697.8\" y1=\"40\" x2=\"697.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"730.0\" y1=\"40\" x2=\"730.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85.0\" y1=\"40\" x2=\"85.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">0</text><line x1=\"149.5\" y1=\"40\" x2=\"149.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"149.5\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">2</text><line x1=\"214.0\" y1=\"40\" x2=\"214.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"214.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">4</text><line x1=\"278.5\" y1=\"40\" x2=\"278.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"278.5\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">6</text><line x1=\"343.0\" y1=\"40\" x2=\"343.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"343.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">8</text><line x1=\"407.5\" y1=\"40\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">10</text><line x1=\"472.0\" y1=\"40\" x2=\"472.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"472.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">12</text><line x1=\"536.5\" y1=\"40\" x2=\"536.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"536.5\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">14</text><line x1=\"601.0\" y1=\"40\" x2=\"601.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"601.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">16</text><line x1=\"665.5\" y1=\"40\" x2=\"665.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"665.5\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">18</text><line x1=\"730.0\" y1=\"40\" x2=\"730.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"730.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">20</text><line x1=\"85\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"413.0\" text-anchor=\"end\" font-size=\"15\">40</text><line x1=\"85\" y1=\"371.2\" x2=\"730\" y2=\"371.2\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"376.2\" text-anchor=\"end\" font-size=\"15\">45</text><line x1=\"85\" y1=\"334.4\" x2=\"730\" y2=\"334.4\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"339.4\" text-anchor=\"end\" font-size=\"15\">50</text><line x1=\"85\" y1=\"297.6\" x2=\"730\" y2=\"297.6\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"302.6\" text-anchor=\"end\" font-size=\"15\">55</text><line x1=\"85\" y1=\"260.8\" x2=\"730\" y2=\"260.8\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"265.8\" text-anchor=\"end\" font-size=\"15\">60</text><line x1=\"85\" y1=\"224.0\" x2=\"730\" y2=\"224.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"229.0\" text-anchor=\"end\" font-size=\"15\">65</text><line x1=\"85\" y1=\"187.2\" x2=\"730\" y2=\"187.2\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"192.2\" text-anchor=\"end\" font-size=\"15\">70</text><line x1=\"85\" y1=\"150.4\" x2=\"730\" y2=\"150.4\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"155.4\" text-anchor=\"end\" font-size=\"15\">75</text><line x1=\"85\" y1=\"113.6\" x2=\"730\" y2=\"113.6\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"118.6\" text-anchor=\"end\" font-size=\"15\">80</text><line x1=\"85\" y1=\"76.8\" x2=\"730\" y2=\"76.8\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"81.8\" text-anchor=\"end\" font-size=\"15\">85</text><line x1=\"85\" y1=\"40.0\" x2=\"730\" y2=\"40.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"45.0\" text-anchor=\"end\" font-size=\"15\">90</text><rect x=\"85\" y=\"40\" width=\"645\" height=\"368\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"407.5\" y=\"460\" text-anchor=\"middle\" font-weight=\"bold\">t (min)</text><text transform=\"translate(22,224.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">θ (°C)</text><polyline points=\"85.0,76.8 117.2,109.9 149.5,139.4 181.8,168.8 214.0,194.6 246.2,194.6 278.5,194.6 310.8,194.6 343.0,194.6 375.2,194.6 407.5,194.6 439.8,194.6 472.0,194.6 504.2,194.6 536.5,227.7 568.8,260.8 601.0,286.6 633.2,312.3 665.5,338.1 697.8,356.5 730.0,374.9\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.4\"/><circle cx=\"85.0\" cy=\"76.8\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"117.2\" cy=\"109.9\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"149.5\" cy=\"139.4\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"181.8\" cy=\"168.8\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"214.0\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"246.2\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"278.5\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"310.8\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"343.0\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"375.2\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"407.5\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"439.8\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"472.0\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"504.2\" cy=\"194.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"536.5\" cy=\"227.7\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"568.8\" cy=\"260.8\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"601.0\" cy=\"286.6\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"633.2\" cy=\"312.3\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"665.5\" cy=\"338.1\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"697.8\" cy=\"356.5\" r=\"4\" fill=\"#B5523B\"/><circle cx=\"730.0\" cy=\"374.9\" r=\"4\" fill=\"#B5523B\"/><text x=\"722.0\" y=\"54.7\" text-anchor=\"end\" font-size=\"15\" fill=\"#3a3a3a\">Refroidissement d'un échantillon de 25,0 g</text></svg>",
+      "contexte2": [
+        "Températures de fusion de quelques acides gras : acide laurique 44 °C ; acide myristique 54 °C ; acide palmitique 63 °C ; acide stéarique 69 °C.",
+        "Énergie massique de fusion de l'espèce étudiée : environ 2,0 × 10⁵ J·kg⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Indique l'état physique de l'espèce entre 0 et 4 min, entre 4 et 13 min, et entre 13 et 20 min.",
+          "aides": [
+            "Une partie horizontale de la courbe (palier) correspond à un changement d'état : deux états coexistent.",
+            "Avant le palier, l'échantillon est encore entièrement à l'état de départ ; après le palier, il est entièrement à l'état d'arrivée."
+          ]
+        },
+        {
+          "texte": "Quel changement d'état se produit pendant l'expérience ? Écris son écriture symbolique, en notant A l'espèce chimique.",
+          "aides": []
+        },
+        {
+          "texte": "Relève la température de changement d'état. Identifie l'espèce chimique contenue dans le flacon.",
+          "aides": [
+            "Lis la température du palier sur l'axe vertical (utilise les petites graduations).",
+            "Une espèce chimique a la même température de fusion et de solidification : compare ta lecture au tableau."
+          ]
+        },
+        {
+          "texte": "La présence d'un palier montre que l'échantillon est un corps pur. Comment évoluerait la température si la poudre était un mélange ?",
+          "aides": []
+        },
+        {
+          "texte": "Ce changement d'état est-il endothermique ou exothermique ? Dans quel sens se fait le transfert d'énergie entre le tube et l'eau du bécher ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie Q échangée par l'échantillon pendant le palier. Commente son signe.",
+          "aides": [
+            "Quelle relation du cours relie Q, m et L ? Pense à convertir la masse en kilogrammes.",
+            "Pour une solidification, L<sub>solidification</sub> = − L<sub>fusion</sub> : le résultat est négatif."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> De 0 à 4 min : liquide seul (la température baisse). De 4 à 13 min : coexistence liquide + solide (palier : la température reste constante). De 13 à 20 min : solide seul (la température baisse à nouveau).",
+        "<strong>2.</strong> Le liquide devient solide : c'est une solidification. A(l) → A(s).",
+        "<strong>3.</strong> Lecture du palier : θ = 69 °C. C'est la température de fusion (et de solidification) de l'acide stéarique : le flacon contient de l'acide stéarique.",
+        "<strong>4.</strong> Pour un mélange, il n'y aurait pas de palier net : la température continuerait de diminuer pendant la solidification (le changement d'état se fait sur un intervalle de températures).",
+        "<strong>5.</strong> La solidification est exothermique : l'échantillon cède de l'énergie. Le transfert se fait du tube vers l'eau du bécher, qui se réchauffe un peu.",
+        "<strong>6.</strong> m = 25,0 g = 0,0250 kg ; L<sub>solidification</sub> = − 2,0 × 10⁵ J·kg⁻¹. Q = m × L<sub>solidification</sub> = 0,0250 × (− 2,0 × 10⁵) = − 5,0 × 10³ J. Q &lt; 0 : l'échantillon libère 5,0 kJ pendant la solidification, ce qui confirme qu'elle est exothermique.",
+        "<em>⚠ Erreur fréquente : croire que le système ne cède plus d'énergie pendant le palier parce que la température ne baisse plus. Au contraire : c'est pendant le palier que l'énergie de solidification est libérée, et c'est ce qui maintient la température constante.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Pourquoi transpire-t-on ?",
+      "contexte": [
+        "Samir court un 10 km un jour d'été. Pour éviter que la température de son corps ne monte trop, il transpire : la sueur (constituée presque uniquement d'eau) s'évapore à la surface de la peau.",
+        "Pendant la course, on estime que 600 mL de sueur s'évaporent sur sa peau. À la température de la peau (vers 35 °C), l'énergie massique de vaporisation de l'eau vaut L<sub>vap</sub> = 2,4 × 10⁶ J·kg⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Nomme le changement d'état subi par la sueur qui s'évapore et écris son écriture symbolique.",
+          "aides": []
+        },
+        {
+          "texte": "Ce changement d'état est-il endothermique ou exothermique ? Explique pourquoi la transpiration refroidit le corps.",
+          "aides": [
+            "Pour passer de l'état liquide à l'état gazeux, l'eau doit-elle recevoir ou céder de l'énergie ?",
+            "Si la sueur reçoit de l'énergie, qui la lui fournit ? Que devient alors la température de celui qui la fournit ?"
+          ]
+        },
+        {
+          "texte": "Calcule l'énergie évacuée par l'évaporation de la sueur pendant la course.",
+          "aides": [
+            "La relation Q = m × L demande une masse : utilise la masse volumique de l'eau pour passer de 600 mL à une masse.",
+            "600 mL d'eau ont une masse de 600 g ; convertis en kg, puis applique Q = m × L<sub>vap</sub>."
+          ]
+        },
+        {
+          "texte": "Pendant la course, le corps de Samir doit évacuer environ 2,5 × 10⁶ J pour garder une température proche de 37 °C. Quelle masse de sueur devrait s'évaporer pour évacuer à elle seule toute cette énergie ? Pourquoi est-il conseillé de boire en courant ?",
+          "aides": [
+            "Cette fois, on connaît Q et L, et on cherche m.",
+            "Isole m dans Q = m × L : il faut diviser Q par L."
+          ]
+        },
+        {
+          "texte": "Compare l'énergie nécessaire pour vaporiser 1 kg d'eau à celle nécessaire pour faire fondre 1 kg de glace (voir « Données »). Pourquoi a-t-on froid en sortant de la piscine, surtout quand il y a du vent ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C'est une vaporisation (liquide → gaz) : H₂O(l) → H₂O(g).",
+        "<strong>2.</strong> La vaporisation est endothermique : pour s'évaporer, la sueur doit recevoir de l'énergie. Elle la prend à la peau, donc au corps, qui se refroidit.",
+        "<strong>3.</strong> Masse de sueur : 600 mL d'eau ont une masse de 600 g, soit m = 0,600 kg. Q = m × L<sub>vap</sub> = 0,600 × 2,4 × 10⁶ = 1,44 × 10⁶ J ≈ 1,4 × 10⁶ J.",
+        "<strong>4.</strong> Q = m × L<sub>vap</sub>, donc m = Q / L<sub>vap</sub> = 2,5 × 10⁶ / 2,4 × 10⁶ = 1,04 kg ≈ 1,0 kg. Il faudrait évaporer environ 1,0 kg de sueur (1 L d'eau) : le corps perd beaucoup d'eau, il faut boire pour compenser. (En réalité, 600 mL ne suffisent pas : le reste de l'énergie est évacué autrement, par la respiration et par l'air au contact de la peau.)",
+        "Vérification de l'ordre de grandeur : Q (2,5 × 10⁶ J) et L<sub>vap</sub> (2,4 × 10⁶ J·kg⁻¹) sont voisins, donc m est voisine de 1 kg : c'est cohérent.",
+        "<strong>5.</strong> L<sub>vap</sub> / L<sub>fus</sub> = 2,4 × 10⁶ / 3,34 × 10⁵ ≈ 7 : vaporiser 1 kg d'eau demande environ 7 fois plus d'énergie que faire fondre 1 kg de glace. En sortant de la piscine, l'eau sur la peau s'évapore et prend beaucoup d'énergie au corps, qui se refroidit ; le vent accélère l'évaporation, donc on a encore plus froid.",
+        "<em>⚠ Erreur fréquente : utiliser le volume en litres ou en millilitres à la place de la masse en kilogrammes, ou écrire m = L / Q au lieu de m = Q / L.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le pique-nique au bord de la Seine",
+      "contexte": [
+        "Doc. 1 — La sortie. Inès organise un pique-nique avec ses amis au bord de la Seine, un jour de canicule (30 °C à l'ombre). Départ à 10 h, dernier repas pris vers 16 h : yaourts, poulet et boissons doivent rester au frais pendant 6 h dans une glacière. Tant qu'il reste de la glace en train de fondre (ou de la carboglace en train de se sublimer), l'intérieur de la glacière reste froid. Quand tout a fondu, la température monte et les aliments risquent de s'abîmer.",
+        "Modèle : on admet que toute l'énergie qui entre dans la glacière sert au changement d'état du produit réfrigérant."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"392.7\" x2=\"730\" y2=\"392.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"377.3\" x2=\"730\" y2=\"377.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"362.0\" x2=\"730\" y2=\"362.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"346.7\" x2=\"730\" y2=\"346.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"331.3\" x2=\"730\" y2=\"331.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"316.0\" x2=\"730\" y2=\"316.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"300.7\" x2=\"730\" y2=\"300.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"285.3\" x2=\"730\" y2=\"285.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"270.0\" x2=\"730\" y2=\"270.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"254.7\" x2=\"730\" y2=\"254.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"239.3\" x2=\"730\" y2=\"239.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"224.0\" x2=\"730\" y2=\"224.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"208.7\" x2=\"730\" y2=\"208.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"193.3\" x2=\"730\" y2=\"193.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"178.0\" x2=\"730\" y2=\"178.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"162.7\" x2=\"730\" y2=\"162.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"147.3\" x2=\"730\" y2=\"147.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"132.0\" x2=\"730\" y2=\"132.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"116.7\" x2=\"730\" y2=\"116.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"101.3\" x2=\"730\" y2=\"101.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"86.0\" x2=\"730\" y2=\"86.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"70.7\" x2=\"730\" y2=\"70.7\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"55.3\" x2=\"730\" y2=\"55.3\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85\" y1=\"40.0\" x2=\"730\" y2=\"40.0\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85.0\" y1=\"40\" x2=\"85.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"125.3\" y1=\"40\" x2=\"125.3\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"165.6\" y1=\"40\" x2=\"165.6\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"205.9\" y1=\"40\" x2=\"205.9\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"246.2\" y1=\"40\" x2=\"246.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"286.6\" y1=\"40\" x2=\"286.6\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"326.9\" y1=\"40\" x2=\"326.9\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"367.2\" y1=\"40\" x2=\"367.2\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"407.5\" y1=\"40\" x2=\"407.5\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"447.8\" y1=\"40\" x2=\"447.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"488.1\" y1=\"40\" x2=\"488.1\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"528.4\" y1=\"40\" x2=\"528.4\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"568.8\" y1=\"40\" x2=\"568.8\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"609.1\" y1=\"40\" x2=\"609.1\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"649.4\" y1=\"40\" x2=\"649.4\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"689.7\" y1=\"40\" x2=\"689.7\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"730.0\" y1=\"40\" x2=\"730.0\" y2=\"408\" stroke=\"#ece7dd\" stroke-width=\"0.8\"/><line x1=\"85.0\" y1=\"40\" x2=\"85.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">0</text><line x1=\"165.6\" y1=\"40\" x2=\"165.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"165.6\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">1</text><line x1=\"246.2\" y1=\"40\" x2=\"246.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"246.2\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">2</text><line x1=\"326.9\" y1=\"40\" x2=\"326.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"326.9\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">3</text><line x1=\"407.5\" y1=\"40\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">4</text><line x1=\"488.1\" y1=\"40\" x2=\"488.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"488.1\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">5</text><line x1=\"568.8\" y1=\"40\" x2=\"568.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"568.8\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">6</text><line x1=\"649.4\" y1=\"40\" x2=\"649.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"649.4\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">7</text><line x1=\"730.0\" y1=\"40\" x2=\"730.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"730.0\" y=\"430\" text-anchor=\"middle\" font-size=\"15\">8</text><line x1=\"85\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"413.0\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"85\" y1=\"377.3\" x2=\"730\" y2=\"377.3\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"382.3\" text-anchor=\"end\" font-size=\"15\">50</text><line x1=\"85\" y1=\"346.7\" x2=\"730\" y2=\"346.7\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"351.7\" text-anchor=\"end\" font-size=\"15\">100</text><line x1=\"85\" y1=\"316.0\" x2=\"730\" y2=\"316.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"321.0\" text-anchor=\"end\" font-size=\"15\">150</text><line x1=\"85\" y1=\"285.3\" x2=\"730\" y2=\"285.3\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"290.3\" text-anchor=\"end\" font-size=\"15\">200</text><line x1=\"85\" y1=\"254.7\" x2=\"730\" y2=\"254.7\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"259.7\" text-anchor=\"end\" font-size=\"15\">250</text><line x1=\"85\" y1=\"224.0\" x2=\"730\" y2=\"224.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"229.0\" text-anchor=\"end\" font-size=\"15\">300</text><line x1=\"85\" y1=\"193.3\" x2=\"730\" y2=\"193.3\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"198.3\" text-anchor=\"end\" font-size=\"15\">350</text><line x1=\"85\" y1=\"162.7\" x2=\"730\" y2=\"162.7\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"167.7\" text-anchor=\"end\" font-size=\"15\">400</text><line x1=\"85\" y1=\"132.0\" x2=\"730\" y2=\"132.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"137.0\" text-anchor=\"end\" font-size=\"15\">450</text><line x1=\"85\" y1=\"101.3\" x2=\"730\" y2=\"101.3\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"106.3\" text-anchor=\"end\" font-size=\"15\">500</text><line x1=\"85\" y1=\"70.7\" x2=\"730\" y2=\"70.7\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"75.7\" text-anchor=\"end\" font-size=\"15\">550</text><line x1=\"85\" y1=\"40.0\" x2=\"730\" y2=\"40.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"77\" y=\"45.0\" text-anchor=\"end\" font-size=\"15\">600</text><rect x=\"85\" y=\"40\" width=\"645\" height=\"368\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"407.5\" y=\"460\" text-anchor=\"middle\" font-weight=\"bold\">durée t (h)</text><text transform=\"translate(22,224.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">énergie reçue E (kJ)</text><line x1=\"85.0\" y1=\"408.0\" x2=\"730.0\" y2=\"40.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"109.2\" y=\"64.5\" font-size=\"15\" fill=\"#3a3a3a\">Doc. 2 — Énergie reçue par l'intérieur de la glacière</text><text x=\"109.2\" y=\"86.0\" font-size=\"15\" fill=\"#3a3a3a\">(glacière fermée, à l'ombre, air extérieur à 30 °C)</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Trois solutions possibles.",
+        "A. Un sac de glaçons de 1,0 kg acheté au supermarché (fusion de la glace à 0 °C).",
+        "B. Trois blocs réfrigérants de 500 g chacun, sortis du congélateur. Ils contiennent de l'eau gélifiée : on admet que leur énergie massique de fusion est celle de la glace.",
+        "C. 1,0 kg de carboglace (dioxyde de carbone solide), qui se sublime à − 78,5 °C. Énergie massique de sublimation : L<sub>sub</sub> = 5,7 × 10⁵ J·kg⁻¹. Précautions d'emploi : manipuler avec des gants (brûlures par le froid) ; ne jamais enfermer dans un récipient hermétique (1 kg de carboglace produit plus de 500 L de gaz) ; utiliser dans un lieu aéré ; ne pas mettre en contact direct avec les aliments.",
+        "Utilise aussi l'encadré « Données » de la fiche."
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : quel changement d'état subissent les glaçons dans la glacière ? Est-il endothermique ou exothermique ? Pourquoi la température dans la glacière reste-t-elle voisine de 0 °C tant qu'il reste de la glace ?",
+          "aides": [
+            "Solide → liquide : quel nom ? Le système reçoit-il de l'énergie ?",
+            "Relis l'encadré « attention » du cours sur la température pendant un changement d'état."
+          ]
+        },
+        {
+          "texte": "Quelle solution Inès doit-elle choisir pour que le pique-nique reste au frais jusqu'à 16 h ? Justifie ta réponse par des calculs et à l'aide des documents.",
+          "aides": [
+            "S'approprier : avec le doc. 1 et le doc. 2, trouve l'énergie que la glacière reçoit pendant les 6 h de la sortie.",
+            "Analyser : chaque solution peut absorber l'énergie Q = m × L de son changement d'état ; elle convient si Q est au moins égale à l'énergie reçue.",
+            "Réaliser : calcule Q pour A, B et C (masses en kg), compare au doc. 2, puis relis les précautions du doc. 3 avant de conclure."
+          ]
+        },
+        {
+          "texte": "Regard critique : cite deux limites du modèle utilisé. Que faudrait-il prévoir en pratique ?",
+          "aides": [
+            "Relis le « Modèle » du doc. 1 : toute l'énergie sert-elle vraiment à faire fondre la glace ? Les aliments sont-ils déjà froids ?",
+            "Calcule la marge de la solution choisie (énergie absorbable − énergie reçue) : est-elle grande ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les glaçons fondent : fusion, H₂O(s) → H₂O(l), transformation endothermique. Ils reçoivent l'énergie qui entre dans la glacière. Pendant un changement d'état, la température d'un corps pur reste constante tant que les deux états coexistent : le mélange eau-glace reste à 0 °C, et il garde l'intérieur de la glacière froid.",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Énergie à absorber (doc. 2) : le graphique est une droite passant par l'origine ; pour t = 6 h, on lit E = 450 kJ = 4,50 × 10⁵ J (la glacière reçoit 75 kJ par heure).",
+        "• Énergie absorbée par chaque solution, avec Q = m × L :",
+        "A : Q = 1,0 × 3,34 × 10⁵ = 3,34 × 10⁵ J &lt; 4,50 × 10⁵ J : insuffisant. Sur le graphique, 334 kJ correspondent à t ≈ 4,5 h : la glace a entièrement fondu vers 14 h 30, avant le dernier repas.",
+        "B : m = 3 × 500 g = 1 500 g = 1,50 kg ; Q = 1,50 × 3,34 × 10⁵ = 5,01 × 10⁵ J &gt; 4,50 × 10⁵ J : suffisant (environ 6,7 h, soit jusque vers 16 h 40).",
+        "C : Q = 1,0 × 5,7 × 10⁵ = 5,7 × 10⁵ J &gt; 4,50 × 10⁵ J : suffisant du point de vue de l'énergie (environ 7,6 h). Mais la carboglace est à − 78,5 °C (risque de congeler les yaourts et de brûler les mains), elle dégage plus de 500 L de dioxyde de carbone (la glacière ne doit pas être fermée hermétiquement, et le gaz s'accumule si la glacière est dans une voiture) : solution dangereuse et mal adaptée.",
+        "• Conclusion : Inès doit choisir les trois blocs réfrigérants (solution B), qui suffisent pour 6 h sans danger. (Il faudrait au moins 4,50 × 10⁵ / 3,34 × 10⁵ ≈ 1,35 kg de glace.)",
+        "<strong>3.</strong> Limites du modèle : on a négligé l'énergie reçue quand on ouvre la glacière ; les aliments et boissons mis dans la glacière ne sont pas déjà à 0 °C (il faut aussi les refroidir) ; la glacière peut être au soleil et recevoir plus d'énergie que dans le doc. 2 ; l'eau de fusion se réchauffe ensuite. La marge de la solution B est faible (5,01 × 10⁵ − 4,50 × 10⁵ = 5,1 × 10⁴ J, environ 40 min) : en pratique, mettre des boissons déjà froides, ouvrir la glacière le moins possible, la garder à l'ombre, ou ajouter le sac de glaçons A en plus des blocs.",
+        "Éléments valorisés (même si la conclusion est fausse) : lecture correcte du doc. 2 pour 6 h ; utilisation de Q = m × L avec les masses en kilogrammes ; comparaison chiffrée de chaque solution à l'énergie reçue ; prise en compte des dangers de la carboglace (doc. 3) ; conclusion cohérente avec les calculs.",
+        "<em>⚠ Erreur fréquente : choisir la carboglace parce qu'elle absorbe le plus d'énergie, sans tenir compte des précautions d'emploi ; ou oublier qu'il y a trois blocs de 500 g (1,50 kg et non 0,500 kg).</em>"
+      ]
+    }
+  ]
+}

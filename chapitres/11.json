@@ -1,0 +1,790 @@
+{
+  "id": 11,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Vitesse volumique de réaction",
+        "icon": "⏱️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Vitesse volumique de réaction v(t)",
+            "text": "Grandeur qui traduit la rapidité d'évolution d'un système chimique, définie à partir de l'avancement ξ(t) et du volume V du système (supposé constant) : <strong>v(t) = (1/V) × (dξ/dt)</strong>."
+          },
+          {
+            "type": "formula",
+            "label": "Unité",
+            "text": "v s'exprime en mol·L⁻¹·s⁻¹ (ou mol·L⁻¹·min⁻¹, mol·L⁻¹·h⁻¹ selon l'échelle de temps)."
+          },
+          {
+            "type": "text",
+            "text": "On parle bien de vitesse <strong>volumique</strong> de réaction (et non de \"vitesse de réaction\") car elle est ramenée à l'unité de volume, ce qui permet de comparer des systèmes de tailles différentes."
+          },
+          {
+            "type": "text",
+            "text": "La vitesse volumique se détermine graphiquement à partir d'une courbe de suivi temporel (concentration, absorbance, conductivité...) : elle correspond, à un instant t, au coefficient directeur de la tangente à la courbe [X] = f(t) divisé par le coefficient stœchiométrique de l'espèce X, avec un signe + si X est un produit et − si X est un réactif."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"220\" x2=\"450\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"220\" x2=\"60\" y2=\"25\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"455\" y=\"224\" font-size=\"12\" fill=\"#1B2420\">t</text><text x=\"38\" y=\"30\" font-size=\"12\" fill=\"#1B2420\">[X]</text><text x=\"44\" y=\"232\" font-size=\"11\" fill=\"#5C6B60\">0</text><path d=\"M60,50 C150,62 220,118 300,160 C350,180 390,190 420,195\" fill=\"none\" stroke=\"#4f8ef7\" stroke-width=\"2.2\"/><line x1=\"140\" y1=\"148\" x2=\"290\" y2=\"148\" stroke=\"#B9C0AC\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"290\" y1=\"148\" x2=\"290\" y2=\"93\" stroke=\"#B9C0AC\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><text x=\"195\" y=\"163\" font-size=\"11\" fill=\"#5C6B60\">Δt</text><text x=\"296\" y=\"122\" font-size=\"11\" fill=\"#5C6B60\">Δ[X]</text><line x1=\"140\" y1=\"165\" x2=\"290\" y2=\"93\" stroke=\"#C0472F\" stroke-width=\"2\"/><circle cx=\"220\" cy=\"129\" r=\"4\" fill=\"#C0472F\"/><text x=\"228\" y=\"110\" font-size=\"11\" fill=\"#C0472F\" font-weight=\"600\">tangente en t</text></svg>",
+            "caption": "Détermination graphique de la vitesse : à un instant t, elle est proportionnelle au coefficient directeur Δ[X]/Δt de la tangente à la courbe [X] = f(t) en ce point."
+          }
+        ]
+      },
+      {
+        "title": "2. Facteurs cinétiques",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Facteur cinétique",
+            "text": "Paramètre expérimental qui modifie la vitesse d'une réaction sans modifier l'état d'équilibre final ni la quantité de matière formée."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Facteur",
+              "Effet sur la vitesse",
+              "Interprétation microscopique"
+            ],
+            "rows": [
+              [
+                "Concentration des réactifs",
+                "v augmente si [réactif] augmente",
+                "Plus de particules réactives par unité de volume → plus de chocs efficaces par seconde"
+              ],
+              [
+                "Température",
+                "v augmente si T augmente",
+                "Agitation thermique accrue → chocs plus fréquents et plus énergétiques"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Théorie des collisions",
+        "icon": "💥",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une réaction chimique a lieu à l'échelle microscopique par des <strong>chocs efficaces</strong> entre entités réactives. Un choc est efficace s'il possède une <strong>énergie suffisante</strong> (supérieure à l'énergie d'activation Ea) et une <strong>orientation favorable</strong> des molécules au moment du choc."
+          },
+          {
+            "type": "warn",
+            "text": "Augmenter la température augmente la proportion de chocs suffisamment énergétiques : c'est pourquoi la vitesse croît fortement (souvent de façon exponentielle) avec T."
+          }
+        ]
+      },
+      {
+        "title": "4. Catalyse",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Catalyseur",
+            "text": "Espèce chimique qui augmente la vitesse d'une réaction sans être consommée (elle est régénérée en fin de réaction) et sans déplacer l'état d'équilibre. Un catalyseur abaisse l'énergie d'activation en ouvrant un nouveau chemin réactionnel."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Type de catalyse",
+              "Caractéristique",
+              "Exemple"
+            ],
+            "rows": [
+              [
+                "Homogène",
+                "Catalyseur dans la même phase que les réactifs",
+                "Catalyse acide en solution aqueuse"
+              ],
+              [
+                "Hétérogène",
+                "Catalyseur dans une phase différente (souvent solide)",
+                "Pot catalytique (Pt, Pd, Rh solides) sur gaz d'échappement"
+              ],
+              [
+                "Enzymatique",
+                "Catalyseur biologique (protéine spécifique)",
+                "Enzymes digestives, fermentation"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Un catalyseur n'apparaît pas dans l'équation bilan de la réaction et ne modifie ni le rendement, ni l'état final du système : il agit uniquement sur la cinétique."
+          }
+        ]
+      },
+      {
+        "title": "5. Temps de demi-réaction t½",
+        "icon": "⏳",
+        "content": [
+          {
+            "type": "def",
+            "term": "Temps de demi-réaction t½",
+            "text": "Durée nécessaire pour que l'avancement de la réaction atteigne la moitié de sa valeur finale ξf : ξ(t½) = ξf / 2. Si le réactif limitant est totalement consommé (xf = xmax), cela correspond à [réactif]f = [réactif]0 / 2."
+          },
+          {
+            "type": "text",
+            "text": "Le temps de demi-réaction permet d'estimer la durée d'une transformation : celle-ci est généralement considérée comme terminée au bout d'environ 5 à 10 fois t½ selon le type de cinétique."
+          }
+        ]
+      },
+      {
+        "title": "6. Loi de vitesse d'ordre 1",
+        "icon": "📉",
+        "content": [
+          {
+            "type": "def",
+            "term": "Réaction d'ordre 1 par rapport à un réactif A",
+            "text": "Réaction pour laquelle la vitesse de disparition de A est proportionnelle à sa concentration : −d[A]/dt = k × [A], où k est la constante de vitesse (unité : s⁻¹)."
+          },
+          {
+            "type": "formula",
+            "label": "Solution de l'équation différentielle",
+            "text": "[A](t) = [A]₀ × exp(−k×t)\nLa concentration décroît de façon exponentielle au cours du temps."
+          },
+          {
+            "type": "formula",
+            "label": "Temps de demi-réaction (ordre 1)",
+            "text": "t½ = ln(2) / k\nPropriété caractéristique de l'ordre 1 : t½ est indépendant de la concentration initiale [A]₀."
+          },
+          {
+            "type": "text",
+            "text": "Pour vérifier expérimentalement qu'une réaction suit une cinétique d'ordre 1, on trace ln([A]) en fonction du temps : on doit obtenir une droite de pente −k."
+          }
+        ]
+      },
+      {
+        "title": "7. Mécanismes réactionnels",
+        "icon": "🔗",
+        "content": [
+          {
+            "type": "def",
+            "term": "Acte élémentaire",
+            "text": "Étape microscopique se déroulant en une seule fois, sans espèce intermédiaire, décrivant le réarrangement direct des liaisons lors d'un choc efficace."
+          },
+          {
+            "type": "def",
+            "term": "Mécanisme réactionnel",
+            "text": "Succession d'actes élémentaires (via des intermédiaires réactionnels, souvent instables et non isolables) qui, mis bout à bout, conduit de l'état initial à l'état final observé macroscopiquement."
+          },
+          {
+            "type": "text",
+            "text": "L'étape la plus lente du mécanisme, appelée <strong>étape cinétiquement déterminante</strong>, impose sa vitesse à la réaction globale."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La vitesse volumique de réaction v(t) d'un système de volume V constant est définie par :",
+      "opts": [
+        "v(t) = V × dξ/dt",
+        "v(t) = (1/V) × dξ/dt",
+        "v(t) = dξ/dt",
+        "v(t) = ξ(t) / V"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "vitesse-volumique-volume-multiplie",
+          "texte": "Multiplier par le volume au lieu de diviser : la vitesse est ramenée à l'unité de volume"
+        },
+        null,
+        {
+          "code": "vitesse-volumique-sans-volume",
+          "texte": "Oublier de diviser par V : dξ/dt n'est pas une vitesse volumique"
+        },
+        {
+          "code": "vitesse-vs-avancement",
+          "texte": "Confondre la vitesse (dérivée de ξ) avec l'avancement volumique ξ / V"
+        }
+      ],
+      "exp": "v(t) = (1/V) × dξ/dt, en mol·L⁻¹·s⁻¹ : c'est une dérivée, ramenée à l'unité de volume. Attention : ξ / V est un avancement volumique, pas une vitesse."
+    },
+    {
+      "q": "On suit la concentration d'un réactif R (nombre stœchiométrique 1). Sa vitesse volumique de disparition à l'instant t est :",
+      "opts": [
+        "la valeur de [R] lue à l'instant t",
+        "le coefficient directeur de la tangente à la courbe [R] = f(t) à l'instant t",
+        "l'opposé du coefficient directeur de la tangente à la courbe [R] = f(t) à l'instant t",
+        "le coefficient directeur de la droite joignant le point initial au point d'abscisse t"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "vitesse-vs-concentration",
+          "texte": "Confondre la vitesse et la concentration lue sur la courbe"
+        },
+        {
+          "code": "signe-vitesse-disparition",
+          "texte": "Oublier le signe moins : [R] diminue, la pente est négative, mais une vitesse de disparition est positive"
+        },
+        null,
+        {
+          "code": "vitesse-moyenne-vs-instantanee",
+          "texte": "Calculer une vitesse moyenne (corde) au lieu de la vitesse instantanée (tangente)"
+        }
+      ],
+      "exp": "Vitesse de disparition : v = −d[R]/dt, donc l'opposé de la pente de la tangente en t. Attention : la tangente donne la vitesse instantanée, la corde depuis l'origine une vitesse moyenne."
+    },
+    {
+      "q": "Pour la réaction 2 H₂O₂ → 2 H₂O + O₂, la tangente à la courbe [H₂O₂] = f(t) à t = 10 min a un coefficient directeur de −4,0 × 10⁻³ mol·L⁻¹·min⁻¹. La vitesse volumique de réaction v vaut :",
+      "opts": [
+        "4,0 × 10⁻³ mol·L⁻¹·min⁻¹",
+        "−2,0 × 10⁻³ mol·L⁻¹·min⁻¹",
+        "8,0 × 10⁻³ mol·L⁻¹·min⁻¹",
+        "2,0 × 10⁻³ mol·L⁻¹·min⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier de diviser par le nombre stœchiométrique 2 de H₂O₂"
+        },
+        {
+          "code": "signe-vitesse-disparition",
+          "texte": "Oublier le signe moins : pour un réactif, v = −(1/2) d[H₂O₂]/dt est positive"
+        },
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Multiplier par 2 au lieu de diviser : 4,0 × 10⁻³ × 2"
+        },
+        null
+      ],
+      "exp": "v = −(1/2) × d[H₂O₂]/dt = −(1/2) × (−4,0 × 10⁻³) = 2,0 × 10⁻³ mol·L⁻¹·min⁻¹. Attention : on divise par le nombre stœchiométrique, et une vitesse de réaction est positive."
+    },
+    {
+      "q": "Une augmentation de la température du milieu réactionnel :",
+      "opts": [
+        "augmente la vitesse, car les chocs sont plus fréquents et plus énergétiques",
+        "augmente la quantité de produit obtenue à l'état final",
+        "diminue la vitesse, car les entités restent moins longtemps en contact",
+        "augmente la vitesse, car les molécules grossissent et se heurtent davantage"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "facteur-cinetique-etat-final",
+          "texte": "Croire qu'un facteur cinétique modifie l'état final : il ne change que la durée pour l'atteindre"
+        },
+        {
+          "code": "temperature-ralentit",
+          "texte": "Croire que l'agitation thermique gêne la réaction : elle rend les chocs plus nombreux et plus efficaces"
+        },
+        {
+          "code": "dilatation-des-particules",
+          "texte": "Croire que les molécules grossissent quand la température augmente : seule leur agitation change"
+        }
+      ],
+      "exp": "La température est un facteur cinétique : l'agitation thermique augmente la fréquence des chocs et la proportion de chocs efficaces. Attention : l'état final, lui, n'est pas modifié."
+    },
+    {
+      "q": "Dans un mécanisme réactionnel, un intermédiaire réactionnel est une espèce :",
+      "opts": [
+        "formée lors d'un acte élémentaire, puis consommée lors d'un acte suivant",
+        "qui accélère la réaction et se retrouve intacte à la fin",
+        "qui figure comme réactif dans l'équation de la réaction",
+        "qui est le produit principal, formé à la dernière étape"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "intermediaire-vs-catalyseur",
+          "texte": "Confondre intermédiaire réactionnel (formé puis consommé) et catalyseur (consommé puis régénéré)"
+        },
+        {
+          "code": "intermediaire-dans-bilan",
+          "texte": "Croire qu'un intermédiaire apparaît dans l'équation de la réaction : il n'y figure pas"
+        },
+        {
+          "code": "intermediaire-vs-produit",
+          "texte": "Confondre intermédiaire réactionnel et produit final"
+        }
+      ],
+      "exp": "Un intermédiaire est formé dans une étape puis consommé dans une suivante : il n'apparaît pas dans l'équation de la réaction. Un catalyseur, lui, est consommé puis régénéré."
+    },
+    {
+      "q": "Un catalyseur :",
+      "opts": [
+        "est consommé au cours de la réaction, comme un réactif",
+        "augmente la vitesse de la réaction et est régénéré en fin de réaction",
+        "augmente la quantité de produit obtenue",
+        "rend possible une réaction qui ne se produirait pas spontanément"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "catalyseur-consomme",
+          "texte": "Croire que le catalyseur est consommé : il est régénéré et n'apparaît pas dans l'équation"
+        },
+        null,
+        {
+          "code": "catalyseur-modifie-etat-final",
+          "texte": "Croire qu'un catalyseur modifie l'état final : il ne change que la vitesse"
+        },
+        {
+          "code": "catalyseur-rend-possible",
+          "texte": "Croire qu'un catalyseur rend possible une réaction non spontanée : il accélère seulement une réaction possible"
+        }
+      ],
+      "exp": "Le catalyseur accélère la réaction en ouvrant un autre chemin réactionnel ; il est régénéré et ne modifie ni l'état final ni le sens d'évolution. Attention : il n'augmente pas la quantité de produit."
+    },
+    {
+      "q": "Le temps de demi-réaction t½ est la durée au bout de laquelle :",
+      "opts": [
+        "la moitié de la durée totale de la réaction s'est écoulée",
+        "l'avancement atteint la moitié de sa valeur finale",
+        "le réactif en excès a été consommé à moitié",
+        "l'avancement atteint ξmax / 2, même si la réaction n'est pas totale"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "demi-reaction-moitie-duree",
+          "texte": "Croire que t½ est la moitié de la durée de la réaction : une transformation dure environ 5 à 10 t½"
+        },
+        null,
+        {
+          "code": "demi-reaction-reactif-exces",
+          "texte": "Raisonner sur le réactif en excès : t½ est défini à partir de l'avancement final"
+        },
+        {
+          "code": "xf-vs-xmax",
+          "texte": "Confondre avancement final ξf et avancement maximal ξmax pour une réaction non totale"
+        }
+      ],
+      "exp": "Par définition, ξ(t½) = ξf / 2. Attention : t½ n'est pas la moitié de la durée de la réaction, qui est bien plus longue (plusieurs t½)."
+    },
+    {
+      "q": "Une réaction suit une loi de vitesse d'ordre 1, de constante k = 0,023 min⁻¹. Avec t½ = ln 2 / k, le temps de demi-réaction vaut :",
+      "opts": [
+        "30 min",
+        "1,6 × 10⁻² min",
+        "43 min",
+        "22 min"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : k × ln 2 = 1,6 × 10⁻²"
+        },
+        {
+          "code": "oubli-ln2",
+          "texte": "Oublier ln 2 : 1 / k = 43 min"
+        },
+        {
+          "code": "demi-vie-un-sur-2k",
+          "texte": "Remplacer ln 2 par 1/2 : 1 / (2k) = 22 min"
+        }
+      ],
+      "exp": "t½ = ln 2 / k = 0,693 / 0,023 ≈ 30 min. Attention : 1 / k est un temps caractéristique, mais ce n'est pas t½."
+    },
+    {
+      "q": "Une réaction est d'ordre 1 par rapport au réactif A. On recommence l'expérience avec une concentration initiale [A]₀ deux fois plus grande. Le temps de demi-réaction :",
+      "opts": [
+        "double, car il y a deux fois plus de réactif à consommer",
+        "est divisé par deux, car la réaction est plus rapide",
+        "ne change pas",
+        "double, car la vitesse initiale est divisée par deux"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "t12-proportionnel-a0",
+          "texte": "Croire que t½ est proportionnel à [A]₀ : à l'ordre 1, t½ = ln 2 / k ne dépend pas de [A]₀"
+        },
+        {
+          "code": "t12-inverse-a0",
+          "texte": "Croire que t½ diminue quand [A]₀ augmente : à l'ordre 1, il ne dépend pas de [A]₀"
+        },
+        null,
+        {
+          "code": "vitesse-initiale-a0",
+          "texte": "Croire que la vitesse initiale diminue : à l'ordre 1, v₀ = k [A]₀ double"
+        }
+      ],
+      "exp": "À l'ordre 1, t½ = ln 2 / k est indépendant de [A]₀ : la vitesse double, mais il y a deux fois plus de réactif. Attention : c'est une propriété caractéristique de l'ordre 1."
+    },
+    {
+      "q": "Une réaction est d'ordre 1 par rapport au réactif A lorsque :",
+      "opts": [
+        "la vitesse de disparition de A est proportionnelle à [A]",
+        "[A] diminue proportionnellement au temps",
+        "le temps de demi-réaction double quand [A]₀ double",
+        "A disparaît en un seul acte élémentaire"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "ordre1-decroissance-lineaire",
+          "texte": "Croire que [A] décroît linéairement : à l'ordre 1, la décroissance est exponentielle"
+        },
+        {
+          "code": "t12-proportionnel-a0",
+          "texte": "Croire que t½ est proportionnel à [A]₀ : à l'ordre 1, t½ = ln 2 / k ne dépend pas de [A]₀"
+        },
+        {
+          "code": "ordre1-vs-acte-elementaire",
+          "texte": "Confondre ordre 1 et acte élémentaire unique : l'ordre est une loi expérimentale"
+        }
+      ],
+      "exp": "Ordre 1 : −d[A]/dt = k × [A], d'où [A](t) = [A]₀ × e^(−kt), décroissance exponentielle. Attention : une droite [A] = f(t) correspondrait à une vitesse constante, pas à l'ordre 1."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Biosynthèse de la mélanine — cinétique, temps de demi-réaction",
+      "session": "Polynésie · Jour 2",
+      "link": "https://www.labolycee.org/bac-2023-polynesie-jour-2"
+    },
+    {
+      "year": "2023",
+      "title": "Karl Friedrich Mohr — cinétique",
+      "session": "Polynésie · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-polynesie-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Cuisine, voiture et chimie : vrai ou faux ?",
+      "contexte": [
+        "Yanis prépare un exposé sur la vitesse des réactions dans la vie quotidienne. Il a noté plusieurs affirmations sur son brouillon. Aide-le à les vérifier."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. On conserve les aliments au réfrigérateur parce qu'une température basse ralentit les réactions de dégradation.<br>b. Ajouter un catalyseur permet d'obtenir une plus grande quantité de produit à la fin de la réaction.<br>c. Un catalyseur est consommé au cours de la réaction, c'est pourquoi il faut en ajouter régulièrement.<br>d. Diluer la solution d'un réactif rend la réaction plus lente.<br>e. Le pot catalytique d'une voiture (métaux solides : platine, palladium, rhodium) agissant sur les gaz d'échappement est un exemple de catalyse homogène.<br>f. La vitesse volumique d'une réaction peut s'exprimer en mol·L⁻¹·min⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Dans un autocuiseur, l'eau bout vers 120 °C au lieu de 100 °C et les légumes cuisent environ trois fois plus vite. En utilisant la théorie des collisions, explique pourquoi une température plus élevée accélère les transformations chimiques de la cuisson.",
+          "aides": [
+            "Selon la théorie des collisions, à quelles conditions un choc entre deux entités conduit-il à une réaction ?",
+            "Que change une hausse de température sur le mouvement des entités : la fréquence des chocs ? leur énergie ?"
+          ]
+        },
+        {
+          "texte": "Les enzymes de la salive (amylase) accélèrent la transformation de l'amidon du pain en sucres. De quel type de catalyse s'agit-il ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : la température est un facteur cinétique ; plus elle est basse, plus les réactions (et le développement des micro-organismes) sont lentes.",
+        "b. FAUX : un catalyseur augmente la vitesse mais ne modifie ni l'état final, ni la quantité de produit formé.",
+        "c. FAUX : un catalyseur participe à la réaction mais il est régénéré ; on le retrouve intact à la fin (il n'apparaît pas dans l'équation bilan).",
+        "d. VRAI : diluer diminue la concentration du réactif ; il y a moins d'entités par unité de volume, donc moins de chocs efficaces par seconde.",
+        "e. FAUX : le catalyseur (solide) et les réactifs (gaz) sont dans des phases différentes : c'est une catalyse hétérogène.",
+        "f. VRAI : v = (1/V) × dξ/dt est une concentration divisée par une durée ; mol·L⁻¹·s⁻¹, mol·L⁻¹·min⁻¹ ou mol·L⁻¹·h⁻¹ selon l'échelle de temps.",
+        "<strong>2.</strong> Éléments attendus : une réaction a lieu lors de chocs efficaces entre entités réactives (énergie suffisante et bonne orientation). Quand la température augmente, l'agitation thermique augmente : les chocs sont plus fréquents ET une plus grande proportion d'entre eux a une énergie suffisante. Le nombre de chocs efficaces par seconde augmente, donc la vitesse augmente.",
+        "<strong>3.</strong> Une enzyme est un catalyseur biologique (protéine) : c'est une catalyse enzymatique.",
+        "<em>⚠ Erreur fréquente : dire qu'un catalyseur « déplace » l'état final ou « augmente le rendement ». Il agit uniquement sur la durée de la transformation.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Suivre l'apparition du diiode",
+      "contexte": [
+        "En TP, on mélange de l'eau oxygénée (solution de peroxyde d'hydrogène H₂O₂) avec une solution acidifiée d'iodure de potassium. La réaction support est :",
+        "H₂O₂(aq) + 2 I⁻(aq) + 2 H₃O⁺(aq) → I₂(aq) + 4 H₂O(ℓ)",
+        "Le peroxyde d'hydrogène est le réactif limitant ; la transformation est totale. Le diiode I₂ est la seule espèce colorée (jaune-brun) : on suit sa concentration au cours du temps avec un spectrophotomètre. Le volume du mélange est constant. On obtient la courbe ci-dessous ; T₀ est la tangente à la courbe à la date t = 0."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"106.2\" y1=\"25\" x2=\"106.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"106.2\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"132.4\" y1=\"25\" x2=\"132.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"132.4\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"158.6\" y1=\"25\" x2=\"158.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"158.6\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"184.8\" y1=\"25\" x2=\"184.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"184.8\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"211.0\" y1=\"25\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"237.2\" y1=\"25\" x2=\"237.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"237.2\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"263.4\" y1=\"25\" x2=\"263.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"263.4\" y=\"430\" text-anchor=\"middle\">7</text><line x1=\"289.6\" y1=\"25\" x2=\"289.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"289.6\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"315.8\" y1=\"25\" x2=\"315.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"315.8\" y=\"430\" text-anchor=\"middle\">9</text><line x1=\"342.0\" y1=\"25\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"368.2\" y1=\"25\" x2=\"368.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"368.2\" y=\"430\" text-anchor=\"middle\">11</text><line x1=\"394.4\" y1=\"25\" x2=\"394.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"394.4\" y=\"430\" text-anchor=\"middle\">12</text><line x1=\"420.6\" y1=\"25\" x2=\"420.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"420.6\" y=\"430\" text-anchor=\"middle\">13</text><line x1=\"446.8\" y1=\"25\" x2=\"446.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"446.8\" y=\"430\" text-anchor=\"middle\">14</text><line x1=\"473.0\" y1=\"25\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"430\" text-anchor=\"middle\">15</text><line x1=\"499.2\" y1=\"25\" x2=\"499.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"499.2\" y=\"430\" text-anchor=\"middle\">16</text><line x1=\"525.4\" y1=\"25\" x2=\"525.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"525.4\" y=\"430\" text-anchor=\"middle\">17</text><line x1=\"551.6\" y1=\"25\" x2=\"551.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"551.6\" y=\"430\" text-anchor=\"middle\">18</text><line x1=\"577.8\" y1=\"25\" x2=\"577.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"577.8\" y=\"430\" text-anchor=\"middle\">19</text><line x1=\"604.0\" y1=\"25\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"630.2\" y1=\"25\" x2=\"630.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"630.2\" y=\"430\" text-anchor=\"middle\">21</text><line x1=\"656.4\" y1=\"25\" x2=\"656.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"656.4\" y=\"430\" text-anchor=\"middle\">22</text><line x1=\"682.6\" y1=\"25\" x2=\"682.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"682.6\" y=\"430\" text-anchor=\"middle\">23</text><line x1=\"708.8\" y1=\"25\" x2=\"708.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"708.8\" y=\"430\" text-anchor=\"middle\">24</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">25</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"377.9\" x2=\"735\" y2=\"377.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"345.8\" x2=\"735\" y2=\"345.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"350.8\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"281.7\" x2=\"735\" y2=\"281.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"286.7\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"249.6\" x2=\"735\" y2=\"249.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"185.4\" x2=\"735\" y2=\"185.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"153.3\" x2=\"735\" y2=\"153.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"158.3\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"89.2\" x2=\"735\" y2=\"89.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"94.2\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"57.1\" x2=\"735\" y2=\"57.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">6</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,410.0 82.6,403.6 85.2,397.4 87.9,391.3 90.5,385.3 93.1,379.5 95.7,373.7 98.3,368.1 101.0,362.6 103.6,357.1 106.2,351.8 108.8,346.6 111.4,341.5 114.1,336.5 116.7,331.6 119.3,326.8 121.9,322.1 124.5,317.5 127.2,313.0 129.8,308.6 132.4,304.2 135.0,300.0 137.6,295.8 140.3,291.7 142.9,287.7 145.5,283.8 148.1,279.9 150.7,276.1 153.4,272.4 156.0,268.8 158.6,265.2 161.2,261.8 163.8,258.3 166.5,255.0 169.1,251.7 171.7,248.5 174.3,245.3 176.9,242.2 179.6,239.2 182.2,236.2 184.8,233.3 187.4,230.5 190.0,227.7 192.7,224.9 195.3,222.2 197.9,219.6 200.5,217.0 203.1,214.5 205.8,212.0 208.4,209.6 211.0,207.2 213.6,204.9 216.2,202.6 218.9,200.3 221.5,198.1 224.1,196.0 226.7,193.8 229.3,191.8 232.0,189.7 234.6,187.8 237.2,185.8 239.8,183.9 242.4,182.0 245.1,180.2 247.7,178.4 250.3,176.6 252.9,174.9 255.5,173.2 258.2,171.5 260.8,169.9 263.4,168.3 266.0,166.7 268.6,165.2 271.3,163.7 273.9,162.2 276.5,160.8 279.1,159.3 281.7,157.9 284.4,156.6 287.0,155.3 289.6,153.9 292.2,152.7 294.8,151.4 297.5,150.2 300.1,149.0 302.7,147.8 305.3,146.6 307.9,145.5 310.6,144.4 313.2,143.3 315.8,142.2 318.4,141.1 321.0,140.1 323.7,139.1 326.3,138.1 328.9,137.2 331.5,136.2 334.1,135.3 336.8,134.4 339.4,133.5 342.0,132.6 344.6,131.7 347.2,130.9 349.9,130.1 352.5,129.2 355.1,128.5 357.7,127.7 360.3,126.9 363.0,126.2 365.6,125.4 368.2,124.7 370.8,124.0 373.4,123.3 376.1,122.6 378.7,122.0 381.3,121.3 383.9,120.7 386.5,120.1 389.2,119.5 391.8,118.9 394.4,118.3 397.0,117.7 399.6,117.1 402.3,116.6 404.9,116.0 407.5,115.5 410.1,115.0 412.7,114.5 415.4,114.0 418.0,113.5 420.6,113.0 423.2,112.5 425.8,112.1 428.5,111.6 431.1,111.2 433.7,110.7 436.3,110.3 438.9,109.9 441.6,109.5 444.2,109.1 446.8,108.7 449.4,108.3 452.0,107.9 454.7,107.5 457.3,107.2 459.9,106.8 462.5,106.5 465.1,106.1 467.8,105.8 470.4,105.5 473.0,105.1 475.6,104.8 478.2,104.5 480.9,104.2 483.5,103.9 486.1,103.6 488.7,103.3 491.3,103.1 494.0,102.8 496.6,102.5 499.2,102.2 501.8,102.0 504.4,101.7 507.1,101.5 509.7,101.2 512.3,101.0 514.9,100.8 517.5,100.5 520.2,100.3 522.8,100.1 525.4,99.9 528.0,99.7 530.6,99.5 533.3,99.3 535.9,99.1 538.5,98.9 541.1,98.7 543.7,98.5 546.4,98.3 549.0,98.1 551.6,97.9 554.2,97.8 556.8,97.6 559.5,97.4 562.1,97.3 564.7,97.1 567.3,96.9 569.9,96.8 572.6,96.6 575.2,96.5 577.8,96.3 580.4,96.2 583.0,96.1 585.7,95.9 588.3,95.8 590.9,95.7 593.5,95.5 596.1,95.4 598.8,95.3 601.4,95.2 604.0,95.0 606.6,94.9 609.2,94.8 611.9,94.7 614.5,94.6 617.1,94.5 619.7,94.4 622.3,94.3 625.0,94.2 627.6,94.1 630.2,94.0 632.8,93.9 635.4,93.8 638.1,93.7 640.7,93.6 643.3,93.5 645.9,93.4 648.5,93.3 651.2,93.3 653.8,93.2 656.4,93.1 659.0,93.0 661.6,93.0 664.3,92.9 666.9,92.8 669.5,92.7 672.1,92.7 674.7,92.6 677.4,92.5 680.0,92.5 682.6,92.4 685.2,92.3 687.8,92.3 690.5,92.2 693.1,92.1 695.7,92.1 698.3,92.0 700.9,92.0 703.6,91.9 706.2,91.9 708.8,91.8 711.4,91.8 714.0,91.7 716.7,91.7 719.3,91.6 721.9,91.6 724.5,91.5 727.1,91.5 729.8,91.4 732.4,91.4 735.0,91.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.8\"/><polyline points=\"80.0,410.0 237.2,25.0\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.2\" stroke-dasharray=\"9 6\"/><text x=\"200.5\" y=\"53.9\" fill=\"#B5523B\" font-weight=\"bold\" font-size=\"17\">T₀</text><text x=\"446.8\" y=\"127.7\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"16\">[I₂] = f(t)</text><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">t (min)</text><text transform=\"translate(20,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">[I₂] (mmol·L⁻¹)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pourquoi la spectrophotométrie est-elle adaptée pour suivre cette transformation ?",
+          "aides": []
+        },
+        {
+          "texte": "Relève la concentration finale [I₂]<sub>f</sub> en diiode.",
+          "aides": []
+        },
+        {
+          "texte": "Rappelle la définition du temps de demi-réaction t½, puis détermine sa valeur à l'aide de la courbe.",
+          "aides": [
+            "t½ correspond à ξ = ξ<sub>f</sub> / 2. Ici, [I₂] est proportionnelle à ξ : quelle valeur de [I₂] faut-il chercher sur la courbe ?",
+            "Trace la droite horizontale [I₂] = [I₂]<sub>f</sub> / 2 et lis l'abscisse du point d'intersection avec la courbe."
+          ]
+        },
+        {
+          "texte": "À l'aide de la tangente T₀, détermine la vitesse volumique d'apparition du diiode v<sub>a</sub>(I₂) à la date t = 0.",
+          "aides": [
+            "La vitesse d'apparition est la dérivée d[I₂]/dt, c'est-à-dire le coefficient directeur de la tangente.",
+            "Choisis deux points de T₀ bien lisibles (par exemple l'origine et l'extrémité de la droite) et calcule Δ[I₂] / Δt."
+          ]
+        },
+        {
+          "texte": "Déduis-en la vitesse volumique de disparition des ions iodure v<sub>d</sub>(I⁻) à t = 0.",
+          "aides": []
+        },
+        {
+          "texte": "Comment évolue la vitesse volumique d'apparition du diiode au cours du temps ? Justifie à partir de la courbe, puis interprète à l'aide d'un facteur cinétique.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le diiode est la seule espèce colorée : l'absorbance de la solution est proportionnelle à [I₂] (loi de Beer-Lambert). Mesurer l'absorbance permet donc de suivre [I₂] en continu, sans prélever ni perturber le mélange.",
+        "<strong>2.</strong> La courbe tend vers un palier : [I₂]<sub>f</sub> = 5,0 mmol·L⁻¹.",
+        "<strong>3.</strong> t½ est la durée au bout de laquelle l'avancement atteint la moitié de sa valeur finale : ξ(t½) = ξ<sub>f</sub> / 2, donc ici [I₂](t½) = [I₂]<sub>f</sub> / 2 = 2,5 mmol·L⁻¹. On lit t½ ≈ 3,5 min (on accepte 3,3 à 3,7 min).",
+        "<strong>4.</strong> v<sub>a</sub>(I₂) = d[I₂]/dt est le coefficient directeur de la tangente. T₀ passe par (0 ; 0) et (6,0 min ; 6,0 mmol·L⁻¹) : v<sub>a</sub>(I₂) = (6,0 − 0) / (6,0 − 0) = 1,0 mmol·L⁻¹·min⁻¹ (soit 1,0 × 10⁻³ mol·L⁻¹·min⁻¹).",
+        "<strong>5.</strong> D'après l'équation, il disparaît 2 ions I⁻ chaque fois qu'il se forme 1 molécule I₂ : v<sub>d</sub>(I⁻) = 2 × v<sub>a</sub>(I₂) = 2,0 mmol·L⁻¹·min⁻¹. (La vitesse volumique de réaction v = (1/V) × dξ/dt vaut, elle, 1,0 mmol·L⁻¹·min⁻¹.)",
+        "<strong>6.</strong> Les tangentes sont de moins en moins inclinées : la pente de la courbe diminue jusqu'à s'annuler sur le palier. La vitesse diminue au cours du temps car les réactifs sont consommés : leur concentration (facteur cinétique) diminue, donc il y a de moins en moins de chocs efficaces par seconde.",
+        "<em>⚠ Erreur fréquente : lire t½ à la moitié de l'axe des temps, ou en prenant la moitié de la valeur maximale de l'axe des ordonnées (3 mmol·L⁻¹) au lieu de la moitié de la valeur finale [I₂]<sub>f</sub>.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le « dentifrice d'éléphant »",
+      "contexte": [
+        "Doc. 1 — Une démonstration spectaculaire. On verse de l'eau oxygénée concentrée, du liquide vaisselle et une solution d'iodure de potassium dans une éprouvette : une énorme colonne de mousse jaillit. La mousse est gonflée par le dioxygène O₂ formé par la décomposition du peroxyde d'hydrogène H₂O₂. Sans ions iodure, cette décomposition est extrêmement lente.",
+        "Doc. 2 — Mécanisme réactionnel proposé (deux actes élémentaires) :",
+        "Étape 1 : H₂O₂(aq) + I⁻(aq) → H₂O(ℓ) + IO⁻(aq)",
+        "Étape 2 : H₂O₂(aq) + IO⁻(aq) → H₂O(ℓ) + O₂(g) + I⁻(aq)",
+        "Doc. 3 — Un autre acte élémentaire, acido-basique, représenté ci-dessous avec les schémas de Lewis."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"50\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">Acte élémentaire : HO⁻ + H₃O⁺ → 2 H₂O</text><text x=\"90\" y=\"247\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#1F4E5A\">H</text><line x1=\"108\" y1=\"235\" x2=\"148\" y2=\"235\" stroke=\"#222\" stroke-width=\"3\"/><text x=\"170\" y=\"247\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"158\" y1=\"203\" x2=\"182\" y2=\"203\" stroke=\"#B5523B\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"158\" y1=\"267\" x2=\"182\" y2=\"267\" stroke=\"#B5523B\" stroke-width=\"4\" stroke-linecap=\"round\"/><line x1=\"197\" y1=\"223\" x2=\"197\" y2=\"247\" stroke=\"#B5523B\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"204\" cy=\"196\" r=\"11\" fill=\"none\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"198\" y1=\"196\" x2=\"210\" y2=\"196\" stroke=\"#222\" stroke-width=\"2\"/><text x=\"275\" y=\"249\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#222\">+</text><text x=\"360\" y=\"247\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#1F4E5A\">H</text><line x1=\"378\" y1=\"235\" x2=\"422\" y2=\"235\" stroke=\"#222\" stroke-width=\"3\"/><text x=\"445\" y=\"247\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"462\" y1=\"220\" x2=\"498\" y2=\"185\" stroke=\"#222\" stroke-width=\"3\"/><text x=\"515\" y=\"185\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#1F4E5A\">H</text><line x1=\"462\" y1=\"252\" x2=\"498\" y2=\"287\" stroke=\"#222\" stroke-width=\"3\"/><text x=\"515\" y=\"307\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#1F4E5A\">H</text><line x1=\"433\" y1=\"203\" x2=\"457\" y2=\"203\" stroke=\"#B5523B\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"480\" cy=\"236\" r=\"11\" fill=\"none\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"474\" y1=\"236\" x2=\"486\" y2=\"236\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"480\" y1=\"230\" x2=\"480\" y2=\"242\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"565\" y1=\"235\" x2=\"625\" y2=\"235\" stroke=\"#222\" stroke-width=\"3\"/><polygon points=\"625,227 640,235 625,243\" fill=\"#222\"/><text x=\"700\" y=\"247\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"bold\" fill=\"#1F4E5A\">2 H₂O</text><text x=\"380\" y=\"400\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3a3a3a\">Les traits terracotta représentent les doublets non liants ;</text><text x=\"380\" y=\"424\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3a3a3a\">les traits noirs, les doublets liants (liaisons covalentes).</text></svg>",
+      "questions": [
+        {
+          "texte": "Établis l'équation de la réaction modélisée par le mécanisme du doc. 2.",
+          "aides": []
+        },
+        {
+          "texte": "Identifie, en justifiant, l'intermédiaire réactionnel et le catalyseur.",
+          "aides": []
+        },
+        {
+          "texte": "S'agit-il d'une catalyse homogène ou hétérogène ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Recopie le schéma du doc. 3 et représente les flèches courbes de cet acte élémentaire. Justifie le sens de chaque flèche.",
+          "aides": [
+            "Une flèche courbe part toujours d'un doublet d'électrons (liant ou non liant) et arrive sur un atome ou une liaison.",
+            "Dans l'acte élémentaire, une liaison O–H se forme (entre l'O de HO⁻ et un H de H₃O⁺) et une liaison O–H de H₃O⁺ se rompt : il faut une flèche pour chacune.",
+            "Utilise les électronégativités : dans la liaison O–H, quel atome est pauvre en électrons ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> On additionne les deux étapes et on simplifie ce qui apparaît des deux côtés (I⁻ et IO⁻) : 2 H₂O₂(aq) → 2 H₂O(ℓ) + O₂(g).",
+        "<strong>2.</strong> IO⁻ est formé à l'étape 1 puis consommé à l'étape 2 : c'est un intermédiaire réactionnel (il n'apparaît pas dans l'équation bilan). I⁻ est consommé à l'étape 1 puis régénéré à l'étape 2, et il accélère la réaction (doc. 1) : c'est le catalyseur.",
+        "<strong>3.</strong> Catalyse homogène : le catalyseur I⁻(aq) et le réactif H₂O₂(aq) sont dans la même phase (solution aqueuse).",
+        "<strong>4.</strong> Flèche 1 : elle part d'un doublet non liant de l'atome O de HO⁻ et pointe vers un atome H de H₃O⁺. Flèche 2 : elle part du doublet liant O–H de H₃O⁺ (celui de l'atome H attaqué) et pointe vers l'atome O de H₃O⁺.",
+        "Justification : une flèche courbe va toujours d'un site donneur de doublet d'électrons (riche en électrons : doublet non liant, charge négative) vers un site accepteur (pauvre en électrons). O est plus électronégatif que H (3,44 &gt; 2,20) : dans la liaison O–H, l'atome H porte une charge partielle positive, c'est un site accepteur ; le doublet liant O–H est récupéré par l'atome O, plus électronégatif.",
+        "<em>⚠ Erreur fréquente : dessiner une flèche qui part d'un atome (ou d'une charge) au lieu de partir d'un doublet d'électrons. Une flèche courbe représente le déplacement d'un doublet.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Eau oxygénée : qui accélère la décomposition ?",
+      "contexte": [
+        "L'eau oxygénée de la pharmacie se décompose lentement selon la réaction 2 H₂O₂(aq) → 2 H₂O(ℓ) + O₂(g). Quand on l'applique sur une plaie, elle mousse : une enzyme du sang, la catalase, accélère fortement cette décomposition.",
+        "Un groupe d'élèves place, dans chaque expérience, un volume V = 20,0 mL de solution de peroxyde d'hydrogène dans un erlenmeyer fermé relié à un capteur de pression, et détermine le temps de demi-réaction t½. Leurs résultats (fictifs mais vraisemblables) :",
+        "A : [H₂O₂]₀ = 0,50 mol·L⁻¹ ; 20 °C ; sans ajout → t½ de plusieurs jours.",
+        "B : [H₂O₂]₀ = 0,50 mol·L⁻¹ ; 20 °C ; quelques gouttes d'une solution d'ions fer(III) Fe³⁺ → t½ = 12 min.",
+        "C : [H₂O₂]₀ = 0,50 mol·L⁻¹ ; 40 °C ; mêmes gouttes de Fe³⁺ → t½ = 3 min.",
+        "D : [H₂O₂]₀ = 0,25 mol·L⁻¹ ; 20 °C ; mêmes gouttes de Fe³⁺ → t½ = 12 min.",
+        "E : [H₂O₂]₀ = 0,50 mol·L⁻¹ ; 20 °C ; un morceau de navet cru (contient de la catalase) → t½ de l'ordre de 30 s.",
+        "F : [H₂O₂]₀ = 0,50 mol·L⁻¹ ; 20 °C ; un fil de platine → t½ = 20 min environ."
+      ],
+      "questions": [
+        {
+          "texte": "Pourquoi un capteur de pression permet-il de suivre l'avancement de cette transformation ?",
+          "aides": []
+        },
+        {
+          "texte": "En choisissant à chaque fois deux expériences qui ne diffèrent que par un seul paramètre, identifie deux facteurs cinétiques et l'effet d'un catalyseur.",
+          "aides": [
+            "Fais un tableau : pour chaque expérience, la concentration, la température et la présence d'un catalyseur.",
+            "Paires utiles : A et B ; B et C ; B et E (la paire B et D sera étudiée à la question 5)."
+          ]
+        },
+        {
+          "texte": "Pour les expériences B, E et F, précise le type de catalyse (homogène, hétérogène ou enzymatique).",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le volume de dioxygène dégagé à la fin de l'expérience B (à 20 °C sous 1,013 bar). Ce volume serait-il différent dans l'expérience E ? Justifie.",
+          "aides": [
+            "Calcule n(H₂O₂)₀ = [H₂O₂]₀ × V, puis utilise les nombres stœchiométriques : 2 H₂O₂ donnent 1 O₂.",
+            "V(O₂) = n(O₂) × V<sub>m</sub>. Pour l'expérience E, relis la définition d'un catalyseur."
+          ]
+        },
+        {
+          "texte": "En comparant B et D, Inès affirme : « Le temps de demi-réaction est le même, donc la concentration n'est pas un facteur cinétique. » On admet que la décomposition suit une loi de vitesse d'ordre 1 : v<sub>d</sub>(H₂O₂) = k × [H₂O₂]. Calcule k, puis la vitesse volumique initiale de disparition de H₂O₂ dans B et dans D. Conclus sur l'affirmation d'Inès.",
+          "aides": [
+            "Pour une loi d'ordre 1, la fiche de cours donne une relation entre t½ et k.",
+            "k = ln 2 / t½, puis v<sub>d</sub> = k × [H₂O₂]₀ pour chaque expérience. Compare les deux vitesses."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le dioxygène formé est un gaz : dans l'erlenmeyer fermé, sa quantité (donc l'avancement) augmente avec la pression. La pression est donc une grandeur liée à ξ(t) qu'on peut mesurer en continu.",
+        "<strong>2.</strong> A et B (seule différence : présence de Fe³⁺) : t½ passe de plusieurs jours à 12 min, les ions Fe³⁺ catalysent la réaction. B et C (seule différence : la température) : t½ divisé par 4 à 40 °C, la température est un facteur cinétique. B et E (même concentration, même température, catalyseur différent) : la catalase est un catalyseur bien plus efficace. La concentration (B et D) est discutée à la question 5.",
+        "<strong>3.</strong> B : Fe³⁺(aq) est dans la même phase que H₂O₂(aq) : catalyse homogène. E : la catalase est une enzyme : catalyse enzymatique. F : le platine est solide, les réactifs en solution : catalyse hétérogène.",
+        "<strong>4.</strong> n(H₂O₂)₀ = [H₂O₂]₀ × V = 0,50 × 20,0 × 10⁻³ = 1,0 × 10⁻² mol. D'après l'équation, n(O₂) = n(H₂O₂)₀ / 2 = 5,0 × 10⁻³ mol, donc V(O₂) = n(O₂) × V<sub>m</sub> = 5,0 × 10⁻³ × 24,0 = 0,12 L = 1,2 × 10² mL.",
+        "Dans E, on obtient le même volume (120 mL) : un catalyseur ne modifie pas l'état final, il le fait seulement atteindre plus vite.",
+        "<strong>5.</strong> Ordre 1 : t½ = ln 2 / k, donc k = ln 2 / t½ = 0,693 / 12 = 5,8 × 10⁻² min⁻¹ (identique pour B et D, qui ont le même t½).",
+        "B : v<sub>d</sub>(H₂O₂)₀ = k × [H₂O₂]₀ = 5,78 × 10⁻² × 0,50 = 2,9 × 10⁻² mol·L⁻¹·min⁻¹. D : v<sub>d</sub>(H₂O₂)₀ = 5,78 × 10⁻² × 0,25 = 1,4 × 10⁻² mol·L⁻¹·min⁻¹.",
+        "La vitesse initiale est deux fois plus grande dans B : la concentration est bien un facteur cinétique. Inès a tort : pour une loi d'ordre 1, t½ est indépendant de [H₂O₂]₀ (dans D, il y a deux fois moins de réactif à faire disparaître, mais il disparaît deux fois moins vite).",
+        "<em>⚠ Erreur fréquente : comparer deux expériences qui diffèrent par plusieurs paramètres (par exemple A et C) : on ne peut alors pas savoir lequel est responsable de l'effet observé.</em>",
+        "<em>⚠ Erreur fréquente : confondre « durée de la réaction » et « vitesse » ; t½ identique ne signifie pas vitesse identique.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Un bonbon bleu décoloré par l'eau de Javel",
+      "contexte": [
+        "Le bleu patenté (colorant alimentaire E131, présent dans certains bonbons et sirops) est décoloré par les ions hypochlorite ClO⁻ de l'eau de Javel. Les ions ClO⁻ sont introduits en large excès : leur concentration reste pratiquement constante, et on étudie seulement l'influence de la concentration du colorant, notée [E131].",
+        "Un élève suit la transformation par spectrophotométrie ; il convertit les absorbances mesurées en concentrations (le volume du mélange est constant) :",
+        "t (min) : 0 ; 2 ; 4 ; 6 ; 8 ; 10 ; 12 ; 14 ; 16 ; 18 ; 20",
+        "[E131] (µmol·L⁻¹) : 8,00 ; 6,35 ; 5,04 ; 4,00 ; 3,17 ; 2,52 ; 2,00 ; 1,59 ; 1,26 ; 1,00 ; 0,79",
+        "Il écrit le script Python ci-dessous pour calculer, à chaque date (sauf la première et la dernière), une valeur approchée de la vitesse volumique de disparition du colorant."
+      ],
+      "code": [
+        "t = [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]                                  # min",
+        "c = [8.00, 6.35, 5.04, 4.00, 3.17, 2.52, 2.00, 1.59, 1.26, 1.00, 0.79]   # µmol/L",
+        "for i in range(1, len(t) - 1):",
+        "    v = ...                  # vitesse de disparition (µmol/L/min), à compléter",
+        "    print(t[i], c[i], round(v, 3), round(v / c[i], 3))"
+      ],
+      "contexte2": [
+        "Affichage obtenu après exécution du script complété (t ; c ; v ; v/c) :",
+        "2 ; 6,35 ; 0,740 ; 0,117 — 4 ; 5,04 ; 0,587 ; 0,117 — 6 ; 4,00 ; 0,468 ; 0,117 — 8 ; 3,17 ; 0,370 ; 0,117 — 10 ; 2,52 ; 0,292 ; 0,116 — 12 ; 2,00 ; 0,232 ; 0,116 — 14 ; 1,59 ; 0,185 ; 0,116 — 16 ; 1,26 ; 0,148 ; 0,117 — 18 ; 1,00 ; 0,117 ; 0,117"
+      ],
+      "questions": [
+        {
+          "texte": "Pourquoi la spectrophotométrie convient-elle pour ce suivi ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète la ligne « v = ... » du script : on approche la dérivée −d[E131]/dt par le taux de variation entre la date précédente et la date suivante.",
+          "aides": [
+            "Le taux de variation de c entre les dates t[i−1] et t[i+1] s'écrit Δc / Δt.",
+            "Vitesse de DISPARITION : il faut un signe « − » pour obtenir une valeur positive. Utilise c[i+1], c[i-1], t[i+1] et t[i-1]."
+          ]
+        },
+        {
+          "texte": "Vérifie la valeur affichée pour t = 6 min par un calcul à la main.",
+          "aides": []
+        },
+        {
+          "texte": "Que représente la dernière colonne affichée ? Que peut-on conclure sur la loi de vitesse de cette réaction ? Donne la valeur de la constante de vitesse k avec son unité.",
+          "aides": [
+            "Calcule mentalement v / c pour deux lignes : que constates-tu ?",
+            "Si v / c est constant, alors v = constante × c : c'est la définition de l'ordre 1 (relis la fiche de cours)."
+          ]
+        },
+        {
+          "texte": "Calcule le temps de demi-réaction à partir de k, puis vérifie-le directement dans le tableau de mesures.",
+          "aides": []
+        },
+        {
+          "texte": "Estime la concentration en colorant au bout de 30 min. La solution peut-elle être considérée comme décolorée ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le colorant est la seule espèce colorée (bleue) : l'absorbance est proportionnelle à [E131] (loi de Beer-Lambert), on suit donc sa concentration en continu, sans perturber le mélange.",
+        "<strong>2.</strong> v = -(c[i+1] - c[i-1]) / (t[i+1] - t[i-1])   (le signe « − » rend la vitesse de disparition positive, car c diminue).",
+        "<strong>3.</strong> À t = 6 min : v ≈ −(3,17 − 5,04) / (8 − 4) = 1,87 / 4 = 0,468 µmol·L⁻¹·min⁻¹ : c'est bien la valeur affichée.",
+        "<strong>4.</strong> La dernière colonne est le rapport v<sub>d</sub> / [E131]. Il est constant (0,116 à 0,117 min⁻¹) : la vitesse volumique de disparition est proportionnelle à la concentration du colorant, v<sub>d</sub> = k × [E131]. La réaction suit une loi de vitesse d'ordre 1 par rapport au colorant, avec k ≈ 0,117 min⁻¹.",
+        "<strong>5.</strong> t½ = ln 2 / k = 0,693 / 0,117 = 5,9 min. Vérification : [E131] passe de 8,00 à 4,00 µmol·L⁻¹ entre 0 et 6 min, puis de 4,00 à 2,00 µmol·L⁻¹ entre 6 et 12 min, et de 2,00 à 1,00 entre 12 et 18 min : la concentration est divisée par 2 toutes les 6 min environ, quelle que soit la concentration de départ (propriété de l'ordre 1).",
+        "<strong>6.</strong> 30 min ≈ 5 t½ : la concentration a été divisée par 2⁵ = 32, soit [E131] ≈ 8,00 / 32 = 0,25 µmol·L⁻¹ (avec [E131] = 8,00 × exp(−0,117 × 30), on trouve 0,24 µmol·L⁻¹). Il reste environ 3 % du colorant : la solution est pratiquement décolorée (on considère souvent la transformation terminée après 5 à 10 t½).",
+        "<em>⚠ Erreur fréquente : oublier le signe « − » dans la vitesse de disparition (on obtient des vitesses négatives), ou diviser par 2 min au lieu de 4 min dans le taux de variation centré.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Hydrolyse d'un chloroalcane suivie par conductimétrie",
+      "contexte": [
+        "Doc. 1 — La réaction. Le 2-chloro-2-méthylpropane (CH₃)₃C–Cl, noté RCl, est une espèce moléculaire. Dans un mélange eau-acétone, il réagit avec l'eau selon une transformation lente et totale :",
+        "(CH₃)₃C–Cl + 2 H₂O → (CH₃)₃C–OH + H₃O⁺ + Cl⁻",
+        "Doc. 2 — Protocole et résultats. À t = 0, on introduit n₀ = 1,00 × 10⁻³ mol de RCl dans un volume V = 200,0 mL de mélange eau-acétone maintenu à 25 °C, puis on mesure la conductivité σ de la solution au cours du temps. Au bout de plusieurs heures, elle ne varie plus : σ<sub>f</sub> = 150 mS·m⁻¹. Dans ce mélange, la conductivité vaut σ = (λ(H₃O⁺) + λ(Cl⁻)) × ξ / V, où ξ est l'avancement."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"112.8\" y1=\"25\" x2=\"112.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"112.8\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"145.5\" y1=\"25\" x2=\"145.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.5\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"178.2\" y1=\"25\" x2=\"178.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"178.2\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"211.0\" y1=\"25\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"243.8\" y1=\"25\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"243.8\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"276.5\" y1=\"25\" x2=\"276.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"276.5\" y=\"430\" text-anchor=\"middle\">12</text><line x1=\"309.2\" y1=\"25\" x2=\"309.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"309.2\" y=\"430\" text-anchor=\"middle\">14</text><line x1=\"342.0\" y1=\"25\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"430\" text-anchor=\"middle\">16</text><line x1=\"374.8\" y1=\"25\" x2=\"374.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"374.8\" y=\"430\" text-anchor=\"middle\">18</text><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"440.3\" y1=\"25\" x2=\"440.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"440.3\" y=\"430\" text-anchor=\"middle\">22</text><line x1=\"473.0\" y1=\"25\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"430\" text-anchor=\"middle\">24</text><line x1=\"505.8\" y1=\"25\" x2=\"505.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"505.8\" y=\"430\" text-anchor=\"middle\">26</text><line x1=\"538.5\" y1=\"25\" x2=\"538.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"538.5\" y=\"430\" text-anchor=\"middle\">28</text><line x1=\"571.2\" y1=\"25\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"571.2\" y=\"430\" text-anchor=\"middle\">30</text><line x1=\"604.0\" y1=\"25\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"430\" text-anchor=\"middle\">32</text><line x1=\"636.8\" y1=\"25\" x2=\"636.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"636.8\" y=\"430\" text-anchor=\"middle\">34</text><line x1=\"669.5\" y1=\"25\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.5\" y=\"430\" text-anchor=\"middle\">36</text><line x1=\"702.2\" y1=\"25\" x2=\"702.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"702.2\" y=\"430\" text-anchor=\"middle\">38</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">40</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"385.9\" x2=\"735\" y2=\"385.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"361.9\" x2=\"735\" y2=\"361.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"366.9\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"337.8\" x2=\"735\" y2=\"337.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"318.8\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"289.7\" x2=\"735\" y2=\"289.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"265.6\" x2=\"735\" y2=\"265.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"270.6\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"241.6\" x2=\"735\" y2=\"241.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"193.4\" x2=\"735\" y2=\"193.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"169.4\" x2=\"735\" y2=\"169.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"174.4\" text-anchor=\"end\">100</text><line x1=\"80\" y1=\"145.3\" x2=\"735\" y2=\"145.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"126.2\" text-anchor=\"end\">120</text><line x1=\"80\" y1=\"97.2\" x2=\"735\" y2=\"97.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"73.1\" x2=\"735\" y2=\"73.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"78.1\" text-anchor=\"end\">140</text><line x1=\"80\" y1=\"49.1\" x2=\"735\" y2=\"49.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">160</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,410.0 83.3,403.8 86.5,397.7 89.8,391.7 93.1,385.8 96.4,380.0 99.7,374.4 102.9,368.8 106.2,363.3 109.5,357.9 112.8,352.6 116.0,347.4 119.3,342.2 122.6,337.2 125.8,332.2 129.1,327.4 132.4,322.6 135.7,317.9 138.9,313.3 142.2,308.7 145.5,304.3 148.8,299.9 152.1,295.6 155.3,291.4 158.6,287.2 161.9,283.1 165.2,279.1 168.4,275.1 171.7,271.2 175.0,267.4 178.2,263.7 181.5,260.0 184.8,256.4 188.1,252.8 191.4,249.3 194.6,245.9 197.9,242.5 201.2,239.2 204.4,235.9 207.7,232.7 211.0,229.5 214.3,226.4 217.6,223.4 220.8,220.4 224.1,217.4 227.4,214.6 230.7,211.7 233.9,208.9 237.2,206.2 240.5,203.5 243.8,200.8 247.0,198.2 250.3,195.6 253.6,193.1 256.9,190.7 260.1,188.2 263.4,185.8 266.7,183.5 270.0,181.2 273.2,178.9 276.5,176.7 279.8,174.5 283.1,172.3 286.3,170.2 289.6,168.1 292.9,166.1 296.1,164.1 299.4,162.1 302.7,160.2 306.0,158.2 309.2,156.4 312.5,154.5 315.8,152.7 319.1,150.9 322.4,149.2 325.6,147.5 328.9,145.8 332.2,144.1 335.5,142.5 338.7,140.9 342.0,139.3 345.3,137.7 348.6,136.2 351.8,134.7 355.1,133.3 358.4,131.8 361.6,130.4 364.9,129.0 368.2,127.6 371.5,126.3 374.8,124.9 378.0,123.6 381.3,122.4 384.6,121.1 387.9,119.9 391.1,118.6 394.4,117.4 397.7,116.3 401.0,115.1 404.2,114.0 407.5,112.9 410.8,111.8 414.1,110.7 417.3,109.6 420.6,108.6 423.9,107.6 427.2,106.6 430.4,105.6 433.7,104.6 437.0,103.7 440.3,102.7 443.5,101.8 446.8,100.9 450.1,100.0 453.4,99.1 456.6,98.3 459.9,97.4 463.2,96.6 466.5,95.8 469.7,95.0 473.0,94.2 476.3,93.4 479.6,92.6 482.8,91.9 486.1,91.2 489.4,90.4 492.7,89.7 495.9,89.0 499.2,88.3 502.5,87.7 505.8,87.0 509.0,86.3 512.3,85.7 515.6,85.1 518.9,84.5 522.1,83.9 525.4,83.3 528.7,82.7 532.0,82.1 535.2,81.5 538.5,81.0 541.8,80.4 545.1,79.9 548.3,79.3 551.6,78.8 554.9,78.3 558.2,77.8 561.4,77.3 564.7,76.8 568.0,76.4 571.2,75.9 574.5,75.4 577.8,75.0 581.1,74.5 584.4,74.1 587.6,73.7 590.9,73.2 594.2,72.8 597.5,72.4 600.7,72.0 604.0,71.6 607.3,71.2 610.5,70.9 613.8,70.5 617.1,70.1 620.4,69.7 623.7,69.4 626.9,69.0 630.2,68.7 633.5,68.4 636.8,68.0 640.0,67.7 643.3,67.4 646.6,67.1 649.9,66.8 653.1,66.5 656.4,66.2 659.7,65.9 663.0,65.6 666.2,65.3 669.5,65.0 672.8,64.7 676.0,64.5 679.3,64.2 682.6,63.9 685.9,63.7 689.1,63.4 692.4,63.2 695.7,62.9 699.0,62.7 702.2,62.5 705.5,62.2 708.8,62.0 712.1,61.8 715.4,61.6 718.6,61.4 721.9,61.2 725.2,60.9 728.5,60.7 731.7,60.5 735.0,60.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.8\"/><line x1=\"80.0\" y1=\"49.1\" x2=\"735.0\" y2=\"49.1\" stroke=\"#C8962E\" stroke-width=\"2\" stroke-dasharray=\"9 6\"/><text x=\"554.9\" y=\"41.1\" fill=\"#C8962E\" font-weight=\"bold\">σ<tspan font-size=\"11\" dy=\"4\">f</tspan><tspan dy=\"-4\"> </tspan> = 150 mS·m⁻¹</text><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">t (min)</text><text transform=\"translate(20,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">σ (mS·m⁻¹)</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Mécanisme réactionnel proposé.",
+        "Étape 1 (lente) : (CH₃)₃C–Cl → (CH₃)₃C⁺ + Cl⁻",
+        "Étape 2 (rapide) : (CH₃)₃C⁺ + H₂O → (CH₃)₃C–OH₂⁺",
+        "Étape 3 (rapide) : (CH₃)₃C–OH₂⁺ + H₂O → (CH₃)₃C–OH + H₃O⁺",
+        "Doc. 4 — À 35 °C, dans les mêmes conditions, on mesure un temps de demi-réaction t½ = 3,0 min."
+      ],
+      "questions": [
+        {
+          "texte": "Justifie le choix d'un suivi par conductimétrie pour cette transformation.",
+          "aides": []
+        },
+        {
+          "texte": "Exploitation de la conductivité.<br>a. Montre que ξ(t) = ξ<sub>max</sub> × σ(t) / σ<sub>f</sub>, puis que [RCl](t) = [RCl]₀ × (1 − σ(t)/σ<sub>f</sub>), avec [RCl]₀ = n₀ / V que tu calculeras.<br>b. Lis σ à t = 20 min et déduis-en [RCl] à cette date.",
+          "aides": [
+            "Écris σ à l'instant t et σ<sub>f</sub> en fin de réaction, puis fais le rapport σ / σ<sub>f</sub> : que devient le terme (λ(H₃O⁺) + λ(Cl⁻)) / V ?",
+            "RCl est le réactif limitant et la transformation est totale : ξ<sub>max</sub> = n₀. Tableau d'avancement : n(RCl) = n₀ − ξ."
+          ]
+        },
+        {
+          "texte": "Détermine graphiquement le temps de demi-réaction t½ à 25 °C.",
+          "aides": []
+        },
+        {
+          "texte": "Montre, à l'aide de la courbe, que la durée nécessaire pour que [RCl] soit divisée par 2 ne dépend pas de la concentration de départ. Que peut-on en conclure sur la loi de vitesse ?",
+          "aides": [
+            "Quelle valeur de σ correspond à [RCl] = [RCl]₀ / 4 ? Utilise la relation de la question 2.a.",
+            "[RCl] = [RCl]₀ / 4 lorsque 1 − σ/σ<sub>f</sub> = 1/4, soit σ = 3σ<sub>f</sub> / 4. Lis la date correspondante et compare les durées."
+          ]
+        },
+        {
+          "texte": "Déduis-en la constante de vitesse k, puis la vitesse volumique initiale de disparition de RCl.",
+          "aides": []
+        },
+        {
+          "texte": "Doc. 4 : comment évolue la vitesse quand la température passe de 25 °C à 35 °C ? Interprète à l'échelle microscopique. Pour connaître la composition du mélange à un instant précis, on peut verser un prélèvement dans de l'eau glacée : explique l'intérêt de cette opération.",
+          "aides": []
+        },
+        {
+          "texte": "Doc. 3 : identifie les intermédiaires réactionnels, vérifie que le mécanisme rend compte de l'équation du doc. 1, et représente les flèches courbes des étapes 1 et 2.",
+          "aides": [
+            "Un intermédiaire réactionnel est formé à une étape puis consommé à une étape suivante ; il n'apparaît pas dans l'équation bilan.",
+            "Additionne les trois étapes membre à membre et barre les espèces présentes des deux côtés.",
+            "Étape 1 : quelle liaison se rompt, et vers quel atome partent les électrons ? Étape 2 : quel atome est donneur de doublet ?"
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : l'étape 1, beaucoup plus lente que les autres, est appelée étape cinétiquement déterminante. Explique pourquoi ce mécanisme est cohérent avec la loi de vitesse trouvée à la question 4.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le réactif RCl est moléculaire (il ne conduit pas le courant), alors que la réaction forme des ions H₃O⁺ et Cl⁻ : la conductivité de la solution augmente avec l'avancement. On peut la mesurer en continu, sans prélèvement.",
+        "<strong>2.</strong> a. σ(t) = (λ(H₃O⁺) + λ(Cl⁻)) × ξ(t) / V et, en fin de réaction, σ<sub>f</sub> = (λ(H₃O⁺) + λ(Cl⁻)) × ξ<sub>max</sub> / V. En faisant le rapport : σ(t)/σ<sub>f</sub> = ξ(t)/ξ<sub>max</sub>, donc ξ(t) = ξ<sub>max</sub> × σ(t)/σ<sub>f</sub>.",
+        "La transformation est totale et RCl est limitant : ξ<sub>max</sub> = n₀. Alors n(RCl)(t) = n₀ − ξ(t) = n₀ × (1 − σ(t)/σ<sub>f</sub>) ; en divisant par V : [RCl](t) = [RCl]₀ × (1 − σ(t)/σ<sub>f</sub>), avec [RCl]₀ = n₀ / V = 1,00 × 10⁻³ / 0,2000 = 5,00 × 10⁻³ mol·L⁻¹ = 5,00 mmol·L⁻¹.",
+        "b. On lit σ(20 min) ≈ 123 mS·m⁻¹ (123 à 124). [RCl] = 5,00 × (1 − 123/150) = 0,90 mmol·L⁻¹ (on accepte 0,88 à 0,90 mmol·L⁻¹).",
+        "<strong>3.</strong> À t½, ξ = ξ<sub>max</sub> / 2, donc σ = σ<sub>f</sub> / 2 = 75 mS·m⁻¹. On lit t½ = 8,0 min.",
+        "<strong>4.</strong> [RCl] passe de [RCl]₀ à [RCl]₀/2 en 8 min (σ = 75 mS·m⁻¹). Elle passe de [RCl]₀/2 à [RCl]₀/4 quand σ passe de 75 à 3σ<sub>f</sub>/4 = 112,5 mS·m⁻¹ : on lit t = 16 min, soit à nouveau une durée de 8 min. La durée de « demi-vie » ne dépend pas de la concentration de départ : c'est la propriété caractéristique d'une loi de vitesse d'ordre 1, v<sub>d</sub>(RCl) = k × [RCl].",
+        "<strong>5.</strong> k = ln 2 / t½ = 0,693 / 8,0 = 8,7 × 10⁻² min⁻¹. v<sub>d</sub>(RCl)₀ = k × [RCl]₀ = 8,66 × 10⁻² × 5,00 = 0,43 mmol·L⁻¹·min⁻¹ (4,3 × 10⁻⁴ mol·L⁻¹·min⁻¹).",
+        "<strong>6.</strong> t½ passe de 8,0 min à 3,0 min : la réaction est environ 2,7 fois plus rapide à 35 °C (k = 0,693 / 3,0 = 0,23 min⁻¹). Interprétation : l'agitation thermique augmente, les chocs sont plus fréquents et une plus grande proportion d'entre eux est assez énergétique pour être efficace.",
+        "Eau glacée (trempe) : le refroidissement brutal et la dilution (deux facteurs cinétiques) ralentissent tellement la réaction qu'elle est pratiquement stoppée : la composition du prélèvement est « figée » le temps de l'analyser.",
+        "<strong>7.</strong> Intermédiaires réactionnels : le carbocation (CH₃)₃C⁺ (formé à l'étape 1, consommé à l'étape 2) et (CH₃)₃C–OH₂⁺ (formé à l'étape 2, consommé à l'étape 3). Somme des trois étapes, après simplification des intermédiaires : (CH₃)₃C–Cl + 2 H₂O → (CH₃)₃C–OH + H₃O⁺ + Cl⁻ : c'est bien l'équation du doc. 1.",
+        "Étape 1 : une flèche part du doublet liant C–Cl et pointe vers l'atome Cl, plus électronégatif que C (3,16 &gt; 2,55), qui part avec le doublet sous forme de Cl⁻. Étape 2 : une flèche part d'un doublet non liant de l'atome O de H₂O (site donneur) et pointe vers l'atome C portant la charge + (site accepteur, déficitaire en électrons).",
+        "<strong>8.</strong> Pour aller plus loin : l'étape la plus lente impose sa vitesse à la réaction globale. Or l'étape 1 ne fait intervenir qu'une seule entité, RCl : sa vitesse est proportionnelle au nombre de molécules RCl par unité de volume, donc à [RCl]. On retrouve v<sub>d</sub>(RCl) = k × [RCl] (ordre 1), et l'eau, bien qu'étant réactif, n'intervient pas dans la loi de vitesse.",
+        "<em>⚠ Erreur fréquente : lire t½ à la moitié de la durée de l'expérience, ou à σ = 80 mS·m⁻¹ (moitié de l'axe) au lieu de σ<sub>f</sub> / 2 = 75 mS·m⁻¹.</em>",
+        "<em>⚠ Erreur fréquente : faire partir la flèche courbe de la charge + du carbocation ; elle doit partir du doublet de l'oxygène et ARRIVER sur le carbone.</em>"
+      ]
+    }
+  ]
+}

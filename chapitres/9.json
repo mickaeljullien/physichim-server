@@ -1,0 +1,681 @@
+{
+  "id": 9,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Deuxième loi de Newton et référentiel galiléen",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Référentiel galiléen",
+            "text": "Référentiel dans lequel le principe d'inertie (première loi de Newton) est vérifié : un système isolé ou pseudo-isolé est soit au repos, soit en mouvement rectiligne uniforme. Le référentiel terrestre est considéré comme galiléen pour l'étude de mouvements de courte durée à la surface de la Terre."
+          },
+          {
+            "type": "formula",
+            "label": "Deuxième loi de Newton (relation fondamentale de la dynamique)",
+            "text": "ΣF(ext) = m × a(G)\na(G) : vecteur accélération du centre de masse G du système, dans un référentiel galiléen\nm : masse du système (kg)"
+          },
+          {
+            "type": "text",
+            "text": "Cette loi relie les causes du mouvement (les forces appliquées) à ses effets (l'accélération). Connaissant les forces, on détermine a(G), puis par intégrations successives (avec les conditions initiales) le vecteur vitesse puis le vecteur position à chaque instant."
+          }
+        ]
+      },
+      {
+        "title": "2. Mouvement dans un champ de pesanteur uniforme : chute libre et mouvement parabolique",
+        "icon": "🎯",
+        "content": [
+          {
+            "type": "formula",
+            "label": "Mise en équation",
+            "text": "Système : {solide de masse m}, en chute libre (seule force : le poids P = mg)\nD'après la 2e loi de Newton : m×a = m×g  ⇒  a = g (vecteur accélération constant, indépendant de m)\nRepère (O, x horizontal, y vertical ascendant) : ax = 0 ; ay = -g"
+          },
+          {
+            "type": "formula",
+            "label": "Équations horaires de la vitesse (intégration de a)",
+            "text": "Conditions initiales : v(t=0) = v0, de coordonnées v0x = v0 cosα, v0y = v0 sinα (α : angle de tir avec l'horizontale)\nvx(t) = v0 cosα\nvy(t) = -g t + v0 sinα"
+          },
+          {
+            "type": "formula",
+            "label": "Équations horaires de la position (intégration de v)",
+            "text": "Position initiale à l'origine O :\nx(t) = v0 cosα × t\ny(t) = -½ g t² + v0 sinα × t"
+          },
+          {
+            "type": "formula",
+            "label": "Équation de la trajectoire",
+            "text": "En éliminant t (t = x / (v0 cosα)) :\ny(x) = -g x² / (2 v0² cos²α) + x tanα\n\nC'est l'équation d'une parabole : le mouvement est dit mouvement parabolique."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 500 280\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"vArrow9\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"gArrow9\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><line x1=\"60\" y1=\"240\" x2=\"470\" y2=\"240\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><line x1=\"60\" y1=\"240\" x2=\"60\" y2=\"30\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><text x=\"475\" y=\"244\" font-size=\"11\" fill=\"#5C6B60\">x</text><text x=\"55\" y=\"26\" font-size=\"11\" fill=\"#5C6B60\" text-anchor=\"middle\">y</text><text x=\"48\" y=\"252\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"end\">O</text><path d=\"M60,240 Q260,-80 460,240\" fill=\"none\" stroke=\"#3E7DBF\" stroke-width=\"2.5\"/><circle cx=\"460\" cy=\"240\" r=\"3\" fill=\"#3E7DBF\"/><line x1=\"60\" y1=\"240\" x2=\"124\" y2=\"240\" stroke=\"#5C6B60\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><line x1=\"124\" y1=\"240\" x2=\"124\" y2=\"163\" stroke=\"#5C6B60\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\"/><text x=\"88\" y=\"253\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">v₀cosα</text><text x=\"131\" y=\"205\" font-size=\"10\" fill=\"#5C6B60\">v₀sinα</text><line x1=\"60\" y1=\"240\" x2=\"124\" y2=\"163\" stroke=\"#3E7DBF\" stroke-width=\"2.2\" marker-end=\"url(#vArrow9)\"/><text x=\"128\" y=\"158\" font-size=\"12\" fill=\"#3E7DBF\" font-weight=\"600\">v₀</text><path d=\"M95,240 A35,35 0 0,0 82,213\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1\"/><text x=\"88\" y=\"228\" font-size=\"10\" fill=\"#1B2420\">α</text><line x1=\"260\" y1=\"82\" x2=\"260\" y2=\"122\" stroke=\"#C0472F\" stroke-width=\"2.2\" marker-end=\"url(#gArrow9)\"/><text x=\"268\" y=\"112\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">g</text></svg>",
+            "caption": "Trajectoire parabolique : le vecteur vitesse initiale v₀ se décompose en v₀cosα (horizontale) et v₀sinα (verticale). Le vecteur accélération g, constant et vertical, est responsable de la courbure de la trajectoire."
+          },
+          {
+            "type": "warn",
+            "text": "Le mouvement est plan (contenu dans le plan défini par v0 et g). L'accélération est constante et indépendante de la masse du système : dans le vide, tous les corps chutent de la même façon (résultat historique de Galilée)."
+          }
+        ]
+      },
+      {
+        "title": "3. Mouvement dans un champ électrique uniforme : l'accélérateur linéaire",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Champ électrique uniforme",
+            "text": "Champ créé entre deux plaques planes parallèles portées à des potentiels différents et séparées par une distance d. Sa norme vaut E = U/d (en V·m⁻¹, équivalent à N·C⁻¹), U étant la tension entre les plaques."
+          },
+          {
+            "type": "text",
+            "text": "Une particule de charge q placée dans ce champ subit la force électrique F = qE. D'après la deuxième loi de Newton, elle acquiert une accélération constante a = qE/m, colinéaire au champ (de même sens que E si q > 0, de sens opposé si q < 0)."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Principe de l'accélérateur linéaire :</strong> une particule chargée est accélérée par la traversée successive de zones où règne un champ électrique uniforme, créé entre des électrodes portées à des tensions différentes. Si la vitesse initiale de la particule est colinéaire au champ, le mouvement reste rectiligne : la particule est accélérée en ligne droite."
+          }
+        ]
+      },
+      {
+        "title": "4. Aspects énergétiques : théorème de l'énergie cinétique",
+        "icon": "🔋",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie cinétique",
+            "text": "Ec = ½ m v² (en joules, J), énergie associée au mouvement d'un système de masse m animé de la vitesse v."
+          },
+          {
+            "type": "formula",
+            "label": "Théorème de l'énergie cinétique",
+            "text": "ΔEc = Ec(final) - Ec(initial) = Σ W(F)\nLa variation d'énergie cinétique d'un système entre deux instants est égale à la somme des travaux de toutes les forces qui s'exercent sur lui entre ces deux instants."
+          },
+          {
+            "type": "text",
+            "text": "Dans un accélérateur linéaire, le travail de la force électrique entre deux électrodes séparées par une tension U s'écrit W = q×U. Le théorème de l'énergie cinétique donne alors : ½ m v² - ½ m v0² = q×U, ce qui permet de calculer directement la vitesse finale de la particule, sans intégrer les équations horaires."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans un référentiel galiléen, la deuxième loi de Newton s'écrit :",
+      "opts": [
+        "ΣF = m × v(G)",
+        "ΣF = m × a(G)",
+        "ΣF = m × g, quelles que soient les forces",
+        "ΣF = Δ(½ m v²)"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "force-proportionnelle-vitesse",
+          "texte": "Croire que la force est liée à la vitesse : elle est liée à la variation de la vitesse (l'accélération)"
+        },
+        null,
+        {
+          "code": "newton-chute-libre-generalisee",
+          "texte": "Généraliser le cas de la chute libre : ΣF = m × g seulement si le poids est la seule force"
+        },
+        {
+          "code": "newton-vs-energie-cinetique",
+          "texte": "Confondre la deuxième loi de Newton et le théorème de l'énergie cinétique"
+        }
+      ],
+      "exp": "ΣF(ext) = m × a(G) : les forces déterminent l'accélération du centre de masse, pas sa vitesse. Attention : un objet peut avoir une grande vitesse avec une somme des forces nulle."
+    },
+    {
+      "q": "Un ballon est lancé vers le haut ; on néglige l'action de l'air. Pendant tout son vol, la somme des forces qui s'exercent sur lui est :",
+      "opts": [
+        "verticale vers le bas : c'est le poids",
+        "dirigée vers le haut pendant la montée, sinon il ne monterait pas",
+        "la force du lancer, puis le poids une fois qu'elle s'est épuisée",
+        "nulle au sommet de la trajectoire"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "force-sens-mouvement",
+          "texte": "Croire qu'un mouvement nécessite une force dans son sens : le ballon monte sur sa lancée, en ralentissant"
+        },
+        {
+          "code": "force-du-lancer",
+          "texte": "Croire que la force du lancer accompagne l'objet : elle cesse dès que le ballon quitte la main"
+        },
+        {
+          "code": "acceleration-nulle-sommet",
+          "texte": "Croire qu'au sommet les forces (ou l'accélération) sont nulles : le poids agit pendant tout le vol"
+        }
+      ],
+      "exp": "Une fois lâché, le ballon n'est soumis qu'à son poids, vertical vers le bas, du début à la fin du vol. Attention : il monte parce qu'il a une vitesse initiale, pas parce qu'une force le pousse."
+    },
+    {
+      "q": "Dans un champ de pesanteur uniforme, en chute libre, l'accélération d'un objet :",
+      "opts": [
+        "est plus grande pour un objet plus lourd",
+        "est égale à g seulement s'il est lâché sans vitesse initiale",
+        "est égale à g, quelle que soit sa masse",
+        "est toujours dirigée selon sa vitesse"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "lourd-tombe-plus-vite",
+          "texte": "Croire qu'un objet plus lourd tombe plus vite : en chute libre, a = g ne dépend pas de la masse"
+        },
+        {
+          "code": "chute-libre-vitesse-initiale-nulle",
+          "texte": "Croire qu'une chute libre exige une vitesse initiale nulle : seule compte l'absence de forces autres que le poids"
+        },
+        null,
+        {
+          "code": "vitesse-acceleration-meme-direction",
+          "texte": "Croire que vitesse et accélération ont toujours la même direction"
+        }
+      ],
+      "exp": "Seul le poids agit : m × a = m × g, donc a = g, verticale vers le bas, indépendante de la masse et de la vitesse initiale. Attention : « chute libre » signifie « soumis à son seul poids »."
+    },
+    {
+      "q": "Un projectile est lancé avec une vitesse v₀ faisant un angle α avec l'horizontale (frottements négligés, axe Ox horizontal). La coordonnée vx de sa vitesse :",
+      "opts": [
+        "est constante et égale à v₀ cos α",
+        "est constante et égale à v₀ sin α",
+        "diminue au cours du vol",
+        "s'annule au sommet de la trajectoire"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "cos-sin-inverses",
+          "texte": "Inverser cosinus et sinus : la composante horizontale est v₀ cos α (α mesuré depuis l'horizontale)"
+        },
+        {
+          "code": "vitesse-horizontale-diminue",
+          "texte": "Croire que la vitesse horizontale s'épuise : aucune force horizontale n'agit, vx reste constante"
+        },
+        {
+          "code": "vitesse-nulle-sommet",
+          "texte": "Croire que la vitesse est nulle au sommet : seule vy s'annule, vx reste égale à v₀ cos α"
+        }
+      ],
+      "exp": "ax = 0 (le poids est vertical), donc vx(t) = v₀ cos α à chaque instant. Attention : au sommet, seule la composante verticale vy est nulle."
+    },
+    {
+      "q": "Pour ce même projectile (axe Oy vertical vers le haut), la coordonnée verticale de la vitesse s'écrit :",
+      "opts": [
+        "vy(t) = −g t",
+        "vy(t) = −½ g t² + v₀ sin α × t",
+        "vy(t) = g t + v₀ sin α",
+        "vy(t) = −g t + v₀ sin α"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-condition-initiale",
+          "texte": "Oublier la condition initiale : à t = 0, vy = v₀ sin α"
+        },
+        {
+          "code": "position-vs-vitesse",
+          "texte": "Confondre l'équation horaire de la position y(t) et celle de la vitesse vy(t)"
+        },
+        {
+          "code": "signe-axe-vertical",
+          "texte": "Se tromper de signe : avec Oy vers le haut, ay = −g"
+        },
+        null
+      ],
+      "exp": "ay = −g ; on intègre : vy(t) = −g t + C, et la condition initiale vy(0) = v₀ sin α donne C. Attention : la constante d'intégration vient des conditions initiales."
+    },
+    {
+      "q": "Une balle est lancée avec v₀ = 10 m·s⁻¹ sous un angle α = 30° (g = 9,8 m·s⁻²). Elle atteint le sommet de sa trajectoire au bout de :",
+      "opts": [
+        "0,51 s",
+        "0,88 s",
+        "1,0 s",
+        "5,0 s"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "cos-sin-inverses",
+          "texte": "Utiliser v₀ cos α au lieu de v₀ sin α : 10 × cos 30° / 9,8 = 0,88 s"
+        },
+        {
+          "code": "sommet-vs-duree-vol",
+          "texte": "Confondre l'instant du sommet et la durée totale du vol (2 fois plus longue)"
+        },
+        {
+          "code": "oubli-division-g",
+          "texte": "Oublier de diviser par g : v₀ sin α = 5,0"
+        }
+      ],
+      "exp": "Au sommet vy = 0 : −g t + v₀ sin α = 0, d'où t = v₀ sin α / g = 10 × 0,5 / 9,8 ≈ 0,51 s. Attention : la condition « sommet » porte sur vy seule."
+    },
+    {
+      "q": "Deux plaques parallèles distantes de d = 4,0 cm sont soumises à une tension U = 2,0 kV. La valeur du champ électrique uniforme entre les plaques est :",
+      "opts": [
+        "5,0 × 10² V·m⁻¹",
+        "80 V·m⁻¹",
+        "5,0 × 10⁴ V·m⁻¹",
+        "2,0 × 10⁻⁵ V·m⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-cm-m",
+          "texte": "Oublier de convertir d en mètres : 2 000 / 4,0 = 5,0 × 10²"
+        },
+        {
+          "code": "champ-produit-u-d",
+          "texte": "Multiplier au lieu de diviser : U × d = 2 000 × 0,040 = 80"
+        },
+        null,
+        {
+          "code": "champ-rapport-inverse",
+          "texte": "Inverser le rapport : d / U = 2,0 × 10⁻⁵"
+        }
+      ],
+      "exp": "E = U / d = 2,0 × 10³ / 4,0 × 10⁻² = 5,0 × 10⁴ V·m⁻¹. Attention : d en mètres et U en volts."
+    },
+    {
+      "q": "Un électron (charge q = −e) est placé dans un champ électrique uniforme E. La force électrique qu'il subit est :",
+      "opts": [
+        "de même sens que E",
+        "de sens opposé à E",
+        "perpendiculaire à E",
+        "négligeable, car l'électron est très léger"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "signe-charge-oublie",
+          "texte": "Oublier le signe de la charge : F = qE est de sens opposé à E quand q < 0"
+        },
+        null,
+        {
+          "code": "force-perpendiculaire-champ",
+          "texte": "Croire que la force électrique est perpendiculaire au champ : F = qE lui est colinéaire"
+        },
+        {
+          "code": "force-vs-masse",
+          "texte": "Confondre force et masse : la force électrique dépend de la charge, pas de la masse"
+        }
+      ],
+      "exp": "F = qE avec q = −e < 0 : la force est colinéaire au champ et de sens opposé. Attention : c'est le poids qui est négligeable devant la force électrique, pas l'inverse."
+    },
+    {
+      "q": "Un électron (q = −1,6 × 10⁻¹⁹ C), parti du repos, est accéléré sous une tension U = 1,0 kV. D'après le théorème de l'énergie cinétique, son énergie cinétique finale vaut :",
+      "opts": [
+        "1,0 × 10³ J",
+        "1,6 × 10⁻¹⁹ J",
+        "1,6 × 10⁻¹⁶ J",
+        "−1,6 × 10⁻¹⁶ J"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "energie-vs-tension",
+          "texte": "Confondre énergie et tension : il faut multiplier U par la charge"
+        },
+        {
+          "code": "oubli-tension",
+          "texte": "Oublier de multiplier par U : 1,6 × 10⁻¹⁹ J est l'énergie gagnée sous 1 V"
+        },
+        null,
+        {
+          "code": "energie-cinetique-negative",
+          "texte": "Garder un signe négatif : une énergie cinétique est toujours positive"
+        }
+      ],
+      "exp": "ΔEc = W(F) = |q| × U = 1,6 × 10⁻¹⁹ × 1,0 × 10³ = 1,6 × 10⁻¹⁶ J, et Ec initiale = 0. Attention : Ec = ½ m v² ne peut pas être négative ; le travail est moteur ici."
+    },
+    {
+      "q": "Un proton (m = 1,67 × 10⁻²⁷ kg, q = 1,6 × 10⁻¹⁹ C), parti du repos, est accéléré sous une tension U = 1,0 kV. Avec ½ m v² = q U, sa vitesse finale vaut :",
+      "opts": [
+        "1,9 × 10¹¹ m·s⁻¹",
+        "3,1 × 10⁵ m·s⁻¹",
+        "4,4 × 10⁵ m·s⁻¹",
+        "1,4 × 10⁴ m·s⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-racine",
+          "texte": "Oublier la racine carrée : 2qU / m = 1,9 × 10¹¹ donne v², pas v"
+        },
+        {
+          "code": "oubli-facteur-un-demi",
+          "texte": "Oublier le facteur ½ de l'énergie cinétique : v = √(qU / m)"
+        },
+        null,
+        {
+          "code": "conversion-kv-v",
+          "texte": "Laisser U en kV : √(2 × 1,6 × 10⁻¹⁹ × 1,0 / 1,67 × 10⁻²⁷)"
+        }
+      ],
+      "exp": "v = √(2qU / m) = √(2 × 1,6 × 10⁻¹⁹ × 1,0 × 10³ / 1,67 × 10⁻²⁷) ≈ 4,4 × 10⁵ m·s⁻¹. Attention : U en volts, et ne pas oublier la racine (une vitesse supérieure à c = 3,0 × 10⁸ m·s⁻¹ est impossible)."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Protection des crapauds — champ de pesanteur uniforme",
+      "session": "Métropole · Jour 2",
+      "link": "https://www.labolycee.org/bac-2023-metropole-jour-2"
+    },
+    {
+      "year": "2023",
+      "title": "Principe de l'accélérateur de Van de Graaff — champ électrique",
+      "session": "Polynésie · Jour 2",
+      "link": "https://www.labolycee.org/bac-2023-polynesie-jour-2"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Newton au quotidien",
+      "contexte": [
+        "Inès révise la deuxième loi de Newton avec des situations de tous les jours."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Le référentiel terrestre peut être considéré comme galiléen pour étudier la chute d'une balle de tennis qui dure une seconde.<br>b. Un parachutiste qui descend en ligne droite à vitesse constante n'est soumis à aucune force.<br>c. Le vecteur accélération du centre de masse a toujours la même direction et le même sens que le vecteur vitesse.<br>d. Dans le vide, une bille d'acier et une plume lâchées en même temps de la même hauteur arrivent ensemble au sol.",
+          "aides": []
+        },
+        {
+          "texte": "Une trottinette électrique et son conducteur (masse totale m = 92 kg) démarrent en ligne droite et atteignent 18 km/h en 4,0 s. On suppose l'accélération constante.<br>a. Calcule la valeur a de l'accélération.<br>b. Déduis-en la valeur de la somme des forces qui s'exercent sur le système {trottinette + conducteur}, et précise sa direction et son sens.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : la durée du mouvement (1 s) est très courte devant la durée de rotation de la Terre sur elle-même (environ 24 h) ; le référentiel terrestre est alors considéré comme galiléen.",
+        "b. FAUX : il est soumis à son poids et à la force exercée par l'air (et la voile). Son mouvement est rectiligne uniforme, donc, d'après le principe d'inertie, ces forces se compensent : leur somme est nulle (équilibre dynamique), mais elles existent.",
+        "c. FAUX : d'après la deuxième loi de Newton, le vecteur accélération a la direction et le sens de la somme des forces. Exemple : une balle lancée vers le haut monte (vecteur vitesse vers le haut) alors que son vecteur accélération (égal au vecteur g) est dirigé vers le bas.",
+        "d. VRAI : en chute libre, a(G) = g quelle que soit la masse ; les deux objets ont le même mouvement.",
+        "<strong>2.</strong> a. v = 18 km/h = 18 / 3,6 = 5,0 m·s⁻¹. a = Δv / Δt = (5,0 − 0) / 4,0 = 1,25 m·s⁻², soit a ≈ 1,3 m·s⁻².",
+        "b. ΣF(ext) = m × a(G), donc ΣF = 92 × 1,25 = 115 N ≈ 1,2 × 10² N. Direction : celle du mouvement (horizontale, rectiligne) ; sens : celui du mouvement, car la vitesse augmente.",
+        "<em>⚠ Erreur fréquente : calculer a = 18 / 4,0 = 4,5 sans convertir les km/h en m·s⁻¹.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Analyse vidéo d'un lancer de ballon",
+      "contexte": [
+        "Un élève filme un ballon lancé par un camarade (25 images par seconde), puis réalise un pointage avec un logiciel d'analyse vidéo. Le repère est orthonormé : axe Ox horizontal, axe Oy vertical vers le haut, origine des dates au moment où le ballon quitte les mains. Le logiciel fournit les coordonnées v<sub>x</sub> et v<sub>y</sub> du vecteur vitesse au cours du temps :"
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><defs><marker markerUnits=\"userSpaceOnUse\" id=\"fp\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"ft\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"fn\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"fn2\" markerWidth=\"10\" markerHeight=\"10\" refX=\"1\" refY=\"5\" orient=\"auto\"><path d=\"M10,0 L0,5 L10,10 z\" fill=\"#3a3a3a\"/></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"96.4\" y1=\"25\" x2=\"96.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"112.8\" y1=\"25\" x2=\"112.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"129.1\" y1=\"25\" x2=\"129.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"145.5\" y1=\"25\" x2=\"145.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"161.9\" y1=\"25\" x2=\"161.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"161.9\" y=\"430\" text-anchor=\"middle\">0,1</text><line x1=\"178.2\" y1=\"25\" x2=\"178.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"194.6\" y1=\"25\" x2=\"194.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"211.0\" y1=\"25\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"227.4\" y1=\"25\" x2=\"227.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"243.8\" y1=\"25\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"243.8\" y=\"430\" text-anchor=\"middle\">0,2</text><line x1=\"260.1\" y1=\"25\" x2=\"260.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"276.5\" y1=\"25\" x2=\"276.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"292.9\" y1=\"25\" x2=\"292.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"309.2\" y1=\"25\" x2=\"309.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"325.6\" y1=\"25\" x2=\"325.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"325.6\" y=\"430\" text-anchor=\"middle\">0,3</text><line x1=\"342.0\" y1=\"25\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"358.4\" y1=\"25\" x2=\"358.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"374.7\" y1=\"25\" x2=\"374.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"391.1\" y1=\"25\" x2=\"391.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">0,4</text><line x1=\"423.9\" y1=\"25\" x2=\"423.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"440.2\" y1=\"25\" x2=\"440.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"456.6\" y1=\"25\" x2=\"456.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"473.0\" y1=\"25\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"489.4\" y1=\"25\" x2=\"489.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"489.4\" y=\"430\" text-anchor=\"middle\">0,5</text><line x1=\"505.8\" y1=\"25\" x2=\"505.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"522.1\" y1=\"25\" x2=\"522.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"538.5\" y1=\"25\" x2=\"538.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"554.9\" y1=\"25\" x2=\"554.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"571.2\" y1=\"25\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"571.2\" y=\"430\" text-anchor=\"middle\">0,6</text><line x1=\"587.6\" y1=\"25\" x2=\"587.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"604.0\" y1=\"25\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"620.4\" y1=\"25\" x2=\"620.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"636.8\" y1=\"25\" x2=\"636.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"653.1\" y1=\"25\" x2=\"653.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"653.1\" y=\"430\" text-anchor=\"middle\">0,7</text><line x1=\"669.5\" y1=\"25\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"685.9\" y1=\"25\" x2=\"685.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"702.2\" y1=\"25\" x2=\"702.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"718.6\" y1=\"25\" x2=\"718.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">0,8</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">−4</text><line x1=\"80\" y1=\"390.8\" x2=\"735\" y2=\"390.8\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"371.5\" x2=\"735\" y2=\"371.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"376.5\" text-anchor=\"end\">−3</text><line x1=\"80\" y1=\"352.2\" x2=\"735\" y2=\"352.2\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"333.0\" x2=\"735\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"338.0\" text-anchor=\"end\">−2</text><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"294.5\" x2=\"735\" y2=\"294.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"299.5\" text-anchor=\"end\">−1</text><line x1=\"80\" y1=\"275.2\" x2=\"735\" y2=\"275.2\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"256.0\" x2=\"735\" y2=\"256.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"261.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"236.8\" x2=\"735\" y2=\"236.8\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"198.2\" x2=\"735\" y2=\"198.2\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"179.0\" x2=\"735\" y2=\"179.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"184.0\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"159.8\" x2=\"735\" y2=\"159.8\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"140.5\" x2=\"735\" y2=\"140.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"145.5\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"102.0\" x2=\"735\" y2=\"102.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"107.0\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"82.8\" x2=\"735\" y2=\"82.8\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"63.5\" x2=\"735\" y2=\"63.5\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"68.5\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"44.2\" x2=\"735\" y2=\"44.2\" stroke=\"#d9d2c5\" stroke-width=\"0.5\"/><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"256.0\" x2=\"735\" y2=\"256.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"76.0\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"108.8\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"141.5\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"174.2\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"207.0\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"239.8\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"272.5\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"305.2\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"338.0\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"370.7\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"403.5\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"436.2\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"469.0\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"501.8\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"534.5\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"567.2\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"600.0\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"632.8\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"665.5\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"698.2\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><rect x=\"731.0\" y=\"98.0\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><circle cx=\"80.0\" cy=\"63.5\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"112.8\" cy=\"78.6\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"145.5\" cy=\"93.7\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"178.2\" cy=\"108.8\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"211.0\" cy=\"123.9\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"243.8\" cy=\"139.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"276.5\" cy=\"154.1\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"309.2\" cy=\"169.3\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"342.0\" cy=\"184.4\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"374.7\" cy=\"199.5\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"407.5\" cy=\"214.6\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"440.2\" cy=\"229.7\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"473.0\" cy=\"244.8\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"505.8\" cy=\"259.9\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"538.5\" cy=\"275.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"571.2\" cy=\"290.1\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"604.0\" cy=\"305.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"636.8\" cy=\"320.3\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"669.5\" cy=\"335.4\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"702.2\" cy=\"350.5\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"735.0\" cy=\"365.6\" r=\"4.5\" fill=\"#B5523B\"/><rect x=\"546\" y=\"33\" width=\"180\" height=\"58\" fill=\"#fff\" stroke=\"#d9d2c5\"/><rect x=\"556\" y=\"46\" width=\"8\" height=\"8\" fill=\"#1F4E5A\"/><text x=\"572\" y=\"55\">v<tspan dy=\"5\" font-size=\"12\">x</tspan><tspan dy=\"-5\"> (m·s⁻¹)</tspan></text><circle cx=\"560\" cy=\"74\" r=\"4.5\" fill=\"#B5523B\"/><text x=\"572\" y=\"79\">v<tspan dy=\"5\" font-size=\"12\">y</tspan><tspan dy=\"-5\"> (m·s⁻¹)</tspan></text><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">t (s)</text><text transform=\"translate(24,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">vitesse (m·s⁻¹)</text></svg>",
+      "questions": [
+        {
+          "texte": "Comment évolue v<sub>x</sub> au cours du temps ? Que peut-on en déduire sur les forces horizontales qui s'exercent sur le ballon ?",
+          "aides": []
+        },
+        {
+          "texte": "Lis les coordonnées v<sub>0x</sub> et v<sub>0y</sub> du vecteur vitesse initiale.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine le coefficient directeur de la droite v<sub>y</sub>(t). Que représente-t-il ? Compare-le à g et conclus.",
+          "aides": [
+            "Choisis deux points de la droite v<sub>y</sub>(t) bien éloignés l'un de l'autre.",
+            "Coefficient directeur = Δv<sub>y</sub> / Δt. Or a<sub>y</sub> est la dérivée de v<sub>y</sub> par rapport au temps."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur v<sub>0</sub> de la vitesse initiale et l'angle de tir α avec l'horizontale.",
+          "aides": []
+        },
+        {
+          "texte": "À quelle date le ballon atteint-il le sommet de sa trajectoire ? Justifie avec le graphique.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> v<sub>x</sub> reste constante (points alignés horizontalement) : a<sub>x</sub> = 0. D'après la deuxième loi de Newton, la somme des forces n'a pas de composante horizontale : les frottements de l'air sont négligeables.",
+        "<strong>2.</strong> v<sub>0x</sub> = 4,0 m·s⁻¹ et v<sub>0y</sub> = 5,0 m·s⁻¹ (valeurs à t = 0).",
+        "<strong>3.</strong> En prenant deux points éloignés : (0 s ; 5,0 m·s⁻¹) et (0,80 s ; −2,85 m·s⁻¹) : coefficient directeur = (−2,85 − 5,0) / (0,80 − 0) = −9,8 m·s⁻². Il représente a<sub>y</sub> = dv<sub>y</sub>/dt. On trouve a<sub>y</sub> ≈ −g : le vecteur accélération est vertical, vers le bas, de valeur g. Le ballon est en chute libre (seul son poids agit).",
+        "<strong>4.</strong> v<sub>0</sub> = √(v<sub>0x</sub>² + v<sub>0y</sub>²) = √(4,0² + 5,0²) = 6,4 m·s⁻¹. tan α = v<sub>0y</sub> / v<sub>0x</sub> = 5,0 / 4,0 = 1,25, donc α = 51°.",
+        "<strong>5.</strong> Au sommet, le vecteur vitesse est horizontal : v<sub>y</sub> = 0. La droite v<sub>y</sub>(t) coupe l'axe des temps à t ≈ 0,51 s (calcul : t = v<sub>0y</sub> / g = 5,0 / 9,81 = 0,51 s).",
+        "<em>⚠ Erreur fréquente : oublier le signe « − » du coefficient directeur, ou choisir deux points trop proches (lecture imprécise).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Un électron entre deux plaques",
+      "contexte": [
+        "Au laboratoire, deux plaques métalliques planes et parallèles, distantes de d = 4,0 cm, sont reliées à un générateur haute tension : U = 2,0 kV, la plaque P (en haut) étant reliée à la borne positive. Un électron se trouve au point M, entre les plaques."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><defs><marker markerUnits=\"userSpaceOnUse\" id=\"fp\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"ft\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"fn\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"fn2\" markerWidth=\"10\" markerHeight=\"10\" refX=\"1\" refY=\"5\" orient=\"auto\"><path d=\"M10,0 L0,5 L10,10 z\" fill=\"#3a3a3a\"/></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"190\" y=\"94\" width=\"410\" height=\"16\" fill=\"#B5523B\"/><rect x=\"190\" y=\"370\" width=\"410\" height=\"16\" fill=\"#1F4E5A\"/><text x=\"614\" y=\"109\" font-size=\"26\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"614\" y=\"386\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"640\" y=\"108\">plaque P</text><text x=\"640\" y=\"384\">plaque N</text><line x1=\"690\" y1=\"114\" x2=\"690\" y2=\"366\" stroke=\"#3a3a3a\" stroke-width=\"1.5\" marker-start=\"url(#fn2)\" marker-end=\"url(#fn)\"/><text x=\"680\" y=\"246.0\" text-anchor=\"end\">d = 4,0 cm</text><circle cx=\"400\" cy=\"240.0\" r=\"7\" fill=\"#C8962E\"/><text x=\"414\" y=\"230.0\">M (électron)</text><polyline points=\"200,94 200,40 70,40 70,215\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><circle cx=\"70\" cy=\"245\" r=\"30\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"70\" y=\"251\" text-anchor=\"middle\" font-size=\"15\">HT</text><polyline points=\"70,275 70,440 200,440 200,386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"108\" y=\"250\">U = 2,0 kV</text></svg>",
+      "questions": [
+        {
+          "texte": "QCM — Entre les plaques, le vecteur champ électrique E est : (A) vertical, vers le haut ; (B) vertical, vers le bas ; (C) horizontal ; (D) nul au milieu des plaques.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur E du champ électrique.",
+          "aides": []
+        },
+        {
+          "texte": "Donne la direction, le sens et la valeur de la force électrique F qui s'exerce sur l'électron. Représente le vecteur champ E et le vecteur force F sur un schéma.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le poids P de l'électron, puis le rapport F / P. Conclus.",
+          "aides": [
+            "Le poids s'écrit P = m × g, avec la masse de l'électron donnée dans l'encadré.",
+            "Pour comparer deux valeurs, calcule F / P : si le rapport est très grand, la plus petite force est négligeable."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur de l'accélération de l'électron et compare-la à g.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réponse (B) : le champ électrique est orienté de la plaque positive vers la plaque négative, perpendiculaire aux plaques.",
+        "<strong>2.</strong> E = U / d = 2,0 × 10³ / 4,0 × 10⁻² = 5,0 × 10⁴ V·m⁻¹.",
+        "<strong>3.</strong> F = q × E avec q = −e &lt; 0 : la force a la même direction que le vecteur champ (verticale) mais un sens opposé, donc vers le haut (vers la plaque positive). Valeur : F = e × E = 1,602 × 10⁻¹⁹ × 5,0 × 10⁴ = 8,0 × 10⁻¹⁵ N.",
+        "<strong>4.</strong> P = m<sub>e</sub> × g = 9,109 × 10⁻³¹ × 9,81 = 8,9 × 10⁻³⁰ N. F / P = 8,0 × 10⁻¹⁵ / 8,9 × 10⁻³⁰ = 9,0 × 10¹⁴ : le poids est totalement négligeable devant la force électrique.",
+        "<strong>5.</strong> a = F / m<sub>e</sub> = 8,0 × 10⁻¹⁵ / 9,109 × 10⁻³¹ = 8,8 × 10¹⁵ m·s⁻², soit environ 10¹⁵ fois g.",
+        "<em>⚠ Erreur fréquente : dessiner la force dans le sens du champ ; pour une charge négative, elle est de sens opposé.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le lancer franc",
+      "contexte": [
+        "Lors d'un lancer franc au basket, une joueuse lâche le ballon au point O, à la hauteur h = 2,20 m au-dessus du sol. Le centre du cercle du panier est à la hauteur H = 3,05 m et à la distance horizontale D = 4,20 m du point O.",
+        "Le vecteur vitesse initiale du centre du ballon a pour valeur v<sub>0</sub> = 7,10 m·s⁻¹ et fait un angle α = 50,0° avec l'horizontale. On étudie le mouvement du centre G du ballon dans le référentiel terrestre supposé galiléen, dans un repère (O ; x, y) : axe Ox horizontal dirigé vers le panier, axe Oy vertical vers le haut, axe Oz horizontal perpendiculaire aux deux autres. Les frottements de l'air sont négligés."
+      ],
+      "questions": [
+        {
+          "texte": "Fais le bilan des forces et montre, à l'aide de la deuxième loi de Newton, que le vecteur accélération est égal au vecteur champ de pesanteur g. Donne ses coordonnées a<sub>x</sub>, a<sub>y</sub> et a<sub>z</sub>.",
+          "aides": [
+            "Fais l'inventaire des forces : sans frottements, il n'en reste qu'une.",
+            "Écris ΣF(ext) = m × a(G) avec cette seule force, puis simplifie par m. Projette sur les axes (attention : Oy est vers le haut)."
+          ]
+        },
+        {
+          "texte": "Établis les coordonnées v<sub>x</sub>(t), v<sub>y</sub>(t) et v<sub>z</sub>(t) du vecteur vitesse, puis les équations horaires x(t), y(t) et z(t).",
+          "aides": [
+            "Cherche une fonction dont la dérivée est a<sub>x</sub>, puis a<sub>y</sub> : chaque intégration fait apparaître une constante.",
+            "Les constantes s'obtiennent avec les conditions initiales : coordonnées du vecteur vitesse initiale (v<sub>0</sub> cos α ; v<sub>0</sub> sin α ; 0) et position initiale O (0 ; 0 ; 0)."
+          ]
+        },
+        {
+          "texte": "Montre que le mouvement est plan. Quel est ce plan ?",
+          "aides": []
+        },
+        {
+          "texte": "Établis l'équation de la trajectoire y(x). Donne-la sous forme numérique.",
+          "aides": []
+        },
+        {
+          "texte": "Le centre du ballon passe-t-il par le centre du cercle ?",
+          "aides": [
+            "Calcule y pour x = D avec l'équation de la trajectoire (calculatrice en degrés).",
+            "y est mesuré à partir de O, pas à partir du sol : ajoute la hauteur h avant de comparer à H."
+          ]
+        },
+        {
+          "texte": "Calcule la durée du trajet entre les mains de la joueuse et le panier.",
+          "aides": []
+        },
+        {
+          "texte": "En utilisant la conservation de l'énergie mécanique, calcule la valeur de la vitesse du ballon quand il arrive au panier.",
+          "aides": [
+            "Seul le poids travaille : l'énergie mécanique E<sub>m</sub> = E<sub>c</sub> + E<sub>pp</sub> se conserve.",
+            "Écris E<sub>m</sub> au point de départ (hauteur h, vitesse v<sub>0</sub>) et à l'arrivée (hauteur H, vitesse v), puis isole v."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Système : {ballon}, de masse m. Seule force (frottements négligés) : le poids P = m × g. Deuxième loi de Newton : m × a(G) = m × g, donc a(G) = g. Coordonnées : a<sub>x</sub> = 0 ; a<sub>y</sub> = −g ; a<sub>z</sub> = 0.",
+        "<strong>2.</strong> On intègre avec v<sub>0x</sub> = v<sub>0</sub> cos α, v<sub>0y</sub> = v<sub>0</sub> sin α, v<sub>0z</sub> = 0 : v<sub>x</sub>(t) = v<sub>0</sub> cos α ; v<sub>y</sub>(t) = −g t + v<sub>0</sub> sin α ; v<sub>z</sub>(t) = 0. On intègre encore avec la position initiale O (0 ; 0 ; 0) : x(t) = v<sub>0</sub> cos α × t ; y(t) = −½ g t² + v<sub>0</sub> sin α × t ; z(t) = 0.",
+        "Valeurs : v<sub>0</sub> cos α = 4,56 m·s⁻¹ et v<sub>0</sub> sin α = 5,44 m·s⁻¹.",
+        "<strong>3.</strong> z(t) = 0 à chaque instant : le mouvement a lieu dans le plan vertical (O ; x, y), qui contient le vecteur vitesse initiale et le vecteur g.",
+        "<strong>4.</strong> t = x / (v<sub>0</sub> cos α), d'où y(x) = −g x² / (2 v<sub>0</sub>² cos² α) + x tan α. Numériquement : y(x) = −0,236 x² + 1,19 x (x et y en m). C'est une parabole.",
+        "<strong>5.</strong> Pour x = D = 4,20 m : y = −0,236 × 4,20² + 1,19 × 4,20 = 0,851 m (calcul non arrondi : 0,8512 m). Hauteur au-dessus du sol : h + y = 2,20 + 0,851 = 3,05 m = H. Le centre du ballon passe bien par le centre du cercle : le panier est marqué.",
+        "<strong>6.</strong> t = D / (v<sub>0</sub> cos α) = 4,20 / 4,56 = 0,920 s.",
+        "<strong>7.</strong> E<sub>m</sub> = E<sub>c</sub> + E<sub>pp</sub> se conserve (seul le poids travaille) : ½ m v<sub>0</sub>² + m g h = ½ m v² + m g H, donc v = √(v<sub>0</sub>² − 2 g (H − h)) = √(7,10² − 2 × 9,81 × 0,85) = 5,81 m·s⁻¹. (Les équations horaires donnent la même valeur : v<sub>x</sub> = 4,56 m·s⁻¹ et v<sub>y</sub> = −3,59 m·s⁻¹ à t = 0,920 s.)",
+        "<em>⚠ Erreur fréquente : calculatrice réglée en radians au lieu de degrés, ou oubli de la hauteur h de lancer (l'origine O n'est pas au sol).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le canon à électrons d'un microscope",
+      "contexte": [
+        "Dans un microscope électronique, les électrons sont émis par une cathode C avec une vitesse négligeable, puis accélérés vers une anode A, plane et parallèle à la cathode, située à la distance d = 1,50 cm. La tension entre l'anode et la cathode est U<sub>AC</sub> = 5,00 kV. On étudie un électron dans le référentiel du laboratoire, supposé galiléen, avec un axe Cx perpendiculaire aux électrodes, orienté de C vers A, d'origine C. Le poids de l'électron est négligeable (voir exercice 3)."
+      ],
+      "questions": [
+        {
+          "texte": "Quel doit être le sens de la force électrique pour accélérer l'électron de C vers A ? Déduis-en le sens du vecteur champ E, puis l'électrode qui doit être positive.",
+          "aides": [
+            "L'électron porte une charge négative : F = q × E avec q = −e.",
+            "Une charge négative subit une force de sens opposé au champ. Et le champ « descend » toujours de la plaque positive vers la plaque négative."
+          ]
+        },
+        {
+          "texte": "Calcule les valeurs du champ E, de la force électrique F et de l'accélération a de l'électron.",
+          "aides": []
+        },
+        {
+          "texte": "Établis les équations horaires v<sub>x</sub>(t) et x(t).",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la durée t<sub>A</sub> mise par l'électron pour atteindre l'anode, puis sa vitesse v<sub>A</sub> à l'anode.",
+          "aides": []
+        },
+        {
+          "texte": "Retrouve v<sub>A</sub> à l'aide du théorème de l'énergie cinétique.",
+          "aides": [
+            "Théorème de l'énergie cinétique : ΔE<sub>c</sub> = somme des travaux des forces ; ici, une seule force compte.",
+            "Le travail de la force électrique de C vers A vaut W = q × U<sub>CA</sub>, avec U<sub>CA</sub> = −U<sub>AC</sub>. La vitesse initiale est nulle."
+          ]
+        },
+        {
+          "texte": "Un accélérateur linéaire repose sur le même principe. Quelle tension faudrait-il appliquer pour que la vitesse finale soit deux fois plus grande ? Justifie sans calculer de vitesse.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La force doit être dirigée de C vers A. Comme q = −e &lt; 0, F = q × E est de sens opposé au champ : le vecteur champ E est dirigé de A vers C. Le champ va de l'électrode positive vers l'électrode négative : l'anode A est positive (U<sub>AC</sub> &gt; 0).",
+        "<strong>2.</strong> E = U<sub>AC</sub> / d = 5,00 × 10³ / 1,50 × 10⁻² = 3,33 × 10⁵ V·m⁻¹. F = e × E = 1,602 × 10⁻¹⁹ × 3,33 × 10⁵ = 5,34 × 10⁻¹⁴ N. a = F / m<sub>e</sub> = 5,34 × 10⁻¹⁴ / 9,109 × 10⁻³¹ = 5,86 × 10¹⁶ m·s⁻².",
+        "<strong>3.</strong> a<sub>x</sub> = e E / m<sub>e</sub> = a (constante). Avec v<sub>x</sub>(0) = 0 et x(0) = 0 : v<sub>x</sub>(t) = a t et x(t) = ½ a t². Le mouvement est rectiligne uniformément accéléré.",
+        "<strong>4.</strong> x(t<sub>A</sub>) = d donne t<sub>A</sub> = √(2 d / a) = √(2 × 1,50 × 10⁻² / 5,86 × 10¹⁶) = 7,15 × 10⁻¹⁰ s. v<sub>A</sub> = a × t<sub>A</sub> = 5,86 × 10¹⁶ × 7,15 × 10⁻¹⁰ = 4,19 × 10⁷ m·s⁻¹.",
+        "<strong>5.</strong> ΔE<sub>c</sub> = W(F) : ½ m<sub>e</sub> v<sub>A</sub>² − 0 = q × U<sub>CA</sub> = (−e) × (−U<sub>AC</sub>) = e U<sub>AC</sub>. Donc v<sub>A</sub> = √(2 e U<sub>AC</sub> / m<sub>e</sub>) = √(2 × 1,602 × 10⁻¹⁹ × 5,00 × 10³ / 9,109 × 10⁻³¹) = 4,19 × 10⁷ m·s⁻¹ : même résultat, plus rapidement.",
+        "<strong>6.</strong> v<sub>A</sub> = √(2 e U / m<sub>e</sub>) est proportionnelle à √U : pour doubler la vitesse, il faut multiplier U par 4, soit U = 20,0 kV.",
+        "<em>⚠ Erreur fréquente : écrire W = q × U<sub>AC</sub> avec q = −e et trouver une énergie cinétique négative. Le travail se calcule entre le point de départ et le point d'arrivée : W = q × U<sub>CA</sub>, positif ici.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Les dates de péremption imprimées au jet d'encre",
+      "contexte": [
+        "Doc. 1 — Principe. Sur les chaînes d'emballage, les dates de péremption sont souvent imprimées par une imprimante à jet d'encre continu. Une buse émet des gouttes d'encre, chargées électriquement à la sortie de la buse. Chaque goutte passe entre deux plaques horizontales P₁ et P₂, où règne un champ électrique uniforme, puis vient frapper le support (étiquette, pot de yaourt). En changeant la charge des gouttes, on change le point d'impact et on « dessine » les caractères.",
+        "Doc. 2 — Données (valeurs fictives mais vraisemblables). Goutte : masse m = 1,1 × 10⁻¹⁰ kg ; charge q = −1,5 × 10⁻¹³ C ; vitesse en O : v<sub>0</sub> = 20,0 m·s⁻¹, horizontale. Plaques : tension U = 1,50 kV, distance d = 2,00 mm, longueur L = 1,20 cm ; la goutte entre en O, à égale distance des plaques. Le support est à la distance D = 1,50 cm de la sortie des plaques. Le mouvement est étudié dans le référentiel terrestre, supposé galiléen."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><defs><marker markerUnits=\"userSpaceOnUse\" id=\"fp\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"ft\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"fn\" markerWidth=\"10\" markerHeight=\"10\" refX=\"9\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker><marker markerUnits=\"userSpaceOnUse\" id=\"fn2\" markerWidth=\"10\" markerHeight=\"10\" refX=\"1\" refY=\"5\" orient=\"auto\"><path d=\"M10,0 L0,5 L10,10 z\" fill=\"#3a3a3a\"/></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"40\" y=\"242\" width=\"90\" height=\"36\" rx=\"4\" fill=\"#d9d2c5\" stroke=\"#3a3a3a\"/><text x=\"85\" y=\"265\" text-anchor=\"middle\" font-size=\"14\">buse</text><text x=\"85\" y=\"302\" text-anchor=\"middle\" font-size=\"14\">(gouttes</text><text x=\"85\" y=\"318\" text-anchor=\"middle\" font-size=\"14\">chargées)</text><rect x=\"170\" y=\"173.0\" width=\"192.0\" height=\"12\" fill=\"#B5523B\"/><rect x=\"170\" y=\"335.0\" width=\"192.0\" height=\"12\" fill=\"#1F4E5A\"/><text x=\"266.0\" y=\"165.0\" text-anchor=\"middle\">plaque P₁</text><text x=\"266.0\" y=\"369.0\" text-anchor=\"middle\">plaque P₂</text><line x1=\"170\" y1=\"260\" x2=\"642.0\" y2=\"260\" stroke=\"#3a3a3a\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" marker-end=\"url(#fn)\"/><text x=\"632.0\" y=\"284\" font-style=\"italic\">x</text><line x1=\"170\" y1=\"260\" x2=\"170\" y2=\"40\" stroke=\"#3a3a3a\" stroke-width=\"1.2\" marker-end=\"url(#fn)\"/><text x=\"152\" y=\"52\" font-style=\"italic\">y</text><text x=\"150\" y=\"282\" font-weight=\"bold\">O</text><polyline points=\"170.0,260.0 173.2,260.0 176.4,260.0 179.6,259.9 182.8,259.8 186.0,259.8 189.2,259.7 192.4,259.5 195.6,259.4 198.8,259.2 202.0,259.0 205.2,258.8 208.4,258.6 211.6,258.4 214.8,258.1 218.0,257.9 221.2,257.6 224.4,257.2 227.6,256.9 230.8,256.6 234.0,256.2 237.2,255.8 240.4,255.4 243.6,255.0 246.8,254.5 250.0,254.0 253.2,253.6 256.4,253.1 259.6,252.5 262.8,252.0 266.0,251.4 269.2,250.8 272.4,250.2 275.6,249.6 278.8,249.0 282.0,248.3 285.2,247.7 288.4,247.0 291.6,246.2 294.8,245.5 298.0,244.8 301.2,244.0 304.4,243.2 307.6,242.4 310.8,241.6 314.0,240.7 317.2,239.8 320.4,239.0 323.6,238.1 326.8,237.1 330.0,236.2 333.2,235.2 336.4,234.2 339.6,233.2 342.8,232.2 346.0,231.2 349.2,230.1 352.4,229.1 355.6,228.0 358.8,226.8 362.0,225.7 368.0,223.6 374.0,221.4 380.0,219.3 386.0,217.1 392.0,215.0 398.0,212.9 404.0,210.7 410.0,208.6 416.0,206.4 422.0,204.3 428.0,202.1 434.0,200.0 440.0,197.9 446.0,195.7 452.0,193.6 458.0,191.4 464.0,189.3 470.0,187.1 476.0,185.0 482.0,182.9 488.0,180.7 494.0,178.6 500.0,176.4 506.0,174.3 512.0,172.1 518.0,170.0 524.0,167.9 530.0,165.7 536.0,163.6 542.0,161.4 548.0,159.3 554.0,157.1 560.0,155.0 566.0,152.9 572.0,150.7 578.0,148.6 584.0,146.4 590.0,144.3 596.0,142.1 602.0,140.0\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.5\" stroke-dasharray=\"3 5\"/><circle cx=\"170.0\" cy=\"260.0\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"234.0\" cy=\"256.2\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"298.0\" cy=\"244.8\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"362.0\" cy=\"225.7\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"482.0\" cy=\"182.9\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"602.0\" cy=\"140.0\" r=\"5\" fill=\"#C8962E\"/><line x1=\"170\" y1=\"260\" x2=\"240\" y2=\"260\" stroke=\"#1F4E5A\" stroke-width=\"3\" marker-end=\"url(#fp)\"/><text x=\"198\" y=\"292\" fill=\"#1F4E5A\" font-size=\"18\" font-style=\"italic\" font-weight=\"bold\">v<tspan font-size=\"12\" dy=\"5\" font-style=\"normal\">0</tspan></text><line x1=\"198\" y1=\"276\" x2=\"207.9\" y2=\"276\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><path d=\"M212.9,276 l-6,-3.5 v7 z\" fill=\"#1F4E5A\"/><text x=\"358.0\" y=\"213.71428571428572\" font-weight=\"bold\">S</text><rect x=\"602.0\" y=\"60\" width=\"14\" height=\"370\" fill=\"#d9d2c5\" stroke=\"#3a3a3a\"/><text x=\"624.0\" y=\"80\" font-size=\"14\">support</text><text x=\"580.0\" y=\"130.0\" font-weight=\"bold\">I</text><line x1=\"170\" y1=\"432\" x2=\"362.0\" y2=\"432\" stroke=\"#3a3a3a\" stroke-width=\"1.3\" marker-start=\"url(#fn2)\" marker-end=\"url(#fn)\"/><text x=\"266.0\" y=\"424\" text-anchor=\"middle\" font-style=\"italic\">L</text><line x1=\"362.0\" y1=\"432\" x2=\"602.0\" y2=\"432\" stroke=\"#3a3a3a\" stroke-width=\"1.3\" marker-start=\"url(#fn2)\" marker-end=\"url(#fn)\"/><text x=\"482.0\" y=\"424\" text-anchor=\"middle\" font-style=\"italic\">D</text><line x1=\"362.0\" y1=\"349.0\" x2=\"362.0\" y2=\"438\" stroke=\"#3a3a3a\" stroke-width=\"0.8\" stroke-dasharray=\"3 3\"/><line x1=\"145\" y1=\"185.0\" x2=\"145\" y2=\"335.0\" stroke=\"#3a3a3a\" stroke-width=\"1.3\" marker-start=\"url(#fn2)\" marker-end=\"url(#fn)\"/><text x=\"139\" y=\"230\" text-anchor=\"end\" font-style=\"italic\">d</text><line x1=\"662.0\" y1=\"260\" x2=\"662.0\" y2=\"140.0\" stroke=\"#B5523B\" stroke-width=\"1.5\" marker-end=\"url(#ft)\"/><line x1=\"602.0\" y1=\"140.0\" x2=\"668.0\" y2=\"140.0\" stroke=\"#B5523B\" stroke-width=\"0.8\" stroke-dasharray=\"3 3\"/><text x=\"670.0\" y=\"206.0\" fill=\"#B5523B\" font-style=\"italic\">Y</text><text x=\"380\" y=\"462\" text-anchor=\"middle\" font-size=\"14\">Schéma non à l’échelle (déviation verticale exagérée)</text></svg>",
+      "code": [
+        "q, m = -1.5e-13, 1.1e-10   # charge (C) et masse (kg) de la goutte",
+        "Ey = -7.5e5                # coordonnée du champ sur Oy (V/m)",
+        "v0, L = 20.0, 1.2e-2       # vitesse initiale (m/s), longueur des plaques (m)",
+        "dt = 1e-6                  # pas de temps (s)",
+        "x, y = 0, 0                # position initiale (m)",
+        "vx, vy = v0, 0             # vitesse initiale (m/s)",
+        "ay = ...                   # à compléter",
+        "while x < L:",
+        "    vy = ...               # à compléter",
+        "    x = x + vx * dt",
+        "    y = ...                # à compléter",
+        "print(\"y à la sortie des plaques (m) :\", y)"
+      ],
+      "contexte2": [
+        "Doc. 3 — Script Python (incomplet) qui calcule pas à pas la position de la goutte entre les plaques, en utilisant la relation approchée Δv ≈ (ΣF / m) × Δt entre deux instants voisins. Ey est la coordonnée du vecteur champ E sur l'axe Oy."
+      ],
+      "questions": [
+        {
+          "texte": "Compare le poids de la goutte et la force électrique qu'elle subit entre les plaques. Quelle hypothèse peut-on faire ?",
+          "aides": [
+            "Calcule d'abord E = U / d, puis F = |q| × E, et compare à P = m × g.",
+            "Fais le rapport F / P : un facteur 100 permet de négliger la plus petite force."
+          ]
+        },
+        {
+          "texte": "D'après le doc. 2 (schéma), la goutte est déviée vers la plaque P₁. Déduis-en le sens du vecteur champ E et la plaque chargée positivement.",
+          "aides": []
+        },
+        {
+          "texte": "En appliquant la deuxième loi de Newton, établis les coordonnées du vecteur accélération, puis les équations horaires x(t) et y(t) du mouvement de la goutte entre les plaques.",
+          "aides": [
+            "La seule force retenue est la force électrique : a(G) = (q / m) × E.",
+            "Le vecteur champ n'a pas de composante horizontale : a<sub>x</sub> = 0. Intègre ensuite comme pour une chute libre, avec un vecteur vitesse initiale horizontal."
+          ]
+        },
+        {
+          "texte": "Établis l'équation de la trajectoire entre les plaques. Calcule l'ordonnée y<sub>S</sub> du point de sortie S et vérifie que la goutte ne touche pas la plaque P₁.",
+          "aides": []
+        },
+        {
+          "texte": "Après la sortie des plaques, quel est le mouvement de la goutte ? Justifie, puis calcule la déviation Y du point d'impact I sur le support.",
+          "aides": [
+            "Hors des plaques, quelle force reste-t-il ? Que dit le principe d'inertie ?",
+            "La goutte part en ligne droite depuis S avec la direction du vecteur vitesse en S : sur la distance D, elle monte de D × tan β, avec tan β = v<sub>y</sub> / v<sub>x</sub> en S."
+          ]
+        },
+        {
+          "texte": "Complète les trois lignes « ... » du script du doc. 3. Le script affiche y ≈ 1,85 × 10⁻⁴ m : compare à la question 4.",
+          "aides": [
+            "Dans la boucle, on applique Δv ≈ a × Δt sur l'axe Oy, puis Δy ≈ v<sub>y</sub> × Δt.",
+            "Sur l'axe Oy : a<sub>y</sub> = q × E<sub>y</sub> / m (E<sub>y</sub> est négatif ici, q aussi)."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : dans l'air, la goutte (rayon r = 30 µm) subit aussi une force de frottement de valeur f = 6π η r v (loi de Stokes, admise ; η = 1,8 × 10⁻⁵ Pa·s). Calcule f à l'entrée des plaques et compare-la à F. Estime la diminution de la vitesse horizontale pendant la traversée des plaques, Δv<sub>x</sub> ≈ (f / m) × t<sub>S</sub>, et discute la validité du modèle.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> P = m g = 1,1 × 10⁻¹⁰ × 9,81 = 1,1 × 10⁻⁹ N. E = U / d = 1,50 × 10³ / 2,00 × 10⁻³ = 7,50 × 10⁵ V·m⁻¹ et F = |q| × E = 1,5 × 10⁻¹³ × 7,50 × 10⁵ = 1,1 × 10⁻⁷ N. F / P ≈ 1,0 × 10² : on néglige le poids devant la force électrique.",
+        "<strong>2.</strong> La force électrique est dirigée vers P₁ (vers le haut). Comme q &lt; 0, le vecteur champ E est de sens opposé : vertical, vers le bas (de P₁ vers P₂). Le champ va de la plaque positive vers la plaque négative : P₁ est positive.",
+        "<strong>3.</strong> Système : {goutte}. ΣF(ext) = F = q × E = m × a(G), d'où a(G) = (q / m) × E. Coordonnées : a<sub>x</sub> = 0 ; a<sub>y</sub> = |q| E / m = 1,5 × 10⁻¹³ × 7,50 × 10⁵ / 1,1 × 10⁻¹⁰ = 1,0 × 10³ m·s⁻². Avec v<sub>x</sub>(0) = v<sub>0</sub>, v<sub>y</sub>(0) = 0 et G en O à t = 0 : v<sub>x</sub>(t) = v<sub>0</sub> ; v<sub>y</sub>(t) = a<sub>y</sub> t ; x(t) = v<sub>0</sub> t ; y(t) = ½ a<sub>y</sub> t².",
+        "<strong>4.</strong> t = x / v<sub>0</sub>, d'où y(x) = |q| E x² / (2 m v<sub>0</sub>²) : arc de parabole ; numériquement y = 1,3 x² (x et y en m). Sortie : x = L, t<sub>S</sub> = L / v<sub>0</sub> = 6,0 × 10⁻⁴ s et y<sub>S</sub> = |q| E L² / (2 m v<sub>0</sub>²) = 1,8 × 10⁻⁴ m = 0,18 mm. Or la plaque P₁ est à d / 2 = 1,00 mm de l'axe : la goutte ne la touche pas.",
+        "<strong>5.</strong> Après S, la goutte n'est soumise à aucune force (poids négligé) : d'après le principe d'inertie, son mouvement est rectiligne uniforme, dans la direction du vecteur vitesse en S. En S : v<sub>x</sub> = 20,0 m·s⁻¹ et v<sub>y</sub> = a<sub>y</sub> t<sub>S</sub> = 0,61 m·s⁻¹, donc tan β = v<sub>y</sub> / v<sub>x</sub> = 3,1 × 10⁻² (β : angle avec l'horizontale). Y = y<sub>S</sub> + D × tan β = 1,8 × 10⁻⁴ + 1,50 × 10⁻² × 3,07 × 10⁻² = 6,4 × 10⁻⁴ m ≈ 0,64 mm.",
+        "<strong>6.</strong> ay = q * Ey / m ;  vy = vy + ay * dt ;  y = y + vy * dt. Le script donne 1,85 × 10⁻⁴ m, très proche de y<sub>S</sub> = 1,84 × 10⁻⁴ m (calcul non arrondi) : la petite différence vient de l'approximation pas à pas ; elle diminue si on réduit dt.",
+        "<strong>7.</strong> Pour aller plus loin : f = 6π × 1,8 × 10⁻⁵ × 30 × 10⁻⁶ × 20,0 = 2,0 × 10⁻⁷ N, du même ordre que F (environ 1,8 F) : la force de frottement n'est pas négligeable en valeur ! Mais elle agit surtout selon Ox et la traversée est très brève : Δv<sub>x</sub> ≈ (2,0 × 10⁻⁷ / 1,1 × 10⁻¹⁰) × 6,0 × 10⁻⁴ ≈ 1,1 m·s⁻¹, soit environ 6 % de v<sub>0</sub>. Le modèle sans frottement donne le bon ordre de grandeur, mais pas une précision meilleure que quelques pour cent ; en pratique, l'imprimante est réglée expérimentalement.",
+        "<em>⚠ Erreur fréquente : écrire y(t) = −½ a t² par habitude de la chute libre ; ici l'accélération est dirigée vers le haut, le signe dépend du signe de q et du sens du champ.</em>",
+        "<em>⚠ Erreur fréquente : continuer à utiliser la parabole après la sortie des plaques ; hors du champ, la trajectoire est une droite.</em>"
+      ]
+    }
+  ]
+}

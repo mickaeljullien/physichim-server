@@ -1,0 +1,726 @@
+{
+  "id": 19,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Poussée d'Archimède",
+        "icon": "🛟",
+        "content": [
+          {
+            "type": "def",
+            "term": "Poussée d'Archimède",
+            "text": "Tout corps immergé (totalement ou partiellement) dans un fluide (liquide ou gaz) subit de la part de celui-ci une force verticale, dirigée vers le haut, dont la valeur est égale au poids du volume de fluide déplacé."
+          },
+          {
+            "type": "formula",
+            "label": "Poussée d'Archimède",
+            "text": "F = ρ_fluide × V_immergé × g"
+          },
+          {
+            "type": "text",
+            "text": "Un corps flotte si la poussée d'Archimède peut équilibrer son poids, ce qui suppose une masse volumique moyenne du corps inférieure à celle du fluide : ρ_corps < ρ_fluide."
+          }
+        ]
+      },
+      {
+        "title": "2. Modèle de la particule fluide et débit volumique",
+        "icon": "🌊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Particule de fluide",
+            "text": "Volume mésoscopique de fluide : suffisamment grand pour contenir un très grand nombre de molécules (on peut y définir des grandeurs moyennes comme la pression ou la vitesse), mais suffisamment petit devant l'échelle de l'écoulement pour être considéré comme ponctuel."
+          },
+          {
+            "type": "def",
+            "term": "Écoulement stationnaire (permanent)",
+            "text": "Écoulement pour lequel le champ des vitesses en chaque point de l'espace ne dépend pas du temps (les lignes de courant sont fixes)."
+          },
+          {
+            "type": "def",
+            "term": "Débit volumique Dv",
+            "text": "Volume de fluide traversant une section S par unité de temps : Dv = V / Δt, en m³·s⁻¹. Il s'exprime aussi Dv = S·v, où v est la vitesse moyenne du fluide à travers la section S."
+          }
+        ]
+      },
+      {
+        "title": "3. Conservation du débit volumique",
+        "icon": "🔁",
+        "content": [
+          {
+            "type": "def",
+            "term": "Équation de continuité",
+            "text": "Pour un fluide incompressible en écoulement stationnaire dans une conduite sans fuite ni apport, le débit volumique se conserve tout au long de la conduite."
+          },
+          {
+            "type": "formula",
+            "label": "Conservation du débit",
+            "text": "Dv = S₁·v₁ = S₂·v₂ = constante"
+          },
+          {
+            "type": "text",
+            "text": "Conséquence directe : là où la section diminue, la vitesse du fluide augmente (et inversement)."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 200\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"vArrow19a\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#2F7D75\"/></marker><marker id=\"vArrow19b\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><path d=\"M30,50 L170,50 L230,85 L250,85 L310,50 L450,50\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"2\"/><path d=\"M30,150 L170,150 L230,115 L250,115 L310,150 L450,150\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"2\"/><text x=\"80\" y=\"38\" font-size=\"12\" fill=\"#5C6B60\">S₁</text><text x=\"216\" y=\"175\" font-size=\"12\" fill=\"#5C6B60\">S₂</text><line x1=\"65\" y1=\"100\" x2=\"125\" y2=\"100\" stroke=\"#2F7D75\" stroke-width=\"2.5\" marker-end=\"url(#vArrow19a)\"/><text x=\"78\" y=\"90\" font-size=\"12\" fill=\"#2F7D75\" font-weight=\"600\">v₁</text><line x1=\"228\" y1=\"100\" x2=\"298\" y2=\"100\" stroke=\"#C0472F\" stroke-width=\"2.5\" marker-end=\"url(#vArrow19b)\"/><text x=\"248\" y=\"90\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">v₂ &gt; v₁</text><text x=\"35\" y=\"22\" font-size=\"11\" fill=\"#5C6B60\">P₁ (élevée)</text><text x=\"195\" y=\"22\" font-size=\"11\" fill=\"#5C6B60\">P₂ &lt; P₁ (dépression)</text></svg>",
+            "caption": "Effet Venturi : dans la section resserrée S₂ < S₁, la conservation du débit impose v₂ > v₁, et la relation de Bernoulli impose alors P₂ < P₁ — d'où la dépression caractéristique au niveau de l'étranglement."
+          }
+        ]
+      },
+      {
+        "title": "4. Relation de Bernoulli",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Relation de Bernoulli",
+            "text": "Pour un fluide parfait (non visqueux), incompressible, en écoulement stationnaire, sans échange de travail autre que les forces de pression et de pesanteur, la quantité suivante se conserve le long d'une ligne de courant."
+          },
+          {
+            "type": "formula",
+            "label": "Relation de Bernoulli",
+            "text": "P + ½·ρ·v² + ρ·g·z = constante"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Symbole",
+              "Unité"
+            ],
+            "rows": [
+              [
+                "Pression",
+                "P",
+                "Pa"
+              ],
+              [
+                "Masse volumique",
+                "ρ",
+                "kg·m⁻³"
+              ],
+              [
+                "Vitesse",
+                "v",
+                "m·s⁻¹"
+              ],
+              [
+                "Accélération de la pesanteur",
+                "g",
+                "m·s⁻²"
+              ],
+              [
+                "Altitude",
+                "z",
+                "m"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<strong>Exemple chiffré</strong> : de l'eau (ρ = 1000 kg·m⁻³) s'écoule horizontalement (z₁ = z₂) dans une canalisation. Au point 1 : section S₁ = 8,0 cm², vitesse v₁ = 1,0 m·s⁻¹, pression P₁ = 1,20×10⁵ Pa. Au point 2, la section se réduit à S₂ = 2,0 cm²."
+          },
+          {
+            "type": "formula",
+            "label": "Étape 1 — conservation du débit",
+            "text": "v₂ = v₁ × S₁/S₂ = 1,0 × 8,0/2,0 = 4,0 m·s⁻¹"
+          },
+          {
+            "type": "formula",
+            "label": "Étape 2 — relation de Bernoulli (z₁ = z₂)",
+            "text": "P₂ = P₁ + ½·ρ·(v₁² − v₂²)\nP₂ = 1,20×10⁵ + 0,5×1000×(1,0² − 4,0²)\nP₂ = 1,20×10⁵ − 7,5×10³ ≈ 1,13×10⁵ Pa"
+          }
+        ]
+      },
+      {
+        "title": "5. Effet Venturi",
+        "icon": "🌀",
+        "content": [
+          {
+            "type": "def",
+            "term": "Effet Venturi",
+            "text": "Conséquence directe de la conservation du débit et de la relation de Bernoulli : dans un rétrécissement de section (à altitude constante), la vitesse du fluide augmente donc la pression diminue (dépression), comme dans l'exemple chiffré ci-dessus."
+          },
+          {
+            "type": "text",
+            "text": "Applications : trompe à eau (aspiration par dépression), carburateur, pulvérisateur, portance d'une aile d'avion, débitmètre à effet Venturi (mesure indirecte du débit à partir de la différence de pression mesurée entre une section large et une section étroite)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La poussée d'Archimède exercée sur un corps totalement immergé a pour valeur :",
+      "opts": [
+        "le poids du corps",
+        "le poids du volume de fluide déplacé",
+        "le poids de tout le fluide contenu dans le récipient",
+        "une valeur qui augmente avec la profondeur d'immersion"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "archimede-poids-corps",
+          "texte": "Confondre poussée d'Archimède et poids du corps : ils ne sont égaux que si le corps flotte"
+        },
+        null,
+        {
+          "code": "archimede-tout-le-fluide",
+          "texte": "Prendre tout le fluide du récipient au lieu du seul volume déplacé"
+        },
+        {
+          "code": "archimede-profondeur",
+          "texte": "Croire que la poussée augmente avec la profondeur : pour un corps totalement immergé, elle ne dépend que du volume déplacé"
+        }
+      ],
+      "exp": "F = ρ(fluide) × V(immergé) × g : poids du fluide déplacé. Attention : il ne dépend ni de la masse du corps ni de la profondeur une fois le corps totalement immergé."
+    },
+    {
+      "q": "Un objet en fer (ρ = 7,9 × 10³ kg·m⁻³) de volume 2,0 L est totalement immergé dans l'eau (ρ = 1,0 × 10³ kg·m⁻³, g = 9,8 N·kg⁻¹). La poussée d'Archimède vaut environ :",
+      "opts": [
+        "2,0 × 10⁴ N",
+        "2,0 N",
+        "1,5 × 10² N",
+        "20 N"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "conversion-l-m3",
+          "texte": "Oublier de convertir le volume en m³ : 2,0 L = 2,0 × 10⁻³ m³"
+        },
+        {
+          "code": "oubli-g",
+          "texte": "Oublier g : ρ × V donne une masse, pas une force"
+        },
+        {
+          "code": "masse-volumique-corps-vs-fluide",
+          "texte": "Utiliser la masse volumique du corps au lieu de celle du fluide"
+        },
+        null
+      ],
+      "exp": "F = ρ(eau) × V × g = 1,0 × 10³ × 2,0 × 10⁻³ × 9,8 ≈ 20 N. Attention : c'est la masse volumique du fluide qui intervient, pas celle du corps."
+    },
+    {
+      "q": "Un corps plein lâché dans un liquide flotte si :",
+      "opts": [
+        "sa masse volumique est inférieure à celle du liquide",
+        "sa masse volumique est supérieure à celle du liquide",
+        "sa masse est faible, quel que soit son volume",
+        "il est de forme plate"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "flottaison-inversee",
+          "texte": "Inverser la condition : un corps plus dense que le liquide coule"
+        },
+        {
+          "code": "masse-vs-masse-volumique",
+          "texte": "Confondre masse et masse volumique : un gros navire très lourd flotte"
+        },
+        {
+          "code": "flottaison-forme",
+          "texte": "Croire que la forme décide de la flottaison d'un corps plein : seule compte la masse volumique moyenne"
+        }
+      ],
+      "exp": "Le corps flotte si la poussée d'Archimède peut équilibrer son poids, c'est-à-dire si ρ(corps) < ρ(liquide). Attention : c'est la masse volumique qui compte, pas la masse."
+    },
+    {
+      "q": "De l'eau s'écoule à la vitesse v = 3,0 m·s⁻¹ dans un tuyau de section S = 2,0 cm². Le débit volumique vaut :",
+      "opts": [
+        "6,0 m³·s⁻¹",
+        "6,0 × 10⁻² m³·s⁻¹",
+        "6,0 × 10⁻⁴ m³·s⁻¹",
+        "1,5 × 10⁴ m³·s⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-cm2-m2",
+          "texte": "Oublier de convertir la section : 2,0 cm² = 2,0 × 10⁻⁴ m²"
+        },
+        {
+          "code": "conversion-cm2-puissance",
+          "texte": "Convertir les cm² comme des cm : 1 cm² = 10⁻⁴ m², et non 10⁻² m²"
+        },
+        null,
+        {
+          "code": "debit-rapport",
+          "texte": "Diviser v par S au lieu de multiplier : Dv = S × v"
+        }
+      ],
+      "exp": "Dv = S × v = 2,0 × 10⁻⁴ × 3,0 = 6,0 × 10⁻⁴ m³·s⁻¹ (0,6 L par seconde). Attention : 1 cm² = 10⁻⁴ m²."
+    },
+    {
+      "q": "Un fluide incompressible s'écoule dans une conduite dont la section diminue. Dans la partie étroite :",
+      "opts": [
+        "la vitesse augmente",
+        "la vitesse diminue, le passage étant plus difficile",
+        "la vitesse ne change pas",
+        "le débit volumique augmente"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "retrecissement-ralentit",
+          "texte": "Croire qu'un rétrécissement ralentit le fluide : le débit se conserve, donc v augmente"
+        },
+        {
+          "code": "vitesse-independante-section",
+          "texte": "Oublier la conservation du débit : S × v reste constant"
+        },
+        {
+          "code": "debit-vs-vitesse",
+          "texte": "Confondre débit et vitesse : c'est le débit qui reste constant"
+        }
+      ],
+      "exp": "Dv = S × v se conserve : si S diminue, v augmente (comme quand on pince un tuyau d'arrosage). Attention : le débit, lui, ne change pas."
+    },
+    {
+      "q": "Une conduite passe d'un diamètre d₁ = 4,0 cm à un diamètre d₂ = 2,0 cm. Si l'eau entre à v₁ = 1,0 m·s⁻¹, elle sort à :",
+      "opts": [
+        "2,0 m·s⁻¹",
+        "0,25 m·s⁻¹",
+        "4,0 m·s⁻¹",
+        "0,50 m·s⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "diametre-vs-section",
+          "texte": "Utiliser le rapport des diamètres au lieu de celui des sections : S est proportionnelle à d²"
+        },
+        {
+          "code": "continuite-inverse",
+          "texte": "Inverser le rapport : v₂ = v₁ × S₁ / S₂, plus grande que v₁"
+        },
+        null,
+        {
+          "code": "diametre-et-rapport-inverses",
+          "texte": "Utiliser les diamètres et inverser le rapport"
+        }
+      ],
+      "exp": "S ∝ d² : S₁ / S₂ = (4,0 / 2,0)² = 4, donc v₂ = v₁ × S₁ / S₂ = 4,0 m·s⁻¹. Attention : diviser le diamètre par 2 divise la section par 4."
+    },
+    {
+      "q": "De l'eau (ρ = 1,0 × 10³ kg·m⁻³) s'écoule horizontalement : P₁ = 1,20 × 10⁵ Pa, v₁ = 1,0 m·s⁻¹ et, dans le rétrécissement, v₂ = 4,0 m·s⁻¹. D'après la relation de Bernoulli, P₂ vaut environ :",
+      "opts": [
+        "1,28 × 10⁵ Pa",
+        "1,20 × 10⁵ Pa",
+        "1,13 × 10⁵ Pa",
+        "1,19 × 10⁵ Pa"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "bernoulli-signe",
+          "texte": "Se tromper de signe : là où la vitesse augmente, la pression diminue"
+        },
+        {
+          "code": "pression-independante-vitesse",
+          "texte": "Croire que la pression ne change pas dans une conduite horizontale"
+        },
+        null,
+        {
+          "code": "oubli-carre-vitesse",
+          "texte": "Oublier de mettre les vitesses au carré : 500 × (1,0 − 4,0)"
+        }
+      ],
+      "exp": "P₂ = P₁ + ½ ρ (v₁² − v₂²) = 1,20 × 10⁵ + 500 × (1,0 − 16) ≈ 1,13 × 10⁵ Pa. Attention : les vitesses sont au carré, et la pression baisse là où le fluide accélère."
+    },
+    {
+      "q": "L'effet Venturi désigne, dans un rétrécissement de conduite :",
+      "opts": [
+        "une surpression, le fluide étant comprimé",
+        "une dépression, liée à l'augmentation de la vitesse",
+        "une diminution du débit",
+        "une diminution de la vitesse"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "venturi-surpression",
+          "texte": "Croire que le fluide est « comprimé » dans le rétrécissement : sa pression diminue"
+        },
+        null,
+        {
+          "code": "debit-vs-vitesse",
+          "texte": "Confondre débit et vitesse : le débit se conserve"
+        },
+        {
+          "code": "retrecissement-ralentit",
+          "texte": "Croire qu'un rétrécissement ralentit le fluide : le débit se conserve, donc v augmente"
+        }
+      ],
+      "exp": "Dans le rétrécissement, v augmente (conservation du débit), donc P diminue (Bernoulli) : c'est l'effet Venturi. Attention : l'intuition « ça serre donc ça presse » est fausse."
+    },
+    {
+      "q": "La relation de Bernoulli P + ½ ρ v² + ρ g z = constante s'applique à :",
+      "opts": [
+        "un fluide incompressible et non visqueux, en écoulement stationnaire",
+        "tout fluide, même très visqueux comme le miel",
+        "uniquement un fluide au repos",
+        "uniquement les gaz"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "bernoulli-hors-domaine",
+          "texte": "Utiliser la relation hors de son domaine de validité : la viscosité dissipe de l'énergie"
+        },
+        {
+          "code": "bernoulli-vs-statique",
+          "texte": "Confondre avec la loi de la statique des fluides : Bernoulli décrit un écoulement"
+        },
+        {
+          "code": "bernoulli-gaz-seulement",
+          "texte": "Croire qu'elle ne vaut que pour les gaz : elle suppose au contraire un fluide incompressible"
+        }
+      ],
+      "exp": "Fluide parfait (non visqueux), incompressible, écoulement stationnaire, le long d'une ligne de courant. Attention : pour un fluide au repos (v = 0), on retrouve la loi de la statique."
+    },
+    {
+      "q": "Un débitmètre à effet Venturi détermine le débit d'une canalisation à partir de :",
+      "opts": [
+        "la différence de pression entre une section large et une section étroite",
+        "la pression dans la section étroite, qui augmente avec le débit",
+        "la température du fluide, qui augmente avec le débit",
+        "la masse de fluide contenue dans la conduite"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "venturi-surpression",
+          "texte": "Croire que la pression augmente dans la section étroite : elle diminue"
+        },
+        {
+          "code": "debit-temperature",
+          "texte": "Croire que le débit se mesure par l'échauffement du fluide"
+        },
+        {
+          "code": "debit-vs-masse",
+          "texte": "Confondre débit (volume par seconde) et quantité de fluide contenue"
+        }
+      ],
+      "exp": "La différence P₁ − P₂, avec Bernoulli et la conservation du débit, donne les vitesses donc le débit. Attention : plus le débit est grand, plus la dépression dans la partie étroite est forte."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2025",
+      "title": "Des écoulements sanguins — relation de Bernoulli",
+      "session": "Nouvelle-Calédonie · Jour 1",
+      "link": "https://www.labolycee.org/des-ecoulements-sanguins"
+    },
+    {
+      "year": "2025",
+      "title": "Cargo dirigeable — Archimède, Bernoulli, débit volumique",
+      "session": "Amérique du Sud · Jour 2",
+      "link": "https://www.labolycee.org/cargo-dirigeable"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Vrai ou faux au bord de la piscine",
+      "contexte": [
+        "Pendant la séance de natation, Yanis se pose des questions sur l'eau qui le porte et sur l'eau qui circule dans les tuyaux du bassin. Aide-le à trier le vrai du faux."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. La poussée d'Archimède exercée sur un objet totalement immergé dépend de la masse de cet objet.<br>b. Une balle de ping-pong et une bille d'acier de même volume, maintenues totalement immergées dans l'eau, subissent la même poussée d'Archimède.<br>c. Une particule de fluide est une molécule d'eau.<br>d. Dans un écoulement stationnaire, la vitesse du fluide est la même en tout point de la conduite.<br>e. Quand de l'eau accélère dans un rétrécissement d'une conduite horizontale, sa pression augmente, car l'eau y est « comprimée ».",
+          "aides": []
+        },
+        {
+          "texte": "Un cube est totalement immergé dans l'eau, face supérieure et face inférieure horizontales. En comparant la pression de l'eau sur ces deux faces, explique pourquoi la force totale exercée par l'eau sur le cube est verticale et dirigée vers le haut.",
+          "aides": [
+            "Rappelle-toi la loi de la statique des fluides (données) : où la pression est-elle la plus grande, en haut ou en bas du cube ?",
+            "Une pression P exerce sur une face d'aire S une force pressante de valeur P × S, perpendiculaire à la face et dirigée vers l'objet. Compare les forces sur la face du haut et sur la face du bas."
+          ]
+        },
+        {
+          "texte": "Un glaçon (ρ<sub>glace</sub> = 917 kg·m⁻³) flotte dans un verre d'eau. Montre que la fraction de son volume qui est immergée vaut ρ<sub>glace</sub> / ρ<sub>eau</sub>, puis calcule-la en pourcentage.",
+          "aides": [
+            "Le glaçon flotte immobile : quelles sont les deux forces qui se compensent ?",
+            "Écris le poids avec la masse volumique de la glace et le volume total V ; écris la poussée avec la masse volumique de l'eau et le volume immergé. Puis simplifie par g."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : F = ρ<sub>fluide</sub> × V<sub>immergé</sub> × g ne dépend que du fluide et du volume immergé, pas de la masse de l'objet.",
+        "b. VRAI : même volume immergé dans le même fluide, donc même poussée (environ 0,3 N pour une balle de 4,0 cm de diamètre). C'est le poids qui diffère : la balle remonte, la bille coule.",
+        "c. FAUX : une particule de fluide est un volume mésoscopique qui contient un très grand nombre de molécules (on peut y définir une pression, une vitesse moyenne), tout en restant très petit devant la taille de l'écoulement.",
+        "d. FAUX : « stationnaire » signifie que la vitesse en un point donné ne dépend pas du temps. Elle peut varier d'un point à l'autre (elle augmente par exemple dans un rétrécissement).",
+        "e. FAUX : l'eau est incompressible. Dans le rétrécissement la vitesse augmente (conservation du débit), donc d'après la relation de Bernoulli la pression diminue : c'est l'effet Venturi.",
+        "<strong>2.</strong> La pression dans l'eau augmente avec la profondeur (P<sub>B</sub> − P<sub>A</sub> = ρ·g·(z<sub>A</sub> − z<sub>B</sub>)) : la face inférieure, plus profonde, subit une pression plus grande que la face supérieure. Les deux faces ont la même aire, donc la force pressante vers le haut (sur la face du bas) est plus grande que la force pressante vers le bas (sur la face du haut). Sur les faces latérales, les forces pressantes se compensent deux à deux. La résultante est donc verticale, vers le haut : c'est la poussée d'Archimède.",
+        "<strong>3.</strong> Le glaçon flotte, il est à l'équilibre : son poids est compensé par la poussée d'Archimède. m·g = ρ<sub>eau</sub> × V<sub>immergé</sub> × g, avec m = ρ<sub>glace</sub> × V. Donc ρ<sub>glace</sub> × V = ρ<sub>eau</sub> × V<sub>immergé</sub>, soit V<sub>immergé</sub> / V = ρ<sub>glace</sub> / ρ<sub>eau</sub> = 917 / 1000 = 0,917 : 91,7 % du volume est immergé (seulement 8,3 % dépasse).",
+        "<em>⚠ Erreur fréquente : utiliser le volume total V au lieu du volume immergé dans l'expression de la poussée pour un objet qui flotte.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le tuyau d'arrosage et le pouce",
+      "contexte": [
+        "Pour arroser le potager, Inès remplit d'abord un seau de 10,0 L avec le tuyau d'arrosage : il faut 25,0 s. Le tuyau a un diamètre intérieur d = 15,0 mm.",
+        "Elle pose ensuite son pouce sur l'extrémité du tuyau : la section de sortie de l'eau n'est plus que S' = 0,40 cm², et le jet porte beaucoup plus loin. On suppose que le débit ne change pas et que l'eau est un fluide incompressible."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule le débit volumique D<sub>v</sub> de l'eau, en L·s⁻¹ puis en m³·s⁻¹.",
+          "aides": [
+            "Le débit volumique est le volume écoulé divisé par la durée.",
+            "Convertis ensuite : 1 L = 10⁻³ m³."
+          ]
+        },
+        {
+          "texte": "Calcule l'aire S de la section intérieure du tuyau, en m².",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en la vitesse moyenne v de l'eau dans le tuyau.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle loi permet de calculer la vitesse v' de l'eau à la sortie, sous le pouce ? Calcule v'.",
+          "aides": []
+        },
+        {
+          "texte": "Explique en une phrase pourquoi le jet porte plus loin quand on bouche partiellement le tuyau.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> D<sub>v</sub> = V / Δt = 10,0 / 25,0 = 0,400 L·s⁻¹ = 0,400 × 10⁻³ = 4,00 × 10⁻⁴ m³·s⁻¹.",
+        "<strong>2.</strong> S = π·d² / 4 = π × (15,0 × 10⁻³)² / 4 = 1,77 × 10⁻⁴ m² (1,77 cm²).",
+        "<strong>3.</strong> D<sub>v</sub> = S·v, donc v = D<sub>v</sub> / S = 4,00 × 10⁻⁴ / 1,77 × 10⁻⁴ = 2,26 m·s⁻¹.",
+        "<strong>4.</strong> Conservation du débit volumique (fluide incompressible, écoulement stationnaire, pas de fuite) : S·v = S'·v' = D<sub>v</sub>, donc v' = D<sub>v</sub> / S' = 4,00 × 10⁻⁴ / 0,40 × 10⁻⁴ = 10 m·s⁻¹ (environ 4,4 fois plus vite que dans le tuyau).",
+        "<strong>5.</strong> La section diminue, donc la vitesse de sortie augmente (même débit à travers une section plus petite) : l'eau sort plus vite et le jet va plus loin.",
+        "<em>⚠ Erreur fréquente : oublier les conversions. Le diamètre est en mm (15,0 × 10⁻³ m), la section S' en cm² (0,40 × 10⁻⁴ m²) et le volume en L (10⁻³ m³). Autre piège : utiliser le rayon à la place du diamètre dans S = π·d² / 4.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Peser un cylindre dans l'eau",
+      "contexte": [
+        "En TP, Mathis suspend un cylindre métallique à un dynamomètre : d'abord dans l'air (schéma a), puis totalement immergé dans un bécher d'eau (schéma b). L'index rouge indique la valeur lue.",
+        "Pour mesurer le volume du cylindre, il le plonge dans une éprouvette graduée contenant 150,0 mL d'eau : le niveau monte à 250,0 mL."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"210\" y=\"22\" text-anchor=\"middle\" font-weight=\"bold\">a. Cylindre dans l’air</text><rect x=\"120\" y=\"30\" width=\"180\" height=\"10\" fill=\"#8a7f70\"/><line x1=\"210\" y1=\"40\" x2=\"210\" y2=\"52\" stroke=\"#333\" stroke-width=\"2\"/><rect x=\"188\" y=\"52\" width=\"44\" height=\"268\" rx=\"6\" fill=\"#f4efe6\" stroke=\"#333\" stroke-width=\"1.5\"/><line x1=\"188\" y1=\"62.0\" x2=\"204\" y2=\"62.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"67.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"188\" y1=\"70.0\" x2=\"197\" y2=\"70.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"78.0\" x2=\"197\" y2=\"78.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"86.0\" x2=\"197\" y2=\"86.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"94.0\" x2=\"197\" y2=\"94.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"102.0\" x2=\"204\" y2=\"102.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"107.0\" text-anchor=\"end\" font-size=\"14\">0,5</text><line x1=\"188\" y1=\"110.0\" x2=\"197\" y2=\"110.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"118.0\" x2=\"197\" y2=\"118.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"126.0\" x2=\"197\" y2=\"126.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"134.0\" x2=\"197\" y2=\"134.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"142.0\" x2=\"204\" y2=\"142.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"147.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"188\" y1=\"150.0\" x2=\"197\" y2=\"150.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"158.0\" x2=\"197\" y2=\"158.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"166.0\" x2=\"197\" y2=\"166.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"174.0\" x2=\"197\" y2=\"174.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"182.0\" x2=\"204\" y2=\"182.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"187.0\" text-anchor=\"end\" font-size=\"14\">1,5</text><line x1=\"188\" y1=\"190.0\" x2=\"197\" y2=\"190.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"198.0\" x2=\"197\" y2=\"198.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"206.0\" x2=\"197\" y2=\"206.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"214.0\" x2=\"197\" y2=\"214.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"222.0\" x2=\"204\" y2=\"222.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"227.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"188\" y1=\"230.0\" x2=\"197\" y2=\"230.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"238.0\" x2=\"197\" y2=\"238.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"246.0\" x2=\"197\" y2=\"246.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"254.0\" x2=\"197\" y2=\"254.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"262.0\" x2=\"204\" y2=\"262.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"267.0\" text-anchor=\"end\" font-size=\"14\">2,5</text><line x1=\"188\" y1=\"270.0\" x2=\"197\" y2=\"270.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"278.0\" x2=\"197\" y2=\"278.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"286.0\" x2=\"197\" y2=\"286.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"294.0\" x2=\"197\" y2=\"294.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"188\" y1=\"302.0\" x2=\"204\" y2=\"302.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"182\" y=\"307.0\" text-anchor=\"end\" font-size=\"14\">3</text><text x=\"240\" y=\"67\" font-size=\"14\">N</text><line x1=\"188\" y1=\"278.0\" x2=\"232\" y2=\"278.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><polygon points=\"232,278.0 244,272.0 244,284.0\" fill=\"#B5523B\"/><line x1=\"210\" y1=\"278.0\" x2=\"210\" y2=\"56\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"210\" y1=\"320\" x2=\"210\" y2=\"360\" stroke=\"#333\" stroke-width=\"1.5\"/><rect x=\"188\" y=\"360\" width=\"44\" height=\"58\" rx=\"3\" fill=\"#b9bcc0\" stroke=\"#333\" stroke-width=\"1.5\"/><text x=\"540\" y=\"22\" text-anchor=\"middle\" font-weight=\"bold\">b. Cylindre immergé dans l’eau</text><rect x=\"450\" y=\"30\" width=\"180\" height=\"10\" fill=\"#8a7f70\"/><line x1=\"540\" y1=\"40\" x2=\"540\" y2=\"52\" stroke=\"#333\" stroke-width=\"2\"/><rect x=\"518\" y=\"52\" width=\"44\" height=\"268\" rx=\"6\" fill=\"#f4efe6\" stroke=\"#333\" stroke-width=\"1.5\"/><line x1=\"518\" y1=\"62.0\" x2=\"534\" y2=\"62.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"67.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"518\" y1=\"70.0\" x2=\"527\" y2=\"70.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"78.0\" x2=\"527\" y2=\"78.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"86.0\" x2=\"527\" y2=\"86.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"94.0\" x2=\"527\" y2=\"94.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"102.0\" x2=\"534\" y2=\"102.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"107.0\" text-anchor=\"end\" font-size=\"14\">0,5</text><line x1=\"518\" y1=\"110.0\" x2=\"527\" y2=\"110.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"118.0\" x2=\"527\" y2=\"118.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"126.0\" x2=\"527\" y2=\"126.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"134.0\" x2=\"527\" y2=\"134.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"142.0\" x2=\"534\" y2=\"142.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"147.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"518\" y1=\"150.0\" x2=\"527\" y2=\"150.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"158.0\" x2=\"527\" y2=\"158.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"166.0\" x2=\"527\" y2=\"166.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"174.0\" x2=\"527\" y2=\"174.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"182.0\" x2=\"534\" y2=\"182.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"187.0\" text-anchor=\"end\" font-size=\"14\">1,5</text><line x1=\"518\" y1=\"190.0\" x2=\"527\" y2=\"190.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"198.0\" x2=\"527\" y2=\"198.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"206.0\" x2=\"527\" y2=\"206.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"214.0\" x2=\"527\" y2=\"214.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"222.0\" x2=\"534\" y2=\"222.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"227.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"518\" y1=\"230.0\" x2=\"527\" y2=\"230.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"238.0\" x2=\"527\" y2=\"238.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"246.0\" x2=\"527\" y2=\"246.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"254.0\" x2=\"527\" y2=\"254.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"262.0\" x2=\"534\" y2=\"262.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"267.0\" text-anchor=\"end\" font-size=\"14\">2,5</text><line x1=\"518\" y1=\"270.0\" x2=\"527\" y2=\"270.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"278.0\" x2=\"527\" y2=\"278.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"286.0\" x2=\"527\" y2=\"286.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"294.0\" x2=\"527\" y2=\"294.0\" stroke=\"#333\" stroke-width=\"1\"/><line x1=\"518\" y1=\"302.0\" x2=\"534\" y2=\"302.0\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"512\" y=\"307.0\" text-anchor=\"end\" font-size=\"14\">3</text><text x=\"570\" y=\"67\" font-size=\"14\">N</text><line x1=\"518\" y1=\"198.0\" x2=\"562\" y2=\"198.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><polygon points=\"562,198.0 574,192.0 574,204.0\" fill=\"#B5523B\"/><line x1=\"540\" y1=\"198.0\" x2=\"540\" y2=\"56\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"540\" y1=\"320\" x2=\"540\" y2=\"360\" stroke=\"#333\" stroke-width=\"1.5\"/><rect x=\"465\" y=\"342\" width=\"150\" height=\"120\" fill=\"#cfe0e3\"/><line x1=\"465\" y1=\"342\" x2=\"615\" y2=\"342\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><polyline points=\"462,320 462,465 618,465 618,320\" fill=\"none\" stroke=\"#333\" stroke-width=\"2\"/><text x=\"626\" y=\"380\" font-size=\"14\" fill=\"#1F4E5A\">eau</text><rect x=\"518\" y=\"360\" width=\"44\" height=\"58\" rx=\"3\" fill=\"#b9bcc0\" stroke=\"#333\" stroke-width=\"1.5\"/></svg>",
+      "questions": [
+        {
+          "texte": "Lis la valeur indiquée par le dynamomètre dans l'air. Elle est égale au poids P du cylindre : calcule sa masse m.",
+          "aides": []
+        },
+        {
+          "texte": "Lis la valeur T indiquée dans l'eau. Fais le bilan des forces qui s'exercent sur le cylindre immergé à l'équilibre, puis déduis-en la valeur F de la poussée d'Archimède.",
+          "aides": [
+            "Trois forces s'exercent sur le cylindre dans l'eau. Deux sont dirigées vers le haut : lesquelles ?",
+            "Le cylindre est immobile : la somme des forces dirigées vers le haut est égale à la somme des forces dirigées vers le bas."
+          ]
+        },
+        {
+          "texte": "Calcule ρ<sub>eau</sub> × V × g, où V est le volume du cylindre. L'expression de la poussée d'Archimède est-elle vérifiée ?",
+          "aides": []
+        },
+        {
+          "texte": "Écris l'expression vectorielle de la poussée d'Archimède, en fonction de ρ<sub>eau</sub>, V et du vecteur g. Précise sa direction et son sens.",
+          "aides": []
+        },
+        {
+          "texte": "Mathis recommence dans une eau saturée en sel (ρ = 1,20 × 10³ kg·m⁻³). Prévois la nouvelle valeur indiquée par le dynamomètre.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lecture : P = 2,70 N. m = P / g = 2,70 / 9,81 = 0,275 kg.",
+        "<strong>2.</strong> Lecture : T = 1,70 N. Forces sur le cylindre immergé : son poids (vertical, vers le bas, valeur P), la force exercée par le dynamomètre (verticale, vers le haut, valeur T) et la poussée d'Archimède (verticale, vers le haut, valeur F). Le cylindre est immobile : les forces se compensent (principe d'inertie), donc T + F = P, soit F = P − T = 2,70 − 1,70 = 1,00 N.",
+        "<strong>3.</strong> V = 250,0 − 150,0 = 100,0 mL = 1,000 × 10⁻⁴ m³. ρ<sub>eau</sub> × V × g = 1,00 × 10³ × 1,000 × 10⁻⁴ × 9,81 = 0,981 N. Écart relatif avec la mesure : |1,00 − 0,981| / 0,981 = 1,9 %. Cet écart est petit devant la précision de lecture du dynamomètre (graduations de 0,1 N) : l'expression est vérifiée.",
+        "<strong>4.</strong> Vecteur F = − ρ<sub>eau</sub> × V × vecteur g : la poussée est verticale (même direction que le vecteur g) et dirigée vers le haut (sens opposé au vecteur g, d'où le signe −).",
+        "<strong>5.</strong> Nouvelle poussée : F' = ρ × V × g = 1,20 × 10³ × 1,000 × 10⁻⁴ × 9,81 = 1,18 N. Le dynamomètre indique T' = P − F' = 2,70 − 1,18 = 1,52 N (moins que dans l'eau douce : on « flotte mieux » dans l'eau salée).",
+        "<em>⚠ Erreur fréquente : croire que le dynamomètre dans l'eau mesure la poussée d'Archimède. Il mesure la force qu'il exerce (le « poids apparent ») ; la poussée est la différence P − T.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Vider le récupérateur d'eau de pluie",
+      "contexte": [
+        "Un récupérateur d'eau de pluie est une cuve ouverte à l'air libre. Sa surface libre (point A) a une aire S<sub>A</sub> = 0,60 m². Le robinet de vidange (point B), situé en bas de la cuve, a un diamètre intérieur de 15,0 mm. Quand le robinet est ouvert, l'eau sort à l'air libre.",
+        "Au début de l'expérience, la surface libre est à h = 1,10 m au-dessus du robinet. On modélise l'eau comme un fluide parfait et incompressible, et on suppose l'écoulement stationnaire pendant les quelques secondes de l'expérience."
+      ],
+      "questions": [
+        {
+          "texte": "Exprime la vitesse v<sub>A</sub> de descente de la surface libre en fonction de la vitesse v<sub>B</sub> de sortie de l'eau et des aires S<sub>A</sub> et S<sub>B</sub>. Justifie que v<sub>A</sub> est négligeable devant v<sub>B</sub>.",
+          "aides": [
+            "Le même volume d'eau traverse chaque seconde la surface libre et la sortie du robinet : quelle loi l'exprime ?",
+            "Calcule S<sub>B</sub> (disque de diamètre 15,0 mm) puis le rapport S<sub>A</sub> / S<sub>B</sub> : que peux-tu dire de v<sub>A</sub> par rapport à v<sub>B</sub> ?"
+          ]
+        },
+        {
+          "texte": "En appliquant la relation de Bernoulli entre A et B, montre que v<sub>B</sub> = √(2·g·h).",
+          "aides": [
+            "Écris la relation de Bernoulli entre A et B en entier, puis simplifie-la terme par terme.",
+            "Quelle est la pression en A ? en B ? Que vaut z<sub>A</sub> − z<sub>B</sub> ? Et le terme en v<sub>A</sub>² ?"
+          ]
+        },
+        {
+          "texte": "Calcule v<sub>B</sub>, puis le débit volumique D<sub>v</sub> au robinet (en m³·s⁻¹ et en L·s⁻¹).",
+          "aides": []
+        },
+        {
+          "texte": "Selon ce modèle, combien de temps faut-il pour remplir un arrosoir de 10,0 L ?",
+          "aides": []
+        },
+        {
+          "texte": "Au chronomètre, l'arrosoir se remplit en 17,0 s. Calcule le débit réel et compare-le au débit prévu. Quelle hypothèse du modèle est mise en défaut ?",
+          "aides": [
+            "Calcule le débit réel avec le volume de l'arrosoir et la durée mesurée, puis l'écart relatif |mesure − modèle| / modèle.",
+            "Le débit réel est plus faible : quelle hypothèse sur l'eau néglige les frottements ?"
+          ]
+        },
+        {
+          "texte": "En fin d'été, la surface libre n'est plus qu'à 0,30 m au-dessus du robinet. Selon le modèle, combien de temps faut-il alors pour remplir l'arrosoir ? Commente.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Conservation du débit volumique : S<sub>A</sub>·v<sub>A</sub> = S<sub>B</sub>·v<sub>B</sub>, donc v<sub>A</sub> = v<sub>B</sub> × S<sub>B</sub> / S<sub>A</sub>. S<sub>B</sub> = π × (15,0 × 10⁻³)² / 4 = 1,77 × 10⁻⁴ m², donc S<sub>A</sub> / S<sub>B</sub> = 0,60 / 1,77 × 10⁻⁴ ≈ 3,4 × 10³ : la surface libre descend environ 3 400 fois moins vite que l'eau ne sort. Dans la relation de Bernoulli, le terme v<sub>A</sub>² est donc négligeable devant v<sub>B</sub>² (rapport de l'ordre de 10⁻⁷).",
+        "<strong>2.</strong> Bernoulli entre A et B : P<sub>A</sub> + ½·ρ·v<sub>A</sub>² + ρ·g·z<sub>A</sub> = P<sub>B</sub> + ½·ρ·v<sub>B</sub>² + ρ·g·z<sub>B</sub>. A et B sont à l'air libre : P<sub>A</sub> = P<sub>B</sub> = P<sub>atm</sub>. Avec v<sub>A</sub> ≈ 0 et z<sub>A</sub> − z<sub>B</sub> = h : ρ·g·h = ½·ρ·v<sub>B</sub>², donc v<sub>B</sub> = √(2·g·h).",
+        "<strong>3.</strong> v<sub>B</sub> = √(2 × 9,81 × 1,10) = 4,65 m·s⁻¹. D<sub>v</sub> = S<sub>B</sub>·v<sub>B</sub> = 1,77 × 10⁻⁴ × 4,65 = 8,21 × 10⁻⁴ m³·s⁻¹ = 0,821 L·s⁻¹.",
+        "<strong>4.</strong> Δt = V / D<sub>v</sub> = 10,0 / 0,821 = 12,2 s.",
+        "<strong>5.</strong> D<sub>v</sub> réel = 10,0 / 17,0 = 0,588 L·s⁻¹. Écart relatif : |0,588 − 0,821| / 0,821 = 28 % : le débit réel ne vaut qu'environ 72 % du débit prévu. L'hypothèse du fluide parfait est mise en défaut : la viscosité de l'eau et les frottements dans le robinet (passage étroit, coudes) dissipent de l'énergie, ce que la relation de Bernoulli ne prend pas en compte.",
+        "<strong>6.</strong> v<sub>B</sub> = √(2 × 9,81 × 0,30) = 2,43 m·s⁻¹ ; D<sub>v</sub> = 1,77 × 10⁻⁴ × 2,43 = 4,29 × 10⁻⁴ m³·s⁻¹ = 0,429 L·s⁻¹ ; Δt = 10,0 / 0,429 = 23,3 s. Le débit dépend de la hauteur d'eau (v<sub>B</sub> proportionnelle à √h) : la cuve se vide de plus en plus lentement. L'écoulement n'est donc stationnaire que sur une courte durée, pendant laquelle h varie peu.",
+        "<em>⚠ Erreur fréquente : prendre pour h la hauteur totale de la cuve au lieu du dénivelé entre la surface libre et le robinet, ou oublier que P<sub>A</sub> = P<sub>B</sub> (les deux points sont à la pression atmosphérique).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Un débitmètre à effet Venturi",
+      "contexte": [
+        "Au laboratoire, on fait circuler de l'eau dans une conduite horizontale qui présente un rétrécissement : diamètre d₁ = 20,0 mm dans la partie large, d₂ = 10,0 mm dans la partie étroite. Deux tubes verticaux ouverts en haut, branchés au point 1 (partie large) et au point 2 (partie étroite), servent de manomètres : la pression au point i, sur l'axe de la conduite, vaut P<sub>i</sub> = P<sub>atm</sub> + ρ<sub>eau</sub>·g·h<sub>i</sub>, où h<sub>i</sub> est la hauteur d'eau dans le tube i au-dessus de l'axe.",
+        "L'écoulement est stationnaire ; on modélise l'eau comme un fluide parfait et incompressible."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"70\" y1=\"400\" x2=\"740\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"405\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"70\" y1=\"392\" x2=\"740\" y2=\"392\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"384\" x2=\"740\" y2=\"384\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"376\" x2=\"740\" y2=\"376\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"368\" x2=\"740\" y2=\"368\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"360\" x2=\"740\" y2=\"360\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"365\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"70\" y1=\"352\" x2=\"740\" y2=\"352\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"344\" x2=\"740\" y2=\"344\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"336\" x2=\"740\" y2=\"336\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"328\" x2=\"740\" y2=\"328\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"320\" x2=\"740\" y2=\"320\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"325\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"70\" y1=\"312\" x2=\"740\" y2=\"312\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"304\" x2=\"740\" y2=\"304\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"296\" x2=\"740\" y2=\"296\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"288\" x2=\"740\" y2=\"288\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"280\" x2=\"740\" y2=\"280\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"285\" text-anchor=\"end\" font-size=\"14\">15</text><line x1=\"70\" y1=\"272\" x2=\"740\" y2=\"272\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"264\" x2=\"740\" y2=\"264\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"256\" x2=\"740\" y2=\"256\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"248\" x2=\"740\" y2=\"248\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"240\" x2=\"740\" y2=\"240\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"245\" text-anchor=\"end\" font-size=\"14\">20</text><line x1=\"70\" y1=\"232\" x2=\"740\" y2=\"232\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"224\" x2=\"740\" y2=\"224\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"216\" x2=\"740\" y2=\"216\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"208\" x2=\"740\" y2=\"208\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"200\" x2=\"740\" y2=\"200\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"205\" text-anchor=\"end\" font-size=\"14\">25</text><line x1=\"70\" y1=\"192\" x2=\"740\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"184\" x2=\"740\" y2=\"184\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"176\" x2=\"740\" y2=\"176\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"168\" x2=\"740\" y2=\"168\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"160\" x2=\"740\" y2=\"160\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"165\" text-anchor=\"end\" font-size=\"14\">30</text><line x1=\"70\" y1=\"152\" x2=\"740\" y2=\"152\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"144\" x2=\"740\" y2=\"144\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"136\" x2=\"740\" y2=\"136\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"128\" x2=\"740\" y2=\"128\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"120\" x2=\"740\" y2=\"120\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"125\" text-anchor=\"end\" font-size=\"14\">35</text><line x1=\"70\" y1=\"112\" x2=\"740\" y2=\"112\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"104\" x2=\"740\" y2=\"104\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"96\" x2=\"740\" y2=\"96\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"88\" x2=\"740\" y2=\"88\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"70\" y1=\"80\" x2=\"740\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"62\" y=\"85\" text-anchor=\"end\" font-size=\"14\">40</text><text x=\"22\" y=\"230\" transform=\"rotate(-90 22 230)\" text-anchor=\"middle\" font-weight=\"bold\">hauteur au-dessus de l’axe (cm)</text><polygon points=\"90,378 360,378 430,389 570,389 650,378 735,378 735,422 650,422 570,411 430,411 360,422 90,422\" fill=\"#cfe0e3\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"80\" y1=\"400\" x2=\"740\" y2=\"400\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"8 5\"/><rect x=\"213\" y=\"128.0\" width=\"14\" height=\"250.0\" fill=\"#cfe0e3\"/><line x1=\"213\" y1=\"74\" x2=\"213\" y2=\"378\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"227\" y1=\"74\" x2=\"227\" y2=\"378\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"213\" y1=\"128.0\" x2=\"227\" y2=\"128.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"234\" y=\"88\" font-weight=\"bold\">tube 1</text><circle cx=\"220\" cy=\"400\" r=\"4\" fill=\"#B5523B\"/><text x=\"230\" y=\"419\" font-weight=\"bold\" fill=\"#B5523B\">1</text><rect x=\"493\" y=\"288.0\" width=\"14\" height=\"101.0\" fill=\"#cfe0e3\"/><line x1=\"493\" y1=\"74\" x2=\"493\" y2=\"389\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"507\" y1=\"74\" x2=\"507\" y2=\"389\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"493\" y1=\"288.0\" x2=\"507\" y2=\"288.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"514\" y=\"88\" font-weight=\"bold\">tube 2</text><circle cx=\"500\" cy=\"400\" r=\"4\" fill=\"#B5523B\"/><text x=\"510\" y=\"419\" font-weight=\"bold\" fill=\"#B5523B\">2</text><text x=\"150\" y=\"452\" text-anchor=\"middle\" fill=\"#1F4E5A\">S₁ (d₁ = 20,0 mm)</text><text x=\"500\" y=\"452\" text-anchor=\"middle\" fill=\"#1F4E5A\">S₂ (d₂ = 10,0 mm)</text><line x1=\"95\" y1=\"362\" x2=\"165\" y2=\"362\" stroke=\"#C8962E\" stroke-width=\"3\"/><polygon points=\"175,362 163,356 163,368\" fill=\"#C8962E\"/><text x=\"100\" y=\"354\" fill=\"#C8962E\" font-weight=\"bold\">écoulement</text></svg>",
+      "questions": [
+        {
+          "texte": "Relève les hauteurs h₁ et h₂ sur le schéma. Explique qualitativement pourquoi l'eau monte moins haut dans le tube 2.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la différence de pression P₁ − P₂.",
+          "aides": [
+            "Écris P₁ et P₂ à l'aide de la relation donnée dans l'énoncé, puis fais la différence : P<sub>atm</sub> disparaît.",
+            "Attention à convertir les hauteurs en mètres."
+          ]
+        },
+        {
+          "texte": "Montre que v₂ = 4·v₁, où v₁ et v₂ sont les vitesses de l'eau aux points 1 et 2.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide de la relation de Bernoulli, montre que P₁ − P₂ = ½·ρ<sub>eau</sub>·(v₂² − v₁²) = 15 × ½·ρ<sub>eau</sub>·v₁², puis calcule v₁ et v₂.",
+          "aides": [
+            "Les points 1 et 2 sont sur l'axe horizontal : les termes ρ·g·z se simplifient.",
+            "Remplace v₂ par 4·v₁ dans la relation, puis isole v₁²."
+          ]
+        },
+        {
+          "texte": "Calcule le débit volumique D<sub>v</sub> en m³·s⁻¹, puis en L·min⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Pour tester ce résultat, on recueille l'eau à la sortie de la conduite : un récipient de 5,00 L se remplit en 32,0 s. Calcule l'écart relatif entre les deux valeurs du débit et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lectures : h₁ = 34,0 cm et h₂ = 14,0 cm. Dans la partie étroite, la section est plus petite, donc la vitesse plus grande (conservation du débit) ; d'après la relation de Bernoulli à altitude constante, la pression y est plus faible (effet Venturi) : l'eau monte moins haut dans le tube 2.",
+        "<strong>2.</strong> P₁ − P₂ = ρ<sub>eau</sub>·g·(h₁ − h₂) = 1,00 × 10³ × 9,81 × (34,0 − 14,0) × 10⁻² = 1,96 × 10³ Pa.",
+        "<strong>3.</strong> Conservation du débit : S₁·v₁ = S₂·v₂, donc v₂ = v₁ × S₁ / S₂ = v₁ × (d₁ / d₂)² = v₁ × (20,0 / 10,0)² = 4·v₁.",
+        "<strong>4.</strong> Bernoulli entre 1 et 2 (même axe, z₁ = z₂) : P₁ + ½·ρ<sub>eau</sub>·v₁² = P₂ + ½·ρ<sub>eau</sub>·v₂², donc P₁ − P₂ = ½·ρ<sub>eau</sub>·(v₂² − v₁²) = ½·ρ<sub>eau</sub>·(16 − 1)·v₁² = 15 × ½·ρ<sub>eau</sub>·v₁². D'où v₁ = √(2·(P₁ − P₂) / (15·ρ<sub>eau</sub>)) = √(2 × 1962 / (15 × 1,00 × 10³)) = 0,512 m·s⁻¹ et v₂ = 4 × 0,512 = 2,05 m·s⁻¹.",
+        "<strong>5.</strong> S₁ = π × (20,0 × 10⁻³)² / 4 = 3,14 × 10⁻⁴ m². D<sub>v</sub> = S₁·v₁ = 3,14 × 10⁻⁴ × 0,512 = 1,61 × 10⁻⁴ m³·s⁻¹ = 0,161 L·s⁻¹ = 9,64 L·min⁻¹.",
+        "<strong>6.</strong> D<sub>v</sub> mesuré = 5,00 / 32,0 = 0,156 L·s⁻¹ = 9,38 L·min⁻¹. Écart relatif : |9,38 − 9,64| / 9,64 = 2,8 %. L'accord est bon : le modèle du fluide parfait et la relation de Bernoulli décrivent correctement cet écoulement (le débit mesuré est un peu plus faible, ce qui est cohérent avec de légers frottements).",
+        "<em>⚠ Erreur fréquente : écrire v₂ = 2·v₁ (rapport des diamètres) au lieu de v₂ = 4·v₁ : c'est le rapport des sections qui compte, et une section varie comme le carré du diamètre.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Une artère qui se rétrécit",
+      "contexte": [
+        "Doc. 1 — La sténose carotidienne. Les artères carotides, dans le cou, alimentent le cerveau en sang. Des dépôts (plaque d'athérome) peuvent rétrécir localement une artère : c'est une sténose. Pour en évaluer la gravité, le médecin mesure la vitesse du sang par échographie Doppler. Dans cet exercice, on utilise une classification simplifiée selon la réduction du diamètre de l'artère : moins de 50 % : sténose légère ; de 50 % à 69 % : sténose modérée ; 70 % ou plus : sténose serrée.",
+        "Doc. 2 — Mesures chez un patient (données fictives). Le patient est allongé : l'artère est horizontale. En amont de la sténose, le diamètre intérieur de l'artère vaut d₁ = 6,0 mm. Le graphique donne la vitesse moyenne du sang, mesurée au moment du pic de pression, en différents points de l'artère."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"30\" x2=\"85.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"106.7\" y1=\"30\" x2=\"106.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"128.3\" y1=\"30\" x2=\"128.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"150.0\" y1=\"30\" x2=\"150.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"171.7\" y1=\"30\" x2=\"171.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"193.3\" y1=\"30\" x2=\"193.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"193.3\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"215.0\" y1=\"30\" x2=\"215.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"236.7\" y1=\"30\" x2=\"236.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"258.3\" y1=\"30\" x2=\"258.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"280.0\" y1=\"30\" x2=\"280.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"301.7\" y1=\"30\" x2=\"301.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"301.7\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"323.3\" y1=\"30\" x2=\"323.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"345.0\" y1=\"30\" x2=\"345.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"366.7\" y1=\"30\" x2=\"366.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"388.3\" y1=\"30\" x2=\"388.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"410.0\" y1=\"30\" x2=\"410.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"410.0\" y=\"430\" text-anchor=\"middle\">30</text><line x1=\"431.7\" y1=\"30\" x2=\"431.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"453.3\" y1=\"30\" x2=\"453.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"475.0\" y1=\"30\" x2=\"475.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"496.7\" y1=\"30\" x2=\"496.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"518.3\" y1=\"30\" x2=\"518.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"518.3\" y=\"430\" text-anchor=\"middle\">40</text><line x1=\"540.0\" y1=\"30\" x2=\"540.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"561.7\" y1=\"30\" x2=\"561.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"583.3\" y1=\"30\" x2=\"583.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"605.0\" y1=\"30\" x2=\"605.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"626.7\" y1=\"30\" x2=\"626.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"626.7\" y=\"430\" text-anchor=\"middle\">50</text><line x1=\"648.3\" y1=\"30\" x2=\"648.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"670.0\" y1=\"30\" x2=\"670.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"691.7\" y1=\"30\" x2=\"691.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"713.3\" y1=\"30\" x2=\"713.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">60</text><line x1=\"85\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"396.4\" x2=\"735\" y2=\"396.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"382.9\" x2=\"735\" y2=\"382.9\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"387.9\" text-anchor=\"end\">0,1</text><line x1=\"85\" y1=\"369.3\" x2=\"735\" y2=\"369.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"355.7\" x2=\"735\" y2=\"355.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"360.7\" text-anchor=\"end\">0,2</text><line x1=\"85\" y1=\"342.1\" x2=\"735\" y2=\"342.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"328.6\" x2=\"735\" y2=\"328.6\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"333.6\" text-anchor=\"end\">0,3</text><line x1=\"85\" y1=\"315.0\" x2=\"735\" y2=\"315.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"301.4\" x2=\"735\" y2=\"301.4\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"306.4\" text-anchor=\"end\">0,4</text><line x1=\"85\" y1=\"287.9\" x2=\"735\" y2=\"287.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"274.3\" x2=\"735\" y2=\"274.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"279.3\" text-anchor=\"end\">0,5</text><line x1=\"85\" y1=\"260.7\" x2=\"735\" y2=\"260.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"247.1\" x2=\"735\" y2=\"247.1\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"252.1\" text-anchor=\"end\">0,6</text><line x1=\"85\" y1=\"233.6\" x2=\"735\" y2=\"233.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"220.0\" x2=\"735\" y2=\"220.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"225.0\" text-anchor=\"end\">0,7</text><line x1=\"85\" y1=\"206.4\" x2=\"735\" y2=\"206.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"192.9\" x2=\"735\" y2=\"192.9\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"197.9\" text-anchor=\"end\">0,8</text><line x1=\"85\" y1=\"179.3\" x2=\"735\" y2=\"179.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"165.7\" x2=\"735\" y2=\"165.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"170.7\" text-anchor=\"end\">0,9</text><line x1=\"85\" y1=\"152.1\" x2=\"735\" y2=\"152.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"138.6\" x2=\"735\" y2=\"138.6\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"143.6\" text-anchor=\"end\">1</text><line x1=\"85\" y1=\"125.0\" x2=\"735\" y2=\"125.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"111.4\" x2=\"735\" y2=\"111.4\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"116.4\" text-anchor=\"end\">1,1</text><line x1=\"85\" y1=\"97.9\" x2=\"735\" y2=\"97.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"84.3\" x2=\"735\" y2=\"84.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"89.3\" text-anchor=\"end\">1,2</text><line x1=\"85\" y1=\"70.7\" x2=\"735\" y2=\"70.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"57.1\" x2=\"735\" y2=\"57.1\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"62.1\" text-anchor=\"end\">1,3</text><line x1=\"85\" y1=\"43.6\" x2=\"735\" y2=\"43.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"77\" y=\"35.0\" text-anchor=\"end\">1,4</text><rect x=\"85\" y=\"30\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"366.7\" y=\"30\" width=\"86.7\" height=\"380\" fill=\"#C8962E\" fill-opacity=\"0.15\"/><text x=\"410.0\" y=\"52\" text-anchor=\"middle\" fill=\"#C8962E\" font-weight=\"bold\">sténose</text><polyline points=\"85.0,328.6 87.2,328.6 89.3,328.6 91.5,328.6 93.7,328.6 95.8,328.6 98.0,328.6 100.2,328.6 102.3,328.6 104.5,328.6 106.7,328.6 108.8,328.6 111.0,328.6 113.2,328.6 115.3,328.6 117.5,328.6 119.7,328.6 121.8,328.6 124.0,328.6 126.2,328.6 128.3,328.6 130.5,328.6 132.7,328.6 134.8,328.6 137.0,328.6 139.2,328.6 141.3,328.6 143.5,328.6 145.7,328.6 147.8,328.6 150.0,328.6 152.2,328.6 154.3,328.6 156.5,328.6 158.7,328.6 160.8,328.6 163.0,328.6 165.2,328.6 167.3,328.6 169.5,328.6 171.7,328.6 173.8,328.6 176.0,328.6 178.2,328.6 180.3,328.6 182.5,328.6 184.7,328.6 186.8,328.6 189.0,328.6 191.2,328.6 193.3,328.6 195.5,328.6 197.7,328.6 199.8,328.6 202.0,328.6 204.2,328.6 206.3,328.6 208.5,328.6 210.7,328.6 212.8,328.6 215.0,328.6 217.2,328.6 219.3,328.6 221.5,328.6 223.7,328.6 225.8,328.6 228.0,328.6 230.2,328.6 232.3,328.6 234.5,328.6 236.7,328.6 238.8,328.6 241.0,328.6 243.2,328.6 245.3,328.6 247.5,328.6 249.7,328.6 251.8,328.6 254.0,328.6 256.2,328.6 258.3,328.6 260.5,328.6 262.7,328.6 264.8,328.6 267.0,328.6 269.2,328.6 271.3,328.6 273.5,328.6 275.7,328.6 277.8,328.6 280.0,328.6 282.2,328.6 284.3,328.6 286.5,328.6 288.7,328.6 290.8,328.6 293.0,328.6 295.2,328.6 297.3,328.6 299.5,328.6 301.7,328.6 303.8,327.9 306.0,325.9 308.2,322.6 310.3,318.0 312.5,312.2 314.7,305.2 316.8,297.2 319.0,288.2 321.2,278.2 323.3,267.5 325.5,256.1 327.7,244.2 329.8,231.8 332.0,219.2 334.2,206.4 336.3,193.7 338.5,181.0 340.7,168.7 342.8,156.7 345.0,145.4 347.2,134.6 349.3,124.7 351.5,115.7 353.7,107.6 355.8,100.6 358.0,94.8 360.2,90.3 362.3,87.0 364.5,85.0 366.7,84.3 368.8,84.3 371.0,84.3 373.2,84.3 375.3,84.3 377.5,84.3 379.7,84.3 381.8,84.3 384.0,84.3 386.2,84.3 388.3,84.3 390.5,84.3 392.7,84.3 394.8,84.3 397.0,84.3 399.2,84.3 401.3,84.3 403.5,84.3 405.7,84.3 407.8,84.3 410.0,84.3 412.2,84.3 414.3,84.3 416.5,84.3 418.7,84.3 420.8,84.3 423.0,84.3 425.2,84.3 427.3,84.3 429.5,84.3 431.7,84.3 433.8,84.3 436.0,84.3 438.2,84.3 440.3,84.3 442.5,84.3 444.7,84.3 446.8,84.3 449.0,84.3 451.2,84.3 453.3,84.3 455.5,84.7 457.7,85.8 459.8,87.7 462.0,90.3 464.2,93.6 466.3,97.6 468.5,102.3 470.7,107.6 472.8,113.6 475.0,120.1 477.2,127.1 479.3,134.6 481.5,142.6 483.7,151.0 485.8,159.7 488.0,168.7 490.2,177.9 492.3,187.3 494.5,196.8 496.7,206.4 498.8,216.0 501.0,225.5 503.2,234.9 505.3,244.2 507.5,253.2 509.7,261.9 511.8,270.2 514.0,278.2 516.2,285.8 518.3,292.8 520.5,299.3 522.7,305.2 524.8,310.6 527.0,315.3 529.2,319.3 531.3,322.6 533.5,325.2 535.7,327.1 537.8,328.2 540.0,328.6 542.2,328.6 544.3,328.6 546.5,328.6 548.7,328.6 550.8,328.6 553.0,328.6 555.2,328.6 557.3,328.6 559.5,328.6 561.7,328.6 563.8,328.6 566.0,328.6 568.2,328.6 570.3,328.6 572.5,328.6 574.7,328.6 576.8,328.6 579.0,328.6 581.2,328.6 583.3,328.6 585.5,328.6 587.7,328.6 589.8,328.6 592.0,328.6 594.2,328.6 596.3,328.6 598.5,328.6 600.7,328.6 602.8,328.6 605.0,328.6 607.2,328.6 609.3,328.6 611.5,328.6 613.7,328.6 615.8,328.6 618.0,328.6 620.2,328.6 622.3,328.6 624.5,328.6 626.7,328.6 628.8,328.6 631.0,328.6 633.2,328.6 635.3,328.6 637.5,328.6 639.7,328.6 641.8,328.6 644.0,328.6 646.2,328.6 648.3,328.6 650.5,328.6 652.7,328.6 654.8,328.6 657.0,328.6 659.2,328.6 661.3,328.6 663.5,328.6 665.7,328.6 667.8,328.6 670.0,328.6 672.2,328.6 674.3,328.6 676.5,328.6 678.7,328.6 680.8,328.6 683.0,328.6 685.2,328.6 687.3,328.6 689.5,328.6 691.7,328.6 693.8,328.6 696.0,328.6 698.2,328.6 700.3,328.6 702.5,328.6 704.7,328.6 706.8,328.6 709.0,328.6 711.2,328.6 713.3,328.6 715.5,328.6 717.7,328.6 719.8,328.6 722.0,328.6 724.2,328.6 726.3,328.6 728.5,328.6 730.7,328.6 732.8,328.6 735.0,328.6\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.8\"/><text x=\"106.7\" y=\"301.4\" fill=\"#1F4E5A\">sens de l’écoulement →</text><text x=\"410.0\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">position x le long de l’artère (mm)</text><text transform=\"translate(24,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">vitesse moyenne v (m·s⁻¹)</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Données. Masse volumique du sang : ρ<sub>sang</sub> = 1,06 × 10³ kg·m⁻³. 1 mmHg = 133,3 Pa. Pression artérielle au pic : environ 120 mmHg. On modélise le sang comme un fluide parfait et incompressible, en écoulement stationnaire."
+      ],
+      "questions": [
+        {
+          "texte": "Relève sur le doc. 2 la vitesse v₁ en amont de la sténose et la vitesse v₂ dans la sténose. Explique pourquoi la vitesse augmente dans la sténose.",
+          "aides": []
+        },
+        {
+          "texte": "Montre que le diamètre de l'artère dans la sténose vaut d₂ = d₁·√(v₁ / v₂). Calcule d₂ et la réduction du diamètre en %. Classe la sténose selon le doc. 1.",
+          "aides": [
+            "Le débit se conserve entre l'amont et la sténose : écris-le avec les diamètres plutôt qu'avec les sections.",
+            "S = π·d² / 4 : les facteurs π / 4 se simplifient, il reste d₁²·v₁ = d₂²·v₂.",
+            "La réduction du diamètre en % vaut (d₁ − d₂) / d₁ × 100."
+          ]
+        },
+        {
+          "texte": "Calcule le débit sanguin dans cette carotide, en mL·s⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la différence de pression P₁ − P₂ entre l'amont et la sténose, en Pa puis en mmHg. Commente en la comparant à la pression artérielle.",
+          "aides": [
+            "L'artère est horizontale : quel terme de la relation de Bernoulli disparaît ?",
+            "P₁ − P₂ = ½·ρ<sub>sang</sub>·(v₂² − v₁²). Pour convertir en mmHg, divise par 133,3."
+          ]
+        },
+        {
+          "texte": "Deux ans plus tard, la vitesse mesurée dans la sténose atteint 2,7 m·s⁻¹, la vitesse en amont étant inchangée. Détermine la nouvelle réduction du diamètre, classe la sténose et calcule la nouvelle différence de pression P₁ − P₂ en mmHg.",
+          "aides": [
+            "C'est la même méthode qu'aux questions 2 et 4, avec la nouvelle vitesse dans la sténose.",
+            "Calcule d'abord le nouveau diamètre, puis la réduction en %, puis la différence de pression."
+          ]
+        },
+        {
+          "texte": "Chez un autre patient, l'artère présente au contraire une dilatation locale (anévrisme). Prévois, sans calcul, comment varient la vitesse et la pression du sang dans la zone dilatée, et explique pourquoi la paroi risque de se dilater encore davantage.",
+          "aides": []
+        },
+        {
+          "texte": "Cite deux hypothèses du modèle utilisé qui ne sont pas parfaitement vérifiées pour le sang dans une artère.",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : le nombre de Reynolds Re = ρ<sub>sang</sub>·v·d / η, où η = 3,5 × 10⁻³ Pa·s est la viscosité du sang, permet de prévoir le type d'écoulement dans un tuyau : il reste en général laminaire (régulier) tant que Re est inférieur à environ 2 000. Calcule Re dans la sténose, au premier examen puis deux ans plus tard, et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lectures : v₁ = 0,30 m·s⁻¹ et v₂ = 1,20 m·s⁻¹. Le sang est incompressible et l'écoulement stationnaire : le débit volumique se conserve, D<sub>v</sub> = S₁·v₁ = S₂·v₂. Là où la section diminue, la vitesse augmente.",
+        "<strong>2.</strong> S₁·v₁ = S₂·v₂ avec S = π·d² / 4, donc d₁²·v₁ = d₂²·v₂ et d₂ = d₁·√(v₁ / v₂) = 6,0 × √(0,30 / 1,20) = 6,0 × 0,50 = 3,0 mm. Réduction du diamètre : (6,0 − 3,0) / 6,0 = 50 % (la section, elle, est divisée par 4 : réduction de 75 %). Sténose modérée (à la limite de la sténose légère).",
+        "<strong>3.</strong> D<sub>v</sub> = S₁·v₁ = π × (6,0 × 10⁻³)² / 4 × 0,30 = 8,5 × 10⁻⁶ m³·s⁻¹ = 8,5 mL·s⁻¹ (environ 0,51 L·min⁻¹).",
+        "<strong>4.</strong> Bernoulli entre 1 et 2, à la même altitude : P₁ + ½·ρ<sub>sang</sub>·v₁² = P₂ + ½·ρ<sub>sang</sub>·v₂², donc P₁ − P₂ = ½·ρ<sub>sang</sub>·(v₂² − v₁²) = 0,5 × 1,06 × 10³ × (1,20² − 0,30²) = 7,2 × 10² Pa, soit 715,5 / 133,3 = 5,4 mmHg. C'est faible devant 120 mmHg (environ 4 %) : à ce stade, la chute de pression dans la sténose reste modeste.",
+        "<strong>5.</strong> d₂' = d₁·√(v₁ / v₂') = 6,0 × √(0,30 / 2,7) = 6,0 × 0,333 = 2,0 mm : réduction du diamètre (6,0 − 2,0) / 6,0 = 67 %. La sténose reste modérée, mais proche du seuil de 70 % (sténose serrée). P₁ − P₂ = 0,5 × 1,06 × 10³ × (2,7² − 0,30²) = 3,8 × 10³ Pa = 28,6 mmHg ≈ 29 mmHg, soit environ 24 % de la pression artérielle : la dépression dans la sténose est devenue importante.",
+        "<strong>6.</strong> Dans la zone dilatée, la section augmente, donc la vitesse diminue (conservation du débit). D'après la relation de Bernoulli (altitude constante), la pression y est plus élevée. Cette surpression pousse la paroi vers l'extérieur : la dilatation augmente, ce qui diminue encore la vitesse et augmente encore la pression. Le phénomène s'auto-entretient (risque de rupture).",
+        "<strong>7.</strong> Éléments attendus (deux parmi) : le sang n'est pas un fluide parfait (il est visqueux, il y a des frottements sur la paroi) ; l'écoulement n'est pas stationnaire (il est pulsé, au rythme des battements du cœur) ; la paroi de l'artère est déformable (la section n'est pas fixe) ; la vitesse n'est pas uniforme sur une section (plus faible près de la paroi). En revanche, l'hypothèse « incompressible » est bien vérifiée pour un liquide.",
+        "<strong>8.</strong> Pour aller plus loin : premier examen : Re = 1,06 × 10³ × 1,20 × 3,0 × 10⁻³ / 3,5 × 10⁻³ = 1,1 × 10³ ; deux ans plus tard : Re = 1,06 × 10³ × 2,7 × 2,0 × 10⁻³ / 3,5 × 10⁻³ = 1,6 × 10³. Re reste inférieur à 2 000 : l'écoulement dans la sténose reste laminaire, mais il se rapproche de la limite. Re augmente quand la sténose s'aggrave (v augmente plus vite que d ne diminue), et des tourbillons peuvent apparaître juste après la sténose.",
+        "<em>⚠ Erreur fréquente : écrire d₂ = d₁ × v₁ / v₂ en oubliant que le débit fait intervenir la section, donc le carré du diamètre. Autre piège : oublier d'élever les vitesses au carré dans la relation de Bernoulli.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,674 @@
+{
+  "id": 35,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Système et référentiel",
+        "icon": "🎯",
+        "content": [
+          {
+            "type": "def",
+            "term": "Système",
+            "text": "Objet ou ensemble d'objets dont on étudie le mouvement."
+          },
+          {
+            "type": "def",
+            "term": "Référentiel",
+            "text": "Objet ou ensemble d'objets, considéré comme fixe, par rapport auquel on décrit le mouvement d'un système. On lui associe une origine des temps et un repère d'espace."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Référentiel",
+              "Exemple d'usage"
+            ],
+            "rows": [
+              [
+                "Terrestre",
+                "Étude d'un mouvement à la surface de la Terre (voiture, piéton)"
+              ],
+              [
+                "Géocentrique",
+                "Étude du mouvement de satellites ou de la Lune autour de la Terre"
+              ],
+              [
+                "Héliocentrique",
+                "Étude du mouvement des planètes autour du Soleil"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. La relativité du mouvement",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "warn",
+            "text": "Le mouvement d'un système est relatif : il dépend du référentiel choisi par l'observateur. Un même objet peut être immobile dans un référentiel et en mouvement dans un autre."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : un passager assis dans un train roulant est immobile par rapport au référentiel du train, mais il est en mouvement par rapport au référentiel terrestre (le sol, les rails)."
+          }
+        ]
+      },
+      {
+        "title": "3. Trajectoire et vecteur déplacement",
+        "icon": "➡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Trajectoire",
+            "text": "Ensemble des positions successives occupées par un système au cours de son mouvement, dans un référentiel donné. Elle peut être rectiligne (droite), circulaire ou quelconque (curviligne)."
+          },
+          {
+            "type": "def",
+            "term": "Vecteur déplacement",
+            "text": "Noté M1M2→, il relie la position M1 occupée par le système à l'instant t1 à sa position M2 à l'instant t2. Sa direction et son sens indiquent comment le système s'est déplacé ; sa longueur (norme) correspond à la distance entre les deux points, à l'échelle du schéma."
+          }
+        ]
+      },
+      {
+        "title": "4. Vecteur vitesse moyenne",
+        "icon": "🚄",
+        "content": [
+          {
+            "type": "def",
+            "term": "Vitesse moyenne",
+            "text": "Rapport de la distance parcourue d sur la durée Δt du parcours."
+          },
+          {
+            "type": "formula",
+            "label": "Vitesse moyenne",
+            "text": "v = d / Δt\navec v en m·s⁻¹ (ou km·h⁻¹)\nd en m (ou km)\nΔt en s (ou h)"
+          },
+          {
+            "type": "text",
+            "text": "Le vecteur vitesse moyenne a la même direction et le même sens que le vecteur déplacement ; sa valeur (norme) est la vitesse moyenne v."
+          },
+          {
+            "type": "text",
+            "text": "Exemple chiffré : un TGV parcourt d = 300 km en Δt = 1 h."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul",
+            "text": "v = d / Δt = 300 / 1 = 300 km·h⁻¹ ≈ 83,3 m·s⁻¹"
+          },
+          {
+            "type": "text",
+            "text": "Autre exemple : un athlète parcourt le 100 m en 10,0 s."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul",
+            "text": "v = d / Δt = 100 / 10,0 = 10,0 m·s⁻¹ soit 36,0 km·h⁻¹"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Pour décrire un mouvement, le référentiel est :",
+      "opts": [
+        "l'objet dont on étudie le mouvement",
+        "la trajectoire suivie par l'objet",
+        "l'objet supposé fixe par rapport auquel on décrit le mouvement",
+        "toujours le sol, quel que soit le mouvement"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "systeme-vs-referentiel",
+          "texte": "Confondre système et référentiel : le système est l'objet étudié, le référentiel l'objet de référence"
+        },
+        {
+          "code": "trajectoire-vs-referentiel",
+          "texte": "Confondre trajectoire et référentiel : la trajectoire dépend du référentiel choisi"
+        },
+        null,
+        {
+          "code": "referentiel-toujours-sol",
+          "texte": "Croire que le référentiel est toujours le sol : on peut choisir un train, la Terre, le Soleil…"
+        }
+      ],
+      "exp": "Le référentiel est l'objet de référence, considéré comme fixe, par rapport auquel on décrit le mouvement du système. Attention : il faut toujours le préciser."
+    },
+    {
+      "q": "Léa est assise dans un train qui roule. Elle est :",
+      "opts": [
+        "immobile, puisqu'elle ne quitte pas son siège",
+        "immobile par rapport au train, en mouvement par rapport au sol",
+        "en mouvement par rapport au train, immobile par rapport au sol",
+        "en mouvement seulement si elle se lève"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "mouvement-absolu",
+          "texte": "Oublier que le mouvement est relatif : on doit dire par rapport à quoi Léa est immobile"
+        },
+        null,
+        {
+          "code": "referentiels-inverses",
+          "texte": "Inverser les référentiels : Léa ne bouge pas par rapport au train, mais se déplace par rapport au sol"
+        },
+        {
+          "code": "mouvement-sans-referentiel",
+          "texte": "Croire qu'on bouge seulement si l'on se déplace soi-même : par rapport au sol, Léa avance avec le train"
+        }
+      ],
+      "exp": "Le mouvement est relatif : immobile dans le référentiel du train, Léa est en mouvement dans le référentiel terrestre. Attention : « immobile » n'a de sens que par rapport à un référentiel."
+    },
+    {
+      "q": "Un passager marche vers l'avant d'un train à 5 km·h⁻¹ par rapport au train. Le train roule à 100 km·h⁻¹. Par rapport au sol, la vitesse du passager vaut :",
+      "opts": [
+        "5 km·h⁻¹",
+        "95 km·h⁻¹",
+        "100 km·h⁻¹",
+        "105 km·h⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "mouvement-absolu",
+          "texte": "Donner la vitesse dans le référentiel du train : par rapport au sol, il faut ajouter celle du train"
+        },
+        {
+          "code": "sens-vitesses-inverse",
+          "texte": "Soustraire les vitesses : le passager marche dans le même sens que le train, les vitesses s'ajoutent"
+        },
+        {
+          "code": "vitesse-propre-ignoree",
+          "texte": "Oublier la marche du passager : il avance de 5 km·h⁻¹ de plus que le train"
+        },
+        null
+      ],
+      "exp": "Par rapport au sol, le passager avance avec le train et marche en plus vers l'avant : 100 + 5 = 105 km·h⁻¹. Attention : la vitesse dépend du référentiel."
+    },
+    {
+      "q": "On observe la valve d'une roue de vélo qui avance en ligne droite. La trajectoire de la valve est :",
+      "opts": [
+        "un cercle pour le cycliste, une autre courbe pour un piéton au bord de la route",
+        "un cercle, pour le cycliste comme pour le piéton",
+        "une droite, pour le cycliste comme pour le piéton, comme celle du vélo",
+        "une droite pour le cycliste, un cercle pour le piéton"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "trajectoire-independante-referentiel",
+          "texte": "Croire que la trajectoire ne dépend pas du référentiel : pour le piéton, la valve avance en plus avec le vélo"
+        },
+        {
+          "code": "trajectoire-objet-vs-point",
+          "texte": "Confondre la trajectoire du vélo et celle d'un point de la roue : la valve tourne autour de l'axe en plus d'avancer"
+        },
+        {
+          "code": "referentiels-inverses",
+          "texte": "Inverser les référentiels : c'est pour le cycliste (lié au vélo) que la valve décrit un cercle"
+        }
+      ],
+      "exp": "Dans le référentiel du vélo, la valve tourne autour de l'axe : cercle. Dans le référentiel terrestre, elle tourne et avance à la fois : la courbe est différente. La trajectoire dépend du référentiel."
+    },
+    {
+      "q": "Un automobiliste parcourt 120 km en 1 h 30 min. Sa vitesse moyenne vaut :",
+      "opts": [
+        "92 km·h⁻¹",
+        "80 km·h⁻¹",
+        "180 km·h⁻¹",
+        "1,25×10⁻² km·h⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-heure-minute",
+          "texte": "Écrire 1 h 30 min = 1,30 h : 30 min = 0,5 h, donc 1 h 30 min = 1,5 h"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 120 × 1,5 ; il faut v = d / Δt"
+        },
+        {
+          "code": "vitesse-rapport-inverse",
+          "texte": "Inverser le rapport : Δt / d = 1,5 / 120 ; il faut v = d / Δt"
+        }
+      ],
+      "exp": "Δt = 1 h 30 min = 1,5 h, donc v = d / Δt = 120 / 1,5 = 80 km·h⁻¹. Attention : 30 min, c'est une demi-heure, soit 0,5 h."
+    },
+    {
+      "q": "Cet automobiliste a roulé à 80 km·h⁻¹ de vitesse moyenne. Peut-on affirmer que son compteur a affiché 80 km·h⁻¹ pendant tout le trajet ?",
+      "opts": [
+        "oui : la vitesse moyenne est la vitesse à chaque instant",
+        "non : c'est une moyenne, sa vitesse a pu varier",
+        "non : il a forcément roulé à 120 km·h⁻¹",
+        "non : il roulait à 80 km·h⁻¹ seulement à mi-parcours"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "vitesse-moyenne-vs-instantanee",
+          "texte": "Confondre vitesse moyenne et vitesse instantanée : la voiture a pu ralentir puis accélérer"
+        },
+        null,
+        {
+          "code": "distance-prise-pour-vitesse",
+          "texte": "Prendre la distance (120 km) pour une vitesse"
+        },
+        {
+          "code": "moyenne-a-mi-parcours",
+          "texte": "Croire que la vitesse moyenne est atteinte à mi-parcours : rien ne permet de le dire"
+        }
+      ],
+      "exp": "La vitesse moyenne d / Δt ne dit rien de la vitesse à chaque instant : la voiture a pu s'arrêter, puis rouler plus vite. Attention : le compteur indique la vitesse instantanée."
+    },
+    {
+      "q": "Un athlète court à 10,0 m·s⁻¹. En km·h⁻¹, sa vitesse vaut :",
+      "opts": [
+        "2,78 km·h⁻¹",
+        "0,0100 km·h⁻¹",
+        "36,0 km·h⁻¹",
+        "0,600 km·h⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-kmh-ms-inverse",
+          "texte": "Diviser par 3,6 au lieu de multiplier : pour passer des m·s⁻¹ aux km·h⁻¹, on multiplie par 3,6"
+        },
+        {
+          "code": "conversion-incomplete",
+          "texte": "Convertir les mètres en kilomètres sans convertir les secondes en heures : 10,0 m·s⁻¹ = 0,0100 km·s⁻¹"
+        },
+        null,
+        {
+          "code": "heure-60-secondes",
+          "texte": "Compter 60 s dans une heure : une heure dure 3 600 s, donc 10,0 × 3 600 / 1 000 = 36,0"
+        }
+      ],
+      "exp": "En une heure (3 600 s), il parcourt 10,0 × 3 600 = 36 000 m = 36,0 km : v = 36,0 km·h⁻¹. Attention : m·s⁻¹ → km·h⁻¹, on multiplie par 3,6."
+    },
+    {
+      "q": "Sur une chronophotographie (images prises à intervalles de temps égaux), les positions successives d'un palet sont de plus en plus espacées. Son mouvement est :",
+      "opts": [
+        "ralenti",
+        "uniforme, car les intervalles de temps sont égaux",
+        "curviligne, car les points s'écartent",
+        "accéléré"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "ecart-points-inverse",
+          "texte": "Inverser la lecture : des positions de plus en plus espacées pendant des durées égales indiquent une vitesse qui augmente"
+        },
+        {
+          "code": "intervalle-temps-vs-distance",
+          "texte": "Confondre intervalles de temps et distances : les durées sont égales, mais les distances parcourues augmentent"
+        },
+        {
+          "code": "forme-vs-vitesse",
+          "texte": "Confondre la forme de la trajectoire et l'évolution de la vitesse : l'espacement renseigne sur la vitesse"
+        },
+        null
+      ],
+      "exp": "Pendant des durées égales, le palet parcourt des distances de plus en plus grandes : sa vitesse augmente, le mouvement est accéléré. Attention : la forme de la trajectoire se lit sur l'alignement des points, pas sur leur écart."
+    },
+    {
+      "q": "Une voiture tourne dans un rond-point à la vitesse constante de 30 km·h⁻¹. Son mouvement dans le référentiel terrestre est :",
+      "opts": [
+        "rectiligne et uniforme",
+        "circulaire et uniforme",
+        "circulaire, mais pas uniforme puisqu'elle tourne",
+        "immobile, puisque sa vitesse ne change pas"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "uniforme-vs-rectiligne",
+          "texte": "Confondre uniforme (vitesse de valeur constante) et rectiligne (trajectoire en ligne droite)"
+        },
+        null,
+        {
+          "code": "tourner-pas-uniforme",
+          "texte": "Croire qu'un mouvement qui tourne ne peut pas être uniforme : « uniforme » concerne la valeur de la vitesse"
+        },
+        {
+          "code": "vitesse-constante-immobile",
+          "texte": "Confondre vitesse constante et vitesse nulle : la voiture avance à 30 km·h⁻¹"
+        }
+      ],
+      "exp": "Trajectoire en arc de cercle : circulaire ; valeur de la vitesse constante : uniforme. Attention : « rectiligne » décrit la trajectoire, « uniforme » la valeur de la vitesse."
+    },
+    {
+      "q": "Pour étudier le mouvement de la Lune autour de la Terre, le référentiel le plus adapté est le référentiel :",
+      "opts": [
+        "héliocentrique",
+        "terrestre",
+        "de la Lune elle-même",
+        "géocentrique"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "referentiels-geo-helio-inverses",
+          "texte": "Confondre géocentrique (centré sur la Terre) et héliocentrique (centré sur le Soleil)"
+        },
+        {
+          "code": "terrestre-vs-geocentrique",
+          "texte": "Confondre terrestre et géocentrique : le référentiel terrestre tourne avec la Terre sur elle-même en 24 h"
+        },
+        {
+          "code": "systeme-vs-referentiel",
+          "texte": "Prendre le système comme référentiel : dans son propre référentiel, la Lune est immobile"
+        },
+        null
+      ],
+      "exp": "Le référentiel géocentrique (centre de la Terre et étoiles lointaines) est adapté aux mouvements autour de la Terre : Lune, satellites. Pour les planètes autour du Soleil, on choisit le référentiel héliocentrique."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Qui bouge dans le train ?",
+      "contexte": [
+        "Yanis prend le train à la gare d'Argenteuil pour aller à Paris. Il est assis à sa place, son sac posé sur ses genoux. Son amie Sofia, restée sur le quai, regarde le train partir. Pendant ce temps, le contrôleur marche dans l'allée vers l'avant du train."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"285\" y1=\"20\" x2=\"285\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"142\" y=\"45\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Trajectoire 1</text><circle cx=\"142\" cy=\"220\" r=\"100\" fill=\"none\" stroke=\"#9a9a9a\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/><circle cx=\"226.0\" cy=\"220.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"214.7\" cy=\"178.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"184.0\" cy=\"147.3\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"142.0\" cy=\"136.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"100.0\" cy=\"147.3\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"69.3\" cy=\"178.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"58.0\" cy=\"220.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"69.3\" cy=\"262.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"100.0\" cy=\"292.7\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"142.0\" cy=\"304.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"184.0\" cy=\"292.7\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"214.7\" cy=\"262.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"142\" cy=\"220\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"142\" y=\"246\" text-anchor=\"middle\">axe de la roue</text><text x=\"142\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">les points : positions</text><text x=\"142\" y=\"414\" text-anchor=\"middle\" font-size=\"14\">successives de la valve</text><text x=\"520\" y=\"45\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Trajectoire 2</text><line x1=\"295\" y1=\"300\" x2=\"748\" y2=\"300\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><text x=\"740\" y=\"324\" text-anchor=\"end\">sol</text><circle cx=\"318.0\" cy=\"270\" r=\"30\" fill=\"none\" stroke=\"#9a9a9a\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><circle cx=\"506.5\" cy=\"270\" r=\"30\" fill=\"none\" stroke=\"#9a9a9a\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><circle cx=\"695.0\" cy=\"270\" r=\"30\" fill=\"none\" stroke=\"#9a9a9a\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><polyline points=\"318.0,296.0 318.1,296.0 318.3,295.9 318.4,295.9 318.5,295.8 318.6,295.7 318.8,295.5 318.9,295.4 319.1,295.2 319.2,295.0 319.4,294.7 319.6,294.5 319.7,294.2 319.9,293.9 320.1,293.5 320.3,293.2 320.6,292.8 320.8,292.4 321.0,292.0 321.3,291.5 321.6,291.0 321.9,290.5 322.2,290.0 322.5,289.5 322.8,289.0 323.2,288.4 323.6,287.8 323.9,287.2 324.4,286.6 324.8,285.9 325.2,285.3 325.7,284.6 326.2,283.9 326.7,283.2 327.3,282.5 327.8,281.8 328.4,281.1 329.0,280.3 329.6,279.6 330.3,278.8 331.0,278.0 331.7,277.3 332.4,276.5 333.2,275.7 333.9,274.9 334.7,274.1 335.6,273.3 336.4,272.4 337.3,271.6 338.2,270.8 339.1,270.0 340.1,269.2 341.1,268.4 342.1,267.6 343.1,266.7 344.2,265.9 345.2,265.1 346.3,264.3 347.5,263.5 348.6,262.7 349.8,262.0 351.0,261.2 352.3,260.4 353.5,259.7 354.8,258.9 356.1,258.2 357.4,257.5 358.8,256.8 360.1,256.1 361.5,255.4 362.9,254.7 364.4,254.1 365.8,253.4 367.3,252.8 368.8,252.2 370.3,251.6 371.8,251.0 373.4,250.5 374.9,250.0 376.5,249.5 378.1,249.0 379.7,248.5 381.4,248.0 383.0,247.6 384.6,247.2 386.3,246.8 388.0,246.5 389.7,246.1 391.4,245.8 393.1,245.5 394.8,245.3 396.5,245.0 398.2,244.8 400.0,244.6 401.7,244.5 403.5,244.3 405.2,244.2 407.0,244.1 408.7,244.1 410.5,244.0 412.2,244.0 414.0,244.0 415.8,244.1 417.5,244.1 419.3,244.2 421.0,244.3 422.8,244.5 424.5,244.6 426.3,244.8 428.0,245.0 429.7,245.3 431.4,245.5 433.1,245.8 434.8,246.1 436.5,246.5 438.2,246.8 439.9,247.2 441.5,247.6 443.1,248.0 444.8,248.5 446.4,249.0 448.0,249.5 449.6,250.0 451.1,250.5 452.7,251.0 454.2,251.6 455.7,252.2 457.2,252.8 458.7,253.4 460.1,254.1 461.6,254.7 463.0,255.4 464.4,256.1 465.7,256.8 467.1,257.5 468.4,258.2 469.7,258.9 471.0,259.7 472.2,260.4 473.5,261.2 474.7,262.0 475.9,262.7 477.0,263.5 478.1,264.3 479.3,265.1 480.3,265.9 481.4,266.7 482.4,267.6 483.4,268.4 484.4,269.2 485.4,270.0 486.3,270.8 487.2,271.6 488.1,272.4 488.9,273.3 489.8,274.1 490.6,274.9 491.3,275.7 492.1,276.5 492.8,277.3 493.5,278.0 494.2,278.8 494.9,279.6 495.5,280.3 496.1,281.1 496.7,281.8 497.2,282.5 497.8,283.2 498.3,283.9 498.8,284.6 499.3,285.3 499.7,285.9 500.1,286.6 500.6,287.2 500.9,287.8 501.3,288.4 501.7,289.0 502.0,289.5 502.3,290.0 502.6,290.5 502.9,291.0 503.2,291.5 503.5,292.0 503.7,292.4 503.9,292.8 504.2,293.2 504.4,293.5 504.6,293.9 504.8,294.2 504.9,294.5 505.1,294.7 505.3,295.0 505.4,295.2 505.6,295.4 505.7,295.5 505.9,295.7 506.0,295.8 506.1,295.9 506.2,295.9 506.4,296.0 506.5,296.0 506.6,296.0 506.7,295.9 506.9,295.9 507.0,295.8 507.1,295.7 507.3,295.5 507.4,295.4 507.6,295.2 507.7,295.0 507.9,294.7 508.1,294.5 508.2,294.2 508.4,293.9 508.6,293.5 508.8,293.2 509.0,292.8 509.3,292.4 509.5,292.0 509.8,291.5 510.1,291.0 510.4,290.5 510.7,290.0 511.0,289.5 511.3,289.0 511.7,288.4 512.0,287.8 512.4,287.2 512.9,286.6 513.3,285.9 513.7,285.3 514.2,284.6 514.7,283.9 515.2,283.2 515.8,282.5 516.3,281.8 516.9,281.1 517.5,280.3 518.1,279.6 518.8,278.8 519.5,278.0 520.2,277.3 520.9,276.5 521.6,275.7 522.4,274.9 523.2,274.1 524.1,273.3 524.9,272.4 525.8,271.6 526.7,270.8 527.6,270.0 528.6,269.2 529.6,268.4 530.6,267.6 531.6,266.7 532.7,265.9 533.7,265.1 534.8,264.3 536.0,263.5 537.1,262.7 538.3,262.0 539.5,261.2 540.8,260.4 542.0,259.7 543.3,258.9 544.6,258.2 545.9,257.5 547.3,256.8 548.6,256.1 550.0,255.4 551.4,254.7 552.9,254.1 554.3,253.4 555.8,252.8 557.3,252.2 558.8,251.6 560.3,251.0 561.9,250.5 563.4,250.0 565.0,249.5 566.6,249.0 568.2,248.5 569.8,248.0 571.5,247.6 573.1,247.2 574.8,246.8 576.5,246.5 578.2,246.1 579.9,245.8 581.6,245.5 583.3,245.3 585.0,245.0 586.7,244.8 588.5,244.6 590.2,244.5 592.0,244.3 593.7,244.2 595.5,244.1 597.2,244.1 599.0,244.0 600.7,244.0 602.5,244.0 604.3,244.1 606.0,244.1 607.8,244.2 609.5,244.3 611.3,244.5 613.0,244.6 614.7,244.8 616.5,245.0 618.2,245.3 619.9,245.5 621.6,245.8 623.3,246.1 625.0,246.5 626.7,246.8 628.3,247.2 630.0,247.6 631.6,248.0 633.3,248.5 634.9,249.0 636.5,249.5 638.1,250.0 639.6,250.5 641.2,251.0 642.7,251.6 644.2,252.2 645.7,252.8 647.2,253.4 648.6,254.1 650.1,254.7 651.5,255.4 652.9,256.1 654.2,256.8 655.6,257.5 656.9,258.2 658.2,258.9 659.5,259.7 660.7,260.4 662.0,261.2 663.2,262.0 664.4,262.7 665.5,263.5 666.6,264.3 667.8,265.1 668.8,265.9 669.9,266.7 670.9,267.6 671.9,268.4 672.9,269.2 673.9,270.0 674.8,270.8 675.7,271.6 676.6,272.4 677.4,273.3 678.3,274.1 679.1,274.9 679.8,275.7 680.6,276.5 681.3,277.3 682.0,278.0 682.7,278.8 683.4,279.6 684.0,280.3 684.6,281.1 685.2,281.8 685.7,282.5 686.3,283.2 686.8,283.9 687.3,284.6 687.8,285.3 688.2,285.9 688.6,286.6 689.0,287.2 689.4,287.8 689.8,288.4 690.2,289.0 690.5,289.5 690.8,290.0 691.1,290.5 691.4,291.0 691.7,291.5 692.0,292.0 692.2,292.4 692.4,292.8 692.7,293.2 692.9,293.5 693.1,293.9 693.3,294.2 693.4,294.5 693.6,294.7 693.8,295.0 693.9,295.2 694.1,295.4 694.2,295.5 694.3,295.7 694.5,295.8 694.6,295.9 694.7,295.9 694.9,296.0 695.0,296.0\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><circle cx=\"318.0\" cy=\"296.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"320.7\" cy=\"292.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"326.9\" cy=\"283.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"339.1\" cy=\"270.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"358.3\" cy=\"257.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"383.5\" cy=\"247.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"412.2\" cy=\"244.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"441.0\" cy=\"247.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"466.2\" cy=\"257.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"485.4\" cy=\"270.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"497.6\" cy=\"283.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"503.8\" cy=\"292.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"506.5\" cy=\"296.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"509.2\" cy=\"292.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"515.4\" cy=\"283.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"527.6\" cy=\"270.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"546.8\" cy=\"257.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"572.0\" cy=\"247.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"600.7\" cy=\"244.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"629.5\" cy=\"247.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"654.7\" cy=\"257.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"673.9\" cy=\"270.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"686.1\" cy=\"283.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"692.3\" cy=\"292.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"695.0\" cy=\"296.0\" r=\"5\" fill=\"#B5523B\"/><line x1=\"320\" y1=\"380\" x2=\"400\" y2=\"380\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"400,373 414,380 400,387\" fill=\"#1F4E5A\"/><text x=\"422\" y=\"385\" fill=\"#1F4E5A\">sens de déplacement du vélo</text></svg>",
+      "questions": [
+        {
+          "texte": "Recopie et complète : « Pendant que le train roule, Yanis est immobile par rapport au référentiel …………, mais il est en mouvement par rapport au référentiel ………… . On dit que le mouvement est ………… : il dépend du référentiel choisi. »",
+          "aides": [
+            "Pense aux deux observateurs : quelqu'un assis dans le train, et Sofia sur le quai.",
+            "Par rapport au siège, la position de Yanis change-t-elle ? Et par rapport aux rails ?"
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. « Pour Sofia, Yanis et le contrôleur sont tous les deux en mouvement. »<br>b. « Dans le référentiel du train, Sofia est immobile. »<br>c. « Le contrôleur est immobile dans le référentiel du train. »<br>d. « Le sac de Yanis est immobile dans le référentiel du train. »",
+          "aides": []
+        },
+        {
+          "texte": "Le lendemain, Yanis va au lycée à vélo. On étudie le mouvement de la valve de sa roue avant (le petit embout qui sert à gonfler le pneu). Le document ci-dessous montre la trajectoire de la valve dans deux référentiels différents.<br>a. Quel est le système étudié ?<br>b. Associe chaque trajectoire à son référentiel : le référentiel terrestre (un passant sur le trottoir) ou le référentiel du cadre du vélo (une caméra fixée au cadre).<br>c. Quelle trajectoire est circulaire ? Comment qualifie-t-on l'autre ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Yanis est immobile par rapport au référentiel du train (son siège, le wagon), mais en mouvement par rapport au référentiel terrestre (le quai, les rails). Le mouvement est relatif.",
+        "<strong>2.</strong> a. VRAI : Sofia est immobile sur le quai (référentiel terrestre) ; Yanis et le contrôleur s'éloignent d'elle avec le train.",
+        "b. FAUX : par rapport au train, Sofia s'éloigne vers l'arrière ; elle est en mouvement dans le référentiel du train.",
+        "c. FAUX : le contrôleur marche dans l'allée, sa position par rapport aux sièges change : il est en mouvement dans le référentiel du train.",
+        "d. VRAI : le sac garde la même position par rapport au siège (et à Yanis).",
+        "<strong>3.</strong> a. Le système est la valve de la roue avant.",
+        "b. Trajectoire 1 (cercle autour de l'axe) : référentiel du cadre du vélo, car l'axe de la roue est fixe par rapport au cadre. Trajectoire 2 (suite d'arches qui avancent) : référentiel terrestre, car pour le passant la valve tourne ET avance avec le vélo.",
+        "c. La trajectoire 1 est circulaire ; la trajectoire 2 est curviligne (ni droite, ni cercle).",
+        "<em>⚠ Erreur fréquente : dire « Yanis est immobile » sans préciser le référentiel. Une phrase sur le mouvement n'a de sens que si l'on indique « par rapport à quoi ».</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Du panier de basket à la planète Mars",
+      "contexte": [
+        "On s'intéresse à quatre mouvements très différents :",
+        "(A) le ballon lors d'un lancer franc au basket ; (B) la Station spatiale internationale (ISS) qui tourne autour de la Terre ; (C) la planète Mars qui tourne autour du Soleil ; (D) un ascenseur qui monte du rez-de-chaussée au dernier étage d'une tour de La Défense."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque mouvement (A) à (D), indique le système étudié, le référentiel le plus adapté (terrestre, géocentrique ou héliocentrique) et la forme de la trajectoire (rectiligne, circulaire ou curviligne).",
+          "aides": [
+            "Le référentiel est l'objet « fixe » par rapport auquel on décrit le mouvement. Autour de quoi l'ISS tourne-t-elle ? Et Mars ?",
+            "Relis le tableau de la fiche : terrestre pour un mouvement au sol, géocentrique pour un objet qui tourne autour de la Terre, héliocentrique pour un objet qui tourne autour du Soleil."
+          ]
+        },
+        {
+          "texte": "Associe à chaque mouvement sa durée et la longueur de sa trajectoire, choisies dans les listes suivantes.<br>Durées : 1 s environ ; 30 s environ ; 1,5 h environ ; 1,9 an environ.<br>Longueurs : 100 m environ ; 5 m environ ; 4 × 10⁷ m environ ; 1,4 × 10¹² m environ.",
+          "aides": []
+        },
+        {
+          "texte": "L'ISS mesure environ 100 m de long. Pour décrire son tour de la Terre, on la modélise par un simple point. Est-ce raisonnable ? Compare les deux longueurs.",
+          "aides": []
+        },
+        {
+          "texte": "Une gymnaste réalise un salto. Si on la modélise par un point (son centre), quelle information perd-on sur son mouvement ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> (A) système : le ballon ; référentiel terrestre ; trajectoire curviligne (une courbe en cloche).",
+        "(B) système : l'ISS ; référentiel géocentrique ; trajectoire (quasi) circulaire.",
+        "(C) système : Mars ; référentiel héliocentrique ; trajectoire (quasi) circulaire.",
+        "(D) système : la cabine de l'ascenseur ; référentiel terrestre ; trajectoire rectiligne (verticale).",
+        "<strong>2.</strong> (A) 1 s et 5 m ; (B) 1,5 h et 4 × 10⁷ m (environ 92 min pour un tour de 4,3 × 10⁷ m) ; (C) 1,9 an et 1,4 × 10¹² m ; (D) 30 s et 100 m.",
+        "<strong>3.</strong> Oui : l'orbite mesure environ 4 × 10⁷ m, soit environ 4 × 10⁵ fois (400 000 fois) la longueur de l'ISS. À cette échelle, la taille de la station est négligeable : un point suffit.",
+        "<strong>4.</strong> On perd la rotation de la gymnaste sur elle-même (le salto lui-même) et le mouvement de ses bras et de ses jambes : le point ne décrit que le déplacement global de son centre.",
+        "<em>⚠ Erreur fréquente : choisir le référentiel terrestre pour l'ISS. Elle tourne autour de la Terre : on décrit son mouvement par rapport au centre de la Terre (référentiel géocentrique), pas par rapport au sol qui tourne sur lui-même.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Qui va le plus vite pour aller au lycée ?",
+      "contexte": [
+        "Trois élèves comparent leur trajet du matin. On rappelle la relation de la vitesse moyenne : v = d / Δt, où d est la distance parcourue et Δt la durée du parcours.",
+        "Amina habite à 1,2 km du lycée et vient à pied en 15 min. Rayan habite dans la même rue qu'Amina et vient à vélo en 5 min. Nassim vient de Paris en train : le trajet mesure environ 11 km et dure 12 min (valeurs approchées)."
+      ],
+      "questions": [
+        {
+          "texte": "Convertis les trois durées en heures.",
+          "aides": [
+            "1 h = 60 min : pour passer des minutes aux heures, on divise par 60.",
+            "Exemple : 30 min = 30 / 60 = 0,5 h."
+          ]
+        },
+        {
+          "texte": "Calcule la vitesse moyenne de chaque élève en km·h⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Convertis ces trois vitesses en m·s⁻¹ (arrondis à trois chiffres significatifs).",
+          "aides": [
+            "Relis l'encadré Données : 1 m·s⁻¹ = 3,6 km·h⁻¹.",
+            "Pour passer des km·h⁻¹ aux m·s⁻¹, on divise par 3,6. Vérifie : une vitesse en m·s⁻¹ est plus petite que la même vitesse en km·h⁻¹."
+          ]
+        },
+        {
+          "texte": "Range les trois élèves du plus lent au plus rapide.",
+          "aides": []
+        },
+        {
+          "texte": "Un cycliste du Tour de France roule en moyenne à 36 km·h⁻¹. Exprime cette vitesse en m·s⁻¹. Est-il plus rapide que Rayan ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Amina : Δt = 15 / 60 = 0,25 h. Rayan : Δt = 5 / 60 ≈ 0,083 h. Nassim : Δt = 12 / 60 = 0,20 h.",
+        "<strong>2.</strong> Amina : v = 1,2 / 0,25 = 4,8 km·h⁻¹. Rayan : v = 1,2 / (5/60) = 14,4 km·h⁻¹. Nassim : v = 11 / 0,20 = 55 km·h⁻¹.",
+        "<strong>3.</strong> Amina : v = 4,8 / 3,6 = 1,33 m·s⁻¹ (ou 1 200 m / 900 s). Rayan : v = 14,4 / 3,6 = 4,00 m·s⁻¹ (1 200 m / 300 s). Nassim : v = 55 / 3,6 = 15,3 m·s⁻¹ (11 000 m / 720 s).",
+        "<strong>4.</strong> Amina (4,8 km·h⁻¹) &lt; Rayan (14,4 km·h⁻¹) &lt; Nassim (55 km·h⁻¹).",
+        "<strong>5.</strong> v = 36 / 3,6 = 10,0 m·s⁻¹ : le cycliste est plus de deux fois plus rapide que Rayan (4,00 m·s⁻¹).",
+        "<em>⚠ Erreur fréquente : diviser par 15 min sans convertir (1,2 / 15 = 0,08) et écrire « 0,08 km·h⁻¹ ». Une vitesse de marche d'environ 5 km·h⁻¹ doit servir de repère pour repérer l'erreur.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "La trottinette qui freine",
+      "contexte": [
+        "Ilyes filme avec son téléphone, posé sur un muret, sa sœur qui roule en trottinette électrique sur une piste cyclable rectiligne puis freine. Une application de pointage lui donne les positions successives M₀, M₁, …, M₈ de la trottinette, enregistrées toutes les τ = 0,50 s. On les a reportées sur une règle graduée en mètres (document ci-dessous).",
+        "En France, la vitesse des trottinettes électriques est limitée à 25 km·h⁻¹."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"40\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Positions successives de la trottinette (vue de dessus), toutes les τ = 0,50 s</text><line x1=\"45.0\" y1=\"330\" x2=\"717.0\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"45.0\" y1=\"330\" x2=\"45.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"45.0\" y=\"364\" text-anchor=\"middle\">0</text><line x1=\"45.0\" y1=\"70\" x2=\"45.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"54.6\" y1=\"330\" x2=\"54.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"64.2\" y1=\"330\" x2=\"64.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"73.8\" y1=\"330\" x2=\"73.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"83.4\" y1=\"330\" x2=\"83.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"93.0\" y1=\"330\" x2=\"93.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"93.0\" y=\"364\" text-anchor=\"middle\">1</text><line x1=\"93.0\" y1=\"70\" x2=\"93.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"102.6\" y1=\"330\" x2=\"102.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"112.2\" y1=\"330\" x2=\"112.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"121.8\" y1=\"330\" x2=\"121.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"131.4\" y1=\"330\" x2=\"131.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"141.0\" y1=\"330\" x2=\"141.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"141.0\" y=\"364\" text-anchor=\"middle\">2</text><line x1=\"141.0\" y1=\"70\" x2=\"141.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"150.6\" y1=\"330\" x2=\"150.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"160.2\" y1=\"330\" x2=\"160.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"169.8\" y1=\"330\" x2=\"169.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"179.4\" y1=\"330\" x2=\"179.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"189.0\" y1=\"330\" x2=\"189.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"189.0\" y=\"364\" text-anchor=\"middle\">3</text><line x1=\"189.0\" y1=\"70\" x2=\"189.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"198.6\" y1=\"330\" x2=\"198.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"208.2\" y1=\"330\" x2=\"208.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"217.8\" y1=\"330\" x2=\"217.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"227.4\" y1=\"330\" x2=\"227.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"237.0\" y1=\"330\" x2=\"237.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"237.0\" y=\"364\" text-anchor=\"middle\">4</text><line x1=\"237.0\" y1=\"70\" x2=\"237.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"246.6\" y1=\"330\" x2=\"246.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"256.2\" y1=\"330\" x2=\"256.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"265.8\" y1=\"330\" x2=\"265.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"275.4\" y1=\"330\" x2=\"275.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"285.0\" y1=\"330\" x2=\"285.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"285.0\" y=\"364\" text-anchor=\"middle\">5</text><line x1=\"285.0\" y1=\"70\" x2=\"285.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"294.6\" y1=\"330\" x2=\"294.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304.2\" y1=\"330\" x2=\"304.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"313.8\" y1=\"330\" x2=\"313.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"323.4\" y1=\"330\" x2=\"323.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"333.0\" y1=\"330\" x2=\"333.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"333.0\" y=\"364\" text-anchor=\"middle\">6</text><line x1=\"333.0\" y1=\"70\" x2=\"333.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"342.6\" y1=\"330\" x2=\"342.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"352.2\" y1=\"330\" x2=\"352.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"361.8\" y1=\"330\" x2=\"361.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"371.4\" y1=\"330\" x2=\"371.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"381.0\" y1=\"330\" x2=\"381.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"381.0\" y=\"364\" text-anchor=\"middle\">7</text><line x1=\"381.0\" y1=\"70\" x2=\"381.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"390.6\" y1=\"330\" x2=\"390.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"400.2\" y1=\"330\" x2=\"400.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"409.8\" y1=\"330\" x2=\"409.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"419.4\" y1=\"330\" x2=\"419.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"429.0\" y1=\"330\" x2=\"429.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"429.0\" y=\"364\" text-anchor=\"middle\">8</text><line x1=\"429.0\" y1=\"70\" x2=\"429.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"438.6\" y1=\"330\" x2=\"438.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"448.2\" y1=\"330\" x2=\"448.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"457.8\" y1=\"330\" x2=\"457.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"467.4\" y1=\"330\" x2=\"467.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"477.0\" y1=\"330\" x2=\"477.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"477.0\" y=\"364\" text-anchor=\"middle\">9</text><line x1=\"477.0\" y1=\"70\" x2=\"477.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"486.6\" y1=\"330\" x2=\"486.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"496.2\" y1=\"330\" x2=\"496.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"505.8\" y1=\"330\" x2=\"505.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"515.4\" y1=\"330\" x2=\"515.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"525.0\" y1=\"330\" x2=\"525.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"525.0\" y=\"364\" text-anchor=\"middle\">10</text><line x1=\"525.0\" y1=\"70\" x2=\"525.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"534.6\" y1=\"330\" x2=\"534.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"544.2\" y1=\"330\" x2=\"544.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"553.8\" y1=\"330\" x2=\"553.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"563.4\" y1=\"330\" x2=\"563.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"573.0\" y1=\"330\" x2=\"573.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"573.0\" y=\"364\" text-anchor=\"middle\">11</text><line x1=\"573.0\" y1=\"70\" x2=\"573.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"582.6\" y1=\"330\" x2=\"582.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"592.2\" y1=\"330\" x2=\"592.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"601.8\" y1=\"330\" x2=\"601.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"611.4\" y1=\"330\" x2=\"611.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"621.0\" y1=\"330\" x2=\"621.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"621.0\" y=\"364\" text-anchor=\"middle\">12</text><line x1=\"621.0\" y1=\"70\" x2=\"621.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"630.6\" y1=\"330\" x2=\"630.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"640.2\" y1=\"330\" x2=\"640.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"649.8\" y1=\"330\" x2=\"649.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"659.4\" y1=\"330\" x2=\"659.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"669.0\" y1=\"330\" x2=\"669.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"669.0\" y=\"364\" text-anchor=\"middle\">13</text><line x1=\"669.0\" y1=\"70\" x2=\"669.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"678.6\" y1=\"330\" x2=\"678.6\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"688.2\" y1=\"330\" x2=\"688.2\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"697.8\" y1=\"330\" x2=\"697.8\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"707.4\" y1=\"330\" x2=\"707.4\" y2=\"337\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"717.0\" y1=\"330\" x2=\"717.0\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"717.0\" y=\"364\" text-anchor=\"middle\">14</text><line x1=\"717.0\" y1=\"70\" x2=\"717.0\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"717.0\" y=\"390\" text-anchor=\"end\" font-weight=\"bold\">x (m)</text><line x1=\"45.0\" y1=\"250\" x2=\"717.0\" y2=\"250\" stroke=\"#9a9a9a\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/><line x1=\"45.0\" y1=\"250\" x2=\"45.0\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"45.0\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"41.0\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">0</tspan></text><line x1=\"141.0\" y1=\"250\" x2=\"141.0\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"141.0\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"137.0\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">1</tspan></text><line x1=\"237.0\" y1=\"250\" x2=\"237.0\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"237.0\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"233.0\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">2</tspan></text><line x1=\"333.0\" y1=\"250\" x2=\"333.0\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"333.0\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"329.0\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">3</tspan></text><line x1=\"429.0\" y1=\"250\" x2=\"429.0\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"429.0\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"425.0\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">4</tspan></text><line x1=\"515.4\" y1=\"250\" x2=\"515.4\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"515.4\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"511.4\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">5</tspan></text><line x1=\"582.6\" y1=\"250\" x2=\"582.6\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"582.6\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"578.6\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">6</tspan></text><line x1=\"630.6\" y1=\"250\" x2=\"630.6\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"630.6\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"626.6\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">7</tspan></text><line x1=\"659.4\" y1=\"250\" x2=\"659.4\" y2=\"330\" stroke=\"#C8962E\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"659.4\" cy=\"250\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"655.4\" y=\"232.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">8</tspan></text><text x=\"45.0\" y=\"420\" font-size=\"14\">Échelle : la graduation de la règle donne les positions réelles (en mètres) dans le référentiel terrestre.</text><text x=\"45.0\" y=\"442\" font-size=\"14\">La trottinette roule de gauche à droite.</text></svg>",
+      "questions": [
+        {
+          "texte": "Précise le système étudié et le référentiel d'étude.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle est la forme de la trajectoire ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "En observant l'écart entre deux positions successives, décris le mouvement de la trottinette entre M₀ et M₄, puis entre M₄ et M₈ (uniforme, accéléré ou ralenti).",
+          "aides": [
+            "Toutes les positions sont séparées par la même durée τ.",
+            "Si l'écart entre deux positions reste le même, la vitesse ne change pas ; s'il diminue, la trottinette parcourt moins de distance pendant la même durée."
+          ]
+        },
+        {
+          "texte": "Calcule la vitesse moyenne de la trottinette entre M₀ et M₄, en m·s⁻¹ puis en km·h⁻¹. Sa conductrice respecte-t-elle la limitation ?",
+          "aides": [
+            "Lis la position de M₀ et celle de M₄ sur la règle : la distance parcourue est leur différence.",
+            "Δt : compte le nombre d'intervalles (et non de points) entre M₀ et M₄, puis multiplie par τ.",
+            "Pour convertir en km·h⁻¹, multiplie par 3,6."
+          ]
+        },
+        {
+          "texte": "Calcule la vitesse moyenne entre M₄ et M₈. Le résultat est-il cohérent avec ta réponse à la question 3 ?",
+          "aides": []
+        },
+        {
+          "texte": "Représente sur le document le vecteur déplacement M₄M₈, puis donne sa direction, son sens et la longueur réelle qu'il représente.",
+          "aides": [
+            "Le vecteur déplacement M₄M₈ part de la position M₄ et arrive à la position M₈.",
+            "Sa longueur correspond à la distance entre M₄ et M₈ : lis-la sur la règle."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Système : la trottinette (avec sa conductrice), modélisée par un point. Référentiel : terrestre (le téléphone est immobile sur le muret).",
+        "<strong>2.</strong> La trajectoire est rectiligne : toutes les positions sont alignées sur une même droite.",
+        "<strong>3.</strong> Entre M₀ et M₄ : les positions sont régulièrement espacées (2,0 m entre deux positions, pour la même durée τ) : mouvement rectiligne uniforme. Entre M₄ et M₈ : les écarts diminuent (1,8 m ; 1,4 m ; 1,0 m ; 0,6 m) : mouvement rectiligne ralenti.",
+        "<strong>4.</strong> d = 8,0 − 0 = 8,0 m ; il y a 4 intervalles entre M₀ et M₄, donc Δt = 4 × 0,50 = 2,0 s. v = d / Δt = 8,0 / 2,0 = 4,0 m·s⁻¹, soit 4,0 × 3,6 = 14,4 km·h⁻¹ ≈ 14 km·h⁻¹ &lt; 25 km·h⁻¹ : la limitation est respectée.",
+        "<strong>5.</strong> d = 12,8 − 8,0 = 4,8 m ; Δt = 4 × 0,50 = 2,0 s ; v = 4,8 / 2,0 = 2,4 m·s⁻¹ (8,6 km·h⁻¹). C'est plus petit qu'entre M₀ et M₄ : cohérent avec un mouvement ralenti.",
+        "<strong>6.</strong> Flèche partant de M₄ et arrivant en M₈. Direction : celle de la piste (la droite de la trajectoire) ; sens : de M₄ vers M₈ (de gauche à droite, sens du mouvement) ; longueur réelle représentée : 12,8 − 8,0 = 4,8 m.",
+        "<em>⚠ Erreur fréquente : compter 5 positions de M₀ à M₄ et prendre Δt = 5 × 0,50 = 2,5 s (on trouverait 3,2 m·s⁻¹). Il faut compter les intervalles entre les positions, pas les points.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le tapis roulant de l'aéroport",
+      "contexte": [
+        "À l'aéroport, Lina marche sur un tapis roulant rectiligne. Le tapis avance à 0,75 m·s⁻¹ par rapport au sol ; Lina marche à 1,25 m·s⁻¹ par rapport au tapis, dans le même sens. Sur le même tapis, un autre voyageur reste immobile sur le tapis, sa valise à la main.",
+        "Doc. 1 — Ce qu'affiche le programme du doc. 2 une fois complété : les positions de Lina toutes les secondes, dans deux référentiels (figure ci-dessous).",
+        "Doc. 2 — Programme Python (incomplet) qui calcule et représente ces positions (sous la figure)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"35\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Positions de Lina toutes les secondes, de t = 0 s à t = 10 s</text><line x1=\"70.0\" y1=\"90\" x2=\"70.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"70.0\" y=\"402\" text-anchor=\"middle\">0</text><line x1=\"102.0\" y1=\"90\" x2=\"102.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"134.0\" y1=\"90\" x2=\"134.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"134.0\" y=\"402\" text-anchor=\"middle\">2</text><line x1=\"166.0\" y1=\"90\" x2=\"166.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"198.0\" y1=\"90\" x2=\"198.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"198.0\" y=\"402\" text-anchor=\"middle\">4</text><line x1=\"230.0\" y1=\"90\" x2=\"230.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"262.0\" y1=\"90\" x2=\"262.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"262.0\" y=\"402\" text-anchor=\"middle\">6</text><line x1=\"294.0\" y1=\"90\" x2=\"294.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"326.0\" y1=\"90\" x2=\"326.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"326.0\" y=\"402\" text-anchor=\"middle\">8</text><line x1=\"358.0\" y1=\"90\" x2=\"358.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"390.0\" y1=\"90\" x2=\"390.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"390.0\" y=\"402\" text-anchor=\"middle\">10</text><line x1=\"422.0\" y1=\"90\" x2=\"422.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"454.0\" y1=\"90\" x2=\"454.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"454.0\" y=\"402\" text-anchor=\"middle\">12</text><line x1=\"486.0\" y1=\"90\" x2=\"486.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"518.0\" y1=\"90\" x2=\"518.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"518.0\" y=\"402\" text-anchor=\"middle\">14</text><line x1=\"550.0\" y1=\"90\" x2=\"550.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"582.0\" y1=\"90\" x2=\"582.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"582.0\" y=\"402\" text-anchor=\"middle\">16</text><line x1=\"614.0\" y1=\"90\" x2=\"614.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"646.0\" y1=\"90\" x2=\"646.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"646.0\" y=\"402\" text-anchor=\"middle\">18</text><line x1=\"678.0\" y1=\"90\" x2=\"678.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"710.0\" y1=\"90\" x2=\"710.0\" y2=\"380\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"710.0\" y=\"402\" text-anchor=\"middle\">20</text><rect x=\"70.0\" y=\"90\" width=\"640.0\" height=\"290\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"710.0\" y=\"428\" text-anchor=\"end\" font-weight=\"bold\">x (m)</text><circle cx=\"70.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"134.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"198.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"262.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"326.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"390.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"454.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"518.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"582.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"646.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"710.0\" cy=\"190\" r=\"6\" fill=\"#1F4E5A\"/><circle cx=\"70.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"110.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"150.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"190.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"230.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"270.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"310.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"350.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"390.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"430.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><circle cx=\"470.0\" cy=\"300\" r=\"6\" fill=\"#C8962E\"/><text x=\"76.0\" y=\"170\" fill=\"#1F4E5A\" font-weight=\"bold\">Série A</text><text x=\"76.0\" y=\"280\" fill=\"#8a6418\" font-weight=\"bold\">Série B</text><text x=\"70.0\" y=\"428\" font-size=\"14\">Le premier point de chaque série correspond à t = 0 s.</text></svg>",
+      "code": [
+        "import matplotlib.pyplot as plt",
+        "tau = 1.0          # durée entre deux positions (s)",
+        "vtapis = 0.75     # vitesse du tapis par rapport au sol (m/s)",
+        "vlina = 1.25      # vitesse de Lina par rapport au tapis (m/s)",
+        "xtapis = []       # positions de Lina dans le référentiel du tapis (m)",
+        "xsol = []         # positions de Lina dans le référentiel terrestre (m)",
+        "for i in range(11):",
+        "    t = i * tau",
+        "    xtapis.append(vlina * t)",
+        "    xsol.append(...)              # à compléter",
+        "plt.plot(xsol, [1] * 11, 'o', label='série A')",
+        "plt.plot(xtapis, [0] * 11, 'o', label='série B')",
+        "plt.xlabel('x (m)')",
+        "plt.legend()",
+        "plt.show()"
+      ],
+      "questions": [
+        {
+          "texte": "Dans le référentiel du tapis, puis dans le référentiel terrestre, le voyageur immobile sur le tapis est-il en mouvement ? Et Lina ?",
+          "aides": []
+        },
+        {
+          "texte": "Combien de positions le programme calcule-t-il ? Quelle durée sépare deux positions successives ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète la ligne marquée « à compléter » pour obtenir la position de Lina par rapport au sol.",
+          "aides": [
+            "En 1 s, de combien Lina avance-t-elle par rapport au tapis ? Et de combien le tapis avance-t-il par rapport au sol ?",
+            "Par rapport au sol, les deux déplacements s'ajoutent (même sens) : utilise les deux variables vlina et vtapis du programme."
+          ]
+        },
+        {
+          "texte": "Dans le doc. 1, quelle série de points correspond au référentiel terrestre ? Justifie. Décris le mouvement de Lina dans chaque référentiel.",
+          "aides": []
+        },
+        {
+          "texte": "À partir des positions lues sur le doc. 1, calcule la vitesse moyenne de Lina entre t = 0 s et t = 10 s dans chacun des deux référentiels.",
+          "aides": [
+            "Lis sur le doc. 1 la position du dernier point de chaque série (à t = 10 s) ; le premier point est à x = 0 m.",
+            "Applique v = d / Δt avec Δt = 10 s."
+          ]
+        },
+        {
+          "texte": "Le tapis mesure 50 m. Combien de temps Lina gagne-t-elle en marchant sur le tapis plutôt qu'en y restant immobile ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le voyageur : immobile dans le référentiel du tapis, en mouvement (0,75 m·s⁻¹) dans le référentiel terrestre. Lina : en mouvement dans les deux référentiels (mais pas à la même vitesse).",
+        "<strong>2.</strong> range(11) donne i = 0, 1, …, 10 : 11 positions, séparées de tau = 1,0 s (de t = 0 s à t = 10 s).",
+        "<strong>3.</strong> xsol.append((vlina + vtapis) * t) : par rapport au sol, Lina avance chaque seconde de 1,25 m (sa marche) + 0,75 m (le tapis), soit 2,0 m.",
+        "<strong>4.</strong> La série A (points espacés de 2,0 m) correspond au référentiel terrestre ; la série B (points espacés de 1,25 m) au référentiel du tapis. Dans les deux référentiels, les points sont alignés et régulièrement espacés : mouvement rectiligne uniforme, plus rapide par rapport au sol.",
+        "<strong>5.</strong> Référentiel terrestre : v = 20 / 10 = 2,0 m·s⁻¹. Référentiel du tapis : v = 12,5 / 10 = 1,25 m·s⁻¹.",
+        "<strong>6.</strong> En marchant : Δt = d / v = 50 / 2,0 = 25 s. Immobile : Δt = 50 / 0,75 = 66,7 s ≈ 67 s. Gain : 66,7 − 25 = 41,7 s ≈ 42 s.",
+        "<em>⚠ Erreur fréquente : utiliser 1,25 m·s⁻¹ pour la traversée du tapis. La longueur 50 m est mesurée par rapport au sol : il faut la vitesse de Lina dans le référentiel terrestre (2,0 m·s⁻¹).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Flashé par le radar tronçon ?",
+      "contexte": [
+        "Le père de Samir reçoit une lettre : il serait passé trop vite sur une route départementale équipée d'un radar tronçon. Il est persuadé que c'est une erreur. Samir décide de vérifier.",
+        "Doc. 1 — Principe du radar tronçon (simplifié). Deux portiques, A et B, photographient chaque véhicule et enregistrent l'heure exacte de son passage. Le système calcule la vitesse moyenne du véhicule entre A et B à partir de la longueur de la route entre les deux portiques. Pour tenir compte des imprécisions de mesure, on retire 5 km·h⁻¹ à la vitesse calculée (pour les vitesses inférieures à 100 km·h⁻¹) : c'est la vitesse retenue. Il y a infraction si la vitesse retenue dépasse la vitesse maximale autorisée.",
+        "Doc. 2 — Schéma du tronçon contrôlé."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"20\" y=\"20\" width=\"720\" height=\"430\" fill=\"#f6f1e7\" stroke=\"#d9d2c5\"/><path d=\"M110,340 C180,420 260,420 300,330 S360,140 450,170 S560,330 610,250 S630,170 650,150\" fill=\"none\" stroke=\"#8a7f6e\" stroke-width=\"16\" stroke-linecap=\"round\"/><path d=\"M110,340 C180,420 260,420 300,330 S360,140 450,170 S560,330 610,250 S630,170 650,150\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\" stroke-dasharray=\"10 8\"/><line x1=\"110\" y1=\"340\" x2=\"650\" y2=\"150\" stroke=\"#B5523B\" stroke-width=\"2.5\" stroke-dasharray=\"8 6\"/><rect x=\"96\" y=\"306\" width=\"28\" height=\"12\" fill=\"#1F4E5A\"/><line x1=\"98\" y1=\"318\" x2=\"98\" y2=\"348\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><line x1=\"122\" y1=\"318\" x2=\"122\" y2=\"348\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><rect x=\"636\" y=\"116\" width=\"28\" height=\"12\" fill=\"#1F4E5A\"/><line x1=\"638\" y1=\"128\" x2=\"638\" y2=\"158\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><line x1=\"662\" y1=\"128\" x2=\"662\" y2=\"158\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"90\" y=\"298\" font-weight=\"bold\" fill=\"#1F4E5A\">Portique A (entrée)</text><text x=\"670\" y=\"108\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">Portique B (sortie)</text><text x=\"395\" y=\"212\" text-anchor=\"middle\" fill=\"#B5523B\" font-weight=\"bold\" stroke=\"#f6f1e7\" stroke-width=\"6\" paint-order=\"stroke\" transform=\"rotate(-19 395 212)\">5,9 km en ligne droite (« à vol d'oiseau »)</text><text x=\"250\" y=\"440\" text-anchor=\"middle\" fill=\"#5a5040\" font-weight=\"bold\">route : 7,2 km de A à B</text><circle cx=\"80\" cy=\"90\" r=\"34\" fill=\"#fff\" stroke=\"#c0392b\" stroke-width=\"8\"/><text x=\"80\" y=\"99\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\">90</text><text x=\"125\" y=\"85\">Vitesse maximale autorisée</text><text x=\"125\" y=\"105\">sur tout le tronçon : 90 km/h</text><text x=\"720\" y=\"420\" text-anchor=\"end\" font-size=\"14\">Schéma sans échelle</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Extrait de la lettre et témoignage. « Passage au portique A : 14 h 32 min 10 s. Passage au portique B : 14 h 36 min 40 s. » Le père de Samir affirme : « J'ai roulé à 80 km·h⁻¹ pendant tout le trajet, sauf pendant 1 minute, quand j'ai doublé un camion à 120 km·h⁻¹. Ça ne peut pas faire plus de 90 de moyenne ! »"
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : quel est le système étudié par le radar, et dans quel référentiel ? Quelle distance faut-il utiliser pour calculer la vitesse moyenne : 7,2 km ou 5,9 km ? Justifie.",
+          "aides": [
+            "Le radar calcule la vitesse à partir de la distance que la voiture a réellement parcourue.",
+            "La voiture suit-elle la ligne droite entre A et B, ou la route ?"
+          ]
+        },
+        {
+          "texte": "Le père de Samir va-t-il devoir payer une amende ? Son témoignage est-il compatible avec les horaires enregistrés ? Rédige une réponse argumentée en présentant ta démarche et tes calculs.",
+          "aides": [
+            "Étape 1 : calcule la durée du trajet entre A et B, en secondes puis en heures.",
+            "Étape 2 : v = d / Δt, puis applique la règle du doc. 1 (retirer 5 km·h⁻¹) et compare à 90 km·h⁻¹.",
+            "Étape 3 : pour le récit, calcule la distance parcourue en 1 min à 120 km·h⁻¹, puis la durée pour le reste à 80 km·h⁻¹ ; compare la durée totale à celle enregistrée."
+          ]
+        },
+        {
+          "texte": "Regard critique : un radar tronçon peut-il garantir qu'un automobiliste n'a jamais dépassé 90 km·h⁻¹ entre A et B ? Explique, en t'appuyant sur la notion de vitesse moyenne.",
+          "aides": [
+            "Le radar ne connaît que deux instants et deux positions.",
+            "Imagine un conducteur qui roule très vite au début puis très lentement : que vaut sa vitesse moyenne ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Système : la voiture, modélisée par un point ; référentiel terrestre (les portiques sont fixes par rapport au sol). La voiture parcourt la route, donc d = 7,2 km. La longueur 5,9 km est celle du vecteur déplacement AB (ligne droite) : ce n'est pas la distance parcourue, puisque la trajectoire n'est pas rectiligne.",
+        "<strong>2.</strong> Démarche attendue : (a) calculer la durée entre A et B ; (b) en déduire la vitesse moyenne mesurée, puis la vitesse retenue ; (c) comparer à 90 km·h⁻¹ ; (d) calculer la vitesse moyenne correspondant au récit et la comparer à la mesure.",
+        "a. Δt = 14 h 36 min 40 s − 14 h 32 min 10 s = 4 min 30 s = 270 s = 270 / 3 600 = 0,075 h.",
+        "b. v = d / Δt = 7,2 / 0,075 = 96 km·h⁻¹ (soit 26,7 m·s⁻¹). Vitesse retenue : 96 − 5 = 91 km·h⁻¹.",
+        "c. 91 km·h⁻¹ &gt; 90 km·h⁻¹ : il y a bien infraction, l'amende est justifiée (de peu). Autre démarche possible : pour ne pas être en infraction, il aurait fallu une vitesse calculée d'au plus 95 km·h⁻¹, donc Δt ≥ 7,2 / 95 h = 272,8 s ≈ 4 min 33 s ; il a mis 4 min 30 s.",
+        "d. Récit : 1 min à 120 km·h⁻¹ → d = 120 × 1/60 = 2,0 km. Il reste 7,2 − 2,0 = 5,2 km à 80 km·h⁻¹ → Δt = 5,2 / 80 = 0,065 h = 3,9 min = 234 s. Durée totale : 60 + 234 = 294 s (4 min 54 s), soit une vitesse moyenne de 7,2 / (294/3 600) = 88,2 km·h⁻¹ ≈ 88 km·h⁻¹. Avec ce récit, il n'aurait pas été en infraction. Mais il a mis 24 s de moins (270 s) : il a forcément roulé plus vite que ce qu'il raconte.",
+        "Conclusion : l'amende est justifiée et le témoignage n'est pas compatible avec les horaires enregistrés.",
+        "<strong>3.</strong> Non : le radar mesure une vitesse moyenne. Une voiture peut rouler à 130 km·h⁻¹ sur une partie du tronçon puis très lentement sur le reste et avoir une vitesse moyenne inférieure à 90 km·h⁻¹. La vitesse moyenne ne dit rien de la vitesse à chaque instant. (Ce radar ne contrôle donc pas les excès ponctuels ; c'est le rôle d'un radar fixe classique.)",
+        "Éléments valorisés même si le résultat final est faux : conversion correcte de la durée en heures (ou de la distance en m et de la vitesse en m·s⁻¹) ; choix justifié de la distance par la route ; prise en compte de la marge de 5 km·h⁻¹ ; comparaison argumentée récit / mesure ; conclusion rédigée.",
+        "<em>⚠ Erreur fréquente : faire la moyenne des vitesses (80 + 120) / 2 = 100 km·h⁻¹. La vitesse moyenne n'est pas la moyenne des vitesses : il faut toujours calculer d / Δt sur tout le trajet.</em>",
+        "<em>⚠ Erreur fréquente : utiliser 5,9 km (on trouverait 78,7 km·h⁻¹) : c'est la longueur du vecteur déplacement AB, pas la distance parcourue.</em>"
+      ]
+    }
+  ]
+}

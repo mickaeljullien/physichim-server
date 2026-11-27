@@ -1,0 +1,684 @@
+{
+  "id": 26,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. De l'espèce chimique à l'entité chimique",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "text",
+            "text": "On peut décrire la matière à deux échelles : l'<strong>échelle macroscopique</strong>, où une espèce chimique désigne une collection d'un très grand nombre d'entités identiques, et l'<strong>échelle microscopique</strong>, où l'on s'intéresse aux entités chimiques elles-mêmes (atomes, molécules, ions)."
+          },
+          {
+            "type": "def",
+            "term": "Composé ionique",
+            "text": "Solide constitué de cations et d'anions assemblés de façon à ce que la charge électrique globale soit nulle (principe d'électroneutralité de la matière)."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le chlorure de sodium NaCl est formé d'autant de cations Na⁺ que d'anions Cl⁻. Le chlorure de calcium CaCl₂ est formé de cations Ca²⁺ et d'anions Cl⁻ deux fois plus nombreux, afin que la charge globale reste nulle."
+          }
+        ]
+      },
+      {
+        "title": "2. Concentration en masse et solubilité",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "formula",
+            "label": "Concentration en masse",
+            "text": "cm = m(soluté) / V(solution)"
+          },
+          {
+            "type": "def",
+            "term": "Solubilité",
+            "text": "Masse maximale d'une espèce chimique que l'on peut dissoudre dans un litre de solvant, à une température donnée. Au-delà, la solution est dite saturée et le solide en excès ne se dissout plus."
+          },
+          {
+            "type": "warn",
+            "text": "Exemple : à 20 °C, il est possible de dissoudre au maximum environ 350 g de NaCl(s) dans 1 L d'eau. Au-delà de cette concentration maximale, le sel supplémentaire ajouté reste sous forme solide au fond du récipient."
+          }
+        ]
+      },
+      {
+        "title": "3. Méthode par échelle de teintes",
+        "icon": "🎨",
+        "content": [
+          {
+            "type": "def",
+            "term": "Échelle de teintes",
+            "text": "Ensemble de solutions filles, de concentrations connues et croissantes, préparées par dilution d'une même solution mère colorée."
+          },
+          {
+            "type": "text",
+            "text": "Pour estimer la concentration d'une solution colorée inconnue, on compare visuellement sa teinte à celle des solutions de l'échelle de teintes : plus la concentration en espèce colorée est élevée, plus la teinte est intense. La solution inconnue est encadrée par les deux teintes de l'échelle les plus proches de la sienne."
+          },
+          {
+            "type": "warn",
+            "text": "Cette méthode reste <strong>qualitative</strong> (comparaison visuelle) : elle donne un encadrement approché de la concentration, mais pas une valeur précise. Exemple : une solution de Dakin, colorée par le permanganate de potassium, comparée à une échelle de teintes de concentrations comprises entre 1,0×10⁻³ g·L⁻¹ et 4,0×10⁻² g·L⁻¹, permet d'obtenir un encadrement du type C₁ < C(Dakin) < C₂."
+          }
+        ]
+      },
+      {
+        "title": "4. Dosage par étalonnage : la droite d'étalonnage",
+        "icon": "📈",
+        "content": [
+          {
+            "type": "def",
+            "term": "Dosage par étalonnage",
+            "text": "Méthode quantitative permettant de déterminer la concentration en masse d'une espèce chimique dans une solution, en mesurant une grandeur physique qui varie avec cette concentration."
+          },
+          {
+            "type": "text",
+            "text": "Principe : on prépare une série de solutions étalons de concentrations en masse connues (par exemple par dilutions successives d'une solution mère). Pour chacune, on mesure une grandeur physique (par exemple la masse volumique, l'absorbance ou la conductivité), puis on trace le graphique de cette grandeur en fonction de la concentration : c'est la <strong>droite d'étalonnage</strong>."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Solution étalon",
+              "Concentration cm (g·L⁻¹)",
+              "Masse volumique ρ (g·mL⁻¹)"
+            ],
+            "rows": [
+              [
+                "S1",
+                "20",
+                "1,008"
+              ],
+              [
+                "S2",
+                "40",
+                "1,016"
+              ],
+              [
+                "S3",
+                "60",
+                "1,024"
+              ],
+              [
+                "S4",
+                "80",
+                "1,032"
+              ],
+              [
+                "S5",
+                "100",
+                "1,040"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "On mesure ensuite la même grandeur physique dans la solution de concentration inconnue (par exemple ρ = 1,028 g·mL⁻¹) et on reporte cette valeur sur la droite d'étalonnage pour lire graphiquement, par projection, la concentration correspondante (ici environ 70 g·L⁻¹)."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"220\" x2=\"455\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"220\" x2=\"60\" y2=\"25\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"400\" y=\"238\" font-size=\"11\" fill=\"#1B2420\">cm (g·L⁻¹)</text><text x=\"20\" y=\"30\" font-size=\"11\" fill=\"#1B2420\">ρ (g·mL⁻¹)</text><line x1=\"60\" y1=\"220\" x2=\"420\" y2=\"40\" stroke=\"#4f8ef7\" stroke-width=\"2.2\"/><circle cx=\"132\" cy=\"184\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"204\" cy=\"148\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"276\" cy=\"112\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"348\" cy=\"76\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"420\" cy=\"40\" r=\"4\" fill=\"#1B2420\"/><line x1=\"60\" y1=\"94\" x2=\"312\" y2=\"94\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><line x1=\"312\" y1=\"94\" x2=\"312\" y2=\"220\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><circle cx=\"312\" cy=\"94\" r=\"5\" fill=\"#C0472F\"/><text x=\"18\" y=\"98\" font-size=\"11\" fill=\"#C0472F\">1,028</text><text x=\"296\" y=\"234\" font-size=\"11\" fill=\"#C0472F\">70</text></svg>",
+            "caption": "Droite d'étalonnage ρ = f(cm) : à partir de la mesure ρ = 1,028 g·mL⁻¹ sur la solution inconnue, on lit par projection cm ≈ 70 g·L⁻¹."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Sur l'étiquette d'une bouteille, le mot « eau » désigne :",
+      "opts": [
+        "une seule molécule H₂O, toujours la même",
+        "un très grand nombre de molécules H₂O",
+        "l'élément chimique « eau »",
+        "un très grand nombre d'« atomes d'eau »"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "espece-vs-entite",
+          "texte": "Confondre espèce chimique (échelle macroscopique) et entité chimique (une seule molécule)"
+        },
+        null,
+        {
+          "code": "espece-vs-element",
+          "texte": "Confondre espèce chimique et élément chimique : l'eau est formée des éléments hydrogène et oxygène"
+        },
+        {
+          "code": "molecule-vs-atome",
+          "texte": "Croire que l'eau est faite d'« atomes d'eau » : H₂O est une molécule formée de trois atomes"
+        }
+      ],
+      "exp": "À l'échelle macroscopique, une espèce chimique est une collection d'un très grand nombre d'entités identiques ; ici des molécules H₂O. Attention : une molécule seule est une entité, pas une espèce."
+    },
+    {
+      "q": "Le chlorure de magnésium solide est formé d'ions Mg²⁺ et Cl⁻. Un cristal contient 1,0×10²⁰ ions Mg²⁺. Il contient :",
+      "opts": [
+        "1,0×10²⁰ ions Cl⁻",
+        "5,0×10¹⁹ ions Cl⁻",
+        "2,0×10²⁰ ions Cl⁻",
+        "3,0×10²⁰ ions Cl⁻"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "neutralite-non-verifiee",
+          "texte": "Prendre autant d'anions que de cations sans vérifier la charge globale : (+2) + (−1) ≠ 0"
+        },
+        {
+          "code": "rapport-charges-inverse",
+          "texte": "Inverser le rapport : chaque Mg²⁺ apporte deux charges +, il faut donc deux fois plus d'ions Cl⁻"
+        },
+        null,
+        {
+          "code": "ions-totaux-vs-chlorure",
+          "texte": "Compter tous les ions du motif MgCl₂ (3) au lieu des seuls ions chlorure (2)"
+        }
+      ],
+      "exp": "Électroneutralité : (+2) + 2 × (−1) = 0, donc deux ions Cl⁻ par ion Mg²⁺ (formule MgCl₂) : 2 × 1,0×10²⁰ = 2,0×10²⁰ ions Cl⁻. Attention : la charge globale d'un solide ionique est nulle."
+    },
+    {
+      "q": "On peut dissoudre au maximum environ 350 g de sel dans 1 L d'eau à 20 °C. On verse 50 g de sel dans 100 mL d'eau à 20 °C et on agite longtemps. On observe :",
+      "opts": [
+        "tout le sel se dissout, car 50 g est bien moins que 350 g",
+        "environ 35 g se dissolvent et environ 15 g restent au fond",
+        "tout le sel finit par se dissoudre si l'on agite assez",
+        "aucun gramme ne se dissout, car on dépasse la solubilité"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "solubilite-sans-volume",
+          "texte": "Comparer à 350 g sans tenir compte du volume : 100 mL d'eau ne peuvent dissoudre que 350 × 0,100 = 35 g"
+        },
+        null,
+        {
+          "code": "agitation-depasse-solubilite",
+          "texte": "Croire qu'agiter permet de dépasser la solubilité : l'agitation accélère la dissolution, elle ne change pas la masse maximale"
+        },
+        {
+          "code": "saturation-tout-ou-rien",
+          "texte": "Croire qu'au-delà de la solubilité rien ne se dissout : la solution se sature et seul l'excès reste solide"
+        }
+      ],
+      "exp": "100 mL d'eau dissolvent au plus 350 × 0,100 = 35 g : la solution est saturée et 50 − 35 = 15 g restent solides. Attention : la solubilité est une masse maximale par litre, il faut tenir compte du volume."
+    },
+    {
+      "q": "La solubilité d'une espèce chimique dans l'eau est :",
+      "opts": [
+        "la masse volumique de sa solution saturée",
+        "la masse minimale à dissoudre pour obtenir une solution",
+        "la même quelle que soit la température",
+        "la masse maximale que l'on peut dissoudre par litre, à une température donnée"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "solubilite-vs-masse-volumique",
+          "texte": "Confondre solubilité et masse volumique : la solubilité ne concerne que le soluté dissous"
+        },
+        {
+          "code": "solubilite-minimale",
+          "texte": "Croire que la solubilité est une masse minimale : c'est la masse maximale qu'on peut dissoudre"
+        },
+        {
+          "code": "solubilite-independante-temperature",
+          "texte": "Croire que la solubilité ne dépend pas de la température : elle se donne toujours à une température précise"
+        },
+        null
+      ],
+      "exp": "La solubilité est la concentration en masse maximale d'une espèce dissoute, à une température donnée ; au-delà, la solution est saturée. Attention : elle change avec la température."
+    },
+    {
+      "q": "Échelle de teintes : S1 à 2,0 mg·L⁻¹, S2 à 4,0 mg·L⁻¹, S3 à 6,0 mg·L⁻¹, S4 à 8,0 mg·L⁻¹. Une solution inconnue est plus foncée que S2 et plus claire que S3. On peut conclure que sa concentration :",
+      "opts": [
+        "est comprise entre 4,0 et 6,0 mg·L⁻¹",
+        "vaut exactement 5,0 mg·L⁻¹",
+        "est comprise entre 2 et 3 mg·L⁻¹",
+        "vaut 4,0 mg·L⁻¹, celle de S2"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "teintes-valeur-exacte",
+          "texte": "Croire que l'échelle de teintes donne une valeur précise : la comparaison à l'œil ne donne qu'un encadrement"
+        },
+        {
+          "code": "numero-pris-pour-concentration",
+          "texte": "Prendre le numéro des solutions (S2, S3) pour leur concentration"
+        },
+        {
+          "code": "valeur-etalon-recopiee",
+          "texte": "Recopier la concentration d'un étalon : la teinte est différente de celle de S2, on ne peut donner qu'un encadrement"
+        }
+      ],
+      "exp": "La teinte est encadrée par celles de S2 et S3 : 4,0 mg·L⁻¹ < c < 6,0 mg·L⁻¹. Attention : c'est une méthode visuelle, elle donne un encadrement et non une valeur exacte."
+    },
+    {
+      "q": "Dans une échelle de teintes de permanganate de potassium, la solution la plus foncée est :",
+      "opts": [
+        "la plus diluée",
+        "celle dont le facteur de dilution est le plus grand",
+        "la plus concentrée",
+        "celle qui a le plus grand volume"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "teinte-intensite-inverse",
+          "texte": "Inverser le lien : plus une solution colorée est concentrée, plus sa teinte est foncée"
+        },
+        {
+          "code": "grand-facteur-plus-concentre",
+          "texte": "Croire qu'un grand facteur de dilution donne une solution plus concentrée : la concentration est divisée par F"
+        },
+        null,
+        {
+          "code": "teinte-depend-volume",
+          "texte": "Croire que la teinte dépend du volume : on compare des tubes de même diamètre, la teinte dépend de la concentration"
+        }
+      ],
+      "exp": "Plus la concentration en espèce colorée est grande, plus la teinte est intense. Attention : la solution la plus diluée (F le plus grand) est la plus claire."
+    },
+    {
+      "q": "On pèse 10,0 mL d'une solution étalon : leur masse vaut 10,16 g. La masse volumique de cette solution vaut :",
+      "opts": [
+        "1,016 g·mL⁻¹",
+        "0,984 g·mL⁻¹",
+        "1 016 g·mL⁻¹",
+        "101,6 g·mL⁻¹"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "masse-volumique-inverse",
+          "texte": "Inverser le rapport : V / m = 10,0 / 10,16 ≈ 0,984 au lieu de ρ = m / V"
+        },
+        {
+          "code": "conversion-ml-l",
+          "texte": "Mélanger les unités : 10,16 / 0,0100 L = 1 016 g·L⁻¹, ce ne sont pas des g·mL⁻¹"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 10,16 × 10,0 ≈ 101,6"
+        }
+      ],
+      "exp": "ρ = m / V = 10,16 / 10,0 = 1,016 g·mL⁻¹ (soit 1 016 g·L⁻¹). Attention à garder la même unité de volume du début à la fin."
+    },
+    {
+      "q": "Droite d'étalonnage : ρ = 1,024 g·mL⁻¹ pour cm = 60 g·L⁻¹ et ρ = 1,032 g·mL⁻¹ pour cm = 80 g·L⁻¹ (et 1,040 g·mL⁻¹ pour 100 g·L⁻¹). Une solution inconnue a ρ = 1,030 g·mL⁻¹. Sa concentration en masse vaut environ :",
+      "opts": [
+        "99 g·L⁻¹",
+        "75 g·L⁻¹",
+        "80 g·L⁻¹",
+        "1,03×10³ g·L⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "proportionnel-vs-affine",
+          "texte": "Croire que ρ est proportionnelle à cm : 1,030 / 1,040 × 100 ≈ 99 ; la droite ne passe pas par l'origine (l'eau pure a ρ = 1,000)"
+        },
+        null,
+        {
+          "code": "valeur-etalon-recopiee",
+          "texte": "Prendre la concentration de l'étalon le plus proche (80 g·L⁻¹) au lieu de lire sur la droite"
+        },
+        {
+          "code": "cm-vs-masse-volumique",
+          "texte": "Confondre masse volumique de la solution (1 030 g·L⁻¹) et concentration en masse du soluté"
+        }
+      ],
+      "exp": "Sur la droite, ρ augmente de 0,008 g·mL⁻¹ pour 20 g·L⁻¹ ; 1,030 − 1,024 = 0,006, soit 15 g·L⁻¹ de plus que 60 : cm ≈ 75 g·L⁻¹. Attention : la droite d'étalonnage ne passe pas par l'origine, ce n'est pas une proportionnalité."
+    },
+    {
+      "q": "Une solution trop concentrée a été diluée 2 fois avant la mesure ; sur la droite d'étalonnage, on lit alors 60 g·L⁻¹. La concentration de la solution de départ vaut :",
+      "opts": [
+        "30 g·L⁻¹",
+        "60 g·L⁻¹",
+        "on ne peut plus la connaître : la dilution a changé la masse de soluté",
+        "120 g·L⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "diviser-au-lieu-multiplier",
+          "texte": "Diviser par le facteur de dilution : c'est la solution diluée qui vaut 60 g·L⁻¹, la solution de départ est 2 fois plus concentrée"
+        },
+        {
+          "code": "oubli-facteur-dilution",
+          "texte": "Oublier la dilution : 60 g·L⁻¹ est la concentration de la solution diluée, pas celle de départ"
+        },
+        {
+          "code": "dilution-change-masse",
+          "texte": "Croire que la dilution enlève du soluté : on ajoute seulement du solvant, la masse de soluté prélevée ne change pas"
+        },
+        null
+      ],
+      "exp": "La solution mesurée est 2 fois moins concentrée que celle de départ : c = 60 × 2 = 120 g·L⁻¹. Attention : on multiplie la valeur lue par le facteur de dilution."
+    },
+    {
+      "q": "Pour un dosage par étalonnage avec une droite d'étalonnage, on mesure une même grandeur physique (par exemple la masse volumique) :",
+      "opts": [
+        "sur la solution inconnue seulement, puis on calcule",
+        "sur des solutions étalons de concentrations connues, puis sur la solution inconnue",
+        "sur des solutions étalons seulement : la droite donne directement le résultat",
+        "sur la solution inconnue diluée plusieurs fois, sans solution étalon"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "etalonnage-sans-etalons",
+          "texte": "Oublier les étalons : sans solutions de concentrations connues, on ne peut pas tracer la droite"
+        },
+        null,
+        {
+          "code": "etalonnage-sans-mesure-inconnue",
+          "texte": "Oublier de mesurer la solution inconnue : c'est sa valeur que l'on reporte sur la droite"
+        },
+        {
+          "code": "etalons-vs-dilutions-inconnue",
+          "texte": "Confondre étalons et dilutions de l'inconnue : les étalons ont des concentrations connues"
+        }
+      ],
+      "exp": "On mesure la grandeur pour chaque étalon (concentration connue), on trace la droite, puis on mesure la solution inconnue et on lit sa concentration par projection. Attention : il faut les deux séries de mesures."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Du sel de cuisine au sel de déneigement",
+      "contexte": [
+        "En hiver, les services de la ville d'Argenteuil répandent du sel sur les trottoirs pour faire fondre la glace : du chlorure de sodium NaCl, parfois mélangé à du chlorure de calcium CaCl₂. Ces deux solides sont des composés ioniques.",
+        "Rappel : un composé ionique est un solide formé de cations et d'anions assemblés de sorte que la charge électrique globale soit nulle (électroneutralité)."
+      ],
+      "questions": [
+        {
+          "texte": "Classe chacune des entités suivantes dans la bonne colonne d'un tableau « atome / molécule / cation / anion » : Fe ; H₂O ; Na⁺ ; Cl⁻ ; CO₂ ; Ca²⁺ ; He ; O²⁻.",
+          "aides": [
+            "Un ion porte une charge (+ ou −) écrite en exposant ; un atome ou une molécule n'en a pas.",
+            "Une molécule contient plusieurs atomes liés (sa formule contient au moins deux symboles) ; un atome isolé s'écrit avec un seul symbole."
+          ]
+        },
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Un grain de sel est une entité chimique.<br>b. Le chlorure de sodium est une espèce chimique : à l'échelle macroscopique, c'est un très grand nombre d'entités identiques.<br>c. Dans le chlorure de calcium CaCl₂, il y a autant d'ions Ca²⁺ que d'ions Cl⁻.<br>d. Un cristal de chlorure de sodium est électriquement neutre.",
+          "aides": []
+        },
+        {
+          "texte": "En utilisant l'électroneutralité, écris la formule du composé ionique formé à partir des ions suivants.<br>a. K⁺ et Cl⁻ (sel « de régime », pauvre en sodium)<br>b. Mg²⁺ et Cl⁻ (autre sel de déneigement)<br>c. Ca²⁺ et O²⁻ (la chaux vive)<br>d. Al³⁺ et O²⁻ (l'alumine, constituant du rubis et du saphir)",
+          "aides": [
+            "La charge totale du composé doit être nulle : additionne les charges + et les charges −.",
+            "Cherche le plus petit nombre de charges que l'on peut obtenir à la fois avec les cations et avec les anions (pour Al³⁺ et O²⁻ : un multiple de 3 et de 2).",
+            "Pour Al³⁺ et O²⁻ : 6 charges + et 6 charges −. Combien d'ions de chaque sorte faut-il ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Atomes : Fe, He. Molécules : H₂O, CO₂. Cations (ions positifs) : Na⁺, Ca²⁺. Anions (ions négatifs) : Cl⁻, O²⁻.",
+        "<strong>2.</strong> a. FAUX : un grain de sel est un échantillon macroscopique qui contient un nombre immense d'ions Na⁺ et Cl⁻ ; une entité chimique est un seul atome, une seule molécule ou un seul ion.",
+        "b. VRAI : c'est la définition d'une espèce chimique (ici, un très grand nombre d'ions Na⁺ et Cl⁻ en nombres égaux).",
+        "c. FAUX : un ion Ca²⁺ porte deux charges positives ; il faut deux ions Cl⁻ pour les compenser. Il y a deux fois plus d'ions Cl⁻ que d'ions Ca²⁺.",
+        "d. VRAI : comme tout échantillon de matière, il est électriquement neutre (autant de charges + que de charges −).",
+        "<strong>3.</strong> a. KCl (une charge + pour une charge −).",
+        "b. MgCl₂ (deux ions Cl⁻ compensent les deux charges + de Mg²⁺).",
+        "c. CaO (deux charges + et deux charges −).",
+        "d. Al₂O₃ : 2 ions Al³⁺ apportent 6 charges + et 3 ions O²⁻ apportent 6 charges − ; la charge globale est nulle.",
+        "<em>⚠ Erreur fréquente : écrire AlO ou Al₃O₂. On cherche le plus petit nombre de charges commun aux deux ions (ici 6), et l'ion positif s'écrit en premier.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Jusqu'où peut-on saler l'eau ?",
+      "contexte": [
+        "Inès prépare une eau salée pour faire des gargarismes : elle dissout 6,0 g de sel (chlorure de sodium) dans de l'eau et obtient V = 200 mL de solution.",
+        "Rappel : c<sub>m</sub> = m(soluté) / V(solution), avec m en g, V en L et c<sub>m</sub> en g·L⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la concentration en masse c<sub>m</sub> du sel dans l'eau d'Inès.",
+          "aides": []
+        },
+        {
+          "texte": "Complète le texte avec les mots : saturée, maximale, température, un litre, reste solide. « La solubilité d'une espèce chimique est la masse … de cette espèce que l'on peut dissoudre dans … de solvant, à une … donnée. Au-delà, la solution est dite … : le solide en excès … au fond du récipient. »",
+          "aides": []
+        },
+        {
+          "texte": "Son frère Yanis verse 200 g de sel dans 500 mL d'eau à 20 °C et agite longtemps. Quelle masse de sel peut au maximum se dissoudre dans cette eau ? Qu'observe-t-il au fond du verre ? Calcule la masse de sel non dissous.",
+          "aides": [
+            "La solubilité est donnée pour 1 L d'eau ; Yanis n'en utilise que 500 mL.",
+            "Dans un volume d'eau deux fois plus petit, on peut dissoudre une masse deux fois plus petite. Compare ensuite cette masse aux 200 g versés."
+          ]
+        },
+        {
+          "texte": "QCM — Yanis ajoute encore 10 g de sel dans sa solution. La concentration en masse du sel dissous : (A) augmente ; (B) reste la même ; (C) diminue. Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> V = 200 mL = 0,200 L ; c<sub>m</sub> = m(soluté) / V(solution) = 6,0 / 0,200 = 30 g·L⁻¹.",
+        "<strong>2.</strong> « … la masse maximale … dans un litre de solvant, à une température donnée. Au-delà, la solution est dite saturée : le solide en excès reste solide au fond du récipient. »",
+        "<strong>3.</strong> À 20 °C, on dissout au plus 350 g dans 1 L d'eau, donc dans 0,500 L : m(max) = 350 × 0,500 = 175 g. Yanis a versé 200 g : il observe un dépôt de sel au fond du verre ; la masse non dissoute vaut 200 − 175 = 25 g. La solution est saturée.",
+        "<strong>4.</strong> Réponse (B) : la solution est déjà saturée, le sel ajouté ne se dissout pas et reste au fond ; la concentration en masse du sel dissous ne change plus.",
+        "<em>⚠ Erreur fréquente : croire qu'on peut dissoudre autant de sel que l'on veut. Il existe une concentration maximale : au-delà, le solide ne se dissout plus.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "L'échelle de teintes du Dakin",
+      "contexte": [
+        "La solution de Dakin, utilisée pour désinfecter les plaies, contient un peu de permanganate de potassium, une espèce violette. Pour estimer sa concentration en masse, Lina prépare une échelle de teintes.",
+        "Elle dispose d'une solution mère de permanganate de potassium de concentration c<sub>m</sub>(mère) = 4,0 × 10⁻² g·L⁻¹. Dans chaque tube, elle verse un volume V(mère) de solution mère, puis complète avec de l'eau distillée jusqu'à V(fille) = 10,0 mL.",
+        "Pour une dilution : c<sub>m</sub>(fille) = c<sub>m</sub>(mère) × V(mère) / V(fille)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\">Échelle de teintes (permanganate de potassium) et solution de Dakin</text><path d=\"M 54,90 L 54,330 Q 54,365 80,365 Q 106,365 106,330 L 106,90\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M 55,150 L 55,330 Q 55,363 80,363 Q 105,363 105,330 L 105,150 Z\" fill=\"#9b2d86\" fill-opacity=\"0.13\"/><text x=\"80\" y=\"70\" text-anchor=\"middle\" font-weight=\"bold\">Tube 1</text><text x=\"80\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">V(mère) =</text><text x=\"80\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">1,0 mL</text><path d=\"M 164,90 L 164,330 Q 164,365 190,365 Q 216,365 216,330 L 216,90\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M 165,150 L 165,330 Q 165,363 190,363 Q 215,363 215,330 L 215,150 Z\" fill=\"#9b2d86\" fill-opacity=\"0.30\"/><text x=\"190\" y=\"70\" text-anchor=\"middle\" font-weight=\"bold\">Tube 2</text><text x=\"190\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">V(mère) =</text><text x=\"190\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">2,0 mL</text><path d=\"M 274,90 L 274,330 Q 274,365 300,365 Q 326,365 326,330 L 326,90\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M 275,150 L 275,330 Q 275,363 300,363 Q 325,363 325,330 L 325,150 Z\" fill=\"#9b2d86\" fill-opacity=\"0.47\"/><text x=\"300\" y=\"70\" text-anchor=\"middle\" font-weight=\"bold\">Tube 3</text><text x=\"300\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">V(mère) =</text><text x=\"300\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">3,0 mL</text><path d=\"M 384,90 L 384,330 Q 384,365 410,365 Q 436,365 436,330 L 436,90\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M 385,150 L 385,330 Q 385,363 410,363 Q 435,363 435,330 L 435,150 Z\" fill=\"#9b2d86\" fill-opacity=\"0.64\"/><text x=\"410\" y=\"70\" text-anchor=\"middle\" font-weight=\"bold\">Tube 4</text><text x=\"410\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">V(mère) =</text><text x=\"410\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">4,0 mL</text><path d=\"M 494,90 L 494,330 Q 494,365 520,365 Q 546,365 546,330 L 546,90\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M 495,150 L 495,330 Q 495,363 520,363 Q 545,363 545,330 L 545,150 Z\" fill=\"#9b2d86\" fill-opacity=\"0.81\"/><text x=\"520\" y=\"70\" text-anchor=\"middle\" font-weight=\"bold\">Tube 5</text><text x=\"520\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">V(mère) =</text><text x=\"520\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">5,0 mL</text><rect x=\"610\" y=\"55\" width=\"120\" height=\"380\" rx=\"10\" fill=\"#f4ede1\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"6,4\"/><path d=\"M 644,90 L 644,330 Q 644,365 670,365 Q 696,365 696,330 L 696,90 Z\" fill=\"#ffffff\"/><path d=\"M 644,90 L 644,330 Q 644,365 670,365 Q 696,365 696,330 L 696,90\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M 645,150 L 645,330 Q 645,363 670,363 Q 695,363 695,330 L 695,150 Z\" fill=\"#9b2d86\" fill-opacity=\"0.38\"/><text x=\"670\" y=\"78\" text-anchor=\"middle\" font-weight=\"bold\">Dakin</text><text x=\"670\" y=\"395\" text-anchor=\"middle\" font-size=\"14\">solution</text><text x=\"670\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">à doser</text><text x=\"300\" y=\"450\" text-anchor=\"middle\" font-size=\"14\">Chaque tube contient V(fille) = 10,0 mL de solution (solution mère + eau distillée).</text></svg>",
+      "questions": [
+        {
+          "texte": "Quel volume d'eau distillée Lina ajoute-t-elle dans le tube 2 ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la concentration en masse c<sub>m</sub>(fille) de chacun des tubes 1 à 5 et présente les résultats dans un tableau.",
+          "aides": [
+            "Applique la relation donnée avec V(mère) = 1,0 ; 2,0 ; 3,0 ; 4,0 puis 5,0 mL et V(fille) = 10,0 mL.",
+            "Pour le tube 1 : 4,0 × 10⁻² × 1,0 / 10,0. Diviser par 10, c'est multiplier par 10⁻¹."
+          ]
+        },
+        {
+          "texte": "Observe la figure : comment varie la teinte quand la concentration augmente ?",
+          "aides": []
+        },
+        {
+          "texte": "Donne un encadrement de la concentration en masse c<sub>m</sub>(Dakin) du permanganate de potassium dans la solution de Dakin.",
+          "aides": [
+            "Repère les deux tubes dont la teinte est la plus proche de celle du Dakin : un plus clair, un plus foncé.",
+            "La concentration du Dakin est comprise entre les concentrations de ces deux tubes (calculées à la question 2)."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? « L'échelle de teintes donne la valeur précise de la concentration du Dakin. » Justifie, puis propose une façon d'obtenir un encadrement plus resserré.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi faut-il utiliser des tubes identiques, remplis au même volume, et les observer sur le même fond blanc ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> V(eau) = V(fille) − V(mère) = 10,0 − 2,0 = 8,0 mL.",
+        "<strong>2.</strong> Tube 1 : c<sub>m</sub> = 4,0 × 10⁻² × 1,0 / 10,0 = 4,0 × 10⁻³ g·L⁻¹. Tube 2 : 8,0 × 10⁻³ g·L⁻¹. Tube 3 : 1,2 × 10⁻² g·L⁻¹. Tube 4 : 1,6 × 10⁻² g·L⁻¹. Tube 5 : 2,0 × 10⁻² g·L⁻¹.",
+        "<strong>3.</strong> Plus la concentration en espèce colorée est grande, plus la teinte est intense (foncée).",
+        "<strong>4.</strong> La teinte du Dakin est comprise entre celles des tubes 2 et 3 : 8,0 × 10⁻³ g·L⁻¹ &lt; c<sub>m</sub>(Dakin) &lt; 1,2 × 10⁻² g·L⁻¹.",
+        "<strong>5.</strong> FAUX : la comparaison est visuelle, la méthode est qualitative et ne donne qu'un encadrement. Pour le resserrer, on prépare de nouveaux tubes de concentrations comprises entre 8,0 × 10⁻³ et 1,2 × 10⁻² g·L⁻¹ (par exemple V(mère) = 2,2 ; 2,4 ; 2,6 ; 2,8 mL).",
+        "<strong>6.</strong> La teinte perçue dépend aussi de l'épaisseur de solution traversée par la lumière et de l'éclairage : pour que seule la concentration change d'un tube à l'autre, tout le reste doit être identique.",
+        "<em>⚠ Erreur fréquente : oublier que V(fille) est le volume TOTAL du tube (solution mère + eau) : on ajoute 8,0 mL d'eau, pas 10,0 mL.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Combien de sucre dans une canette de soda ?",
+      "contexte": [
+        "Un groupe d'élèves veut vérifier la teneur en sucre d'un soda au cola. L'étiquette indique « sucres : 10,6 g pour 100 mL ».",
+        "Ils préparent cinq solutions étalons d'eau sucrée S1 à S5 par dilution d'une solution mère S0 de concentration en masse 200 g·L⁻¹, puis mesurent leur masse volumique à 20 °C. Ils obtiennent la droite d'étalonnage ci-dessous.",
+        "Ils mesurent ensuite la masse volumique du soda, préalablement dégazé (on a fait partir les bulles de CO₂) : ρ(soda) = 1,042 g·mL⁻¹.",
+        "Donnée : l'OMS recommande de limiter les sucres ajoutés, idéalement à moins de 25 g par jour environ pour un adulte."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"400\" y=\"26\" text-anchor=\"middle\" font-weight=\"bold\">Droite d'étalonnage : masse volumique des solutions sucrées</text><line x1=\"100.0\" y1=\"400.0\" x2=\"100.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"100.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">0</text><line x1=\"122.1\" y1=\"400.0\" x2=\"122.1\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"144.3\" y1=\"400.0\" x2=\"144.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"166.4\" y1=\"400.0\" x2=\"166.4\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"188.6\" y1=\"400.0\" x2=\"188.6\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"188.6\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">20</text><line x1=\"210.7\" y1=\"400.0\" x2=\"210.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"232.9\" y1=\"400.0\" x2=\"232.9\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"255.0\" y1=\"400.0\" x2=\"255.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"277.1\" y1=\"400.0\" x2=\"277.1\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"277.1\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">40</text><line x1=\"299.3\" y1=\"400.0\" x2=\"299.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"321.4\" y1=\"400.0\" x2=\"321.4\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"343.6\" y1=\"400.0\" x2=\"343.6\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"365.7\" y1=\"400.0\" x2=\"365.7\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"365.7\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">60</text><line x1=\"387.9\" y1=\"400.0\" x2=\"387.9\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"410.0\" y1=\"400.0\" x2=\"410.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"432.1\" y1=\"400.0\" x2=\"432.1\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"454.3\" y1=\"400.0\" x2=\"454.3\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"454.3\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">80</text><line x1=\"476.4\" y1=\"400.0\" x2=\"476.4\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"498.6\" y1=\"400.0\" x2=\"498.6\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"520.7\" y1=\"400.0\" x2=\"520.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"542.9\" y1=\"400.0\" x2=\"542.9\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"542.9\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">100</text><line x1=\"565.0\" y1=\"400.0\" x2=\"565.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"587.1\" y1=\"400.0\" x2=\"587.1\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"609.3\" y1=\"400.0\" x2=\"609.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"631.4\" y1=\"400.0\" x2=\"631.4\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"631.4\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">120</text><line x1=\"653.6\" y1=\"400.0\" x2=\"653.6\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"675.7\" y1=\"400.0\" x2=\"675.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"697.9\" y1=\"400.0\" x2=\"697.9\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"720.0\" y1=\"400.0\" x2=\"720.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"720.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">140</text><line x1=\"100.0\" y1=\"400.0\" x2=\"720.0\" y2=\"400.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"405.0\" text-anchor=\"end\" font-size=\"14\">1,000</text><line x1=\"100.0\" y1=\"388.7\" x2=\"720.0\" y2=\"388.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"377.3\" x2=\"720.0\" y2=\"377.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"366.0\" x2=\"720.0\" y2=\"366.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"354.7\" x2=\"720.0\" y2=\"354.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"343.3\" x2=\"720.0\" y2=\"343.3\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"348.3\" text-anchor=\"end\" font-size=\"14\">1,010</text><line x1=\"100.0\" y1=\"332.0\" x2=\"720.0\" y2=\"332.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"320.7\" x2=\"720.0\" y2=\"320.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"309.3\" x2=\"720.0\" y2=\"309.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"298.0\" x2=\"720.0\" y2=\"298.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"286.7\" x2=\"720.0\" y2=\"286.7\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"291.7\" text-anchor=\"end\" font-size=\"14\">1,020</text><line x1=\"100.0\" y1=\"275.3\" x2=\"720.0\" y2=\"275.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"264.0\" x2=\"720.0\" y2=\"264.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"252.7\" x2=\"720.0\" y2=\"252.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"241.3\" x2=\"720.0\" y2=\"241.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"230.0\" x2=\"720.0\" y2=\"230.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"235.0\" text-anchor=\"end\" font-size=\"14\">1,030</text><line x1=\"100.0\" y1=\"218.7\" x2=\"720.0\" y2=\"218.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"207.3\" x2=\"720.0\" y2=\"207.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"196.0\" x2=\"720.0\" y2=\"196.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"184.7\" x2=\"720.0\" y2=\"184.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"173.3\" x2=\"720.0\" y2=\"173.3\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"178.3\" text-anchor=\"end\" font-size=\"14\">1,040</text><line x1=\"100.0\" y1=\"162.0\" x2=\"720.0\" y2=\"162.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"150.7\" x2=\"720.0\" y2=\"150.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"139.3\" x2=\"720.0\" y2=\"139.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"128.0\" x2=\"720.0\" y2=\"128.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"116.7\" x2=\"720.0\" y2=\"116.7\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"121.7\" text-anchor=\"end\" font-size=\"14\">1,050</text><line x1=\"100.0\" y1=\"105.3\" x2=\"720.0\" y2=\"105.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"94.0\" x2=\"720.0\" y2=\"94.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"82.7\" x2=\"720.0\" y2=\"82.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"71.3\" x2=\"720.0\" y2=\"71.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"60.0\" x2=\"720.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"65.0\" text-anchor=\"end\" font-size=\"14\">1,060</text><line x1=\"100\" y1=\"400\" x2=\"728\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"100\" y1=\"400\" x2=\"100\" y2=\"52\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"720\" y=\"442\" text-anchor=\"end\" font-size=\"15\">concentration en masse cₘ (g·L⁻¹)</text><text x=\"40\" y=\"44\" font-size=\"15\">ρ (g·mL⁻¹)</text><line x1=\"100.0\" y1=\"400.0\" x2=\"720.0\" y2=\"82.7\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"204.7\" y1=\"337.3\" x2=\"216.7\" y2=\"349.3\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"204.7\" y1=\"349.3\" x2=\"216.7\" y2=\"337.3\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"202.7\" y=\"335.3\" font-size=\"14\" fill=\"#B5523B\" text-anchor=\"end\">S1</text><line x1=\"315.4\" y1=\"280.7\" x2=\"327.4\" y2=\"292.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"315.4\" y1=\"292.7\" x2=\"327.4\" y2=\"280.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"313.4\" y=\"278.7\" font-size=\"14\" fill=\"#B5523B\" text-anchor=\"end\">S2</text><line x1=\"426.1\" y1=\"224.0\" x2=\"438.1\" y2=\"236.0\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"426.1\" y1=\"236.0\" x2=\"438.1\" y2=\"224.0\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"424.1\" y=\"222.0\" font-size=\"14\" fill=\"#B5523B\" text-anchor=\"end\">S3</text><line x1=\"536.9\" y1=\"167.3\" x2=\"548.9\" y2=\"179.3\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"536.9\" y1=\"179.3\" x2=\"548.9\" y2=\"167.3\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"534.9\" y=\"165.3\" font-size=\"14\" fill=\"#B5523B\" text-anchor=\"end\">S4</text><line x1=\"647.6\" y1=\"110.7\" x2=\"659.6\" y2=\"122.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"647.6\" y1=\"122.7\" x2=\"659.6\" y2=\"110.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"645.6\" y=\"108.7\" font-size=\"14\" fill=\"#B5523B\" text-anchor=\"end\">S5</text></svg>",
+      "questions": [
+        {
+          "texte": "La solution S2 a une concentration en masse de 50 g·L⁻¹. Calcule le volume de solution mère S0 à prélever pour préparer 100,0 mL de S2, et nomme la verrerie utilisée.",
+          "aides": [
+            "Pendant une dilution, la masse de soluté prélevée dans la solution mère se retrouve entièrement dans la solution fille.",
+            "c<sub>m</sub>(S0) × V(mère) = c<sub>m</sub>(S2) × V(fille) : isole V(mère)."
+          ]
+        },
+        {
+          "texte": "Détermine graphiquement la concentration en masse c<sub>m</sub>(soda) du sucre dans le soda. Explique ta méthode.",
+          "aides": [
+            "Pars de la valeur mesurée sur l'axe vertical (ρ), pas de l'axe horizontal.",
+            "Trace un trait horizontal jusqu'à la droite, puis un trait vertical jusqu'à l'axe des concentrations. Une petite case horizontale vaut 5 g·L⁻¹."
+          ]
+        },
+        {
+          "texte": "Un élève affirme : « La masse volumique du soda vaut 1 042 g·L⁻¹, donc il contient 1 042 g de sucre par litre. » Explique son erreur.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse de sucre contenue dans une canette de 33 cL. Combien de morceaux de sucre de 5 g cela représente-t-il ? Compare à la recommandation de l'OMS.",
+          "aides": [
+            "Utilise c<sub>m</sub> = m / V en isolant m, avec V en litres.",
+            "33 cL = 0,330 L. Divise ensuite la masse obtenue par 5 g pour le nombre de morceaux."
+          ]
+        },
+        {
+          "texte": "Convertis l'indication de l'étiquette en g·L⁻¹, puis calcule l'écart relatif avec ta mesure. L'étiquette est-elle vérifiée ?",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi a-t-on dégazé le soda avant de mesurer sa masse volumique ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lors d'une dilution, la masse de sucre se conserve : c<sub>m</sub>(S0) × V(mère) = c<sub>m</sub>(S2) × V(fille), donc V(mère) = 100,0 × 50 / 200 = 25,0 mL. On le prélève avec une pipette jaugée de 25,0 mL (et une propipette), on le verse dans une fiole jaugée de 100,0 mL, on complète à l'eau distillée jusqu'au trait de jauge, on bouche et on agite.",
+        "<strong>2.</strong> On place ρ = 1,042 g·mL⁻¹ sur l'axe des ordonnées, on trace l'horizontale jusqu'à la droite, puis la verticale jusqu'à l'axe des abscisses : c<sub>m</sub>(soda) ≈ 105 g·L⁻¹ (on accepte 103 à 107 g·L⁻¹).",
+        "<strong>3.</strong> La masse volumique utilise la masse de TOUTE la solution (eau + sucre + autres espèces), alors que la concentration en masse n'utilise que la masse du sucre dissous. Un litre de soda a une masse de 1 042 g, dont environ 105 g de sucre seulement.",
+        "<strong>4.</strong> m = c<sub>m</sub> × V = 105 × 0,330 = 34,65 g ≈ 35 g de sucre, soit 34,65 / 5 ≈ 7 morceaux de sucre. Une seule canette dépasse déjà la recommandation de l'OMS (environ 25 g par jour) : elle en représente 1,4 fois.",
+        "<strong>5.</strong> Étiquette : 10,6 g pour 100 mL = 10,6 / 0,100 = 106 g·L⁻¹. Écart relatif = |105 − 106| / 106 ≈ 0,9 % : la mesure est en accord avec l'étiquette.",
+        "<strong>6.</strong> Les bulles de gaz occupent du volume sans presque rien peser : elles fausseraient la mesure de la masse volumique (valeur trop faible).",
+        "<em>⚠ Erreur fréquente : confondre masse volumique et concentration en masse (question 3), ou oublier de convertir 33 cL en 0,330 L.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le sel des marais salants",
+      "contexte": [
+        "Dans les marais salants, l'eau de mer circule lentement dans des bassins peu profonds. L'eau s'évapore au soleil et au vent, le sel se concentre, puis il cristallise : le paludier le récolte. On admet ici que le sel (assimilé à du chlorure de sodium) commence à cristalliser quand sa concentration en masse atteint c<sub>max</sub> ≈ 350 g·L⁻¹.",
+        "Une élève rapporte un échantillon d'eau d'un bassin. Au laboratoire, elle prépare des solutions étalons de chlorure de sodium, puis pèse 10,00 mL de chaque solution (pipette jaugée et balance au centième de gramme). Elle procède de même avec l'échantillon.",
+        "Résultats — masse de 10,00 mL de solution : S1 (50 g·L⁻¹) : 10,35 g ; S2 (100 g·L⁻¹) : 10,70 g ; S3 (150 g·L⁻¹) : 11,05 g ; S4 (200 g·L⁻¹) : 11,40 g ; S5 (250 g·L⁻¹) : 11,75 g ; échantillon du bassin : 11,47 g."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"400\" y=\"26\" text-anchor=\"middle\" font-weight=\"bold\">Repère pour tracer la droite d'étalonnage ρ = f(cₘ)</text><line x1=\"100.0\" y1=\"400.0\" x2=\"100.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"100.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">0</text><line x1=\"120.7\" y1=\"400.0\" x2=\"120.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"141.3\" y1=\"400.0\" x2=\"141.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"162.0\" y1=\"400.0\" x2=\"162.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"182.7\" y1=\"400.0\" x2=\"182.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"203.3\" y1=\"400.0\" x2=\"203.3\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"203.3\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">50</text><line x1=\"224.0\" y1=\"400.0\" x2=\"224.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"244.7\" y1=\"400.0\" x2=\"244.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"265.3\" y1=\"400.0\" x2=\"265.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"286.0\" y1=\"400.0\" x2=\"286.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"306.7\" y1=\"400.0\" x2=\"306.7\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"306.7\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">100</text><line x1=\"327.3\" y1=\"400.0\" x2=\"327.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"348.0\" y1=\"400.0\" x2=\"348.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"368.7\" y1=\"400.0\" x2=\"368.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"389.3\" y1=\"400.0\" x2=\"389.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"410.0\" y1=\"400.0\" x2=\"410.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"410.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">150</text><line x1=\"430.7\" y1=\"400.0\" x2=\"430.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"451.3\" y1=\"400.0\" x2=\"451.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"472.0\" y1=\"400.0\" x2=\"472.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"492.7\" y1=\"400.0\" x2=\"492.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"513.3\" y1=\"400.0\" x2=\"513.3\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"513.3\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">200</text><line x1=\"534.0\" y1=\"400.0\" x2=\"534.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"554.7\" y1=\"400.0\" x2=\"554.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"575.3\" y1=\"400.0\" x2=\"575.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"596.0\" y1=\"400.0\" x2=\"596.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"616.7\" y1=\"400.0\" x2=\"616.7\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"616.7\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">250</text><line x1=\"637.3\" y1=\"400.0\" x2=\"637.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"658.0\" y1=\"400.0\" x2=\"658.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"678.7\" y1=\"400.0\" x2=\"678.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"699.3\" y1=\"400.0\" x2=\"699.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"720.0\" y1=\"400.0\" x2=\"720.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"720.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">300</text><line x1=\"100.0\" y1=\"400.0\" x2=\"720.0\" y2=\"400.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"405.0\" text-anchor=\"end\" font-size=\"14\">1,00</text><line x1=\"100.0\" y1=\"393.2\" x2=\"720.0\" y2=\"393.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"386.4\" x2=\"720.0\" y2=\"386.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"379.6\" x2=\"720.0\" y2=\"379.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"372.8\" x2=\"720.0\" y2=\"372.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"366.0\" x2=\"720.0\" y2=\"366.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"359.2\" x2=\"720.0\" y2=\"359.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"352.4\" x2=\"720.0\" y2=\"352.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"345.6\" x2=\"720.0\" y2=\"345.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"338.8\" x2=\"720.0\" y2=\"338.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"332.0\" x2=\"720.0\" y2=\"332.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"337.0\" text-anchor=\"end\" font-size=\"14\">1,05</text><line x1=\"100.0\" y1=\"325.2\" x2=\"720.0\" y2=\"325.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"318.4\" x2=\"720.0\" y2=\"318.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"311.6\" x2=\"720.0\" y2=\"311.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"304.8\" x2=\"720.0\" y2=\"304.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"298.0\" x2=\"720.0\" y2=\"298.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"291.2\" x2=\"720.0\" y2=\"291.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"284.4\" x2=\"720.0\" y2=\"284.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"277.6\" x2=\"720.0\" y2=\"277.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"270.8\" x2=\"720.0\" y2=\"270.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"264.0\" x2=\"720.0\" y2=\"264.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"269.0\" text-anchor=\"end\" font-size=\"14\">1,10</text><line x1=\"100.0\" y1=\"257.2\" x2=\"720.0\" y2=\"257.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"250.4\" x2=\"720.0\" y2=\"250.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"243.6\" x2=\"720.0\" y2=\"243.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"236.8\" x2=\"720.0\" y2=\"236.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"230.0\" x2=\"720.0\" y2=\"230.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"223.2\" x2=\"720.0\" y2=\"223.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"216.4\" x2=\"720.0\" y2=\"216.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"209.6\" x2=\"720.0\" y2=\"209.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"202.8\" x2=\"720.0\" y2=\"202.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"196.0\" x2=\"720.0\" y2=\"196.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"201.0\" text-anchor=\"end\" font-size=\"14\">1,15</text><line x1=\"100.0\" y1=\"189.2\" x2=\"720.0\" y2=\"189.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"182.4\" x2=\"720.0\" y2=\"182.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"175.6\" x2=\"720.0\" y2=\"175.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"168.8\" x2=\"720.0\" y2=\"168.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"162.0\" x2=\"720.0\" y2=\"162.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"155.2\" x2=\"720.0\" y2=\"155.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"148.4\" x2=\"720.0\" y2=\"148.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"141.6\" x2=\"720.0\" y2=\"141.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"134.8\" x2=\"720.0\" y2=\"134.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"128.0\" x2=\"720.0\" y2=\"128.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"133.0\" text-anchor=\"end\" font-size=\"14\">1,20</text><line x1=\"100.0\" y1=\"121.2\" x2=\"720.0\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"114.4\" x2=\"720.0\" y2=\"114.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"107.6\" x2=\"720.0\" y2=\"107.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"100.8\" x2=\"720.0\" y2=\"100.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"94.0\" x2=\"720.0\" y2=\"94.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"87.2\" x2=\"720.0\" y2=\"87.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"80.4\" x2=\"720.0\" y2=\"80.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"73.6\" x2=\"720.0\" y2=\"73.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"66.8\" x2=\"720.0\" y2=\"66.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"60.0\" x2=\"720.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"65.0\" text-anchor=\"end\" font-size=\"14\">1,25</text><line x1=\"100\" y1=\"400\" x2=\"728\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"100\" y1=\"400\" x2=\"100\" y2=\"52\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"720\" y=\"442\" text-anchor=\"end\" font-size=\"15\">concentration en masse cₘ (g·L⁻¹)</text><text x=\"40\" y=\"44\" font-size=\"15\">ρ (g·mL⁻¹)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pourquoi ne peut-on pas utiliser une échelle de teintes pour doser le sel dans cette eau ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse volumique ρ (en g·mL⁻¹) de chaque solution étalon.",
+          "aides": [
+            "ρ = m(solution) / V(solution) : on divise chaque masse par 10,00 mL.",
+            "Le résultat est en g·mL⁻¹ et doit être un peu supérieur à 1 (eau salée un peu plus « lourde » que l'eau)."
+          ]
+        },
+        {
+          "texte": "Trace la droite d'étalonnage ρ = f(c<sub>m</sub>) dans le repère fourni.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la masse volumique de l'échantillon, puis sa concentration en masse c<sub>m</sub>(bassin) en sel.",
+          "aides": []
+        },
+        {
+          "texte": "Le sel commence-t-il déjà à cristalliser dans ce bassin ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "On considère 1,0 L d'eau de ce bassin. Quel volume doit-il rester après évaporation pour que le sel commence à cristalliser ? Quel volume d'eau doit donc s'évaporer ?",
+          "aides": [
+            "Quand l'eau s'évapore, la masse de sel ne change pas : seul le volume diminue.",
+            "Calcule la masse de sel dans 1,0 L, puis cherche le volume V tel que cette masse donne c<sub>max</sub> = 350 g·L⁻¹ : V = m / c<sub>max</sub>."
+          ]
+        },
+        {
+          "texte": "Le « sel gris » récolté contient aussi un peu de chlorure de magnésium, formé d'ions Mg²⁺ et Cl⁻. Écris sa formule en justifiant.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'eau salée est incolore, quelle que soit sa concentration : il n'y a pas de teinte à comparer. On utilise une autre grandeur physique qui varie avec la concentration, ici la masse volumique.",
+        "<strong>2.</strong> ρ = m(solution) / V(solution) : S1 : 10,35 / 10,00 = 1,035 g·mL⁻¹ ; S2 : 1,070 g·mL⁻¹ ; S3 : 1,105 g·mL⁻¹ ; S4 : 1,140 g·mL⁻¹ ; S5 : 1,175 g·mL⁻¹.",
+        "<strong>3.</strong> Les cinq points sont alignés : on trace la droite qui passe au plus près des points. Elle ne passe pas par l'origine : prolongée jusqu'à c<sub>m</sub> = 0, elle donne ρ = 1,000 g·mL⁻¹, la masse volumique de l'eau pure.",
+        "<strong>4.</strong> ρ(bassin) = 11,47 / 10,00 = 1,147 g·mL⁻¹. Par lecture graphique : c<sub>m</sub>(bassin) ≈ 210 g·L⁻¹ (on accepte 205 à 215 g·L⁻¹).",
+        "<strong>5.</strong> Non : 210 g·L⁻¹ &lt; 350 g·L⁻¹, la concentration maximale n'est pas atteinte, la solution n'est pas saturée.",
+        "<strong>6.</strong> 1,0 L d'eau du bassin contient m = c<sub>m</sub> × V = 210 × 1,0 = 210 g de sel, qui ne s'évapore pas. Le sel cristallise quand 210 g sont dissous dans V = m / c<sub>max</sub> = 210 / 350 = 0,60 L. Il doit donc s'évaporer 1,0 − 0,60 = 0,40 L d'eau (40 % du volume).",
+        "<strong>7.</strong> MgCl₂ : un ion Mg²⁺ porte deux charges positives, compensées par deux ions Cl⁻ (électroneutralité).",
+        "<em>⚠ Erreur fréquente : laisser V = 10,00 mL au dénominateur en croyant obtenir des g·L⁻¹ ; ici ρ est en g·mL⁻¹ (1,147 g·mL⁻¹ = 1 147 g·L⁻¹). Et ne pas confondre cette masse volumique avec la concentration en masse du sel.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le moteur passera-t-il l'hiver au ski ?",
+      "contexte": [
+        "La famille de Sofiane part en vacances au ski. À la station, la nuit, la température peut descendre jusqu'à −20 °C ; à Argenteuil, elle descend rarement sous −10 °C. Si le liquide de refroidissement de la voiture gèle, il peut endommager le moteur.",
+        "Doc. 1 — Le liquide de refroidissement. C'est un mélange d'eau et d'éthylène glycol (un liquide incolore), auquel le fabricant ajoute un colorant (rose, vert ou bleu selon les marques). Plus la concentration en masse de glycol est grande, plus la température à laquelle le mélange commence à geler est basse (données simplifiées) :",
+        "c<sub>m</sub> du glycol (g·L⁻¹) : 200 → gel à −8 °C ; 300 → gel à −14 °C ; 400 → gel à −22 °C ; 500 → gel à −33 °C.",
+        "Doc. 2 — Mesure. Moteur froid, Sofiane prélève 20,00 mL de liquide de refroidissement avec une pipette jaugée et les verse dans un bécher posé sur une balance tarée. La balance affiche 20,68 g. La mesure est faite à 20 °C."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"400\" y=\"26\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 3 — Masse volumique de mélanges eau + éthylène glycol (20 °C)</text><line x1=\"100.0\" y1=\"400.0\" x2=\"100.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"100.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">0</text><line x1=\"120.7\" y1=\"400.0\" x2=\"120.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"141.3\" y1=\"400.0\" x2=\"141.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"162.0\" y1=\"400.0\" x2=\"162.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"182.7\" y1=\"400.0\" x2=\"182.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"203.3\" y1=\"400.0\" x2=\"203.3\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"203.3\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">100</text><line x1=\"224.0\" y1=\"400.0\" x2=\"224.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"244.7\" y1=\"400.0\" x2=\"244.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"265.3\" y1=\"400.0\" x2=\"265.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"286.0\" y1=\"400.0\" x2=\"286.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"306.7\" y1=\"400.0\" x2=\"306.7\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"306.7\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">200</text><line x1=\"327.3\" y1=\"400.0\" x2=\"327.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"348.0\" y1=\"400.0\" x2=\"348.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"368.7\" y1=\"400.0\" x2=\"368.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"389.3\" y1=\"400.0\" x2=\"389.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"410.0\" y1=\"400.0\" x2=\"410.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"410.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">300</text><line x1=\"430.7\" y1=\"400.0\" x2=\"430.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"451.3\" y1=\"400.0\" x2=\"451.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"472.0\" y1=\"400.0\" x2=\"472.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"492.7\" y1=\"400.0\" x2=\"492.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"513.3\" y1=\"400.0\" x2=\"513.3\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"513.3\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">400</text><line x1=\"534.0\" y1=\"400.0\" x2=\"534.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"554.7\" y1=\"400.0\" x2=\"554.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"575.3\" y1=\"400.0\" x2=\"575.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"596.0\" y1=\"400.0\" x2=\"596.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"616.7\" y1=\"400.0\" x2=\"616.7\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"616.7\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">500</text><line x1=\"637.3\" y1=\"400.0\" x2=\"637.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"658.0\" y1=\"400.0\" x2=\"658.0\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"678.7\" y1=\"400.0\" x2=\"678.7\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"699.3\" y1=\"400.0\" x2=\"699.3\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"720.0\" y1=\"400.0\" x2=\"720.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"720.0\" y=\"420.0\" text-anchor=\"middle\" font-size=\"14\">600</text><line x1=\"100.0\" y1=\"400.0\" x2=\"720.0\" y2=\"400.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"405.0\" text-anchor=\"end\" font-size=\"14\">1,000</text><line x1=\"100.0\" y1=\"390.3\" x2=\"720.0\" y2=\"390.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"380.6\" x2=\"720.0\" y2=\"380.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"370.9\" x2=\"720.0\" y2=\"370.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"361.1\" x2=\"720.0\" y2=\"361.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"351.4\" x2=\"720.0\" y2=\"351.4\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"356.4\" text-anchor=\"end\" font-size=\"14\">1,010</text><line x1=\"100.0\" y1=\"341.7\" x2=\"720.0\" y2=\"341.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"332.0\" x2=\"720.0\" y2=\"332.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"322.3\" x2=\"720.0\" y2=\"322.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"312.6\" x2=\"720.0\" y2=\"312.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"302.9\" x2=\"720.0\" y2=\"302.9\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"307.9\" text-anchor=\"end\" font-size=\"14\">1,020</text><line x1=\"100.0\" y1=\"293.1\" x2=\"720.0\" y2=\"293.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"283.4\" x2=\"720.0\" y2=\"283.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"273.7\" x2=\"720.0\" y2=\"273.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"264.0\" x2=\"720.0\" y2=\"264.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"254.3\" x2=\"720.0\" y2=\"254.3\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"259.3\" text-anchor=\"end\" font-size=\"14\">1,030</text><line x1=\"100.0\" y1=\"244.6\" x2=\"720.0\" y2=\"244.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"234.9\" x2=\"720.0\" y2=\"234.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"225.1\" x2=\"720.0\" y2=\"225.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"215.4\" x2=\"720.0\" y2=\"215.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"205.7\" x2=\"720.0\" y2=\"205.7\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"210.7\" text-anchor=\"end\" font-size=\"14\">1,040</text><line x1=\"100.0\" y1=\"196.0\" x2=\"720.0\" y2=\"196.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"186.3\" x2=\"720.0\" y2=\"186.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"176.6\" x2=\"720.0\" y2=\"176.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"166.9\" x2=\"720.0\" y2=\"166.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"157.1\" x2=\"720.0\" y2=\"157.1\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"162.1\" text-anchor=\"end\" font-size=\"14\">1,050</text><line x1=\"100.0\" y1=\"147.4\" x2=\"720.0\" y2=\"147.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"137.7\" x2=\"720.0\" y2=\"137.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"128.0\" x2=\"720.0\" y2=\"128.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"118.3\" x2=\"720.0\" y2=\"118.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"108.6\" x2=\"720.0\" y2=\"108.6\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"113.6\" text-anchor=\"end\" font-size=\"14\">1,060</text><line x1=\"100.0\" y1=\"98.9\" x2=\"720.0\" y2=\"98.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"89.1\" x2=\"720.0\" y2=\"89.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"79.4\" x2=\"720.0\" y2=\"79.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"69.7\" x2=\"720.0\" y2=\"69.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"100.0\" y1=\"60.0\" x2=\"720.0\" y2=\"60.0\" stroke=\"#b9ae9c\" stroke-width=\"1.1\"/><text x=\"94.0\" y=\"65.0\" text-anchor=\"end\" font-size=\"14\">1,070</text><line x1=\"100\" y1=\"400\" x2=\"728\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"100\" y1=\"400\" x2=\"100\" y2=\"52\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"720\" y=\"442\" text-anchor=\"end\" font-size=\"15\">concentration en masse de glycol cₘ (g·L⁻¹)</text><text x=\"40\" y=\"44\" font-size=\"15\">ρ (g·mL⁻¹)</text><line x1=\"100.0\" y1=\"400.0\" x2=\"699.3\" y2=\"61.9\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"197.3\" y1=\"335.7\" x2=\"209.3\" y2=\"347.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"197.3\" y1=\"347.7\" x2=\"209.3\" y2=\"335.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"300.7\" y1=\"277.4\" x2=\"312.7\" y2=\"289.4\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"300.7\" y1=\"289.4\" x2=\"312.7\" y2=\"277.4\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"404.0\" y1=\"219.1\" x2=\"416.0\" y2=\"231.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"404.0\" y1=\"231.1\" x2=\"416.0\" y2=\"219.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"507.3\" y1=\"160.9\" x2=\"519.3\" y2=\"172.9\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"507.3\" y1=\"172.9\" x2=\"519.3\" y2=\"160.9\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"610.7\" y1=\"102.6\" x2=\"622.7\" y2=\"114.6\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"610.7\" y1=\"114.6\" x2=\"622.7\" y2=\"102.6\" stroke=\"#B5523B\" stroke-width=\"2.4\"/></svg>",
+      "contexte2": [
+        "Doc. 3 (ci-dessus) — Droite d'étalonnage tracée par le technicien du lycée avec des mélanges eau + glycol de concentrations connues, à 20 °C."
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : Sofiane propose de comparer la couleur de son liquide à une échelle de teintes. D'après le doc. 1, pourquoi cette méthode ne convient-elle pas ?",
+          "aides": []
+        },
+        {
+          "texte": "Le liquide de refroidissement de la voiture protège-t-il le moteur pour les vacances au ski ? Et pour un hiver à Argenteuil ? Rédige une réponse argumentée en t'appuyant sur les documents.",
+          "aides": [
+            "S'approprier : quelle grandeur peux-tu calculer à partir du doc. 2 ? Quel document l'utilise ?",
+            "Analyser : la chaîne est mesure (doc. 2) → masse volumique → concentration (doc. 3) → température de gel (doc. 1) → comparaison avec −20 °C et −10 °C.",
+            "Réaliser : ρ = m / V avec m = 20,68 g et V = 20,00 mL, puis projection horizontale sur la droite du doc. 3."
+          ]
+        },
+        {
+          "texte": "Regard critique : cite deux sources d'imprécision de ta conclusion. Quelle précaution le doc. 2 a-t-il prise pour que l'étalonnage soit utilisable ?",
+          "aides": [
+            "À quelle température l'étalonnage et la mesure ont-ils été faits ? Pourquoi est-ce important pour une masse volumique ?",
+            "Pense aussi à la lecture graphique et au tableau du doc. 1, qui ne donne que quelques valeurs."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin : le garagiste vide 1,0 L des 5,0 L du circuit et le remplace par 1,0 L d'antigel pur (glycol pur, c<sub>m</sub> = 1,11 × 10³ g·L⁻¹). La voiture est-elle alors protégée à −20 °C ?",
+          "aides": [
+            "La masse de glycol qui reste dans les 4,0 L se calcule avec la concentration trouvée à la question 2.",
+            "Ajoute la masse de glycol contenue dans 1,0 L d'antigel pur, puis divise la masse totale par le volume total (5,0 L)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La couleur vient d'un colorant ajouté par le fabricant, pas du glycol (incolore) : la teinte ne renseigne pas sur la concentration en glycol. Il faut mesurer une grandeur qui dépend de la concentration en glycol : la masse volumique (doc. 3).",
+        "<strong>2.</strong> Démarche attendue : (a) masse volumique du liquide : ρ = m / V = 20,68 / 20,00 = 1,034 g·mL⁻¹ ; (b) lecture sur la droite d'étalonnage (doc. 3) : c<sub>m</sub>(glycol) ≈ 2,8 × 10² g·L⁻¹ (283 g·L⁻¹ ; on accepte 275 à 290 g·L⁻¹) ; (c) doc. 1 : cette concentration est comprise entre 200 et 300 g·L⁻¹, donc le mélange gèle entre −8 °C et −14 °C (environ −13 °C) ; (d) conclusion : le moteur est protégé pour un hiver à Argenteuil (−10 °C), mais PAS pour les nuits à −20 °C au ski : il faut ajouter de l'antigel avant de partir.",
+        "<strong>3.</strong> Imprécisions : lecture graphique (± 5 à 10 g·L⁻¹), températures de gel données seulement tous les 100 g·L⁻¹ (estimation entre deux valeurs), additifs et colorant qui modifient un peu la masse volumique, mesure de masse au centième de gramme. Précaution : la mesure est faite à 20 °C, comme l'étalonnage (la masse volumique dépend de la température) ; on prélève moteur froid avec une pipette jaugée (volume précis). Les incertitudes ne changent pas la conclusion : même à 290 g·L⁻¹, on reste loin des 400 g·L⁻¹ environ nécessaires pour −20 °C.",
+        "<strong>4.</strong> Pour aller plus loin : il reste 4,0 L contenant 283 × 4,0 ≈ 1 133 g de glycol ; on ajoute 1,11 × 10³ g. Nouvelle concentration : c<sub>m</sub> = (1 133 + 1 110) / 5,0 ≈ 449 g·L⁻¹ ≈ 4,5 × 10² g·L⁻¹, comprise entre 400 et 500 g·L⁻¹ : gel vers −27 °C. La voiture est protégée à −20 °C.",
+        "Éléments valorisés (grille indicative) : avoir calculé une masse volumique à partir du doc. 2 ; avoir utilisé la droite d'étalonnage par projection ; avoir relié la concentration à la température de gel (doc. 1) ; conclusion argumentée distinguant ski et Argenteuil, même si la valeur lue est un peu différente.",
+        "<em>⚠ Erreur fréquente : lire directement 20,68 sur l'axe des ordonnées (c'est une masse en g, pas une masse volumique), ou confondre la masse volumique (1 034 g·L⁻¹) avec la concentration en masse du glycol.</em>"
+      ]
+    }
+  ]
+}

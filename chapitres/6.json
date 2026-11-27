@@ -1,0 +1,752 @@
+{
+  "id": 6,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La conductimétrie",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Conductivité d'une solution (σ)",
+            "text": "Grandeur qui traduit l'aptitude d'une solution ionique à conduire le courant électrique. Elle s'exprime en siemens par mètre (S·m⁻¹) et se mesure à l'aide d'une cellule conductimétrique reliée à un conductimètre."
+          },
+          {
+            "type": "formula",
+            "label": "Loi de Kohlrausch",
+            "text": "σ = Σ λᵢ × [Xᵢ]\navec λᵢ : conductivité molaire ionique de l'ion i (S·m²·mol⁻¹)\n[Xᵢ] : concentration molaire de l'ion i (mol·m⁻³)"
+          },
+          {
+            "type": "text",
+            "text": "La conductivité d'une solution est la somme des contributions de <strong>tous les ions présents</strong>, chacune étant proportionnelle à sa concentration. Les ions H₃O⁺ et HO⁻ possèdent des conductivités molaires ioniques particulièrement élevées : leur présence, même en faible quantité, influence fortement la conductivité globale."
+          },
+          {
+            "type": "warn",
+            "text": "Attention aux unités : dans la loi de Kohlrausch, les concentrations sont en mol·m⁻³ si les λᵢ sont en S·m²·mol⁻¹ (1 mol·L⁻¹ = 1000 mol·m⁻³)."
+          }
+        ]
+      },
+      {
+        "title": "2. Spectroscopie UV-visible : loi de Beer-Lambert",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "def",
+            "term": "Absorbance A",
+            "text": "Grandeur sans unité qui mesure l'atténuation, par une solution colorée, d'un faisceau de lumière monochromatique traversant une cuve d'épaisseur l."
+          },
+          {
+            "type": "formula",
+            "label": "Loi de Beer-Lambert",
+            "text": "A = ε × l × c\nε : coefficient d'absorption molaire de l'espèce dissoute, à une longueur d'onde donnée (L·mol⁻¹·cm⁻¹)\nl : longueur de la cuve traversée (cm)\nc : concentration molaire de l'espèce colorée (mol·L⁻¹)"
+          },
+          {
+            "type": "text",
+            "text": "La mesure s'effectue à la longueur d'onde du maximum d'absorption λmax, pour laquelle la sensibilité est optimale. La loi de Beer-Lambert n'est valable que pour une lumière monochromatique et des <strong>solutions suffisamment diluées</strong> : au-delà d'une certaine concentration, la relation entre A et c n'est plus linéaire."
+          }
+        ]
+      },
+      {
+        "title": "3. Spectroscopie infrarouge (IR)",
+        "icon": "📈",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un spectre IR représente la transmittance T (%) en fonction du nombre d'onde σ (cm⁻¹), généralement porté sur un axe gradué de façon décroissante. Chaque type de liaison chimique absorbe le rayonnement infrarouge à des nombres d'onde caractéristiques : l'analyse des bandes d'absorption permet d'identifier des groupes caractéristiques présents dans une molécule."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Liaison",
+              "Nombre d'onde (cm⁻¹)",
+              "Allure de la bande"
+            ],
+            "rows": [
+              [
+                "O-H (alcool)",
+                "3200 - 3550",
+                "Forte, large"
+              ],
+              [
+                "O-H (acide carboxylique)",
+                "2500 - 3200",
+                "Forte, très large"
+              ],
+              [
+                "N-H (amine)",
+                "3100 - 3500",
+                "Moyenne"
+              ],
+              [
+                "C-H",
+                "2800 - 3000",
+                "Moyenne à forte"
+              ],
+              [
+                "C=O",
+                "1650 - 1730",
+                "Forte, fine"
+              ],
+              [
+                "C=C",
+                "1625 - 1685",
+                "Faible à moyenne"
+              ],
+              [
+                "C-O",
+                "1050 - 1450",
+                "Forte"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Une bande large et intense entre 2500 et 3200 cm⁻¹ est caractéristique de la liaison O-H d'un acide carboxylique, à ne pas confondre avec la bande fine C=O vers 1700 cm⁻¹ du même groupe."
+          }
+        ]
+      },
+      {
+        "title": "4. Le dosage par étalonnage",
+        "icon": "📏",
+        "content": [
+          {
+            "type": "def",
+            "term": "Dosage par étalonnage",
+            "text": "Méthode de détermination de la concentration d'une espèce en solution, fondée sur la mesure d'une grandeur physique (absorbance, conductivité...) proportionnelle à cette concentration."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Principe :</strong> on prépare, à partir d'une solution mère, une série de solutions étalons de concentrations connues c₁, c₂, ... cₙ. On mesure pour chacune la grandeur physique G (absorbance ou conductivité), puis on trace la courbe d'étalonnage G = f(c). On mesure enfin G pour la solution de concentration inconnue et on détermine cette concentration par lecture graphique, ou par calcul si la courbe est une droite passant par l'origine."
+          },
+          {
+            "type": "warn",
+            "text": "Limites : la courbe d'étalonnage n'est linéaire que dans un domaine de concentrations limité (domaine de validité des lois de Beer-Lambert ou de Kohlrausch). Il est interdit d'<strong>extrapoler</strong> en dehors de ce domaine : si la mesure de la solution inconnue sort de l'intervalle des étalons, il faut diluer (ou concentrer) l'échantillon avant de refaire la mesure."
+          }
+        ]
+      },
+      {
+        "title": "5. Exemple numérique : dosage par étalonnage UV-visible",
+        "icon": "🧮",
+        "content": [
+          {
+            "type": "text",
+            "text": "On souhaite déterminer la concentration d'une solution S de permanganate de potassium par spectrophotométrie UV-visible, à λmax = 525 nm. Cinq solutions étalons sont préparées par dilution puis leur absorbance est mesurée dans une cuve de 1 cm :"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Solution",
+              "S1",
+              "S2",
+              "S3",
+              "S4",
+              "S5"
+            ],
+            "rows": [
+              [
+                "c (mmol·L⁻¹)",
+                "0,10",
+                "0,20",
+                "0,30",
+                "0,40",
+                "0,50"
+              ],
+              [
+                "A mesurée",
+                "0,24",
+                "0,48",
+                "0,72",
+                "0,96",
+                "1,20"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "La courbe A = f(c) est une droite passant par l'origine, conformément à la loi de Beer-Lambert. Le coefficient directeur (obtenu par régression linéaire) vaut k = ε × l ≈ 2,40×10³ L·mol⁻¹. Pour la solution S, on mesure A(S) = 0,68."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"220\" x2=\"455\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"220\" x2=\"60\" y2=\"25\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"395\" y=\"238\" font-size=\"11\" fill=\"#1B2420\">c (mmol·L⁻¹)</text><text x=\"38\" y=\"30\" font-size=\"11\" fill=\"#1B2420\">A</text><line x1=\"60\" y1=\"220\" x2=\"440\" y2=\"37.6\" stroke=\"#4f8ef7\" stroke-width=\"2.2\"/><circle cx=\"123.3\" cy=\"189.6\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"186.7\" cy=\"159.2\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"250\" cy=\"128.8\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"313.3\" cy=\"98.4\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"376.7\" cy=\"68\" r=\"4\" fill=\"#1B2420\"/><line x1=\"60\" y1=\"133.9\" x2=\"237.3\" y2=\"133.9\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><line x1=\"237.3\" y1=\"133.9\" x2=\"237.3\" y2=\"220\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><circle cx=\"237.3\" cy=\"133.9\" r=\"5\" fill=\"#C0472F\"/><text x=\"18\" y=\"138\" font-size=\"11\" fill=\"#C0472F\">0,68</text><text x=\"216\" y=\"234\" font-size=\"11\" fill=\"#C0472F\">0,28</text></svg>",
+            "caption": "Droite d'étalonnage A = f(c) : à partir de la mesure A(S) = 0,68 sur la solution inconnue, on lit par projection c(S) ≈ 0,28 mmol·L⁻¹ — cohérent avec le calcul par régression."
+          },
+          {
+            "type": "formula",
+            "label": "Lecture graphique / calcul",
+            "text": "c(S) = A(S) / k = 0,68 / 2400 ≈ 2,8×10⁻⁴ mol·L⁻¹ = 0,28 mmol·L⁻¹"
+          },
+          {
+            "type": "warn",
+            "text": "Cette valeur est bien comprise dans le domaine des étalons (0,10 à 0,50 mmol·L⁻¹) : la lecture graphique est donc valide, sans extrapolation."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans la loi de Kohlrausch σ = Σ λᵢ × [Xᵢ], la grandeur λᵢ est :",
+      "opts": [
+        "la concentration de l'ion i",
+        "la longueur d'onde associée à l'ion i",
+        "la conductivité molaire ionique de l'ion i",
+        "la conductivité de la solution"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "kohlrausch-lambda-vs-concentration",
+          "texte": "Confondre λᵢ avec la concentration [Xᵢ] de l'ion"
+        },
+        {
+          "code": "lambda-longueur-onde",
+          "texte": "Confondre le symbole λ de la conductivité molaire ionique avec celui de la longueur d'onde"
+        },
+        null,
+        {
+          "code": "kohlrausch-lambda-vs-sigma",
+          "texte": "Confondre la conductivité molaire ionique λᵢ d'un ion et la conductivité σ de la solution"
+        }
+      ],
+      "exp": "λᵢ est la conductivité molaire ionique de l'ion i, en S·m²·mol⁻¹ : la contribution d'une mole par m³ de cet ion à la conductivité σ (en S·m⁻¹). Attention : même symbole que la longueur d'onde, mais aucun rapport."
+    },
+    {
+      "q": "Une solution de chlorure de sodium a une concentration c = 1,0 × 10⁻³ mol·L⁻¹. Avec λ(Na⁺) = 5,0 mS·m²·mol⁻¹ et λ(Cl⁻) = 7,6 mS·m²·mol⁻¹, sa conductivité σ vaut :",
+      "opts": [
+        "1,3 × 10⁻² S·m⁻¹",
+        "1,3 × 10⁻⁵ S·m⁻¹",
+        "7,6 × 10⁻³ S·m⁻¹",
+        "13 S·m⁻¹"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-mol-l-mol-m3",
+          "texte": "Oublier de convertir c en mol·m⁻³ : 1,0 × 10⁻³ mol·L⁻¹ = 1,0 mol·m⁻³"
+        },
+        {
+          "code": "oubli-ions-spectateurs",
+          "texte": "Ne compter qu'un seul ion : tous les ions de la solution contribuent à σ"
+        },
+        {
+          "code": "conversion-ms-s",
+          "texte": "Oublier de convertir les mS en S : 12,6 × 1,0 = 13"
+        }
+      ],
+      "exp": "c = 1,0 mol·m⁻³ ; σ = (λ(Na⁺) + λ(Cl⁻)) × c = (5,0 + 7,6) × 10⁻³ × 1,0 ≈ 1,3 × 10⁻² S·m⁻¹. Attention : concentrations en mol·m⁻³ et λ en S·m²·mol⁻¹."
+    },
+    {
+      "q": "À la même concentration, une solution d'acide chlorhydrique (H₃O⁺ + Cl⁻) conduit beaucoup mieux le courant qu'une solution de chlorure de sodium (Na⁺ + Cl⁻), car :",
+      "opts": [
+        "l'acide libère des électrons libres qui transportent le courant",
+        "λ(H₃O⁺) est beaucoup plus grande que λ(Na⁺)",
+        "l'acide libère plus d'ions par entité dissoute",
+        "la solution acide contient plus d'ions Cl⁻"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "electrons-dans-solution",
+          "texte": "Croire que des électrons circulent dans les solutions : ce sont des ions qui s'y déplacent"
+        },
+        null,
+        {
+          "code": "conductivite-nombre-ions",
+          "texte": "Croire que l'acide libère plus d'ions : HCl et NaCl donnent chacun 2 ions"
+        },
+        {
+          "code": "conductivite-cl-concentration",
+          "texte": "Croire que [Cl⁻] diffère : à concentration égale, les deux solutions ont la même concentration en Cl⁻"
+        }
+      ],
+      "exp": "Les deux solutions ont les mêmes concentrations d'ions, mais λ(H₃O⁺) ≈ 35 mS·m²·mol⁻¹ contre 5,0 pour Na⁺. Attention : σ dépend de la nature des ions, pas seulement de leur nombre."
+    },
+    {
+      "q": "L'absorbance A d'une solution colorée :",
+      "opts": [
+        "est sans unité et augmente avec la concentration",
+        "s'exprime en L·mol⁻¹·cm⁻¹ et augmente avec la concentration",
+        "est proportionnelle à la transmittance de la solution",
+        "est sans unité et diminue quand la concentration augmente"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "absorbance-vs-epsilon",
+          "texte": "Confondre l'absorbance A, sans unité, et le coefficient d'absorption molaire ε"
+        },
+        {
+          "code": "absorbance-transmittance-proportionnelles",
+          "texte": "Croire que l'absorbance est proportionnelle à la transmittance : plus la solution absorbe, moins elle transmet"
+        },
+        {
+          "code": "absorbance-vs-transmittance",
+          "texte": "Confondre absorbance et transmittance : une solution plus concentrée absorbe plus"
+        }
+      ],
+      "exp": "A = ε × l × c : A est sans unité et proportionnelle à c (solution diluée, lumière monochromatique). Attention : quand A augmente, la lumière transmise diminue."
+    },
+    {
+      "q": "Pour doser une espèce colorée par spectrophotométrie, on règle la longueur d'onde sur λmax parce que :",
+      "opts": [
+        "c'est la longueur d'onde de la couleur de la solution",
+        "la solution y absorbe le moins, la lumière la traverse bien",
+        "la sensibilité de la mesure y est maximale",
+        "A ne dépend pas de la longueur d'onde choisie"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "couleur-percue-vs-absorbee",
+          "texte": "Confondre couleur perçue et couleur absorbée : la solution absorbe surtout la couleur complémentaire de la sienne"
+        },
+        {
+          "code": "lambda-max-absorption-minimale",
+          "texte": "Croire qu'on mesure là où la solution absorbe le moins : λmax est le maximum d'absorption"
+        },
+        null,
+        {
+          "code": "epsilon-independant-lambda",
+          "texte": "Croire que A ne dépend pas de λ : ε, donc A, varie avec la longueur d'onde"
+        }
+      ],
+      "exp": "À λmax, ε est maximal : une petite variation de c donne la plus grande variation de A, la mesure est la plus précise. Attention : une solution bleue absorbe surtout dans l'orange, la couleur complémentaire."
+    },
+    {
+      "q": "La droite d'étalonnage d'un dosage par spectrophotométrie a pour équation A = k × c, avec k = 2,40 × 10³ L·mol⁻¹. La solution inconnue a une absorbance A = 0,60. Sa concentration vaut :",
+      "opts": [
+        "1,4 × 10³ mol·L⁻¹",
+        "2,5 × 10⁻⁴ mol·L⁻¹",
+        "4,0 × 10³ mol·L⁻¹",
+        "2,5 × 10⁻¹ mol·L⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "multiplier-au-lieu-diviser",
+          "texte": "Multiplier au lieu de diviser : 0,60 × 2,40 × 10³"
+        },
+        null,
+        {
+          "code": "rapport-inverse-etalonnage",
+          "texte": "Inverser le rapport : k / A = 4,0 × 10³"
+        },
+        {
+          "code": "mmol-pris-pour-mol",
+          "texte": "Lire le résultat en mmol·L⁻¹ comme s'il était en mol·L⁻¹ : 0,25 mmol·L⁻¹ = 2,5 × 10⁻⁴ mol·L⁻¹"
+        }
+      ],
+      "exp": "c = A / k = 0,60 / 2,40 × 10³ = 2,5 × 10⁻⁴ mol·L⁻¹. Attention : un ordre de grandeur de 10³ mol·L⁻¹ est impossible pour une solution, ce qui signale une erreur de calcul."
+    },
+    {
+      "q": "Les solutions étalons ont des absorbances comprises entre 0,24 et 1,20. La solution inconnue donne A = 2,1. Il faut :",
+      "opts": [
+        "prolonger la droite d'étalonnage jusqu'à A = 2,1",
+        "calculer c = A / k, la loi de Beer-Lambert étant toujours valable",
+        "diluer la solution inconnue, puis refaire la mesure",
+        "garder le résultat, la mesure étant d'autant plus précise que A est grande"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "extrapolation-etalonnage",
+          "texte": "Extrapoler la courbe d'étalonnage hors du domaine des étalons"
+        },
+        {
+          "code": "beer-lambert-hors-domaine",
+          "texte": "Utiliser la loi de Beer-Lambert hors de son domaine de validité : elle n'est linéaire que pour les solutions diluées"
+        },
+        null,
+        {
+          "code": "grande-absorbance-precise",
+          "texte": "Croire qu'une grande absorbance donne une mesure plus précise : au-delà du domaine étalonné, la linéarité n'est plus garantie"
+        }
+      ],
+      "exp": "La mesure sort du domaine des étalons, où la relation A = k × c a été vérifiée : on dilue d'un facteur connu pour revenir dans ce domaine. Attention : on n'extrapole jamais une courbe d'étalonnage."
+    },
+    {
+      "q": "Un spectre infrarouge représente en général :",
+      "opts": [
+        "l'absorbance en fonction de la longueur d'onde",
+        "la transmittance en fonction de la longueur d'onde",
+        "la transmittance en fonction du nombre d'onde",
+        "l'absorbance en fonction du nombre d'onde, bandes vers le haut"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "spectre-ir-vs-uv-visible",
+          "texte": "Confondre spectre IR et spectre UV-visible (absorbance en fonction de λ)"
+        },
+        {
+          "code": "nombre-onde-vs-longueur-onde",
+          "texte": "Confondre nombre d'onde σ = 1/λ (en cm⁻¹) et longueur d'onde"
+        },
+        null,
+        {
+          "code": "bandes-ir-vers-haut",
+          "texte": "Chercher des bandes vers le haut : ce sont des creux de transmittance"
+        }
+      ],
+      "exp": "Spectre IR : transmittance T (%) en fonction du nombre d'onde σ = 1/λ (cm⁻¹), axe souvent décroissant ; les bandes d'absorption sont des creux. Attention à ne pas confondre avec un spectre UV-visible."
+    },
+    {
+      "q": "Le spectre IR d'une espèce présente une bande forte et très large entre 2 500 et 3 200 cm⁻¹ et une bande forte et fine vers 1 710 cm⁻¹. Cette espèce est probablement :",
+      "opts": [
+        "un alcool",
+        "un acide carboxylique",
+        "une cétone",
+        "une amine"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ir-bande-co-ignoree",
+          "texte": "Ne voir que la bande O–H : la bande fine vers 1 710 cm⁻¹ révèle aussi un C=O"
+        },
+        null,
+        {
+          "code": "ir-bande-oh-ignoree",
+          "texte": "Ne voir que la bande C=O : la bande très large entre 2 500 et 3 200 cm⁻¹ est un O–H d'acide"
+        },
+        {
+          "code": "ir-oh-vs-nh",
+          "texte": "Confondre la bande O–H d'acide avec une bande N–H (moyenne, vers 3 100 – 3 500 cm⁻¹)"
+        }
+      ],
+      "exp": "Bande O–H très large et décalée (2 500 – 3 200 cm⁻¹) et bande C=O vers 1 710 cm⁻¹ : groupe carboxyle –COOH. Attention : il faut exploiter toutes les bandes, pas une seule."
+    },
+    {
+      "q": "Pour tracer une courbe d'étalonnage, on mesure la grandeur physique (absorbance, conductivité) :",
+      "opts": [
+        "de la solution inconnue diluée plusieurs fois",
+        "d'une même solution à plusieurs longueurs d'onde",
+        "du solvant seul, qui sert de référence",
+        "d'une série de solutions étalons de concentrations connues"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "etalons-vs-inconnue",
+          "texte": "Croire qu'on étalonne avec la solution inconnue : il faut des solutions de concentrations connues"
+        },
+        {
+          "code": "etalonnage-vs-spectre",
+          "texte": "Confondre courbe d'étalonnage A = f(c) et spectre d'absorption A = f(λ)"
+        },
+        {
+          "code": "blanc-vs-etalonnage",
+          "texte": "Confondre la mesure du blanc (réglage du zéro) et l'étalonnage"
+        },
+        null
+      ],
+      "exp": "On prépare des solutions étalons de concentrations connues (par dilution d'une solution mère), on mesure G pour chacune et on trace G = f(c). Attention : le blanc sert seulement à faire le zéro de l'appareil."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Technique de dosage de l'urée — Beer-Lambert",
+      "session": "Amérique du Nord · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-1"
+    },
+    {
+      "year": "2023",
+      "title": "Contrôle de la qualité d'un biberon — dosage spectrophotométrique",
+      "session": "Centres étrangers · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-centres-etrangers-1-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Pourquoi le citron « conduit » mieux que le sel ?",
+      "contexte": [
+        "Inès compare au conductimètre deux solutions de même concentration c = 2,00 mmol·L⁻¹ : une solution de chlorure de sodium (Na⁺(aq) + Cl⁻(aq)), le sel de cuisine, et une solution d'acide chlorhydrique (H₃O⁺(aq) + Cl⁻(aq))."
+      ],
+      "questions": [
+        {
+          "texte": "Vrai ou faux ? Justifie en une phrase.<br>a. La conductivité σ d'une solution s'exprime en siemens par mètre (S·m⁻¹).<br>b. Une solution de sucre (saccharose) dans l'eau distillée conduit bien le courant.<br>c. Si l'on dilue 2 fois une solution de chlorure de sodium assez diluée, sa conductivité est divisée par 2.<br>d. La loi de Kohlrausch reste valable pour une saumure très concentrée (300 g de sel par litre).",
+          "aides": []
+        },
+        {
+          "texte": "Exprime la concentration c en mol·m⁻³.",
+          "aides": [
+            "Combien y a-t-il de litres dans 1 m³ ?",
+            "1 m³ = 10³ L, donc une concentration en mol·L⁻¹ se multiplie par 10³ pour l'avoir en mol·m⁻³ ; et 1 mmol = 10⁻³ mol."
+          ]
+        },
+        {
+          "texte": "Écris la loi de Kohlrausch pour la solution de chlorure de sodium, puis calcule sa conductivité σ₁ en mS·m⁻¹ et en S·m⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la conductivité σ₂ de la solution d'acide chlorhydrique. Combien de fois est-elle plus grande que σ₁ ? Quel ion en est responsable ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : σ s'exprime en S·m⁻¹ (souvent en mS·m⁻¹ ou en mS·cm⁻¹ sur les appareils).",
+        "b. FAUX : le saccharose est une molécule, pas un ion ; sans ions, pas de courant (σ reste très faible, proche de celle de l'eau distillée).",
+        "c. VRAI : dans le domaine de validité de la loi de Kohlrausch, σ est proportionnelle aux concentrations des ions ; si elles sont divisées par 2, σ l'est aussi.",
+        "d. FAUX : la loi de Kohlrausch n'est valable que pour des solutions diluées (de l'ordre de 10⁻² mol·L⁻¹ au plus) ; une saumure à 300 g·L⁻¹ (environ 5 mol·L⁻¹) est bien trop concentrée.",
+        "<strong>2.</strong> c = 2,00 mmol·L⁻¹ = 2,00 × 10⁻³ mol·L⁻¹ = 2,00 × 10⁻³ × 10³ mol·m⁻³ = 2,00 mol·m⁻³.",
+        "<strong>3.</strong> σ₁ = λ(Na⁺) × [Na⁺] + λ(Cl⁻) × [Cl⁻] = (5,01 + 7,63) × 2,00 = 25,3 mS·m⁻¹ = 2,53 × 10⁻² S·m⁻¹.",
+        "<strong>4.</strong> σ₂ = λ(H₃O⁺) × [H₃O⁺] + λ(Cl⁻) × [Cl⁻] = (34,98 + 7,63) × 2,00 = 85,2 mS·m⁻¹, soit 85,2 / 25,3 = 3,4 fois plus. Responsable : l'ion H₃O⁺, dont la conductivité ionique molaire (34,98 mS·m²·mol⁻¹) est environ 7 fois celle de Na⁺.",
+        "<em>⚠ Erreur fréquente : utiliser c en mol·L⁻¹ avec λ en mS·m²·mol⁻¹ (on trouverait σ 1 000 fois trop petit).</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La couleur violette du permanganate",
+      "contexte": [
+        "Le permanganate de potassium (K⁺(aq) + MnO₄⁻(aq)) colore en violet certaines solutions antiseptiques. Un élève enregistre au spectrophotomètre le spectre d'absorption d'une solution S de permanganate, dans une cuve de largeur l = 1,00 cm.",
+        "Donnée : à λ<sub>max</sub>, le coefficient d'absorption molaire de l'ion MnO₄⁻ vaut ε = 2,40 × 10³ L·mol⁻¹·cm⁻¹."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"82.0\" y1=\"22\" x2=\"82.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82.0\" y=\"428\" text-anchor=\"middle\">400</text><line x1=\"125.5\" y1=\"22\" x2=\"125.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"125.5\" y=\"428\" text-anchor=\"middle\">420</text><line x1=\"169.1\" y1=\"22\" x2=\"169.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"169.1\" y=\"428\" text-anchor=\"middle\">440</text><line x1=\"212.6\" y1=\"22\" x2=\"212.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"212.6\" y=\"428\" text-anchor=\"middle\">460</text><line x1=\"256.1\" y1=\"22\" x2=\"256.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"256.1\" y=\"428\" text-anchor=\"middle\">480</text><line x1=\"299.7\" y1=\"22\" x2=\"299.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"299.7\" y=\"428\" text-anchor=\"middle\">500</text><line x1=\"343.2\" y1=\"22\" x2=\"343.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"343.2\" y=\"428\" text-anchor=\"middle\">520</text><line x1=\"386.7\" y1=\"22\" x2=\"386.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"386.7\" y=\"428\" text-anchor=\"middle\">540</text><line x1=\"430.3\" y1=\"22\" x2=\"430.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"430.3\" y=\"428\" text-anchor=\"middle\">560</text><line x1=\"473.8\" y1=\"22\" x2=\"473.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.8\" y=\"428\" text-anchor=\"middle\">580</text><line x1=\"517.3\" y1=\"22\" x2=\"517.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"517.3\" y=\"428\" text-anchor=\"middle\">600</text><line x1=\"560.9\" y1=\"22\" x2=\"560.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"560.9\" y=\"428\" text-anchor=\"middle\">620</text><line x1=\"604.4\" y1=\"22\" x2=\"604.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.4\" y=\"428\" text-anchor=\"middle\">640</text><line x1=\"647.9\" y1=\"22\" x2=\"647.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"647.9\" y=\"428\" text-anchor=\"middle\">660</text><line x1=\"691.5\" y1=\"22\" x2=\"691.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"691.5\" y=\"428\" text-anchor=\"middle\">680</text><line x1=\"735.0\" y1=\"22\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">700</text><line x1=\"82\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"82\" y1=\"388.7\" x2=\"735\" y2=\"388.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"369.4\" x2=\"735\" y2=\"369.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"374.4\" text-anchor=\"end\">0,04</text><line x1=\"82\" y1=\"350.1\" x2=\"735\" y2=\"350.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"330.8\" x2=\"735\" y2=\"330.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"335.8\" text-anchor=\"end\">0,08</text><line x1=\"82\" y1=\"311.5\" x2=\"735\" y2=\"311.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"292.2\" x2=\"735\" y2=\"292.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"297.2\" text-anchor=\"end\">0,12</text><line x1=\"82\" y1=\"272.9\" x2=\"735\" y2=\"272.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"253.6\" x2=\"735\" y2=\"253.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"258.6\" text-anchor=\"end\">0,16</text><line x1=\"82\" y1=\"234.3\" x2=\"735\" y2=\"234.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"215.0\" x2=\"735\" y2=\"215.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"220.0\" text-anchor=\"end\">0,2</text><line x1=\"82\" y1=\"195.7\" x2=\"735\" y2=\"195.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"176.4\" x2=\"735\" y2=\"176.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"181.4\" text-anchor=\"end\">0,24</text><line x1=\"82\" y1=\"157.1\" x2=\"735\" y2=\"157.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"137.8\" x2=\"735\" y2=\"137.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"142.8\" text-anchor=\"end\">0,28</text><line x1=\"82\" y1=\"118.5\" x2=\"735\" y2=\"118.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"99.2\" x2=\"735\" y2=\"99.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"104.2\" text-anchor=\"end\">0,32</text><line x1=\"82\" y1=\"79.9\" x2=\"735\" y2=\"79.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"60.6\" x2=\"735\" y2=\"60.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"65.6\" text-anchor=\"end\">0,36</text><line x1=\"82\" y1=\"41.3\" x2=\"735\" y2=\"41.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"27.0\" text-anchor=\"end\">0,4</text><rect x=\"82\" y=\"22\" width=\"653\" height=\"386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"82.0,408.0 83.1,408.0 84.2,408.0 85.3,408.0 86.4,408.0 87.4,408.0 88.5,408.0 89.6,408.0 90.7,408.0 91.8,408.0 92.9,408.0 94.0,408.0 95.1,408.0 96.1,407.9 97.2,407.9 98.3,407.9 99.4,407.9 100.5,407.9 101.6,407.9 102.7,407.9 103.8,407.9 104.9,407.9 105.9,407.9 107.0,407.9 108.1,407.9 109.2,407.9 110.3,407.9 111.4,407.9 112.5,407.9 113.6,407.9 114.7,407.9 115.7,407.9 116.8,407.8 117.9,407.8 119.0,407.8 120.1,407.8 121.2,407.8 122.3,407.8 123.4,407.8 124.4,407.8 125.5,407.8 126.6,407.8 127.7,407.7 128.8,407.7 129.9,407.7 131.0,407.7 132.1,407.7 133.2,407.7 134.2,407.7 135.3,407.6 136.4,407.6 137.5,407.6 138.6,407.6 139.7,407.6 140.8,407.5 141.9,407.5 142.9,407.5 144.0,407.5 145.1,407.4 146.2,407.4 147.3,407.4 148.4,407.3 149.5,407.3 150.6,407.3 151.7,407.2 152.7,407.2 153.8,407.2 154.9,407.1 156.0,407.1 157.1,407.0 158.2,407.0 159.3,406.9 160.4,406.9 161.4,406.8 162.5,406.8 163.6,406.7 164.7,406.7 165.8,406.6 166.9,406.6 168.0,406.5 169.1,406.4 170.2,406.4 171.2,406.3 172.3,406.2 173.4,406.1 174.5,406.1 175.6,406.0 176.7,405.9 177.8,405.8 178.9,405.7 179.9,405.6 181.0,405.5 182.1,405.4 183.2,405.3 184.3,405.2 185.4,405.1 186.5,405.0 187.6,404.9 188.7,404.7 189.7,404.6 190.8,404.5 191.9,404.3 193.0,404.2 194.1,404.1 195.2,403.9 196.3,403.8 197.4,403.6 198.5,403.4 199.5,403.3 200.6,403.1 201.7,402.9 202.8,402.7 203.9,402.5 205.0,402.3 206.1,402.1 207.2,401.9 208.2,401.7 209.3,401.5 210.4,401.3 211.5,401.0 212.6,400.8 213.7,400.6 214.8,400.3 215.9,400.1 217.0,399.8 218.0,399.5 219.1,399.3 220.2,399.0 221.3,398.7 222.4,398.4 223.5,398.1 224.6,397.8 225.7,397.5 226.7,397.1 227.8,396.8 228.9,396.4 230.0,396.1 231.1,395.7 232.2,395.3 233.3,395.0 234.4,394.6 235.5,394.1 236.5,393.7 237.6,393.3 238.7,392.8 239.8,392.4 240.9,391.9 242.0,391.4 243.1,390.8 244.2,390.3 245.2,389.7 246.3,389.1 247.4,388.5 248.5,387.8 249.6,387.1 250.7,386.4 251.8,385.6 252.9,384.8 254.0,383.9 255.0,383.0 256.1,382.0 257.2,380.9 258.3,379.8 259.4,378.6 260.5,377.3 261.6,375.9 262.7,374.4 263.8,372.8 264.8,371.2 265.9,369.4 267.0,367.4 268.1,365.4 269.2,363.2 270.3,360.9 271.4,358.4 272.5,355.7 273.5,352.9 274.6,350.0 275.7,346.8 276.8,343.5 277.9,340.1 279.0,336.4 280.1,332.6 281.2,328.6 282.3,324.4 283.3,320.1 284.4,315.5 285.5,310.9 286.6,306.0 287.7,301.1 288.8,295.9 289.9,290.7 291.0,285.3 292.0,279.9 293.1,274.3 294.2,268.7 295.3,263.0 296.4,257.3 297.5,251.5 298.6,245.7 299.7,239.9 300.8,234.1 301.8,228.4 302.9,222.6 304.0,217.0 305.1,211.4 306.2,205.9 307.3,200.4 308.4,195.1 309.5,189.8 310.5,184.7 311.6,179.6 312.7,174.7 313.8,169.9 314.9,165.1 316.0,160.5 317.1,156.0 318.2,151.6 319.3,147.3 320.3,143.0 321.4,138.9 322.5,134.8 323.6,130.8 324.7,126.9 325.8,123.0 326.9,119.2 328.0,115.4 329.1,111.8 330.1,108.1 331.2,104.5 332.3,101.0 333.4,97.6 334.5,94.2 335.6,91.0 336.7,87.8 337.8,84.7 338.8,81.8 339.9,79.0 341.0,76.3 342.1,73.8 343.2,71.5 344.3,69.4 345.4,67.5 346.5,65.8 347.6,64.3 348.6,63.1 349.7,62.1 350.8,61.3 351.9,60.8 353.0,60.6 354.1,60.6 355.2,60.9 356.3,61.3 357.3,62.1 358.4,63.0 359.5,64.1 360.6,65.4 361.7,66.9 362.8,68.5 363.9,70.2 365.0,72.0 366.1,73.9 367.1,75.8 368.2,77.7 369.3,79.6 370.4,81.5 371.5,83.3 372.6,85.1 373.7,86.8 374.8,88.4 375.9,89.9 376.9,91.3 378.0,92.6 379.1,93.7 380.2,94.8 381.3,95.7 382.4,96.5 383.5,97.3 384.6,97.9 385.6,98.5 386.7,99.1 387.8,99.6 388.9,100.2 390.0,100.7 391.1,101.3 392.2,102.0 393.3,102.8 394.4,103.6 395.4,104.6 396.5,105.8 397.6,107.1 398.7,108.6 399.8,110.3 400.9,112.2 402.0,114.4 403.1,116.7 404.1,119.3 405.2,122.0 406.3,125.0 407.4,128.2 408.5,131.6 409.6,135.2 410.7,138.9 411.8,142.8 412.9,146.9 413.9,151.0 415.0,155.3 416.1,159.7 417.2,164.1 418.3,168.6 419.4,173.1 420.5,177.7 421.6,182.2 422.6,186.7 423.7,191.2 424.8,195.6 425.9,200.0 427.0,204.3 428.1,208.6 429.2,212.8 430.3,216.9 431.4,220.9 432.4,224.8 433.5,228.7 434.6,232.4 435.7,236.1 436.8,239.7 437.9,243.3 439.0,246.8 440.1,250.2 441.2,253.6 442.2,257.0 443.3,260.3 444.4,263.6 445.5,266.9 446.6,270.1 447.7,273.4 448.8,276.6 449.9,279.9 450.9,283.1 452.0,286.4 453.1,289.7 454.2,293.0 455.3,296.3 456.4,299.6 457.5,302.9 458.6,306.2 459.7,309.5 460.7,312.8 461.8,316.1 462.9,319.4 464.0,322.7 465.1,325.9 466.2,329.1 467.3,332.3 468.4,335.4 469.4,338.5 470.5,341.6 471.6,344.6 472.7,347.5 473.8,350.3 474.9,353.1 476.0,355.8 477.1,358.4 478.2,360.9 479.2,363.4 480.3,365.7 481.4,368.0 482.5,370.2 483.6,372.3 484.7,374.3 485.8,376.2 486.9,378.0 487.9,379.7 489.0,381.3 490.1,382.9 491.2,384.3 492.3,385.7 493.4,387.0 494.5,388.3 495.6,389.4 496.7,390.5 497.7,391.5 498.8,392.5 499.9,393.4 501.0,394.2 502.1,395.0 503.2,395.7 504.3,396.4 505.4,397.0 506.4,397.6 507.5,398.2 508.6,398.7 509.7,399.2 510.8,399.6 511.9,400.1 513.0,400.5 514.1,400.8 515.2,401.2 516.2,401.5 517.3,401.8 518.4,402.1 519.5,402.4 520.6,402.6 521.7,402.8 522.8,403.1 523.9,403.3 525.0,403.5 526.0,403.7 527.1,403.9 528.2,404.0 529.3,404.2 530.4,404.4 531.5,404.5 532.6,404.7 533.7,404.8 534.7,404.9 535.8,405.0 536.9,405.2 538.0,405.3 539.1,405.4 540.2,405.5 541.3,405.6 542.4,405.7 543.5,405.8 544.5,405.9 545.6,406.0 546.7,406.1 547.8,406.1 548.9,406.2 550.0,406.3 551.1,406.4 552.2,406.4 553.2,406.5 554.3,406.6 555.4,406.6 556.5,406.7 557.6,406.7 558.7,406.8 559.8,406.8 560.9,406.9 562.0,406.9 563.0,407.0 564.1,407.0 565.2,407.1 566.3,407.1 567.4,407.2 568.5,407.2 569.6,407.2 570.7,407.3 571.8,407.3 572.8,407.3 573.9,407.4 575.0,407.4 576.1,407.4 577.2,407.5 578.3,407.5 579.4,407.5 580.5,407.5 581.5,407.6 582.6,407.6 583.7,407.6 584.8,407.6 585.9,407.6 587.0,407.7 588.1,407.7 589.2,407.7 590.3,407.7 591.3,407.7 592.4,407.7 593.5,407.7 594.6,407.8 595.7,407.8 596.8,407.8 597.9,407.8 599.0,407.8 600.0,407.8 601.1,407.8 602.2,407.8 603.3,407.8 604.4,407.8 605.5,407.9 606.6,407.9 607.7,407.9 608.8,407.9 609.8,407.9 610.9,407.9 612.0,407.9 613.1,407.9 614.2,407.9 615.3,407.9 616.4,407.9 617.5,407.9 618.5,407.9 619.6,407.9 620.7,407.9 621.8,407.9 622.9,407.9 624.0,407.9 625.1,407.9 626.2,408.0 627.3,408.0 628.3,408.0 629.4,408.0 630.5,408.0 631.6,408.0 632.7,408.0 633.8,408.0 634.9,408.0 636.0,408.0 637.0,408.0 638.1,408.0 639.2,408.0 640.3,408.0 641.4,408.0 642.5,408.0 643.6,408.0 644.7,408.0 645.8,408.0 646.8,408.0 647.9,408.0 649.0,408.0 650.1,408.0 651.2,408.0 652.3,408.0 653.4,408.0 654.5,408.0 655.6,408.0 656.6,408.0 657.7,408.0 658.8,408.0 659.9,408.0 661.0,408.0 662.1,408.0 663.2,408.0 664.3,408.0 665.3,408.0 666.4,408.0 667.5,408.0 668.6,408.0 669.7,408.0 670.8,408.0 671.9,408.0 673.0,408.0 674.1,408.0 675.1,408.0 676.2,408.0 677.3,408.0 678.4,408.0 679.5,408.0 680.6,408.0 681.7,408.0 682.8,408.0 683.8,408.0 684.9,408.0 686.0,408.0 687.1,408.0 688.2,408.0 689.3,408.0 690.4,408.0 691.5,408.0 692.6,408.0 693.6,408.0 694.7,408.0 695.8,408.0 696.9,408.0 698.0,408.0 699.1,408.0 700.2,408.0 701.3,408.0 702.4,408.0 703.4,408.0 704.5,408.0 705.6,408.0 706.7,408.0 707.8,408.0 708.9,408.0 710.0,408.0 711.1,408.0 712.1,408.0 713.2,408.0 714.3,408.0 715.4,408.0 716.5,408.0 717.6,408.0 718.7,408.0 719.8,408.0 720.9,408.0 721.9,408.0 723.0,408.0 724.1,408.0 725.2,408.0 726.3,408.0 727.4,408.0 728.5,408.0 729.6,408.0 730.6,408.0 731.7,408.0 732.8,408.0 733.9,408.0 735.0,408.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" /><text x=\"408.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Longueur d'onde λ (nm)</text><text transform=\"translate(22,215.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Absorbance A</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis sur le spectre la longueur d'onde λ<sub>max</sub> du maximum d'absorption et l'absorbance A<sub>max</sub> correspondante.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle couleur la solution absorbe-t-elle le plus ? Déduis-en sa couleur perçue. Est-ce cohérent ?",
+          "aides": [
+            "Repère dans quel domaine de couleur (données) se trouve λ<sub>max</sub>.",
+            "La couleur perçue n'est pas la couleur absorbée : c'est sa couleur complémentaire."
+          ]
+        },
+        {
+          "texte": "Écris la loi de Beer-Lambert en précisant les unités, puis calcule la concentration c de la solution S en ions MnO₄⁻.",
+          "aides": []
+        },
+        {
+          "texte": "L'élève remplace la cuve par une cuve de largeur 2,00 cm. Quelle absorbance mesure-t-il à λ<sub>max</sub> ?",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi règle-t-on le spectrophotomètre sur λ<sub>max</sub> pour un dosage ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> λ<sub>max</sub> ≈ 525 nm et A<sub>max</sub> = 0,36.",
+        "<strong>2.</strong> Vers 525 nm, la solution absorbe surtout le vert (490-560 nm). Sa couleur perçue est la couleur complémentaire du vert : magenta (pourpre-violet). C'est cohérent avec la couleur violette observée.",
+        "<strong>3.</strong> A = ε × l × c, avec A sans unité, ε en L·mol⁻¹·cm⁻¹, l en cm et c en mol·L⁻¹. c = A<sub>max</sub> / (ε × l) = 0,36 / (2,40 × 10³ × 1,00) = 1,5 × 10⁻⁴ mol·L⁻¹.",
+        "<strong>4.</strong> A est proportionnelle à l : en doublant l, A double. A = 2 × 0,36 = 0,72.",
+        "<strong>5.</strong> À λ<sub>max</sub>, l'absorbance est la plus grande : une petite variation de concentration y produit la plus grande variation de A, la mesure est la plus sensible (et moins sensible à un petit décalage de réglage, car le spectre est « plat » au sommet).",
+        "<em>⚠ Erreur fréquente : donner la couleur absorbée (vert) comme couleur de la solution.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le flacon sans étiquette",
+      "contexte": [
+        "Au laboratoire, un flacon a perdu son étiquette. Il contient l'un de ces trois liquides du quotidien : l'éthanol CH₃–CH₂–OH (gel hydroalcoolique), la propanone CH₃–CO–CH₃ (dissolvant pour vernis à ongles) ou l'acide éthanoïque CH₃–COOH (présent dans le vinaigre).",
+        "On enregistre le spectre infrarouge du liquide (voir ci-dessous) et on utilise la table IR des données."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"735.0\" y1=\"22\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">500</text><line x1=\"688.4\" y1=\"22\" x2=\"688.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"688.4\" y=\"428\" text-anchor=\"middle\">750</text><line x1=\"641.7\" y1=\"22\" x2=\"641.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"641.7\" y=\"428\" text-anchor=\"middle\">1000</text><line x1=\"595.1\" y1=\"22\" x2=\"595.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"595.1\" y=\"428\" text-anchor=\"middle\">1250</text><line x1=\"548.4\" y1=\"22\" x2=\"548.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"548.4\" y=\"428\" text-anchor=\"middle\">1500</text><line x1=\"501.8\" y1=\"22\" x2=\"501.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"501.8\" y=\"428\" text-anchor=\"middle\">1750</text><line x1=\"455.1\" y1=\"22\" x2=\"455.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"455.1\" y=\"428\" text-anchor=\"middle\">2000</text><line x1=\"408.5\" y1=\"22\" x2=\"408.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"408.5\" y=\"428\" text-anchor=\"middle\">2250</text><line x1=\"361.9\" y1=\"22\" x2=\"361.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"361.9\" y=\"428\" text-anchor=\"middle\">2500</text><line x1=\"315.2\" y1=\"22\" x2=\"315.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"315.2\" y=\"428\" text-anchor=\"middle\">2750</text><line x1=\"268.6\" y1=\"22\" x2=\"268.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"268.6\" y=\"428\" text-anchor=\"middle\">3000</text><line x1=\"221.9\" y1=\"22\" x2=\"221.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"221.9\" y=\"428\" text-anchor=\"middle\">3250</text><line x1=\"175.3\" y1=\"22\" x2=\"175.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"175.3\" y=\"428\" text-anchor=\"middle\">3500</text><line x1=\"128.6\" y1=\"22\" x2=\"128.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"128.6\" y=\"428\" text-anchor=\"middle\">3750</text><line x1=\"82.0\" y1=\"22\" x2=\"82.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82.0\" y=\"428\" text-anchor=\"middle\">4000</text><line x1=\"82\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"82\" y1=\"369.4\" x2=\"735\" y2=\"369.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"374.4\" text-anchor=\"end\">10</text><line x1=\"82\" y1=\"330.8\" x2=\"735\" y2=\"330.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"335.8\" text-anchor=\"end\">20</text><line x1=\"82\" y1=\"292.2\" x2=\"735\" y2=\"292.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"297.2\" text-anchor=\"end\">30</text><line x1=\"82\" y1=\"253.6\" x2=\"735\" y2=\"253.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"258.6\" text-anchor=\"end\">40</text><line x1=\"82\" y1=\"215.0\" x2=\"735\" y2=\"215.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"220.0\" text-anchor=\"end\">50</text><line x1=\"82\" y1=\"176.4\" x2=\"735\" y2=\"176.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"181.4\" text-anchor=\"end\">60</text><line x1=\"82\" y1=\"137.8\" x2=\"735\" y2=\"137.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"142.8\" text-anchor=\"end\">70</text><line x1=\"82\" y1=\"99.2\" x2=\"735\" y2=\"99.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"104.2\" text-anchor=\"end\">80</text><line x1=\"82\" y1=\"60.6\" x2=\"735\" y2=\"60.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"65.6\" text-anchor=\"end\">90</text><line x1=\"82\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"27.0\" text-anchor=\"end\">100</text><rect x=\"82\" y=\"22\" width=\"653\" height=\"386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"82.0,39.4 82.4,39.4 82.7,39.4 83.1,39.4 83.5,39.4 83.9,39.4 84.2,39.4 84.6,39.4 85.0,39.4 85.4,39.4 85.7,39.4 86.1,39.4 86.5,39.4 86.9,39.4 87.2,39.4 87.6,39.4 88.0,39.4 88.3,39.4 88.7,39.4 89.1,39.4 89.5,39.4 89.8,39.4 90.2,39.4 90.6,39.4 91.0,39.4 91.3,39.4 91.7,39.4 92.1,39.4 92.4,39.4 92.8,39.4 93.2,39.4 93.6,39.4 93.9,39.4 94.3,39.4 94.7,39.4 95.1,39.4 95.4,39.4 95.8,39.4 96.2,39.4 96.6,39.4 96.9,39.4 97.3,39.4 97.7,39.4 98.0,39.4 98.4,39.4 98.8,39.4 99.2,39.4 99.5,39.4 99.9,39.4 100.3,39.4 100.7,39.4 101.0,39.4 101.4,39.4 101.8,39.4 102.1,39.4 102.5,39.4 102.9,39.4 103.3,39.4 103.6,39.4 104.0,39.4 104.4,39.4 104.8,39.4 105.1,39.4 105.5,39.4 105.9,39.4 106.3,39.4 106.6,39.4 107.0,39.4 107.4,39.4 107.7,39.4 108.1,39.4 108.5,39.4 108.9,39.4 109.2,39.4 109.6,39.4 110.0,39.4 110.4,39.5 110.7,39.5 111.1,39.5 111.5,39.5 111.9,39.5 112.2,39.5 112.6,39.5 113.0,39.5 113.3,39.5 113.7,39.5 114.1,39.5 114.5,39.5 114.8,39.6 115.2,39.6 115.6,39.6 116.0,39.6 116.3,39.6 116.7,39.6 117.1,39.7 117.4,39.7 117.8,39.7 118.2,39.7 118.6,39.7 118.9,39.8 119.3,39.8 119.7,39.8 120.1,39.8 120.4,39.9 120.8,39.9 121.2,39.9 121.6,40.0 121.9,40.0 122.3,40.1 122.7,40.1 123.0,40.1 123.4,40.2 123.8,40.2 124.2,40.3 124.5,40.3 124.9,40.4 125.3,40.5 125.7,40.5 126.0,40.6 126.4,40.7 126.8,40.8 127.2,40.8 127.5,40.9 127.9,41.0 128.3,41.1 128.6,41.2 129.0,41.3 129.4,41.4 129.8,41.6 130.1,41.7 130.5,41.8 130.9,42.0 131.3,42.1 131.6,42.3 132.0,42.4 132.4,42.6 132.7,42.8 133.1,43.0 133.5,43.2 133.9,43.4 134.2,43.6 134.6,43.8 135.0,44.0 135.4,44.3 135.7,44.5 136.1,44.8 136.5,45.1 136.9,45.4 137.2,45.7 137.6,46.0 138.0,46.4 138.3,46.7 138.7,47.1 139.1,47.5 139.5,47.9 139.8,48.3 140.2,48.8 140.6,49.2 141.0,49.7 141.3,50.2 141.7,50.7 142.1,51.2 142.4,51.8 142.8,52.4 143.2,53.0 143.6,53.6 143.9,54.3 144.3,54.9 144.7,55.6 145.1,56.4 145.4,57.1 145.8,57.9 146.2,58.7 146.6,59.6 146.9,60.4 147.3,61.3 147.7,62.3 148.0,63.2 148.4,64.2 148.8,65.2 149.2,66.3 149.5,67.4 149.9,68.5 150.3,69.7 150.7,70.9 151.0,72.2 151.4,73.4 151.8,74.7 152.2,76.1 152.5,77.5 152.9,78.9 153.3,80.4 153.6,81.9 154.0,83.5 154.4,85.1 154.8,86.7 155.1,88.4 155.5,90.1 155.9,91.8 156.3,93.6 156.6,95.5 157.0,97.4 157.4,99.3 157.7,101.3 158.1,103.3 158.5,105.3 158.9,107.4 159.2,109.6 159.6,111.7 160.0,113.9 160.4,116.2 160.7,118.5 161.1,120.8 161.5,123.2 161.9,125.6 162.2,128.0 162.6,130.5 163.0,133.0 163.3,135.6 163.7,138.2 164.1,140.8 164.5,143.4 164.8,146.1 165.2,148.8 165.6,151.5 166.0,154.3 166.3,157.0 166.7,159.8 167.1,162.7 167.4,165.5 167.8,168.4 168.2,171.2 168.6,174.1 168.9,177.0 169.3,179.9 169.7,182.9 170.1,185.8 170.4,188.7 170.8,191.7 171.2,194.6 171.6,197.6 171.9,200.5 172.3,203.5 172.7,206.4 173.0,209.4 173.4,212.3 173.8,215.2 174.2,218.1 174.5,221.0 174.9,223.9 175.3,226.8 175.7,229.6 176.0,232.4 176.4,235.3 176.8,238.0 177.2,240.8 177.5,243.6 177.9,246.3 178.3,249.0 178.6,251.6 179.0,254.2 179.4,256.8 179.8,259.4 180.1,261.9 180.5,264.4 180.9,266.9 181.3,269.3 181.6,271.7 182.0,274.1 182.4,276.4 182.7,278.7 183.1,280.9 183.5,283.1 183.9,285.3 184.2,287.4 184.6,289.5 185.0,291.5 185.4,293.5 185.7,295.4 186.1,297.3 186.5,299.2 186.9,301.0 187.2,302.8 187.6,304.5 188.0,306.2 188.3,307.9 188.7,309.5 189.1,311.1 189.5,312.6 189.8,314.1 190.2,315.5 190.6,316.9 191.0,318.3 191.3,319.6 191.7,320.9 192.1,322.1 192.5,323.3 192.8,324.5 193.2,325.6 193.6,326.7 193.9,327.7 194.3,328.7 194.7,329.7 195.1,330.6 195.4,331.5 195.8,332.3 196.2,333.1 196.6,333.9 196.9,334.7 197.3,335.4 197.7,336.0 198.0,336.7 198.4,337.3 198.8,337.8 199.2,338.4 199.5,338.9 199.9,339.3 200.3,339.8 200.7,340.2 201.0,340.5 201.4,340.9 201.8,341.2 202.2,341.4 202.5,341.7 202.9,341.9 203.3,342.1 203.6,342.2 204.0,342.3 204.4,342.4 204.8,342.4 205.1,342.4 205.5,342.4 205.9,342.4 206.3,342.3 206.6,342.2 207.0,342.1 207.4,341.9 207.7,341.7 208.1,341.4 208.5,341.2 208.9,340.9 209.2,340.5 209.6,340.2 210.0,339.8 210.4,339.3 210.7,338.9 211.1,338.4 211.5,337.8 211.9,337.3 212.2,336.7 212.6,336.0 213.0,335.4 213.3,334.7 213.7,333.9 214.1,333.1 214.5,332.3 214.8,331.5 215.2,330.6 215.6,329.7 216.0,328.7 216.3,327.7 216.7,326.7 217.1,325.6 217.5,324.5 217.8,323.3 218.2,322.1 218.6,320.9 218.9,319.6 219.3,318.3 219.7,316.9 220.1,315.5 220.4,314.1 220.8,312.6 221.2,311.1 221.6,309.5 221.9,307.9 222.3,306.2 222.7,304.5 223.0,302.8 223.4,301.0 223.8,299.2 224.2,297.3 224.5,295.4 224.9,293.5 225.3,291.5 225.7,289.5 226.0,287.4 226.4,285.3 226.8,283.1 227.2,280.9 227.5,278.7 227.9,276.4 228.3,274.1 228.6,271.7 229.0,269.3 229.4,266.9 229.8,264.4 230.1,261.9 230.5,259.4 230.9,256.8 231.3,254.2 231.6,251.6 232.0,249.0 232.4,246.3 232.7,243.6 233.1,240.8 233.5,238.0 233.9,235.3 234.2,232.4 234.6,229.6 235.0,226.8 235.4,223.9 235.7,221.0 236.1,218.1 236.5,215.2 236.9,212.3 237.2,209.4 237.6,206.4 238.0,203.5 238.3,200.5 238.7,197.6 239.1,194.6 239.5,191.7 239.8,188.7 240.2,185.8 240.6,182.9 241.0,179.9 241.3,177.0 241.7,174.1 242.1,171.2 242.5,168.4 242.8,165.5 243.2,162.7 243.6,159.8 243.9,157.0 244.3,154.3 244.7,151.5 245.1,148.8 245.4,146.1 245.8,143.4 246.2,140.8 246.6,138.2 246.9,135.6 247.3,133.0 247.7,130.5 248.0,128.0 248.4,125.6 248.8,123.2 249.2,120.8 249.5,118.5 249.9,116.2 250.3,113.9 250.7,111.7 251.0,109.6 251.4,107.4 251.8,105.3 252.2,103.3 252.5,101.3 252.9,99.3 253.3,97.4 253.6,95.5 254.0,93.7 254.4,91.9 254.8,90.1 255.1,88.4 255.5,86.7 255.9,85.1 256.3,83.5 256.6,82.0 257.0,80.6 257.4,79.2 257.8,77.8 258.1,76.6 258.5,75.4 258.9,74.4 259.2,73.4 259.6,72.6 260.0,72.0 260.4,71.7 260.7,71.6 261.1,71.8 261.5,72.4 261.9,73.4 262.2,75.0 262.6,77.2 263.0,80.1 263.3,83.8 263.7,88.3 264.1,93.8 264.5,100.4 264.8,107.9 265.2,116.5 265.6,126.1 266.0,136.6 266.3,148.0 266.7,160.1 267.1,172.7 267.5,185.6 267.8,198.6 268.2,211.5 268.6,224.1 268.9,236.2 269.3,247.6 269.7,258.2 270.1,267.9 270.4,276.6 270.8,284.2 271.2,290.8 271.6,296.4 271.9,301.0 272.3,304.5 272.7,307.1 273.0,308.9 273.4,309.7 273.8,309.9 274.2,309.3 274.5,308.0 274.9,306.3 275.3,304.0 275.7,301.5 276.0,298.8 276.4,296.0 276.8,293.2 277.2,290.6 277.5,288.3 277.9,286.3 278.3,284.7 278.6,283.3 279.0,282.3 279.4,281.3 279.8,280.4 280.1,279.4 280.5,278.2 280.9,276.7 281.3,274.6 281.6,272.1 282.0,268.9 282.4,265.2 282.8,260.9 283.1,256.2 283.5,251.1 283.9,245.9 284.2,240.8 284.6,235.9 285.0,231.6 285.4,228.0 285.7,225.3 286.1,223.6 286.5,222.9 286.9,223.1 287.2,224.0 287.6,225.5 288.0,227.2 288.3,228.9 288.7,230.3 289.1,231.3 289.5,231.4 289.8,230.7 290.2,228.9 290.6,226.0 291.0,221.8 291.3,216.3 291.7,209.6 292.1,201.7 292.5,192.7 292.8,182.6 293.2,171.8 293.6,160.4 293.9,148.6 294.3,136.7 294.7,125.0 295.1,113.7 295.4,103.0 295.8,93.0 296.2,84.0 296.6,76.0 296.9,69.1 297.3,63.1 297.7,58.0 298.0,53.9 298.4,50.5 298.8,47.8 299.2,45.7 299.5,44.0 299.9,42.8 300.3,41.8 300.7,41.1 301.0,40.6 301.4,40.3 301.8,40.0 302.2,39.8 302.5,39.7 302.9,39.6 303.3,39.5 303.6,39.5 304.0,39.5 304.4,39.4 304.8,39.4 305.1,39.4 305.5,39.4 305.9,39.4 306.3,39.4 306.6,39.4 307.0,39.4 307.4,39.4 307.8,39.4 308.1,39.4 308.5,39.4 308.9,39.4 309.2,39.4 309.6,39.4 310.0,39.4 310.4,39.4 310.7,39.4 311.1,39.4 311.5,39.4 311.9,39.4 312.2,39.4 312.6,39.4 313.0,39.4 313.3,39.4 313.7,39.4 314.1,39.4 314.5,39.4 314.8,39.4 315.2,39.4 315.6,39.4 316.0,39.4 316.3,39.4 316.7,39.4 317.1,39.4 317.5,39.4 317.8,39.4 318.2,39.4 318.6,39.4 318.9,39.4 319.3,39.4 319.7,39.4 320.1,39.4 320.4,39.4 320.8,39.4 321.2,39.4 321.6,39.4 321.9,39.4 322.3,39.4 322.7,39.4 323.1,39.4 323.4,39.4 323.8,39.4 324.2,39.4 324.5,39.4 324.9,39.4 325.3,39.4 325.7,39.4 326.0,39.4 326.4,39.4 326.8,39.4 327.2,39.4 327.5,39.4 327.9,39.4 328.3,39.4 328.6,39.4 329.0,39.4 329.4,39.4 329.8,39.4 330.1,39.4 330.5,39.4 330.9,39.4 331.3,39.4 331.6,39.4 332.0,39.4 332.4,39.4 332.8,39.4 333.1,39.4 333.5,39.4 333.9,39.4 334.2,39.4 334.6,39.4 335.0,39.4 335.4,39.4 335.7,39.4 336.1,39.4 336.5,39.4 336.9,39.4 337.2,39.4 337.6,39.4 338.0,39.4 338.3,39.4 338.7,39.4 339.1,39.4 339.5,39.4 339.8,39.4 340.2,39.4 340.6,39.4 341.0,39.4 341.3,39.4 341.7,39.4 342.1,39.4 342.5,39.4 342.8,39.4 343.2,39.4 343.6,39.4 343.9,39.4 344.3,39.4 344.7,39.4 345.1,39.4 345.4,39.4 345.8,39.4 346.2,39.4 346.6,39.4 346.9,39.4 347.3,39.4 347.7,39.4 348.1,39.4 348.4,39.4 348.8,39.4 349.2,39.4 349.5,39.4 349.9,39.4 350.3,39.4 350.7,39.4 351.0,39.4 351.4,39.4 351.8,39.4 352.2,39.4 352.5,39.4 352.9,39.4 353.3,39.4 353.6,39.4 354.0,39.4 354.4,39.4 354.8,39.4 355.1,39.4 355.5,39.4 355.9,39.4 356.3,39.4 356.6,39.4 357.0,39.4 357.4,39.4 357.8,39.4 358.1,39.4 358.5,39.4 358.9,39.4 359.2,39.4 359.6,39.4 360.0,39.4 360.4,39.4 360.7,39.4 361.1,39.4 361.5,39.4 361.9,39.4 362.2,39.4 362.6,39.4 363.0,39.4 363.3,39.4 363.7,39.4 364.1,39.4 364.5,39.4 364.8,39.4 365.2,39.4 365.6,39.4 366.0,39.4 366.3,39.4 366.7,39.4 367.1,39.4 367.5,39.4 367.8,39.4 368.2,39.4 368.6,39.4 368.9,39.4 369.3,39.4 369.7,39.4 370.1,39.4 370.4,39.4 370.8,39.4 371.2,39.4 371.6,39.4 371.9,39.4 372.3,39.4 372.7,39.4 373.1,39.4 373.4,39.4 373.8,39.4 374.2,39.4 374.5,39.4 374.9,39.4 375.3,39.4 375.7,39.4 376.0,39.4 376.4,39.4 376.8,39.4 377.2,39.4 377.5,39.4 377.9,39.4 378.3,39.4 378.6,39.4 379.0,39.4 379.4,39.4 379.8,39.4 380.1,39.4 380.5,39.4 380.9,39.4 381.3,39.4 381.6,39.4 382.0,39.4 382.4,39.4 382.8,39.4 383.1,39.4 383.5,39.4 383.9,39.4 384.2,39.4 384.6,39.4 385.0,39.4 385.4,39.4 385.7,39.4 386.1,39.4 386.5,39.4 386.9,39.4 387.2,39.4 387.6,39.4 388.0,39.4 388.4,39.4 388.7,39.4 389.1,39.4 389.5,39.4 389.8,39.4 390.2,39.4 390.6,39.4 391.0,39.4 391.3,39.4 391.7,39.4 392.1,39.4 392.5,39.4 392.8,39.4 393.2,39.4 393.6,39.4 393.9,39.4 394.3,39.4 394.7,39.4 395.1,39.4 395.4,39.4 395.8,39.4 396.2,39.4 396.6,39.4 396.9,39.4 397.3,39.4 397.7,39.4 398.1,39.4 398.4,39.4 398.8,39.4 399.2,39.4 399.5,39.4 399.9,39.4 400.3,39.4 400.7,39.4 401.0,39.4 401.4,39.4 401.8,39.4 402.2,39.4 402.5,39.4 402.9,39.4 403.3,39.4 403.6,39.4 404.0,39.4 404.4,39.4 404.8,39.4 405.1,39.4 405.5,39.4 405.9,39.4 406.3,39.4 406.6,39.4 407.0,39.4 407.4,39.4 407.8,39.4 408.1,39.4 408.5,39.4 408.9,39.4 409.2,39.4 409.6,39.4 410.0,39.4 410.4,39.4 410.7,39.4 411.1,39.4 411.5,39.4 411.9,39.4 412.2,39.4 412.6,39.4 413.0,39.4 413.4,39.4 413.7,39.4 414.1,39.4 414.5,39.4 414.8,39.4 415.2,39.4 415.6,39.4 416.0,39.4 416.3,39.4 416.7,39.4 417.1,39.4 417.5,39.4 417.8,39.4 418.2,39.4 418.6,39.4 418.9,39.4 419.3,39.4 419.7,39.4 420.1,39.4 420.4,39.4 420.8,39.4 421.2,39.4 421.6,39.4 421.9,39.4 422.3,39.4 422.7,39.4 423.1,39.4 423.4,39.4 423.8,39.4 424.2,39.4 424.5,39.4 424.9,39.4 425.3,39.4 425.7,39.4 426.0,39.4 426.4,39.4 426.8,39.4 427.2,39.4 427.5,39.4 427.9,39.4 428.3,39.4 428.6,39.4 429.0,39.4 429.4,39.4 429.8,39.4 430.1,39.4 430.5,39.4 430.9,39.4 431.3,39.4 431.6,39.4 432.0,39.4 432.4,39.4 432.8,39.4 433.1,39.4 433.5,39.4 433.9,39.4 434.2,39.4 434.6,39.4 435.0,39.4 435.4,39.4 435.7,39.4 436.1,39.4 436.5,39.4 436.9,39.4 437.2,39.4 437.6,39.4 438.0,39.4 438.4,39.4 438.7,39.4 439.1,39.4 439.5,39.4 439.8,39.4 440.2,39.4 440.6,39.4 441.0,39.4 441.3,39.4 441.7,39.4 442.1,39.4 442.5,39.4 442.8,39.4 443.2,39.4 443.6,39.4 443.9,39.4 444.3,39.4 444.7,39.4 445.1,39.4 445.4,39.4 445.8,39.4 446.2,39.4 446.6,39.4 446.9,39.4 447.3,39.4 447.7,39.4 448.1,39.4 448.4,39.4 448.8,39.4 449.2,39.4 449.5,39.4 449.9,39.4 450.3,39.4 450.7,39.4 451.0,39.4 451.4,39.4 451.8,39.4 452.2,39.4 452.5,39.4 452.9,39.4 453.3,39.4 453.7,39.4 454.0,39.4 454.4,39.4 454.8,39.4 455.1,39.4 455.5,39.4 455.9,39.4 456.3,39.4 456.6,39.4 457.0,39.4 457.4,39.4 457.8,39.4 458.1,39.4 458.5,39.4 458.9,39.4 459.2,39.4 459.6,39.4 460.0,39.4 460.4,39.4 460.7,39.4 461.1,39.4 461.5,39.4 461.9,39.4 462.2,39.4 462.6,39.4 463.0,39.4 463.4,39.4 463.7,39.4 464.1,39.4 464.5,39.4 464.8,39.4 465.2,39.4 465.6,39.4 466.0,39.4 466.3,39.4 466.7,39.4 467.1,39.4 467.5,39.4 467.8,39.4 468.2,39.4 468.6,39.4 468.9,39.4 469.3,39.4 469.7,39.4 470.1,39.4 470.4,39.4 470.8,39.4 471.2,39.4 471.6,39.4 471.9,39.4 472.3,39.4 472.7,39.4 473.1,39.4 473.4,39.4 473.8,39.4 474.2,39.4 474.5,39.4 474.9,39.4 475.3,39.4 475.7,39.4 476.0,39.4 476.4,39.4 476.8,39.4 477.2,39.4 477.5,39.4 477.9,39.4 478.3,39.4 478.7,39.4 479.0,39.4 479.4,39.4 479.8,39.4 480.1,39.4 480.5,39.4 480.9,39.4 481.3,39.4 481.6,39.4 482.0,39.4 482.4,39.4 482.8,39.4 483.1,39.4 483.5,39.4 483.9,39.4 484.2,39.4 484.6,39.4 485.0,39.4 485.4,39.4 485.7,39.4 486.1,39.4 486.5,39.4 486.9,39.4 487.2,39.4 487.6,39.4 488.0,39.4 488.4,39.4 488.7,39.4 489.1,39.4 489.5,39.4 489.8,39.4 490.2,39.4 490.6,39.4 491.0,39.4 491.3,39.4 491.7,39.4 492.1,39.4 492.5,39.4 492.8,39.4 493.2,39.4 493.6,39.4 493.9,39.4 494.3,39.4 494.7,39.4 495.1,39.4 495.4,39.4 495.8,39.4 496.2,39.4 496.6,39.4 496.9,39.4 497.3,39.4 497.7,39.4 498.1,39.4 498.4,39.4 498.8,39.4 499.2,39.4 499.5,39.4 499.9,39.4 500.3,39.4 500.7,39.4 501.0,39.4 501.4,39.4 501.8,39.4 502.2,39.4 502.5,39.4 502.9,39.4 503.3,39.4 503.7,39.4 504.0,39.4 504.4,39.4 504.8,39.4 505.1,39.4 505.5,39.4 505.9,39.4 506.3,39.4 506.6,39.4 507.0,39.4 507.4,39.4 507.8,39.4 508.1,39.4 508.5,39.4 508.9,39.4 509.2,39.4 509.6,39.4 510.0,39.4 510.4,39.4 510.7,39.4 511.1,39.4 511.5,39.4 511.9,39.4 512.2,39.4 512.6,39.4 513.0,39.4 513.4,39.4 513.7,39.4 514.1,39.4 514.5,39.4 514.8,39.4 515.2,39.4 515.6,39.4 516.0,39.4 516.3,39.4 516.7,39.4 517.1,39.4 517.5,39.4 517.8,39.4 518.2,39.4 518.6,39.4 519.0,39.4 519.3,39.4 519.7,39.4 520.1,39.4 520.4,39.4 520.8,39.4 521.2,39.4 521.6,39.4 521.9,39.4 522.3,39.4 522.7,39.4 523.1,39.4 523.4,39.4 523.8,39.4 524.2,39.4 524.5,39.4 524.9,39.4 525.3,39.4 525.7,39.4 526.0,39.4 526.4,39.4 526.8,39.4 527.2,39.4 527.5,39.4 527.9,39.4 528.3,39.4 528.7,39.4 529.0,39.4 529.4,39.4 529.8,39.4 530.1,39.4 530.5,39.4 530.9,39.4 531.3,39.4 531.6,39.4 532.0,39.4 532.4,39.4 532.8,39.4 533.1,39.4 533.5,39.4 533.9,39.4 534.2,39.4 534.6,39.4 535.0,39.4 535.4,39.4 535.7,39.4 536.1,39.4 536.5,39.4 536.9,39.4 537.2,39.4 537.6,39.4 538.0,39.4 538.4,39.4 538.7,39.4 539.1,39.4 539.5,39.4 539.8,39.4 540.2,39.4 540.6,39.4 541.0,39.4 541.3,39.4 541.7,39.4 542.1,39.4 542.5,39.4 542.8,39.4 543.2,39.4 543.6,39.4 544.0,39.4 544.3,39.4 544.7,39.4 545.1,39.4 545.4,39.4 545.8,39.4 546.2,39.4 546.6,39.4 546.9,39.4 547.3,39.4 547.7,39.4 548.1,39.5 548.4,39.6 548.8,39.7 549.2,39.9 549.5,40.3 549.9,40.8 550.3,41.5 550.7,42.6 551.0,44.0 551.4,46.0 551.8,48.6 552.2,52.0 552.5,56.2 552.9,61.4 553.3,67.5 553.7,74.6 554.0,82.5 554.4,91.1 554.8,100.0 555.1,109.0 555.5,117.8 555.9,125.9 556.3,133.1 556.6,139.0 557.0,143.4 557.4,146.1 557.8,147.0 558.1,146.1 558.5,143.4 558.9,139.0 559.2,133.1 559.6,125.9 560.0,117.8 560.4,109.0 560.7,100.0 561.1,91.1 561.5,82.5 561.9,74.6 562.2,67.5 562.6,61.4 563.0,56.3 563.4,52.1 563.7,48.9 564.1,46.6 564.5,45.1 564.8,44.4 565.2,44.6 565.6,45.7 566.0,48.0 566.3,51.5 566.7,56.5 567.1,63.2 567.5,71.4 567.8,81.1 568.2,91.9 568.6,103.3 569.0,114.7 569.3,125.2 569.7,134.3 570.1,141.2 570.4,145.6 570.8,147.0 571.2,145.6 571.6,141.2 571.9,134.3 572.3,125.3 572.7,114.7 573.1,103.5 573.4,92.2 573.8,81.5 574.2,72.2 574.5,64.5 574.9,58.7 575.3,55.0 575.7,53.2 576.0,53.3 576.4,55.1 576.8,58.5 577.2,63.2 577.5,68.9 577.9,75.3 578.3,81.8 578.7,88.1 579.0,93.5 579.4,97.8 579.8,100.5 580.1,101.4 580.5,100.5 580.9,97.8 581.3,93.5 581.6,88.0 582.0,81.7 582.4,75.0 582.8,68.4 583.1,62.2 583.5,56.8 583.9,52.1 584.3,48.4 584.6,45.6 585.0,43.5 585.4,42.0 585.7,41.0 586.1,40.4 586.5,39.9 586.9,39.7 587.2,39.5 587.6,39.5 588.0,39.4 588.4,39.4 588.7,39.4 589.1,39.4 589.5,39.4 589.8,39.4 590.2,39.4 590.6,39.4 591.0,39.4 591.3,39.4 591.7,39.4 592.1,39.4 592.5,39.4 592.8,39.4 593.2,39.4 593.6,39.4 594.0,39.4 594.3,39.4 594.7,39.4 595.1,39.4 595.4,39.4 595.8,39.4 596.2,39.4 596.6,39.4 596.9,39.4 597.3,39.4 597.7,39.4 598.1,39.4 598.4,39.4 598.8,39.4 599.2,39.4 599.5,39.4 599.9,39.4 600.3,39.4 600.7,39.4 601.0,39.4 601.4,39.4 601.8,39.4 602.2,39.4 602.5,39.4 602.9,39.4 603.3,39.4 603.7,39.4 604.0,39.4 604.4,39.4 604.8,39.4 605.1,39.4 605.5,39.4 605.9,39.4 606.3,39.4 606.6,39.4 607.0,39.4 607.4,39.4 607.8,39.4 608.1,39.4 608.5,39.4 608.9,39.4 609.3,39.4 609.6,39.4 610.0,39.4 610.4,39.4 610.7,39.4 611.1,39.4 611.5,39.4 611.9,39.4 612.2,39.4 612.6,39.4 613.0,39.4 613.4,39.4 613.7,39.4 614.1,39.4 614.5,39.4 614.8,39.4 615.2,39.5 615.6,39.6 616.0,39.8 616.3,40.2 616.7,40.8 617.1,41.7 617.5,43.1 617.8,45.2 618.2,48.4 618.6,53.0 619.0,59.3 619.3,67.8 619.7,78.8 620.1,92.6 620.4,109.1 620.8,128.0 621.2,148.9 621.6,171.0 621.9,193.3 622.3,214.8 622.7,234.5 623.1,252.0 623.4,266.6 623.8,278.2 624.2,286.8 624.5,292.4 624.9,295.2 625.3,295.5 625.7,293.6 626.0,289.8 626.4,284.8 626.8,279.4 627.2,274.6 627.5,271.5 627.9,271.0 628.3,273.9 628.7,280.0 629.0,289.1 629.4,300.0 629.8,311.8 630.1,323.1 630.5,333.3 630.9,341.9 631.3,348.5 631.6,353.1 632.0,355.7 632.4,356.5 632.8,355.2 633.1,351.9 633.5,346.3 633.9,338.2 634.3,327.2 634.6,313.0 635.0,295.6 635.4,274.9 635.7,251.5 636.1,225.9 636.5,199.4 636.9,173.0 637.2,147.9 637.6,125.2 638.0,105.3 638.4,88.7 638.7,75.3 639.1,64.9 639.5,57.1 639.8,51.4 640.2,47.3 640.6,44.5 641.0,42.6 641.3,41.4 641.7,40.6 642.1,40.1 642.5,39.8 642.8,39.6 643.2,39.5 643.6,39.4 644.0,39.4 644.3,39.4 644.7,39.4 645.1,39.4 645.4,39.4 645.8,39.4 646.2,39.4 646.6,39.4 646.9,39.4 647.3,39.4 647.7,39.4 648.1,39.4 648.4,39.4 648.8,39.4 649.2,39.4 649.6,39.4 649.9,39.4 650.3,39.4 650.7,39.4 651.0,39.4 651.4,39.4 651.8,39.4 652.2,39.4 652.5,39.4 652.9,39.4 653.3,39.4 653.7,39.4 654.0,39.4 654.4,39.4 654.8,39.4 655.1,39.4 655.5,39.4 655.9,39.4 656.3,39.4 656.6,39.4 657.0,39.4 657.4,39.4 657.8,39.5 658.1,39.6 658.5,39.9 658.9,40.4 659.3,41.3 659.6,43.0 660.0,45.7 660.4,50.0 660.7,56.2 661.1,64.7 661.5,75.5 661.9,88.2 662.2,102.0 662.6,115.9 663.0,128.4 663.4,138.4 663.7,144.8 664.1,147.0 664.5,144.8 664.8,138.4 665.2,128.4 665.6,115.9 666.0,102.0 666.3,88.2 666.7,75.5 667.1,64.7 667.5,56.2 667.8,50.0 668.2,45.7 668.6,43.0 669.0,41.3 669.3,40.4 669.7,39.9 670.1,39.6 670.4,39.5 670.8,39.4 671.2,39.4 671.6,39.4 671.9,39.4 672.3,39.4 672.7,39.4 673.1,39.4 673.4,39.4 673.8,39.4 674.2,39.4 674.6,39.4 674.9,39.4 675.3,39.4 675.7,39.4 676.0,39.4 676.4,39.4 676.8,39.4 677.2,39.4 677.5,39.4 677.9,39.4 678.3,39.4 678.7,39.4 679.0,39.4 679.4,39.4 679.8,39.4 680.1,39.4 680.5,39.4 680.9,39.4 681.3,39.4 681.6,39.4 682.0,39.4 682.4,39.4 682.8,39.4 683.1,39.4 683.5,39.4 683.9,39.4 684.3,39.4 684.6,39.4 685.0,39.4 685.4,39.4 685.7,39.4 686.1,39.4 686.5,39.4 686.9,39.4 687.2,39.4 687.6,39.4 688.0,39.4 688.4,39.4 688.7,39.4 689.1,39.4 689.5,39.4 689.8,39.4 690.2,39.4 690.6,39.4 691.0,39.4 691.3,39.4 691.7,39.4 692.1,39.4 692.5,39.4 692.8,39.4 693.2,39.4 693.6,39.4 694.0,39.4 694.3,39.4 694.7,39.4 695.1,39.4 695.4,39.4 695.8,39.4 696.2,39.4 696.6,39.4 696.9,39.4 697.3,39.4 697.7,39.4 698.1,39.4 698.4,39.4 698.8,39.4 699.2,39.4 699.6,39.4 699.9,39.4 700.3,39.4 700.7,39.4 701.0,39.4 701.4,39.4 701.8,39.4 702.2,39.4 702.5,39.4 702.9,39.4 703.3,39.4 703.7,39.4 704.0,39.4 704.4,39.4 704.8,39.4 705.1,39.4 705.5,39.4 705.9,39.4 706.3,39.4 706.6,39.4 707.0,39.4 707.4,39.4 707.8,39.4 708.1,39.4 708.5,39.4 708.9,39.4 709.3,39.4 709.6,39.4 710.0,39.4 710.4,39.4 710.7,39.4 711.1,39.4 711.5,39.4 711.9,39.4 712.2,39.4 712.6,39.4 713.0,39.4 713.4,39.4 713.7,39.4 714.1,39.4 714.5,39.4 714.9,39.4 715.2,39.4 715.6,39.4 716.0,39.4 716.3,39.4 716.7,39.4 717.1,39.4 717.5,39.4 717.8,39.4 718.2,39.4 718.6,39.4 719.0,39.4 719.3,39.4 719.7,39.4 720.1,39.4 720.4,39.4 720.8,39.4 721.2,39.4 721.6,39.4 721.9,39.4 722.3,39.4 722.7,39.4 723.1,39.4 723.4,39.4 723.8,39.4 724.2,39.4 724.6,39.4 724.9,39.4 725.3,39.4 725.7,39.4 726.0,39.4 726.4,39.4 726.8,39.4 727.2,39.4 727.5,39.4 727.9,39.4 728.3,39.4 728.7,39.4 729.0,39.4 729.4,39.4 729.8,39.4 730.1,39.4 730.5,39.4 730.9,39.4 731.3,39.4 731.6,39.4 732.0,39.4 732.4,39.4 732.8,39.4 733.1,39.4 733.5,39.4 733.9,39.4 734.3,39.4 734.6,39.4 735.0,39.4\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.6\" /><text x=\"408.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Nombre d'onde σ (cm⁻¹)</text><text transform=\"translate(22,215.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Transmittance T (%)</text></svg>",
+      "questions": [
+        {
+          "texte": "Que représente-t-on en abscisse et en ordonnée d'un spectre IR ? Qu'a de particulier l'axe des abscisses ?",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque molécule, écris la formule développée et entoure le groupe caractéristique. Nomme la famille correspondante.",
+          "aides": []
+        },
+        {
+          "texte": "Repère sur le spectre les bandes d'absorption intenses (T &lt; 50 %) et attribue chacune à une liaison à l'aide de la table.",
+          "aides": [
+            "Attention : l'axe des abscisses est gradué de 4000 (à gauche) à 500 cm⁻¹ (à droite). Une bande = un creux vers le bas.",
+            "Relève le nombre d'onde au fond de chaque creux profond, puis cherche dans quel intervalle de la table il tombe."
+          ]
+        },
+        {
+          "texte": "Identifie le contenu du flacon en éliminant clairement les deux autres liquides.",
+          "aides": [
+            "Quelle bande devrait apparaître pour la propanone et pour l'acide éthanoïque, mais pas pour l'éthanol ?",
+            "Regarde la zone 1650-1730 cm⁻¹ (C=O), puis la position et la largeur de la bande O–H."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> En abscisse : le nombre d'onde σ en cm⁻¹ (σ = 1/λ), gradué de droite à gauche, c'est-à-dire de façon décroissante (de 4000 à 500 cm⁻¹). En ordonnée : la transmittance T en %. Une bande d'absorption est donc un « creux » vers le bas.",
+        "<strong>2.</strong> Éthanol : groupe hydroxyle –OH, famille des alcools. Propanone : groupe carbonyle C=O au milieu de la chaîne, famille des cétones. Acide éthanoïque : groupe carboxyle –COOH, famille des acides carboxyliques.",
+        "<strong>3.</strong> Bande forte et large centrée vers 3340 cm⁻¹ : O–H d'un alcool (3200-3550). Bandes vers 2880-2980 cm⁻¹ : C–H (2800-3000). Bande forte vers 1050 cm⁻¹ (et 1090 cm⁻¹) : C–O (1050-1450). Les petites bandes moins intenses sous 1500 cm⁻¹ (zone dite « empreinte digitale ») ne sont pas exploitées.",
+        "<strong>4.</strong> Il n'y a aucune bande entre 1650 et 1730 cm⁻¹ (T reste au-dessus de 90 %) : pas de liaison C=O, ce n'est ni la propanone ni l'acide éthanoïque. La bande O–H est large mais située au-dessus de 3200 cm⁻¹ : c'est un O–H d'alcool, pas d'acide (2500-3200, très large). Le flacon contient de l'éthanol.",
+        "<em>⚠ Erreur fréquente : conclure « acide » dès qu'on voit une bande O–H. Il faut regarder sa position, et surtout la présence ou non de la bande C=O vers 1700 cm⁻¹.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Combien de sel dans la saumure des olives ?",
+      "contexte": [
+        "Les olives se conservent dans une saumure, une solution concentrée de chlorure de sodium. Un élève veut déterminer sa teneur en sel par conductimétrie. On admet que la saumure ne contient pas d'autres ions en quantité notable.",
+        "Il prépare des solutions étalons de chlorure de sodium et mesure leur conductivité à 25 °C :",
+        "c (mmol·L⁻¹) : 1,0 ; 2,0 ; 4,0 ; 6,0 ; 8,0 — σ (mS·m⁻¹) : 12,4 ; 24,9 ; 49,6 ; 74,8 ; 99,1.",
+        "Premier essai : la saumure, diluée 10 fois, donne σ ≈ 1,4 S·m⁻¹. Second essai : la saumure, diluée 200 fois, donne σ = 68,2 mS·m⁻¹."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"82.0\" y1=\"22\" x2=\"82.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"114.7\" y1=\"22\" x2=\"114.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"114.7\" y=\"428\" text-anchor=\"middle\">0,5</text><line x1=\"147.3\" y1=\"22\" x2=\"147.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"147.3\" y=\"428\" text-anchor=\"middle\">1</text><line x1=\"179.9\" y1=\"22\" x2=\"179.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"179.9\" y=\"428\" text-anchor=\"middle\">1,5</text><line x1=\"212.6\" y1=\"22\" x2=\"212.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"212.6\" y=\"428\" text-anchor=\"middle\">2</text><line x1=\"245.2\" y1=\"22\" x2=\"245.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"245.2\" y=\"428\" text-anchor=\"middle\">2,5</text><line x1=\"277.9\" y1=\"22\" x2=\"277.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"277.9\" y=\"428\" text-anchor=\"middle\">3</text><line x1=\"310.5\" y1=\"22\" x2=\"310.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"310.5\" y=\"428\" text-anchor=\"middle\">3,5</text><line x1=\"343.2\" y1=\"22\" x2=\"343.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"343.2\" y=\"428\" text-anchor=\"middle\">4</text><line x1=\"375.9\" y1=\"22\" x2=\"375.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"375.9\" y=\"428\" text-anchor=\"middle\">4,5</text><line x1=\"408.5\" y1=\"22\" x2=\"408.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"408.5\" y=\"428\" text-anchor=\"middle\">5</text><line x1=\"441.2\" y1=\"22\" x2=\"441.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"441.2\" y=\"428\" text-anchor=\"middle\">5,5</text><line x1=\"473.8\" y1=\"22\" x2=\"473.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.8\" y=\"428\" text-anchor=\"middle\">6</text><line x1=\"506.4\" y1=\"22\" x2=\"506.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"506.4\" y=\"428\" text-anchor=\"middle\">6,5</text><line x1=\"539.1\" y1=\"22\" x2=\"539.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"539.1\" y=\"428\" text-anchor=\"middle\">7</text><line x1=\"571.8\" y1=\"22\" x2=\"571.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"571.8\" y=\"428\" text-anchor=\"middle\">7,5</text><line x1=\"604.4\" y1=\"22\" x2=\"604.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.4\" y=\"428\" text-anchor=\"middle\">8</text><line x1=\"637.0\" y1=\"22\" x2=\"637.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"637.0\" y=\"428\" text-anchor=\"middle\">8,5</text><line x1=\"669.7\" y1=\"22\" x2=\"669.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.7\" y=\"428\" text-anchor=\"middle\">9</text><line x1=\"702.4\" y1=\"22\" x2=\"702.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"702.4\" y=\"428\" text-anchor=\"middle\">9,5</text><line x1=\"735.0\" y1=\"22\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">10</text><line x1=\"82\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"82\" y1=\"393.2\" x2=\"735\" y2=\"393.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"378.3\" x2=\"735\" y2=\"378.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"383.3\" text-anchor=\"end\">10</text><line x1=\"82\" y1=\"363.5\" x2=\"735\" y2=\"363.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"348.6\" x2=\"735\" y2=\"348.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"353.6\" text-anchor=\"end\">20</text><line x1=\"82\" y1=\"333.8\" x2=\"735\" y2=\"333.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"318.9\" x2=\"735\" y2=\"318.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"323.9\" text-anchor=\"end\">30</text><line x1=\"82\" y1=\"304.1\" x2=\"735\" y2=\"304.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"289.2\" x2=\"735\" y2=\"289.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"294.2\" text-anchor=\"end\">40</text><line x1=\"82\" y1=\"274.4\" x2=\"735\" y2=\"274.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"259.5\" x2=\"735\" y2=\"259.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"264.5\" text-anchor=\"end\">50</text><line x1=\"82\" y1=\"244.7\" x2=\"735\" y2=\"244.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"229.8\" x2=\"735\" y2=\"229.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"234.8\" text-anchor=\"end\">60</text><line x1=\"82\" y1=\"215.0\" x2=\"735\" y2=\"215.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"200.2\" x2=\"735\" y2=\"200.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"205.2\" text-anchor=\"end\">70</text><line x1=\"82\" y1=\"185.3\" x2=\"735\" y2=\"185.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"170.5\" x2=\"735\" y2=\"170.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"175.5\" text-anchor=\"end\">80</text><line x1=\"82\" y1=\"155.6\" x2=\"735\" y2=\"155.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"140.8\" x2=\"735\" y2=\"140.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"145.8\" text-anchor=\"end\">90</text><line x1=\"82\" y1=\"125.9\" x2=\"735\" y2=\"125.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"111.1\" x2=\"735\" y2=\"111.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"116.1\" text-anchor=\"end\">100</text><line x1=\"82\" y1=\"96.2\" x2=\"735\" y2=\"96.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"81.4\" x2=\"735\" y2=\"81.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"86.4\" text-anchor=\"end\">110</text><line x1=\"82\" y1=\"66.5\" x2=\"735\" y2=\"66.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"51.7\" x2=\"735\" y2=\"51.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"56.7\" text-anchor=\"end\">120</text><line x1=\"82\" y1=\"36.8\" x2=\"735\" y2=\"36.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"27.0\" text-anchor=\"end\">130</text><rect x=\"82\" y=\"22\" width=\"653\" height=\"386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"141.3\" y1=\"365.2\" x2=\"153.3\" y2=\"377.2\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"141.3\" y1=\"377.2\" x2=\"153.3\" y2=\"365.2\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"206.6\" y1=\"328.1\" x2=\"218.6\" y2=\"340.1\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"206.6\" y1=\"340.1\" x2=\"218.6\" y2=\"328.1\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"337.2\" y1=\"254.7\" x2=\"349.2\" y2=\"266.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"337.2\" y1=\"266.7\" x2=\"349.2\" y2=\"254.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"467.8\" y1=\"179.9\" x2=\"479.8\" y2=\"191.9\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"467.8\" y1=\"191.9\" x2=\"479.8\" y2=\"179.9\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"598.4\" y1=\"107.7\" x2=\"610.4\" y2=\"119.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"598.4\" y1=\"119.7\" x2=\"610.4\" y2=\"107.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"408.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Concentration c (mmol·L⁻¹)</text><text transform=\"translate(22,215.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Conductivité σ (mS·m⁻¹)</text></svg>",
+      "questions": [
+        {
+          "texte": "Les points des étalons sont placés sur le graphique. Trace la droite d'étalonnage. La loi de Kohlrausch est-elle vérifiée ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine le coefficient directeur k de la droite et compare-le à la valeur prévue par la loi de Kohlrausch.",
+          "aides": [
+            "Le coefficient directeur d'une droite passant par l'origine est k = σ / c pour n'importe lequel de ses points.",
+            "Pour comparer à Kohlrausch : σ = (λ(Na⁺) + λ(Cl⁻)) × c ; et 1 mmol·L⁻¹ = 1 mol·m⁻³."
+          ]
+        },
+        {
+          "texte": "Pourquoi le premier essai est-il inexploitable ? Donne deux raisons.",
+          "aides": [
+            "Compare la conductivité mesurée à celle du plus grand étalon.",
+            "Pense à l'extrapolation, et au domaine de validité de la loi de Kohlrausch."
+          ]
+        },
+        {
+          "texte": "Détermine la concentration de la solution diluée 200 fois, graphiquement puis par le calcul.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en la concentration molaire c puis la concentration en masse C<sub>m</sub> de chlorure de sodium de la saumure.",
+          "aides": [
+            "Quelle est la relation entre la concentration de la saumure et celle de la solution diluée ?",
+            "Puis C<sub>m</sub> = c × M."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les points sont alignés sur une droite passant par l'origine : σ est proportionnelle à c, conformément à la loi de Kohlrausch (σ = (λ(Na⁺) + λ(Cl⁻)) × c) pour ces solutions diluées.",
+        "<strong>2.</strong> Par lecture d'un point de la droite, ou par régression linéaire : k = σ / c ≈ 12,4 mS·m⁻¹ par mmol·L⁻¹ (12,41 par régression), soit 12,4 mS·m²·mol⁻¹ (1 mmol·L⁻¹ = 1 mol·m⁻³). Kohlrausch prévoit k = λ(Na⁺) + λ(Cl⁻) = 5,01 + 7,63 = 12,64 mS·m²·mol⁻¹ : écart relatif de 1,8 %, très bon accord (les λ tabulés sont des valeurs limites, pour une dilution infinie).",
+        "<strong>3.</strong> σ ≈ 1,4 S·m⁻¹ = 1,4 × 10³ mS·m⁻¹ est très au-delà du plus grand étalon (99,1 mS·m⁻¹) : il faudrait extrapoler la droite, ce qui est interdit ; et une solution aussi concentrée (environ 0,11 mol·L⁻¹) sort du domaine de validité de la loi de Kohlrausch, σ n'y est plus proportionnelle à c.",
+        "<strong>4.</strong> Graphiquement : σ = 68,2 mS·m⁻¹ donne c ≈ 5,5 mmol·L⁻¹. Par le calcul : c<sub>dil</sub> = σ / k = 68,2 / 12,41 = 5,49 mmol·L⁻¹ (k non arrondi) (5,49 × 10⁻³ mol·L⁻¹), bien dans le domaine des étalons.",
+        "<strong>5.</strong> c = 200 × c<sub>dil</sub> = 200 × 5,49 × 10⁻³ = 1,10 mol·L⁻¹. C<sub>m</sub> = c × M(NaCl) = 1,10 × 58,44 = 64,2 g·L⁻¹.",
+        "<em>⚠ Erreur fréquente : oublier le facteur de dilution 200 (on trouverait 0,32 g·L⁻¹, moins salé que l'eau du robinet… ce qui devrait alerter pour une saumure).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "La solution de Dakin est-elle conforme ?",
+      "contexte": [
+        "La solution de Dakin, utilisée pour désinfecter les plaies, contient un peu de permanganate de potassium qui la colore en rose. Son étiquette indique : « permanganate de potassium : 0,0010 g pour 100 mL ».",
+        "On prépare, à partir d'une solution mère de permanganate de potassium de concentration c₀ = 1,00 × 10⁻³ mol·L⁻¹, une gamme de solutions étalons. On mesure leur absorbance à 525 nm (λ<sub>max</sub> de l'exercice 2) dans une cuve de 1,00 cm :",
+        "c (10⁻⁵ mol·L⁻¹) : 2,0 ; 4,0 ; 6,0 ; 8,0 ; 10,0 — A : 0,048 ; 0,097 ; 0,144 ; 0,193 ; 0,240.",
+        "La solution de Dakin, placée dans la même cuve, donne A = 0,150. On admet qu'à 525 nm, seul l'ion permanganate absorbe."
+      ],
+      "questions": [
+        {
+          "texte": "Décris précisément la préparation de 50,0 mL de l'étalon de concentration 4,0 × 10⁻⁵ mol·L⁻¹ (calcul du volume à prélever, verrerie, gestes).",
+          "aides": [
+            "Commence par calculer le facteur de dilution F = c₀ / c.",
+            "Volume de solution mère à prélever : V₀ = V / F. Verrerie de précision : pipette jaugée et fiole jaugée."
+          ]
+        },
+        {
+          "texte": "Montre, sans tracer de graphique, que ces mesures vérifient la loi de Beer-Lambert. Déduis-en la valeur du coefficient d'absorption molaire ε de l'ion MnO₄⁻ à 525 nm.",
+          "aides": [
+            "Si A = k × c, que vaut le rapport A / c pour chaque étalon ?",
+            "k = ε × l, avec l = 1,00 cm."
+          ]
+        },
+        {
+          "texte": "Détermine la concentration molaire en permanganate de la solution de Dakin, puis sa concentration en masse en mg·L⁻¹.",
+          "aides": [
+            "c = A / k. Vérifie que A = 0,150 est bien dans la gamme des étalons.",
+            "Pour la concentration en masse : C<sub>m</sub> = c × M, puis convertis en mg·L⁻¹."
+          ]
+        },
+        {
+          "texte": "La solution de Dakin est-elle conforme à son étiquette ? Calcule un écart relatif.",
+          "aides": []
+        },
+        {
+          "texte": "Un camarade propose de doser une solution de permanganate dix fois plus concentrée que la solution mère, sans la diluer. Qu'en penses-tu ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Facteur de dilution F = c₀ / c = 1,00 × 10⁻³ / 4,0 × 10⁻⁵ = 25 ; volume à prélever V₀ = V / F = 50,0 / 25 = 2,00 mL. On prélève 2,00 mL de solution mère avec une pipette jaugée de 2,00 mL (munie d'une propipette), on les verse dans une fiole jaugée de 50,0 mL, on complète à l'eau distillée jusqu'au trait de jauge, on bouche et on agite.",
+        "<strong>2.</strong> On calcule A / c pour chaque étalon : 2 400 ; 2 425 ; 2 400 ; 2 412 ; 2 400 L·mol⁻¹. Ce rapport est constant (à 1 % près) : A est proportionnelle à c, la loi de Beer-Lambert est vérifiée. k = ε × l ≈ 2,41 × 10³ L·mol⁻¹ (2 405 par régression), d'où ε = k / l = 2,41 × 10³ L·mol⁻¹·cm⁻¹ (accord avec la valeur 2,40 × 10³ de l'exercice 2).",
+        "<strong>3.</strong> c = A / k = 0,150 / 2 405 = 6,24 × 10⁻⁵ mol·L⁻¹ (k non arrondi) (valeur bien comprise dans la gamme des étalons). C<sub>m</sub> = c × M(KMnO₄) = 6,24 × 10⁻⁵ × 158,03 = 9,85 × 10⁻³ g·L⁻¹ = 9,85 mg·L⁻¹.",
+        "<strong>4.</strong> Étiquette : 0,0010 g pour 100 mL = 0,010 g·L⁻¹ = 10 mg·L⁻¹. Écart relatif = |9,85 − 10| / 10 = 1,5 % : la solution est conforme.",
+        "<strong>5.</strong> Mauvaise idée : avec c = 1,0 × 10⁻² mol·L⁻¹, on attendrait A ≈ 24, valeur hors de la gamme des étalons (pas d'extrapolation) et hors du domaine de validité de la loi de Beer-Lambert (solutions diluées) ; le spectrophotomètre ne mesure d'ailleurs pas de telles absorbances. Il faut diluer la solution avant la mesure.",
+        "<em>⚠ Erreur fréquente : comparer 9,85 mg·L⁻¹ directement à « 0,0010 g » sans ramener l'étiquette à un litre.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le vert du sirop de menthe",
+      "contexte": [
+        "Doc. 1 — Deux colorants pour un vert. La couleur verte d'un sirop de menthe est obtenue en mélangeant deux colorants alimentaires : la tartrazine E102 (jaune) et le bleu patenté V E131 (bleu). On prendra pour le bleu patenté une dose journalière admissible (DJA) de 5 mg par kilogramme de masse corporelle et par jour.",
+        "Doc. 2 — Spectres d'absorption (cuve de 1,00 cm) d'une solution de tartrazine, d'une solution de bleu patenté et du sirop dilué 20 fois."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"82.0\" y1=\"22\" x2=\"82.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82.0\" y=\"428\" text-anchor=\"middle\">400</text><line x1=\"128.6\" y1=\"22\" x2=\"128.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"128.6\" y=\"428\" text-anchor=\"middle\">425</text><line x1=\"175.3\" y1=\"22\" x2=\"175.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"175.3\" y=\"428\" text-anchor=\"middle\">450</text><line x1=\"221.9\" y1=\"22\" x2=\"221.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"221.9\" y=\"428\" text-anchor=\"middle\">475</text><line x1=\"268.6\" y1=\"22\" x2=\"268.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"268.6\" y=\"428\" text-anchor=\"middle\">500</text><line x1=\"315.2\" y1=\"22\" x2=\"315.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"315.2\" y=\"428\" text-anchor=\"middle\">525</text><line x1=\"361.9\" y1=\"22\" x2=\"361.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"361.9\" y=\"428\" text-anchor=\"middle\">550</text><line x1=\"408.5\" y1=\"22\" x2=\"408.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"408.5\" y=\"428\" text-anchor=\"middle\">575</text><line x1=\"455.1\" y1=\"22\" x2=\"455.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"455.1\" y=\"428\" text-anchor=\"middle\">600</text><line x1=\"501.8\" y1=\"22\" x2=\"501.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"501.8\" y=\"428\" text-anchor=\"middle\">625</text><line x1=\"548.4\" y1=\"22\" x2=\"548.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"548.4\" y=\"428\" text-anchor=\"middle\">650</text><line x1=\"595.1\" y1=\"22\" x2=\"595.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"595.1\" y=\"428\" text-anchor=\"middle\">675</text><line x1=\"641.7\" y1=\"22\" x2=\"641.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"641.7\" y=\"428\" text-anchor=\"middle\">700</text><line x1=\"688.4\" y1=\"22\" x2=\"688.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"688.4\" y=\"428\" text-anchor=\"middle\">725</text><line x1=\"735.0\" y1=\"22\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">750</text><line x1=\"82\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"82\" y1=\"383.9\" x2=\"735\" y2=\"383.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"359.8\" x2=\"735\" y2=\"359.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"364.8\" text-anchor=\"end\">0,1</text><line x1=\"82\" y1=\"335.6\" x2=\"735\" y2=\"335.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"311.5\" x2=\"735\" y2=\"311.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"316.5\" text-anchor=\"end\">0,2</text><line x1=\"82\" y1=\"287.4\" x2=\"735\" y2=\"287.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"263.2\" x2=\"735\" y2=\"263.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"268.2\" text-anchor=\"end\">0,3</text><line x1=\"82\" y1=\"239.1\" x2=\"735\" y2=\"239.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"215.0\" x2=\"735\" y2=\"215.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"220.0\" text-anchor=\"end\">0,4</text><line x1=\"82\" y1=\"190.9\" x2=\"735\" y2=\"190.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"166.8\" x2=\"735\" y2=\"166.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"171.8\" text-anchor=\"end\">0,5</text><line x1=\"82\" y1=\"142.6\" x2=\"735\" y2=\"142.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"118.5\" x2=\"735\" y2=\"118.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"123.5\" text-anchor=\"end\">0,6</text><line x1=\"82\" y1=\"94.4\" x2=\"735\" y2=\"94.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"70.2\" x2=\"735\" y2=\"70.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"75.2\" text-anchor=\"end\">0,7</text><line x1=\"82\" y1=\"46.1\" x2=\"735\" y2=\"46.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"82\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"74\" y=\"27.0\" text-anchor=\"end\">0,8</text><rect x=\"82\" y=\"22\" width=\"653\" height=\"386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"82.0,223.6 83.9,220.8 85.7,218.0 87.6,215.4 89.5,212.8 91.3,210.3 93.2,207.9 95.1,205.5 96.9,203.3 98.8,201.1 100.7,199.1 102.5,197.1 104.4,195.2 106.3,193.5 108.1,191.8 110.0,190.3 111.9,188.9 113.7,187.6 115.6,186.4 117.4,185.3 119.3,184.4 121.2,183.5 123.0,182.8 124.9,182.3 126.8,181.8 128.6,181.5 130.5,181.3 132.4,181.2 134.2,181.3 136.1,181.5 138.0,181.8 139.8,182.3 141.7,182.8 143.6,183.5 145.4,184.4 147.3,185.3 149.2,186.4 151.0,187.6 152.9,188.9 154.8,190.3 156.6,191.8 158.5,193.5 160.4,195.2 162.2,197.1 164.1,199.1 166.0,201.1 167.8,203.3 169.7,205.5 171.6,207.9 173.4,210.3 175.3,212.8 177.2,215.4 179.0,218.0 180.9,220.8 182.7,223.6 184.6,226.4 186.5,229.3 188.3,232.3 190.2,235.3 192.1,238.4 193.9,241.5 195.8,244.6 197.7,247.7 199.5,250.9 201.4,254.2 203.3,257.4 205.1,260.6 207.0,263.9 208.9,267.2 210.7,270.5 212.6,273.7 214.5,277.0 216.3,280.3 218.2,283.5 220.1,286.8 221.9,290.0 223.8,293.2 225.7,296.4 227.5,299.5 229.4,302.6 231.3,305.7 233.1,308.8 235.0,311.8 236.9,314.8 238.7,317.7 240.6,320.6 242.5,323.5 244.3,326.3 246.2,329.0 248.0,331.7 249.9,334.4 251.8,337.0 253.6,339.5 255.5,342.0 257.4,344.5 259.2,346.9 261.1,349.2 263.0,351.5 264.8,353.7 266.7,355.8 268.6,357.9 270.4,360.0 272.3,362.0 274.2,363.9 276.0,365.8 277.9,367.6 279.8,369.3 281.6,371.0 283.5,372.7 285.4,374.3 287.2,375.8 289.1,377.3 291.0,378.7 292.8,380.1 294.7,381.5 296.6,382.7 298.4,384.0 300.3,385.2 302.2,386.3 304.0,387.4 305.9,388.5 307.8,389.5 309.6,390.4 311.5,391.4 313.3,392.2 315.2,393.1 317.1,393.9 318.9,394.7 320.8,395.4 322.7,396.1 324.5,396.8 326.4,397.4 328.3,398.0 330.1,398.6 332.0,399.2 333.9,399.7 335.7,400.2 337.6,400.7 339.5,401.1 341.3,401.5 343.2,401.9 345.1,402.3 346.9,402.7 348.8,403.0 350.7,403.3 352.5,403.6 354.4,403.9 356.3,404.2 358.1,404.4 360.0,404.7 361.9,404.9 363.7,405.1 365.6,405.3 367.5,405.5 369.3,405.7 371.2,405.8 373.1,406.0 374.9,406.1 376.8,406.2 378.6,406.4 380.5,406.5 382.4,406.6 384.2,406.7 386.1,406.8 388.0,406.9 389.8,407.0 391.7,407.1 393.6,407.1 395.4,407.2 397.3,407.3 399.2,407.3 401.0,407.4 402.9,407.4 404.8,407.5 406.6,407.5 408.5,407.5 410.4,407.6 412.2,407.6 414.1,407.6 416.0,407.7 417.8,407.7 419.7,407.7 421.6,407.7 423.4,407.8 425.3,407.8 427.2,407.8 429.0,407.8 430.9,407.8 432.8,407.9 434.6,407.9 436.5,407.9 438.4,407.9 440.2,407.9 442.1,407.9 443.9,407.9 445.8,407.9 447.7,407.9 449.5,407.9 451.4,407.9 453.3,407.9 455.1,408.0 457.0,408.0 458.9,408.0 460.7,408.0 462.6,408.0 464.5,408.0 466.3,408.0 468.2,408.0 470.1,408.0 471.9,408.0 473.8,408.0 475.7,408.0 477.5,408.0 479.4,408.0 481.3,408.0 483.1,408.0 485.0,408.0 486.9,408.0 488.7,408.0 490.6,408.0 492.5,408.0 494.3,408.0 496.2,408.0 498.1,408.0 499.9,408.0 501.8,408.0 503.7,408.0 505.5,408.0 507.4,408.0 509.2,408.0 511.1,408.0 513.0,408.0 514.8,408.0 516.7,408.0 518.6,408.0 520.4,408.0 522.3,408.0 524.2,408.0 526.0,408.0 527.9,408.0 529.8,408.0 531.6,408.0 533.5,408.0 535.4,408.0 537.2,408.0 539.1,408.0 541.0,408.0 542.8,408.0 544.7,408.0 546.6,408.0 548.4,408.0 550.3,408.0 552.2,408.0 554.0,408.0 555.9,408.0 557.8,408.0 559.6,408.0 561.5,408.0 563.4,408.0 565.2,408.0 567.1,408.0 569.0,408.0 570.8,408.0 572.7,408.0 574.5,408.0 576.4,408.0 578.3,408.0 580.1,408.0 582.0,408.0 583.9,408.0 585.7,408.0 587.6,408.0 589.5,408.0 591.3,408.0 593.2,408.0 595.1,408.0 596.9,408.0 598.8,408.0 600.7,408.0 602.5,408.0 604.4,408.0 606.3,408.0 608.1,408.0 610.0,408.0 611.9,408.0 613.7,408.0 615.6,408.0 617.5,408.0 619.3,408.0 621.2,408.0 623.1,408.0 624.9,408.0 626.8,408.0 628.7,408.0 630.5,408.0 632.4,408.0 634.3,408.0 636.1,408.0 638.0,408.0 639.8,408.0 641.7,408.0 643.6,408.0 645.4,408.0 647.3,408.0 649.2,408.0 651.0,408.0 652.9,408.0 654.8,408.0 656.6,408.0 658.5,408.0 660.4,408.0 662.2,408.0 664.1,408.0 666.0,408.0 667.8,408.0 669.7,408.0 671.6,408.0 673.4,408.0 675.3,408.0 677.2,408.0 679.0,408.0 680.9,408.0 682.8,408.0 684.6,408.0 686.5,408.0 688.4,408.0 690.2,408.0 692.1,408.0 694.0,408.0 695.8,408.0 697.7,408.0 699.6,408.0 701.4,408.0 703.3,408.0 705.1,408.0 707.0,408.0 708.9,408.0 710.7,408.0 712.6,408.0 714.5,408.0 716.3,408.0 718.2,408.0 720.1,408.0 721.9,408.0 723.8,408.0 725.7,408.0 727.5,408.0 729.4,408.0 731.3,408.0 733.1,408.0 735.0,408.0\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.6\" /><polyline points=\"82.0,392.5 83.9,392.3 85.7,392.1 87.6,391.9 89.5,391.7 91.3,391.5 93.2,391.4 95.1,391.3 96.9,391.2 98.8,391.1 100.7,391.1 102.5,391.0 104.4,391.0 106.3,391.0 108.1,391.1 110.0,391.1 111.9,391.2 113.7,391.3 115.6,391.4 117.4,391.5 119.3,391.7 121.2,391.9 123.0,392.1 124.9,392.3 126.8,392.5 128.6,392.8 130.5,393.0 132.4,393.3 134.2,393.6 136.1,393.9 138.0,394.2 139.8,394.5 141.7,394.8 143.6,395.2 145.4,395.5 147.3,395.9 149.2,396.2 151.0,396.6 152.9,397.0 154.8,397.3 156.6,397.7 158.5,398.1 160.4,398.4 162.2,398.8 164.1,399.2 166.0,399.5 167.8,399.9 169.7,400.2 171.6,400.6 173.4,400.9 175.3,401.2 177.2,401.6 179.0,401.9 180.9,402.2 182.7,402.5 184.6,402.8 186.5,403.1 188.3,403.3 190.2,403.6 192.1,403.8 193.9,404.1 195.8,404.3 197.7,404.6 199.5,404.8 201.4,405.0 203.3,405.2 205.1,405.4 207.0,405.5 208.9,405.7 210.7,405.9 212.6,406.0 214.5,406.2 216.3,406.3 218.2,406.4 220.1,406.5 221.9,406.6 223.8,406.8 225.7,406.9 227.5,406.9 229.4,407.0 231.3,407.1 233.1,407.2 235.0,407.3 236.9,407.3 238.7,407.4 240.6,407.4 242.5,407.5 244.3,407.5 246.2,407.6 248.0,407.6 249.9,407.6 251.8,407.7 253.6,407.7 255.5,407.7 257.4,407.8 259.2,407.8 261.1,407.8 263.0,407.8 264.8,407.8 266.7,407.9 268.6,407.9 270.4,407.9 272.3,407.9 274.2,407.9 276.0,407.9 277.9,407.9 279.8,407.9 281.6,407.9 283.5,407.9 285.4,407.9 287.2,407.9 289.1,407.9 291.0,407.9 292.8,407.9 294.7,407.9 296.6,407.9 298.4,407.9 300.3,407.9 302.2,407.9 304.0,407.9 305.9,407.8 307.8,407.8 309.6,407.8 311.5,407.8 313.3,407.7 315.2,407.7 317.1,407.6 318.9,407.6 320.8,407.5 322.7,407.4 324.5,407.3 326.4,407.2 328.3,407.1 330.1,407.0 332.0,406.9 333.9,406.7 335.7,406.5 337.6,406.3 339.5,406.1 341.3,405.9 343.2,405.6 345.1,405.3 346.9,405.0 348.8,404.6 350.7,404.2 352.5,403.8 354.4,403.3 356.3,402.8 358.1,402.3 360.0,401.7 361.9,401.0 363.7,400.3 365.6,399.5 367.5,398.7 369.3,397.8 371.2,396.8 373.1,395.8 374.9,394.7 376.8,393.6 378.6,392.4 380.5,391.1 382.4,389.7 384.2,388.3 386.1,386.7 388.0,385.2 389.8,383.5 391.7,381.8 393.6,379.9 395.4,378.1 397.3,376.1 399.2,374.1 401.0,372.0 402.9,369.8 404.8,367.5 406.6,365.2 408.5,362.9 410.4,360.4 412.2,358.0 414.1,355.4 416.0,352.8 417.8,350.1 419.7,347.4 421.6,344.6 423.4,341.8 425.3,338.9 427.2,335.9 429.0,332.9 430.9,329.8 432.8,326.6 434.6,323.4 436.5,320.1 438.4,316.7 440.2,313.2 442.1,309.7 443.9,306.0 445.8,302.2 447.7,298.4 449.5,294.4 451.4,290.2 453.3,286.0 455.1,281.6 457.0,277.0 458.9,272.3 460.7,267.5 462.6,262.5 464.5,257.3 466.3,252.0 468.2,246.5 470.1,240.9 471.9,235.1 473.8,229.1 475.7,223.0 477.5,216.8 479.4,210.5 481.3,204.0 483.1,197.5 485.0,190.9 486.9,184.3 488.7,177.7 490.6,171.0 492.5,164.4 494.3,157.9 496.2,151.5 498.1,145.2 499.9,139.0 501.8,133.1 503.7,127.4 505.5,121.9 507.4,116.8 509.2,112.0 511.1,107.5 513.0,103.5 514.8,99.8 516.7,96.7 518.6,94.0 520.4,91.8 522.3,90.2 524.2,89.1 526.0,88.6 527.9,88.6 529.8,89.2 531.6,90.4 533.5,92.1 535.4,94.5 537.2,97.4 539.1,100.8 541.0,104.8 542.8,109.4 544.7,114.4 546.6,119.9 548.4,125.8 550.3,132.2 552.2,138.9 554.0,146.1 555.9,153.5 557.8,161.2 559.6,169.1 561.5,177.3 563.4,185.6 565.2,194.1 567.1,202.6 569.0,211.2 570.8,219.9 572.7,228.5 574.5,237.1 576.4,245.5 578.3,253.9 580.1,262.2 582.0,270.3 583.9,278.2 585.7,285.9 587.6,293.4 589.5,300.6 591.3,307.6 593.2,314.3 595.1,320.8 596.9,327.0 598.8,332.9 600.7,338.5 602.5,343.8 604.4,348.8 606.3,353.6 608.1,358.1 610.0,362.3 611.9,366.2 613.7,369.9 615.6,373.3 617.5,376.5 619.3,379.4 621.2,382.1 623.1,384.7 624.9,387.0 626.8,389.1 628.7,391.0 630.5,392.8 632.4,394.4 634.3,395.9 636.1,397.2 638.0,398.4 639.8,399.5 641.7,400.5 643.6,401.4 645.4,402.2 647.3,402.9 649.2,403.5 651.0,404.1 652.9,404.6 654.8,405.0 656.6,405.4 658.5,405.7 660.4,406.0 662.2,406.3 664.1,406.5 666.0,406.7 667.8,406.9 669.7,407.1 671.6,407.2 673.4,407.3 675.3,407.4 677.2,407.5 679.0,407.6 680.9,407.6 682.8,407.7 684.6,407.7 686.5,407.8 688.4,407.8 690.2,407.9 692.1,407.9 694.0,407.9 695.8,407.9 697.7,407.9 699.6,407.9 701.4,408.0 703.3,408.0 705.1,408.0 707.0,408.0 708.9,408.0 710.7,408.0 712.6,408.0 714.5,408.0 716.3,408.0 718.2,408.0 720.1,408.0 721.9,408.0 723.8,408.0 725.7,408.0 727.5,408.0 729.4,408.0 731.3,408.0 733.1,408.0 735.0,408.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" /><polyline points=\"82.0,229.3 83.9,226.6 85.7,224.0 87.6,221.5 89.5,219.0 91.3,216.6 93.2,214.3 95.1,212.1 96.9,210.0 98.8,208.0 100.7,206.1 102.5,204.3 104.4,202.6 106.3,201.1 108.1,199.6 110.0,198.3 111.9,197.0 113.7,195.9 115.6,195.0 117.4,194.1 119.3,193.4 121.2,192.8 123.0,192.3 124.9,192.0 126.8,191.8 128.6,191.7 130.5,191.7 132.4,191.9 134.2,192.2 136.1,192.6 138.0,193.1 139.8,193.8 141.7,194.6 143.6,195.5 145.4,196.5 147.3,197.7 149.2,198.9 151.0,200.3 152.9,201.8 154.8,203.3 156.6,205.0 158.5,206.8 160.4,208.7 162.2,210.7 164.1,212.7 166.0,214.9 167.8,217.1 169.7,219.4 171.6,221.8 173.4,224.3 175.3,226.8 177.2,229.4 179.0,232.0 180.9,234.7 182.7,237.5 184.6,240.3 186.5,243.2 188.3,246.0 190.2,249.0 192.1,251.9 193.9,254.9 195.8,257.9 197.7,261.0 199.5,264.0 201.4,267.1 203.3,270.1 205.1,273.2 207.0,276.3 208.9,279.4 210.7,282.5 212.6,285.5 214.5,288.6 216.3,291.6 218.2,294.7 220.1,297.7 221.9,300.7 223.8,303.6 225.7,306.6 227.5,309.5 229.4,312.4 231.3,315.2 233.1,318.0 235.0,320.8 236.9,323.5 238.7,326.2 240.6,328.9 242.5,331.5 244.3,334.0 246.2,336.6 248.0,339.0 249.9,341.5 251.8,343.8 253.6,346.1 255.5,348.4 257.4,350.6 259.2,352.8 261.1,354.9 263.0,357.0 264.8,359.0 266.7,360.9 268.6,362.8 270.4,364.7 272.3,366.5 274.2,368.2 276.0,369.9 277.9,371.6 279.8,373.1 281.6,374.7 283.5,376.2 285.4,377.6 287.2,379.0 289.1,380.3 291.0,381.6 292.8,382.9 294.7,384.1 296.6,385.2 298.4,386.3 300.3,387.4 302.2,388.4 304.0,389.4 305.9,390.3 307.8,391.2 309.6,392.0 311.5,392.8 313.3,393.6 315.2,394.3 317.1,395.0 318.9,395.7 320.8,396.3 322.7,396.8 324.5,397.4 326.4,397.9 328.3,398.3 330.1,398.7 332.0,399.1 333.9,399.5 335.7,399.8 337.6,400.0 339.5,400.3 341.3,400.4 343.2,400.6 345.1,400.7 346.9,400.7 348.8,400.8 350.7,400.7 352.5,400.6 354.4,400.5 356.3,400.3 358.1,400.1 360.0,399.8 361.9,399.5 363.7,399.1 365.6,398.6 367.5,398.1 369.3,397.5 371.2,396.9 373.1,396.2 374.9,395.5 376.8,394.6 378.6,393.8 380.5,392.8 382.4,391.8 384.2,390.7 386.1,389.6 388.0,388.3 389.8,387.0 391.7,385.7 393.6,384.3 395.4,382.8 397.3,381.2 399.2,379.6 401.0,378.0 402.9,376.2 404.8,374.5 406.6,372.6 408.5,370.7 410.4,368.8 412.2,366.7 414.1,364.7 416.0,362.6 417.8,360.4 419.7,358.2 421.6,356.0 423.4,353.7 425.3,351.3 427.2,348.9 429.0,346.4 430.9,343.9 432.8,341.4 434.6,338.7 436.5,336.0 438.4,333.3 440.2,330.5 442.1,327.6 443.9,324.6 445.8,321.5 447.7,318.3 449.5,315.1 451.4,311.7 453.3,308.2 455.1,304.6 457.0,300.9 458.9,297.1 460.7,293.1 462.6,289.1 464.5,284.8 466.3,280.5 468.2,276.0 470.1,271.4 471.9,266.6 473.8,261.8 475.7,256.8 477.5,251.7 479.4,246.6 481.3,241.3 483.1,236.0 485.0,230.6 486.9,225.2 488.7,219.7 490.6,214.3 492.5,208.9 494.3,203.6 496.2,198.3 498.1,193.2 499.9,188.2 501.8,183.3 503.7,178.6 505.5,174.2 507.4,170.0 509.2,166.0 511.1,162.4 513.0,159.1 514.8,156.2 516.7,153.6 518.6,151.4 520.4,149.6 522.3,148.3 524.2,147.4 526.0,146.9 527.9,147.0 529.8,147.4 531.6,148.4 533.5,149.9 535.4,151.8 537.2,154.1 539.1,157.0 541.0,160.2 542.8,163.9 544.7,168.0 546.6,172.5 548.4,177.4 550.3,182.6 552.2,188.1 554.0,193.9 555.9,200.0 557.8,206.3 559.6,212.8 561.5,219.5 563.4,226.3 565.2,233.2 567.1,240.2 569.0,247.2 570.8,254.2 572.7,261.3 574.5,268.3 576.4,275.2 578.3,282.1 580.1,288.8 582.0,295.4 583.9,301.9 585.7,308.2 587.6,314.3 589.5,320.2 591.3,325.9 593.2,331.4 595.1,336.7 596.9,341.8 598.8,346.6 600.7,351.2 602.5,355.5 604.4,359.6 606.3,363.5 608.1,367.2 610.0,370.6 611.9,373.8 613.7,376.8 615.6,379.6 617.5,382.2 619.3,384.6 621.2,386.9 623.1,388.9 624.9,390.8 626.8,392.5 628.7,394.1 630.5,395.6 632.4,396.9 634.3,398.1 636.1,399.2 638.0,400.2 639.8,401.1 641.7,401.9 643.6,402.6 645.4,403.2 647.3,403.8 649.2,404.3 651.0,404.8 652.9,405.2 654.8,405.6 656.6,405.9 658.5,406.2 660.4,406.4 662.2,406.6 664.1,406.8 666.0,407.0 667.8,407.1 669.7,407.2 671.6,407.4 673.4,407.4 675.3,407.5 677.2,407.6 679.0,407.7 680.9,407.7 682.8,407.8 684.6,407.8 686.5,407.8 688.4,407.9 690.2,407.9 692.1,407.9 694.0,407.9 695.8,407.9 697.7,407.9 699.6,408.0 701.4,408.0 703.3,408.0 705.1,408.0 707.0,408.0 708.9,408.0 710.7,408.0 712.6,408.0 714.5,408.0 716.3,408.0 718.2,408.0 720.1,408.0 721.9,408.0 723.8,408.0 725.7,408.0 727.5,408.0 729.4,408.0 731.3,408.0 733.1,408.0 735.0,408.0\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.6\" stroke-dasharray=\"8 5\"/><line x1=\"205\" y1=\"47\" x2=\"239\" y2=\"47\" stroke=\"#C8962E\" stroke-width=\"3\" /><text x=\"247\" y=\"52\">tartrazine (10,0 mg·L⁻¹)</text><line x1=\"205\" y1=\"71\" x2=\"239\" y2=\"71\" stroke=\"#1F4E5A\" stroke-width=\"3\" /><text x=\"247\" y=\"76\">bleu patenté (4,0 mg·L⁻¹)</text><line x1=\"205\" y1=\"95\" x2=\"239\" y2=\"95\" stroke=\"#B5523B\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"247\" y=\"100\">sirop dilué 20 fois</text><text x=\"408.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Longueur d'onde λ (nm)</text><text transform=\"translate(22,215.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Absorbance A</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Étalonnage. Solutions étalons de bleu patenté, absorbance mesurée à 640 nm (cuve de 1,00 cm) :",
+        "C<sub>m</sub> (mg·L⁻¹) : 1,0 ; 2,0 ; 3,0 ; 4,0 ; 5,0 — A : 0,165 ; 0,332 ; 0,494 ; 0,661 ; 0,826.",
+        "Le sirop, dilué 20 fois, a une absorbance A = 0,540 à 640 nm.",
+        "Doc. 4 — Préparation d'une boisson. On verse 1 volume de sirop pour 7 volumes d'eau. Un verre contient 25 cL de boisson."
+      ],
+      "questions": [
+        {
+          "texte": "À l'aide du doc. 2 et du tableau des couleurs complémentaires, explique pourquoi la tartrazine est jaune, le bleu patenté bleu et le sirop vert.",
+          "aides": [
+            "Pour chaque courbe, repère le domaine de longueurs d'onde le plus absorbé.",
+            "Utilise le tableau des couleurs complémentaires. Pour le sirop, cherche aussi ce qui n'est PAS absorbé."
+          ]
+        },
+        {
+          "texte": "Pourquoi le dosage du bleu patenté est-il réalisé à 640 nm et non à 427 nm ? Justifie à l'aide du doc. 2.",
+          "aides": [
+            "Regarde l'absorbance de la tartrazine à 640 nm sur le doc. 2.",
+            "Un dosage n'est fiable que si une seule espèce absorbe à la longueur d'onde choisie."
+          ]
+        },
+        {
+          "texte": "Pourquoi a-t-on dilué le sirop avant la mesure ? Estime l'absorbance qu'aurait le sirop pur à 640 nm.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la concentration en masse de bleu patenté dans le sirop.",
+          "aides": [
+            "Doc. 3 : vérifie que A est proportionnelle à C<sub>m</sub> et détermine le coefficient k.",
+            "C<sub>m</sub>(dilué) = A / k, puis tiens compte de la dilution."
+          ]
+        },
+        {
+          "texte": "Un enfant de 30 kg boit des verres de sirop à l'eau. Combien de verres peut-il boire dans la journée sans dépasser la DJA du bleu patenté ? Commente.",
+          "aides": [
+            "Quel volume de sirop contient un verre de 25 cL de boisson (1 volume de sirop pour 8 volumes au total) ?",
+            "Masse ingérée par verre = C<sub>m</sub>(sirop) × V(sirop). Masse maximale par jour = DJA × masse de l'enfant."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : les absorbances de plusieurs espèces s'additionnent. À 427 nm, le sirop dilué 20 fois a une absorbance A = 0,448 ; la solution de bleu patenté à 4,0 mg·L⁻¹ a une absorbance 0,03 ; pour la tartrazine, A = k<sub>T</sub> × C<sub>m</sub> avec k<sub>T</sub> = 0,0470 L·mg⁻¹. Détermine la concentration en masse de tartrazine dans le sirop.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La tartrazine absorbe autour de 427 nm (violet-bleu) : elle paraît jaune (couleur complémentaire). Le bleu patenté absorbe autour de 640 nm (rouge-orangé) : il paraît bleu (cyan). Le sirop contient les deux colorants : il absorbe dans le violet-bleu et dans le rouge, et ne transmet bien que le milieu du spectre, autour de 500-550 nm : il paraît vert.",
+        "<strong>2.</strong> À 640 nm (λ<sub>max</sub> du bleu patenté), la tartrazine n'absorbe pas (A ≈ 0 sur sa courbe) : l'absorbance du sirop dilué est due au seul bleu patenté, et la sensibilité est maximale. À 427 nm, les deux colorants absorbent : on ne pourrait pas attribuer l'absorbance au seul bleu patenté.",
+        "<strong>3.</strong> A est proportionnelle à la concentration : le sirop pur aurait A ≈ 20 × 0,540 = 10,8, valeur hors de la gamme des étalons (0,165 à 0,826), hors du domaine de validité de la loi de Beer-Lambert et non mesurable par un spectrophotomètre. La dilution ramène la mesure dans la gamme étalonnée.",
+        "<strong>4.</strong> Doc. 3 : A / C<sub>m</sub> est constant, A = k × C<sub>m</sub> avec k = 0,165 L·mg⁻¹ (régression). Sirop dilué : C<sub>dil</sub> = A / k = 0,540 / 0,165 = 3,27 mg·L⁻¹ (dans la gamme des étalons). Sirop : C<sub>m</sub> = 20 × 3,27 = 65,4 mg·L⁻¹.",
+        "<strong>5.</strong> Volume de sirop par verre : 25 / 8 = 3,125 cL = 31,25 mL. Masse de bleu patenté par verre : m = C<sub>m</sub> × V = 65,4 × 31,25 × 10⁻³ = 2,04 mg. Masse maximale journalière : 5 × 30 = 150 mg. Nombre de verres : 150 / 2,04 = 73 verres, soit plus de 18 L de boisson : aucun risque de dépasser la DJA avec une consommation normale (le sucre du sirop pose bien plus problème !).",
+        "<strong>6.</strong> Pour aller plus loin : part du bleu patenté à 427 nm : 0,03 / 4,0 × 3,27 = 0,025. Part de la tartrazine : 0,448 − 0,025 = 0,423. C<sub>T</sub>(dilué) = 0,423 / 0,0470 = 9,0 mg·L⁻¹, d'où C<sub>T</sub>(sirop) = 20 × 9,0 = 1,8 × 10² mg·L⁻¹.",
+        "<em>⚠ Erreur fréquente : utiliser le volume de boisson (25 cL) au lieu du volume de sirop (25/8 cL) pour calculer la masse de colorant ingérée.</em>",
+        "<em>⚠ Erreur fréquente : oublier de multiplier par 20 pour revenir au sirop pur.</em>"
+      ]
+    }
+  ]
+}

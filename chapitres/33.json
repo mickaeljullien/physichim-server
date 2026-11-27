@@ -1,0 +1,713 @@
+{
+  "id": 33,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Modéliser une transformation chimique",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Transformation chimique",
+            "text": "Passage d'un système chimique d'un état initial (réactifs) à un état final (produits) avec formation de nouvelles espèces chimiques."
+          },
+          {
+            "type": "def",
+            "term": "Réaction chimique",
+            "text": "Modélisation, à l'échelle macroscopique, de la transformation chimique. Elle décrit le passage des réactifs aux produits."
+          },
+          {
+            "type": "text",
+            "text": "Au cours d'une transformation chimique, les réactifs sont consommés et les produits sont formés. Certaines espèces, dites spectatrices, ne participent pas à la réaction et n'apparaissent donc pas dans son équation."
+          }
+        ]
+      },
+      {
+        "title": "2. Équation de la réaction",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Équation de réaction",
+            "text": "Écriture symbolique qui traduit la conservation des éléments chimiques et de la charge électrique entre réactifs et produits. Seuls les réactifs et les produits y figurent, jamais les espèces spectatrices."
+          },
+          {
+            "type": "text",
+            "text": "Pour ajuster une équation, on place des nombres appelés nombres stœchiométriques devant les formules chimiques, afin que chaque élément (et la charge électrique) soit présent en même quantité de part et d'autre de la flèche."
+          },
+          {
+            "type": "formula",
+            "label": "Forme générale",
+            "text": "réactifs → produits\na A + b B → c C + d D\n(a, b, c, d : nombres stœchiométriques)"
+          },
+          {
+            "type": "warn",
+            "text": "On n'ajuste jamais les indices d'une formule chimique (ex. on n'écrit pas H4O2 à la place de 2 H2O) : seuls les nombres stœchiométriques placés devant les formules peuvent être modifiés."
+          }
+        ]
+      },
+      {
+        "title": "3. Les quatre réactions de référence du programme",
+        "icon": "🔥",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le programme officiel cite quatre exemples de transformations chimiques à connaître avec leur équation ajustée."
+          },
+          {
+            "type": "formula",
+            "label": "Combustion complète du méthane",
+            "text": "CH4 + 2 O2 → CO2 + 2 H2O"
+          },
+          {
+            "type": "text",
+            "text": "Vérification de la conservation : 1 C, 4 H et 4 O de chaque côté de l'équation."
+          },
+          {
+            "type": "formula",
+            "label": "Corrosion d'un métal (ex. le fer)",
+            "text": "Le fer, en présence de dioxygène et d'humidité, se corrode (rouille) : c'est une transformation chimique lente qui forme des oxydes de fer. On la modélise qualitativement par :\nfer + dioxygène → oxyde de fer"
+          },
+          {
+            "type": "formula",
+            "label": "Action d'un acide sur le calcaire",
+            "text": "CaCO3 (s) + 2 H⁺(aq) → Ca²⁺(aq) + H2O (l) + CO2 (g)"
+          },
+          {
+            "type": "text",
+            "text": "Le calcaire (carbonate de calcium CaCO3) réagit avec les ions oxonium (acide) : on observe une effervescence due au dégagement de dioxyde de carbone."
+          },
+          {
+            "type": "formula",
+            "label": "Réaction entre acide chlorhydrique et soude",
+            "text": "HCl (aq) + NaOH (aq) → NaCl (aq) + H2O (l)\nsoit, en ne gardant que les ions qui réagissent :\nH⁺(aq) + HO⁻(aq) → H2O (l)"
+          },
+          {
+            "type": "warn",
+            "text": "Dans HCl + NaOH → NaCl + H2O, les ions Cl⁻ et Na⁺ sont des ions spectateurs : ils sont présents avant et après la réaction sans être transformés."
+          }
+        ]
+      },
+      {
+        "title": "4. Réactif limitant",
+        "icon": "🚧",
+        "content": [
+          {
+            "type": "def",
+            "term": "Réactif limitant",
+            "text": "Lors d'une transformation chimique totale, réactif qui est entièrement consommé le premier, ce qui arrête la réaction. L'autre réactif, s'il en reste, est dit en excès."
+          },
+          {
+            "type": "text",
+            "text": "Méthode pour déterminer le réactif limitant : on calcule, pour chaque réactif, le rapport de sa quantité de matière initiale sur son nombre stœchiométrique. Le réactif qui a le plus petit rapport est le réactif limitant."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Réactif",
+              "n initial (mol)",
+              "Nombre stœchiométrique",
+              "Rapport n/coefficient"
+            ],
+            "rows": [
+              [
+                "A",
+                "n(A)",
+                "a",
+                "n(A)/a"
+              ],
+              [
+                "B",
+                "n(B)",
+                "b",
+                "n(B)/b"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Le réactif limitant correspond au rapport n/coefficient le plus petit : c'est lui qui impose la quantité maximale de produits formés."
+          }
+        ]
+      },
+      {
+        "title": "5. Effet thermique d'une transformation",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Transformation exothermique",
+            "text": "Transformation au cours de laquelle le système chimique libère de l'énergie vers le milieu extérieur, dont la température augmente (ex. une combustion)."
+          },
+          {
+            "type": "def",
+            "term": "Transformation endothermique",
+            "text": "Transformation au cours de laquelle le système chimique reçoit de l'énergie du milieu extérieur, dont la température diminue (ex. la dissolution du nitrate d'ammonium, utilisée dans les poches de froid)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Pour ajuster l'équation H₂ + O₂ → H₂O, on écrit :",
+      "opts": [
+        "H₂ + O₂ → H₂O₂",
+        "H₂ + O → H₂O",
+        "2 H₂ + O₂ → 2 H₂O",
+        "2 H₂ + O₂ → H₂O"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "indices-ajustes",
+          "texte": "Modifier les indices d'une formule : on obtient une autre espèce (H₂O₂ est l'eau oxygénée), on ne change que les nombres devant"
+        },
+        {
+          "code": "formule-reactif-modifiee",
+          "texte": "Modifier la formule d'un réactif : le dioxygène est formé de molécules O₂"
+        },
+        null,
+        {
+          "code": "ajustement-partiel",
+          "texte": "N'ajuster qu'un élément : avec 2 H₂ + O₂ → H₂O, il y a 4 H à gauche et 2 à droite"
+        }
+      ],
+      "exp": "2 H₂ + O₂ → 2 H₂O : 4 H et 2 O de chaque côté. Attention : on n'ajuste que les nombres stœchiométriques, jamais les indices."
+    },
+    {
+      "q": "Combustion du propane : C₃H₈ + … O₂ → 3 CO₂ + 4 H₂O. Le nombre stœchiométrique de O₂ est :",
+      "opts": [
+        "10",
+        "5",
+        "7",
+        "2"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "atomes-vs-molecules",
+          "texte": "Compter les atomes O au lieu des molécules O₂ : 10 atomes O correspondent à 5 molécules O₂"
+        },
+        null,
+        {
+          "code": "molecules-au-lieu-atomes",
+          "texte": "Compter les molécules de produits (3 + 4) au lieu des atomes O : 3 × 2 + 4 × 1 = 10 atomes O"
+        },
+        {
+          "code": "recopie-equation-methane",
+          "texte": "Recopier le coefficient de la combustion du méthane : il faut refaire le décompte pour le propane"
+        }
+      ],
+      "exp": "À droite : 3 × 2 + 4 × 1 = 10 atomes O ; il faut donc 10 / 2 = 5 molécules O₂. Équation : C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O."
+    },
+    {
+      "q": "On mélange de l'acide chlorhydrique (ions H⁺ et Cl⁻) et de la soude (ions Na⁺ et HO⁻). L'équation de la réaction s'écrit :",
+      "opts": [
+        "Na⁺ + Cl⁻ → NaCl",
+        "H⁺ + HO⁻ → H₂O",
+        "H⁺ + HO⁻ → H₂O + NaCl",
+        "H⁺ + Cl⁻ + Na⁺ + HO⁻ → H₂O"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "spectateurs-reagissent",
+          "texte": "Croire que Na⁺ et Cl⁻ réagissent : ils restent dispersés dans l'eau, ce sont des ions spectateurs"
+        },
+        null,
+        {
+          "code": "conservation-non-verifiee",
+          "texte": "Ajouter un produit sans vérifier la conservation : Na et Cl n'apparaissent pas parmi les réactifs"
+        },
+        {
+          "code": "spectateurs-dans-equation",
+          "texte": "Écrire les ions spectateurs dans l'équation : ils n'y figurent pas (et ici les éléments ne seraient pas conservés)"
+        }
+      ],
+      "exp": "Seuls H⁺ et HO⁻ réagissent : H⁺ + HO⁻ → H₂O. Les ions Na⁺ et Cl⁻ sont spectateurs : présents avant et après, ils ne figurent pas dans l'équation."
+    },
+    {
+      "q": "Action d'un acide sur le calcaire : CaCO₃(s) + … H⁺(aq) → Ca²⁺(aq) + H₂O(ℓ) + CO₂(g). Le nombre devant H⁺ est :",
+      "opts": [
+        "1",
+        "2",
+        "3, pour équilibrer les 3 atomes O",
+        "aucun : on écrit H₂⁺"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conservation-charge-oubliee",
+          "texte": "Oublier la conservation de la charge : à droite la charge vaut 2+, il faut donc 2 H⁺ à gauche (et 2 H dans H₂O)"
+        },
+        null,
+        {
+          "code": "mauvais-element-ajuste",
+          "texte": "Ajuster le mauvais élément : les O sont déjà équilibrés (3 de chaque côté), ce sont H et la charge qui imposent 2"
+        },
+        {
+          "code": "indices-ajustes",
+          "texte": "Modifier la formule d'une espèce : on ne touche jamais aux indices, seulement aux nombres placés devant"
+        }
+      ],
+      "exp": "Avec 2 H⁺ : 2 H et une charge 2+ de chaque côté. Attention : une équation conserve les éléments et la charge électrique."
+    },
+    {
+      "q": "Zn + 2 HCl → ZnCl₂ + H₂. On mélange 0,20 mol de zinc et 0,30 mol de chlorure d'hydrogène. Le réactif limitant est :",
+      "opts": [
+        "le zinc, car 0,20 mol est inférieur à 0,30 mol",
+        "le zinc, car son nombre stœchiométrique est le plus petit",
+        "aucun : à la fin, il reste un peu des deux réactifs",
+        "le chlorure d'hydrogène HCl"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "limitant-plus-petite-quantite",
+          "texte": "Désigner le réactif en plus petite quantité sans tenir compte des nombres stœchiométriques : il faut comparer 0,20 / 1 et 0,30 / 2"
+        },
+        {
+          "code": "limitant-par-coefficient",
+          "texte": "Choisir le réactif selon son seul nombre stœchiométrique : il faut comparer les rapports n / coefficient"
+        },
+        {
+          "code": "limitant-reste-des-deux",
+          "texte": "Croire qu'il reste des deux réactifs : lors d'une transformation totale, le réactif limitant est entièrement consommé"
+        },
+        null
+      ],
+      "exp": "Zn : 0,20 / 1 = 0,20 ; HCl : 0,30 / 2 = 0,15. Le plus petit rapport est celui de HCl : c'est le réactif limitant. Attention : il faut 2 HCl pour 1 Zn."
+    },
+    {
+      "q": "Zn + 2 HCl → ZnCl₂ + H₂. On mélange 0,20 mol de zinc et 0,30 mol de HCl ; la transformation est totale. La quantité de dihydrogène formée vaut :",
+      "opts": [
+        "0,15 mol",
+        "0,30 mol",
+        "0,20 mol",
+        "0,60 mol"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique 2 de HCl : 0,30 mol de HCl donnent 0,30 / 2 = 0,15 mol de H₂"
+        },
+        {
+          "code": "produit-avec-reactif-exces",
+          "texte": "Calculer avec le zinc, qui est en excès : c'est le réactif limitant (HCl) qui fixe la quantité de produit"
+        },
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Inverser le rapport stœchiométrique : 0,30 × 2 au lieu de 0,30 / 2"
+        }
+      ],
+      "exp": "HCl est limitant (0,30 / 2 = 0,15 < 0,20 / 1) ; 2 mol de HCl donnent 1 mol de H₂ : n(H₂) = 0,30 / 2 = 0,15 mol. Attention : c'est le réactif limitant qui fixe la quantité de produit."
+    },
+    {
+      "q": "On fait réagir du calcaire avec de l'acide dans un bécher ouvert posé sur une balance. La masse affichée diminue car :",
+      "opts": [
+        "la matière disparaît au cours d'une réaction chimique",
+        "le dioxyde de carbone formé s'échappe dans l'air",
+        "les atomes du calcaire sont détruits",
+        "les gaz formés n'ont pas de masse"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "masse-non-conservee",
+          "texte": "Croire que la masse ne se conserve pas : les atomes se réarrangent, la masse totale reste la même"
+        },
+        null,
+        {
+          "code": "atomes-detruits",
+          "texte": "Croire que les atomes sont détruits : lors d'une réaction chimique, ils se réarrangent et se conservent"
+        },
+        {
+          "code": "gaz-sans-masse",
+          "texte": "Croire qu'un gaz n'a pas de masse : le CO₂ a une masse, qui quitte le bécher avec lui"
+        }
+      ],
+      "exp": "La masse totale se conserve, mais le CO₂ gazeux quitte le bécher : la balance ne le pèse plus. Dans un récipient fermé, la masse resterait constante."
+    },
+    {
+      "q": "Dans CH₄ + 2 O₂ → CO₂ + 2 H₂O, le nombre 2 placé devant O₂ signifie que :",
+      "opts": [
+        "il réagit 2 molécules de O₂ pour 1 molécule de CH₄",
+        "il faut introduire exactement 2 mol de O₂ dans le réacteur",
+        "la molécule de dioxygène contient 2 atomes",
+        "le dioxygène est deux fois plus lourd que le méthane"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "coefficients-quantites-initiales",
+          "texte": "Croire que les nombres stœchiométriques donnent les quantités introduites : ils donnent les proportions dans lesquelles les espèces réagissent"
+        },
+        {
+          "code": "coefficient-vs-indice",
+          "texte": "Confondre nombre stœchiométrique et indice : le 2 de O₂ (indice) indique 2 atomes, le 2 placé devant indique 2 molécules"
+        },
+        {
+          "code": "coefficient-masse",
+          "texte": "Croire que le nombre stœchiométrique renseigne sur la masse : il indique un nombre d'entités"
+        }
+      ],
+      "exp": "Les nombres stœchiométriques donnent les proportions de la réaction : 1 CH₄ réagit avec 2 O₂. Attention : ils ne disent rien des quantités introduites au départ."
+    },
+    {
+      "q": "Dans une poche de froid, du nitrate d'ammonium se dissout dans l'eau et la poche se refroidit. Cette transformation est :",
+      "opts": [
+        "exothermique : elle produit du froid",
+        "exothermique, car la température change",
+        "sans échange d'énergie avec l'extérieur",
+        "endothermique"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "froid-substance",
+          "texte": "Croire que le froid est une substance qui se transmet : c'est le milieu extérieur (la main) qui cède de l'énergie"
+        },
+        {
+          "code": "endo-exo-inverses",
+          "texte": "Inverser endothermique et exothermique : si le milieu extérieur se refroidit, la transformation reçoit de l'énergie, elle est endothermique"
+        },
+        {
+          "code": "changement-temperature-sans-transfert",
+          "texte": "Croire que la température peut baisser sans transfert d'énergie : le refroidissement montre que de l'énergie est absorbée"
+        },
+        null
+      ],
+      "exp": "La transformation reçoit de l'énergie du milieu extérieur, qui se refroidit : elle est endothermique. Attention : le froid n'est pas produit, c'est de l'énergie qui est absorbée."
+    },
+    {
+      "q": "Parmi ces transformations, laquelle est une transformation chimique ?",
+      "opts": [
+        "la fusion de la cire d'une bougie",
+        "la combustion de la mèche et de la cire d'une bougie",
+        "la dissolution du sel dans l'eau",
+        "l'évaporation de l'eau d'une flaque"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "fusion-vs-chimique",
+          "texte": "Croire que fondre est une transformation chimique : la cire liquide est toujours de la cire"
+        },
+        null,
+        {
+          "code": "dissolution-vs-chimique",
+          "texte": "Croire que la dissolution forme une nouvelle espèce : le sel est dispersé dans l'eau, sans être transformé"
+        },
+        {
+          "code": "changement-etat-nouvelle-espece",
+          "texte": "Croire qu'un changement d'état crée une nouvelle espèce : la vapeur est toujours de l'eau"
+        }
+      ],
+      "exp": "Lors de la combustion, de nouvelles espèces apparaissent (dioxyde de carbone, eau) : c'est chimique. Fusion, dissolution et évaporation sont physiques."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le détartrage de la bouilloire",
+      "contexte": [
+        "La bouilloire de Sami est recouverte d'un dépôt blanc de calcaire (carbonate de calcium CaCO₃). Il y verse un détartrant à base d'acide chlorhydrique dilué. Aussitôt, une effervescence apparaît : des bulles de gaz se forment. Une heure plus tard, le dépôt a disparu. Le document ci-dessous liste les espèces chimiques présentes avant et après."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"40\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\">Espèces chimiques présentes dans la bouilloire</text><rect x=\"40\" y=\"70\" width=\"300\" height=\"330\" rx=\"14\" fill=\"#fbf8f2\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"190\" y=\"105\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#1F4E5A\">ÉTAT INITIAL</text><text x=\"70\" y=\"150\" font-size=\"19\">• calcaire CaCO₃(s)</text><text x=\"70\" y=\"192\" font-size=\"19\">• ions hydrogène H⁺(aq)</text><text x=\"70\" y=\"234\" font-size=\"19\">• ions chlorure Cl⁻(aq)</text><text x=\"70\" y=\"276\" font-size=\"19\">• eau H₂O(l)</text><rect x=\"420\" y=\"70\" width=\"300\" height=\"330\" rx=\"14\" fill=\"#fbf8f2\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"570\" y=\"105\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">ÉTAT FINAL</text><text x=\"450\" y=\"150\" font-size=\"19\">• ions calcium Ca²⁺(aq)</text><text x=\"450\" y=\"192\" font-size=\"19\">• dioxyde de carbone CO₂(g)</text><text x=\"450\" y=\"234\" font-size=\"19\">• ions hydrogène H⁺(aq)</text><text x=\"450\" y=\"276\" font-size=\"19\">• ions chlorure Cl⁻(aq)</text><text x=\"450\" y=\"318\" font-size=\"19\">• eau H₂O(l)</text><line x1=\"350\" y1=\"235\" x2=\"408\" y2=\"235\" stroke=\"#C8962E\" stroke-width=\"5\"/><polygon points=\"414,235 398,225 398,245\" fill=\"#C8962E\"/><text x=\"380\" y=\"440\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3a3a3a\">À l'état final, il ne reste plus de calcaire au fond de la bouilloire.</text></svg>",
+      "questions": [
+        {
+          "texte": "S'agit-il d'une transformation physique ou d'une transformation chimique ? Justifie à l'aide du document.",
+          "aides": []
+        },
+        {
+          "texte": "Recopie et complète le tableau en classant les espèces : réactifs (consommés), produits (formés), espèces spectatrices (présentes avant et après sans être transformées). Indice : l'eau est le solvant ; elle est présente avant et après, mais elle est aussi formée par la réaction.",
+          "aides": [
+            "Une espèce qui disparaît ou dont la quantité diminue est un réactif ; une espèce qui apparaît est un produit.",
+            "Compare les deux colonnes : qui n'est présent qu'à gauche ? qui n'est présent qu'à droite ? qui est dans les deux sans changer ?"
+          ]
+        },
+        {
+          "texte": "Les ions chlorure Cl⁻ apparaissent-ils dans l'équation de la réaction ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "L'équation de la réaction s'écrit : CaCO₃(s) + 2 H⁺(aq) → Ca²⁺(aq) + H₂O(l) + CO₂(g). Retrouve dans cette équation les réactifs et les produits de la question 2.",
+          "aides": []
+        },
+        {
+          "texte": "À l'état final, il ne reste plus de calcaire, mais il reste des ions H⁺. Quel est le réactif limitant ? Quel réactif est en excès ?",
+          "aides": [
+            "Le réactif limitant est celui qui est entièrement consommé.",
+            "Lequel des deux réactifs n'est plus présent dans l'état final ?"
+          ]
+        },
+        {
+          "texte": "Quel test Sami peut-il réaliser pour vérifier que le gaz formé est du dioxyde de carbone ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C'est une transformation chimique : de nouvelles espèces chimiques apparaissent (ions calcium Ca²⁺ et dioxyde de carbone CO₂) et le calcaire CaCO₃ disparaît.",
+        "<strong>2.</strong> Réactifs : calcaire CaCO₃(s) et ions hydrogène H⁺(aq) (une partie est consommée). Produits : ions calcium Ca²⁺(aq), dioxyde de carbone CO₂(g) et eau H₂O(l). Espèce spectatrice : ions chlorure Cl⁻(aq).",
+        "<strong>3.</strong> Non : les ions Cl⁻ sont présents à l'état initial et à l'état final sans être transformés. Ce sont des ions spectateurs ; ils n'apparaissent jamais dans l'équation de la réaction.",
+        "<strong>4.</strong> À gauche de la flèche, les réactifs : CaCO₃ et H⁺. À droite, les produits : Ca²⁺, H₂O et CO₂.",
+        "<strong>5.</strong> Le calcaire a entièrement disparu : c'est le réactif limitant (c'est lui qui arrête la réaction). Il reste des ions H⁺ : l'acide est en excès.",
+        "<strong>6.</strong> On fait barboter le gaz dans de l'eau de chaux : si elle se trouble, le gaz est du dioxyde de carbone.",
+        "<em>⚠ Erreur fréquente : classer H⁺ comme espèce spectatrice parce qu'il est présent à l'état final. Il en reste, mais sa quantité a diminué : c'est un réactif en excès.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Ajuster, c'est compter",
+      "contexte": [
+        "Dans une gazinière, le méthane CH₄ brûle dans le dioxygène O₂ de l'air. La combustion complète forme du dioxyde de carbone CO₂ et de l'eau H₂O. Son équation ajustée s'écrit : CH₄ + 2 O₂ → CO₂ + 2 H₂O."
+      ],
+      "questions": [
+        {
+          "texte": "Recopie et complète le tableau : pour chaque élément (C, H, O), indique le nombre d'atomes du côté des réactifs et du côté des produits. Que constates-tu ?",
+          "aides": [
+            "Un nombre stœchiométrique multiplie tous les atomes de la formule qui le suit.",
+            "Exemple : 2 O₂ contient 2 × 2 = 4 atomes d'oxygène ; 2 H₂O contient 2 × 2 = 4 atomes H et 2 × 1 = 2 atomes O."
+          ]
+        },
+        {
+          "texte": "Avant d'ajuster, Inès avait écrit : CH₄ + O₂ → CO₂ + H₂O. Montre que cette écriture ne respecte pas la conservation des éléments.",
+          "aides": []
+        },
+        {
+          "texte": "Pour ajuster, Inès propose ensuite : CH₄ + 2 O₂ → CO₂ + H₄O₂. Vrai ou faux : « Cette équation est correcte, car il y a autant d'atomes de chaque élément de chaque côté. » Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Ajuste les équations suivantes en plaçant le bon nombre stœchiométrique devant chaque formule (un nombre 1 ne s'écrit pas).<br>a. Fonctionnement d'une pile à hydrogène : … H₂ + … O₂ → … H₂O<br>b. Formation de la rouille : … Fe + … O₂ → … Fe₂O₃<br>c. Action d'un acide sur le zinc : … Zn + … H⁺ → … Zn²⁺ + … H₂ (vérifie aussi la conservation de la charge électrique)",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réactifs : C : 1 ; H : 4 ; O : 2 × 2 = 4. Produits : C : 1 ; H : 2 × 2 = 4 ; O : 2 + 2 × 1 = 4. Chaque élément est présent en même nombre de part et d'autre de la flèche : l'équation traduit la conservation des éléments.",
+        "<strong>2.</strong> Réactifs : 1 C, 4 H, 2 O. Produits : 1 C, 2 H, 3 O. Il manque 2 H et il y a 1 O de trop côté produits : les éléments H et O ne sont pas conservés.",
+        "<strong>3.</strong> FAUX. Les atomes sont bien conservés (1 C, 4 H, 4 O de chaque côté), mais Inès a modifié la formule de l'eau : H₄O₂ n'est pas l'eau. On n'ajuste jamais les indices d'une formule ; on place un nombre stœchiométrique devant : 2 H₂O.",
+        "<strong>4.</strong> a. 2 H₂ + O₂ → 2 H₂O (4 H et 2 O de chaque côté).",
+        "b. 4 Fe + 3 O₂ → 2 Fe₂O₃ (4 Fe et 6 O de chaque côté).",
+        "c. Zn + 2 H⁺ → Zn²⁺ + H₂. Éléments : 1 Zn et 2 H de chaque côté. Charges : à gauche 2 × (+1) = +2 ; à droite +2. La charge électrique est conservée.",
+        "<em>⚠ Erreur fréquente : pour la rouille, écrire 2 Fe + O₂ → Fe₂O₃ : le fer est équilibré, mais il y a 2 O à gauche et 3 O à droite. Il faut un nombre pair d'atomes O à droite, d'où 2 Fe₂O₃.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Chaud devant, froid derrière",
+      "contexte": [
+        "Une chaufferette de poche contient de la poudre de fer. Quand on ouvre l'emballage, le fer réagit avec le dioxygène de l'air et l'humidité : c'est une corrosion très rapide (fer + dioxygène → oxyde de fer). Une poche de froid, utilisée par les soigneurs sur un terrain de foot, contient du nitrate d'ammonium et une poche d'eau : en pressant la poche, le nitrate d'ammonium se dissout dans l'eau.",
+        "Un élève mesure la température de chaque poche au cours du temps. Ses mesures sont représentées ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"420\" x2=\"80.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">0</text><line x1=\"144.0\" y1=\"420\" x2=\"144.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"144.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">1</text><line x1=\"208.0\" y1=\"420\" x2=\"208.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"208.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">2</text><line x1=\"272.0\" y1=\"420\" x2=\"272.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"272.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">3</text><line x1=\"336.0\" y1=\"420\" x2=\"336.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"336.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">4</text><line x1=\"400.0\" y1=\"420\" x2=\"400.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"400.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">5</text><line x1=\"464.0\" y1=\"420\" x2=\"464.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"464.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">6</text><line x1=\"528.0\" y1=\"420\" x2=\"528.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"528.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">7</text><line x1=\"592.0\" y1=\"420\" x2=\"592.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"592.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">8</text><line x1=\"656.0\" y1=\"420\" x2=\"656.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"656.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">9</text><line x1=\"720.0\" y1=\"420\" x2=\"720.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"720.0\" y=\"442\" text-anchor=\"middle\" font-size=\"15\">10</text><line x1=\"80\" y1=\"420.0\" x2=\"720\" y2=\"420.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"425.0\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"80\" y1=\"391.7\" x2=\"720\" y2=\"391.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"396.7\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"80\" y1=\"363.3\" x2=\"720\" y2=\"363.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"368.3\" text-anchor=\"end\" font-size=\"15\">10</text><line x1=\"80\" y1=\"335.0\" x2=\"720\" y2=\"335.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"340.0\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"80\" y1=\"306.7\" x2=\"720\" y2=\"306.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"311.7\" text-anchor=\"end\" font-size=\"15\">20</text><line x1=\"80\" y1=\"278.3\" x2=\"720\" y2=\"278.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"283.3\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"80\" y1=\"250.0\" x2=\"720\" y2=\"250.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"255.0\" text-anchor=\"end\" font-size=\"15\">30</text><line x1=\"80\" y1=\"221.7\" x2=\"720\" y2=\"221.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"226.7\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"80\" y1=\"193.3\" x2=\"720\" y2=\"193.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"198.3\" text-anchor=\"end\" font-size=\"15\">40</text><line x1=\"80\" y1=\"165.0\" x2=\"720\" y2=\"165.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"170.0\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"80\" y1=\"136.7\" x2=\"720\" y2=\"136.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"141.7\" text-anchor=\"end\" font-size=\"15\">50</text><line x1=\"80\" y1=\"108.3\" x2=\"720\" y2=\"108.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"113.3\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"80\" y1=\"80.0\" x2=\"720\" y2=\"80.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"85.0\" text-anchor=\"end\" font-size=\"15\">60</text><line x1=\"80\" y1=\"420\" x2=\"730\" y2=\"420\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"80\" y1=\"420\" x2=\"80\" y2=\"70\" stroke=\"#000\" stroke-width=\"2\"/><text x=\"720\" y=\"468\" text-anchor=\"end\" font-size=\"16\">temps t (min)</text><text x=\"70\" y=\"58\" text-anchor=\"start\" font-size=\"16\">température θ (°C)</text><polyline points=\"80.0,306.7 83.2,297.5 86.4,288.8 89.6,280.6 92.8,272.8 96.0,265.4 99.2,258.5 102.4,251.9 105.6,245.7 108.8,239.8 112.0,234.2 115.2,228.9 118.4,223.9 121.6,219.2 124.8,214.8 128.0,210.5 131.2,206.6 134.4,202.8 137.6,199.2 140.8,195.8 144.0,192.6 147.2,189.6 150.4,186.7 153.6,184.0 156.8,181.5 160.0,179.1 163.2,176.8 166.4,174.6 169.6,172.5 172.8,170.6 176.0,168.8 179.2,167.0 182.4,165.4 185.6,163.8 188.8,162.4 192.0,161.0 195.2,159.7 198.4,158.4 201.6,157.3 204.8,156.1 208.0,155.1 211.2,154.1 214.4,153.2 217.6,152.3 220.8,151.4 224.0,150.6 227.2,149.9 230.4,149.2 233.6,148.5 236.8,147.8 240.0,147.2 243.2,146.7 246.4,146.1 249.6,145.6 252.8,145.1 256.0,144.7 259.2,144.2 262.4,143.8 265.6,143.4 268.8,143.1 272.0,142.7 275.2,142.4 278.4,142.1 281.6,141.8 284.8,141.5 288.0,141.3 291.2,141.0 294.4,140.8 297.6,140.6 300.8,140.3 304.0,140.1 307.2,140.0 310.4,139.8 313.6,139.6 316.8,139.5 320.0,139.3 323.2,139.2 326.4,139.0 329.6,138.9 332.8,138.8 336.0,138.7 339.2,138.6 342.4,138.5 345.6,138.4 348.8,138.3 352.0,138.2 355.2,138.1 358.4,138.0 361.6,137.9 364.8,137.9 368.0,137.8 371.2,137.8 374.4,137.7 377.6,137.6 380.8,137.6 384.0,137.5 387.2,137.5 390.4,137.4 393.6,137.4 396.8,137.4 400.0,137.3 403.2,137.3 406.4,137.3 409.6,137.2 412.8,137.2 416.0,137.2 419.2,137.1 422.4,137.1 425.6,137.1 428.8,137.1 432.0,137.0 435.2,137.0 438.4,137.0 441.6,137.0 444.8,137.0 448.0,137.0 451.2,136.9 454.4,136.9 457.6,136.9 460.8,136.9 464.0,136.9 467.2,136.9 470.4,136.9 473.6,136.8 476.8,136.8 480.0,136.8 483.2,136.8 486.4,136.8 489.6,136.8 492.8,136.8 496.0,136.8 499.2,136.8 502.4,136.8 505.6,136.8 508.8,136.8 512.0,136.8 515.2,136.8 518.4,136.8 521.6,136.7 524.8,136.7 528.0,136.7 531.2,136.7 534.4,136.7 537.6,136.7 540.8,136.7 544.0,136.7 547.2,136.7 550.4,136.7 553.6,136.7 556.8,136.7 560.0,136.7 563.2,136.7 566.4,136.7 569.6,136.7 572.8,136.7 576.0,136.7 579.2,136.7 582.4,136.7 585.6,136.7 588.8,136.7 592.0,136.7 595.2,136.7 598.4,136.7 601.6,136.7 604.8,136.7 608.0,136.7 611.2,136.7 614.4,136.7 617.6,136.7 620.8,136.7 624.0,136.7 627.2,136.7 630.4,136.7 633.6,136.7 636.8,136.7 640.0,136.7 643.2,136.7 646.4,136.7 649.6,136.7 652.8,136.7 656.0,136.7 659.2,136.7 662.4,136.7 665.6,136.7 668.8,136.7 672.0,136.7 675.2,136.7 678.4,136.7 681.6,136.7 684.8,136.7 688.0,136.7 691.2,136.7 694.4,136.7 697.6,136.7 700.8,136.7 704.0,136.7 707.2,136.7 710.4,136.7 713.6,136.7 716.8,136.7 720.0,136.7\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polyline points=\"80.0,306.7 83.2,312.2 86.4,317.3 89.6,322.2 92.8,326.7 96.0,331.0 99.2,335.0 102.4,338.8 105.6,342.3 108.8,345.7 112.0,348.8 115.2,351.7 118.4,354.5 121.6,357.1 124.8,359.5 128.0,361.8 131.2,364.0 134.4,366.0 137.6,367.9 140.8,369.7 144.0,371.4 147.2,372.9 150.4,374.4 153.6,375.8 156.8,377.1 160.0,378.3 163.2,379.5 166.4,380.6 169.6,381.6 172.8,382.5 176.0,383.4 179.2,384.3 182.4,385.1 185.6,385.8 188.8,386.5 192.0,387.2 195.2,387.8 198.4,388.4 201.6,388.9 204.8,389.4 208.0,389.9 211.2,390.3 214.4,390.8 217.6,391.2 220.8,391.5 224.0,391.9 227.2,392.2 230.4,392.5 233.6,392.8 236.8,393.1 240.0,393.3 243.2,393.6 246.4,393.8 249.6,394.0 252.8,394.2 256.0,394.4 259.2,394.6 262.4,394.8 265.6,394.9 268.8,395.1 272.0,395.2 275.2,395.3 278.4,395.5 281.6,395.6 284.8,395.7 288.0,395.8 291.2,395.9 294.4,396.0 297.6,396.0 300.8,396.1 304.0,396.2 307.2,396.3 310.4,396.3 313.6,396.4 316.8,396.4 320.0,396.5 323.2,396.5 326.4,396.6 329.6,396.6 332.8,396.7 336.0,396.7 339.2,396.8 342.4,396.8 345.6,396.8 348.8,396.9 352.0,396.9 355.2,396.9 358.4,396.9 361.6,397.0 364.8,397.0 368.0,397.0 371.2,397.0 374.4,397.0 377.6,397.1 380.8,397.1 384.0,397.1 387.2,397.1 390.4,397.1 393.6,397.1 396.8,397.1 400.0,397.2 403.2,397.2 406.4,397.2 409.6,397.2 412.8,397.2 416.0,397.2 419.2,397.2 422.4,397.2 425.6,397.2 428.8,397.2 432.0,397.2 435.2,397.2 438.4,397.3 441.6,397.3 444.8,397.3 448.0,397.3 451.2,397.3 454.4,397.3 457.6,397.3 460.8,397.3 464.0,397.3 467.2,397.3 470.4,397.3 473.6,397.3 476.8,397.3 480.0,397.3 483.2,397.3 486.4,397.3 489.6,397.3 492.8,397.3 496.0,397.3 499.2,397.3 502.4,397.3 505.6,397.3 508.8,397.3 512.0,397.3 515.2,397.3 518.4,397.3 521.6,397.3 524.8,397.3 528.0,397.3 531.2,397.3 534.4,397.3 537.6,397.3 540.8,397.3 544.0,397.3 547.2,397.3 550.4,397.3 553.6,397.3 556.8,397.3 560.0,397.3 563.2,397.3 566.4,397.3 569.6,397.3 572.8,397.3 576.0,397.3 579.2,397.3 582.4,397.3 585.6,397.3 588.8,397.3 592.0,397.3 595.2,397.3 598.4,397.3 601.6,397.3 604.8,397.3 608.0,397.3 611.2,397.3 614.4,397.3 617.6,397.3 620.8,397.3 624.0,397.3 627.2,397.3 630.4,397.3 633.6,397.3 636.8,397.3 640.0,397.3 643.2,397.3 646.4,397.3 649.6,397.3 652.8,397.3 656.0,397.3 659.2,397.3 662.4,397.3 665.6,397.3 668.8,397.3 672.0,397.3 675.2,397.3 678.4,397.3 681.6,397.3 684.8,397.3 688.0,397.3 691.2,397.3 694.4,397.3 697.6,397.3 700.8,397.3 704.0,397.3 707.2,397.3 710.4,397.3 713.6,397.3 716.8,397.3 720.0,397.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3.5\"/><rect x=\"420\" y=\"215\" width=\"290\" height=\"62\" fill=\"#fff\" stroke=\"#d9d2c5\"/><line x1=\"432\" y1=\"235\" x2=\"462\" y2=\"235\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><text x=\"470\" y=\"240\" font-size=\"15\">A : chaufferette (fer + air)</text><line x1=\"432\" y1=\"260\" x2=\"462\" y2=\"260\" stroke=\"#1F4E5A\" stroke-width=\"3.5\"/><text x=\"470\" y=\"265\" font-size=\"15\">B : poche de froid</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis sur le graphique la température initiale et la température à t = 5 min de chaque poche.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la variation de température Δθ = θ(5 min) − θ(0) pour chaque poche.",
+          "aides": [
+            "Fais bien θ(final) − θ(initial), dans cet ordre.",
+            "Un Δθ positif signifie que la température augmente ; un Δθ négatif qu'elle diminue."
+          ]
+        },
+        {
+          "texte": "Complète avec « exothermique » ou « endothermique » : « La transformation dans la chaufferette est … : le système libère de l'énergie vers le milieu extérieur. La transformation dans la poche de froid est … : le système reçoit de l'énergie du milieu extérieur. »",
+          "aides": [
+            "Si la poche chauffe la main, l'énergie va du système vers l'extérieur ; si elle la refroidit, l'énergie va de l'extérieur vers le système.",
+            "Exo- signifie « vers l'extérieur », endo- signifie « vers l'intérieur »."
+          ]
+        },
+        {
+          "texte": "Donne un autre exemple de transformation exothermique cité dans le cours.",
+          "aides": []
+        },
+        {
+          "texte": "Pour mettre en évidence l'effet thermique d'une transformation au laboratoire, remets dans l'ordre les étapes suivantes : (A) mélanger les réactifs et agiter ; (B) mesurer la température initiale des réactifs avec un thermomètre ; (C) relever la température régulièrement jusqu'à ce qu'elle ne varie plus ; (D) conclure en comparant la température finale à la température initiale.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Chaufferette A : θ(0) = 20 °C et θ(5 min) = 50 °C. Poche de froid B : θ(0) = 20 °C et θ(5 min) = 4 °C.",
+        "<strong>2.</strong> A : Δθ = 50 − 20 = +30 °C (la température augmente). B : Δθ = 4 − 20 = −16 °C (la température diminue).",
+        "<strong>3.</strong> « La transformation dans la chaufferette est exothermique […]. La transformation dans la poche de froid est endothermique […]. »",
+        "<strong>4.</strong> La combustion (par exemple celle du méthane dans une gazinière) est exothermique. La réaction entre l'acide chlorhydrique et la soude l'est aussi.",
+        "<strong>5.</strong> Ordre : B → A → C → D.",
+        "<em>⚠ Erreur fréquente : croire qu'une transformation endothermique « produit du froid ». Le système reçoit de l'énergie du milieu extérieur (la main, la cheville), c'est pour cela que celui-ci se refroidit.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le réchaud de camping",
+      "contexte": [
+        "Le réchaud de camping de Yasmine fonctionne au propane C₃H₈. Lors de sa combustion complète dans le dioxygène O₂, il se forme du dioxyde de carbone et de l'eau.",
+        "Pour comprendre ce qui se passe à l'échelle microscopique, on imagine un tout petit volume de mélange contenant 4 molécules de propane et 15 molécules de dioxygène."
+      ],
+      "questions": [
+        {
+          "texte": "Écris et ajuste l'équation de la combustion complète du propane.",
+          "aides": [
+            "Commence par le carbone, puis l'hydrogène ; ajuste l'oxygène en dernier, car O₂ ne contient que de l'oxygène.",
+            "3 C donnent 3 CO₂ ; 8 H donnent 4 H₂O. Compte alors les atomes O à droite."
+          ]
+        },
+        {
+          "texte": "Pourquoi ne peut-on pas conclure que le propane est le réactif limitant simplement parce que 4 est plus petit que 15 ?",
+          "aides": []
+        },
+        {
+          "texte": "Détermine le réactif limitant du mélange.",
+          "aides": [
+            "Pour chaque réactif, divise son nombre initial de molécules par son nombre stœchiométrique.",
+            "Le réactif qui a le plus petit rapport est le réactif limitant."
+          ]
+        },
+        {
+          "texte": "Donne la composition du système à l'état final (nombre de molécules de chaque espèce).",
+          "aides": [
+            "Le plus petit rapport indique combien de fois la réaction a lieu.",
+            "Multiplie ce nombre par chaque nombre stœchiométrique pour trouver ce qui est consommé et ce qui est formé."
+          ]
+        },
+        {
+          "texte": "Vérifie que les atomes de carbone, d'hydrogène et d'oxygène sont conservés entre l'état initial et l'état final.",
+          "aides": []
+        },
+        {
+          "texte": "Combien de molécules de dioxygène auraient été nécessaires pour brûler entièrement les 4 molécules de propane ?",
+          "aides": []
+        },
+        {
+          "texte": "Quand le dioxygène manque, la combustion est incomplète et produit du monoxyde de carbone CO, un gaz très toxique et inodore. Explique pourquoi il ne faut jamais faire fonctionner un réchaud dans une tente fermée.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O. Vérification : 3 C ; 8 H ; 5 × 2 = 10 O à gauche et 3 × 2 + 4 × 1 = 10 O à droite.",
+        "<strong>2.</strong> Une molécule de propane réagit avec 5 molécules de dioxygène : les deux réactifs ne sont pas consommés au même rythme. Il faut tenir compte des nombres stœchiométriques.",
+        "<strong>3.</strong> On divise le nombre initial de molécules de chaque réactif par son nombre stœchiométrique : propane : 4 / 1 = 4 ; dioxygène : 15 / 5 = 3. Le plus petit rapport est celui du dioxygène : O₂ est le réactif limitant. La réaction peut se produire 3 fois.",
+        "<strong>4.</strong> Consommés : 3 × 1 = 3 C₃H₈ et 3 × 5 = 15 O₂. Formés : 3 × 3 = 9 CO₂ et 3 × 4 = 12 H₂O. État final : 4 − 3 = 1 molécule de C₃H₈ (en excès), 0 molécule de O₂, 9 molécules de CO₂, 12 molécules de H₂O.",
+        "<strong>5.</strong> État initial : C : 4 × 3 = 12 ; H : 4 × 8 = 32 ; O : 15 × 2 = 30. État final : C : 1 × 3 + 9 = 12 ; H : 1 × 8 + 12 × 2 = 32 ; O : 9 × 2 + 12 = 30. Les trois éléments sont conservés.",
+        "<strong>6.</strong> Il faut 5 molécules de O₂ par molécule de propane : 4 × 5 = 20 molécules de O₂.",
+        "<strong>7.</strong> Dans une tente fermée, le dioxygène s'épuise vite (il devient le réactif limitant) : la combustion devient incomplète et produit du monoxyde de carbone, toxique et inodore, qui s'accumule. On ne s'en rend pas compte avant d'être intoxiqué.",
+        "<em>⚠ Erreur fréquente : désigner comme limitant le réactif le moins nombreux (ici le propane) sans diviser par les nombres stœchiométriques.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Neutraliser un acide avant de le jeter",
+      "contexte": [
+        "Au laboratoire, on ne jette pas une solution acide à l'évier : on la neutralise d'abord avec de la soude. Un technicien mélange une solution d'acide chlorhydrique et une solution d'hydroxyde de sodium. L'équation de la réaction est : HCl(aq) + NaOH(aq) → NaCl(aq) + H₂O(l).",
+        "Les quantités d'ions sont données en mol (la mole, unité de quantité de matière, sera étudiée au chapitre suivant) : il suffit ici de les comparer et de les combiner comme des nombres d'entités.",
+        "Pour étudier l'effet thermique, il réalise six mélanges contenant chacun n(H⁺) = 0,020 mol d'ions hydrogène et des quantités croissantes d'ions hydroxyde, puis mesure l'élévation de température ΔT de chaque mélange (graphique ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"90.0\" y1=\"410\" x2=\"90.0\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"90.0\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,000</text><line x1=\"193.3\" y1=\"410\" x2=\"193.3\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"193.3\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,005</text><line x1=\"296.7\" y1=\"410\" x2=\"296.7\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"296.7\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,010</text><line x1=\"400.0\" y1=\"410\" x2=\"400.0\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"400.0\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,015</text><line x1=\"503.3\" y1=\"410\" x2=\"503.3\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"503.3\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,020</text><line x1=\"606.7\" y1=\"410\" x2=\"606.7\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"606.7\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,025</text><line x1=\"710.0\" y1=\"410\" x2=\"710.0\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"710.0\" y=\"432\" text-anchor=\"middle\" font-size=\"15\">0,030</text><line x1=\"90\" y1=\"410.0\" x2=\"710\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"415.0\" text-anchor=\"end\" font-size=\"15\">0,0</text><line x1=\"90\" y1=\"364.3\" x2=\"710\" y2=\"364.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"369.3\" text-anchor=\"end\" font-size=\"15\">0,5</text><line x1=\"90\" y1=\"318.6\" x2=\"710\" y2=\"318.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"323.6\" text-anchor=\"end\" font-size=\"15\">1,0</text><line x1=\"90\" y1=\"272.9\" x2=\"710\" y2=\"272.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"277.9\" text-anchor=\"end\" font-size=\"15\">1,5</text><line x1=\"90\" y1=\"227.1\" x2=\"710\" y2=\"227.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"232.1\" text-anchor=\"end\" font-size=\"15\">2,0</text><line x1=\"90\" y1=\"181.4\" x2=\"710\" y2=\"181.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"186.4\" text-anchor=\"end\" font-size=\"15\">2,5</text><line x1=\"90\" y1=\"135.7\" x2=\"710\" y2=\"135.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"140.7\" text-anchor=\"end\" font-size=\"15\">3,0</text><line x1=\"90\" y1=\"90.0\" x2=\"710\" y2=\"90.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"95.0\" text-anchor=\"end\" font-size=\"15\">3,5</text><line x1=\"90\" y1=\"410\" x2=\"720\" y2=\"410\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"90\" y1=\"410\" x2=\"90\" y2=\"80\" stroke=\"#000\" stroke-width=\"2\"/><text x=\"710\" y=\"458\" text-anchor=\"end\" font-size=\"16\">n(HO⁻) introduite (mol)</text><text x=\"80\" y=\"68\" text-anchor=\"start\" font-size=\"16\">élévation de température ΔT (°C)</text><path d=\"M186.3,339.0 L200.3,353.0 M186.3,353.0 L200.3,339.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M289.7,275.0 L303.7,289.0 M289.7,289.0 L303.7,275.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M393.0,220.1 L407.0,234.1 M393.0,234.1 L407.0,220.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M496.3,156.1 L510.3,170.1 M496.3,170.1 L510.3,156.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M599.7,156.1 L613.7,170.1 M599.7,170.1 L613.7,156.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M703.0,156.1 L717.0,170.1 M703.0,170.1 L717.0,156.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">n(H⁺) = 0,020 mol dans chaque mélange ; volume total : 100 mL</text></svg>",
+      "questions": [
+        {
+          "texte": "En utilisant les données, identifie les ions spectateurs de cette réaction. Écris l'équation simplifiée, sans les ions spectateurs, et vérifie qu'elle conserve les éléments et la charge électrique.",
+          "aides": [
+            "Écris les ions présents dans chaque solution des données, à gauche et à droite de l'équation.",
+            "Un ion qui se retrouve identique des deux côtés est spectateur : on le supprime de l'équation."
+          ]
+        },
+        {
+          "texte": "Dans un premier mélange, le technicien introduit n(H⁺) = 0,020 mol et n(HO⁻) = 0,015 mol. Détermine le réactif limitant, puis la composition de l'état final (ions H⁺, HO⁻, Na⁺, Cl⁻ et eau formée).",
+          "aides": [
+            "Les nombres stœchiométriques de H⁺ et HO⁻ valent 1 : compare directement les quantités.",
+            "Le réactif limitant disparaît entièrement ; retire sa quantité à celle de l'autre réactif."
+          ]
+        },
+        {
+          "texte": "La solution obtenue est-elle neutralisée ? Quelle quantité d'ions HO⁻ faut-il encore ajouter ?",
+          "aides": []
+        },
+        {
+          "texte": "D'après le graphique, la transformation est-elle exothermique ou endothermique ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Pour les quatre premiers mélanges, quel est le réactif limitant ? Montre que ΔT est alors proportionnelle à n(HO⁻), puis prévois ΔT pour n(HO⁻) = 0,012 mol.",
+          "aides": [
+            "Tant que n(HO⁻) est inférieure à 0,020 mol, quel ion est entièrement consommé ?",
+            "Calcule ΔT / n(HO⁻) pour plusieurs points : que remarques-tu ?",
+            "Utilise ensuite la proportionnalité (produit en croix) à partir du point n(HO⁻) = 0,010 mol."
+          ]
+        },
+        {
+          "texte": "Explique pourquoi ΔT n'augmente plus au-delà de n(HO⁻) = 0,020 mol.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les ions Na⁺ et Cl⁻ sont présents avant et après la réaction sans être transformés : ce sont les ions spectateurs. Équation simplifiée : H⁺(aq) + HO⁻(aq) → H₂O(l). Éléments : 2 H et 1 O de chaque côté. Charges : (+1) + (−1) = 0 à gauche ; 0 à droite.",
+        "<strong>2.</strong> Nombres stœchiométriques égaux à 1 : H⁺ : 0,020 / 1 = 0,020 ; HO⁻ : 0,015 / 1 = 0,015. Le plus petit rapport désigne HO⁻ : réactif limitant. État final : n(HO⁻) = 0 mol ; n(H⁺) = 0,020 − 0,015 = 0,005 mol (en excès) ; eau formée : 0,015 mol ; ions spectateurs inchangés : n(Na⁺) = 0,015 mol et n(Cl⁻) = 0,020 mol.",
+        "<strong>3.</strong> Non : il reste 0,005 mol d'ions H⁺, la solution est encore acide. Il faut ajouter encore 0,005 mol d'ions HO⁻ (mélange alors dans les proportions de l'équation : 0,020 mol de chaque).",
+        "<strong>4.</strong> ΔT &gt; 0 : la température du mélange augmente. Le système libère de l'énergie vers le milieu extérieur : la transformation est exothermique.",
+        "<strong>5.</strong> Pour n(HO⁻) ≤ 0,020 mol, HO⁻ est le réactif limitant (n(HO⁻)/1 ≤ 0,020). Les points sont alignés sur une droite passant par l'origine : ΔT est proportionnelle à n(HO⁻). Par exemple 0,7 / 0,005 = 1,4 × 10² °C·mol⁻¹ et 1,4 / 0,010 = 1,4 × 10² °C·mol⁻¹. Pour 0,012 mol : ΔT = 1,4 × 0,012 / 0,010 ≈ 1,7 °C.",
+        "<strong>6.</strong> Au-delà de 0,020 mol d'ions HO⁻, ce sont les ions H⁺ (0,020 mol) qui deviennent le réactif limitant : la quantité d'eau formée ne dépasse plus 0,020 mol, l'énergie libérée reste la même, donc ΔT reste égale à 2,7 °C. Les ions HO⁻ ajoutés en plus sont en excès et ne réagissent pas.",
+        "<em>⚠ Erreur fréquente : écrire l'équation simplifiée avec Na⁺ et Cl⁻. Les ions spectateurs ne figurent jamais dans l'équation, même s'ils sont présents dans le mélange.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un ballon gonflé par la chimie",
+      "contexte": [
+        "Pour la fête de la science, Lina veut gonfler un ballon de baudruche sans souffler, avec 1,0 L de dioxyde de carbone produit par la réaction entre le vinaigre blanc et de la poudre de calcaire. Elle veut utiliser le moins de produits possible, sans gaspiller ni vinaigre ni calcaire.",
+        "Doc. 1 — Équation de la réaction. Le vinaigre apporte les ions hydrogène H⁺(aq) ; la poudre de calcaire est du carbonate de calcium CaCO₃ : CaCO₃(s) + 2 H⁺(aq) → Ca²⁺(aq) + H₂O(l) + CO₂(g).",
+        "Doc. 2 — Expérience préliminaire. Lina prépare six flacons F1 à F6 contenant chacun 20 mL du même vinaigre blanc. Elle ajoute dans chacun une masse différente de poudre de calcaire, attend la fin de l'effervescence et mesure le volume de CO₂ recueilli (graphique ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"90.0\" y1=\"400\" x2=\"90.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"90.0\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">0,0</text><line x1=\"124.4\" y1=\"400\" x2=\"124.4\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"124.4\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"158.9\" y1=\"400\" x2=\"158.9\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"158.9\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">0,2</text><line x1=\"193.3\" y1=\"400\" x2=\"193.3\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"193.3\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"227.8\" y1=\"400\" x2=\"227.8\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"227.8\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">0,4</text><line x1=\"262.2\" y1=\"400\" x2=\"262.2\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"262.2\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"296.7\" y1=\"400\" x2=\"296.7\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"296.7\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">0,6</text><line x1=\"331.1\" y1=\"400\" x2=\"331.1\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"331.1\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"365.6\" y1=\"400\" x2=\"365.6\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"365.6\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">0,8</text><line x1=\"400.0\" y1=\"400\" x2=\"400.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"400.0\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"434.4\" y1=\"400\" x2=\"434.4\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"434.4\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">1,0</text><line x1=\"468.9\" y1=\"400\" x2=\"468.9\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"468.9\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"503.3\" y1=\"400\" x2=\"503.3\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"503.3\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">1,2</text><line x1=\"537.8\" y1=\"400\" x2=\"537.8\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"537.8\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"572.2\" y1=\"400\" x2=\"572.2\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"572.2\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">1,4</text><line x1=\"606.7\" y1=\"400\" x2=\"606.7\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"606.7\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"641.1\" y1=\"400\" x2=\"641.1\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"641.1\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">1,6</text><line x1=\"675.6\" y1=\"400\" x2=\"675.6\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"675.6\" y=\"422\" text-anchor=\"middle\" font-size=\"15\"></text><line x1=\"710.0\" y1=\"400\" x2=\"710.0\" y2=\"80\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"710.0\" y=\"422\" text-anchor=\"middle\" font-size=\"15\">1,8</text><line x1=\"90\" y1=\"400.0\" x2=\"710\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"405.0\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"90\" y1=\"373.3\" x2=\"710\" y2=\"373.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"378.3\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"90\" y1=\"346.7\" x2=\"710\" y2=\"346.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"351.7\" text-anchor=\"end\" font-size=\"15\">50</text><line x1=\"90\" y1=\"320.0\" x2=\"710\" y2=\"320.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"325.0\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"90\" y1=\"293.3\" x2=\"710\" y2=\"293.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"298.3\" text-anchor=\"end\" font-size=\"15\">100</text><line x1=\"90\" y1=\"266.7\" x2=\"710\" y2=\"266.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"271.7\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"90\" y1=\"240.0\" x2=\"710\" y2=\"240.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"245.0\" text-anchor=\"end\" font-size=\"15\">150</text><line x1=\"90\" y1=\"213.3\" x2=\"710\" y2=\"213.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"218.3\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"90\" y1=\"186.7\" x2=\"710\" y2=\"186.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"191.7\" text-anchor=\"end\" font-size=\"15\">200</text><line x1=\"90\" y1=\"160.0\" x2=\"710\" y2=\"160.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"165.0\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"90\" y1=\"133.3\" x2=\"710\" y2=\"133.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"138.3\" text-anchor=\"end\" font-size=\"15\">250</text><line x1=\"90\" y1=\"106.7\" x2=\"710\" y2=\"106.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"111.7\" text-anchor=\"end\" font-size=\"15\"></text><line x1=\"90\" y1=\"80.0\" x2=\"710\" y2=\"80.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"82\" y=\"85.0\" text-anchor=\"end\" font-size=\"15\">300</text><line x1=\"90\" y1=\"400\" x2=\"720\" y2=\"400\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"90\" y1=\"400\" x2=\"90\" y2=\"70\" stroke=\"#000\" stroke-width=\"2\"/><text x=\"710\" y=\"448\" text-anchor=\"end\" font-size=\"16\">masse de poudre de calcaire m (g)</text><text x=\"80\" y=\"58\" text-anchor=\"start\" font-size=\"16\">volume de CO₂ recueilli V (mL)</text><circle cx=\"158.9\" cy=\"346.7\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"158.9\" y=\"332.7\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">F1</text><circle cx=\"227.8\" cy=\"293.3\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"227.8\" y=\"279.3\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">F2</text><circle cx=\"296.7\" cy=\"240.0\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"296.7\" y=\"226.0\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">F3</text><circle cx=\"365.6\" cy=\"186.7\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"365.6\" y=\"172.7\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">F4</text><circle cx=\"503.3\" cy=\"133.3\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"503.3\" y=\"119.3\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">F5</text><circle cx=\"641.1\" cy=\"133.3\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"641.1\" y=\"119.3\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">F6</text><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">Chaque flacon (F1 à F6) contient 20 mL du même vinaigre blanc.</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Observations à l'état final. Flacons F1 à F4 : il ne reste aucun solide ; le papier pH indique que la solution est encore acide. Flacons F5 et F6 : il reste de la poudre blanche au fond ; le papier pH indique que la solution n'est presque plus acide."
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : à l'aide du doc. 3, indique pour chaque flacon quel est le réactif limitant.",
+          "aides": [
+            "Le réactif limitant est celui qui a disparu à l'état final.",
+            "Un solide restant au fond signifie qu'il reste du calcaire ; une solution acide signifie qu'il reste des ions H⁺."
+          ]
+        },
+        {
+          "texte": "Quel volume de vinaigre et quelle masse de poudre de calcaire Lina doit-elle utiliser pour obtenir 1,0 L de CO₂ sans gaspillage ? Explique ta démarche.",
+          "aides": [
+            "S'approprier : repère sur le graphique les flacons où le volume augmente avec la masse et ceux où il n'augmente plus.",
+            "Analyser : trace la droite et le palier. Leur point de rencontre donne la masse de calcaire qui réagit exactement avec 20 mL de vinaigre, sans excès.",
+            "Réaliser : combien de fois le volume de gaz de ce mélange faut-il pour atteindre 1 000 mL ? Multiplie les deux réactifs par ce même nombre."
+          ]
+        },
+        {
+          "texte": "Regard critique : Lina propose d'utiliser 10 g de poudre « pour être sûre d'avoir assez de gaz » avec la quantité de vinaigre trouvée. Qu'en penses-tu ? Si elle remplace la poudre de calcaire par des coquilles d'œufs broyées (environ 95 % de carbonate de calcium), que doit-elle modifier ?",
+          "aides": [
+            "Avec 80 mL de vinaigre, quel volume maximal de CO₂ peut-on obtenir ? Lequel des réactifs devient limitant avec 10 g de poudre ?",
+            "Si seulement 95 % de la poudre est du calcaire, faut-il plus ou moins de poudre pour avoir 4,0 g de CaCO₃ ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F1 à F4 : il ne reste plus de solide et la solution est encore acide (il reste des ions H⁺) : le calcaire CaCO₃ est le réactif limitant. F5 et F6 : il reste du calcaire et presque plus d'ions H⁺ : les ions H⁺ du vinaigre sont le réactif limitant.",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Lecture du doc. 2 : pour F1 à F4, les points sont alignés sur une droite passant par l'origine (V = 50 mL pour 0,2 g, 100 mL pour 0,4 g…) : V est proportionnel à la masse de calcaire, qui est limitant. Pour F5 et F6, V reste égal à 250 mL : le vinaigre est limitant, ajouter du calcaire ne sert plus à rien.",
+        "• Mélange sans gaspillage : la droite (50 mL pour 0,2 g, soit 250 mL pour 1,0 g) atteint le palier de 250 mL pour m = 1,0 g. Donc 20 mL de vinaigre réagissent exactement avec 1,0 g de calcaire et donnent 250 mL de CO₂ : aucun réactif ne reste.",
+        "• Proportionnalité : il faut 1,0 L = 1 000 mL de CO₂, soit 1 000 / 250 = 4 fois plus. Vinaigre : 4 × 20 = 80 mL ; calcaire : 4 × 1,0 = 4,0 g.",
+        "• Conclusion : Lina doit mélanger 80 mL de vinaigre blanc et 4,0 g de poudre de calcaire.",
+        "<strong>3.</strong> Avec 80 mL de vinaigre, les ions H⁺ ne peuvent produire que 1,0 L de CO₂ : avec 10 g de poudre, le vinaigre devient le réactif limitant, le volume de gaz n'augmente pas et environ 6 g de calcaire restent inutilisés (gaspillage). Pour avoir plus de gaz, il faudrait augmenter les DEUX réactifs dans les mêmes proportions. Avec des coquilles d'œufs à 95 % de CaCO₃, il faut un peu plus de poudre : 4,0 / 0,95 ≈ 4,2 g. Autres limites : une partie du CO₂ se dissout dans l'eau du mélange et le ballon peut fuir, donc le volume obtenu sera un peu inférieur à 1,0 L ; on peut prévoir un léger excès de vinaigre et de poudre.",
+        "Éléments valorisés (même si le résultat final est faux) : identification du réactif limitant dans chaque flacon à partir de l'état final ; repérage du palier et de la masse de 1,0 g correspondant au mélange sans excès ; utilisation de la proportionnalité pour les deux réactifs ; conclusion avec unités.",
+        "<em>⚠ Erreur fréquente : calculer seulement la masse de calcaire (4,0 g) en gardant 20 mL de vinaigre. Le vinaigre étant alors limitant, on n'obtiendrait que 250 mL de gaz.</em>"
+      ]
+    }
+  ]
+}

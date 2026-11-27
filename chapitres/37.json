@@ -1,0 +1,705 @@
+{
+  "id": 37,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Modéliser une action par une force",
+        "icon": "💪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Force",
+            "text": "Modélisation d'une action mécanique exercée par un objet A sur un objet B. Une force peut résulter d'un contact direct (force de contact) ou s'exercer à distance, sans contact (force à distance, ex. gravitation, force électrostatique)."
+          },
+          {
+            "type": "text",
+            "text": "Une force est une grandeur vectorielle, notée F→, qui possède quatre caractéristiques."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Caractéristique",
+              "Description"
+            ],
+            "rows": [
+              [
+                "Point d'application",
+                "Le point où s'exerce la force sur l'objet"
+              ],
+              [
+                "Direction",
+                "La droite le long de laquelle agit la force"
+              ],
+              [
+                "Sens",
+                "L'orientation de la force le long de sa direction"
+              ],
+              [
+                "Valeur",
+                "L'intensité de la force, en newton (N), mesurée avec un dynamomètre"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Le principe des actions réciproques",
+        "icon": "🔁",
+        "content": [
+          {
+            "type": "def",
+            "term": "Principe des actions réciproques",
+            "text": "Si un objet A exerce une force FA→B sur un objet B, alors B exerce sur A une force FB→A de même direction, de même valeur, mais de sens opposé : FA→B = − FB→A."
+          },
+          {
+            "type": "warn",
+            "text": "Ce principe (aussi appelé 3ᵉ loi de Newton) s'applique à TOUTES les forces, qu'elles soient de contact (ex. une personne qui pousse un meuble) OU à distance (ex. l'attraction gravitationnelle entre la Terre et la Lune). Ce n'est pas réservé aux seules forces de contact."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 160\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"fArrowR37\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#2F7D75\"/></marker><marker id=\"fArrowL37\" markerWidth=\"8\" markerHeight=\"8\" refX=\"2\" refY=\"4\" orient=\"auto\"><path d=\"M8,0 L0,4 L8,8 Z\" fill=\"#C0472F\"/></marker></defs><rect x=\"40\" y=\"45\" width=\"120\" height=\"70\" rx=\"6\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"100\" y=\"85\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">A</text><rect x=\"300\" y=\"45\" width=\"120\" height=\"70\" rx=\"6\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"360\" y=\"85\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">B</text><line x1=\"230\" y1=\"80\" x2=\"296\" y2=\"80\" stroke=\"#2F7D75\" stroke-width=\"2.5\" marker-end=\"url(#fArrowR37)\"/><text x=\"263\" y=\"65\" font-size=\"12\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">FA→B</text><line x1=\"230\" y1=\"100\" x2=\"164\" y2=\"100\" stroke=\"#C0472F\" stroke-width=\"2.5\" marker-end=\"url(#fArrowL37)\"/><text x=\"197\" y=\"122\" font-size=\"12\" fill=\"#C0472F\" text-anchor=\"middle\" font-weight=\"600\">FB→A</text></svg>",
+            "caption": "Principe des actions réciproques : les forces FA→B et FB→A ont la même direction et la même valeur, mais des sens opposés."
+          }
+        ]
+      },
+      {
+        "title": "3. Masse et poids : deux grandeurs à ne pas confondre",
+        "icon": "⚠️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Masse m",
+            "text": "Grandeur scalaire, exprimée en kilogramme (kg), qui caractérise la quantité de matière d'un objet. Elle est intrinsèque à l'objet : elle ne dépend pas du lieu où il se trouve."
+          },
+          {
+            "type": "def",
+            "term": "Poids P",
+            "text": "Force (grandeur vectorielle), exprimée en newton (N), qui modélise l'attraction gravitationnelle exercée sur l'objet. Elle dépend du lieu où se trouve l'objet (Terre, Lune, autre planète)."
+          },
+          {
+            "type": "warn",
+            "text": "Un pèse-personne (balance électronique) mesure en réalité une force et affiche une masse après conversion interne à l'aide de g. Rigoureusement, seule une balance à deux plateaux (comparaison directe de masses) détermine une masse. Un dynamomètre, lui, mesure directement une force, donc un poids."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : un astronaute de masse m = 30 kg a exactement la même masse sur la Terre et sur la Lune. En revanche, son poids est différent : plus faible sur la Lune, où la pesanteur est environ 6 fois plus faible que sur Terre."
+          },
+          {
+            "type": "formula",
+            "label": "Relation entre poids et masse",
+            "text": "P = m × g\navec P en newton (N)\nm en kilogramme (kg)\ng : intensité de la pesanteur du lieu, en N·kg⁻¹ (g ≈ 9,8 N·kg⁻¹ sur Terre, g ≈ 1,6 N·kg⁻¹ sur la Lune)"
+          }
+        ]
+      },
+      {
+        "title": "4. La loi de gravitation universelle",
+        "icon": "🌍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi de gravitation universelle",
+            "text": "Deux corps ponctuels de masses m1 et m2, séparés par une distance d, exercent l'un sur l'autre des forces attractives, de même valeur, dirigées suivant la droite qui les relie."
+          },
+          {
+            "type": "formula",
+            "label": "Valeur de la force gravitationnelle",
+            "text": "F1→2 = F2→1 = G × m1 × m2 / d²\navec G ≈ 6,67×10⁻¹¹ N·m²·kg⁻² (constante de gravitation universelle)\nF en newton (N) ; m1, m2 en kg ; d en m"
+          },
+          {
+            "type": "formula",
+            "label": "Écriture vectorielle",
+            "text": "F1→2→ = − F2→1→\n(les deux vecteurs forces ont même direction, même valeur, sens opposés : ils sont portés par la droite reliant les centres des deux corps)"
+          },
+          {
+            "type": "text",
+            "text": "Le poids P = m × g d'un objet à la surface d'une planète est en réalité une approximation de la force de gravitation exercée par cette planète sur l'objet (on néglige alors l'attraction des autres astres)."
+          }
+        ]
+      },
+      {
+        "title": "5. Exemple chiffré : l'attraction Terre-Lune",
+        "icon": "🌙",
+        "content": [
+          {
+            "type": "text",
+            "text": "Données : masse de la Terre mT = 5,98×10²⁴ kg ; masse de la Lune mL = 7,36×10²² kg ; distance Terre-Lune d = 384 000 km = 3,84×10⁸ m."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul de la force gravitationnelle",
+            "text": "FTerre/Lune = G × mT × mL / d²\nFTerre/Lune = (6,67×10⁻¹¹ × 5,98×10²⁴ × 7,36×10²²) / (3,84×10⁸)²\nFTerre/Lune ≈ 2,0×10²⁰ N"
+          },
+          {
+            "type": "text",
+            "text": "D'après le principe des actions réciproques, la Lune exerce sur la Terre une force FLune/Terre de même valeur (2,0×10²⁰ N), même direction, mais de sens opposé."
+          },
+          {
+            "type": "warn",
+            "text": "Si la force gravitationnelle attire la Lune vers la Terre, la Lune ne s'écrase pas sur la Terre : elle possède une vitesse initiale qui, combinée à cette attraction, entretient son mouvement de rotation autour de la Terre (voir le principe d'inertie, chapitre suivant)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La Terre attire la Lune avec une force de valeur 2,0×10²⁰ N. La Lune attire la Terre avec une force :",
+      "opts": [
+        "beaucoup plus faible, car la Lune est moins massive",
+        "de 2,0×10²⁰ N, dans le sens opposé",
+        "nulle : c'est la Terre qui attire la Lune",
+        "de 2,0×10²⁰ N, dans le même sens"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "reciproque-plus-massif-plus-fort",
+          "texte": "Croire que l'objet le plus massif exerce la plus grande force : les deux forces réciproques ont toujours la même valeur"
+        },
+        null,
+        {
+          "code": "action-a-sens-unique",
+          "texte": "Croire qu'une interaction va dans un seul sens : si A agit sur B, B agit aussi sur A"
+        },
+        {
+          "code": "reciproque-meme-sens",
+          "texte": "Oublier que les forces réciproques sont de sens opposés : chaque astre attire l'autre vers lui"
+        }
+      ],
+      "exp": "Principe des actions réciproques : F(Lune/Terre) a la même direction et la même valeur que F(Terre/Lune), mais un sens opposé. Attention : la Lune bouge plus car elle est moins massive, pas parce qu'elle subit une force plus grande."
+    },
+    {
+      "q": "Un camion percute une petite voiture. Pendant le choc :",
+      "opts": [
+        "le camion exerce sur la voiture une force plus grande que l'inverse",
+        "la voiture, plus abîmée, a subi une force plus grande que celle qu'elle exerce",
+        "seul le camion exerce une force : la voiture la subit",
+        "les deux véhicules exercent l'un sur l'autre des forces de même valeur"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "reciproque-plus-massif-plus-fort",
+          "texte": "Croire que l'objet le plus massif exerce la plus grande force : les deux forces réciproques ont toujours la même valeur"
+        },
+        {
+          "code": "degats-vs-force",
+          "texte": "Juger la force aux dégâts : la voiture est plus abîmée parce qu'elle est plus fragile et plus légère, pas parce que la force est plus grande"
+        },
+        {
+          "code": "action-a-sens-unique",
+          "texte": "Croire qu'une interaction va dans un seul sens : si A agit sur B, B agit aussi sur A"
+        },
+        null
+      ],
+      "exp": "Principe des actions réciproques : F(camion/voiture) et F(voiture/camion) ont la même valeur et des sens opposés. Les effets diffèrent parce que les véhicules n'ont ni la même masse ni la même solidité."
+    },
+    {
+      "q": "Un livre est posé, immobile, sur une table. Le poids du livre et la force exercée par la table sur le livre :",
+      "opts": [
+        "forment un couple d'actions réciproques",
+        "se compensent, mais ne sont pas des actions réciproques",
+        "n'existent pas tous les deux : une table n'exerce pas de force",
+        "ne se compensent pas : la table pousse plus fort"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "equilibre-vs-reciproque",
+          "texte": "Confondre forces qui se compensent et actions réciproques : les deux forces s'exercent ici sur le même objet (le livre) ; la réciproque du poids s'exerce sur la Terre"
+        },
+        null,
+        {
+          "code": "support-sans-force",
+          "texte": "Croire qu'un support passif n'exerce pas de force : la table empêche le livre de tomber, elle exerce une force vers le haut"
+        },
+        {
+          "code": "support-plus-fort",
+          "texte": "Croire que le support doit pousser plus fort que le poids : le livre étant immobile, les deux forces ont la même valeur"
+        }
+      ],
+      "exp": "Les deux forces s'exercent sur le livre et se compensent (il est immobile). La réciproque du poids est la force exercée par le livre sur la Terre ; celle de la force de la table est la force du livre sur la table."
+    },
+    {
+      "q": "Quel est le poids d'un objet de masse 500 g sur Terre (g = 9,8 N·kg⁻¹) ?",
+      "opts": [
+        "4,9×10³ N",
+        "4,9 N",
+        "0,051 N",
+        "0,50 kg"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 500 × 9,8 ; il faut 0,500 kg"
+        },
+        null,
+        {
+          "code": "poids-m-sur-g",
+          "texte": "Diviser au lieu de multiplier : P = m × g, pas m / g"
+        },
+        {
+          "code": "masse-vs-poids",
+          "texte": "Confondre masse (en kg) et poids (une force, en N)"
+        }
+      ],
+      "exp": "P = m × g = 0,500 × 9,8 = 4,9 N. Attention : la masse s'exprime en kg, le poids en newtons."
+    },
+    {
+      "q": "Un astronaute a une masse de 80 kg sur Terre. Sur la Lune (g = 1,6 N·kg⁻¹) :",
+      "opts": [
+        "sa masse vaut environ 13 kg",
+        "son poids vaut 784 N, comme sur Terre",
+        "sa masse vaut 80 kg et son poids 128 N",
+        "sa masse vaut 128 N"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "masse-depend-astre",
+          "texte": "Croire que la masse change d'un astre à l'autre : seule la valeur du poids change, la masse reste 80 kg"
+        },
+        {
+          "code": "poids-independant-astre",
+          "texte": "Croire que le poids ne dépend pas de l'astre : P = m × g, et g est environ 6 fois plus faible sur la Lune"
+        },
+        null,
+        {
+          "code": "masse-vs-poids",
+          "texte": "Confondre masse (en kg) et poids (une force, en N)"
+        }
+      ],
+      "exp": "La masse ne dépend pas du lieu : 80 kg. Le poids, oui : P = 80 × 1,6 = 128 N sur la Lune (contre 80 × 9,8 = 784 N sur Terre)."
+    },
+    {
+      "q": "Une personne de 60 kg est à la surface de la Terre (mT = 5,98×10²⁴ kg, rayon R = 6 370 km, G = 6,67×10⁻¹¹ N·m²·kg⁻²). La force d'attraction de la Terre sur elle vaut environ :",
+      "opts": [
+        "5,9×10² N",
+        "5,9×10⁸ N",
+        "3,8×10⁹ N",
+        "9,8 N"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-km-m",
+          "texte": "Oublier de convertir le rayon en mètres : R = 6 370 km = 6,37×10⁶ m"
+        },
+        {
+          "code": "oubli-carre-distance",
+          "texte": "Oublier le carré de la distance : F = G × mT × m / R², pas / R"
+        },
+        {
+          "code": "oubli-masse-objet",
+          "texte": "Oublier la masse de la personne : G × mT / R² ≈ 9,8 N·kg⁻¹ est l'intensité de la pesanteur g, pas une force"
+        }
+      ],
+      "exp": "F = G × mT × m / R² = 6,67×10⁻¹¹ × 5,98×10²⁴ × 60 / (6,37×10⁶)² ≈ 5,9×10² N : c'est son poids, P = m × g ≈ 60 × 9,8. Attention : distance en mètres, et au carré."
+    },
+    {
+      "q": "Si la distance entre deux astres double, la force d'attraction gravitationnelle entre eux est :",
+      "opts": [
+        "divisée par 2",
+        "multipliée par 2",
+        "inchangée",
+        "divisée par 4"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-carre-distance",
+          "texte": "Oublier le carré : F est inversement proportionnelle à d², donc divisée par 2² = 4"
+        },
+        {
+          "code": "force-augmente-distance",
+          "texte": "Croire que la force augmente avec la distance : plus les astres sont éloignés, plus elle est faible"
+        },
+        {
+          "code": "force-independante-distance",
+          "texte": "Croire que la force ne dépend que des masses : elle dépend aussi de la distance (d² au dénominateur)"
+        },
+        null
+      ],
+      "exp": "F = G × m1 × m2 / d² : si d est multipliée par 2, d² est multipliée par 4, donc F est divisée par 4. Attention au carré."
+    },
+    {
+      "q": "Un pèse-personne réglé pour la Terre affiche 50 kg pour Léo. Sur la Lune (g = 1,6 N·kg⁻¹ au lieu de 9,8), il afficherait pour Léo environ :",
+      "opts": [
+        "50 kg, puisque la masse ne change pas",
+        "8 kg",
+        "300 kg",
+        "0 kg, puisqu'il n'y a pas de gravité sur la Lune"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "pese-personne-mesure-masse",
+          "texte": "Croire qu'un pèse-personne mesure une masse : il mesure une force (le poids) et la divise par le g terrestre"
+        },
+        null,
+        {
+          "code": "rapport-g-inverse",
+          "texte": "Inverser le rapport des g : 50 × 9,8 / 1,6 ; le poids est plus faible sur la Lune, l'affichage aussi"
+        },
+        {
+          "code": "pas-de-gravite-lune",
+          "texte": "Croire qu'il n'y a pas de gravité sur la Lune : elle est environ 6 fois plus faible que sur Terre, pas nulle"
+        }
+      ],
+      "exp": "Le pèse-personne mesure le poids (50 × 1,6 = 80 N sur la Lune) puis divise par 9,8 : il affiche environ 8 kg. La masse de Léo, elle, reste 50 kg."
+    },
+    {
+      "q": "Le poids d'un objet posé sur une pente est représenté par une flèche :",
+      "opts": [
+        "verticale, vers le bas",
+        "perpendiculaire à la pente",
+        "parallèle à la pente, dans le sens où il glisserait",
+        "sans direction : le poids est une masse"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "poids-perpendiculaire-support",
+          "texte": "Confondre le poids et la force exercée par le support : le poids est toujours vertical, vers le centre de la Terre"
+        },
+        {
+          "code": "force-sens-mouvement",
+          "texte": "Croire que la force est dans le sens du mouvement possible : le poids est vertical, quel que soit le mouvement"
+        },
+        {
+          "code": "masse-vs-poids",
+          "texte": "Confondre poids et masse : le poids est une force, avec une direction et un sens"
+        }
+      ],
+      "exp": "Le poids est vertical, orienté vers le bas (vers le centre de la Terre), appliqué au centre de l'objet, quelle que soit la pente. Attention : la force du support, elle, est perpendiculaire à la pente si l'on néglige les frottements."
+    },
+    {
+      "q": "Un parachutiste vient de sauter d'un avion. La Terre exerce sur lui une force :",
+      "opts": [
+        "seulement quand il touche le sol",
+        "à distance, sans contact",
+        "grâce à l'air qui le pousse vers le bas",
+        "seulement parce qu'il est en mouvement"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "force-exige-contact",
+          "texte": "Croire qu'une force exige un contact : l'attraction gravitationnelle agit à distance"
+        },
+        null,
+        {
+          "code": "gravite-liee-atmosphere",
+          "texte": "Croire que la gravité est due à l'air : elle existe aussi dans le vide (sur la Lune, sans atmosphère, les objets tombent)"
+        },
+        {
+          "code": "force-exige-mouvement",
+          "texte": "Croire qu'un objet n'est soumis à une force que s'il bouge : un objet immobile a aussi un poids"
+        }
+      ],
+      "exp": "Le poids modélise une action à distance : la Terre attire le parachutiste sans contact. Attention : l'air, lui, exerce une force de contact qui freine la chute."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Qui agit sur qui ?",
+      "contexte": [
+        "Pendant une journée au lycée, Moussa note plusieurs actions mécaniques :",
+        "(a) au foot, à la récré, son pied frappe le ballon ; (b) pendant son vol, le ballon est attiré par la Terre ; (c) le filet du but arrête le ballon ; (d) en cours, un aimant attire un trombone placé à 1 cm de lui ; (e) une règle en plastique frottée sur un pull attire de petits morceaux de papier sans les toucher ; (f) le soir, la chaîne de la balançoire retient sa petite sœur ; (g) la chaise soutient Moussa assis à son bureau."
+      ],
+      "questions": [
+        {
+          "texte": "Recopie et complète le tableau suivant pour les situations (a) à (g) : « Situation | Objet qui agit (acteur) | Objet qui subit l'action (receveur) | Action de contact ou à distance ? ».",
+          "aides": [
+            "Dans chaque phrase, cherche « qui fait » (l'acteur) et « qui subit » (le receveur).",
+            "Les deux objets se touchent-ils ? Si oui, action de contact ; sinon, action à distance."
+          ]
+        },
+        {
+          "texte": "Recopie et complète : « Une action mécanique est modélisée par une ………… . Celle-ci est caractérisée par son point d'………… , sa ………… , son ………… et sa ………… , qui s'exprime en ………… (symbole ……) et se mesure avec un ………… . »",
+          "aides": []
+        },
+        {
+          "texte": "Dans la situation (b), la force qui modélise l'action de la Terre sur le ballon est : A. verticale, vers le haut ; B. verticale, vers le bas ; C. toujours dans le sens du mouvement du ballon ; D. nulle, car la Terre ne touche pas le ballon. Choisis la bonne réponse et justifie.",
+          "aides": [
+            "Quand tu lâches un objet, dans quel sens tombe-t-il ?",
+            "La Terre attire les objets vers son centre, même sans les toucher : une action à distance existe bel et bien."
+          ]
+        },
+        {
+          "texte": "Dans la situation (a), le ballon agit-il aussi sur le pied de Moussa ? Quel principe du cours permet de répondre ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> (a) pied → ballon : contact. (b) Terre → ballon : à distance. (c) filet → ballon : contact. (d) aimant → trombone : à distance. (e) règle frottée → morceaux de papier : à distance (action électrostatique). (f) chaîne → petite sœur (ou siège de la balançoire) : contact. (g) chaise → Moussa : contact.",
+        "<strong>2.</strong> « Une action mécanique est modélisée par une force. Celle-ci est caractérisée par son point d'application, sa direction, son sens et sa valeur, qui s'exprime en newton (symbole N) et se mesure avec un dynamomètre. »",
+        "<strong>3.</strong> Réponse B : l'action de la Terre (le poids) est verticale et dirigée vers le bas (vers le centre de la Terre), quel que soit le mouvement du ballon. La réponse D est fausse : une force peut s'exercer à distance, sans contact.",
+        "<strong>4.</strong> Oui : d'après le principe des actions réciproques, si le pied exerce une force sur le ballon, le ballon exerce sur le pied une force de même direction, de même valeur et de sens opposé (c'est pourquoi on peut avoir mal au pied en frappant fort).",
+        "<em>⚠ Erreur fréquente : croire qu'il n'y a pas de force sans contact. La gravitation, l'action d'un aimant ou d'un objet électrisé sont des actions à distance.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Lire une force sur un schéma : la luge",
+      "contexte": [
+        "Lina tire une luge chargée de bûches sur la neige, à l'aide d'une corde horizontale accrochée au point A. Le document ci-dessous représente, à l'échelle, deux forces qui s'exercent sur la luge : le vecteur F₁ et le vecteur F₂. G est le centre de la luge chargée."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"90\" y1=\"60\" x2=\"90\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"120\" y1=\"60\" x2=\"120\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"150\" y1=\"60\" x2=\"150\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"180\" y1=\"60\" x2=\"180\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"210\" y1=\"60\" x2=\"210\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"240\" y1=\"60\" x2=\"240\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"270\" y1=\"60\" x2=\"270\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"60\" x2=\"300\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"330\" y1=\"60\" x2=\"330\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"360\" y1=\"60\" x2=\"360\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"390\" y1=\"60\" x2=\"390\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"60\" x2=\"420\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"450\" y1=\"60\" x2=\"450\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"480\" y1=\"60\" x2=\"480\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"510\" y1=\"60\" x2=\"510\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"540\" y1=\"60\" x2=\"540\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"570\" y1=\"60\" x2=\"570\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"600\" y1=\"60\" x2=\"600\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"630\" y1=\"60\" x2=\"630\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"660\" y1=\"60\" x2=\"660\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"690\" y1=\"60\" x2=\"690\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"60\" x2=\"690\" y2=\"60\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"90\" x2=\"690\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"120\" x2=\"690\" y2=\"120\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"150\" x2=\"690\" y2=\"150\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"180\" x2=\"690\" y2=\"180\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"210\" x2=\"690\" y2=\"210\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"240\" x2=\"690\" y2=\"240\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"270\" x2=\"690\" y2=\"270\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"300\" x2=\"690\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"330\" x2=\"690\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"360\" x2=\"690\" y2=\"360\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"390\" x2=\"690\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"420\" x2=\"690\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"450\" x2=\"690\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"380\" y=\"36\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">La luge chargée, vue de côté, et deux forces qui s'exercent sur elle</text><rect x=\"90\" y=\"360\" width=\"600\" height=\"90\" fill=\"#eef3f5\"/><line x1=\"90\" y1=\"360\" x2=\"690\" y2=\"360\" stroke=\"#5a6b70\" stroke-width=\"2.5\"/><text x=\"110\" y=\"430\" fill=\"#5a6b70\">neige</text><path d=\"M180,350 L420,350 Q445,350 440,325\" fill=\"none\" stroke=\"#5a3b20\" stroke-width=\"4\"/><line x1=\"210\" y1=\"350\" x2=\"210\" y2=\"315\" stroke=\"#5a3b20\" stroke-width=\"4\"/><line x1=\"390\" y1=\"350\" x2=\"390\" y2=\"315\" stroke=\"#5a3b20\" stroke-width=\"4\"/><rect x=\"180\" y=\"300\" width=\"250\" height=\"16\" fill=\"#a0703f\"/><rect x=\"230\" y=\"230\" width=\"140\" height=\"70\" fill=\"#f1e3c8\" stroke=\"#8a6a3a\" stroke-width=\"2\"/><text x=\"300\" y=\"250\" text-anchor=\"middle\" font-size=\"14\" fill=\"#5a3b20\">bûches</text><line x1=\"430\" y1=\"300\" x2=\"690\" y2=\"300\" stroke=\"#8a6a3a\" stroke-width=\"2.5\" stroke-dasharray=\"7 4\"/><text x=\"680\" y=\"290\" text-anchor=\"end\" font-size=\"14\" fill=\"#5a3b20\">corde (tirée par Lina) →</text><line x1=\"430.0\" y1=\"300.0\" x2=\"596.0\" y2=\"300.0\" stroke=\"#B5523B\" stroke-width=\"5\"/><polygon points=\"610.0,300.0 596.0,306.3 596.0,293.7\" fill=\"#B5523B\"/><text x=\"560\" y=\"335\" fill=\"#B5523B\" font-weight=\"bold\" font-size=\"18\">F<tspan font-size=\"13\" dy=\"5\">₁</tspan></text><line x1=\"559.0\" y1=\"316.0\" x2=\"568.0\" y2=\"316.0\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><polygon points=\"573.0,316.0 568.0,318.2 568.0,313.8\" fill=\"#B5523B\"/><line x1=\"300.0\" y1=\"270.0\" x2=\"300.0\" y2=\"376.0\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><polygon points=\"300.0,390.0 293.7,376.0 306.3,376.0\" fill=\"#1F4E5A\"/><text x=\"312\" y=\"395\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"18\">F<tspan font-size=\"13\" dy=\"5\">₂</tspan></text><line x1=\"311.0\" y1=\"376.0\" x2=\"320.0\" y2=\"376.0\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><polygon points=\"325.0,376.0 320.0,378.2 320.0,373.8\" fill=\"#1F4E5A\"/><circle cx=\"300\" cy=\"270\" r=\"4.5\" fill=\"#222\"/><text x=\"274\" y=\"290\" font-weight=\"bold\" fill=\"#222\">G</text><circle cx=\"430\" cy=\"300\" r=\"4.5\" fill=\"#222\"/><text x=\"424\" y=\"288\" font-weight=\"bold\" fill=\"#222\">A</text><rect x=\"96\" y=\"70\" width=\"210\" height=\"44\" fill=\"#fff\"/><rect x=\"100\" y=\"78\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"140\" y=\"98.0\" fill=\"#1F4E5A\" font-weight=\"bold\">1 carreau ↔ 10 N</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe chaque vecteur (F₁ et F₂) à l'action qu'il modélise : action de la corde sur la luge, ou action de la Terre sur la luge. Précise s'il s'agit d'une action de contact ou à distance.",
+          "aides": []
+        },
+        {
+          "texte": "Donne les quatre caractéristiques de chaque force (point d'application, direction, sens, valeur).",
+          "aides": [
+            "Point d'application : là où la flèche commence (A ou G). Direction : la droite qui porte la flèche (horizontale ou verticale).",
+            "Valeur : compte le nombre de carreaux de la flèche, puis utilise l'échelle 1 carreau ↔ 10 N."
+          ]
+        },
+        {
+          "texte": "Une troisième action s'exerce sur la luge mais n'est pas représentée. Quel objet l'exerce ? Est-ce une action de contact ou à distance ?",
+          "aides": []
+        },
+        {
+          "texte": "La luge exerce-t-elle une force sur la corde ? Si oui, donne sa direction, son sens et sa valeur.",
+          "aides": [
+            "Relis le principe des actions réciproques : si A agit sur B, alors B agit sur A.",
+            "Ici A = la corde et B = la luge : même direction, même valeur, sens opposé."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie. « La luge est beaucoup moins massive que la Terre, donc elle attire la Terre beaucoup moins fort que la Terre ne l'attire. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Vecteur F₁ : action de la corde sur la luge (vecteur F<sub>corde</sub>/<sub>luge</sub>), action de contact. Vecteur F₂ : action de la Terre sur la luge, c'est-à-dire le poids P, action à distance.",
+        "<strong>2.</strong> Vecteur F₁ : point d'application A (point d'attache de la corde) ; direction horizontale (celle de la corde) ; sens vers la droite (vers Lina) ; valeur : 6 carreaux × 10 N = 60 N.",
+        "Vecteur F₂ (poids) : point d'application G ; direction verticale ; sens vers le bas ; valeur : 4 carreaux × 10 N = 40 N.",
+        "<strong>3.</strong> La neige (le sol) : action de contact. Elle soutient la luge et freine son glissement (frottements).",
+        "<strong>4.</strong> Oui, d'après le principe des actions réciproques : vecteur F<sub>luge</sub>/<sub>corde</sub> = − vecteur F<sub>corde</sub>/<sub>luge</sub>. Direction horizontale, sens vers la gauche (vers la luge), valeur 60 N. Elle s'exerce sur la corde, au point A.",
+        "<strong>5.</strong> FAUX : d'après le principe des actions réciproques (valable aussi pour les forces à distance), la luge attire la Terre avec une force de même valeur que celle avec laquelle la Terre attire la luge (40 N), de sens opposé.",
+        "<em>⚠ Erreur fréquente : mesurer la longueur de la flèche avec une règle et oublier l'échelle. Il faut compter les carreaux puis multiplier par 10 N.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Masse ou poids ? L'astronaute sur la Lune",
+      "contexte": [
+        "Un astronaute équipé de sa combinaison spatiale a une masse totale m = 150 kg (valeur approchée). Il se prépare sur Terre, puis marche sur la Lune.",
+        "On rappelle la relation entre le poids P et la masse m : P = m × g, avec P en newton (N), m en kilogramme (kg) et g l'intensité de la pesanteur du lieu (en N·kg⁻¹ : 9,8 sur Terre, 1,6 sur la Lune)."
+      ],
+      "questions": [
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. « Sur la Lune, la masse de l'astronaute est plus petite que sur Terre. »<br>b. « Le poids s'exprime en kilogramme. »<br>c. « Le poids d'un objet dépend du lieu où il se trouve. »<br>d. « Un dynamomètre mesure une force, donc un poids. »",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le poids de l'astronaute équipé sur Terre, puis sur la Lune.",
+          "aides": []
+        },
+        {
+          "texte": "Combien de fois son poids est-il plus faible sur la Lune ? Compare avec la fiche de cours.",
+          "aides": []
+        },
+        {
+          "texte": "Sur la Lune, l'astronaute monte sur un pèse-personne fabriqué pour la Terre : l'appareil mesure la force exercée sur lui, puis affiche une « masse » en divisant cette force par 9,8. Quelle valeur affiche-t-il ? L'appareil est-il fiable sur la Lune ?",
+          "aides": [
+            "Le pèse-personne mesure en réalité le poids de l'astronaute sur la Lune : calcule-le d'abord avec g de la Lune.",
+            "Divise ensuite ce poids par 9,8 (la valeur de g utilisée par l'appareil) et compare à 150 kg."
+          ]
+        },
+        {
+          "texte": "Au laboratoire, sur Terre, Moussa suspend un paquet de pâtes de 500 g à un dynamomètre, qui indique 4,9 N. Calcule l'intensité de la pesanteur g dans la salle de TP.",
+          "aides": [
+            "Utilise P = m × g pour isoler g : g = P / m.",
+            "Attention aux unités : la masse doit être en kilogramme (500 g = ? kg)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : la masse ne dépend pas du lieu ; elle vaut 150 kg sur la Terre comme sur la Lune.",
+        "b. FAUX : le poids est une force, il s'exprime en newton (N). C'est la masse qui s'exprime en kilogramme.",
+        "c. VRAI : P = m × g et g dépend du lieu (Terre, Lune, autre planète).",
+        "d. VRAI : un dynamomètre mesure directement une force, par exemple le poids d'un objet suspendu.",
+        "<strong>2.</strong> Sur Terre : P = m × g = 150 × 9,8 = 1 470 N ≈ 1,5 × 10³ N. Sur la Lune : P = 150 × 1,6 = 240 N.",
+        "<strong>3.</strong> 1 470 / 240 ≈ 6,1 : le poids est environ 6 fois plus faible sur la Lune, comme l'indique la fiche (la pesanteur y est environ 6 fois plus faible).",
+        "<strong>4.</strong> L'appareil mesure 240 N et affiche 240 / 9,8 ≈ 24 kg, alors que la masse vaut 150 kg. Il n'est pas fiable sur la Lune : il ne mesure pas une masse, mais une force, convertie avec la valeur de g de la Terre.",
+        "<strong>5.</strong> g = P / m avec m = 500 g = 0,500 kg : g = 4,9 / 0,500 = 9,8 N·kg⁻¹.",
+        "<em>⚠ Erreur fréquente : garder m = 500 (en grammes) et trouver g = 0,0098 N·kg⁻¹. La masse doit être en kilogramme.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "La lampe du salon et le smartphone",
+      "contexte": [
+        "Situation 1 : une lampe de masse 1,2 kg est suspendue au plafond par un fil vertical, accroché à la lampe au point A. Elle est immobile.",
+        "Situation 2 : un smartphone de masse 200 g est posé, immobile, sur une table horizontale.",
+        "Le document ci-dessous est quadrillé ; l'échelle est : 1 carreau ↔ 2 N."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"90\" y1=\"60\" x2=\"90\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"120\" y1=\"60\" x2=\"120\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"150\" y1=\"60\" x2=\"150\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"180\" y1=\"60\" x2=\"180\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"210\" y1=\"60\" x2=\"210\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"240\" y1=\"60\" x2=\"240\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"270\" y1=\"60\" x2=\"270\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"60\" x2=\"300\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"330\" y1=\"60\" x2=\"330\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"60\" x2=\"330\" y2=\"60\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"90\" x2=\"330\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"120\" x2=\"330\" y2=\"120\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"150\" x2=\"330\" y2=\"150\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"180\" x2=\"330\" y2=\"180\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"210\" x2=\"330\" y2=\"210\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"240\" x2=\"330\" y2=\"240\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"270\" x2=\"330\" y2=\"270\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"300\" x2=\"330\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"330\" x2=\"330\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"360\" x2=\"330\" y2=\"360\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"390\" x2=\"330\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"420\" x2=\"330\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"60\" y1=\"450\" x2=\"330\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"120\" x2=\"420\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"450\" y1=\"120\" x2=\"450\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"480\" y1=\"120\" x2=\"480\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"510\" y1=\"120\" x2=\"510\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"540\" y1=\"120\" x2=\"540\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"570\" y1=\"120\" x2=\"570\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"600\" y1=\"120\" x2=\"600\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"630\" y1=\"120\" x2=\"630\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"660\" y1=\"120\" x2=\"660\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"690\" y1=\"120\" x2=\"690\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"720\" y1=\"120\" x2=\"720\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"120\" x2=\"720\" y2=\"120\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"150\" x2=\"720\" y2=\"150\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"180\" x2=\"720\" y2=\"180\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"210\" x2=\"720\" y2=\"210\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"240\" x2=\"720\" y2=\"240\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"270\" x2=\"720\" y2=\"270\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"300\" x2=\"720\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"330\" x2=\"720\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"360\" x2=\"720\" y2=\"360\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"390\" x2=\"720\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"420\" x2=\"720\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"195\" y=\"24\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"16\" fill=\"#1F4E5A\">Situation 1 : la lampe</text><text x=\"570\" y=\"24\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"16\" fill=\"#1F4E5A\">Situation 2 : le smartphone</text><line x1=\"370\" y1=\"10\" x2=\"370\" y2=\"460\" stroke=\"#bbb\" stroke-width=\"1.5\"/><rect x=\"60\" y=\"38\" width=\"270\" height=\"22\" fill=\"#e9e3d8\"/><line x1=\"60\" y1=\"60\" x2=\"76\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"78\" y1=\"60\" x2=\"94\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"96\" y1=\"60\" x2=\"112\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"114\" y1=\"60\" x2=\"130\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"132\" y1=\"60\" x2=\"148\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"150\" y1=\"60\" x2=\"166\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"168\" y1=\"60\" x2=\"184\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"186\" y1=\"60\" x2=\"202\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"204\" y1=\"60\" x2=\"220\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"222\" y1=\"60\" x2=\"238\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"240\" y1=\"60\" x2=\"256\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"258\" y1=\"60\" x2=\"274\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"276\" y1=\"60\" x2=\"292\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"294\" y1=\"60\" x2=\"310\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"312\" y1=\"60\" x2=\"328\" y2=\"40\" stroke=\"#8a8174\" stroke-width=\"1.2\"/><line x1=\"60\" y1=\"60\" x2=\"330\" y2=\"60\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><text x=\"66\" y=\"54\" font-size=\"14\">plafond</text><line x1=\"180\" y1=\"60\" x2=\"180\" y2=\"240\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><text x=\"188\" y=\"130\" font-size=\"14\">fil</text><polygon points=\"160,240 200,240 230,300 130,300\" fill=\"#C8962E\" fill-opacity=\"0.55\" stroke=\"#8a6a1e\" stroke-width=\"2\"/><text x=\"240\" y=\"300\" font-size=\"14\">lampe</text><text x=\"240\" y=\"318\" font-size=\"14\">m = 1,2 kg</text><circle cx=\"180\" cy=\"240\" r=\"4.5\" fill=\"#222\"/><text x=\"188\" y=\"234\" font-weight=\"bold\" fill=\"#222\">A</text><circle cx=\"180\" cy=\"270\" r=\"4.5\" fill=\"#222\"/><text x=\"188\" y=\"288\" font-weight=\"bold\" fill=\"#222\">G</text><rect x=\"500\" y=\"270\" width=\"140\" height=\"30\" rx=\"6\" fill=\"#2d2d2d\"/><text x=\"570\" y=\"262\" text-anchor=\"middle\" font-size=\"14\">smartphone (m = 200 g)</text><rect x=\"440\" y=\"300\" width=\"260\" height=\"14\" fill=\"#c9a77a\" stroke=\"#8a6a3a\" stroke-width=\"1.5\"/><line x1=\"460\" y1=\"314\" x2=\"460\" y2=\"420\" stroke=\"#8a6a3a\" stroke-width=\"6\"/><line x1=\"680\" y1=\"314\" x2=\"680\" y2=\"420\" stroke=\"#8a6a3a\" stroke-width=\"6\"/><text x=\"600\" y=\"345\" font-size=\"14\">table</text><circle cx=\"570\" cy=\"285\" r=\"4.5\" fill=\"#ffffff\"/><text x=\"578\" y=\"282\" font-weight=\"bold\" fill=\"#ffffff\">G</text><circle cx=\"570\" cy=\"300\" r=\"4.5\" fill=\"#222\"/><text x=\"578\" y=\"330\" font-weight=\"bold\" fill=\"#222\">C</text><rect x=\"416\" y=\"64\" width=\"210\" height=\"44\" fill=\"#fff\"/><rect x=\"420\" y=\"70\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"460\" y=\"90.0\" fill=\"#1F4E5A\" font-weight=\"bold\">1 carreau ↔ 2 N</text><text x=\"420\" y=\"450\" font-size=\"14\">C : centre de la surface de contact</text></svg>",
+      "questions": [
+        {
+          "texte": "Situation 1. On étudie le système {lampe}. Fais l'inventaire des actions mécaniques qui s'exercent sur lui en précisant, pour chacune, l'acteur et s'il s'agit d'une action de contact ou à distance.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur du poids de la lampe, puis représente le vecteur P sur le document, à l'échelle.",
+          "aides": [
+            "P = m × g avec m en kilogramme et g = 9,8 N·kg⁻¹.",
+            "Nombre de carreaux = valeur de la force / 2 N. Le poids s'applique en G, il est vertical et dirigé vers le bas."
+          ]
+        },
+        {
+          "texte": "On admet (tu le justifieras au chapitre suivant) que, la lampe étant immobile, la force exercée par le fil sur la lampe a la même direction et la même valeur que le poids, mais un sens opposé. Donne les caractéristiques du vecteur F<sub>fil</sub>/<sub>lampe</sub> et représente-le.",
+          "aides": []
+        },
+        {
+          "texte": "D'après le principe des actions réciproques, quelle force la lampe exerce-t-elle sur le fil ? Donne ses caractéristiques. Est-ce le poids de la lampe ? Justifie.",
+          "aides": [
+            "Dans « vecteur F<sub>lampe</sub>/<sub>fil</sub> », qui agit et qui subit ? Et pour le poids ?",
+            "Deux forces réciproques ont même direction, même valeur, sens opposés, et s'exercent sur deux objets différents."
+          ]
+        },
+        {
+          "texte": "Situation 2. Calcule la valeur du poids du smartphone et représente-le à l'échelle.",
+          "aides": []
+        },
+        {
+          "texte": "Représente qualitativement la force exercée par la table sur le smartphone (vecteur R) en précisant son point d'application, sa direction et son sens. On admet, comme pour la lampe, qu'elle a la même valeur que le poids.",
+          "aides": [
+            "L'action de la table s'exerce là où elle touche le smartphone.",
+            "La force exercée par un support (sans frottement) est perpendiculaire à ce support et dirigée vers l'objet qu'il soutient."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Deux actions s'exercent sur la lampe : l'action de la Terre (le poids), à distance ; l'action du fil, de contact (au point A).",
+        "<strong>2.</strong> P = m × g = 1,2 × 9,8 = 11,76 N ≈ 12 N. Longueur : 11,76 / 2 = 5,88 ≈ 6 carreaux. Flèche partant de G, verticale, vers le bas, de 6 carreaux.",
+        "<strong>3.</strong> Vecteur F<sub>fil</sub>/<sub>lampe</sub> : point d'application A ; direction verticale (celle du fil) ; sens vers le haut ; valeur F<sub>fil</sub>/<sub>lampe</sub> = 12 N. Flèche partant de A, vers le haut, de 6 carreaux.",
+        "<strong>4.</strong> Vecteur F<sub>lampe</sub>/<sub>fil</sub> = − vecteur F<sub>fil</sub>/<sub>lampe</sub> : il s'exerce sur le fil, au point A ; direction verticale ; sens vers le bas ; valeur 12 N. Ce n'est PAS le poids de la lampe : le poids est exercé par la Terre sur la lampe, alors que cette force est exercée par la lampe sur le fil. Elles ont les mêmes caractéristiques ici, mais pas le même acteur ni le même receveur.",
+        "<strong>5.</strong> m = 200 g = 0,200 kg ; P = 0,200 × 9,8 = 1,96 N ≈ 2,0 N, soit 0,98 ≈ 1 carreau : flèche partant de G, verticale, vers le bas, de 1 carreau.",
+        "<strong>6.</strong> Vecteur R : point d'application C (centre de la surface de contact) ; direction perpendiculaire à la table, donc verticale ; sens vers le haut (la table soutient le smartphone) ; longueur 1 carreau (2,0 N).",
+        "<em>⚠ Erreur fréquente : croire que le poids et la force exercée par le fil (ou par la table) forment un couple d'actions réciproques. Deux forces réciproques s'exercent sur deux objets différents (A sur B et B sur A) ; le poids et la force du fil s'exercent tous les deux sur la lampe.</em>",
+        "<em>⚠ Erreur fréquente : oublier de convertir 200 g en kilogramme (on trouverait un poids de 1 960 N pour un smartphone !).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Qui attire le plus la Lune ?",
+      "contexte": [
+        "Lors du premier quartier, la Lune, la Terre et le Soleil forment un angle droit (document ci-dessous). À ce moment, la distance Terre-Lune vaut 384 000 km et la distance Soleil-Lune vaut environ 1,50 × 10⁸ km. Les masses et la valeur de G sont dans l'encadré « Données »."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"300\" y1=\"30\" x2=\"300\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"330\" y1=\"30\" x2=\"330\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"360\" y1=\"30\" x2=\"360\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"390\" y1=\"30\" x2=\"390\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"420\" y1=\"30\" x2=\"420\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"450\" y1=\"30\" x2=\"450\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"480\" y1=\"30\" x2=\"480\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"510\" y1=\"30\" x2=\"510\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"540\" y1=\"30\" x2=\"540\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"570\" y1=\"30\" x2=\"570\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"600\" y1=\"30\" x2=\"600\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"630\" y1=\"30\" x2=\"630\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"660\" y1=\"30\" x2=\"660\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"690\" y1=\"30\" x2=\"690\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"30\" x2=\"690\" y2=\"30\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"60\" x2=\"690\" y2=\"60\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"90\" x2=\"690\" y2=\"90\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"120\" x2=\"690\" y2=\"120\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"150\" x2=\"690\" y2=\"150\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"180\" x2=\"690\" y2=\"180\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"210\" x2=\"690\" y2=\"210\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"240\" x2=\"690\" y2=\"240\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"270\" x2=\"690\" y2=\"270\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"300\" y1=\"300\" x2=\"690\" y2=\"300\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"20\" y=\"40\" font-weight=\"bold\" font-size=\"16\" fill=\"#1F4E5A\">La Lune au premier quartier</text><text x=\"20\" y=\"62\" font-size=\"14\">(tailles et distances non respectées)</text><line x1=\"600\" y1=\"150\" x2=\"600\" y2=\"400\" stroke=\"#888\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"40\" y1=\"150\" x2=\"600\" y2=\"150\" stroke=\"#888\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"150.0\" y1=\"190.0\" x2=\"54.0\" y2=\"190.0\" stroke=\"#C8962E\" stroke-width=\"3\"/><polygon points=\"40.0,190.0 54.0,183.7 54.0,196.3\" fill=\"#C8962E\"/><text x=\"40\" y=\"220\" font-size=\"14\" fill=\"#8a6a1e\">vers le Soleil (très loin :</text><text x=\"40\" y=\"240\" font-size=\"14\" fill=\"#8a6a1e\">1,50 × 10⁸ km de la Lune)</text><circle cx=\"600\" cy=\"150\" r=\"16\" fill=\"#cfcac0\" stroke=\"#666\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"150\" r=\"4\" fill=\"#222\"/><text x=\"624\" y=\"132\" font-weight=\"bold\">Lune (centre L)</text><circle cx=\"600\" cy=\"415\" r=\"40\" fill=\"#3f7fa6\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"652\" y=\"420\" font-weight=\"bold\">Terre</text><text x=\"610\" y=\"345\" font-size=\"14\">384 000 km</text><rect x=\"76\" y=\"330\" width=\"250\" height=\"44\" fill=\"#fff\"/><rect x=\"80\" y=\"336\" width=\"30\" height=\"30\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"120\" y=\"356.0\" fill=\"#1F4E5A\" font-weight=\"bold\">1 carreau ↔ 0,5 × 10²⁰ N</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule la valeur F<sub>T</sub>/<sub>L</sub> de la force d'attraction gravitationnelle exercée par la Terre sur la Lune.",
+          "aides": [
+            "Écris d'abord la loi de gravitation universelle : F = G × m1 × m2 / d².",
+            "Convertis la distance en mètres : 1 km = 10³ m.",
+            "Calcule d'abord d² = (3,84 × 10⁸)², puis le numérateur, puis divise ; vérifie l'ordre de grandeur avec l'exemple de la fiche."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur F<sub>S</sub>/<sub>L</sub> de la force exercée par le Soleil sur la Lune.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le rapport F<sub>S</sub>/<sub>L</sub> / F<sub>T</sub>/<sub>L</sub>. Quel astre attire le plus la Lune ? Es-tu surpris(e) ?",
+          "aides": []
+        },
+        {
+          "texte": "Représente ces deux forces sur le document, à l'échelle indiquée, en partant du centre L de la Lune.",
+          "aides": [
+            "Nombre de carreaux = valeur de la force / (0,5 × 10²⁰ N).",
+            "Chaque force est dirigée de la Lune vers l'astre qui l'attire (attraction)."
+          ]
+        },
+        {
+          "texte": "Ryan affirme : « La Terre est environ 81 fois plus massive que la Lune, donc la Terre attire la Lune 81 fois plus fort que la Lune n'attire la Terre. » Vérifie le nombre 81 puis discute cette affirmation.",
+          "aides": [
+            "Calcule m<sub>T</sub> / m<sub>L</sub> avec les données.",
+            "Relis le principe des actions réciproques : s'applique-t-il aussi aux forces à distance ? Regarde aussi si la formule change quand on échange m1 et m2."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F<sub>T</sub>/<sub>L</sub> = G × m<sub>T</sub> × m<sub>L</sub> / d² avec d = 384 000 km = 3,84 × 10⁸ m. F<sub>T</sub>/<sub>L</sub> = 6,67 × 10⁻¹¹ × 5,98 × 10²⁴ × 7,36 × 10²² / (3,84 × 10⁸)² ≈ 1,99 × 10²⁰ N ≈ 2,0 × 10²⁰ N.",
+        "<strong>2.</strong> d = 1,50 × 10⁸ km = 1,50 × 10¹¹ m. F<sub>S</sub>/<sub>L</sub> = 6,67 × 10⁻¹¹ × 1,99 × 10³⁰ × 7,36 × 10²² / (1,50 × 10¹¹)² ≈ 4,34 × 10²⁰ N.",
+        "<strong>3.</strong> F<sub>S</sub>/<sub>L</sub> / F<sub>T</sub>/<sub>L</sub> = 4,34 × 10²⁰ / 1,99 × 10²⁰ ≈ 2,18 ≈ 2,2 : le Soleil attire la Lune environ 2 fois plus que la Terre ! Il est beaucoup plus loin, mais sa masse est énorme (plus de 300 000 fois celle de la Terre). (La Lune ne « part » pas vers le Soleil : le Soleil attire aussi la Terre, et les deux astres tournent ensemble autour de lui.)",
+        "<strong>4.</strong> Les deux flèches partent de L. Vers la Terre : direction de la droite Lune-Terre (verticale sur le document), sens vers le bas, longueur (1,99 × 10²⁰) / (0,5 × 10²⁰) ≈ 4 carreaux. Vers le Soleil : direction de la droite Lune-Soleil (horizontale), sens vers la gauche, longueur (4,34 × 10²⁰) / (0,5 × 10²⁰) ≈ 8,7 carreaux.",
+        "<strong>5.</strong> m<sub>T</sub> / m<sub>L</sub> = 5,98 × 10²⁴ / 7,36 × 10²² ≈ 81,2 : le nombre 81 est correct. Mais l'affirmation est fausse : d'après le principe des actions réciproques (et la formule, symétrique en m<sub>T</sub> et m<sub>L</sub>), la Lune attire la Terre avec une force de même valeur, 2,0 × 10²⁰ N, de même direction et de sens opposé. La Terre « bouge » moins car elle est plus massive, pas parce qu'elle est moins attirée.",
+        "Vérification de l'unité : N·m²·kg⁻² × kg × kg / m² = N.",
+        "<em>⚠ Erreur fréquente : garder les distances en kilomètres (on trouverait 1,99 × 10²⁶ N pour la Terre) ou oublier le carré de la distance (7,64 × 10²⁸ N). La distance doit être en mètres et élevée au carré.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Quel câble pour déposer Perseverance sur Mars ?",
+      "contexte": [
+        "En février 2021, le rover Perseverance (masse 1 025 kg) s'est posé sur Mars. Pour les derniers mètres, un étage de descente freiné par ses moteurs, la « grue volante », l'a descendu lentement jusqu'au sol au bout de trois câbles en nylon, avant de s'éloigner. Tu fais partie de l'équipe qui choisit les câbles d'une future mission identique.",
+        "Doc. 1 — Schéma simplifié de la dépose (ci-dessous). On admet que, pendant la descente à vitesse constante, les trois câbles verticaux exercent sur le rover des forces de même valeur, et que la somme de ces trois valeurs est égale à la valeur du poids du rover sur Mars."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"0\" y=\"400\" width=\"760\" height=\"70\" fill=\"#B5523B\" fill-opacity=\"0.35\"/><path d=\"M0,402 Q120,390 240,404 T480,400 T760,398\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"20\" y=\"450\" font-size=\"15\" fill=\"#6b2c1f\" font-weight=\"bold\">sol de Mars</text><rect x=\"250\" y=\"40\" width=\"260\" height=\"56\" rx=\"8\" fill=\"#dcd7cc\" stroke=\"#555\" stroke-width=\"2\"/><polygon points=\"252,96 272,96 282,150 242,150\" fill=\"#C8962E\" fill-opacity=\"0.6\"/><polygon points=\"488,96 508,96 518,150 478,150\" fill=\"#C8962E\" fill-opacity=\"0.6\"/><text x=\"380\" y=\"74\" text-anchor=\"middle\" font-size=\"14\">étage de descente</text><line x1=\"310\" y1=\"96\" x2=\"310\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><line x1=\"380\" y1=\"96\" x2=\"380\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><line x1=\"450\" y1=\"96\" x2=\"450\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><rect x=\"280\" y=\"262\" width=\"200\" height=\"56\" rx=\"6\" fill=\"#f1e3c8\" stroke=\"#8a6a3a\" stroke-width=\"2\"/><line x1=\"300\" y1=\"262\" x2=\"300\" y2=\"222\" stroke=\"#8a6a3a\" stroke-width=\"4\"/><rect x=\"286\" y=\"208\" width=\"30\" height=\"16\" fill=\"#8a6a3a\"/><circle cx=\"300\" cy=\"338\" r=\"18\" fill=\"#444\"/><circle cx=\"380\" cy=\"338\" r=\"18\" fill=\"#444\"/><circle cx=\"460\" cy=\"338\" r=\"18\" fill=\"#444\"/><text x=\"380\" y=\"295\" text-anchor=\"middle\" font-size=\"14\">rover</text><line x1=\"560.0\" y1=\"150.0\" x2=\"477.7\" y2=\"172.9\" stroke=\"#444\" stroke-width=\"1.5\"/><polygon points=\"470.0,175.0 476.7,169.4 478.7,176.3\" fill=\"#444\"/><text x=\"566\" y=\"140\" font-size=\"15\">3 câbles en nylon,</text><text x=\"566\" y=\"160\" font-size=\"15\">verticaux</text><text x=\"566\" y=\"190\" font-size=\"15\">(quelques mètres)</text><line x1=\"560.0\" y1=\"290.0\" x2=\"498.0\" y2=\"290.0\" stroke=\"#444\" stroke-width=\"1.5\"/><polygon points=\"490.0,290.0 498.0,286.4 498.0,293.6\" fill=\"#444\"/><text x=\"566\" y=\"286\" font-size=\"15\">rover Perseverance</text><text x=\"566\" y=\"306\" font-size=\"15\">m = 1 025 kg</text><line x1=\"560.0\" y1=\"66.0\" x2=\"523.0\" y2=\"66.0\" stroke=\"#444\" stroke-width=\"1.5\"/><polygon points=\"515.0,66.0 523.0,62.4 523.0,69.6\" fill=\"#444\"/><text x=\"566\" y=\"62\" font-size=\"15\">« grue volante »</text><text x=\"566\" y=\"82\" font-size=\"15\">(freinée par ses moteurs)</text><line x1=\"140.0\" y1=\"150.0\" x2=\"140.0\" y2=\"316.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"140.0,330.0 133.7,316.0 146.3,316.0\" fill=\"#1F4E5A\"/><text x=\"30\" y=\"120\" font-size=\"15\" fill=\"#1F4E5A\">descente lente,</text><text x=\"30\" y=\"140\" font-size=\"15\" fill=\"#1F4E5A\">à vitesse constante</text><text x=\"20\" y=\"28\" font-weight=\"bold\" font-size=\"16\" fill=\"#1F4E5A\">Doc. 1 — La dépose du rover (schéma simplifié)</text></svg>",
+      "contexte2": [
+        "Doc. 2 — Données sur les astres. Mars : masse m<sub>Mars</sub> = 6,42 × 10²³ kg ; rayon R<sub>Mars</sub> = 3 390 km. Terre : masse m<sub>T</sub> = 5,98 × 10²⁴ kg ; rayon R<sub>T</sub> = 6 370 km. G = 6,67 × 10⁻¹¹ N·m²·kg⁻². Le poids d'un objet posé à la surface d'un astre est approché par la force d'attraction gravitationnelle exercée par cet astre, la distance d étant alors le rayon de l'astre.",
+        "Doc. 3 — Catalogue de câbles (données fictives). Charge de rupture = valeur de la force à partir de laquelle le câble casse. Câble A : charge de rupture 2 000 N, masse 15 g par mètre. Câble B : 3 000 N, 22 g par mètre. Câble C : 5 000 N, 37 g par mètre. Câble D : 8 000 N, 60 g par mètre.",
+        "Doc. 4 — Cahier des charges. Par sécurité, la force exercée sur chaque câble ne doit jamais dépasser la moitié de sa charge de rupture. Chaque kilogramme emporté vers Mars coûte très cher : on choisit le câble le plus léger qui convient."
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : vérifie, avec le doc. 2, que la force d'attraction exercée par la Terre sur un objet de 1 kg posé à sa surface est bien proche de 9,8 N. Que montre ce résultat ?",
+          "aides": [
+            "Utilise la formule de la loi de gravitation avec m = 1 kg et d = R<sub>T</sub>, en mètres.",
+            "Compare ton résultat au poids d'un objet de 1 kg sur Terre : P = 1 × 9,8."
+          ]
+        },
+        {
+          "texte": "S'approprier : un câble est tendu par une force exercée sur lui. Quel objet exerce cette force sur le câble ? Comment sa valeur se compare-t-elle à celle de la force exercée par le câble sur le rover ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Quel modèle de câble l'équipe doit-elle choisir ? Rédige une réponse argumentée en présentant ta démarche et tes calculs.",
+          "aides": [
+            "Étape 1 : calcule le poids du rover SUR MARS avec la loi de gravitation (doc. 2), en convertissant le rayon en mètres.",
+            "Étape 2 : divise par 3 (trois câbles) pour obtenir la force exercée sur chaque câble.",
+            "Étape 3 : la charge de rupture doit être au moins le double de cette force ; choisis le câble le plus léger qui convient."
+          ]
+        },
+        {
+          "texte": "Regard critique : un ingénieur propose de tester le dispositif sur Terre, avec le vrai rover et les câbles choisis. Ce test est-il possible sans risque ? Justifie par un calcul et propose une solution.",
+          "aides": [
+            "Sur Terre, le poids du rover se calcule avec g = 9,8 N·kg⁻¹.",
+            "Compare la force exercée sur chaque câble à la charge de rupture du câble choisi."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F = G × m<sub>T</sub> × m / R<sub>T</sub>² avec R<sub>T</sub> = 6 370 km = 6,37 × 10⁶ m et m = 1 kg : F = 6,67 × 10⁻¹¹ × 5,98 × 10²⁴ × 1 / (6,37 × 10⁶)² ≈ 9,83 N ≈ 9,8 N. On retrouve P = m × g avec g = 9,8 N·kg⁻¹ : le poids est bien (approximativement) la force de gravitation exercée par l'astre. On peut donc utiliser la même méthode pour Mars.",
+        "<strong>2.</strong> C'est le rover qui exerce une force sur chaque câble (force verticale, vers le bas, appliquée au point d'attache du câble). D'après le principe des actions réciproques, elle a la même valeur (et la même direction, mais un sens opposé) que la force exercée par le câble sur le rover.",
+        "<strong>3.</strong> Démarche attendue : (a) calculer le poids du rover sur Mars ; (b) en déduire la force exercée sur chaque câble ; (c) appliquer la marge de sécurité ; (d) choisir le câble le plus léger qui convient.",
+        "a. P<sub>Mars</sub> = G × m<sub>Mars</sub> × m / R<sub>Mars</sub>² avec R<sub>Mars</sub> = 3,39 × 10⁶ m : P<sub>Mars</sub> = 6,67 × 10⁻¹¹ × 6,42 × 10²³ × 1 025 / (3,39 × 10⁶)² ≈ 3,82 × 10³ N (soit g<sub>Mars</sub> ≈ 3,73 N·kg⁻¹).",
+        "b. Chaque câble supporte un tiers du poids : F = 3 819 / 3 ≈ 1,27 × 10³ N ; d'après la question 2, chaque câble subit une force de même valeur de la part du rover.",
+        "c. Il faut une charge de rupture d'au moins 2 × 1 273 ≈ 2,55 × 10³ N.",
+        "d. Le câble A (2 000 N) ne convient pas ; les câbles B, C et D conviennent ; le plus léger est le câble B (3 000 N, 22 g par mètre). Conclusion : l'équipe doit choisir le câble B.",
+        "<strong>4.</strong> Sur Terre : P = m × g = 1 025 × 9,8 ≈ 1,00 × 10⁴ N, soit environ 3,35 × 10³ N par câble, plus que la charge de rupture du câble B (3 000 N) : les câbles casseraient ! Le poids du rover est environ 2,6 fois plus grand sur Terre que sur Mars. Solutions : faire le test avec une maquette de masse plus faible (environ 1 025 / 2,6 ≈ 390 kg pour avoir le même poids que sur Mars), ou utiliser des câbles plus résistants (câble D) pour le test seulement. Autre limite du modèle : on a négligé la masse des câbles, les à-coups lors de la descente et l'attraction des autres astres.",
+        "Éléments valorisés même si le résultat final est faux : idée que le poids sur Mars se calcule avec la loi de gravitation (ou g<sub>Mars</sub>) ; conversion des kilomètres en mètres ; partage du poids entre les trois câbles ; utilisation du principe des actions réciproques ; prise en compte de la marge de sécurité ; conclusion rédigée et argumentée.",
+        "<em>⚠ Erreur fréquente : calculer le poids avec g = 9,8 N·kg⁻¹ (valeur de la Terre) : on choisirait le câble D, presque trois fois plus lourd que nécessaire.</em>",
+        "<em>⚠ Erreur fréquente : oublier le partage entre les trois câbles (on choisirait D) ou oublier la marge de sécurité (on choisirait A, qui travaillerait à plus de 60 % de sa charge de rupture).</em>"
+      ]
+    }
+  ]
+}

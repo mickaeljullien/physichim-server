@@ -1,0 +1,750 @@
+{
+  "id": 59,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Énergie cinétique",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie cinétique Ec",
+            "text": "Énergie associée au mouvement d'un système, modélisé par un point matériel. Elle dépend de la masse m (en kg) du système et du carré de la valeur de sa vitesse v (en m/s)."
+          },
+          {
+            "type": "formula",
+            "label": "Énergie cinétique",
+            "text": "Ec = ½ × m × v²\n(Ec en joules J, m en kg, v en m/s)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : une voiture de masse m = 1200 kg roulant à v = 90 km/h, soit v = 25 m/s, possède une énergie cinétique Ec = ½ × 1200 × 25² = 3,75×10⁵ J."
+          }
+        ]
+      },
+      {
+        "title": "2. Travail d'une force",
+        "icon": "💪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Travail d'une force constante",
+            "text": "Le travail d'une force traduit l'action mécanique de cette force lors d'un déplacement. Pour une force constante F⃗ et un déplacement rectiligne d⃗, le travail s'exprime à l'aide du produit scalaire de ces deux vecteurs."
+          },
+          {
+            "type": "formula",
+            "label": "Travail d'une force constante",
+            "text": "W(F⃗) = F⃗ · d⃗ = F × d × cos(α)\n(W en joules J, F en newtons N, d en mètres m, α angle entre F⃗ et d⃗)"
+          },
+          {
+            "type": "warn",
+            "text": "Si le travail est positif (W > 0), la force est motrice : elle accélère le système. Si le travail est négatif (W < 0), la force est résistante : elle freine le système. C'est le cas des forces de frottement, dont le travail est toujours négatif lorsqu'elles s'opposent au mouvement."
+          }
+        ]
+      },
+      {
+        "title": "3. Théorème de l'énergie cinétique",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Théorème de l'énergie cinétique (TEC)",
+            "text": "Dans un référentiel galiléen, la variation d'énergie cinétique d'un système entre deux instants est égale à la somme des travaux de toutes les forces qui s'exercent sur lui pendant cette durée."
+          },
+          {
+            "type": "formula",
+            "label": "Théorème de l'énergie cinétique",
+            "text": "ΔEc = Ec(finale) − Ec(initiale) = ΣW(F⃗)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : un objet de masse m = 5,0 kg, initialement au repos (Ec initiale nulle), est soumis à une force dont le travail vaut W = 250 J. D'après le TEC, Ec(finale) = 250 J, d'où v = √(2×Ec/m) = √(2×250/5,0) = 10 m/s."
+          }
+        ]
+      },
+      {
+        "title": "4. Énergie potentielle de pesanteur",
+        "icon": "⛰️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie potentielle de pesanteur Epp",
+            "text": "Énergie associée à l'altitude d'un système dans le champ de pesanteur terrestre. Elle est comptée par rapport à une altitude de référence choisie (souvent z = 0)."
+          },
+          {
+            "type": "formula",
+            "label": "Énergie potentielle de pesanteur",
+            "text": "Epp = m × g × z\n(Epp en joules J, m en kg, g ≈ 9,81 N/kg, z altitude en m par rapport à la référence)"
+          },
+          {
+            "type": "text",
+            "text": "Plus l'altitude z diminue, plus l'énergie potentielle de pesanteur diminue : un objet qui descend restitue de l'énergie potentielle. Exemple : un objet de masse 3,0 kg à z = 15 m a Epp ≈ 441 J ; à z = 5,0 m, Epp ≈ 147 J."
+          }
+        ]
+      },
+      {
+        "title": "5. Énergie mécanique : conservation et non-conservation",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie mécanique Em",
+            "text": "Somme de l'énergie cinétique et de l'énergie potentielle de pesanteur d'un système : Em = Ec + Epp."
+          },
+          {
+            "type": "text",
+            "text": "En l'absence de frottement (forces conservatives uniquement), l'énergie mécanique se conserve au cours du mouvement : Em(finale) = Em(initiale). En présence de frottements (forces non conservatives), l'énergie mécanique diminue : une partie est dissipée, généralement sous forme thermique."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 240\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"210\" x2=\"460\" y2=\"210\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"210\" x2=\"60\" y2=\"20\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"420\" y=\"226\" font-size=\"11\" fill=\"#1B2420\">z (altitude)</text><text x=\"25\" y=\"25\" font-size=\"11\" fill=\"#1B2420\">Énergie (J)</text><text x=\"55\" y=\"224\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">z₁</text><text x=\"440\" y=\"224\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">0 (sol)</text><line x1=\"60\" y1=\"40\" x2=\"440\" y2=\"40\" stroke=\"#6E4FA0\" stroke-width=\"2.2\" stroke-dasharray=\"6 3\"/><text x=\"340\" y=\"33\" font-size=\"11\" fill=\"#6E4FA0\" font-weight=\"600\">Em = Ec + Epp (constante)</text><line x1=\"60\" y1=\"40\" x2=\"440\" y2=\"210\" stroke=\"#2F7D75\" stroke-width=\"2.2\"/><text x=\"90\" y=\"55\" font-size=\"12\" fill=\"#2F7D75\" font-weight=\"600\">Epp</text><line x1=\"60\" y1=\"210\" x2=\"440\" y2=\"40\" stroke=\"#C0472F\" stroke-width=\"2.2\"/><text x=\"390\" y=\"55\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">Ec</text></svg>",
+            "caption": "Chute libre sans frottement : Epp et Ec varient linéairement (et exactement en sens opposé) avec l'altitude z, mais leur somme Em reste constante — l'énergie potentielle se convertit intégralement en énergie cinétique."
+          },
+          {
+            "type": "formula",
+            "label": "Variation d'énergie mécanique avec frottements",
+            "text": "ΔEm = Em(finale) − Em(initiale) = W(forces non conservatives) < 0"
+          },
+          {
+            "type": "warn",
+            "text": "Exemple (chute avec frottements) : une bille de masse 0,20 kg lâchée d'une hauteur z1 = 3,0 m atteint le sol avec une vitesse mesurée v2 = 6,5 m/s, inférieure à la vitesse théorique sans frottement (≈ 7,67 m/s). L'énergie mécanique diminue (ΔEm ≈ −1,66 J) : l'énergie « perdue » est transférée à l'air sous forme thermique, par frottement (résistance de l'air)."
+          }
+        ]
+      },
+      {
+        "title": "6. Synthèse",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Expression",
+              "Caractéristique"
+            ],
+            "rows": [
+              [
+                "Énergie cinétique Ec",
+                "Ec = ½×m×v²",
+                "Associée au mouvement"
+              ],
+              [
+                "Énergie potentielle de pesanteur Epp",
+                "Epp = m×g×z",
+                "Associée à l'altitude"
+              ],
+              [
+                "Énergie mécanique Em",
+                "Em = Ec + Epp",
+                "Conservée sans frottement, diminue avec frottement"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Si la vitesse d'une voiture double, son énergie cinétique :",
+      "opts": [
+        "double",
+        "est multipliée par 4",
+        "ne change pas, la masse est la même",
+        "est multipliée par √2"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ec-proportionnelle-v",
+          "texte": "Croire que l'énergie cinétique est proportionnelle à la vitesse : Ec = ½ m v², elle dépend du carré de v"
+        },
+        null,
+        {
+          "code": "ec-depend-masse-seule",
+          "texte": "Croire que l'énergie cinétique ne dépend que de la masse : elle dépend aussi (et surtout) de la vitesse"
+        },
+        {
+          "code": "racine-au-lieu-carre",
+          "texte": "Prendre la racine au lieu du carré : Ec ∝ v², donc ×2² = ×4"
+        }
+      ],
+      "exp": "Ec = ½ m v² : si v double, v² est multiplié par 4, donc Ec aussi. C'est pourquoi la distance de freinage augmente très vite avec la vitesse."
+    },
+    {
+      "q": "Une voiture de 1 000 kg roule à 72 km·h⁻¹. Son énergie cinétique vaut :",
+      "opts": [
+        "2,6×10⁶ J",
+        "2,0×10⁵ J",
+        "4,0×10⁵ J",
+        "1,0×10⁴ J"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-kmh-ms-oubliee",
+          "texte": "Garder la vitesse en km·h⁻¹ : 72 km·h⁻¹ = 72 / 3,6 = 20 m·s⁻¹"
+        },
+        null,
+        {
+          "code": "oubli-facteur-un-demi",
+          "texte": "Oublier le facteur ½ : Ec = ½ m v² = ½ × 1 000 × 20²"
+        },
+        {
+          "code": "oubli-carre-vitesse",
+          "texte": "Oublier le carré de la vitesse : ½ × 1 000 × 20 ; il faut v² = 400"
+        }
+      ],
+      "exp": "v = 72 / 3,6 = 20 m·s⁻¹, donc Ec = ½ × 1 000 × 20² = 2,0×10⁵ J. Attention : v en m·s⁻¹, au carré, et le facteur ½."
+    },
+    {
+      "q": "Un objet de 3,0 kg descend de l'altitude 15 m à l'altitude 5,0 m (g = 9,81 N·kg⁻¹). Son énergie potentielle de pesanteur :",
+      "opts": [
+        "augmente de 294 J",
+        "diminue de 441 J",
+        "diminue de 30 J",
+        "diminue de 294 J"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "signe-variation-inverse",
+          "texte": "Se tromper de signe : quand l'altitude diminue, l'énergie potentielle de pesanteur diminue"
+        },
+        {
+          "code": "altitude-au-lieu-variation",
+          "texte": "Utiliser l'altitude de départ (15 m) au lieu de la variation d'altitude (10 m)"
+        },
+        {
+          "code": "oubli-g",
+          "texte": "Oublier g : Epp = m × g × z, et non m × z"
+        },
+        null
+      ],
+      "exp": "ΔEpp = m g (z₂ − z₁) = 3,0 × 9,81 × (5,0 − 15) ≈ −294 J : l'énergie potentielle diminue de 294 J. Attention : c'est la variation d'altitude qui compte."
+    },
+    {
+      "q": "Une force constante de 50 N tire une luge sur 10 m ; elle fait un angle de 60° avec le déplacement. Son travail W = F × d × cos α vaut :",
+      "opts": [
+        "500 J",
+        "250 J",
+        "433 J",
+        "5,0 J"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-cos",
+          "texte": "Oublier le cosinus : seule la composante de la force le long du déplacement travaille, W = F d cos α"
+        },
+        null,
+        {
+          "code": "cos-sin-inverses",
+          "texte": "Utiliser le sinus au lieu du cosinus : W = F d cos 60° = F d × 0,5"
+        },
+        {
+          "code": "quotient-au-lieu-produit",
+          "texte": "Diviser au lieu de multiplier : F / d ; le travail est un produit, en joules"
+        }
+      ],
+      "exp": "W = F × d × cos α = 50 × 10 × cos 60° = 50 × 10 × 0,5 = 250 J. Attention : α est l'angle entre la force et le déplacement."
+    },
+    {
+      "q": "Un traîneau avance sur la neige. Le travail de la force de frottement exercée par la neige sur le traîneau est :",
+      "opts": [
+        "négatif, car la force s'oppose au déplacement",
+        "positif, comme tout travail",
+        "nul, car la force est horizontale",
+        "nul, si le traîneau avance à vitesse constante"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "travail-toujours-positif",
+          "texte": "Croire qu'un travail est toujours positif : une force opposée au déplacement (α = 180°) a un travail négatif"
+        },
+        {
+          "code": "travail-nul-horizontal",
+          "texte": "Croire qu'une force horizontale ne travaille pas : c'est une force perpendiculaire au déplacement qui ne travaille pas"
+        },
+        {
+          "code": "vitesse-constante-travail-nul",
+          "texte": "Croire que chaque travail est nul à vitesse constante : c'est la somme des travaux qui est nulle (ΔEc = 0)"
+        }
+      ],
+      "exp": "Le frottement est opposé au déplacement (α = 180°, cos α = −1) : son travail est négatif, la force est résistante. Attention : à vitesse constante, c'est la somme des travaux qui est nulle."
+    },
+    {
+      "q": "Un objet de 2,0 kg, initialement au repos, reçoit un travail total de 100 J. D'après le théorème de l'énergie cinétique, sa vitesse finale vaut :",
+      "opts": [
+        "100 m·s⁻¹",
+        "10 m·s⁻¹",
+        "7,1 m·s⁻¹",
+        "50 m·s⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-racine",
+          "texte": "Oublier la racine : 2 W / m = 100 donne v², donc v = √100 = 10 m·s⁻¹"
+        },
+        null,
+        {
+          "code": "oubli-facteur-un-demi",
+          "texte": "Oublier le facteur ½ de l'énergie cinétique : v = √(W / m) ; il faut v = √(2 W / m)"
+        },
+        {
+          "code": "v-egal-w-sur-m",
+          "texte": "Diviser le travail par la masse, sans facteur 2 ni racine : W / m = 50"
+        }
+      ],
+      "exp": "ΔEc = W, avec Ec initiale nulle : ½ m v² = 100 J, donc v = √(2 × 100 / 2,0) = √100 = 10 m·s⁻¹. Attention à la racine et au facteur ½."
+    },
+    {
+      "q": "Un skieur part sans vitesse du haut d'une piste, 20 m au-dessus du bas (frottements négligés, g = 9,81 N·kg⁻¹). En bas, sa vitesse vaut :",
+      "opts": [
+        "392 m·s⁻¹",
+        "14,0 m·s⁻¹",
+        "19,8 m·s⁻¹",
+        "plus grande pour un skieur plus lourd"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-racine",
+          "texte": "Oublier la racine : 2 g h = 392 est la valeur de v², pas de v"
+        },
+        {
+          "code": "oubli-facteur-un-demi",
+          "texte": "Oublier le facteur ½ de l'énergie cinétique : m v² = m g h donne √(g h) ; il faut v = √(2 g h)"
+        },
+        null,
+        {
+          "code": "lourd-tombe-plus-vite",
+          "texte": "Croire qu'un objet plus lourd va plus vite : la masse se simplifie, v = √(2 g h) ne dépend pas de m"
+        }
+      ],
+      "exp": "Sans frottement, Em se conserve : ½ m v² = m g h, donc v = √(2 g h) = √(2 × 9,81 × 20) ≈ 19,8 m·s⁻¹, quelle que soit la masse. Attention à la racine."
+    },
+    {
+      "q": "Une bille tombe en subissant les frottements de l'air. Entre le départ et l'arrivée au sol, son énergie mécanique :",
+      "opts": [
+        "reste constante, car l'énergie se conserve toujours",
+        "augmente, car les frottements chauffent la bille",
+        "devient nulle à l'arrivée",
+        "diminue : une partie est transférée sous forme thermique"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "em-toujours-conservee",
+          "texte": "Confondre énergie totale et énergie mécanique : l'énergie se conserve, mais l'énergie mécanique diminue avec des frottements"
+        },
+        {
+          "code": "frottements-apportent-energie",
+          "texte": "Croire que les frottements apportent de l'énergie au système : leur travail est négatif, ils en retirent"
+        },
+        {
+          "code": "em-nulle-au-sol",
+          "texte": "Croire que l'énergie mécanique s'annule au sol : la bille y a encore une vitesse, donc une énergie cinétique"
+        },
+        null
+      ],
+      "exp": "Avec frottements, ΔEm = W(frottements) < 0 : l'énergie mécanique diminue, la part perdue est transférée à l'air et à la bille sous forme thermique. L'énergie totale, elle, se conserve."
+    },
+    {
+      "q": "Une balle est lancée verticalement vers le haut (frottements négligés). Au sommet de sa trajectoire :",
+      "opts": [
+        "Ec est nulle, Epp est maximale, Em est inchangée",
+        "Ec et Epp sont toutes deux nulles",
+        "Em est nulle, car la balle est immobile",
+        "Ec est maximale, car la balle a fini de monter"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "epp-nulle-sommet",
+          "texte": "Croire que Epp est nulle au sommet : l'altitude y est maximale, donc Epp aussi"
+        },
+        {
+          "code": "em-nulle-si-immobile",
+          "texte": "Croire que l'énergie mécanique est nulle quand la vitesse est nulle : Em = Ec + Epp, et Epp est maximale"
+        },
+        {
+          "code": "ec-max-sommet",
+          "texte": "Inverser les variations : en montant, la balle ralentit, son énergie cinétique diminue jusqu'à 0 au sommet"
+        }
+      ],
+      "exp": "Au sommet, v = 0 donc Ec = 0, et l'altitude est maximale donc Epp aussi ; sans frottement, Em = Ec + Epp garde sa valeur de départ : l'énergie cinétique s'est convertie en énergie potentielle."
+    },
+    {
+      "q": "Une luge de 50 kg descend d'une hauteur de 10 m, partant à l'arrêt, et arrive en bas à 12 m·s⁻¹ (g = 9,81 N·kg⁻¹). Le travail des frottements vaut ΔEm, soit environ :",
+      "opts": [
+        "+1,3×10³ J",
+        "3,6×10³ J",
+        "−4,6×10³ J",
+        "−1,3×10³ J"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "signe-variation-inverse",
+          "texte": "Se tromper de signe : l'énergie mécanique diminue, ΔEm = Em(finale) − Em(initiale) < 0"
+        },
+        {
+          "code": "ec-finale-pour-travail",
+          "texte": "Donner l'énergie cinétique finale (½ × 50 × 12²) : le travail des frottements est la variation d'énergie mécanique"
+        },
+        {
+          "code": "oubli-carre-vitesse",
+          "texte": "Oublier le carré de la vitesse : ½ × 50 × 12 = 300 J au lieu de ½ × 50 × 12² = 3 600 J"
+        },
+        null
+      ],
+      "exp": "Em(initiale) = m g h = 50 × 9,81 × 10 ≈ 4 905 J ; Em(finale) = ½ × 50 × 12² = 3 600 J ; ΔEm ≈ −1,3×10³ J = W(frottements). Attention : un travail résistant est négatif."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "La trottinette de Sofiane",
+      "contexte": [
+        "Sofiane se rend au lycée en trottinette. La masse de l'ensemble {Sofiane + trottinette} est m = 80 kg. Sur le trajet, il roule à v = 18 km·h⁻¹.",
+        "Rappel : l'énergie cinétique d'un système de masse m (en kg) qui se déplace à la vitesse v (en m·s⁻¹) vaut E<sub>c</sub> = ½ × m × v² (en joules, J)."
+      ],
+      "questions": [
+        {
+          "texte": "Convertis la vitesse v en m·s⁻¹.",
+          "aides": [
+            "Pour passer des km·h⁻¹ aux m·s⁻¹, on divise par 3,6 (voir l'encadré « Données »).",
+            "Explication : 1 km·h⁻¹ = 1 000 m / 3 600 s."
+          ]
+        },
+        {
+          "texte": "Calcule l'énergie cinétique E<sub>c</sub> de l'ensemble {Sofiane + trottinette}.",
+          "aides": []
+        },
+        {
+          "texte": "Dans une descente, sa vitesse atteint 36 km·h⁻¹. Calcule la nouvelle énergie cinétique. La vitesse a doublé : par combien l'énergie cinétique a-t-elle été multipliée ?",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase (avec un calcul si besoin).<br>a. L'énergie cinétique d'un système est proportionnelle à sa vitesse.<br>b. Un camion de 12 tonnes qui roule à 18 km·h⁻¹ a une énergie cinétique 150 fois plus grande que celle de Sofiane à la même vitesse.<br>c. L'énergie cinétique d'un système peut être négative.<br>d. Une énergie s'exprime en joules, et 1 J = 1 kg·m²·s⁻².<br>e. Pour un passager assis dans un bus en marche, l'énergie cinétique est nulle dans le référentiel du bus, mais pas dans le référentiel terrestre.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> v = 18 / 3,6 = 5,0 m·s⁻¹.",
+        "<strong>2.</strong> E<sub>c</sub> = ½ × m × v² = ½ × 80 × 5,0² = ½ × 80 × 25 = 1,0 × 10³ J.",
+        "<strong>3.</strong> 36 km·h⁻¹ = 36 / 3,6 = 10 m·s⁻¹ ; E<sub>c</sub> = ½ × 80 × 10² = 4,0 × 10³ J. La vitesse a été multipliée par 2, l'énergie cinétique par 4 = 2² (car E<sub>c</sub> dépend du carré de la vitesse).",
+        "<strong>4.</strong> a. FAUX : E<sub>c</sub> est proportionnelle au CARRÉ de la vitesse (question 3 : vitesse × 2, énergie × 4). Elle est en revanche proportionnelle à la masse.",
+        "b. VRAI : à vitesse égale, E<sub>c</sub> est proportionnelle à la masse ; 12 000 / 80 = 150. Le camion a E<sub>c</sub> = ½ × 12 000 × 5,0² = 1,5 × 10⁵ J.",
+        "c. FAUX : m &gt; 0 et v² ≥ 0, donc E<sub>c</sub> ≥ 0 ; elle est nulle seulement si le système est immobile.",
+        "d. VRAI : E<sub>c</sub> = ½ m v² s'exprime en kg × (m·s⁻¹)² = kg·m²·s⁻², c'est-à-dire en joules.",
+        "e. VRAI : la vitesse dépend du référentiel. Le passager est immobile par rapport au bus (v = 0, donc E<sub>c</sub> = 0), mais il se déplace par rapport à la route.",
+        "<em>⚠ Erreur fréquente : calculer E<sub>c</sub> avec v en km·h⁻¹ (on trouverait ½ × 80 × 18² = 1,3 × 10⁴ J, treize fois trop). La vitesse doit être en m·s⁻¹ pour obtenir des joules.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La valise à roulettes",
+      "contexte": [
+        "Inès traverse le hall d'une gare en tirant sa valise à roulettes, à vitesse constante, sur une distance AB = 50,0 m en ligne droite et à l'horizontale. Les forces qui s'exercent sur la valise sont représentées sur la figure ci-dessous :",
+        "• la force de traction F exercée par Inès (F = 30 N), qui fait un angle α = 60° avec l'horizontale ;",
+        "• le poids P de la valise (P = 180 N), vertical, vers le bas ;",
+        "• la réaction R du sol, perpendiculaire au sol ;",
+        "• la force de frottement f (f = 15 N), horizontale, opposée au déplacement.",
+        "Rappel : le travail d'une force constante F lors d'un déplacement rectiligne de A à B vaut W<sub>AB</sub>(F) = F × AB × cos α, où α est l'angle entre le vecteur F et le vecteur AB. Il s'exprime en joules (J) si F est en newtons et AB en mètres."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"20\" y1=\"330\" x2=\"740\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"30\" y1=\"330\" x2=\"18\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"54\" y1=\"330\" x2=\"42\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"78\" y1=\"330\" x2=\"66\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"102\" y1=\"330\" x2=\"90\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"126\" y1=\"330\" x2=\"114\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"330\" x2=\"138\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"174\" y1=\"330\" x2=\"162\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"198\" y1=\"330\" x2=\"186\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"222\" y1=\"330\" x2=\"210\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"246\" y1=\"330\" x2=\"234\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"270\" y1=\"330\" x2=\"258\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"294\" y1=\"330\" x2=\"282\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"318\" y1=\"330\" x2=\"306\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"342\" y1=\"330\" x2=\"330\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"366\" y1=\"330\" x2=\"354\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"390\" y1=\"330\" x2=\"378\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"414\" y1=\"330\" x2=\"402\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"438\" y1=\"330\" x2=\"426\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"462\" y1=\"330\" x2=\"450\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"486\" y1=\"330\" x2=\"474\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"510\" y1=\"330\" x2=\"498\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"534\" y1=\"330\" x2=\"522\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"558\" y1=\"330\" x2=\"546\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"582\" y1=\"330\" x2=\"570\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"606\" y1=\"330\" x2=\"594\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"630\" y1=\"330\" x2=\"618\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"654\" y1=\"330\" x2=\"642\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"678\" y1=\"330\" x2=\"666\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"702\" y1=\"330\" x2=\"690\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"726\" y1=\"330\" x2=\"714\" y2=\"342\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><rect x=\"250\" y=\"170\" width=\"150\" height=\"145\" rx=\"12\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><circle cx=\"275\" cy=\"322\" r=\"8\" fill=\"#3a3a3a\"/><circle cx=\"375\" cy=\"322\" r=\"8\" fill=\"#3a3a3a\"/><circle cx=\"325.0\" cy=\"242.5\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"303.0\" y=\"262.5\">G</text><line x1=\"400\" y1=\"195\" x2=\"435.0\" y2=\"134.4\" stroke=\"#3a3a3a\" stroke-width=\"5\"/><line x1=\"325.0\" y1=\"242.5\" x2=\"393.0\" y2=\"124.7\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"400.0,112.6 387.8,121.7 398.2,127.7\" fill=\"#B5523B\"/><text x=\"408.0\" y=\"116.6\" font-weight=\"bold\" font-size=\"18\" fill=\"#B5523B\">F</text><line x1=\"325.0\" y1=\"242.5\" x2=\"445.0\" y2=\"242.5\" stroke=\"#3a3a3a\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M 380.0 242.5 A 55 55 0 0 0 352.5 194.9\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.5\"/><text x=\"412\" y=\"228.5\" font-weight=\"bold\" fill=\"#C8962E\">α = 60°</text><line x1=\"325.0\" y1=\"242.5\" x2=\"325.0\" y2=\"348.5\" stroke=\"#1F4E5A\" stroke-width=\"3.5\"/><polygon points=\"325.0,362.5 331.0,348.5 319.0,348.5\" fill=\"#1F4E5A\"/><text x=\"333.0\" y=\"360.5\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">P</text><line x1=\"321.0\" y1=\"242.5\" x2=\"321.0\" y2=\"151.5\" stroke=\"#1F4E5A\" stroke-width=\"3.5\"/><polygon points=\"321.0,137.5 315.0,151.5 327.0,151.5\" fill=\"#1F4E5A\"/><text x=\"301.0\" y=\"152.5\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">R</text><line x1=\"325.0\" y1=\"245.5\" x2=\"244.0\" y2=\"245.5\" stroke=\"#C8962E\" stroke-width=\"3.5\"/><polygon points=\"230.0,245.5 244.0,251.5 244.0,239.5\" fill=\"#C8962E\"/><text x=\"225.0\" y=\"236.5\" font-weight=\"bold\" font-size=\"18\" fill=\"#C8962E\">f</text><circle cx=\"90\" cy=\"395\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"84\" y=\"423\" font-weight=\"bold\">A</text><circle cx=\"680\" cy=\"395\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"674\" y=\"423\" font-weight=\"bold\">B</text><line x1=\"90.0\" y1=\"395.0\" x2=\"666.0\" y2=\"395.0\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><polygon points=\"680.0,395.0 666.0,389.0 666.0,401.0\" fill=\"#3a3a3a\"/><text x=\"385\" y=\"423\" text-anchor=\"middle\">déplacement AB = 50,0 m</text><text x=\"560\" y=\"60\" font-size=\"15\" fill=\"#3a3a3a\">sens du mouvement →</text><text x=\"20\" y=\"40\" font-size=\"15\" fill=\"#3a3a3a\">Les forces sont représentées</text><text x=\"20\" y=\"60\" font-size=\"15\" fill=\"#3a3a3a\">au point G (sans souci d'échelle).</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule le travail W<sub>AB</sub>(F) de la force de traction. Cette force est-elle motrice ou résistante ?",
+          "aides": []
+        },
+        {
+          "texte": "Construis un tableau qui donne, pour chacune des quatre forces : angle α entre la force et le vecteur AB ; valeur de cos α ; travail W<sub>AB</sub> (en J) ; nature du travail (moteur, résistant ou nul).",
+          "aides": [
+            "Pour chaque force, repère sur la figure l'angle entre la flèche de la force et la flèche du déplacement AB.",
+            "Une force verticale fait 90° avec un déplacement horizontal ; une force opposée au déplacement fait 180° avec lui."
+          ]
+        },
+        {
+          "texte": "Calcule la somme des travaux des quatre forces. Inès avance à vitesse constante : que peux-tu dire de l'énergie cinétique de la valise entre A et B ? Les deux résultats te semblent-ils cohérents ?",
+          "aides": []
+        },
+        {
+          "texte": "QCM. Inès tire toujours avec une force de 30 N, mais tient la poignée plus bas, de sorte que α = 30°. Le travail de la force de traction entre A et B est alors : A. plus petit ; B. inchangé ; C. plus grand. Justifie par un calcul.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> W<sub>AB</sub>(F) = F × AB × cos 60° = 30 × 50,0 × 0,500 = 750 J. W &gt; 0 : la force de traction est motrice.",
+        "<strong>2.</strong> Tableau : force F : α = 60°, cos α = 0,500, W = 750 J, travail moteur.",
+        "Poids P : α = 90°, cos α = 0, W = 180 × 50,0 × 0 = 0 J, travail nul (le poids est perpendiculaire au déplacement horizontal).",
+        "Réaction R : α = 90°, cos α = 0, W = 0 J, travail nul.",
+        "Frottement f : α = 180°, cos α = −1, W = 15 × 50,0 × (−1) = −750 J, travail résistant.",
+        "<strong>3.</strong> ΣW = 750 + 0 + 0 − 750 = 0 J. La vitesse est constante, donc l'énergie cinétique ne varie pas : ΔE<sub>c</sub> = 0. C'est cohérent : la variation d'énergie cinétique est égale à la somme des travaux des forces (théorème de l'énergie cinétique, utilisé dans les exercices suivants).",
+        "<strong>4.</strong> Réponse C. W<sub>AB</sub>(F) = 30 × 50,0 × cos 30° = 30 × 50,0 × 0,866 = 1,3 × 10³ J &gt; 750 J. Plus la force est proche de la direction du déplacement (α petit, cos α grand), plus son travail est grand (au maximum 1,5 × 10³ J pour α = 0°).",
+        "<em>⚠ Erreur fréquente : prendre pour α l'angle entre la force et la verticale, ou oublier que cos 180° = −1 (le travail d'une force de frottement opposée au déplacement est négatif).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le ballon lâché du balcon",
+      "contexte": [
+        "Lina lâche, sans vitesse initiale, un ballon de basket de masse m = 600 g depuis son balcon. L'altitude z est mesurée à partir du sol (z = 0 au sol, référence de l'énergie potentielle de pesanteur). Un logiciel a calculé, à partir d'une vidéo, l'énergie cinétique, l'énergie potentielle de pesanteur et l'énergie mécanique du ballon jusqu'à son arrivée au sol (graphique ci-dessous).",
+        "Rappels : E<sub>c</sub> = ½ × m × v² ; E<sub>pp</sub> = m × g × z ; E<sub>m</sub> = E<sub>c</sub> + E<sub>pp</sub>."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"139.1\" y1=\"20\" x2=\"139.1\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"139.1\" y=\"422\" text-anchor=\"middle\">0,1</text><line x1=\"198.2\" y1=\"20\" x2=\"198.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"198.2\" y=\"422\" text-anchor=\"middle\">0,2</text><line x1=\"257.3\" y1=\"20\" x2=\"257.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"257.3\" y=\"422\" text-anchor=\"middle\">0,3</text><line x1=\"316.4\" y1=\"20\" x2=\"316.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"316.4\" y=\"422\" text-anchor=\"middle\">0,4</text><line x1=\"375.5\" y1=\"20\" x2=\"375.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"375.5\" y=\"422\" text-anchor=\"middle\">0,5</text><line x1=\"434.5\" y1=\"20\" x2=\"434.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"434.5\" y=\"422\" text-anchor=\"middle\">0,6</text><line x1=\"493.6\" y1=\"20\" x2=\"493.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"493.6\" y=\"422\" text-anchor=\"middle\">0,7</text><line x1=\"552.7\" y1=\"20\" x2=\"552.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"552.7\" y=\"422\" text-anchor=\"middle\">0,8</text><line x1=\"611.8\" y1=\"20\" x2=\"611.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"611.8\" y=\"422\" text-anchor=\"middle\">0,9</text><line x1=\"670.9\" y1=\"20\" x2=\"670.9\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"670.9\" y=\"422\" text-anchor=\"middle\">1</text><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">1,1</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"345.7\" x2=\"730\" y2=\"345.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"350.7\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"291.4\" x2=\"730\" y2=\"291.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"296.4\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"237.1\" x2=\"730\" y2=\"237.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"242.1\" text-anchor=\"end\">15</text><line x1=\"80\" y1=\"182.9\" x2=\"730\" y2=\"182.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"187.9\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"128.6\" x2=\"730\" y2=\"128.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"133.6\" text-anchor=\"end\">25</text><line x1=\"80\" y1=\"74.3\" x2=\"730\" y2=\"74.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"79.3\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">35</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">temps t (s)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">énergie (J)</text><polyline points=\"80.0,74.1 83.0,74.1 86.0,74.1 89.0,74.2 92.1,74.2 95.1,74.3 98.1,74.4 101.1,74.5 104.1,74.6 107.1,74.7 110.1,74.9 113.1,75.1 116.2,75.3 119.2,75.5 122.2,75.7 125.2,75.9 128.2,76.2 131.2,76.4 134.2,76.7 137.2,77.0 140.3,77.3 143.3,77.7 146.3,78.0 149.3,78.4 152.3,78.8 155.3,79.2 158.3,79.6 161.3,80.0 164.4,80.5 167.4,80.9 170.4,81.4 173.4,81.9 176.4,82.4 179.4,83.0 182.4,83.5 185.4,84.1 188.5,84.6 191.5,85.2 194.5,85.8 197.5,86.5 200.5,87.1 203.5,87.8 206.5,88.5 209.5,89.1 212.6,89.9 215.6,90.6 218.6,91.3 221.6,92.1 224.6,92.9 227.6,93.6 230.6,94.5 233.6,95.3 236.7,96.1 239.7,97.0 242.7,97.8 245.7,98.7 248.7,99.6 251.7,100.6 254.7,101.5 257.7,102.4 260.8,103.4 263.8,104.4 266.8,105.4 269.8,106.4 272.8,107.5 275.8,108.5 278.8,109.6 281.9,110.7 284.9,111.8 287.9,112.9 290.9,114.0 293.9,115.2 296.9,116.3 299.9,117.5 302.9,118.7 306.0,119.9 309.0,121.1 312.0,122.4 315.0,123.7 318.0,124.9 321.0,126.2 324.0,127.5 327.0,128.9 330.1,130.2 333.1,131.6 336.1,133.0 339.1,134.3 342.1,135.8 345.1,137.2 348.1,138.6 351.1,140.1 354.2,141.6 357.2,143.0 360.2,144.6 363.2,146.1 366.2,147.6 369.2,149.2 372.2,150.7 375.2,152.3 378.3,153.9 381.3,155.6 384.3,157.2 387.3,158.9 390.3,160.5 393.3,162.2 396.3,163.9 399.3,165.6 402.4,167.4 405.4,169.1 408.4,170.9 411.4,172.7 414.4,174.5 417.4,176.3 420.4,178.1 423.4,180.0 426.5,181.8 429.5,183.7 432.5,185.6 435.5,187.5 438.5,189.5 441.5,191.4 444.5,193.4 447.5,195.4 450.6,197.4 453.6,199.4 456.6,201.4 459.6,203.4 462.6,205.5 465.6,207.6 468.6,209.7 471.7,211.8 474.7,213.9 477.7,216.1 480.7,218.2 483.7,220.4 486.7,222.6 489.7,224.8 492.7,227.0 495.8,229.3 498.8,231.5 501.8,233.8 504.8,236.1 507.8,238.4 510.8,240.7 513.8,243.0 516.8,245.4 519.9,247.8 522.9,250.2 525.9,252.6 528.9,255.0 531.9,257.4 534.9,259.9 537.9,262.3 540.9,264.8 544.0,267.3 547.0,269.8 550.0,272.4 553.0,274.9 556.0,277.5 559.0,280.1 562.0,282.7 565.0,285.3 568.1,287.9 571.1,290.6 574.1,293.2 577.1,295.9 580.1,298.6 583.1,301.3 586.1,304.1 589.1,306.8 592.2,309.6 595.2,312.3 598.2,315.1 601.2,317.9 604.2,320.8 607.2,323.6 610.2,326.5 613.2,329.3 616.3,332.2 619.3,335.2 622.3,338.1 625.3,341.0 628.3,344.0 631.3,346.9 634.3,349.9 637.3,352.9 640.4,356.0 643.4,359.0 646.4,362.1 649.4,365.1 652.4,368.2 655.4,371.3 658.4,374.4 661.5,377.6 664.5,380.7 667.5,383.9 670.5,387.1 673.5,390.3 676.5,393.5 679.5,396.7 682.5,400.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><polyline points=\"80.0,400.0 83.0,400.0 86.0,400.0 89.0,399.9 92.1,399.9 95.1,399.8 98.1,399.7 101.1,399.6 104.1,399.5 107.1,399.3 110.1,399.2 113.1,399.0 116.2,398.8 119.2,398.6 122.2,398.4 125.2,398.2 128.2,397.9 131.2,397.6 134.2,397.4 137.2,397.1 140.3,396.7 143.3,396.4 146.3,396.1 149.3,395.7 152.3,395.3 155.3,394.9 158.3,394.5 161.3,394.1 164.4,393.6 167.4,393.1 170.4,392.7 173.4,392.2 176.4,391.7 179.4,391.1 182.4,390.6 185.4,390.0 188.5,389.4 191.5,388.8 194.5,388.2 197.5,387.6 200.5,387.0 203.5,386.3 206.5,385.6 209.5,384.9 212.6,384.2 215.6,383.5 218.6,382.8 221.6,382.0 224.6,381.2 227.6,380.4 230.6,379.6 233.6,378.8 236.7,378.0 239.7,377.1 242.7,376.2 245.7,375.4 248.7,374.4 251.7,373.5 254.7,372.6 257.7,371.6 260.8,370.7 263.8,369.7 266.8,368.7 269.8,367.7 272.8,366.6 275.8,365.6 278.8,364.5 281.9,363.4 284.9,362.3 287.9,361.2 290.9,360.1 293.9,358.9 296.9,357.8 299.9,356.6 302.9,355.4 306.0,354.2 309.0,352.9 312.0,351.7 315.0,350.4 318.0,349.1 321.0,347.9 324.0,346.5 327.0,345.2 330.1,343.9 333.1,342.5 336.1,341.1 339.1,339.7 342.1,338.3 345.1,336.9 348.1,335.5 351.1,334.0 354.2,332.5 357.2,331.0 360.2,329.5 363.2,328.0 366.2,326.5 369.2,324.9 372.2,323.3 375.2,321.7 378.3,320.1 381.3,318.5 384.3,316.9 387.3,315.2 390.3,313.6 393.3,311.9 396.3,310.2 399.3,308.5 402.4,306.7 405.4,305.0 408.4,303.2 411.4,301.4 414.4,299.6 417.4,297.8 420.4,296.0 423.4,294.1 426.5,292.2 429.5,290.4 432.5,288.5 435.5,286.5 438.5,284.6 441.5,282.7 444.5,280.7 447.5,278.7 450.6,276.7 453.6,274.7 456.6,272.7 459.6,270.6 462.6,268.6 465.6,266.5 468.6,264.4 471.7,262.3 474.7,260.2 477.7,258.0 480.7,255.9 483.7,253.7 486.7,251.5 489.7,249.3 492.7,247.1 495.8,244.8 498.8,242.6 501.8,240.3 504.8,238.0 507.8,235.7 510.8,233.4 513.8,231.0 516.8,228.7 519.9,226.3 522.9,223.9 525.9,221.5 528.9,219.1 531.9,216.7 534.9,214.2 537.9,211.8 540.9,209.3 544.0,206.8 547.0,204.2 550.0,201.7 553.0,199.2 556.0,196.6 559.0,194.0 562.0,191.4 565.0,188.8 568.1,186.2 571.1,183.5 574.1,180.9 577.1,178.2 580.1,175.5 583.1,172.8 586.1,170.0 589.1,167.3 592.2,164.5 595.2,161.7 598.2,159.0 601.2,156.1 604.2,153.3 607.2,150.5 610.2,147.6 613.2,144.7 616.3,141.8 619.3,138.9 622.3,136.0 625.3,133.1 628.3,130.1 631.3,127.1 634.3,124.1 637.3,121.1 640.4,118.1 643.4,115.1 646.4,112.0 649.4,108.9 652.4,105.9 655.4,102.8 658.4,99.6 661.5,96.5 664.5,93.3 667.5,90.2 670.5,87.0 673.5,83.8 676.5,80.6 679.5,77.3 682.5,74.1\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.2\" stroke-dasharray=\"10 5\"/><polyline points=\"80.0,74.1 83.0,74.1 86.0,74.1 89.0,74.1 92.1,74.1 95.1,74.1 98.1,74.1 101.1,74.1 104.1,74.1 107.1,74.1 110.1,74.1 113.1,74.1 116.2,74.1 119.2,74.1 122.2,74.1 125.2,74.1 128.2,74.1 131.2,74.1 134.2,74.1 137.2,74.1 140.3,74.1 143.3,74.1 146.3,74.1 149.3,74.1 152.3,74.1 155.3,74.1 158.3,74.1 161.3,74.1 164.4,74.1 167.4,74.1 170.4,74.1 173.4,74.1 176.4,74.1 179.4,74.1 182.4,74.1 185.4,74.1 188.5,74.1 191.5,74.1 194.5,74.1 197.5,74.1 200.5,74.1 203.5,74.1 206.5,74.1 209.5,74.1 212.6,74.1 215.6,74.1 218.6,74.1 221.6,74.1 224.6,74.1 227.6,74.1 230.6,74.1 233.6,74.1 236.7,74.1 239.7,74.1 242.7,74.1 245.7,74.1 248.7,74.1 251.7,74.1 254.7,74.1 257.7,74.1 260.8,74.1 263.8,74.1 266.8,74.1 269.8,74.1 272.8,74.1 275.8,74.1 278.8,74.1 281.9,74.1 284.9,74.1 287.9,74.1 290.9,74.1 293.9,74.1 296.9,74.1 299.9,74.1 302.9,74.1 306.0,74.1 309.0,74.1 312.0,74.1 315.0,74.1 318.0,74.1 321.0,74.1 324.0,74.1 327.0,74.1 330.1,74.1 333.1,74.1 336.1,74.1 339.1,74.1 342.1,74.1 345.1,74.1 348.1,74.1 351.1,74.1 354.2,74.1 357.2,74.1 360.2,74.1 363.2,74.1 366.2,74.1 369.2,74.1 372.2,74.1 375.2,74.1 378.3,74.1 381.3,74.1 384.3,74.1 387.3,74.1 390.3,74.1 393.3,74.1 396.3,74.1 399.3,74.1 402.4,74.1 405.4,74.1 408.4,74.1 411.4,74.1 414.4,74.1 417.4,74.1 420.4,74.1 423.4,74.1 426.5,74.1 429.5,74.1 432.5,74.1 435.5,74.1 438.5,74.1 441.5,74.1 444.5,74.1 447.5,74.1 450.6,74.1 453.6,74.1 456.6,74.1 459.6,74.1 462.6,74.1 465.6,74.1 468.6,74.1 471.7,74.1 474.7,74.1 477.7,74.1 480.7,74.1 483.7,74.1 486.7,74.1 489.7,74.1 492.7,74.1 495.8,74.1 498.8,74.1 501.8,74.1 504.8,74.1 507.8,74.1 510.8,74.1 513.8,74.1 516.8,74.1 519.9,74.1 522.9,74.1 525.9,74.1 528.9,74.1 531.9,74.1 534.9,74.1 537.9,74.1 540.9,74.1 544.0,74.1 547.0,74.1 550.0,74.1 553.0,74.1 556.0,74.1 559.0,74.1 562.0,74.1 565.0,74.1 568.1,74.1 571.1,74.1 574.1,74.1 577.1,74.1 580.1,74.1 583.1,74.1 586.1,74.1 589.1,74.1 592.2,74.1 595.2,74.1 598.2,74.1 601.2,74.1 604.2,74.1 607.2,74.1 610.2,74.1 613.2,74.1 616.3,74.1 619.3,74.1 622.3,74.1 625.3,74.1 628.3,74.1 631.3,74.1 634.3,74.1 637.3,74.1 640.4,74.1 643.4,74.1 646.4,74.1 649.4,74.1 652.4,74.1 655.4,74.1 658.4,74.1 661.5,74.1 664.5,74.1 667.5,74.1 670.5,74.1 673.5,74.1 676.5,74.1 679.5,74.1 682.5,74.1\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"3.2\"/><text x=\"150.9\" y=\"112.3\" font-weight=\"bold\" fill=\"#1F4E5A\">courbe 1</text><text x=\"552.7\" y=\"144.9\" font-weight=\"bold\" fill=\"#B5523B\">courbe 2</text><text x=\"316.4\" y=\"61.3\" font-weight=\"bold\" fill=\"#C8962E\">courbe 3</text><line x1=\"682.5\" y1=\"20\" x2=\"682.5\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><text x=\"676.5\" y=\"215.4\" text-anchor=\"end\" font-size=\"15\" fill=\"#3a3a3a\">arrivée</text><text x=\"676.5\" y=\"233.4\" text-anchor=\"end\" font-size=\"15\" fill=\"#3a3a3a\">au sol</text></svg>",
+      "questions": [
+        {
+          "texte": "Que vaut l'énergie cinétique du ballon à t = 0 ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chacune des courbes 1, 2 et 3 à l'une des énergies E<sub>c</sub>, E<sub>pp</sub> et E<sub>m</sub>. Justifie.",
+          "aides": [
+            "Au départ, le ballon est immobile et en hauteur ; au sol, il va vite et z = 0. Quelle énergie est nulle au départ ? Laquelle est nulle à l'arrivée ?",
+            "Une des courbes est horizontale : elle représente la somme des deux autres."
+          ]
+        },
+        {
+          "texte": "Lis la valeur de l'énergie mécanique. Comment évolue-t-elle au cours de la chute ? Qu'en déduis-tu sur les frottements de l'air ?",
+          "aides": []
+        },
+        {
+          "texte": "Lis l'énergie potentielle de pesanteur à t = 0, puis déduis-en l'altitude z<sub>0</sub> du point de lâcher.",
+          "aides": [
+            "Isole z dans la relation E<sub>pp</sub> = m × g × z.",
+            "z = E<sub>pp</sub> / (m × g), avec la masse en kilogrammes."
+          ]
+        },
+        {
+          "texte": "Lis l'énergie cinétique du ballon juste avant qu'il touche le sol, puis calcule sa vitesse v<sub>sol</sub>, sachant que v = √(2 × E<sub>c</sub> / m).",
+          "aides": []
+        },
+        {
+          "texte": "Lis les valeurs de E<sub>pp</sub> et de E<sub>c</sub> à t = 0,60 s. Vérifie que leur somme est cohérente avec la question 3.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le ballon est lâché sans vitesse initiale : v = 0, donc E<sub>c</sub> = ½ × m × 0² = 0 J à t = 0.",
+        "<strong>2.</strong> Courbe 2 : part de 0 et augmente, le ballon accélère en tombant, c'est E<sub>c</sub>. Courbe 1 : diminue jusqu'à 0 au sol (z = 0), c'est E<sub>pp</sub>. Courbe 3 : reste constante, et vaut à chaque instant la somme des deux autres, c'est E<sub>m</sub> = E<sub>c</sub> + E<sub>pp</sub>.",
+        "<strong>3.</strong> On lit E<sub>m</sub> = 30 J, constante pendant toute la chute. L'énergie mécanique se conserve : les frottements de l'air sont négligeables (le ballon n'est soumis, en pratique, qu'à son poids).",
+        "<strong>4.</strong> À t = 0 : E<sub>pp</sub> = 30 J. z<sub>0</sub> = E<sub>pp</sub> / (m × g) = 30,0 / (0,600 × 9,81) = 5,10 m.",
+        "<strong>5.</strong> Au sol, E<sub>pp</sub> = 0 et E<sub>c</sub> = E<sub>m</sub> = 30 J. v<sub>sol</sub> = √(2 × 30,0 / 0,600) = √100 = 10,0 m·s⁻¹ (soit 36 km·h⁻¹).",
+        "<strong>6.</strong> On lit E<sub>pp</sub> ≈ 19,5 J et E<sub>c</sub> ≈ 10,5 J (valeurs calculées : 19,6 J et 10,4 J). Somme ≈ 30 J : on retrouve bien la valeur constante de E<sub>m</sub>.",
+        "<em>⚠ Erreur fréquente : laisser la masse en grammes (m = 600 au lieu de 0,600 kg) : on trouverait z<sub>0</sub> = 5,1 × 10⁻³ m, résultat absurde pour un balcon.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "En ville : 30 ou 50 km·h⁻¹ ?",
+      "contexte": [
+        "De nombreuses villes passent leurs rues « en zone 30 ». Pour comprendre pourquoi, on étudie une voiture de masse m = 1 150 kg (conducteur compris) qui roule sur une route horizontale et rectiligne. Un piéton surgit à 15,0 m devant elle.",
+        "Le conducteur met t<sub>R</sub> = 1,0 s à réagir (temps de réaction) : pendant cette durée, la voiture garde sa vitesse. Puis il freine : la route exerce alors sur la voiture une force de frottement constante, opposée au déplacement, de valeur f = 8,6 × 10³ N. On néglige l'action de l'air.",
+        "On compare deux vitesses initiales : v<sub>1</sub> = 50 km·h⁻¹ et v<sub>2</sub> = 30 km·h⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule l'énergie cinétique de la voiture à chacune des deux vitesses.",
+          "aides": [
+            "Convertis d'abord chaque vitesse en m·s⁻¹ (diviser par 3,6).",
+            "Puis E<sub>c</sub> = ½ × m × v², avec m en kg et v en m·s⁻¹."
+          ]
+        },
+        {
+          "texte": "Calcule, pour chaque vitesse, la distance de réaction d<sub>R</sub> parcourue pendant le temps de réaction.",
+          "aides": []
+        },
+        {
+          "texte": "Pendant le freinage, fais l'inventaire des forces qui s'exercent sur la voiture et indique, pour chacune, si son travail est moteur, résistant ou nul.",
+          "aides": [
+            "Trois forces s'exercent sur la voiture : l'action de la Terre et deux actions de la route.",
+            "Compare la direction de chaque force à celle du déplacement (horizontal) : perpendiculaire, même sens ou sens opposé ?"
+          ]
+        },
+        {
+          "texte": "En appliquant le théorème de l'énergie cinétique entre le début du freinage et l'arrêt, établis l'expression littérale de la distance de freinage d<sub>F</sub> en fonction de m, v et f, puis calcule d<sub>F</sub> pour les deux vitesses.",
+          "aides": [
+            "Écris ΔE<sub>c</sub> = E<sub>c</sub>(finale) − E<sub>c</sub>(initiale) : que vaut E<sub>c</sub> quand la voiture est arrêtée ?",
+            "Seule la force de frottement travaille : W(f) = f × d<sub>F</sub> × cos 180° = −f × d<sub>F</sub>.",
+            "Égale les deux expressions, puis isole d<sub>F</sub>."
+          ]
+        },
+        {
+          "texte": "Calcule la distance d'arrêt d<sub>A</sub> = d<sub>R</sub> + d<sub>F</sub> dans les deux cas. La voiture s'arrête-t-elle avant le piéton ?",
+          "aides": []
+        },
+        {
+          "texte": "À 50 km·h⁻¹, montre que la voiture heurte le piéton à une vitesse proche de 48 km·h⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Un camarade affirme : « Passer de 50 à 30 km·h⁻¹, c'est diviser la vitesse par 1,7 ; la distance de freinage n'est donc divisée que par 1,7. » Discute cette affirmation.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> v<sub>1</sub> = 50 / 3,6 = 13,9 m·s⁻¹ : E<sub>c1</sub> = ½ × 1 150 × 13,9² = 1,11 × 10⁵ J. v<sub>2</sub> = 30 / 3,6 = 8,33 m·s⁻¹ : E<sub>c2</sub> = ½ × 1 150 × 8,33² = 3,99 × 10⁴ J.",
+        "<strong>2.</strong> Mouvement uniforme pendant t<sub>R</sub> : d<sub>R</sub> = v × t<sub>R</sub>. À 50 km·h⁻¹ : d<sub>R</sub> = 13,9 × 1,0 = 13,9 m ; à 30 km·h⁻¹ : d<sub>R</sub> = 8,33 × 1,0 = 8,3 m.",
+        "<strong>3.</strong> Le poids P (vertical) et la réaction normale de la route R (verticale) sont perpendiculaires au déplacement horizontal : leur travail est nul. La force de frottement f est opposée au déplacement (α = 180°) : son travail W = −f × d<sub>F</sub> est résistant.",
+        "<strong>4.</strong> TEC entre le début du freinage (vitesse v) et l'arrêt (vitesse nulle) : E<sub>c</sub>(finale) − E<sub>c</sub>(initiale) = W(P) + W(R) + W(f), soit 0 − ½ m v² = 0 + 0 − f × d<sub>F</sub>, d'où d<sub>F</sub> = m v² / (2 f).",
+        "À 50 km·h⁻¹ : d<sub>F</sub> = 1,11 × 10⁵ / 8,6 × 10³ = 12,9 m. À 30 km·h⁻¹ : d<sub>F</sub> = 3,99 × 10⁴ / 8,6 × 10³ = 4,64 m.",
+        "<strong>5.</strong> À 50 km·h⁻¹ : d<sub>A</sub> = 13,9 + 12,9 = 26,8 m &gt; 15,0 m : la voiture ne s'arrête pas avant le piéton. À 30 km·h⁻¹ : d<sub>A</sub> = 8,3 + 4,64 = 13,0 m &lt; 15,0 m : la voiture s'arrête environ 2,0 m avant le piéton.",
+        "<strong>6.</strong> À 50 km·h⁻¹, la voiture ne freine que sur 15,0 − 13,9 = 1,1 m avant d'atteindre le piéton. TEC sur cette distance : E<sub>c</sub>(choc) = E<sub>c1</sub> − f × 1,1 = 1,11 × 10⁵ − 8,6 × 10³ × 1,11 = 1,01 × 10⁵ J. v = √(2 × E<sub>c</sub> / m) = √(2 × 1,01 × 10⁵ / 1 150) = 13,3 m·s⁻¹, soit 13,3 × 3,6 = 48 km·h⁻¹ : la voiture n'a presque pas ralenti au moment du choc.",
+        "<strong>7.</strong> L'affirmation est fausse : d<sub>F</sub> = m v² / (2 f) est proportionnelle au CARRÉ de la vitesse. Le rapport des distances de freinage vaut (50 / 30)² = 2,8 (vérification : 12,9 / 4,64 = 2,8). En zone 30, la distance de freinage est presque trois fois plus courte, et la distance d'arrêt deux fois plus courte (26,8 m contre 13,0 m).",
+        "<em>⚠ Erreur fréquente : oublier la distance de réaction, ou écrire le TEC sans le signe moins du travail résistant (on obtiendrait une distance « négative »). Penser aussi à convertir les km·h⁻¹ en m·s⁻¹.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le toboggan aquatique",
+      "contexte": [
+        "Au centre aquatique, Tom (masse m = 52,0 kg) s'élance en haut d'un toboggan au point A, à l'altitude z<sub>A</sub> = 12,0 m au-dessus de la surface du bassin, avec une vitesse v<sub>A</sub> = 1,0 m·s⁻¹. Il glisse le long de la piste sinueuse jusqu'au point B, à l'altitude z<sub>B</sub> = 0,50 m, où il quitte le toboggan (voir le schéma). La longueur de la piste entre A et B est L = 60,0 m.",
+        "L'origine des altitudes (et la référence de l'énergie potentielle de pesanteur) est la surface du bassin. Un capteur placé en B mesure la vitesse de Tom : v<sub>B</sub> = 11,0 m·s⁻¹."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"50.0\" y1=\"420.0\" x2=\"50.0\" y2=\"64.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polygon points=\"50.0,50.0 44.0,64.0 56.0,64.0\" fill=\"#3a3a3a\"/><text x=\"60\" y=\"62\" font-weight=\"bold\">z (m)</text><line x1=\"44\" y1=\"420\" x2=\"56\" y2=\"420\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"425\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"44\" y1=\"364\" x2=\"56\" y2=\"364\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"369\" text-anchor=\"end\" font-size=\"15\">2</text><line x1=\"44\" y1=\"308\" x2=\"56\" y2=\"308\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"313\" text-anchor=\"end\" font-size=\"15\">4</text><line x1=\"44\" y1=\"252\" x2=\"56\" y2=\"252\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"257\" text-anchor=\"end\" font-size=\"15\">6</text><line x1=\"44\" y1=\"196\" x2=\"56\" y2=\"196\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"201\" text-anchor=\"end\" font-size=\"15\">8</text><line x1=\"44\" y1=\"140\" x2=\"56\" y2=\"140\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"145\" text-anchor=\"end\" font-size=\"15\">10</text><line x1=\"44\" y1=\"84\" x2=\"56\" y2=\"84\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"38\" y=\"89\" text-anchor=\"end\" font-size=\"15\">12</text><rect x=\"560\" y=\"420\" width=\"190\" height=\"40\" fill=\"#cfe3e8\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"655\" y=\"447\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">bassin (z = 0)</text><line x1=\"20\" y1=\"420\" x2=\"560\" y2=\"420\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"90\" y=\"84.0\" width=\"60\" height=\"336.0\" fill=\"#F3EEE4\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><path d=\"M 150 84.0 C 330 84.0, 360 154.0, 230 196.0 S 150 280.0, 330 296.79999999999995 S 470 347.2, 430 375.2 S 480 406.0, 560 406.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"7\" stroke-linecap=\"round\"/><circle cx=\"150\" cy=\"84.0\" r=\"7\" fill=\"#B5523B\"/><text x=\"142\" y=\"70.0\" font-weight=\"bold\" font-size=\"18\" fill=\"#B5523B\">A</text><circle cx=\"560\" cy=\"406.0\" r=\"7\" fill=\"#B5523B\"/><text x=\"564\" y=\"392.0\" font-weight=\"bold\" font-size=\"18\" fill=\"#B5523B\">B</text><line x1=\"56\" y1=\"84.0\" x2=\"150\" y2=\"84.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><line x1=\"56\" y1=\"406.0\" x2=\"560\" y2=\"406.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><text x=\"200\" y=\"74.0\" font-size=\"15\">z<tspan baseline-shift=\"sub\" font-size=\"12\">A</tspan> = 12,0 m</text><text x=\"250\" y=\"398.0\" font-size=\"15\">z<tspan baseline-shift=\"sub\" font-size=\"12\">B</tspan> = 0,50 m</text><text x=\"470\" y=\"95\" font-size=\"15\" fill=\"#3a3a3a\">longueur de la piste</text><text x=\"470\" y=\"115\" font-size=\"15\" fill=\"#3a3a3a\">de A à B : L = 60,0 m</text><text x=\"470\" y=\"140\" font-size=\"15\" fill=\"#3a3a3a\">(schéma sans échelle</text><text x=\"470\" y=\"160\" font-size=\"15\" fill=\"#3a3a3a\">horizontale)</text></svg>",
+      "questions": [
+        {
+          "texte": "Fais l'inventaire des forces qui s'exercent sur Tom pendant la descente. Laquelle ne travaille pas ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le travail du poids de Tom entre A et B. Explique pourquoi ce travail ne dépend pas de la forme de la piste.",
+          "aides": [
+            "Le travail du poids entre deux points ne dépend que de leurs altitudes : W<sub>AB</sub>(P) = m × g × (z<sub>A</sub> − z<sub>B</sub>).",
+            "Découpe la piste en petits morceaux : sur chacun, le travail du poids ne fait intervenir que la descente verticale de ce morceau."
+          ]
+        },
+        {
+          "texte": "En négligeant les frottements, utilise le théorème de l'énergie cinétique pour calculer la vitesse qu'aurait Tom en B.",
+          "aides": [
+            "Sans frottement, seul le poids travaille (la réaction est perpendiculaire à la piste) : E<sub>c</sub>(B) − E<sub>c</sub>(A) = W<sub>AB</sub>(P).",
+            "Calcule d'abord E<sub>c</sub>(A) avec v<sub>A</sub> = 1,0 m·s⁻¹, puis E<sub>c</sub>(B), puis isole v<sub>B</sub> dans E<sub>c</sub> = ½ m v²."
+          ]
+        },
+        {
+          "texte": "Calcule l'énergie mécanique de Tom en A, puis en B (avec la vitesse mesurée). L'énergie mécanique se conserve-t-elle ? Quelle fraction de l'énergie mécanique initiale a été dissipée ? Sous quelle forme ?",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en le travail des forces de frottement entre A et B, puis la valeur f de la force de frottement, supposée constante et opposée au déplacement tout au long de la piste.",
+          "aides": [
+            "La variation d'énergie mécanique est égale au travail des forces non conservatives.",
+            "Pour une force constante opposée au déplacement sur une longueur L : W = f × L × cos 180° = −f × L."
+          ]
+        },
+        {
+          "texte": "Le gérant envisage une piste deux fois plus longue, avec les mêmes points de départ et d'arrivée (mêmes altitudes). En gardant la même force de frottement, prévois la vitesse de Tom en B, puis commente le résultat et les limites de cette prévision.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le poids P (vertical, vers le bas), la réaction normale R de la piste (perpendiculaire à la piste) et les forces de frottement (de la piste et de l'eau, opposées au déplacement). La réaction normale R est à chaque instant perpendiculaire au déplacement : son travail est nul.",
+        "<strong>2.</strong> W<sub>AB</sub>(P) = m × g × (z<sub>A</sub> − z<sub>B</sub>) = 52,0 × 9,81 × (12,0 − 0,50) = 5,87 × 10³ J (travail moteur : Tom descend). Ce travail ne dépend que de la différence d'altitude entre A et B, et pas du chemin suivi : sur chaque portion, seul le déplacement vertical compte (le poids est vertical).",
+        "<strong>3.</strong> TEC sans frottement : E<sub>c</sub>(B) − E<sub>c</sub>(A) = W<sub>AB</sub>(P). E<sub>c</sub>(A) = ½ × 52,0 × 1,0² = 26 J, donc E<sub>c</sub>(B) = 26 + 5,87 × 10³ = 5,89 × 10³ J et v<sub>B</sub> = √(2 × 5,89 × 10³ / 52,0) = 15,1 m·s⁻¹ (environ 54 km·h⁻¹).",
+        "<strong>4.</strong> E<sub>m</sub>(A) = E<sub>c</sub>(A) + m g z<sub>A</sub> = 26 + 52,0 × 9,81 × 12,0 = 26 + 6,12 × 10³ = 6,15 × 10³ J. E<sub>m</sub>(B) = ½ × 52,0 × 11,0² + 52,0 × 9,81 × 0,50 = 3,15 × 10³ + 255 = 3,40 × 10³ J.",
+        "E<sub>m</sub>(B) &lt; E<sub>m</sub>(A) : l'énergie mécanique ne se conserve pas. ΔE<sub>m</sub> = 3,40 × 10³ − 6,15 × 10³ = −2,75 × 10³ J, soit 2,75 / 6,15 = 45 % de l'énergie initiale, dissipée principalement sous forme thermique (échauffement de la piste, de l'eau et du maillot) par les frottements.",
+        "<strong>5.</strong> La variation d'énergie mécanique est égale au travail des forces non conservatives (les frottements) : W<sub>AB</sub>(f) = ΔE<sub>m</sub> = −2,75 × 10³ J. Pour une force constante opposée au déplacement sur une longueur L : W = −f × L, donc f = 2,75 × 10³ / 60,0 = 45,8 N.",
+        "<strong>6.</strong> Le travail du poids ne change pas (mêmes altitudes) : 5,87 × 10³ J. Le travail des frottements double : W(f) = −45,8 × 120 = −5,49 × 10³ J. TEC : E<sub>c</sub>(B) = 26 + 5,87 × 10³ − 5,49 × 10³ ≈ 4,0 × 10² J, d'où v<sub>B</sub> = √(2 × 4,0 × 10² / 52,0) = 3,9 m·s⁻¹.",
+        "Commentaire : Tom arriverait beaucoup plus lentement (le toboggan serait moins amusant, et un peu plus de frottement suffirait pour qu'il s'arrête sur la piste). Limites : la force de frottement n'est pas vraiment constante (elle dépend de la vitesse, du débit d'eau, de la position du corps) ; ce calcul ne donne qu'un ordre de grandeur.",
+        "<em>⚠ Erreur fréquente : écrire W(P) = m g (z<sub>B</sub> − z<sub>A</sub>), négatif, alors que le poids est moteur pendant une descente. Vérifie le signe : le poids travaille positivement quand le système descend.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Bilan énergétique d'un volant de badminton",
+      "contexte": [
+        "Doc. 1 — Le dégagement. Au club de badminton, Kenza frappe le volant (masse m = 5,1 g) vers le haut et vers le fond du terrain : c'est un « dégagement ». Son camarade filme la scène à 25 images par seconde, soit une durée Δt = 0,040 s entre deux images, et pointe les positions successives du volant : abscisse x (horizontale) et altitude y par rapport au sol, en mètres. Très léger et muni de plumes, le volant est fortement freiné par l'air.",
+        "Doc. 2 — Énergies du volant calculées par le script du doc. 3 (figure ci-dessous). La référence de l'énergie potentielle de pesanteur est le sol (y = 0).",
+        "Doc. 3 — Script Python (sous la figure). Les listes x et y contiennent les positions pointées, la première correspondant à t = 0. Pour chaque position i (sauf la première et la dernière), le script estime les coordonnées vx et vy du vecteur vitesse à partir des positions i − 1 et i + 1, puis calcule les énergies et affiche une ligne : t (s), E<sub>c</sub> (J), E<sub>pp</sub> (J), E<sub>m</sub> (J)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"130.0\" y1=\"20\" x2=\"130.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"130.0\" y=\"422\" text-anchor=\"middle\">0,04</text><line x1=\"180.0\" y1=\"20\" x2=\"180.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"180.0\" y=\"422\" text-anchor=\"middle\">0,08</text><line x1=\"230.0\" y1=\"20\" x2=\"230.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"230.0\" y=\"422\" text-anchor=\"middle\">0,12</text><line x1=\"280.0\" y1=\"20\" x2=\"280.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"280.0\" y=\"422\" text-anchor=\"middle\">0,16</text><line x1=\"330.0\" y1=\"20\" x2=\"330.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"330.0\" y=\"422\" text-anchor=\"middle\">0,2</text><line x1=\"380.0\" y1=\"20\" x2=\"380.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"380.0\" y=\"422\" text-anchor=\"middle\">0,24</text><line x1=\"430.0\" y1=\"20\" x2=\"430.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"430.0\" y=\"422\" text-anchor=\"middle\">0,28</text><line x1=\"480.0\" y1=\"20\" x2=\"480.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"480.0\" y=\"422\" text-anchor=\"middle\">0,32</text><line x1=\"530.0\" y1=\"20\" x2=\"530.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"530.0\" y=\"422\" text-anchor=\"middle\">0,36</text><line x1=\"580.0\" y1=\"20\" x2=\"580.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"580.0\" y=\"422\" text-anchor=\"middle\">0,4</text><line x1=\"630.0\" y1=\"20\" x2=\"630.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"630.0\" y=\"422\" text-anchor=\"middle\">0,44</text><line x1=\"680.0\" y1=\"20\" x2=\"680.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"680.0\" y=\"422\" text-anchor=\"middle\">0,48</text><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">0,52</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"362.0\" x2=\"730\" y2=\"362.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"367.0\" text-anchor=\"end\">0,1</text><line x1=\"80\" y1=\"324.0\" x2=\"730\" y2=\"324.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"329.0\" text-anchor=\"end\">0,2</text><line x1=\"80\" y1=\"286.0\" x2=\"730\" y2=\"286.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"291.0\" text-anchor=\"end\">0,3</text><line x1=\"80\" y1=\"248.0\" x2=\"730\" y2=\"248.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"253.0\" text-anchor=\"end\">0,4</text><line x1=\"80\" y1=\"210.0\" x2=\"730\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"215.0\" text-anchor=\"end\">0,5</text><line x1=\"80\" y1=\"172.0\" x2=\"730\" y2=\"172.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"177.0\" text-anchor=\"end\">0,6</text><line x1=\"80\" y1=\"134.0\" x2=\"730\" y2=\"134.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"139.0\" text-anchor=\"end\">0,7</text><line x1=\"80\" y1=\"96.0\" x2=\"730\" y2=\"96.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"101.0\" text-anchor=\"end\">0,8</text><line x1=\"80\" y1=\"58.0\" x2=\"730\" y2=\"58.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"63.0\" text-anchor=\"end\">0,9</text><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">1</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">temps t (s)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">énergie (J)</text><polyline points=\"130.0,61.4 180.0,128.7 230.0,170.1 280.0,198.6 330.0,216.5 380.0,230.9 430.0,240.8 480.0,247.2 530.0,254.5 580.0,258.6 630.0,261.7 680.0,264.3\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.5\"/><circle cx=\"130.0\" cy=\"61.4\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"180.0\" cy=\"128.7\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"230.0\" cy=\"170.1\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"280.0\" cy=\"198.6\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"330.0\" cy=\"216.5\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"380.0\" cy=\"230.9\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"430.0\" cy=\"240.8\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"480.0\" cy=\"247.2\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"530.0\" cy=\"254.5\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"580.0\" cy=\"258.6\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"630.0\" cy=\"261.7\" r=\"5\" fill=\"#C8962E\"/><circle cx=\"680.0\" cy=\"264.3\" r=\"5\" fill=\"#C8962E\"/><polyline points=\"130.0,119.6 180.0,195.6 230.0,245.0 280.0,279.9 330.0,303.5 380.0,322.5 430.0,336.9 480.0,347.2 530.0,357.4 580.0,364.3 630.0,369.6 680.0,374.5\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.5\" stroke-dasharray=\"10 5\"/><circle cx=\"130.0\" cy=\"119.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"180.0\" cy=\"195.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"230.0\" cy=\"245.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"280.0\" cy=\"279.9\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"330.0\" cy=\"303.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"380.0\" cy=\"322.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"430.0\" cy=\"336.9\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"480.0\" cy=\"347.2\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"530.0\" cy=\"357.4\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"580.0\" cy=\"364.3\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"630.0\" cy=\"369.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"680.0\" cy=\"374.5\" r=\"5\" fill=\"#B5523B\"/><polyline points=\"130.0,341.9 180.0,332.7 230.0,325.1 280.0,318.7 330.0,313.0 380.0,308.0 430.0,303.9 480.0,300.1 530.0,297.0 580.0,294.4 630.0,292.1 680.0,290.2\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><circle cx=\"130.0\" cy=\"341.9\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"180.0\" cy=\"332.7\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"230.0\" cy=\"325.1\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"280.0\" cy=\"318.7\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"330.0\" cy=\"313.0\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"380.0\" cy=\"308.0\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"430.0\" cy=\"303.9\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"480.0\" cy=\"300.1\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"530.0\" cy=\"297.0\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"580.0\" cy=\"294.4\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"630.0\" cy=\"292.1\" r=\"5\" fill=\"#1F4E5A\"/><circle cx=\"680.0\" cy=\"290.2\" r=\"5\" fill=\"#1F4E5A\"/><rect x=\"444.99999999999994\" y=\"24.599999999999966\" width=\"270\" height=\"92\" fill=\"#fff\" stroke=\"#d9d2c5\"/><line x1=\"454.99999999999994\" y1=\"40.599999999999966\" x2=\"494.99999999999994\" y2=\"40.599999999999966\" stroke=\"#C8962E\" stroke-width=\"2.5\"/><circle cx=\"474.99999999999994\" cy=\"40.599999999999966\" r=\"5\" fill=\"#C8962E\"/><text x=\"504.99999999999994\" y=\"45.599999999999966\">énergie mécanique E<tspan baseline-shift=\"sub\" font-size=\"12\">m</tspan></text><line x1=\"454.99999999999994\" y1=\"68.59999999999997\" x2=\"494.99999999999994\" y2=\"68.59999999999997\" stroke=\"#B5523B\" stroke-width=\"2.5\" stroke-dasharray=\"10 5\"/><circle cx=\"474.99999999999994\" cy=\"68.59999999999997\" r=\"5\" fill=\"#B5523B\"/><text x=\"504.99999999999994\" y=\"73.59999999999997\">énergie cinétique E<tspan baseline-shift=\"sub\" font-size=\"12\">c</tspan></text><line x1=\"454.99999999999994\" y1=\"96.59999999999997\" x2=\"494.99999999999994\" y2=\"96.59999999999997\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><circle cx=\"474.99999999999994\" cy=\"96.59999999999997\" r=\"5\" fill=\"#1F4E5A\"/><text x=\"504.99999999999994\" y=\"101.59999999999997\">énergie potentielle E<tspan baseline-shift=\"sub\" font-size=\"12\">pp</tspan></text></svg>",
+      "code": [
+        "m = 0.0051          # masse du volant (kg)",
+        "g = 9.81            # intensité de la pesanteur (N/kg)",
+        "dt = 0.040          # durée entre deux images (s)",
+        "x = [0.00, 0.48, 0.89, 1.25, 1.58, 1.87, 2.15,",
+        "     2.40, 2.64, 2.86, 3.07, 3.27, 3.46, 3.64]   # abscisses (m)",
+        "y = [2.50, 3.06, 3.53, 3.93, 4.27, 4.57, 4.83,",
+        "     5.05, 5.25, 5.42, 5.56, 5.68, 5.78, 5.86]   # altitudes (m)",
+        "for i in range(1, len(x) - 1):",
+        "    vx = (x[i+1] - x[i-1]) / (2 * dt)",
+        "    vy = (y[i+1] - y[i-1]) / (2 * dt)",
+        "    v = (vx**2 + vy**2) ** 0.5",
+        "    Ec = ...            # ligne A, à compléter",
+        "    Epp = ...           # ligne B, à compléter",
+        "    Em = ...            # ligne C, à compléter",
+        "    print(round(i * dt, 2), round(Ec, 3), round(Epp, 3), round(Em, 3))"
+      ],
+      "questions": [
+        {
+          "texte": "Appropriation du script (doc. 3).<br>a. Explique pourquoi la boucle ne traite ni la première ni la dernière position.<br>b. Que calcule la ligne commençant par « v = » ? Quelle relation mathématique traduit-elle ?",
+          "aides": [
+            "Pour calculer vx à la position i, de quelles positions le script a-t-il besoin ? Existent-elles pour i = 0 ?",
+            "vx et vy sont les coordonnées du vecteur vitesse ; la valeur de la vitesse est la norme de ce vecteur."
+          ]
+        },
+        {
+          "texte": "Complète les lignes A, B et C du script.",
+          "aides": [
+            "Traduis en Python les relations E<sub>c</sub> = ½ m v², E<sub>pp</sub> = m g z et E<sub>m</sub> = E<sub>c</sub> + E<sub>pp</sub>.",
+            "L'altitude de la position i s'écrit y[i] ; en Python, le carré de v s'écrit v**2."
+          ]
+        },
+        {
+          "texte": "Vérifie « à la main », à partir des positions du doc. 3, les valeurs affichées pour t = 0,04 s : calcule vx, vy, v, puis E<sub>c</sub>, E<sub>pp</sub> et E<sub>m</sub>.",
+          "aides": [
+            "Pour t = 0,04 s, i = 1 : utilise x[0], x[2], y[0] et y[2], avec 2 × Δt = 0,080 s.",
+            "Puis v = √(vx² + vy²) ; pour E<sub>pp</sub>, prends l'altitude y[1] = 3,06 m et la masse en kg."
+          ]
+        },
+        {
+          "texte": "Exploitation du doc. 2.<br>a. Lis l'énergie mécanique du volant à t = 0,04 s et à t = 0,48 s. Se conserve-t-elle ?<br>b. Déduis-en le travail des forces de frottement de l'air entre ces deux instants, et le pourcentage de l'énergie mécanique dissipée.",
+          "aides": [
+            "Identifie la courbe de E<sub>m</sub> sur le doc. 2 (ou utilise la dernière colonne des valeurs affichées).",
+            "ΔE<sub>m</sub> = E<sub>m</sub>(finale) − E<sub>m</sub>(initiale) est égale au travail des forces non conservatives, ici les frottements de l'air."
+          ]
+        },
+        {
+          "texte": "Calcule le travail du poids du volant entre t = 0,04 s et t = 0,48 s. Est-il moteur ou résistant ? Vérifie ensuite que le théorème de l'énergie cinétique est respecté entre ces deux instants (E<sub>c</sub> lue sur le doc. 2 : 0,738 J puis 0,067 J).",
+          "aides": []
+        },
+        {
+          "texte": "Compare la diminution de l'énergie mécanique entre 0,04 s et 0,20 s, puis entre 0,32 s et 0,48 s (deux durées égales). Que peut-on en déduire sur les frottements de l'air ?",
+          "aides": []
+        },
+        {
+          "texte": "Regard critique. Un camarade propose d'étudier ce dégagement avec le modèle sans frottement (conservation de l'énergie mécanique). Calcule la vitesse que ce modèle prévoit à t = 0,48 s, compare-la à la vitesse issue du pointage, et conclus. Cite aussi une source d'incertitude liée au pointage vidéo.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Le calcul de la vitesse à la position i utilise les positions i − 1 et i + 1 : il n'y a pas de position avant la première, ni après la dernière. On ne peut donc estimer la vitesse ni au premier ni au dernier point.",
+        "b. Elle calcule la valeur v de la vitesse, c'est-à-dire la norme du vecteur vitesse de coordonnées (vx ; vy) : v = √(vx² + vy²) (élever à la puissance 0,5 revient à prendre la racine carrée).",
+        "<strong>2.</strong> Ligne A : Ec = m * v**2 / 2 ; ligne B : Epp = m * g * y[i] ; ligne C : Em = Ec + Epp.",
+        "<strong>3.</strong> vx = (x₂ − x₀) / (2 × Δt) = (0,89 − 0,00) / 0,080 = 11,1 m·s⁻¹ ; vy = (3,53 − 2,50) / 0,080 = 12,9 m·s⁻¹ ; v = √(11,1² + 12,9²) = 17,0 m·s⁻¹ (17,02 m·s⁻¹ sans arrondir vx et vy).",
+        "E<sub>c</sub> = ½ × 5,1 × 10⁻³ × 17,02² = 0,738 J ; E<sub>pp</sub> = 5,1 × 10⁻³ × 9,81 × 3,06 = 0,153 J ; E<sub>m</sub> = 0,738 + 0,153 = 0,891 J. On retrouve la première ligne affichée par le script et le premier point des courbes.",
+        "<strong>4.</strong> a. E<sub>m</sub>(0,04 s) = 0,891 J et E<sub>m</sub>(0,48 s) = 0,357 J : l'énergie mécanique diminue nettement, elle ne se conserve pas.",
+        "b. W(frottements) = ΔE<sub>m</sub> = 0,357 − 0,891 = −0,534 J (travail résistant). Pourcentage dissipé : 0,534 / 0,891 = 60 % (l'énergie est transférée à l'air, principalement sous forme thermique).",
+        "<strong>5.</strong> W(P) = m × g × (y<sub>i</sub> − y<sub>f</sub>) = 5,1 × 10⁻³ × 9,81 × (3,06 − 5,78) = −0,136 J : travail résistant, car le volant monte. TEC : ΔE<sub>c</sub> = 0,067 − 0,738 = −0,671 J, et W(P) + W(frottements) = −0,136 + (−0,534) = −0,670 J : les deux valeurs sont égales aux arrondis près, le TEC est vérifié.",
+        "<strong>6.</strong> Entre 0,04 s et 0,20 s : E<sub>m</sub> diminue de 0,891 − 0,483 = 0,408 J. Entre 0,32 s et 0,48 s : de 0,402 − 0,357 = 0,045 J seulement, environ 9 fois moins. Le volant va beaucoup plus vite au début (17 m·s⁻¹ contre environ 5 m·s⁻¹) : les frottements de l'air sont d'autant plus intenses que la vitesse est grande.",
+        "<strong>7.</strong> Avec conservation de E<sub>m</sub> : E<sub>c</sub>(0,48 s) = 0,891 − 0,289 = 0,602 J, soit v = √(2 × 0,602 / 5,1 × 10⁻³) = 15,4 m·s⁻¹. Le pointage donne v = √(2 × 0,067 / 5,1 × 10⁻³) ≈ 5,1 m·s⁻¹, trois fois moins : le modèle sans frottement est inadapté au volant (il prévoirait un vol bien plus long). Il convient en revanche pour le ballon de l'exercice 3, plus lourd et plus lent.",
+        "Sources d'incertitude : précision du clic sur l'image (quelques centimètres), flou du volant rapide, échelle mal définie ou volant pas exactement dans le plan filmé ; l'erreur sur la vitesse est d'autant plus grande que Δt est petit devant la précision du pointage.",
+        "<em>⚠ Erreur fréquente : prendre W(P) = m g (y<sub>f</sub> − y<sub>i</sub>), positif, alors que le poids est résistant quand le système monte ; ou garder la masse en grammes (5,1 au lieu de 5,1 × 10⁻³ kg), ce qui multiplie toutes les énergies par 1 000.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,715 @@
+{
+  "id": 30,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Molécule et liaison covalente",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Molécule",
+            "text": "Édifice chimique électriquement neutre, formé d'un nombre limité d'atomes liés les uns aux autres par des liaisons covalentes."
+          },
+          {
+            "type": "def",
+            "term": "Liaison covalente",
+            "text": "Liaison chimique résultant de la mise en commun de deux électrons de valence entre deux atomes voisins, chaque atome fournissant un électron. Elle se représente par un tiret entre les deux atomes : A—B."
+          },
+          {
+            "type": "text",
+            "text": "Une liaison covalente peut être simple (une paire d'électrons partagée), double (deux paires) ou triple (trois paires)."
+          }
+        ]
+      },
+      {
+        "title": "2. Règle du duet/octet et nombre de liaisons",
+        "icon": "🔢",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un atome établit un nombre de liaisons covalentes égal au nombre d'électrons qui lui manquent pour compléter sa couche de valence selon la règle du duet (2 électrons) ou de l'octet (8 électrons)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Élément",
+              "Symbole",
+              "Électrons de valence",
+              "Nombre de liaisons"
+            ],
+            "rows": [
+              [
+                "Hydrogène",
+                "H",
+                "1",
+                "1"
+              ],
+              [
+                "Carbone",
+                "C",
+                "4",
+                "4"
+              ],
+              [
+                "Azote",
+                "N",
+                "5",
+                "3"
+              ],
+              [
+                "Oxygène",
+                "O",
+                "6",
+                "2"
+              ],
+              [
+                "Fluor / Chlore",
+                "F, Cl",
+                "7",
+                "1"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Doublets liants et doublets non liants",
+        "icon": "👥",
+        "content": [
+          {
+            "type": "def",
+            "term": "Doublet liant",
+            "text": "Paire de deux électrons partagée entre deux atomes ; elle correspond à une liaison covalente et se représente par un tiret entre les atomes."
+          },
+          {
+            "type": "def",
+            "term": "Doublet non liant",
+            "text": "Paire de deux électrons de valence qui appartient à un seul atome et ne participe à aucune liaison ; on l'appelle aussi doublet libre. Il se représente par un tiret porté par un seul atome."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : dans la molécule d'eau H₂O, l'atome d'oxygène établit 2 doublets liants (avec les deux atomes d'hydrogène) et possède 2 doublets non liants. Dans la molécule d'ammoniac NH₃, l'atome d'azote établit 3 doublets liants (avec les trois atomes d'hydrogène) et possède 1 doublet non liant."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 210\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"110.6\" y1=\"95.4\" x2=\"79.4\" y2=\"129.6\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"129.4\" y1=\"95.4\" x2=\"160.6\" y2=\"129.6\" stroke=\"#1B2420\" stroke-width=\"2\"/><text x=\"120\" y=\"90\" font-size=\"18\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">O</text><text x=\"70\" y=\"148\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><text x=\"170\" y=\"148\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><line x1=\"108\" y1=\"58\" x2=\"118\" y2=\"58\" stroke=\"#2F7D75\" stroke-width=\"2.5\"/><line x1=\"122\" y1=\"58\" x2=\"132\" y2=\"58\" stroke=\"#2F7D75\" stroke-width=\"2.5\"/><text x=\"120\" y=\"195\" font-size=\"13\" fill=\"#5C6B60\" text-anchor=\"middle\">H₂O</text><line x1=\"341\" y1=\"80.8\" x2=\"309\" y2=\"119.2\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"359\" y1=\"80.8\" x2=\"391\" y2=\"119.2\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"350\" y1=\"84\" x2=\"350\" y2=\"141\" stroke=\"#1B2420\" stroke-width=\"2\"/><text x=\"350\" y=\"75\" font-size=\"18\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">N</text><text x=\"300\" y=\"148\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><text x=\"400\" y=\"148\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><text x=\"350\" y=\"165\" font-size=\"16\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><line x1=\"344\" y1=\"40\" x2=\"356\" y2=\"40\" stroke=\"#2F7D75\" stroke-width=\"2.5\"/><text x=\"350\" y=\"195\" font-size=\"13\" fill=\"#5C6B60\" text-anchor=\"middle\">NH₃</text></svg>",
+            "caption": "Schémas de Lewis de H₂O et NH₃ : traits noirs = doublets liants (liaisons covalentes), traits verts au-dessus de l'atome = doublets non liants."
+          },
+          {
+            "type": "warn",
+            "text": "Le nombre total de doublets (liants + non liants) autour d'un atome respecte la règle du duet (2 doublets pour H) ou de l'octet (4 doublets pour C, N, O...)."
+          }
+        ]
+      },
+      {
+        "title": "4. Représentations d'une molécule",
+        "icon": "🖊️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une même molécule peut être représentée de plusieurs façons, chacune apportant des informations différentes. Exemple pris pour l'eau (H₂O)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Représentation",
+              "Description",
+              "Exemple (eau)"
+            ],
+            "rows": [
+              [
+                "Formule brute",
+                "Nature et nombre d'atomes, sans information sur les liaisons",
+                "H₂O"
+              ],
+              [
+                "Schéma de Lewis",
+                "Tous les doublets liants et non liants de tous les atomes",
+                "H—O—H avec 2 doublets non liants sur O"
+              ],
+              [
+                "Formule développée",
+                "Tous les atomes et toutes les liaisons entre eux",
+                "H—O—H"
+              ],
+              [
+                "Formule semi-développée",
+                "Liaisons avec les atomes d'hydrogène non représentées (indiquées par un indice)",
+                "H₂O (utile surtout pour des molécules plus grandes, ex. éthanol CH₃—CH₂—OH)"
+              ],
+              [
+                "Modèle moléculaire",
+                "Représentation en 3D avec des sphères et des bâtonnets",
+                "—"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "La formule brute et la formule développée ne renseignent pas sur la géométrie réelle (dans l'espace) de la molécule ; seul le modèle moléculaire le permet."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 210\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"90\" x2=\"43.6\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"31.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"80\" y1=\"90\" x2=\"116.4\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"128.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><polygon points=\"80,90 83.2,48.0 76.8,48.0\" fill=\"#1B2420\"/><text x=\"80.0\" y=\"37.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"73.1\" y1=\"85.7\" x2=\"71.9\" y2=\"88.9\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"65.8\" y1=\"82.3\" x2=\"64.1\" y2=\"86.8\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"58.5\" y1=\"78.9\" x2=\"56.4\" y2=\"84.7\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"51.2\" y1=\"75.5\" x2=\"48.6\" y2=\"82.6\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"44.0\" y1=\"72.1\" x2=\"40.9\" y2=\"80.5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"29.3\" y=\"74.5\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><circle cx=\"80\" cy=\"90\" r=\"7\" fill=\"#FAFAF5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"80\" y=\"94\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">C</text><text x=\"80\" y=\"178\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Tétraédrique (CH₄)</text><text x=\"80\" y=\"192\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">4 doublets liants</text><line x1=\"240\" y1=\"90\" x2=\"203.6\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"191.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"240\" y1=\"90\" x2=\"276.4\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"288.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><polygon points=\"240,90 243.2,48.0 236.8,48.0\" fill=\"#1B2420\"/><text x=\"240.0\" y=\"37.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><circle cx=\"215.7\" cy=\"80.4\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"214.1\" cy=\"86.2\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"240\" cy=\"90\" r=\"7\" fill=\"#FAFAF5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"240\" y=\"94\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">N</text><text x=\"240\" y=\"178\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Pyramidale (NH₃)</text><text x=\"240\" y=\"192\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">3 liants + 1 non liant</text><line x1=\"400\" y1=\"90\" x2=\"361.9\" y2=\"72.3\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"349.2\" y=\"69.3\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"400\" y1=\"90\" x2=\"438.1\" y2=\"72.3\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"450.8\" y=\"69.3\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><circle cx=\"392.5\" cy=\"115.1\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"398.4\" cy=\"116.1\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"402.6\" cy=\"122.0\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"408.5\" cy=\"121.0\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"400\" cy=\"90\" r=\"7\" fill=\"#FAFAF5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"400\" y=\"94\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">O</text><text x=\"400\" y=\"178\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Coudée (H₂O)</text><text x=\"400\" y=\"192\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">2 liants + 2 non liants</text></svg>",
+            "caption": "Exemples de modèles moléculaires en représentation 3D simplifiée (convention wedge-and-dash) : liaison pleine dans le plan, triangle plein vers l'avant, tirets vers l'arrière. Les doublets non liants (points) occupent eux aussi un emplacement dans l'espace."
+          }
+        ]
+      },
+      {
+        "title": "5. Énergie de liaison (approche qualitative)",
+        "icon": "🔥",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie de liaison",
+            "text": "Énergie qu'il faut fournir pour rompre (casser) une liaison covalente et séparer les deux atomes qu'elle unit."
+          },
+          {
+            "type": "text",
+            "text": "Plus une liaison covalente est forte, plus l'énergie nécessaire pour la rompre est grande. À l'inverse, la formation d'une liaison covalente entre deux atomes libère de l'énergie."
+          },
+          {
+            "type": "warn",
+            "text": "Rompre des liaisons consomme de l'énergie (processus endothermique) ; former des liaisons en libère (processus exothermique). C'est ce bilan énergétique qui explique, par exemple, pourquoi une réaction de combustion dégage de la chaleur."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une liaison covalente entre deux atomes correspond à :",
+      "opts": [
+        "le transfert d'un électron d'un atome à l'autre",
+        "la mise en commun de deux électrons, un apporté par chaque atome",
+        "la mise en commun d'un seul électron entre les deux atomes",
+        "l'attraction directe entre les deux noyaux, sans électrons"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "covalente-vs-ionique",
+          "texte": "Confondre liaison covalente et formation d'ions : dans une liaison covalente, les électrons sont partagés, pas transférés"
+        },
+        null,
+        {
+          "code": "liaison-un-electron",
+          "texte": "Croire qu'une liaison partage un seul électron : un doublet liant contient deux électrons"
+        },
+        {
+          "code": "liaison-sans-electrons",
+          "texte": "Oublier le rôle des électrons : ce sont eux, mis en commun, qui lient les atomes"
+        }
+      ],
+      "exp": "Une liaison covalente est un doublet liant : deux électrons de valence mis en commun, chaque atome en fournissant un. Attention : il n'y a pas de transfert d'électron comme pour les ions."
+    },
+    {
+      "q": "L'atome d'oxygène a 6 électrons de valence. Dans une molécule, il établit :",
+      "opts": [
+        "6 liaisons covalentes",
+        "8 liaisons covalentes",
+        "2 liaisons covalentes",
+        "4 liaisons covalentes"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "liaisons-egal-valence",
+          "texte": "Prendre le nombre d'électrons de valence pour le nombre de liaisons : il faut compter les électrons qui manquent pour l'octet (8 − 6 = 2)"
+        },
+        {
+          "code": "octet-pris-pour-liaisons",
+          "texte": "Prendre 8 (l'octet) pour le nombre de liaisons : 8 est le nombre d'électrons visé autour de l'atome"
+        },
+        null,
+        {
+          "code": "doublets-total-pris-pour-liaisons",
+          "texte": "Compter tous les doublets (4) comme des liaisons : l'oxygène a 2 doublets liants et 2 doublets non liants"
+        }
+      ],
+      "exp": "Il manque 8 − 6 = 2 électrons à l'oxygène pour respecter l'octet : il établit 2 liaisons covalentes. Attention : ses 4 autres électrons forment 2 doublets non liants."
+    },
+    {
+      "q": "Dans le schéma de Lewis de la molécule d'eau H₂O, l'atome d'oxygène porte :",
+      "opts": [
+        "2 doublets liants et 2 doublets non liants",
+        "4 doublets liants et aucun doublet non liant",
+        "2 doublets liants et 4 doublets non liants",
+        "2 doublets liants et aucun doublet non liant"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "doublets-total-pris-pour-liaisons",
+          "texte": "Compter tous les doublets comme des liaisons : l'oxygène ne forme que 2 liaisons, avec les 2 atomes d'hydrogène"
+        },
+        {
+          "code": "electrons-vs-doublets",
+          "texte": "Compter des électrons au lieu de doublets : 4 électrons non liants forment 2 doublets"
+        },
+        {
+          "code": "oubli-doublets-non-liants",
+          "texte": "Oublier les doublets non liants : il reste 4 électrons de valence sur l'oxygène, soit 2 doublets non liants"
+        }
+      ],
+      "exp": "L'oxygène forme 2 liaisons O—H (2 doublets liants) ; ses 6 − 2 = 4 autres électrons de valence forment 2 doublets non liants. Au total 4 doublets : l'octet est respecté."
+    },
+    {
+      "q": "Dans le schéma de Lewis de la molécule HCl, l'atome de chlore (7 électrons de valence) porte :",
+      "opts": [
+        "7 doublets non liants",
+        "aucun doublet non liant",
+        "4 doublets non liants",
+        "3 doublets non liants"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "electrons-vs-doublets",
+          "texte": "Compter des électrons au lieu de doublets : les 6 électrons non liants forment 3 doublets"
+        },
+        {
+          "code": "oubli-doublets-non-liants",
+          "texte": "Oublier les doublets non liants : il reste 6 électrons de valence sur le chlore, soit 3 doublets"
+        },
+        {
+          "code": "liant-compte-non-liant",
+          "texte": "Compter le doublet liant avec les doublets non liants : le chlore a 4 doublets au total, dont 1 liant"
+        },
+        null
+      ],
+      "exp": "Le chlore forme 1 liaison H—Cl ; ses 7 − 1 = 6 autres électrons de valence forment 3 doublets non liants. Au total 4 doublets : octet respecté."
+    },
+    {
+      "q": "Dans une molécule, un atome d'hydrogène établit :",
+      "opts": [
+        "2 liaisons, pour obtenir un duet",
+        "1 liaison et aucun doublet non liant",
+        "1 liaison et 1 doublet non liant",
+        "4 liaisons, pour respecter l'octet"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "duet-pris-pour-liaisons",
+          "texte": "Prendre 2 (le duet) pour le nombre de liaisons : une seule liaison (2 électrons partagés) suffit à H"
+        },
+        null,
+        {
+          "code": "doublet-non-liant-sur-h",
+          "texte": "Mettre un doublet non liant sur H : son unique électron est engagé dans la liaison, il n'en reste aucun"
+        },
+        {
+          "code": "duet-vs-octet",
+          "texte": "Appliquer la règle de l'octet à l'hydrogène : il suit la règle du duet (2 électrons)"
+        }
+      ],
+      "exp": "H a 1 électron de valence ; avec une liaison, il partage 2 électrons, comme l'hélium (duet). Attention : l'hydrogène ne porte jamais de doublet non liant."
+    },
+    {
+      "q": "Une molécule est formée d'un atome d'azote (5 électrons de valence) et d'atomes d'hydrogène. Sa formule est :",
+      "opts": [
+        "NH₅",
+        "NH₄",
+        "N₃H",
+        "NH₃"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "liaisons-egal-valence",
+          "texte": "Prendre le nombre d'électrons de valence pour le nombre de liaisons : il manque 8 − 5 = 3 électrons à l'azote"
+        },
+        {
+          "code": "doublets-total-pris-pour-liaisons",
+          "texte": "Compter tous les doublets comme des liaisons : l'azote a 4 doublets, dont 1 non liant"
+        },
+        {
+          "code": "indice-mal-place",
+          "texte": "Mettre l'indice sur le mauvais atome : il y a un atome d'azote et trois atomes d'hydrogène"
+        },
+        null
+      ],
+      "exp": "Il manque 3 électrons à l'azote pour l'octet : il établit 3 liaisons, avec 3 atomes d'hydrogène, d'où NH₃ (l'ammoniac), avec 1 doublet non liant sur N."
+    },
+    {
+      "q": "Pour rompre une liaison covalente :",
+      "opts": [
+        "il faut fournir de l'énergie",
+        "de l'énergie est libérée",
+        "aucune énergie n'est nécessaire",
+        "il faut ajouter des électrons aux atomes"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "rupture-libere-energie",
+          "texte": "Croire que casser une liaison libère de l'énergie : rompre une liaison en consomme, c'est la former qui en libère"
+        },
+        {
+          "code": "rupture-sans-energie",
+          "texte": "Croire qu'une liaison se casse sans énergie : l'énergie de liaison est justement l'énergie à fournir"
+        },
+        {
+          "code": "rupture-par-electrons",
+          "texte": "Croire qu'on rompt une liaison en ajoutant des électrons : il faut lui fournir de l'énergie"
+        }
+      ],
+      "exp": "L'énergie de liaison est l'énergie à fournir pour rompre la liaison. Attention : à l'inverse, former une liaison libère de l'énergie."
+    },
+    {
+      "q": "Une combustion libère de l'énergie. L'explication à l'échelle des molécules est :",
+      "opts": [
+        "rompre les liaisons du combustible libère l'énergie qu'elles contiennent",
+        "former les liaisons des produits libère plus d'énergie qu'il n'en faut pour rompre celles des réactifs",
+        "les atomes du combustible sont détruits et transformés en énergie",
+        "le dioxygène apporte la chaleur qu'il contient déjà"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "rupture-libere-energie",
+          "texte": "Croire que casser une liaison libère de l'énergie : rompre une liaison en consomme, c'est la former qui en libère"
+        },
+        null,
+        {
+          "code": "atomes-detruits",
+          "texte": "Croire que les atomes sont détruits : lors d'une réaction chimique, ils se réarrangent et se conservent"
+        },
+        {
+          "code": "chaleur-contenue-substance",
+          "texte": "Croire que la chaleur est contenue dans une substance : l'énergie libérée vient du bilan entre liaisons rompues et formées"
+        }
+      ],
+      "exp": "Rompre les liaisons des réactifs consomme de l'énergie ; former celles des produits en libère. Si l'énergie libérée est plus grande, la transformation dégage de l'énergie. Attention : les atomes, eux, se conservent."
+    },
+    {
+      "q": "Le schéma de Lewis de l'eau s'écrit souvent H—O—H, sur une ligne. La molécule d'eau est-elle linéaire ?",
+      "opts": [
+        "oui, puisque les atomes sont alignés sur le schéma",
+        "oui, car les deux H se repoussent au maximum",
+        "non, elle est coudée : le schéma de Lewis ne donne pas la géométrie",
+        "non, elle a la forme d'une pyramide, comme NH₃"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "schema-plan-donne-geometrie",
+          "texte": "Croire qu'un schéma écrit à plat montre la forme réelle : seul le modèle moléculaire montre la géométrie"
+        },
+        {
+          "code": "doublets-non-liants-sans-place",
+          "texte": "Oublier que les 2 doublets non liants de l'oxygène occupent aussi de la place autour de lui"
+        },
+        null,
+        {
+          "code": "geometries-confondues",
+          "texte": "Confondre les géométries : NH₃ (3 liaisons, 1 doublet non liant) est pyramidale, H₂O (2 liaisons, 2 doublets) est coudée"
+        }
+      ],
+      "exp": "L'oxygène est entouré de 4 doublets (2 liants, 2 non liants) répartis dans l'espace : la molécule d'eau est coudée. Attention : le schéma de Lewis et la formule développée ne renseignent pas sur la géométrie."
+    },
+    {
+      "q": "Une molécule est :",
+      "opts": [
+        "un assemblage d'ions de charges opposées",
+        "un ensemble d'atomes qui sont tous identiques",
+        "un atome qui a gagné ou perdu des électrons",
+        "un assemblage neutre d'atomes liés par covalence"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "ionique-vs-moleculaire",
+          "texte": "Confondre molécule et solide ionique : une molécule est faite d'atomes liés par des liaisons covalentes, pas d'ions"
+        },
+        {
+          "code": "molecule-atomes-identiques",
+          "texte": "Croire qu'une molécule ne contient qu'une sorte d'atome : H₂O contient de l'hydrogène et de l'oxygène"
+        },
+        {
+          "code": "molecule-vs-ion",
+          "texte": "Confondre molécule et ion : un ion est chargé, une molécule est neutre"
+        },
+        null
+      ],
+      "exp": "Une molécule est un assemblage neutre d'un nombre limité d'atomes liés par des liaisons covalentes (H₂O, CO₂, O₂…). Attention : elle n'est pas chargée, contrairement à un ion."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le quiz de Yanis",
+      "contexte": [
+        "Yanis prépare un quiz pour réviser le chapitre avec ses camarades. Il a écrit huit affirmations, mais certaines sont fausses."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse. Corrige celles qui sont fausses.<br>a. Une molécule est électriquement neutre.<br>b. Dans une liaison covalente, un atome donne deux électrons à l'autre atome.<br>c. Une liaison double correspond à la mise en commun de deux doublets d'électrons.<br>d. Un doublet non liant est partagé entre deux atomes voisins.<br>e. La formule brute C₂H₆O indique comment les atomes sont liés entre eux.<br>f. Seul le modèle moléculaire montre la géométrie de la molécule dans l'espace.<br>g. Pour rompre une liaison covalente, il faut fournir de l'énergie.<br>h. La formation d'une liaison covalente entre deux atomes consomme de l'énergie.",
+          "aides": []
+        },
+        {
+          "texte": "Dans la molécule de diazote N₂, les deux atomes d'azote sont unis par une liaison triple. Combien d'électrons sont mis en commun entre les deux atomes ?",
+          "aides": [
+            "Une liaison triple correspond à combien de doublets partagés ?",
+            "Un doublet est une paire d'électrons : multiplie le nombre de doublets par 2."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : une molécule est un édifice électriquement neutre (contrairement à un ion).",
+        "b. FAUX : chaque atome fournit UN électron ; les deux électrons sont mis en commun et forment un doublet liant.",
+        "c. VRAI : liaison simple = 1 doublet partagé, double = 2 doublets, triple = 3 doublets.",
+        "d. FAUX : un doublet non liant (ou doublet libre) appartient à un seul atome ; c'est le doublet liant qui est partagé.",
+        "e. FAUX : la formule brute donne seulement la nature et le nombre des atomes (2 C, 6 H, 1 O). Pour voir les liaisons, il faut la formule développée (ou semi-développée).",
+        "f. VRAI : les formules brute et développée ne renseignent pas sur la géométrie réelle ; seul le modèle moléculaire la montre.",
+        "g. VRAI : c'est la définition de l'énergie de liaison.",
+        "h. FAUX : la formation d'une liaison covalente LIBÈRE de l'énergie (processus exothermique) ; c'est la rupture qui en consomme.",
+        "<strong>2.</strong> Liaison triple = 3 doublets liants ; 1 doublet = 2 électrons : 3 × 2 = 6 électrons mis en commun.",
+        "<em>⚠ Erreur fréquente : compter un tiret comme un électron. Un tiret représente un doublet, soit 2 électrons.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Les molécules de la maison",
+      "contexte": [
+        "L'eau du robinet, l'ammoniac de certains produits d'entretien, le méthane du gaz naturel de la gazinière et le dioxyde de carbone des bulles de soda sont des espèces chimiques constituées de molécules. Leurs schémas de Lewis sont représentés ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"26\" text-anchor=\"middle\" font-weight=\"bold\">Schémas de Lewis de quatre molécules du quotidien</text><line x1=\"380\" y1=\"42\" x2=\"380\" y2=\"430\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"15\" y1=\"236\" x2=\"745\" y2=\"236\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"20\" y=\"64\" font-weight=\"bold\" fill=\"#3a3a3a\">Molécule 1 : eau</text><text x=\"400\" y=\"64\" font-weight=\"bold\" fill=\"#3a3a3a\">Molécule 2 : ammoniac</text><text x=\"20\" y=\"262\" font-weight=\"bold\" fill=\"#3a3a3a\">Molécule 3 : méthane</text><text x=\"400\" y=\"262\" font-weight=\"bold\" fill=\"#3a3a3a\">Molécule 4 : dioxyde de carbone</text><line x1=\"173.0\" y1=\"145.0\" x2=\"127.0\" y2=\"145.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"207.0\" y1=\"145.0\" x2=\"253.0\" y2=\"145.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"190\" y=\"154\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">O</text><line x1=\"181.0\" y1=\"122.0\" x2=\"199.0\" y2=\"122.0\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><line x1=\"199.0\" y1=\"168.0\" x2=\"181.0\" y2=\"168.0\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><text x=\"110\" y=\"154\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"270\" y=\"154\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><line x1=\"553.0\" y1=\"130.0\" x2=\"507.0\" y2=\"130.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"587.0\" y1=\"130.0\" x2=\"633.0\" y2=\"130.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"570.0\" y1=\"147.0\" x2=\"570.0\" y2=\"188.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"570\" y=\"139\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">N</text><line x1=\"561.0\" y1=\"107.0\" x2=\"579.0\" y2=\"107.0\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><text x=\"490\" y=\"139\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"650\" y=\"139\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"570\" y=\"214\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><line x1=\"213.0\" y1=\"350.0\" x2=\"175.0\" y2=\"350.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"247.0\" y1=\"350.0\" x2=\"285.0\" y2=\"350.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"333.0\" x2=\"230.0\" y2=\"297.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"367.0\" x2=\"230.0\" y2=\"403.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"230\" y=\"359\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">C</text><text x=\"158\" y=\"359\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"302\" y=\"359\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"230\" y=\"289\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"230\" y=\"429\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><line x1=\"553.0\" y1=\"355.0\" x2=\"495.0\" y2=\"355.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"553.0\" y1=\"345.0\" x2=\"495.0\" y2=\"345.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"587.0\" y1=\"345.0\" x2=\"645.0\" y2=\"345.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"587.0\" y1=\"355.0\" x2=\"645.0\" y2=\"355.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"570\" y=\"359\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">C</text><text x=\"478\" y=\"359\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">O</text><line x1=\"455.4\" y1=\"340.1\" x2=\"468.1\" y2=\"327.4\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><line x1=\"468.1\" y1=\"372.6\" x2=\"455.4\" y2=\"359.9\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><text x=\"662\" y=\"359\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">O</text><line x1=\"671.9\" y1=\"327.4\" x2=\"684.6\" y2=\"340.1\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><line x1=\"684.6\" y1=\"359.9\" x2=\"671.9\" y2=\"372.6\" stroke=\"#B5523B\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><line x1=\"30\" y1=\"455\" x2=\"60\" y2=\"455\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"68\" y=\"460\" font-size=\"15\">trait entre deux atomes : doublet liant</text><line x1=\"380\" y1=\"455\" x2=\"400\" y2=\"455\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><text x=\"408\" y=\"460\" font-size=\"15\">trait porté par un seul atome : doublet non liant</text></svg>",
+      "questions": [
+        {
+          "texte": "Écris la formule brute de chacune des quatre molécules.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque molécule, compte le nombre de doublets liants et le nombre de doublets non liants. Présente tes résultats dans un tableau.",
+          "aides": [
+            "Un doublet liant est un trait entre deux atomes ; un doublet non liant est un trait porté par un seul atome.",
+            "Deux traits entre deux atomes (liaison double) comptent pour deux doublets liants."
+          ]
+        },
+        {
+          "texte": "Quel type de liaison (simple, double ou triple) relie l'atome de carbone à chaque atome d'oxygène dans le dioxyde de carbone ?",
+          "aides": []
+        },
+        {
+          "texte": "Dans la molécule d'eau, compte le nombre d'électrons qui entourent l'atome d'oxygène, puis le nombre d'électrons qui entourent chaque atome d'hydrogène. Quelles règles sont respectées ?",
+          "aides": [
+            "Compte tous les traits qui touchent l'atome d'oxygène : ceux des liaisons ET ceux qu'il porte seul.",
+            "Chaque trait est un doublet, soit 2 électrons. Compare ensuite à 8 (octet) et à 2 (duet)."
+          ]
+        },
+        {
+          "texte": "Le néon (Z = 10) et l'hélium (Z = 2) sont des gaz nobles, très stables chimiquement. Écris leur configuration électronique. Explique pourquoi les atomes d'oxygène et d'hydrogène sont plus stables dans la molécule d'eau que s'ils étaient isolés.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Eau : H₂O ; ammoniac : NH₃ ; méthane : CH₄ ; dioxyde de carbone : CO₂.",
+        "<strong>2.</strong> Eau : 2 doublets liants, 2 doublets non liants (sur O). Ammoniac : 3 doublets liants, 1 doublet non liant (sur N). Méthane : 4 doublets liants, 0 doublet non liant. Dioxyde de carbone : 4 doublets liants (deux liaisons doubles), 4 doublets non liants (2 sur chaque O).",
+        "<strong>3.</strong> Deux traits entre C et chaque O : ce sont deux liaisons doubles.",
+        "<strong>4.</strong> Autour de O : 2 doublets liants + 2 doublets non liants = 4 doublets, soit 4 × 2 = 8 électrons : règle de l'octet respectée. Autour de chaque H : 1 doublet liant, soit 2 électrons : règle du duet respectée.",
+        "<strong>5.</strong> Néon : 1s² 2s² 2p⁶ (8 électrons sur la couche de valence n = 2). Hélium : 1s² (2 électrons). Dans la molécule d'eau, l'oxygène est entouré de 8 électrons comme le néon, et chaque hydrogène de 2 électrons comme l'hélium : chaque atome acquiert la structure électronique de valence d'un gaz noble, ce qui le stabilise. Isolés, O (6 électrons de valence) et H (1 électron) n'ont pas cette structure.",
+        "<em>⚠ Erreur fréquente : oublier de compter les doublets liants dans les électrons qui entourent un atome. Un doublet liant « appartient » aux deux atomes qu'il relie : on le compte pour chacun d'eux.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "La boîte de modèles moléculaires",
+      "contexte": [
+        "En TP, Malik ouvre une boîte de modèles moléculaires. Chaque atome est représenté par une boule de couleur, percée d'autant de trous que de liaisons covalentes simples que l'atome peut établir.",
+        "Rappel : nombre de liaisons d'un atome = nombre d'électrons qui lui manquent pour avoir 8 électrons sur sa couche de valence (2 pour l'hydrogène)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\">Les boules d'une boîte de modèles moléculaires</text><circle cx=\"76\" cy=\"160\" r=\"40\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"76.0\" cy=\"135.2\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><text x=\"76\" y=\"168\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"76\" y=\"258\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Hydrogène</text><text x=\"76\" y=\"283\" text-anchor=\"middle\" font-size=\"15\">boule blanche</text><text x=\"76\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">1 trou</text><circle cx=\"228\" cy=\"160\" r=\"52\" fill=\"#2b2b2b\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"228.0\" cy=\"127.8\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><circle cx=\"195.8\" cy=\"160.0\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><circle cx=\"228.0\" cy=\"192.2\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><circle cx=\"260.2\" cy=\"160.0\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><text x=\"228\" y=\"168\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#fff\">C</text><text x=\"228\" y=\"258\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Carbone</text><text x=\"228\" y=\"283\" text-anchor=\"middle\" font-size=\"15\">boule noire</text><text x=\"228\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">4 trous</text><circle cx=\"380\" cy=\"160\" r=\"52\" fill=\"#3d6fb6\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"380.0\" cy=\"127.8\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><circle cx=\"352.1\" cy=\"176.1\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><circle cx=\"407.9\" cy=\"176.1\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><text x=\"380\" y=\"168\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#fff\">N</text><text x=\"380\" y=\"258\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Azote</text><text x=\"380\" y=\"283\" text-anchor=\"middle\" font-size=\"15\">boule bleue</text><text x=\"380\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">3 trous</text><circle cx=\"532\" cy=\"160\" r=\"52\" fill=\"#c4342b\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"532.0\" cy=\"127.8\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><circle cx=\"532.0\" cy=\"192.2\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><text x=\"532\" y=\"168\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#fff\">O</text><text x=\"532\" y=\"258\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Oxygène</text><text x=\"532\" y=\"283\" text-anchor=\"middle\" font-size=\"15\">boule rouge</text><text x=\"532\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">2 trous</text><circle cx=\"684\" cy=\"160\" r=\"52\" fill=\"#3f9a4a\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"684.0\" cy=\"127.8\" r=\"7\" fill=\"#9a9a9a\" stroke=\"#000\" stroke-width=\"1.5\"/><text x=\"684\" y=\"168\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#fff\">Cl</text><text x=\"684\" y=\"258\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Chlore</text><text x=\"684\" y=\"283\" text-anchor=\"middle\" font-size=\"15\">boule verte</text><text x=\"684\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">1 trou</text><rect x=\"60\" y=\"355\" width=\"640\" height=\"90\" rx=\"10\" fill=\"#f4ede1\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><circle cx=\"120\" cy=\"400\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"142\" y=\"396\" width=\"60\" height=\"8\" fill=\"#C8962E\"/><circle cx=\"224\" cy=\"400\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"270\" y=\"395\" font-size=\"15\">Un bâtonnet relie deux boules : il représente</text><text x=\"270\" y=\"418\" font-size=\"15\">une liaison covalente simple (ici : la molécule H₂).</text></svg>",
+      "questions": [
+        {
+          "texte": "Complète le texte à trous pour le carbone (Z = 6) : « La configuration électronique du carbone est … ; il possède … électrons de valence. Il lui manque … électrons pour respecter la règle de l'… . Il établit donc … liaisons covalentes : c'est pourquoi la boule noire a … trous. »",
+          "aides": [
+            "Le carbone a 6 électrons : remplis 1s, puis 2s, puis 2p (2 électrons au maximum dans une sous-couche s, 6 dans une sous-couche p).",
+            "Les électrons de valence sont ceux de la couche n = 2 (2s et 2p). Nombre de liaisons = 8 − nombre d'électrons de valence."
+          ]
+        },
+        {
+          "texte": "Fais le même raisonnement pour l'azote (Z = 7), l'oxygène (Z = 8) et le chlore (Z = 17). Vérifie que tu retrouves le nombre de trous de chaque boule.",
+          "aides": []
+        },
+        {
+          "texte": "Les électrons de valence qui ne servent pas aux liaisons forment des doublets non liants. Combien de doublets non liants portent les atomes de carbone, d'azote, d'oxygène et de chlore dans une molécule ?",
+          "aides": [
+            "Chaque liaison utilise un électron de valence de l'atome.",
+            "Les électrons restants vont par deux : doublets non liants = (électrons de valence − nombre de liaisons) / 2."
+          ]
+        },
+        {
+          "texte": "Malik veut construire une molécule avec une boule noire, une boule rouge et des boules blanches. Le carbone et l'oxygène sont reliés par un seul bâtonnet, et tous les trous doivent être occupés. Combien de boules blanches doit-il utiliser ? Donne la formule brute de la molécule obtenue (c'est le méthanol).",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> « La configuration électronique du carbone est 1s² 2s² 2p² ; il possède 4 électrons de valence (2s² 2p²). Il lui manque 8 − 4 = 4 électrons pour respecter la règle de l'octet. Il établit donc 4 liaisons covalentes : c'est pourquoi la boule noire a 4 trous. »",
+        "<strong>2.</strong> Azote : 1s² 2s² 2p³, 5 électrons de valence, il en manque 8 − 5 = 3 : 3 liaisons (boule bleue, 3 trous).",
+        "Oxygène : 1s² 2s² 2p⁴, 6 électrons de valence, il en manque 8 − 6 = 2 : 2 liaisons (boule rouge, 2 trous).",
+        "Chlore : 1s² 2s² 2p⁶ 3s² 3p⁵, 7 électrons de valence (couche n = 3), il en manque 8 − 7 = 1 : 1 liaison (boule verte, 1 trou).",
+        "<strong>3.</strong> Carbone : (4 − 4) / 2 = 0 doublet non liant ; azote : (5 − 3) / 2 = 1 ; oxygène : (6 − 2) / 2 = 2 ; chlore : (7 − 1) / 2 = 3.",
+        "<strong>4.</strong> Le bâtonnet C—O occupe 1 trou du carbone et 1 trou de l'oxygène. Il reste 4 − 1 = 3 trous sur le carbone et 2 − 1 = 1 trou sur l'oxygène : il faut 3 + 1 = 4 boules blanches. Formule brute : CH₄O (formule semi-développée CH₃—OH).",
+        "<em>⚠ Erreur fréquente : pour le chlore, compter les électrons de la couche n = 2 au lieu de ceux de la couche de valence n = 3.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Les gaz de l'air",
+      "contexte": [
+        "L'air sec est un mélange de gaz. Il contient, en volume, environ 78 % de diazote N₂, 21 % de dioxygène O₂, 0,9 % d'argon Ar et 0,04 % de dioxyde de carbone CO₂."
+      ],
+      "questions": [
+        {
+          "texte": "L'argon (Z = 18) est un gaz noble : il est constitué d'atomes isolés. Écris sa configuration électronique et explique pourquoi l'atome d'argon n'établit aucune liaison covalente.",
+          "aides": []
+        },
+        {
+          "texte": "Établis le schéma de Lewis de la molécule de diazote N₂ : nombre de liaisons de chaque atome, type de liaison entre les deux atomes, doublets non liants. Décris-le, puis dessine-le.",
+          "aides": [
+            "Combien d'électrons de valence possède l'atome d'azote ? Combien lui en manque-t-il pour l'octet ?",
+            "Chaque N doit établir toutes ses liaisons avec l'autre N : combien de traits faut-il entre eux ?",
+            "Les électrons de valence qui ne servent pas aux liaisons forment les doublets non liants."
+          ]
+        },
+        {
+          "texte": "Établis de même le schéma de Lewis de la molécule de dioxygène O₂, puis vérifie que chaque atome d'oxygène respecte la règle de l'octet.",
+          "aides": []
+        },
+        {
+          "texte": "Dans la molécule de dioxyde de carbone CO₂, l'atome de carbone est lié aux deux atomes d'oxygène. Lou propose le schéma suivant : O—C—O, avec 3 doublets non liants sur chaque atome d'oxygène et aucun sur le carbone. Explique pourquoi ce schéma est faux, puis décris le schéma de Lewis correct.",
+          "aides": [
+            "Dans le schéma de Lou, compte les doublets autour de l'atome de carbone.",
+            "Le carbone doit établir 4 liaisons et chaque oxygène 2 : comment répartir les liaisons entre C et chaque O ?"
+          ]
+        },
+        {
+          "texte": "Calcule le nombre total d'électrons de valence apportés par les atomes de la molécule de CO₂. Vérifie qu'il est égal au nombre d'électrons représentés dans ton schéma de Lewis.",
+          "aides": [
+            "Additionne les électrons de valence du carbone et des deux atomes d'oxygène.",
+            "Dans le schéma, compte tous les doublets (liants et non liants), puis multiplie par 2."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Argon : 1s² 2s² 2p⁶ 3s² 3p⁶. Sa couche de valence (n = 3) contient déjà 8 électrons : il ne lui manque aucun électron (8 − 8 = 0), il n'établit donc aucune liaison. Il est stable à l'état d'atome isolé.",
+        "<strong>2.</strong> N : 1s² 2s² 2p³, 5 électrons de valence ; il lui en manque 3 : chaque N établit 3 liaisons. Il n'y a que deux atomes : ces 3 liaisons les relient l'un à l'autre, c'est une liaison triple N≡N. Il reste à chaque N : 5 − 3 = 2 électrons, soit 1 doublet non liant. Schéma : N≡N avec un doublet non liant sur chaque atome d'azote (placé à l'extérieur).",
+        "Vérification : autour de chaque N, 3 doublets liants + 1 doublet non liant = 4 doublets = 8 électrons (octet).",
+        "<strong>3.</strong> O : 6 électrons de valence, 2 liaisons ; les deux atomes sont reliés par une liaison double O=O. Il reste 6 − 2 = 4 électrons, soit 2 doublets non liants sur chaque O. Autour de chaque O : 2 doublets liants + 2 doublets non liants = 4 doublets = 8 électrons : l'octet est respecté.",
+        "<strong>4.</strong> Dans le schéma de Lou, le carbone n'établit que 2 liaisons au lieu de 4 : il n'est entouré que de 2 doublets, soit 4 électrons, et ne respecte pas la règle de l'octet. De plus, chaque O n'établit qu'une liaison au lieu de 2.",
+        "Schéma correct : O=C=O. Le carbone est relié à chaque oxygène par une liaison double (4 liaisons au total, aucun doublet non liant) ; chaque oxygène porte 2 doublets non liants. Chaque atome est alors entouré de 4 doublets (8 électrons).",
+        "<strong>5.</strong> Électrons de valence : 4 (C) + 2 × 6 (O) = 16 électrons. Schéma de Lewis : 4 doublets liants + 4 doublets non liants = 8 doublets, soit 8 × 2 = 16 électrons. Les deux nombres sont égaux.",
+        "Remarque : le schéma de Lou contient lui aussi 16 électrons (2 doublets liants + 6 doublets non liants) : compter les électrons ne suffit pas, il faut aussi vérifier l'octet de chaque atome.",
+        "<em>⚠ Erreur fréquente : relier les deux atomes de N₂ par une liaison simple et placer 3 doublets non liants sur chaque atome : chaque N n'établirait alors qu'une liaison au lieu de 3.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Même formule brute, molécules différentes",
+      "contexte": [
+        "L'éthanol est l'alcool contenu dans les gels hydroalcooliques. Le méthoxyméthane est un gaz utilisé comme propulseur dans certaines bombes aérosols. Leurs formules développées sont représentées ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"24\" text-anchor=\"middle\" font-weight=\"bold\">Formules développées de deux molécules</text><line x1=\"15\" y1=\"232\" x2=\"745\" y2=\"232\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"560\" y=\"110\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Molécule A : éthanol</text><text x=\"560\" y=\"138\" text-anchor=\"middle\" font-size=\"15\">liquide à 20 °C</text><text x=\"560\" y=\"160\" text-anchor=\"middle\" font-size=\"15\">(gels hydroalcooliques)</text><text x=\"560\" y=\"335\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Molécule B : méthoxyméthane</text><text x=\"560\" y=\"363\" text-anchor=\"middle\" font-size=\"15\">gaz à 20 °C</text><text x=\"560\" y=\"385\" text-anchor=\"middle\" font-size=\"15\">(propulseur de bombes aérosols)</text><line x1=\"167.0\" y1=\"120.0\" x2=\"223.0\" y2=\"120.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"257.0\" y1=\"120.0\" x2=\"313.0\" y2=\"120.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"347.0\" y1=\"120.0\" x2=\"403.0\" y2=\"120.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"133.0\" y1=\"120.0\" x2=\"87.0\" y2=\"120.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"150.0\" y1=\"103.0\" x2=\"150.0\" y2=\"67.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"150.0\" y1=\"137.0\" x2=\"150.0\" y2=\"173.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"240.0\" y1=\"103.0\" x2=\"240.0\" y2=\"67.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"240.0\" y1=\"137.0\" x2=\"240.0\" y2=\"173.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"150\" y=\"129\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">C</text><text x=\"240\" y=\"129\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">C</text><text x=\"330\" y=\"129\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">O</text><text x=\"420\" y=\"129\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"70\" y=\"129\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"150\" y=\"59\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"150\" y=\"199\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"240\" y=\"59\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"240\" y=\"199\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><line x1=\"167.0\" y1=\"345.0\" x2=\"223.0\" y2=\"345.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"257.0\" y1=\"345.0\" x2=\"313.0\" y2=\"345.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"133.0\" y1=\"345.0\" x2=\"87.0\" y2=\"345.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"150.0\" y1=\"328.0\" x2=\"150.0\" y2=\"292.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"150.0\" y1=\"362.0\" x2=\"150.0\" y2=\"398.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"347.0\" y1=\"345.0\" x2=\"393.0\" y2=\"345.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"330.0\" y1=\"328.0\" x2=\"330.0\" y2=\"292.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"330.0\" y1=\"362.0\" x2=\"330.0\" y2=\"398.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><text x=\"150\" y=\"354\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">C</text><text x=\"240\" y=\"354\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">O</text><text x=\"330\" y=\"354\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">C</text><text x=\"70\" y=\"354\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"150\" y=\"284\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"150\" y=\"424\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"410\" y=\"354\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"330\" y=\"284\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"330\" y=\"424\" text-anchor=\"middle\" font-size=\"26\" font-weight=\"bold\" fill=\"#000\">H</text><text x=\"380\" y=\"458\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">Les doublets non liants ne sont pas représentés dans une formule développée.</text></svg>",
+      "questions": [
+        {
+          "texte": "Écris la formule brute de la molécule A et celle de la molécule B. Que remarques-tu ?",
+          "aides": []
+        },
+        {
+          "texte": "La formule brute suffit-elle pour identifier une molécule ? Justifie à l'aide de cet exemple.",
+          "aides": []
+        },
+        {
+          "texte": "Écris la formule semi-développée de chacune des deux molécules.",
+          "aides": [
+            "Dans une formule semi-développée, on représente toutes les liaisons sauf celles avec les atomes d'hydrogène.",
+            "Regroupe chaque atome avec les H qui lui sont liés : un C lié à trois H s'écrit CH₃."
+          ]
+        },
+        {
+          "texte": "Pour passer de la formule développée de A à son schéma de Lewis, il faut ajouter les doublets non liants. Indique combien de doublets non liants porte chaque atome de carbone, d'hydrogène et d'oxygène. Justifie avec les règles du duet et de l'octet.",
+          "aides": [
+            "Compte les liaisons déjà établies par chaque atome dans la formule développée.",
+            "Un atome qui n'est pas encore entouré de 4 doublets (1 doublet pour H) complète avec des doublets non liants."
+          ]
+        },
+        {
+          "texte": "Calcule le nombre total d'électrons de valence des atomes d'une molécule de formule C₂H₆O, puis le nombre d'électrons représentés dans le schéma de Lewis de A. Conclus.",
+          "aides": [
+            "Électrons de valence : 4 pour C, 1 pour H, 6 pour O. Multiplie par le nombre d'atomes de chaque sorte.",
+            "Dans le schéma de Lewis, compte les doublets liants (un par trait entre deux atomes) et les doublets non liants, puis multiplie par 2."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : C₂H₆O ; B : C₂H₆O. Les deux molécules ont la même formule brute.",
+        "<strong>2.</strong> Non : A et B ont la même formule brute, mais leurs atomes ne sont pas liés de la même façon (dans A, O est lié à un C et à un H ; dans B, O est lié à deux C). Ce sont deux molécules différentes, aux propriétés différentes (l'une liquide, l'autre gazeuse à 20 °C). Il faut une formule développée ou semi-développée.",
+        "<strong>3.</strong> A : CH₃—CH₂—OH ; B : CH₃—O—CH₃.",
+        "<strong>4.</strong> Chaque C établit déjà 4 liaisons (4 doublets) : 0 doublet non liant. Chaque H établit 1 liaison (duet) : 0 doublet non liant. L'O établit 2 liaisons ; pour être entouré de 4 doublets (octet), il porte 2 doublets non liants.",
+        "<strong>5.</strong> Électrons de valence : 2 × 4 (C) + 6 × 1 (H) + 6 (O) = 20 électrons. Schéma de Lewis de A : 8 doublets liants (1 C—C, 5 C—H, 1 C—O, 1 O—H) + 2 doublets non liants = 10 doublets, soit 20 électrons. Les deux nombres sont égaux : le schéma est cohérent.",
+        "<em>⚠ Erreur fréquente : dans la formule semi-développée, écrire les liaisons C—H (ce serait la formule développée) ou oublier le H lié à l'oxygène (écrire CH₃—CH₂—O).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Quel gaz dans le paquet de chips ?",
+      "contexte": [
+        "Doc. 1 — Pourquoi les paquets de chips sont-ils gonflés ? Un paquet de chips semble à moitié vide : il est rempli d'un gaz qui protège les chips des chocs. Ce gaz ne doit pas être de l'air : au contact du dioxygène, les matières grasses des chips réagissent lentement et « rancissent » (elles prennent un goût désagréable). Cahier des charges du gaz de remplissage : non toxique, sans odeur, très peu réactif, peu coûteux.",
+        "Modèle simplifié : pour qu'un gaz réagisse, il faut d'abord rompre des liaisons covalentes dans ses molécules. Plus ces liaisons sont difficiles à rompre, moins le gaz est réactif."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 2 — Énergie à fournir pour rompre une liaison covalente</text><text x=\"380\" y=\"54\" text-anchor=\"middle\" font-size=\"15\">(valeurs moyennes pour UNE liaison, d'après les tables usuelles)</text><line x1=\"150.0\" y1=\"66\" x2=\"150.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"150.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">0</text><line x1=\"220.0\" y1=\"66\" x2=\"220.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"220.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">2</text><line x1=\"290.0\" y1=\"66\" x2=\"290.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"290.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">4</text><line x1=\"360.0\" y1=\"66\" x2=\"360.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"360.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">6</text><line x1=\"430.0\" y1=\"66\" x2=\"430.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"430.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">8</text><line x1=\"500.0\" y1=\"66\" x2=\"500.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"500.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">10</text><line x1=\"570.0\" y1=\"66\" x2=\"570.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"570.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">12</text><line x1=\"640.0\" y1=\"66\" x2=\"640.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"640.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">14</text><line x1=\"710.0\" y1=\"66\" x2=\"710.0\" y2=\"372\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"710.0\" y=\"394\" text-anchor=\"middle\" font-size=\"15\">16</text><rect x=\"150\" y=\"81.0\" width=\"94.8\" height=\"32\" fill=\"#1F4E5A\"/><text x=\"136\" y=\"104.0\" text-anchor=\"end\" font-size=\"20\" font-weight=\"bold\">N—N</text><text x=\"252.8\" y=\"103.0\" font-weight=\"bold\">2,71</text><rect x=\"150\" y=\"131.0\" width=\"242.9\" height=\"32\" fill=\"#1F4E5A\"/><text x=\"136\" y=\"154.0\" text-anchor=\"end\" font-size=\"20\" font-weight=\"bold\">N=N</text><text x=\"400.9\" y=\"153.0\" font-weight=\"bold\">6,94</text><rect x=\"150\" y=\"181.0\" width=\"549.1\" height=\"32\" fill=\"#1F4E5A\"/><text x=\"136\" y=\"204.0\" text-anchor=\"end\" font-size=\"20\" font-weight=\"bold\">N≡N</text><text x=\"691.1\" y=\"203.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#fff\">15,7</text><rect x=\"150\" y=\"231.0\" width=\"84.7\" height=\"32\" fill=\"#B5523B\"/><text x=\"136\" y=\"254.0\" text-anchor=\"end\" font-size=\"20\" font-weight=\"bold\">O—O</text><text x=\"242.7\" y=\"253.0\" font-weight=\"bold\">2,42</text><rect x=\"150\" y=\"281.0\" width=\"289.4\" height=\"32\" fill=\"#B5523B\"/><text x=\"136\" y=\"304.0\" text-anchor=\"end\" font-size=\"20\" font-weight=\"bold\">O=O</text><text x=\"447.4\" y=\"303.0\" font-weight=\"bold\">8,27</text><rect x=\"150\" y=\"331.0\" width=\"141.4\" height=\"32\" fill=\"#C8962E\"/><text x=\"136\" y=\"354.0\" text-anchor=\"end\" font-size=\"20\" font-weight=\"bold\">Cl—Cl</text><text x=\"299.4\" y=\"353.0\" font-weight=\"bold\">4,04</text><line x1=\"150\" y1=\"66\" x2=\"150\" y2=\"372\" stroke=\"#000\" stroke-width=\"2\"/><line x1=\"150\" y1=\"372\" x2=\"720\" y2=\"372\" stroke=\"#000\" stroke-width=\"2\"/><text x=\"430.0\" y=\"420\" text-anchor=\"middle\">énergie de liaison (en 10⁻¹⁹ J)</text><text x=\"380\" y=\"462\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">— liaison simple ; = liaison double ; ≡ liaison triple</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Trois gaz disponibles dans l'usine. Dioxygène O₂ : non toxique, sans odeur, peu coûteux. Diazote N₂ : non toxique, sans odeur, très peu coûteux (extrait de l'air). Dichlore Cl₂ : toxique, odeur suffocante.",
+        "Utilise aussi l'encadré « Données » de la fiche."
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : d'après le doc. 1, quel gaz est responsable du rancissement des chips ? Quelle propriété doit avoir le gaz de remplissage pour protéger les chips ?",
+          "aides": [
+            "Relis le doc. 1 : qu'est-ce qui fait rancir les chips ?",
+            "Le gaz de remplissage doit-il réagir facilement ou difficilement avec les matières grasses ?"
+          ]
+        },
+        {
+          "texte": "Le fabricant doit-il remplir ses paquets avec du dioxygène, du diazote ou du dichlore ? Justifie ton choix à l'aide des schémas de Lewis des molécules et des documents.",
+          "aides": [
+            "S'approprier : élimine d'abord les gaz qui ne respectent pas le cahier des charges du doc. 1 (aide-toi du doc. 3).",
+            "Analyser : pour lire la bonne barre du doc. 2, il faut savoir si la liaison est simple, double ou triple : établis les schémas de Lewis de N₂ et de O₂.",
+            "Réaliser : relève les deux énergies de liaison et compare-les, par exemple en calculant leur quotient."
+          ]
+        },
+        {
+          "texte": "Regard critique : pour protéger un vin ouvert, certains cavistes injectent de l'argon dans la bouteille. Pourquoi l'argon est-il encore moins réactif que le diazote ? Une énergie de liaison a-t-elle un sens pour l'argon ?",
+          "aides": [
+            "Écris la configuration électronique de l'argon (Z = 18) : combien d'électrons de valence a-t-il ?",
+            "Un atome qui a déjà 8 électrons de valence a-t-il besoin d'établir des liaisons ? Y a-t-il alors une liaison à rompre ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C'est le dioxygène de l'air qui fait rancir les matières grasses. Le gaz de remplissage doit donc être très peu réactif (en plus d'être non toxique, sans odeur et peu coûteux).",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Tri avec le cahier des charges (doc. 1 et 3) : le dichlore est toxique et odorant, il est éliminé ; le dioxygène est justement le gaz qui fait rancir les chips. Il reste à comparer la réactivité de N₂ et de O₂.",
+        "• Schémas de Lewis : N (5 électrons de valence) établit 3 liaisons et porte 1 doublet non liant : N≡N, liaison triple. O (6 électrons de valence) établit 2 liaisons et porte 2 doublets non liants : O=O, liaison double. (Cl : 7 électrons de valence, 1 liaison, 3 doublets non liants : Cl—Cl, liaison simple.)",
+        "• Lecture du doc. 2 avec le bon type de liaison : E(N≡N) = 15,7 × 10⁻¹⁹ J ; E(O=O) = 8,27 × 10⁻¹⁹ J ; E(Cl—Cl) = 4,04 × 10⁻¹⁹ J.",
+        "• Comparaison : 15,7 / 8,27 ≈ 1,9 : il faut fournir environ deux fois plus d'énergie pour rompre la liaison de N₂ que celle de O₂ (et presque 4 fois plus que celle de Cl₂). D'après le modèle du doc. 1, le diazote est le moins réactif des trois.",
+        "• Conclusion : le fabricant doit choisir le diazote, non toxique, sans odeur, très peu coûteux et très peu réactif grâce à sa liaison triple, très difficile à rompre.",
+        "<strong>3.</strong> Argon (Z = 18) : 1s² 2s² 2p⁶ 3s² 3p⁶, 8 électrons de valence : il a déjà la structure d'un gaz noble, il n'établit aucune liaison. Il n'y a donc aucune liaison à rompre : la notion d'énergie de liaison n'a pas de sens pour un atome isolé. Il est encore plus stable que N₂, mais il coûte plus cher à produire (il ne représente que 0,9 % de l'air), d'où son usage limité. Limite du modèle : la réactivité d'un gaz ne dépend pas seulement de l'énergie de ses liaisons.",
+        "Éléments valorisés (même si la conclusion est fausse) : élimination justifiée de Cl₂ et de O₂ par les documents ; schémas de Lewis de N₂ et O₂ ; choix de la bonne barre du doc. 2 (liaison triple pour N₂, double pour O₂) ; comparaison chiffrée des énergies ; conclusion cohérente avec les calculs.",
+        "<em>⚠ Erreur fréquente : lire la barre « N—N » (2,71 × 10⁻¹⁹ J) pour le diazote et conclure qu'il est plus réactif que le dioxygène. Il faut d'abord établir le schéma de Lewis pour savoir que la liaison est triple.</em>"
+      ]
+    }
+  ]
+}

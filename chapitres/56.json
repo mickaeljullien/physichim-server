@@ -1,0 +1,689 @@
+{
+  "id": 56,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La pression",
+        "icon": "💧",
+        "content": [
+          {
+            "type": "def",
+            "term": "Pression P",
+            "text": "Quotient de la valeur de la force pressante F exercée par un fluide sur une surface S par l'aire de cette surface : P = F/S. Elle s'exprime en pascal (Pa) dans le Système international."
+          },
+          {
+            "type": "text",
+            "text": "Unités usuelles : 1 bar = 10⁵ Pa ; pression atmosphérique normale P0 ≈ 1,013×10⁵ Pa."
+          }
+        ]
+      },
+      {
+        "title": "2. Loi fondamentale de la statique des fluides",
+        "icon": "📉",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi fondamentale de la statique des fluides",
+            "text": "Dans un fluide au repos, homogène et incompressible, soumis au champ de pesanteur, la pression augmente linéairement avec la profondeur h : P(h) = P0 + ρ×g×h."
+          },
+          {
+            "type": "formula",
+            "label": "Relation générale",
+            "text": "P2 − P1 = ρ × g × (z1 − z2)"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Profondeur h",
+              "0 m",
+              "10 m",
+              "20 m",
+              "30 m"
+            ],
+            "rows": [
+              [
+                "Pression (Pa)",
+                "1,0×10⁵",
+                "2,0×10⁵",
+                "3,0×10⁵",
+                "4,0×10⁵"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "La pression en un point ne dépend que de la profondeur (et de P0, ρ, g) : elle est indépendante de la forme du récipient."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 240\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"40\" y1=\"220\" x2=\"460\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"220\" x2=\"60\" y2=\"20\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"430\" y=\"236\" font-size=\"11\" fill=\"#1B2420\">h (m)</text><text x=\"20\" y=\"25\" font-size=\"11\" fill=\"#1B2420\">P (Pa)</text><line x1=\"60\" y1=\"210\" x2=\"440\" y2=\"40\" stroke=\"#3E7DBF\" stroke-width=\"2.2\"/><circle cx=\"60\" cy=\"210\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"186.7\" cy=\"153.3\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"313.3\" cy=\"96.7\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"440\" cy=\"40\" r=\"4\" fill=\"#1B2420\"/><text x=\"55\" y=\"233\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">0</text><text x=\"186.7\" y=\"233\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">10</text><text x=\"313.3\" y=\"233\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">20</text><text x=\"440\" y=\"233\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">30</text><text x=\"18\" y=\"214\" font-size=\"10\" fill=\"#5C6B60\">1,0×10⁵</text><text x=\"18\" y=\"44\" font-size=\"10\" fill=\"#5C6B60\">4,0×10⁵</text></svg>",
+            "caption": "La pression P(h) = P0 + ρgh croît linéairement avec la profondeur h : la représentation graphique est une droite."
+          }
+        ]
+      },
+      {
+        "title": "3. La poussée d'Archimède",
+        "icon": "🛟",
+        "content": [
+          {
+            "type": "def",
+            "term": "Poussée d'Archimède",
+            "text": "Tout corps immergé, partiellement ou totalement, dans un fluide au repos subit de la part de celui-ci une force verticale, dirigée vers le haut, dont la valeur est égale au poids du volume de fluide déplacé."
+          },
+          {
+            "type": "formula",
+            "label": "Expression",
+            "text": "F_A = ρ_fluide × V_immergé × g"
+          },
+          {
+            "type": "text",
+            "text": "Si la poussée d'Archimède est supérieure au poids de l'objet, celui-ci flotte (remonte) ; si elle est inférieure, l'objet coule."
+          }
+        ]
+      },
+      {
+        "title": "4. Loi de Boyle-Mariotte",
+        "icon": "🎈",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi de Boyle-Mariotte",
+            "text": "À température constante, pour une quantité donnée de gaz, le produit de la pression par le volume reste constant : P × V = constante."
+          },
+          {
+            "type": "text",
+            "text": "Cette loi permet de prévoir l'évolution de la pression (ou du volume) d'un gaz lors d'une transformation isotherme : par exemple, comprimer un gaz (diminuer son volume) fait augmenter sa pression."
+          }
+        ]
+      },
+      {
+        "title": "5. Synthèse",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Pression",
+                "P = F/S, exprimée en pascal (Pa)"
+              ],
+              [
+                "Poussée d'Archimède",
+                "Force verticale vers le haut, égale au poids du fluide déplacé"
+              ],
+              [
+                "Loi de Boyle-Mariotte",
+                "P·V = constante, à température constante"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une personne exerce une force pressante de 600 N sur le sol par une surface de 30 cm². La pression exercée vaut :",
+      "opts": [
+        "20 Pa",
+        "2,0×10³ Pa",
+        "2,0×10⁵ Pa",
+        "1,8 Pa"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-cm2-m2",
+          "texte": "Oublier de convertir la surface : 30 cm² = 30×10⁻⁴ m² = 3,0×10⁻³ m²"
+        },
+        {
+          "code": "conversion-cm2-puissance",
+          "texte": "Convertir les cm² comme des cm : 1 cm² = 10⁻⁴ m², et non 10⁻² m²"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 600 × 3,0×10⁻³ ; il faut P = F / S"
+        }
+      ],
+      "exp": "S = 30 cm² = 3,0×10⁻³ m², donc P = F / S = 600 / 3,0×10⁻³ = 2,0×10⁵ Pa. Attention : 1 cm² = 10⁻⁴ m²."
+    },
+    {
+      "q": "Une pression de 2,0×10⁵ Pa, exprimée en bar (1 bar = 10⁵ Pa), vaut :",
+      "opts": [
+        "2,0 bar",
+        "0,20 bar",
+        "2,0×10¹⁰ bar",
+        "2,0×10² bar"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-bar-puissance",
+          "texte": "Se tromper de puissance de dix : 2,0×10⁵ / 10⁵ = 2,0"
+        },
+        {
+          "code": "conversion-bar-inverse",
+          "texte": "Multiplier au lieu de diviser : pour passer des Pa aux bar, on divise par 10⁵"
+        },
+        {
+          "code": "bar-vs-hectopascal",
+          "texte": "Confondre bar et hectopascal : 1 hPa = 10² Pa, mais 1 bar = 10⁵ Pa"
+        }
+      ],
+      "exp": "2,0×10⁵ Pa / 10⁵ = 2,0 bar, soit environ deux fois la pression atmosphérique. Attention : 1 bar = 10⁵ Pa = 1 000 hPa."
+    },
+    {
+      "q": "À 2,5 m de profondeur dans une piscine : P₀ = 1,013×10⁵ Pa ; ρ(eau) = 1,00×10³ kg·m⁻³ ; g = 9,81 N·kg⁻¹. La pression vaut P = P₀ + ρ g h, soit :",
+      "opts": [
+        "2,45×10⁴ Pa",
+        "7,68×10⁴ Pa",
+        "1,26×10⁵ Pa",
+        "1,01×10⁵ Pa"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-pression-atmospherique",
+          "texte": "Oublier la pression atmosphérique : ρ g h donne seulement l'écart de pression avec la surface"
+        },
+        {
+          "code": "signe-profondeur-inverse",
+          "texte": "Retrancher au lieu d'ajouter : la pression augmente avec la profondeur"
+        },
+        null,
+        {
+          "code": "masse-volumique-non-convertie",
+          "texte": "Prendre ρ = 1,00 (en g·cm⁻³ ou kg·L⁻¹) : il faut ρ = 1,00×10³ kg·m⁻³"
+        }
+      ],
+      "exp": "P = 1,013×10⁵ + 1,00×10³ × 9,81 × 2,5 ≈ 1,013×10⁵ + 2,45×10⁴ ≈ 1,26×10⁵ Pa. Attention : ρ en kg·m⁻³, et la pression atmosphérique s'ajoute."
+    },
+    {
+      "q": "Un vase large et un tube étroit sont remplis d'eau jusqu'à la même hauteur. Au fond, la pression est :",
+      "opts": [
+        "plus grande dans le vase large, qui contient plus d'eau",
+        "la même dans les deux récipients",
+        "plus grande dans le tube étroit, où l'eau est resserrée",
+        "impossible à comparer sans la masse d'eau"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "pression-depend-volume",
+          "texte": "Croire que la pression dépend de la quantité de liquide : elle ne dépend que de la profondeur (et de ρ, g, P₀)"
+        },
+        null,
+        {
+          "code": "pression-depend-forme",
+          "texte": "Croire que la pression dépend de la forme du récipient : à même profondeur, la pression est la même"
+        },
+        {
+          "code": "pression-besoin-masse",
+          "texte": "Croire qu'il faut la masse de liquide : P = P₀ + ρ g h ne fait intervenir que la profondeur"
+        }
+      ],
+      "exp": "P = P₀ + ρ g h ne dépend que de la profondeur h, pas de la forme ni du volume du récipient : même hauteur d'eau, même pression au fond."
+    },
+    {
+      "q": "Un plongeur descend de 5,0 m à 15,0 m de profondeur en mer (ρ = 1,03×10³ kg·m⁻³ ; g = 9,81 N·kg⁻¹). La pression autour de lui augmente de :",
+      "opts": [
+        "1,52×10⁵ Pa",
+        "1,01×10⁵ Pa",
+        "2,02×10⁵ Pa",
+        "1,01×10² Pa"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "profondeur-au-lieu-ecart",
+          "texte": "Utiliser la profondeur finale (15,0 m) au lieu de l'écart de profondeur (10,0 m)"
+        },
+        null,
+        {
+          "code": "profondeurs-additionnees",
+          "texte": "Additionner les profondeurs : l'écart de pression dépend de la différence z₁ − z₂ = 10,0 m"
+        },
+        {
+          "code": "masse-volumique-non-convertie",
+          "texte": "Prendre ρ = 1,03 : la masse volumique doit être en kg·m⁻³ (1,03×10³)"
+        }
+      ],
+      "exp": "ΔP = ρ g Δh = 1,03×10³ × 9,81 × 10,0 ≈ 1,01×10⁵ Pa : environ 1 bar de plus tous les 10 m. Attention : c'est l'écart de profondeur qui compte."
+    },
+    {
+      "q": "Un gaz occupe 400 mL sous 1,00×10⁵ Pa. On le comprime, à température constante, jusqu'à 250 mL. Sa nouvelle pression vaut :",
+      "opts": [
+        "6,25×10⁴ Pa",
+        "1,00×10⁵ Pa",
+        "4,00×10⁷ Pa",
+        "1,60×10⁵ Pa"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "mariotte-rapport-inverse",
+          "texte": "Inverser le rapport des volumes : P₂ = P₁ × V₁ / V₂ ; comprimer un gaz augmente sa pression"
+        },
+        {
+          "code": "pression-independante-volume",
+          "texte": "Croire que la pression ne change pas : à température constante, P × V reste constant"
+        },
+        {
+          "code": "mariotte-oubli-v2",
+          "texte": "Calculer P₁ × V₁ sans diviser par V₂ : 1,00×10⁵ × 400"
+        },
+        null
+      ],
+      "exp": "Loi de Mariotte : P₁ V₁ = P₂ V₂, donc P₂ = 1,00×10⁵ × 400 / 250 = 1,60×10⁵ Pa. Attention : volume plus petit, pression plus grande."
+    },
+    {
+      "q": "À l'échelle microscopique, la pression exercée par un gaz sur une paroi est due :",
+      "opts": [
+        "au poids des particules posées sur la paroi",
+        "aux chocs des particules en mouvement sur la paroi",
+        "à la dilatation des particules",
+        "à la répulsion entre particules immobiles"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "pression-poids-particules",
+          "texte": "Croire que la pression vient du poids des particules : un gaz exerce une pression sur toutes les parois, même le plafond"
+        },
+        null,
+        {
+          "code": "dilatation-des-particules",
+          "texte": "Croire que les particules se dilatent : leur taille ne change pas, c'est leur mouvement qui compte"
+        },
+        {
+          "code": "particules-immobiles",
+          "texte": "Croire que les particules d'un gaz sont immobiles : elles sont en mouvement désordonné permanent"
+        }
+      ],
+      "exp": "Les particules d'un gaz, en mouvement désordonné, frappent sans cesse les parois : ces chocs exercent la force pressante. Attention : la pression s'exerce dans toutes les directions, pas seulement vers le bas."
+    },
+    {
+      "q": "On chauffe un gaz enfermé dans un récipient rigide (volume constant). Sa pression augmente, car :",
+      "opts": [
+        "les particules grossissent et occupent plus de place",
+        "le chauffage crée de nouvelles particules",
+        "le volume du gaz augmente",
+        "les particules, plus rapides, frappent les parois plus souvent et plus fort"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "dilatation-des-particules",
+          "texte": "Croire que les particules se dilatent : leur taille ne change pas, leur vitesse augmente"
+        },
+        {
+          "code": "chauffage-cree-particules",
+          "texte": "Croire que le chauffage crée des particules : leur nombre reste le même dans un récipient fermé"
+        },
+        {
+          "code": "volume-change-recipient-rigide",
+          "texte": "Croire que le volume du gaz augmente : il occupe tout le récipient rigide, son volume ne change pas"
+        },
+        null
+      ],
+      "exp": "La température mesure l'agitation des particules : plus chaudes, elles sont plus rapides et frappent les parois plus souvent et plus fort, d'où une pression plus grande. Leur nombre et leur taille ne changent pas."
+    },
+    {
+      "q": "Un ballon-sonde contient 5,0 m³ de gaz sous 1,0×10⁵ Pa au sol. Son enveloppe éclate au-delà de 30 m³. En supposant la température constante, il éclate quand la pression extérieure descend à :",
+      "opts": [
+        "6,0×10⁵ Pa",
+        "1,7×10⁴ Pa",
+        "1,0×10⁵ Pa",
+        "3,0×10⁶ Pa"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "mariotte-rapport-inverse",
+          "texte": "Inverser le rapport des volumes : P = P₁ × V₁ / V ; quand le volume augmente, la pression diminue"
+        },
+        null,
+        {
+          "code": "pression-independante-volume",
+          "texte": "Croire que la pression ne change pas : à température constante, P × V reste constant"
+        },
+        {
+          "code": "mariotte-oubli-v2",
+          "texte": "Calculer P₁ × V sans diviser : P × V = constante donne P = P₁ V₁ / V"
+        }
+      ],
+      "exp": "P₁ V₁ = P V, donc P = 1,0×10⁵ × 5,0 / 30 ≈ 1,7×10⁴ Pa. Le ballon gonfle en montant, car la pression extérieure diminue."
+    },
+    {
+      "q": "Pourquoi la pression atmosphérique diminue-t-elle quand l'altitude augmente ?",
+      "opts": [
+        "Parce que l'air est plus chaud en altitude",
+        "Parce que la quantité d'air située au-dessus diminue",
+        "Parce que la gravité disparaît en altitude",
+        "Parce que les particules d'air rétrécissent en altitude"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "altitude-plus-chaud",
+          "texte": "Croire que l'air est plus chaud en altitude : il est en général plus froid, et ce n'est pas la cause"
+        },
+        null,
+        {
+          "code": "gravite-nulle-altitude",
+          "texte": "Croire que la gravité disparaît en altitude : elle diminue très peu sur quelques kilomètres"
+        },
+        {
+          "code": "dilatation-des-particules",
+          "texte": "Croire que la taille des particules change : c'est leur nombre par unité de volume qui diminue"
+        }
+      ],
+      "exp": "La pression de l'air en un point est liée au poids de la colonne d'air située au-dessus : en montant, cette colonne diminue, donc la pression aussi (comme dans l'eau, mais avec un fluide compressible)."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Dans le ballon de basket",
+      "contexte": [
+        "Avant l'entraînement, Nadia regonfle son ballon de basket avec une pompe. Elle se demande ce qui se passe, à l'échelle des molécules, à l'intérieur du ballon.",
+        "À l'échelle macroscopique, l'air du ballon est décrit par trois grandeurs : sa masse volumique ρ, sa température T et sa pression P. À l'échelle microscopique, l'air est formé de molécules (surtout N₂ et O₂)."
+      ],
+      "questions": [
+        {
+          "texte": "Associe chaque grandeur macroscopique (masse volumique, température, pression) à son interprétation microscopique : (A) les chocs des molécules sur la paroi du ballon ; (B) le nombre de molécules par unité de volume ; (C) l'agitation désordonnée des molécules (plus elle est grande, plus les molécules sont rapides).",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. Le ballon est posé au sol : l'air qu'il contient est au repos, donc ses molécules sont immobiles.<br>b. Quand Nadia ajoute de l'air (le volume du ballon ne change presque pas), le nombre de chocs de molécules sur la paroi, chaque seconde, augmente : la pression augmente.<br>c. Si le ballon reste en plein soleil, la pression de l'air qu'il contient augmente.<br>d. Dans l'eau liquide, les molécules sont beaucoup plus proches les unes des autres que dans l'air, mais elles sont elles aussi en mouvement désordonné.",
+          "aides": []
+        },
+        {
+          "texte": "Le ballon gonflé a un volume V = 7,5 L et contient une masse d'air m = 13,5 g. Calcule la masse volumique ρ = m / V de cet air, en g·L⁻¹ puis en kg·m⁻³.",
+          "aides": [
+            "Le volume est donné en litres : le calcul m / V donne directement des g·L⁻¹.",
+            "Pour passer en kg·m⁻³ : 1 g = 10⁻³ kg et 1 L = 10⁻³ m³. Que vaut alors 1 g·L⁻¹ ?"
+          ]
+        },
+        {
+          "texte": "Compare-la à celle de l'air ambiant (encadré « Données »). Que peux-tu en déduire sur le nombre de molécules par litre dans le ballon, et sur la pression de l'air du ballon par rapport à la pression atmosphérique ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Masse volumique → (B) nombre de molécules par unité de volume ; température → (C) agitation désordonnée des molécules ; pression → (A) chocs des molécules sur la paroi.",
+        "<strong>2.</strong> a. FAUX : « au repos » signifie qu'il n'y a pas de mouvement d'ensemble de l'air (pas de courant d'air), mais à l'échelle microscopique les molécules sont en agitation permanente et désordonnée.",
+        "b. VRAI : il y a plus de molécules dans le même volume, donc plus de chocs sur chaque centimètre carré de paroi chaque seconde : la force pressante exercée par l'air sur la paroi, et donc la pression, augmentent.",
+        "c. VRAI : la température de l'air augmente, l'agitation des molécules aussi ; les chocs sur la paroi sont plus nombreux et plus violents, donc la pression augmente.",
+        "d. VRAI : dans un liquide, les entités sont au contact les unes des autres (état compact) mais elles bougent et glissent les unes sur les autres de façon désordonnée ; c'est pourquoi un liquide, comme un gaz, est un fluide.",
+        "<strong>3.</strong> ρ = m / V = 13,5 / 7,5 = 1,8 g·L⁻¹. Or 1 g·L⁻¹ = 10⁻³ kg / 10⁻³ m³ = 1 kg·m⁻³, donc ρ = 1,8 kg·m⁻³.",
+        "<strong>4.</strong> 1,8 / 1,20 = 1,5 : l'air du ballon est 1,5 fois plus dense que l'air ambiant, il contient donc environ 1,5 fois plus de molécules par litre (à la même température). Les chocs sur la paroi sont plus nombreux : la pression de l'air dans le ballon est supérieure à la pression atmosphérique (c'est ce qui rend le ballon dur et rebondissant).",
+        "<em>⚠ Erreur fréquente : croire qu'un fluide « au repos » est immobile à l'échelle microscopique. Le repos est macroscopique ; l'agitation des molécules ne s'arrête jamais.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Sous pression au quotidien",
+      "contexte": [
+        "La pression intervient partout : dans le bulletin météo, dans les pneus d'un vélo, dans un autocuiseur ou sur l'écran d'un smartphone.",
+        "Rappel : un fluide à la pression P exerce sur une surface plane d'aire S une force pressante perpendiculaire à la surface, dirigée du fluide vers la surface, de valeur F = P × S (F en N, P en Pa, S en m²)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"40\" y=\"370\" width=\"680\" height=\"16\" fill=\"#C8962E\" opacity=\"0.55\"/><path d=\"M250,370 L250,165 Q250,125 310,105 L325,65 L325,30 L375,30 L375,65 L390,105 Q450,125 450,165 L450,370 Z\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><rect x=\"251.5\" y=\"175\" width=\"197\" height=\"193.5\" fill=\"#DCE9EC\"/><line x1=\"250\" y1=\"175\" x2=\"450\" y2=\"175\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-dasharray=\"7 5\"/><line x1=\"250\" y1=\"370\" x2=\"450\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><line x1=\"450\" y1=\"165\" x2=\"450\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"310.0\" y=\"250\" text-anchor=\"middle\" font-size=\"18\" fill=\"#1F4E5A\" font-style=\"italic\">eau</text><text x=\"350.0\" y=\"120\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3a3a3a\" font-style=\"italic\">air</text><text x=\"600\" y=\"70\" text-anchor=\"middle\" font-size=\"16\" fill=\"#3a3a3a\" font-style=\"italic\">air extérieur</text><circle cx=\"450\" cy=\"270\" r=\"6\" fill=\"#3a3a3a\"/><text x=\"462\" y=\"256\" font-size=\"20\" font-weight=\"bold\">A</text><line x1=\"450.0\" y1=\"270.0\" x2=\"535.0\" y2=\"270.0\" stroke=\"#B5523B\" stroke-width=\"3.2\"/><polygon points=\"545.0,270.0 532.4,276.1 532.4,263.9\" fill=\"#B5523B\"/><text x=\"559.0\" y=\"258.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#B5523B\">1</text><line x1=\"450.0\" y1=\"270.0\" x2=\"365.0\" y2=\"270.0\" stroke=\"#B5523B\" stroke-width=\"3.2\"/><polygon points=\"355.0,270.0 367.6,263.9 367.6,276.1\" fill=\"#B5523B\"/><text x=\"351.0\" y=\"256.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#B5523B\">2</text><line x1=\"450.0\" y1=\"270.0\" x2=\"512.5\" y2=\"325.4\" stroke=\"#B5523B\" stroke-width=\"3.2\"/><polygon points=\"520.0,332.0 506.5,328.2 514.6,319.1\" fill=\"#B5523B\"/><text x=\"534.0\" y=\"346.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#B5523B\">3</text><circle cx=\"330\" cy=\"370\" r=\"6\" fill=\"#3a3a3a\"/><text x=\"340\" y=\"360\" font-size=\"20\" font-weight=\"bold\">B</text><line x1=\"330.0\" y1=\"370.0\" x2=\"330.0\" y2=\"430.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><polygon points=\"330.0,440.0 323.9,427.4 336.1,427.4\" fill=\"#1F4E5A\"/><text x=\"348.0\" y=\"440.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">4</text><line x1=\"330.0\" y1=\"370.0\" x2=\"330.0\" y2=\"285.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><polygon points=\"330.0,275.0 336.1,287.6 323.9,287.6\" fill=\"#1F4E5A\"/><text x=\"314.0\" y=\"285.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">5</text><line x1=\"330.0\" y1=\"370.0\" x2=\"277.4\" y2=\"418.2\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><polygon points=\"270.0,425.0 275.2,412.0 283.4,421.0\" fill=\"#1F4E5A\"/><text x=\"254.0\" y=\"433.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">6</text><text x=\"640\" y=\"410\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">table</text></svg>",
+      "questions": [
+        {
+          "texte": "Complète les conversions suivantes.<br>a. Pression atmosphérique annoncée par la météo : 1 024 hPa = … Pa = … bar.<br>b. Pression de l'air dans un pneu de vélo : 5,5 bar = … Pa = … hPa.<br>c. Pression de la vapeur dans un autocuiseur : 1,8 × 10⁵ Pa = … hPa = … bar.",
+          "aides": []
+        },
+        {
+          "texte": "La figure représente une bouteille d'eau posée sur une table. En A (paroi latérale) et en B (fond), trois flèches sont proposées. Pour chaque point, indique la flèche qui représente la force pressante exercée par l'eau sur la paroi. Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "L'écran d'un smartphone est un rectangle de 15,0 cm sur 7,0 cm. On prendra P<sub>0</sub> ≈ 1,0 × 10⁵ Pa.<br>a. Calcule l'aire S de l'écran en m².<br>b. Calcule la valeur F de la force pressante exercée par l'air extérieur sur l'écran.<br>c. Quelle masse m aurait un objet dont le poids (P = m × g) aurait cette valeur ?<br>d. L'écran ne se brise pourtant pas. Propose une explication.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. 1 024 hPa = 1 024 × 10² Pa = 1,024 × 10⁵ Pa = 1,024 bar.",
+        "b. 5,5 bar = 5,5 × 10⁵ Pa = 5,5 × 10³ hPa (5 500 hPa).",
+        "c. 1,8 × 10⁵ Pa = 1,8 × 10³ hPa (1 800 hPa) = 1,8 bar.",
+        "<strong>2.</strong> En A, c'est la flèche 1 ; en B, c'est la flèche 4. La force pressante est perpendiculaire à la paroi et dirigée du fluide vers la paroi : en A, horizontale vers l'extérieur de la bouteille ; en B, verticale vers le bas. Les flèches 2 et 5 sont dirigées vers le fluide, les flèches 3 et 6 ne sont pas perpendiculaires à la paroi.",
+        "<strong>3.</strong> a. S = 15,0 × 7,0 = 105 cm² = 105 × 10⁻⁴ m² = 1,05 × 10⁻² m² (1 cm² = 10⁻⁴ m²).",
+        "b. F = P<sub>0</sub> × S = 1,0 × 10⁵ × 1,05 × 10⁻² = 1,05 × 10³ N, soit environ 1,1 × 10³ N.",
+        "c. m = F / g = 1,05 × 10³ / 9,81 = 107 kg, soit environ 1,1 × 10² kg : c'est comme si un adulte assez lourd était posé sur l'écran !",
+        "d. L'air contenu à l'intérieur du téléphone est à la même pression que l'air extérieur : il exerce sur la face intérieure de l'écran une force pressante de même valeur, dirigée en sens inverse. Les deux forces se compensent.",
+        "<em>⚠ Erreur fréquente : oublier de convertir les cm² en m² (1 cm² = 10⁻⁴ m², et non 10⁻² m²). On trouverait une force 10 000 fois trop grande.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Un capteur de pression dans une éprouvette",
+      "contexte": [
+        "Pour tester la loi fondamentale de la statique des fluides, Mehdi plonge la sonde d'un capteur de pression dans une grande éprouvette remplie d'eau du robinet, à différentes profondeurs h (distance entre la surface libre et la sonde). Ses mesures sont représentées sur le graphique ci-dessous (croix), avec la droite qui passe au mieux par les points.",
+        "Rappel : dans un liquide au repos, homogène et incompressible, la pression à la profondeur h vaut P(h) = P<sub>0</sub> + ρ × g × h, où P<sub>0</sub> est la pression à la surface libre."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"95.0\" y1=\"20\" x2=\"95.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"120.4\" y1=\"20\" x2=\"120.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"145.8\" y1=\"20\" x2=\"145.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"171.2\" y1=\"20\" x2=\"171.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"196.6\" y1=\"20\" x2=\"196.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"222.0\" y1=\"20\" x2=\"222.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"247.4\" y1=\"20\" x2=\"247.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"272.8\" y1=\"20\" x2=\"272.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"298.2\" y1=\"20\" x2=\"298.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"323.6\" y1=\"20\" x2=\"323.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"349.0\" y1=\"20\" x2=\"349.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"374.4\" y1=\"20\" x2=\"374.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"399.8\" y1=\"20\" x2=\"399.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"425.2\" y1=\"20\" x2=\"425.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"450.6\" y1=\"20\" x2=\"450.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"476.0\" y1=\"20\" x2=\"476.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"501.4\" y1=\"20\" x2=\"501.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"526.8\" y1=\"20\" x2=\"526.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"552.2\" y1=\"20\" x2=\"552.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"577.6\" y1=\"20\" x2=\"577.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"603.0\" y1=\"20\" x2=\"603.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"628.4\" y1=\"20\" x2=\"628.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"653.8\" y1=\"20\" x2=\"653.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"679.2\" y1=\"20\" x2=\"679.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"704.6\" y1=\"20\" x2=\"704.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95.0\" y1=\"20\" x2=\"95.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"95.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"222.0\" y1=\"20\" x2=\"222.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"222.0\" y=\"422\" text-anchor=\"middle\">5</text><line x1=\"349.0\" y1=\"20\" x2=\"349.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"349.0\" y=\"422\" text-anchor=\"middle\">10</text><line x1=\"476.0\" y1=\"20\" x2=\"476.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"476.0\" y=\"422\" text-anchor=\"middle\">15</text><line x1=\"603.0\" y1=\"20\" x2=\"603.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"603.0\" y=\"422\" text-anchor=\"middle\">20</text><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">25</text><line x1=\"95\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"387.3\" x2=\"730\" y2=\"387.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"374.7\" x2=\"730\" y2=\"374.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"362.0\" x2=\"730\" y2=\"362.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"349.3\" x2=\"730\" y2=\"349.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"336.7\" x2=\"730\" y2=\"336.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"324.0\" x2=\"730\" y2=\"324.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"311.3\" x2=\"730\" y2=\"311.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"298.7\" x2=\"730\" y2=\"298.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"286.0\" x2=\"730\" y2=\"286.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"273.3\" x2=\"730\" y2=\"273.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"260.7\" x2=\"730\" y2=\"260.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"248.0\" x2=\"730\" y2=\"248.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"235.3\" x2=\"730\" y2=\"235.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"222.7\" x2=\"730\" y2=\"222.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"210.0\" x2=\"730\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"197.3\" x2=\"730\" y2=\"197.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"184.7\" x2=\"730\" y2=\"184.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"172.0\" x2=\"730\" y2=\"172.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"159.3\" x2=\"730\" y2=\"159.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"146.7\" x2=\"730\" y2=\"146.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"134.0\" x2=\"730\" y2=\"134.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"121.3\" x2=\"730\" y2=\"121.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"108.7\" x2=\"730\" y2=\"108.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"96.0\" x2=\"730\" y2=\"96.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"83.3\" x2=\"730\" y2=\"83.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"70.7\" x2=\"730\" y2=\"70.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"58.0\" x2=\"730\" y2=\"58.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"45.3\" x2=\"730\" y2=\"45.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"32.7\" x2=\"730\" y2=\"32.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"95\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"405.0\" text-anchor=\"end\">1010</text><line x1=\"95\" y1=\"336.7\" x2=\"730\" y2=\"336.7\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"341.7\" text-anchor=\"end\">1015</text><line x1=\"95\" y1=\"273.3\" x2=\"730\" y2=\"273.3\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"278.3\" text-anchor=\"end\">1020</text><line x1=\"95\" y1=\"210.0\" x2=\"730\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"215.0\" text-anchor=\"end\">1025</text><line x1=\"95\" y1=\"146.7\" x2=\"730\" y2=\"146.7\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"151.7\" text-anchor=\"end\">1030</text><line x1=\"95\" y1=\"83.3\" x2=\"730\" y2=\"83.3\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"88.3\" text-anchor=\"end\">1035</text><line x1=\"95\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"87\" y=\"25.0\" text-anchor=\"end\">1040</text><rect x=\"95\" y=\"20\" width=\"635\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"412.5\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">profondeur h (cm)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">pression P (hPa)</text><line x1=\"95.0\" y1=\"362.0\" x2=\"730.0\" y2=\"51.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M87.0,354.0 L103.0,370.0 M87.0,370.0 L103.0,354.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M214.0,290.7 L230.0,306.7 M214.0,306.7 L230.0,290.7\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M341.0,229.9 L357.0,245.9 M341.0,245.9 L357.0,229.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M468.0,169.1 L484.0,185.1 M468.0,185.1 L484.0,169.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M595.0,104.5 L611.0,120.5 M595.0,120.5 L611.0,104.5\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M722.0,43.7 L738.0,59.7 M722.0,59.7 L738.0,43.7\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"719.8\" y=\"248.0\" text-anchor=\"end\" font-size=\"16\" fill=\"#B5523B\" font-weight=\"bold\">h = 25 cm : P = 1 037,5 hPa</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis la pression mesurée pour h = 0 cm. À quelle pression correspond-elle ?",
+          "aides": []
+        },
+        {
+          "texte": "D'après la relation rappelée, quelle allure doit avoir la courbe P = f(h) ? Les mesures de Mehdi sont-elles en accord avec cette allure ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le coefficient directeur de la droite en hPa·cm⁻¹, à partir des points h = 0 cm et h = 25 cm, puis convertis-le en Pa·m⁻¹.",
+          "aides": [
+            "Coefficient directeur = (P<sub>2</sub> − P<sub>1</sub>) / (h<sub>2</sub> − h<sub>1</sub>), avec les valeurs lues sur le graphique.",
+            "Pour la conversion : 1 hPa = 10² Pa et 1 cm = 10⁻² m. Divise des pascals par des mètres."
+          ]
+        },
+        {
+          "texte": "Ce coefficient directeur est égal à ρ × g. Déduis-en la masse volumique ρ du liquide. Le résultat est-il cohérent ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? « Si Mehdi refait la mesure à 20 cm de profondeur dans un large seau rempli de la même eau, il trouvera une pression plus faible, car l'eau est moins resserrée. » Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Explique pourquoi le mur d'un barrage est beaucoup plus épais à sa base qu'à son sommet.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Pour h = 0 cm, P = 1 013 hPa : c'est la pression à la surface libre de l'eau, c'est-à-dire la pression atmosphérique P<sub>0</sub>.",
+        "<strong>2.</strong> P(h) = P<sub>0</sub> + ρ·g·h est une fonction affine de h : la courbe doit être une droite croissante, d'ordonnée à l'origine P<sub>0</sub>. Les points de Mehdi sont bien alignés sur une droite croissante qui coupe l'axe des ordonnées vers 1 013 hPa : les mesures sont en accord avec la loi.",
+        "<strong>3.</strong> Coefficient directeur : a = (1 037,5 − 1 013,0) / (25 − 0) = 24,5 / 25 = 0,98 hPa·cm⁻¹. Conversion : 0,98 hPa = 98 Pa et 1 cm = 10⁻² m, donc a = 98 / 10⁻² = 9,8 × 10³ Pa·m⁻¹.",
+        "<strong>4.</strong> ρ × g = a, donc ρ = a / g = 9,8 × 10³ / 9,81 = 999 kg·m⁻³ ≈ 1,0 × 10³ kg·m⁻³. C'est bien la masse volumique de l'eau douce (1,00 × 10³ kg·m⁻³) : la loi est vérifiée.",
+        "<strong>5.</strong> FAUX : la pression dans un fluide au repos ne dépend que de la profondeur (et de P<sub>0</sub>, ρ et g), pas de la forme ni de la taille du récipient. À 20 cm de profondeur dans la même eau, il mesurera la même pression, environ 1 033 hPa.",
+        "<strong>6.</strong> La pression de l'eau augmente avec la profondeur : elle est maximale au pied du barrage. La force pressante exercée par l'eau sur chaque mètre carré de mur y est donc la plus grande ; le mur doit être plus épais (plus résistant) en bas.",
+        "<em>⚠ Erreur fréquente : utiliser h en cm dans la relation P = P<sub>0</sub> + ρ·g·h. Avec ρ en kg·m⁻³ et g en N·kg⁻¹, la profondeur doit être en mètres pour obtenir des pascals.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Tester la loi de Mariotte avec un microcontrôleur",
+      "contexte": [
+        "Doc. 1 — Protocole. On tire le piston d'une seringue jusqu'à V = 60 mL, puis on relie son embout, par un tuyau très court (de volume négligeable), à un capteur de pression branché sur un microcontrôleur qui affiche la pression P en hPa. L'air emprisonné ne peut plus s'échapper. On enfonce lentement le piston et on relève P pour différents volumes, en attendant à chaque fois que l'affichage se stabilise. La fiche technique indique que le capteur ne doit pas dépasser 4 000 hPa.",
+        "Doc. 2 — Mesures. V (mL) : 60 ; 50 ; 40 ; 30 ; 25 ; 20. P (hPa) : 1 013 ; 1 217 ; 1 516 ; 2 031 ; 2 428 ; 3 045.",
+        "Doc. 3 — Script Python incomplet qui exploite les mesures (ci-dessous)."
+      ],
+      "code": [
+        "V = [60, 50, 40, 30, 25, 20]                  # volume (mL)",
+        "P = [1013, 1217, 1516, 2031, 2428, 3045]      # pression (hPa)",
+        "produits = []",
+        "for i in range(len(V)):",
+        "    PV = ...                                  # ligne à compléter",
+        "    produits.append(PV)",
+        "    print(V[i], P[i], PV)",
+        "moyenne = sum(produits) / len(produits)",
+        "ecart_max = max(abs(x - moyenne) for x in produits) / moyenne * 100",
+        "print(\"moyenne :\", round(moyenne), \"écart max (%) :\", round(ecart_max, 1))"
+      ],
+      "questions": [
+        {
+          "texte": "Énonce la loi de Mariotte en précisant ses conditions de validité. Comment le protocole du doc. 1 permet-il de les respecter ?",
+          "aides": []
+        },
+        {
+          "texte": "Décris l'évolution de la pression quand le volume diminue, puis interprète-la à l'échelle microscopique.",
+          "aides": []
+        },
+        {
+          "texte": "Exploitation du script (doc. 3).<br>a. Complète la ligne manquante.<br>b. Indique ce que le script affiche pour la première mesure, puis sur sa dernière ligne.<br>c. Les mesures permettent-elles de valider la loi de Mariotte ? Argumente.",
+          "aides": [
+            "La loi à tester porte sur le produit P × V : c'est lui que le script doit calculer pour chaque mesure.",
+            "Dans la boucle, la mesure numéro i est repérée par V[i] et P[i].",
+            "La dernière ligne affiche la moyenne des produits et le plus grand écart à cette moyenne, en %."
+          ]
+        },
+        {
+          "texte": "Un camarade affirme : « Si on divise le volume par deux, la pression est elle aussi divisée par deux. » Discute cette affirmation à l'aide des mesures.",
+          "aides": []
+        },
+        {
+          "texte": "Jusqu'à quel volume minimal peut-on comprimer l'air de la seringue sans risquer d'abîmer le capteur ?",
+          "aides": [
+            "D'après la loi de Mariotte, le produit P × V garde la même valeur que lors des mesures.",
+            "Écris P<sub>max</sub> × V<sub>min</sub> = 60 800 hPa·mL avec P<sub>max</sub> = 4 000 hPa."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Loi de Mariotte : pour une quantité de gaz donnée et à température constante, le produit P × V reste constant. Ici, la quantité d'air est constante car la seringue est fermée par le capteur (aucune fuite) ; la température reste celle de la salle car on enfonce le piston lentement et on attend la stabilisation (une compression rapide réchaufferait l'air).",
+        "<strong>2.</strong> Quand le volume diminue, la pression augmente (de 1 013 hPa à 60 mL à 3 045 hPa à 20 mL). Interprétation : le même nombre de molécules occupe un volume plus petit ; il y a plus de molécules par unité de volume, donc plus de chocs sur chaque unité de surface de la paroi par seconde : la pression augmente.",
+        "<strong>3.</strong> a. PV = P[i] * V[i]",
+        "b. Première ligne affichée : 60 1013 60780 (V = 60 mL, P = 1 013 hPa, P × V = 60 780 hPa·mL). Les autres produits valent 60 850 ; 60 640 ; 60 930 ; 60 700 ; 60 900. Dernière ligne : moyenne : 60800 écart max (%) : 0,3 (Python affiche le nombre décimal avec un point au lieu d'une virgule).",
+        "c. Oui : alors que la pression est multipliée par 3 environ, le produit P × V reste égal à 6,08 × 10⁴ hPa·mL à 0,3 % près au maximum, écart compatible avec la précision de lecture du volume sur la seringue et du capteur. P × V est constant aux incertitudes près : la loi de Mariotte est validée.",
+        "<strong>4.</strong> L'affirmation est fausse : P et V varient en sens inverse. Si V est divisé par 2 (60 mL → 30 mL), P est multiplié par 2 : 2 031 hPa ≈ 2 × 1 013 = 2 026 hPa. De même, V divisé par 3 (60 → 20 mL) donne P ≈ 3 × 1 013 = 3 039 hPa (mesuré : 3 045 hPa).",
+        "<strong>5.</strong> P × V = constante, donc P<sub>max</sub> × V<sub>min</sub> = 60 800 hPa·mL, soit V<sub>min</sub> = 60 800 / 4 000 = 15,2 mL. On ne doit pas descendre en dessous de 15 mL environ.",
+        "<em>⚠ Erreur fréquente : croire qu'il faut convertir P en Pa et V en m³ pour utiliser la loi de Mariotte. Comme on compare des produits P × V entre eux, il suffit d'utiliser les mêmes unités dans toute la relation.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le baromètre du smartphone",
+      "contexte": [
+        "La plupart des smartphones contiennent un capteur de pression (baromètre), utilisé notamment pour estimer l'altitude.",
+        "Partie A — Monter en haut d'une tour. Lina lance une application de mesure de pression au pied d'une tour de bureaux : P<sub>bas</sub> = 1 012,4 hPa. Arrivée au dernier étage, elle lit P<sub>haut</sub> = 1 001,6 hPa. On considère que l'air est un fluide au repos de masse volumique ρ = 1,20 kg·m⁻³ sur toute la hauteur de la tour.",
+        "Partie B — Mesurer la tension artérielle. Une tension artérielle « 12/8 » signifie que, pendant une contraction du cœur, la pression du sang dans l'artère du bras dépasse la pression atmosphérique de 120 mmHg (millimètres de mercure). Données : 1 mmHg = 133,3 Pa ; masse volumique du sang ρ<sub>sang</sub> = 1,06 × 10³ kg·m⁻³. Le brassard du tensiomètre doit être placé à la hauteur du cœur."
+      ],
+      "questions": [
+        {
+          "texte": "Partie A. Explique pourquoi la pression atmosphérique est plus faible en haut de la tour qu'en bas.",
+          "aides": []
+        },
+        {
+          "texte": "Partie A. Détermine la hauteur H de la tour. Vérifie que l'ordre de grandeur est vraisemblable pour une tour d'une trentaine d'étages.",
+          "aides": [
+            "Utilise la loi fondamentale P<sub>2</sub> − P<sub>1</sub> = ρ × g × (z<sub>1</sub> − z<sub>2</sub>) avec le point 1 en haut et le point 2 en bas.",
+            "z<sub>1</sub> − z<sub>2</sub> est la hauteur H cherchée. Convertis d'abord la différence de pression en pascals."
+          ]
+        },
+        {
+          "texte": "Partie A. En appliquant le même modèle depuis le niveau de la mer (P<sub>0</sub> = 1 013 hPa), calcule la pression prévue à 3 000 m d'altitude. Le modèle d'atmosphère type utilisé en aviation indique P = 701 hPa à cette altitude. Calcule l'écart relatif entre les deux valeurs et explique l'origine de l'écart.",
+          "aides": [
+            "À l'altitude z, P = P<sub>0</sub> − ρ × g × z avec z = 3 000 m ; attention aux unités (Pa et hPa).",
+            "Écart relatif = |valeur du modèle − valeur de référence| / valeur de référence.",
+            "Pour expliquer l'écart, demande-toi si la masse volumique de l'air reste vraiment la même quand la pression diminue."
+          ]
+        },
+        {
+          "texte": "Partie B. Exprime en pascals la surpression de 120 mmHg.",
+          "aides": []
+        },
+        {
+          "texte": "Partie B. Une infirmière mesure la tension d'un patient debout en plaçant par erreur le brassard à la cheville, 1,20 m sous le niveau du cœur. On modélise le sang comme un fluide au repos. Calcule la différence de pression entre la cheville et le cœur, en Pa puis en mmHg. Quelle tension « haute » l'appareil affichera-t-il ? Conclus sur la consigne de placement du brassard.",
+          "aides": [
+            "La cheville est plus basse que le cœur : la pression du sang y est-elle plus grande ou plus faible ?",
+            "P<sub>cheville</sub> − P<sub>c</sub>œur = ρ<sub>sang</sub> × g × 1,20 ; divise ensuite par 133,3 pour obtenir des mmHg."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La pression de l'air en un point est due au poids de l'air situé au-dessus de ce point. En haut de la tour, il y a moins d'air au-dessus de Lina : la pression est plus faible. (La loi fondamentale le traduit : plus l'altitude z est grande, plus P est faible.)",
+        "<strong>2.</strong> Loi fondamentale (axe z vertical vers le haut) : P<sub>bas</sub> − P<sub>haut</sub> = ρ × g × (z<sub>haut</sub> − z<sub>bas</sub>) = ρ × g × H. Donc H = (P<sub>bas</sub> − P<sub>haut</sub>) / (ρ × g) avec P<sub>bas</sub> − P<sub>haut</sub> = 1 012,4 − 1 001,6 = 10,8 hPa = 1 080 Pa. H = 1 080 / (1,20 × 9,81) = 91,7 m ≈ 92 m. Avec environ 3 m par étage, cela fait une trentaine d'étages (91,7 / 3 ≈ 31) : c'est vraisemblable.",
+        "<strong>3.</strong> P(3 000 m) = P<sub>0</sub> − ρ × g × z = 1 013 × 10² − 1,20 × 9,81 × 3 000 = 1,013 × 10⁵ − 3,53 × 10⁴ = 6,60 × 10⁴ Pa = 660 hPa. Écart relatif : (701 − 660) / 701 = 0,059, soit environ 6 % (la baisse de pression prévue, 353 hPa, dépasse de 13 % la baisse réelle, 312 hPa). Origine : l'air est compressible ; en altitude, la pression est plus faible, l'air est moins comprimé, sa masse volumique diminue (environ 0,9 kg·m⁻³ à 3 000 m). Le modèle « ρ constante » n'est valable que sur quelques centaines de mètres.",
+        "<strong>4.</strong> ΔP = 120 × 133,3 = 1,60 × 10⁴ Pa (15 996 Pa).",
+        "<strong>5.</strong> P<sub>cheville</sub> − P<sub>c</sub>œur = ρ<sub>sang</sub> × g × (z<sub>c</sub>œur − z<sub>cheville</sub>) = 1,06 × 10³ × 9,81 × 1,20 = 1,25 × 10⁴ Pa, soit 1,25 × 10⁴ / 133,3 = 93,6 mmHg ≈ 94 mmHg. L'appareil afficherait environ 120 + 94 = 214 mmHg, soit une tension « 21 » au lieu de « 12 » : le patient serait jugé à tort en forte hypertension. La pression du sang dépend de la hauteur du point de mesure : pour comparer les mesures entre elles, il faut toujours mesurer au niveau du cœur. (Limite : le sang circule, il n'est pas vraiment au repos, mais le modèle donne le bon ordre de grandeur.)",
+        "<em>⚠ Erreur fréquente : se tromper de signe dans P<sub>2</sub> − P<sub>1</sub> = ρ × g × (z<sub>1</sub> − z<sub>2</sub>). Vérifier avec le bon sens : le point le plus bas a toujours la pression la plus grande.</em>",
+        "<em>⚠ Erreur fréquente : oublier de convertir les hPa en Pa avant de diviser par ρ × g (on trouverait H = 0,92 m).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Plongée en mer : gérer l'air sous pression",
+      "contexte": [
+        "Doc. 1 — Le plongeur et son gilet. En plongée avec bouteille, le plongeur respire de l'air fourni par un détendeur à la pression de l'eau qui l'entoure. Il porte un gilet stabilisateur, une poche souple qu'il remplit d'air (depuis sa bouteille) ou qu'il vide (par une purge) pour rester à la profondeur voulue. Comme la poche est souple, l'air qu'elle contient est toujours à la pression de l'eau. Si le gilet se dilate pendant la remontée sans être purgé, le plongeur remonte de plus en plus vite : c'est la « remontée incontrôlée ». Première règle enseignée aux débutants : « Ne jamais bloquer sa respiration en remontant. »",
+        "Doc. 2 — Pression de l'eau de mer en fonction de la profondeur h, au repos (graphique ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"96.2\" y1=\"20\" x2=\"96.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"112.5\" y1=\"20\" x2=\"112.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"128.8\" y1=\"20\" x2=\"128.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"145.0\" y1=\"20\" x2=\"145.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"161.2\" y1=\"20\" x2=\"161.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"177.5\" y1=\"20\" x2=\"177.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"193.8\" y1=\"20\" x2=\"193.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"210.0\" y1=\"20\" x2=\"210.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"226.2\" y1=\"20\" x2=\"226.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"242.5\" y1=\"20\" x2=\"242.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"258.8\" y1=\"20\" x2=\"258.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"275.0\" y1=\"20\" x2=\"275.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"291.2\" y1=\"20\" x2=\"291.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"307.5\" y1=\"20\" x2=\"307.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"323.8\" y1=\"20\" x2=\"323.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"340.0\" y1=\"20\" x2=\"340.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"356.2\" y1=\"20\" x2=\"356.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"372.5\" y1=\"20\" x2=\"372.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"388.8\" y1=\"20\" x2=\"388.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"421.2\" y1=\"20\" x2=\"421.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"437.5\" y1=\"20\" x2=\"437.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"453.7\" y1=\"20\" x2=\"453.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"470.0\" y1=\"20\" x2=\"470.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"486.2\" y1=\"20\" x2=\"486.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"502.5\" y1=\"20\" x2=\"502.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"518.8\" y1=\"20\" x2=\"518.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"535.0\" y1=\"20\" x2=\"535.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"551.2\" y1=\"20\" x2=\"551.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"567.5\" y1=\"20\" x2=\"567.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"583.8\" y1=\"20\" x2=\"583.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"600.0\" y1=\"20\" x2=\"600.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"616.2\" y1=\"20\" x2=\"616.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"632.5\" y1=\"20\" x2=\"632.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"648.8\" y1=\"20\" x2=\"648.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"665.0\" y1=\"20\" x2=\"665.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"681.2\" y1=\"20\" x2=\"681.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"697.5\" y1=\"20\" x2=\"697.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"713.8\" y1=\"20\" x2=\"713.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"161.2\" y1=\"20\" x2=\"161.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"161.2\" y=\"422\" text-anchor=\"middle\">5</text><line x1=\"242.5\" y1=\"20\" x2=\"242.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"242.5\" y=\"422\" text-anchor=\"middle\">10</text><line x1=\"323.8\" y1=\"20\" x2=\"323.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"323.8\" y=\"422\" text-anchor=\"middle\">15</text><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"405.0\" y=\"422\" text-anchor=\"middle\">20</text><line x1=\"486.2\" y1=\"20\" x2=\"486.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"486.2\" y=\"422\" text-anchor=\"middle\">25</text><line x1=\"567.5\" y1=\"20\" x2=\"567.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"567.5\" y=\"422\" text-anchor=\"middle\">30</text><line x1=\"648.8\" y1=\"20\" x2=\"648.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"648.8\" y=\"422\" text-anchor=\"middle\">35</text><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">40</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"393.1\" x2=\"730\" y2=\"393.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"386.2\" x2=\"730\" y2=\"386.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"379.3\" x2=\"730\" y2=\"379.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"372.4\" x2=\"730\" y2=\"372.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"365.5\" x2=\"730\" y2=\"365.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"358.5\" x2=\"730\" y2=\"358.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"351.6\" x2=\"730\" y2=\"351.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"344.7\" x2=\"730\" y2=\"344.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"337.8\" x2=\"730\" y2=\"337.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"330.9\" x2=\"730\" y2=\"330.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"324.0\" x2=\"730\" y2=\"324.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"317.1\" x2=\"730\" y2=\"317.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"310.2\" x2=\"730\" y2=\"310.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"303.3\" x2=\"730\" y2=\"303.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"296.4\" x2=\"730\" y2=\"296.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"289.5\" x2=\"730\" y2=\"289.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"282.5\" x2=\"730\" y2=\"282.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"275.6\" x2=\"730\" y2=\"275.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"268.7\" x2=\"730\" y2=\"268.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"261.8\" x2=\"730\" y2=\"261.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"254.9\" x2=\"730\" y2=\"254.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"248.0\" x2=\"730\" y2=\"248.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"241.1\" x2=\"730\" y2=\"241.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"234.2\" x2=\"730\" y2=\"234.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"227.3\" x2=\"730\" y2=\"227.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"220.4\" x2=\"730\" y2=\"220.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"213.5\" x2=\"730\" y2=\"213.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"206.5\" x2=\"730\" y2=\"206.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"199.6\" x2=\"730\" y2=\"199.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"192.7\" x2=\"730\" y2=\"192.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"185.8\" x2=\"730\" y2=\"185.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"178.9\" x2=\"730\" y2=\"178.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"172.0\" x2=\"730\" y2=\"172.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"165.1\" x2=\"730\" y2=\"165.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"158.2\" x2=\"730\" y2=\"158.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"151.3\" x2=\"730\" y2=\"151.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"144.4\" x2=\"730\" y2=\"144.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"137.5\" x2=\"730\" y2=\"137.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"130.5\" x2=\"730\" y2=\"130.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"123.6\" x2=\"730\" y2=\"123.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"116.7\" x2=\"730\" y2=\"116.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"109.8\" x2=\"730\" y2=\"109.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"102.9\" x2=\"730\" y2=\"102.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"96.0\" x2=\"730\" y2=\"96.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"89.1\" x2=\"730\" y2=\"89.1\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"82.2\" x2=\"730\" y2=\"82.2\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"75.3\" x2=\"730\" y2=\"75.3\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"68.4\" x2=\"730\" y2=\"68.4\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"61.5\" x2=\"730\" y2=\"61.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"54.5\" x2=\"730\" y2=\"54.5\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"47.6\" x2=\"730\" y2=\"47.6\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"40.7\" x2=\"730\" y2=\"40.7\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"33.8\" x2=\"730\" y2=\"33.8\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"26.9\" x2=\"730\" y2=\"26.9\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"365.5\" x2=\"730\" y2=\"365.5\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"370.5\" text-anchor=\"end\">0,5</text><line x1=\"80\" y1=\"330.9\" x2=\"730\" y2=\"330.9\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"335.9\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"296.4\" x2=\"730\" y2=\"296.4\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"301.4\" text-anchor=\"end\">1,5</text><line x1=\"80\" y1=\"261.8\" x2=\"730\" y2=\"261.8\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"266.8\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"227.3\" x2=\"730\" y2=\"227.3\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"232.3\" text-anchor=\"end\">2,5</text><line x1=\"80\" y1=\"192.7\" x2=\"730\" y2=\"192.7\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"197.7\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"158.2\" x2=\"730\" y2=\"158.2\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"163.2\" text-anchor=\"end\">3,5</text><line x1=\"80\" y1=\"123.6\" x2=\"730\" y2=\"123.6\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"128.6\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"89.1\" x2=\"730\" y2=\"89.1\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"94.1\" text-anchor=\"end\">4,5</text><line x1=\"80\" y1=\"54.5\" x2=\"730\" y2=\"54.5\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"59.5\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">5,5</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">profondeur h (m)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">pression P (bar)</text><line x1=\"80.0\" y1=\"330.0\" x2=\"730.0\" y2=\"50.8\" stroke=\"#B5523B\" stroke-width=\"3.4\"/><rect x=\"104.4\" y=\"33.8\" width=\"300\" height=\"34\" fill=\"#fff\" stroke=\"#d9d2c5\"/><text x=\"116.4\" y=\"56.8\" fill=\"#3a3a3a\">eau de mer au repos (surface : P = P₀)</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Données techniques. Volume maximal du gilet : 15 L (au-delà, une soupape laisse s'échapper l'air). Vitre du masque : aire S = 1,2 × 10⁻² m² ; le plongeur souffle un peu d'air par le nez dans son masque pendant la descente. Volume d'air des poumons du plongeur après une inspiration profonde : 5,0 L. Température de l'eau le jour de la plongée : 22 °C en surface, 14 °C à 20 m de profondeur."
+      ],
+      "questions": [
+        {
+          "texte": "Lis sur le doc. 2 la pression à 20 m de profondeur, puis retrouve-la par le calcul. Vérifie la règle des plongeurs : « tous les 10 m, la pression augmente d'environ 1 bar ».",
+          "aides": [
+            "La profondeur se lit sur l'axe horizontal du doc. 2.",
+            "P = P<sub>0</sub> + ρ × g × h avec la masse volumique de l'eau de mer. Pour la règle, calcule seulement ρ × g × 10 m."
+          ]
+        },
+        {
+          "texte": "À 20 m, le gilet contient 6,0 L d'air. Le plongeur remonte jusqu'à 10 m sans purger son gilet. Quel volume occupe alors l'air du gilet ? Que se passerait-il s'il continuait jusqu'à la surface sans purger ? Relie ta réponse au risque de remontée incontrôlée décrit dans le doc. 1.",
+          "aides": [
+            "Calcule d'abord la pression à 10 m de profondeur, comme à la question 1.",
+            "La quantité d'air du gilet ne change pas : P<sub>20</sub> × V<sub>20</sub> = P<sub>10</sub> × V<sub>10</sub>.",
+            "Pour la surface, la pression vaut P<sub>0</sub>. Compare le volume obtenu à la capacité du gilet (doc. 3)."
+          ]
+        },
+        {
+          "texte": "À 30 m de profondeur, le plongeur inspire profondément l'air de son détendeur, puis remonte vers la surface en bloquant sa respiration. Calcule le volume qu'occuperait cet air à la surface et explique la règle du doc. 1. Pourquoi un apnéiste, qui inspire en surface avant de descendre, n'est-il pas exposé à ce danger ?",
+          "aides": [
+            "Calcule P à 30 m, puis applique la loi de Mariotte entre 30 m et la surface pour les 5,0 L d'air des poumons.",
+            "Pour l'apnéiste, quelle est la pression de l'air dans ses poumons au moment où il inspire ?"
+          ]
+        },
+        {
+          "texte": "Calcule la valeur de la force pressante exercée par l'eau sur la vitre du masque à 20 m. Pourquoi la vitre ne se brise-t-elle pas ?",
+          "aides": [
+            "F = P × S, avec P la pression à 20 m (question 1) et S en m².",
+            "De l'autre côté de la vitre, il y a l'air du masque : à quelle pression est-il, puisque le plongeur y souffle de l'air respiré à la pression de l'eau ?"
+          ]
+        },
+        {
+          "texte": "Les calculs des questions 2 et 3 reposent sur la loi de Mariotte. Discute la validité de ses conditions d'application dans cette situation (doc. 1 et doc. 3), et indique, sans calcul, si les volumes calculés sont surestimés ou sous-estimés.",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (hors programme de Première : la poussée d'Archimède est étudiée en Terminale) : un corps immergé subit une force verticale vers le haut de valeur F<sub>A</sub> = ρ × V × g, où V est le volume immergé. Calcule l'augmentation de F<sub>A</sub> due à la dilatation du gilet entre 20 m et 10 m, et explique pourquoi la remontée devient incontrôlée.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lecture : à h = 20 m, P ≈ 3,0 bar. Calcul : P = P<sub>0</sub> + ρ × g × h = 1,013 × 10⁵ + 1,03 × 10³ × 9,81 × 20 = 1,013 × 10⁵ + 2,02 × 10⁵ = 3,03 × 10⁵ Pa ≈ 3,0 bar. Pour 10 m d'eau de mer : ρ × g × 10 = 1,03 × 10³ × 9,81 × 10 = 1,01 × 10⁵ Pa ≈ 1 bar : la règle est vérifiée.",
+        "<strong>2.</strong> À 10 m : P<sub>10</sub> = 1,013 × 10⁵ + 1,01 × 10⁵ = 2,02 × 10⁵ Pa. Loi de Mariotte (même quantité d'air, température supposée constante) : P<sub>20</sub> × V<sub>20</sub> = P<sub>10</sub> × V<sub>10</sub>, donc V<sub>10</sub> = V<sub>20</sub> × P<sub>20</sub> / P<sub>10</sub> = 6,0 × 3,03 × 10⁵ / 2,02 × 10⁵ = 9,0 L. Jusqu'à la surface : V<sub>0</sub> = 6,0 × 3,03 × 10⁵ / 1,013 × 10⁵ = 18 L, plus que les 15 L du gilet : la soupape s'ouvrirait. Le gilet triple de volume pendant la remontée : il porte de mieux en mieux le plongeur, qui remonte de plus en plus vite si l'air n'est pas purgé régulièrement.",
+        "<strong>3.</strong> À 30 m : P<sub>30</sub> = 1,013 × 10⁵ + 1,03 × 10³ × 9,81 × 30 = 4,04 × 10⁵ Pa. En surface : V = 5,0 × 4,04 × 10⁵ / 1,013 × 10⁵ = 20 L (4 fois plus). Les poumons ne peuvent pas contenir 20 L : ils seraient déchirés (surpression pulmonaire). En expirant pendant la remontée, le plongeur évacue l'air qui se dilate. L'apnéiste, lui, part de la surface avec 5 à 6 L d'air à 1 bar : à la descente, l'air est comprimé (volume divisé par 4 à 30 m), puis il retrouve son volume initial en remontant, sans jamais le dépasser.",
+        "<strong>4.</strong> F = P × S = 3,03 × 10⁵ × 1,2 × 10⁻² = 3,6 × 10³ N, le poids d'une masse d'environ 370 kg. La vitre ne se brise pas car l'air du masque, alimenté par le nez du plongeur, est lui aussi à la pression de l'eau (environ 3 bar) : il exerce sur la face intérieure une force pressante presque égale et opposée. Sans ce rééquilibrage, le masque serait plaqué violemment sur le visage.",
+        "<strong>5.</strong> Éléments attendus. Quantité d'air constante : vraie si le plongeur ne purge pas, ne remplit pas le gilet et si la soupape ne s'ouvre pas ; pour les poumons, seulement si la respiration est bloquée. Température constante : fausse, l'eau passe de 14 °C à 20 m à 22 °C en surface ; en remontant, l'air se réchauffe, l'agitation de ses molécules augmente et il se dilate encore un peu plus que ne le prévoit la loi de Mariotte. Les volumes calculés sont donc légèrement sous-estimés (l'écart reste faible, de l'ordre de quelques %). Les conclusions de sécurité sont donc renforcées. On a aussi supposé l'eau au repos et de masse volumique uniforme pour calculer les pressions.",
+        "<strong>6.</strong> ΔF<sub>A</sub> = ρ × g × ΔV = 1,03 × 10³ × 9,81 × (9,0 − 6,0) × 10⁻³ = 30 N. On suppose le plongeur équilibré à 20 m (son poids compensé par la poussée d'Archimède). Son poids ne change pas, mais la force vers le haut augmente de 30 N (le poids d'un objet de 3 kg environ) : la force totale est dirigée vers le haut et le plongeur remonte de plus en plus vite ; en remontant, le gilet se dilate encore, ce qui aggrave le phénomène.",
+        "<em>⚠ Erreur fréquente : appliquer la loi de Mariotte avec la seule pression due à l'eau (ρ·g·h) en oubliant la pression atmosphérique P<sub>0</sub>. À 20 m, on utiliserait 2,0 bar au lieu de 3,0 bar et on trouverait des volumes faux.</em>"
+      ]
+    }
+  ]
+}

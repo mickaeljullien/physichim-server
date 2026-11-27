@@ -1,0 +1,755 @@
+{
+  "id": 50,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Le schéma de Lewis",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Doublet liant",
+            "text": "Doublet d'électrons de valence partagé entre deux atomes, formant une liaison covalente."
+          },
+          {
+            "type": "def",
+            "term": "Doublet non liant",
+            "text": "Doublet d'électrons de valence localisé sur un seul atome, non engagé dans une liaison."
+          },
+          {
+            "type": "text",
+            "text": "Dans une molécule ou un ion, les électrons de valence se répartissent en doublets liants et doublets non liants. Chaque atome respecte la règle du duet (pour l'hydrogène) ou de l'octet (2 ou 8 électrons dans sa couche de valence)."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : la molécule H2O possède 2 doublets liants O–H et 2 doublets non liants portés par l'atome d'oxygène."
+          }
+        ]
+      },
+      {
+        "title": "2. Géométrie des entités",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les doublets (liants et non liants) qui entourent un atome central se répartissent dans l'espace de façon à minimiser les répulsions entre eux : cette répartition détermine la géométrie de l'entité. Des logiciels de représentation moléculaire ou des modèles éclatés permettent de visualiser ces géométries en trois dimensions."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Molécule",
+              "Doublets autour de l'atome central",
+              "Géométrie"
+            ],
+            "rows": [
+              [
+                "CH4",
+                "4 doublets liants, 0 non liant",
+                "Tétraédrique"
+              ],
+              [
+                "NH3",
+                "3 doublets liants, 1 non liant",
+                "Pyramidale"
+              ],
+              [
+                "H2O",
+                "2 doublets liants, 2 non liants",
+                "Coudée (angulaire)"
+              ]
+            ]
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 210\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"80\" y1=\"90\" x2=\"43.6\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"31.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"80\" y1=\"90\" x2=\"116.4\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"128.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><polygon points=\"80,90 83.2,48.0 76.8,48.0\" fill=\"#1B2420\"/><text x=\"80.0\" y=\"37.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"73.1\" y1=\"85.7\" x2=\"71.9\" y2=\"88.9\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"65.8\" y1=\"82.3\" x2=\"64.1\" y2=\"86.8\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"58.5\" y1=\"78.9\" x2=\"56.4\" y2=\"84.7\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"51.2\" y1=\"75.5\" x2=\"48.6\" y2=\"82.6\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"44.0\" y1=\"72.1\" x2=\"40.9\" y2=\"80.5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"29.3\" y=\"74.5\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><circle cx=\"80\" cy=\"90\" r=\"7\" fill=\"#FAFAF5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"80\" y=\"94\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">C</text><text x=\"80\" y=\"178\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Tétraédrique (CH₄)</text><text x=\"80\" y=\"192\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">4 doublets liants</text><line x1=\"240\" y1=\"90\" x2=\"203.6\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"191.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"240\" y1=\"90\" x2=\"276.4\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"288.5\" y=\"121.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><polygon points=\"240,90 243.2,48.0 236.8,48.0\" fill=\"#1B2420\"/><text x=\"240.0\" y=\"37.0\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><circle cx=\"215.7\" cy=\"80.4\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"214.1\" cy=\"86.2\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"240\" cy=\"90\" r=\"7\" fill=\"#FAFAF5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"240\" y=\"94\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">N</text><text x=\"240\" y=\"178\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Pyramidale (NH₃)</text><text x=\"240\" y=\"192\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">3 liants + 1 non liant</text><line x1=\"400\" y1=\"90\" x2=\"361.9\" y2=\"72.3\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"349.2\" y=\"69.3\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><line x1=\"400\" y1=\"90\" x2=\"438.1\" y2=\"72.3\" stroke=\"#1B2420\" stroke-width=\"1.6\"/><text x=\"450.8\" y=\"69.3\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">H</text><circle cx=\"392.5\" cy=\"115.1\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"398.4\" cy=\"116.1\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"402.6\" cy=\"122.0\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"408.5\" cy=\"121.0\" r=\"2\" fill=\"#5C6B60\"/><circle cx=\"400\" cy=\"90\" r=\"7\" fill=\"#FAFAF5\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"400\" y=\"94\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">O</text><text x=\"400\" y=\"178\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Coudée (H₂O)</text><text x=\"400\" y=\"192\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">2 liants + 2 non liants</text></svg>",
+            "caption": "Les liaisons pleines sont dans le plan de la feuille, le triangle plein sort vers l'avant, les tirets s'éloignent vers l'arrière. Les doublets non liants (points) occupent aussi un emplacement dans l'espace et repoussent les doublets liants."
+          },
+          {
+            "type": "warn",
+            "text": "CH4 et NH3 ont chacun 4 doublets autour de l'atome central, mais des géométries différentes : le doublet non liant de NH3 occupe l'un des quatre emplacements et repousse les doublets liants, ce qui déforme la géométrie tétraédrique de base en pyramide. Dans H2O, l'angle H–O–H réel est proche de, mais inférieur à, l'angle tétraédrique de référence (109,5°) à cause des deux doublets non liants."
+          }
+        ]
+      },
+      {
+        "title": "3. Électronégativité et polarisation d'une liaison",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Électronégativité",
+            "text": "Grandeur qui mesure la capacité d'un atome à attirer vers lui le doublet d'électrons d'une liaison covalente. Elle augmente globalement de gauche à droite et du bas vers le haut du tableau périodique."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Atome",
+              "H",
+              "C",
+              "N",
+              "Cl",
+              "O"
+            ],
+            "rows": [
+              [
+                "Électronégativité",
+                "2,2",
+                "2,5",
+                "3,0",
+                "3,0",
+                "3,5"
+              ]
+            ]
+          },
+          {
+            "type": "def",
+            "term": "Polarisation d'une liaison",
+            "text": "Lorsque deux atomes liés ont des électronégativités différentes, la liaison est polarisée : l'atome le plus électronégatif porte une charge partielle δ⁻, l'autre une charge partielle δ⁺."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : la liaison C–H (électronégativités proches, 2,5 et 2,2) est très faiblement polarisée. La liaison O–H (3,5 et 2,2) est nettement plus polarisée, l'oxygène portant la charge δ⁻. Classement par polarité croissante : C–H < N–H < O–H."
+          }
+        ]
+      },
+      {
+        "title": "4. Polarité d'une entité moléculaire",
+        "icon": "🧲",
+        "content": [
+          {
+            "type": "def",
+            "term": "Entité polaire",
+            "text": "Une entité moléculaire est polaire si le barycentre des charges partielles positives ne coïncide pas avec celui des charges partielles négatives."
+          },
+          {
+            "type": "text",
+            "text": "H2O est polaire : ses liaisons O–H sont polarisées et sa géométrie coudée empêche les effets de s'annuler. CO2 est apolaire malgré ses liaisons C=O polarisées, car sa géométrie linéaire et symétrique fait que les effets s'annulent exactement (les barycentres coïncident au niveau de l'atome de carbone)."
+          },
+          {
+            "type": "warn",
+            "text": "Attention : une molécule peut posséder des liaisons polarisées et être apolaire dans l'ensemble (cas de CO2). Il faut toujours prendre en compte la géométrie de l'entité, pas seulement la polarité de chaque liaison."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 220\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"muArrow50\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker><marker id=\"muArrowL50\" markerWidth=\"8\" markerHeight=\"8\" refX=\"2\" refY=\"4\" orient=\"auto\"><path d=\"M8,0 L0,4 L8,8 Z\" fill=\"#5C6B60\"/></marker><marker id=\"muArrowR50\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#5C6B60\"/></marker></defs><line x1=\"120\" y1=\"55\" x2=\"75\" y2=\"125\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"120\" y1=\"55\" x2=\"165\" y2=\"125\" stroke=\"#1B2420\" stroke-width=\"2\"/><text x=\"120\" y=\"50\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">O</text><text x=\"120\" y=\"38\" font-size=\"11\" fill=\"#2F7D75\" text-anchor=\"middle\">δ⁻</text><text x=\"75\" y=\"140\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><text x=\"60\" y=\"140\" font-size=\"11\" fill=\"#C0472F\">δ⁺</text><text x=\"165\" y=\"140\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">H</text><text x=\"180\" y=\"140\" font-size=\"11\" fill=\"#C0472F\">δ⁺</text><line x1=\"120\" y1=\"118\" x2=\"120\" y2=\"66\" stroke=\"#C0472F\" stroke-width=\"2.5\" marker-end=\"url(#muArrow50)\"/><text x=\"133\" y=\"95\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">μ</text><text x=\"120\" y=\"195\" font-size=\"12\" fill=\"#5C6B60\" text-anchor=\"middle\">H₂O — polaire (μ ≠ 0)</text><line x1=\"282\" y1=\"146\" x2=\"356\" y2=\"146\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"282\" y1=\"154\" x2=\"356\" y2=\"154\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"364\" y1=\"146\" x2=\"438\" y2=\"146\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"364\" y1=\"154\" x2=\"438\" y2=\"154\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"280\" y=\"155\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">O</text><text x=\"280\" y=\"135\" font-size=\"11\" fill=\"#2F7D75\" text-anchor=\"middle\">δ⁻</text><text x=\"360\" y=\"155\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">C</text><text x=\"360\" y=\"135\" font-size=\"11\" fill=\"#C0472F\" text-anchor=\"middle\">δ⁺</text><text x=\"440\" y=\"155\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">O</text><text x=\"440\" y=\"135\" font-size=\"11\" fill=\"#2F7D75\" text-anchor=\"middle\">δ⁻</text><line x1=\"352\" y1=\"172\" x2=\"302\" y2=\"172\" stroke=\"#5C6B60\" stroke-width=\"2\" marker-end=\"url(#muArrowL50)\"/><line x1=\"368\" y1=\"172\" x2=\"418\" y2=\"172\" stroke=\"#5C6B60\" stroke-width=\"2\" marker-end=\"url(#muArrowR50)\"/><text x=\"360\" y=\"195\" font-size=\"12\" fill=\"#5C6B60\" text-anchor=\"middle\">CO₂ — apolaire (μ total = 0)</text></svg>",
+            "caption": "Comparaison H₂O / CO₂ : dans H₂O, la géométrie coudée empêche les dipôles de liaison de s'annuler (molécule polaire). Dans CO₂, la géométrie linéaire et symétrique fait que les deux dipôles de liaison s'annulent exactement (molécule apolaire)."
+          }
+        ]
+      },
+      {
+        "title": "5. Polarité et solubilité",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "La polarité d'une entité conditionne son comportement vis-à-vis des solvants : « qui se ressemble s'assemble ». L'eau, polaire, dissout bien les espèces polaires. Les huiles, constituées de longues chaînes carbonées peu polarisées (liaisons C–H et C–C), sont apolaires : elles se dissolvent mal dans l'eau mais bien dans un solvant apolaire comme le cyclohexane."
+          }
+        ]
+      },
+      {
+        "title": "6. Synthèse",
+        "icon": "📌",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Doublet liant / non liant",
+                "Partagé entre 2 atomes / localisé sur 1 atome"
+              ],
+              [
+                "Électronégativité",
+                "Capacité d'un atome à attirer un doublet de liaison"
+              ],
+              [
+                "Entité polaire",
+                "Barycentres des charges + et − non confondus"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans le schéma de Lewis de l'ammoniac NH₃, combien de doublets non liants porte l'atome d'azote ?",
+      "opts": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "doublets-non-liants-oublies",
+          "texte": "Oublier les doublets non liants : N a 5 électrons de valence, 3 sont engagés dans les liaisons, les 2 restants forment un doublet"
+        },
+        null,
+        {
+          "code": "electrons-vs-doublets",
+          "texte": "Compter des électrons au lieu de doublets : 2 électrons non liants forment 1 doublet"
+        },
+        {
+          "code": "liants-non-liants-confondus",
+          "texte": "Confondre doublets liants et non liants : les 3 doublets N–H sont liants"
+        }
+      ],
+      "exp": "N a 5 électrons de valence : 3 forment les liaisons N–H, les 2 autres forment 1 doublet non liant, ce qui complète l'octet. Attention : on compte des doublets (paires d'électrons)."
+    },
+    {
+      "q": "Nombre d'électrons de valence : C : 4 ; O : 6. Le nombre total d'électrons de valence à répartir dans le schéma de Lewis de CO₂ est :",
+      "opts": [
+        "10",
+        "8",
+        "22",
+        "16"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-indice",
+          "texte": "Oublier l'indice 2 : 4 + 6 = 10 ; il y a deux atomes d'oxygène, soit 4 + 2 × 6 = 16"
+        },
+        {
+          "code": "electrons-vs-doublets",
+          "texte": "Donner le nombre de doublets (8) au lieu du nombre d'électrons (16)"
+        },
+        {
+          "code": "valence-tous-electrons",
+          "texte": "Compter tous les électrons (6 + 8 + 8 = 22) : seuls les électrons de valence entrent dans le schéma de Lewis"
+        },
+        null
+      ],
+      "exp": "4 + 2 × 6 = 16 électrons de valence, soit 8 doublets répartis en liants et non liants. Attention : ne compter que les électrons de valence, et chaque atome autant de fois que son indice."
+    },
+    {
+      "q": "Dans le sulfure d'hydrogène H₂S, l'atome de soufre est entouré de 2 doublets liants et de 2 doublets non liants. La géométrie de la molécule est :",
+      "opts": [
+        "linéaire",
+        "coudée",
+        "tétraédrique",
+        "pyramidale"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "geometrie-sans-non-liants",
+          "texte": "Oublier les doublets non liants : ils occupent de la place et repoussent les doublets liants, la molécule n'est pas linéaire"
+        },
+        null,
+        {
+          "code": "geometrie-doublets-vs-atomes",
+          "texte": "Décrire la répartition des 4 doublets au lieu de la position des atomes : seuls 2 atomes H entourent S, la molécule est coudée"
+        },
+        {
+          "code": "geometries-confondues",
+          "texte": "Confondre les géométries : pyramidale correspond à 3 liaisons et 1 doublet non liant (NH₃), pas à 2 et 2"
+        }
+      ],
+      "exp": "Comme H₂O, H₂S a 2 doublets liants et 2 non liants autour de l'atome central : la molécule est coudée. Attention : la géométrie décrit la position des atomes, mais les doublets non liants la déforment."
+    },
+    {
+      "q": "CH₄ et NH₃ ont chacun 4 doublets autour de l'atome central. Pourquoi NH₃ n'est-il pas tétraédrique ?",
+      "opts": [
+        "Un des 4 doublets est non liant : seuls 3 atomes H entourent N",
+        "L'azote est plus électronégatif que le carbone",
+        "NH₃ n'a que 3 doublets autour de l'azote",
+        "Les 3 atomes H se repoussent et forment un triangle plan"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "electronegativite-fixe-geometrie",
+          "texte": "Croire que l'électronégativité fixe la géométrie : c'est le nombre de doublets liants et non liants qui la détermine"
+        },
+        {
+          "code": "doublets-non-liants-oublies",
+          "texte": "Oublier le doublet non liant de N : il y a bien 4 doublets (3 liants + 1 non liant)"
+        },
+        {
+          "code": "geometrie-sans-non-liants",
+          "texte": "Oublier que le doublet non liant occupe un emplacement : il repousse les liaisons N–H, la molécule est pyramidale, pas plane"
+        }
+      ],
+      "exp": "Les 4 doublets de NH₃ se répartissent comme dans CH₄, mais l'un est non liant : les atomes forment une pyramide (N au sommet, 3 H à la base). Attention : un doublet non liant compte dans la répartition des doublets."
+    },
+    {
+      "q": "L'électronégativité d'un atome mesure :",
+      "opts": [
+        "sa capacité à céder le doublet d'une liaison",
+        "son nombre d'électrons de valence",
+        "sa capacité à attirer le doublet d'une liaison covalente",
+        "sa masse : plus un atome est lourd, plus il attire"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "electronegativite-inverse",
+          "texte": "Inverser la définition : un atome électronégatif attire vers lui le doublet de la liaison, il ne le cède pas"
+        },
+        {
+          "code": "electronegativite-nombre-electrons",
+          "texte": "Confondre électronégativité et nombre d'électrons de valence : Cl (7) et N (5) ont la même électronégativité (3,0)"
+        },
+        null,
+        {
+          "code": "electronegativite-masse",
+          "texte": "Croire que l'atome le plus lourd est le plus électronégatif : O (3,5) est plus léger que Cl (3,0)"
+        }
+      ],
+      "exp": "L'électronégativité mesure la capacité d'un atome à attirer vers lui le doublet d'une liaison covalente ; elle augmente de gauche à droite et de bas en haut du tableau. Attention : elle ne dépend pas de la masse."
+    },
+    {
+      "q": "Électronégativités : C : 2,5 ; Cl : 3,0. Dans la liaison C–Cl :",
+      "opts": [
+        "Cl porte δ⁻, car il est plus électronégatif",
+        "C porte δ⁻, car il est moins électronégatif",
+        "aucun atome ne porte de charge : c'est une liaison covalente",
+        "C porte δ⁻, car il est l'atome central"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "delta-signes-inverses",
+          "texte": "Inverser les charges partielles : l'atome le plus électronégatif attire le doublet, il porte δ⁻"
+        },
+        {
+          "code": "covalente-jamais-polarisee",
+          "texte": "Croire qu'une liaison covalente n'est jamais polarisée : dès que les électronégativités diffèrent, elle l'est"
+        },
+        {
+          "code": "atome-central-charge",
+          "texte": "Attribuer la charge selon la position dans la molécule : seule l'électronégativité compte"
+        }
+      ],
+      "exp": "Cl (3,0) est plus électronégatif que C (2,5) : il attire le doublet liant et porte la charge partielle δ⁻, C porte δ⁺. Attention à ne pas inverser les signes."
+    },
+    {
+      "q": "Électronégativités : H : 2,2 ; C : 2,5 ; Cl : 3,0 ; O : 3,5. Quelle liaison est la plus polarisée ?",
+      "opts": [
+        "O=O",
+        "C–Cl",
+        "O–H",
+        "C–H"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "polarisation-atomes-electronegatifs",
+          "texte": "Croire qu'une liaison entre atomes très électronégatifs est très polarisée : c'est l'écart qui compte, nul pour O=O"
+        },
+        {
+          "code": "electronegativite-masse",
+          "texte": "Choisir la liaison avec l'atome le plus lourd (Cl) : l'écart C–Cl (0,5) est plus petit que l'écart O–H (1,3)"
+        },
+        null,
+        {
+          "code": "polarisation-liaison-avec-h",
+          "texte": "Croire que les liaisons avec H sont toujours très polarisées : l'écart C–H n'est que de 0,3"
+        }
+      ],
+      "exp": "La polarisation dépend de l'écart d'électronégativité : O–H 1,3 ; C–Cl 0,5 ; C–H 0,3 ; O=O 0. La liaison O–H est la plus polarisée. Attention : on regarde l'écart, pas la valeur de chaque atome."
+    },
+    {
+      "q": "CO₂ possède deux liaisons C=O polarisées, mais c'est une molécule apolaire. Pourquoi ?",
+      "opts": [
+        "Les liaisons C=O ne sont pas vraiment polarisées",
+        "CO₂ ne possède pas de doublet non liant",
+        "CO₂ est un gaz",
+        "CO₂ est linéaire : les barycentres des charges partielles coïncident"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "liaisons-non-polarisees",
+          "texte": "Nier la polarisation des liaisons : l'écart C (2,5) – O (3,5) vaut 1,0, les liaisons C=O sont polarisées"
+        },
+        {
+          "code": "polarite-doublets-non-liants",
+          "texte": "Relier la polarité aux doublets non liants : chaque O de CO₂ en porte deux ; c'est la géométrie qui compte"
+        },
+        {
+          "code": "gaz-donc-apolaire",
+          "texte": "Croire qu'un gaz est forcément apolaire : l'état physique ne dit rien de la polarité (H₂O gazeuse reste polaire)"
+        },
+        null
+      ],
+      "exp": "CO₂ est linéaire et symétrique : les barycentres des charges δ⁺ et δ⁻ sont confondus sur le carbone, la molécule est apolaire. Attention : liaisons polarisées ne veut pas dire molécule polaire."
+    },
+    {
+      "q": "Le tétrachlorométhane CCl₄ est tétraédrique, avec quatre liaisons C–Cl polarisées identiques. Cette molécule est :",
+      "opts": [
+        "polaire, car ses liaisons sont polarisées",
+        "apolaire, car les barycentres des charges coïncident",
+        "polaire, car elle contient des doublets non liants",
+        "apolaire, car le chlore n'est pas électronégatif"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "liaison-polarisee-donc-molecule-polaire",
+          "texte": "Croire qu'une molécule à liaisons polarisées est forcément polaire : dans CCl₄, symétrique, les effets s'annulent"
+        },
+        null,
+        {
+          "code": "polarite-doublets-non-liants",
+          "texte": "Relier la polarité aux doublets non liants : ce sont les barycentres des charges partielles qui comptent"
+        },
+        {
+          "code": "liaisons-non-polarisees",
+          "texte": "Nier la polarisation : Cl (3,0) est plus électronégatif que C (2,5) ; la molécule est apolaire grâce à sa symétrie"
+        }
+      ],
+      "exp": "Les quatre liaisons C–Cl sont polarisées, mais la molécule tétraédrique est symétrique : le barycentre des δ⁻ (les 4 Cl) coïncide avec celui des δ⁺ (C). CCl₄ est apolaire, comme CO₂."
+    },
+    {
+      "q": "Le diiode I₂ est une molécule apolaire. Il se dissout mieux :",
+      "opts": [
+        "dans le cyclohexane, apolaire",
+        "dans l'eau, polaire",
+        "dans l'eau, qui dissout toutes les espèces",
+        "autant dans les deux solvants"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "polarite-solubilite-inversee",
+          "texte": "Inverser la règle : « qui se ressemble s'assemble », une espèce apolaire se dissout mieux dans un solvant apolaire"
+        },
+        {
+          "code": "eau-solvant-universel",
+          "texte": "Croire que l'eau dissout tout : les espèces apolaires (huiles, diiode) s'y dissolvent mal"
+        },
+        {
+          "code": "solubilite-independante-solvant",
+          "texte": "Croire que la solubilité ne dépend pas du solvant : elle dépend de la polarité du soluté et du solvant"
+        }
+      ],
+      "exp": "« Qui se ressemble s'assemble » : le diiode, apolaire, est bien plus soluble dans le cyclohexane, apolaire, que dans l'eau, polaire. Attention : l'eau ne dissout bien que les espèces polaires ou ioniques."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Des schémas de Lewis à vérifier",
+      "contexte": [
+        "Sami prépare un exposé sur les molécules de l'air et de la maison. Avant de les construire avec une boîte de modèles moléculaires, il vérifie les schémas de Lewis qu'il a dessinés (figure ci-dessous).",
+        "Rappel : le nombre total de doublets d'une entité est égal à la moitié du nombre total de ses électrons de valence. L'atome d'hydrogène respecte la règle du duet (2 électrons autour de lui), les atomes C, N, O et Cl la règle de l'octet (8 électrons)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"12\" y=\"8\" width=\"356\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"190.0\" y=\"40.0\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">A. Chlorure d'hydrogène HCl</text><rect x=\"392\" y=\"8\" width=\"356\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"570.0\" y=\"40.0\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">B. Eau H₂O</text><rect x=\"12\" y=\"223\" width=\"356\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"190.0\" y=\"255.0\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C. Dioxyde de carbone CO₂</text><rect x=\"392\" y=\"223\" width=\"356\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"570.0\" y=\"255.0\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">D. Diazote N₂</text><line x1=\"163.6\" y1=\"137.0\" x2=\"211.4\" y2=\"137.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"217.4\" y1=\"112.4\" x2=\"242.6\" y2=\"112.4\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"254.6\" y1=\"124.4\" x2=\"254.6\" y2=\"149.6\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"242.6\" y1=\"161.6\" x2=\"217.4\" y2=\"161.6\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><text x=\"145.0\" y=\"147.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><text x=\"230.0\" y=\"147.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><line x1=\"508.6\" y1=\"137.0\" x2=\"551.4\" y2=\"137.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"588.6\" y1=\"137.0\" x2=\"631.4\" y2=\"137.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><text x=\"490.0\" y=\"147.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><text x=\"570.0\" y=\"147.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><text x=\"650.0\" y=\"147.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><line x1=\"123.6\" y1=\"347.0\" x2=\"171.4\" y2=\"347.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"123.6\" y1=\"357.0\" x2=\"171.4\" y2=\"357.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"208.6\" y1=\"347.0\" x2=\"256.4\" y2=\"347.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"208.6\" y1=\"357.0\" x2=\"256.4\" y2=\"357.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"78.7\" y1=\"343.5\" x2=\"96.5\" y2=\"325.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"96.5\" y1=\"378.3\" x2=\"78.7\" y2=\"360.5\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"283.5\" y1=\"325.7\" x2=\"301.3\" y2=\"343.5\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"301.3\" y1=\"360.5\" x2=\"283.5\" y2=\"378.3\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><text x=\"105.0\" y=\"362.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><text x=\"190.0\" y=\"362.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C</text><text x=\"275.0\" y=\"362.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><line x1=\"543.6\" y1=\"347.0\" x2=\"596.4\" y2=\"347.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"543.6\" y1=\"357.0\" x2=\"596.4\" y2=\"357.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"498.7\" y1=\"343.5\" x2=\"516.5\" y2=\"325.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"516.5\" y1=\"378.3\" x2=\"498.7\" y2=\"360.5\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"623.5\" y1=\"325.7\" x2=\"641.3\" y2=\"343.5\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"641.3\" y1=\"360.5\" x2=\"623.5\" y2=\"378.3\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><text x=\"525.0\" y=\"362.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">N</text><text x=\"615.0\" y=\"362.5\" font-size=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">N</text><text x=\"380.0\" y=\"455.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">Chaque trait représente un doublet d'électrons (liant ou non liant).</text></svg>",
+      "questions": [
+        {
+          "texte": "Écris la configuration électronique des atomes de carbone, d'azote, d'oxygène et de chlore, puis donne le nombre d'électrons de valence de chacun de ces atomes et de l'atome d'hydrogène.",
+          "aides": []
+        },
+        {
+          "texte": "Recopie et complète le tableau suivant pour H, C, N, O et Cl : nombre d'électrons qui manquent pour respecter la règle du duet ou de l'octet (c'est le nombre de liaisons covalentes formées par l'atome) ; nombre de doublets non liants de l'atome.",
+          "aides": [
+            "Pour un atome autre que H : nombre de liaisons = 8 − nombre d'électrons de valence. Pour H : 2 − 1.",
+            "Les électrons de valence qui ne servent pas aux liaisons (un électron par liaison) se regroupent par deux en doublets non liants."
+          ]
+        },
+        {
+          "texte": "Pour chacune des molécules H₂, HCl, H₂O, O₂, CO₂ et N₂, calcule le nombre total d'électrons de valence, puis le nombre total de doublets.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chacun des schémas A à D de Sami, indique s'il est correct ou faux et justifie (nombre total de doublets, règle du duet ou de l'octet).",
+          "aides": [
+            "Fais deux vérifications : le nombre total de doublets dessinés (question 3) et le nombre d'électrons autour de chaque atome.",
+            "Une liaison double compte pour 2 doublets, soit 4 électrons autour de chacun des deux atomes liés ; un doublet non liant compte pour 2 électrons."
+          ]
+        },
+        {
+          "texte": "Dessine le schéma de Lewis correct de chaque molécule dont le schéma est faux, puis celui du dioxygène O₂.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C (Z = 6) : 1s² 2s² 2p², soit 4 électrons de valence. N (Z = 7) : 1s² 2s² 2p³, soit 5. O (Z = 8) : 1s² 2s² 2p⁴, soit 6. Cl (Z = 17) : 1s² 2s² 2p⁶ 3s² 3p⁵, soit 7 (couche de valence n = 3). H (Z = 1) : 1s¹, soit 1.",
+        "<strong>2.</strong> H : 2 − 1 = 1 liaison, 0 doublet non liant. C : 8 − 4 = 4 liaisons, 0 doublet non liant. N : 8 − 5 = 3 liaisons, (5 − 3) / 2 = 1 doublet non liant. O : 2 liaisons, (6 − 2) / 2 = 2 doublets non liants. Cl : 1 liaison, (7 − 1) / 2 = 3 doublets non liants.",
+        "<strong>3.</strong> H₂ : 2 × 1 = 2 électrons, 1 doublet. HCl : 1 + 7 = 8 électrons, 4 doublets. H₂O : 2 × 1 + 6 = 8 électrons, 4 doublets. O₂ : 2 × 6 = 12 électrons, 6 doublets. CO₂ : 4 + 2 × 6 = 16 électrons, 8 doublets. N₂ : 2 × 5 = 10 électrons, 5 doublets.",
+        "<strong>4.</strong> A (HCl) : correct. 1 doublet liant + 3 doublets non liants = 4 doublets ; H a 2 électrons (duet), Cl a 2 + 6 = 8 électrons (octet).",
+        "B (H₂O) : faux. Seulement 2 doublets au lieu de 4 ; l'atome d'oxygène n'est entouré que de 4 électrons : il manque ses 2 doublets non liants.",
+        "C (CO₂) : correct. 2 liaisons doubles (4 doublets liants) + 4 doublets non liants = 8 doublets ; C est entouré de 8 électrons, chaque O de 4 + 4 = 8 électrons.",
+        "D (N₂) : faux. Chaque atome d'azote respecte bien l'octet, mais le schéma compte 2 + 4 = 6 doublets, soit 12 électrons, alors que la molécule n'a que 10 électrons de valence.",
+        "<strong>5.</strong> H₂O : l'atome O, au centre, est lié à chaque atome H par une liaison simple et porte 2 doublets non liants (H–O–H, deux traits autour de O). N₂ : triple liaison N≡N et un doublet non liant sur chaque atome N : 3 + 2 = 5 doublets ; chaque N est entouré de 6 + 2 = 8 électrons. O₂ : liaison double O=O et 2 doublets non liants sur chaque atome O : 2 + 4 = 6 doublets ; chaque O est entouré de 4 + 4 = 8 électrons.",
+        "<em>⚠ Erreur fréquente : oublier les doublets non liants (schéma B), ou ne vérifier que la règle de l'octet sans compter le nombre total de doublets (schéma D). Les électrons de cœur (1s² pour C, N, O) ne sont jamais représentés.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Quelle géométrie pour quelle molécule ?",
+      "contexte": [
+        "En TP, Léa utilise un logiciel de représentation moléculaire. Elle obtient les quatre modèles A à D ci-dessous, en représentation de Cram.",
+        "Règle : les doublets (liants et non liants) qui entourent l'atome central s'écartent le plus possible les uns des autres pour minimiser leurs répulsions. Une liaison double ou triple compte comme une seule direction."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"95.0\" y1=\"215.0\" x2=\"95.0\" y2=\"140.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"95.0\" y1=\"215.0\" x2=\"30.4\" y2=\"253.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><polygon points=\"95.0,215.0 130.3,281.5 141.2,274.4\" fill=\"#1F4E5A\"/><line x1=\"104.7\" y1=\"217.2\" x2=\"104.2\" y2=\"218.8\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"114.3\" y1=\"219.3\" x2=\"113.3\" y2=\"222.6\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"124.0\" y1=\"221.5\" x2=\"122.5\" y2=\"226.4\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"133.7\" y1=\"223.6\" x2=\"131.6\" y2=\"230.1\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"143.3\" y1=\"225.8\" x2=\"140.8\" y2=\"233.9\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"153.0\" y1=\"227.9\" x2=\"149.9\" y2=\"237.7\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"162.7\" y1=\"230.1\" x2=\"159.1\" y2=\"241.5\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"95.0\" cy=\"215.0\" r=\"19\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"95.0\" y=\"222.2\" font-size=\"20\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C</text><circle cx=\"95.0\" cy=\"140.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"95.0\" y=\"145.8\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"30.4\" cy=\"253.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"30.4\" y=\"258.8\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"135.7\" cy=\"278.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"135.7\" y=\"283.7\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"166.5\" cy=\"237.6\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"166.5\" y=\"243.3\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><ellipse cx=\"0\" cy=\"0\" rx=\"23.0\" ry=\"14\" fill=\"#f3e4c2\" stroke=\"#C8962E\" stroke-width=\"2\" transform=\"translate(285.0,193.0) rotate(-90)\"/><circle cx=\"279.0\" cy=\"193.0\" r=\"3.2\" fill=\"#B5523B\"/><circle cx=\"291.0\" cy=\"193.0\" r=\"3.2\" fill=\"#B5523B\"/><line x1=\"285.0\" y1=\"230.0\" x2=\"220.4\" y2=\"268.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><polygon points=\"285.0,230.0 320.3,296.5 331.2,289.4\" fill=\"#1F4E5A\"/><line x1=\"294.7\" y1=\"232.2\" x2=\"294.2\" y2=\"233.8\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"304.3\" y1=\"234.3\" x2=\"303.3\" y2=\"237.6\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"314.0\" y1=\"236.5\" x2=\"312.5\" y2=\"241.4\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"323.7\" y1=\"238.6\" x2=\"321.6\" y2=\"245.1\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"333.3\" y1=\"240.8\" x2=\"330.8\" y2=\"248.9\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"343.0\" y1=\"242.9\" x2=\"339.9\" y2=\"252.7\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"352.7\" y1=\"245.1\" x2=\"349.1\" y2=\"256.5\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"285.0\" cy=\"230.0\" r=\"19\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"285.0\" y=\"237.2\" font-size=\"20\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">N</text><circle cx=\"220.4\" cy=\"268.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"220.4\" y=\"273.8\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"325.7\" cy=\"293.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"325.7\" y=\"298.7\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"356.5\" cy=\"252.6\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"356.5\" y=\"258.3\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><ellipse cx=\"0\" cy=\"0\" rx=\"23.0\" ry=\"14\" fill=\"#f3e4c2\" stroke=\"#C8962E\" stroke-width=\"2\" transform=\"translate(453.8,179.7) rotate(-125)\"/><circle cx=\"448.9\" cy=\"183.1\" r=\"3.2\" fill=\"#B5523B\"/><circle cx=\"458.7\" cy=\"176.2\" r=\"3.2\" fill=\"#B5523B\"/><ellipse cx=\"0\" cy=\"0\" rx=\"23.0\" ry=\"14\" fill=\"#f3e4c2\" stroke=\"#C8962E\" stroke-width=\"2\" transform=\"translate(496.2,179.7) rotate(-55)\"/><circle cx=\"491.3\" cy=\"176.2\" r=\"3.2\" fill=\"#B5523B\"/><circle cx=\"501.1\" cy=\"183.1\" r=\"3.2\" fill=\"#B5523B\"/><line x1=\"475.0\" y1=\"210.0\" x2=\"422.0\" y2=\"263.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"475.0\" y1=\"210.0\" x2=\"528.0\" y2=\"263.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><circle cx=\"475.0\" cy=\"210.0\" r=\"19\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"475.0\" y=\"217.2\" font-size=\"20\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><circle cx=\"422.0\" cy=\"263.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"422.0\" y=\"268.8\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"528.0\" cy=\"263.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"528.0\" y=\"268.8\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><line x1=\"605.0\" y1=\"210.0\" x2=\"637.0\" y2=\"210.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"605.0\" y1=\"220.0\" x2=\"637.0\" y2=\"220.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"673.0\" y1=\"210.0\" x2=\"705.0\" y2=\"210.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"673.0\" y1=\"220.0\" x2=\"705.0\" y2=\"220.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"655.0\" cy=\"215.0\" r=\"19\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"655.0\" y=\"222.2\" font-size=\"20\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C</text><circle cx=\"591.0\" cy=\"215.0\" r=\"18\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"591.0\" y=\"221.5\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><circle cx=\"719.0\" cy=\"215.0\" r=\"18\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"719.0\" y=\"221.5\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><text x=\"95.0\" y=\"365.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Modèle A</text><text x=\"95.0\" y=\"392.0\" font-size=\"18\" fill=\"#222\" text-anchor=\"middle\">CH₄</text><text x=\"285.0\" y=\"365.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Modèle B</text><text x=\"285.0\" y=\"392.0\" font-size=\"18\" fill=\"#222\" text-anchor=\"middle\">NH₃</text><text x=\"475.0\" y=\"365.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Modèle C</text><text x=\"475.0\" y=\"392.0\" font-size=\"18\" fill=\"#222\" text-anchor=\"middle\">H₂O</text><text x=\"655.0\" y=\"365.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Modèle D</text><text x=\"655.0\" y=\"392.0\" font-size=\"18\" fill=\"#222\" text-anchor=\"middle\">CO₂</text><line x1=\"190.0\" y1=\"60.0\" x2=\"190.0\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"6 5\"/><line x1=\"380.0\" y1=\"60.0\" x2=\"380.0\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"6 5\"/><line x1=\"565.0\" y1=\"60.0\" x2=\"565.0\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"6 5\"/><text x=\"380.0\" y=\"32.0\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Modèles obtenus avec le logiciel (représentation de Cram)</text><line x1=\"40.0\" y1=\"437.0\" x2=\"90.0\" y2=\"437.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><text x=\"98.0\" y=\"442.0\" font-size=\"15\" fill=\"#333\" text-anchor=\"start\">dans le plan</text><polygon points=\"215.0,437.0 265.0,443.5 265.0,430.5\" fill=\"#1F4E5A\"/><text x=\"273.0\" y=\"442.0\" font-size=\"15\" fill=\"#333\" text-anchor=\"start\">vers l'avant</text><line x1=\"393.9\" y1=\"435.8\" x2=\"393.9\" y2=\"438.2\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"402.9\" y1=\"434.7\" x2=\"402.9\" y2=\"439.3\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"411.8\" y1=\"433.5\" x2=\"411.8\" y2=\"440.5\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"420.7\" y1=\"432.4\" x2=\"420.7\" y2=\"441.6\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"429.6\" y1=\"431.2\" x2=\"429.6\" y2=\"442.8\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><text x=\"443.0\" y=\"442.0\" font-size=\"15\" fill=\"#333\" text-anchor=\"start\">vers l'arrière</text><ellipse cx=\"0\" cy=\"0\" rx=\"17.0\" ry=\"14\" fill=\"#f3e4c2\" stroke=\"#C8962E\" stroke-width=\"2\" transform=\"translate(591.0,437.0) rotate(0)\"/><circle cx=\"591.0\" cy=\"431.0\" r=\"3.2\" fill=\"#B5523B\"/><circle cx=\"591.0\" cy=\"443.0\" r=\"3.2\" fill=\"#B5523B\"/><text x=\"615.0\" y=\"442.0\" font-size=\"15\" fill=\"#333\" text-anchor=\"start\">doublet non liant</text></svg>",
+      "questions": [
+        {
+          "texte": "Donne le nom de la géométrie de chaque modèle, en choisissant parmi : linéaire, coudée, pyramidale, tétraédrique.",
+          "aides": []
+        },
+        {
+          "texte": "Pour CH₄, NH₃, H₂O et CO₂, indique le nombre de doublets liants et de doublets non liants autour de l'atome central, puis le nombre de directions qu'ils occupent (aide-toi de l'exercice 1).",
+          "aides": []
+        },
+        {
+          "texte": "Le logiciel affiche les angles de liaison suivants : 104,5° ; 107° ; 109,5° ; 180°. Attribue chaque angle à une molécule, puis explique pourquoi l'angle diminue de CH₄ à NH₃ puis à H₂O.",
+          "aides": [
+            "Les trois molécules CH₄, NH₃ et H₂O ont chacune 4 directions autour de l'atome central : quel angle correspond au tétraèdre régulier ?",
+            "Ce qui change de CH₄ à H₂O, c'est le nombre de doublets non liants. Un doublet non liant repousse plus fortement les doublets liants qu'un doublet liant."
+          ]
+        },
+        {
+          "texte": "L'atome de carbone de CO₂ est engagé dans quatre doublets liants. Pourquoi la molécule n'est-elle pas tétraédrique ?",
+          "aides": []
+        },
+        {
+          "texte": "Le sulfure d'hydrogène H₂S donne leur odeur aux œufs pourris. Le soufre (Z = 16) est dans la même colonne que l'oxygène. Prévois, en justifiant, la géométrie de H₂S.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A (CH₄) : tétraédrique. B (NH₃) : pyramidale. C (H₂O) : coudée. D (CO₂) : linéaire.",
+        "<strong>2.</strong> CH₄ : 4 doublets liants, 0 non liant, 4 directions. NH₃ : 3 liants, 1 non liant, 4 directions. H₂O : 2 liants, 2 non liants, 4 directions. CO₂ : 4 doublets liants formant 2 liaisons doubles, 0 non liant, donc 2 directions seulement.",
+        "<strong>3.</strong> CH₄ : 109,5° ; NH₃ : 107° ; H₂O : 104,5° ; CO₂ : 180°. Dans CH₄, NH₃ et H₂O, 4 directions entourent l'atome central : elles pointent à peu près vers les sommets d'un tétraèdre (angle de référence 109,5°). Un doublet non liant, plus proche de l'atome central, repousse plus fortement les doublets liants : l'angle se referme un peu avec 1 doublet non liant (NH₃), davantage avec 2 (H₂O).",
+        "<strong>4.</strong> Les quatre doublets liants de C forment deux liaisons doubles, qui ne comptent que pour 2 directions ; il n'y a aucun doublet non liant. Pour s'écarter le plus possible, ces deux directions se placent de part et d'autre de l'atome de carbone, à 180° : la molécule est linéaire.",
+        "<strong>5.</strong> S : 1s² 2s² 2p⁶ 3s² 3p⁴, soit 6 électrons de valence comme O : il forme 2 liaisons et porte 2 doublets non liants. H₂S a donc, comme H₂O, 2 doublets liants et 2 doublets non liants autour de l'atome central (4 directions) : sa géométrie est coudée.",
+        "<em>⚠ Erreur fréquente : croire que H₂O est linéaire parce que son schéma de Lewis est dessiné « à plat ». C'est la répartition des quatre doublets dans l'espace, doublets non liants compris, qui fixe la géométrie.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "L'électronégativité dans le gel hydroalcoolique",
+      "contexte": [
+        "Le document ci-dessous donne l'électronégativité χ des éléments des trois premières périodes (gaz nobles exclus).",
+        "Le gel hydroalcoolique contient surtout de l'éthanol, de formule semi-développée CH₃–CH₂–OH, et de l'eau."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380.0\" y=\"32.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Électronégativité des éléments (échelle de Pauling)</text><text x=\"164.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 1</text><text x=\"252.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 2</text><text x=\"340.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 13</text><text x=\"428.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 14</text><text x=\"516.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 15</text><text x=\"604.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 16</text><text x=\"692.0\" y=\"68.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">colonne 17</text><text x=\"106.0\" y=\"142.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"end\">période 1</text><rect x=\"123\" y=\"83\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(224,197,140)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"164.0\" y=\"128.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><text x=\"164.0\" y=\"165.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">2,20</text><text x=\"106.0\" y=\"254.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"end\">période 2</text><rect x=\"123\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(241,229,203)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"164.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Li</text><text x=\"164.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">0,98</text><rect x=\"211\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(233,213,172)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"252.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Be</text><text x=\"252.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">1,57</text><rect x=\"299\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(226,201,148)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"340.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">B</text><text x=\"340.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">2,04</text><rect x=\"387\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(219,188,121)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"428.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C</text><text x=\"428.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">2,55</text><rect x=\"475\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(213,175,96)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"516.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">N</text><text x=\"516.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">3,04</text><rect x=\"563\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(207,164,75)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"604.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">O</text><text x=\"604.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">3,44</text><rect x=\"651\" y=\"195\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(200,150,47)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"692.0\" y=\"240.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">F</text><text x=\"692.0\" y=\"277.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">3,98</text><text x=\"106.0\" y=\"366.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"end\">période 3</text><rect x=\"123\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(242,230,206)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"164.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Na</text><text x=\"164.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">0,93</text><rect x=\"211\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(236,220,186)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"252.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Mg</text><text x=\"252.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">1,31</text><rect x=\"299\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(232,212,170)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"340.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Al</text><text x=\"340.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">1,61</text><rect x=\"387\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(228,205,155)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"428.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Si</text><text x=\"428.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">1,90</text><rect x=\"475\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(224,197,140)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"516.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">P</text><text x=\"516.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">2,19</text><rect x=\"563\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(219,187,120)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"604.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">S</text><text x=\"604.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">2,58</text><rect x=\"651\" y=\"307\" width=\"82\" height=\"106\" rx=\"6\" fill=\"rgb(211,172,89)\" stroke=\"#1F4E5A\" stroke-width=\"1.6\"/><text x=\"692.0\" y=\"352.0\" font-size=\"28\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><text x=\"692.0\" y=\"389.0\" font-size=\"20\" fill=\"#222\" text-anchor=\"middle\">3,16</text><text x=\"380.0\" y=\"455.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">Plus la case est foncée, plus l'élément est électronégatif. Gaz nobles non représentés.</text></svg>",
+      "questions": [
+        {
+          "texte": "Lecture du document.<br>a. Quel est l'élément le plus électronégatif ?<br>b. Comment évolue l'électronégativité de gauche à droite dans une période ? Du haut vers le bas dans une colonne ? Cite deux exemples pour chaque cas.",
+          "aides": []
+        },
+        {
+          "texte": "La molécule d'éthanol contient quatre types de liaisons : C–H, C–C, C–O et O–H. Calcule la différence d'électronégativité Δχ = |χ(A) − χ(B)| pour chacune.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide de la convention des données, indique quelles liaisons de l'éthanol sont polarisées et, pour chacune, l'atome qui porte la charge partielle δ− et celui qui porte δ+.",
+          "aides": [
+            "Une liaison est polarisée si Δχ ≥ 0,4 : compare chacune de tes valeurs de la question 2 à 0,4.",
+            "L'atome qui a la plus grande électronégativité attire le doublet liant vers lui : il porte la charge δ−."
+          ]
+        },
+        {
+          "texte": "Classe les liaisons C–H, N–H, O–H et F–H par polarisation croissante.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie. « Dans la liaison C–Cl, l'atome de carbone porte la charge partielle δ− car c'est lui qui forme le plus de liaisons. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Le fluor F (χ = 3,98).",
+        "b. Dans une période, l'électronégativité augmente de gauche à droite : Li (0,98) &lt; C (2,55) &lt; F (3,98) ; Na (0,93) &lt; S (2,58) &lt; Cl (3,16). Dans une colonne, elle diminue du haut vers le bas : F (3,98) &gt; Cl (3,16) ; O (3,44) &gt; S (2,58) ; H (2,20) &gt; Li (0,98) &gt; Na (0,93).",
+        "<strong>2.</strong> C–H : 2,55 − 2,20 = 0,35. C–C : 0 (deux atomes identiques). C–O : 3,44 − 2,55 = 0,89. O–H : 3,44 − 2,20 = 1,24.",
+        "<strong>3.</strong> C–O (0,89 ≥ 0,4) et O–H (1,24 ≥ 0,4) sont polarisées. Dans C–O, l'oxygène, plus électronégatif, porte δ− et le carbone δ+. Dans O–H, l'oxygène porte δ− et l'hydrogène δ+. C–C (0) et C–H (0,35 &lt; 0,4) ne sont pas polarisées.",
+        "<strong>4.</strong> Δχ : C–H 0,35 ; N–H 3,04 − 2,20 = 0,84 ; O–H 1,24 ; F–H 3,98 − 2,20 = 1,78. Polarisation croissante : C–H &lt; N–H &lt; O–H &lt; F–H.",
+        "<strong>5.</strong> FAUX. La charge partielle dépend de l'électronégativité, pas du nombre de liaisons : χ(Cl) = 3,16 &gt; χ(C) = 2,55, donc Cl porte δ− et C porte δ+. Avec Δχ = 0,61 ≥ 0,4, la liaison C–Cl est polarisée.",
+        "<em>⚠ Erreur fréquente : placer δ+ sur l'atome le plus électronégatif. C'est l'inverse : l'atome le plus électronégatif attire le doublet liant vers lui, il porte δ−.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Solvants chlorés et cyanure d'hydrogène : polaires ou apolaires ?",
+      "contexte": [
+        "Le tétrachlorométhane CCl₄ a longtemps servi de détachant ; très toxique, il n'est plus vendu au grand public. Le trichlorométhane CHCl₃ (chloroforme) est encore utilisé comme solvant au laboratoire. La figure ci-dessous donne leur représentation de Cram.",
+        "Le cyanure d'hydrogène HCN est un gaz très toxique présent dans la fumée de cigarette. Dans cette molécule, l'atome de carbone est l'atome central : il est lié à l'atome H et à l'atome N."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"380.0\" y1=\"50.0\" x2=\"380.0\" y2=\"420.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-dasharray=\"6 5\"/><line x1=\"175.0\" y1=\"225.0\" x2=\"175.0\" y2=\"115.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"175.0\" y1=\"225.0\" x2=\"80.2\" y2=\"280.8\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><polygon points=\"175.0,225.0 229.3,320.9 240.2,313.8\" fill=\"#1F4E5A\"/><line x1=\"184.2\" y1=\"227.3\" x2=\"183.9\" y2=\"228.4\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"193.4\" y1=\"229.6\" x2=\"192.7\" y2=\"231.8\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"202.6\" y1=\"232.0\" x2=\"201.6\" y2=\"235.2\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"211.8\" y1=\"234.3\" x2=\"210.5\" y2=\"238.6\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"221.1\" y1=\"236.6\" x2=\"219.4\" y2=\"241.9\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"230.3\" y1=\"238.9\" x2=\"228.2\" y2=\"245.3\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"239.5\" y1=\"241.2\" x2=\"237.1\" y2=\"248.7\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"248.7\" y1=\"243.6\" x2=\"246.0\" y2=\"252.1\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"257.9\" y1=\"245.9\" x2=\"254.9\" y2=\"255.5\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"267.1\" y1=\"248.2\" x2=\"263.7\" y2=\"258.9\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"276.3\" y1=\"250.5\" x2=\"272.6\" y2=\"262.3\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"175.0\" cy=\"225.0\" r=\"22\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"175.0\" y=\"232.2\" font-size=\"20\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C</text><circle cx=\"175.0\" cy=\"115.0\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"175.0\" y=\"121.5\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><circle cx=\"80.2\" cy=\"280.8\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"80.2\" y=\"287.3\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><circle cx=\"234.8\" cy=\"317.4\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"234.8\" y=\"323.8\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><circle cx=\"279.9\" cy=\"258.1\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"279.9\" y=\"264.6\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><line x1=\"565.0\" y1=\"225.0\" x2=\"565.0\" y2=\"115.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"565.0\" y1=\"225.0\" x2=\"470.2\" y2=\"280.8\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><polygon points=\"565.0,225.0 619.3,320.9 630.2,313.8\" fill=\"#1F4E5A\"/><line x1=\"575.1\" y1=\"227.5\" x2=\"574.7\" y2=\"228.7\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"585.2\" y1=\"230.1\" x2=\"584.4\" y2=\"232.4\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"595.2\" y1=\"232.6\" x2=\"594.1\" y2=\"236.1\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"605.3\" y1=\"235.2\" x2=\"603.8\" y2=\"239.8\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"615.4\" y1=\"237.7\" x2=\"613.6\" y2=\"243.5\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"625.5\" y1=\"240.2\" x2=\"623.3\" y2=\"247.3\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"635.6\" y1=\"242.8\" x2=\"633.0\" y2=\"251.0\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"645.6\" y1=\"245.3\" x2=\"642.7\" y2=\"254.7\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"655.7\" y1=\"247.9\" x2=\"652.4\" y2=\"258.4\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><line x1=\"665.8\" y1=\"250.4\" x2=\"662.1\" y2=\"262.1\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"565.0\" cy=\"225.0\" r=\"22\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"565.0\" y=\"232.2\" font-size=\"20\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">C</text><circle cx=\"565.0\" cy=\"115.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"565.0\" y=\"120.8\" font-size=\"16\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">H</text><circle cx=\"470.2\" cy=\"280.8\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"470.2\" y=\"287.3\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><circle cx=\"624.8\" cy=\"317.4\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"624.8\" y=\"323.8\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><circle cx=\"669.9\" cy=\"258.1\" r=\"24\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"669.9\" y=\"264.6\" font-size=\"18\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Cl</text><text x=\"190.0\" y=\"40.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Tétrachlorométhane CCl₄</text><text x=\"570.0\" y=\"40.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Trichlorométhane CHCl₃</text><text x=\"380.0\" y=\"445.0\" font-size=\"15\" fill=\"#444\" text-anchor=\"middle\">Les doublets non liants des atomes de chlore ne sont pas représentés.</text></svg>",
+      "questions": [
+        {
+          "texte": "Établis le schéma de Lewis de CCl₄ : nombre total d'électrons de valence, nombre de doublets liants et de doublets non liants. Vérifie la règle de l'octet pour chaque atome.",
+          "aides": [
+            "Compte les électrons de valence de C et de Cl, puis divise le total par 2 pour obtenir le nombre de doublets.",
+            "Le carbone forme 4 liaisons ; chaque chlore n'en forme qu'une et complète son octet avec des doublets non liants."
+          ]
+        },
+        {
+          "texte": "Justifie la géométrie tétraédrique de CCl₄ et de CHCl₃ à partir de leur schéma de Lewis.",
+          "aides": []
+        },
+        {
+          "texte": "Les liaisons C–Cl et C–H sont-elles polarisées ? Recopie les deux représentations de Cram en y plaçant les charges partielles.",
+          "aides": []
+        },
+        {
+          "texte": "Montre que CCl₄ est apolaire alors que CHCl₃ est polaire.",
+          "aides": [
+            "Place δ+ et δ− sur chaque modèle, puis cherche où se trouve le « centre » des charges δ− par rapport à l'atome de carbone.",
+            "Dans un tétraèdre régulier, le centre des 4 sommets est le centre du tétraèdre ; le centre de 3 sommets seulement ne l'est pas."
+          ]
+        },
+        {
+          "texte": "Établis le schéma de Lewis de HCN, prévois sa géométrie, puis indique si la molécule est polaire. Compare avec le cas de CO₂.",
+          "aides": [
+            "10 électrons de valence pour HCN : il faut une liaison multiple entre C et N pour que chaque atome respecte l'octet.",
+            "Une liaison triple compte comme une seule direction : combien de directions autour de C ?",
+            "Combien de liaisons de HCN sont polarisées ? Une liaison polarisée seule peut-elle être « compensée » ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Électrons de valence : 4 + 4 × 7 = 32, soit 16 doublets. L'atome de carbone forme 4 liaisons simples C–Cl (4 doublets liants) ; chaque atome de chlore porte 3 doublets non liants, soit 4 × 3 = 12 doublets non liants. Total : 4 + 12 = 16 doublets. Octet : C est entouré de 4 × 2 = 8 électrons ; chaque Cl de 2 + 6 = 8 électrons.",
+        "<strong>2.</strong> Dans CCl₄ comme dans CHCl₃ (26 électrons de valence, 13 doublets : 4 liants et 9 non liants), l'atome de carbone est entouré de 4 doublets liants et d'aucun doublet non liant : 4 directions qui s'écartent au maximum, vers les sommets d'un tétraèdre. La géométrie est tétraédrique.",
+        "<strong>3.</strong> C–Cl : Δχ = 3,16 − 2,55 = 0,61 ≥ 0,4 : liaison polarisée, δ− sur Cl, δ+ sur C. C–H : Δχ = 0,35 &lt; 0,4 : considérée comme non polarisée. Sur les schémas : δ− sur chaque atome Cl, δ+ sur l'atome C, rien sur H.",
+        "<strong>4.</strong> CCl₄ : les 4 charges δ− identiques occupent les sommets d'un tétraèdre régulier centré sur l'atome de carbone ; leur barycentre est donc au centre, sur l'atome C, qui porte la charge δ+. Les barycentres des charges partielles positives et négatives coïncident : CCl₄ est apolaire, malgré ses 4 liaisons polarisées.",
+        "CHCl₃ : les 3 charges δ− sont toutes du même côté (côté des atomes de chlore) ; leur barycentre est situé entre les 3 atomes Cl et ne coïncide pas avec l'atome C (δ+). CHCl₃ est polaire.",
+        "<strong>5.</strong> Électrons de valence : 1 + 4 + 5 = 10, soit 5 doublets : liaison simple H–C, triple liaison C≡N (4 doublets liants) et un doublet non liant sur N. Octet : C est entouré de 2 + 6 = 8 électrons, N de 6 + 2 = 8 ; H de 2 (duet).",
+        "Autour de C : 2 directions (une liaison simple, une liaison triple), aucun doublet non liant : HCN est linéaire. C–H n'est pas polarisée ; C≡N l'est : Δχ = 3,04 − 2,55 = 0,49 ≥ 0,4 (δ− sur N, δ+ sur C). Une seule liaison polarisée : δ+ (C) et δ− (N) ne peuvent pas avoir le même barycentre. HCN est polaire.",
+        "CO₂ est aussi linéaire, mais ses deux liaisons C=O polarisées sont identiques et opposées : les effets s'annulent, CO₂ est apolaire. Pour une molécule linéaire, c'est la symétrie qui compte.",
+        "<em>⚠ Erreur fréquente : conclure « liaisons polarisées, donc molécule polaire » (faux pour CCl₄) ou « molécule linéaire, donc apolaire » (faux pour HCN). Il faut toujours combiner la polarisation des liaisons et la géométrie.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Des ions du quotidien et une lacune électronique",
+      "contexte": [
+        "Le sel de cuisine contient des ions sodium Na⁺ et chlorure Cl⁻ ; la chaux vive CaO, des ions oxyde O²⁻ ; les déboucheurs de canalisations, des ions hydroxyde HO⁻ ; certains engrais, des ions ammonium NH₄⁺. Les solutions acides, comme le vinaigre, contiennent des ions oxonium H₃O⁺.",
+        "Le trifluorure de bore BF₃ est un gaz utilisé dans l'industrie chimique. Son schéma de Lewis est représenté ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380.0\" y=\"38.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Schéma de Lewis du trifluorure de bore BF₃</text><line x1=\"300.0\" y1=\"243.9\" x2=\"300.0\" y2=\"166.1\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"281.7\" y1=\"275.5\" x2=\"214.3\" y2=\"314.5\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"318.3\" y1=\"275.5\" x2=\"385.7\" y2=\"314.5\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"272.9\" y1=\"159.3\" x2=\"272.9\" y2=\"130.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"285.7\" y1=\"117.9\" x2=\"314.3\" y2=\"117.9\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"327.1\" y1=\"130.7\" x2=\"327.1\" y2=\"159.3\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"222.0\" y1=\"341.3\" x2=\"197.3\" y2=\"355.6\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"179.8\" y1=\"350.9\" x2=\"165.5\" y2=\"326.2\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"170.2\" y1=\"308.7\" x2=\"194.9\" y2=\"294.4\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"405.1\" y1=\"294.4\" x2=\"429.8\" y2=\"308.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"434.5\" y1=\"326.2\" x2=\"420.2\" y2=\"350.9\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><line x1=\"402.7\" y1=\"355.6\" x2=\"378.0\" y2=\"341.3\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><rect x=\"-15.3\" y=\"-6\" width=\"30.6\" height=\"12\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\" transform=\"translate(300.0,296.1) rotate(180)\"/><text x=\"300.0\" y=\"276.9\" font-size=\"34\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">B</text><text x=\"300.0\" y=\"156.9\" font-size=\"34\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">F</text><text x=\"196.1\" y=\"336.9\" font-size=\"34\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">F</text><text x=\"403.9\" y=\"336.9\" font-size=\"34\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">F</text><rect x=\"540\" y=\"150\" width=\"200\" height=\"150\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"640.0\" y=\"180.0\" font-size=\"17\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Légende</text><line x1=\"560.0\" y1=\"215.0\" x2=\"596.0\" y2=\"215.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" stroke-linecap=\"round\"/><text x=\"610.0\" y=\"221.0\" font-size=\"16\" fill=\"#222\" text-anchor=\"start\">doublet</text><rect x=\"563\" y=\"254\" width=\"30\" height=\"12\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"610.0\" y=\"266.0\" font-size=\"16\" fill=\"#222\" text-anchor=\"start\">lacune</text><text x=\"610.0\" y=\"286.0\" font-size=\"16\" fill=\"#222\" text-anchor=\"start\">électronique</text></svg>",
+      "questions": [
+        {
+          "texte": "À partir de leur configuration électronique, explique pourquoi le sodium forme l'ion Na⁺ et le chlore l'ion Cl⁻. Donne le schéma de Lewis des ions Cl⁻ et O²⁻.",
+          "aides": []
+        },
+        {
+          "texte": "Pour les ions H₃O⁺, NH₄⁺ et HO⁻ : calcule le nombre total d'électrons de valence (en tenant compte de la charge), déduis-en les nombres de doublets liants et non liants, puis indique l'atome qui porte la charge.",
+          "aides": [
+            "Nombre d'électrons d'un ion = somme des électrons de valence des atomes − charge (on retire 1 électron pour une charge +, on en ajoute 1 pour une charge −).",
+            "Pour trouver l'atome chargé, utilise la règle des données : un électron par liaison + 2 par doublet non liant, à comparer aux électrons de valence de l'atome."
+          ]
+        },
+        {
+          "texte": "Prévois la géométrie des ions H₃O⁺ et NH₄⁺.",
+          "aides": []
+        },
+        {
+          "texte": "Le trifluorure de bore BF₃ (figure).<br>a. Combien d'électrons de valence possède l'atome de bore ? Vérifie que le schéma de BF₃ comporte le bon nombre de doublets.<br>b. Combien d'électrons entourent l'atome de bore ? Explique pourquoi on dit qu'il possède une lacune électronique.<br>c. Prévois la géométrie de BF₃ et la valeur des angles F–B–F.<br>d. La molécule BF₃ est-elle polaire ?",
+          "aides": [
+            "Compte les électrons autour du bore : seulement les doublets liants dessinés autour de lui.",
+            "Une lacune n'est pas un doublet : pour la géométrie, ne compte que les 3 doublets liants autour de B.",
+            "Pour la polarité, regarde où se trouve le centre des 3 atomes F, disposés en triangle équilatéral autour de B."
+          ]
+        },
+        {
+          "texte": "L'ion hydrogène H⁺ possède lui aussi une lacune électronique. Explique comment un ion H₃O⁺ peut se former à partir d'une molécule d'eau et d'un ion H⁺.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Na (Z = 11) : 1s² 2s² 2p⁶ 3s¹. En perdant son unique électron de valence, il obtient la configuration 1s² 2s² 2p⁶, dont la couche externe est saturée (comme le néon) : il forme Na⁺. Cl (Z = 17) : 1s² 2s² 2p⁶ 3s² 3p⁵. En gagnant un électron, il obtient 3s² 3p⁶ (8 électrons sur la couche externe, comme l'argon) : il forme Cl⁻.",
+        "Cl⁻ : 7 + 1 = 8 électrons de valence, soit 4 doublets non liants autour de Cl, et la charge − (entourée) à côté de l'atome. O²⁻ : 6 + 2 = 8 électrons, soit 4 doublets non liants autour de O, et la charge 2−.",
+        "<strong>2.</strong> H₃O⁺ : 3 × 1 + 6 − 1 = 8 électrons, 4 doublets : 3 doublets liants O–H et 1 doublet non liant sur O. On attribue à O 3 électrons (un par liaison) + 2 (doublet non liant) = 5, un de moins que ses 6 électrons de valence : la charge + est portée par l'oxygène.",
+        "NH₄⁺ : 4 × 1 + 5 − 1 = 8 électrons, 4 doublets liants N–H, aucun doublet non liant. On attribue 4 électrons à N, un de moins que ses 5 électrons de valence : la charge + est portée par l'azote.",
+        "HO⁻ : 1 + 6 + 1 = 8 électrons, 4 doublets : 1 doublet liant O–H et 3 doublets non liants sur O. On attribue à O 1 + 6 = 7 électrons, un de plus que 6 : la charge − est portée par l'oxygène.",
+        "<strong>3.</strong> H₃O⁺ : 3 doublets liants et 1 non liant autour de O, comme NH₃ : géométrie pyramidale. NH₄⁺ : 4 doublets liants et aucun non liant autour de N, comme CH₄ : géométrie tétraédrique.",
+        "<strong>4.</strong> a. B (Z = 5) : 1s² 2s² 2p¹, soit 3 électrons de valence. BF₃ : 3 + 3 × 7 = 24 électrons, soit 12 doublets. Le schéma compte 3 doublets liants + 3 × 3 = 9 doublets non liants = 12 doublets : il est correct.",
+        "b. L'atome de bore n'est entouré que de 3 doublets liants, soit 6 électrons : il lui manque 2 électrons pour respecter l'octet. Cette « place libre » pour un doublet est une lacune électronique (représentée par le rectangle vide).",
+        "c. Autour de B : 3 doublets liants, aucun doublet non liant (une lacune n'est pas un doublet). Les 3 directions s'écartent au maximum dans un même plan, à 120° les unes des autres : géométrie plane triangulaire, angles F–B–F de 120°.",
+        "d. B–F : Δχ = 3,98 − 2,04 = 1,94 : liaisons très polarisées (δ− sur F, δ+ sur B). Mais les 3 charges δ− identiques sont aux sommets d'un triangle équilatéral centré sur B : leur barycentre coïncide avec l'atome B (δ+). BF₃ est apolaire.",
+        "<strong>5.</strong> H⁺ n'a plus aucun électron : sa couche, qui pourrait recevoir un doublet (duet), est vide : c'est une lacune électronique. L'atome d'oxygène de H₂O porte 2 doublets non liants : l'un d'eux vient se placer dans la lacune de H⁺ et devient un doublet liant. On obtient H₂O + H⁺ → H₃O⁺, avec 3 liaisons O–H, un seul doublet non liant sur O et la charge + sur l'oxygène.",
+        "<em>⚠ Erreur fréquente : oublier la charge dans le décompte des électrons (H₃O⁺ : 8 électrons et non 9 ; HO⁻ : 8 et non 7), ou compter la lacune comme un doublet pour prévoir la géométrie.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Extraire le diiode : quel solvant choisir ?",
+      "contexte": [
+        "Doc. 1 — Une expérience de TP. L'eau iodée est une solution aqueuse de diiode I₂, de couleur jaune-brun. Dans trois tubes à essais contenant chacun 5 mL d'eau iodée, un élève ajoute 2 mL d'un solvant : cyclohexane (tube 1), éthanol (tube 2), dichlorométhane (tube 3). Il bouche, agite, puis laisse reposer (doc. 3, figure ci-dessous). Dissous dans un solvant comme le cyclohexane ou le dichlorométhane, le diiode donne une couleur rose-violet.",
+        "Doc. 2 — Données sur les liquides utilisés (à 20 °C).",
+        "Eau H₂O : densité 1,00.",
+        "Cyclohexane C₆H₁₂ : cycle de 6 atomes de carbone, chacun lié à 2 atomes d'hydrogène (liaisons C–C et C–H uniquement) ; densité 0,78 ; non miscible à l'eau ; très inflammable, dangereux pour les milieux aquatiques.",
+        "Éthanol CH₃–CH₂–OH : densité 0,79 ; miscible à l'eau en toutes proportions ; inflammable.",
+        "Dichlorométhane CH₂Cl₂ : géométrie tétraédrique autour du carbone ; densité 1,33 ; très peu miscible à l'eau ; ininflammable ; susceptible de provoquer le cancer."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380.0\" y=\"32.0\" font-size=\"19\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 3 — Les trois tubes après agitation et repos</text><clipPath id=\"c60\"><path d=\"M60,70 L60,348.0 A32.0,32.0 0 0 0 124,348.0 L124,70 Z\"/></clipPath><rect x=\"60\" y=\"160.0\" width=\"64\" height=\"63.9\" fill=\"#b07cc6\" clip-path=\"url(#c60)\"/><rect x=\"60\" y=\"222.9\" width=\"64\" height=\"158.1\" fill=\"#f6eec4\" clip-path=\"url(#c60)\"/><path d=\"M60,70 L60,348.0 A32.0,32.0 0 0 0 124,348.0 L124,70\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><clipPath id=\"c310\"><path d=\"M310,70 L310,348.0 A32.0,32.0 0 0 0 374,348.0 L374,70 Z\"/></clipPath><rect x=\"310\" y=\"160.0\" width=\"64\" height=\"221.0\" fill=\"#d9a85a\" clip-path=\"url(#c310)\"/><path d=\"M310,70 L310,348.0 A32.0,32.0 0 0 0 374,348.0 L374,70\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><clipPath id=\"c560\"><path d=\"M560,70 L560,348.0 A32.0,32.0 0 0 0 624,348.0 L624,70 Z\"/></clipPath><rect x=\"560\" y=\"160.0\" width=\"64\" height=\"158.1\" fill=\"#f6eec4\" clip-path=\"url(#c560)\"/><rect x=\"560\" y=\"317.1\" width=\"64\" height=\"63.9\" fill=\"#b07cc6\" clip-path=\"url(#c560)\"/><path d=\"M560,70 L560,348.0 A32.0,32.0 0 0 0 624,348.0 L624,70\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><line x1=\"154.0\" y1=\"172.0\" x2=\"116.0\" y2=\"191.4\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><text x=\"160.0\" y=\"177.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">rose-violet</text><line x1=\"154.0\" y1=\"310.0\" x2=\"116.0\" y2=\"290.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><text x=\"160.0\" y=\"315.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">presque</text><text x=\"160.0\" y=\"334.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">incolore</text><line x1=\"404.0\" y1=\"250.0\" x2=\"366.0\" y2=\"270.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><text x=\"410.0\" y=\"255.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">jaune-brun,</text><text x=\"410.0\" y=\"274.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">une seule</text><text x=\"410.0\" y=\"293.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">phase</text><line x1=\"654.0\" y1=\"200.0\" x2=\"616.0\" y2=\"220.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><text x=\"660.0\" y=\"205.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">presque</text><text x=\"660.0\" y=\"224.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">incolore</text><line x1=\"654.0\" y1=\"350.0\" x2=\"612.0\" y2=\"350.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><text x=\"660.0\" y=\"355.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"start\">rose-violet</text><text x=\"132.0\" y=\"415.0\" font-size=\"17\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Tube 1</text><text x=\"132.0\" y=\"438.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"middle\">eau iodée + cyclohexane</text><text x=\"382.0\" y=\"415.0\" font-size=\"17\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Tube 2</text><text x=\"382.0\" y=\"438.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"middle\">eau iodée + éthanol</text><text x=\"632.0\" y=\"415.0\" font-size=\"17\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-weight=\"bold\">Tube 3</text><text x=\"632.0\" y=\"438.0\" font-size=\"15\" fill=\"#222\" text-anchor=\"middle\">eau iodée + dichlorométhane</text></svg>",
+      "contexte2": [
+        "Les électronégativités sont dans les données en début de fiche."
+      ],
+      "questions": [
+        {
+          "texte": "Établis le schéma de Lewis de la molécule de diiode I₂. Sa liaison est-elle polarisée ? La molécule est-elle polaire ?",
+          "aides": [
+            "L'iode est dans la même colonne que le chlore : combien d'électrons de valence ?",
+            "Une liaison entre deux atomes identiques : que vaut Δχ ?"
+          ]
+        },
+        {
+          "texte": "Vérifie, en comptant ses électrons de valence et ses liaisons, que le cyclohexane ne possède aucun doublet non liant, puis montre que c'est une espèce apolaire.",
+          "aides": []
+        },
+        {
+          "texte": "Tube 1 : identifie chaque phase à l'aide du doc. 2 et explique pourquoi le diiode « passe » de l'eau dans le cyclohexane.",
+          "aides": [
+            "Quelle phase est la moins dense ? Laquelle contient le diiode, d'après la couleur ?",
+            "Compare la polarité du diiode (question 1) à celle de l'eau et à celle du cyclohexane (question 2)."
+          ]
+        },
+        {
+          "texte": "L'éthanol (tube 2).<br>a. Décris le schéma de Lewis de l'éthanol et indique ses liaisons polarisées.<br>b. Justifie que la molécule d'éthanol est polaire.<br>c. Explique pourquoi l'éthanol ne permet pas d'extraire le diiode de l'eau iodée.",
+          "aides": [
+            "Compte les électrons de valence de C₂H₆O, puis les liaisons de CH₃–CH₂–OH ; les électrons restants forment des doublets non liants.",
+            "Regarde autour de l'atome d'oxygène : combien de doublets liants et non liants ? Quelle géométrie, comme pour quelle molécule ?",
+            "Relis le doc. 2 : l'éthanol forme-t-il une phase séparée avec l'eau ?"
+          ]
+        },
+        {
+          "texte": "Le dichlorométhane (tube 3).<br>a. Montre que la molécule CH₂Cl₂ est polaire.<br>b. Identifie chaque phase du tube 3.<br>c. Regard critique : le résultat du tube 3 semble-t-il en accord avec la règle « qui se ressemble s'assemble » ? Discute les limites de cette règle.",
+          "aides": [
+            "Place les charges partielles sur les deux atomes Cl et sur C : les deux Cl sont-ils de part et d'autre de C ou du même côté ?",
+            "Utilise les densités du doc. 2 pour placer les phases.",
+            "Compare les Δχ des liaisons de CH₂Cl₂ à ceux des liaisons de l'eau : les deux molécules sont-elles « aussi polaires » l'une que l'autre ?"
+          ]
+        },
+        {
+          "texte": "Choix argumenté : quel solvant conseillerais-tu pour extraire le diiode de l'eau iodée en TP au lycée ? Argumente à l'aide des trois documents et précise si la phase contenant le diiode sera en haut ou en bas de l'ampoule à décanter.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> I : même colonne que Cl, donc 7 électrons de valence. I₂ : 14 électrons, soit 7 doublets : une liaison simple I–I et 3 doublets non liants sur chaque atome (chaque I est entouré de 2 + 6 = 8 électrons). Les deux atomes sont identiques : Δχ = 0, la liaison n'est pas polarisée et la molécule est apolaire.",
+        "<strong>2.</strong> C₆H₁₂ : 6 × 4 + 12 × 1 = 36 électrons de valence, soit 18 doublets. Liaisons : 6 liaisons C–C (cycle) + 12 liaisons C–H = 18 doublets liants : il ne reste aucun doublet non liant. Les liaisons C–C (Δχ = 0) et C–H (Δχ = 0,35 &lt; 0,4) ne sont pas polarisées : aucune charge partielle, le cyclohexane est apolaire.",
+        "<strong>3.</strong> Le cyclohexane n'est pas miscible à l'eau et il est moins dense (0,78 &lt; 1,00) : la phase supérieure, rose-violet, est le cyclohexane contenant le diiode ; la phase inférieure, presque incolore, est l'eau. Le diiode, apolaire, est bien plus soluble dans le cyclohexane apolaire que dans l'eau polaire (« qui se ressemble s'assemble ») : lors de l'agitation, il passe presque entièrement dans le cyclohexane.",
+        "<strong>4.</strong> a. 2 × 4 + 6 × 1 + 6 = 20 électrons de valence, soit 10 doublets : 8 doublets liants (1 liaison C–C, 5 liaisons C–H, 1 liaison C–O, 1 liaison O–H) et 2 doublets non liants sur l'atome O. Liaisons polarisées : C–O (Δχ = 0,89, δ− sur O, δ+ sur C) et O–H (Δχ = 1,24, δ− sur O, δ+ sur H).",
+        "b. L'atome d'oxygène est entouré de 2 doublets liants et de 2 doublets non liants : comme dans l'eau, la géométrie autour de O est coudée. Les deux liaisons polarisées C–O et O–H ne sont pas alignées : le barycentre des charges δ+ (sur C et H) ne coïncide pas avec la charge δ− (sur O). L'éthanol est polaire.",
+        "c. L'éthanol, polaire comme l'eau, est miscible à l'eau en toutes proportions (doc. 2) : on n'obtient qu'une seule phase (tube 2), on ne peut donc pas séparer le diiode de l'eau. (L'eau et l'éthanol interagissent fortement, notamment par liaisons hydrogène : notion du chapitre Interpréter les propriétés d'une espèce chimique.)",
+        "<strong>5.</strong> a. Lewis : 4 + 2 × 1 + 2 × 7 = 20 électrons, soit 10 doublets : 4 doublets liants (2 C–H, 2 C–Cl) et 3 doublets non liants sur chaque Cl. Géométrie tétraédrique. Les liaisons C–Cl sont polarisées (Δχ = 0,61), pas les liaisons C–H. Les deux charges δ− (sur les Cl) sont du même côté de la molécule : leur barycentre, au milieu des deux atomes Cl, ne coïncide pas avec l'atome C (δ+). CH₂Cl₂ est polaire.",
+        "b. Le dichlorométhane n'est presque pas miscible à l'eau et il est plus dense (1,33 &gt; 1,00) : la phase inférieure, rose-violet, est le dichlorométhane contenant le diiode ; la phase supérieure, presque incolore, est l'eau.",
+        "c. À première vue non : CH₂Cl₂ est polaire, et pourtant il ne se mélange pas à l'eau et dissout très bien le diiode apolaire. Limites de la règle : la polarité n'est pas « tout ou rien » ; CH₂Cl₂ est beaucoup moins polaire que l'eau (Δχ = 0,61 pour C–Cl contre 1,24 pour O–H, et les liaisons C–H ne sont pas polarisées). La règle est qualitative : elle compare des espèces « très polaires » et « peu ou pas polaires ». D'autres interactions comptent aussi (les molécules d'eau sont liées entre elles par des liaisons hydrogène, pas celles de CH₂Cl₂ : chapitre Interpréter les propriétés d'une espèce chimique).",
+        "<strong>6.</strong> Éléments attendus : l'éthanol est exclu (miscible à l'eau). Le cyclohexane et le dichlorométhane conviennent tous deux : non miscibles à l'eau, ils dissolvent bien le diiode (tubes 1 et 3). Sécurité : le dichlorométhane est susceptible de provoquer le cancer ; on préfère le cyclohexane au lycée, en travaillant loin de toute flamme (très inflammable), avec gants et lunettes, et en récupérant les déchets dans un bidon (dangereux pour les milieux aquatiques). Avec le cyclohexane (densité 0,78), la phase contenant le diiode est la phase supérieure de l'ampoule à décanter.",
+        "<em>⚠ Erreur fréquente : identifier les phases d'après la couleur seulement ou en supposant que le solvant ajouté est toujours en haut. C'est la densité qui fixe la position : le cyclohexane (0,78) flotte sur l'eau, le dichlorométhane (1,33) tombe au fond.</em>",
+        "<em>⚠ Erreur fréquente : déclarer l'éthanol apolaire parce qu'il contient beaucoup de liaisons C–H ; ses liaisons C–O et O–H, polarisées, et sa géométrie coudée autour de O le rendent polaire.</em>"
+      ]
+    }
+  ]
+}

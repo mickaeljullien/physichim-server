@@ -1,0 +1,654 @@
+{
+  "id": 58,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Puissance électrique",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Puissance électrique P",
+            "text": "Puissance reçue par un dipôle traversé par un courant d'intensité I, soumis à une tension U à ses bornes : P = U × I. Elle s'exprime en watt (W)."
+          }
+        ]
+      },
+      {
+        "title": "2. Énergie électrique",
+        "icon": "🔌",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie électrique E",
+            "text": "Énergie reçue par un appareil pendant une durée t, égale au produit de la puissance qu'il reçoit par cette durée : E = P × t. On l'exprime souvent en kilowattheure (kWh) dans la vie courante."
+          },
+          {
+            "type": "text",
+            "text": "1 kWh correspond à l'énergie consommée par un appareil de puissance 1000 W fonctionnant pendant 1 heure."
+          }
+        ]
+      },
+      {
+        "title": "3. L'effet Joule",
+        "icon": "🔥",
+        "content": [
+          {
+            "type": "def",
+            "term": "Effet Joule",
+            "text": "Lorsqu'un courant électrique traverse un conducteur ohmique (une résistance), une partie de l'énergie électrique est dissipée sous forme de chaleur : c'est l'effet Joule, souvent responsable de pertes énergétiques."
+          },
+          {
+            "type": "formula",
+            "label": "Puissance dissipée par effet Joule",
+            "text": "P_Joule = R × I²"
+          },
+          {
+            "type": "warn",
+            "text": "L'effet Joule n'est pas toujours une perte : dans un radiateur ou une bouilloire, la chaleur produite par effet Joule est justement l'énergie utile recherchée."
+          }
+        ]
+      },
+      {
+        "title": "4. Rendement d'une conversion énergétique",
+        "icon": "⚙️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Rendement η",
+            "text": "Un convertisseur (moteur, lampe, chargeur...) ne transforme jamais la totalité de l'énergie électrique reçue en énergie utile. Le rendement compare la puissance (ou l'énergie) utile obtenue à la puissance (ou l'énergie) totale absorbée : η = P_utile / P_absorbée × 100."
+          }
+        ]
+      },
+      {
+        "title": "5. Synthèse",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Puissance électrique",
+                "P = U × I, exprimée en watt (W)"
+              ],
+              [
+                "Effet Joule",
+                "Dissipation thermique dans un conducteur ohmique, P = R × I²"
+              ],
+              [
+                "Rendement",
+                "Puissance utile / puissance absorbée × 100"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une lampe est soumise à une tension U = 12 V et traversée par un courant I = 250 mA. Elle reçoit une puissance électrique P = U × I de :",
+      "opts": [
+        "3,0×10³ W",
+        "3,0 W",
+        "48 W",
+        "2,1×10⁻² W"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-ma-a",
+          "texte": "Oublier de convertir les milliampères en ampères : 250 mA = 0,250 A"
+        },
+        null,
+        {
+          "code": "quotient-au-lieu-produit",
+          "texte": "Diviser au lieu de multiplier : U / I = 12 / 0,250 ; il faut P = U × I"
+        },
+        {
+          "code": "puissance-rapport-inverse",
+          "texte": "Calculer I / U = 0,250 / 12 : la puissance est le produit U × I"
+        }
+      ],
+      "exp": "P = U × I = 12 × 0,250 = 3,0 W. Attention : l'intensité doit être en ampères."
+    },
+    {
+      "q": "Un four de puissance 2 500 W fonctionne pendant 45 min. L'énergie électrique qu'il reçoit vaut :",
+      "opts": [
+        "1,9 kWh",
+        "112,5 kWh",
+        "1,1 kWh",
+        "1 875 kWh"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-minute-heure",
+          "texte": "Laisser la durée en minutes : 2,5 × 45 ; pour des kWh, la durée doit être en heures (0,75 h)"
+        },
+        {
+          "code": "conversion-heure-minute",
+          "texte": "Écrire 45 min = 0,45 h : 45 min = 45 / 60 = 0,75 h"
+        },
+        {
+          "code": "conversion-w-kw",
+          "texte": "Oublier de convertir les watts en kilowatts : 2 500 W = 2,5 kW"
+        }
+      ],
+      "exp": "E = P × t = 2,5 kW × 0,75 h ≈ 1,9 kWh. Attention : 45 min = 0,75 h, et 2 500 W = 2,5 kW."
+    },
+    {
+      "q": "Une résistance R = 24 Ω est parcourue par un courant I = 8,0 A. La puissance dissipée par effet Joule vaut P = R × I², soit :",
+      "opts": [
+        "192 W",
+        "3,0 W",
+        "1,5×10³ W",
+        "4,6×10³ W"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-carre-intensite",
+          "texte": "Oublier le carré de l'intensité : R × I = 24 × 8,0 ; il faut R × I² = 24 × 64"
+        },
+        {
+          "code": "quotient-au-lieu-produit",
+          "texte": "Diviser au lieu de multiplier : R / I = 24 / 8,0 ; il faut P = R × I²"
+        },
+        null,
+        {
+          "code": "carre-mauvaise-grandeur",
+          "texte": "Mettre le carré sur R au lieu de I : R² × I = 24² × 8,0 ; c'est l'intensité qui est au carré"
+        }
+      ],
+      "exp": "P = R × I² = 24 × 8,0² = 24 × 64 ≈ 1,5×10³ W. Attention : seule l'intensité est au carré ; doubler I quadruple la puissance dissipée."
+    },
+    {
+      "q": "Dans lequel de ces appareils l'effet Joule est-il l'effet utile recherché ?",
+      "opts": [
+        "Aucun : l'effet Joule est toujours une perte",
+        "Le moteur d'une perceuse",
+        "Une lampe à LED",
+        "Un radiateur électrique"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "joule-toujours-perte",
+          "texte": "Croire que l'effet Joule est toujours une perte : dans un radiateur ou une bouilloire, la chaleur produite est l'effet recherché"
+        },
+        {
+          "code": "joule-utile-moteur",
+          "texte": "Confondre énergie utile et énergie perdue : dans un moteur, l'énergie utile est mécanique, l'effet Joule est une perte"
+        },
+        {
+          "code": "joule-utile-lampe",
+          "texte": "Croire que la chaleur d'une lampe est utile : une lampe sert à éclairer, l'effet Joule y est une perte"
+        },
+        null
+      ],
+      "exp": "Dans un radiateur, l'énergie électrique est convertie en énergie thermique par effet Joule : c'est le but. Dans un moteur ou une lampe, l'effet Joule est une perte qui diminue le rendement."
+    },
+    {
+      "q": "Une perceuse reçoit une puissance électrique de 500 W et fournit une puissance mécanique utile de 380 W. Son rendement vaut :",
+      "opts": [
+        "132 %",
+        "24 %",
+        "76 %",
+        "0,76 %"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "rendement-inverse",
+          "texte": "Inverser le rapport : 500 / 380 ≈ 132 % ; un rendement ne dépasse jamais 100 %"
+        },
+        {
+          "code": "rendement-vs-pertes",
+          "texte": "Calculer la part perdue (120 / 500 = 24 %) au lieu du rendement"
+        },
+        null,
+        {
+          "code": "oubli-facteur-100",
+          "texte": "Oublier de multiplier par 100 : 380 / 500 = 0,76, soit 76 %"
+        }
+      ],
+      "exp": "η = P(utile) / P(reçue) = 380 / 500 = 0,76, soit 76 %. Attention : le rendement est toujours inférieur à 1 (100 %)."
+    },
+    {
+      "q": "Cette perceuse reçoit 500 W et fournit 380 W de puissance mécanique. Les 120 W restants :",
+      "opts": [
+        "sont détruits dans le moteur",
+        "s'accumulent dans la perceuse",
+        "sont transférés à l'environnement",
+        "retournent au réseau électrique"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "energie-detruite",
+          "texte": "Croire que l'énergie disparaît : elle se conserve ; la part non utile est transférée à l'environnement"
+        },
+        {
+          "code": "energie-stockee-appareil",
+          "texte": "Croire que l'énergie s'accumule dans l'appareil : elle est transférée à l'air ambiant (la perceuse chauffe)"
+        },
+        null,
+        {
+          "code": "energie-retour-secteur",
+          "texte": "Croire que l'énergie non utilisée retourne au réseau : elle est dissipée par effet Joule et par les frottements"
+        }
+      ],
+      "exp": "L'énergie se conserve : 500 W = 380 W (mécanique, utile) + 120 W transférés à l'environnement, par effet Joule dans les bobinages et par les frottements. C'est pourquoi la perceuse chauffe."
+    },
+    {
+      "q": "Une bouilloire de rendement 92 % doit fournir à l'eau une énergie Q = 3,43×10⁵ J. L'énergie électrique qu'elle doit recevoir vaut :",
+      "opts": [
+        "3,16×10⁵ J",
+        "3,43×10⁵ J",
+        "3,73×10⁵ J",
+        "3,7×10³ J"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "rendement-multiplie",
+          "texte": "Multiplier par le rendement : 3,43×10⁵ × 0,92 ; l'énergie reçue est plus grande que l'énergie utile"
+        },
+        {
+          "code": "rendement-ignore",
+          "texte": "Oublier le rendement : une partie de l'énergie reçue est perdue, il faut en recevoir plus que 3,43×10⁵ J"
+        },
+        null,
+        {
+          "code": "pourcentage-non-converti",
+          "texte": "Utiliser 92 au lieu de 0,92 : 3,43×10⁵ / 92"
+        }
+      ],
+      "exp": "η = Q / E(élec), donc E(élec) = Q / η = 3,43×10⁵ / 0,92 ≈ 3,73×10⁵ J. Attention : l'énergie reçue est toujours supérieure à l'énergie utile."
+    },
+    {
+      "q": "Cette bouilloire, de puissance 2 200 W, doit recevoir 3,73×10⁵ J. La durée de chauffe vaut t = E / P, soit :",
+      "opts": [
+        "170 s",
+        "8,2×10⁸ s",
+        "5,9×10⁻³ s",
+        "0,17 s"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 3,73×10⁵ × 2 200 ; il faut t = E / P"
+        },
+        {
+          "code": "duree-rapport-inverse",
+          "texte": "Inverser le rapport : P / E = 2 200 / 3,73×10⁵ ; il faut t = E / P"
+        },
+        {
+          "code": "conversion-w-kw-inverse",
+          "texte": "Mélanger les unités : 2 200 W ne fait pas 2,2×10⁶ W ; avec E en J et P en W, t est en s"
+        }
+      ],
+      "exp": "t = E / P = 3,73×10⁵ / 2 200 ≈ 170 s, soit un peu moins de 3 minutes. Attention : avec E en joules et P en watts, la durée est en secondes."
+    },
+    {
+      "q": "Une charge électrique Q = 30 C traverse une section d'un fil en 2,0 min. L'intensité du courant vaut I = Q / Δt, soit :",
+      "opts": [
+        "15 A",
+        "0,25 A",
+        "3,6×10³ A",
+        "4,0 A"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-min-s",
+          "texte": "Oublier de convertir les minutes en secondes : 2,0 min = 120 s"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 30 × 120 ; il faut I = Q / Δt"
+        },
+        {
+          "code": "intensite-charge-rapport-inverse",
+          "texte": "Inverser le rapport : Δt / Q = 120 / 30 ; l'intensité est une charge par seconde"
+        }
+      ],
+      "exp": "I = Q / Δt = 30 / 120 = 0,25 A : l'intensité est le débit de charges électriques, en coulombs par seconde (ampères). Attention : Δt en secondes."
+    },
+    {
+      "q": "Une pile de force électromotrice E = 4,5 V et de résistance interne r = 1,5 Ω débite un courant I = 0,40 A. La tension à ses bornes vaut U = E − r × I, soit :",
+      "opts": [
+        "5,1 V",
+        "4,5 V",
+        "3,9 V",
+        "0,60 V"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "source-reelle-signe",
+          "texte": "Ajouter au lieu de retrancher : une partie de la tension est « perdue » dans la résistance interne, U < E"
+        },
+        {
+          "code": "pile-tension-constante",
+          "texte": "Croire que la tension d'une pile est toujours égale à E : elle diminue quand le courant débité augmente"
+        },
+        null,
+        {
+          "code": "chute-tension-pour-u",
+          "texte": "Donner r × I = 0,60 V, la tension perdue dans la pile, au lieu de la tension disponible U = E − r I"
+        }
+      ],
+      "exp": "U = E − r × I = 4,5 − 1,5 × 0,40 = 3,9 V. Une source réelle n'est pas idéale : plus elle débite, plus sa tension diminue, et une partie de l'énergie est dissipée par effet Joule dans la pile."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Ce que cache le « mAh » de ton smartphone",
+      "contexte": [
+        "Le courant électrique est un déplacement d'ensemble de porteurs de charge. L'intensité I d'un courant continu est le débit de charge électrique : si une charge Q (en coulomb, C) traverse une section du circuit pendant une durée Δt (en s), alors I = Q / Δt, avec I en ampère (A).",
+        "La batterie du smartphone de Lina porte l'indication « 4 000 mAh – 3,85 V »."
+      ],
+      "questions": [
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. Dans le câble en cuivre du chargeur, les porteurs de charge sont des électrons.<br>b. Dans l'électrolyte d'une batterie (solution conductrice), les porteurs de charge sont des ions.<br>c. Dans un fil métallique, les électrons se déplacent dans le sens conventionnel du courant, de la borne + vers la borne − du générateur, à l'extérieur de celui-ci.<br>d. Une intensité de 1 A correspond au passage d'une charge de 1 C par seconde.",
+          "aides": []
+        },
+        {
+          "texte": "Le chargeur délivre un courant d'intensité I = 2,0 A pendant Δt = 30 min. Calcule la charge Q qui a traversé le câble, puis le nombre N d'électrons correspondant.",
+          "aides": [
+            "La relation I = Q / Δt s'utilise avec Δt en seconde : commence par convertir 30 min.",
+            "Q = I × Δt, puis chaque électron porte la charge e : le nombre d'électrons est N = Q / e."
+          ]
+        },
+        {
+          "texte": "Le « mAh » (milliampère-heure) est une unité de charge : 1 mAh est la charge transportée par un courant de 1 mA pendant 1 h. Convertis la charge de la batterie, 4 000 mAh, en coulomb.",
+          "aides": []
+        },
+        {
+          "texte": "En vidéo, le téléphone consomme un courant d'intensité moyenne I = 0,50 A. Combien de temps la batterie pleine peut-elle tenir ?",
+          "aides": []
+        },
+        {
+          "texte": "Le « mAh » mesure-t-il l'énergie stockée dans la batterie ? L'énergie stockée (en Wh) s'obtient en multipliant la charge (en Ah) par la tension de la batterie (en V) : calcule-la.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : dans un métal, ce sont les électrons libres qui se déplacent.",
+        "b. VRAI : dans une solution, ce sont les ions (cations et anions) qui se déplacent, en sens opposés.",
+        "c. FAUX : les électrons, chargés négativement, se déplacent en sens inverse du sens conventionnel du courant, de la borne − vers la borne + à l'extérieur du générateur.",
+        "d. VRAI : I = Q / Δt, donc 1 A = 1 C / 1 s = 1 C·s⁻¹.",
+        "<strong>2.</strong> Δt = 30 min = 30 × 60 = 1 800 s. Q = I × Δt = 2,0 × 1 800 = 3,6 × 10³ C. N = Q / e = 3,6 × 10³ / 1,60 × 10⁻¹⁹ = 2,3 × 10²² électrons (2,25 × 10²²).",
+        "<strong>3.</strong> 4 000 mAh = 4,000 A × 3 600 s = 1,44 × 10⁴ C.",
+        "<strong>4.</strong> Δt = Q / I = 1,44 × 10⁴ / 0,50 = 2,88 × 10⁴ s, soit 2,88 × 10⁴ / 3 600 = 8,0 h.",
+        "<strong>5.</strong> Non : le mAh est une unité de charge. L'énergie stockée vaut 4,000 Ah × 3,85 V = 15,4 Wh (soit 15,4 × 3 600 = 5,54 × 10⁴ J). Deux batteries de même « mAh » mais de tensions différentes ne stockent pas la même énergie.",
+        "<em>⚠ Erreur fréquente : garder Δt en minutes dans Q = I × Δt (on trouverait 60 C au lieu de 3 600 C). En unités du système international, la durée est en seconde.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Qui consomme le plus à la maison ?",
+      "contexte": [
+        "Un appareil soumis à une tension U et traversé par un courant d'intensité I reçoit la puissance électrique P = U × I (P en watt, W). Pendant une durée Δt, il reçoit l'énergie électrique E<sub>élec</sub> = P × Δt : en joule (J) si P est en W et Δt en s, en kilowattheure (kWh) si P est en kW et Δt en h.",
+        "Le prix du kilowattheure est pris égal à 0,20 € (valeur arrondie)."
+      ],
+      "questions": [
+        {
+          "texte": "Associe chaque appareil à l'ordre de grandeur de sa puissance. Appareils : lampe LED ; chargeur de smartphone ; ordinateur portable ; bouilloire ; borne de recharge rapide pour voiture électrique ; motrice de TGV. Puissances : 2 kW ; 9 MW ; 8 W ; 50 kW ; 60 W ; 20 W.",
+          "aides": []
+        },
+        {
+          "texte": "Le chargeur rapide de Yanis indique « sortie : 9,0 V – 2,0 A ». Calcule la puissance électrique qu'il fournit au téléphone.",
+          "aides": []
+        },
+        {
+          "texte": "La console de jeu de Yanis reçoit une puissance P = 150 W. Il joue 2,0 h par jour pendant 30 jours.<br>a. Calcule l'énergie électrique reçue par la console sur le mois, en kWh, puis en J.<br>b. Calcule le coût correspondant.",
+          "aides": [
+            "Calcule d'abord la durée totale de jeu sur le mois, en heures.",
+            "Pour obtenir des kWh, la puissance doit être en kW : 150 W = 0,150 kW. Puis E<sub>élec</sub> = P × Δt.",
+            "Pour passer en joule, utilise 1 kWh = 3,6 × 10⁶ J ; pour le coût, multiplie le nombre de kWh par le prix d'un kWh."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? « Une bouilloire de 2 kW consomme 2 kWh à chaque utilisation. » Justifie en calculant l'énergie reçue pour une utilisation de 15 min.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lampe LED : 8 W ; chargeur de smartphone : 20 W ; ordinateur portable : 60 W ; bouilloire : 2 kW ; borne de recharge rapide : 50 kW ; motrice de TGV : 9 MW.",
+        "<strong>2.</strong> P = U × I = 9,0 × 2,0 = 18 W.",
+        "<strong>3.</strong> a. Δt = 2,0 × 30 = 60 h et P = 150 W = 0,150 kW. E<sub>élec</sub> = P × Δt = 0,150 × 60 = 9,0 kWh. En joule : 9,0 × 3,6 × 10⁶ = 3,2 × 10⁷ J (3,24 × 10⁷ J).",
+        "b. Coût = 9,0 × 0,20 = 1,80 €.",
+        "<strong>4.</strong> FAUX : le kW est une unité de puissance, le kWh une unité d'énergie. L'énergie dépend de la durée d'utilisation : E<sub>élec</sub> = 2 kW × 0,25 h = 0,5 kWh pour 15 min. Elle ne vaudrait 2 kWh que pour 1 h de fonctionnement.",
+        "<em>⚠ Erreur fréquente : multiplier des W par des h et annoncer des kWh (150 × 60 = 9 000 Wh = 9,0 kWh, et non 9 000 kWh) : convertis d'abord la puissance en kW.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "L'effet Joule : utile ou gênant ?",
+      "contexte": [
+        "Un conducteur ohmique de résistance R traversé par un courant d'intensité I convertit l'énergie électrique reçue en énergie thermique : c'est l'effet Joule. La puissance dissipée vaut P<sub>J</sub> = R × I². Rappel de la loi d'Ohm : U = R × I.",
+        "Le grille-pain d'Inès est branché sur le secteur (U = 230 V) ; sa résistance chauffante vaut R = 46 Ω. Il est branché par l'intermédiaire d'une rallonge dont les deux fils ont une résistance totale r = 0,20 Ω."
+      ],
+      "questions": [
+        {
+          "texte": "Dans quels appareils l'effet Joule est-il l'effet recherché ? (plusieurs réponses possibles) A. radiateur électrique ; B. moteur de ventilateur ; C. bouilloire ; D. chargeur de téléphone ; E. fusible.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'intensité I du courant qui traverse la résistance du grille-pain.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la puissance dissipée par effet Joule dans le grille-pain. Vérifie que tu retrouves la même valeur avec P = U × I.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la puissance perdue par effet Joule dans les fils de la rallonge quand le grille-pain fonctionne.",
+          "aides": []
+        },
+        {
+          "texte": "Inès branche ensuite sur la même rallonge le grille-pain et un radiateur : l'intensité dans la rallonge atteint 16 A. Par combien l'intensité a-t-elle été multipliée ? Calcule la nouvelle puissance perdue dans la rallonge, puis explique pourquoi on recommande de ne pas surcharger une rallonge.",
+          "aides": [
+            "Dans P = r × I², l'intensité est élevée au carré : si I est multipliée par k, P est multipliée par k².",
+            "Calcule 0,20 × 16², puis compare au résultat de la question 4."
+          ]
+        },
+        {
+          "texte": "Les lignes électriques transportent l'électricité sous très haute tension. Pour une même puissance transportée P = U × I, par combien sont divisées les pertes par effet Joule dans les câbles si la tension est multipliée par 10 ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A, C et E. Dans un radiateur et une bouilloire, la chaleur est l'énergie utile. Dans un fusible, l'échauffement fait fondre le fil et coupe le circuit en cas de surintensité. Dans un moteur et un chargeur, l'effet Joule est une perte.",
+        "<strong>2.</strong> Loi d'Ohm : I = U / R = 230 / 46 = 5,0 A.",
+        "<strong>3.</strong> P<sub>J</sub> = R × I² = 46 × 5,0² = 46 × 25 = 1 150 W ≈ 1,2 kW. Vérification : P = U × I = 230 × 5,0 = 1 150 W. Ici, toute l'énergie électrique reçue est convertie en énergie thermique.",
+        "<strong>4.</strong> P = r × I² = 0,20 × 5,0² = 5,0 W, perdus en chaleur dans les fils.",
+        "<strong>5.</strong> 16 / 5,0 = 3,2 : l'intensité est multipliée par 3,2. P = 0,20 × 16² = 51 W (51,2 W) : les pertes sont multipliées par 3,2² ≈ 10. Les pertes varient comme le carré de l'intensité : une rallonge surchargée chauffe beaucoup, ce qui peut faire fondre l'isolant et provoquer un incendie.",
+        "<strong>6.</strong> P = U × I est fixée : si U est multipliée par 10, I est divisée par 10, et P<sub>J</sub> = R × I² est divisée par 10² = 100.",
+        "<em>⚠ Erreur fréquente : écrire P<sub>J</sub> = R × I (oubli du carré) : on trouverait 230 W au lieu de 1 150 W pour le grille-pain, et des pertes simplement proportionnelles à l'intensité dans la rallonge.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "La pile plate de la lampe de camping",
+      "contexte": [
+        "Pour savoir si la pile plate de sa lampe de camping peut être modélisée par une source idéale de tension, Malik réalise un circuit série comprenant la pile, un ampèremètre et une résistance variable (rhéostat), et mesure la tension U aux bornes de la pile avec un voltmètre. En faisant varier la résistance, il obtient les mesures ci-dessous, reportées sur le graphique.",
+        "I (A) : 0,00 ; 0,10 ; 0,20 ; 0,30 ; 0,40 ; 0,50 ; 0,60. U (V) : 4,50 ; 4,36 ; 4,19 ; 4,06 ; 3,89 ; 3,76 ; 3,59. (Attention : l'axe des tensions ne commence pas à 0.)"
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"126.4\" y1=\"20\" x2=\"126.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"172.9\" y1=\"20\" x2=\"172.9\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"172.9\" y=\"422\" text-anchor=\"middle\">0,1</text><line x1=\"219.3\" y1=\"20\" x2=\"219.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"265.7\" y1=\"20\" x2=\"265.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"265.7\" y=\"422\" text-anchor=\"middle\">0,2</text><line x1=\"312.1\" y1=\"20\" x2=\"312.1\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"358.6\" y1=\"20\" x2=\"358.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"358.6\" y=\"422\" text-anchor=\"middle\">0,3</text><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"451.4\" y1=\"20\" x2=\"451.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"451.4\" y=\"422\" text-anchor=\"middle\">0,4</text><line x1=\"497.9\" y1=\"20\" x2=\"497.9\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"544.3\" y1=\"20\" x2=\"544.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"544.3\" y=\"422\" text-anchor=\"middle\">0,5</text><line x1=\"590.7\" y1=\"20\" x2=\"590.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"637.1\" y1=\"20\" x2=\"637.1\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"637.1\" y=\"422\" text-anchor=\"middle\">0,6</text><line x1=\"683.6\" y1=\"20\" x2=\"683.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">0,7</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">3,4</text><line x1=\"80\" y1=\"384.2\" x2=\"730\" y2=\"384.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"368.3\" x2=\"730\" y2=\"368.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"373.3\" text-anchor=\"end\">3,5</text><line x1=\"80\" y1=\"352.5\" x2=\"730\" y2=\"352.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"336.7\" x2=\"730\" y2=\"336.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"341.7\" text-anchor=\"end\">3,6</text><line x1=\"80\" y1=\"320.8\" x2=\"730\" y2=\"320.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"305.0\" x2=\"730\" y2=\"305.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"310.0\" text-anchor=\"end\">3,7</text><line x1=\"80\" y1=\"289.2\" x2=\"730\" y2=\"289.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"273.3\" x2=\"730\" y2=\"273.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"278.3\" text-anchor=\"end\">3,8</text><line x1=\"80\" y1=\"257.5\" x2=\"730\" y2=\"257.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"241.7\" x2=\"730\" y2=\"241.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"246.7\" text-anchor=\"end\">3,9</text><line x1=\"80\" y1=\"225.8\" x2=\"730\" y2=\"225.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"210.0\" x2=\"730\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"215.0\" text-anchor=\"end\">4,0</text><line x1=\"80\" y1=\"194.2\" x2=\"730\" y2=\"194.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"178.3\" x2=\"730\" y2=\"178.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"183.3\" text-anchor=\"end\">4,1</text><line x1=\"80\" y1=\"162.5\" x2=\"730\" y2=\"162.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"146.7\" x2=\"730\" y2=\"146.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"151.7\" text-anchor=\"end\">4,2</text><line x1=\"80\" y1=\"130.8\" x2=\"730\" y2=\"130.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"115.0\" x2=\"730\" y2=\"115.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"120.0\" text-anchor=\"end\">4,3</text><line x1=\"80\" y1=\"99.2\" x2=\"730\" y2=\"99.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"83.3\" x2=\"730\" y2=\"83.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"88.3\" text-anchor=\"end\">4,4</text><line x1=\"80\" y1=\"67.5\" x2=\"730\" y2=\"67.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"51.7\" x2=\"730\" y2=\"51.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"56.7\" text-anchor=\"end\">4,5</text><line x1=\"80\" y1=\"35.8\" x2=\"730\" y2=\"35.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">4,6</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">intensité I (A)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">tension U aux bornes de la pile (V)</text><line x1=\"80.0\" y1=\"51.7\" x2=\"730.0\" y2=\"384.2\" stroke=\"#C8962E\" stroke-width=\"2.4\" stroke-dasharray=\"9 6\"/><line x1=\"74.0\" y1=\"45.7\" x2=\"86.0\" y2=\"57.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"74.0\" y1=\"57.7\" x2=\"86.0\" y2=\"45.7\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"166.9\" y1=\"90.0\" x2=\"178.9\" y2=\"102.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"166.9\" y1=\"102.0\" x2=\"178.9\" y2=\"90.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"259.7\" y1=\"143.8\" x2=\"271.7\" y2=\"155.8\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"259.7\" y1=\"155.8\" x2=\"271.7\" y2=\"143.8\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"352.6\" y1=\"185.0\" x2=\"364.6\" y2=\"197.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"352.6\" y1=\"197.0\" x2=\"364.6\" y2=\"185.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"445.4\" y1=\"238.8\" x2=\"457.4\" y2=\"250.8\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"445.4\" y1=\"250.8\" x2=\"457.4\" y2=\"238.8\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"538.3\" y1=\"280.0\" x2=\"550.3\" y2=\"292.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"538.3\" y1=\"292.0\" x2=\"550.3\" y2=\"280.0\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"631.1\" y1=\"333.8\" x2=\"643.1\" y2=\"345.8\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><line x1=\"631.1\" y1=\"345.8\" x2=\"643.1\" y2=\"333.8\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"470.0\" y=\"67.5\" fill=\"#1F4E5A\" font-weight=\"bold\">× points de mesure</text><text x=\"470.0\" y=\"91.5\" fill=\"#C8962E\" font-weight=\"bold\">- - droite modélisant les points</text></svg>",
+      "questions": [
+        {
+          "texte": "Comment l'ampèremètre et le voltmètre doivent-ils être branchés ? Quel est le rôle de la résistance variable ?",
+          "aides": []
+        },
+        {
+          "texte": "Une source idéale de tension maintient la même tension à ses bornes quelle que soit l'intensité. La pile est-elle une source idéale ? Justifie à l'aide du graphique.",
+          "aides": []
+        },
+        {
+          "texte": "La caractéristique est modélisée par une droite d'équation U = E − r × I. Détermine graphiquement la tension à vide E et la résistance interne r de la pile.",
+          "aides": [
+            "E est la valeur de U quand I = 0 : lis-la sur l'axe vertical.",
+            "Le coefficient directeur de la droite est (U₂ − U₁) / (I₂ − I₁), avec deux points éloignés pris sur la droite ; il vaut −r."
+          ]
+        },
+        {
+          "texte": "Par maladresse, les deux bornes de la pile sont reliées par un fil de résistance négligeable (court-circuit). Calcule l'intensité de court-circuit, puis la puissance dissipée par effet Joule dans la pile. Quel risque cela présente-t-il ?",
+          "aides": [
+            "En court-circuit, la tension aux bornes de la pile est nulle : écris U = 0 dans le modèle U = E − r × I.",
+            "La puissance dissipée dans la pile se calcule avec sa résistance interne : P<sub>J</sub> = r × I²."
+          ]
+        },
+        {
+          "texte": "La pile alimente maintenant l'ampoule de la lampe, traversée par un courant d'intensité I = 0,30 A.<br>a. Calcule la tension aux bornes de la pile et la puissance électrique reçue par l'ampoule.<br>b. Calcule la puissance dissipée par effet Joule dans la pile et la puissance E × I. Écris le bilan de puissance de la pile.<br>c. Calcule le rendement de la pile, rapport de la puissance fournie à l'ampoule à la puissance E × I.",
+          "aides": [
+            "Utilise le modèle de la question 3 avec I = 0,30 A pour obtenir U, puis P = U × I.",
+            "Multiplie chaque terme de U = E − r × I par I : que représente chacun des trois termes obtenus ?"
+          ]
+        },
+        {
+          "texte": "Une pile usée a encore une tension à vide de 4,50 V, mais sa résistance interne vaut 9,0 Ω. Calcule la tension à ses bornes lorsqu'elle débite 0,30 A et explique pourquoi la lampe éclaire beaucoup moins bien.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'ampèremètre se branche en série dans le circuit, le voltmètre en dérivation aux bornes de la pile. La résistance variable permet de modifier l'intensité du courant débité par la pile, donc d'obtenir plusieurs points de mesure.",
+        "<strong>2.</strong> Non : la tension aux bornes de la pile diminue quand l'intensité augmente (de 4,50 V à 3,59 V entre 0 et 0,60 A). La caractéristique n'est pas une droite horizontale.",
+        "<strong>3.</strong> E est l'ordonnée à l'origine de la droite : E = 4,50 V. Le coefficient directeur de la droite vaut −r ; avec deux points éloignés de la droite, (0 ; 4,50) et (0,60 ; 3,60) : coefficient directeur = (3,60 − 4,50) / (0,60 − 0) = −1,5 V·A⁻¹, donc r = 1,5 Ω. Modèle : U = 4,50 − 1,5 × I (U en V, I en A).",
+        "<strong>4.</strong> En court-circuit, U = 0, donc E − r × I<sub>cc</sub> = 0 : I<sub>cc</sub> = E / r = 4,50 / 1,5 = 3,0 A. P<sub>J</sub> = r × I<sub>cc</sub>² = 1,5 × 3,0² = 13,5 W ≈ 14 W, dissipés à l'intérieur de la pile : elle chauffe fortement, se décharge très vite et peut fuir, voire exploser pour une batterie. C'est une conséquence pratique de la résistance interne (elle limite toutefois l'intensité de court-circuit).",
+        "<strong>5.</strong> a. U = E − r × I = 4,50 − 1,5 × 0,30 = 4,05 V. P<sub>ampoule</sub> = U × I = 4,05 × 0,30 = 1,22 W (1,215 W).",
+        "b. P<sub>J</sub> = r × I² = 1,5 × 0,30² = 0,135 W ≈ 0,14 W. E × I = 4,50 × 0,30 = 1,35 W. Bilan : E × I = U × I + r × I², soit 1,35 W = 1,215 W + 0,135 W. La puissance E × I convertie par la pile (à partir de l'énergie chimique) est en partie fournie au circuit, en partie dissipée en chaleur dans la pile.",
+        "c. η = 1,215 / 1,35 = 0,90, soit 90 %.",
+        "<strong>6.</strong> U = 4,50 − 9,0 × 0,30 = 1,8 V. La tension à vide est inchangée, mais la chute de tension r × I aux bornes de la résistance interne est devenue très grande : l'ampoule reçoit une tension bien plus faible, donc beaucoup moins de puissance. Mesurer une pile « à vide » au voltmètre ne permet donc pas de savoir si elle est usée.",
+        "<em>⚠ Erreur fréquente : prendre pour r le coefficient directeur lui-même (−1,5 Ω), ou lire la pente sur l'axe des tensions comme s'il commençait à 0. Une résistance est positive ; et l'axe commence ici à 3,40 V.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "La trottinette électrique",
+      "contexte": [
+        "La trottinette électrique de Sofiane est équipée d'une batterie « 36 V – 10,4 Ah ». Sur un trajet plat à 25 km·h⁻¹, le moteur est soumis à une tension U = 36,0 V et traversé par un courant d'intensité I = 8,6 A. La résistance des enroulements (bobinages en cuivre) du moteur vaut R = 0,40 Ω, et les frottements dans le moteur (roulements, engrenages) font perdre une puissance de 28 W.",
+        "Pour la recharge, le chargeur branché sur le secteur a un rendement de 88 %. Prix du kWh : 0,20 €."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"20\" y=\"120\" width=\"140\" height=\"90\" rx=\"8\" fill=\"#F3EEE4\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"90\" y=\"160\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Batterie</text><text x=\"90\" y=\"184\" text-anchor=\"middle\">36 V</text><rect x=\"300\" y=\"105\" width=\"170\" height=\"120\" rx=\"10\" fill=\"#1F4E5A\"/><text x=\"385\" y=\"172\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"20\" fill=\"#fff\">Moteur</text><circle cx=\"680\" cy=\"165\" r=\"52\" fill=\"#F3EEE4\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"680\" y=\"160\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Roue</text><text x=\"680\" y=\"182\" text-anchor=\"middle\" font-size=\"14\">(mouvement)</text><line x1=\"160\" y1=\"165\" x2=\"272\" y2=\"165\" stroke=\"#B5523B\" stroke-width=\"10\"/><polygon points=\"272,149 296,165 272,181\" fill=\"#B5523B\"/><text x=\"230\" y=\"95\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">énergie</text><text x=\"230\" y=\"115\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">…………</text><text x=\"230\" y=\"250\" text-anchor=\"middle\">P = …… W</text><line x1=\"470\" y1=\"165\" x2=\"600\" y2=\"165\" stroke=\"#C8962E\" stroke-width=\"10\"/><polygon points=\"600,149 624,165 600,181\" fill=\"#C8962E\"/><text x=\"535\" y=\"95\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">énergie</text><text x=\"535\" y=\"115\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">…………</text><text x=\"535\" y=\"250\" text-anchor=\"middle\">P = …… W</text><line x1=\"340\" y1=\"225\" x2=\"340\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"10\"/><polygon points=\"324,330 340,354 356,330\" fill=\"#3a3a3a\"/><line x1=\"430\" y1=\"225\" x2=\"430\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"10\"/><polygon points=\"414,330 430,354 446,330\" fill=\"#3a3a3a\"/><text x=\"250\" y=\"395\" text-anchor=\"middle\" font-weight=\"bold\">transfert thermique</text><text x=\"250\" y=\"417\" text-anchor=\"middle\">(effet ……………)</text><text x=\"250\" y=\"447\" text-anchor=\"middle\">P = …… W</text><text x=\"530\" y=\"395\" text-anchor=\"middle\" font-weight=\"bold\">pertes par frottements</text><text x=\"530\" y=\"417\" text-anchor=\"middle\">(roulements, engrenages)</text><text x=\"530\" y=\"447\" text-anchor=\"middle\">P = 28 W</text><text x=\"380\" y=\"40\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">Diagramme de conversion d'énergie du moteur (à compléter)</text></svg>",
+      "questions": [
+        {
+          "texte": "Recopie et complète le diagramme de conversion d'énergie du moteur (nature des énergies, nom de l'effet, valeurs des puissances), après avoir calculé la puissance électrique reçue par le moteur et la puissance dissipée par effet Joule dans ses enroulements.",
+          "aides": [
+            "Le moteur reçoit de l'énergie électrique et fournit de l'énergie mécanique à la roue ; le reste est perdu.",
+            "Puissance reçue : P = U × I ; puissance perdue dans les enroulements : P<sub>J</sub> = R × I²."
+          ]
+        },
+        {
+          "texte": "Déduis-en la puissance utile (mécanique) fournie par le moteur et son rendement.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie stockée dans la batterie pleine, en Wh, puis estime l'autonomie de la trottinette (en heures et minutes, puis en kilomètres) sur ce trajet. Le fabricant annonce « jusqu'à 30 km » : commente.",
+          "aides": [
+            "L'énergie stockée s'obtient en multipliant la charge (en Ah) par la tension (en V) : le résultat est en Wh.",
+            "Δt = E<sub>stockée</sub> / P, avec E en Wh et P en W : Δt est en h. Convertis la partie décimale des heures en minutes, puis utilise d = v × Δt."
+          ]
+        },
+        {
+          "texte": "En montée, l'intensité qui traverse le moteur double. Par combien est multipliée la puissance perdue par effet Joule ? Pourquoi le moteur chauffe-t-il davantage ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie prélevée sur le secteur pour une recharge complète, puis le coût de cette recharge.",
+          "aides": [
+            "Le chargeur perd de l'énergie : il prélève sur le secteur plus d'énergie qu'il n'en stocke dans la batterie.",
+            "Écris le rendement du chargeur : η = E<sub>stockée</sub> / E<sub>secteur</sub>, puis isole E<sub>secteur</sub>."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> P<sub>absorbée</sub> = U × I = 36,0 × 8,6 = 310 W (309,6 W). P<sub>J</sub> = R × I² = 0,40 × 8,6² = 29,6 W. Diagramme : batterie → (énergie électrique, 310 W) → moteur → (énergie mécanique, P<sub>utile</sub>) → roue ; flèches de pertes : transfert thermique par effet Joule (29,6 W) et pertes par frottements (28 W).",
+        "<strong>2.</strong> Conservation de l'énergie : P<sub>utile</sub> = P<sub>absorbée</sub> − P<sub>J</sub> − P<sub>frottements</sub> = 309,6 − 29,6 − 28 = 252 W. Rendement : η = P<sub>utile</sub> / P<sub>absorbée</sub> = 252 / 309,6 = 0,814, soit 81 %.",
+        "<strong>3.</strong> E<sub>stockée</sub> = 36 V × 10,4 Ah = 374 Wh (374,4 Wh). Autonomie : Δt = E<sub>stockée</sub> / P<sub>absorbée</sub> = 374,4 / 309,6 = 1,21 h, soit environ 1 h 13 min. Distance : d = v × Δt = 25 × 1,21 = 30 km. Le calcul est cohérent avec l'annonce, mais celle-ci correspond à un trajet plat à vitesse constante : en montée, avec des démarrages fréquents, un vent contraire ou une batterie qui vieillit, l'autonomie réelle est plus faible (« jusqu'à »).",
+        "<strong>4.</strong> P<sub>J</sub> = R × I² : si I est multipliée par 2, P<sub>J</sub> est multipliée par 2² = 4 (0,40 × 17,2² = 118 W). Le moteur reçoit plus d'énergie électrique, et une part croissante est convertie en énergie thermique dans les enroulements.",
+        "<strong>5.</strong> η<sub>chargeur</sub> = E<sub>stockée</sub> / E<sub>secteur</sub>, donc E<sub>secteur</sub> = 374,4 / 0,88 = 425 Wh = 0,425 kWh. Coût = 0,425 × 0,20 = 0,085 €, soit environ 8,5 centimes pour une recharge complète.",
+        "<em>⚠ Erreur fréquente : calculer un rendement supérieur à 1 (en divisant P<sub>absorbée</sub> par P<sub>utile</sub>), ou multiplier par η au lieu de diviser à la question 5. Un convertisseur reçoit toujours plus d'énergie qu'il n'en fournit d'utile : E<sub>secteur</sub> &gt; E<sub>stockée</sub>.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un panneau solaire pour le week-end",
+      "contexte": [
+        "Doc. 1 — Le panneau. Pour un week-end en camping, Emma achète un panneau photovoltaïque pliable de surface S = 0,15 m², destiné à recharger une batterie externe. Le vendeur précise : « cellules au silicium, rendement jusqu'à 23 % ». Par une belle journée, à la mi-journée, le panneau orienté face au Soleil reçoit une puissance lumineuse de 800 W par mètre carré.",
+        "Doc. 2 — Caractéristique du panneau. Dans ces conditions d'éclairement, Emma relève la tension U aux bornes du panneau et l'intensité I du courant qu'il débite pour différentes résistances branchées à ses bornes (points reportés sur la figure ci-dessous). I (A) : 0 ; 1,0 ; 2,0 ; 3,0 ; 3,5 ; 4,0 ; 4,2 ; 4,4 ; 4,5. U (V) : 7,20 ; 6,97 ; 6,71 ; 6,38 ; 6,15 ; 5,80 ; 5,56 ; 5,07 ; 0."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"112.5\" y1=\"20\" x2=\"112.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"145.0\" y1=\"20\" x2=\"145.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"145.0\" y=\"422\" text-anchor=\"middle\">0,5</text><line x1=\"177.5\" y1=\"20\" x2=\"177.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"210.0\" y1=\"20\" x2=\"210.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"210.0\" y=\"422\" text-anchor=\"middle\">1</text><line x1=\"242.5\" y1=\"20\" x2=\"242.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"275.0\" y1=\"20\" x2=\"275.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"275.0\" y=\"422\" text-anchor=\"middle\">1,5</text><line x1=\"307.5\" y1=\"20\" x2=\"307.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"340.0\" y1=\"20\" x2=\"340.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"340.0\" y=\"422\" text-anchor=\"middle\">2</text><line x1=\"372.5\" y1=\"20\" x2=\"372.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"405.0\" y=\"422\" text-anchor=\"middle\">2,5</text><line x1=\"437.5\" y1=\"20\" x2=\"437.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"470.0\" y1=\"20\" x2=\"470.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"470.0\" y=\"422\" text-anchor=\"middle\">3</text><line x1=\"502.5\" y1=\"20\" x2=\"502.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"535.0\" y1=\"20\" x2=\"535.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"535.0\" y=\"422\" text-anchor=\"middle\">3,5</text><line x1=\"567.5\" y1=\"20\" x2=\"567.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"600.0\" y1=\"20\" x2=\"600.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"600.0\" y=\"422\" text-anchor=\"middle\">4</text><line x1=\"632.5\" y1=\"20\" x2=\"632.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"665.0\" y1=\"20\" x2=\"665.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"665.0\" y=\"422\" text-anchor=\"middle\">4,5</text><line x1=\"697.5\" y1=\"20\" x2=\"697.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">5</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"376.2\" x2=\"730\" y2=\"376.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"352.5\" x2=\"730\" y2=\"352.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"357.5\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"328.8\" x2=\"730\" y2=\"328.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"305.0\" x2=\"730\" y2=\"305.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"310.0\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"281.2\" x2=\"730\" y2=\"281.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"257.5\" x2=\"730\" y2=\"257.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"262.5\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"233.8\" x2=\"730\" y2=\"233.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"210.0\" x2=\"730\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"215.0\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"186.2\" x2=\"730\" y2=\"186.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"162.5\" x2=\"730\" y2=\"162.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"167.5\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"138.8\" x2=\"730\" y2=\"138.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"115.0\" x2=\"730\" y2=\"115.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"120.0\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"91.2\" x2=\"730\" y2=\"91.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"67.5\" x2=\"730\" y2=\"67.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"72.5\" text-anchor=\"end\">7</text><line x1=\"80\" y1=\"43.8\" x2=\"730\" y2=\"43.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">8</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">intensité I (A)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">tension U aux bornes du panneau (V)</text><polyline points=\"80.0,58.0 81.5,58.1 82.9,58.2 84.4,58.3 85.8,58.5 87.3,58.6 88.8,58.7 90.2,58.8 91.7,58.9 93.2,59.0 94.6,59.1 96.1,59.3 97.5,59.4 99.0,59.5 100.5,59.6 101.9,59.7 103.4,59.8 104.9,60.0 106.3,60.1 107.8,60.2 109.2,60.3 110.7,60.4 112.2,60.5 113.6,60.7 115.1,60.8 116.6,60.9 118.0,61.0 119.5,61.1 120.9,61.2 122.4,61.4 123.9,61.5 125.3,61.6 126.8,61.7 128.3,61.8 129.7,62.0 131.2,62.1 132.6,62.2 134.1,62.3 135.6,62.4 137.0,62.5 138.5,62.7 140.0,62.8 141.4,62.9 142.9,63.0 144.3,63.1 145.8,63.3 147.3,63.4 148.7,63.5 150.2,63.6 151.7,63.7 153.1,63.9 154.6,64.0 156.0,64.1 157.5,64.2 159.0,64.4 160.4,64.5 161.9,64.6 163.4,64.7 164.8,64.8 166.3,65.0 167.7,65.1 169.2,65.2 170.7,65.3 172.1,65.5 173.6,65.6 175.1,65.7 176.5,65.8 178.0,66.0 179.4,66.1 180.9,66.2 182.4,66.3 183.8,66.5 185.3,66.6 186.8,66.7 188.2,66.8 189.7,67.0 191.1,67.1 192.6,67.2 194.1,67.3 195.5,67.5 197.0,67.6 198.5,67.7 199.9,67.8 201.4,68.0 202.8,68.1 204.3,68.2 205.8,68.3 207.2,68.5 208.7,68.6 210.2,68.7 211.6,68.9 213.1,69.0 214.5,69.1 216.0,69.2 217.5,69.4 218.9,69.5 220.4,69.6 221.9,69.8 223.3,69.9 224.8,70.0 226.2,70.2 227.7,70.3 229.2,70.4 230.6,70.5 232.1,70.7 233.6,70.8 235.0,70.9 236.5,71.1 237.9,71.2 239.4,71.3 240.9,71.5 242.3,71.6 243.8,71.7 245.3,71.9 246.7,72.0 248.2,72.1 249.6,72.3 251.1,72.4 252.6,72.5 254.0,72.7 255.5,72.8 257.0,72.9 258.4,73.1 259.9,73.2 261.3,73.4 262.8,73.5 264.3,73.6 265.7,73.8 267.2,73.9 268.7,74.0 270.1,74.2 271.6,74.3 273.0,74.5 274.5,74.6 276.0,74.7 277.4,74.9 278.9,75.0 280.4,75.2 281.8,75.3 283.3,75.4 284.7,75.6 286.2,75.7 287.7,75.9 289.1,76.0 290.6,76.1 292.1,76.3 293.5,76.4 295.0,76.6 296.4,76.7 297.9,76.9 299.4,77.0 300.8,77.1 302.3,77.3 303.8,77.4 305.2,77.6 306.7,77.7 308.1,77.9 309.6,78.0 311.1,78.2 312.5,78.3 314.0,78.5 315.5,78.6 316.9,78.7 318.4,78.9 319.8,79.0 321.3,79.2 322.8,79.3 324.2,79.5 325.7,79.6 327.2,79.8 328.6,79.9 330.1,80.1 331.5,80.2 333.0,80.4 334.5,80.5 335.9,80.7 337.4,80.9 338.9,81.0 340.3,81.2 341.8,81.3 343.2,81.5 344.7,81.6 346.2,81.8 347.6,81.9 349.1,82.1 350.6,82.2 352.0,82.4 353.5,82.6 354.9,82.7 356.4,82.9 357.9,83.0 359.3,83.2 360.8,83.4 362.3,83.5 363.7,83.7 365.2,83.8 366.6,84.0 368.1,84.2 369.6,84.3 371.0,84.5 372.5,84.7 374.0,84.8 375.4,85.0 376.9,85.1 378.3,85.3 379.8,85.5 381.3,85.6 382.7,85.8 384.2,86.0 385.7,86.1 387.1,86.3 388.6,86.5 390.0,86.7 391.5,86.8 393.0,87.0 394.4,87.2 395.9,87.3 397.4,87.5 398.8,87.7 400.3,87.9 401.7,88.0 403.2,88.2 404.7,88.4 406.1,88.6 407.6,88.7 409.1,88.9 410.5,89.1 412.0,89.3 413.4,89.5 414.9,89.6 416.4,89.8 417.8,90.0 419.3,90.2 420.8,90.4 422.2,90.6 423.7,90.7 425.1,90.9 426.6,91.1 428.1,91.3 429.5,91.5 431.0,91.7 432.5,91.9 433.9,92.0 435.4,92.2 436.8,92.4 438.3,92.6 439.8,92.8 441.2,93.0 442.7,93.2 444.2,93.4 445.6,93.6 447.1,93.8 448.5,94.0 450.0,94.2 451.5,94.4 452.9,94.6 454.4,94.8 455.9,95.0 457.3,95.2 458.8,95.4 460.2,95.6 461.7,95.8 463.2,96.0 464.6,96.2 466.1,96.5 467.6,96.7 469.0,96.9 470.5,97.1 471.9,97.3 473.4,97.5 474.9,97.7 476.3,98.0 477.8,98.2 479.3,98.4 480.7,98.6 482.2,98.8 483.6,99.1 485.1,99.3 486.6,99.5 488.0,99.7 489.5,100.0 491.0,100.2 492.4,100.4 493.9,100.7 495.3,100.9 496.8,101.1 498.3,101.4 499.7,101.6 501.2,101.9 502.7,102.1 504.1,102.4 505.6,102.6 507.0,102.8 508.5,103.1 510.0,103.3 511.4,103.6 512.9,103.9 514.4,104.1 515.8,104.4 517.3,104.6 518.7,104.9 520.2,105.2 521.7,105.4 523.1,105.7 524.6,106.0 526.1,106.2 527.5,106.5 529.0,106.8 530.4,107.1 531.9,107.4 533.4,107.6 534.8,107.9 536.3,108.2 537.8,108.5 539.2,108.8 540.7,109.1 542.1,109.4 543.6,109.7 545.1,110.0 546.5,110.3 548.0,110.6 549.5,110.9 550.9,111.3 552.4,111.6 553.8,111.9 555.3,112.2 556.8,112.6 558.2,112.9 559.7,113.2 561.2,113.6 562.6,113.9 564.1,114.3 565.5,114.6 567.0,115.0 568.5,115.4 569.9,115.7 571.4,116.1 572.9,116.5 574.3,116.9 575.8,117.3 577.2,117.7 578.7,118.0 580.2,118.5 581.6,118.9 583.1,119.3 584.6,119.7 586.0,120.1 587.5,120.6 588.9,121.0 590.4,121.5 591.9,121.9 593.3,122.4 594.8,122.9 596.3,123.4 597.7,123.8 599.2,124.4 600.6,124.9 602.1,125.4 603.6,125.9 605.0,126.5 606.5,127.0 608.0,127.6 609.4,128.2 610.9,128.8 612.3,129.4 613.8,130.0 615.3,130.6 616.7,131.3 618.2,132.0 619.7,132.7 621.1,133.4 622.6,134.1 624.0,134.9 625.5,135.7 627.0,136.5 628.4,137.4 629.9,138.2 631.4,139.2 632.8,140.1 634.3,141.1 635.7,142.1 637.2,143.2 638.7,144.4 640.1,145.6 641.6,146.8 643.1,148.2 644.5,149.6 646.0,151.2 647.4,152.8 648.9,154.6 650.4,156.6 651.8,158.8 653.3,161.2 654.8,163.9 656.2,167.0 657.7,170.8 659.1,175.3 660.6,181.1 662.1,189.2 663.5,203.1 665.0,400.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><line x1=\"74.0\" y1=\"52.0\" x2=\"86.0\" y2=\"64.0\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"74.0\" y1=\"64.0\" x2=\"86.0\" y2=\"52.0\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"204.0\" y1=\"62.9\" x2=\"216.0\" y2=\"74.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"204.0\" y1=\"74.9\" x2=\"216.0\" y2=\"62.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"334.0\" y1=\"75.3\" x2=\"346.0\" y2=\"87.3\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"334.0\" y1=\"87.3\" x2=\"346.0\" y2=\"75.3\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"464.0\" y1=\"90.9\" x2=\"476.0\" y2=\"102.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"464.0\" y1=\"102.9\" x2=\"476.0\" y2=\"90.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"529.0\" y1=\"101.9\" x2=\"541.0\" y2=\"113.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"529.0\" y1=\"113.9\" x2=\"541.0\" y2=\"101.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"594.0\" y1=\"118.5\" x2=\"606.0\" y2=\"130.5\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"594.0\" y1=\"130.5\" x2=\"606.0\" y2=\"118.5\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"620.0\" y1=\"129.9\" x2=\"632.0\" y2=\"141.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"620.0\" y1=\"141.9\" x2=\"632.0\" y2=\"129.9\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"646.0\" y1=\"153.2\" x2=\"658.0\" y2=\"165.2\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"646.0\" y1=\"165.2\" x2=\"658.0\" y2=\"153.2\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"659.0\" y1=\"394.0\" x2=\"671.0\" y2=\"406.0\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><line x1=\"659.0\" y1=\"406.0\" x2=\"671.0\" y2=\"394.0\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><text x=\"119.0\" y=\"276.5\" fill=\"#B5523B\" font-weight=\"bold\">× points du tableau (doc. 2)</text><text x=\"119.0\" y=\"300.5\" fill=\"#1F4E5A\" font-weight=\"bold\">— caractéristique du panneau</text><text x=\"119.0\" y=\"324.5\" fill=\"#3a3a3a\">(800 W·m⁻², panneau face au Soleil)</text></svg>",
+      "contexte2": [
+        "Doc. 3 — La batterie externe. Elle porte l'indication « 20 000 mAh – 3,7 V ». Un régulateur fait fonctionner le panneau au point où il fournit sa puissance maximale ; le rendement global de la chaîne « régulateur + charge de la batterie » est de 80 %. Sur l'emballage du panneau, on lit : « Rechargez votre batterie 20 000 mAh en 3 h en plein soleil »."
+      ],
+      "questions": [
+        {
+          "texte": "À l'aide du doc. 2, calcule la puissance électrique fournie par le panneau pour chaque point de mesure. Pour quel point de fonctionnement (U ; I) la puissance est-elle maximale ? Donne la valeur de P<sub>max</sub>.",
+          "aides": [
+            "Calcule U × I pour chaque colonne du tableau.",
+            "Le point de puissance maximale n'est ni à I = 0 ni au court-circuit : compare les valeurs entre 4,0 A et 4,4 A."
+          ]
+        },
+        {
+          "texte": "Calcule la puissance lumineuse reçue par le panneau, puis son rendement de conversion. Compare-le à l'indication du vendeur (écart relatif) et propose une explication de l'écart.",
+          "aides": []
+        },
+        {
+          "texte": "Peut-on modéliser le panneau par une source réelle de tension, de caractéristique U = E − r × I, sur tout son domaine de fonctionnement ?<br>a. Calcule la résistance r du modèle affine passant par les points I = 0 et I = 3,0 A.<br>b. Quelle tension ce modèle prévoit-il pour I = 4,4 A ? Quelle intensité de court-circuit prévoit-il ? Compare aux mesures et conclus.",
+          "aides": [
+            "Le modèle affine passe par (0 ; 7,20) et (3,0 ; 6,38) : son coefficient directeur vaut −r.",
+            "Remplace I par 4,4 A dans U = E − r × I, puis cherche l'intensité pour laquelle U = 0, et compare à la figure."
+          ]
+        },
+        {
+          "texte": "Calcule l'énergie stockée dans la batterie externe pleine, en Wh puis en J, et la charge électrique correspondante, en C.",
+          "aides": [
+            "Comme pour le smartphone : 1 Ah = 3 600 C.",
+            "Énergie (Wh) = charge (Ah) × tension (V) ; puis 1 Wh = 3 600 J."
+          ]
+        },
+        {
+          "texte": "Estime la durée nécessaire pour recharger entièrement la batterie dans les conditions du doc. 1. L'indication de l'emballage est-elle vérifiée ? Calcule l'écart relatif.",
+          "aides": [
+            "Seuls 80 % de P<sub>max</sub> sont réellement stockés dans la batterie.",
+            "Δt = E<sub>stockée</sub> / P<sub>stockée</sub>, avec E en Wh et P en W donne une durée en h.",
+            "Écart relatif = (valeur calculée − valeur annoncée) / valeur annoncée."
+          ]
+        },
+        {
+          "texte": "Les fabricants mesurent les performances de leurs panneaux sous une puissance lumineuse de référence de 1 000 W·m⁻². En admettant que la puissance maximale du panneau est proportionnelle à la puissance lumineuse reçue, recalcule la durée de recharge. Rédige un avis argumenté sur l'indication de l'emballage et sur ce qu'Emma peut réellement espérer pendant son week-end.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> P = U × I. Puissances (W) : 0 ; 6,97 ; 13,4 ; 19,1 ; 21,5 ; 23,2 ; 23,4 ; 22,3 ; 0. La puissance est maximale pour le point (5,56 V ; 4,2 A) : P<sub>max</sub> = 5,56 × 4,2 = 23,4 W (23,35 W). Aux deux extrémités (circuit ouvert, I = 0, ou court-circuit, U = 0), le panneau ne fournit aucune puissance.",
+        "<strong>2.</strong> P<sub>lum</sub> = 800 × 0,15 = 120 W. η = P<sub>max</sub> / P<sub>lum</sub> = 23,35 / 120 = 0,195, soit environ 19 %. Écart relatif à la valeur du vendeur : (23 − 19,5) / 23 = 15 %. Explications possibles : 23 % est un maximum (« jusqu'à ») obtenu pour une cellule seule et dans les conditions idéales ; le panneau comporte des espaces entre les cellules et des connexions, les cellules chauffent au soleil (le rendement diminue avec la température), l'orientation n'est pas parfaite, les mesures ont leurs incertitudes.",
+        "<strong>3.</strong> a. r = (U(0) − U(3,0)) / (3,0 − 0) = (7,20 − 6,38) / 3,0 = 0,27 Ω, avec E = 7,20 V.",
+        "b. Le modèle prévoit U = 7,20 − 0,27 × 4,4 = 6,0 V, alors que la mesure donne 5,07 V. Il prévoit une intensité de court-circuit E / r = 7,20 / 0,273 ≈ 26 A (en gardant r non arrondie), alors que le panneau ne débite jamais plus de 4,5 A. Le modèle affine ne convient que pour les faibles intensités (en gros I &lt; 3 A) : au-delà, la caractéristique s'effondre. Le panneau n'est pas une source réelle de tension au sens du modèle (il se comporte plutôt, près du court-circuit, comme une source d'intensité presque constante).",
+        "<strong>4.</strong> Charge : Q = 20 000 mAh = 20,0 A × 3 600 s = 7,2 × 10⁴ C. Énergie : E<sub>stockée</sub> = 20,0 Ah × 3,7 V = 74 Wh = 74 × 3 600 = 2,7 × 10⁵ J (2,66 × 10⁵ J).",
+        "<strong>5.</strong> Puissance effectivement stockée : P<sub>stockée</sub> = 0,80 × 23,35 = 18,7 W. Durée : Δt = E<sub>stockée</sub> / P<sub>stockée</sub> = 74 / 18,7 = 3,96 h ≈ 4,0 h (environ 3 h 58 min). L'indication de 3 h n'est pas vérifiée : écart relatif = (3,96 − 3,0) / 3,0 = 32 %.",
+        "<strong>6.</strong> Sous 1 000 W·m⁻², P<sub>max</sub> = 23,35 × 1 000 / 800 = 29,2 W, P<sub>stockée</sub> = 0,80 × 29,2 = 23,4 W et Δt = 74 / 23,4 = 3,2 h. Éléments attendus pour l'avis : l'indication « 3 h » est proche de ce calcul (3,2 h) ; elle correspond donc à des conditions de référence rarement atteintes (1 000 W·m⁻², panneau froid, parfaitement orienté) ; sous 800 W·m⁻² il faut déjà environ 4 h. Pendant un week-end, l'éclairement varie au cours de la journée (matin, soir), avec les nuages et l'orientation du panneau par rapport au Soleil : la puissance moyenne sera nettement inférieure à P<sub>max</sub>, et il faudra plutôt une journée entière de soleil pour une recharge complète. L'indication est donc optimiste ; Emma pourra cependant recharger plusieurs fois son téléphone avec la batterie.",
+        "<em>⚠ Erreur fréquente : multiplier les 20 000 mAh par 3 600 et annoncer une énergie en joule. Le produit mAh × s donne une charge (en mC) ; pour obtenir une énergie, il faut multiplier la charge par la tension de la batterie.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,727 @@
+{
+  "id": 16,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Intensité sonore et niveau d'intensité sonore",
+        "icon": "🔊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Intensité sonore I",
+            "text": "Puissance sonore reçue par unité de surface. S'exprime en W·m⁻². Elle diminue quand on s'éloigne de la source."
+          },
+          {
+            "type": "def",
+            "term": "Niveau d'intensité sonore L",
+            "text": "Grandeur logarithmique, en décibels (dB), qui rend compte de la perception auditive : L = 10·log(I / I₀), avec I₀ = 1,0×10⁻¹² W·m⁻² l'intensité de référence (seuil d'audibilité)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Situation",
+              "Niveau L (dB)"
+            ],
+            "rows": [
+              [
+                "Seuil d'audibilité",
+                "0 dB"
+              ],
+              [
+                "Conversation calme",
+                "60 dB"
+              ],
+              [
+                "Rue bruyante",
+                "80 dB"
+              ],
+              [
+                "Discothèque",
+                "100 dB"
+              ],
+              [
+                "Seuil de douleur",
+                "120 dB"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Propriété importante : quand I est multipliée par 10, L augmente de 10 dB. Quand I est multipliée par 2, L augmente d'environ 3 dB."
+          }
+        ]
+      },
+      {
+        "title": "2. Atténuation d'une onde",
+        "icon": "📉",
+        "content": [
+          {
+            "type": "def",
+            "term": "Atténuation géométrique",
+            "text": "Pour une source ponctuelle émettant une onde sphérique de puissance P, cette puissance se répartit sur une sphère de surface 4πr² qui croît avec la distance r. L'intensité décroît donc en 1/r² : I(r) = P / (4π·r²)."
+          },
+          {
+            "type": "formula",
+            "label": "Loi de l'inverse du carré",
+            "text": "I(r) = P / (4π·r²)"
+          },
+          {
+            "type": "def",
+            "term": "Atténuation par absorption",
+            "text": "En plus de l'étalement géométrique, l'onde perd de l'énergie en traversant un milieu matériel (frottements, milieu non parfaitement transparent). Cette perte est caractérisée par un coefficient d'atténuation propre au milieu."
+          },
+          {
+            "type": "warn",
+            "text": "Ne pas confondre : l'atténuation géométrique existe même dans le vide (juste liée à la propagation dans l'espace), alors que l'atténuation par absorption dépend du milieu traversé."
+          }
+        ]
+      },
+      {
+        "title": "3. Effet Doppler : principe",
+        "icon": "🚗",
+        "content": [
+          {
+            "type": "def",
+            "term": "Effet Doppler",
+            "text": "Modification de la fréquence perçue par un observateur lorsqu'il existe un mouvement relatif entre la source de l'onde (sonore ou électromagnétique) et l'observateur."
+          },
+          {
+            "type": "text",
+            "text": "Si la source se <strong>rapproche</strong> de l'observateur, la fréquence reçue f' est <strong>supérieure</strong> à la fréquence émise f (son plus aigu, lumière décalée vers le bleu). Si la source <strong>s'éloigne</strong>, f' est <strong>inférieure</strong> à f (son plus grave, lumière décalée vers le rouge, on parle de « redshift »)."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 220\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"vArrow16\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#a44ff7\"/></marker></defs><circle cx=\"80\" cy=\"110\" r=\"210\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\"/><circle cx=\"140\" cy=\"110\" r=\"160\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\"/><circle cx=\"200\" cy=\"110\" r=\"110\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\"/><circle cx=\"260\" cy=\"110\" r=\"60\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\"/><circle cx=\"310\" cy=\"110\" r=\"15\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\"/><line x1=\"70\" y1=\"110\" x2=\"320\" y2=\"110\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><circle cx=\"320\" cy=\"110\" r=\"6\" fill=\"#a44ff7\"/><line x1=\"320\" y1=\"110\" x2=\"365\" y2=\"110\" stroke=\"#a44ff7\" stroke-width=\"2.2\" marker-end=\"url(#vArrow16)\"/><text x=\"330\" y=\"100\" font-size=\"12\" fill=\"#a44ff7\" font-weight=\"600\">v</text><text x=\"395\" y=\"55\" font-size=\"12\" fill=\"#1B2420\" font-weight=\"600\">f' &gt; f</text><text x=\"390\" y=\"71\" font-size=\"10\" fill=\"#5C6B60\">(aigu, devant)</text><text x=\"15\" y=\"55\" font-size=\"12\" fill=\"#1B2420\" font-weight=\"600\">f' &lt; f</text><text x=\"8\" y=\"71\" font-size=\"10\" fill=\"#5C6B60\">(grave, derrière)</text></svg>",
+            "caption": "Effet Doppler : la source en mouvement rattrape en partie ses propres ondes émises — les fronts d'onde se resserrent devant elle (fréquence perçue plus grande) et s'écartent derrière (fréquence perçue plus faible)."
+          }
+        ]
+      },
+      {
+        "title": "4. Décalage Doppler : expression quantitative",
+        "icon": "🧮",
+        "content": [
+          {
+            "type": "formula",
+            "label": "Décalage Doppler (approximation v ≪ célérité)",
+            "text": "Δf / f = ± v / c   (onde électromagnétique)\nΔf / f = ± v / v_son   (onde sonore)"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Symbole",
+              "Unité"
+            ],
+            "rows": [
+              [
+                "Fréquence émise",
+                "f",
+                "Hz"
+              ],
+              [
+                "Fréquence reçue",
+                "f'",
+                "Hz"
+              ],
+              [
+                "Décalage Doppler",
+                "Δf = f' − f",
+                "Hz"
+              ],
+              [
+                "Vitesse relative source/observateur",
+                "v",
+                "m·s⁻¹"
+              ],
+              [
+                "Célérité de l'onde dans le milieu",
+                "c ou v_son",
+                "m·s⁻¹"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Convention de signe : Δf > 0 (fréquence reçue plus grande) lors d'un rapprochement, Δf < 0 lors d'un éloignement."
+          }
+        ]
+      },
+      {
+        "title": "5. Applications",
+        "icon": "🛰️",
+        "content": [
+          {
+            "type": "text",
+            "text": "<strong>Radars Doppler</strong> : mesure de la vitesse d'un véhicule (police) ou des précipitations (météorologie) à partir du décalage de fréquence de l'onde réfléchie."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Échographie Doppler</strong> : mesure de la vitesse du sang dans les vaisseaux à partir du décalage de fréquence des ultrasons réfléchis par les globules rouges en mouvement."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Astrophysique</strong> : le décalage vers le rouge (redshift) de la lumière des galaxies lointaines montre qu'elles s'éloignent de nous, preuve de l'expansion de l'Univers. La méthode des vitesses radiales (oscillation Doppler de la lumière d'une étoile) permet aussi de détecter des exoplanètes."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Un son a une intensité I = 1,0 × 10⁻⁵ W·m⁻² (I₀ = 1,0 × 10⁻¹² W·m⁻²). Son niveau d'intensité sonore L = 10 log(I / I₀) vaut :",
+      "opts": [
+        "−70 dB",
+        "7,0 dB",
+        "70 dB",
+        "1,0 × 10⁸ dB"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "niveau-rapport-inverse",
+          "texte": "Inverser le rapport : 10 log(I₀ / I) = −70 dB"
+        },
+        {
+          "code": "niveau-oubli-facteur-10",
+          "texte": "Oublier le facteur 10 : log(I / I₀) = 7,0"
+        },
+        null,
+        {
+          "code": "niveau-oubli-log",
+          "texte": "Oublier le logarithme : 10 × I / I₀ = 1,0 × 10⁸"
+        }
+      ],
+      "exp": "L = 10 log(1,0 × 10⁻⁵ / 1,0 × 10⁻¹²) = 10 log(10⁷) = 70 dB. Attention : l'échelle des décibels est logarithmique."
+    },
+    {
+      "q": "Une source sonore produit un niveau L = 60 dB en un point. On allume une seconde source identique au même endroit. Le niveau sonore devient :",
+      "opts": [
+        "120 dB, le niveau double",
+        "environ 63 dB",
+        "70 dB",
+        "60 dB, chaque source ayant le même niveau"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "niveau-double-avec-source",
+          "texte": "Croire que doubler la source double le niveau : ce sont les intensités qui s'ajoutent, pas les niveaux"
+        },
+        null,
+        {
+          "code": "doubler-vs-decupler",
+          "texte": "Confondre ×2 et ×10 : +10 dB correspond à une intensité multipliée par 10"
+        },
+        {
+          "code": "intensites-ne-s-ajoutent-pas",
+          "texte": "Croire que deux sources identiques ne changent rien : leurs intensités s'additionnent"
+        }
+      ],
+      "exp": "L'intensité double : L' = L + 10 log 2 ≈ 60 + 3 = 63 dB. Attention : doubler l'intensité ajoute environ 3 dB ; la multiplier par 10 ajoute 10 dB."
+    },
+    {
+      "q": "Pour une source ponctuelle sans absorption, quand on double la distance r à la source, l'intensité sonore I = P / (4πr²) est :",
+      "opts": [
+        "divisée par 4",
+        "divisée par 2",
+        "inchangée, car rien n'absorbe l'onde",
+        "divisée par 4, comme le niveau sonore L"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "intensite-inverse-distance",
+          "texte": "Croire que I varie en 1/r : la puissance se répartit sur une surface 4πr², donc en 1/r²"
+        },
+        {
+          "code": "attenuation-geometrique-vs-absorption",
+          "texte": "Oublier l'atténuation géométrique : même sans absorption, la puissance s'étale sur une surface plus grande"
+        },
+        {
+          "code": "niveau-proportionnel-intensite",
+          "texte": "Croire que L est proportionnel à I : diviser I par 4 retire seulement 6 dB environ"
+        }
+      ],
+      "exp": "I = P / (4πr²) : r doublée, I divisée par 2² = 4 (le niveau baisse d'environ 6 dB). Attention : l'atténuation géométrique existe même sans absorption."
+    },
+    {
+      "q": "L'atténuation géométrique d'une onde sonore :",
+      "opts": [
+        "est due à l'absorption de l'énergie sonore par l'air traversé",
+        "vient de l'étalement de la puissance sur une surface croissante",
+        "fait baisser la fréquence du son, qui devient plus grave",
+        "n'existe que dans les milieux denses, liquides ou solides"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "attenuation-geometrique-vs-absorption",
+          "texte": "Confondre atténuation géométrique (étalement) et atténuation par absorption (pertes dans le milieu)"
+        },
+        null,
+        {
+          "code": "attenuation-change-frequence",
+          "texte": "Croire que l'atténuation change la hauteur du son : elle diminue l'intensité, pas la fréquence"
+        },
+        {
+          "code": "attenuation-milieu-dense",
+          "texte": "Croire que l'atténuation n'existe que dans les milieux denses"
+        }
+      ],
+      "exp": "L'atténuation géométrique vient de l'étalement de la puissance sur une sphère de plus en plus grande ; l'absorption, elle, dépend du milieu. Attention : un son qui s'atténue n'en devient pas plus grave."
+    },
+    {
+      "q": "Une ambulance passe devant un piéton immobile. Le son de sa sirène :",
+      "opts": [
+        "est émis plus aigu quand l'ambulance approche",
+        "garde la même fréquence émise ; seule la fréquence perçue change",
+        "est perçu plus aigu quand l'ambulance s'éloigne",
+        "est perçu plus grave car moins intense quand elle s'éloigne"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "doppler-frequence-emise",
+          "texte": "Croire que la fréquence émise change : c'est la fréquence perçue qui est modifiée"
+        },
+        null,
+        {
+          "code": "doppler-sens-inverse",
+          "texte": "Inverser l'effet : le son est perçu plus aigu à l'approche, plus grave à l'éloignement"
+        },
+        {
+          "code": "hauteur-vs-intensite",
+          "texte": "Confondre hauteur (fréquence) et intensité sonore"
+        }
+      ],
+      "exp": "La sirène émet toujours la même fréquence ; le mouvement relatif modifie la fréquence perçue : plus aiguë à l'approche, plus grave à l'éloignement. Attention : la hauteur ne dépend pas de l'intensité."
+    },
+    {
+      "q": "Une source de fréquence f = 440 Hz se rapproche d'un observateur immobile à v = 20 m·s⁻¹ (v_son = 340 m·s⁻¹). Avec Δf / f = v / v_son, la fréquence perçue vaut environ :",
+      "opts": [
+        "414 Hz",
+        "26 Hz",
+        "7,5 × 10³ Hz",
+        "466 Hz"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "doppler-sens-inverse",
+          "texte": "Se tromper de signe : en rapprochement, la fréquence perçue est plus grande que la fréquence émise"
+        },
+        {
+          "code": "decalage-vs-frequence-percue",
+          "texte": "Donner le décalage Δf = 26 Hz au lieu de la fréquence perçue f' = f + Δf"
+        },
+        {
+          "code": "doppler-rapport-inverse",
+          "texte": "Inverser le rapport : f × v_son / v"
+        },
+        null
+      ],
+      "exp": "Δf = f × v / v_son = 440 × 20 / 340 ≈ 26 Hz ; en rapprochement f' = f + Δf ≈ 466 Hz. Attention : Δf est un décalage, pas la fréquence perçue."
+    },
+    {
+      "q": "La lumière reçue d'une galaxie lointaine est décalée vers le rouge (fréquences reçues plus faibles). On en déduit que cette galaxie :",
+      "opts": [
+        "se rapproche de nous",
+        "s'éloigne de nous",
+        "émet une lumière de couleur rouge",
+        "a perdu de l'énergie lumineuse à cause de la distance"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "doppler-sens-inverse",
+          "texte": "Inverser l'effet : une fréquence reçue plus faible correspond à un éloignement"
+        },
+        null,
+        {
+          "code": "decalage-vs-couleur-propre",
+          "texte": "Confondre décalage vers le rouge et couleur de l'astre : toutes les raies sont décalées"
+        },
+        {
+          "code": "decalage-vs-attenuation",
+          "texte": "Attribuer le décalage à la distance : la distance diminue l'intensité reçue, pas la fréquence"
+        }
+      ],
+      "exp": "Fréquence reçue plus faible que la fréquence émise : la source s'éloigne (effet Doppler). C'est l'un des indices de l'expansion de l'Univers."
+    },
+    {
+      "q": "Les raies d'une galaxie ont une fréquence relative diminuée de Δf / f = 1,0 × 10⁻³. Avec Δf / f = v / c (c = 3,0 × 10⁸ m·s⁻¹), sa vitesse d'éloignement vaut :",
+      "opts": [
+        "3,0 × 10⁵ m·s⁻¹",
+        "3,0 × 10¹¹ m·s⁻¹",
+        "0,34 m·s⁻¹",
+        "3,0 × 10² m·s⁻¹"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "doppler-rapport-inverse",
+          "texte": "Inverser la relation : c / (Δf / f) = 3,0 × 10¹¹ m·s⁻¹, plus que la vitesse de la lumière"
+        },
+        {
+          "code": "celerite-son-vs-lumiere",
+          "texte": "Utiliser la célérité du son (340 m·s⁻¹) pour une onde lumineuse"
+        },
+        {
+          "code": "conversion-km-m",
+          "texte": "Prendre c en km·s⁻¹ (3,0 × 10⁵) au lieu de m·s⁻¹"
+        }
+      ],
+      "exp": "v = c × Δf / f = 3,0 × 10⁸ × 1,0 × 10⁻³ = 3,0 × 10⁵ m·s⁻¹. Attention : pour la lumière, c est la célérité de la lumière ; une vitesse supérieure à c est impossible."
+    },
+    {
+      "q": "Un radar routier mesure la vitesse d'un véhicule en exploitant :",
+      "opts": [
+        "le décalage de fréquence de l'onde réfléchie par le véhicule",
+        "l'intensité de l'onde réfléchie, plus grande si le véhicule va vite",
+        "la durée de l'aller-retour de l'onde",
+        "l'atténuation de l'onde réfléchie"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "doppler-vs-intensite",
+          "texte": "Croire que l'intensité reçue dépend de la vitesse : c'est la fréquence qui est décalée"
+        },
+        {
+          "code": "duree-aller-retour-vs-vitesse",
+          "texte": "Confondre mesure de distance (durée d'aller-retour) et mesure de vitesse (effet Doppler)"
+        },
+        {
+          "code": "doppler-vs-attenuation",
+          "texte": "Confondre atténuation et effet Doppler"
+        }
+      ],
+      "exp": "L'onde réfléchie par un véhicule en mouvement revient avec une fréquence décalée, proportionnelle à sa vitesse : c'est l'effet Doppler. La durée d'aller-retour, elle, donne une distance."
+    },
+    {
+      "q": "Un son a une intensité I égale à l'intensité de référence I₀. Son niveau d'intensité sonore vaut :",
+      "opts": [
+        "1 dB",
+        "10 dB",
+        "0 dB",
+        "1,0 × 10⁻¹² dB"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "niveau-oubli-log",
+          "texte": "Oublier le logarithme : I / I₀ = 1, mais L = 10 log 1 = 0"
+        },
+        {
+          "code": "niveau-log-un",
+          "texte": "Croire que log 1 = 1 : log 1 = 0"
+        },
+        null,
+        {
+          "code": "intensite-vs-niveau",
+          "texte": "Confondre l'intensité (en W·m⁻²) et le niveau (en dB)"
+        }
+      ],
+      "exp": "L = 10 log(I₀ / I₀) = 10 log 1 = 0 dB : c'est le seuil d'audibilité. Attention : 0 dB ne veut pas dire « aucun son »."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2025",
+      "title": "Installation d'un panneau routier — effet Doppler",
+      "session": "Nouvelle-Calédonie · Jour 2",
+      "link": "https://www.labolycee.org/installation-dun-panneau-routier"
+    },
+    {
+      "year": "2023",
+      "title": "Bicycle Moto cross — niveau d'intensité sonore",
+      "session": "Amérique du Nord · Jour 2",
+      "link": "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-2"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Décibels : vrai ou faux ?",
+      "contexte": [
+        "Yanis écoute de la musique au casque dans le bus, puis révise à la bibliothèque. Il en profite pour vérifier ce qu'il a compris des décibels."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase (un calcul peut servir de justification).<br>a. Un niveau d'intensité sonore de 0 dB signifie qu'il n'y a aucun son.<br>b. Deux scooters identiques produisant chacun 80 dB au même endroit produisent ensemble 160 dB.<br>c. Passer d'un niveau de 60 dB à un niveau de 80 dB revient à multiplier l'intensité sonore par 100.<br>d. Si l'on se place deux fois plus loin d'une source ponctuelle, l'intensité sonore reçue est divisée par 4.<br>e. L'atténuation géométrique n'existe que dans un milieu matériel comme l'air.",
+          "aides": []
+        },
+        {
+          "texte": "Le casque de Yanis produit au niveau de son tympan une intensité sonore I = 3,2 × 10⁻⁴ W·m⁻². Calcule le niveau d'intensité sonore correspondant.",
+          "aides": []
+        },
+        {
+          "texte": "À la bibliothèque, le niveau d'intensité sonore vaut L = 40 dB. Calcule l'intensité sonore correspondante.",
+          "aides": [
+            "Il faut « inverser » la relation L = 10·log(I / I₀) : commence par isoler log(I / I₀).",
+            "La fonction réciproque de log est x ↦ 10^x : log(I / I₀) = L/10 donne I / I₀ = 10^(L/10)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : L = 0 dB correspond à I = I₀ = 1,0 × 10⁻¹² W·m⁻², le seuil d'audibilité ; le son existe mais il est à peine audible.",
+        "b. FAUX : ce sont les intensités qui s'additionnent, pas les niveaux. I est multipliée par 2, donc L = 80 + 10·log 2 = 83 dB.",
+        "c. VRAI : +20 dB = deux fois +10 dB, soit I × 10 × 10 = I × 100 (I₈₀ / I₆₀ = 10^(20/10) = 100).",
+        "d. VRAI : I = P / (4π·r²) ; si r est multipliée par 2, r² est multipliée par 4 et I est divisée par 4.",
+        "e. FAUX : l'atténuation géométrique est due à la répartition de la puissance sur une surface de plus en plus grande ; elle existe même dans le vide. C'est l'atténuation par absorption qui dépend du milieu.",
+        "<strong>2.</strong> L = 10·log(I / I₀) = 10·log(3,2 × 10⁻⁴ / 1,0 × 10⁻¹²) = 10·log(3,2 × 10⁸) = 85 dB.",
+        "<strong>3.</strong> I = I₀ × 10^(L/10) = 1,0 × 10⁻¹² × 10^(40/10) = 1,0 × 10⁻¹² × 10⁴ = 1,0 × 10⁻⁸ W·m⁻².",
+        "<em>⚠ Erreur fréquente : additionner les décibels (80 + 80 = 160 dB). On additionne les intensités, puis on recalcule le niveau.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La sirène de l'ambulance",
+      "contexte": [
+        "Une ambulance roule toutes sirènes hurlantes dans une rue droite. Léa est sur le trottoir devant l'ambulance, Tom est derrière elle. La figure représente, vue de dessus, les fronts d'onde sonore émis par la sirène à intervalles de temps réguliers (une période T)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><circle cx=\"386.4\" cy=\"225\" r=\"34.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"372.8\" cy=\"225\" r=\"68.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"359.2\" cy=\"225\" r=\"102.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"345.6\" cy=\"225\" r=\"136.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"332.0\" cy=\"225\" r=\"170.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"318.4\" cy=\"225\" r=\"204.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"400.0\" cy=\"225\" r=\"9\" fill=\"#B5523B\"/><line x1=\"414.0\" y1=\"225\" x2=\"470.0\" y2=\"225\" stroke=\"#B5523B\" stroke-width=\"3\"/><polygon points=\"480.0,225 466.0,218 466.0,232\" fill=\"#B5523B\"/><text x=\"440.0\" y=\"211\" text-anchor=\"middle\" fill=\"#B5523B\" font-weight=\"bold\" stroke=\"#fff\" stroke-width=\"6\" paint-order=\"stroke\">vitesse u</text><text x=\"400.0\" y=\"255\" text-anchor=\"middle\" fill=\"#B5523B\" font-weight=\"bold\" stroke=\"#fff\" stroke-width=\"6\" paint-order=\"stroke\">sirène S</text><circle cx=\"690\" cy=\"225\" r=\"10\" fill=\"#C8962E\"/><text x=\"690\" y=\"259\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">Léa</text><circle cx=\"70\" cy=\"225\" r=\"10\" fill=\"#C8962E\"/><text x=\"70\" y=\"259\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">Tom</text><text x=\"380\" y=\"455\" text-anchor=\"middle\">Fronts d'onde émis toutes les périodes T (vue de dessus, vitesse de la sirène exagérée)</text></svg>",
+      "questions": [
+        {
+          "texte": "Compare l'écart entre deux fronts d'onde successifs du côté de Léa et du côté de Tom. Que peut-on en déduire pour la longueur d'onde perçue par chacun ?",
+          "aides": [
+            "Repère la sirène S et les cercles les plus proches de Léa, puis de Tom.",
+            "La distance entre deux fronts successifs, c'est la longueur d'onde perçue dans cette direction."
+          ]
+        },
+        {
+          "texte": "Qui entend le son le plus aigu ? Justifie à l'aide de la relation entre fréquence, longueur d'onde et célérité.",
+          "aides": []
+        },
+        {
+          "texte": "La sirène émet un son de fréquence f = 440 Hz et l'ambulance roule à u = 20 m·s⁻¹. À l'aide de l'expression approchée du décalage Doppler (encadré des données), calcule le décalage Δf puis la fréquence perçue par Léa et celle perçue par Tom.",
+          "aides": []
+        },
+        {
+          "texte": "Quand l'ambulance s'arrête au feu rouge, quelle fréquence Léa et Tom perçoivent-ils ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Du côté de Léa (devant), les fronts d'onde sont plus resserrés : la longueur d'onde perçue est plus petite que λ. Du côté de Tom (derrière), ils sont plus écartés : la longueur d'onde perçue est plus grande.",
+        "<strong>2.</strong> La célérité v<sub>son</sub> du son dans l'air ne dépend pas du mouvement de la source, et f' = v<sub>son</sub> / λ'. Une longueur d'onde plus petite donne une fréquence plus grande : Léa entend le son le plus aigu.",
+        "<strong>3.</strong> |Δf| = f × u / v<sub>son</sub> = 440 × 20 / 340 = 26 Hz (25,9 Hz). Léa (rapprochement) : f' = 440 + 25,9 = 466 Hz. Tom (éloignement) : f' = 440 − 25,9 = 414 Hz.",
+        "<strong>4.</strong> Il n'y a plus de mouvement relatif entre la source et les observateurs : pas d'effet Doppler, ils perçoivent tous deux f = 440 Hz.",
+        "<em>⚠ Erreur fréquente : penser que le son est plus aigu parce qu'il est plus fort. La hauteur dépend de la fréquence, pas de l'intensité.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Mon enceinte Bluetooth s'entend-elle au fond du jardin ?",
+      "contexte": [
+        "Inès pose son enceinte Bluetooth dans un grand jardin dégagé, loin des murs. Avec une application « sonomètre » de son smartphone, elle mesure le niveau d'intensité sonore L à différentes distances d de l'enceinte, le volume restant réglé de la même façon.",
+        "Mesures : d = 0,50 m : L = 88,2 dB ; d = 1,0 m : L = 82,0 dB ; d = 1,5 m : L = 78,6 dB ; d = 2,0 m : L = 75,9 dB ; d = 3,0 m : L = 72,3 dB ; d = 4,0 m : L = 70,1 dB."
+      ],
+      "questions": [
+        {
+          "texte": "De combien de décibels diminue le niveau mesuré quand la distance double (de 0,50 m à 1,0 m, de 1,0 m à 2,0 m, puis de 2,0 m à 4,0 m) ? Que remarques-tu ?",
+          "aides": []
+        },
+        {
+          "texte": "On modélise l'enceinte par une source ponctuelle : I(r) = P / (4π·r²). Montre que lorsque la distance double, le niveau d'intensité sonore diminue d'environ 6 dB.",
+          "aides": [
+            "Écris I(2r) avec la formule et compare-la à I(r).",
+            "Si I est divisée par 4, L(2r) = 10·log(I(r) / (4 I₀)) ; utilise log(a / b) = log a − log b."
+          ]
+        },
+        {
+          "texte": "Calcule l'intensité sonore à 1,0 m de l'enceinte, puis la puissance sonore P de l'enceinte.",
+          "aides": [
+            "Utilise la réciproque : I = I₀ × 10^(L/10), avec la mesure faite à 1,0 m.",
+            "Puis inverse la relation I = P / (4π·r²) pour obtenir P."
+          ]
+        },
+        {
+          "texte": "Prévois le niveau d'intensité sonore au fond du jardin, à 8,0 m de l'enceinte.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi Inès a-t-elle fait ses mesures dans un jardin dégagé, loin des murs ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> De 0,50 m à 1,0 m : 88,2 − 82,0 = 6,2 dB ; de 1,0 m à 2,0 m : 82,0 − 75,9 = 6,1 dB ; de 2,0 m à 4,0 m : 75,9 − 70,1 = 5,8 dB. À chaque doublement de la distance, le niveau baisse d'environ 6 dB.",
+        "<strong>2.</strong> I(2r) = P / (4π·(2r)²) = I(r) / 4. Donc L(2r) = 10·log(I(r) / (4·I₀)) = L(r) − 10·log 4 = L(r) − 6,0 dB.",
+        "<strong>3.</strong> I(1,0 m) = I₀ × 10^(82,0/10) = 1,0 × 10⁻¹² × 10^8,2 = 1,6 × 10⁻⁴ W·m⁻². P = 4π·r²·I = 4π × 1,0² × 1,58 × 10⁻⁴ = 2,0 × 10⁻³ W (2,0 mW).",
+        "<strong>4.</strong> De 1,0 m à 8,0 m, la distance double trois fois : L ≈ 82,0 − 3 × 6,0 = 64 dB. (Calcul direct : L = 82,0 − 20·log 8,0 = 63,9 dB.)",
+        "<strong>5.</strong> Le modèle I = P / (4π·r²) suppose que l'onde se propage librement dans toutes les directions. Près d'un mur, le son réfléchi s'ajoute au son direct et fausse les mesures.",
+        "<em>⚠ Erreur fréquente : croire que le niveau est divisé par 2 ou par 4 quand la distance double. C'est l'intensité qui est divisée par 4 ; le niveau, lui, diminue de 6 dB.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Au concert, protéger ses oreilles",
+      "contexte": [
+        "Lors d'un concert en plein air, la scène est équipée de deux enceintes identiques. Un technicien mesure L₁ = 100 dB à 2,0 m d'une seule enceinte en fonctionnement. On assimile chaque enceinte à une source ponctuelle et on se place à la même distance des deux enceintes.",
+        "Dans l'air, l'atténuation par absorption dépend de la fréquence. On admet, pour les conditions du jour, les valeurs approchées suivantes : 0,10 dB par mètre pour un son aigu de 8 kHz ; 0,0011 dB par mètre pour un son grave de 250 Hz."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule le niveau d'intensité sonore à 2,0 m des deux enceintes en fonctionnement.",
+          "aides": [
+            "Deux enceintes identiques : que devient l'intensité sonore ?",
+            "Si I double, L augmente de 10·log 2 (voir la fiche de cours)."
+          ]
+        },
+        {
+          "texte": "L'organisateur ne veut pas que le public soit exposé à plus de 94 dB. À quelle distance minimale des enceintes faut-il placer la barrière ? On ne tient compte que de l'atténuation géométrique.",
+          "aides": [
+            "Quelle atténuation (en dB) faut-il obtenir à partir de la valeur trouvée en question 1 ?",
+            "Puisque I ∝ 1/r², L(r) = L(2,0 m) − 10·log((r / 2,0)²) = L(2,0 m) − 20·log(r / 2,0).",
+            "Isole log(r / 2,0), puis utilise la fonction 10^x."
+          ]
+        },
+        {
+          "texte": "Un technicien qui doit rester à 2,0 m porte des bouchons d'oreilles d'atténuation A = 25 dB. Quel niveau perçoit-il ? Par combien l'intensité sonore qui atteint son tympan est-elle divisée ?",
+          "aides": []
+        },
+        {
+          "texte": "Un spectateur s'est installé à 50 m de la scène.<br>a. Calcule l'atténuation géométrique entre 2,0 m et 50 m.<br>b. Calcule l'atténuation par absorption entre 2,0 m et 50 m pour le son aigu et pour le son grave.<br>c. Ce spectateur trouve que la musique paraît « étouffée », avec beaucoup de basses. Explique pourquoi.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les intensités s'ajoutent : I = 2 I₁, donc L = L₁ + 10·log 2 = 100 + 3,0 = 103 dB.",
+        "<strong>2.</strong> On veut une atténuation géométrique A = 103 − 94 = 9 dB. Comme I ∝ 1/r², L(r) = L(2,0 m) − 20·log(r / 2,0). Donc 20·log(r / 2,0) = 9, r = 2,0 × 10^(9/20) = 5,6 m. La barrière doit être à au moins 5,6 m des enceintes.",
+        "<strong>3.</strong> L = 103 − 25 = 78 dB. L'intensité est divisée par 10^(25/10) = 10^2,5 ≈ 3,2 × 10² (316).",
+        "<strong>4.</strong> a. A<sub>géo</sub> = 20·log(50 / 2,0) = 20·log 25 = 28 dB (27,96 dB).",
+        "b. Son aigu : 0,10 × (50 − 2,0) = 4,8 dB. Son grave : 0,0011 × 48 = 0,05 dB, négligeable.",
+        "c. L'atténuation géométrique est la même pour toutes les fréquences, mais l'absorption par l'air atténue beaucoup plus les aigus : à 50 m, le son grave arrive à environ 75 dB et le son aigu à environ 70 dB alors qu'ils étaient au même niveau près de la scène. Le spectateur entend surtout les basses.",
+        "<em>⚠ Erreur fréquente : écrire 2 × 100 = 200 dB pour deux enceintes, ou utiliser 10·log au lieu de 20·log pour un rapport de distances (I varie comme 1/r², d'où 10·log(r²) = 20·log r).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Effet Doppler dans le ciel",
+      "contexte": [
+        "Partie A — Une galaxie lointaine. Dans le spectre de la lumière émise par l'hydrogène au laboratoire, la raie Hα a pour longueur d'onde λ = 656,3 nm. Dans le spectre d'une galaxie, un astronome mesure pour cette même raie λ' = 669,4 nm.",
+        "Partie B — Une étoile qui « danse ». Une planète qui tourne autour d'une étoile fait légèrement osciller cette étoile. En mesurant le décalage Doppler des raies de l'étoile, on obtient sa vitesse radiale v<sub>r</sub> (vitesse selon la ligne de visée, comptée positivement quand l'étoile s'éloigne de nous). Le graphique donne les mesures (points) et le modèle sinusoïdal ajusté (courbe) pour une étoile observée pendant 10 jours (données fictives)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"117.5\" y1=\"25\" x2=\"117.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"117.5\" y=\"430\" text-anchor=\"middle\">0,5</text><line x1=\"150.0\" y1=\"25\" x2=\"150.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"150.0\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"182.5\" y1=\"25\" x2=\"182.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"182.5\" y=\"430\" text-anchor=\"middle\">1,5</text><line x1=\"215.0\" y1=\"25\" x2=\"215.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"215.0\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"247.5\" y1=\"25\" x2=\"247.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"247.5\" y=\"430\" text-anchor=\"middle\">2,5</text><line x1=\"280.0\" y1=\"25\" x2=\"280.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"280.0\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"312.5\" y1=\"25\" x2=\"312.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"312.5\" y=\"430\" text-anchor=\"middle\">3,5</text><line x1=\"345.0\" y1=\"25\" x2=\"345.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"345.0\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"377.5\" y1=\"25\" x2=\"377.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"377.5\" y=\"430\" text-anchor=\"middle\">4,5</text><line x1=\"410.0\" y1=\"25\" x2=\"410.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"410.0\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"442.5\" y1=\"25\" x2=\"442.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"442.5\" y=\"430\" text-anchor=\"middle\">5,5</text><line x1=\"475.0\" y1=\"25\" x2=\"475.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"475.0\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"507.5\" y1=\"25\" x2=\"507.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"507.5\" y=\"430\" text-anchor=\"middle\">6,5</text><line x1=\"540.0\" y1=\"25\" x2=\"540.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"540.0\" y=\"430\" text-anchor=\"middle\">7</text><line x1=\"572.5\" y1=\"25\" x2=\"572.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"572.5\" y=\"430\" text-anchor=\"middle\">7,5</text><line x1=\"605.0\" y1=\"25\" x2=\"605.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"605.0\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"637.5\" y1=\"25\" x2=\"637.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"637.5\" y=\"430\" text-anchor=\"middle\">8,5</text><line x1=\"670.0\" y1=\"25\" x2=\"670.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"670.0\" y=\"430\" text-anchor=\"middle\">9</text><line x1=\"702.5\" y1=\"25\" x2=\"702.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"702.5\" y=\"430\" text-anchor=\"middle\">9,5</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"85\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"415.0\" text-anchor=\"end\">−80</text><line x1=\"85\" y1=\"385.9\" x2=\"735\" y2=\"385.9\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"390.9\" text-anchor=\"end\">−70</text><line x1=\"85\" y1=\"361.9\" x2=\"735\" y2=\"361.9\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"366.9\" text-anchor=\"end\">−60</text><line x1=\"85\" y1=\"337.8\" x2=\"735\" y2=\"337.8\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"342.8\" text-anchor=\"end\">−50</text><line x1=\"85\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"318.8\" text-anchor=\"end\">−40</text><line x1=\"85\" y1=\"289.7\" x2=\"735\" y2=\"289.7\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"294.7\" text-anchor=\"end\">−30</text><line x1=\"85\" y1=\"265.6\" x2=\"735\" y2=\"265.6\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"270.6\" text-anchor=\"end\">−20</text><line x1=\"85\" y1=\"241.6\" x2=\"735\" y2=\"241.6\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"246.6\" text-anchor=\"end\">−10</text><line x1=\"85\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"222.5\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"193.4\" x2=\"735\" y2=\"193.4\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"198.4\" text-anchor=\"end\">10</text><line x1=\"85\" y1=\"169.4\" x2=\"735\" y2=\"169.4\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"174.4\" text-anchor=\"end\">20</text><line x1=\"85\" y1=\"145.3\" x2=\"735\" y2=\"145.3\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"150.3\" text-anchor=\"end\">30</text><line x1=\"85\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"126.2\" text-anchor=\"end\">40</text><line x1=\"85\" y1=\"97.2\" x2=\"735\" y2=\"97.2\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"102.2\" text-anchor=\"end\">50</text><line x1=\"85\" y1=\"73.1\" x2=\"735\" y2=\"73.1\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"78.1\" text-anchor=\"end\">60</text><line x1=\"85\" y1=\"49.1\" x2=\"735\" y2=\"49.1\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"54.1\" text-anchor=\"end\">70</text><line x1=\"85\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\">80</text><rect x=\"85\" y=\"25\" width=\"650\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"85.0,249.6 86.3,244.6 87.6,239.4 88.9,234.3 90.2,229.2 91.5,224.0 92.8,218.8 94.1,213.6 95.4,208.4 96.7,203.3 98.0,198.1 99.3,193.0 100.6,187.9 101.9,182.9 103.2,177.8 104.5,172.9 105.8,168.0 107.1,163.1 108.4,158.4 109.7,153.7 111.0,149.1 112.3,144.6 113.6,140.1 114.9,135.8 116.2,131.6 117.5,127.5 118.8,123.5 120.1,119.6 121.4,115.9 122.7,112.3 124.0,108.8 125.3,105.4 126.6,102.2 127.9,99.2 129.2,96.3 130.5,93.6 131.8,91.0 133.1,88.6 134.4,86.3 135.7,84.2 137.0,82.3 138.3,80.6 139.6,79.0 140.9,77.7 142.2,76.5 143.5,75.4 144.8,74.6 146.1,74.0 147.4,73.5 148.7,73.2 150.0,73.1 151.3,73.2 152.6,73.5 153.9,74.0 155.2,74.6 156.5,75.4 157.8,76.5 159.1,77.7 160.4,79.0 161.7,80.6 163.0,82.3 164.3,84.2 165.6,86.3 166.9,88.6 168.2,91.0 169.5,93.6 170.8,96.3 172.1,99.2 173.4,102.2 174.7,105.4 176.0,108.8 177.3,112.3 178.6,115.9 179.9,119.6 181.2,123.5 182.5,127.5 183.8,131.6 185.1,135.8 186.4,140.1 187.7,144.6 189.0,149.1 190.3,153.7 191.6,158.4 192.9,163.1 194.2,168.0 195.5,172.9 196.8,177.8 198.1,182.9 199.4,187.9 200.7,193.0 202.0,198.1 203.3,203.3 204.6,208.4 205.9,213.6 207.2,218.8 208.5,224.0 209.8,229.2 211.1,234.3 212.4,239.4 213.7,244.6 215.0,249.6 216.3,254.7 217.6,259.6 218.9,264.6 220.2,269.4 221.5,274.2 222.8,279.0 224.1,283.6 225.4,288.2 226.7,292.7 228.0,297.0 229.3,301.3 230.6,305.5 231.9,309.5 233.2,313.5 234.5,317.3 235.8,321.0 237.1,324.5 238.4,327.9 239.7,331.2 241.0,334.3 242.3,337.3 243.6,340.1 244.9,342.7 246.2,345.2 247.5,347.6 248.8,349.7 250.1,351.7 251.4,353.6 252.7,355.2 254.0,356.7 255.3,358.0 256.6,359.1 257.9,360.0 259.2,360.7 260.5,361.3 261.8,361.7 263.1,361.9 264.4,361.9 265.7,361.7 267.0,361.3 268.3,360.7 269.6,360.0 270.9,359.1 272.2,358.0 273.5,356.7 274.8,355.2 276.1,353.6 277.4,351.7 278.7,349.7 280.0,347.6 281.3,345.2 282.6,342.7 283.9,340.1 285.2,337.3 286.5,334.3 287.8,331.2 289.1,327.9 290.4,324.5 291.7,321.0 293.0,317.3 294.3,313.5 295.6,309.5 296.9,305.5 298.2,301.3 299.5,297.0 300.8,292.7 302.1,288.2 303.4,283.6 304.7,279.0 306.0,274.2 307.3,269.4 308.6,264.6 309.9,259.6 311.2,254.7 312.5,249.6 313.8,244.6 315.1,239.4 316.4,234.3 317.7,229.2 319.0,224.0 320.3,218.8 321.6,213.6 322.9,208.4 324.2,203.3 325.5,198.1 326.8,193.0 328.1,187.9 329.4,182.9 330.7,177.8 332.0,172.9 333.3,168.0 334.6,163.1 335.9,158.4 337.2,153.7 338.5,149.1 339.8,144.6 341.1,140.1 342.4,135.8 343.7,131.6 345.0,127.5 346.3,123.5 347.6,119.6 348.9,115.9 350.2,112.3 351.5,108.8 352.8,105.4 354.1,102.2 355.4,99.2 356.7,96.3 358.0,93.6 359.3,91.0 360.6,88.6 361.9,86.3 363.2,84.2 364.5,82.3 365.8,80.6 367.1,79.0 368.4,77.7 369.7,76.5 371.0,75.4 372.3,74.6 373.6,74.0 374.9,73.5 376.2,73.2 377.5,73.1 378.8,73.2 380.1,73.5 381.4,74.0 382.7,74.6 384.0,75.4 385.3,76.5 386.6,77.7 387.9,79.0 389.2,80.6 390.5,82.3 391.8,84.2 393.1,86.3 394.4,88.6 395.7,91.0 397.0,93.6 398.3,96.3 399.6,99.2 400.9,102.2 402.2,105.4 403.5,108.8 404.8,112.3 406.1,115.9 407.4,119.6 408.7,123.5 410.0,127.5 411.3,131.6 412.6,135.8 413.9,140.1 415.2,144.6 416.5,149.1 417.8,153.7 419.1,158.4 420.4,163.1 421.7,168.0 423.0,172.9 424.3,177.8 425.6,182.9 426.9,187.9 428.2,193.0 429.5,198.1 430.8,203.3 432.1,208.4 433.4,213.6 434.7,218.8 436.0,224.0 437.3,229.2 438.6,234.3 439.9,239.4 441.2,244.6 442.5,249.6 443.8,254.7 445.1,259.6 446.4,264.6 447.7,269.4 449.0,274.2 450.3,279.0 451.6,283.6 452.9,288.2 454.2,292.7 455.5,297.0 456.8,301.3 458.1,305.5 459.4,309.5 460.7,313.5 462.0,317.3 463.3,321.0 464.6,324.5 465.9,327.9 467.2,331.2 468.5,334.3 469.8,337.3 471.1,340.1 472.4,342.7 473.7,345.2 475.0,347.6 476.3,349.7 477.6,351.7 478.9,353.6 480.2,355.2 481.5,356.7 482.8,358.0 484.1,359.1 485.4,360.0 486.7,360.7 488.0,361.3 489.3,361.7 490.6,361.9 491.9,361.9 493.2,361.7 494.5,361.3 495.8,360.7 497.1,360.0 498.4,359.1 499.7,358.0 501.0,356.7 502.3,355.2 503.6,353.6 504.9,351.7 506.2,349.7 507.5,347.6 508.8,345.2 510.1,342.7 511.4,340.1 512.7,337.3 514.0,334.3 515.3,331.2 516.6,327.9 517.9,324.5 519.2,321.0 520.5,317.3 521.8,313.5 523.1,309.5 524.4,305.5 525.7,301.3 527.0,297.0 528.3,292.7 529.6,288.2 530.9,283.6 532.2,279.0 533.5,274.2 534.8,269.4 536.1,264.6 537.4,259.6 538.7,254.7 540.0,249.6 541.3,244.6 542.6,239.4 543.9,234.3 545.2,229.2 546.5,224.0 547.8,218.8 549.1,213.6 550.4,208.4 551.7,203.3 553.0,198.1 554.3,193.0 555.6,187.9 556.9,182.9 558.2,177.8 559.5,172.9 560.8,168.0 562.1,163.1 563.4,158.4 564.7,153.7 566.0,149.1 567.3,144.6 568.6,140.1 569.9,135.8 571.2,131.6 572.5,127.5 573.8,123.5 575.1,119.6 576.4,115.9 577.7,112.3 579.0,108.8 580.3,105.4 581.6,102.2 582.9,99.2 584.2,96.3 585.5,93.6 586.8,91.0 588.1,88.6 589.4,86.3 590.7,84.2 592.0,82.3 593.3,80.6 594.6,79.0 595.9,77.7 597.2,76.5 598.5,75.4 599.8,74.6 601.1,74.0 602.4,73.5 603.7,73.2 605.0,73.1 606.3,73.2 607.6,73.5 608.9,74.0 610.2,74.6 611.5,75.4 612.8,76.5 614.1,77.7 615.4,79.0 616.7,80.6 618.0,82.3 619.3,84.2 620.6,86.3 621.9,88.6 623.2,91.0 624.5,93.6 625.8,96.3 627.1,99.2 628.4,102.2 629.7,105.4 631.0,108.8 632.3,112.3 633.6,115.9 634.9,119.6 636.2,123.5 637.5,127.5 638.8,131.6 640.1,135.8 641.4,140.1 642.7,144.6 644.0,149.1 645.3,153.7 646.6,158.4 647.9,163.1 649.2,168.0 650.5,172.9 651.8,177.8 653.1,182.9 654.4,187.9 655.7,193.0 657.0,198.1 658.3,203.3 659.6,208.4 660.9,213.6 662.2,218.8 663.5,224.0 664.8,229.2 666.1,234.3 667.4,239.4 668.7,244.6 670.0,249.6 671.3,254.7 672.6,259.6 673.9,264.6 675.2,269.4 676.5,274.2 677.8,279.0 679.1,283.6 680.4,288.2 681.7,292.7 683.0,297.0 684.3,301.3 685.6,305.5 686.9,309.5 688.2,313.5 689.5,317.3 690.8,321.0 692.1,324.5 693.4,327.9 694.7,331.2 696.0,334.3 697.3,337.3 698.6,340.1 699.9,342.7 701.2,345.2 702.5,347.6 703.8,349.7 705.1,351.7 706.4,353.6 707.7,355.2 709.0,356.7 710.3,358.0 711.6,359.1 712.9,360.0 714.2,360.7 715.5,361.3 716.8,361.7 718.1,361.9 719.4,361.9 720.7,361.7 722.0,361.3 723.3,360.7 724.6,360.0 725.9,359.1 727.2,358.0 728.5,356.7 729.8,355.2 731.1,353.6 732.4,351.7 733.7,349.7 735.0,347.6\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><circle cx=\"104.5\" cy=\"165.7\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"144.8\" cy=\"84.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"185.1\" cy=\"131.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"225.4\" cy=\"293.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"265.7\" cy=\"352.0\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"306.0\" cy=\"281.5\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"346.3\" cy=\"121.1\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"386.6\" cy=\"89.7\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"426.9\" cy=\"180.7\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"467.2\" cy=\"326.4\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"507.5\" cy=\"354.8\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"547.8\" cy=\"209.2\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"588.1\" cy=\"93.4\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"628.4\" cy=\"104.6\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"668.7\" cy=\"237.3\" r=\"4.5\" fill=\"#B5523B\"/><circle cx=\"709.0\" cy=\"361.5\" r=\"4.5\" fill=\"#B5523B\"/><text x=\"410.0\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">t (jours)</text><text transform=\"translate(20,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">v<tspan font-size=\"11\" dy=\"4\">r</tspan><tspan dy=\"-4\"> (m·s⁻¹)</tspan></text></svg>",
+      "questions": [
+        {
+          "texte": "Partie A. La raie est-elle décalée vers le rouge ou vers le bleu ? La galaxie s'approche-t-elle ou s'éloigne-t-elle de nous ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la fréquence f de la raie émise et la fréquence f' reçue, puis le décalage Doppler Δf.",
+          "aides": [
+            "Pour une onde lumineuse, f = c / λ.",
+            "Convertis les longueurs d'onde en mètres : 1 nm = 10⁻⁹ m. Garde 4 chiffres significatifs : f et f' sont très proches."
+          ]
+        },
+        {
+          "texte": "Déduis-en la vitesse de la galaxie par rapport à la Terre, en km·s⁻¹. L'expression approchée du décalage Doppler est-elle justifiée ?",
+          "aides": []
+        },
+        {
+          "texte": "Partie B. Détermine graphiquement l'amplitude de la vitesse radiale de l'étoile et la période de son oscillation.",
+          "aides": [
+            "L'amplitude se lit sur l'axe vertical : valeur maximale de v<sub>r</sub>.",
+            "La période est la durée entre deux maxima successifs ; mesure-la entre deux maxima éloignés pour être plus précis."
+          ]
+        },
+        {
+          "texte": "Calcule le décalage Doppler relatif maximal |Δf| / f, puis le décalage maximal |Δf| pour la raie Hα. Commente.",
+          "aides": []
+        },
+        {
+          "texte": "À la date t = 2,75 jours, la lumière de l'étoile est-elle décalée vers le rouge ou vers le bleu ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> λ' &gt; λ : la raie est décalée vers le rouge (fréquence reçue plus faible). La galaxie s'éloigne de nous.",
+        "<strong>2.</strong> f = c / λ = 2,998 × 10⁸ / 656,3 × 10⁻⁹ = 4,568 × 10¹⁴ Hz ; f' = c / λ' = 2,998 × 10⁸ / 669,4 × 10⁻⁹ = 4,479 × 10¹⁴ Hz ; Δf = f' − f = −8,94 × 10¹² Hz (négatif : éloignement).",
+        "<strong>3.</strong> |Δf| / f = v / c, donc v = c × |Δf| / f = 2,998 × 10⁸ × 8,94 × 10¹² / 4,568 × 10¹⁴ = 5,87 × 10⁶ m·s⁻¹ = 5,87 × 10³ km·s⁻¹. v / c = 0,020 ≪ 1 : l'approximation est justifiée.",
+        "<strong>4.</strong> Amplitude : la courbe oscille entre −60 et +60 m·s⁻¹, soit 60 m·s⁻¹. Période : maxima à t = 1,0 j, 4,5 j et 8,0 j, donc T = 3,5 jours.",
+        "<strong>5.</strong> |Δf| / f = v / c = 60 / 2,998 × 10⁸ = 2,0 × 10⁻⁷. Pour Hα : |Δf| = 4,568 × 10¹⁴ × 2,0 × 10⁻⁷ = 9,1 × 10⁷ Hz, soit un décalage relatif d'environ 2 dix-millionièmes : il faut des spectrographes extrêmement précis pour détecter des exoplanètes par cette méthode.",
+        "<strong>6.</strong> À t = 2,75 j, la courbe passe par son minimum : v<sub>r</sub> = −60 m·s⁻¹ &lt; 0, l'étoile se rapproche de nous ; la fréquence reçue est plus grande que la fréquence émise : décalage vers le bleu.",
+        "<em>⚠ Erreur fréquente : oublier de convertir les nanomètres en mètres, ou les m·s⁻¹ en km·s⁻¹ (1 km·s⁻¹ = 10³ m·s⁻¹).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Contrôler la vitesse d'une trottinette à l'oreille",
+      "contexte": [
+        "En France, la vitesse des trottinettes électriques est limitée à 25 km·h⁻¹. Des élèves veulent mesurer la vitesse d'une trottinette par effet Doppler.",
+        "Doc. 1 — Établir le décalage Doppler. Une source S émet un son de fréquence f (période T, longueur d'onde λ = v<sub>son</sub> × T dans l'air immobile). Elle se déplace en ligne droite à la vitesse u, vers un observateur O immobile. À la date t = 0, elle émet un front d'onde ; à la date T, elle émet le front suivant, après avoir parcouru la distance u × T.",
+        "Doc. 2 — L'expérience. Un élève roule à vitesse constante sur la trottinette en tenant un smartphone qui émet un son de fréquence f. Il passe à 1,5 m d'un microphone fixe relié à un logiciel qui affiche la fréquence reçue f' en fonction du temps. Au début de l'enregistrement, la trottinette est encore loin et s'approche ; à la fin, elle est loin et s'éloigne. On note f<sub>R</sub> la fréquence reçue au début (rapprochement) et f<sub>E</sub> la fréquence reçue à la fin (éloignement)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"139.2\" y1=\"25\" x2=\"139.2\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"139.2\" y=\"430\" text-anchor=\"middle\">0,5</text><line x1=\"193.3\" y1=\"25\" x2=\"193.3\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"193.3\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"247.5\" y1=\"25\" x2=\"247.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"247.5\" y=\"430\" text-anchor=\"middle\">1,5</text><line x1=\"301.7\" y1=\"25\" x2=\"301.7\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"301.7\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"355.8\" y1=\"25\" x2=\"355.8\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"355.8\" y=\"430\" text-anchor=\"middle\">2,5</text><line x1=\"410.0\" y1=\"25\" x2=\"410.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"410.0\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"464.2\" y1=\"25\" x2=\"464.2\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"464.2\" y=\"430\" text-anchor=\"middle\">3,5</text><line x1=\"518.3\" y1=\"25\" x2=\"518.3\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"518.3\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"572.5\" y1=\"25\" x2=\"572.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"572.5\" y=\"430\" text-anchor=\"middle\">4,5</text><line x1=\"626.7\" y1=\"25\" x2=\"626.7\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"626.7\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"680.8\" y1=\"25\" x2=\"680.8\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"680.8\" y=\"430\" text-anchor=\"middle\">5,5</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"85\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"415.0\" text-anchor=\"end\">1950</text><line x1=\"85\" y1=\"371.5\" x2=\"735\" y2=\"371.5\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"376.5\" text-anchor=\"end\">1960</text><line x1=\"85\" y1=\"333.0\" x2=\"735\" y2=\"333.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"338.0\" text-anchor=\"end\">1970</text><line x1=\"85\" y1=\"294.5\" x2=\"735\" y2=\"294.5\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"299.5\" text-anchor=\"end\">1980</text><line x1=\"85\" y1=\"256.0\" x2=\"735\" y2=\"256.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"261.0\" text-anchor=\"end\">1990</text><line x1=\"85\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"222.5\" text-anchor=\"end\">2000</text><line x1=\"85\" y1=\"179.0\" x2=\"735\" y2=\"179.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"184.0\" text-anchor=\"end\">2010</text><line x1=\"85\" y1=\"140.5\" x2=\"735\" y2=\"140.5\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"145.5\" text-anchor=\"end\">2020</text><line x1=\"85\" y1=\"102.0\" x2=\"735\" y2=\"102.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"107.0\" text-anchor=\"end\">2030</text><line x1=\"85\" y1=\"63.5\" x2=\"735\" y2=\"63.5\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"68.5\" text-anchor=\"end\">2040</text><line x1=\"85\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\">2050</text><rect x=\"85\" y=\"25\" width=\"650\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"85.0,79.7 86.1,79.7 87.2,79.7 88.2,79.7 89.3,79.7 90.4,79.7 91.5,79.7 92.6,79.7 93.7,79.7 94.8,79.7 95.8,79.7 96.9,79.7 98.0,79.7 99.1,79.7 100.2,79.7 101.2,79.7 102.3,79.7 103.4,79.7 104.5,79.7 105.6,79.7 106.7,79.7 107.8,79.7 108.8,79.7 109.9,79.7 111.0,79.8 112.1,79.8 113.2,79.8 114.2,79.8 115.3,79.8 116.4,79.8 117.5,79.8 118.6,79.8 119.7,79.8 120.8,79.8 121.8,79.8 122.9,79.8 124.0,79.8 125.1,79.8 126.2,79.8 127.2,79.8 128.3,79.8 129.4,79.8 130.5,79.8 131.6,79.8 132.7,79.8 133.8,79.8 134.8,79.9 135.9,79.9 137.0,79.9 138.1,79.9 139.2,79.9 140.2,79.9 141.3,79.9 142.4,79.9 143.5,79.9 144.6,79.9 145.7,79.9 146.8,79.9 147.8,79.9 148.9,79.9 150.0,79.9 151.1,79.9 152.2,79.9 153.2,80.0 154.3,80.0 155.4,80.0 156.5,80.0 157.6,80.0 158.7,80.0 159.8,80.0 160.8,80.0 161.9,80.0 163.0,80.0 164.1,80.0 165.2,80.0 166.2,80.0 167.3,80.0 168.4,80.1 169.5,80.1 170.6,80.1 171.7,80.1 172.8,80.1 173.8,80.1 174.9,80.1 176.0,80.1 177.1,80.1 178.2,80.1 179.2,80.1 180.3,80.1 181.4,80.2 182.5,80.2 183.6,80.2 184.7,80.2 185.8,80.2 186.8,80.2 187.9,80.2 189.0,80.2 190.1,80.2 191.2,80.2 192.2,80.3 193.3,80.3 194.4,80.3 195.5,80.3 196.6,80.3 197.7,80.3 198.8,80.3 199.8,80.3 200.9,80.3 202.0,80.4 203.1,80.4 204.2,80.4 205.2,80.4 206.3,80.4 207.4,80.4 208.5,80.4 209.6,80.4 210.7,80.5 211.8,80.5 212.8,80.5 213.9,80.5 215.0,80.5 216.1,80.5 217.2,80.5 218.2,80.6 219.3,80.6 220.4,80.6 221.5,80.6 222.6,80.6 223.7,80.6 224.8,80.7 225.8,80.7 226.9,80.7 228.0,80.7 229.1,80.7 230.2,80.7 231.2,80.8 232.3,80.8 233.4,80.8 234.5,80.8 235.6,80.8 236.7,80.9 237.8,80.9 238.8,80.9 239.9,80.9 241.0,81.0 242.1,81.0 243.2,81.0 244.2,81.0 245.3,81.0 246.4,81.1 247.5,81.1 248.6,81.1 249.7,81.1 250.8,81.2 251.8,81.2 252.9,81.2 254.0,81.3 255.1,81.3 256.2,81.3 257.2,81.3 258.3,81.4 259.4,81.4 260.5,81.4 261.6,81.5 262.7,81.5 263.8,81.5 264.8,81.6 265.9,81.6 267.0,81.6 268.1,81.7 269.2,81.7 270.2,81.7 271.3,81.8 272.4,81.8 273.5,81.9 274.6,81.9 275.7,82.0 276.8,82.0 277.8,82.0 278.9,82.1 280.0,82.1 281.1,82.2 282.2,82.2 283.2,82.3 284.3,82.3 285.4,82.4 286.5,82.4 287.6,82.5 288.7,82.6 289.8,82.6 290.8,82.7 291.9,82.7 293.0,82.8 294.1,82.9 295.2,82.9 296.2,83.0 297.3,83.1 298.4,83.1 299.5,83.2 300.6,83.3 301.7,83.4 302.8,83.5 303.8,83.5 304.9,83.6 306.0,83.7 307.1,83.8 308.2,83.9 309.2,84.0 310.3,84.1 311.4,84.2 312.5,84.3 313.6,84.4 314.7,84.5 315.8,84.6 316.8,84.8 317.9,84.9 319.0,85.0 320.1,85.2 321.2,85.3 322.2,85.4 323.3,85.6 324.4,85.7 325.5,85.9 326.6,86.1 327.7,86.2 328.8,86.4 329.8,86.6 330.9,86.8 332.0,87.0 333.1,87.2 334.2,87.4 335.2,87.6 336.3,87.8 337.4,88.1 338.5,88.3 339.6,88.6 340.7,88.8 341.8,89.1 342.8,89.4 343.9,89.7 345.0,90.0 346.1,90.3 347.2,90.7 348.2,91.0 349.3,91.4 350.4,91.8 351.5,92.2 352.6,92.6 353.7,93.1 354.8,93.5 355.8,94.0 356.9,94.5 358.0,95.1 359.1,95.6 360.2,96.2 361.3,96.9 362.3,97.5 363.4,98.2 364.5,98.9 365.6,99.7 366.7,100.5 367.8,101.4 368.8,102.3 369.9,103.2 371.0,104.2 372.1,105.3 373.2,106.4 374.2,107.6 375.3,108.9 376.4,110.3 377.5,111.7 378.6,113.2 379.7,114.8 380.8,116.5 381.8,118.3 382.9,120.2 384.0,122.2 385.1,124.4 386.2,126.7 387.2,129.1 388.3,131.7 389.4,134.4 390.5,137.3 391.6,140.3 392.7,143.5 393.8,146.9 394.8,150.5 395.9,154.3 397.0,158.2 398.1,162.4 399.2,166.7 400.2,171.2 401.3,175.9 402.4,180.7 403.5,185.7 404.6,190.8 405.7,196.0 406.8,201.3 407.8,206.6 408.9,212.1 410.0,217.5 411.1,222.9 412.2,228.3 413.2,233.7 414.3,238.9 415.4,244.1 416.5,249.1 417.6,254.0 418.7,258.7 419.8,263.3 420.8,267.6 421.9,271.8 423.0,275.9 424.1,279.7 425.2,283.3 426.2,286.8 427.3,290.1 428.4,293.2 429.5,296.1 430.6,298.9 431.7,301.5 432.8,303.9 433.8,306.2 434.9,308.4 436.0,310.5 437.1,312.4 438.2,314.2 439.2,315.9 440.3,317.5 441.4,319.1 442.5,320.5 443.6,321.8 444.7,323.1 445.8,324.3 446.8,325.4 447.9,326.5 449.0,327.5 450.1,328.5 451.2,329.4 452.3,330.2 453.3,331.0 454.4,331.8 455.5,332.5 456.6,333.2 457.7,333.9 458.8,334.5 459.8,335.1 460.9,335.6 462.0,336.2 463.1,336.7 464.2,337.1 465.3,337.6 466.3,338.0 467.4,338.5 468.5,338.9 469.6,339.2 470.7,339.6 471.8,340.0 472.8,340.3 473.9,340.6 475.0,340.9 476.1,341.2 477.2,341.5 478.2,341.8 479.3,342.0 480.4,342.3 481.5,342.5 482.6,342.7 483.7,343.0 484.8,343.2 485.8,343.4 486.9,343.6 488.0,343.8 489.1,343.9 490.2,344.1 491.2,344.3 492.3,344.5 493.4,344.6 494.5,344.8 495.6,344.9 496.7,345.0 497.8,345.2 498.8,345.3 499.9,345.4 501.0,345.6 502.1,345.7 503.2,345.8 504.2,345.9 505.3,346.0 506.4,346.1 507.5,346.2 508.6,346.3 509.7,346.4 510.8,346.5 511.8,346.6 512.9,346.7 514.0,346.8 515.1,346.9 516.2,347.0 517.2,347.0 518.3,347.1 519.4,347.2 520.5,347.3 521.6,347.3 522.7,347.4 523.8,347.5 524.8,347.5 525.9,347.6 527.0,347.6 528.1,347.7 529.2,347.8 530.2,347.8 531.3,347.9 532.4,347.9 533.5,348.0 534.6,348.0 535.7,348.1 536.8,348.1 537.8,348.2 538.9,348.2 540.0,348.3 541.1,348.3 542.2,348.4 543.2,348.4 544.3,348.4 545.4,348.5 546.5,348.5 547.6,348.6 548.7,348.6 549.8,348.6 550.8,348.7 551.9,348.7 553.0,348.7 554.1,348.8 555.2,348.8 556.2,348.8 557.3,348.9 558.4,348.9 559.5,348.9 560.6,349.0 561.7,349.0 562.8,349.0 563.8,349.0 564.9,349.1 566.0,349.1 567.1,349.1 568.2,349.1 569.2,349.2 570.3,349.2 571.4,349.2 572.5,349.2 573.6,349.3 574.7,349.3 575.8,349.3 576.8,349.3 577.9,349.4 579.0,349.4 580.1,349.4 581.2,349.4 582.2,349.4 583.3,349.5 584.4,349.5 585.5,349.5 586.6,349.5 587.7,349.5 588.8,349.5 589.8,349.6 590.9,349.6 592.0,349.6 593.1,349.6 594.2,349.6 595.2,349.6 596.3,349.7 597.4,349.7 598.5,349.7 599.6,349.7 600.7,349.7 601.8,349.7 602.8,349.8 603.9,349.8 605.0,349.8 606.1,349.8 607.2,349.8 608.2,349.8 609.3,349.8 610.4,349.8 611.5,349.9 612.6,349.9 613.7,349.9 614.8,349.9 615.8,349.9 616.9,349.9 618.0,349.9 619.1,349.9 620.2,349.9 621.2,350.0 622.3,350.0 623.4,350.0 624.5,350.0 625.6,350.0 626.7,350.0 627.8,350.0 628.8,350.0 629.9,350.0 631.0,350.1 632.1,350.1 633.2,350.1 634.2,350.1 635.3,350.1 636.4,350.1 637.5,350.1 638.6,350.1 639.7,350.1 640.8,350.1 641.8,350.1 642.9,350.1 644.0,350.2 645.1,350.2 646.2,350.2 647.3,350.2 648.3,350.2 649.4,350.2 650.5,350.2 651.6,350.2 652.7,350.2 653.8,350.2 654.8,350.2 655.9,350.2 657.0,350.2 658.1,350.3 659.2,350.3 660.3,350.3 661.3,350.3 662.4,350.3 663.5,350.3 664.6,350.3 665.7,350.3 666.8,350.3 667.8,350.3 668.9,350.3 670.0,350.3 671.1,350.3 672.2,350.3 673.2,350.3 674.3,350.3 675.4,350.3 676.5,350.4 677.6,350.4 678.7,350.4 679.8,350.4 680.8,350.4 681.9,350.4 683.0,350.4 684.1,350.4 685.2,350.4 686.2,350.4 687.3,350.4 688.4,350.4 689.5,350.4 690.6,350.4 691.7,350.4 692.8,350.4 693.8,350.4 694.9,350.4 696.0,350.4 697.1,350.4 698.2,350.5 699.2,350.5 700.3,350.5 701.4,350.5 702.5,350.5 703.6,350.5 704.7,350.5 705.8,350.5 706.8,350.5 707.9,350.5 709.0,350.5 710.1,350.5 711.2,350.5 712.2,350.5 713.3,350.5 714.4,350.5 715.5,350.5 716.6,350.5 717.7,350.5 718.8,350.5 719.8,350.5 720.9,350.5 722.0,350.5 723.1,350.5 724.2,350.5 725.2,350.5 726.3,350.5 727.4,350.6 728.5,350.6 729.6,350.6 730.7,350.6 731.8,350.6 732.8,350.6 733.9,350.6 735.0,350.6\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"410.0\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">t (s)</text><text transform=\"translate(20,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">fréquence reçue f' (Hz)</text></svg>",
+      "contexte2": [
+        "Donnée : célérité du son dans l'air le jour de l'expérience, v<sub>son</sub> = 340 m·s⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Doc. 1. Exprime la distance λ' qui sépare les deux fronts d'onde devant la source, en fonction de λ, u et T. Déduis-en que la fréquence reçue par O s'écrit f<sub>R</sub> = f × v<sub>son</sub> / (v<sub>son</sub> − u).",
+          "aides": [
+            "Fais un schéma : position de la source et du premier front à la date T.",
+            "Le premier front a parcouru v<sub>son</sub> × T, la source u × T dans le même sens : la distance entre eux est la différence.",
+            "Puis f<sub>R</sub> = v<sub>son</sub> / λ' et λ = v<sub>son</sub> × T."
+          ]
+        },
+        {
+          "texte": "Par un raisonnement analogue, on admet que lorsque la source s'éloigne de O, f<sub>E</sub> = f × v<sub>son</sub> / (v<sub>son</sub> + u). Vérifie que ces deux expressions sont cohérentes avec ce que perçoit un piéton au passage d'une moto.",
+          "aides": []
+        },
+        {
+          "texte": "Doc. 2. Relève les valeurs de f<sub>R</sub> et f<sub>E</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Montre que u = v<sub>son</sub> × (f<sub>R</sub> − f<sub>E</sub>) / (f<sub>R</sub> + f<sub>E</sub>). Calcule u en m·s⁻¹ puis en km·h⁻¹. La trottinette respecte-t-elle la limitation ?",
+          "aides": [
+            "Les deux expressions contiennent la même fréquence f : exprime f à partir de chacune et égale les deux.",
+            "f<sub>R</sub> × (v<sub>son</sub> − u) = f<sub>E</sub> × (v<sub>son</sub> + u) ; développe et regroupe les termes en u."
+          ]
+        },
+        {
+          "texte": "Déduis-en la fréquence f émise par le smartphone. Pourquoi la méthode de la question 4 est-elle intéressante quand on ne connaît pas f ?",
+          "aides": []
+        },
+        {
+          "texte": "Les élèves connaissent finalement f = 2000 Hz. Calcule la vitesse u à partir de f<sub>R</sub> seule, avec l'expression approchée Δf / f = u / v<sub>son</sub>. Compare au résultat de la question 4 (écart relatif) et commente.",
+          "aides": [
+            "Δf = f<sub>R</sub> − f, puis u = v<sub>son</sub> × Δf / f.",
+            "Écart relatif = |valeur approchée − valeur exacte| / valeur exacte."
+          ]
+        },
+        {
+          "texte": "Pourquoi la fréquence reçue ne passe-t-elle pas brusquement de f<sub>R</sub> à f<sub>E</sub> au moment du passage devant le micro ?",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : un radar de police émet une onde de fréquence 24,125 GHz qui se réfléchit sur une voiture roulant à 90 km·h⁻¹ vers lui. La voiture reçoit l'onde décalée, puis la renvoie comme une source mobile : le décalage total vaut Δf ≈ 2 × u × f / c. Calcule ce décalage.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Pendant une période, le premier front parcourt λ = v<sub>son</sub> × T vers O, tandis que la source avance de u × T dans la même direction. Devant la source, λ' = λ − u × T = (v<sub>son</sub> − u) × T. Le son se propage à v<sub>son</sub>, donc f<sub>R</sub> = v<sub>son</sub> / λ' = v<sub>son</sub> / ((v<sub>son</sub> − u) × T) = f × v<sub>son</sub> / (v<sub>son</sub> − u).",
+        "<strong>2.</strong> Au rapprochement, v<sub>son</sub> − u &lt; v<sub>son</sub> donc f<sub>R</sub> &gt; f (son plus aigu) ; à l'éloignement, v<sub>son</sub> + u &gt; v<sub>son</sub> donc f<sub>E</sub> &lt; f (son plus grave). C'est bien le « niiiii-aaaouuu » d'une moto qui passe : aigu puis grave.",
+        "<strong>3.</strong> Lecture des paliers : f<sub>R</sub> ≈ 2036 Hz et f<sub>E</sub> ≈ 1965 Hz.",
+        "<strong>4.</strong> f<sub>R</sub> × (v<sub>son</sub> − u) = f × v<sub>son</sub> = f<sub>E</sub> × (v<sub>son</sub> + u), donc v<sub>son</sub> × (f<sub>R</sub> − f<sub>E</sub>) = u × (f<sub>R</sub> + f<sub>E</sub>), d'où u = v<sub>son</sub> × (f<sub>R</sub> − f<sub>E</sub>) / (f<sub>R</sub> + f<sub>E</sub>) = 340 × (2036 − 1965) / (2036 + 1965) = 6,03 m·s⁻¹ = 21,7 km·h⁻¹. C'est inférieur à 25 km·h⁻¹ : la limitation est respectée.",
+        "<strong>5.</strong> f = f<sub>R</sub> × (v<sub>son</sub> − u) / v<sub>son</sub> = 2036 × (340 − 6,03) / 340 = 2,00 × 10³ Hz (même résultat avec f<sub>E</sub>). La méthode n'utilise que les deux fréquences mesurées : pas besoin de connaître f à l'avance.",
+        "<strong>6.</strong> u ≈ v<sub>son</sub> × (f<sub>R</sub> − f) / f = 340 × (2036 − 2000) / 2000 = 6,1 m·s⁻¹ (6,12). Écart relatif : |6,12 − 6,03| / 6,03 = 1,4 %. L'approximation est acceptable car u / v<sub>son</sub> ≈ 0,02 ≪ 1.",
+        "<strong>7.</strong> Le smartphone ne se dirige pas exactement vers le micro : il passe à 1,5 m. Seule la composante de la vitesse dirigée vers le micro compte ; elle diminue à l'approche, s'annule au passage (f' = f) puis devient une vitesse d'éloignement. La fréquence varie donc continûment.",
+        "<strong>8.</strong> Pour aller plus loin : u = 90 / 3,6 = 25 m·s⁻¹ ; Δf ≈ 2 × 25 × 24,125 × 10⁹ / 2,998 × 10⁸ = 4,0 × 10³ Hz (4,0 kHz).",
+        "<em>⚠ Erreur fréquente : prendre la vitesse en km·h⁻¹ dans les formules, ou confondre f<sub>R</sub> − f<sub>E</sub> (écart entre les deux paliers) avec le décalage Δf = f<sub>R</sub> − f, deux fois plus petit.</em>"
+      ]
+    }
+  ]
+}

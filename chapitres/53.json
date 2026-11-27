@@ -1,0 +1,701 @@
+{
+  "id": 53,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Les étapes d'une synthèse organique",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une synthèse organique comporte généralement quatre étapes : la transformation chimique (souvent accélérée par chauffage à reflux), l'isolement du produit formé, sa purification, puis l'identification et le contrôle de sa pureté."
+          }
+        ]
+      },
+      {
+        "title": "2. Le chauffage à reflux",
+        "icon": "🔥",
+        "content": [
+          {
+            "type": "def",
+            "term": "Chauffage à reflux",
+            "text": "Permet d'accélérer une réaction lente en élevant la température, sans perte de matière : le réfrigérant à eau, placé à la verticale au-dessus du ballon, condense les vapeurs qui retombent dans le milieu réactionnel."
+          },
+          {
+            "type": "text",
+            "text": "Le montage comprend : un ballon (contenant les réactifs et éventuellement un catalyseur), un chauffe-ballon, un réfrigérant à eau, et des pierres ponces pour réguler l'ébullition."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 380\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"eauArrowL53\" markerWidth=\"7\" markerHeight=\"7\" refX=\"2\" refY=\"3.5\" orient=\"auto\"><path d=\"M7,0 L0,3.5 L7,7 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"eauArrowR53\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#3E7DBF\"/></marker></defs><line x1=\"280\" y1=\"20\" x2=\"280\" y2=\"360\" stroke=\"#1B2420\" stroke-width=\"3\"/><line x1=\"280\" y1=\"110\" x2=\"225\" y2=\"110\" stroke=\"#1B2420\" stroke-width=\"4\"/><rect x=\"205\" y=\"100\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"90\" y=\"60\" width=\"40\" height=\"140\" rx=\"6\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"110\" y1=\"45\" x2=\"110\" y2=\"215\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"140\" y1=\"185\" x2=\"133\" y2=\"185\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#eauArrowL53)\"/><text x=\"144\" y=\"189\" font-size=\"10\" fill=\"#3E7DBF\">eau</text><line x1=\"133\" y1=\"75\" x2=\"140\" y2=\"75\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#eauArrowR53)\"/><text x=\"144\" y=\"79\" font-size=\"10\" fill=\"#3E7DBF\">eau</text><text x=\"135\" y=\"50\" font-size=\"11\" fill=\"#5C6B60\">Réfrigérant</text><rect x=\"103\" y=\"210\" width=\"14\" height=\"35\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><circle cx=\"110\" cy=\"300\" r=\"55\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><path d=\"M62,315 Q110,300 158,315 L158,340 Q110,355 62,340 Z\" fill=\"#3E7DBF\" fill-opacity=\"0.3\"/><circle cx=\"95\" cy=\"325\" r=\"3\" fill=\"#5C6B60\"/><circle cx=\"120\" cy=\"330\" r=\"3\" fill=\"#5C6B60\"/><text x=\"172\" y=\"300\" font-size=\"11\" fill=\"#5C6B60\">Ballon</text><rect x=\"60\" y=\"350\" width=\"100\" height=\"25\" rx=\"8\" fill=\"#B9C0AC\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><text x=\"172\" y=\"366\" font-size=\"11\" fill=\"#5C6B60\">Chauffe-ballon</text></svg>",
+            "caption": "Montage à reflux : les vapeurs qui s'échappent du ballon chauffé sont condensées par le réfrigérant (refroidi par une circulation d'eau à contre-courant) et retombent dans le ballon, sans perte de matière."
+          }
+        ]
+      },
+      {
+        "title": "3. Techniques de purification",
+        "icon": "🧫",
+        "content": [
+          {
+            "type": "def",
+            "term": "Recristallisation",
+            "text": "Un solide est dissous à chaud dans un solvant approprié, puis la solution est refroidie lentement : le solide, moins soluble à froid, recristallise sous une forme plus pure, tandis que les impuretés restent en solution."
+          },
+          {
+            "type": "def",
+            "term": "Extraction et filtration",
+            "text": "Une extraction liquide-liquide permet d'isoler le produit organique de la phase aqueuse ; une filtration (simple ou sous vide, sur Büchner) sépare un solide de la phase liquide qui le contient."
+          }
+        ]
+      },
+      {
+        "title": "4. Contrôle de la pureté : la CCM",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "def",
+            "term": "Chromatographie sur couche mince (CCM)",
+            "text": "Permet de comparer le produit synthétisé à un produit commercial ou aux réactifs : une espèce pure ne révèle qu'une seule tache, caractérisée par son rapport frontal."
+          },
+          {
+            "type": "formula",
+            "label": "Rapport frontal",
+            "text": "Rf = distance parcourue par l'espèce / distance parcourue par l'éluant"
+          },
+          {
+            "type": "text",
+            "text": "La température de fusion (mesurée au banc Kofler) est également un critère de pureté : un solide pur fond à une température précise."
+          },
+          {
+            "type": "text",
+            "text": "Exemple (synthèse de l'acétate d'isoamyle) : éluant parcouru = 6,4 cm. Réactif A : 3,2 cm. Produit synthétisé : deux taches, à 3,2 cm et 5,1 cm. Acétate d'isoamyle commercial : 5,1 cm. La tache à 5,1 cm (Rf ≈ 0,80) commune au produit et au commercial confirme la présence d'acétate d'isoamyle ; la tache à 3,2 cm (Rf = 0,50), identique à celle du réactif A, montre que le produit contient encore du réactif résiduel et n'est donc pas pur."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"20\" width=\"240\" height=\"245\" fill=\"#FAFAF5\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"40\" y1=\"250\" x2=\"280\" y2=\"250\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"4\" y=\"254\" font-size=\"9\" fill=\"#5C6B60\">Dépôt</text><line x1=\"40\" y1=\"50\" x2=\"280\" y2=\"50\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"178\" y=\"44\" font-size=\"9\" fill=\"#5C6B60\">Front de l'éluant</text><text x=\"90\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Réactif A</text><text x=\"165\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Produit synth.</text><text x=\"240\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Commercial</text><line x1=\"70\" y1=\"150\" x2=\"260\" y2=\"150\" stroke=\"#C0472F\" stroke-width=\"1\" stroke-dasharray=\"2 2\" opacity=\"0.5\"/><line x1=\"70\" y1=\"90.6\" x2=\"260\" y2=\"90.6\" stroke=\"#2F7D75\" stroke-width=\"1\" stroke-dasharray=\"2 2\" opacity=\"0.5\"/><circle cx=\"90\" cy=\"150\" r=\"6\" fill=\"#C0472F\"/><circle cx=\"165\" cy=\"150\" r=\"6\" fill=\"#C0472F\"/><circle cx=\"165\" cy=\"90.6\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"240\" cy=\"90.6\" r=\"6\" fill=\"#2F7D75\"/><text x=\"284\" y=\"153\" font-size=\"9\" fill=\"#C0472F\">Rf=0,50</text><text x=\"284\" y=\"93\" font-size=\"9\" fill=\"#2F7D75\">Rf=0,80</text></svg>",
+            "caption": "Chromatogramme de contrôle : la tache commune à 5,1 cm (Rf ≈ 0,80, en vert) confirme la présence du produit attendu ; la tache à 3,2 cm (Rf = 0,50, en rouge), identique à celle du réactif A, révèle un reste de réactif non consommé — le produit n'est donc pas encore pur."
+          }
+        ]
+      },
+      {
+        "title": "5. Rendement d'une synthèse",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Rendement",
+            "text": "Compare la masse de produit réellement obtenue à la masse théorique maximale calculable à partir des quantités de matière introduites, en supposant la réaction totale."
+          },
+          {
+            "type": "formula",
+            "label": "Formule du rendement",
+            "text": "η = m(obtenue) / m(théorique) × 100"
+          },
+          {
+            "type": "text",
+            "text": "Exemple (TP synthèse de l'arôme de banane) : m(théorique) = 9,5 g, m(obtenue) = 6,8 g, donc η = 6,8/9,5 × 100 ≈ 71,6 %."
+          },
+          {
+            "type": "text",
+            "text": "Autre exemple : m(théorique) = 12,4 g, m(obtenue) = 8,9 g, donc η = 8,9/12,4 × 100 ≈ 71,8 %. Un rendement inférieur à 100 % s'explique par une réaction non totale et par des pertes de matière lors des étapes de transvasement, d'extraction ou de purification."
+          }
+        ]
+      },
+      {
+        "title": "6. Synthèse du chapitre",
+        "icon": "📌",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Chauffage à reflux",
+                "Accélère la réaction en chauffant sans perte de matière"
+              ],
+              [
+                "CCM",
+                "Contrôle de pureté par comparaison des taches (Rf)"
+              ],
+              [
+                "Rendement",
+                "Masse obtenue / masse théorique × 100"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Au cours d'une synthèse, l'étape d'isolement consiste à :",
+      "opts": [
+        "rendre le produit plus pur, par exemple par recristallisation",
+        "séparer le produit du milieu réactionnel (extraction, filtration)",
+        "vérifier l'identité du produit par CCM",
+        "faire réagir les réactifs, par exemple au reflux"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "isolement-vs-purification",
+          "texte": "Confondre isolement et purification : on sépare d'abord le produit du mélange, puis on élimine les impuretés qu'il contient"
+        },
+        null,
+        {
+          "code": "isolement-vs-identification",
+          "texte": "Confondre isolement et identification : la CCM vient à la fin, pour contrôler l'identité et la pureté"
+        },
+        {
+          "code": "etapes-synthese-confondues",
+          "texte": "Confondre les étapes : la transformation a lieu dans le ballon, l'isolement vient après"
+        }
+      ],
+      "exp": "Les quatre étapes sont : transformation, isolement (séparer le produit du milieu réactionnel), purification, puis identification et contrôle de pureté. Attention : isoler n'est pas encore purifier."
+    },
+    {
+      "q": "Dans un montage de chauffage à reflux, le réfrigérant à eau sert à :",
+      "opts": [
+        "refroidir le mélange pour ralentir la réaction",
+        "séparer le produit en le recueillant dans un autre récipient",
+        "condenser les vapeurs, qui retombent dans le ballon",
+        "empêcher le mélange de bouillir"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "reflux-refroidit-melange",
+          "texte": "Croire que le réfrigérant refroidit le mélange : il condense seulement les vapeurs, le mélange reste chaud"
+        },
+        {
+          "code": "reflux-vs-distillation",
+          "texte": "Confondre reflux et distillation : au reflux, les vapeurs condensées retombent dans le ballon"
+        },
+        null,
+        {
+          "code": "reflux-empeche-ebullition",
+          "texte": "Croire que le réfrigérant empêche l'ébullition : le mélange bout, mais les vapeurs sont condensées et ne sont pas perdues"
+        }
+      ],
+      "exp": "Le réfrigérant vertical condense les vapeurs, qui retombent dans le ballon : on peut chauffer longtemps sans perte de matière. Attention : il ne refroidit pas le mélange réactionnel."
+    },
+    {
+      "q": "Pourquoi chauffe-t-on le mélange réactionnel lors d'une synthèse ?",
+      "opts": [
+        "Pour accélérer la transformation",
+        "Pour obtenir davantage de produit à l'état final",
+        "Pour faire fondre tous les réactifs",
+        "Pour éliminer l'eau du mélange"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "facteur-cinetique-etat-final",
+          "texte": "Croire que chauffer change l'état final : la température accélère la transformation, elle ne fixe pas la quantité de produit"
+        },
+        {
+          "code": "chauffage-pour-fondre",
+          "texte": "Croire que le chauffage sert à faire fondre les réactifs : il sert à rendre la transformation plus rapide"
+        },
+        {
+          "code": "chauffage-evapore-eau",
+          "texte": "Croire que le chauffage élimine l'eau : avec le reflux, les vapeurs retombent dans le ballon"
+        }
+      ],
+      "exp": "La température est un facteur cinétique : chauffer accélère une transformation lente. Attention : chauffer ne permet pas d'obtenir plus de produit que xmax ne l'autorise."
+    },
+    {
+      "q": "Pourquoi ajoute-t-on quelques grains de pierre ponce dans le ballon ?",
+      "opts": [
+        "Pour catalyser la transformation",
+        "Pour absorber l'eau formée",
+        "Pour refroidir le mélange",
+        "Pour régulariser l'ébullition"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "pierre-ponce-catalyseur",
+          "texte": "Croire que la pierre ponce est un catalyseur : elle ne participe pas à la réaction, elle évite l'ébullition brutale"
+        },
+        {
+          "code": "pierre-ponce-dessechant",
+          "texte": "Croire que la pierre ponce absorbe l'eau : elle sert seulement à régulariser l'ébullition"
+        },
+        {
+          "code": "pierre-ponce-refroidit",
+          "texte": "Croire que la pierre ponce refroidit le mélange : elle favorise la formation de petites bulles régulières"
+        },
+        null
+      ],
+      "exp": "La pierre ponce, poreuse, favorise la formation de petites bulles : l'ébullition est régulière, sans projections. Elle ne participe pas à la transformation."
+    },
+    {
+      "q": "La purification d'un solide par recristallisation repose sur le fait que :",
+      "opts": [
+        "le solide est beaucoup plus soluble à chaud qu'à froid",
+        "le solide est plus soluble à froid qu'à chaud",
+        "les impuretés cristallisent, le produit reste dissous",
+        "le solvant détruit les impuretés par une réaction"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "recristallisation-solubilite-inversee",
+          "texte": "Inverser l'effet de la température : on dissout à chaud, puis le produit, moins soluble à froid, recristallise"
+        },
+        {
+          "code": "recristallisation-impuretes-cristallisent",
+          "texte": "Inverser les rôles : c'est le produit qui recristallise, les impuretés, peu abondantes, restent dissoutes"
+        },
+        {
+          "code": "purification-par-reaction",
+          "texte": "Croire que la purification détruit les impuretés : elle les sépare du produit, sans réaction chimique"
+        }
+      ],
+      "exp": "On dissout le solide à chaud dans un minimum de solvant, puis on refroidit : le produit, moins soluble à froid, recristallise ; les impuretés restent en solution. On filtre ensuite."
+    },
+    {
+      "q": "La transformation peut former au maximum 4,0×10⁻² mol de produit (M = 130 g·mol⁻¹, soit m(théorique) = 5,2 g). On en obtient 3,9 g. Le rendement vaut :",
+      "opts": [
+        "133 %",
+        "75 %",
+        "98 %",
+        "3,0 %"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "rendement-inverse",
+          "texte": "Inverser le rapport : 5,2 / 3,9 = 133 % ; un rendement ne dépasse jamais 100 %"
+        },
+        null,
+        {
+          "code": "masse-vs-quantite-matiere",
+          "texte": "Comparer une masse à une quantité de matière : 3,9 / 4,0×10⁻² n'a pas de sens, il faut comparer 3,9 g à 5,2 g"
+        },
+        {
+          "code": "rendement-sans-quantite-maximale",
+          "texte": "Prendre n(obtenue) = 3,9 / 130 = 3,0×10⁻² mol pour le rendement : il faut le diviser par nmax = 4,0×10⁻² mol"
+        }
+      ],
+      "exp": "η = m(obtenue) / m(théorique) = 3,9 / 5,2 = 0,75, soit 75 % (de même n(obtenue) / nmax = 3,0×10⁻² / 4,0×10⁻²). Attention : on compare deux masses ou deux quantités de matière."
+    },
+    {
+      "q": "Sur une plaque de CCM, l'éluant a parcouru 8,0 cm et une tache 3,0 cm. Son rapport frontal vaut :",
+      "opts": [
+        "0,38",
+        "2,7",
+        "3,0",
+        "0,63"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "rf-inverse",
+          "texte": "Inverser le rapport : 8,0 / 3,0 ≈ 2,7, alors que Rf = h / H est toujours inférieur à 1"
+        },
+        {
+          "code": "rf-hauteur-tache",
+          "texte": "Prendre la distance parcourue par la tache pour le Rf : il faut la diviser par celle de l'éluant"
+        },
+        {
+          "code": "rf-distance-restante",
+          "texte": "Utiliser la distance entre la tache et le front de l'éluant : (8,0 − 3,0) / 8,0 ; Rf se mesure depuis la ligne de dépôt"
+        }
+      ],
+      "exp": "Rf = distance parcourue par l'espèce / distance parcourue par l'éluant = 3,0 / 8,0 ≈ 0,38. Attention : les deux distances se mesurent depuis la ligne de dépôt ; Rf est sans unité et inférieur à 1."
+    },
+    {
+      "q": "Sur la ligne du produit synthétisé, la CCM révèle deux taches : l'une à la hauteur du produit commercial, l'autre à la hauteur du réactif A. On en conclut :",
+      "opts": [
+        "le produit est pur, car une tache correspond au produit commercial",
+        "le produit attendu n'a pas été formé",
+        "le produit attendu est présent, mais il reste du réactif A",
+        "il s'est formé deux espèces nouvelles"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "une-tache-commune-donc-pur",
+          "texte": "Croire qu'une tache commune suffit : une espèce pure ne donne qu'une seule tache ; la seconde montre une impureté"
+        },
+        {
+          "code": "deux-taches-pas-de-produit",
+          "texte": "Croire que le produit n'est pas formé : la tache commune avec le produit commercial montre sa présence"
+        },
+        null,
+        {
+          "code": "taches-nouvelles-especes",
+          "texte": "Oublier de comparer aux références : la seconde tache est à la même hauteur que le réactif A, c'est du réactif restant"
+        }
+      ],
+      "exp": "La tache commune avec le produit commercial montre que le produit attendu est formé ; la tache à la hauteur du réactif A montre qu'il en reste : le produit n'est pas pur. Attention : on identifie une tache par comparaison."
+    },
+    {
+      "q": "Le solide synthétisé fond sur le banc Kofler entre 118 °C et 124 °C ; la température de fusion tabulée du produit attendu est 122 °C. On en conclut :",
+      "opts": [
+        "le produit est pur, car 122 °C est dans l'intervalle",
+        "le produit contient probablement des impuretés",
+        "ce n'est pas l'espèce attendue",
+        "il faut le chauffer plus longtemps pour le purifier"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "tfus-intervalle-pur",
+          "texte": "Croire qu'un intervalle contenant la valeur tabulée suffit : un solide pur fond à une température précise, pas sur 6 °C"
+        },
+        null,
+        {
+          "code": "impur-donc-autre-espece",
+          "texte": "Confondre impur et autre espèce : le produit attendu est sans doute présent, mais mélangé à des impuretés"
+        },
+        {
+          "code": "chauffage-purifie",
+          "texte": "Croire que chauffer purifie : il faut une technique de purification, comme la recristallisation"
+        }
+      ],
+      "exp": "Un solide pur fond à une température précise. Une fusion étalée sur plusieurs degrés indique un mélange : le produit contient des impuretés et doit être purifié (recristallisation par exemple)."
+    },
+    {
+      "q": "Pourquoi le rendement d'une synthèse est-il presque toujours inférieur à 100 % ?",
+      "opts": [
+        "Parce qu'on utilise un réactif en excès",
+        "Parce que la masse ne se conserve pas pendant la transformation",
+        "Parce que le catalyseur est consommé",
+        "Parce que la transformation peut être non totale et que l'on perd du produit"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "exces-diminue-rendement",
+          "texte": "Croire que l'excès d'un réactif diminue le rendement : le rendement se calcule à partir du réactif limitant"
+        },
+        {
+          "code": "masse-non-conservee",
+          "texte": "Croire que la masse ne se conserve pas : les atomes se réarrangent, la masse totale reste la même"
+        },
+        {
+          "code": "catalyseur-consomme",
+          "texte": "Croire que le catalyseur est consommé : il est régénéré et ne limite pas la quantité de produit"
+        },
+        null
+      ],
+      "exp": "La transformation n'est pas toujours totale, et on perd du produit lors des transvasements, de l'isolement et de la purification. Attention : la masse se conserve, ce n'est pas la cause."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "L'arôme de banane, étape par étape",
+      "contexte": [
+        "L'odeur des bonbons à la banane vient souvent d'un ester, l'acétate d'isoamyle (ou éthanoate de 3-méthylbutyle). En TP, Sofiane le synthétise en suivant ce protocole :",
+        "A. Dans un ballon, introduire 15 mL de 3-méthylbutan-1-ol, 20 mL d'acide éthanoïque pur, quelques gouttes d'acide sulfurique concentré et quelques grains de pierre ponce.",
+        "B. Chauffer à reflux pendant 30 minutes.",
+        "C. Laisser refroidir, puis verser le contenu du ballon dans un bécher contenant 50 mL d'eau salée froide.",
+        "D. Verser le tout dans une ampoule à décanter, agiter, laisser décanter, puis éliminer la phase aqueuse.",
+        "E. Laver la phase organique avec une solution d'hydrogénocarbonate de sodium, en ouvrant souvent le robinet de l'ampoule retournée (un gaz se dégage), puis éliminer la phase aqueuse.",
+        "F. Sécher la phase organique avec du sulfate de magnésium anhydre, puis filtrer.",
+        "G. Réaliser une chromatographie sur couche mince (CCM) du liquide obtenu, à côté d'acétate d'isoamyle commercial.",
+        "Données : l'acétate d'isoamyle est très peu soluble dans l'eau salée, sa masse volumique est 0,87 g·mL⁻¹ ; celle de l'eau salée est environ 1,2 g·mL⁻¹. L'acide éthanoïque est très soluble dans l'eau."
+      ],
+      "questions": [
+        {
+          "texte": "Une synthèse comporte quatre étapes : transformation des réactifs, isolement du produit, purification, analyse. Associe chaque étape A à G du protocole à l'une de ces quatre étapes.",
+          "aides": [
+            "Repère les verbes de chaque étape : « introduire, chauffer » ; « verser, décanter » ; « laver, sécher » ; « réaliser une CCM ».",
+            "Isoler, c'est séparer le produit du reste du mélange ; purifier, c'est retirer les impuretés qui restent avec lui (acide, eau)."
+          ]
+        },
+        {
+          "texte": "Lors de l'étape D, l'ampoule contient deux phases. Dans quelle phase (supérieure ou inférieure) se trouve l'ester ? Justifie avec les données.",
+          "aides": []
+        },
+        {
+          "texte": "À quoi sert l'étape E ? Le gaz qui se dégage est le dioxyde de carbone : pourquoi faut-il ouvrir souvent le robinet ?",
+          "aides": []
+        },
+        {
+          "texte": "À quoi sert le sulfate de magnésium anhydre de l'étape F ? Pourquoi faut-il ensuite filtrer ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? « Si la CCM du liquide obtenu montre deux taches, le produit est pur. » Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Transformation des réactifs : A et B (on met les réactifs en présence, puis on chauffe à reflux). Isolement du produit : C et D (on sépare l'ester, peu soluble dans l'eau salée, du reste du mélange par extraction liquide-liquide). Purification : E et F (on élimine l'acide restant, puis les traces d'eau). Analyse : G (identification et contrôle de pureté par CCM).",
+        "<strong>2.</strong> L'ester est très peu soluble dans l'eau salée : il forme une phase à part, la phase organique. Sa masse volumique (0,87 g·mL⁻¹) est plus petite que celle de l'eau salée (1,2 g·mL⁻¹) : la phase organique, qui contient l'ester, est la phase supérieure.",
+        "<strong>3.</strong> L'étape E est un lavage : l'hydrogénocarbonate réagit avec l'acide éthanoïque restant dans la phase organique (réaction vue avec le vinaigre et le bicarbonate). L'acide est ainsi éliminé dans la phase aqueuse. Le CO₂ formé fait monter la pression dans l'ampoule fermée : on dégaze souvent pour éviter que le bouchon saute et projette le mélange.",
+        "<strong>4.</strong> Le sulfate de magnésium anhydre fixe les traces d'eau restées dans la phase organique : c'est un desséchant (étape de séchage). C'est un solide : on le sépare du liquide par filtration.",
+        "<strong>5.</strong> FAUX : une espèce pure ne donne qu'une seule tache. Deux taches signifient que le liquide contient au moins deux espèces : le produit n'est pas pur (il peut, par exemple, contenir encore un réactif).",
+        "<em>⚠ Erreur fréquente : classer le lavage et le séchage dans l'isolement. L'isolement sépare le produit du mélange réactionnel ; la purification élimine ensuite les impuretés qui l'accompagnent encore.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le montage à reflux",
+      "contexte": [
+        "Pour la synthèse de l'exercice 1, Sofiane réalise le montage à reflux schématisé ci-dessous.",
+        "Liste des noms (dans le désordre) : chauffe-ballon ; entrée d'eau froide ; support élévateur ; ballon ; sortie d'eau ; mélange réactionnel ; pierres ponces ; réfrigérant à eau."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"60\" y=\"440\" width=\"150\" height=\"14\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\"/><line x1=\"110\" y1=\"440\" x2=\"110\" y2=\"15\" stroke=\"#3a3a3a\" stroke-width=\"6\"/><line x1=\"110\" y1=\"125\" x2=\"244\" y2=\"125\" stroke=\"#3a3a3a\" stroke-width=\"5\"/><rect x=\"236\" y=\"115\" width=\"16\" height=\"20\" rx=\"3\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\"/><rect x=\"104\" y=\"117\" width=\"12\" height=\"16\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\"/><line x1=\"110\" y1=\"222\" x2=\"256\" y2=\"222\" stroke=\"#3a3a3a\" stroke-width=\"5\"/><rect x=\"248\" y=\"212\" width=\"16\" height=\"20\" rx=\"3\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\"/><rect x=\"104\" y=\"214\" width=\"12\" height=\"16\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\"/><rect x=\"180\" y=\"428\" width=\"180\" height=\"14\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"180\" y=\"384\" width=\"180\" height=\"10\" fill=\"#cfc6b6\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"195\" y1=\"394\" x2=\"345\" y2=\"428\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><line x1=\"195\" y1=\"428\" x2=\"345\" y2=\"394\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><rect x=\"352\" y=\"404\" width=\"22\" height=\"14\" rx=\"3\" fill=\"#3a3a3a\"/><rect x=\"200\" y=\"322\" width=\"140\" height=\"62\" rx=\"12\" fill=\"#B9A88F\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><circle cx=\"320\" cy=\"364\" r=\"6\" fill=\"#B5523B\"/><rect x=\"258\" y=\"205\" width=\"24\" height=\"52\" fill=\"#EEF3F4\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"270\" cy=\"300\" r=\"50\" fill=\"#EEF3F4\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"260\" y=\"245\" width=\"20\" height=\"14\" fill=\"#EEF3F4\"/><path d=\"M222.3,315 A50,50 0 0,0 317.7,315 Z\" fill=\"#C8962E\" fill-opacity=\"0.45\"/><polygon points=\"247,341 250,334 257,336 256,342\" fill=\"#7d7668\"/><polygon points=\"263,346 266,339 273,341 272,347\" fill=\"#7d7668\"/><polygon points=\"279,340 282,333 289,335 288,341\" fill=\"#7d7668\"/><rect x=\"246\" y=\"45\" width=\"48\" height=\"150\" rx=\"10\" fill=\"#DCEBF2\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"263\" y=\"22\" width=\"14\" height=\"190\" fill=\"#F7FAFB\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"294\" y=\"58\" width=\"42\" height=\"12\" fill=\"#DCEBF2\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"294\" y=\"172\" width=\"42\" height=\"12\" fill=\"#DCEBF2\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"455\" y1=\"52\" x2=\"336\" y2=\"64\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"52\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"58\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">1</text><line x1=\"455\" y1=\"118\" x2=\"294\" y2=\"120\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"118\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"124\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">2</text><line x1=\"455\" y1=\"184\" x2=\"336\" y2=\"178\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"184\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"190\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">3</text><line x1=\"455\" y1=\"252\" x2=\"310\" y2=\"268\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"252\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"258\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">4</text><line x1=\"455\" y1=\"300\" x2=\"300\" y2=\"322\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"300\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">5</text><line x1=\"455\" y1=\"348\" x2=\"284\" y2=\"338\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"348\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"354\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">6</text><line x1=\"455\" y1=\"392\" x2=\"340\" y2=\"352\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"392\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"398\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">7</text><line x1=\"455\" y1=\"436\" x2=\"360\" y2=\"435\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"470\" cy=\"436\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"470\" y=\"442\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">8</text><text x=\"510\" y=\"235\" fill=\"#3a3a3a\" font-size=\"15\">Montage à reflux :</text><text x=\"510\" y=\"257\" fill=\"#3a3a3a\" font-size=\"15\">éléments numérotés</text><text x=\"510\" y=\"279\" fill=\"#3a3a3a\" font-size=\"15\">de 1 à 8.</text></svg>",
+      "contexte2": [
+        "L'étiquette du flacon d'acide éthanoïque pur porte deux pictogrammes de danger : une flamme, et un liquide qui attaque une main et une surface."
+      ],
+      "questions": [
+        {
+          "texte": "Légende le schéma : associe chaque numéro de 1 à 8 à un nom de la liste.",
+          "aides": [
+            "Commence par ce que tu reconnais sûrement : ballon, chauffe-ballon, réfrigérant.",
+            "Les deux petits tubes sur le côté du réfrigérant servent à la circulation de l'eau : elle entre par le tube du bas et sort par le tube du haut."
+          ]
+        },
+        {
+          "texte": "QCM. Pour chaque élément, choisis le bon rôle.<br>a. Le chauffage : (1) il accélère la transformation ; (2) il fait évaporer les produits pour les récupérer ; (3) il rend la transformation totale.<br>b. Le réfrigérant : (1) il refroidit le mélange pour arrêter la réaction ; (2) il condense les vapeurs, qui retombent dans le ballon ; (3) il mesure la température.<br>c. Les pierres ponces : (1) elles régularisent l'ébullition et évitent les projections ; (2) elles absorbent les vapeurs ; (3) elles servent de réactif.<br>d. Le support élévateur : (1) il rapproche le ballon du réfrigérant ; (2) il permet de retirer rapidement le chauffe-ballon en cas de problème ; (3) il chauffe le ballon par le dessous.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie. « Pour ne perdre aucune vapeur, il faut boucher le haut du réfrigérant. »",
+          "aides": []
+        },
+        {
+          "texte": "Que signifient les deux pictogrammes de l'acide éthanoïque pur ? Cite trois précautions à prendre pendant cette synthèse.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : sortie d'eau ; 2 : réfrigérant à eau ; 3 : entrée d'eau froide ; 4 : ballon ; 5 : mélange réactionnel ; 6 : pierres ponces ; 7 : chauffe-ballon ; 8 : support élévateur.",
+        "L'eau entre par le bas du réfrigérant et ressort par le haut : ainsi le manchon est toujours entièrement rempli d'eau froide.",
+        "<strong>2.</strong> a. (1) : la température élevée accélère la transformation (elle ne la rend pas totale).",
+        "b. (2) : les vapeurs qui montent se condensent au contact de la paroi froide et retombent dans le ballon : pas de perte de matière.",
+        "c. (1) : elles régularisent l'ébullition et évitent les projections.",
+        "d. (2) : en abaissant le support, on éloigne immédiatement le chauffe-ballon du ballon.",
+        "<strong>3.</strong> FAUX : le montage doit rester ouvert en haut. Bouché, il serait chauffé en système fermé : la pression augmenterait et le montage pourrait éclater. Les vapeurs sont de toute façon condensées par le réfrigérant.",
+        "<strong>4.</strong> Flamme : espèce inflammable. Liquide qui attaque la main et la surface : espèce corrosive (brûlures graves de la peau et des yeux). Précautions possibles : blouse fermée, lunettes et gants ; prélever l'acide sous la hotte ; aucune flamme à proximité (on chauffe avec un chauffe-ballon électrique, pas avec un bec Bunsen) ; refermer le flacon aussitôt.",
+        "<em>⚠ Erreur fréquente : croire que le réfrigérant sert à refroidir le mélange réactionnel. Il ne refroidit que les vapeurs, le ballon reste chaud.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le conservateur des sodas",
+      "contexte": [
+        "L'acide benzoïque (E210) est un conservateur utilisé dans certaines boissons. En TP, Léa en a synthétisé à partir d'un réactif, l'alcool benzylique. Pour contrôler son produit brut (un solide blanc), elle réalise une CCM : dépôt A, alcool benzylique ; dépôt B, son produit brut ; dépôt C, acide benzoïque commercial. Le chromatogramme révélé est représenté ci-dessous.",
+        "Rappel : rapport frontal Rf = distance parcourue par l'espèce / distance parcourue par l'éluant (distances mesurées depuis la ligne de dépôt)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"230\" y=\"7.0\" width=\"300\" height=\"443.0\" fill=\"#FAF7F0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"150\" y=\"6.0\" width=\"46\" height=\"423.0\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"178\" y1=\"420.0\" x2=\"196\" y2=\"420.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"425.0\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"190\" y1=\"415.5\" x2=\"196\" y2=\"415.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"411.0\" x2=\"196\" y2=\"411.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"406.5\" x2=\"196\" y2=\"406.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"402.0\" x2=\"196\" y2=\"402.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"397.5\" x2=\"196\" y2=\"397.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"393.0\" x2=\"196\" y2=\"393.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"388.5\" x2=\"196\" y2=\"388.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"384.0\" x2=\"196\" y2=\"384.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"379.5\" x2=\"196\" y2=\"379.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"375.0\" x2=\"196\" y2=\"375.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"380.0\" text-anchor=\"end\" font-size=\"15\">1</text><line x1=\"190\" y1=\"370.5\" x2=\"196\" y2=\"370.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"366.0\" x2=\"196\" y2=\"366.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"361.5\" x2=\"196\" y2=\"361.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"357.0\" x2=\"196\" y2=\"357.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"352.5\" x2=\"196\" y2=\"352.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"348.0\" x2=\"196\" y2=\"348.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"343.5\" x2=\"196\" y2=\"343.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"339.0\" x2=\"196\" y2=\"339.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"334.5\" x2=\"196\" y2=\"334.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"330.0\" x2=\"196\" y2=\"330.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"335.0\" text-anchor=\"end\" font-size=\"15\">2</text><line x1=\"190\" y1=\"325.5\" x2=\"196\" y2=\"325.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"321.0\" x2=\"196\" y2=\"321.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"316.5\" x2=\"196\" y2=\"316.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"312.0\" x2=\"196\" y2=\"312.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"307.5\" x2=\"196\" y2=\"307.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"303.0\" x2=\"196\" y2=\"303.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"298.5\" x2=\"196\" y2=\"298.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"294.0\" x2=\"196\" y2=\"294.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"289.5\" x2=\"196\" y2=\"289.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"285.0\" x2=\"196\" y2=\"285.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"290.0\" text-anchor=\"end\" font-size=\"15\">3</text><line x1=\"190\" y1=\"280.5\" x2=\"196\" y2=\"280.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"276.0\" x2=\"196\" y2=\"276.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"271.5\" x2=\"196\" y2=\"271.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"267.0\" x2=\"196\" y2=\"267.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"262.5\" x2=\"196\" y2=\"262.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"258.0\" x2=\"196\" y2=\"258.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"253.5\" x2=\"196\" y2=\"253.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"249.0\" x2=\"196\" y2=\"249.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"244.5\" x2=\"196\" y2=\"244.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"240.0\" x2=\"196\" y2=\"240.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"245.0\" text-anchor=\"end\" font-size=\"15\">4</text><line x1=\"190\" y1=\"235.5\" x2=\"196\" y2=\"235.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"231.0\" x2=\"196\" y2=\"231.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"226.5\" x2=\"196\" y2=\"226.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"222.0\" x2=\"196\" y2=\"222.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"217.5\" x2=\"196\" y2=\"217.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"213.0\" x2=\"196\" y2=\"213.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"208.5\" x2=\"196\" y2=\"208.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"204.0\" x2=\"196\" y2=\"204.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"199.5\" x2=\"196\" y2=\"199.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"195.0\" x2=\"196\" y2=\"195.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"200.0\" text-anchor=\"end\" font-size=\"15\">5</text><line x1=\"190\" y1=\"190.5\" x2=\"196\" y2=\"190.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"186.0\" x2=\"196\" y2=\"186.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"181.5\" x2=\"196\" y2=\"181.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"177.0\" x2=\"196\" y2=\"177.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"172.5\" x2=\"196\" y2=\"172.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"168.0\" x2=\"196\" y2=\"168.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"163.5\" x2=\"196\" y2=\"163.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"159.0\" x2=\"196\" y2=\"159.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"154.5\" x2=\"196\" y2=\"154.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"150.0\" x2=\"196\" y2=\"150.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"155.0\" text-anchor=\"end\" font-size=\"15\">6</text><line x1=\"190\" y1=\"145.5\" x2=\"196\" y2=\"145.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"141.0\" x2=\"196\" y2=\"141.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"136.5\" x2=\"196\" y2=\"136.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"132.0\" x2=\"196\" y2=\"132.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"127.5\" x2=\"196\" y2=\"127.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"123.0\" x2=\"196\" y2=\"123.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"118.5\" x2=\"196\" y2=\"118.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"114.0\" x2=\"196\" y2=\"114.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"109.5\" x2=\"196\" y2=\"109.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"105.0\" x2=\"196\" y2=\"105.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"110.0\" text-anchor=\"end\" font-size=\"15\">7</text><line x1=\"190\" y1=\"100.5\" x2=\"196\" y2=\"100.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"96.0\" x2=\"196\" y2=\"96.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"91.5\" x2=\"196\" y2=\"91.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"87.0\" x2=\"196\" y2=\"87.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"82.5\" x2=\"196\" y2=\"82.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"78.0\" x2=\"196\" y2=\"78.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"73.5\" x2=\"196\" y2=\"73.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"69.0\" x2=\"196\" y2=\"69.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"64.5\" x2=\"196\" y2=\"64.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"60.0\" x2=\"196\" y2=\"60.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"65.0\" text-anchor=\"end\" font-size=\"15\">8</text><line x1=\"190\" y1=\"55.5\" x2=\"196\" y2=\"55.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"51.0\" x2=\"196\" y2=\"51.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"46.5\" x2=\"196\" y2=\"46.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"42.0\" x2=\"196\" y2=\"42.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"184\" y1=\"37.5\" x2=\"196\" y2=\"37.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"33.0\" x2=\"196\" y2=\"33.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"28.5\" x2=\"196\" y2=\"28.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"24.0\" x2=\"196\" y2=\"24.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190\" y1=\"19.5\" x2=\"196\" y2=\"19.5\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"178\" y1=\"15.0\" x2=\"196\" y2=\"15.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"170\" y=\"20.0\" text-anchor=\"end\" font-size=\"15\">9</text><text x=\"173\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">cm</text><line x1=\"196\" y1=\"420\" x2=\"530\" y2=\"420\" stroke=\"#3a3a3a\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><line x1=\"196\" y1=\"60.0\" x2=\"530\" y2=\"60.0\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"540\" y=\"425\" font-size=\"15\">ligne de dépôt</text><text x=\"540\" y=\"65.0\" font-size=\"15\" fill=\"#1F4E5A\">front de l'éluant</text><line x1=\"305\" y1=\"415\" x2=\"315\" y2=\"425\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"305\" y1=\"425\" x2=\"315\" y2=\"415\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"310\" y=\"446\" text-anchor=\"middle\" font-weight=\"bold\">A</text><ellipse cx=\"310\" cy=\"150.0\" rx=\"13\" ry=\"8\" fill=\"#1F4E5A\" fill-opacity=\"0.85\"/><line x1=\"375\" y1=\"415\" x2=\"385\" y2=\"425\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"375\" y1=\"425\" x2=\"385\" y2=\"415\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"380\" y=\"446\" text-anchor=\"middle\" font-weight=\"bold\">B</text><ellipse cx=\"380\" cy=\"240.0\" rx=\"13\" ry=\"8\" fill=\"#1F4E5A\" fill-opacity=\"0.85\"/><ellipse cx=\"380\" cy=\"150.0\" rx=\"13\" ry=\"8\" fill=\"#1F4E5A\" fill-opacity=\"0.85\"/><line x1=\"445\" y1=\"415\" x2=\"455\" y2=\"425\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"445\" y1=\"425\" x2=\"455\" y2=\"415\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"450\" y=\"446\" text-anchor=\"middle\" font-weight=\"bold\">C</text><ellipse cx=\"450\" cy=\"240.0\" rx=\"13\" ry=\"8\" fill=\"#1F4E5A\" fill-opacity=\"0.85\"/><line x1=\"196\" y1=\"240.0\" x2=\"290\" y2=\"240.0\" stroke=\"#C8962E\" stroke-width=\"1.2\" stroke-dasharray=\"2 4\"/><line x1=\"196\" y1=\"150.0\" x2=\"290\" y2=\"150.0\" stroke=\"#C8962E\" stroke-width=\"1.2\" stroke-dasharray=\"2 4\"/><text x=\"540\" y=\"195.0\" font-size=\"15\" fill=\"#3a3a3a\">A : alcool benzylique</text><text x=\"540\" y=\"219.0\" font-size=\"15\" fill=\"#3a3a3a\">B : produit brut</text><text x=\"540\" y=\"243.0\" font-size=\"15\" fill=\"#3a3a3a\">C : acide benzoïque</text><text x=\"540\" y=\"263.0\" font-size=\"15\" fill=\"#3a3a3a\">     commercial</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis sur la règle la distance parcourue par l'éluant.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le rapport frontal de la tache du dépôt A et celui de la tache du dépôt C.",
+          "aides": [
+            "Lis la hauteur de chaque tache sur la règle, en partant de la ligne de dépôt (0 cm).",
+            "Divise la distance de la tache par celle du front de l'éluant : le Rf est toujours compris entre 0 et 1."
+          ]
+        },
+        {
+          "texte": "Le produit brut contient-il de l'acide benzoïque ? Est-il pur ? Justifie avec le chromatogramme.",
+          "aides": []
+        },
+        {
+          "texte": "Léa purifie son produit par recristallisation, puis mesure sa température de fusion au banc Kofler.<br>a. Remets dans l'ordre ces trois actions : (1) déposer quelques cristaux du produit sur le banc, du côté froid, et les pousser vers le côté chaud ; (2) étalonner le banc avec une espèce de référence dont la température de fusion est connue ; (3) lire la température à la limite entre la partie restée solide et la partie fondue.<br>b. Elle lit θ<sub>fus</sub> = 122 °C. La table donne θ<sub>fus</sub> = 122 °C pour l'acide benzoïque. Que peut-on conclure ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La ligne de dépôt est à 0 cm et le front de l'éluant à 8,0 cm : l'éluant a parcouru 8,0 cm.",
+        "<strong>2.</strong> Tache A : 6,0 cm, donc Rf(A) = 6,0 / 8,0 = 0,75. Tache C : 4,0 cm, donc Rf(C) = 4,0 / 8,0 = 0,50.",
+        "<strong>3.</strong> Le dépôt B donne une tache à 4,0 cm (Rf = 0,50), au même niveau que l'acide benzoïque commercial : le produit brut contient de l'acide benzoïque. Il donne aussi une tache à 6,0 cm (Rf = 0,75), au même niveau que l'alcool benzylique : il reste du réactif. Le produit brut n'est donc pas pur.",
+        "<strong>4.</strong> a. Ordre : (2), puis (1), puis (3). On étalonne d'abord, on mesure ensuite.",
+        "b. La température mesurée est égale à la valeur de la table : c'est un indice fort que le solide est de l'acide benzoïque pur. Un solide impur fond en général à une température plus basse que l'espèce pure, et moins nettement.",
+        "<em>⚠ Erreur fréquente : mesurer les distances depuis le bas de la plaque, et non depuis la ligne de dépôt.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "L'aspirine du TP",
+      "contexte": [
+        "L'aspirine (acide acétylsalicylique, C₉H₈O₄) est l'un des médicaments les plus consommés au monde. On peut la synthétiser au lycée à partir d'acide salicylique C₇H₆O₃ (solide) et d'anhydride éthanoïque C₄H₆O₃ (liquide, masse volumique 1,08 g·mL⁻¹, inflammable et corrosif : manipulé sous la hotte).",
+        "Équation de la réaction : C₇H₆O₃(s) + C₄H₆O₃(ℓ) → C₉H₈O₄(s) + C₂H₄O₂(ℓ).",
+        "Protocole suivi par Nour : introduire 3,00 g d'acide salicylique et 6,0 mL d'anhydride éthanoïque dans un ballon, chauffer à reflux à environ 60 °C pendant 15 minutes. Refroidir, ajouter de l'eau glacée : des cristaux d'aspirine apparaissent. Filtrer sur Büchner, rincer les cristaux à l'eau glacée, essorer, puis sécher les cristaux à l'étuve.",
+        "Données : l'aspirine est très peu soluble dans l'eau froide, plus soluble dans l'eau chaude ; l'acide éthanoïque est très soluble dans l'eau ; température de fusion de l'aspirine : 135 °C."
+      ],
+      "questions": [
+        {
+          "texte": "Quel est l'intérêt d'une filtration sur Büchner par rapport à une filtration simple ? Pourquoi rince-t-on les cristaux à l'eau glacée et non à l'eau tiède ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule les quantités de matière initiales des deux réactifs, puis identifie le réactif limitant.",
+          "aides": [
+            "L'acide salicylique est un solide : utilise n = m / M. L'anhydride est un liquide dont on connaît le volume : passe d'abord par la masse.",
+            "Pour un liquide, m = ρ × V. Calcule ensuite les masses molaires avec les masses molaires atomiques de l'encadré « Données »."
+          ]
+        },
+        {
+          "texte": "Détermine l'avancement maximal, puis la masse maximale d'aspirine que Nour peut obtenir.",
+          "aides": [
+            "D'après l'équation, combien de moles d'aspirine se forment quand x = x<sub>max</sub> ?",
+            "La masse théorique maximale est la masse de cette quantité d'aspirine : m = n × M."
+          ]
+        },
+        {
+          "texte": "Après séchage, Nour pèse 2,70 g d'aspirine. Calcule le rendement de la synthèse. Donne deux raisons pour lesquelles il est inférieur à 100 %.",
+          "aides": []
+        },
+        {
+          "texte": "Son voisin, pressé, a pesé ses cristaux juste après l'essorage, sans les sécher : il trouve 4,10 g et annonce un rendement de 105 %. Que penses-tu de ce résultat ?",
+          "aides": [
+            "Compare 4,10 g à la masse théorique maximale calculée à la question 3. Est-ce possible ?",
+            "Qu'est-ce qui reste dans des cristaux qui viennent d'être rincés à l'eau et qui n'ont pas été séchés ?"
+          ]
+        },
+        {
+          "texte": "Au banc Kofler, les cristaux secs de Nour fondent à 134 °C. Calcule l'écart relatif avec la valeur de la table et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La filtration sous vide sur Büchner est plus rapide et essore mieux le solide (moins de liquide reste dans les cristaux). On rince à l'eau glacée car l'aspirine y est très peu soluble : on élimine les impuretés solubles (acide éthanoïque, reste d'anhydride) sans redissoudre le produit. Avec de l'eau tiède, on perdrait une partie de l'aspirine.",
+        "<strong>2.</strong> M(C₇H₆O₃) = 7 × 12,0 + 6 × 1,0 + 3 × 16,0 = 138,0 g·mol⁻¹ : n<sub>0</sub>(acide salicylique) = m / M = 3,00 / 138,0 = 2,17 × 10⁻² mol. Anhydride : m = ρ × V = 1,08 × 6,0 = 6,48 g ; M(C₄H₆O₃) = 102,0 g·mol⁻¹ ; n<sub>0</sub>(anhydride) = 6,48 / 102,0 = 6,4 × 10⁻² mol. Les nombres stœchiométriques valent 1 : l'acide salicylique, en plus petite quantité, est le réactif limitant (l'anhydride est en excès).",
+        "<strong>3.</strong> x<sub>max</sub> = n<sub>0</sub>(acide salicylique) = 2,17 × 10⁻² mol. Il se forme au plus n(aspirine) = x<sub>max</sub>. M(C₉H₈O₄) = 9 × 12,0 + 8 × 1,0 + 4 × 16,0 = 180,0 g·mol⁻¹, donc m(théorique) = x<sub>max</sub> × M = 2,17 × 10⁻² × 180,0 = 3,91 g.",
+        "<strong>4.</strong> η = m(obtenue) / m(théorique) × 100 = 2,70 / 3,91 × 100 = 69,0 %. Raisons : la transformation n'est peut-être pas totale (il peut rester de l'acide salicylique) ; une partie de l'aspirine est perdue lors des transvasements, reste sur le filtre ou se dissout dans l'eau de rinçage.",
+        "<strong>5.</strong> Un rendement ne peut pas dépasser 100 % : on ne peut pas former plus de produit que la masse théorique maximale. 4,10 g &gt; 3,91 g : les cristaux non séchés contiennent encore de l'eau (et des impuretés dissoutes), dont la masse s'ajoute à celle de l'aspirine. Il faut sécher avant de peser.",
+        "<strong>6.</strong> Écart relatif = |134 − 135| / 135 = 7 × 10⁻³, soit 0,7 %. L'écart est très faible : le solide est bien de l'aspirine, et elle est quasiment pure (une impureté abaisserait nettement la température de fusion).",
+        "<em>⚠ Erreur fréquente : calculer le rendement avec le réactif en excès. Avec l'anhydride, on trouverait m(théorique) = 11,4 g et η = 24 %, ce qui est faux : seul le réactif limitant fixe la quantité maximale de produit.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Du beurre rance à l'ananas",
+      "contexte": [
+        "L'acide butanoïque sent le beurre rance. Pourtant, en le faisant réagir avec de l'éthanol, on obtient du butanoate d'éthyle, à l'odeur d'ananas, utilisé dans les jus de fruits et les bonbons. Équation de la réaction : C₄H₈O₂(ℓ) + C₂H₆O(ℓ) → C₆H₁₂O₂(ℓ) + H₂O(ℓ).",
+        "Protocole suivi par Yasmine : dans un ballon, introduire 9,20 mL d'acide butanoïque, 17,5 mL d'éthanol, quelques gouttes d'acide sulfurique concentré et des pierres ponces ; chauffer à reflux 45 minutes. Refroidir, verser dans 50 mL d'eau salée froide, décanter dans une ampoule et garder la phase organique. La laver avec une solution d'hydrogénocarbonate de sodium, la sécher avec du sulfate de magnésium anhydre, filtrer. Elle obtient 7,10 g d'un liquide à l'odeur d'ananas.",
+        "Données : acide butanoïque : masse volumique 0,958 g·mL⁻¹, soluble dans l'eau. Éthanol : masse volumique 0,789 g·mL⁻¹, soluble en toutes proportions dans l'eau. Butanoate d'éthyle : masse volumique 0,879 g·mL⁻¹, très peu soluble dans l'eau salée. Eau salée : masse volumique 1,2 g·mL⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule les masses molaires des trois espèces organiques, puis les quantités de matière initiales d'acide butanoïque et d'éthanol.",
+          "aides": [
+            "Les deux réactifs sont des liquides : on connaît leur volume et leur masse volumique.",
+            "Chaîne de calcul : m = ρ × V (en g, avec V en mL), puis n = m / M."
+          ]
+        },
+        {
+          "texte": "Détermine le réactif limitant et la masse théorique maximale de butanoate d'éthyle.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le rendement de la synthèse.",
+          "aides": [
+            "Le rendement compare deux masses de la même espèce : laquelle a été obtenue, laquelle est le maximum possible ?",
+            "η = m(obtenue) / m(théorique) × 100, avec la masse théorique calculée à partir du réactif limitant."
+          ]
+        },
+        {
+          "texte": "Lors de la décantation, où se trouve le butanoate d'éthyle ? Où se retrouve l'essentiel de l'éthanol restant ? Justifie avec les données.",
+          "aides": [
+            "Pour chaque espèce, regarde sa solubilité dans l'eau : dans quelle phase va-t-elle ?",
+            "Pour savoir quelle phase est en haut, compare les masses volumiques de la phase organique et de l'eau salée."
+          ]
+        },
+        {
+          "texte": "Propose une méthode pour vérifier que le liquide obtenu contient du butanoate d'éthyle et s'il est pur. Décris le résultat attendu si c'est le cas.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(C₄H₈O₂) = 4 × 12,0 + 8 × 1,0 + 2 × 16,0 = 88,0 g·mol⁻¹ ; M(C₂H₆O) = 2 × 12,0 + 6 × 1,0 + 16,0 = 46,0 g·mol⁻¹ ; M(C₆H₁₂O₂) = 6 × 12,0 + 12 × 1,0 + 2 × 16,0 = 116,0 g·mol⁻¹. Acide : m = ρ × V = 0,958 × 9,20 = 8,81 g, n<sub>0</sub> = 8,81 / 88,0 = 0,100 mol. Éthanol : m = 0,789 × 17,5 = 13,8 g, n<sub>0</sub> = 13,8 / 46,0 = 0,300 mol.",
+        "<strong>2.</strong> Les nombres stœchiométriques valent 1 : l'acide butanoïque est le réactif limitant (l'éthanol est en excès, trois fois plus abondant). x<sub>max</sub> = 0,100 mol, donc m(théorique) = x<sub>max</sub> × M(ester) = 0,100 × 116,0 = 11,6 g.",
+        "<strong>3.</strong> η = m(obtenue) / m(théorique) × 100 = 7,10 / 11,6 × 100 = 61,1 %.",
+        "<strong>4.</strong> Le butanoate d'éthyle est très peu soluble dans l'eau salée et moins dense qu'elle (0,879 &lt; 1,2 g·mL⁻¹) : il est dans la phase organique, en haut. L'éthanol est soluble en toutes proportions dans l'eau : l'essentiel de l'éthanol en excès passe dans la phase aqueuse, en bas, et est éliminé avec elle (l'acide restant, en partie dans la phase organique, est éliminé ensuite par le lavage).",
+        "<strong>5.</strong> On réalise une CCM avec trois dépôts : le liquide obtenu, du butanoate d'éthyle commercial, et l'acide butanoïque (réactif limitant). Résultat attendu si le produit est pur : une seule tache pour le liquide obtenu, au même niveau (même Rf) que celle de l'ester commercial, et aucune tache au niveau de l'acide butanoïque.",
+        "<em>⚠ Erreur fréquente : prendre l'éthanol comme référence. On trouverait m(théorique) = 0,300 × 116,0 = 34,8 g et η = 20 %. Le rendement se calcule toujours avec le réactif limitant.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Fabriquer du paracétamol",
+      "contexte": [
+        "Doc. 1 — Protocole. Le paracétamol (C₈H₉NO₂), présent dans de nombreux médicaments contre la douleur et la fièvre, peut être synthétisé à partir de 4-aminophénol (C₆H₇NO, solide). Équation de la réaction : C₆H₇NO(s) + C₄H₆O₃(ℓ) → C₈H₉NO₂(s) + C₂H₄O₂(aq). Étape 1 : dans un ballon, mélanger 2,70 g de 4-aminophénol, 25 mL d'eau et 3,50 mL d'anhydride éthanoïque C₄H₆O₃ (masse volumique 1,08 g·mL⁻¹) ; chauffer à reflux 20 minutes. Étape 2 : refroidir le ballon dans un bain d'eau glacée ; filtrer les cristaux sur Büchner, les rincer à l'eau glacée, les sécher : c'est le produit brut. Étape 3 : dissoudre le produit brut dans le minimum d'eau bouillante (Malik en utilise 65 mL), laisser refroidir lentement jusqu'à 0 °C dans un bain d'eau glacée, filtrer sur Büchner, sécher. Étape 4 : contrôles de pureté.",
+        "Doc. 2 — Résultats de Malik. Masse de produit brut sec : 3,02 g. Masse de produit après l'étape 3 : 2,41 g. CCM : le produit brut donne deux taches, l'une au niveau du paracétamol commercial, l'autre au niveau du 4-aminophénol ; le produit de l'étape 3 donne une seule tache, au niveau du paracétamol commercial. Banc Kofler : le produit brut fond vers 158 °C ; le produit de l'étape 3 fond à 168 °C. Valeur de la table : θ<sub>fus</sub>(paracétamol) = 169 °C.",
+        "Doc. 3 — Solubilité du paracétamol dans l'eau en fonction de la température (valeurs approchées, figure ci-dessous). Les impuretés, présentes en petite quantité, restent dissoutes dans l'eau froide."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"112.5\" y1=\"20\" x2=\"112.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"145.0\" y1=\"20\" x2=\"145.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.0\" y=\"422\" text-anchor=\"middle\">10</text><line x1=\"177.5\" y1=\"20\" x2=\"177.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"210.0\" y1=\"20\" x2=\"210.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"210.0\" y=\"422\" text-anchor=\"middle\">20</text><line x1=\"242.5\" y1=\"20\" x2=\"242.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"275.0\" y1=\"20\" x2=\"275.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"275.0\" y=\"422\" text-anchor=\"middle\">30</text><line x1=\"307.5\" y1=\"20\" x2=\"307.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"340.0\" y1=\"20\" x2=\"340.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"340.0\" y=\"422\" text-anchor=\"middle\">40</text><line x1=\"372.5\" y1=\"20\" x2=\"372.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"405.0\" y=\"422\" text-anchor=\"middle\">50</text><line x1=\"437.5\" y1=\"20\" x2=\"437.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"470.0\" y1=\"20\" x2=\"470.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"470.0\" y=\"422\" text-anchor=\"middle\">60</text><line x1=\"502.5\" y1=\"20\" x2=\"502.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"535.0\" y1=\"20\" x2=\"535.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"535.0\" y=\"422\" text-anchor=\"middle\">70</text><line x1=\"567.5\" y1=\"20\" x2=\"567.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"600.0\" y1=\"20\" x2=\"600.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"600.0\" y=\"422\" text-anchor=\"middle\">80</text><line x1=\"632.5\" y1=\"20\" x2=\"632.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"665.0\" y1=\"20\" x2=\"665.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"665.0\" y=\"422\" text-anchor=\"middle\">90</text><line x1=\"697.5\" y1=\"20\" x2=\"697.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">100</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"393.1\" x2=\"730\" y2=\"393.1\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"386.2\" x2=\"730\" y2=\"386.2\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"379.3\" x2=\"730\" y2=\"379.3\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"372.4\" x2=\"730\" y2=\"372.4\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"365.5\" x2=\"730\" y2=\"365.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"370.5\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"358.5\" x2=\"730\" y2=\"358.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"351.6\" x2=\"730\" y2=\"351.6\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"344.7\" x2=\"730\" y2=\"344.7\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"337.8\" x2=\"730\" y2=\"337.8\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"330.9\" x2=\"730\" y2=\"330.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"335.9\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"324.0\" x2=\"730\" y2=\"324.0\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"317.1\" x2=\"730\" y2=\"317.1\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"310.2\" x2=\"730\" y2=\"310.2\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"303.3\" x2=\"730\" y2=\"303.3\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"296.4\" x2=\"730\" y2=\"296.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"301.4\" text-anchor=\"end\">15</text><line x1=\"80\" y1=\"289.5\" x2=\"730\" y2=\"289.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"282.5\" x2=\"730\" y2=\"282.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"275.6\" x2=\"730\" y2=\"275.6\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"268.7\" x2=\"730\" y2=\"268.7\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"261.8\" x2=\"730\" y2=\"261.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"266.8\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"254.9\" x2=\"730\" y2=\"254.9\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"248.0\" x2=\"730\" y2=\"248.0\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"241.1\" x2=\"730\" y2=\"241.1\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"234.2\" x2=\"730\" y2=\"234.2\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"227.3\" x2=\"730\" y2=\"227.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"232.3\" text-anchor=\"end\">25</text><line x1=\"80\" y1=\"220.4\" x2=\"730\" y2=\"220.4\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"213.5\" x2=\"730\" y2=\"213.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"206.5\" x2=\"730\" y2=\"206.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"199.6\" x2=\"730\" y2=\"199.6\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"192.7\" x2=\"730\" y2=\"192.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"197.7\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"185.8\" x2=\"730\" y2=\"185.8\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"178.9\" x2=\"730\" y2=\"178.9\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"172.0\" x2=\"730\" y2=\"172.0\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"165.1\" x2=\"730\" y2=\"165.1\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"158.2\" x2=\"730\" y2=\"158.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"163.2\" text-anchor=\"end\">35</text><line x1=\"80\" y1=\"151.3\" x2=\"730\" y2=\"151.3\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"144.4\" x2=\"730\" y2=\"144.4\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"137.5\" x2=\"730\" y2=\"137.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"130.5\" x2=\"730\" y2=\"130.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"123.6\" x2=\"730\" y2=\"123.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"128.6\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"116.7\" x2=\"730\" y2=\"116.7\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"109.8\" x2=\"730\" y2=\"109.8\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"102.9\" x2=\"730\" y2=\"102.9\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"96.0\" x2=\"730\" y2=\"96.0\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"89.1\" x2=\"730\" y2=\"89.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"94.1\" text-anchor=\"end\">45</text><line x1=\"80\" y1=\"82.2\" x2=\"730\" y2=\"82.2\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"75.3\" x2=\"730\" y2=\"75.3\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"68.4\" x2=\"730\" y2=\"68.4\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"61.5\" x2=\"730\" y2=\"61.5\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"54.5\" x2=\"730\" y2=\"54.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"59.5\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"47.6\" x2=\"730\" y2=\"47.6\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"40.7\" x2=\"730\" y2=\"40.7\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"33.8\" x2=\"730\" y2=\"33.8\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"26.9\" x2=\"730\" y2=\"26.9\" stroke=\"#d9d2c5\" stroke-width=\"0.4\"/><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">55</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">température θ (°C)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">solubilité s (g·L⁻¹)</text><polyline points=\"80.0,351.6 86.5,350.4 93.0,349.1 99.5,347.8 106.0,346.4 112.5,345.0 119.0,343.6 125.5,342.1 132.0,340.6 138.5,339.0 145.0,337.5 151.5,335.9 158.0,334.2 164.5,332.6 171.0,330.8 177.5,329.1 184.0,327.3 190.5,325.5 197.0,323.7 203.5,321.8 210.0,319.9 216.5,317.9 223.0,315.9 229.5,313.9 236.0,311.8 242.5,309.8 249.0,307.6 255.5,305.5 262.0,303.3 268.5,301.0 275.0,298.8 281.5,296.5 288.0,294.2 294.5,291.8 301.0,289.4 307.5,286.9 314.0,284.5 320.5,282.0 327.0,279.4 333.5,276.9 340.0,274.3 346.5,271.6 353.0,268.9 359.5,266.2 366.0,263.5 372.5,260.7 379.0,257.9 385.5,255.0 392.0,252.1 398.5,249.2 405.0,246.3 411.5,243.3 418.0,240.3 424.5,237.2 431.0,234.1 437.5,231.0 444.0,227.8 450.5,224.6 457.0,221.4 463.5,218.1 470.0,214.8 476.5,211.5 483.0,208.1 489.5,204.7 496.0,201.3 502.5,197.8 509.0,194.3 515.5,190.8 522.0,187.2 528.5,183.6 535.0,179.9 541.5,176.3 548.0,172.6 554.5,168.8 561.0,165.0 567.5,161.2 574.0,157.4 580.5,153.5 587.0,149.5 593.5,145.6 600.0,141.6 606.5,137.6 613.0,133.5 619.5,129.4 626.0,125.3 632.5,121.1 639.0,116.9 645.5,112.7 652.0,108.4 658.5,104.1 665.0,99.8 671.5,95.4 678.0,91.0 684.5,86.6 691.0,82.1 697.5,77.6 704.0,73.1 710.5,68.5 717.0,63.9 723.5,59.2 730.0,54.5\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.2\"/><rect x=\"119.0\" y=\"40.72727272727275\" width=\"300\" height=\"34\" fill=\"#fff\" stroke=\"#d9d2c5\"/><text x=\"131.0\" y=\"63.72727272727275\" fill=\"#B5523B\" font-weight=\"bold\">paracétamol dans l'eau</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe chaque étape du doc. 1 à l'une des quatre étapes d'une synthèse. Comment s'appelle la technique de l'étape 3 ?",
+          "aides": []
+        },
+        {
+          "texte": "Justifie, à l'aide du doc. 3, le refroidissement dans l'eau glacée avant la filtration de l'étape 2.",
+          "aides": []
+        },
+        {
+          "texte": "Montre que le 4-aminophénol est le réactif limitant, puis calcule le rendement de la synthèse à partir de la masse obtenue après l'étape 3.",
+          "aides": [
+            "Calcule n<sub>0</sub> pour chaque réactif (m = ρ × V pour le liquide) et compare-les : les nombres stœchiométriques valent 1.",
+            "m(théorique) = x<sub>max</sub> × M(paracétamol), puis η = m(obtenue) / m(théorique) × 100."
+          ]
+        },
+        {
+          "texte": "Exploite le doc. 2 : le produit brut est-il pur ? Et le produit de l'étape 3 ? Calcule l'écart relatif entre la température de fusion mesurée après l'étape 3 et la valeur de la table.",
+          "aides": [
+            "Une espèce pure : une seule tache en CCM et une température de fusion égale à celle de la table.",
+            "Écart relatif = |valeur mesurée − valeur de référence| / valeur de référence."
+          ]
+        },
+        {
+          "texte": "Un camarade calcule le rendement avec la masse de produit brut et trouve 80,7 %. Explique pourquoi ce résultat surestime le rendement réel.",
+          "aides": []
+        },
+        {
+          "texte": "Exploitation de la courbe (doc. 3).<br>a. Lis la solubilité du paracétamol à 100 °C et à 0 °C.<br>b. Vérifie que 65 mL d'eau bouillante suffisent pour dissoudre les 3,02 g de produit brut.<br>c. Quelle masse de paracétamol reste dissoute dans les 65 mL d'eau à 0 °C, et part donc dans le filtrat ?",
+          "aides": [
+            "Pour b, la masse maximale dissoute vaut s × V, avec s lue à 100 °C et V en litres.",
+            "Pour c, même relation, mais avec la solubilité lue à 0 °C : 65 mL = 0,065 L."
+          ]
+        },
+        {
+          "texte": "Malik conclut : « La recristallisation m'a fait perdre 20 % de mon produit, c'était une mauvaise idée. » Rédige un avis argumenté : explique d'où viennent les 0,61 g perdus, dis si l'étape 3 était justifiée pour un médicament, et propose une amélioration du protocole.",
+          "aides": [
+            "Compare la perte totale (3,02 − 2,41 g) à la masse calculée à la question 6c : quelle part est due à la solubilité ?",
+            "Pense aussi à ce qu'on voulait éliminer : que montrent la CCM et la température de fusion du produit brut ?",
+            "Sur quels paramètres du doc. 1 peut-on jouer pour perdre moins de paracétamol : volume d'eau, température, rinçage ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Étape 1 : transformation des réactifs (chauffage à reflux). Étape 2 : isolement du produit (cristallisation à froid et filtration sur Büchner). Étape 3 : purification ; c'est une recristallisation. Étape 4 : analyse (identification et contrôle de pureté).",
+        "<strong>2.</strong> D'après le doc. 3, la solubilité du paracétamol diminue quand la température baisse (7 g·L⁻¹ à 0 °C contre 50 g·L⁻¹ à 100 °C). En refroidissant, on fait cristalliser le maximum de paracétamol, et on en perd le moins possible dans le filtrat.",
+        "<strong>3.</strong> M(C₆H₇NO) = 6 × 12,0 + 7 × 1,0 + 14,0 + 16,0 = 109,0 g·mol⁻¹ : n<sub>0</sub>(4-aminophénol) = 2,70 / 109,0 = 2,48 × 10⁻² mol. Anhydride : m = ρ × V = 1,08 × 3,50 = 3,78 g ; n<sub>0</sub> = 3,78 / 102,0 = 3,71 × 10⁻² mol. Nombres stœchiométriques égaux à 1 : le 4-aminophénol est limitant et x<sub>max</sub> = 2,48 × 10⁻² mol. M(C₈H₉NO₂) = 8 × 12,0 + 9 × 1,0 + 14,0 + 2 × 16,0 = 151,0 g·mol⁻¹ ; m(théorique) = x<sub>max</sub> × M = 2,48 × 10⁻² × 151,0 = 3,74 g. η = 2,41 / 3,74 × 100 = 64,4 %.",
+        "<strong>4.</strong> Produit brut : deux taches en CCM (paracétamol + 4-aminophénol restant) et fusion vers 158 °C, nettement en dessous de 169 °C : il n'est pas pur. Produit de l'étape 3 : une seule tache, au niveau du paracétamol commercial, et fusion à 168 °C. Écart relatif = |168 − 169| / 169 = 0,6 % : très faible, le produit est du paracétamol quasiment pur.",
+        "<strong>5.</strong> Le produit brut contient des impuretés (du 4-aminophénol, d'après la CCM) : sa masse, 3,02 g, n'est pas entièrement de la masse de paracétamol. Le rendement calculé avec elle (3,02 / 3,74 × 100 = 80,7 %) compte les impuretés comme du produit : il est surestimé. Le rendement doit se calculer avec un produit pur.",
+        "<strong>6.</strong> a. Lecture : s(100 °C) = 50 g·L⁻¹ et s(0 °C) = 7 g·L⁻¹.",
+        "b. À 100 °C, 65 mL d'eau peuvent dissoudre au plus 50 × 0,065 = 3,25 g de paracétamol, plus que 3,02 g : c'est suffisant (le minimum serait 3,02 / 50 = 6,04 × 10⁻² L, soit environ 60 mL).",
+        "c. À 0 °C : m = s × V = 7,0 × 0,065 = 0,46 g de paracétamol restent dissous et partent dans le filtrat.",
+        "<strong>7.</strong> Éléments attendus. Perte : 3,02 − 2,41 = 0,61 g, soit 20 % du produit brut. Environ 0,46 g s'expliquent par la solubilité du paracétamol dans l'eau froide (perte inévitable avec 65 mL) ; le reste, environ 0,15 g, correspond aux impuretés éliminées (4-aminophénol…) et aux pertes de manipulation (cristaux restés sur le filtre ou dans le ballon). Justification : pour un médicament, la pureté passe avant le rendement ; le produit brut était impur (deux taches, fusion à 158 °C), le produit recristallisé est quasiment pur (une tache, 168 °C). La recristallisation était donc indispensable, au prix d'un rendement plus faible. Amélioration : utiliser vraiment le minimum d'eau bouillante (environ 60 mL au lieu de 65 mL), bien refroidir à 0 °C avant de filtrer, rincer les cristaux avec très peu d'eau glacée.",
+        "<em>⚠ Erreur fréquente : croire qu'un rendement plus élevé signifie une meilleure synthèse. Un rendement calculé sur un produit impur est faussement élevé ; il faut toujours le lire avec les contrôles de pureté (CCM, température de fusion).</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,736 @@
+{
+  "id": 17,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Stabilité et instabilité des noyaux",
+        "icon": "☢️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Noyau atomique",
+            "text": "Constitué de nucléons (Z protons et N neutrons), noté ᴬ_Z X avec A = Z + N le nombre de masse (nombre de nucléons)."
+          },
+          {
+            "type": "text",
+            "text": "Sur un diagramme (N, Z), les noyaux stables forment une <strong>vallée de stabilité</strong> : pour les noyaux légers (Z < 20 environ), la stabilité correspond à N ≈ Z. Pour les noyaux plus lourds, il faut un excès de neutrons (N > Z) pour compenser la répulsion électrique croissante entre protons. Au-delà de Z = 83 (bismuth), <strong>tous les noyaux sont instables</strong> (radioactifs)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Position par rapport à la vallée de stabilité",
+              "Type de radioactivité"
+            ],
+            "rows": [
+              [
+                "Noyau lourd (Z > 83)",
+                "Radioactivité α"
+              ],
+              [
+                "Excès de neutrons (au-dessus de la vallée)",
+                "Radioactivité β⁻"
+              ],
+              [
+                "Excès de protons (en dessous de la vallée)",
+                "Radioactivité β⁺"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Lois de conservation : lois de Soddy",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Lois de Soddy",
+            "text": "Lors de toute réaction nucléaire (radioactivité ou réaction provoquée), il y a conservation du <strong>nombre de masse A</strong> (nombre total de nucléons) et conservation du <strong>numéro atomique Z</strong> (charge électrique totale)."
+          },
+          {
+            "type": "formula",
+            "label": "Équation générale",
+            "text": "ᴬ_Z X  →  ᴬ¹_Z1 Y + ᴬ²_Z2 P\navec A = A1 + A2  et  Z = Z1 + Z2"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Type",
+              "Particule émise",
+              "Effet sur (A, Z)"
+            ],
+            "rows": [
+              [
+                "α",
+                "Noyau d'hélium ⁴₂He",
+                "A diminue de 4, Z diminue de 2"
+              ],
+              [
+                "β⁻",
+                "Électron ⁰₋₁e (+ antineutrino)",
+                "A inchangé, Z augmente de 1"
+              ],
+              [
+                "β⁺",
+                "Positon ⁰₊₁e (+ neutrino)",
+                "A inchangé, Z diminue de 1"
+              ],
+              [
+                "γ",
+                "Photon (désexcitation)",
+                "A et Z inchangés"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Décroissance radioactive et activité",
+        "icon": "📉",
+        "content": [
+          {
+            "type": "text",
+            "text": "À l'échelle d'un noyau, la désintégration est un phénomène aléatoire et inéluctable : on ne peut pas prédire l'instant précis où un noyau donné se désintègre. Mais sur un très grand nombre de noyaux, on observe une loi statistique déterministe."
+          },
+          {
+            "type": "def",
+            "term": "Loi de décroissance radioactive",
+            "text": "N(t) = N₀·e^(−λt), où N(t) est le nombre de noyaux radioactifs restants à l'instant t, N₀ le nombre initial, et λ la constante radioactive (en s⁻¹), caractéristique du radionucléide."
+          },
+          {
+            "type": "def",
+            "term": "Activité A",
+            "text": "Nombre de désintégrations par seconde : A(t) = λ·N(t) = A₀·e^(−λt). Unité : le becquerel (Bq), 1 Bq = 1 désintégration par seconde."
+          },
+          {
+            "type": "formula",
+            "label": "Temps de demi-vie",
+            "text": "t₁/₂ = ln(2) / λ"
+          },
+          {
+            "type": "text",
+            "text": "Le temps de demi-vie t₁/₂ est la durée au bout de laquelle la moitié des noyaux radioactifs initialement présents se sont désintégrés (N₀ devient N₀/2). Il est indépendant de la quantité initiale de matière."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 240\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"210\" x2=\"455\" y2=\"210\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"210\" x2=\"60\" y2=\"20\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"460\" y=\"214\" font-size=\"12\" fill=\"#1B2420\">t</text><text x=\"32\" y=\"25\" font-size=\"12\" fill=\"#1B2420\">N(t)</text><text x=\"44\" y=\"222\" font-size=\"11\" fill=\"#5C6B60\">0</text><line x1=\"60\" y1=\"35\" x2=\"90\" y2=\"35\" stroke=\"#5C6B60\" stroke-width=\"1\"/><text x=\"20\" y=\"39\" font-size=\"11\" fill=\"#5C6B60\">N₀</text><polyline points=\"60,35 150,122.5 240,166 330,188 420,199\" fill=\"none\" stroke=\"#a44ff7\" stroke-width=\"2.2\"/><line x1=\"60\" y1=\"122.5\" x2=\"150\" y2=\"122.5\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"150\" y1=\"122.5\" x2=\"150\" y2=\"210\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"20\" y=\"126\" font-size=\"11\" fill=\"#5C6B60\">N₀/2</text><text x=\"135\" y=\"224\" font-size=\"11\" fill=\"#5C6B60\">t₁/₂</text><line x1=\"60\" y1=\"166\" x2=\"240\" y2=\"166\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"240\" y1=\"166\" x2=\"240\" y2=\"210\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"18\" y=\"170\" font-size=\"11\" fill=\"#5C6B60\">N₀/4</text><text x=\"218\" y=\"224\" font-size=\"11\" fill=\"#5C6B60\">2t₁/₂</text></svg>",
+            "caption": "Décroissance radioactive N(t) = N₀e⁻λt : à chaque intervalle de durée t₁/₂ égal, le nombre de noyaux restants est divisé par 2."
+          }
+        ]
+      },
+      {
+        "title": "4. Datation radioactive",
+        "icon": "🕰️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Principe de la datation au carbone 14 : le rapport ¹⁴C/¹²C est constant dans un organisme vivant (échanges permanents avec l'atmosphère). À la mort de l'organisme, les échanges cessent et le ¹⁴C (t₁/₂ = 5730 ans) se désintègre progressivement sans être renouvelé : l'activité en ¹⁴C diminue au cours du temps."
+          },
+          {
+            "type": "formula",
+            "label": "Âge d'un échantillon",
+            "text": "t = (1/λ)·ln(A₀/A(t)) = (t₁/₂ / ln 2)·ln(A₀ / A(t))"
+          },
+          {
+            "type": "warn",
+            "text": "La datation au ¹⁴C n'est fiable que sur des échelles de temps comparables à quelques demi-vies (jusqu'à environ 50 000 ans) ; au-delà, l'activité résiduelle devient trop faible pour être mesurée précisément."
+          }
+        ]
+      },
+      {
+        "title": "5. Réactions nucléaires provoquées : fission et fusion",
+        "icon": "💥",
+        "content": [
+          {
+            "type": "def",
+            "term": "Fission nucléaire",
+            "text": "Réaction au cours de laquelle un noyau lourd (ex. uranium 235) se scinde, sous l'impact d'un neutron, en deux noyaux plus légers avec émission de neutrons et d'énergie. Les lois de Soddy s'appliquent aussi ici."
+          },
+          {
+            "type": "def",
+            "term": "Fusion nucléaire",
+            "text": "Réaction au cours de laquelle deux noyaux légers (ex. deutérium et tritium) fusionnent pour former un noyau plus lourd, avec émission d'énergie (réaction à l'œuvre dans le Soleil)."
+          },
+          {
+            "type": "text",
+            "text": "Ces réactions libèrent une énergie considérable, en accord avec la relation d'Einstein E = m·c², liée à une petite perte de masse entre réactifs et produits."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Lors d'une réaction nucléaire, les lois de Soddy imposent la conservation :",
+      "opts": [
+        "de la masse et de la charge électrique",
+        "du nombre de masse A et du nombre de charge Z",
+        "du nombre de neutrons et du nombre de protons, séparément",
+        "de l'élément chimique, comme dans une réaction chimique"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conservation-masse-nucleaire",
+          "texte": "Croire que la masse se conserve : une réaction nucléaire s'accompagne d'une perte de masse"
+        },
+        null,
+        {
+          "code": "conservation-n-et-z",
+          "texte": "Croire que N et Z se conservent séparément : en β⁻, un neutron devient un proton"
+        },
+        {
+          "code": "nucleaire-vs-chimique",
+          "texte": "Confondre réaction nucléaire et chimique : dans une réaction nucléaire, l'élément change"
+        }
+      ],
+      "exp": "Soddy : conservation du nombre total de nucléons A et de la charge Z. Attention : contrairement à une réaction chimique, l'élément chimique change."
+    },
+    {
+      "q": "L'uranium ²³⁸₉₂U subit une désintégration α (émission de ⁴₂He). Le noyau fils est :",
+      "opts": [
+        "²³⁴₉₂U",
+        "²³⁴₉₀Th",
+        "²³⁶₉₀Th",
+        "²⁴²₉₄Pu"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-conservation-z",
+          "texte": "Oublier la conservation de Z : le noyau fils perd 2 protons"
+        },
+        null,
+        {
+          "code": "a-z-meme-variation",
+          "texte": "Retirer 2 à A comme à Z : A diminue de 4"
+        },
+        {
+          "code": "ajout-au-lieu-retrait",
+          "texte": "Ajouter la particule émise au lieu de la retrancher"
+        }
+      ],
+      "exp": "A : 238 = 234 + 4 ; Z : 92 = 90 + 2. Le noyau fils a Z = 90 : c'est le thorium ²³⁴₉₀Th. Attention : Z change, donc l'élément change."
+    },
+    {
+      "q": "Le carbone 14 (¹⁴₆C) est radioactif β⁻ (émission d'un électron ⁰₋₁e). Le noyau fils est :",
+      "opts": [
+        "¹⁴₇N",
+        "¹⁴₅B",
+        "¹³₆C",
+        "¹⁴₆C, l'électron venant du cortège électronique"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "beta-moins-signe-z",
+          "texte": "Se tromper de signe : en β⁻, Z augmente de 1 (6 = Z − 1)"
+        },
+        {
+          "code": "beta-perte-neutron",
+          "texte": "Croire qu'un neutron est éjecté : en β⁻, un neutron se transforme en proton, A ne change pas"
+        },
+        {
+          "code": "beta-electron-cortege",
+          "texte": "Croire que l'électron émis vient du cortège : il est créé dans le noyau"
+        }
+      ],
+      "exp": "A : 14 = 14 + 0 ; Z : 6 = Z − 1, donc Z = 7 : azote ¹⁴₇N. Attention : l'électron β⁻ est créé dans le noyau, lorsqu'un neutron se transforme en proton."
+    },
+    {
+      "q": "Un noyau situé au-dessus de la vallée de stabilité (excès de neutrons) subit le plus probablement une désintégration :",
+      "opts": [
+        "α",
+        "β⁻",
+        "β⁺",
+        "γ"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "alpha-vs-exces-neutrons",
+          "texte": "Associer tout noyau instable à la radioactivité α, propre aux noyaux lourds"
+        },
+        null,
+        {
+          "code": "beta-plus-vs-beta-moins",
+          "texte": "Inverser β⁺ et β⁻ : β⁺ concerne les noyaux qui ont trop de protons"
+        },
+        {
+          "code": "gamma-change-noyau",
+          "texte": "Croire que γ change la composition du noyau : c'est une désexcitation, A et Z ne changent pas"
+        }
+      ],
+      "exp": "En β⁻, un neutron se transforme en proton : le noyau se rapproche de la vallée de stabilité. Attention : β⁺ concerne l'excès de protons."
+    },
+    {
+      "q": "Un échantillon contient N₀ noyaux radioactifs. Au bout de deux demi-vies, il en reste :",
+      "opts": [
+        "N₀ / 4",
+        "aucun, deux moitiés faisant le tout",
+        "un nombre impossible à prévoir, la désintégration étant aléatoire",
+        "N₀ / 2, la demi-vie s'allongeant quand il reste moins de noyaux"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "deux-demi-vies-tout",
+          "texte": "Croire que deux demi-vies font disparaître tout l'échantillon : à chaque t½, il reste la moitié de ce qu'il y avait"
+        },
+        {
+          "code": "aleatoire-vs-statistique",
+          "texte": "Croire qu'on ne peut rien prévoir : sur un grand nombre de noyaux, la décroissance suit une loi précise"
+        },
+        {
+          "code": "demi-vie-depend-n",
+          "texte": "Croire que la demi-vie dépend du nombre de noyaux : elle est caractéristique du noyau"
+        }
+      ],
+      "exp": "Après t½ il reste N₀/2, après 2t½ il reste N₀/4. Attention : la demi-vie ne dépend pas de la quantité de noyaux."
+    },
+    {
+      "q": "La constante radioactive du carbone 14 vaut λ = 1,2 × 10⁻⁴ an⁻¹. Avec t½ = ln 2 / λ, sa demi-vie vaut environ :",
+      "opts": [
+        "5,8 × 10³ ans",
+        "8,3 × 10³ ans",
+        "8,3 × 10⁻⁵ an",
+        "4,2 × 10³ ans"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-ln2",
+          "texte": "Oublier ln 2 : 1 / λ = 8,3 × 10³ ans"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : λ × ln 2"
+        },
+        {
+          "code": "demi-vie-un-sur-2k",
+          "texte": "Remplacer ln 2 par 1/2 : 1 / (2λ)"
+        }
+      ],
+      "exp": "t½ = ln 2 / λ = 0,693 / 1,2 × 10⁻⁴ ≈ 5,8 × 10³ ans. Attention : 1 / λ n'est pas la demi-vie."
+    },
+    {
+      "q": "Un échantillon contient N = 1,0 × 10¹⁵ noyaux radioactifs de constante λ = 2,0 × 10⁻⁶ s⁻¹. Son activité vaut :",
+      "opts": [
+        "5,0 × 10²⁰ Bq",
+        "2,0 × 10⁹ Bq",
+        "1,0 × 10¹⁵ Bq",
+        "2,0 × 10⁻⁶ Bq"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "activite-rapport-inverse",
+          "texte": "Diviser N par λ au lieu de multiplier"
+        },
+        null,
+        {
+          "code": "activite-vs-nombre-noyaux",
+          "texte": "Confondre l'activité (désintégrations par seconde) et le nombre de noyaux"
+        },
+        {
+          "code": "activite-vs-constante",
+          "texte": "Confondre l'activité et la constante radioactive λ"
+        }
+      ],
+      "exp": "A = λ × N = 2,0 × 10⁻⁶ × 1,0 × 10¹⁵ = 2,0 × 10⁹ Bq (désintégrations par seconde). Attention : A = λN, et non N / λ."
+    },
+    {
+      "q": "Un échantillon d'os a une activité en carbone 14 quatre fois plus faible que celle d'un organisme vivant (t½ = 5 730 ans). Son âge est d'environ :",
+      "opts": [
+        "5 730 ans",
+        "2,3 × 10⁴ ans",
+        "1,1 × 10⁴ ans",
+        "2,9 × 10³ ans"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "une-demi-vie-seulement",
+          "texte": "Compter une seule demi-vie : il faut deux divisions par 2 pour diviser par 4"
+        },
+        {
+          "code": "rapport-vs-nombre-demi-vies",
+          "texte": "Prendre le rapport 4 pour le nombre de demi-vies : 4 × 5 730"
+        },
+        null,
+        {
+          "code": "demi-vie-divisee",
+          "texte": "Diviser la demi-vie au lieu de la multiplier : 5 730 / 2"
+        }
+      ],
+      "exp": "A₀ / A = 4 = 2² : deux demi-vies, t = 2 × 5 730 ≈ 1,1 × 10⁴ ans. Attention : diviser par 4, c'est diviser deux fois par 2."
+    },
+    {
+      "q": "Pour un noyau radioactif donné, on peut affirmer :",
+      "opts": [
+        "qu'on ne peut pas prévoir l'instant de sa désintégration",
+        "qu'il se désintègre au bout d'une durée égale à sa demi-vie",
+        "qu'il se désintègre plus vite si l'on chauffe l'échantillon",
+        "qu'il rend radioactifs les objets qu'il touche"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "demi-vie-vs-duree-de-vie",
+          "texte": "Croire que t½ est la durée de vie de chaque noyau : c'est une durée statistique pour un grand nombre de noyaux"
+        },
+        {
+          "code": "radioactivite-temperature",
+          "texte": "Croire que la température modifie la désintégration : elle ne dépend pas des conditions extérieures"
+        },
+        {
+          "code": "radioactivite-contagieuse",
+          "texte": "Croire que la radioactivité est contagieuse : un objet irradié ne devient pas radioactif"
+        }
+      ],
+      "exp": "La désintégration d'un noyau est aléatoire et ne dépend ni de la température ni de la pression ; seule la décroissance d'un grand nombre de noyaux est prévisible. Attention : irradiation n'est pas contamination."
+    },
+    {
+      "q": "Un échantillon d'iode 131 (t½ = 8 jours) a une activité A₀ = 800 Bq. Au bout de 24 jours, son activité vaut :",
+      "opts": [
+        "267 Bq",
+        "400 Bq",
+        "100 Bq",
+        "50 Bq"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "division-par-nombre-demi-vies",
+          "texte": "Diviser par le nombre de demi-vies (3) au lieu de diviser 3 fois par 2"
+        },
+        {
+          "code": "une-demi-vie-seulement",
+          "texte": "Ne diviser qu'une fois par 2 : 24 jours font 3 demi-vies"
+        },
+        null,
+        {
+          "code": "compte-demi-vies",
+          "texte": "Compter une demi-vie de trop : 800 / 2⁴ = 50 Bq, alors que 24 jours font 3 demi-vies"
+        }
+      ],
+      "exp": "24 jours = 3 demi-vies : A = 800 / 2³ = 100 Bq. Attention : chaque demi-vie divise l'activité par 2."
+    }
+  ],
+  "annales": [
+    {
+      "year": "—",
+      "title": "Fiches de révision Labolycée — décroissance radioactive, datation",
+      "session": "Ressource thématique",
+      "link": "https://www.labolycee.org/nucleaire-cartes-de-revision"
+    },
+    {
+      "year": "2023",
+      "title": "Sujet complet — Métropole",
+      "session": "Métropole · Jour 1",
+      "link": "https://www.labolycee.org/metropole-2023-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Se repérer dans le diagramme (N, Z)",
+      "contexte": [
+        "Le carbone 11, l'azote 13, l'oxygène 15 et le fluor 18 sont utilisés en imagerie médicale (tomographie par émission de positons, TEP), alors que le carbone 14 sert à dater des vestiges. Le diagramme ci-dessous représente une partie du diagramme (N, Z) des noyaux légers."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"110\" y1=\"15\" x2=\"110\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"196\" y1=\"15\" x2=\"196\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"282\" y1=\"15\" x2=\"282\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"368\" y1=\"15\" x2=\"368\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"454\" y1=\"15\" x2=\"454\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"540\" y1=\"15\" x2=\"540\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"393\" x2=\"540\" y2=\"393\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"351\" x2=\"540\" y2=\"351\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"309\" x2=\"540\" y2=\"309\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"267\" x2=\"540\" y2=\"267\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"225\" x2=\"540\" y2=\"225\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"183\" x2=\"540\" y2=\"183\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"141\" x2=\"540\" y2=\"141\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"99\" x2=\"540\" y2=\"99\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"57\" x2=\"540\" y2=\"57\" stroke=\"#d9d2c5\"/><line x1=\"110\" y1=\"15\" x2=\"540\" y2=\"15\" stroke=\"#d9d2c5\"/><text x=\"153.0\" y=\"415\" text-anchor=\"middle\">5</text><text x=\"239.0\" y=\"415\" text-anchor=\"middle\">6</text><text x=\"325.0\" y=\"415\" text-anchor=\"middle\">7</text><text x=\"411.0\" y=\"415\" text-anchor=\"middle\">8</text><text x=\"497.0\" y=\"415\" text-anchor=\"middle\">9</text><text x=\"100\" y=\"377.0\" text-anchor=\"end\">4</text><text x=\"100\" y=\"335.0\" text-anchor=\"end\">5</text><text x=\"100\" y=\"293.0\" text-anchor=\"end\">6</text><text x=\"100\" y=\"251.0\" text-anchor=\"end\">7</text><text x=\"100\" y=\"209.0\" text-anchor=\"end\">8</text><text x=\"100\" y=\"167.0\" text-anchor=\"end\">9</text><text x=\"100\" y=\"125.0\" text-anchor=\"end\">10</text><text x=\"100\" y=\"83.0\" text-anchor=\"end\">11</text><text x=\"100\" y=\"41.0\" text-anchor=\"end\">12</text><rect x=\"113\" y=\"312\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"113\" y=\"270\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"113\" y=\"228\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"113\" y=\"186\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"199\" y=\"354\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"199\" y=\"312\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"199\" y=\"270\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"199\" y=\"228\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"199\" y=\"186\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"199\" y=\"144\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"285\" y=\"270\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"285\" y=\"228\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"285\" y=\"186\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"285\" y=\"144\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"285\" y=\"102\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"371\" y=\"270\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"371\" y=\"228\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"371\" y=\"186\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"371\" y=\"144\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"371\" y=\"102\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"371\" y=\"60\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"371\" y=\"18\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"457\" y=\"186\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"457\" y=\"144\" width=\"80\" height=\"36\" fill=\"#C8962E\" rx=\"3\"/><rect x=\"457\" y=\"102\" width=\"80\" height=\"36\" fill=\"#1F4E5A\" rx=\"3\"/><rect x=\"457\" y=\"60\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><rect x=\"457\" y=\"18\" width=\"80\" height=\"36\" fill=\"#B5523B\" rx=\"3\"/><line x1=\"118.59999999999997\" y1=\"346.8\" x2=\"535.6999999999999\" y2=\"143.10000000000002\" stroke=\"#3a3a3a\" stroke-width=\"2\" stroke-dasharray=\"7 5\"/><text x=\"543.6999999999999\" y=\"143.10000000000002\" font-size=\"15\" fill=\"#3a3a3a\">N = Z</text><text x=\"153.0\" y=\"336.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁰B</text><text x=\"153.0\" y=\"294.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹¹B</text><text x=\"153.0\" y=\"252.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹²B</text><text x=\"153.0\" y=\"210.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹³B</text><text x=\"239.0\" y=\"378.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁰C</text><text x=\"239.0\" y=\"336.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹¹C</text><text x=\"239.0\" y=\"294.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹²C</text><text x=\"239.0\" y=\"252.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹³C</text><text x=\"239.0\" y=\"210.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁴C</text><text x=\"239.0\" y=\"168.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁵C</text><text x=\"325.0\" y=\"294.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹³N</text><text x=\"325.0\" y=\"252.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁴N</text><text x=\"325.0\" y=\"210.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁵N</text><text x=\"325.0\" y=\"168.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁶N</text><text x=\"325.0\" y=\"126.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁷N</text><text x=\"411.0\" y=\"294.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁴O</text><text x=\"411.0\" y=\"252.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁵O</text><text x=\"411.0\" y=\"210.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁶O</text><text x=\"411.0\" y=\"168.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁷O</text><text x=\"411.0\" y=\"126.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁸O</text><text x=\"411.0\" y=\"84.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁹O</text><text x=\"411.0\" y=\"42.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">²⁰O</text><text x=\"497.0\" y=\"210.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁷F</text><text x=\"497.0\" y=\"168.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁸F</text><text x=\"497.0\" y=\"126.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">¹⁹F</text><text x=\"497.0\" y=\"84.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">²⁰F</text><text x=\"497.0\" y=\"42.0\" text-anchor=\"middle\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"3\" paint-order=\"stroke\" font-size=\"17\" font-weight=\"bold\">²¹F</text><text x=\"325.0\" y=\"443\" text-anchor=\"middle\" font-weight=\"bold\">Numéro atomique Z</text><text transform=\"translate(40,204.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Nombre de neutrons N</text><rect x=\"585\" y=\"259\" width=\"26\" height=\"22\" fill=\"#1F4E5A\" rx=\"3\"/><text x=\"619\" y=\"275\" font-size=\"15\">noyau stable</text><rect x=\"585\" y=\"299\" width=\"26\" height=\"22\" fill=\"#B5523B\" rx=\"3\"/><text x=\"619\" y=\"315\" font-size=\"15\">radioactif β⁻</text><rect x=\"585\" y=\"339\" width=\"26\" height=\"22\" fill=\"#C8962E\" rx=\"3\"/><text x=\"619\" y=\"355\" font-size=\"15\">radioactif β⁺</text></svg>",
+      "questions": [
+        {
+          "texte": "Que représente une case du diagramme ? Pour le carbone 14 (¹⁴C), donne Z, N et A.",
+          "aides": []
+        },
+        {
+          "texte": "Combien d'isotopes du carbone figurent sur le diagramme ? Lesquels sont stables ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse à l'aide du diagramme.<br>a. Pour les noyaux légers stables, le nombre de neutrons N est voisin du numéro atomique Z.<br>b. Deux isotopes d'un même élément ont le même nombre de neutrons.<br>c. Le carbone 14 a trop de neutrons par rapport aux isotopes stables du carbone : il est radioactif β⁻.<br>d. Le fluor 18 (Z = 9) est situé au-dessus de la vallée de stabilité.",
+          "aides": []
+        },
+        {
+          "texte": "Le carbone 11 (Z = 6, A = 11) est-il en excès de neutrons ou de protons ? Prévois son type de radioactivité, puis vérifie avec la couleur de sa case.",
+          "aides": [
+            "Calcule N pour le carbone 11, puis compare-le aux nombres de neutrons des isotopes stables du carbone.",
+            "Moins de neutrons que les noyaux stables = excès de protons = en dessous de la vallée de stabilité. Relis le tableau de la fiche : quel type de radioactivité correspond à cette position ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Une case représente un noyau (un nucléide), repéré par son numéro atomique Z (abscisse) et son nombre de neutrons N (ordonnée). Carbone 14 : Z = 6, N = 8, A = Z + N = 14.",
+        "<strong>2.</strong> Six isotopes du carbone (même Z = 6, colonne Z = 6) : ¹⁰C, ¹¹C, ¹²C, ¹³C, ¹⁴C et ¹⁵C. Seuls ¹²C et ¹³C sont stables.",
+        "<strong>3.</strong> a. VRAI : les noyaux stables (cases pétrole) sont situés sur ou juste au-dessus de la droite N = Z (par exemple ¹²C : N = Z = 6 ; ¹⁹F : N = 10, Z = 9).",
+        "b. FAUX : des isotopes ont le même Z mais des nombres de neutrons N différents (donc des A différents).",
+        "c. VRAI : ¹⁴C a N = 8 neutrons alors que les isotopes stables du carbone en ont 6 ou 7. Il est au-dessus de la vallée de stabilité, donc radioactif β⁻ (case terracotta).",
+        "d. FAUX : ¹⁸F a N = 9 neutrons, moins que le fluor stable ¹⁹F (N = 10) : il est en dessous de la vallée (excès de protons), il est radioactif β⁺.",
+        "<strong>4.</strong> ¹¹C : N = 11 − 6 = 5, moins que les isotopes stables (6 ou 7) : excès de protons, radioactivité β⁺. Sa case est bien ocre (β⁺) : c'est un émetteur de positons, d'où son usage en TEP.",
+        "<em>⚠ Erreur fréquente : lire A en abscisse ou en ordonnée. Sur ce diagramme on lit Z et N ; A = Z + N se calcule.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Compléter des équations nucléaires",
+      "contexte": [
+        "Inès prépare un exposé sur les usages de la radioactivité : granite, datation, imagerie médicale, traitement de la thyroïde, radon. Elle a recopié des équations de désintégration, mais il manque à chaque fois un noyau ou une particule."
+      ],
+      "questions": [
+        {
+          "texte": "Énonce les deux lois de conservation (lois de Soddy) qui s'appliquent à toute réaction nucléaire.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque équation, détermine A et Z de l'espèce manquante, identifie-la à l'aide des données, puis indique le type de radioactivité (α, β⁻ ou β⁺).<br>a. Uranium 238 du granite : ²³⁸₉₂U → ²³⁴₉₀Th + ?<br>b. Carbone 14 : ¹⁴₆C → ? + ⁰₋₁e<br>c. Fluor 18 (imagerie TEP) : ¹⁸₉F → ¹⁸₈O + ?<br>d. Iode 131 (traitement de la thyroïde) : ¹³¹₅₃I → ¹³¹₅₄Xe + ?<br>e. Radon 222 : ²²²₈₆Rn → ? + ⁴₂He",
+          "aides": [
+            "Écris la conservation de A (en haut) puis celle de Z (en bas) : la somme à gauche de la flèche est égale à la somme à droite.",
+            "Attention aux particules : l'électron s'écrit ⁰₋₁e (Z = −1), le positon ⁰₊₁e (Z = +1). Pour identifier un noyau, cherche son Z dans les données."
+          ]
+        },
+        {
+          "texte": "Le cobalt 60 (⁶⁰₂₇Co), utilisé pour stériliser du matériel médical, est radioactif β⁻. Le noyau fils est formé dans un état excité (noté avec un astérisque *), puis se désexcite. Écris les deux équations et nomme le rayonnement émis lors de la désexcitation.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lors d'une réaction nucléaire, il y a conservation du nombre de masse A (nombre total de nucléons) et conservation du numéro atomique Z (charge électrique totale).",
+        "<strong>2.</strong> a. A = 238 − 234 = 4 ; Z = 92 − 90 = 2 : noyau d'hélium ⁴₂He. Radioactivité α.",
+        "b. A = 14 − 0 = 14 ; Z = 6 − (−1) = 7 : azote, ¹⁴₇N. Radioactivité β⁻.",
+        "c. A = 18 − 18 = 0 ; Z = 9 − 8 = 1 : positon ⁰₊₁e. Radioactivité β⁺.",
+        "d. A = 131 − 131 = 0 ; Z = 53 − 54 = −1 : électron ⁰₋₁e. Radioactivité β⁻.",
+        "e. A = 222 − 4 = 218 ; Z = 86 − 2 = 84 : polonium, ²¹⁸₈₄Po. Radioactivité α.",
+        "<strong>3.</strong> ⁶⁰₂₇Co → ⁶⁰₂₈Ni* + ⁰₋₁e (A = 60 ; Z = 27 + 1 = 28 : nickel), puis ⁶⁰₂₈Ni* → ⁶⁰₂₈Ni + γ. La désexcitation émet un photon γ (rayonnement électromagnétique très énergétique) ; A et Z ne changent pas.",
+        "<em>⚠ Erreur fréquente : en β⁻, écrire Z − 1 pour le noyau fils. Comme l'électron porte Z = −1, le noyau fils a Z + 1 (un neutron s'est transformé en proton).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "L'iode 131 contre l'hyperthyroïdie",
+      "contexte": [
+        "Pour traiter une hyperthyroïdie, un patient avale une gélule d'iode 131 radioactif, qui se fixe sur la thyroïde. La courbe ci-dessous donne l'activité A de l'iode 131 de la gélule au cours du temps, en ne tenant compte que de la décroissance radioactive (dans la réalité, l'élimination par l'organisme la fait baisser encore plus vite)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"117.5\" y1=\"25\" x2=\"117.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"117.5\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"150.0\" y1=\"25\" x2=\"150.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"150.0\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"182.5\" y1=\"25\" x2=\"182.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"182.5\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"215.0\" y1=\"25\" x2=\"215.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"215.0\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"247.5\" y1=\"25\" x2=\"247.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"247.5\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"280.0\" y1=\"25\" x2=\"280.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"280.0\" y=\"430\" text-anchor=\"middle\">12</text><line x1=\"312.5\" y1=\"25\" x2=\"312.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"312.5\" y=\"430\" text-anchor=\"middle\">14</text><line x1=\"345.0\" y1=\"25\" x2=\"345.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"345.0\" y=\"430\" text-anchor=\"middle\">16</text><line x1=\"377.5\" y1=\"25\" x2=\"377.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"377.5\" y=\"430\" text-anchor=\"middle\">18</text><line x1=\"410.0\" y1=\"25\" x2=\"410.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"410.0\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"442.5\" y1=\"25\" x2=\"442.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"442.5\" y=\"430\" text-anchor=\"middle\">22</text><line x1=\"475.0\" y1=\"25\" x2=\"475.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"475.0\" y=\"430\" text-anchor=\"middle\">24</text><line x1=\"507.5\" y1=\"25\" x2=\"507.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"507.5\" y=\"430\" text-anchor=\"middle\">26</text><line x1=\"540.0\" y1=\"25\" x2=\"540.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"540.0\" y=\"430\" text-anchor=\"middle\">28</text><line x1=\"572.5\" y1=\"25\" x2=\"572.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"572.5\" y=\"430\" text-anchor=\"middle\">30</text><line x1=\"605.0\" y1=\"25\" x2=\"605.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"605.0\" y=\"430\" text-anchor=\"middle\">32</text><line x1=\"637.5\" y1=\"25\" x2=\"637.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"637.5\" y=\"430\" text-anchor=\"middle\">34</text><line x1=\"670.0\" y1=\"25\" x2=\"670.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"670.0\" y=\"430\" text-anchor=\"middle\">36</text><line x1=\"702.5\" y1=\"25\" x2=\"702.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"702.5\" y=\"430\" text-anchor=\"middle\">38</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">40</text><line x1=\"85\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"385.9\" x2=\"735\" y2=\"385.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"390.9\" text-anchor=\"end\">25</text><line x1=\"85\" y1=\"361.9\" x2=\"735\" y2=\"361.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"366.9\" text-anchor=\"end\">50</text><line x1=\"85\" y1=\"337.8\" x2=\"735\" y2=\"337.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"342.8\" text-anchor=\"end\">75</text><line x1=\"85\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"318.8\" text-anchor=\"end\">100</text><line x1=\"85\" y1=\"289.7\" x2=\"735\" y2=\"289.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"294.7\" text-anchor=\"end\">125</text><line x1=\"85\" y1=\"265.6\" x2=\"735\" y2=\"265.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"270.6\" text-anchor=\"end\">150</text><line x1=\"85\" y1=\"241.6\" x2=\"735\" y2=\"241.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"246.6\" text-anchor=\"end\">175</text><line x1=\"85\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"222.5\" text-anchor=\"end\">200</text><line x1=\"85\" y1=\"193.4\" x2=\"735\" y2=\"193.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"198.4\" text-anchor=\"end\">225</text><line x1=\"85\" y1=\"169.4\" x2=\"735\" y2=\"169.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"174.4\" text-anchor=\"end\">250</text><line x1=\"85\" y1=\"145.3\" x2=\"735\" y2=\"145.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"150.3\" text-anchor=\"end\">275</text><line x1=\"85\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"126.2\" text-anchor=\"end\">300</text><line x1=\"85\" y1=\"97.2\" x2=\"735\" y2=\"97.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"102.2\" text-anchor=\"end\">325</text><line x1=\"85\" y1=\"73.1\" x2=\"735\" y2=\"73.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"78.1\" text-anchor=\"end\">350</text><line x1=\"85\" y1=\"49.1\" x2=\"735\" y2=\"49.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"54.1\" text-anchor=\"end\">375</text><line x1=\"85\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\">400</text><rect x=\"85\" y=\"25\" width=\"650\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"85.0,25.0 88.2,31.6 91.5,38.1 94.8,44.5 98.0,50.7 101.2,56.9 104.5,62.9 107.8,68.9 111.0,74.7 114.2,80.5 117.5,86.1 120.8,91.7 124.0,97.1 127.2,102.5 130.5,107.8 133.8,112.9 137.0,118.0 140.2,123.0 143.5,127.9 146.8,132.8 150.0,137.5 153.2,142.2 156.5,146.8 159.8,151.3 163.0,155.7 166.2,160.1 169.5,164.4 172.8,168.6 176.0,172.7 179.2,176.8 182.5,180.8 185.8,184.7 189.0,188.6 192.2,192.4 195.5,196.1 198.8,199.8 202.0,203.4 205.2,206.9 208.5,210.4 211.8,213.8 215.0,217.2 218.2,220.5 221.5,223.7 224.8,226.9 228.0,230.0 231.2,233.1 234.5,236.2 237.8,239.1 241.0,242.1 244.3,244.9 247.5,247.8 250.8,250.6 254.0,253.3 257.2,256.0 260.5,258.6 263.8,261.2 267.0,263.8 270.2,266.3 273.5,268.7 276.8,271.1 280.0,273.5 283.2,275.9 286.5,278.2 289.8,280.4 293.0,282.6 296.2,284.8 299.5,287.0 302.8,289.1 306.0,291.2 309.2,293.2 312.5,295.2 315.8,297.2 319.0,299.1 322.2,301.0 325.5,302.9 328.8,304.7 332.0,306.5 335.2,308.3 338.5,310.0 341.8,311.7 345.0,313.4 348.2,315.1 351.5,316.7 354.8,318.3 358.0,319.9 361.2,321.4 364.5,322.9 367.8,324.4 371.0,325.9 374.2,327.3 377.5,328.7 380.8,330.1 384.0,331.5 387.2,332.9 390.5,334.2 393.8,335.5 397.0,336.8 400.2,338.0 403.5,339.2 406.8,340.5 410.0,341.6 413.3,342.8 416.5,344.0 419.8,345.1 423.0,346.2 426.2,347.3 429.5,348.4 432.8,349.4 436.0,350.5 439.2,351.5 442.5,352.5 445.8,353.5 449.0,354.5 452.3,355.4 455.5,356.3 458.7,357.3 462.0,358.2 465.3,359.1 468.5,359.9 471.8,360.8 475.0,361.6 478.3,362.5 481.5,363.3 484.8,364.1 488.0,364.9 491.2,365.6 494.5,366.4 497.8,367.1 501.0,367.9 504.2,368.6 507.5,369.3 510.8,370.0 514.0,370.7 517.2,371.4 520.5,372.0 523.8,372.7 527.0,373.3 530.2,373.9 533.5,374.6 536.8,375.2 540.0,375.8 543.2,376.4 546.5,376.9 549.8,377.5 553.0,378.1 556.2,378.6 559.5,379.1 562.8,379.7 566.0,380.2 569.2,380.7 572.5,381.2 575.8,381.7 579.0,382.2 582.2,382.7 585.5,383.1 588.8,383.6 592.0,384.0 595.2,384.5 598.5,384.9 601.8,385.3 605.0,385.8 608.2,386.2 611.5,386.6 614.8,387.0 618.0,387.4 621.2,387.8 624.5,388.2 627.8,388.5 631.0,388.9 634.2,389.3 637.5,389.6 640.8,390.0 644.0,390.3 647.2,390.6 650.5,391.0 653.8,391.3 657.0,391.6 660.2,391.9 663.5,392.2 666.8,392.6 670.0,392.9 673.2,393.1 676.5,393.4 679.8,393.7 683.0,394.0 686.2,394.3 689.5,394.5 692.8,394.8 696.0,395.1 699.2,395.3 702.5,395.6 705.8,395.8 709.0,396.1 712.2,396.3 715.5,396.5 718.8,396.8 722.0,397.0 725.3,397.2 728.5,397.4 731.8,397.7 735.0,397.9\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><text x=\"410.0\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">t (jours)</text><text transform=\"translate(22,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">A (MBq)</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis l'activité initiale A₀ de la gélule. Que signifie concrètement une activité de 1 Bq ?",
+          "aides": []
+        },
+        {
+          "texte": "Rappelle la définition du temps de demi-vie t₁/₂, puis détermine-le graphiquement. Compare avec la valeur des données.",
+          "aides": [
+            "t₁/₂ correspond au moment où l'activité a été divisée par 2.",
+            "Trace la droite horizontale A = 200 MBq jusqu'à la courbe, puis descends verticalement jusqu'à l'axe des temps."
+          ]
+        },
+        {
+          "texte": "Sans calcul, prévois l'activité au bout de 16 jours puis de 24 jours. Vérifie sur la courbe.",
+          "aides": []
+        },
+        {
+          "texte": "Au bout de combien de demi-vies, puis de combien de jours, l'activité devient-elle inférieure à 25 MBq ?",
+          "aides": []
+        },
+        {
+          "texte": "De retour chez lui, le patient doit pendant quelques jours dormir seul et éviter les contacts proches et prolongés avec les jeunes enfants et les femmes enceintes. Parmi les trois moyens de protection contre les rayonnements ionisants (durée d'exposition, distance, écran), lesquels ces consignes utilisent-elles ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> À t = 0, A₀ = 400 MBq = 4,00 × 10⁸ Bq. 1 Bq correspond à 1 désintégration par seconde : la gélule subit 400 millions de désintégrations par seconde au départ.",
+        "<strong>2.</strong> t₁/₂ est la durée au bout de laquelle la moitié des noyaux radioactifs initialement présents se sont désintégrés (l'activité est alors divisée par 2). On cherche l'abscisse du point d'ordonnée A₀ / 2 = 200 MBq : t₁/₂ ≈ 8 jours, en accord avec la valeur des données (8,02 jours).",
+        "<strong>3.</strong> 16 jours = 2 t₁/₂ : A ≈ A₀ / 4 = 100 MBq. 24 jours = 3 t₁/₂ : A ≈ A₀ / 8 = 50 MBq. La courbe donne bien 100 MBq et 50 MBq.",
+        "<strong>4.</strong> 400 / 25 = 16 = 2⁴ : il faut 4 demi-vies, soit 4 × 8,02 ≈ 32 jours. Lecture graphique : A = 25 MBq vers t ≈ 32 jours.",
+        "<strong>5.</strong> « Dormir seul », « éviter les contacts proches » : on augmente la distance. « Éviter les contacts prolongés », « pendant quelques jours » : on limite la durée d'exposition, le temps que l'activité diminue. Aucun écran n'est utilisé ici."
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le technétium 99m en scintigraphie",
+      "contexte": [
+        "Partie A — Établir la loi de décroissance. Un échantillon contient N(t) noyaux radioactifs à la date t. Pendant une durée Δt très courte, le nombre de noyaux qui se désintègrent est proportionnel à N(t) et à Δt : N(t + Δt) − N(t) = −λ·N(t)·Δt, où λ est la constante radioactive.",
+        "Partie B — Une scintigraphie osseuse. Un patient reçoit une injection de technétium 99m (⁹⁹ᵐTc, masse molaire M ≈ 99 g·mol⁻¹), d'activité A₀ = 740 MBq. Les images sont réalisées environ 3 h après l'injection, à l'aide d'une caméra qui détecte le rayonnement γ émis."
+      ],
+      "questions": [
+        {
+          "texte": "Partie A. Justifie le signe « − » dans la relation, puis, en faisant tendre Δt vers 0, établis l'équation différentielle vérifiée par N(t).",
+          "aides": [
+            "Divise les deux membres de la relation par Δt.",
+            "Le rapport [N(t + Δt) − N(t)] / Δt tend vers la dérivée dN/dt quand Δt tend vers 0."
+          ]
+        },
+        {
+          "texte": "Vérifie que N(t) = N₀·e^(−λt) est solution de cette équation et respecte la condition initiale N(0) = N₀.",
+          "aides": []
+        },
+        {
+          "texte": "Montre que le temps de demi-vie s'écrit t₁/₂ = ln 2 / λ.",
+          "aides": [
+            "Écris la condition qui définit t₁/₂ : N(t₁/₂) = N₀ / 2.",
+            "Simplifie par N₀, puis applique la fonction ln aux deux membres : ln(e^x) = x et ln(1/2) = −ln 2."
+          ]
+        },
+        {
+          "texte": "Partie B. Calcule la constante radioactive λ du technétium 99m en h⁻¹, puis en s⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le nombre N₀ de noyaux injectés, puis la masse de technétium 99m correspondante. Commente.",
+          "aides": [
+            "La relation entre activité et nombre de noyaux est A = λ·N.",
+            "A₀ doit être en Bq (s⁻¹) et λ en s⁻¹. Ensuite : n = N / N<sub>A</sub>, puis m = n × M."
+          ]
+        },
+        {
+          "texte": "Calcule l'activité au moment des images, 3 h après l'injection.",
+          "aides": []
+        },
+        {
+          "texte": "Au bout de combien de temps l'activité n'est-elle plus que 1 % de A₀ ? Explique pourquoi un temps de demi-vie de quelques heures est bien adapté à cet examen.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> N(t + Δt) &lt; N(t) : le nombre de noyaux radioactifs diminue (les noyaux désintégrés disparaissent), d'où le signe « − ». En divisant par Δt : [N(t + Δt) − N(t)] / Δt = −λ·N(t). Quand Δt tend vers 0, le membre de gauche tend vers la dérivée : dN/dt = −λ·N(t), soit dN/dt + λ·N = 0.",
+        "<strong>2.</strong> N(t) = N₀·e^(−λt) donne dN/dt = −λ·N₀·e^(−λt) = −λ·N(t) : l'équation est vérifiée. Et N(0) = N₀·e⁰ = N₀.",
+        "<strong>3.</strong> À t = t₁/₂ : N₀·e^(−λ·t₁/₂) = N₀ / 2, donc e^(−λ·t₁/₂) = 1/2, soit −λ·t₁/₂ = ln(1/2) = −ln 2, d'où t₁/₂ = ln 2 / λ.",
+        "<strong>4.</strong> λ = ln 2 / t₁/₂ = 0,693 / 6,01 = 0,115 h⁻¹. En s⁻¹ : λ = 0,693 / (6,01 × 3 600) = 3,20 × 10⁻⁵ s⁻¹.",
+        "<strong>5.</strong> A₀ = λ·N₀, donc N₀ = A₀ / λ = 7,40 × 10⁸ / 3,20 × 10⁻⁵ = 2,31 × 10¹³ noyaux. n = N₀ / N<sub>A</sub> = 2,31 × 10¹³ / 6,022 × 10²³ = 3,84 × 10⁻¹¹ mol, et m = n × M = 3,8 × 10⁻⁹ g, soit environ 4 nanogrammes. Une masse infime suffit pour une activité très élevée : la toxicité chimique est négligeable.",
+        "<strong>6.</strong> A(3 h) = A₀·e^(−λt) = 740 × e^(−0,115 × 3) = 524 MBq (environ 71 % de A₀).",
+        "<strong>7.</strong> A = A₀ / 100 ⟺ e^(−λt) = 1/100 ⟺ t = ln(100) / λ = 4,61 / 0,115 = 39,9 h ≈ 40 h, soit environ 6,6 demi-vies. Le technétium reste assez actif pendant l'examen (quelques heures) mais son activité devient très faible en moins de deux jours : l'exposition du patient et de son entourage est limitée.",
+        "<em>⚠ Erreur fréquente : mélanger les unités. Pour calculer N₀ = A₀ / λ avec A₀ en Bq (s⁻¹), λ doit être en s⁻¹ ; dans e^(−λt), λ et t doivent être exprimés avec la même unité de temps.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Dater un foyer préhistorique",
+      "contexte": [
+        "Tant qu'un arbre est vivant, il échange du carbone avec l'atmosphère : la proportion de carbone 14 dans son carbone reste constante, et l'activité due au carbone 14 vaut environ A₀ = 0,226 Bq par gramme de carbone. À sa mort, les échanges cessent.",
+        "Des archéologues trouvent des charbons de bois dans un ancien foyer. Un laboratoire mesure une activité A = 0,052 Bq par gramme de carbone (valeur fictive vraisemblable)."
+      ],
+      "questions": [
+        {
+          "texte": "Explique pourquoi l'activité d'un morceau de bois mort diminue, alors que celle d'un arbre vivant reste constante.",
+          "aides": []
+        },
+        {
+          "texte": "À partir de la loi A(t) = A₀·e^(−λt), établis l'expression de l'âge t de l'échantillon en fonction de A₀, A et t₁/₂.",
+          "aides": [
+            "Isole d'abord l'exponentielle : e^(−λt) = A / A₀.",
+            "Applique ln aux deux membres, puis remplace λ par ln 2 / t₁/₂."
+          ]
+        },
+        {
+          "texte": "Calcule l'âge des charbons de bois. Vérifie la cohérence du résultat en comparant A à A₀ / 4 et A₀ / 8.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le nombre de noyaux de carbone 14 contenus dans 1 g de carbone d'un arbre vivant, puis compare-le au nombre total d'atomes de carbone dans 1 g (M(C) = 12,0 g·mol⁻¹).",
+          "aides": [
+            "Utilise A = λ·N, avec λ en s⁻¹ (car 1 Bq = 1 désintégration par seconde).",
+            "Convertis t₁/₂ en secondes : 5 730 × 365,25 × 86 400. Pour le carbone total : N = (m / M) × N<sub>A</sub>."
+          ]
+        },
+        {
+          "texte": "Un paléontologue voudrait dater par cette méthode un os vieux d'environ 100 000 ans. Calcule l'activité attendue par gramme de carbone et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Dans l'arbre vivant, les noyaux de ¹⁴C qui se désintègrent sont remplacés en permanence grâce aux échanges avec l'atmosphère (photosynthèse) : la quantité de ¹⁴C reste constante. Après la mort, il n'y a plus de renouvellement : le nombre de noyaux de ¹⁴C diminue selon la loi de décroissance, donc l'activité aussi.",
+        "<strong>2.</strong> A = A₀·e^(−λt) ⟺ A₀ / A = e^(λt) ⟺ ln(A₀ / A) = λt, donc t = (1/λ)·ln(A₀ / A) = (t₁/₂ / ln 2)·ln(A₀ / A).",
+        "<strong>3.</strong> t = (5 730 / 0,693) × ln(0,226 / 0,052) = 8 267 × ln(4,35) = 8 267 × 1,469 = 1,21 × 10⁴ ans (environ 12 000 ans). Cohérence : A₀ / 4 = 0,0565 Bq et A₀ / 8 = 0,028 Bq ; A est compris entre les deux, donc l'âge est compris entre 2 et 3 demi-vies (11 460 et 17 190 ans) : c'est le cas (2,1 demi-vies).",
+        "<strong>4.</strong> λ = ln 2 / t₁/₂ = 0,693 / (5 730 × 365,25 × 86 400) = 3,83 × 10⁻¹² s⁻¹. N(¹⁴C) = A₀ / λ = 0,226 / 3,83 × 10⁻¹² = 5,90 × 10¹⁰ noyaux. Nombre d'atomes de carbone dans 1 g : N<sub>A</sub> / M = 6,022 × 10²³ / 12,0 = 5,02 × 10²² atomes. Rapport : 5,90 × 10¹⁰ / 5,02 × 10²² = 1,2 × 10⁻¹² : environ un atome de carbone sur mille milliards est du carbone 14.",
+        "<strong>5.</strong> 100 000 ans représentent 100 000 / 5 730 = 17,5 demi-vies. A = 0,226 × e^(−λ × 100 000) = 1,3 × 10⁻⁶ Bq par gramme (environ 6 millionièmes de A₀), soit en moyenne une désintégration tous les 9 jours par gramme de carbone. C'est beaucoup trop faible pour être mesuré de façon fiable : la datation au carbone 14 ne convient pas (elle est limitée à environ 50 000 ans).",
+        "<em>⚠ Erreur fréquente : dans t = (t₁/₂ / ln 2)·ln(A₀ / A), inverser A₀ et A (on obtient un âge négatif) ; et en question 4, oublier de convertir t₁/₂ en secondes pour avoir λ en s⁻¹ (A est en Bq = s⁻¹).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Du radon dans la cave",
+      "contexte": [
+        "Doc. 1 — Le radon. Le radon 222 est un gaz radioactif naturel. Il provient de la désintégration α du radium 226 (²²⁶₈₈Ra), lui-même descendant de l'uranium 238 présent dans les roches granitiques. Il s'échappe du sol et s'accumule dans les caves et les pièces mal aérées. Inhalé, il augmente le risque de cancer du poumon. En France, le niveau de référence pour l'activité volumique du radon dans l'air intérieur est de 300 Bq·m⁻³.",
+        "Doc. 2 — La mesure. Un élève qui habite en région granitique enferme un échantillon d'air de sa cave dans une cellule de mesure étanche, puis mesure chaque jour l'activité volumique A due au radon de l'échantillon (on admet que l'appareil ne compte que les désintégrations du radon). Mesures : t = 0 ; 1 ; 2 ; 3 ; 4 ; 5 ; 6 ; 8 ; 10 jours → A = 820 ; 685 ; 573 ; 469 ; 397 ; 330 ; 278 ; 191 ; 133 Bq·m⁻³. Ces points sont représentés ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"144.1\" y1=\"25\" x2=\"144.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"144.1\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"203.2\" y1=\"25\" x2=\"203.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"203.2\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"262.3\" y1=\"25\" x2=\"262.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"262.3\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"321.4\" y1=\"25\" x2=\"321.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"321.4\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"380.5\" y1=\"25\" x2=\"380.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"380.5\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"439.5\" y1=\"25\" x2=\"439.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"439.5\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"498.6\" y1=\"25\" x2=\"498.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"498.6\" y=\"430\" text-anchor=\"middle\">7</text><line x1=\"557.7\" y1=\"25\" x2=\"557.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"557.7\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"616.8\" y1=\"25\" x2=\"616.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"616.8\" y=\"430\" text-anchor=\"middle\">9</text><line x1=\"675.9\" y1=\"25\" x2=\"675.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"675.9\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">11</text><line x1=\"85\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"388.6\" x2=\"735\" y2=\"388.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"393.6\" text-anchor=\"end\">50</text><line x1=\"85\" y1=\"367.2\" x2=\"735\" y2=\"367.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"372.2\" text-anchor=\"end\">100</text><line x1=\"85\" y1=\"345.8\" x2=\"735\" y2=\"345.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"350.8\" text-anchor=\"end\">150</text><line x1=\"85\" y1=\"324.4\" x2=\"735\" y2=\"324.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"329.4\" text-anchor=\"end\">200</text><line x1=\"85\" y1=\"303.1\" x2=\"735\" y2=\"303.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"308.1\" text-anchor=\"end\">250</text><line x1=\"85\" y1=\"281.7\" x2=\"735\" y2=\"281.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"286.7\" text-anchor=\"end\">300</text><line x1=\"85\" y1=\"260.3\" x2=\"735\" y2=\"260.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"265.3\" text-anchor=\"end\">350</text><line x1=\"85\" y1=\"238.9\" x2=\"735\" y2=\"238.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"243.9\" text-anchor=\"end\">400</text><line x1=\"85\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"222.5\" text-anchor=\"end\">450</text><line x1=\"85\" y1=\"196.1\" x2=\"735\" y2=\"196.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"201.1\" text-anchor=\"end\">500</text><line x1=\"85\" y1=\"174.7\" x2=\"735\" y2=\"174.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"179.7\" text-anchor=\"end\">550</text><line x1=\"85\" y1=\"153.3\" x2=\"735\" y2=\"153.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"158.3\" text-anchor=\"end\">600</text><line x1=\"85\" y1=\"131.9\" x2=\"735\" y2=\"131.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"136.9\" text-anchor=\"end\">650</text><line x1=\"85\" y1=\"110.6\" x2=\"735\" y2=\"110.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"115.6\" text-anchor=\"end\">700</text><line x1=\"85\" y1=\"89.2\" x2=\"735\" y2=\"89.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"94.2\" text-anchor=\"end\">750</text><line x1=\"85\" y1=\"67.8\" x2=\"735\" y2=\"67.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"72.8\" text-anchor=\"end\">800</text><line x1=\"85\" y1=\"46.4\" x2=\"735\" y2=\"46.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"51.4\" text-anchor=\"end\">850</text><line x1=\"85\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\">900</text><rect x=\"85\" y=\"25\" width=\"650\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><path d=\"M79.0,59.2 h12 M85.0,53.2 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M138.1,117.0 h12 M144.1,111.0 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M197.2,164.9 h12 M203.2,158.9 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M256.3,209.4 h12 M262.3,203.4 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M315.4,240.2 h12 M321.4,234.2 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M374.5,268.8 h12 M380.5,262.8 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M433.5,291.1 h12 M439.5,285.1 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M551.7,328.3 h12 M557.7,322.3 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><path d=\"M669.9,353.1 h12 M675.9,347.1 v12\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"410.0\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">t (jours)</text><text transform=\"translate(22,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">A (Bq·m⁻³)</text></svg>",
+      "code": [
+        "lam = 0.182       # constante radioactive du radon (en j^-1)",
+        "dt = 0.5          # pas de temps (en jours)",
+        "A = 820           # activité volumique initiale (Bq/m3)",
+        "t = 0",
+        "while t < 10:",
+        "    dA = ...      # variation de A pendant dt : à compléter",
+        "    A = A + dA",
+        "    t = t + dt",
+        "print(t, round(A, 1))"
+      ],
+      "contexte2": [
+        "Doc. 3 — Exploitation au tableur. Les points (t ; ln A) sont alignés. La droite modélisée a pour équation : ln A = −0,182 × t + 6,71 (t en jours, A en Bq·m⁻³).",
+        "Doc. 4 — Script Python (incomplet) qui calcule l'évolution de A pas à pas, à partir de la relation ΔA = −λ·A·Δt valable pour une durée Δt courte. Exécuté une fois complété, il affiche : 10.0 121.6"
+      ],
+      "questions": [
+        {
+          "texte": "Écris l'équation de la désintégration du radium 226 en radon 222 (doc. 1).",
+          "aides": []
+        },
+        {
+          "texte": "Le radon 222 se désintègre à son tour en polonium 218. Écris l'équation de cette désintégration et identifie le type de radioactivité.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide du graphique du doc. 2, détermine une valeur approchée du temps de demi-vie du radon 222. Explique ta méthode.",
+          "aides": [
+            "Calcule d'abord A₀ / 2.",
+            "Repère entre quelles mesures se situe cette valeur, et estime la date correspondante."
+          ]
+        },
+        {
+          "texte": "Montre que l'alignement des points (t ; ln A) est cohérent avec la loi de décroissance radioactive. Déduis de l'équation du doc. 3 la constante radioactive λ, l'activité initiale A₀, puis le temps de demi-vie. Compare à la valeur de référence (écart relatif).",
+          "aides": [
+            "Applique la fonction ln à la relation A(t) = A₀·e^(−λt).",
+            "Tu obtiens une relation du type y = a·t + b : identifie a et b avec l'équation du doc. 3. Attention, b = ln A₀, pas A₀."
+          ]
+        },
+        {
+          "texte": "Complète la ligne « dA = ... » du script du doc. 4. Le modèle exponentiel donne A(10 j) = 133 Bq·m⁻³ : explique pourquoi le script donne une valeur un peu plus faible, et comment améliorer la précision.",
+          "aides": [
+            "La ligne à compléter traduit la relation ΔA = −λ·A·Δt du doc. 4 avec les noms des variables du script.",
+            "Pendant un pas dt, le script calcule dA avec la valeur de A au début du pas. Or A diminue pendant ce pas : la perte est-elle sur- ou sous-estimée ?"
+          ]
+        },
+        {
+          "texte": "L'élève affirme : « D'après ma mesure, il suffit d'attendre 6 jours pour que l'air de ma cave passe sous le niveau de référence. » Calcule la durée nécessaire pour que l'activité de l'échantillon enfermé passe sous 300 Bq·m⁻³, puis discute cette affirmation et propose deux mesures pour réduire le radon dans la cave.",
+          "aides": [
+            "Pour le calcul, isole t dans 300 = A₀·e^(−λt).",
+            "Pour la discussion : dans la cave, d'où vient le radon ? Cette source s'arrête-t-elle quand on ne fait rien ?"
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : à l'aide des masses atomiques m(²²²Rn) = 222,01758 u, m(²¹⁸Po) = 218,00897 u, m(⁴He) = 4,00260 u, de 1 u = 1,660539 × 10⁻²⁷ kg, c = 2,998 × 10⁸ m·s⁻¹ et 1 eV = 1,602 × 10⁻¹⁹ J, calcule l'énergie libérée par la désintégration d'un noyau de radon 222 (relation d'Einstein E = Δm·c²), en MeV.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> ²²⁶₈₈Ra → ²²²₈₆Rn + ⁴₂He (A : 226 = 222 + 4 ; Z : 88 = 86 + 2). Radioactivité α.",
+        "<strong>2.</strong> ²²²₈₆Rn → ²¹⁸₈₄Po + ⁴₂He. Conservation de A : 222 = 218 + 4 ; conservation de Z : 86 = 84 + 2 : la particule émise est un noyau d'hélium, radioactivité α.",
+        "<strong>3.</strong> On cherche la date à laquelle l'activité vaut A₀ / 2 = 820 / 2 = 410 Bq·m⁻³. Elle est comprise entre les mesures à 3 jours (469) et à 4 jours (397), plus près de 4 jours : t₁/₂ ≈ 3,8 jours (on accepte 3,6 à 4,0 jours).",
+        "<strong>4.</strong> A(t) = A₀·e^(−λt) donne ln A = ln A₀ − λ·t : ln A est une fonction affine de t, de coefficient directeur −λ et d'ordonnée à l'origine ln A₀. Par identification : λ = 0,182 j⁻¹ ; ln A₀ = 6,71, soit A₀ = e^6,71 ≈ 820 Bq·m⁻³ (cohérent avec la mesure). t₁/₂ = ln 2 / λ = 0,693 / 0,182 = 3,81 jours. Écart relatif : |3,81 − 3,82| / 3,82 = 0,3 % : excellent accord.",
+        "<strong>5.</strong> dA = -lam * A * dt. Le script suppose que A reste constante pendant chaque pas de 0,5 jour ; or A diminue pendant ce pas, donc le script surestime le nombre de désintégrations à chaque pas et sous-estime A (121,6 au lieu de 133 Bq·m⁻³, écart d'environ 8 %). Pour améliorer la précision, on diminue le pas dt (avec dt = 0,1 jour, on obtient environ 130,7 Bq·m⁻³).",
+        "<strong>6.</strong> Pour l'échantillon enfermé : 300 = 820·e^(−λt) ⟺ t = ln(820 / 300) / λ = (3,82 / 0,693) × ln(2,73) = 5,5 jours. Le calcul est juste pour l'échantillon isolé, mais l'affirmation est fausse pour la cave : dans la cave, le radon est renouvelé en permanence par le sol (le radium et l'uranium, de très longue demi-vie, en produisent sans cesse), donc l'activité ne décroît pas. Mesures possibles : aérer et ventiler régulièrement la cave (ventilation mécanique), rendre étanches le sol et les passages de canalisations, mettre le sous-sol en dépression.",
+        "<strong>7.</strong> Pour aller plus loin : Δm = m(Rn) − [m(Po) + m(He)] = 222,01758 − 222,01157 = 0,00601 u = 9,98 × 10⁻³⁰ kg. E = Δm·c² = 9,98 × 10⁻³⁰ × (2,998 × 10⁸)² = 8,97 × 10⁻¹³ J = 5,60 MeV. (Les masses atomiques incluent les électrons, mais ils sont en même nombre de part et d'autre : 86 = 84 + 2.)",
+        "<em>⚠ Erreur fréquente : en question 4, lire 6,71 comme la valeur de A₀ (c'est ln A₀) ; en question 6, appliquer à la cave un raisonnement valable seulement pour un échantillon isolé, sans source de radon.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,691 @@
+{
+  "id": 32,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Isotopes",
+        "icon": "🧬",
+        "content": [
+          {
+            "type": "def",
+            "term": "Élément chimique",
+            "text": "Caractérisé par son numéro atomique Z (nombre de protons). Tous les atomes ou ions d'un même élément chimique ont le même Z et le même symbole."
+          },
+          {
+            "type": "def",
+            "term": "Isotopes",
+            "text": "Atomes (ou ions) qui possèdent le même numéro atomique Z (même nombre de protons) mais un nombre de neutrons N différent, donc un nombre de nucléons A différent (A = Z + N)."
+          },
+          {
+            "type": "text",
+            "text": "Des atomes isotopes portent le nom de l'élément chimique suivi de leur nombre de nucléons A (exemple : carbone 12, carbone 14). Ayant le même cortège électronique, les isotopes d'un même élément ont la même réactivité chimique."
+          }
+        ]
+      },
+      {
+        "title": "2. La transformation nucléaire",
+        "icon": "☢️",
+        "content": [
+          {
+            "type": "warn",
+            "text": "Contrairement à une transformation chimique, au cours d'une transformation nucléaire, les éléments chimiques ne sont PAS conservés : le numéro atomique Z peut changer, un noyau pouvant se transformer en noyau d'un autre élément."
+          },
+          {
+            "type": "text",
+            "text": "Une transformation nucléaire met en jeu un ou plusieurs noyaux réactifs qui se transforment en de nouveaux noyaux ; elle s'accompagne très souvent de l'émission d'un rayonnement gamma (γ), très énergétique."
+          }
+        ]
+      },
+      {
+        "title": "3. Les lois de conservation de Soddy",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Toute équation de réaction nucléaire doit être ajustée pour respecter deux lois de conservation, énoncées par Frederick Soddy :"
+          },
+          {
+            "type": "def",
+            "term": "Conservation du nombre de nucléons A",
+            "text": "La somme des nombres de nucléons A des noyaux et particules formés est égale à la somme des nombres de nucléons A des noyaux réactifs."
+          },
+          {
+            "type": "def",
+            "term": "Conservation du numéro atomique Z",
+            "text": "La somme des numéros atomiques Z (charges) des noyaux et particules formés est égale à la somme des numéros atomiques Z des noyaux réactifs."
+          }
+        ]
+      },
+      {
+        "title": "4. Les trois types de désintégration",
+        "icon": "💥",
+        "content": [
+          {
+            "type": "text",
+            "text": "La désintégration radioactive est une réaction nucléaire spontanée. Il en existe trois types principaux :"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Type",
+              "Particule émise",
+              "Effet sur A et Z"
+            ],
+            "rows": [
+              [
+                "Désintégration α (alpha)",
+                "Noyau d'hélium ⁴₂He",
+                "A diminue de 4, Z diminue de 2"
+              ],
+              [
+                "Désintégration β⁻ (bêta moins)",
+                "Électron ⁰₋₁e",
+                "A inchangé, Z augmente de 1"
+              ],
+              [
+                "Désintégration β⁺ (bêta plus)",
+                "Positon ⁰₊₁e",
+                "A inchangé, Z diminue de 1"
+              ]
+            ]
+          },
+          {
+            "type": "formula",
+            "label": "Exemple α : désintégration de l'uranium 238",
+            "text": "²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He"
+          },
+          {
+            "type": "formula",
+            "label": "Exemple β⁻ : désintégration du carbone 14",
+            "text": "¹⁴₆C → ¹⁴₇N + ⁰₋₁e"
+          },
+          {
+            "type": "formula",
+            "label": "Exemple β⁺ : désintégration du carbone 11",
+            "text": "¹¹₆C → ¹¹₅B + ⁰₊₁e"
+          }
+        ]
+      },
+      {
+        "title": "5. Fusion et fission nucléaires",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Fusion nucléaire",
+            "text": "Réaction au cours de laquelle deux noyaux légers s'associent pour former un noyau plus lourd, avec un dégagement d'énergie considérable. C'est la réaction qui se produit au cœur du Soleil et des étoiles (fusion de noyaux d'hydrogène en noyaux d'hélium)."
+          },
+          {
+            "type": "def",
+            "term": "Fission nucléaire",
+            "text": "Réaction au cours de laquelle un noyau lourd dit « fissile » (comme l'uranium 235), bombardé par un neutron, se scinde en deux noyaux plus légers, en libérant de l'énergie et plusieurs neutrons supplémentaires. C'est la réaction exploitée dans les réacteurs des centrales nucléaires."
+          },
+          {
+            "type": "text",
+            "text": "Les neutrons libérés lors d'une fission peuvent provoquer la fission d'autres noyaux fissiles voisins : on parle de réaction en chaîne."
+          },
+          {
+            "type": "warn",
+            "text": "Ordre de grandeur : la fission d'une masse donnée d'uranium 235 libère environ un million de fois plus d'énergie que la combustion de la même masse de charbon. Les réactions nucléaires libèrent des énergies bien plus importantes que les réactions chimiques (combustion, etc.)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Les noyaux ¹²₆C et ¹⁴₆C sont isotopes. Ils ont :",
+      "opts": [
+        "le même nombre de nucléons",
+        "le même nombre de neutrons, mais pas de protons",
+        "le même nombre de protons, mais pas de neutrons",
+        "des propriétés chimiques différentes"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "isotopes-meme-a",
+          "texte": "Croire que des isotopes ont le même A : ils ont le même Z, mais des A différents (12 et 14)"
+        },
+        {
+          "code": "isotopes-meme-n",
+          "texte": "Inverser protons et neutrons : des isotopes ont le même nombre de protons (Z), pas de neutrons"
+        },
+        null,
+        {
+          "code": "isotopes-chimie-differente",
+          "texte": "Croire que des isotopes réagissent différemment : ils ont les mêmes électrons, donc les mêmes propriétés chimiques"
+        }
+      ],
+      "exp": "Même Z = 6 : 6 protons (même élément, le carbone) ; N = 12 − 6 = 6 et N = 14 − 6 = 8 neutrons. Attention : des isotopes ont les mêmes propriétés chimiques."
+    },
+    {
+      "q": "Lequel de ces noyaux est un isotope de l'oxygène 16, ¹⁶₈O ?",
+      "opts": [
+        "¹⁶₇N",
+        "¹⁸₈O",
+        "¹⁷₉F",
+        "l'ion oxyde O²⁻"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "isotopes-meme-a",
+          "texte": "Croire que des isotopes ont le même A : ¹⁶₇N a 7 protons, c'est un autre élément"
+        },
+        null,
+        {
+          "code": "isotopes-meme-n",
+          "texte": "Chercher le même nombre de neutrons : ¹⁷₉F a 8 neutrons comme ¹⁶₈O, mais 9 protons, c'est un autre élément"
+        },
+        {
+          "code": "isotopes-vs-ions",
+          "texte": "Confondre isotope et ion : un ion a gagné ou perdu des électrons, son noyau ne change pas"
+        }
+      ],
+      "exp": "Un isotope de ¹⁶₈O a le même Z = 8 et un A différent : ¹⁸₈O (10 neutrons). Attention : des isotopes diffèrent par leurs neutrons, des ions par leurs électrons."
+    },
+    {
+      "q": "Combien de neutrons contient le noyau de carbone 14, ¹⁴₆C ?",
+      "opts": [
+        "14",
+        "6",
+        "20",
+        "8"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "neutrons-egal-a",
+          "texte": "Prendre A pour le nombre de neutrons : N = A − Z = 14 − 6"
+        },
+        {
+          "code": "z-vs-n",
+          "texte": "Confondre Z et N : Z = 6 est le nombre de protons"
+        },
+        {
+          "code": "a-plus-z",
+          "texte": "Additionner A et Z : A compte déjà les protons, N = A − Z"
+        },
+        null
+      ],
+      "exp": "N = A − Z = 14 − 6 = 8 neutrons. Attention : A est le nombre total de nucléons (protons + neutrons)."
+    },
+    {
+      "q": "Laquelle de ces écritures traduit une transformation nucléaire ?",
+      "opts": [
+        "C + O₂ → CO₂",
+        "²³⁵U(s) → ²³⁵U(ℓ)",
+        "¹⁴₆C → ¹⁴₇N + ⁰₋₁e",
+        "Na → Na⁺ + e⁻"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "nucleaire-vs-chimique",
+          "texte": "Confondre transformation chimique et nucléaire : dans C + O₂ → CO₂, les éléments sont conservés"
+        },
+        {
+          "code": "uranium-donc-nucleaire",
+          "texte": "Croire que tout ce qui concerne l'uranium est nucléaire : ici c'est une fusion (changement d'état), une transformation physique"
+        },
+        null,
+        {
+          "code": "ion-vs-nucleaire",
+          "texte": "Croire que perdre un électron est nucléaire : le noyau ne change pas, c'est la formation d'un ion"
+        }
+      ],
+      "exp": "Dans ¹⁴₆C → ¹⁴₇N + ⁰₋₁e, le noyau change d'élément (Z passe de 6 à 7) : c'est nucléaire. Attention : le mot « fusion » désigne aussi un simple changement d'état."
+    },
+    {
+      "q": "Dans une centrale : ²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²₃₆Kr + x ¹₀n. Le nombre x de neutrons formés vaut :",
+      "opts": [
+        "2",
+        "1, comme le neutron qui a provoqué la fission",
+        "3",
+        "0, car Z est déjà conservé"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-neutron-incident",
+          "texte": "Oublier le neutron incident dans les réactifs : A = 235 + 1 = 236 à gauche, donc 236 = 141 + 92 + x"
+        },
+        {
+          "code": "neutrons-entree-sortie",
+          "texte": "Croire qu'il ressort autant de neutrons qu'il en entre : c'est la conservation de A qui donne x"
+        },
+        null,
+        {
+          "code": "oubli-conservation-a",
+          "texte": "Ne vérifier que Z : il faut aussi conserver le nombre de nucléons A"
+        }
+      ],
+      "exp": "Conservation de A : 235 + 1 = 141 + 92 + x, donc x = 3 ; Z : 92 = 56 + 36 (les neutrons ont Z = 0). Attention : on conserve à la fois A et Z."
+    },
+    {
+      "q": "Le carbone 11 se désintègre : ¹¹₆C → ¹¹₅B + X. La particule X est :",
+      "opts": [
+        "un électron ⁰₋₁e",
+        "un positon ⁰₊₁e",
+        "un noyau d'hélium ⁴₂He",
+        "un neutron ¹₀n"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "signe-z-particule",
+          "texte": "Mal conserver Z : 6 = 5 + z donne z = +1, la particule est un positon"
+        },
+        null,
+        {
+          "code": "oubli-conservation-a",
+          "texte": "Ne pas vérifier A : avec ⁴₂He on aurait 11 = 11 + 4, impossible"
+        },
+        {
+          "code": "oubli-conservation-z",
+          "texte": "Oublier de conserver Z : avec un neutron, on aurait 6 = 5 + 0"
+        }
+      ],
+      "exp": "A : 11 = 11 + a, donc a = 0 ; Z : 6 = 5 + z, donc z = +1 : X = ⁰₊₁e, un positon. Attention : on applique les deux lois de conservation pour identifier la particule."
+    },
+    {
+      "q": "Le polonium 210 émet un noyau d'hélium : ²¹⁰₈₄Po → X + ⁴₂He. Le noyau X est :",
+      "opts": [
+        "²¹⁴₈₆Rn",
+        "²⁰⁶₈₄Po",
+        "²⁰⁶₈₂Pb",
+        "²⁰⁸₈₂Pb"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conservation-addition",
+          "texte": "Ajouter au lieu de soustraire : A(X) = 210 − 4 et Z(X) = 84 − 2"
+        },
+        {
+          "code": "oubli-conservation-z",
+          "texte": "Oublier de conserver Z : le noyau perd 2 protons, il change d'élément"
+        },
+        null,
+        {
+          "code": "a-z-melanges",
+          "texte": "Retirer à A le Z de la particule : A(X) = 210 − 4 = 206, pas 210 − 2"
+        }
+      ],
+      "exp": "A : 210 = A + 4, donc A = 206 ; Z : 84 = Z + 2, donc Z = 82 (plomb) : X = ²⁰⁶₈₂Pb. Attention : Z change, donc l'élément change."
+    },
+    {
+      "q": "L'énergie rayonnée par le Soleil provient :",
+      "opts": [
+        "de la fusion de noyaux d'hydrogène en hélium",
+        "de la fission de noyaux lourds, comme dans une centrale",
+        "d'une gigantesque combustion de gaz",
+        "de la chaleur stockée lors de sa formation"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "fusion-fission-inverses",
+          "texte": "Confondre fusion (noyaux légers qui s'assemblent, dans le Soleil) et fission (noyau lourd qui se scinde, dans les centrales)"
+        },
+        {
+          "code": "soleil-combustion",
+          "texte": "Croire que le Soleil « brûle » : il n'y a pas de combustion (réaction chimique) mais des réactions nucléaires"
+        },
+        {
+          "code": "soleil-reserve-chaleur",
+          "texte": "Croire que le Soleil vide une réserve de chaleur : son énergie est produite en permanence par fusion nucléaire"
+        }
+      ],
+      "exp": "Au cœur du Soleil, des noyaux d'hydrogène fusionnent en noyaux d'hélium en libérant une énergie énorme. Attention : ce n'est ni une combustion, ni une fission."
+    },
+    {
+      "q": "Dans le réacteur d'une centrale nucléaire, un noyau d'uranium 235 qui absorbe un neutron :",
+      "opts": [
+        "fusionne avec un autre noyau d'uranium",
+        "brûle en produisant du dioxyde de carbone",
+        "se scinde en deux noyaux plus légers et libère des neutrons",
+        "devient un isotope plus lourd, qui reste stable"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "fusion-fission-inverses",
+          "texte": "Confondre fusion et fission : dans une centrale, un noyau lourd se scinde (fission)"
+        },
+        {
+          "code": "nucleaire-vs-chimique",
+          "texte": "Confondre réaction nucléaire et combustion (réaction chimique) : une centrale nucléaire ne rejette pas de CO₂ par réaction"
+        },
+        null,
+        {
+          "code": "fission-absorption-seule",
+          "texte": "Croire que le noyau garde simplement le neutron : l'uranium 235 se scinde, ce qui libère l'énergie"
+        }
+      ],
+      "exp": "C'est la fission : le noyau d'uranium 235 se scinde en deux noyaux plus légers et libère 2 ou 3 neutrons, qui peuvent provoquer d'autres fissions (réaction en chaîne)."
+    },
+    {
+      "q": "À masse égale, la fission de l'uranium 235 libère, par rapport à la combustion du charbon :",
+      "opts": [
+        "à peu près autant d'énergie",
+        "environ 10 fois plus d'énergie",
+        "environ un million de fois plus d'énergie",
+        "moins d'énergie, mais sans rejeter de CO₂"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "nucleaire-energie-comparable",
+          "texte": "Croire que réactions nucléaires et chimiques libèrent des énergies comparables : le nucléaire libère des énergies bien plus grandes"
+        },
+        {
+          "code": "ordre-grandeur-sous-estime",
+          "texte": "Sous-estimer l'écart : c'est de l'ordre d'un million (10⁶), pas de 10"
+        },
+        null,
+        {
+          "code": "nucleaire-moins-energie",
+          "texte": "Croire que le nucléaire libère moins d'énergie : à masse égale, il en libère environ un million de fois plus"
+        }
+      ],
+      "exp": "La fission d'une masse d'uranium 235 libère environ un million de fois plus d'énergie que la combustion de la même masse de charbon. Attention : les énergies nucléaires sont sans commune mesure avec les énergies chimiques."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "La famille de l'hydrogène",
+      "contexte": [
+        "Le noyau d'hydrogène le plus courant ne contient qu'un proton. Mais il existe aussi de l'« hydrogène lourd », le deutérium, présent dans l'eau de mer, et du tritium, utilisé dans les recherches sur la fusion. Le document ci-dessous représente quatre noyaux."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\">Composition de quatre noyaux légers</text><rect x=\"15\" y=\"62\" width=\"160\" height=\"200\" rx=\"12\" fill=\"#f7f3ec\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"95\" y=\"88\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#1F4E5A\">Noyau A</text><circle cx=\"95\" cy=\"175\" r=\"18\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"95\" y=\"182\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">+</text><rect x=\"200\" y=\"62\" width=\"160\" height=\"200\" rx=\"12\" fill=\"#f7f3ec\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"280\" y=\"88\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#1F4E5A\">Noyau B</text><circle cx=\"263\" cy=\"175\" r=\"18\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"263\" y=\"182\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">+</text><circle cx=\"297\" cy=\"175\" r=\"18\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><rect x=\"385\" y=\"62\" width=\"160\" height=\"200\" rx=\"12\" fill=\"#f7f3ec\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"465\" y=\"88\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#1F4E5A\">Noyau C</text><circle cx=\"448\" cy=\"185\" r=\"18\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"482\" cy=\"185\" r=\"18\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"465\" cy=\"156\" r=\"18\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"465\" y=\"163\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">+</text><rect x=\"570\" y=\"62\" width=\"160\" height=\"200\" rx=\"12\" fill=\"#f7f3ec\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"650\" y=\"88\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#1F4E5A\">Noyau D</text><circle cx=\"633\" cy=\"185\" r=\"18\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"633\" y=\"192\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">+</text><circle cx=\"667\" cy=\"185\" r=\"18\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"650\" cy=\"156\" r=\"18\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"650\" y=\"163\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">+</text><circle cx=\"190\" cy=\"320\" r=\"16\" fill=\"#B5523B\"/><text x=\"190\" y=\"327\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">+</text><text x=\"215\" y=\"326\">proton</text><circle cx=\"440\" cy=\"320\" r=\"16\" fill=\"#1F4E5A\"/><text x=\"465\" y=\"326\">neutron</text><rect x=\"60\" y=\"360\" width=\"640\" height=\"80\" rx=\"10\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"380\" y=\"392\" text-anchor=\"middle\" font-size=\"16\">Les électrons ne sont pas représentés.</text><text x=\"380\" y=\"420\" text-anchor=\"middle\" font-size=\"16\">Les noyaux ne sont pas dessinés à l'échelle.</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour chaque noyau A, B, C et D, compte le nombre de protons Z et le nombre de neutrons N, puis calcule le nombre de nucléons A = Z + N. Présente tes résultats dans un tableau.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide de l'encadré « Données », donne le nom de l'élément chimique de chaque noyau et écris-le avec la notation conventionnelle (exemple : ¹⁴₆C).",
+          "aides": []
+        },
+        {
+          "texte": "Quels noyaux sont des isotopes ? Justifie avec la définition.",
+          "aides": [
+            "Relis la définition : des isotopes ont-ils le même nombre de protons, de neutrons ou de nucléons ?",
+            "Repère dans ton tableau les noyaux qui ont le même Z, puis vérifie que leurs N sont différents."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? « Les noyaux C et D ont le même nombre de nucléons : ce sont donc des isotopes. » Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "L'iode est indispensable au fonctionnement de la thyroïde. L'iode 127 est stable ; l'iode 131, radioactif, peut être rejeté lors d'un accident nucléaire. Calcule le nombre de neutrons de chacun de ces deux noyaux. Sont-ils isotopes ?",
+          "aides": []
+        },
+        {
+          "texte": "En cas d'accident, on distribue des comprimés d'iodure de potassium (contenant de l'iode 127) : la thyroïde se remplit d'iode stable et n'absorbe presque plus l'iode 131. Pourquoi la thyroïde ne peut-elle pas « choisir » entre l'iode 127 et l'iode 131 ?",
+          "aides": [
+            "Les propriétés chimiques d'un atome dépendent de ses électrons. Combien d'électrons possède un atome d'iode 127 ? Et un atome d'iode 131 ?",
+            "Deux atomes qui ont le même cortège électronique ont-ils la même réactivité chimique ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Noyau A : Z = 1, N = 0, A = 1 + 0 = 1. Noyau B : Z = 1, N = 1, A = 2. Noyau C : Z = 1, N = 2, A = 3. Noyau D : Z = 2, N = 1, A = 3.",
+        "<strong>2.</strong> Z = 1 : hydrogène (H) ; Z = 2 : hélium (He). A : ¹₁H (hydrogène 1) ; B : ²₁H (hydrogène 2, le deutérium) ; C : ³₁H (hydrogène 3, le tritium) ; D : ³₂He (hélium 3).",
+        "<strong>3.</strong> A, B et C sont isotopes : ils ont le même numéro atomique Z = 1 (même élément, l'hydrogène) mais des nombres de neutrons différents (0, 1 et 2), donc des nombres de nucléons différents.",
+        "<strong>4.</strong> FAUX : C et D ont bien le même A (3), mais pas le même Z (1 et 2). Ce sont deux éléments différents (hydrogène et hélium) : ils ne sont pas isotopes. Des isotopes ont le même Z, pas le même A.",
+        "<strong>5.</strong> Iode : Z = 53. Iode 127 : N = 127 − 53 = 74 neutrons. Iode 131 : N = 131 − 53 = 78 neutrons. Même Z, nombres de neutrons différents : ce sont des isotopes.",
+        "<strong>6.</strong> Des isotopes ont le même nombre de protons, donc le même nombre d'électrons et le même cortège électronique : ils ont la même réactivité chimique. La thyroïde fixe donc l'iode 127 et l'iode 131 exactement de la même façon ; si elle est déjà saturée d'iode 127, elle n'absorbe presque plus d'iode 131.",
+        "<em>⚠ Erreur fréquente : croire que des isotopes ont le même nombre de nucléons A. C'est le numéro atomique Z qui est identique.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Physique, chimique ou nucléaire ?",
+      "contexte": [
+        "Inès a relevé huit transformations, observées dans la vie courante ou décrites dans son manuel.",
+        "A. Les glaçons d'une boisson fondent : H₂O(s) → H₂O(l).",
+        "B. Le gaz de la gazinière brûle : CH₄ + 2 O₂ → CO₂ + 2 H₂O.",
+        "C. Dans certaines roches granitiques : ²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He.",
+        "D. Le chocolat fond dans une casserole au bain-marie.",
+        "E. Au cœur du Soleil : ²₁H + ¹₁H → ³₂He + γ.",
+        "F. Le sodium réagit violemment avec le dichlore : 2 Na + Cl₂ → 2 NaCl.",
+        "G. L'eau d'une flaque s'évapore au soleil.",
+        "H. Une grille en fer rouille : 4 Fe + 3 O₂ → 2 Fe₂O₃."
+      ],
+      "questions": [
+        {
+          "texte": "Complète les phrases avec les mots « espèces chimiques » ou « éléments chimiques ».<br>a. Lors d'une transformation physique, les … sont conservées : seul leur état change.<br>b. Lors d'une transformation chimique, de nouvelles … se forment, mais les … sont conservés.<br>c. Lors d'une transformation nucléaire, les … ne sont pas conservés : des noyaux changent de numéro atomique Z.",
+          "aides": []
+        },
+        {
+          "texte": "Classe les huit transformations dans un tableau à trois colonnes : physique, chimique, nucléaire. Pour C et E, justifie en comparant les numéros atomiques des réactifs et des produits.",
+          "aides": [
+            "Dans les équations, cherche les symboles d'éléments chimiques de chaque côté de la flèche : sont-ils les mêmes ?",
+            "Si un symbole d'élément disparaît et qu'un autre apparaît (le numéro atomique Z change), la transformation est nucléaire. Si seul l'état (s), (l), (g) change, elle est physique."
+          ]
+        },
+        {
+          "texte": "Les transformations D et E contiennent toutes les deux le mot « fusion » (fusion du chocolat, fusion nucléaire). Explique pourquoi ces deux « fusions » sont de nature très différente.",
+          "aides": [
+            "Que deviennent les espèces chimiques quand le chocolat fond ? Est-ce toujours du chocolat ?",
+            "Dans la transformation E, compare les noyaux avant et après : sont-ils les mêmes ?"
+          ]
+        },
+        {
+          "texte": "Dans la transformation C, quel élément chimique disparaît ? Quels éléments apparaissent ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Les espèces chimiques sont conservées. b. De nouvelles espèces chimiques se forment, mais les éléments chimiques sont conservés. c. Les éléments chimiques ne sont pas conservés.",
+        "<strong>2.</strong> Physique : A, D, G (changements d'état : l'espèce chimique reste la même). Chimique : B, F, H (de nouvelles espèces se forment, mais on retrouve les mêmes éléments de chaque côté : C, H et O pour B ; Na et Cl pour F ; Fe et O pour H). Nucléaire : C et E.",
+        "C : le réactif est l'uranium (Z = 92) ; on obtient du thorium (Z = 90) et de l'hélium (Z = 2). E : les réactifs sont deux noyaux d'hydrogène (Z = 1) ; on obtient un noyau d'hélium (Z = 2). Des noyaux changent de Z : les éléments ne sont pas conservés, c'est une transformation nucléaire.",
+        "<strong>3.</strong> D : la fusion du chocolat est un changement d'état (solide → liquide) : transformation physique, les espèces chimiques restent les mêmes. E : la fusion nucléaire est l'association de deux noyaux légers qui forment un noyau plus lourd : les noyaux eux-mêmes sont transformés (l'hydrogène devient de l'hélium).",
+        "<strong>4.</strong> L'uranium (U) disparaît ; le thorium (Th) et l'hélium (He) apparaissent.",
+        "<em>⚠ Erreur fréquente : classer B, F ou H en transformation nucléaire parce que « les molécules changent ». Dans une transformation chimique, les atomes se réarrangent, mais leurs noyaux ne changent pas.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Des noyaux qui se désintègrent",
+      "contexte": [
+        "Certains noyaux sont instables : ils se désintègrent spontanément en émettant une particule. Pour écrire l'équation d'une réaction nucléaire, on utilise les lois de conservation de Soddy : la somme des nombres de nucléons A est la même avant et après la réaction ; la somme des numéros atomiques Z (les charges) aussi.",
+        "Utilise l'encadré « Données »."
+      ],
+      "questions": [
+        {
+          "texte": "Vérifie que l'équation ²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He respecte les deux lois de Soddy (calcule la somme des A, puis celle des Z, de chaque côté).",
+          "aides": []
+        },
+        {
+          "texte": "Complète chaque équation, puis nomme le noyau ou la particule manquant.<br>a. Le radon 222, un gaz radioactif qui peut s'accumuler dans les caves : ²²²₈₆Rn → ²¹⁸Po + ⁴₂He. Quel est le numéro atomique Z du polonium ? Vérifie avec les données.<br>b. L'iode 131, utilisé à l'hôpital pour soigner certaines maladies de la thyroïde : ¹³¹₅₃I → ¹³¹₅₄Xe + particule P. Trouve le nombre de nucléons A et le numéro atomique Z de la particule P.<br>c. Le fluor 18, injecté au patient lors d'un examen d'imagerie (TEP) : ¹⁸₉F → ¹⁸₈O + particule Q. Trouve A et Z de la particule Q.",
+          "aides": [
+            "Écris l'égalité « somme des A à gauche = somme des A à droite », puis la même pour Z.",
+            "Pour b : 53 = 54 + Z. Quelle valeur de Z rend cette égalité vraie ?",
+            "Une particule de A = 0 et Z = −1 ou +1 : cherche-la dans la liste des particules de l'encadré « Données »."
+          ]
+        },
+        {
+          "texte": "Pour chacune des désintégrations a, b et c, indique s'il s'agit d'une désintégration α, β⁻ ou β⁺.",
+          "aides": [
+            "Regarde la particule émise dans chaque cas : noyau d'hélium, électron ou positon ?",
+            "Compare avec la ligne « Désintégrations » de l'encadré « Données »."
+          ]
+        },
+        {
+          "texte": "Les noyaux formés sont souvent « excités » : ils émettent alors un rayonnement γ. Faut-il le prendre en compte pour vérifier les lois de Soddy ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Nucléons : à gauche 238 ; à droite 234 + 4 = 238. Charges : à gauche 92 ; à droite 90 + 2 = 92. Les deux lois sont respectées.",
+        "<strong>2.</strong> a. Conservation de A : 222 = 218 + 4 (vérifié). Conservation de Z : 86 = Z + 2, donc Z = 86 − 2 = 84. D'après les données, Z = 84 est bien le polonium : ²²²₈₆Rn → ²¹⁸₈₄Po + ⁴₂He.",
+        "b. Conservation de A : 131 = 131 + A, donc A = 0. Conservation de Z : 53 = 54 + Z, donc Z = 53 − 54 = −1. La particule ⁰₋₁e est un électron : ¹³¹₅₃I → ¹³¹₅₄Xe + ⁰₋₁e.",
+        "c. Conservation de A : 18 = 18 + A, donc A = 0. Conservation de Z : 9 = 8 + Z, donc Z = +1. La particule ⁰₊₁e est un positon : ¹⁸₉F → ¹⁸₈O + ⁰₊₁e.",
+        "<strong>3.</strong> a : émission d'un noyau d'hélium (A diminue de 4, Z de 2) : désintégration α. b : émission d'un électron (Z augmente de 1) : désintégration β⁻. c : émission d'un positon (Z diminue de 1) : désintégration β⁺.",
+        "<strong>4.</strong> Non : le rayonnement γ n'est pas une particule chargée et ne contient aucun nucléon (A = 0, Z = 0). Il ne change ni la somme des A ni celle des Z.",
+        "<em>⚠ Erreur fréquente : en b, écrire Z = +1 en faisant 54 − 53 « dans le mauvais sens ». On écrit l'égalité « somme à gauche = somme à droite » (53 = 54 + Z), puis on la résout.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Au cœur d'un réacteur nucléaire",
+      "contexte": [
+        "La centrale de Nogent-sur-Seine, la plus proche de l'Île-de-France, produit de l'électricité grâce à l'énergie libérée par la fission de noyaux d'uranium 235. Un noyau d'uranium 235 qui absorbe un neutron peut se briser de plusieurs façons, par exemple :",
+        "Réaction (1) : ²³⁵₉₂U + ¹₀n → ¹⁴¹₅₆Ba + ⁹²Kr + 3 ¹₀n",
+        "Réaction (2) : ²³⁵₉₂U + ¹₀n → ¹⁴⁰₅₄Xe + ⁹⁴₃₈Sr + x ¹₀n"
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\">Schéma d'une réaction en chaîne (chaque fission libère 3 neutrons)</text><defs><marker id=\"fl\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker></defs><circle cx=\"30.0\" cy=\"235.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"40.0\" y1=\"235.0\" x2=\"112.0\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"140\" cy=\"235\" r=\"26\" fill=\"#C8962E\" stroke=\"#7a5a12\" stroke-width=\"1.5\"/><text x=\"140\" y=\"240\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">U 235</text><circle cx=\"180\" cy=\"205\" r=\"15\" fill=\"#B5523B\"/><circle cx=\"180\" cy=\"265\" r=\"12\" fill=\"#B5523B\"/><circle cx=\"210.0\" cy=\"219.4\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"220.0\" y1=\"219.4\" x2=\"348.0\" y2=\"105.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"210.0\" cy=\"235.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"220.0\" y1=\"235.0\" x2=\"348.0\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"210.0\" cy=\"250.6\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"220.0\" y1=\"250.6\" x2=\"348.0\" y2=\"365.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"380\" cy=\"105\" r=\"26\" fill=\"#C8962E\" stroke=\"#7a5a12\" stroke-width=\"1.5\"/><text x=\"380\" y=\"110\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">U 235</text><circle cx=\"420\" cy=\"75\" r=\"15\" fill=\"#B5523B\"/><circle cx=\"420\" cy=\"135\" r=\"12\" fill=\"#B5523B\"/><line x1=\"450.0\" y1=\"82.2\" x2=\"628.0\" y2=\"67.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"67.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"67.0\" x2=\"680.0\" y2=\"67.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><line x1=\"450.0\" y1=\"105.0\" x2=\"628.0\" y2=\"105.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"105.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"105.0\" x2=\"680.0\" y2=\"105.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><line x1=\"450.0\" y1=\"127.8\" x2=\"628.0\" y2=\"143.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"143.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"143.0\" x2=\"680.0\" y2=\"143.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"380\" cy=\"235\" r=\"26\" fill=\"#C8962E\" stroke=\"#7a5a12\" stroke-width=\"1.5\"/><text x=\"380\" y=\"240\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">U 235</text><circle cx=\"420\" cy=\"205\" r=\"15\" fill=\"#B5523B\"/><circle cx=\"420\" cy=\"265\" r=\"12\" fill=\"#B5523B\"/><line x1=\"450.0\" y1=\"212.2\" x2=\"628.0\" y2=\"197.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"197.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"197.0\" x2=\"680.0\" y2=\"197.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><line x1=\"450.0\" y1=\"235.0\" x2=\"628.0\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"235.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"235.0\" x2=\"680.0\" y2=\"235.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><line x1=\"450.0\" y1=\"257.8\" x2=\"628.0\" y2=\"273.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"273.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"273.0\" x2=\"680.0\" y2=\"273.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"380\" cy=\"365\" r=\"26\" fill=\"#C8962E\" stroke=\"#7a5a12\" stroke-width=\"1.5\"/><text x=\"380\" y=\"370\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"bold\" fill=\"#fff\">U 235</text><circle cx=\"420\" cy=\"335\" r=\"15\" fill=\"#B5523B\"/><circle cx=\"420\" cy=\"395\" r=\"12\" fill=\"#B5523B\"/><line x1=\"450.0\" y1=\"342.2\" x2=\"628.0\" y2=\"327.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"327.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"327.0\" x2=\"680.0\" y2=\"327.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><line x1=\"450.0\" y1=\"365.0\" x2=\"628.0\" y2=\"365.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"365.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"365.0\" x2=\"680.0\" y2=\"365.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><line x1=\"450.0\" y1=\"387.8\" x2=\"628.0\" y2=\"403.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><circle cx=\"640.0\" cy=\"403.0\" r=\"8\" fill=\"#1F4E5A\"/><line x1=\"650.0\" y1=\"403.0\" x2=\"680.0\" y2=\"403.0\" stroke=\"#d9d2c5\" stroke-width=\"2\" marker-end=\"url(#fl)\"/><text x=\"140\" y=\"300\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">1ʳᵉ fission</text><text x=\"470\" y=\"440\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">fissions suivantes</text><text x=\"700\" y=\"440\" text-anchor=\"middle\" font-size=\"15\">vers d'autres</text><text x=\"700\" y=\"459\" text-anchor=\"middle\" font-size=\"15\">noyaux…</text><circle cx=\"40\" cy=\"395\" r=\"8\" fill=\"#1F4E5A\"/><text x=\"56\" y=\"400\" font-size=\"15\">neutron</text><circle cx=\"40\" cy=\"425\" r=\"10\" fill=\"#C8962E\"/><text x=\"56\" y=\"430\" font-size=\"15\">noyau d'uranium 235</text><circle cx=\"40\" cy=\"455\" r=\"10\" fill=\"#B5523B\"/><text x=\"56\" y=\"460\" font-size=\"15\">noyaux formés (plus légers)</text></svg>",
+      "questions": [
+        {
+          "texte": "Dans la réaction (1), le numéro atomique du krypton n'est pas écrit. Détermine-le avec une loi de conservation, puis vérifie-le avec les données. Vérifie aussi la conservation du nombre de nucléons.",
+          "aides": [
+            "Le neutron ¹₀n a Z = 0 : il ne compte pas dans la somme des charges.",
+            "Écris : 92 + 0 = 56 + Z(Kr) + 3 × 0, puis isole Z(Kr)."
+          ]
+        },
+        {
+          "texte": "Dans la réaction (2), détermine le nombre x de neutrons libérés.",
+          "aides": [
+            "N'oublie pas le neutron qui frappe le noyau d'uranium : il fait partie des réactifs.",
+            "Somme des A à gauche : 235 + 1. Somme à droite : 140 + 94 + x × 1."
+          ]
+        },
+        {
+          "texte": "Pourquoi ces réactions sont-elles des fissions et non des fusions ? Sont-elles spontanées ?",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide du schéma, explique ce qu'est une réaction en chaîne. Si tous les neutrons libérés provoquaient une nouvelle fission, combien de fissions aurait-on à la 5ᵉ génération (la 1ʳᵉ génération étant une seule fission) ? Pourquoi faut-il contrôler la réaction dans un réacteur ?",
+          "aides": [
+            "Sur le schéma, compte le nombre de fissions à chaque étape : 1, puis … ?",
+            "À chaque génération, le nombre de fissions est multiplié par le nombre de neutrons libérés par fission."
+          ]
+        },
+        {
+          "texte": "Données : la fission de 1 g d'uranium 235 libère environ 8,2 × 10¹⁰ J ; la combustion de 1 g de charbon libère environ 3,0 × 10⁴ J. Combien de fois plus d'énergie la fission libère-t-elle, à masse égale ? Donne l'ordre de grandeur et compare à l'affirmation du cours (« environ un million de fois plus »).",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Conservation de Z : 92 + 0 = 56 + Z(Kr) + 3 × 0, donc Z(Kr) = 92 − 56 = 36 ; les données confirment que Z = 36 est le krypton : ⁹²₃₆Kr. Conservation de A : à gauche 235 + 1 = 236 ; à droite 141 + 92 + 3 × 1 = 236. Les deux lois sont respectées.",
+        "<strong>2.</strong> Conservation de A : 235 + 1 = 140 + 94 + x × 1, donc x = 236 − 234 = 2. Vérification de Z : 92 + 0 = 54 + 38 + 2 × 0 = 92. La réaction (2) libère 2 neutrons.",
+        "<strong>3.</strong> Un noyau lourd (A = 235) se scinde en deux noyaux plus légers (A = 141 et 92, ou 140 et 94) : c'est une fission. Une fusion associerait au contraire deux noyaux légers. Ces fissions ne sont pas spontanées : elles sont provoquées par un neutron qui frappe le noyau d'uranium 235.",
+        "<strong>4.</strong> Chaque fission libère des neutrons qui peuvent provoquer à leur tour la fission d'autres noyaux d'uranium 235, qui libèrent de nouveaux neutrons, etc. : c'est la réaction en chaîne. Avec 3 neutrons efficaces par fission : 1 fission (1ʳᵉ génération), puis 3, 9, 27 et 81 fissions à la 5ᵉ génération (3⁴ = 81).",
+        "Le nombre de fissions augmente très vite : l'énergie libérée deviendrait énorme et incontrôlable (c'est le principe d'une bombe). Dans un réacteur, des barres de contrôle absorbent une partie des neutrons, pour qu'en moyenne un seul neutron par fission en provoque une nouvelle : la puissance reste constante.",
+        "<strong>5.</strong> Quotient : 8,2 × 10¹⁰ / 3,0 × 10⁴ ≈ 2,7 × 10⁶. À masse égale, la fission de l'uranium 235 libère environ 3 millions de fois plus d'énergie que la combustion du charbon : l'ordre de grandeur est 10⁶, ce qui confirme le cours (environ un million de fois plus). Autrement dit, 1 g d'uranium 235 « vaut » environ 2,7 t de charbon.",
+        "<em>⚠ Erreur fréquente : oublier le neutron incident dans la somme des nucléons des réactifs (écrire 235 au lieu de 236), ce qui donne x = 1 au lieu de 2.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "D'où vient l'énergie du Soleil ?",
+      "contexte": [
+        "Le projet international ITER, construit à Cadarache (Bouches-du-Rhône), cherche à produire de l'énergie avec la même famille de réactions que celles qui se produisent au cœur du Soleil. Le schéma ci-dessous représente la réaction étudiée."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\">Une réaction de fusion étudiée pour les futures centrales</text><circle cx=\"69\" cy=\"185\" r=\"17\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"69\" y=\"192\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#fff\">+</text><circle cx=\"101\" cy=\"185\" r=\"17\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"160\" y=\"196\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"bold\">+</text><circle cx=\"224\" cy=\"195\" r=\"17\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"256\" cy=\"195\" r=\"17\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"256\" y=\"202\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#fff\">+</text><circle cx=\"240\" cy=\"167\" r=\"17\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><line x1=\"300\" y1=\"185\" x2=\"388\" y2=\"185\" stroke=\"#3a3a3a\" stroke-width=\"3\" marker-end=\"url(#f5)\"/><defs><marker id=\"f5\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker></defs><circle cx=\"454\" cy=\"169\" r=\"17\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"454\" y=\"176\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#fff\">+</text><circle cx=\"486\" cy=\"169\" r=\"17\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"454\" cy=\"201\" r=\"17\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><circle cx=\"486\" cy=\"201\" r=\"17\" fill=\"#B5523B\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"486\" y=\"208\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#fff\">+</text><text x=\"550\" y=\"196\" text-anchor=\"middle\" font-size=\"30\" font-weight=\"bold\">+</text><circle cx=\"630\" cy=\"185\" r=\"17\" fill=\"#1F4E5A\" stroke=\"#fff\" stroke-width=\"2\"/><text x=\"85\" y=\"262\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">deutérium</text><text x=\"85\" y=\"284\" text-anchor=\"middle\" font-size=\"15\">(hydrogène 2)</text><text x=\"240\" y=\"262\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">tritium</text><text x=\"240\" y=\"284\" text-anchor=\"middle\" font-size=\"15\">(hydrogène 3)</text><text x=\"470\" y=\"262\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">noyau formé</text><text x=\"630\" y=\"262\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">particule</text><text x=\"630\" y=\"284\" text-anchor=\"middle\" font-size=\"15\">émise</text><circle cx=\"250\" cy=\"340\" r=\"15\" fill=\"#B5523B\"/><text x=\"250\" y=\"347\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#fff\">+</text><text x=\"274\" y=\"346\">proton</text><circle cx=\"430\" cy=\"340\" r=\"15\" fill=\"#1F4E5A\"/><text x=\"454\" y=\"346\">neutron</text><text x=\"380\" y=\"400\" text-anchor=\"middle\" font-size=\"15\">Cette réaction libère beaucoup d'énergie (et un rayonnement γ).</text><text x=\"380\" y=\"425\" text-anchor=\"middle\" font-size=\"15\">Elle n'a lieu qu'à très haute température (plus de 100 millions de degrés).</text></svg>",
+      "questions": [
+        {
+          "texte": "Détermine Z et A de chaque noyau et de la particule du schéma, puis écris l'équation de la réaction avec la notation conventionnelle. Vérifie les deux lois de conservation.",
+          "aides": [
+            "Pour chaque boule chargée « + », compte un proton (Z) ; le nombre de nucléons A est le nombre total de boules.",
+            "Le noyau formé a 2 protons : quel élément est-ce ? La particule émise n'a qu'un neutron : comment la note-t-on ?"
+          ]
+        },
+        {
+          "texte": "Le deutérium et le tritium sont-ils des isotopes ? S'agit-il d'une fusion ou d'une fission ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Dans le Soleil, l'hydrogène est transformé en hélium par une suite de réactions dont le bilan est : 4 ¹₁H → ⁴₂He + y ⁰₊₁e. Détermine y.",
+          "aides": [
+            "La conservation de A ne t'aide pas ici (le positon a A = 0) : utilise celle de Z.",
+            "Somme des Z à gauche : 4 × 1. À droite : 2 + y × 1."
+          ]
+        },
+        {
+          "texte": "Le Soleil libère chaque seconde une énergie de 3,8 × 10²⁶ J. Chaque réaction-bilan de la question 3 libère 4,3 × 10⁻¹² J. Calcule le nombre de réactions-bilans qui ont lieu chaque seconde dans le Soleil.",
+          "aides": [
+            "Si tu connais l'énergie totale et l'énergie libérée par une réaction, quelle opération donne le nombre de réactions ?",
+            "Pour diviser des puissances de dix : 10²⁶ / 10⁻¹² = 10²⁶⁻⁽⁻¹²⁾."
+          ]
+        },
+        {
+          "texte": "Déduis-en la masse d'hydrogène consommée chaque seconde par le Soleil, en kg puis en tonnes. Donnée : masse d'un noyau d'hydrogène 1 : 1,67 × 10⁻²⁷ kg.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Deutérium : 1 proton, 1 neutron : ²₁H. Tritium : 1 proton, 2 neutrons : ³₁H. Noyau formé : 2 protons, 2 neutrons : ⁴₂He (hélium 4). Particule émise : 0 proton, 1 neutron : ¹₀n. Équation : ²₁H + ³₁H → ⁴₂He + ¹₀n.",
+        "Conservation de A : 2 + 3 = 5 et 4 + 1 = 5. Conservation de Z : 1 + 1 = 2 et 2 + 0 = 2. Les deux lois sont respectées.",
+        "<strong>2.</strong> Oui : même Z = 1 (élément hydrogène), nombres de neutrons différents (1 et 2). C'est une fusion : deux noyaux légers s'associent pour former un noyau plus lourd (A = 4).",
+        "<strong>3.</strong> Conservation de A : 4 × 1 = 4 + y × 0 (toujours vrai). Conservation de Z : 4 × 1 = 2 + y × 1, donc y = 4 − 2 = 2. Bilan : 4 ¹₁H → ⁴₂He + 2 ⁰₊₁e.",
+        "<strong>4.</strong> Nombre de réactions par seconde = énergie libérée par seconde / énergie d'une réaction = 3,8 × 10²⁶ / 4,3 × 10⁻¹² ≈ 8,8 × 10³⁷ réactions chaque seconde.",
+        "<strong>5.</strong> Chaque réaction consomme 4 noyaux d'hydrogène : m = 4 × 8,8 × 10³⁷ × 1,67 × 10⁻²⁷ ≈ 5,9 × 10¹¹ kg chaque seconde, soit 5,9 × 10⁸ t (près de 600 millions de tonnes par seconde !). Ordre de grandeur cohérent : le Soleil est immense (sa masse est de l'ordre de 10³⁰ kg).",
+        "<em>⚠ Erreur fréquente : diviser 10²⁶ par 10⁻¹² en soustrayant les exposants dans le mauvais sens (10²⁶ / 10⁻¹² = 10²⁶⁺¹² = 10³⁸), ou oublier le facteur 4 dans la question 5.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un camion d'uranium contre des milliers de camions de charbon ?",
+      "contexte": [
+        "Doc. 1 — Une affirmation lue sur un forum. « Le combustible consommé en un an par un réacteur nucléaire tiendrait dans un seul camion, alors qu'une centrale à charbon qui libérerait la même énergie aurait besoin de plus de 50 000 camions de charbon. »"
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 2 — Composition de l'uranium d'un combustible neuf (en masse)</text><rect x=\"60\" y=\"120\" width=\"25.6\" height=\"70\" fill=\"#B5523B\"/><rect x=\"85.6\" y=\"120\" width=\"614.4\" height=\"70\" fill=\"#1F4E5A\"/><text x=\"392.8\" y=\"162.0\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#fff\">uranium 238 : 96 %</text><line x1=\"72.8\" y1=\"190\" x2=\"72.8\" y2=\"230\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"60\" y=\"252\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">uranium 235 : 4 %</text><line x1=\"60.0\" y1=\"112\" x2=\"60.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"60.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">0 %</text><line x1=\"124.0\" y1=\"112\" x2=\"124.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"124.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">10 %</text><line x1=\"188.0\" y1=\"112\" x2=\"188.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"188.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">20 %</text><line x1=\"252.0\" y1=\"112\" x2=\"252.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"252.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">30 %</text><line x1=\"316.0\" y1=\"112\" x2=\"316.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"316.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">40 %</text><line x1=\"380.0\" y1=\"112\" x2=\"380.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"380.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">50 %</text><line x1=\"444.0\" y1=\"112\" x2=\"444.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"444.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">60 %</text><line x1=\"508.0\" y1=\"112\" x2=\"508.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"508.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">70 %</text><line x1=\"572.0\" y1=\"112\" x2=\"572.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"572.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">80 %</text><line x1=\"636.0\" y1=\"112\" x2=\"636.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"636.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">90 %</text><line x1=\"700.0\" y1=\"112\" x2=\"700.0\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"700.0\" y=\"106\" text-anchor=\"middle\" font-size=\"14\">100 %</text><rect x=\"60\" y=\"300\" width=\"640\" height=\"130\" rx=\"10\" fill=\"#f7f3ec\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"380\" y=\"335\" text-anchor=\"middle\" font-size=\"16\">Seuls les noyaux d'uranium 235 sont fissiles :</text><text x=\"380\" y=\"362\" text-anchor=\"middle\" font-size=\"16\">ce sont eux qui subissent la fission dans le réacteur.</text><text x=\"380\" y=\"398\" text-anchor=\"middle\" font-size=\"16\">L'uranium naturel ne contient que 0,7 % d'uranium 235 :</text><text x=\"380\" y=\"420\" text-anchor=\"middle\" font-size=\"16\">on dit que l'uranium du combustible est « enrichi ».</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Quelques données. Énergie libérée en un an par les fissions dans le cœur d'un réacteur de 900 MW : environ 7,0 × 10¹⁶ J. Fission de 1 g d'uranium 235 : 8,2 × 10¹⁰ J. Combustion de 1 g de charbon : 3,0 × 10⁴ J. Un camion semi-remorque transporte au maximum 25 t de marchandise (1 t = 10⁶ g).",
+        "Utilise aussi l'encadré « Données » de la fiche."
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : l'uranium 235 et l'uranium 238 sont-ils des isotopes ? Donne la composition de leurs noyaux. D'après le doc. 2, lequel des deux libère l'énergie dans le réacteur ?",
+          "aides": [
+            "Uranium : Z = 92. Calcule N = A − Z pour chaque noyau.",
+            "Relis le cadre sous la barre du doc. 2 : quels noyaux sont « fissiles » ?"
+          ]
+        },
+        {
+          "texte": "L'affirmation du doc. 1 est-elle vraisemblable ? Construis ta démarche à partir des documents et présente tes calculs.",
+          "aides": [
+            "S'approprier : deux masses sont à calculer, celle du combustible nucléaire et celle du charbon, pour la même énergie (doc. 3).",
+            "Analyser : masse = énergie totale / énergie libérée par gramme. Attention, seulement 4 % du combustible est de l'uranium 235 (doc. 2).",
+            "Réaliser : convertis les masses en tonnes, puis compare-les à la charge d'un camion (25 t) et au nombre de camions annoncé (doc. 1)."
+          ]
+        },
+        {
+          "texte": "Regard critique : cite au moins deux simplifications faites dans ton raisonnement. Ton calcul permet-il de dire qu'une centrale nucléaire n'a « que des avantages » ?",
+          "aides": [
+            "Tout l'uranium 235 d'un combustible est-il consommé en un an ? Le combustible est-il de l'uranium pur ?",
+            "Pense aussi à ce que rejettent les deux types de centrales (déchets, gaz à effet de serre)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Uranium : Z = 92. Uranium 235 : 92 protons et 235 − 92 = 143 neutrons. Uranium 238 : 92 protons et 238 − 92 = 146 neutrons. Même Z, nombres de neutrons différents : ce sont des isotopes. D'après le doc. 2, seul l'uranium 235 est fissile : c'est lui qui libère l'énergie.",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Masse d'uranium 235 qui subit la fission en un an : m = 7,0 × 10¹⁶ / 8,2 × 10¹⁰ ≈ 8,5 × 10⁵ g, soit environ 850 kg.",
+        "• Masse de combustible : l'uranium 235 ne représente que 4 % de l'uranium (doc. 2), donc m(combustible) = 8,5 × 10⁵ / 0,04 ≈ 2,1 × 10⁷ g ≈ 21 t. C'est moins que 25 t : un seul camion suffit.",
+        "• Masse de charbon qui libérerait la même énergie : m = 7,0 × 10¹⁶ / 3,0 × 10⁴ ≈ 2,3 × 10¹² g ≈ 2,3 × 10⁶ t (plus de deux millions de tonnes).",
+        "• Nombre de camions de charbon : 2,3 × 10⁶ / 25 ≈ 9,3 × 10⁴, soit environ 93 000 camions, bien plus que 50 000.",
+        "• Conclusion : l'affirmation est vraisemblable (elle est même plutôt prudente pour le charbon). La différence vient de l'énergie libérée par gramme, environ un million de fois plus grande pour une réaction nucléaire que pour une réaction chimique.",
+        "<strong>3.</strong> Simplifications possibles : tout l'uranium 235 du combustible ne subit pas la fission en un an (le combustible reste plusieurs années dans le réacteur) ; le combustible contient aussi de l'oxygène (oxyde d'uranium), donc sa masse est un peu plus grande ; les deux centrales ne transforment pas l'énergie libérée en électricité avec la même efficacité ; le pouvoir énergétique du charbon dépend de sa qualité. Ces corrections ne changent pas l'ordre de grandeur.",
+        "Non : ce calcul ne compare que les masses de combustible. Une centrale nucléaire produit des déchets radioactifs, dangereux pendant très longtemps, et présente un risque d'accident ; une centrale à charbon rejette énormément de CO₂. Il faut comparer plusieurs critères.",
+        "Éléments valorisés (même si la conclusion est fausse) : identification des isotopes ; utilisation de l'énergie annuelle et de l'énergie par gramme pour obtenir une masse ; prise en compte des 4 % d'uranium 235 ; conversion g → t ; comparaison chiffrée avec 25 t et avec 50 000 camions ; conclusion argumentée.",
+        "<em>⚠ Erreur fréquente : oublier que l'uranium 235 n'est que 4 % du combustible (on trouve alors 850 kg au lieu de 21 t), ou se tromper dans la conversion des grammes en tonnes (1 t = 10⁶ g).</em>"
+      ]
+    }
+  ]
+}

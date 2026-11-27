@@ -1,0 +1,725 @@
+{
+  "id": 61,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La lentille convergente",
+        "icon": "🔍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Lentille convergente",
+            "text": "Lentille qui fait converger un faisceau de rayons lumineux parallèles vers un point appelé foyer image F', situé à une distance f' (distance focale) du centre optique O."
+          },
+          {
+            "type": "def",
+            "term": "Vergence C",
+            "text": "Grandeur qui caractérise la capacité d'une lentille à faire converger la lumière. Elle est l'inverse de la distance focale."
+          },
+          {
+            "type": "formula",
+            "label": "Vergence",
+            "text": "C = 1 / f'\n(C en dioptries δ, f' en mètres m)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : une lentille convergente de distance focale f' = 25 cm = 0,25 m a une vergence C = 1/0,25 = 4,0 δ."
+          }
+        ]
+      },
+      {
+        "title": "2. Relation de conjugaison",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Relation de conjugaison (Descartes)",
+            "text": "La position de l'image A' d'un point objet A, formée par une lentille mince convergente, est donnée par la relation de conjugaison, qui utilise des grandeurs algébriques (OA et OA' comptées avec un signe selon leur sens)."
+          },
+          {
+            "type": "formula",
+            "label": "Relation de conjugaison",
+            "text": "1/OA' − 1/OA = 1/f'"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : pour un objet placé en OA = −40 cm = −0,40 m devant une lentille de distance focale f' = 15 cm = 0,15 m : 1/OA' = 1/f' + 1/OA = 1/0,15 + 1/(−0,40) ≈ 4,167, donc OA' ≈ 0,24 m = 24 cm. Comme OA' > 0, l'image est réelle."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 500 260\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"axArrow61\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#5C6B60\"/></marker><marker id=\"objArrow61\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#2F7D75\"/></marker><marker id=\"imgArrow61\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><line x1=\"20\" y1=\"130\" x2=\"470\" y2=\"130\" stroke=\"#5C6B60\" stroke-width=\"1.2\" marker-end=\"url(#axArrow61)\"/><line x1=\"250\" y1=\"40\" x2=\"250\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"2\"/><path d=\"M250,40 L242,52 L258,52 Z\" fill=\"#1B2420\"/><path d=\"M250,220 L242,208 L258,208 Z\" fill=\"#1B2420\"/><text x=\"256\" y=\"122\" font-size=\"12\" fill=\"#1B2420\">O</text><circle cx=\"170\" cy=\"130\" r=\"2.5\" fill=\"#5C6B60\"/><text x=\"166\" y=\"148\" font-size=\"12\" fill=\"#5C6B60\">F</text><circle cx=\"330\" cy=\"130\" r=\"2.5\" fill=\"#5C6B60\"/><text x=\"326\" y=\"148\" font-size=\"12\" fill=\"#5C6B60\">F'</text><line x1=\"100\" y1=\"60\" x2=\"421\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"100\" y1=\"60\" x2=\"250\" y2=\"60\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"250\" y1=\"60\" x2=\"421\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"100\" y1=\"60\" x2=\"250\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"250\" y1=\"210\" x2=\"418\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\" marker-end=\"url(#axArrow61)\"/><line x1=\"100\" y1=\"130\" x2=\"100\" y2=\"63\" stroke=\"#2F7D75\" stroke-width=\"2.4\" marker-end=\"url(#objArrow61)\"/><text x=\"88\" y=\"148\" font-size=\"12\" fill=\"#2F7D75\">A</text><text x=\"88\" y=\"58\" font-size=\"12\" fill=\"#2F7D75\" font-weight=\"600\">B</text><line x1=\"421\" y1=\"130\" x2=\"421\" y2=\"207\" stroke=\"#C0472F\" stroke-width=\"2.4\" marker-end=\"url(#imgArrow61)\"/><text x=\"427\" y=\"146\" font-size=\"12\" fill=\"#C0472F\">A'</text><text x=\"427\" y=\"215\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">B'</text></svg>",
+            "caption": "Construction de l'image A'B' à l'aide des trois rayons remarquables issus de B : par O (non dévié), parallèle à l'axe (émerge par F'), par F (émerge parallèle à l'axe). L'objet étant au-delà de F (OA = −40 cm, f' = 15 cm), l'image A'B' est réelle et renversée, conformément au calcul (OA' ≈ 24 cm)."
+          }
+        ]
+      },
+      {
+        "title": "3. Le grandissement",
+        "icon": "📏",
+        "content": [
+          {
+            "type": "def",
+            "term": "Grandissement γ",
+            "text": "Grandeur sans unité qui compare la taille de l'image à la taille de l'objet."
+          },
+          {
+            "type": "formula",
+            "label": "Grandissement",
+            "text": "γ = A'B' / AB = OA' / OA"
+          },
+          {
+            "type": "warn",
+            "text": "Si γ est négatif, l'image est renversée ; si γ est positif, elle est droite. Exemple : avec OA = −40 cm et OA' = 24 cm, γ = 24/(−40) = −0,60. Pour un objet AB = 2,0 cm, l'image mesure |A'B'| = 0,60×2,0 = 1,2 cm et elle est renversée (γ < 0)."
+          }
+        ]
+      },
+      {
+        "title": "4. Le modèle de l'œil réduit",
+        "icon": "👁️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Œil réduit",
+            "text": "Modèle dans lequel le cristallin est assimilé à une lentille convergente de vergence variable (accommodation), et la rétine à un écran fixe sur lequel doit se former l'image nette d'un objet."
+          },
+          {
+            "type": "text",
+            "text": "L'accommodation permet à l'œil de faire varier la vergence du cristallin pour former une image nette d'objets situés à différentes distances."
+          },
+          {
+            "type": "warn",
+            "text": "Œil myope : l'œil est « trop convergent », l'image d'un objet éloigné se forme avant la rétine ; on corrige avec une lentille divergente (vergence négative). Œil hypermétrope : l'œil n'est « pas assez convergent » ; on corrige avec une lentille convergente (vergence positive). Exemple : un œil hypermétrope a C_œil = 63,0 δ contre 64,0 δ pour un œil normal. La lentille correctrice doit avoir C = 64,0 − 63,0 = 1,0 δ, soit f' = 1/1,0 = 1,0 m : une lentille convergente."
+          }
+        ]
+      },
+      {
+        "title": "5. La couleur des objets : synthèses additive et soustractive",
+        "icon": "🌈",
+        "content": [
+          {
+            "type": "def",
+            "term": "Synthèse additive",
+            "text": "Addition de lumières colorées (rouge, vert, bleu), utilisée notamment sur les écrans. Exemple : la superposition de lumière rouge et de lumière verte donne du jaune."
+          },
+          {
+            "type": "def",
+            "term": "Synthèse soustractive",
+            "text": "Utilisation de filtres ou de pigments (cyan, magenta, jaune) qui absorbent une partie de la lumière incidente. Exemple : un filtre magenta absorbe le vert et laisse passer le rouge et le bleu."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 220\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"20\" width=\"200\" height=\"170\" fill=\"#111111\"/><circle cx=\"90\" cy=\"75\" r=\"50\" fill=\"#FF0000\" style=\"mix-blend-mode:screen\"/><circle cx=\"140\" cy=\"75\" r=\"50\" fill=\"#00FF00\" style=\"mix-blend-mode:screen\"/><circle cx=\"115\" cy=\"120\" r=\"50\" fill=\"#0000FF\" style=\"mix-blend-mode:screen\"/><text x=\"55\" y=\"55\" font-size=\"13\" fill=\"#FF6666\" font-weight=\"600\">R</text><text x=\"175\" y=\"55\" font-size=\"13\" fill=\"#66FF66\" font-weight=\"600\">V</text><text x=\"115\" y=\"178\" font-size=\"13\" fill=\"#6666FF\" text-anchor=\"middle\" font-weight=\"600\">B</text><text x=\"120\" y=\"205\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Synthèse additive</text><rect x=\"260\" y=\"20\" width=\"200\" height=\"170\" fill=\"#FFFFFF\" stroke=\"#B9C0AC\" stroke-width=\"1\"/><circle cx=\"330\" cy=\"75\" r=\"50\" fill=\"#00FFFF\" style=\"mix-blend-mode:multiply\"/><circle cx=\"380\" cy=\"75\" r=\"50\" fill=\"#FF00FF\" style=\"mix-blend-mode:multiply\"/><circle cx=\"355\" cy=\"120\" r=\"50\" fill=\"#FFFF00\" style=\"mix-blend-mode:multiply\"/><text x=\"295\" y=\"55\" font-size=\"13\" fill=\"#1B2420\" font-weight=\"600\">C</text><text x=\"415\" y=\"55\" font-size=\"13\" fill=\"#1B2420\" font-weight=\"600\">M</text><text x=\"355\" y=\"178\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">J</text><text x=\"360\" y=\"205\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Synthèse soustractive</text></svg>",
+            "caption": "Synthèse additive (lumières colorées sur fond noir, comme un écran) : rouge + vert + bleu = blanc. Synthèse soustractive (filtres/pigments sur fond blanc) : cyan + magenta + jaune = noir."
+          }
+        ]
+      },
+      {
+        "title": "6. Absorption, diffusion, transmission",
+        "icon": "💡",
+        "content": [
+          {
+            "type": "text",
+            "text": "La couleur perçue d'un objet dépend de la couleur de la lumière incidente qui l'éclaire ainsi que des phénomènes d'absorption (l'objet absorbe certaines radiations), de diffusion (l'objet renvoie certaines radiations dans toutes les directions, ce qui donne sa couleur apparente) et de transmission (un objet transparent ou un filtre laisse passer certaines radiations et en absorbe d'autres)."
+          },
+          {
+            "type": "warn",
+            "text": "Un objet éclairé avec une lumière ne contenant pas la couleur qu'il diffuse habituellement peut apparaître noir : la couleur perçue dépend à la fois de l'objet et de la source lumineuse."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La vergence d'une lentille convergente de distance focale f' = 20 cm vaut C = 1 / f', soit :",
+      "opts": [
+        "5,0 δ",
+        "0,050 δ",
+        "0,20 δ",
+        "−5,0 δ"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-cm-m",
+          "texte": "Garder la distance focale en centimètres : 1 / 20 ; f' = 20 cm = 0,20 m"
+        },
+        {
+          "code": "vergence-egale-focale",
+          "texte": "Confondre vergence et distance focale : C est l'inverse de f', exprimé en dioptries (m⁻¹)"
+        },
+        {
+          "code": "vergence-signe-convergente",
+          "texte": "Donner un signe négatif : une lentille convergente a une vergence positive"
+        }
+      ],
+      "exp": "C = 1 / f' = 1 / 0,20 = 5,0 δ. Attention : f' en mètres ; une lentille convergente a une vergence positive."
+    },
+    {
+      "q": "Un objet est placé en OA = −30 cm devant une lentille convergente de distance focale f' = 10 cm. Avec 1/OA' − 1/OA = 1/f', l'image se forme en :",
+      "opts": [
+        "OA' = 7,5 cm",
+        "OA' = 15 cm",
+        "OA' = 6,7 cm",
+        "OA' = −15 cm"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oa-sans-signe",
+          "texte": "Oublier le signe de OA : l'objet est avant la lentille, OA = −0,30 m"
+        },
+        null,
+        {
+          "code": "oubli-inverse-conjugaison",
+          "texte": "Donner 1/OA' = 6,7 m⁻¹ au lieu de OA' : il faut encore prendre l'inverse, OA' = 1 / 6,7 ≈ 0,15 m"
+        },
+        {
+          "code": "image-cote-objet",
+          "texte": "Se tromper de signe sur OA' : ici 1/OA' > 0, l'image est après la lentille"
+        }
+      ],
+      "exp": "1/OA' = 1/f' + 1/OA = 1/0,10 + 1/(−0,30) ≈ 6,7 m⁻¹, donc OA' ≈ 0,15 m = 15 cm. Attention : grandeurs algébriques (OA < 0) et ne pas oublier de prendre l'inverse."
+    },
+    {
+      "q": "Avec OA' = +15 cm, l'image formée par la lentille est :",
+      "opts": [
+        "virtuelle, car OA' est positive",
+        "réelle, car elle est plus petite que l'objet",
+        "réelle, observable sur un écran placé après la lentille",
+        "impossible à caractériser sans la taille de l'objet"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "reelle-virtuelle-inverses",
+          "texte": "Inverser réelle et virtuelle : OA' > 0, l'image est après la lentille, on peut la recueillir sur un écran"
+        },
+        {
+          "code": "reelle-car-petite",
+          "texte": "Relier réelle à la taille : une image réelle peut être plus grande ou plus petite que l'objet"
+        },
+        null,
+        {
+          "code": "nature-image-taille",
+          "texte": "Croire qu'il faut la taille de l'objet : le signe de OA' suffit à dire si l'image est réelle"
+        }
+      ],
+      "exp": "OA' > 0 : l'image se forme après la lentille, là où les rayons se croisent réellement ; on peut l'observer sur un écran : elle est réelle."
+    },
+    {
+      "q": "Pour OA = −30 cm et OA' = 15 cm, le grandissement γ = OA' / OA vaut :",
+      "opts": [
+        "+0,50",
+        "−2,0",
+        "−0,50",
+        "−0,50 cm"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "signe-gamma-ignore",
+          "texte": "Ignorer le signe : OA est négatif, donc γ = 15 / (−30) est négatif"
+        },
+        {
+          "code": "grandissement-inverse",
+          "texte": "Inverser le rapport : γ = OA' / OA = 15 / (−30), pas OA / OA'"
+        },
+        null,
+        {
+          "code": "gamma-avec-unite",
+          "texte": "Donner une unité au grandissement : c'est un rapport de deux longueurs, il est sans unité"
+        }
+      ],
+      "exp": "γ = OA' / OA = 15 / (−30) = −0,50 (sans unité). Attention : avec les grandeurs algébriques, le signe de γ a un sens."
+    },
+    {
+      "q": "Un objet AB = 3,0 cm donne, avec γ = −0,50, une image A'B' :",
+      "opts": [
+        "de 1,5 cm, renversée",
+        "de 1,5 cm, droite",
+        "de 6,0 cm, renversée",
+        "de 1,5 cm, virtuelle car γ est négatif"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "signe-gamma-ignore",
+          "texte": "Ignorer le signe de γ : un grandissement négatif indique une image renversée"
+        },
+        {
+          "code": "grandissement-inverse",
+          "texte": "Diviser au lieu de multiplier : |A'B'| = |γ| × AB = 0,50 × 3,0 cm"
+        },
+        {
+          "code": "renversee-vs-virtuelle",
+          "texte": "Confondre renversée et virtuelle : le signe de γ donne le sens de l'image, le signe de OA' sa nature"
+        }
+      ],
+      "exp": "|A'B'| = |γ| × AB = 0,50 × 3,0 = 1,5 cm ; γ < 0 : l'image est renversée. Attention : le signe de γ indique le sens, pas la nature réelle ou virtuelle."
+    },
+    {
+      "q": "Dans le modèle de l'œil réduit, quand on passe de la vision d'un objet lointain à celle d'un objet proche, l'image reste nette sur la rétine car :",
+      "opts": [
+        "la rétine s'éloigne du cristallin",
+        "la vergence du cristallin augmente",
+        "la vergence du cristallin diminue",
+        "la pupille se contracte"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "accommodation-retine-bouge",
+          "texte": "Croire que la rétine se déplace : la distance cristallin-rétine est fixe, c'est le cristallin qui se déforme"
+        },
+        null,
+        {
+          "code": "accommodation-sens-inverse",
+          "texte": "Inverser le sens de l'accommodation : pour un objet proche, l'œil doit être plus convergent"
+        },
+        {
+          "code": "accommodation-vs-pupille",
+          "texte": "Confondre accommodation et adaptation à la lumière : la pupille règle la quantité de lumière, pas la netteté"
+        }
+      ],
+      "exp": "La distance cristallin-rétine est fixe : pour un objet plus proche, le cristallin se bombe et sa vergence augmente, afin que l'image reste sur la rétine. C'est l'accommodation."
+    },
+    {
+      "q": "On éclaire un écran blanc à la fois en lumière rouge et en lumière verte. La zone éclairée par les deux paraît :",
+      "opts": [
+        "marron",
+        "blanche",
+        "noire",
+        "jaune"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "additive-vs-soustractive",
+          "texte": "Raisonner comme avec des peintures : superposer des lumières, c'est la synthèse additive"
+        },
+        {
+          "code": "deux-couleurs-donnent-blanc",
+          "texte": "Croire que deux lumières colorées donnent du blanc : il faut rouge, vert et bleu"
+        },
+        {
+          "code": "lumiere-plus-lumiere-noir",
+          "texte": "Croire que des lumières superposées s'annulent : en synthèse additive, la lumière s'ajoute"
+        },
+        null
+      ],
+      "exp": "Synthèse additive : rouge + vert = jaune ; rouge + vert + bleu = blanc. Attention : mélanger des peintures (synthèse soustractive) ne donne pas le même résultat."
+    },
+    {
+      "q": "La lumière blanche traverse un filtre jaune, puis un filtre cyan. La lumière qui sort est :",
+      "opts": [
+        "verte",
+        "blanche",
+        "noire",
+        "cyan"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "filtres-ajoutent",
+          "texte": "Croire que les filtres ajoutent de la lumière : chaque filtre absorbe une partie de la lumière qu'il reçoit"
+        },
+        {
+          "code": "deux-filtres-noir",
+          "texte": "Croire que deux filtres bloquent tout : le vert est transmis par le jaune et par le cyan"
+        },
+        {
+          "code": "dernier-filtre-gagne",
+          "texte": "Croire que seul le dernier filtre compte : le cyan ne reçoit déjà plus que le rouge et le vert"
+        }
+      ],
+      "exp": "Le filtre jaune transmet le rouge et le vert ; le filtre cyan transmet le vert et le bleu. Seul le vert traverse les deux : la lumière qui sort est verte (synthèse soustractive)."
+    },
+    {
+      "q": "Une tomate, rouge en lumière blanche, est éclairée uniquement en lumière verte. Elle paraît :",
+      "opts": [
+        "verte",
+        "rouge",
+        "noire",
+        "jaune"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "objet-prend-couleur-lumiere",
+          "texte": "Croire que l'objet prend la couleur de la lumière : la tomate absorbe le vert, elle ne le diffuse pas"
+        },
+        {
+          "code": "couleur-propriete-objet",
+          "texte": "Croire que la couleur appartient à l'objet seul : elle dépend aussi de la lumière qui l'éclaire"
+        },
+        null,
+        {
+          "code": "additive-objet",
+          "texte": "Additionner la couleur de l'objet et celle de la lumière : l'objet ne diffuse que ce qu'il reçoit et n'absorbe pas"
+        }
+      ],
+      "exp": "La tomate diffuse le rouge et absorbe les autres couleurs. Éclairée en vert, elle absorbe tout et ne renvoie rien : elle paraît noire. La couleur perçue dépend de l'objet et de la lumière."
+    },
+    {
+      "q": "Un filtre magenta éclairé en lumière blanche :",
+      "opts": [
+        "ajoute du magenta à la lumière blanche",
+        "absorbe le rouge et le bleu, transmet le vert",
+        "transmet une seule radiation, de couleur magenta",
+        "absorbe le vert, transmet le rouge et le bleu"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "filtre-colore-la-lumiere",
+          "texte": "Croire qu'un filtre colore la lumière : il absorbe une partie de la lumière blanche et transmet le reste"
+        },
+        {
+          "code": "absorbe-transmet-inverses",
+          "texte": "Inverser absorbé et transmis : le filtre magenta laisse passer les couleurs qui forment le magenta (rouge et bleu)"
+        },
+        {
+          "code": "magenta-radiation-unique",
+          "texte": "Croire que le magenta est une radiation unique : c'est le mélange de rouge et de bleu"
+        },
+        null
+      ],
+      "exp": "Le magenta est la superposition du rouge et du bleu : un filtre magenta transmet le rouge et le bleu et absorbe le vert. Attention : un filtre ne crée pas de couleur, il en retire."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "La flèche lumineuse de Nour",
+      "contexte": [
+        "En TP, Nour place une flèche lumineuse AB (hauteur 2,0 cm) devant une lentille mince convergente de distance focale f' = 4,0 cm. Le schéma ci-dessous est à l'échelle : 1 carreau = 1 cm, horizontalement comme verticalement. Les foyers ne sont pas encore placés.",
+        "Rappel des trois rayons particuliers issus de B : le rayon qui passe par O n'est pas dévié ; le rayon parallèle à l'axe optique ressort en passant par le foyer image F' ; le rayon qui passe par le foyer objet F ressort parallèle à l'axe optique."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Banc d'optique de Nour — 1 carreau = 1 cm (horizontalement et verticalement)</text><line x1=\"19.0\" y1=\"109.0\" x2=\"19.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"48.0\" y1=\"109.0\" x2=\"48.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"77.0\" y1=\"109.0\" x2=\"77.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"106.0\" y1=\"109.0\" x2=\"106.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"135.0\" y1=\"109.0\" x2=\"135.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"164.0\" y1=\"109.0\" x2=\"164.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"193.0\" y1=\"109.0\" x2=\"193.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"222.0\" y1=\"109.0\" x2=\"222.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"251.0\" y1=\"109.0\" x2=\"251.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"280.0\" y1=\"109.0\" x2=\"280.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"309.0\" y1=\"109.0\" x2=\"309.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"338.0\" y1=\"109.0\" x2=\"338.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"367.0\" y1=\"109.0\" x2=\"367.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"396.0\" y1=\"109.0\" x2=\"396.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"425.0\" y1=\"109.0\" x2=\"425.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"454.0\" y1=\"109.0\" x2=\"454.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"483.0\" y1=\"109.0\" x2=\"483.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"512.0\" y1=\"109.0\" x2=\"512.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"541.0\" y1=\"109.0\" x2=\"541.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"570.0\" y1=\"109.0\" x2=\"570.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"599.0\" y1=\"109.0\" x2=\"599.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"628.0\" y1=\"109.0\" x2=\"628.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"657.0\" y1=\"109.0\" x2=\"657.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"686.0\" y1=\"109.0\" x2=\"686.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"715.0\" y1=\"109.0\" x2=\"715.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"341.0\" x2=\"715.0\" y2=\"341.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"312.0\" x2=\"715.0\" y2=\"312.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"283.0\" x2=\"715.0\" y2=\"283.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"254.0\" x2=\"715.0\" y2=\"254.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"225.0\" x2=\"715.0\" y2=\"225.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"196.0\" x2=\"715.0\" y2=\"196.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"167.0\" x2=\"715.0\" y2=\"167.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"138.0\" x2=\"715.0\" y2=\"138.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"19.0\" y1=\"109.0\" x2=\"715.0\" y2=\"109.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"11.0\" y1=\"225.0\" x2=\"724.0\" y2=\"225.0\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><polygon points=\"737.0,225.0 724.0,230.8 724.0,219.2\" fill=\"#3a3a3a\"/><text x=\"735.0\" y=\"215.0\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">sens de la lumière</text><line x1=\"425.0\" y1=\"225.0\" x2=\"425.0\" y2=\"132.6\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"425.0,120.6 430.4,132.6 419.6,132.6\" fill=\"#1F4E5A\"/><line x1=\"425.0\" y1=\"225.0\" x2=\"425.0\" y2=\"317.4\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"425.0,329.4 419.6,317.4 430.4,317.4\" fill=\"#1F4E5A\"/><text x=\"432.0\" y=\"245.0\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"77.0\" y1=\"225.0\" x2=\"77.0\" y2=\"180.0\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"77.0,167.0 82.8,180.0 71.2,180.0\" fill=\"#B5523B\"/><text x=\"77.0\" y=\"247.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">A</text><text x=\"68.0\" y=\"171.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">B</text><line x1=\"30\" y1=\"380\" x2=\"59\" y2=\"380\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"30\" y1=\"374\" x2=\"30\" y2=\"386\" stroke=\"#333\" stroke-width=\"2\"/><line x1=\"59\" y1=\"374\" x2=\"59\" y2=\"386\" stroke=\"#333\" stroke-width=\"2\"/><text x=\"67\" y=\"385\" font-size=\"15\">1 cm</text><text x=\"30\" y=\"420\" font-size=\"15\">Lentille mince convergente de distance focale f' = 4,0 cm (foyers non placés).</text><text x=\"30\" y=\"445\" font-size=\"15\">Objet AB : flèche lumineuse de hauteur 2,0 cm.</text></svg>",
+      "questions": [
+        {
+          "texte": "Donne les valeurs algébriques OF' et OF, puis OA. Place les foyers F et F' sur le schéma.",
+          "aides": []
+        },
+        {
+          "texte": "Trace les trois rayons particuliers issus de B. Déduis-en la position du point image B', puis celle de A'.",
+          "aides": [
+            "Le rayon passant par O traverse la lentille sans être dévié : prolonge simplement la droite (BO).",
+            "Après la lentille, le rayon parallèle à l'axe passe par F' (à droite) ; le rayon qui passait par F (à gauche) ressort parallèle à l'axe.",
+            "B' est le point où les trois rayons émergents se croisent ; A' est sur l'axe, à la verticale de B'."
+          ]
+        },
+        {
+          "texte": "Lis sur ta construction les valeurs algébriques OA' et A'B' (en cm).",
+          "aides": []
+        },
+        {
+          "texte": "Caractérise l'image : réelle ou virtuelle ? droite ou renversée ? plus grande ou plus petite que l'objet ?",
+          "aides": []
+        },
+        {
+          "texte": "Le grandissement vaut γ = A'B'/AB = OA'/OA. Calcule γ des deux façons et vérifie qu'elles donnent le même résultat. Que signifie le signe de γ ?",
+          "aides": [
+            "Lis A'B' avec son signe : l'image est-elle au-dessus ou au-dessous de l'axe ?",
+            "OA et OA' n'ont pas le même signe : γ est donc négatif."
+          ]
+        },
+        {
+          "texte": "QCM. Nour cache la moitié haute de la lentille avec un carton. Sur l'écran placé en A' : A. la moitié haute de l'image disparaît ; B. l'image reste entière mais devient moins lumineuse ; C. il n'y a plus d'image. Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> OF' = f' = +4,0 cm (F' est après la lentille) ; OF = −4,0 cm (F est avant la lentille, symétrique de F' par rapport à O). L'objet est à 12 carreaux avant la lentille : OA = −12 cm. On place F à 4 carreaux à gauche de O et F' à 4 carreaux à droite.",
+        "<strong>2.</strong> Rayon 1 : de B vers O, il traverse la lentille sans être dévié. Rayon 2 : de B parallèlement à l'axe (2 carreaux au-dessus), il ressort de la lentille en passant par F'. Rayon 3 : de B vers F, il atteint la lentille 1 carreau sous l'axe, puis ressort parallèlement à l'axe. Les trois rayons émergents se coupent en B', 6 carreaux à droite de O et 1 carreau sous l'axe ; A' est le projeté de B' sur l'axe.",
+        "<strong>3.</strong> OA' = +6,0 cm et A'B' = −1,0 cm.",
+        "<strong>4.</strong> L'image est réelle (elle se forme après la lentille, OA' &gt; 0 : on peut la recueillir sur un écran), renversée (A'B' &lt; 0 alors que AB &gt; 0) et deux fois plus petite que l'objet.",
+        "<strong>5.</strong> γ = A'B'/AB = −1,0 / 2,0 = −0,50 ; γ = OA'/OA = 6,0 / (−12) = −0,50 : les deux calculs concordent. γ &lt; 0 : l'image est renversée ; |γ| &lt; 1 : elle est plus petite que l'objet.",
+        "<strong>6.</strong> Réponse B. Chaque point de l'objet envoie des rayons sur toute la surface de la lentille ; ceux qui passent par la moitié basse suffisent à former l'image complète en B'. Moins de lumière traverse la lentille : l'image est moins lumineuse.",
+        "<em>⚠ Erreur fréquente : faire passer le rayon parallèle à l'axe par F (au lieu de F') après la lentille, ou donner OA = +12 cm. Ici, la lumière va vers la droite et l'objet est à gauche de O : OA &lt; 0.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La loupe de Lina",
+      "contexte": [
+        "Lina, passionnée d'insectes, observe une fourmi de longueur AB = 1,0 cm avec une loupe, c'est-à-dire une lentille mince convergente de distance focale f' = 5,0 cm. Elle tient la loupe à 3,0 cm au-dessus de la fourmi (schéma ci-dessous, 1 carreau = 1 cm).",
+        "Rappel : relation de conjugaison 1/OA' − 1/OA = 1/f', avec des valeurs algébriques (ici exprimées en cm) ; grandissement γ = A'B'/AB = OA'/OA."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">La loupe de Lina — 1 carreau = 1 cm</text><line x1=\"81.0\" y1=\"65.0\" x2=\"81.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"115.0\" y1=\"65.0\" x2=\"115.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"149.0\" y1=\"65.0\" x2=\"149.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"183.0\" y1=\"65.0\" x2=\"183.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"217.0\" y1=\"65.0\" x2=\"217.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"251.0\" y1=\"65.0\" x2=\"251.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"285.0\" y1=\"65.0\" x2=\"285.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"319.0\" y1=\"65.0\" x2=\"319.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"353.0\" y1=\"65.0\" x2=\"353.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"387.0\" y1=\"65.0\" x2=\"387.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"421.0\" y1=\"65.0\" x2=\"421.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"455.0\" y1=\"65.0\" x2=\"455.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"489.0\" y1=\"65.0\" x2=\"489.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"523.0\" y1=\"65.0\" x2=\"523.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"557.0\" y1=\"65.0\" x2=\"557.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"591.0\" y1=\"65.0\" x2=\"591.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"625.0\" y1=\"65.0\" x2=\"625.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"659.0\" y1=\"65.0\" x2=\"659.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"693.0\" y1=\"65.0\" x2=\"693.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"337.0\" x2=\"693.0\" y2=\"337.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"303.0\" x2=\"693.0\" y2=\"303.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"269.0\" x2=\"693.0\" y2=\"269.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"235.0\" x2=\"693.0\" y2=\"235.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"201.0\" x2=\"693.0\" y2=\"201.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"167.0\" x2=\"693.0\" y2=\"167.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"133.0\" x2=\"693.0\" y2=\"133.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"99.0\" x2=\"693.0\" y2=\"99.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"81.0\" y1=\"65.0\" x2=\"693.0\" y2=\"65.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"73.0\" y1=\"235.0\" x2=\"702.0\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><polygon points=\"715.0,235.0 702.0,240.8 702.0,229.2\" fill=\"#3a3a3a\"/><text x=\"713.0\" y=\"225.0\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">sens de la lumière</text><line x1=\"455.0\" y1=\"235.0\" x2=\"455.0\" y2=\"145.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"455.0,133.0 460.4,145.0 449.6,145.0\" fill=\"#1F4E5A\"/><line x1=\"455.0\" y1=\"235.0\" x2=\"455.0\" y2=\"325.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"455.0,337.0 449.6,325.0 460.4,325.0\" fill=\"#1F4E5A\"/><text x=\"462.0\" y=\"255.0\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"353.0\" y1=\"235.0\" x2=\"353.0\" y2=\"214.0\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"353.0,201.0 358.9,214.0 347.1,214.0\" fill=\"#B5523B\"/><text x=\"353.0\" y=\"257.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">A</text><text x=\"344.0\" y=\"205.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">B</text><line x1=\"285.0\" y1=\"229\" x2=\"285.0\" y2=\"241\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"285.0\" y=\"257\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">F</text><line x1=\"625.0\" y1=\"229\" x2=\"625.0\" y2=\"241\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"625.0\" y=\"257\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">F'</text><text x=\"30\" y=\"385\" font-size=\"15\">AB : fourmi de longueur 1,0 cm, placée à 3,0 cm de la loupe (f' = 5,0 cm).</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule la vergence C de la loupe.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie.<br>a. Pour la fourmi, OA = +3,0 cm.<br>b. La fourmi est placée entre le foyer objet F et le centre optique O.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule 1/OA', puis la position OA' de l'image.",
+          "aides": [
+            "Isole 1/OA' : 1/OA' = 1/f' + 1/OA, avec OA = −3,0 cm (attention au signe).",
+            "1/5,0 = 0,200 et 1/(−3,0) ≈ −0,333 ; OA' est l'inverse du résultat."
+          ]
+        },
+        {
+          "texte": "D'après le signe de OA', l'image est-elle réelle ou virtuelle ? Où se trouve-t-elle ? Peut-on la recueillir sur un écran ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le grandissement γ, puis la taille A'B' de l'image. L'image est-elle droite ou renversée ?",
+          "aides": []
+        },
+        {
+          "texte": "Vérifie tes résultats par une construction sur le schéma : trace le rayon issu de B passant par O et le rayon issu de B parallèle à l'axe, puis repère B'.",
+          "aides": [
+            "Après la lentille, les deux rayons ne se croisent pas : ils s'écartent l'un de l'autre.",
+            "Prolonge les deux rayons émergents vers la gauche, en pointillés : B' est à l'intersection des prolongements."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> f' = 5,0 cm = 0,050 m, donc C = 1/f' = 1/0,050 = 20 δ.",
+        "<strong>2.</strong> a. FAUX : la fourmi est avant la lentille, du côté d'où vient la lumière, donc OA = −3,0 cm.",
+        "b. VRAI : OF = −5,0 cm et OA = −3,0 cm ; la fourmi est plus proche de la lentille que le foyer objet F. C'est la condition d'utilisation d'une loupe.",
+        "<strong>3.</strong> 1/OA' = 1/f' + 1/OA = 1/5,0 + 1/(−3,0) = 0,200 − 0,333 = −0,133 cm⁻¹ (exactement −2/15), donc OA' = −7,5 cm.",
+        "<strong>4.</strong> OA' &lt; 0 : l'image est virtuelle. Elle se trouve 7,5 cm AVANT la lentille, du même côté que la fourmi. On ne peut pas la recueillir sur un écran : on la voit en regardant à travers la loupe.",
+        "<strong>5.</strong> γ = OA'/OA = (−7,5) / (−3,0) = +2,5, et A'B' = γ × AB = 2,5 × 1,0 = 2,5 cm. γ &gt; 0 : l'image est droite, et 2,5 fois plus grande que la fourmi.",
+        "<strong>6.</strong> Le rayon passant par O n'est pas dévié ; le rayon parallèle à l'axe ressort en passant par F'. Après la lentille, ces deux rayons s'écartent l'un de l'autre (ils divergent) : ils ne se coupent pas. On prolonge les rayons émergents vers l'arrière, en pointillés : leurs prolongements se coupent en B', 7,5 carreaux avant O et 2,5 carreaux au-dessus de l'axe. On retrouve OA' = −7,5 cm et A'B' = +2,5 cm.",
+        "<em>⚠ Erreur fréquente : oublier le signe moins de OA (on trouverait 1/OA' = 1/5,0 + 1/3,0, soit OA' ≈ +1,9 cm, une image réelle, ce qui est faux pour une loupe).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Pixels et cartouches d'encre",
+      "contexte": [
+        "Avec sa loupe, Lina observe l'écran de son smartphone : chaque pixel est formé de trois petites zones lumineuses très proches, les sous-pixels rouge (R), vert (V) et bleu (B), que l'œil ne distingue pas à l'œil nu. Chaque sous-pixel peut être allumé ou éteint (et plus ou moins intense).",
+        "Elle imprime ensuite une photo sur une feuille blanche avec une imprimante à trois cartouches : cyan, magenta et jaune. La photo est regardée en lumière blanche."
+      ],
+      "questions": [
+        {
+          "texte": "Les sous-pixels émettent de la lumière, et les lumières qui arrivent dans l'œil s'ajoutent. Comment s'appelle cette synthèse des couleurs ?",
+          "aides": []
+        },
+        {
+          "texte": "Recopie et complète le tableau : sous-pixels allumés (rouge et vert ; rouge et bleu ; vert et bleu ; rouge, vert et bleu ; aucun) → couleur perçue du pixel.",
+          "aides": []
+        },
+        {
+          "texte": "QCM. Éclairée en lumière blanche, une tache d'encre jaune : A. émet de la lumière jaune ; B. absorbe le bleu et diffuse le rouge et le vert ; C. absorbe le rouge et le vert et diffuse le bleu.",
+          "aides": [
+            "Une encre n'est pas une source de lumière : elle renvoie (diffuse) une partie de la lumière qu'elle reçoit.",
+            "Le jaune est obtenu en synthèse additive avec rouge + vert. Quelle composante de la lumière blanche manque ?"
+          ]
+        },
+        {
+          "texte": "Prévois la couleur perçue, en lumière blanche, d'une zone où l'imprimante a superposé : a. de l'encre jaune et de l'encre cyan ; b. de l'encre magenta et de l'encre jaune ; c. les trois encres.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque couleur primaire de la synthèse additive (rouge, vert, bleu) à sa couleur complémentaire (cyan, magenta, jaune).",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque situation, indique si elle relève de la synthèse additive ou de la synthèse soustractive.<br>a. Un vidéoprojecteur qui affiche une image sur un écran blanc.<br>b. Un graffiti peint à la bombe sur un mur.<br>c. Les projecteurs colorés d'une scène de concert, dont les faisceaux se superposent sur un mur blanc.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C'est la synthèse additive : on ajoute des lumières colorées (rouge, verte, bleue).",
+        "<strong>2.</strong> Rouge + vert → jaune ; rouge + bleu → magenta ; vert + bleu → cyan ; rouge + vert + bleu → blanc ; aucun sous-pixel allumé → noir.",
+        "<strong>3.</strong> Réponse B. Une encre n'émet pas de lumière : elle absorbe une partie de la lumière qu'elle reçoit et diffuse le reste. L'encre jaune absorbe le bleu (sa couleur complémentaire) et diffuse le rouge et le vert, dont la superposition est perçue jaune.",
+        "<strong>4.</strong> a. Le jaune absorbe le bleu, le cyan absorbe le rouge : seul le vert est diffusé, la zone paraît verte. b. Le magenta absorbe le vert, le jaune absorbe le bleu : la zone paraît rouge. c. Le bleu, le vert et le rouge sont absorbés : la zone paraît noire.",
+        "<strong>5.</strong> Rouge ↔ cyan ; vert ↔ magenta ; bleu ↔ jaune (deux couleurs complémentaires donnent du blanc en synthèse additive).",
+        "<strong>6.</strong> a. Synthèse additive : le vidéoprojecteur émet des lumières rouge, verte et bleue qui s'ajoutent sur l'écran blanc. b. Synthèse soustractive : les pigments de peinture absorbent une partie de la lumière blanche qui les éclaire. c. Synthèse additive : ce sont des lumières colorées qui se superposent.",
+        "<em>⚠ Erreur fréquente : appliquer les règles de la synthèse additive aux encres (« jaune + cyan = blanc ») ; avec des encres ou des filtres, chaque couleur ajoutée ENLÈVE de la lumière.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Mise au point : smartphone contre œil",
+      "contexte": [
+        "Partie A — L'appareil photo du smartphone. L'objectif de l'appareil photo principal de Yanis est modélisé par une lentille mince convergente de distance focale f' = 4,20 mm ; le capteur (hauteur 5,6 mm) joue le rôle d'écran. Pour faire la mise au point, un petit moteur déplace l'objectif par rapport au capteur, qui est fixe.",
+        "Yanis photographie d'abord son ami Adam, debout, de taille 1,75 m, situé à 3,00 m de l'objectif. Il photographie ensuite une page de son cahier placée à 10,0 cm de l'objectif.",
+        "Partie B — L'œil réduit. Dans le modèle de l'œil réduit, le cristallin est une lentille mince convergente de vergence variable et la rétine est un écran situé à une distance fixe de 17,0 mm du cristallin."
+      ],
+      "questions": [
+        {
+          "texte": "Partie A. Pour la photo d'Adam, donne la valeur algébrique de OA, puis calcule la distance OA' entre l'objectif et le capteur pour que l'image soit nette.",
+          "aides": [
+            "La lumière va d'Adam vers l'objectif : OA est négatif. Convertis f' en mètres.",
+            "Utilise la relation de conjugaison sous la forme 1/OA' = 1/f' + 1/OA."
+          ]
+        },
+        {
+          "texte": "Calcule le grandissement, puis la taille de l'image d'Adam sur le capteur. L'image tient-elle sur le capteur ? Caractérise-la (réelle ou virtuelle, droite ou renversée).",
+          "aides": []
+        },
+        {
+          "texte": "Calcule OA' pour la photo de la page de cahier. De quelle distance, et dans quel sens, le moteur doit-il déplacer l'objectif entre les deux photos ?",
+          "aides": [
+            "Même méthode qu'à la question 1, avec OA = −0,100 m.",
+            "Compare les deux valeurs de OA' : l'objectif doit-il se rapprocher ou s'éloigner du capteur ?"
+          ]
+        },
+        {
+          "texte": "Où se forme l'image d'un objet très éloigné (« à l'infini ») ? Compare au résultat de la question 1 et commente.",
+          "aides": []
+        },
+        {
+          "texte": "Partie B. Calcule la vergence du cristallin de l'œil réduit lorsqu'il forme sur la rétine une image nette d'un objet très éloigné, puis d'un texte lu à 25,0 cm.",
+          "aides": [
+            "Dans l'œil réduit, c'est OA' qui est fixé : OA' = +17,0 mm. On cherche f', donc C.",
+            "C = 1/f' = 1/OA' − 1/OA, avec toutes les distances en mètres ; pour un objet à l'infini, 1/OA = 0."
+          ]
+        },
+        {
+          "texte": "Explique comment l'œil fait la mise au point (accommodation) et en quoi elle diffère de celle du smartphone.",
+          "aides": []
+        },
+        {
+          "texte": "L'accommodation permet d'augmenter la vergence du cristallin d'environ 12 δ à 16 ans, mais seulement d'environ 4 δ à 45 ans (ordres de grandeur). Yanis (16 ans) et son professeur (45 ans) peuvent-ils voir nettement un texte placé à 10,0 cm de leurs yeux ? Justifie par un calcul.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Adam est avant l'objectif : OA = −3,00 m. Relation de conjugaison : 1/OA' = 1/f' + 1/OA = 1/(4,20 × 10⁻³) + 1/(−3,00) = 238,10 − 0,33 = 237,76 m⁻¹, donc OA' = 4,206 × 10⁻³ m = 4,206 mm.",
+        "<strong>2.</strong> γ = OA'/OA = 4,206 × 10⁻³ / (−3,00) = −1,40 × 10⁻³. A'B' = γ × AB = −1,40 × 10⁻³ × 1,75 = −2,45 × 10⁻³ m = −2,45 mm. |A'B'| = 2,45 mm &lt; 5,6 mm : l'image tient sur le capteur. Elle est réelle (OA' &gt; 0, recueillie sur le capteur), renversée (γ &lt; 0) et environ 700 fois plus petite qu'Adam.",
+        "<strong>3.</strong> OA = −0,100 m : 1/OA' = 238,10 + 1/(−0,100) = 238,10 − 10,0 = 228,10 m⁻¹, donc OA' = 4,384 × 10⁻³ m = 4,384 mm. Le moteur doit ÉLOIGNER l'objectif du capteur de 4,384 − 4,206 = 0,178 mm, soit environ 0,18 mm : un déplacement minuscule.",
+        "<strong>4.</strong> Pour un objet à l'infini, 1/OA tend vers 0 : 1/OA' = 1/f', l'image se forme au foyer image F', soit OA' = f' = 4,20 mm. À 3,00 m, OA' = 4,206 mm : la différence n'est que de 0,006 mm. Pour un objet situé à quelques mètres, le capteur est pratiquement dans le plan focal image.",
+        "<strong>5.</strong> Dans l'œil, OA' = +17,0 mm = 1,70 × 10⁻² m (fixe) et C = 1/f' = 1/OA' − 1/OA. Objet à l'infini : C = 1/(1,70 × 10⁻²) = 58,8 δ (f' = 17,0 mm). Texte à 25,0 cm (OA = −0,250 m) : C = 58,8 − 1/(−0,250) = 58,8 + 4,0 = 62,8 δ (f' = 15,9 mm).",
+        "<strong>6.</strong> La distance cristallin-rétine ne peut pas changer. Pour voir net un objet plus proche, les muscles de l'œil bombent le cristallin : sa vergence augmente (sa distance focale diminue). C'est l'accommodation. Le smartphone, lui, garde la même lentille (f' fixe) et modifie la distance objectif-capteur.",
+        "<strong>7.</strong> Pour un texte à 10,0 cm : C = 58,8 − 1/(−0,100) = 58,8 + 10,0 = 68,8 δ, soit une augmentation de vergence de 10,0 δ par rapport à l'œil au repos. Yanis peut accommoder de 12 δ &gt; 10,0 δ : il voit le texte net. Son professeur ne peut accommoder que de 4 δ : il voit net jusqu'à environ 25 cm seulement (question 5), le texte à 10 cm lui paraît flou (presbytie).",
+        "<em>⚠ Erreur fréquente : mélanger les unités (f' en mm et OA en m dans la même relation) ou oublier que OA est négatif. Avant de calculer, tout convertir en mètres ; vérifier ensuite que OA' est proche de f' pour un objet éloigné.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Lumières de scène",
+      "contexte": [
+        "Pour le concert de fin d'année du lycée, le technicien place un filtre devant un projecteur de lumière blanche. La figure ci-dessous donne le facteur de transmission T du filtre (pourcentage de la lumière reçue qui le traverse) en fonction de la longueur d'onde.",
+        "La chanteuse porte un T-shirt jaune, un pantalon cyan et une casquette verte (couleurs observées en lumière blanche). Les pigments des vêtements sont supposés « idéaux » : chacun diffuse entièrement les composantes de sa couleur et absorbe totalement les autres."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Doc. — Facteur de transmission T du filtre placé devant le projecteur</text><rect x=\"95.0\" y=\"402\" width=\"177.1\" height=\"10\" fill=\"#3b6fd4\" opacity=\"0.75\"/><rect x=\"272.1\" y=\"402\" width=\"177.1\" height=\"10\" fill=\"#3aa655\" opacity=\"0.75\"/><rect x=\"449.3\" y=\"402\" width=\"265.7\" height=\"10\" fill=\"#d0402f\" opacity=\"0.75\"/><line x1=\"95.0\" y1=\"70\" x2=\"95.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"139.3\" y1=\"70\" x2=\"139.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"183.6\" y1=\"70\" x2=\"183.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"227.9\" y1=\"70\" x2=\"227.9\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"272.1\" y1=\"70\" x2=\"272.1\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"316.4\" y1=\"70\" x2=\"316.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"360.7\" y1=\"70\" x2=\"360.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"405.0\" y1=\"70\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"449.3\" y1=\"70\" x2=\"449.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"493.6\" y1=\"70\" x2=\"493.6\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"537.9\" y1=\"70\" x2=\"537.9\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"582.1\" y1=\"70\" x2=\"582.1\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"626.4\" y1=\"70\" x2=\"626.4\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"670.7\" y1=\"70\" x2=\"670.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"715.0\" y1=\"70\" x2=\"715.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"95\" y1=\"400.0\" x2=\"715\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"405.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"95\" y1=\"367.0\" x2=\"715\" y2=\"367.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"372.0\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"95\" y1=\"334.0\" x2=\"715\" y2=\"334.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"339.0\" text-anchor=\"end\" font-size=\"14\">20</text><line x1=\"95\" y1=\"301.0\" x2=\"715\" y2=\"301.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"306.0\" text-anchor=\"end\" font-size=\"14\">30</text><line x1=\"95\" y1=\"268.0\" x2=\"715\" y2=\"268.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"273.0\" text-anchor=\"end\" font-size=\"14\">40</text><line x1=\"95\" y1=\"235.0\" x2=\"715\" y2=\"235.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"240.0\" text-anchor=\"end\" font-size=\"14\">50</text><line x1=\"95\" y1=\"202.0\" x2=\"715\" y2=\"202.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"207.0\" text-anchor=\"end\" font-size=\"14\">60</text><line x1=\"95\" y1=\"169.0\" x2=\"715\" y2=\"169.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"174.0\" text-anchor=\"end\" font-size=\"14\">70</text><line x1=\"95\" y1=\"136.0\" x2=\"715\" y2=\"136.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"141.0\" text-anchor=\"end\" font-size=\"14\">80</text><line x1=\"95\" y1=\"103.0\" x2=\"715\" y2=\"103.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"108.0\" text-anchor=\"end\" font-size=\"14\">90</text><line x1=\"95\" y1=\"70.0\" x2=\"715\" y2=\"70.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"75.0\" text-anchor=\"end\" font-size=\"14\">100</text><text x=\"95.0\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">400</text><text x=\"183.6\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">450</text><text x=\"272.1\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">500</text><text x=\"360.7\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">550</text><text x=\"449.3\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">600</text><text x=\"537.9\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">650</text><text x=\"626.4\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">700</text><text x=\"715.0\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">750</text><line x1=\"95\" y1=\"400\" x2=\"715\" y2=\"400\" stroke=\"#333\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"400\" x2=\"95\" y2=\"70\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"405.0\" y=\"456\" text-anchor=\"middle\" font-size=\"15\">longueur d'onde λ (nm)</text><text x=\"32\" y=\"235.0\" text-anchor=\"middle\" font-size=\"15\" transform=\"rotate(-90 32 235.0)\">T (%)</text><polyline points=\"95.0,119.5 98.5,119.5 102.1,119.5 105.6,119.5 109.2,119.5 112.7,119.5 116.3,119.5 119.8,119.5 123.3,119.5 126.9,119.5 130.4,119.5 134.0,119.5 137.5,119.5 141.1,119.5 144.6,119.5 148.1,119.5 151.7,119.5 155.2,119.5 158.8,119.5 162.3,119.5 165.9,119.5 169.4,119.5 172.9,119.5 176.5,119.5 180.0,119.5 183.6,119.5 187.1,119.5 190.7,119.5 194.2,119.5 197.7,119.5 201.3,119.5 204.8,119.5 208.4,119.5 211.9,119.5 215.5,119.5 219.0,119.5 222.5,119.5 226.1,119.5 229.6,119.9 233.2,123.1 236.7,129.5 240.3,139.0 243.8,151.1 247.3,165.8 250.9,182.5 254.4,201.0 258.0,220.7 261.5,241.1 265.1,261.9 268.6,282.3 272.1,302.0 275.7,320.5 279.2,337.2 282.8,351.9 286.3,364.0 289.9,373.5 293.4,379.9 296.9,383.1 300.5,383.5 304.0,383.5 307.6,383.5 311.1,383.5 314.7,383.5 318.2,383.5 321.7,383.5 325.3,383.5 328.8,383.5 332.4,383.5 335.9,383.5 339.5,383.5 343.0,383.5 346.5,383.5 350.1,383.5 353.6,383.5 357.2,383.5 360.7,383.5 364.3,383.5 367.8,383.5 371.3,383.5 374.9,383.5 378.4,383.5 382.0,383.5 385.5,383.5 389.1,383.5 392.6,383.5 396.1,383.5 399.7,383.5 403.2,383.5 406.8,383.5 410.3,383.5 413.9,383.5 417.4,383.5 420.9,383.5 424.5,383.1 428.0,380.1 431.6,374.1 435.1,365.3 438.7,353.9 442.2,340.1 445.7,324.4 449.3,307.1 452.8,288.6 456.4,269.5 459.9,250.0 463.5,230.9 467.0,212.4 470.5,195.1 474.1,179.4 477.6,165.6 481.2,154.2 484.7,145.4 488.3,139.4 491.8,136.4 495.3,136.0 498.9,136.0 502.4,136.0 506.0,136.0 509.5,136.0 513.1,136.0 516.6,136.0 520.1,136.0 523.7,136.0 527.2,136.0 530.8,136.0 534.3,136.0 537.9,136.0 541.4,136.0 544.9,136.0 548.5,136.0 552.0,136.0 555.6,136.0 559.1,136.0 562.7,136.0 566.2,136.0 569.7,136.0 573.3,136.0 576.8,136.0 580.4,136.0 583.9,136.0 587.5,136.0 591.0,136.0 594.5,136.0 598.1,136.0 601.6,136.0 605.2,136.0 608.7,136.0 612.3,136.0 615.8,136.0 619.3,136.0 622.9,136.0 626.4,136.0 630.0,136.0 633.5,136.0 637.1,136.0 640.6,136.0 644.1,136.0 647.7,136.0 651.2,136.0 654.8,136.0 658.3,136.0 661.9,136.0 665.4,136.0 668.9,136.0 672.5,136.0 676.0,136.0 679.6,136.0 683.1,136.0 686.7,136.0 690.2,136.0 693.7,136.0 697.3,136.0 700.8,136.0 704.4,136.0 707.9,136.0 711.5,136.0 715.0,136.0\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.2\"/></svg>",
+      "questions": [
+        {
+          "texte": "Lis la valeur de T à 450 nm, 550 nm et 650 nm. Quelles radiations le filtre transmet-il ? Lesquelles absorbe-t-il ? Déduis-en la couleur du faisceau qui éclaire la scène.",
+          "aides": [
+            "Sur le graphique, repère à quelle couleur correspond chaque longueur d'onde (bandes colorées sous l'axe).",
+            "Le filtre transmet les couleurs pour lesquelles T est grand. Quelle couleur donne leur superposition ?"
+          ]
+        },
+        {
+          "texte": "Prévois la couleur perçue du T-shirt, du pantalon et de la casquette éclairés par ce faisceau. Justifie en termes d'absorption et de diffusion.",
+          "aides": [
+            "Un objet ne peut diffuser que les lumières qu'il reçoit ET qui appartiennent à sa couleur.",
+            "Écris pour chaque vêtement les couleurs qu'il diffuse (jaune = R + V, cyan = V + B), puis garde celles qui sont présentes dans le faisceau."
+          ]
+        },
+        {
+          "texte": "Le technicien ajoute derrière le premier filtre un filtre jaune idéal. Quelle est la couleur du faisceau qui sort des deux filtres ?",
+          "aides": []
+        },
+        {
+          "texte": "Il remplace finalement le filtre jaune par un second filtre identique au premier. Calcule le pourcentage de la lumière bleue, de la lumière verte et de la lumière rouge du projecteur qui traverse les deux filtres. La couleur du faisceau change-t-elle ? Qu'est-ce qui change ?",
+          "aides": [
+            "Après le premier filtre, il reste 85 % du bleu ; le second filtre transmet 85 % de ce qui lui arrive.",
+            "Le pourcentage final est donc le produit des deux facteurs de transmission (0,85 × 0,85 pour le bleu)."
+          ]
+        },
+        {
+          "texte": "Pour le dernier morceau, la scène est éclairée par deux projecteurs, l'un rouge et l'autre vert, dont les faisceaux se superposent. Quelle est la couleur perçue du mur blanc du fond de scène ? du pantalon ? du T-shirt ? Quel modèle de synthèse utilises-tu pour le mur ?",
+          "aides": []
+        },
+        {
+          "texte": "La rétine contient trois types de cônes, plus sensibles respectivement au bleu, au vert et au rouge. Une lumière monochromatique de longueur d'onde 580 nm est perçue jaune. Explique pourquoi la superposition des faisceaux rouge et vert, qui ne contient pas de radiation à 580 nm, est elle aussi perçue jaune.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> On lit T(450 nm) = 85 %, T(550 nm) = 5 % et T(650 nm) = 80 %. Le filtre transmet la plus grande partie du bleu (400 à 500 nm) et du rouge (600 à 750 nm) ; il absorbe presque tout le vert (500 à 600 nm). Le faisceau contient du bleu et du rouge : il est magenta.",
+        "<strong>2.</strong> Le T-shirt jaune diffuse le rouge et le vert et absorbe le bleu ; il reçoit du rouge et du bleu : il absorbe le bleu et diffuse le rouge, il paraît ROUGE. Le pantalon cyan diffuse le vert et le bleu et absorbe le rouge : il paraît BLEU. La casquette verte absorbe le rouge et le bleu, qui sont les seules lumières reçues : elle paraît NOIRE.",
+        "<strong>3.</strong> Le premier filtre ne laisse passer que le rouge et le bleu ; le filtre jaune absorbe le bleu et transmet le rouge (et le vert, qui n'arrive pas) : le faisceau est ROUGE.",
+        "<strong>4.</strong> Bleu : 0,85 × 0,85 = 0,72, soit 72 % ; vert : 0,05 × 0,05 = 0,0025, soit 0,25 % ; rouge : 0,80 × 0,80 = 0,64, soit 64 %. Le faisceau reste magenta (bleu + rouge, sans vert), mais il est moins lumineux : chaque filtre absorbe une partie supplémentaire de la lumière.",
+        "<strong>5.</strong> Synthèse additive pour le mur blanc (il diffuse toutes les couleurs) : rouge + vert → JAUNE. Le pantalon cyan absorbe le rouge et diffuse le vert : il paraît VERT. Le T-shirt jaune diffuse le rouge et le vert : il paraît JAUNE.",
+        "<strong>6.</strong> La couleur perçue dépend de la façon dont les trois types de cônes sont stimulés. La radiation à 580 nm stimule fortement les cônes « rouges » et « verts » et presque pas les cônes « bleus ». La superposition des lumières rouge et verte produit à peu près la même stimulation des trois types de cônes : le cerveau interprète les deux lumières de la même façon, en jaune. C'est le principe de la trichromie, utilisé par les écrans.",
+        "<em>⚠ Erreur fréquente : croire qu'un filtre « colore » la lumière blanche ou qu'un objet garde sa couleur quel que soit l'éclairage. Un filtre ne fait que retirer des composantes ; un objet ne peut diffuser que des lumières qu'il reçoit.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Tester la relation de conjugaison au banc d'optique",
+      "contexte": [
+        "Doc. 1 — Protocole. Sur un banc d'optique, Inès place un objet lumineux AB (lettre « F » de hauteur AB = 2,0 cm), une lentille mince convergente dont le fabricant indique f' = 10,0 cm, puis un écran. Pour chaque position de l'objet, elle déplace l'écran jusqu'à obtenir une image nette et mesure OA'. L'axe est orienté dans le sens de la lumière.",
+        "Doc. 2 — Mesures. OA (cm) : −15,0 ; −20,0 ; −25,0 ; −30,0 ; −40,0 ; −60,0. OA' correspondant (cm) : 30,5 ; 20,1 ; 16,6 ; 15,2 ; 13,4 ; 12,1. Pour OA = −15,0 cm, elle mesure aussi A'B' = −4,1 cm. Pour OA = −8,0 cm, aucune position de l'écran ne donne d'image nette.",
+        "Doc. 3 — Exploitation (figure ci-dessous). Inès a calculé 1/OA et 1/OA' en m⁻¹, placé les points et demandé au tableur la droite modélisant ces points."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Doc. 3 — 1/OA' en fonction de 1/OA (valeurs en m⁻¹)</text><line x1=\"95.0\" y1=\"60\" x2=\"95.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"139.3\" y1=\"60\" x2=\"139.3\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"183.6\" y1=\"60\" x2=\"183.6\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"227.9\" y1=\"60\" x2=\"227.9\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"272.1\" y1=\"60\" x2=\"272.1\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"316.4\" y1=\"60\" x2=\"316.4\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"360.7\" y1=\"60\" x2=\"360.7\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"405.0\" y1=\"60\" x2=\"405.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"449.3\" y1=\"60\" x2=\"449.3\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"493.6\" y1=\"60\" x2=\"493.6\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"537.9\" y1=\"60\" x2=\"537.9\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"582.1\" y1=\"60\" x2=\"582.1\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"626.4\" y1=\"60\" x2=\"626.4\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"670.7\" y1=\"60\" x2=\"670.7\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"715.0\" y1=\"60\" x2=\"715.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"405.0\" x2=\"715\" y2=\"405.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"387.8\" x2=\"715\" y2=\"387.8\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"370.5\" x2=\"715\" y2=\"370.5\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"353.2\" x2=\"715\" y2=\"353.2\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"336.0\" x2=\"715\" y2=\"336.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"318.8\" x2=\"715\" y2=\"318.8\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"301.5\" x2=\"715\" y2=\"301.5\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"284.2\" x2=\"715\" y2=\"284.2\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"267.0\" x2=\"715\" y2=\"267.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"249.8\" x2=\"715\" y2=\"249.8\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"232.5\" x2=\"715\" y2=\"232.5\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"215.2\" x2=\"715\" y2=\"215.2\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"198.0\" x2=\"715\" y2=\"198.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"180.8\" x2=\"715\" y2=\"180.8\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"163.5\" x2=\"715\" y2=\"163.5\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"146.2\" x2=\"715\" y2=\"146.2\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"129.0\" x2=\"715\" y2=\"129.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"111.8\" x2=\"715\" y2=\"111.8\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"94.5\" x2=\"715\" y2=\"94.5\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"95\" y1=\"77.2\" x2=\"715\" y2=\"77.2\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"95\" y1=\"60.0\" x2=\"715\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><text x=\"95.0\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−7</text><text x=\"183.6\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−6</text><text x=\"272.1\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−5</text><text x=\"360.7\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−4</text><text x=\"449.3\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−3</text><text x=\"537.9\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−2</text><text x=\"626.4\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">−1</text><text x=\"715.0\" y=\"427\" text-anchor=\"middle\" font-size=\"14\">0</text><text x=\"87\" y=\"410.0\" text-anchor=\"end\" font-size=\"14\">0</text><text x=\"87\" y=\"375.5\" text-anchor=\"end\" font-size=\"14\">1</text><text x=\"87\" y=\"341.0\" text-anchor=\"end\" font-size=\"14\">2</text><text x=\"87\" y=\"306.5\" text-anchor=\"end\" font-size=\"14\">3</text><text x=\"87\" y=\"272.0\" text-anchor=\"end\" font-size=\"14\">4</text><text x=\"87\" y=\"237.5\" text-anchor=\"end\" font-size=\"14\">5</text><text x=\"87\" y=\"203.0\" text-anchor=\"end\" font-size=\"14\">6</text><text x=\"87\" y=\"168.5\" text-anchor=\"end\" font-size=\"14\">7</text><text x=\"87\" y=\"134.0\" text-anchor=\"end\" font-size=\"14\">8</text><text x=\"87\" y=\"99.5\" text-anchor=\"end\" font-size=\"14\">9</text><text x=\"87\" y=\"65.0\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"95\" y1=\"405\" x2=\"715\" y2=\"405\" stroke=\"#333\" stroke-width=\"1.6\"/><line x1=\"715\" y1=\"405\" x2=\"715\" y2=\"60\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"405.0\" y=\"453\" text-anchor=\"middle\" font-size=\"15\">1/OA (m⁻¹)</text><text x=\"745\" y=\"232.5\" text-anchor=\"middle\" font-size=\"15\" transform=\"rotate(-90 745 232.5)\">1/OA' (m⁻¹)</text><line x1=\"95.0\" y1=\"303.6\" x2=\"715.0\" y2=\"62.1\" stroke=\"#1F4E5A\" stroke-width=\"2.4\"/><line x1=\"117.5\" y1=\"284.9\" x2=\"131.5\" y2=\"298.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"117.5\" y1=\"298.9\" x2=\"131.5\" y2=\"284.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"265.1\" y1=\"226.4\" x2=\"279.1\" y2=\"240.4\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"265.1\" y1=\"240.4\" x2=\"279.1\" y2=\"226.4\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"353.7\" y1=\"190.2\" x2=\"367.7\" y2=\"204.2\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"353.7\" y1=\"204.2\" x2=\"367.7\" y2=\"190.2\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"412.8\" y1=\"171.0\" x2=\"426.8\" y2=\"185.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"412.8\" y1=\"185.0\" x2=\"426.8\" y2=\"171.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"486.6\" y1=\"140.5\" x2=\"500.6\" y2=\"154.5\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"486.6\" y1=\"154.5\" x2=\"500.6\" y2=\"140.5\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"560.4\" y1=\"112.9\" x2=\"574.4\" y2=\"126.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"560.4\" y1=\"126.9\" x2=\"574.4\" y2=\"112.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><rect x=\"108.3\" y=\"65.2\" width=\"330\" height=\"34\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"120.3\" y=\"88.2\" font-size=\"15\" font-weight=\"bold\" fill=\"#1F4E5A\">Modèle : 1/OA' = 1,00 × (1/OA) + 9,94</text><text x=\"120.3\" y=\"113.3\" font-size=\"14\" fill=\"#B5523B\">✕ points de mesure</text></svg>",
+      "questions": [
+        {
+          "texte": "Appropriation.<br>a. Pourquoi les valeurs de OA sont-elles négatives ? Que signifie le signe de A'B' mesuré ?<br>b. Pour OA = −25,0 cm, calcule 1/OA et 1/OA' en m⁻¹, et vérifie que le point correspondant est bien placé sur le doc. 3.",
+          "aides": [
+            "Pense à l'orientation de l'axe : où est l'objet par rapport à O ?",
+            "Convertis en mètres avant de prendre l'inverse : −25,0 cm = −0,250 m."
+          ]
+        },
+        {
+          "texte": "Montre que, si la relation de conjugaison est vérifiée, 1/OA' est une fonction affine de 1/OA. Précise le coefficient directeur et l'ordonnée à l'origine attendus.",
+          "aides": [
+            "Isole 1/OA' dans la relation de conjugaison.",
+            "Pose x = 1/OA et y = 1/OA' : tu dois obtenir y = a × x + b. Identifie a et b."
+          ]
+        },
+        {
+          "texte": "Exploite le modèle du doc. 3 : la relation de conjugaison est-elle validée par les mesures ? Déduis-en la distance focale de la lentille et compare-la à la valeur du fabricant (écart relatif).",
+          "aides": [
+            "Compare le coefficient directeur du modèle à la valeur attendue (question 2).",
+            "L'ordonnée à l'origine vaut 1/f' : f' est son inverse, en mètres. Écart relatif = |valeur mesurée − valeur de référence| / valeur de référence."
+          ]
+        },
+        {
+          "texte": "Pour OA = −15,0 cm, calcule le grandissement à partir des tailles mesurées, puis à partir des positions. Conclus et caractérise l'image.",
+          "aides": []
+        },
+        {
+          "texte": "Explique pourquoi Inès n'obtient aucune image sur l'écran pour OA = −8,0 cm : calcule la position et le grandissement prévus, caractérise l'image et indique comment l'observer.",
+          "aides": [
+            "Compare OA = −8,0 cm à OF = −10,0 cm : où est l'objet par rapport au foyer objet ?",
+            "Applique la relation de conjugaison : quel est le signe de OA' ? Que peux-tu en déduire pour l'image ?"
+          ]
+        },
+        {
+          "texte": "Regard critique. Calcule, avec f' = 10,0 cm, les valeurs de OA' attendues pour OA = −15,0 cm et OA = −30,0 cm, et compare-les aux mesures. La mesure la moins précise est celle de l'image la plus éloignée : propose une explication et une amélioration du protocole.",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (hors programme de Première) : le verre dévie un peu plus la lumière bleue que la lumière rouge. Pour cette lentille, on peut prendre f' = 9,8 cm pour le bleu et f' = 10,2 cm pour le rouge. Pour OA = −15,0 cm, calcule la position de l'image bleue et celle de l'image rouge. Pourquoi l'image d'un objet blanc présente-t-elle des bords colorés (aberration chromatique) ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. L'objet est placé avant la lentille, du côté d'où vient la lumière, alors que l'axe est orienté dans le sens de la lumière : OA &lt; 0. A'B' = −4,1 cm &lt; 0 alors que AB &gt; 0 : l'image est renversée.",
+        "b. 1/OA = 1/(−0,250) = −4,00 m⁻¹ et 1/OA' = 1/0,166 = 6,02 m⁻¹. Le point (−4,00 ; 6,02) est bien sur le doc. 3, juste au-dessus de la graduation 6.",
+        "<strong>2.</strong> 1/OA' − 1/OA = 1/f' donne 1/OA' = 1 × (1/OA) + 1/f' : c'est de la forme y = a × x + b avec x = 1/OA et y = 1/OA'. On attend un coefficient directeur a = 1 et une ordonnée à l'origine b = 1/f' (en m⁻¹ si f' est en m).",
+        "<strong>3.</strong> Les points sont alignés au voisinage d'une droite de coefficient directeur 1,00 : c'est la valeur attendue, la relation de conjugaison est validée. L'ordonnée à l'origine vaut 9,94 m⁻¹ = 1/f', donc f' = 1/9,94 = 0,1006 m ≈ 10,1 cm (vergence C ≈ 9,94 δ). Écart relatif avec le fabricant : |10,06 − 10,0| / 10,0 ≈ 0,6 % : très bon accord.",
+        "<strong>4.</strong> γ<sub>mes</sub> = A'B'/AB = −4,1 / 2,0 = −2,05 ≈ −2,1 ; γ = OA'/OA = 30,5 / (−15,0) = −2,03 ≈ −2,0. Les deux valeurs concordent aux erreurs de mesure près. L'image est réelle (OA' &gt; 0, sur l'écran), renversée (γ &lt; 0) et environ deux fois plus grande que l'objet.",
+        "<strong>5.</strong> 1/OA' = 1/10,0 + 1/(−8,0) = 0,100 − 0,125 = −0,025 cm⁻¹, donc OA' = −40 cm ; γ = OA'/OA = (−40) / (−8,0) = +5,0. L'objet est entre F et O : l'image est virtuelle (avant la lentille), droite et 5 fois plus grande. Les rayons émergents divergent : ils ne se croisent jamais sur un écran. On l'observe en regardant à travers la lentille, qui joue le rôle de loupe (exercice 2).",
+        "<strong>6.</strong> Avec f' = 10,0 cm : pour OA = −15,0 cm, OA' = 1/(1/10,0 − 1/15,0) = 30,0 cm (mesure 30,5 cm, écart 0,5 cm) ; pour OA = −30,0 cm, OA' = 15,0 cm (mesure 15,2 cm, écart 0,2 cm). Pour les autres mesures, les écarts sont aussi de 0,2 cm au plus.",
+        "Explication possible : quand l'image est loin et très agrandie, elle est peu lumineuse et reste « assez nette » sur une plage de positions de l'écran de plus d'un centimètre ; la position choisie est donc moins précise. Améliorations : repérer les deux positions extrêmes où l'image devient floue et prendre le milieu ; faire répéter la mesure par plusieurs élèves et calculer la moyenne ; travailler dans l'obscurité ; vérifier que le repère de la lentille correspond bien à son centre optique.",
+        "<strong>7.</strong> Pour aller plus loin. Bleu : 1/OA' = 1/9,8 − 1/15,0 = 0,1020 − 0,0667 = 0,0354 cm⁻¹, donc OA' = 28,3 cm. Rouge : 1/OA' = 1/10,2 − 1/15,0 = 0,0980 − 0,0667 = 0,0314 cm⁻¹, donc OA' = 31,9 cm. Les images bleue et rouge sont séparées de 3,6 cm : quand l'écran est réglé sur l'image d'une couleur, les autres couleurs sont un peu floues et débordent, d'où des bords irisés. Les objectifs d'appareil photo associent plusieurs lentilles pour corriger ce défaut.",
+        "<em>⚠ Erreur fréquente : calculer 1/OA avec OA en centimètres (on obtient −0,040 au lieu de −4,0 m⁻¹, et une ordonnée à l'origine cent fois trop petite), ou oublier le signe de OA dans le calcul.</em>"
+      ]
+    }
+  ]
+}

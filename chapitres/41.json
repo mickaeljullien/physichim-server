@@ -1,0 +1,706 @@
+{
+  "id": 41,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Réfraction et réflexion",
+        "icon": "🔦",
+        "content": [
+          {
+            "type": "def",
+            "term": "Réfraction",
+            "text": "Changement de direction de propagation d'un rayon lumineux qui passe d'un milieu de propagation à un autre (par exemple de l'air vers l'eau)."
+          },
+          {
+            "type": "def",
+            "term": "Réflexion",
+            "text": "Changement de direction de propagation d'un rayon lumineux qui atteint la surface séparant deux milieux, en restant dans le premier milieu."
+          },
+          {
+            "type": "text",
+            "text": "Tous les angles (incidence, réfraction, réflexion) se mesurent entre le rayon considéré et la normale à la surface au point d'incidence — jamais entre le rayon et la surface elle-même."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Angle",
+              "Symbole",
+              "Rayon concerné"
+            ],
+            "rows": [
+              [
+                "Angle d'incidence",
+                "i₁",
+                "Rayon incident"
+              ],
+              [
+                "Angle de réfraction",
+                "i₂",
+                "Rayon réfracté (dans le 2ᵉ milieu)"
+              ],
+              [
+                "Angle de réflexion",
+                "i_R",
+                "Rayon réfléchi (dans le 1ᵉʳ milieu)"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Lois de Snell-Descartes",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "formula",
+            "label": "Loi de la réflexion",
+            "text": "i₁ = i_R"
+          },
+          {
+            "type": "formula",
+            "label": "Loi de la réfraction",
+            "text": "n₁ × sin(i₁) = n₂ × sin(i₂)"
+          },
+          {
+            "type": "def",
+            "term": "Indice de réfraction n",
+            "text": "Nombre sans unité, caractéristique d'un milieu transparent, toujours supérieur ou égal à 1. Il traduit le fait que la lumière se propage moins vite dans ce milieu que dans le vide."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Milieu",
+              "Indice de réfraction (moyen)"
+            ],
+            "rows": [
+              [
+                "Vide",
+                "1 (exactement)"
+              ],
+              [
+                "Air",
+                "1,00"
+              ],
+              [
+                "Eau",
+                "1,33"
+              ],
+              [
+                "Verre",
+                "1,50"
+              ],
+              [
+                "Diamant",
+                "2,42"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Exemple d'application numérique : un rayon lumineux passe de l'air (n₁ = 1,00) vers l'eau (n₂ = 1,33) avec un angle d'incidence i₁ = 40°. Calculons l'angle de réfraction i₂."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul",
+            "text": "n₁ × sin(i₁) = n₂ × sin(i₂)\nsin(i₂) = (n₁ × sin(i₁)) / n₂ = (1,00 × sin 40°) / 1,33 = 0,643 / 1,33 ≈ 0,483\ni₂ = arcsin(0,483) ≈ 29°"
+          },
+          {
+            "type": "warn",
+            "text": "En passant dans un milieu plus réfringent (indice plus grand), le rayon se rapproche de la normale : ici i₂ (≈29°) < i₁ (40°)."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"rayArrow41\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#1B2420\"/></marker></defs><rect x=\"20\" y=\"20\" width=\"360\" height=\"130\" fill=\"#EBECE3\"/><rect x=\"20\" y=\"150\" width=\"360\" height=\"130\" fill=\"#3E7DBF\" fill-opacity=\"0.15\"/><line x1=\"20\" y1=\"150\" x2=\"380\" y2=\"150\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"200\" y1=\"40\" x2=\"200\" y2=\"260\" stroke=\"#B9C0AC\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\"/><text x=\"35\" y=\"38\" font-size=\"12\" fill=\"#5C6B60\">air (n₁ = 1,00)</text><text x=\"35\" y=\"270\" font-size=\"12\" fill=\"#5C6B60\">eau (n₂ = 1,33)</text><line x1=\"110\" y1=\"43\" x2=\"200\" y2=\"150\" stroke=\"#1B2420\" stroke-width=\"2.2\" marker-end=\"url(#rayArrow41)\"/><line x1=\"200\" y1=\"150\" x2=\"268\" y2=\"272\" stroke=\"#1B2420\" stroke-width=\"2.2\" marker-end=\"url(#rayArrow41)\"/><path d=\"M200,120 A30,30 0 0,0 180.7,127\" fill=\"none\" stroke=\"#C0472F\" stroke-width=\"1.5\"/><text x=\"165\" y=\"120\" font-size=\"13\" fill=\"#C0472F\" font-weight=\"600\">i₁ = 40°</text><path d=\"M200,180 A30,30 0 0,1 214.6,176.25\" fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"1.5\"/><text x=\"222\" y=\"200\" font-size=\"13\" fill=\"#2F7D75\" font-weight=\"600\">i₂ ≈ 29°</text></svg>",
+            "caption": "Réfraction d'un rayon passant de l'air vers l'eau (milieu plus réfringent) : le rayon réfracté se rapproche de la normale (i₂ < i₁)."
+          }
+        ]
+      },
+      {
+        "title": "3. Dispersion de la lumière blanche par un prisme",
+        "icon": "🌈",
+        "content": [
+          {
+            "type": "def",
+            "term": "Dispersion",
+            "text": "Séparation des différentes radiations colorées qui composent une lumière. Un prisme (ou un réseau) permet de décomposer un faisceau de lumière blanche en un spectre allant du violet au rouge."
+          },
+          {
+            "type": "text",
+            "text": "Cette dispersion s'explique par les lois de Snell-Descartes : l'indice de réfraction d'un milieu dispersif (comme le verre du prisme) dépend de la longueur d'onde de la radiation qui le traverse. L'indice de réfraction pour une lumière violette est supérieur à celui pour une lumière rouge."
+          },
+          {
+            "type": "formula",
+            "label": "Interprétation",
+            "text": "n_air × sin(i₁) = n_rouge × sin(i₂,rouge)\nn_air × sin(i₁) = n_violet × sin(i₂,violet)\nComme n_violet > n_rouge, alors i₂,violet < i₂,rouge : le violet est plus dévié que le rouge."
+          },
+          {
+            "type": "warn",
+            "text": "C'est ce même phénomène de dispersion, par les gouttes d'eau en suspension jouant le rôle de prismes, qui explique la formation de l'arc-en-ciel."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La réfraction de la lumière est :",
+      "opts": [
+        "un changement de direction en restant dans le même milieu",
+        "la décomposition de la lumière blanche en couleurs",
+        "un changement de direction quand la lumière change de milieu",
+        "le passage d'un milieu à un autre sans changement de direction"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "reflexion-vs-refraction",
+          "texte": "Confondre réfraction et réflexion : la réflexion renvoie la lumière dans le premier milieu"
+        },
+        {
+          "code": "dispersion-vs-refraction",
+          "texte": "Confondre réfraction et dispersion : la dispersion est une conséquence de la réfraction quand l'indice dépend de la couleur"
+        },
+        null,
+        {
+          "code": "refraction-sans-deviation",
+          "texte": "Croire que la lumière garde sa direction en changeant de milieu : elle est déviée (sauf sous incidence nulle)"
+        }
+      ],
+      "exp": "La réfraction est le changement de direction d'un rayon qui passe d'un milieu transparent à un autre (air → eau, par exemple). Attention : la réflexion, elle, renvoie le rayon dans le premier milieu."
+    },
+    {
+      "q": "Un rayon lumineux arrive sur la surface de l'eau en faisant un angle de 30° avec cette surface. L'angle d'incidence vaut :",
+      "opts": [
+        "30°",
+        "60°",
+        "150°",
+        "on ne peut pas le savoir sans les indices"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "angle-vs-surface",
+          "texte": "Mesurer l'angle par rapport à la surface : les angles se mesurent par rapport à la normale, donc 90° − 30° = 60°"
+        },
+        null,
+        {
+          "code": "angle-supplementaire",
+          "texte": "Prendre l'angle supplémentaire (180° − 30°) : l'angle d'incidence est entre le rayon et la normale, il est inférieur à 90°"
+        },
+        {
+          "code": "angle-depend-indices",
+          "texte": "Croire que l'angle d'incidence dépend des milieux : il se lit sur le rayon incident, avant toute réfraction"
+        }
+      ],
+      "exp": "La normale est perpendiculaire à la surface : l'angle entre le rayon et la normale vaut 90° − 30° = 60°. Attention : les angles se mesurent toujours par rapport à la normale."
+    },
+    {
+      "q": "Un rayon arrive sur un miroir plan avec un angle d'incidence de 35°. L'angle de réflexion vaut :",
+      "opts": [
+        "55°",
+        "70°",
+        "35°",
+        "il dépend de l'indice du verre du miroir"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "angle-vs-surface",
+          "texte": "Mesurer l'angle par rapport à la surface : les angles se mesurent par rapport à la normale"
+        },
+        {
+          "code": "reflexion-angle-double",
+          "texte": "Doubler l'angle : 70° est l'angle entre le rayon incident et le rayon réfléchi, pas l'angle de réflexion"
+        },
+        null,
+        {
+          "code": "reflexion-avec-indices",
+          "texte": "Appliquer la loi de la réfraction à la réflexion : l'angle de réflexion est égal à l'angle d'incidence, sans indice"
+        }
+      ],
+      "exp": "Loi de la réflexion : i_R = i₁ = 35°. Attention : l'angle entre les deux rayons vaut 2 × 35° = 70°, mais ce n'est pas l'angle de réflexion."
+    },
+    {
+      "q": "Un rayon passe de l'air (n₁ = 1,00) à l'eau (n₂ = 1,33) avec un angle d'incidence de 40°. L'angle de réfraction vaut environ :",
+      "opts": [
+        "29°",
+        "59°",
+        "40°",
+        "35°"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "indices-inverses-snell",
+          "texte": "Inverser les indices : sin(i₂) = n₁ × sin(i₁) / n₂, pas n₂ × sin(i₁) / n₁"
+        },
+        {
+          "code": "refraction-sans-deviation",
+          "texte": "Croire que la lumière garde sa direction en changeant de milieu : elle est déviée"
+        },
+        {
+          "code": "angle-vs-surface",
+          "texte": "Prendre l'angle par rapport à la surface (50°) au lieu de l'angle par rapport à la normale (40°)"
+        }
+      ],
+      "exp": "sin(i₂) = n₁ × sin(i₁) / n₂ = 1,00 × sin(40°) / 1,33 ≈ 0,483, donc i₂ ≈ 29°. Le rayon se rapproche de la normale en entrant dans l'eau, plus réfringente."
+    },
+    {
+      "q": "Un rayon passe de l'eau (n = 1,33) dans l'air (n = 1,00), avec un angle d'incidence de 20°. Le rayon réfracté :",
+      "opts": [
+        "se rapproche de la normale, comme lors de toute réfraction",
+        "n'est pas dévié, car l'air est transparent",
+        "s'éloigne de la normale",
+        "n'est dévié que sous incidence nulle"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "normale-toujours-rapproche",
+          "texte": "Croire que le rayon se rapproche toujours de la normale : il s'en éloigne en passant dans un milieu moins réfringent"
+        },
+        {
+          "code": "refraction-sans-deviation",
+          "texte": "Croire que la lumière garde sa direction en changeant de milieu : elle est déviée dès que les indices diffèrent"
+        },
+        null,
+        {
+          "code": "incidence-nulle-deviee",
+          "texte": "Inverser le cas particulier : sous incidence nulle (rayon perpendiculaire), le rayon n'est pas dévié"
+        }
+      ],
+      "exp": "n₁ > n₂ : sin(i₂) = 1,33 × sin(20°) / 1,00 ≈ 0,455, i₂ ≈ 27° > 20° : le rayon s'éloigne de la normale. Attention : il ne se rapproche de la normale que vers un milieu plus réfringent."
+    },
+    {
+      "q": "L'indice de réfraction d'un milieu transparent :",
+      "opts": [
+        "est un nombre sans unité, supérieur ou égal à 1",
+        "s'exprime en m·s⁻¹ : c'est la vitesse de la lumière",
+        "est compris entre 0 et 1",
+        "est le même pour tous les milieux transparents"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "indice-vs-vitesse",
+          "texte": "Confondre indice et vitesse : l'indice est sans unité ; il est d'autant plus grand que la lumière est lente dans le milieu"
+        },
+        {
+          "code": "indice-inferieur-1",
+          "texte": "Croire que l'indice est inférieur à 1 : il vaut 1 dans le vide et plus dans les autres milieux"
+        },
+        {
+          "code": "indice-universel",
+          "texte": "Croire que tous les milieux ont le même indice : eau 1,33, verre 1,50, diamant 2,42"
+        }
+      ],
+      "exp": "L'indice n est sans unité et vaut au moins 1 (1 pour le vide, environ 1,00 pour l'air, 1,33 pour l'eau). Attention : plus n est grand, plus la lumière est lente dans le milieu."
+    },
+    {
+      "q": "Un rayon passe de l'air (n = 1,00) dans un milieu inconnu : i₁ = 45° et i₂ = 28°. L'indice du milieu vaut environ :",
+      "opts": [
+        "0,66",
+        "1,6",
+        "1,5",
+        "0,80"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "indices-inverses-snell",
+          "texte": "Inverser le rapport : sin(28°) / sin(45°) ≈ 0,66 ; il faut n₂ = n₁ × sin(i₁) / sin(i₂)"
+        },
+        {
+          "code": "oubli-sinus",
+          "texte": "Oublier les sinus : 45 / 28 ≈ 1,6 ; la loi relie les sinus des angles, pas les angles"
+        },
+        null,
+        {
+          "code": "angle-vs-surface",
+          "texte": "Mesurer i₂ par rapport à la surface (90° − 28° = 62°) : sin(45°) / sin(62°) ≈ 0,80"
+        }
+      ],
+      "exp": "n₂ = n₁ × sin(i₁) / sin(i₂) = 1,00 × sin(45°) / sin(28°) ≈ 0,707 / 0,469 ≈ 1,5 : c'est probablement du verre. Attention : un indice inférieur à 1 est impossible."
+    },
+    {
+      "q": "Quand la lumière blanche traverse un prisme, la radiation la plus déviée est :",
+      "opts": [
+        "la violette",
+        "la rouge",
+        "aucune : toutes sont déviées de la même façon",
+        "aucune : le prisme colore la lumière sans la dévier"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "dispersion-rouge-plus-devie",
+          "texte": "Inverser l'ordre : l'indice du verre est plus grand pour le violet, qui est donc le plus dévié"
+        },
+        {
+          "code": "dispersion-niee",
+          "texte": "Croire que toutes les couleurs sont déviées pareil : c'est justement parce qu'elles ne le sont pas qu'elles se séparent"
+        },
+        {
+          "code": "prisme-colore-lumiere",
+          "texte": "Croire que le prisme ajoute des couleurs : elles sont déjà dans la lumière blanche, le prisme les sépare"
+        }
+      ],
+      "exp": "L'indice du verre est un peu plus grand pour le violet que pour le rouge : le violet est plus dévié. Attention : le prisme ne crée pas les couleurs, il les sépare."
+    },
+    {
+      "q": "Un prisme sépare les couleurs de la lumière blanche parce que :",
+      "opts": [
+        "il ajoute des couleurs à la lumière blanche",
+        "il absorbe certaines couleurs et laisse passer les autres",
+        "il réfléchit chaque couleur sur une face différente",
+        "l'indice du verre dépend de la longueur d'onde"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "prisme-colore-lumiere",
+          "texte": "Croire que le prisme ajoute des couleurs : elles sont déjà dans la lumière blanche, le prisme les sépare"
+        },
+        {
+          "code": "dispersion-vs-absorption",
+          "texte": "Confondre dispersion et absorption : toutes les couleurs ressortent, mais dans des directions différentes"
+        },
+        {
+          "code": "reflexion-vs-refraction",
+          "texte": "Confondre réflexion et réfraction : la lumière traverse le prisme, elle est réfractée"
+        },
+        null
+      ],
+      "exp": "Le verre est un milieu dispersif : son indice dépend de la longueur d'onde, donc chaque radiation est réfractée différemment et les couleurs se séparent."
+    },
+    {
+      "q": "On envoie le faisceau d'un laser rouge (lumière monochromatique) sur un prisme. On observe :",
+      "opts": [
+        "un spectre allant du rouge au violet",
+        "un faisceau rouge dévié, sans autre couleur",
+        "un faisceau rouge non dévié, puisqu'il n'a qu'une couleur",
+        "un faisceau rouge étalé en plusieurs nuances de rouge"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "prisme-colore-lumiere",
+          "texte": "Croire que le prisme crée des couleurs : il ne peut séparer que celles qui sont déjà présentes"
+        },
+        null,
+        {
+          "code": "monochromatique-non-devie",
+          "texte": "Croire qu'une lumière monochromatique n'est pas déviée : elle est réfractée, mais ne se décompose pas"
+        },
+        {
+          "code": "monochromatique-disperse",
+          "texte": "Croire qu'une lumière monochromatique se décompose : elle ne contient qu'une radiation"
+        }
+      ],
+      "exp": "Une lumière monochromatique ne contient qu'une radiation : le prisme la dévie (réfraction) sans la décomposer. Attention : la dispersion ne fait que séparer des couleurs déjà présentes."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le faisceau de la lampe torche",
+      "contexte": [
+        "Le soir, au bord du bassin du parc, Inès éclaire la surface de l'eau avec la lampe torche de son téléphone. Elle voit une tache de lumière au fond du bassin, mais aussi un reflet sur un mur. Le schéma ci-dessous représente la situation : au point I, le faisceau (rayon 1) donne naissance à deux autres rayons."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker></defs><rect x=\"20\" y=\"235\" width=\"720\" height=\"215\" fill=\"#dfeaf0\"/><line x1=\"20\" y1=\"235\" x2=\"740\" y2=\"235\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><line x1=\"380\" y1=\"35\" x2=\"380\" y2=\"440\" stroke=\"#3a3a3a\" stroke-width=\"1.8\" stroke-dasharray=\"8 6\"/><line x1=\"245.0\" y1=\"74.1\" x2=\"380.0\" y2=\"235.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"310.6\" y1=\"152.3\" x2=\"314.4\" y2=\"156.9\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#fl)\"/><line x1=\"380.0\" y1=\"235.0\" x2=\"515.0\" y2=\"74.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"445.6\" y1=\"156.9\" x2=\"449.4\" y2=\"152.3\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#fl)\"/><line x1=\"380.0\" y1=\"235.0\" x2=\"481.5\" y2=\"418.8\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"429.3\" y1=\"324.3\" x2=\"432.2\" y2=\"329.5\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#fl)\"/><path d=\"M305.0,235.0 A75,75 0 0,1 331.8,177.5\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.2\"/><text x=\"255\" y=\"221\" fill=\"#C8962E\" font-weight=\"bold\" font-size=\"18\">50°</text><text x=\"205\" y=\"62\" font-weight=\"bold\" fill=\"#B5523B\">rayon 1</text><text x=\"485\" y=\"62\" font-weight=\"bold\" fill=\"#B5523B\">rayon 2</text><text x=\"493\" y=\"411\" font-weight=\"bold\" fill=\"#B5523B\">rayon 3</text><text x=\"390\" y=\"52\" font-weight=\"bold\">droite (D)</text><text x=\"358\" y=\"257\" font-weight=\"bold\">I</text><text x=\"40\" y=\"70\" font-size=\"20\" fill=\"#1F4E5A\" font-weight=\"bold\">air</text><text x=\"40\" y=\"420\" font-size=\"20\" fill=\"#1F4E5A\" font-weight=\"bold\">eau</text><text x=\"575\" y=\"225\" fill=\"#1F4E5A\">surface de l'eau</text></svg>",
+      "questions": [
+        {
+          "texte": "Association — Relie chaque élément du schéma à son nom : rayon 1 ; rayon 2 ; rayon 3 ; droite (D). Noms proposés : rayon réfracté ; normale à la surface ; rayon incident ; rayon réfléchi.",
+          "aides": []
+        },
+        {
+          "texte": "Lequel des rayons 2 et 3 correspond à une réflexion ? à une réfraction ? Justifie avec les définitions du cours (le rayon reste-t-il dans l'air ou passe-t-il dans l'eau ?).",
+          "aides": []
+        },
+        {
+          "texte": "Inès mesure avec un rapporteur l'angle entre le rayon 1 et la surface de l'eau : elle trouve 50°.<br>a. Est-ce l'angle d'incidence i₁ ? Justifie.<br>b. Déduis-en la valeur de l'angle d'incidence i₁.<br>c. Sans calcul, donne la valeur de l'angle de réflexion i<sub>R</sub>.",
+          "aides": [
+            "Relis l'encadré Données : par rapport à quelle droite mesure-t-on les angles ?",
+            "La normale est perpendiculaire à la surface : l'angle entre la surface et la normale vaut 90°."
+          ]
+        },
+        {
+          "texte": "Sur le schéma, le rayon 3 se rapproche-t-il ou s'éloigne-t-il de la normale ? Compare l'indice de l'air (1,00) et celui de l'eau (1,33).",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie en une phrase.<br>a. « Dans l'air, milieu transparent et homogène, la lumière se propage en ligne droite. »<br>b. « L'indice de réfraction de l'eau vaut 1,33 m·s⁻¹. »<br>c. « Un indice de réfraction peut valoir 0,8. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Rayon 1 : rayon incident ; rayon 2 : rayon réfléchi ; rayon 3 : rayon réfracté ; droite (D) : normale à la surface au point I (perpendiculaire à la surface).",
+        "<strong>2.</strong> Le rayon 2 reste dans le premier milieu (l'air) : c'est une réflexion. Le rayon 3 passe dans un autre milieu (l'eau) en changeant de direction : c'est une réfraction.",
+        "<strong>3.</strong> a. Non : les angles se mesurent par rapport à la normale, jamais par rapport à la surface.",
+        "b. La normale est perpendiculaire à la surface, donc i₁ = 90° − 50° = 40°.",
+        "c. Loi de la réflexion : i<sub>R</sub> = i₁ = 40°.",
+        "<strong>4.</strong> Le rayon 3 se rapproche de la normale (sur le schéma, i₂ ≈ 29° &lt; 40°) : la lumière passe dans un milieu plus réfringent (n plus grand : 1,33 &gt; 1,00).",
+        "<strong>5.</strong> a. VRAI : c'est la propagation rectiligne de la lumière dans un milieu transparent et homogène : on la représente par des rayons.",
+        "b. FAUX : un indice de réfraction est un nombre sans unité.",
+        "c. FAUX : un indice de réfraction est toujours supérieur ou égal à 1 (1 pour le vide), car la lumière ne va jamais plus vite que dans le vide.",
+        "<em>⚠ Erreur fréquente : prendre 50° comme angle d'incidence parce que c'est l'angle « visible » entre le rayon et la surface.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le laser de l'escape game",
+      "contexte": [
+        "Dans une salle d'escape game à Cergy, les joueurs doivent guider un faisceau laser jusqu'à un capteur à l'aide de miroirs plans. Sur le schéma ci-dessous, le faisceau arrive sur un miroir au point I."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker></defs><line x1=\"80\" y1=\"380\" x2=\"680\" y2=\"380\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><line x1=\"100\" y1=\"383\" x2=\"84\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"122\" y1=\"383\" x2=\"106\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"144\" y1=\"383\" x2=\"128\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"166\" y1=\"383\" x2=\"150\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"188\" y1=\"383\" x2=\"172\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"210\" y1=\"383\" x2=\"194\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"232\" y1=\"383\" x2=\"216\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"254\" y1=\"383\" x2=\"238\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"276\" y1=\"383\" x2=\"260\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"298\" y1=\"383\" x2=\"282\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"320\" y1=\"383\" x2=\"304\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"342\" y1=\"383\" x2=\"326\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"364\" y1=\"383\" x2=\"348\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"386\" y1=\"383\" x2=\"370\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"408\" y1=\"383\" x2=\"392\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"430\" y1=\"383\" x2=\"414\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"452\" y1=\"383\" x2=\"436\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"474\" y1=\"383\" x2=\"458\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"496\" y1=\"383\" x2=\"480\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"518\" y1=\"383\" x2=\"502\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"540\" y1=\"383\" x2=\"524\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"562\" y1=\"383\" x2=\"546\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"584\" y1=\"383\" x2=\"568\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"606\" y1=\"383\" x2=\"590\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"628\" y1=\"383\" x2=\"612\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"650\" y1=\"383\" x2=\"634\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><line x1=\"672\" y1=\"383\" x2=\"656\" y2=\"402\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"580\" y=\"430\" fill=\"#1F4E5A\" font-weight=\"bold\">miroir</text><line x1=\"380\" y1=\"40\" x2=\"380\" y2=\"380\" stroke=\"#3a3a3a\" stroke-width=\"1.8\" stroke-dasharray=\"8 6\"/><text x=\"390\" y=\"58\">normale</text><rect x=\"150\" y=\"105\" width=\"80\" height=\"30\" rx=\"4\" fill=\"#1F4E5A\" transform=\"rotate(60 230 120)\"/><text x=\"115\" y=\"90\" font-weight=\"bold\" fill=\"#1F4E5A\">laser</text><line x1=\"230.0\" y1=\"120.2\" x2=\"380.0\" y2=\"380.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"303.5\" y1=\"247.5\" x2=\"306.5\" y2=\"252.7\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#fl)\"/><path d=\"M332.5,297.7 A95,95 0 0,1 380.0,285.0\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.2\"/><text x=\"330\" y=\"275\" fill=\"#C8962E\" font-weight=\"bold\" font-size=\"18\">30°</text><text x=\"388\" y=\"372\" font-weight=\"bold\">I</text><text x=\"281\" y=\"245\" text-anchor=\"end\" fill=\"#B5523B\" font-weight=\"bold\">rayon incident</text></svg>",
+      "questions": [
+        {
+          "texte": "QCM — Lorsque le faisceau rencontre le miroir, il subit : a. une réfraction ; b. une réflexion ; c. une dispersion. Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Lis sur le schéma l'angle d'incidence i₁. Écris la loi de la réflexion et donne la valeur de l'angle de réflexion i<sub>R</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Reproduis le schéma (ou complète-le) en traçant le rayon réfléchi, avec un rapporteur. Indique l'angle i<sub>R</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'angle entre le rayon incident et le rayon réfléchi.",
+          "aides": []
+        },
+        {
+          "texte": "Pour un deuxième miroir, un joueur mesure 20° entre le faisceau incident et la surface du miroir. Calcule i₁, puis i<sub>R</sub>, puis l'angle entre le rayon incident et le rayon réfléchi.",
+          "aides": [
+            "Même piège qu'à l'exercice 1 : 20° est mesuré par rapport au miroir, pas par rapport à la normale.",
+            "i₁ = 90° − (angle avec le miroir). Ensuite, l'angle entre les deux rayons vaut i₁ + i<sub>R</sub>."
+          ]
+        },
+        {
+          "texte": "Pour que le faisceau revienne exactement vers le laser, quel doit être l'angle d'incidence ? Justifie.",
+          "aides": [
+            "Pour revenir sur lui-même, le rayon réfléchi doit être confondu avec le rayon incident.",
+            "Si i<sub>R</sub> = i₁ et que les deux rayons sont confondus, ils sont tous les deux le long de la normale."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réponse b : la lumière change de direction en restant dans le même milieu (l'air) : c'est une réflexion.",
+        "<strong>2.</strong> On lit i₁ = 30°. Loi de la réflexion : i<sub>R</sub> = i₁, donc i<sub>R</sub> = 30°.",
+        "<strong>3.</strong> Le rayon réfléchi part de I, de l'autre côté de la normale, en faisant un angle de 30° avec la normale (rayon symétrique du rayon incident par rapport à la normale).",
+        "<strong>4.</strong> Angle entre les deux rayons : i₁ + i<sub>R</sub> = 30° + 30° = 60°.",
+        "<strong>5.</strong> i₁ = 90° − 20° = 70° ; i<sub>R</sub> = i₁ = 70° ; angle entre les rayons : 70° + 70° = 140°.",
+        "<strong>6.</strong> Il faut i₁ = 0° : le faisceau arrive perpendiculairement au miroir (le long de la normale) ; alors i<sub>R</sub> = 0° et il repart sur lui-même.",
+        "<em>⚠ Erreur fréquente : écrire i₁ = 20° à la question 5 (angle mesuré par rapport au miroir et non à la normale).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le pointeur laser dans l'aquarium",
+      "contexte": [
+        "Pendant une séance au laboratoire, Yanis dirige le faisceau d'un pointeur laser vers la surface de l'eau d'un aquarium. Il veut prévoir la direction du faisceau dans l'eau.",
+        "Formule (loi de la réfraction) : n₁ × sin(i₁) = n₂ × sin(i₂), donc sin(i₂) = n₁ × sin(i₁) / n₂. Ici, n₁ = 1,00 (air) et n₂ = 1,33 (eau)."
+      ],
+      "questions": [
+        {
+          "texte": "Quel est le milieu 1 ? le milieu 2 ? Le faisceau subit-il une réflexion ou une réfraction en entrant dans l'eau ?",
+          "aides": []
+        },
+        {
+          "texte": "Recopie et complète le tableau (sinus à 3 chiffres après la virgule, angles arrondis au degré) :<br>Ligne 1 : i₁ = 0° ; sin(i₁) = … ; sin(i₂) = … ; i₂ = …<br>Ligne 2 : i₁ = 30° ; sin(i₁) = … ; sin(i₂) = … ; i₂ = …<br>Ligne 3 : i₁ = 60° ; sin(i₁) = … ; sin(i₂) = … ; i₂ = …",
+          "aides": [
+            "Vérifie que ta calculatrice est en mode DEGRÉS : sin(30) doit donner 0,5.",
+            "Calcule d'abord sin(i₂) = 1,00 × sin(i₁) / 1,33, puis i₂ avec la touche sin⁻¹ (Arcsin)."
+          ]
+        },
+        {
+          "texte": "Que se passe-t-il pour un faisceau qui arrive perpendiculairement à la surface (i₁ = 0°) ?",
+          "aides": []
+        },
+        {
+          "texte": "Texte à trous — Complète avec : « se rapproche », « plus grand », « inférieur ». Quand la lumière passe de l'air dans l'eau, milieu d'indice …, le rayon réfracté … de la normale : l'angle de réfraction est … à l'angle d'incidence.",
+          "aides": [
+            "Compare l'indice de l'eau (1,33) à celui de l'air (1,00).",
+            "Compare les angles i₂ trouvés dans ton tableau aux angles i₁."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Milieu 1 : l'air (le faisceau en vient) ; milieu 2 : l'eau. En passant d'un milieu à un autre avec changement de direction, il subit une réfraction (une petite partie est aussi réfléchie).",
+        "<strong>2.</strong> Ligne 1 : sin(0°) = 0 ; sin(i₂) = 1,00 × 0 / 1,33 = 0 ; i₂ = 0°.",
+        "Ligne 2 : sin(30°) = 0,500 ; sin(i₂) = 1,00 × 0,500 / 1,33 = 0,376 ; i₂ = arcsin(0,376) ≈ 22° (22,1°).",
+        "Ligne 3 : sin(60°) = 0,866 ; sin(i₂) = 1,00 × 0,866 / 1,33 = 0,651 ; i₂ = arcsin(0,651) ≈ 41° (40,6°).",
+        "<strong>3.</strong> i₂ = 0° : le faisceau n'est pas dévié, il continue tout droit le long de la normale.",
+        "<strong>4.</strong> Quand la lumière passe de l'air dans l'eau, milieu d'indice plus grand, le rayon réfracté se rapproche de la normale : l'angle de réfraction est inférieur à l'angle d'incidence (22° &lt; 30° ; 41° &lt; 60°).",
+        "<em>⚠ Erreur fréquente : calculatrice en mode radians (sin(30) donnerait −0,988) ; ou oublier la dernière étape arcsin et donner 0,376 comme angle.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le flacon sans étiquette",
+      "contexte": [
+        "Au laboratoire, un flacon de liquide incolore a perdu son étiquette. Il peut s'agir d'eau (n = 1,33), d'éthanol (n = 1,36) ou de glycérol (n = 1,47). Des élèves remplissent de ce liquide une cuve hémicylindrique et envoient un rayon laser depuis l'air (n₁ = 1,00) vers le centre de la face plane. Ils mesurent l'angle de réfraction i₂ pour plusieurs angles d'incidence i₁.",
+        "Mesures — i₁ (°) : 0 ; 10 ; 20 ; 30 ; 40 ; 50 ; 60 ; 70. i₂ (°) : 0 ; 7,0 ; 13,5 ; 20,0 ; 26,0 ; 31,5 ; 36,0 ; 40,0.",
+        "sin(i₁) : 0 ; 0,17 ; 0,34 ; … ; 0,64 ; … ; 0,87 ; 0,94. sin(i₂) : 0 ; 0,12 ; 0,23 ; … ; 0,44 ; … ; 0,59 ; 0,64.",
+        "Les élèves ont tracé sin(i₁) en fonction de sin(i₂) (croix) et la droite qui modélise les points."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker></defs><line x1=\"90.0\" y1=\"25\" x2=\"90.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"90.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"108.3\" y1=\"25\" x2=\"108.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"126.6\" y1=\"25\" x2=\"126.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"144.9\" y1=\"25\" x2=\"144.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"163.1\" y1=\"25\" x2=\"163.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"181.4\" y1=\"25\" x2=\"181.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"181.4\" y=\"430\" text-anchor=\"middle\">0,1</text><line x1=\"199.7\" y1=\"25\" x2=\"199.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"218.0\" y1=\"25\" x2=\"218.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"236.3\" y1=\"25\" x2=\"236.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"254.6\" y1=\"25\" x2=\"254.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"272.9\" y1=\"25\" x2=\"272.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"272.9\" y=\"430\" text-anchor=\"middle\">0,2</text><line x1=\"291.1\" y1=\"25\" x2=\"291.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"309.4\" y1=\"25\" x2=\"309.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"327.7\" y1=\"25\" x2=\"327.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"346.0\" y1=\"25\" x2=\"346.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"364.3\" y1=\"25\" x2=\"364.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"364.3\" y=\"430\" text-anchor=\"middle\">0,3</text><line x1=\"382.6\" y1=\"25\" x2=\"382.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"400.9\" y1=\"25\" x2=\"400.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"419.1\" y1=\"25\" x2=\"419.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"437.4\" y1=\"25\" x2=\"437.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"455.7\" y1=\"25\" x2=\"455.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"455.7\" y=\"430\" text-anchor=\"middle\">0,4</text><line x1=\"474.0\" y1=\"25\" x2=\"474.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"492.3\" y1=\"25\" x2=\"492.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"510.6\" y1=\"25\" x2=\"510.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"528.9\" y1=\"25\" x2=\"528.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"547.1\" y1=\"25\" x2=\"547.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"547.1\" y=\"430\" text-anchor=\"middle\">0,5</text><line x1=\"565.4\" y1=\"25\" x2=\"565.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"583.7\" y1=\"25\" x2=\"583.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"602.0\" y1=\"25\" x2=\"602.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"620.3\" y1=\"25\" x2=\"620.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"638.6\" y1=\"25\" x2=\"638.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"638.6\" y=\"430\" text-anchor=\"middle\">0,6</text><line x1=\"656.9\" y1=\"25\" x2=\"656.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"675.1\" y1=\"25\" x2=\"675.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"693.4\" y1=\"25\" x2=\"693.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"711.7\" y1=\"25\" x2=\"711.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"730.0\" y1=\"25\" x2=\"730.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"730.0\" y=\"430\" text-anchor=\"middle\">0,7</text><line x1=\"90\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"90\" y1=\"400.3\" x2=\"730\" y2=\"400.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"392.7\" x2=\"730\" y2=\"392.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"385.0\" x2=\"730\" y2=\"385.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"377.4\" x2=\"730\" y2=\"377.4\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"369.7\" x2=\"730\" y2=\"369.7\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"374.7\" text-anchor=\"end\">0,1</text><line x1=\"90\" y1=\"362.0\" x2=\"730\" y2=\"362.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"354.4\" x2=\"730\" y2=\"354.4\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"346.7\" x2=\"730\" y2=\"346.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"339.1\" x2=\"730\" y2=\"339.1\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"331.4\" x2=\"730\" y2=\"331.4\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"336.4\" text-anchor=\"end\">0,2</text><line x1=\"90\" y1=\"323.7\" x2=\"730\" y2=\"323.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"316.1\" x2=\"730\" y2=\"316.1\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"308.4\" x2=\"730\" y2=\"308.4\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"300.8\" x2=\"730\" y2=\"300.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"293.1\" x2=\"730\" y2=\"293.1\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"298.1\" text-anchor=\"end\">0,3</text><line x1=\"90\" y1=\"285.4\" x2=\"730\" y2=\"285.4\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"277.8\" x2=\"730\" y2=\"277.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"270.1\" x2=\"730\" y2=\"270.1\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"262.5\" x2=\"730\" y2=\"262.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"254.8\" x2=\"730\" y2=\"254.8\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"259.8\" text-anchor=\"end\">0,4</text><line x1=\"90\" y1=\"247.1\" x2=\"730\" y2=\"247.1\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"239.5\" x2=\"730\" y2=\"239.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"231.8\" x2=\"730\" y2=\"231.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"224.2\" x2=\"730\" y2=\"224.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"216.5\" x2=\"730\" y2=\"216.5\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"221.5\" text-anchor=\"end\">0,5</text><line x1=\"90\" y1=\"208.8\" x2=\"730\" y2=\"208.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"201.2\" x2=\"730\" y2=\"201.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"193.5\" x2=\"730\" y2=\"193.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"185.9\" x2=\"730\" y2=\"185.9\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"178.2\" x2=\"730\" y2=\"178.2\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"183.2\" text-anchor=\"end\">0,6</text><line x1=\"90\" y1=\"170.5\" x2=\"730\" y2=\"170.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"162.9\" x2=\"730\" y2=\"162.9\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"155.2\" x2=\"730\" y2=\"155.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"147.6\" x2=\"730\" y2=\"147.6\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"139.9\" x2=\"730\" y2=\"139.9\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"144.9\" text-anchor=\"end\">0,7</text><line x1=\"90\" y1=\"132.2\" x2=\"730\" y2=\"132.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"124.6\" x2=\"730\" y2=\"124.6\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"116.9\" x2=\"730\" y2=\"116.9\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"109.3\" x2=\"730\" y2=\"109.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"101.6\" x2=\"730\" y2=\"101.6\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"106.6\" text-anchor=\"end\">0,8</text><line x1=\"90\" y1=\"93.9\" x2=\"730\" y2=\"93.9\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"86.3\" x2=\"730\" y2=\"86.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"78.6\" x2=\"730\" y2=\"78.6\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"71.0\" x2=\"730\" y2=\"71.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"63.3\" x2=\"730\" y2=\"63.3\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"68.3\" text-anchor=\"end\">0,9</text><line x1=\"90\" y1=\"55.6\" x2=\"730\" y2=\"55.6\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"48.0\" x2=\"730\" y2=\"48.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"40.3\" x2=\"730\" y2=\"40.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"32.7\" x2=\"730\" y2=\"32.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"90\" y1=\"25.0\" x2=\"730\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"82\" y=\"30.0\" text-anchor=\"end\">1</text><rect x=\"90\" y=\"25\" width=\"640\" height=\"383\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"90.0\" y1=\"408.0\" x2=\"711.7\" y2=\"26.2\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"84.0\" y1=\"402.0\" x2=\"96.0\" y2=\"414.0\"/><line x1=\"84.0\" y1=\"414.0\" x2=\"96.0\" y2=\"402.0\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"195.4\" y1=\"335.5\" x2=\"207.4\" y2=\"347.5\"/><line x1=\"195.4\" y1=\"347.5\" x2=\"207.4\" y2=\"335.5\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"297.4\" y1=\"271.0\" x2=\"309.4\" y2=\"283.0\"/><line x1=\"297.4\" y1=\"283.0\" x2=\"309.4\" y2=\"271.0\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"396.7\" y1=\"210.5\" x2=\"408.7\" y2=\"222.5\"/><line x1=\"396.7\" y1=\"222.5\" x2=\"408.7\" y2=\"210.5\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"484.8\" y1=\"155.8\" x2=\"496.8\" y2=\"167.8\"/><line x1=\"484.8\" y1=\"167.8\" x2=\"496.8\" y2=\"155.8\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"561.7\" y1=\"108.6\" x2=\"573.7\" y2=\"120.6\"/><line x1=\"561.7\" y1=\"120.6\" x2=\"573.7\" y2=\"108.6\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"621.4\" y1=\"70.3\" x2=\"633.4\" y2=\"82.3\"/><line x1=\"621.4\" y1=\"82.3\" x2=\"633.4\" y2=\"70.3\"/></g><g stroke=\"#B5523B\" stroke-width=\"2.6\"><line x1=\"671.7\" y1=\"42.1\" x2=\"683.7\" y2=\"54.1\"/><line x1=\"671.7\" y1=\"54.1\" x2=\"683.7\" y2=\"42.1\"/></g><text x=\"410.0\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">sin i₂</text><text transform=\"translate(26,216.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">sin i₁</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule les valeurs manquantes de sin(i₁) et sin(i₂) pour i₁ = 30° et i₁ = 50° (deux chiffres après la virgule).",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi trace-t-on sin(i₁) en fonction de sin(i₂), et non i₁ en fonction de i₂ ? Calcule i₁ / i₂ pour la 2ᵉ et la dernière mesure pour t'aider.",
+          "aides": [
+            "Compare les quotients i₁ / i₂ : sont-ils égaux ?",
+            "Dans la loi n₁ × sin(i₁) = n₂ × sin(i₂), ce sont les sinus qui apparaissent."
+          ]
+        },
+        {
+          "texte": "Que peut-on dire de la forme du graphique ? Conclus : les mesures sont-elles en accord avec la loi de Snell-Descartes ?",
+          "aides": []
+        },
+        {
+          "texte": "Montre, à partir de la loi de Snell-Descartes, que le coefficient directeur de la droite est égal à l'indice n₂ du liquide.",
+          "aides": [
+            "Remplace n₁ par 1,00 dans la loi de Snell-Descartes.",
+            "Tu obtiens sin(i₁) = n₂ × sin(i₂) : compare avec l'équation d'une droite passant par l'origine, y = a × x."
+          ]
+        },
+        {
+          "texte": "Détermine le coefficient directeur de la droite à l'aide d'un point bien choisi, puis identifie le liquide.",
+          "aides": [
+            "Choisis un point de la droite (pas une croix), loin de l'origine, où la lecture est facile.",
+            "Coefficient directeur d'une droite passant par l'origine : a = y / x, avec y = sin(i₁) et x = sin(i₂)."
+          ]
+        },
+        {
+          "texte": "Pourquoi est-il préférable de faire plusieurs mesures et un graphique plutôt qu'une seule mesure ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> i₁ = 30° : sin(30°) = 0,50 et sin(20,0°) = 0,34. i₁ = 50° : sin(50°) = 0,77 et sin(31,5°) = 0,52.",
+        "<strong>2.</strong> La loi de Snell-Descartes relie les sinus, pas les angles : sin(i₁) est proportionnel à sin(i₂), mais i₁ n'est pas proportionnel à i₂. Vérification : 10 / 7,0 = 1,43 alors que 70 / 40,0 = 1,75 : le rapport des angles n'est pas constant.",
+        "<strong>3.</strong> Les points sont alignés sur une droite qui passe par l'origine : sin(i₁) est proportionnel à sin(i₂). C'est ce que prévoit la loi de Snell-Descartes : les mesures sont en accord avec la loi.",
+        "<strong>4.</strong> n₁ × sin(i₁) = n₂ × sin(i₂) avec n₁ = 1,00 donne sin(i₁) = n₂ × sin(i₂) : de la forme y = a × x, avec y = sin(i₁), x = sin(i₂) et a = n₂.",
+        "<strong>5.</strong> On choisit un point de la droite loin de l'origine, par exemple sin(i₂) = 0,60 ; on lit sin(i₁) ≈ 0,88. Coefficient directeur : a = 0,88 / 0,60 ≈ 1,47 (on accepte 1,44 à 1,50). Donc n₂ ≈ 1,47 : c'est du glycérol (l'eau, 1,33, et l'éthanol, 1,36, sont trop éloignés).",
+        "<strong>6.</strong> Chaque mesure d'angle est imprécise (environ ± 0,5°) ; la droite moyenne « lisse » ces erreurs, et le graphique permet de vérifier la loi (alignement, passage par l'origine) en plus de calculer n₂.",
+        "<em>⚠ Erreur fréquente : calculer le coefficient directeur avec un point de mesure plutôt qu'avec un point de la droite, ou inverser (sin(i₂) / sin(i₁) = 1 / n₂ ≈ 0,68 &lt; 1, ce qui est impossible pour un indice).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Diamant ou imitation ?",
+      "contexte": [
+        "Une bijoutière d'Argenteuil veut savoir si deux pierres transparentes, A et B, sont de vrais diamants (n = 2,42) ou des imitations : verre (n = 1,50) ou zircone, un cristal synthétique (n = 2,17).",
+        "Elle envoie un fin faisceau laser depuis l'air sur une face plane de chaque pierre, avec un angle d'incidence de 45°, et mesure l'angle de réfraction : 17,0° pour la pierre A et 19,0° pour la pierre B."
+      ],
+      "questions": [
+        {
+          "texte": "Fais un schéma de la situation pour la pierre A (surface, normale, rayon incident, rayon réfléchi, rayon réfracté, angles).",
+          "aides": []
+        },
+        {
+          "texte": "Donne la valeur de l'angle de réflexion sur la face de la pierre. Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "À partir de la loi de Snell-Descartes, exprime l'indice n₂ de la pierre en fonction de n₁, i₁ et i₂.",
+          "aides": [
+            "Il faut isoler n₂ : divise les deux membres de l'égalité par sin(i₂).",
+            "Vérifie ton résultat : avec un indice de diamant, tu dois trouver un nombre plus grand que 1."
+          ]
+        },
+        {
+          "texte": "Calcule l'indice de chaque pierre (3 chiffres significatifs) et identifie-la.",
+          "aides": [
+            "Calcule séparément sin(45°) et sin(17,0°) (calculatrice en degrés), puis fais le quotient.",
+            "Compare tes résultats aux trois indices de l'énoncé."
+          ]
+        },
+        {
+          "texte": "Quelle pierre dévie le plus la lumière ? Relie ta réponse à son indice.",
+          "aides": []
+        },
+        {
+          "texte": "Quel angle de réfraction la bijoutière aurait-elle mesuré pour une imitation en verre ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Schéma : surface plane, normale perpendiculaire au point d'incidence ; rayon incident à 45° de la normale ; rayon réfléchi dans l'air, symétrique par rapport à la normale (45°) ; rayon réfracté dans la pierre, à 17,0° de la normale, plus proche de la normale que le rayon incident.",
+        "<strong>2.</strong> Loi de la réflexion : i<sub>R</sub> = i₁ = 45°.",
+        "<strong>3.</strong> n₁ × sin(i₁) = n₂ × sin(i₂), donc n₂ = n₁ × sin(i₁) / sin(i₂).",
+        "<strong>4.</strong> Pierre A : n₂ = 1,00 × sin(45°) / sin(17,0°) = 0,707 / 0,292 = 2,42 : c'est un diamant.",
+        "Pierre B : n₂ = 1,00 × sin(45°) / sin(19,0°) = 0,707 / 0,326 = 2,17 : c'est une zircone (imitation).",
+        "<strong>5.</strong> La pierre A (diamant) : son rayon réfracté est le plus proche de la normale (17,0° &lt; 19,0°), elle dévie le plus la lumière, car son indice est le plus grand.",
+        "<strong>6.</strong> sin(i₂) = 1,00 × sin(45°) / 1,50 = 0,471, donc i₂ = arcsin(0,471) ≈ 28° (28,1°).",
+        "<em>⚠ Erreur fréquente : écrire n₂ = sin(i₂) / sin(i₁) (on trouverait 0,413 : un indice inférieur à 1 est impossible, cela doit alerter) ; ou calculatrice en radians.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un spectroscope pour le club sciences",
+      "contexte": [
+        "Le club sciences du lycée veut fabriquer un spectroscope « maison » : un faisceau fin de lumière blanche entre dans un bloc transparent, qui sépare les couleurs, et un smartphone photographie le résultat.",
+        "Doc. 1 — Le principe. L'indice de réfraction d'un milieu transparent dépend un peu de la couleur (de la longueur d'onde) de la lumière. À l'entrée du bloc, chaque radiation colorée est donc réfractée avec un angle i₂ différent (schéma ci-dessous, sans échelle)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#555\"/></marker></defs><rect x=\"60\" y=\"190\" width=\"640\" height=\"210\" fill=\"#e9eef0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"545\" y=\"385\" fill=\"#1F4E5A\" font-weight=\"bold\">bloc transparent</text><text x=\"80\" y=\"175\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"18\">air</text><line x1=\"330\" y1=\"30\" x2=\"330\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"1.8\" stroke-dasharray=\"8 6\"/><text x=\"338\" y=\"48\">normale</text><line x1=\"178.4\" y1=\"102.5\" x2=\"330.0\" y2=\"190.0\" stroke=\"#555\" stroke-width=\"3.5\"/><line x1=\"251.6\" y1=\"144.8\" x2=\"256.8\" y2=\"147.8\" stroke=\"#555\" stroke-width=\"3.5\" marker-end=\"url(#fl)\"/><text x=\"138\" y=\"88\" font-weight=\"bold\">lumière blanche</text><path d=\"M269.4,155.0 A70,70 0 0,1 330.0,120.0\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.2\"/><text x=\"230\" y=\"120\" fill=\"#C8962E\" font-weight=\"bold\">i₁ = 60°</text><line x1=\"330\" y1=\"190\" x2=\"492.1\" y2=\"370.0\" stroke=\"#c0392b\" stroke-width=\"3\"/><text x=\"498\" y=\"364\" fill=\"#c0392b\" font-weight=\"bold\">rouge</text><line x1=\"330\" y1=\"190\" x2=\"421.7\" y2=\"370.0\" stroke=\"#6c3fa0\" stroke-width=\"3\"/><text x=\"428\" y=\"364\" fill=\"#6c3fa0\" font-weight=\"bold\">violet</text><text x=\"380\" y=\"450\" text-anchor=\"middle\" font-size=\"15\" font-style=\"italic\">Schéma sans échelle : l'écart entre le rouge et le violet est très exagéré.</text></svg>",
+      "contexte2": [
+        "Doc. 2 — Matériaux disponibles (indices arrondis, pour le rouge et pour le violet ; prix pour un bloc).",
+        "Verre « crown » : n<sub>rouge</sub> = 1,514 ; n<sub>violet</sub> = 1,530 ; 25 €. — Verre « flint » : n<sub>rouge</sub> = 1,615 ; n<sub>violet</sub> = 1,652 ; 60 €. — Cuve remplie d'eau : n<sub>rouge</sub> = 1,331 ; n<sub>violet</sub> = 1,343 ; 5 €.",
+        "Doc. 3 — Cahier des charges du club. Le support impose un angle d'incidence i₁ = 60°. D'après les essais du club, la photo ne sépare nettement le rouge du violet que si l'écart entre leurs angles de réfraction, i₂,rouge − i₂,violet, est d'au moins 0,5°. Budget : 70 € au maximum."
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier — D'après le doc. 1, quelle couleur est la plus déviée en entrant dans le bloc ? Justifie à l'aide des indices du doc. 2.",
+          "aides": []
+        },
+        {
+          "texte": "Problème — Quel matériau le club doit-il choisir pour son spectroscope ? Construis et rédige ta démarche.",
+          "aides": [
+            "S'approprier : tu cherches, pour chaque matériau, l'écart entre i₂,rouge et i₂,violet, à comparer à 0,5°.",
+            "Analyser : pour chaque couleur, sin(i₂) = 1,00 × sin(60°) / n, puis i₂ = arcsin(…). Garde une décimale sur les angles.",
+            "Réaliser : six angles à calculer (2 couleurs × 3 matériaux). N'oublie pas le budget pour conclure."
+          ]
+        },
+        {
+          "texte": "Regard critique — Le modèle n'étudie que l'entrée de la lumière dans le bloc. Cite au moins une limite de cette étude, ou une piste pour améliorer la séparation des couleurs sans changer de matériau.",
+          "aides": [
+            "Que devient la lumière quand elle ressort du bloc, de l'autre côté ?",
+            "Pense à la forme d'un prisme, à la précision des mesures d'angles, ou à la distance entre le bloc et le smartphone."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : l'indice d'un milieu vaut n = c / v, où v est la vitesse de la lumière dans ce milieu et c = 3,00 × 10⁸ m·s⁻¹. Calcule la vitesse de la lumière rouge et celle de la lumière violette dans le flint.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Pour un même i₁, sin(i₂) = sin(i₁) / n : plus n est grand, plus i₂ est petit. Comme n<sub>violet</sub> &gt; n<sub>rouge</sub> (pour les trois matériaux), i₂,violet &lt; i₂,rouge : le violet se rapproche davantage de la normale, il est le plus dévié (comme dans un prisme).",
+        "<strong>2.</strong> Démarche attendue : pour chaque matériau, calculer i₂,rouge et i₂,violet avec la loi de Snell-Descartes (n₁ = 1,00 ; i₁ = 60° ; sin(60°) = 0,866), puis l'écart, puis vérifier le critère de 0,5° et le budget.",
+        "Crown : sin(i₂,rouge) = 0,866 / 1,514 = 0,572, i₂,rouge = 34,9° ; sin(i₂,violet) = 0,866 / 1,530 = 0,566, i₂,violet = 34,5° ; écart ≈ 0,4° &lt; 0,5° : insuffisant.",
+        "Flint : sin(i₂,rouge) = 0,866 / 1,615 = 0,536, i₂,rouge = 32,4° ; sin(i₂,violet) = 0,866 / 1,652 = 0,524, i₂,violet = 31,6° ; écart ≈ 0,8° ≥ 0,5° : convient.",
+        "Eau : sin(i₂,rouge) = 0,866 / 1,331 = 0,651, i₂,rouge = 40,6° ; sin(i₂,violet) = 0,866 / 1,343 = 0,645, i₂,violet = 40,2° ; écart ≈ 0,4° &lt; 0,5° : insuffisant, malgré son prix.",
+        "Conclusion : seul le flint remplit le cahier des charges, et son prix (60 €) respecte le budget de 70 € : le club doit choisir le bloc de flint.",
+        "Éléments valorisés : écrire la loi de Snell-Descartes, calculer au moins un couple d'angles correctement, comparer à 0,5° et au budget, conclure clairement, même si un calcul est faux.",
+        "<strong>3.</strong> Éléments attendus (au moins un) : les écarts sont très petits et les angles mesurés à quelques dixièmes de degré près, le critère 0,5° est donc sévère ; la lumière est réfractée une seconde fois en sortant : avec un prisme (faces non parallèles), la séparation augmente encore, alors qu'avec un bloc à faces parallèles les couleurs ressortent parallèles ; on peut éloigner l'écran ou le smartphone pour que les couleurs s'écartent davantage ; les indices du doc. 2 sont arrondis ; augmenter i₁ augmente un peu l'écart (crown à 80° : 0,51°), mais le support impose 60°.",
+        "<strong>4.</strong> Pour aller plus loin : v = c / n. Rouge : v = 3,00 × 10⁸ / 1,615 = 1,86 × 10⁸ m·s⁻¹ ; violet : v = 3,00 × 10⁸ / 1,652 = 1,82 × 10⁸ m·s⁻¹ : dans le verre, le violet va un peu moins vite que le rouge.",
+        "<em>⚠ Erreur fréquente : choisir l'eau parce qu'elle est la moins chère, sans vérifier le critère de séparation ; ou arrondir les angles à l'unité, ce qui donne un écart nul et empêche de conclure.</em>"
+      ]
+    }
+  ]
+}

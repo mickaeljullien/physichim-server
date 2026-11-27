@@ -1,0 +1,664 @@
+{
+  "id": 7,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Vocabulaire du titrage",
+        "icon": "📌",
+        "content": [
+          {
+            "type": "def",
+            "term": "Titrage",
+            "text": "Technique expérimentale permettant de déterminer la concentration (ou la quantité de matière) d'une espèce chimique en solution, appelée <strong>espèce titrée</strong>, en la faisant réagir avec une solution de concentration connue, appelée <strong>solution titrante</strong>."
+          },
+          {
+            "type": "def",
+            "term": "Réaction support de titrage",
+            "text": "Réaction chimique sur laquelle repose le titrage. Elle doit être <strong>totale</strong>, <strong>rapide</strong> (quasi instantanée) et <strong>unique</strong> (pas de réaction parasite)."
+          },
+          {
+            "type": "def",
+            "term": "Équivalence d'un titrage",
+            "text": "Instant du titrage où les réactifs titrant et titré ont été mélangés dans les proportions stœchiométriques de l'équation de la réaction support de titrage. Avant l'équivalence, le réactif titré est en excès ; après, c'est le réactif titrant qui est en excès."
+          }
+        ]
+      },
+      {
+        "title": "2. Le titre massique",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Titre massique w",
+            "text": "Rapport de la masse de soluté à la masse de la solution : w = m(soluté) / m(solution). C'est un rapport de deux masses : il est sans unité et souvent donné en pourcentage (w = 28 % signifie 28 g de soluté dans 100 g de solution)."
+          },
+          {
+            "type": "formula",
+            "label": "Lien avec la concentration en quantité de matière",
+            "text": "c = w × ρ(solution) / M   avec   ρ(solution) = d × ρ(eau)\nw : titre massique (sans unité)\nρ(solution) : masse volumique de la solution (g·L⁻¹)\nd : densité de la solution (sans unité) ; ρ(eau) = 1,0 × 10³ g·L⁻¹\nM : masse molaire du soluté (g·mol⁻¹)"
+          },
+          {
+            "type": "warn",
+            "text": "Ne pas confondre le titre massique w = m(soluté) / m(solution), sans unité, avec la concentration en masse cm = m(soluté) / V(solution), en g·L⁻¹. Les étiquettes des solutions commerciales (ammoniac, acide chlorhydrique, eau oxygénée…) indiquent le titre massique, souvent en pourcentage, et la densité."
+          }
+        ]
+      },
+      {
+        "title": "3. Titrage pH-métrique",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "On introduit la solution titrée dans un bécher, avec une sonde pH-métrique et un agitateur magnétique. La solution titrante est versée progressivement à l'aide d'une burette graduée. Après chaque ajout de volume V, on relève le pH, ce qui permet de tracer la courbe pH = f(V)."
+          },
+          {
+            "type": "formula",
+            "label": "Méthode des tangentes (détermination de Véq)",
+            "text": "On trace deux tangentes à la courbe pH = f(V), parallèles entre elles, de part et d'autre du saut de pH.\nOn trace la droite parallèle à ces deux tangentes et équidistante (médiatrice).\nL'abscisse du point d'intersection de cette médiatrice avec la courbe donne le volume équivalent Véq."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 500 320\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"280\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"50\" y1=\"280\" x2=\"470\" y2=\"280\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"18\" y=\"24\" font-size=\"11\" fill=\"#5C6B60\">pH</text><text x=\"420\" y=\"310\" font-size=\"11\" fill=\"#5C6B60\">V (mL)</text><text x=\"38\" y=\"284\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"end\">0</text><text x=\"38\" y=\"154\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"end\">7</text><text x=\"38\" y=\"24\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"end\">14</text><text x=\"50\" y=\"296\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">0</text><text x=\"218\" y=\"296\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">10</text><text x=\"386\" y=\"296\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">20</text><line x1=\"90\" y1=\"215\" x2=\"320\" y2=\"126\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"180\" y1=\"117\" x2=\"460\" y2=\"8\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><line x1=\"150\" y1=\"168\" x2=\"350\" y2=\"90\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><polyline points=\"50,226 84,211 117,200 151,192 184,182 218,170 235,159 243,146 252,128 260,102 268,87 285,76 319,66 386,59 470,55\" fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"2.5\"/><line x1=\"252\" y1=\"280\" x2=\"252\" y2=\"128\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/><circle cx=\"252\" cy=\"128\" r=\"3.5\" fill=\"#C0472F\"/><text x=\"252\" y=\"300\" font-size=\"10\" fill=\"#C0472F\" text-anchor=\"middle\">Véq = 12,0 mL</text><text x=\"60\" y=\"120\" font-size=\"10\" fill=\"#C0472F\">pH ≈ 8,2</text></svg>",
+            "caption": "Titrage de l'acide éthanoïque (V₀ = 20,0 mL) par la soude (cB = 0,10 mol·L⁻¹) : les deux tangentes parallèles (gris) et leur médiatrice (rouge) coupent la courbe au point équivalent, ici Véq = 12,0 mL."
+          },
+          {
+            "type": "warn",
+            "text": "Au point d'équivalence, la valeur du pH n'est pas nécessairement égale à 7 : elle dépend de la nature acido-basique des espèces présentes en solution à cet instant (par exemple pH > 7 pour le titrage d'un acide faible par une base forte, car l'espèce majoritaire à l'équivalence est une base faible)."
+          }
+        ]
+      },
+      {
+        "title": "4. Titrage conductimétrique",
+        "icon": "💡",
+        "content": [
+          {
+            "type": "text",
+            "text": "On suit l'évolution de la conductivité σ de la solution titrée en fonction du volume V de solution titrante versée, à l'aide d'une cellule conductimétrique. Avant l'équivalence, σ varie linéairement avec une pente qui dépend des ions consommés et formés ; après l'équivalence, la pente change brutalement : c'est la <strong>rupture de pente</strong>, qui permet de repérer Véq par l'intersection des deux portions de droites."
+          },
+          {
+            "type": "warn",
+            "text": "Pour obtenir des portions de courbe bien rectilignes, il faut soit utiliser une solution titrante beaucoup plus concentrée que la solution titrée (dilution négligeable), soit corriger les valeurs de conductivité mesurées par le facteur de dilution (V₀+V)/V₀."
+          }
+        ]
+      },
+      {
+        "title": "5. Exemple numérique : détermination graphique de Véq",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "text",
+            "text": "<strong>Titrage pH-métrique :</strong> on titre V₀ = 20,0 mL d'une solution d'acide éthanoïque par une solution d'hydroxyde de sodium de concentration cB = 0,10 mol·L⁻¹. La courbe pH = f(V) présente un saut de pH marqué autour de V = 12,0 mL. La méthode des tangentes donne Véq = 12,0 mL, avec un pH à l'équivalence proche de 8,2 (milieu basique, car l'espèce majoritaire à l'équivalence est l'ion éthanoate, base faible)."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Titrage conductimétrique :</strong> pour le titrage de V₀ = 20,0 mL d'une solution d'acide chlorhydrique par une solution de soude à cB = 0,10 mol·L⁻¹, la conductivité décroît d'abord (les ions H₃O⁺, très conducteurs, sont consommés et remplacés par des ions Na⁺ moins conducteurs) puis croît après l'équivalence (accumulation d'ions HO⁻ et Na⁺ en excès). L'intersection des deux droites donne Véq = 15,0 mL."
+          },
+          {
+            "type": "formula",
+            "label": "Exploitation de Véq",
+            "text": "À l'équivalence : n(titrant) versé = n(titré) initial (dans le cas d'une stœchiométrie 1:1)\nn(A) = cB × Véq  ⇒  c(A) = (cB × Véq) / V₀"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La réaction support d'un titrage doit être :",
+      "opts": [
+        "totale, rapide et unique",
+        "totale et lente, pour bien repérer l'équivalence",
+        "rapide, mais elle peut rester partielle",
+        "rapide et totale, même si une autre réaction consomme aussi le réactif titrant"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "reaction-lente",
+          "texte": "Croire qu'une réaction lente facilite le repérage de l'équivalence"
+        },
+        {
+          "code": "reaction-non-totale",
+          "texte": "Croire qu'une réaction non totale suffit pour exploiter le volume versé"
+        },
+        {
+          "code": "reaction-non-unique",
+          "texte": "Oublier la condition d'unicité : une réaction parasite fausse la quantité de titrant attribuée au titré"
+        }
+      ],
+      "exp": "Totale (le réactif limitant disparaît), rapide (le système est à l'état final à chaque ajout) et unique (tout le titrant versé réagit avec le titré). Attention : sans l'unicité, une partie du titrant serait consommée par autre chose."
+    },
+    {
+      "q": "À l'équivalence d'un titrage :",
+      "opts": [
+        "seul le réactif titrant a été entièrement consommé",
+        "le réactif titré et le réactif titrant versé ont été entièrement consommés",
+        "le pH de la solution est toujours égal à 7",
+        "les quantités de réactif titré et de titrant versé sont égales, quelle que soit l'équation"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "equivalence-fin-titrant",
+          "texte": "Croire que l'équivalence marque seulement la fin du réactif titrant"
+        },
+        null,
+        {
+          "code": "ph-7-equivalence",
+          "texte": "Croire qu'à l'équivalence le pH vaut toujours 7"
+        },
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier les nombres stœchiométriques de l'équation"
+        }
+      ],
+      "exp": "À l'équivalence, les réactifs ont été introduits dans les proportions stœchiométriques : ils sont tous les deux entièrement consommés. Attention : n(titré) = n(titrant) seulement si les nombres stœchiométriques sont égaux."
+    },
+    {
+      "q": "Le titre massique w d'un soluté dans une solution est :",
+      "opts": [
+        "w = m(soluté) / V(solution), en g·L⁻¹",
+        "w = n(soluté) / V(solution), en mol·L⁻¹",
+        "w = m(soluté) / m(solvant), sans unité",
+        "w = m(soluté) / m(solution), sans unité"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "titre-massique-vs-cm",
+          "texte": "Confondre titre massique et concentration en masse"
+        },
+        {
+          "code": "titre-massique-vs-c",
+          "texte": "Confondre titre massique et concentration en quantité de matière"
+        },
+        {
+          "code": "masse-solvant-vs-solution",
+          "texte": "Diviser par la masse du solvant au lieu de celle de la solution"
+        },
+        null
+      ],
+      "exp": "Le titre massique est un rapport de deux masses, donc sans unité (souvent donné en %). Attention : m(soluté) / V(solution) est la concentration en masse, en g·L⁻¹."
+    },
+    {
+      "q": "Une solution commerciale d'ammoniac a un titre massique w = 28 % et une densité d = 0,90. Avec M(NH₃) = 17 g·mol⁻¹ et ρ(eau) = 1,0 × 10³ g·L⁻¹, sa concentration en ammoniac est :",
+      "opts": [
+        "16 mol·L⁻¹",
+        "15 mol·L⁻¹",
+        "1,5 × 10³ mol·L⁻¹",
+        "2,5 × 10² mol·L⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-densite",
+          "texte": "Oublier la densité : 0,28 × 1000 / 17 = 16 mol·L⁻¹"
+        },
+        null,
+        {
+          "code": "pourcentage-non-converti",
+          "texte": "Utiliser 28 au lieu de 0,28 : 28 × 900 / 17 = 1,5 × 10³"
+        },
+        {
+          "code": "cm-pris-pour-c",
+          "texte": "Prendre la concentration en masse (0,28 × 900 = 252 g·L⁻¹) pour la concentration molaire"
+        }
+      ],
+      "exp": "ρ(solution) = d × ρ(eau) = 900 g·L⁻¹, donc C_m = w × ρ = 0,28 × 900 = 252 g·L⁻¹, puis c = C_m / M = 252 / 17 = 15 mol·L⁻¹ (14,8). Attention : 28 % s'écrit 0,28 dans le calcul."
+    },
+    {
+      "q": "Avant un titrage, on ajoute 50 mL d'eau distillée dans le bécher qui contient la solution titrée. Le volume équivalent :",
+      "opts": [
+        "augmente, car la solution titrée est plus diluée",
+        "diminue, car la concentration du réactif titré a baissé",
+        "ne change pas, car la quantité de réactif titré ne change pas",
+        "double si l'on double le volume d'eau ajouté"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "dilution-change-n",
+          "texte": "Croire que diluer modifie la quantité de matière de réactif titré"
+        },
+        {
+          "code": "quantite-vs-concentration",
+          "texte": "Raisonner sur la concentration au lieu de la quantité de matière"
+        },
+        null,
+        {
+          "code": "veq-proportionnel-volume",
+          "texte": "Croire que le volume équivalent est proportionnel au volume total"
+        }
+      ],
+      "exp": "L'eau ne change pas la quantité de réactif titré, donc la quantité de titrant nécessaire est la même. Elle modifie seulement les valeurs mesurées (pH ou conductivité)."
+    },
+    {
+      "q": "Sur une courbe de titrage pH = f(V), le volume équivalent est :",
+      "opts": [
+        "l'abscisse du point où le pH vaut 7",
+        "l'abscisse du point où la pente est maximale (maximum de dpH/dV)",
+        "l'abscisse du point où le pH est égal au pKa",
+        "le volume pour lequel le pH atteint sa valeur la plus haute"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ph-7-equivalence",
+          "texte": "Croire qu'à l'équivalence le pH vaut toujours 7"
+        },
+        null,
+        {
+          "code": "equivalence-vs-demi-equivalence",
+          "texte": "Confondre l'équivalence et la demi-équivalence"
+        },
+        {
+          "code": "lecture-fin-courbe",
+          "texte": "Lire la fin de la courbe au lieu du saut de pH"
+        }
+      ],
+      "exp": "L'équivalence se situe au milieu du saut de pH, là où la courbe est la plus raide : maximum de la dérivée dpH/dV (ou méthode des tangentes parallèles). Le pH à l'équivalence n'est 7 que pour un titrage acide fort / base forte."
+    },
+    {
+      "q": "On titre de l'acide chlorhydrique (H₃O⁺ + Cl⁻) par de la soude (Na⁺ + HO⁻). Avant l'équivalence, la conductivité diminue car :",
+      "opts": [
+        "les ions H₃O⁺ consommés sont remplacés par des ions Na⁺, moins conducteurs",
+        "les ions consommés disparaissent sans être remplacés par d'autres ions",
+        "la solution se dilue au fur et à mesure des ajouts de soude",
+        "les ions HO⁻ versés sont plus conducteurs que les ions H₃O⁺"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-ions-spectateurs",
+          "texte": "Oublier les ions spectateurs (Na⁺) apportés par la solution titrante"
+        },
+        {
+          "code": "conductivite-dilution",
+          "texte": "Attribuer la variation de σ à la dilution plutôt qu'au remplacement des ions"
+        },
+        {
+          "code": "lambda-inverses",
+          "texte": "Inverser les conductivités ioniques molaires (λ(H₃O⁺) est la plus grande)"
+        }
+      ],
+      "exp": "Chaque ion H₃O⁺ (λ très élevée) consommé est remplacé par un ion Na⁺ (λ bien plus faible) : σ diminue. Après l'équivalence, les ions Na⁺ et HO⁻ s'accumulent et σ augmente."
+    },
+    {
+      "q": "On titre V₀ = 20,0 mL d'une solution d'acide par de la soude de concentration c_B = 0,20 mol·L⁻¹ (réaction 1 pour 1). L'équivalence est obtenue pour V_E = 10,0 mL. La concentration de l'acide est :",
+      "opts": [
+        "0,40 mol·L⁻¹",
+        "0,20 mol·L⁻¹",
+        "0,10 mol·L⁻¹",
+        "2,0 × 10⁻³ mol·L⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "volumes-inverses",
+          "texte": "Inverser les volumes : 0,20 × 20,0 / 10,0"
+        },
+        {
+          "code": "recopie-concentration-titrante",
+          "texte": "Recopier la concentration de la solution titrante"
+        },
+        null,
+        {
+          "code": "quantite-vs-concentration",
+          "texte": "Confondre quantité de matière et concentration : n = 0,20 × 10,0 × 10⁻³ = 2,0 × 10⁻³ mol"
+        }
+      ],
+      "exp": "À l'équivalence, c_A × V₀ = c_B × V_E, donc c_A = 0,20 × 10,0 / 20,0 = 0,10 mol·L⁻¹. Vérification de bon sens : il a fallu moins de soude que d'acide, la soude est donc plus concentrée."
+    },
+    {
+      "q": "On titre V₀ = 10,0 mL d'acide oxalique par de la soude à 0,100 mol·L⁻¹ selon H₂C₂O₄ + 2 HO⁻ → C₂O₄²⁻ + 2 H₂O. Avec V_E = 12,0 mL, la concentration en acide oxalique est :",
+      "opts": [
+        "0,12 mol·L⁻¹",
+        "0,24 mol·L⁻¹",
+        "4,2 × 10⁻² mol·L⁻¹",
+        "6,0 × 10⁻² mol·L⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique 2 : 0,100 × 12,0 / 10,0"
+        },
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Multiplier par 2 au lieu de diviser : n(acide) = 2 n(HO⁻)"
+        },
+        {
+          "code": "volumes-inverses",
+          "texte": "Inverser les volumes : 0,100 × 10,0 / (2 × 12,0)"
+        },
+        null
+      ],
+      "exp": "À l'équivalence, n(acide) = n(HO⁻) / 2, donc c = 0,100 × 12,0 / (2 × 10,0) = 6,0 × 10⁻² mol·L⁻¹. Bon sens : il faut deux ions HO⁻ par molécule d'acide."
+    },
+    {
+      "q": "Lors du titrage d'un acide faible par une base forte, le pH à l'équivalence est :",
+      "opts": [
+        "égal à 7, comme pour tout titrage acide-base",
+        "inférieur à 7, car la solution titrée était acide",
+        "égal au pKa du couple de l'acide titré",
+        "supérieur à 7, car la base conjuguée de l'acide est présente"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "ph-7-equivalence",
+          "texte": "Croire qu'à l'équivalence le pH vaut toujours 7"
+        },
+        {
+          "code": "caractere-solution-depart",
+          "texte": "Croire que le milieu garde le caractère de la solution de départ"
+        },
+        {
+          "code": "equivalence-vs-demi-equivalence",
+          "texte": "Confondre l'équivalence et la demi-équivalence (pH = pKa)"
+        },
+        null
+      ],
+      "exp": "À l'équivalence, l'acide a été transformé en sa base conjuguée (par exemple l'ion éthanoate), qui rend la solution basique : pH > 7. Le pH vaut pKa à la demi-équivalence, pas à l'équivalence."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Karl Friedrich Mohr — titrage conductimétrique",
+      "session": "Polynésie · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-polynesie-jour-1"
+    },
+    {
+      "year": "2023",
+      "title": "Un polymère biodégradable — titrage pH-métrique",
+      "session": "Nouvelle-Calédonie · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-nouvelle-caledonie-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Les mots du titrage",
+      "contexte": [
+        "Lina prépare son premier titrage en TP et relit ses notes. Aide-la à trier le vrai du faux."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. À l'équivalence, seul le réactif titrant a été entièrement consommé.<br>b. La réaction support d'un titrage doit être unique, rapide et totale.<br>c. Ajouter de l'eau distillée dans le bécher avant le titrage modifie le volume équivalent.<br>d. Après l'équivalence, le réactif titrant versé est en excès.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chacune des réactions support ci-dessous, écris la relation entre les quantités de matière à l'équivalence.<br>(i) CH₃COOH(aq) + HO⁻(aq) → CH₃COO⁻(aq) + H₂O(ℓ)<br>(ii) Ag⁺(aq) + Cl⁻(aq) → AgCl(s)<br>(iii) H₂C₂O₄(aq) + 2 HO⁻(aq) → C₂O₄²⁻(aq) + 2 H₂O(ℓ) (acide oxalique, présent dans certains détartrants)",
+          "aides": [
+            "Relis l'équation : les nombres stœchiométriques te disent « combien de l'un réagit avec combien de l'autre ».",
+            "À l'équivalence : n(titré) / a = n(titrant versé) / b pour une réaction a A + b B → …"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : à l'équivalence, le réactif titré ET le réactif titrant ont été entièrement consommés ; ils ont été introduits dans les proportions stœchiométriques.",
+        "b. VRAI : sinon la quantité de titrant versée ne correspondrait pas uniquement au réactif titré, ou l'équivalence ne serait pas repérable.",
+        "c. FAUX : l'eau ne change pas la quantité de matière de réactif titré, donc ne change pas la quantité de titrant nécessaire (elle change seulement les concentrations et donc les valeurs de pH ou de σ).",
+        "d. VRAI : après l'équivalence, il n'y a plus de réactif titré à consommer ; le titrant versé s'accumule.",
+        "<strong>2.</strong> (i) n(CH₃COOH) initiale = n(HO⁻) versée à l'équivalence.",
+        "(ii) n(Cl⁻) initiale = n(Ag⁺) versée à l'équivalence.",
+        "(iii) n(H₂C₂O₄) initiale = n(HO⁻) versée à l'équivalence / 2 (on divise chaque quantité par son nombre stœchiométrique).",
+        "⚠ Erreur fréquente : écrire n(H₂C₂O₄) = 2 n(HO⁻) au lieu de 2 n(H₂C₂O₄) = n(HO⁻). Vérifie avec le bon sens : il faut deux fois plus d'ions HO⁻ que de molécules d'acide oxalique."
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le déboucheur de canalisations",
+      "contexte": [
+        "Un déboucheur de canalisations contient de la soude (Na⁺(aq) + HO⁻(aq)), très corrosive. Pour connaître sa concentration, on le dilue, puis on titre un volume V<sub>B</sub> = 10,0 mL de la solution diluée par de l'acide chlorhydrique (H₃O⁺(aq) + Cl⁻(aq)) de concentration c<sub>A</sub> = 0,100 mol·L⁻¹.",
+        "Le volume versé à l'équivalence est V<sub>E</sub> = 12,5 mL."
+      ],
+      "questions": [
+        {
+          "texte": "Écris l'équation de la réaction support du titrage.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la quantité de matière d'ions H₃O⁺ versée à l'équivalence.",
+          "aides": [
+            "La relation à utiliser est n = c × V.",
+            "Attention à l'unité : V<sub>E</sub> doit être en litres (12,5 mL = 12,5 × 10⁻³ L)."
+          ]
+        },
+        {
+          "texte": "Déduis-en la concentration c<sub>B</sub> en ions HO⁻ de la solution diluée.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi a-t-on dilué le produit commercial avant de le titrer ? Donne deux raisons.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> H₃O⁺(aq) + HO⁻(aq) → 2 H₂O(ℓ)",
+        "<strong>2.</strong> n(H₃O⁺)<sub>E</sub> = c<sub>A</sub> × V<sub>E</sub> = 0,100 × 12,5 × 10⁻³ = 1,25 × 10⁻³ mol.",
+        "<strong>3.</strong> À l'équivalence : n(HO⁻) initiale = n(H₃O⁺)<sub>E</sub>, donc c<sub>B</sub> = n(H₃O⁺)<sub>E</sub> / V<sub>B</sub> = 1,25 × 10⁻³ / (10,0 × 10⁻³) = 0,125 mol·L⁻¹.",
+        "<strong>4.</strong> Le produit commercial est très concentré : sans dilution, le volume équivalent serait bien plus grand que le contenu d'une burette de 25 mL. Et manipuler une solution diluée est plus sûr (produit corrosif).",
+        "⚠ Erreur fréquente : laisser les volumes en mL dans c = n / V. Convertis en litres (ou garde des mL partout dans le rapport c<sub>A</sub> × V<sub>E</sub> / V<sub>B</sub>, les unités se simplifient)."
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Lire une courbe de titrage",
+      "contexte": [
+        "On titre V<sub>A</sub> = 10,0 mL d'un vinaigre dilué (solution d'acide éthanoïque CH₃COOH) par une solution de soude de concentration c<sub>B</sub> = 0,100 mol·L⁻¹, en suivant le pH. On obtient la courbe ci-dessous."
+      ],
+      "image": "<svg viewBox=\"0 0 420 260\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Courbe pH = f(V_B) du titrage du vinaigre dilué par la soude\" font-family=\"DM Sans, sans-serif\"><line x1=\"46.0\" y1=\"220.0\" x2=\"46.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"46.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">0</text><line x1=\"118.0\" y1=\"220.0\" x2=\"118.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"118.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">5</text><line x1=\"190.0\" y1=\"220.0\" x2=\"190.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"190.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">10</text><line x1=\"262.0\" y1=\"220.0\" x2=\"262.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"262.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">15</text><line x1=\"334.0\" y1=\"220.0\" x2=\"334.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"334.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">20</text><line x1=\"406.0\" y1=\"220.0\" x2=\"406.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"406.0\" y=\"235\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5C6B63\">25</text><line x1=\"46\" y1=\"220.0\" x2=\"406.0\" y2=\"220.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"223.5\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">0</text><line x1=\"46\" y1=\"190.6\" x2=\"406.0\" y2=\"190.6\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"194.1\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">2</text><line x1=\"46\" y1=\"161.1\" x2=\"406.0\" y2=\"161.1\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"164.6\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">4</text><line x1=\"46\" y1=\"131.7\" x2=\"406.0\" y2=\"131.7\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"135.2\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">6</text><line x1=\"46\" y1=\"102.3\" x2=\"406.0\" y2=\"102.3\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"105.8\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">8</text><line x1=\"46\" y1=\"72.9\" x2=\"406.0\" y2=\"72.9\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"76.4\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">10</text><line x1=\"46\" y1=\"43.4\" x2=\"406.0\" y2=\"43.4\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"46.9\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">12</text><line x1=\"46\" y1=\"14.0\" x2=\"406.0\" y2=\"14.0\" stroke=\"#D5D9CC\" stroke-width=\"0.6\"/><text x=\"40\" y=\"17.5\" font-size=\"10\" text-anchor=\"end\" fill=\"#5C6B63\">14</text><line x1=\"46.0\" y1=\"220.0\" x2=\"46.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"60.4\" y1=\"220.0\" x2=\"60.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"74.8\" y1=\"220.0\" x2=\"74.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"89.2\" y1=\"220.0\" x2=\"89.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"103.6\" y1=\"220.0\" x2=\"103.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"118.0\" y1=\"220.0\" x2=\"118.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"132.4\" y1=\"220.0\" x2=\"132.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"146.8\" y1=\"220.0\" x2=\"146.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"161.2\" y1=\"220.0\" x2=\"161.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"175.6\" y1=\"220.0\" x2=\"175.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"190.0\" y1=\"220.0\" x2=\"190.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"204.4\" y1=\"220.0\" x2=\"204.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"218.8\" y1=\"220.0\" x2=\"218.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"233.2\" y1=\"220.0\" x2=\"233.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"247.6\" y1=\"220.0\" x2=\"247.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"262.0\" y1=\"220.0\" x2=\"262.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"276.4\" y1=\"220.0\" x2=\"276.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"290.8\" y1=\"220.0\" x2=\"290.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"305.2\" y1=\"220.0\" x2=\"305.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"319.6\" y1=\"220.0\" x2=\"319.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"334.0\" y1=\"220.0\" x2=\"334.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"348.4\" y1=\"220.0\" x2=\"348.4\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"362.8\" y1=\"220.0\" x2=\"362.8\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"377.2\" y1=\"220.0\" x2=\"377.2\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"391.6\" y1=\"220.0\" x2=\"391.6\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"406.0\" y1=\"220.0\" x2=\"406.0\" y2=\"14.0\" stroke=\"#E8EBE1\" stroke-width=\"0.4\"/><line x1=\"46\" y1=\"220\" x2=\"406.0\" y2=\"220\" stroke=\"#1B2420\"/><line x1=\"46\" y1=\"220\" x2=\"46\" y2=\"14\" stroke=\"#1B2420\"/><polyline fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"2\" points=\"46.0,178.7 49.6,173.9 53.2,170.4 56.8,168.0 60.4,166.2 64.0,164.7 67.6,163.4 71.2,162.3 74.8,161.4 78.4,160.5 82.0,159.7 85.6,158.9 89.2,158.2 92.8,157.6 96.4,157.0 100.0,156.4 103.6,155.8 107.2,155.3 110.8,154.7 114.4,154.2 118.0,153.7 121.6,153.2 125.2,152.7 128.8,152.3 132.4,151.8 136.0,151.3 139.6,150.9 143.2,150.4 146.8,150.0 150.4,149.5 154.0,149.0 157.6,148.6 161.2,148.1 164.8,147.6 168.4,147.2 172.0,146.7 175.6,146.2 179.2,145.7 182.8,145.2 186.4,144.7 190.0,144.1 193.6,143.5 197.2,142.9 200.8,142.3 204.4,141.7 208.0,141.0 211.6,140.2 215.2,139.4 218.8,138.5 222.4,137.5 223.1,137.3 223.8,137.1 224.6,136.9 225.3,136.6 226.0,136.4 226.7,136.2 227.4,135.9 228.2,135.7 228.9,135.4 229.6,135.1 230.3,134.8 231.0,134.5 231.8,134.2 232.5,133.9 233.2,133.6 233.9,133.2 234.6,132.8 235.4,132.5 236.1,132.0 236.8,131.6 237.5,131.1 238.2,130.6 239.0,130.1 239.7,129.5 240.4,128.9 241.1,128.2 241.8,127.4 242.6,126.5 243.3,125.5 244.0,124.4 244.7,122.9 245.4,121.0 246.2,118.4 246.9,114.0 247.6,91.1 248.3,68.2 249.0,63.8 249.8,61.2 250.5,59.4 251.2,57.9 251.9,56.8 252.6,55.8 253.4,55.0 254.1,54.2 254.8,53.6 255.5,53.0 256.2,52.4 257.0,51.9 257.7,51.5 258.4,51.1 259.1,50.7 259.8,50.3 260.6,49.9 261.3,49.6 262.0,49.3 262.7,49.0 263.4,48.7 264.2,48.4 264.9,48.2 265.6,47.9 266.3,47.7 267.0,47.5 267.8,47.2 268.5,47.0 269.2,46.8 269.9,46.6 270.6,46.4 271.4,46.2 272.1,46.1 272.8,45.9 273.5,45.7 274.2,45.6 275.0,45.4 275.7,45.3 276.4,45.1 280.0,44.4 283.6,43.8 287.2,43.3 290.8,42.8 294.4,42.3 298.0,41.9 301.6,41.5 305.2,41.1 308.8,40.8 312.4,40.5 316.0,40.2 319.6,39.9 323.2,39.7 326.8,39.4 330.4,39.2 334.0,39.0 337.6,38.8 341.2,38.6 344.8,38.4 348.4,38.2 352.0,38.1 355.6,37.9 359.2,37.7 362.8,37.6 366.4,37.4 370.0,37.3 373.6,37.1 377.2,37.0 380.8,36.9 384.4,36.8 388.0,36.6 391.6,36.5 395.2,36.4 398.8,36.3 402.4,36.2 406.0,36.1\"/><text x=\"406.0\" y=\"254\" font-size=\"10.5\" text-anchor=\"end\" fill=\"#1B2420\">V<tspan baseline-shift=\"sub\" font-size=\"8\">B</tspan> (mL)</text><text x=\"50\" y=\"11\" font-size=\"10.5\" fill=\"#1B2420\">pH</text></svg>",
+      "questions": [
+        {
+          "texte": "Relève le pH initial. La solution titrée est-elle acide ou basique ?",
+          "aides": []
+        },
+        {
+          "texte": "Repère le saut de pH et détermine graphiquement le volume équivalent V<sub>E</sub>.",
+          "aides": [
+            "Le saut de pH est la partie presque verticale de la courbe.",
+            "V<sub>E</sub> est l'abscisse du milieu du saut (ou méthode des tangentes parallèles)."
+          ]
+        },
+        {
+          "texte": "Calcule la concentration c<sub>A</sub> en acide éthanoïque du vinaigre dilué (réaction support : équation (i) de l'exercice 1).",
+          "aides": []
+        },
+        {
+          "texte": "Le pH à l'équivalence vaut-il 7 ? Lis sa valeur sur la courbe.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> pH initial ≈ 2,8 &lt; 7 : la solution est acide.",
+        "<strong>2.</strong> Le saut de pH est centré sur V<sub>E</sub> = 14,0 mL (milieu du saut, ou méthode des tangentes parallèles ; on accepte 13,8 à 14,2 mL).",
+        "<strong>3.</strong> À l'équivalence : c<sub>A</sub> × V<sub>A</sub> = c<sub>B</sub> × V<sub>E</sub>, donc c<sub>A</sub> = 0,100 × 14,0 / 10,0 = 0,140 mol·L⁻¹.",
+        "<strong>4.</strong> Non : on lit pH<sub>E</sub> ≈ 8,8. À l'équivalence, le bécher contient des ions éthanoate CH₃COO⁻, base conjuguée de l'acide éthanoïque : la solution est basique."
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Mon vinaigre est-il vraiment à 6° ?",
+      "contexte": [
+        "L'étiquette d'un vinaigre d'alcool indique « 6° », ce qui signifie : 6 g d'acide éthanoïque pour 100 g de vinaigre. Un élève veut le vérifier.",
+        "Il dilue le vinaigre 10 fois, prélève 10,0 mL de la solution diluée et la titre par de la soude de concentration c<sub>B</sub> = 0,100 mol·L⁻¹. Il trouve V<sub>E</sub> = 10,2 mL.",
+        "<strong>Données :</strong> masse volumique du vinaigre ρ = 1,01 g·mL⁻¹ ; M(CH₃COOH) = 60,05 g·mol⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Décris précisément comment réaliser la dilution d'un facteur 10 (verrerie et gestes).",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la concentration en acide éthanoïque de la solution diluée, puis celle du vinaigre commercial.",
+          "aides": [
+            "Commence par la solution diluée : à l'équivalence, n(acide) = n(HO⁻ versés).",
+            "La solution commerciale est 10 fois plus concentrée que la solution diluée."
+          ]
+        },
+        {
+          "texte": "Calcule la concentration en masse C<sub>m</sub> d'acide éthanoïque dans le vinaigre.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en la masse d'acide éthanoïque dans 100 g de vinaigre, puis le degré du vinaigre.",
+          "aides": [
+            "Le degré se rapporte à 100 g de vinaigre, pas à 100 mL : quel volume occupent 100 g de vinaigre ?",
+            "V = m / ρ, puis m(acide) = C<sub>m</sub> × V (V en litres)."
+          ]
+        },
+        {
+          "texte": "Calcule l'écart relatif avec la valeur de l'étiquette et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Prélever 10,0 mL de vinaigre avec une pipette jaugée de 10,0 mL (et une propipette), les verser dans une fiole jaugée de 100,0 mL, compléter avec de l'eau distillée jusqu'au trait de jauge, boucher et agiter.",
+        "<strong>2.</strong> Solution diluée : c<sub>dil</sub> = c<sub>B</sub> × V<sub>E</sub> / V = 0,100 × 10,2 / 10,0 = 0,102 mol·L⁻¹. Vinaigre : c = 10 × c<sub>dil</sub> = 1,02 mol·L⁻¹.",
+        "<strong>3.</strong> C<sub>m</sub> = c × M = 1,02 × 60,05 = 61,3 g·L⁻¹ (61,25 avant arrondi).",
+        "<strong>4.</strong> Volume de 100 g de vinaigre : V = m / ρ = 100 / 1,01 = 99,0 mL. Masse d'acide : m = C<sub>m</sub> × V = 61,25 × 0,0990 = 6,06 g. Le vinaigre est à 6,1°.",
+        "<strong>5.</strong> Écart relatif = |6,06 − 6| / 6 = 1,1 % : la valeur de l'étiquette est vérifiée.",
+        "⚠ Erreur fréquente : oublier de multiplier par le facteur de dilution (on trouverait un vinaigre à 0,6°, ce qui devrait alerter)."
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le sérum physiologique",
+      "contexte": [
+        "Le sérum physiologique, utilisé pour nettoyer le nez des bébés, est annoncé à 0,9 % de chlorure de sodium (0,9 g de NaCl pour 100 g de solution, soit environ 9,0 g·L⁻¹).",
+        "On verse 10,0 mL de sérum dans un bécher, on ajoute 190 mL d'eau distillée, puis on titre les ions chlorure par une solution de nitrate d'argent (Ag⁺(aq) + NO₃⁻(aq)) de concentration c = 5,00 × 10⁻² mol·L⁻¹, en suivant la conductivité σ. Il se forme un précipité blanc de chlorure d'argent AgCl(s)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"145.5\" y1=\"30\" x2=\"145.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.5\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"211.0\" y1=\"30\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"276.5\" y1=\"30\" x2=\"276.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"276.5\" y=\"430\" text-anchor=\"middle\">15</text><line x1=\"342.0\" y1=\"30\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">25</text><line x1=\"473.0\" y1=\"30\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"430\" text-anchor=\"middle\">30</text><line x1=\"538.5\" y1=\"30\" x2=\"538.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"538.5\" y=\"430\" text-anchor=\"middle\">35</text><line x1=\"604.0\" y1=\"30\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"430\" text-anchor=\"middle\">40</text><line x1=\"669.5\" y1=\"30\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.5\" y=\"430\" text-anchor=\"middle\">45</text><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">50</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"362.5\" x2=\"735\" y2=\"362.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"367.5\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"315.0\" x2=\"735\" y2=\"315.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"320.0\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"267.5\" x2=\"735\" y2=\"267.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"272.5\" text-anchor=\"end\">90</text><line x1=\"80\" y1=\"220.0\" x2=\"735\" y2=\"220.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"225.0\" text-anchor=\"end\">100</text><line x1=\"80\" y1=\"172.5\" x2=\"735\" y2=\"172.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"177.5\" text-anchor=\"end\">110</text><line x1=\"80\" y1=\"125.0\" x2=\"735\" y2=\"125.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"130.0\" text-anchor=\"end\">120</text><line x1=\"80\" y1=\"77.5\" x2=\"735\" y2=\"77.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"82.5\" text-anchor=\"end\">130</text><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">140</text><rect x=\"80\" y=\"30\" width=\"655\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,235.7 106.2,241.4 132.4,247.0 158.6,252.5 184.8,257.8 211.0,263.1 237.2,268.3 263.4,273.4 289.6,278.3 315.8,283.2 342.0,288.0 368.2,292.7 394.4,297.4 420.6,301.9 446.8,306.4 473.0,310.8 499.2,295.3 525.4,271.6 551.6,248.4 577.8,225.6 604.0,203.1 630.2,181.0 656.4,159.3 682.6,137.9 708.8,116.8 735.0,96.1\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.6\" /><circle cx=\"80.0\" cy=\"235.7\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"106.2\" cy=\"241.4\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"132.4\" cy=\"247.0\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"158.6\" cy=\"252.5\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"184.8\" cy=\"257.8\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"211.0\" cy=\"263.1\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"237.2\" cy=\"268.3\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"263.4\" cy=\"273.4\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"289.6\" cy=\"278.3\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"315.8\" cy=\"283.2\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"342.0\" cy=\"288.0\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"368.2\" cy=\"292.7\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"394.4\" cy=\"297.4\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"420.6\" cy=\"301.9\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"446.8\" cy=\"306.4\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"473.0\" cy=\"310.8\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"499.2\" cy=\"295.3\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"525.4\" cy=\"271.6\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"551.6\" cy=\"248.4\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"577.8\" cy=\"225.6\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"604.0\" cy=\"203.1\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"630.2\" cy=\"181.0\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"656.4\" cy=\"159.3\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"682.6\" cy=\"137.9\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"708.8\" cy=\"116.8\" r=\"3.5\" fill=\"#B5523B\"/><circle cx=\"735.0\" cy=\"96.1\" r=\"3.5\" fill=\"#B5523B\"/><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">V (mL) de nitrate d'argent versé</text><text transform=\"translate(22,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">σ (mS·m⁻¹)</text></svg>",
+      "questions": [
+        {
+          "texte": "Écris l'équation de la réaction support du titrage.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi ajoute-t-on 190 mL d'eau distillée avant de commencer ?",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide des conductivités ioniques molaires, justifie qualitativement la pente de chaque partie de la courbe.",
+          "aides": [
+            "Avant l'équivalence, un ion disparaît et un autre apparaît : lesquels ?",
+            "Compare leurs λ. Après l'équivalence, plus rien ne réagit : que deviennent les ions versés ?",
+            "Pense aussi aux ions spectateurs Na⁺ et NO₃⁻."
+          ]
+        },
+        {
+          "texte": "Détermine graphiquement le volume équivalent V<sub>E</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la concentration en ions chlorure du sérum, puis sa teneur en NaCl en g·L⁻¹. L'indication 0,9 % est-elle vérifiée ?",
+          "aides": []
+        },
+        {
+          "texte": "Donne la composition du mélange (quantités de matière de chaque ion et du précipité) après l'ajout de 10,0 mL puis de 40,0 mL de nitrate d'argent.",
+          "aides": [
+            "Calcule d'abord n(Ag⁺) versé et n(Cl⁻) initial (question 5).",
+            "Avant l'équivalence, Ag⁺ est limitant ; après, Cl⁻ est limitant. Utilise un tableau d'avancement."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Ag⁺(aq) + Cl⁻(aq) → AgCl(s)",
+        "<strong>2.</strong> Le volume versé (au plus 50 mL) reste petit devant le volume initial (200 mL) : la dilution pendant le titrage est faible, et la courbe est formée de deux segments de droite faciles à exploiter.",
+        "<strong>3.</strong> Avant l'équivalence : chaque ion Cl⁻ consommé (précipité) est remplacé par un ion NO₃⁻ apporté. Comme λ(NO₃⁻) = 7,14 &lt; λ(Cl⁻) = 7,63 mS·m²·mol⁻¹, σ diminue légèrement. Après l'équivalence : on ajoute des ions Ag⁺ et NO₃⁻ qui ne réagissent plus, σ augmente nettement.",
+        "<strong>4.</strong> Intersection des deux droites : V<sub>E</sub> = 30,6 mL.",
+        "<strong>5.</strong> n(Cl⁻) = c × V<sub>E</sub> = 5,00 × 10⁻² × 30,6 × 10⁻³ = 1,53 × 10⁻³ mol ; [Cl⁻] = 1,53 × 10⁻³ / 10,0 × 10⁻³ = 0,153 mol·L⁻¹. C<sub>m</sub>(NaCl) = 0,153 × 58,44 = 8,94 g·L⁻¹, soit environ 0,89 % : écart relatif de 0,7 % avec 9,0 g·L⁻¹, l'indication est vérifiée.",
+        "<strong>6.</strong> Après 10,0 mL (avant l'équivalence, Ag⁺ limitant, x = 5,00 × 10⁻⁴ mol) : Na⁺ : 1,53 × 10⁻³ mol ; Cl⁻ : 1,03 × 10⁻³ mol ; NO₃⁻ : 5,00 × 10⁻⁴ mol ; Ag⁺ : 0 ; AgCl : 5,00 × 10⁻⁴ mol.",
+        "Après 40,0 mL (après l'équivalence, Cl⁻ limitant, x = 1,53 × 10⁻³ mol) : Na⁺ : 1,53 × 10⁻³ mol ; Cl⁻ : 0 ; NO₃⁻ : 2,00 × 10⁻³ mol ; Ag⁺ : 4,7 × 10⁻⁴ mol ; AgCl : 1,53 × 10⁻³ mol.",
+        "<em>⚠ Erreur fréquente : oublier les ions spectateurs (Na⁺, NO₃⁻), qui contribuent pourtant à la conductivité.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Ce lait est-il encore frais ?",
+      "contexte": [
+        "Doc. 1 — L'acidité Dornic. Dans le lait, des bactéries transforment peu à peu le lactose en acide lactique C₃H₆O₃, noté AH. Les laiteries mesurent l'acidité en degrés Dornic : 1 °D correspond à 0,1 g d'acide lactique par litre de lait. Un lait frais a une acidité comprise entre 15 et 18 °D ; au-delà de 18 °D, il commence à « tourner ».",
+        "Doc. 2 — Protocole. On prélève 20,0 mL de lait, on ajoute environ 30 mL d'eau distillée pour immerger la sonde du pH-mètre, puis on titre par une solution de soude de concentration c<sub>B</sub> = (5,00 ± 0,05) × 10⁻² mol·L⁻¹. La courbe obtenue et sa dérivée sont représentées ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"134.6\" y1=\"30\" x2=\"134.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"134.6\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"189.2\" y1=\"30\" x2=\"189.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"189.2\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"243.8\" y1=\"30\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"243.8\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"298.3\" y1=\"30\" x2=\"298.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"352.9\" y1=\"30\" x2=\"352.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"352.9\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"462.1\" y1=\"30\" x2=\"462.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"462.1\" y=\"430\" text-anchor=\"middle\">7</text><line x1=\"516.7\" y1=\"30\" x2=\"516.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"571.2\" y1=\"30\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"571.2\" y=\"430\" text-anchor=\"middle\">9</text><line x1=\"625.8\" y1=\"30\" x2=\"625.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"625.8\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"680.4\" y1=\"30\" x2=\"680.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"680.4\" y=\"430\" text-anchor=\"middle\">11</text><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">12</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"382.9\" x2=\"735\" y2=\"382.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"387.9\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"355.7\" x2=\"735\" y2=\"355.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"360.7\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"328.6\" x2=\"735\" y2=\"328.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"333.6\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"301.4\" x2=\"735\" y2=\"301.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"306.4\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"274.3\" x2=\"735\" y2=\"274.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"279.3\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"247.1\" x2=\"735\" y2=\"247.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"252.1\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"220.0\" x2=\"735\" y2=\"220.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"225.0\" text-anchor=\"end\">7</text><line x1=\"80\" y1=\"192.9\" x2=\"735\" y2=\"192.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"197.9\" text-anchor=\"end\">8</text><line x1=\"80\" y1=\"165.7\" x2=\"735\" y2=\"165.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"170.7\" text-anchor=\"end\">9</text><line x1=\"80\" y1=\"138.6\" x2=\"735\" y2=\"138.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"143.6\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"111.4\" x2=\"735\" y2=\"111.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"116.4\" text-anchor=\"end\">11</text><line x1=\"80\" y1=\"84.3\" x2=\"735\" y2=\"84.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"89.3\" text-anchor=\"end\">12</text><line x1=\"80\" y1=\"57.1\" x2=\"735\" y2=\"57.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"62.1\" text-anchor=\"end\">13</text><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">14</text><rect x=\"80\" y=\"30\" width=\"655\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,328.1 82.7,327.7 85.5,327.4 88.2,327.1 90.9,326.7 93.6,326.4 96.4,326.0 99.1,325.7 101.8,325.4 104.6,325.0 107.3,324.7 110.0,324.3 112.8,324.0 115.5,323.6 118.2,323.3 120.9,323.0 123.7,322.6 126.4,322.3 129.1,322.0 131.9,321.6 134.6,321.3 137.3,321.0 140.0,320.6 142.8,320.3 145.5,320.0 148.2,319.6 151.0,319.3 153.7,319.0 156.4,318.7 159.1,318.3 161.9,318.0 164.6,317.7 167.3,317.4 170.1,317.1 172.8,316.7 175.5,316.4 178.2,316.1 181.0,315.8 183.7,315.5 186.4,315.2 189.2,314.9 191.9,314.6 194.6,314.3 197.4,314.0 200.1,313.7 202.8,313.4 205.5,313.1 208.3,312.8 211.0,312.5 213.7,312.2 216.5,311.9 219.2,311.6 221.9,311.3 224.6,311.0 227.4,310.7 230.1,310.4 232.8,310.1 235.6,309.8 238.3,309.6 241.0,309.3 243.8,309.0 246.5,308.7 249.2,308.4 251.9,308.1 254.7,307.8 257.4,307.5 260.1,307.3 262.9,307.0 265.6,306.7 268.3,306.4 271.0,306.1 273.8,305.8 276.5,305.5 279.2,305.2 282.0,305.0 284.7,304.7 287.4,304.4 290.1,304.1 292.9,303.8 295.6,303.5 298.3,303.2 301.1,302.9 303.8,302.6 306.5,302.3 309.2,302.0 312.0,301.7 314.7,301.4 317.4,301.1 320.2,300.8 322.9,300.5 325.6,300.2 328.4,299.9 331.1,299.6 333.8,299.3 336.5,299.0 339.3,298.6 342.0,298.3 344.7,298.0 347.5,297.7 350.2,297.3 352.9,297.0 355.6,296.7 358.4,296.3 361.1,296.0 363.8,295.6 366.6,295.3 369.3,294.9 372.0,294.6 374.8,294.2 377.5,293.8 380.2,293.4 382.9,293.1 385.7,292.7 388.4,292.3 391.1,291.9 393.9,291.5 396.6,291.0 399.3,290.6 402.0,290.2 404.8,289.7 407.5,289.3 410.2,288.8 413.0,288.3 415.7,287.8 418.4,287.3 421.1,286.8 423.9,286.3 426.6,285.7 429.3,285.2 432.1,284.6 434.8,284.0 437.5,283.3 440.3,282.7 443.0,282.0 445.7,281.3 448.4,280.5 451.2,279.7 453.9,278.9 456.6,278.0 459.4,277.0 462.1,276.0 464.8,274.9 467.5,273.7 470.3,272.4 473.0,270.9 475.7,269.2 478.5,267.3 481.2,265.1 483.9,262.4 486.6,258.9 489.4,254.1 492.1,245.8 494.8,197.1 497.6,148.4 500.3,140.3 503.0,135.5 505.8,132.1 508.5,129.5 511.2,127.4 513.9,125.5 516.7,124.0 519.4,122.6 522.1,121.4 524.9,120.3 527.6,119.2 530.3,118.3 533.0,117.4 535.8,116.6 538.5,115.9 541.2,115.2 544.0,114.5 546.7,113.9 549.4,113.3 552.1,112.7 554.9,112.2 557.6,111.7 560.3,111.2 563.1,110.7 565.8,110.3 568.5,109.8 571.2,109.4 574.0,109.0 576.7,108.6 579.4,108.2 582.2,107.9 584.9,107.5 587.6,107.2 590.4,106.9 593.1,106.5 595.8,106.2 598.5,105.9 601.3,105.6 604.0,105.3 606.7,105.0 609.5,104.8 612.2,104.5 614.9,104.2 617.6,104.0 620.4,103.7 623.1,103.5 625.8,103.3 628.6,103.0 631.3,102.8 634.0,102.6 636.8,102.4 639.5,102.1 642.2,101.9 644.9,101.7 647.7,101.5 650.4,101.3 653.1,101.1 655.9,100.9 658.6,100.7 661.3,100.6 664.0,100.4 666.8,100.2 669.5,100.0 672.2,99.8 675.0,99.7 677.7,99.5 680.4,99.3 683.1,99.2 685.9,99.0 688.6,98.9 691.3,98.7 694.1,98.6 696.8,98.4 699.5,98.3 702.2,98.1 705.0,98.0 707.7,97.8 710.4,97.7 713.2,97.5 715.9,97.4 718.6,97.3 721.4,97.1 724.1,97.0 726.8,96.9 729.5,96.8 732.3,96.6 735.0,96.5\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" /><polyline points=\"82.7,408.3 85.5,408.3 88.2,408.3 90.9,408.3 93.6,408.3 96.4,408.3 99.1,408.3 101.8,408.3 104.6,408.3 107.3,408.3 110.0,408.3 112.8,408.3 115.5,408.3 118.2,408.3 120.9,408.3 123.7,408.3 126.4,408.3 129.1,408.3 131.9,408.3 134.6,408.3 137.3,408.3 140.0,408.3 142.8,408.3 145.5,408.4 148.2,408.4 151.0,408.4 153.7,408.4 156.4,408.4 159.1,408.4 161.9,408.4 164.6,408.4 167.3,408.4 170.1,408.4 172.8,408.4 175.5,408.4 178.2,408.4 181.0,408.5 183.7,408.5 186.4,408.5 189.2,408.5 191.9,408.5 194.6,408.5 197.4,408.5 200.1,408.5 202.8,408.5 205.5,408.5 208.3,408.5 211.0,408.5 213.7,408.5 216.5,408.5 219.2,408.5 221.9,408.5 224.6,408.5 227.4,408.5 230.1,408.5 232.8,408.6 235.6,408.6 238.3,408.6 241.0,408.6 243.8,408.6 246.5,408.6 249.2,408.6 251.9,408.6 254.7,408.6 257.4,408.6 260.1,408.6 262.9,408.6 265.6,408.6 268.3,408.6 271.0,408.6 273.8,408.6 276.5,408.6 279.2,408.6 282.0,408.6 284.7,408.6 287.4,408.5 290.1,408.5 292.9,408.5 295.6,408.5 298.3,408.5 301.1,408.5 303.8,408.5 306.5,408.5 309.2,408.5 312.0,408.5 314.7,408.5 317.4,408.5 320.2,408.5 322.9,408.5 325.6,408.5 328.4,408.4 331.1,408.4 333.8,408.4 336.5,408.4 339.3,408.4 342.0,408.4 344.7,408.4 347.5,408.4 350.2,408.3 352.9,408.3 355.6,408.3 358.4,408.3 361.1,408.3 363.8,408.2 366.6,408.2 369.3,408.2 372.0,408.2 374.8,408.2 377.5,408.1 380.2,408.1 382.9,408.1 385.7,408.0 388.4,408.0 391.1,408.0 393.9,407.9 396.6,407.9 399.3,407.8 402.0,407.8 404.8,407.7 407.5,407.7 410.2,407.6 413.0,407.6 415.7,407.5 418.4,407.4 421.1,407.4 423.9,407.3 426.6,407.2 429.3,407.1 432.1,407.0 434.8,406.9 437.5,406.8 440.3,406.6 443.0,406.5 445.7,406.3 448.4,406.1 451.2,405.9 453.9,405.7 456.6,405.4 459.4,405.1 462.1,404.7 464.8,404.2 467.5,403.7 470.3,403.0 473.0,402.2 475.7,401.1 478.5,399.7 481.2,397.7 483.9,394.6 486.6,389.2 489.4,377.3 492.1,267.5 494.8,166.4 497.6,267.9 500.3,377.7 503.0,389.6 505.8,395.0 508.5,398.1 511.2,400.1 513.9,401.6 516.7,402.6 519.4,403.5 522.1,404.1 524.9,404.7 527.6,405.1 530.3,405.5 533.0,405.8 535.8,406.1 538.5,406.4 541.2,406.6 544.0,406.8 546.7,406.9 549.4,407.1 552.1,407.2 554.9,407.4 557.6,407.5 560.3,407.6 563.1,407.7 565.8,407.8 568.5,407.9 571.2,407.9 574.0,408.0 576.7,408.1 579.4,408.1 582.2,408.2 584.9,408.3 587.6,408.3 590.4,408.4 593.1,408.4 595.8,408.5 598.5,408.5 601.3,408.5 604.0,408.6 606.7,408.6 609.5,408.6 612.2,408.7 614.9,408.7 617.6,408.7 620.4,408.8 623.1,408.8 625.8,408.8 628.6,408.8 631.3,408.9 634.0,408.9 636.8,408.9 639.5,408.9 642.2,409.0 644.9,409.0 647.7,409.0 650.4,409.0 653.1,409.0 655.9,409.0 658.6,409.1 661.3,409.1 664.0,409.1 666.8,409.1 669.5,409.1 672.2,409.1 675.0,409.2 677.7,409.2 680.4,409.2 683.1,409.2 685.9,409.2 688.6,409.2 691.3,409.2 694.1,409.2 696.8,409.3 699.5,409.3 702.2,409.3 705.0,409.3 707.7,409.3 710.4,409.3 713.2,409.3 715.9,409.3 718.6,409.3 721.4,409.3 724.1,409.3 726.8,409.4 729.5,409.4 732.3,409.4\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.6\" stroke-dasharray=\"7 5\"/><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">V (mL) de soude versée</text><text transform=\"translate(22,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">pH   (pointillés : dpH/dV ÷ 4, en mL⁻¹)</text></svg>",
+      "code": [
+        "nAH0 = 3.8e-4     # quantité initiale d'acide lactique (mol)",
+        "cB = 0.0500       # concentration de la soude (mol/L)",
+        "for VB_mL in range(0, 13):",
+        "    nB = cB * VB_mL * 1e-3     # quantité de HO- versée (mol)",
+        "    if nB < nAH0:",
+        "        nAH = ...                # à compléter",
+        "        nHO = 0",
+        "    else:",
+        "        nAH = 0",
+        "        nHO = ...                # à compléter",
+        "    nA = ...                     # A- formé (mol), à compléter",
+        "    print(VB_mL, nAH, nHO, nA)"
+      ],
+      "contexte2": [
+        "Doc. 3 — Incertitudes. u(V<sub>E</sub>) = 0,15 mL ; u(c<sub>B</sub>) = 0,05 × 10⁻² mol·L⁻¹ ; u(V<sub>lait</sub>) = 0,03 mL. Pour un résultat du type C = c<sub>B</sub> × V<sub>E</sub> × M / V<sub>lait</sub> :",
+        "u(C) / C = √[ (u(V<sub>E</sub>)/V<sub>E</sub>)² + (u(c<sub>B</sub>)/c<sub>B</sub>)² + (u(V<sub>lait</sub>)/V<sub>lait</sub>)² ]",
+        "Doc. 4 — Script Python (incomplet) représentant l'évolution des quantités de matière au cours du titrage."
+      ],
+      "questions": [
+        {
+          "texte": "Écris l'équation de la réaction support du titrage.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine le volume équivalent V<sub>E</sub> en justifiant la méthode utilisée.",
+          "aides": [
+            "Doc. 2 : où la courbe en pointillés est-elle maximale ?",
+            "Ce maximum correspond à la plus forte variation du pH : c'est l'équivalence."
+          ]
+        },
+        {
+          "texte": "L'ajout des 30 mL d'eau distillée fausse-t-il le résultat ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Montre que l'acidité de ce lait vaut environ 17 °D.",
+          "aides": [
+            "Chaîne de calcul : V<sub>E</sub> → n(AH) → concentration molaire → concentration en masse (g·L⁻¹) → °D.",
+            "1 °D = 0,1 g·L⁻¹ : pour obtenir les °D, on divise C<sub>m</sub> par 0,1."
+          ]
+        },
+        {
+          "texte": "Évalue l'incertitude-type sur l'acidité, écris le résultat sous la forme A = (… ± …) °D, puis conclus : ce lait est-il frais ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète les trois lignes « ... » du script du doc. 4.",
+          "aides": [
+            "Avant l'équivalence, HO⁻ est limitant : il ne reste donc pas de HO⁻, et l'acide restant vaut nAH0 − (ce qui a réagi).",
+            "Chaque HO⁻ qui réagit forme un A⁻ ; mais on ne peut pas former plus de A⁻ qu'il n'y avait d'acide au départ."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : lis le pH à la demi-équivalence et compare-le au pKa du couple AH/A⁻, égal à 3,86.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> AH(aq) + HO⁻(aq) → A⁻(aq) + H₂O(ℓ)",
+        "<strong>2.</strong> V<sub>E</sub> correspond au maximum de la dérivée dpH/dV (abscisse du point d'inflexion du saut de pH) : V<sub>E</sub> = 7,6 mL.",
+        "<strong>3.</strong> Non : l'eau ne change pas la quantité d'acide lactique, donc ne change pas V<sub>E</sub> (elle modifie seulement les valeurs du pH).",
+        "<strong>4.</strong> n(AH) = c<sub>B</sub> × V<sub>E</sub> = 5,00 × 10⁻² × 7,6 × 10⁻³ = 3,8 × 10⁻⁴ mol ; c = 3,8 × 10⁻⁴ / 20,0 × 10⁻³ = 1,9 × 10⁻² mol·L⁻¹ ; C<sub>m</sub> = 1,9 × 10⁻² × 90,08 = 1,71 g·L⁻¹. Acidité : A = 1,71 / 0,1 = 17,1 °D ≈ 17 °D.",
+        "<strong>5.</strong> u(A)/A = √[(0,15/7,6)² + (0,05/5,00)² + (0,03/20,0)²] = 2,2 × 10⁻², donc u(A) = 0,4 °D. A = (17,1 ± 0,4) °D. Même en ajoutant l'incertitude (17,5 °D), l'acidité reste sous 18 °D : le lait est frais, mais proche de la limite (il faut le consommer rapidement).",
+        "<strong>6.</strong> nAH = nAH0 − nB ;  nHO = nB − nAH0 ;  nA = min(nB, nAH0)  (avant l'équivalence, A⁻ formé = HO⁻ versé ; après, A⁻ = nAH0).",
+        "<strong>7.</strong> Pour aller plus loin : à V<sub>E</sub> / 2 = 3,8 mL, on lit pH ≈ 3,9, très proche du pKa = 3,86 (à la demi-équivalence, [AH] = [A⁻]).",
+        "<em>⚠ Erreur fréquente : diviser par 0,1 au lieu de multiplier, ou oublier que le °D se rapporte à 1 L de lait (et non au volume du bécher).</em>"
+      ]
+    }
+  ]
+}
