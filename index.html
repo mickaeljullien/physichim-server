@@ -809,6 +809,12 @@
     margin-top: 12px;
   }
   .rgpd-notice strong { color: var(--accent); }
+  .rgpd-lien { background: none; border: none; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; cursor: pointer; }
+  .rgpd-texte { font-size: 0.86rem; line-height: 1.55; color: var(--text); }
+  .rgpd-texte h3 { font-family: 'Syne', sans-serif; font-size: 0.95rem; margin: 16px 0 6px; }
+  .rgpd-texte ul { padding-left: 20px; margin: 4px 0; }
+  .rgpd-texte li { margin: 3px 0; }
+  .rgpd-texte p { margin: 4px 0; }
 
   /* ── TEACHER VIEW ── */
   .teacher-badge {
@@ -910,6 +916,10 @@
         <span class="nav-dot" style="background:var(--green)"></span>
         Vue enseignant
       </div>
+      <div class="nav-item" onclick="openRgpd(); closeSidebarOnMobile()" id="nav-rgpd">
+        <span class="nav-dot" style="background:var(--muted)"></span>
+        Mes données personnelles
+      </div>
     </div>
 
     <div class="nav-section" style="flex:1;overflow-y:auto;padding-bottom:16px">
@@ -975,8 +985,49 @@
     </div>
 
     <div class="rgpd-notice" style="margin-top:12px">
-      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores, tes notes et les erreurs fréquentes repérées dans tes réponses aux quiz sont enregistrés sur un serveur hébergé en Europe et ne sont visibles que par ton enseignant.
+      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores de quiz, les erreurs repérées dans tes réponses, les chapitres ouverts, les notes que tu saisis et tes dates de connexion sont enregistrés pour ton enseignant, qui est le seul à les voir, et effacés en fin d'année.
+      <button type="button" class="rgpd-lien" onclick="openRgpd()">Tout savoir sur tes données et tes droits</button>
     </div>
+  </div>
+</div>
+
+<!-- INFORMATION RGPD (élèves et familles) -->
+<div class="modal-overlay" id="rgpd-overlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="rgpd-titre">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+      <h2 class="modal-title" id="rgpd-titre">🔒 Tes données personnelles</h2>
+      <button class="btn-close" onclick="closeRgpd()" aria-label="Fermer">✕</button>
+    </div>
+    <div class="rgpd-texte">
+      <p>PhysiChim est un outil de révision utilisé par ton enseignant de physique-chimie du lycée Georges Braque. Il sert uniquement à t'aider à réviser et à permettre à ton enseignant de suivre ton travail. Il n'y a ni publicité, ni pistage, ni revente de données.</p>
+
+      <h3>Qui est responsable, qui contacter ?</h3>
+      <p>Ton enseignant de physique-chimie, celui qui t'a donné ton code. C'est à lui que tu t'adresses (en classe ou par la messagerie de l'établissement) pour toute question ou demande sur tes données. Le délégué à la protection des données (DPO) de l'académie de Versailles peut aussi être sollicité par l'intermédiaire de l'établissement.</p>
+
+      <h3>Quelles données sont enregistrées ?</h3>
+      <ul>
+        <li>ton nom et ton prénom, ou un pseudo, tels que ton enseignant les a saisis, ton code élève et ta classe ;</li>
+        <li>tes scores aux quiz, avec la date ;</li>
+        <li>les erreurs fréquentes repérées dans tes réponses aux quiz (par exemple « croire qu'à l'équivalence le pH vaut 7 »), avec la date ;</li>
+        <li>les chapitres que tu ouvres, avec la date ;</li>
+        <li>les notes de devoirs que tu saisis toi-même dans ton tableau de bord ;</li>
+        <li>la date de chacune de tes connexions.</li>
+      </ul>
+      <p>Sur ton appareil seulement (dans le navigateur, pas sur le serveur) : ton code, pour te reconnecter automatiquement (le bouton 🚪 l'efface), les exercices que tu as terminés et le niveau affiché.</p>
+
+      <h3>Qui peut les voir ?</h3>
+      <p>Ton enseignant, et lui seul, voit tes résultats. La personne qui administre le site peut voir un rapport d'activité (nombre de connexions et de quiz par élève). Personne d'autre : pas les autres élèves, pas de société commerciale.</p>
+
+      <h3>Où sont-elles enregistrées ?</h3>
+      <p>Le site est hébergé par Render ; tes données sont enregistrées dans une base de données hébergée en Europe (Neon, Francfort). Pour afficher les polices de caractères, ton navigateur contacte aussi les serveurs de Google Fonts (ton adresse IP leur est alors transmise, comme pour tout site qui les utilise).</p>
+
+      <h3>Combien de temps ?</h3>
+      <p>Pendant l'année scolaire. En fin d'année, ton enseignant efface les scores, les erreurs, les chapitres ouverts, les notes et le journal des connexions. Le journal des connexions est de toute façon effacé automatiquement au bout de 13 mois.</p>
+
+      <h3>Tes droits</h3>
+      <p>Tu peux demander à ton enseignant de voir toutes tes données, de les corriger ou de les effacer, ou t'opposer à leur utilisation : il peut réinitialiser ou supprimer ton compte. Tu peux supprimer toi-même les notes que tu as saisies. Tes parents ou responsables légaux peuvent aussi faire ces demandes. Si tu estimes que tes droits ne sont pas respectés, tu peux t'adresser à la CNIL (cnil.fr).</p>
+    </div>
+    <button class="btn-primary" style="width:100%;margin-top:16px" onclick="closeRgpd()">J'ai compris</button>
   </div>
 </div>
 
@@ -41259,7 +41310,10 @@ function migrerExercicesTerminesFusionnes() {
 // serveur est donc toujours celle de la page elle-même. On ne demande plus à l'élève
 // de la saisir (physichim_server reste lu pour compatibilité avec d'anciennes sessions,
 // au cas où une valeur différente y aurait été enregistrée par le passé).
-let SERVER_URL = localStorage.getItem('physichim_server') || window.location.origin;
+// Une ancienne adresse d'un autre site est ignorée : la politique de sécurité (CSP) n'autorise
+// de toute façon les échanges qu'avec ce serveur.
+let SERVER_URL = localStorage.getItem('physichim_server') === window.location.origin
+  ? localStorage.getItem('physichim_server') : window.location.origin;
 
 let state = {
   currentChapter: null,
@@ -41269,6 +41323,8 @@ let state = {
   quiz: { active: false, idx: 0, answers: {}, revealed: {} },
   students: [],          // liste locale (code + pseudo)
   activeStudentId: null, // id serveur de l'élève connecté
+  jeton: null,           // jeton de session délivré par /api/login (24 h), jamais écrit sur le disque
+  jetonRenouvelerApres: 0, // instant (ms) à partir duquel on renouvelle le jeton avant de s'en servir
   activeStudentData: {   // données chargées depuis le serveur
     scores: {},          // { chapitre_id: score }
     notes: [],
@@ -41366,56 +41422,72 @@ async function apiLogin(code) {
   }
 }
 
-// `erreurs` : [{ code, texte }] des pièges tombés pendant ce quiz, envoyés avec le score
-// dans le même appel (tableau de bord enseignant « Erreurs fréquentes »).
-async function apiSaveQuiz(chapitreId, score, erreurs = []) {
-  if (!state.activeStudentId || !SERVER_URL) return false;
+// Requête élève authentifiée : jeton de session dans l'en-tête Authorization (le serveur
+// n'accepte plus le seul eleve_id). Si le jeton a expiré (page restée ouverte plus de 24 h,
+// serveur redémarré avec une autre clé…), la page se reconnecte en silence avec le code
+// mémorisé et renvoie la requête une fois : rien n'est perdu et l'élève n'a rien à faire.
+// Renvoie la réponse fetch, ou null si le serveur est injoignable.
+let reconnexionEnCours = null;
+async function apiEleve(chemin, methode, donnees) {
+  if (!state.activeStudentId || !SERVER_URL) return null;
+  const envoyer = () => fetch(SERVER_URL + chemin, {
+    method: methode,
+    headers: { 'Content-Type': 'application/json', ...(state.jeton ? { 'Authorization': 'Bearer ' + state.jeton } : {}) },
+    // eleve_id reste envoyé : le serveur vérifie qu'il correspond au jeton.
+    body: JSON.stringify({ ...donnees, eleve_id: state.activeStudentId })
+  });
   try {
-    const r = await fetch(SERVER_URL + '/api/quiz', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: QUIZ_NB_QUESTIONS, erreurs })
-    });
-    return r.ok;
-  } catch(e) {
-    console.warn('Quiz non sauvegardé sur le serveur', e);
-    return false;
+    // Jeton bientôt expiré (page ouverte depuis presque 24 h) : renouvelé avant l'envoi.
+    if (state.jeton && Date.now() > state.jetonRenouvelerApres) await renouvelerJeton();
+    let r = await envoyer();
+    if (r.status === 401 && await renouvelerJeton()) r = await envoyer();
+    return r;
+  } catch (e) {
+    return null;
   }
 }
 
+// Nouveau jeton par reconnexion avec le code mémorisé sur cet appareil. Plusieurs requêtes
+// refusées en même temps partagent la même reconnexion.
+async function renouvelerJeton() {
+  const code = localStorage.getItem('physichim_active_code');
+  if (!code) return false;
+  if (!reconnexionEnCours) {
+    reconnexionEnCours = apiLogin(code).finally(() => { setTimeout(() => { reconnexionEnCours = null; }, 0); });
+  }
+  const result = await reconnexionEnCours;
+  if (result.error || !result.eleve || result.eleve.id !== state.activeStudentId || !result.jeton) return false;
+  memoriserJeton(result);
+  return true;
+}
+
+function memoriserJeton(result) {
+  state.jeton = result.jeton || null;
+  // Renouvelé 10 minutes avant son expiration annoncée par le serveur.
+  state.jetonRenouvelerApres = Date.now() + Math.max(60, (result.jeton_duree_s || 86400) - 600) * 1000;
+}
+
+// `erreurs` : [{ code, texte }] des pièges tombés pendant ce quiz, envoyés avec le score
+// dans le même appel (tableau de bord enseignant « Erreurs fréquentes »).
+async function apiSaveQuiz(chapitreId, score, erreurs = []) {
+  const r = await apiEleve('/api/quiz', 'POST', { chapitre_id: chapitreId, score, total: QUIZ_NB_QUESTIONS, erreurs });
+  if (!r || !r.ok) console.warn('Quiz non sauvegardé sur le serveur', r ? r.status : 'hors connexion');
+  return !!(r && r.ok);
+}
+
 async function apiSaveNote(type, intitule, valeur) {
-  if (!state.activeStudentId || !SERVER_URL) return null;
-  try {
-    const r = await fetch(SERVER_URL + '/api/notes', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eleve_id: state.activeStudentId, type, intitule, valeur })
-    });
-    const d = await r.json();
-    return d.id || null;
-  } catch(e) { return null; }
+  const r = await apiEleve('/api/notes', 'POST', { type, intitule, valeur });
+  if (!r) return null;
+  try { const d = await r.json(); return d.id || null; } catch (e) { return null; }
 }
 
 async function apiDeleteNote(noteId) {
-  if (!state.activeStudentId || !SERVER_URL) return;
-  try {
-    await fetch(`${SERVER_URL}/api/notes/${noteId}`, {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eleve_id: state.activeStudentId })
-    });
-  } catch(e) {}
+  const r = await apiEleve(`/api/notes/${encodeURIComponent(noteId)}`, 'DELETE', {});
+  return !!(r && r.ok);
 }
 
 async function apiLogProgression(chapitreId, action) {
-  if (!state.activeStudentId || !SERVER_URL) return;
-  try {
-    await fetch(SERVER_URL + '/api/progression', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, action })
-    });
-  } catch(e) {}
+  await apiEleve('/api/progression', 'POST', { chapitre_id: chapitreId, action });
 }
 
 // ── Compatibilité avec l'ancien système ──────────────
@@ -42147,8 +42219,9 @@ async function addGrade() {
 }
 
 async function deleteGrade(noteId) {
-  await apiDeleteNote(noteId);
-  state.activeStudentData.notes = state.activeStudentData.notes.filter(n => n.id !== noteId);
+  if (!(await apiDeleteNote(noteId))) { alert("La note n'a pas pu être supprimée. Vérifie ta connexion et réessaie."); return; }
+  state.activeStudentData.notes
+ = state.activeStudentData.notes.filter(n => n.id !== noteId);
   showDashboard();
 }
 
@@ -42352,6 +42425,18 @@ function closeStudentModal() {
   document.getElementById('modal-overlay').classList.remove('open');
 }
 
+// Information RGPD complète (au-dessus de la fenêtre de connexion si elle est ouverte).
+let rgpdOuvertDepuis = null;
+function openRgpd() {
+  rgpdOuvertDepuis = document.activeElement;
+  document.getElementById('rgpd-overlay').classList.add('open');
+  setTimeout(() => document.querySelector('#rgpd-overlay .btn-close').focus(), 50);
+}
+function closeRgpd() {
+  document.getElementById('rgpd-overlay').classList.remove('open');
+  if (rgpdOuvertDepuis && rgpdOuvertDepuis.focus) rgpdOuvertDepuis.focus();
+}
+
 function showServerSetup() {
   document.getElementById('modal-server-setup').style.display = 'block';
   document.getElementById('modal-login-form').style.display = 'none';
@@ -42394,6 +42479,8 @@ function applyStudentLoginResult(result, code) {
     devoirs: (result.devoirs || []).map(versActuel),
     chapitresAutorises: [...new Set((result.chapitresAutorises || []).map(chapitreIdActuel))] };
   state.activeStudentId = eleve.id;
+  memoriserJeton(result);
+
   state._savedCode = code;
 
   state.activeStudentData = {
@@ -42456,6 +42543,7 @@ function closeOnboarding() {
 // connecter avec son propre code sans voir les données du précédent.
 function logoutStudent() {
   state.activeStudentId = null;
+  state.jeton = null;
   state.activeStudentData = { scores: {}, notes: [], progression: [], chapitresAutorises: null, classe: null };
   state._savedCode = '';
   state.students = [];
@@ -42545,7 +42633,7 @@ function showTeacher() {
            <button class="btn-secondary" onclick="openStudentModal()">Configurer le serveur</button>`
       }
       <div class="rgpd-notice" style="margin-top:24px;text-align:left;max-width:480px;margin-left:auto;margin-right:auto">
-        <strong>🔒 RGPD :</strong> L'interface admin est protégée par un identifiant et un code enseignant. Les données des élèves (nom ou pseudo saisi par l'enseignant, scores, notes, erreurs fréquentes repérées dans les réponses aux quiz) sont stockées dans une base hébergée en Europe (Neon, Francfort) et ne sont visibles que par leur enseignant. Chaque élève se connecte avec un code personnel.
+        <strong>🔒 RGPD :</strong> L'interface admin est protégée par un identifiant et un code enseignant. Les données des élèves (nom ou pseudo saisi par l'enseignant, scores, erreurs fréquentes repérées dans les réponses aux quiz, chapitres ouverts, notes, dates de connexion) sont stockées dans une base de données hébergée en Europe (Neon, Francfort) et ne sont visibles que par leur enseignant ; le site lui-même est hébergé par Render. Chaque élève se connecte avec un code personnel. L'espace enseignant permet d'effacer ces données en fin d'année. <button type="button" class="rgpd-lien" onclick="openRgpd()">Information complète donnée aux élèves</button>
       </div>
     </div>
   `;
@@ -42576,6 +42664,9 @@ state.lienDirect = lireLienDirect(); // ?chap=…&ex=… (QR code), ouvert aprè
 // Fermer modal si clic sur l'overlay
 document.getElementById('modal-overlay').addEventListener('click', function(e) {
   if (e.target === this) closeStudentModal();
+});
+document.getElementById('rgpd-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeRgpd();
 });
 </script>
 </body>

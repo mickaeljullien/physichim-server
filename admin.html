@@ -277,6 +277,23 @@
         <div id="add-classe-alert"></div>
       </div>
       <div class="home-grid-admin" id="classes-grid"></div>
+
+      <div class="card" style="margin-top:24px">
+        <div class="card-title">🧹 Fin d'année : effacer les données des élèves</div>
+        <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Efface les scores de quiz, les erreurs fréquentes, les chapitres ouverts, les notes saisies, le journal des connexions et les devoirs de vos classes. Les classes et leurs chapitres autorisés sont conservés. Pensez à faire l'<button type="button" class="link-muted" style="background:none;border:none;font:inherit;padding:0" onclick="exportCSV()">export CSV</button> avant : cette action est irréversible.</p>
+        <div class="add-eleve-row">
+          <div class="form-group">
+            <label class="form-label" for="purge-classe">Classes concernées</label>
+            <select class="form-select" id="purge-classe" onchange="purgeAnnulerApercu()"></select>
+          </div>
+          <label style="display:flex;align-items:center;gap:8px;font-size:.84rem;margin-bottom:10px;cursor:pointer">
+            <input type="checkbox" id="purge-eleves" onchange="purgeAnnulerApercu()" style="width:16px;height:16px;accent-color:var(--red)">
+            Supprimer aussi les comptes élèves (leurs codes ne marcheront plus)
+          </label>
+          <button class="btn btn-secondary" onclick="purgeApercu()">Voir ce qui sera effacé</button>
+        </div>
+        <div id="purge-apercu" aria-live="polite"></div>
+      </div>
     </div>
 
     <!-- Onglet Élèves -->
@@ -587,7 +604,9 @@ async function doSuperadminLogin() {
   try {
     const r = await fetch(SERVER+'/api/admin/teachers', { headers: superHeaders() });
     if (r.status === 401) { showAlert('superadmin-alert','Clé maître incorrecte.','err'); return; }
+    if (r.status === 429) { const d = await r.json().catch(() => ({})); showAlert('superadmin-alert', escapeHtml(d.error || 'Trop de tentatives.'), 'err'); return; }
     if (!r.ok) throw new Error('Erreur '+r.status);
+
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('superadmin-screen').style.display = 'block';
     await refreshTeachers();
@@ -681,6 +700,7 @@ async function refreshClasses() {
   const r = await fetch(SERVER+'/api/admin/classes', { headers: headers() });
   CLASSES = await r.json();
   renderClasses();
+  remplirClassesPurge();
 }
 
 function renderAll() {
@@ -1546,6 +1566,81 @@ function toggleErreurEleves(btn) {
   const ouvert = btn.getAttribute('aria-expanded') === 'true';
   btn.setAttribute('aria-expanded', String(!ouvert));
   document.getElementById(btn.getAttribute('aria-controls')).hidden = ouvert;
+}
+
+// ── Purge de fin d'année ─────────────────────────────────
+// Étape 1 : le serveur compte les lignes concernées (rien n'est effacé).
+// Étape 2 : bouton « Effacer définitivement », puis deux confirmations (une fenêtre qui
+// rappelle les nombres, puis le mot EFFACER à taper). Le serveur recompte et efface tout
+// dans une seule transaction.
+const PURGE_LIBELLES = {
+  quiz_scores: 'scores de quiz', erreurs_quiz: 'erreurs fréquentes', progression: 'chapitres ouverts',
+  notes: 'notes saisies par les élèves', connexions: 'connexions enregistrées'
+};
+let purgeEnCours = null;
+
+function remplirClassesPurge() {
+  const sel = document.getElementById('purge-classe');
+  if (!sel) return;
+  const choix = sel.value;
+  sel.innerHTML = `<option value="">Toutes mes classes (et mes élèves sans classe)</option>`
+    + CLASSES.map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.nom)} — ${niveauLabel(c.niveau)}</option>`).join('');
+  if ([...sel.options].some(o => o.value === choix)) sel.value = choix;
+}
+
+function purgeAnnulerApercu() {
+  purgeEnCours = null;
+  document.getElementById('purge-apercu').innerHTML = '';
+}
+
+function purgeResume(a, supprimerEleves) {
+  const lignes = Object.entries(a.lignes).map(([t, n]) => `${n} ${PURGE_LIBELLES[t] || t}`);
+  lignes.push(`${a.devoirs} devoir${a.devoirs === 1 ? '' : 's'}`);
+  if (supprimerEleves) lignes.push(`${a.nbEleves} compte${a.nbEleves === 1 ? '' : 's'} élève${a.nbEleves === 1 ? '' : 's'}`);
+  return lignes;
+}
+
+async function purgeApercu() {
+  const classeId = document.getElementById('purge-classe').value;
+  const supprimerEleves = document.getElementById('purge-eleves').checked;
+  const box = document.getElementById('purge-apercu');
+  box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Calcul…</p>';
+  const r = await fetch(`${SERVER}/api/admin/purge${classeId ? '?classe_id=' + encodeURIComponent(classeId) : ''}`, { headers: headers() }).catch(() => null);
+  if (!r || !r.ok) { box.innerHTML = '<p style="color:var(--red);font-size:.82rem">Impossible de calculer ce qui serait effacé.</p>'; return; }
+  const a = await r.json();
+  const classe = CLASSES.find(c => c.id === classeId);
+  purgeEnCours = { classeId: classeId || null, supprimerEleves, apercu: a, nom: classe ? `la classe ${classe.nom}` : `toutes vos classes (${a.nbClasses})` };
+  const total = Object.values(a.lignes).reduce((x, y) => x + y, 0) + a.devoirs + (supprimerEleves ? a.nbEleves : 0);
+  box.innerHTML = `
+    <div style="border:1px solid rgba(247,89,89,.3);background:rgba(247,89,89,.06);border-radius:8px;padding:12px 14px;margin-top:6px">
+      <div style="font-size:.85rem;margin-bottom:6px">Pour ${escapeHtml(purgeEnCours.nom)} — ${a.nbEleves} élève${a.nbEleves === 1 ? '' : 's'}, seraient effacés :</div>
+      <ul style="font-size:.84rem;padding-left:20px;margin-bottom:10px">${purgeResume(a, supprimerEleves).map(l => `<li>${escapeHtml(l)}</li>`).join('')}</ul>
+      ${total ? `<button class="btn btn-danger" onclick="purgeExecuter()">Effacer définitivement</button>`
+              : '<span style="color:var(--muted);font-size:.82rem">Rien à effacer.</span>'}
+    </div>`;
+}
+
+async function purgeExecuter() {
+  const p = purgeEnCours;
+  if (!p) return;
+  const resume = purgeResume(p.apercu, p.supprimerEleves).map(l => '• ' + l).join('\n');
+  if (!confirm(`Effacer définitivement, pour ${p.nom} :\n${resume}\n\nCette action est irréversible. Continuer ?`)) return;
+  const mot = prompt('Dernière confirmation : tapez EFFACER (en majuscules) pour lancer l\'effacement.');
+  if (mot === null) return;
+  if (mot.trim() !== 'EFFACER') { alert('Mot de confirmation incorrect : rien n\'a été effacé.'); return; }
+  const box = document.getElementById('purge-apercu');
+  box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Effacement en cours…</p>';
+  const r = await fetch(`${SERVER}/api/admin/purge`, { method: 'POST', headers: headers(),
+    body: JSON.stringify({ classe_id: p.classeId, supprimer_eleves: p.supprimerEleves, confirmation: 'EFFACER' }) }).catch(() => null);
+  purgeEnCours = null;
+  const d = r ? await r.json().catch(() => ({})) : {};
+  if (!r || !r.ok) { box.innerHTML = `<div class="alert alert-err">⚠ ${escapeHtml(d.error || 'Effacement impossible : rien n\'a été effacé.')}</div>`; return; }
+  const fait = Object.entries(d.lignes).map(([t, n]) => `${n} ${PURGE_LIBELLES[t] || t}`);
+  fait.push(`${d.devoirs} devoir${d.devoirs === 1 ? '' : 's'}`);
+  if (p.supprimerEleves) fait.push(`${d.elevesSupprimes} compte${d.elevesSupprimes === 1 ? '' : 's'} élève${d.elevesSupprimes === 1 ? '' : 's'}`);
+  box.innerHTML = `<div class="alert alert-ok">✓ Effacé : ${escapeHtml(fait.join(', '))}.</div>`;
+  await refreshClasses();
+  await refreshData();
 }
 
 // ── Tabs ─────────────────────────────────────────────────
