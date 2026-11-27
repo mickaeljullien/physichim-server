@@ -702,6 +702,7 @@
   .ex-btn-aide { margin-top: 6px; background: transparent; border: 1px dashed var(--yellow); color: var(--yellow); border-radius: var(--radius-sm); padding: 8px 12px; min-height: 40px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 600; cursor: pointer; }
   .ex-btn-aide:hover { background: rgba(135,98,34,0.08); }
   .ex-fin { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .ex-devoir { display: inline-block; margin: 0 0 8px; padding: 3px 10px; border-radius: 999px; font-size: 0.76rem; font-weight: 600; background: rgba(192,71,47,0.10); color: var(--accent2); }
   .ex-confirm { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 0.86rem; }
   .ex-confirm-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
   .ex-corrige { background: rgba(63,122,61,0.07); border: 1px solid rgba(63,122,61,0.28); border-radius: var(--radius-sm); padding: 12px 14px; }
@@ -985,7 +986,7 @@
     </div>
 
     <div class="rgpd-notice" style="margin-top:12px">
-      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores de quiz, les erreurs repérées dans tes réponses, les chapitres ouverts, les notes que tu saisis et tes dates de connexion sont enregistrés pour ton enseignant, qui est le seul à les voir, et effacés en fin d'année.
+      <strong>🔒 RGPD :</strong> Ton code est personnel, ne le partage pas. Tes scores de quiz, les erreurs repérées dans tes réponses, les chapitres ouverts, ton suivi des exercices (aides dévoilées, « J'ai terminé »), les notes que tu saisis et tes dates de connexion sont enregistrés pour ton enseignant, qui est le seul à les voir, et effacés en fin d'année.
       <button type="button" class="rgpd-lien" onclick="openRgpd()">Tout savoir sur tes données et tes droits</button>
     </div>
   </div>
@@ -1010,10 +1011,11 @@
         <li>tes scores aux quiz, avec la date ;</li>
         <li>les erreurs fréquentes repérées dans tes réponses aux quiz (par exemple « croire qu'à l'équivalence le pH vaut 7 »), avec la date ;</li>
         <li>les chapitres que tu ouvres, avec la date ;</li>
+        <li>pour chaque exercice : la date où tu l'as ouvert, le nombre d'aides que tu as dévoilées à chaque question, et la date de « J'ai terminé » ;</li>
         <li>les notes de devoirs que tu saisis toi-même dans ton tableau de bord ;</li>
         <li>la date de chacune de tes connexions.</li>
       </ul>
-      <p>Sur ton appareil seulement (dans le navigateur, pas sur le serveur) : ton code, pour te reconnecter automatiquement (le bouton 🚪 l'efface), les exercices que tu as terminés et le niveau affiché.</p>
+      <p>Sur ton appareil seulement (dans le navigateur, pas sur le serveur) : ton code, pour te reconnecter automatiquement (le bouton 🚪 l'efface), les exercices que tu as terminés (pour réafficher leur corrigé), les envois en attente quand la connexion est coupée, et le niveau affiché.</p>
 
       <h3>Qui peut les voir ?</h3>
       <p>Ton enseignant, et lui seul, voit tes résultats. La personne qui administre le site peut voir un rapport d'activité (nombre de connexions et de quiz par élève). Personne d'autre : pas les autres élèves, pas de société commerciale.</p>
@@ -1022,7 +1024,7 @@
       <p>Le site est hébergé par Render ; tes données sont enregistrées dans une base de données hébergée en Europe (Neon, Francfort). Pour afficher les polices de caractères, ton navigateur contacte aussi les serveurs de Google Fonts (ton adresse IP leur est alors transmise, comme pour tout site qui les utilise).</p>
 
       <h3>Combien de temps ?</h3>
-      <p>Pendant l'année scolaire. En fin d'année, ton enseignant efface les scores, les erreurs, les chapitres ouverts, les notes et le journal des connexions. Le journal des connexions est de toute façon effacé automatiquement au bout de 13 mois.</p>
+      <p>Pendant l'année scolaire. En fin d'année, ton enseignant efface les scores, les erreurs, les chapitres ouverts, le suivi des exercices, les notes et le journal des connexions. Le journal des connexions est de toute façon effacé automatiquement au bout de 13 mois.</p>
 
       <h3>Tes droits</h3>
       <p>Tu peux demander à ton enseignant de voir toutes tes données, de les corriger ou de les effacer, ou t'opposer à leur utilisation : il peut réinitialiser ou supprimer ton compte. Tu peux supprimer toi-même les notes que tu as saisies. Tes parents ou responsables légaux peuvent aussi faire ces demandes. Si tu estimes que tes droits ne sont pas respectés, tu peux t'adresser à la CNIL (cnil.fr).</p>
@@ -41867,9 +41869,120 @@ const exAidesVues = {};
 // Exercice dont l'élève est en train de confirmer « J'ai terminé ».
 let exConfirmEnCours = null;
 
+// Suivi enregistré sur le serveur (ouvert, aides, terminé), chargé à la connexion :
+// Map "chapitre|exercice" -> { aides, ouvert_le, termine_le }.
+function exSuivi(chId, exId) {
+  const m = state.activeStudentData.exercices;
+  return m instanceof Map ? m.get(`${chId}|${exId}`) || null : null;
+}
+
+// « Terminé » sur cet appareil (clé locale, d'avant le suivi sur le serveur, et partagée par
+// tous les élèves d'un même navigateur) ou sur le serveur pour l'élève connecté.
+// Exception : un exercice d'un devoir pas encore fait, terminé seulement d'après la clé locale,
+// est réaffiché avec son bouton « J'ai terminé », pour que l'élève puisse valider son devoir.
 function exCleTermine(chId, exId) { return `physichim_ex_fini_${chId}_${exId}`; }
 function exEstTermine(chId, exId) {
+  const s = exSuivi(chId, exId);
+  if (s && s.termine_le) return true;
+  if (exDevoirEnAttente(chId, exId)) return false;
   try { return localStorage.getItem(exCleTermine(chId, exId)) === '1'; } catch (e) { return false; }
+}
+
+// Devoir pas encore fait qui demande cet exercice (le plus proche), ou null.
+function exDevoirEnAttente(chId, exId) {
+  return (state.activeStudentData.devoirs || []).find(d => d.chapitre_id === chId && !devoirFait(d)
+    && d.parties && d.parties.exercices && d.parties.exercices[exId] === null) || null;
+}
+
+// ── Envoi du suivi au serveur, avec file d'attente hors connexion ──
+// Un envoi qui échoue faute de réseau (ou serveur endormi) est gardé dans le navigateur, par
+// élève, puis renvoyé à la connexion suivante ou au prochain envoi réussi : rien n'est perdu.
+// Le serveur date l'événement à sa réception.
+// La clé est prise au début de chaque envoi : un élève qui se déconnecte entre-temps
+// retrouve ses envois en attente à sa prochaine connexion, sans les mélanger avec un autre.
+function exCleAttente() { return `physichim_ex_attente_${state.activeStudentId}`; }
+function exLireAttente(cle = exCleAttente()) {
+  try { return JSON.parse(localStorage.getItem(cle) || '[]'); } catch (e) { return []; }
+}
+function exEcrireAttente(liste, cle = exCleAttente()) {
+  try {
+    if (liste.length) localStorage.setItem(cle, JSON.stringify(liste.slice(-300)));
+    else localStorage.removeItem(cle);
+  } catch (e) {}
+}
+
+// Envoie un événement ; renvoie true s'il est enregistré (ou refusé pour de bon), false s'il reste à envoyer.
+async function exEnvoyer(evt) {
+  const r = await apiEleve('/api/exercices', 'POST', evt);
+  if (!r || r.status >= 500 || r.status === 401 || r.status === 429) return false;
+  if (r.ok) {
+    try {
+      const d = await r.json();
+      if (d.suivi && state.activeStudentData.exercices instanceof Map) {
+        state.activeStudentData.exercices.set(`${d.suivi.chapitre_id}|${d.suivi.exercice_id}`, d.suivi);
+      }
+    } catch (e) {}
+  }
+  return true; // 400 (exercice inconnu…) : inutile de réessayer
+}
+
+let exEnvoiEnCours = Promise.resolve();
+function exSignaler(chId, exId, action, extra = {}) {
+  if (!state.activeStudentId) return Promise.resolve(false);
+  const evt = { chapitre_id: chId, exercice_id: exId, action, ...extra };
+  const cle = exCleAttente(), eleve = state.activeStudentId;
+  // Les envois partent l'un après l'autre, dans l'ordre (ouverture avant aide, aide avant fin).
+  const envoi = exEnvoiEnCours.then(async () => {
+    const ok = state.activeStudentId === eleve && await exEnvoyer(evt);
+    if (!ok) exEcrireAttente([...exLireAttente(cle), evt], cle);
+    else if (exLireAttente(cle).length) await exViderAttente();
+    return ok;
+  });
+  exEnvoiEnCours = envoi.catch(() => {});
+  return envoi;
+}
+
+async function exViderAttente() {
+  if (!state.activeStudentId) return;
+  const cle = exCleAttente(), eleve = state.activeStudentId;
+  const liste = exLireAttente(cle);
+  if (!liste.length) return;
+  const reste = [];
+  for (let i = 0; i < liste.length; i++) {
+    if (state.activeStudentId !== eleve || !(await exEnvoyer(liste[i]))) { reste.push(...liste.slice(i)); break; }
+  }
+  exEcrireAttente(reste, cle);
+}
+
+
+// Ouverture : un exercice compte comme ouvert quand sa carte est restée au moins 2 secondes
+// à moitié visible à l'écran (une seule fois par exercice).
+const EX_DELAI_OUVERTURE_MS = 2000;
+const exOuverturesSignalees = new Set();
+let exObservateur = null;
+function exObserverOuvertures() {
+  if (exObservateur) exObservateur.disconnect();
+  if (!('IntersectionObserver' in window) || !state.activeStudentId) return;
+  const minuteries = new Map();
+  exObservateur = new IntersectionObserver(entrees => {
+    entrees.forEach(e => {
+      const el = e.target;
+      if (e.isIntersecting) {
+        if (!minuteries.has(el.id)) minuteries.set(el.id, setTimeout(() => {
+          minuteries.delete(el.id);
+          const chId = Number(el.dataset.chapitre), exId = el.dataset.exercice;
+          const cle = `${state.activeStudentId}|${chId}|${exId}`;
+          if (exOuverturesSignalees.has(cle) || exSuivi(chId, exId)) return;
+          exOuverturesSignalees.add(cle);
+          exSignaler(chId, exId, 'ouverture');
+        }, EX_DELAI_OUVERTURE_MS));
+      } else if (minuteries.has(el.id)) {
+        clearTimeout(minuteries.get(el.id));
+        minuteries.delete(el.id);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.ex-card[data-exercice]').forEach(el => exObservateur.observe(el));
 }
 
 function chapitreAExercices(ch) {
@@ -41890,6 +42003,7 @@ function renderExercice(ch, ex, rang) {
 
   const termine = exEstTermine(ch.id, ex.id);
   const enConfirmation = exConfirmEnCours === `${ch.id}|${ex.id}`;
+  const devoir = termine ? null : exDevoirEnAttente(ch.id, ex.id);
   let fin;
   if (termine) {
     fin = `<div class="ex-corrige"><div class="ex-corrige-title">✅ Corrigé</div>${(ex.corrige || []).map(p => `<p>${p}</p>`).join('')}</div>`;
@@ -41903,8 +42017,9 @@ function renderExercice(ch, ex, rang) {
     fin = `<button class="btn-secondary" onclick="exDemanderTermine(${ch.id}, '${escHtmlAttr(ex.id)}')">✔️ J'ai terminé — voir le corrigé</button>`;
   }
 
-  return `<div class="section ex-card" id="${escHtmlAttr(domId)}">
+  return `<div class="section ex-card" id="${escHtmlAttr(domId)}" data-chapitre="${ch.id}" data-exercice="${escHtmlAttr(ex.id)}">
     <div class="section-title"><span class="ex-num">Ex. ${rang}</span>${ex.titre || ''}</div>
+    ${devoir ? `<div class="ex-devoir">📝 Devoir pour le ${dateDevoirFr(devoir.date_limite)}</div>` : ''}
     <div class="ex-contexte">${(ex.contexte || []).map(p => `<p>${p}</p>`).join('')}</div>
     ${ex.image ? `<div class="schema-box">${ex.image}</div>` : ''}
     ${Array.isArray(ex.code) && ex.code.length ? `<pre class="ex-code">${escapeHtml(ex.code.join('\n'))}</pre>` : ''}
@@ -41943,12 +42058,14 @@ function exRafraichir(chId, exId) {
   const cible = el.classList.contains('ex-cible');
   el.outerHTML = renderExercice(ch, ch.exercices[idx], ordre.indexOf(ch.exercices[idx]) + 1);
   if (cible) document.getElementById(`ex-${chId}-${exId}`).classList.add('ex-cible');
+  exObserverOuvertures(); // la carte a été remplacée : on observe la nouvelle
 }
 
 function exAfficherAide(chId, exId, qi) {
   const cle = `${chId}|${exId}|${qi}`;
   exAidesVues[cle] = (exAidesVues[cle] || 0) + 1;
   exRafraichir(chId, exId);
+  exSignaler(chId, exId, 'aide', { question: qi, nb: exAidesVues[cle] });
 }
 
 function exDemanderTermine(chId, exId) {
@@ -41965,7 +42082,13 @@ function exAnnulerTermine() {
 function exConfirmerTermine(chId, exId) {
   exConfirmEnCours = null;
   try { localStorage.setItem(exCleTermine(chId, exId), '1'); } catch (e) {}
+  // Affiché tout de suite comme terminé (corrigé débloqué), même si l'envoi attend le réseau.
+  const m = state.activeStudentData.exercices;
+  const maintenant = new Date().toISOString();
+  if (m instanceof Map) m.set(`${chId}|${exId}`, { ...(m.get(`${chId}|${exId}`) || { aides: {}, ouvert_le: maintenant }), termine_le: maintenant });
+  marquerDevoirsFaits(chId, { exercice: exId });
   exRafraichir(chId, exId);
+  exSignaler(chId, exId, 'termine');
 }
 
 // ═══════════════════════════════════════════════════
@@ -42243,13 +42366,37 @@ function devoirFait(d) {
   return d.statut === 'a_temps' || d.statut === 'en_retard';
 }
 
-// Un quiz enregistré valide tout de suite les devoirs en cours sur ce chapitre, sans
-// attendre la prochaine connexion (le serveur recalcule de toute façon le statut réel).
-function marquerDevoirsFaits(chapitreId) {
+// Un quiz enregistré (ou un exercice terminé) valide tout de suite sa partie des devoirs en
+// cours sur ce chapitre, sans attendre la prochaine connexion (le serveur recalcule de toute
+// façon le statut réel). Le devoir passe à « fait » quand toutes ses parties le sont.
+// partie : { quiz: true } ou { exercice: "ex4" } ; sans précision, le quiz (comme avant).
+function marquerDevoirsFaits(chapitreId, partie = { quiz: true }) {
+  const maintenant = new Date().toISOString();
   (state.activeStudentData.devoirs || []).forEach(d => {
     if (d.chapitre_id !== chapitreId || devoirFait(d)) return;
-    d.statut = d.statut === 'non_fait' ? 'en_retard' : 'a_temps';
+    // Réponse d'un serveur sans détail des parties : un devoir = le quiz, comme avant.
+    if (!d.parties) d.parties = { quiz: null };
+    if (partie.quiz && d.parties.quiz === null) d.parties.quiz = maintenant;
+    if (partie.exercice && d.parties.exercices && d.parties.exercices[partie.exercice] === null) d.parties.exercices[partie.exercice] = maintenant;
+    const restant = (d.parties.quiz === null ? 1 : 0)
+      + Object.values(d.parties.exercices || {}).filter(v => v === null).length;
+    if (!restant) d.statut = d.statut === 'non_fait' ? 'en_retard' : 'a_temps';
   });
+}
+
+// Ce qui reste à faire dans un devoir : { quiz: bool, exercices: [ids] }.
+function devoirRestant(d) {
+  const p = d.parties || { quiz: null };
+  return {
+    quiz: p.quiz === null,
+    exercices: Object.entries(p.exercices || {}).filter(([, v]) => v === null).map(([id]) => id)
+  };
+}
+
+// Rang affiché d'un exercice (« Ex. 3 »), dans l'ordre de l'onglet Exercices (par niveau).
+function exRang(ch, exId) {
+  const ordre = [1, 2, 3].flatMap(n => (ch.exercices || []).filter(e => Number(e.niveau) === n));
+  return ordre.findIndex(e => e.id === exId) + 1;
 }
 
 function dateDevoirFr(iso) {
@@ -42272,6 +42419,25 @@ function openDevoir(chapitreId) {
   switchTab('quiz');
 }
 
+// Ouvre l'onglet Exercices d'un devoir, sur le premier exercice qui reste à faire.
+function openDevoirExercices(chapitreId, exId) {
+  const ch = CHAPTERS.find(c => c.id === chapitreId);
+  if (!ch || isChapterLocked(chapitreId)) return;
+  if (ch.niveau !== state.niveau) {
+    state.niveau = ch.niveau;
+    localStorage.setItem('physichim_niveau', ch.niveau);
+    refreshNiveauButtons();
+    buildNav();
+  }
+  openChapter(chapitreId);
+  switchTab('exercices');
+  const el = document.getElementById(`ex-${chapitreId}-${exId}`);
+  if (el) {
+    el.classList.add('ex-cible');
+    requestAnimationFrame(() => el.scrollIntoView({ block: 'start' }));
+  }
+}
+
 function renderDevoirsHome() {
   if (!state.activeStudentId) return '';
   const devoirs = (state.activeStudentData.devoirs || [])
@@ -42286,14 +42452,24 @@ function renderDevoirsHome() {
       const enRetard = d.statut === 'non_fait';
       const detail = fait ? '✓ Fait' : enRetard ? `⚠ En retard — c'était pour le ${dateDevoirFr(d.date_limite)}` : `Pour le ${dateDevoirFr(d.date_limite)}`;
       const couleur = fait ? 'var(--green)' : enRetard ? 'var(--red)' : 'var(--muted)';
+      const reste = devoirRestant(d);
+      // Contenu du devoir : quiz et/ou exercices, chaque partie cochée quand elle est faite.
+      const exos = Object.entries((d.parties && d.parties.exercices) || {});
+      const contenu = (d.avec_quiz === false ? [] : [`${d.parties && d.parties.quiz ? '✓ ' : ''}Quiz`])
+        .concat(exos.map(([id, v]) => `${v ? '✓ ' : ''}Ex. ${exRang(ch, id) || id}`));
+      const boutons = fait ? '' : isChapterLocked(ch.id)
+        ? `<span style="font-size:.75rem;color:var(--muted)">🔒 Chapitre fermé par ton professeur</span>`
+        : `<div style="display:flex;gap:8px;flex-wrap:wrap">
+            ${reste.quiz ? `<button class="btn-primary" style="font-size:.85rem;padding:10px 16px" onclick="openDevoir(${ch.id})">Faire le quiz</button>` : ''}
+            ${reste.exercices.length ? `<button class="btn-primary" style="font-size:.85rem;padding:10px 16px" onclick="openDevoirExercices(${ch.id}, '${escHtmlAttr(reste.exercices[0])}')">Faire ${reste.exercices.length > 1 ? 'les exercices' : "l'exercice"}</button>` : ''}
+          </div>`;
       return `<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0;border-top:1px solid var(--border)">
         <div style="font-size:.85rem">
           <strong>${NIVEAU_LABELS[ch.niveau] !== NIVEAU_LABELS[state.niveau] ? NIVEAU_LABELS[ch.niveau] + ' · ' : ''}${ch.num}. ${escapeHtml(ch.title)}</strong>
+          ${contenu.length > 1 || exos.length ? `<div style="font-size:.8rem;margin-top:2px">${contenu.map(escapeHtml).join(' · ')}</div>` : ''}
           <div style="color:${couleur};font-size:.8rem;margin-top:2px">${detail}</div>
         </div>
-        ${fait ? '' : isChapterLocked(ch.id)
-          ? `<span style="font-size:.75rem;color:var(--muted)">🔒 Chapitre fermé par ton professeur</span>`
-          : `<button class="btn-primary" style="font-size:.85rem;padding:10px 16px" onclick="openDevoir(${ch.id})">Faire le quiz</button>`}
+        ${boutons}
       </div>`;
     }).join('')}
   </div>`;
@@ -42395,6 +42571,8 @@ function refreshContent() {
   else if (state.currentTab === 'exercices') html = renderExercices(ch);
   else if (state.currentTab === 'annales') html = renderAnnales(ch);
   document.getElementById('content').innerHTML = html;
+  if (state.currentTab === 'exercices') exObserverOuvertures();
+  else if (exObservateur) exObservateur.disconnect();
   if (state.currentTab !== 'quiz') document.getElementById('content').scrollTop = 0;
 }
 
@@ -42477,7 +42655,9 @@ function applyStudentLoginResult(result, code) {
   result = { ...result,
     progression: (result.progression || []).map(versActuel),
     devoirs: (result.devoirs || []).map(versActuel),
-    chapitresAutorises: [...new Set((result.chapitresAutorises || []).map(chapitreIdActuel))] };
+    chapitresAutorises: [...new Set((result.chapitresAutorises || []).map(chapitreIdActuel))],
+    exercices: (result.exercices || []).map(x => ({ ...x,
+      exercice_id: exerciceIdActuel(x.chapitre_id, x.exercice_id), chapitre_id: chapitreIdActuel(x.chapitre_id) })) };
   state.activeStudentId = eleve.id;
   memoriserJeton(result);
 
@@ -42489,6 +42669,7 @@ function applyStudentLoginResult(result, code) {
     progression: result.progression || [],
     chapitresAutorises: result.chapitresAutorises || [],
     devoirs: result.devoirs || [],
+    exercices: new Map(result.exercices.map(x => [`${x.chapitre_id}|${x.exercice_id}`, x])),
     classe: result.classe || null
   };
 
@@ -42502,7 +42683,10 @@ function applyStudentLoginResult(result, code) {
   document.getElementById('logout-btn').style.display = 'block';
   applyNiveauLock();
   maybeShowOnboarding(eleve.id);
+  // Envois d'exercices restés en attente (connexion coupée), à la suite des autres envois.
+  exEnvoiEnCours = exEnvoiEnCours.then(exViderAttente).catch(() => {});
 }
+
 
 // ── Bienvenue au tout premier login (une fois par élève, jamais revu ensuite) ──
 const ONBOARDING_STEPS = [
