@@ -16,11 +16,14 @@
     --surface: #FAFAF5;
     --surface2: #EBECE3;
     --border: #D3D6C9;
-    --accent: #2F7D75;
-    --accent2: #C0472F;
-    --green: #3F7A3D;
+    /* Accessibilité (WCAG 2.1 AA) : accent, accent2, green et yellow légèrement assombris
+       (même teinte) pour un contraste d'au moins 4,5:1 du texte sur tous les fonds clairs
+       du site, y compris le bas de la barre latérale. Avant : #2F7D75, #C0472F, #3F7A3D, #876222. */
+    --accent: #2B726B;
+    --accent2: #B2422B;
+    --green: #3B733A;
     --red: #B23A2E;
-    --yellow: #876222;
+    --yellow: #856121;
     --text: #1B2420;
     --muted: #5C6B60;
     --ch-chimie: #2F7D75;
@@ -849,8 +852,11 @@
     .home-grid { grid-template-columns: 1fr 1fr; }
     /* Zones à toucher d'au moins ~44 px au doigt */
     #menu-toggle { min-width: 44px; min-height: 44px; }
-    .logout-btn { padding: 10px 12px; }
-    .niveau-btn { min-height: 38px; }
+    .logout-btn { padding: 10px 12px; min-width: 44px; min-height: 44px; }
+    .niveau-btn { min-height: 44px; }
+    .nav-item { min-height: 44px; }
+    .btn-close { min-width: 44px; min-height: 44px; }
+    .tab-btn, .ex-btn-aide, .btn-primary, .btn-secondary, .form-input, .form-select, #student-badge .student-info { min-height: 44px; }
   }
   @media (max-width: 480px) {
     .home-grid { grid-template-columns: 1fr; }
@@ -866,12 +872,32 @@
     .tab-bar { gap: 2px; padding: 3px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
     .tab-bar::-webkit-scrollbar { display: none; }
     .tab-btn { padding: 12px 7px; font-size: 0.74rem; white-space: nowrap; flex-shrink: 0; }
-    /* Plus de place pour le titre quand les onglets sont affichés : il ne restait qu'un « … ». */
-    #topbar:has(#tab-bar[style*="flex"]) #page-title { display: none; }
+    /* Plus de place pour le titre quand les onglets sont affichés : il ne restait qu'un « … ».
+       Il reste lu par les lecteurs d'écran (titre principal de la page). */
+    #topbar:has(#tab-bar[style*="flex"]) #page-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   }
   /* Survol réservé aux souris : au doigt, il restait affiché et se confondait avec la réponse choisie */
   @media (hover: none) {
     .option:hover:not(.locked):not(.selected) { border-color: var(--border); background: transparent; transform: none; }
+  }
+
+  /* ── ACCESSIBILITÉ ── */
+  /* Texte lu par les lecteurs d'écran, invisible à l'écran. */
+  .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  /* Lien « Aller au contenu », visible seulement quand on y arrive au clavier. */
+  .lien-evitement { position: absolute; left: 8px; top: -80px; z-index: 3000; background: var(--accent); color: #fff; padding: 12px 18px; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; }
+  .lien-evitement:focus { top: 8px; }
+  /* Focus visible au clavier sur tout ce qui est interactif (et seulement au clavier). */
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .form-input:focus-visible, .form-select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  #content:focus, #content:focus-visible, [tabindex="-1"]:focus { outline: none; }
+  .tab-btn.active:focus-visible, .niveau-btn.active:focus-visible, .btn-primary:focus-visible { outline-color: var(--text); }
+  /* Corbeille d'une note : vrai bouton, zone de toucher de 44 px. */
+  button.grade-del { background: none; border: none; min-width: 44px; min-height: 44px; border-radius: var(--radius-sm); }
+  /* Mouvement réduit (réglage du système) : plus d'animations ni de transitions. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .chapter-card:hover, .nav-item:hover, .option:hover { transform: none !important; }
   }
 
   /* scrollbar */
@@ -882,6 +908,7 @@
 </style>
 </head>
 <body>
+<a class="lien-evitement" href="#content">Aller au contenu</a>
 
 <div id="app">
   <!-- SIDEBAR -->
@@ -891,43 +918,44 @@
       <div class="app-subtitle" id="app-subtitle">Terminale — Espace de révision</div>
     </div>
     <div id="student-badge" onclick="openStudentModal()">
-      <span class="student-icon">👤</span>
-      <div class="student-info">
+      <span class="student-icon" aria-hidden="true">👤</span>
+      <div class="student-info" role="button" tabindex="0" aria-describedby="badge-aide">
         <div class="student-id">Identifiant</div>
         <div class="student-name" id="badge-name">Sélectionner un élève</div>
+        <span class="visually-hidden" id="badge-aide">Ouvrir la connexion élève</span>
       </div>
-      <button id="logout-btn" class="logout-btn" style="display:none" title="Se déconnecter (PC partagé)" onclick="event.stopPropagation(); logoutStudent()">🚪</button>
+      <button id="logout-btn" class="logout-btn" style="display:none" title="Se déconnecter (PC partagé)" aria-label="Se déconnecter" onclick="event.stopPropagation(); logoutStudent()"><span aria-hidden="true">🚪</span></button>
     </div>
 
-    <div id="niveau-switcher">
-      <button class="niveau-btn" id="niveau-btn-2nde" onclick="setNiveau('2nde')">Seconde</button>
-      <button class="niveau-btn" id="niveau-btn-1ere" onclick="setNiveau('1ere')">Première</button>
-      <button class="niveau-btn active" id="niveau-btn-tle" onclick="setNiveau('tle')">Terminale</button>
+    <div id="niveau-switcher" role="group" aria-label="Niveau affiché">
+      <button class="niveau-btn" id="niveau-btn-2nde" onclick="setNiveau('2nde')" aria-pressed="false">Seconde</button>
+      <button class="niveau-btn" id="niveau-btn-1ere" onclick="setNiveau('1ere')" aria-pressed="false">Première</button>
+      <button class="niveau-btn active" id="niveau-btn-tle" onclick="setNiveau('tle')" aria-pressed="true">Terminale</button>
     </div>
 
     <div class="nav-section">
       <div class="nav-label">Navigation</div>
-      <div class="nav-item active" onclick="showHome(); closeSidebarOnMobile()" id="nav-home">
+      <div class="nav-item active" role="button" tabindex="0" aria-current="page" onclick="showHome(); closeSidebarOnMobile()" id="nav-home">
         <span class="nav-dot" style="background:var(--accent)"></span>
         Accueil
       </div>
-      <div class="nav-item" onclick="showDashboard(); closeSidebarOnMobile()" id="nav-dashboard">
+      <div class="nav-item" role="button" tabindex="0" onclick="showDashboard(); closeSidebarOnMobile()" id="nav-dashboard">
         <span class="nav-dot" style="background:var(--accent2)"></span>
         Tableau de bord élève
       </div>
-      <div class="nav-item" onclick="showTeacher(); closeSidebarOnMobile()" id="nav-teacher">
+      <div class="nav-item" role="button" tabindex="0" onclick="showTeacher(); closeSidebarOnMobile()" id="nav-teacher">
         <span class="nav-dot" style="background:var(--green)"></span>
         Vue enseignant
       </div>
-      <div class="nav-item" onclick="openRgpd(); closeSidebarOnMobile()" id="nav-rgpd">
+      <div class="nav-item" role="button" tabindex="0" onclick="openRgpd(); closeSidebarOnMobile()" id="nav-rgpd">
         <span class="nav-dot" style="background:var(--muted)"></span>
         Mes données personnelles
       </div>
     </div>
 
     <div class="nav-section" style="flex:1;overflow-y:auto;padding-bottom:16px">
-      <div class="nav-label">Chapitres</div>
-      <div id="chapters-nav"></div>
+      <div class="nav-label" id="chapitres-label">Chapitres</div>
+      <div id="chapters-nav" role="group" aria-labelledby="chapitres-label"></div>
     </div>
   </nav>
   <!-- Voile derrière le menu sur téléphone : un toucher à côté referme le menu. -->
@@ -935,35 +963,35 @@
 
   <!-- MAIN -->
   <div id="main">
-    <div id="topbar">
-      <button id="menu-toggle" onclick="toggleSidebar()">☰</button>
-      <div id="page-title">Accueil</div>
-      <div class="tab-bar" id="tab-bar" style="display:none">
-        <button class="tab-btn active" id="tab-cours" onclick="switchTab('cours')">📖 Cours</button>
-        <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">🧠 Quiz</button>
-        <button class="tab-btn" id="tab-exercices" onclick="switchTab('exercices')" style="display:none">✏️ Exercices</button>
-        <button class="tab-btn" id="tab-annales" onclick="switchTab('annales')">📝 Annales</button>
+    <header id="topbar">
+      <button id="menu-toggle" onclick="toggleSidebar()" aria-label="Menu des chapitres" aria-controls="sidebar" aria-expanded="true"><span aria-hidden="true">☰</span></button>
+      <h1 id="page-title">Accueil</h1>
+      <div class="tab-bar" id="tab-bar" style="display:none" role="group" aria-label="Rubriques du chapitre">
+        <button class="tab-btn active" id="tab-cours" onclick="switchTab('cours')" aria-pressed="true"><span aria-hidden="true">📖 </span>Cours</button>
+        <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')" aria-pressed="false"><span aria-hidden="true">🧠 </span>Quiz</button>
+        <button class="tab-btn" id="tab-exercices" onclick="switchTab('exercices')" style="display:none" aria-pressed="false"><span aria-hidden="true">✏️ </span>Exercices</button>
+        <button class="tab-btn" id="tab-annales" onclick="switchTab('annales')" aria-pressed="false"><span aria-hidden="true">📝 </span>Annales</button>
       </div>
-    </div>
-    <div id="content">
+    </header>
+    <main id="content" tabindex="-1">
       <!-- dynamically filled -->
-    </div>
+    </main>
   </div>
 </div>
 
 <!-- STUDENT LOGIN MODAL -->
 <div class="modal-overlay" id="modal-overlay">
-  <div class="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="connexion-titre">
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
-      <div class="modal-title">🔑 Connexion élève</div>
-      <button class="btn-close" onclick="closeStudentModal()">✕</button>
+      <h2 class="modal-title" id="connexion-titre"><span aria-hidden="true">🔑 </span>Connexion élève</h2>
+      <button class="btn-close" onclick="closeStudentModal()" aria-label="Fermer">✕</button>
     </div>
 
     <!-- Config serveur (première fois) -->
     <div id="modal-server-setup" style="display:none">
       <div class="modal-sub">⚙️ Entrez l'adresse du serveur fournie par votre enseignant.</div>
       <div class="form-group" style="margin-bottom:12px">
-        <label class="form-label">Adresse du serveur</label>
+        <label class="form-label" for="server-url-input">Adresse du serveur</label>
         <input type="text" class="form-input" id="server-url-input" placeholder="https://votre-app.railway.app" style="width:100%">
       </div>
       <button class="btn-primary" onclick="saveServerUrl()" style="width:100%">Valider</button>
@@ -979,9 +1007,9 @@
         <span>🌐</span><span id="modal-server-display"></span>
         <span style="cursor:pointer;color:var(--accent);margin-left:auto" onclick="showServerSetup()">Changer</span>
       </div>
-      <div id="login-error" style="display:none;background:rgba(178,58,46,.1);border:1px solid rgba(178,58,46,.3);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--red);margin-bottom:12px"></div>
+      <div id="login-error" role="alert" style="display:none;background:rgba(178,58,46,.1);border:1px solid rgba(178,58,46,.3);border-radius:8px;padding:8px 12px;font-size:.82rem;color:var(--red);margin-bottom:12px"></div>
       <div class="form-group" style="margin-bottom:12px">
-        <label class="form-label">Mon code élève</label>
+        <label class="form-label" for="login-code">Mon code élève</label>
         <input type="text" class="form-input" id="login-code" placeholder="ex : AB7KQ2XM" autocapitalize="characters" autocorrect="off" autocomplete="off" spellcheck="false" style="width:100%;text-transform:uppercase;font-family:'DM Mono',monospace;font-size:1.1rem;letter-spacing:.1em" onkeydown="if(event.key==='Enter')doStudentLogin()">
       </div>
       <button class="btn-primary" id="login-btn" onclick="doStudentLogin()" style="width:100%">Se connecter</button>
@@ -1036,9 +1064,10 @@
 </div>
 
 <div class="modal-overlay" id="onboarding-overlay">
-  <div class="modal" style="text-align:center">
+  <div class="modal" style="text-align:center" role="dialog" aria-modal="true" aria-labelledby="onboarding-titre">
     <div id="onboarding-content"></div>
-    <div style="display:flex;justify-content:center;gap:6px;margin:16px 0">
+    <div style="display:flex;justify-content:center;gap:6px;margin:16px 0" aria-hidden="true">
+
       <span class="onb-dot" style="width:7px;height:7px;border-radius:50%;background:var(--border)"></span>
       <span class="onb-dot" style="width:7px;height:7px;border-radius:50%;background:var(--border)"></span>
       <span class="onb-dot" style="width:7px;height:7px;border-radius:50%;background:var(--border)"></span>
@@ -1189,6 +1218,14 @@ const CAT_COLORS = {
   chimie: '#2F7D75', physique: '#6E4FA0', mecanique: '#3E7DBF',
   thermo: '#C0472F', elec: '#876222', organique: '#5C8A3A'
 };
+// Même famille de couleurs, assombrie juste assez pour le TEXTE des étiquettes (« Chimie »,
+// « Mécanique »…) : contraste d'au moins 4,5:1 sur leur fond teinté (WCAG 2.1 AA).
+// Le fond teinté, les pastilles et les bordures gardent CAT_COLORS.
+const CAT_COLORS_TEXTE = {
+  chimie: '#286A64', physique: '#6D4E9E', mecanique: '#316397',
+  thermo: '#A33C28', elec: '#7B591F', organique: '#466A2C'
+};
+function couleurTexteCategorie(ch) { return CAT_COLORS_TEXTE[ch.category] || 'var(--text)'; }
 // Abréviation façon "symbole d'élément" (2 lettres), dérivée du premier mot du titre —
 // pas de donnée supplémentaire à maintenir par chapitre.
 function chapterSymbol(title) {
@@ -1307,7 +1344,7 @@ function niveauxAccessibles(niveau) {
 function refreshNiveauButtons() {
   NIVEAU_ORDER.forEach(n => {
     const btn = document.getElementById(`niveau-btn-${n}`);
-    if (btn) btn.classList.toggle('active', n === state.niveau);
+    if (btn) { btn.classList.toggle('active', n === state.niveau); btn.setAttribute('aria-pressed', String(n === state.niveau)); }
   });
   document.getElementById('app-subtitle').textContent = `${NIVEAU_LABELS[state.niveau]} — Espace de révision`;
 }
@@ -1461,37 +1498,90 @@ function buildNav() {
     const quizScore = d[`quiz_${ch.id}`];
     const scoreLabel = quizScore !== undefined ? `${quizScore}/10` : '';
     const scoreColor = quizScore >= 7 ? 'var(--green)' : quizScore >= 5 ? 'var(--yellow)' : quizScore !== undefined ? 'var(--red)' : 'var(--muted)';
+    const raisonVerrou = state.activeStudentId ? 'Verrouillé par votre professeur' : 'Connectez-vous pour accéder à ce chapitre';
     nav.innerHTML += `
       <div class="nav-item ch-${ch.category}${locked ? ' locked' : ''}" id="nav-ch-${ch.id}" onclick="openChapter(${ch.id})"
+           role="button" tabindex="0"${locked ? ' aria-disabled="true"' : ''}
            style="--dot-color:${CAT_COLORS[ch.category] || ch.color}">
         <span class="nav-dot"></span>
         <span style="flex:1;overflow:hidden;text-overflow:ellipsis">${ch.num}. ${ch.title}</span>
-        ${locked ? `<span class="nav-check" title="${state.activeStudentId ? 'Verrouillé par votre professeur' : 'Connectez-vous pour accéder à ce chapitre'}">🔒</span>` : (scoreLabel ? `<span class="quiz-score" style="color:${scoreColor}">${scoreLabel}</span>` : '')}
+        ${locked ? `<span class="nav-check" title="${raisonVerrou}"><span aria-hidden="true">🔒</span><span class="visually-hidden">(${raisonVerrou.toLowerCase()})</span></span>` : (scoreLabel ? `<span class="quiz-score" style="color:${scoreColor}"><span class="visually-hidden">quiz : </span>${scoreLabel}</span>` : '')}
       </div>`;
   });
 }
 
+// Menu replié : hors de l'écran, il ne doit plus recevoir le focus clavier ni être lu (inert).
+function appliquerEtatSidebar() {
+  const sb = document.getElementById('sidebar');
+  sb.classList.toggle('collapsed', !state.sidebarOpen);
+  sb.inert = !state.sidebarOpen;
+  document.getElementById('menu-toggle').setAttribute('aria-expanded', String(state.sidebarOpen));
+}
+
 function toggleSidebar() {
   state.sidebarOpen = !state.sidebarOpen;
-  document.getElementById('sidebar').classList.toggle('collapsed', !state.sidebarOpen);
+  appliquerEtatSidebar();
+  // Au clavier sur téléphone, le focus entre dans le menu qui vient de s'ouvrir.
+  if (state.sidebarOpen && window.innerWidth <= 768) {
+    const actif = document.querySelector('#sidebar .nav-item.active') || document.querySelector('#sidebar .nav-item');
+    if (actif) actif.focus({ preventScroll: true });
+  }
 }
 
 // Sur téléphone, le menu recouvre la page : on le referme dès qu'on choisit où aller.
 function closeSidebarOnMobile() {
   if (window.innerWidth > 768 || !state.sidebarOpen) return;
   state.sidebarOpen = false;
-  document.getElementById('sidebar').classList.add('collapsed');
+  appliquerEtatSidebar();
 }
 
 function setNavActive(id) {
-  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(el => { el.classList.remove('active'); el.removeAttribute('aria-current'); });
   const el = document.getElementById(id);
-  if (el) el.classList.add('active');
+  if (el) { el.classList.add('active'); el.setAttribute('aria-current', 'page'); }
 }
+
+// Après un changement de vue, le focus clavier va au contenu s'il était perdu (élément
+// remplacé), dans le menu, ou nulle part : sinon il faudrait tout reparcourir au clavier.
+// Le titre de l'onglet du navigateur suit la vue affichée.
+function focusContenu(titre) {
+  if (titre) document.title = `${titre} — PhysiChim`;
+  const a = document.activeElement;
+  if (!a || a === document.body || !a.isConnected || document.getElementById('sidebar').contains(a)) {
+    document.getElementById('content').focus({ preventScroll: true });
+  }
+}
+
+// Place le focus sur un élément après le prochain rendu (lecture par les lecteurs d'écran).
+function focusSur(selecteur) {
+  requestAnimationFrame(() => {
+    const el = typeof selecteur === 'string' ? document.querySelector(selecteur) : selecteur;
+    if (el) el.focus({ preventScroll: false });
+  });
+}
+
+// Éléments qui ne sont pas de vrais boutons mais en jouent le rôle (role="button" ou
+// "radio") : Entrée et Espace les activent, comme un bouton.
+document.addEventListener('keydown', e => {
+  const el = e.target;
+  if ((e.key === 'Enter' || e.key === ' ') && el instanceof HTMLElement && !(el instanceof HTMLButtonElement)
+    && /^(button|radio)$/.test(el.getAttribute('role') || '')) {
+    e.preventDefault();
+    if (el.getAttribute('aria-disabled') !== 'true') el.click();
+    else if (el.classList.contains('locked')) el.click(); // chapitre verrouillé : ouvre la connexion si besoin
+  }
+});
 
 // ═══════════════════════════════════════════════════
 // RENDERING FICHE
 // ═══════════════════════════════════════════════════
+
+// Nom accessible d'un schéma SVG (sa légende, ou un nom générique) : sans lui, un lecteur
+// d'écran lit les étiquettes du dessin une à une, sans les relier.
+function svgAccessible(svg, nom) {
+  const label = escHtmlAttr(String(nom || '').replace(/<[^>]*>/g, '').trim() || 'Schéma');
+  return String(svg).replace(/<svg\b(?![^>]*\brole=)/, `<svg role="img" aria-label="${label}"`);
+}
 
 function renderContent(c) {
   if (c.type === 'def') return `<div class="key-def"><span class="def-term">${c.term}</span><br>${c.text}</div>`;
@@ -1499,7 +1589,7 @@ function renderContent(c) {
   if (c.type === 'warn') return `<div class="warn-box">${c.text}</div>`;
   if (c.type === 'text') return `<p style="font-size:.88rem;line-height:1.6;color:#2E3A34;margin:6px 0">${c.text}</p>`;
   if (c.type === 'table') return `<div class="table-wrapper"><table class="data-table"><thead><tr>${c.headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${c.rows.map(r=>`<tr>${r.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
-  if (c.type === 'schema') return `<div class="schema-box">${c.svg}${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
+  if (c.type === 'schema') return `<div class="schema-box">${svgAccessible(c.svg, c.caption)}${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
   if (c.type === 'embed') return `<div class="schema-box embed-box">${c.title ? `<div class="section-title" style="font-size:.95rem;margin-bottom:10px">${c.title}</div>` : ''}<iframe srcdoc="${escHtmlAttr(c.html)}" title="${escHtmlAttr(c.title || 'Contenu interactif')}" style="width:100%;height:${c.height || 2300}px;border:0;border-radius:12px;display:block" loading="lazy" onload="ajusterHauteurEmbed(this)"></iframe>${c.caption ? `<div class="schema-caption">${c.caption}</div>` : ''}</div>`;
   return '';
 }
@@ -1531,13 +1621,13 @@ function renderFiche(ch) {
       <div>
         <div class="fiche-title">${ch.title}</div>
         <div class="fiche-subtitle">
-          <span class="card-tag" style="background:${(CAT_COLORS[ch.category] || ch.color)}22;color:${CAT_COLORS[ch.category] || ch.color}">${ch.tag}</span>
+          <span class="card-tag" style="background:${(CAT_COLORS[ch.category] || ch.color)}22;color:${couleurTexteCategorie(ch)}">${ch.tag}</span>
         </div>
       </div>
     </div>
     ${ch.fiche.sections.map(sec => `
       <div class="section">
-        <div class="section-title"><span class="s-icon">${sec.icon}</span>${sec.title}</div>
+        <h2 class="section-title"><span class="s-icon" aria-hidden="true">${sec.icon}</span>${sec.title}</h2>
         ${sec.content.map(renderContent).join('')}
       </div>
     `).join('')}
@@ -1558,7 +1648,7 @@ function renderQuiz(ch) {
     const prev = d[`quiz_${ch.id}`];
     return `
       <div class="quiz-intro">
-        <div class="big-icon">🧠</div>
+        <div class="big-icon" aria-hidden="true">🧠</div>
         <h2>Quiz — ${ch.title}</h2>
         <p>${Math.min(ch.quiz.length, QUIZ_NB_QUESTIONS)} questions pour vérifier vos connaissances sur ce chapitre${ch.quiz.length > QUIZ_NB_QUESTIONS ? `, tirées au hasard parmi ${ch.quiz.length} : chaque essai est différent` : ''}.</p>
         ${prev !== undefined ? `<p style="color:var(--accent);margin-bottom:16px">Votre score précédent : <strong>${prev}/10</strong></p>` : ''}
@@ -1575,15 +1665,15 @@ function renderQuiz(ch) {
 
   return `
     <div class="quiz-progress">
-      <div class="quiz-progress-bar">
+      <div class="quiz-progress-bar" role="progressbar" aria-label="Avancement du quiz" aria-valuemin="0" aria-valuemax="${totalQ}" aria-valuenow="${i}">
         <div class="quiz-progress-fill" style="width:${(i/totalQ)*100}%"></div>
       </div>
-      <div class="quiz-progress-text">Q${i+1}/${totalQ}</div>
+      <div class="quiz-progress-text" aria-hidden="true">Q${i+1}/${totalQ}</div>
     </div>
     <div class="question-card">
-      <div class="question-num">Question ${i+1}</div>
-      <div class="question-text">${q.q.replace(/\n/g,'<br>')}</div>
-      <div class="options">
+      <h2 class="question-num" style="font-weight:inherit">Question ${i+1}<span class="visually-hidden"> sur ${totalQ}</span></h2>
+      <div class="question-text" id="question-texte" tabindex="-1">${q.q.replace(/\n/g,'<br>')}</div>
+      <div class="options" role="radiogroup" aria-labelledby="question-texte">
         ${q.opts.map((opt, oi) => {
           let cls = 'option';
           if (revealed) {
@@ -1595,12 +1685,15 @@ function renderQuiz(ch) {
           }
           const letter = String.fromCharCode(65+oi);
           const clickHandler = revealed ? '' : `onclick="selectAnswer(${oi})"`;
-          return `<div class="${cls}" ${clickHandler}>
-            <span class="option-letter">${letter}</span>${opt}
+          // Choix au clavier (Tab, Entrée/Espace) et lus comme des boutons radio ; une fois
+          // la réponse validée, la correction est dite en toutes lettres, pas seulement en couleur.
+          const verdict = !revealed ? '' : oi === q.ans ? ' (bonne réponse)' : oi === selected ? ' (ta réponse, incorrecte)' : '';
+          return `<div class="${cls}" ${clickHandler} role="radio" aria-checked="${oi === selected}" tabindex="${revealed ? -1 : 0}"${revealed ? ' aria-disabled="true"' : ''}>
+            <span class="option-letter">${letter}</span>${opt}${verdict ? `<span class="visually-hidden">${verdict}</span>` : ''}
           </div>`;
         }).join('')}
       </div>
-      <div class="explanation ${revealed ? 'show' : ''}">
+      <div class="explanation ${revealed ? 'show' : ''}" id="quiz-explication" tabindex="-1">
         <div class="exp-label">✓ Explication</div>
         ${q.exp}
       </div>
@@ -1671,21 +1764,27 @@ function startQuiz() {
   const ch = CHAPTERS.find(c => c.id === state.currentChapter);
   state.quiz = { active: true, idx: 0, answers: {}, revealed: {}, questions: buildShuffledQuiz(ch) };
   refreshContent();
+  focusSur('#question-texte');
 }
 
+// Le contenu est redessiné à chaque action : on remet le focus là où l'élève en a besoin
+// (sinon, au clavier, il repartirait du haut de la page à chaque réponse).
 function selectAnswer(oi) {
   state.quiz.answers[state.quiz.idx] = oi;
   refreshContent();
+  focusSur(document.querySelectorAll('#content .options [role="radio"]')[oi]);
 }
 
 function revealAnswer() {
   state.quiz.revealed[state.quiz.idx] = true;
   refreshContent();
+  focusSur('#quiz-explication');
 }
 
 function nextQuestion() {
   state.quiz.idx++;
   refreshContent();
+  focusSur('#question-texte');
 }
 
 // Messages variés (tirés au sort) pour ne pas répéter toujours la même phrase
@@ -1702,6 +1801,7 @@ function randomQuizMessage(cls) {
 
 // Petite pluie de confettis pour célébrer un bon score — CSS only, aucune dépendance.
 function launchConfetti() {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const colors = ['#2F7D75', '#C0472F', '#3F7A3D', '#6E4FA0', '#B8862E', '#3E7DBF'];
   const count = 28;
   for (let i = 0; i < count; i++) {
@@ -1773,8 +1873,8 @@ async function finishQuiz() {
         <div class="score-num">${score}/10</div>
         <div class="score-label">score</div>
       </div>
-      <h2 style="font-family:Syne,sans-serif;font-size:1.3rem;margin-bottom:8px">${msg}</h2>
-      <div id="quiz-save-status">${quizSaveStatusHtml(saved, student)}</div>
+      <h2 style="font-family:Syne,sans-serif;font-size:1.3rem;margin-bottom:8px" id="quiz-resultat" tabindex="-1"><span class="visually-hidden">Résultat : ${score} sur 10. </span>${msg}</h2>
+      <div id="quiz-save-status" role="status">${quizSaveStatusHtml(saved, student)}</div>
       <div style="display:flex;gap:12px;justify-content:center">
         <button class="btn-secondary" onclick="startQuiz()">Refaire le quiz</button>
         <button class="btn-primary" onclick="switchTab('cours')">Revoir le cours</button>
@@ -1782,6 +1882,7 @@ async function finishQuiz() {
     </div>`;
 
   state.quiz.active = false;
+  focusSur('#quiz-resultat');
 }
 
 // ═══════════════════════════════════════════════════
@@ -1932,7 +2033,7 @@ function renderExercice(ch, ex, rang) {
     const vues = Math.min(exAidesVues[`${ch.id}|${ex.id}|${qi}`] || 0, aides.length);
     return `<li class="ex-question">
       <div>${q.texte}</div>
-      ${aides.slice(0, vues).map((a, ai) => `<div class="ex-aide"><span class="ex-aide-label">💡 Aide ${ai + 1}${aides.length > 1 ? '/' + aides.length : ''} :</span>${a}</div>`).join('')}
+      ${aides.slice(0, vues).map((a, ai) => `<div class="ex-aide" id="${escHtmlAttr(`${domId}-q${qi}-aide${ai}`)}" tabindex="-1"><span class="ex-aide-label"><span aria-hidden="true">💡 </span>Aide ${ai + 1}${aides.length > 1 ? '/' + aides.length : ''} :</span>${a}</div>`).join('')}
       ${vues < aides.length ? `<button class="ex-btn-aide" onclick="exAfficherAide(${ch.id}, '${escHtmlAttr(ex.id)}', ${qi})">💡 Afficher l'aide ${vues + 1}</button>` : ''}
     </li>`;
   }).join('');
@@ -1942,9 +2043,9 @@ function renderExercice(ch, ex, rang) {
   const devoir = termine ? null : exDevoirEnAttente(ch.id, ex.id);
   let fin;
   if (termine) {
-    fin = `<div class="ex-corrige"><div class="ex-corrige-title">✅ Corrigé</div>${(ex.corrige || []).map(p => `<p>${p}</p>`).join('')}</div>`;
+    fin = `<div class="ex-corrige"><h4 class="ex-corrige-title" tabindex="-1">✅ Corrigé</h4>${(ex.corrige || []).map(p => `<p>${p}</p>`).join('')}</div>`;
   } else if (enConfirmation) {
-    fin = `<div class="ex-confirm">As-tu vraiment terminé toutes les questions ? Le corrigé restera affiché ensuite.
+    fin = `<div class="ex-confirm" role="group" aria-label="Confirmer la fin de l'exercice">As-tu vraiment terminé toutes les questions ? Le corrigé restera affiché ensuite.
       <div class="ex-confirm-actions">
         <button class="btn-primary" style="padding:10px 18px" onclick="exConfirmerTermine(${ch.id}, '${escHtmlAttr(ex.id)}')">Oui, voir le corrigé</button>
         <button class="btn-secondary" style="padding:10px 18px" onclick="exAnnulerTermine()">Pas encore</button>
@@ -1954,10 +2055,10 @@ function renderExercice(ch, ex, rang) {
   }
 
   return `<div class="section ex-card" id="${escHtmlAttr(domId)}" data-chapitre="${ch.id}" data-exercice="${escHtmlAttr(ex.id)}">
-    <div class="section-title"><span class="ex-num">Ex. ${rang}</span>${ex.titre || ''}</div>
+    <h3 class="section-title"><span class="ex-num">Ex. ${rang}</span>${ex.titre || ''}</h3>
     ${devoir ? `<div class="ex-devoir">📝 Devoir pour le ${dateDevoirFr(devoir.date_limite)}</div>` : ''}
     <div class="ex-contexte">${(ex.contexte || []).map(p => `<p>${p}</p>`).join('')}</div>
-    ${ex.image ? `<div class="schema-box">${ex.image}</div>` : ''}
+    ${ex.image ? `<div class="schema-box">${svgAccessible(ex.image, `Document de l'exercice ${rang}`)}</div>` : ''}
     ${Array.isArray(ex.code) && ex.code.length ? `<pre class="ex-code">${escapeHtml(ex.code.join('\n'))}</pre>` : ''}
     ${Array.isArray(ex.contexte2) && ex.contexte2.length ? `<div class="ex-contexte">${ex.contexte2.map(p => `<p>${p}</p>`).join('')}</div>` : ''}
     <ol class="ex-questions">${questions}</ol>
@@ -1976,7 +2077,7 @@ function renderExercices(ch) {
       <p style="color:var(--muted);font-size:.84rem">Commence par le niveau conseillé par ton professeur. Bloqué(e) ? Dévoile les aides une par une, seulement si besoin. Le corrigé s'affiche quand tu as terminé l'exercice.</p>
     </div>
     ${parNiveau.map(g => `
-      <div class="ex-niveau-title"><span class="ex-stars">${EX_NIVEAUX[g.n].etoiles}</span>${EX_NIVEAUX[g.n].nom}</div>
+      <h2 class="ex-niveau-title"><span class="ex-stars" aria-hidden="true">${EX_NIVEAUX[g.n].etoiles}</span>${EX_NIVEAUX[g.n].nom}<span class="visually-hidden"> (niveau ${g.n} sur 3)</span></h2>
       ${g.liste.map(ex => renderExercice(ch, ex, ++rang)).join('')}
     `).join('')}
   `;
@@ -2001,18 +2102,23 @@ function exAfficherAide(chId, exId, qi) {
   const cle = `${chId}|${exId}|${qi}`;
   exAidesVues[cle] = (exAidesVues[cle] || 0) + 1;
   exRafraichir(chId, exId);
+  focusSur(document.getElementById(`ex-${chId}-${exId}-q${qi}-aide${exAidesVues[cle] - 1}`)); // l'aide qui vient d'apparaître
   exSignaler(chId, exId, 'aide', { question: qi, nb: exAidesVues[cle] });
 }
 
 function exDemanderTermine(chId, exId) {
   exConfirmEnCours = `${chId}|${exId}`;
   exRafraichir(chId, exId);
+  focusSur(document.querySelector(`#ex-${chId}-${exId} .ex-confirm .btn-primary`));
 }
 
 function exAnnulerTermine() {
   const [chId, exId] = (exConfirmEnCours || '').split('|');
   exConfirmEnCours = null;
-  if (exId) exRafraichir(Number(chId), exId);
+  if (exId) {
+    exRafraichir(Number(chId), exId);
+    focusSur(document.querySelector(`#ex-${chId}-${exId} .ex-fin .btn-secondary`));
+  }
 }
 
 function exConfirmerTermine(chId, exId) {
@@ -2024,6 +2130,7 @@ function exConfirmerTermine(chId, exId) {
   if (m instanceof Map) m.set(`${chId}|${exId}`, { ...(m.get(`${chId}|${exId}`) || { aides: {}, ouvert_le: maintenant }), termine_le: maintenant });
   marquerDevoirsFaits(chId, { exercice: exId });
   exRafraichir(chId, exId);
+  focusSur(document.querySelector(`#ex-${chId}-${exId} .ex-corrige-title`));
   exSignaler(chId, exId, 'termine');
 }
 
@@ -2119,7 +2226,7 @@ function renderAnnales(ch) {
             <div class="annale-title">${a.title}</div>
             <div class="annale-meta">${a.session}</div>
           </div>
-          <a class="annale-link" href="${a.link}" target="_blank" rel="noopener">Accéder ↗</a>
+          <a class="annale-link" href="${a.link}" target="_blank" rel="noopener" aria-label="Accéder à l'annale ${escHtmlAttr(String(a.title).replace(/<[^>]*>/g, ''))} ${escHtmlAttr(a.year)} sur labolycee.org (nouvel onglet)">Accéder <span aria-hidden="true">↗</span></a>
         </div>
       `).join('')}
     </div>
@@ -2135,7 +2242,7 @@ function renderDashboard() {
   const student = getStudent();
   if (!student) {
     return `<div style="text-align:center;padding:60px 20px">
-      <div style="font-size:3rem;margin-bottom:16px">👤</div>
+      <div style="font-size:3rem;margin-bottom:16px" aria-hidden="true">👤</div>
       <h2 style="font-family:Syne,sans-serif;margin-bottom:8px">Non connecté</h2>
       <p style="color:var(--muted);margin-bottom:20px">Connectez-vous avec votre code élève pour voir votre tableau de bord.</p>
       <button class="btn-primary" onclick="openStudentModal()">Se connecter</button>
@@ -2165,9 +2272,9 @@ function renderDashboard() {
 
   return `
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px">
-      <div style="font-size:2rem">👤</div>
+      <div style="font-size:2rem" aria-hidden="true">👤</div>
       <div>
-        <div style="font-family:Syne,sans-serif;font-size:1.3rem;font-weight:800">${escapeHtml(student.name)}</div>
+        <h2 style="font-family:Syne,sans-serif;font-size:1.3rem;font-weight:800">${escapeHtml(student.name)}</h2>
         <div style="color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:6px">
           Code : <strong style="font-family:'DM Mono',monospace;color:var(--accent)">${escapeHtml(student.code) || student.id}</strong>
           <span style="color:var(--green);font-size:.75rem">● Synchronisé</span>
@@ -2190,7 +2297,7 @@ function renderDashboard() {
       </div>
       <div class="stat-card">
         <div class="stat-label">Moyenne notes</div>
-        <div class="stat-value" style="color:${avgGrade!=='—'&&parseFloat(avgGrade)>=10?'var(--green)':'var(--red)'}">${avgGrade}<span class="stat-unit">/ 20</span></div>
+        <div class="stat-value" style="color:${avgGrade==='—'?'inherit':parseFloat(avgGrade)>=10?'var(--green)':'var(--red)'}">${avgGrade}<span class="stat-unit">/ 20</span></div>
       </div>
     </div>
 
@@ -2204,41 +2311,41 @@ function renderDashboard() {
     </div>` : ''}
 
     <div style="margin-bottom:20px">
-      <div style="font-family:Syne,sans-serif;font-weight:700;margin-bottom:12px">📊 Résultats par chapitre</div>
+      <h2 style="font-family:Syne,sans-serif;font-size:1rem;font-weight:700;margin-bottom:12px"><span aria-hidden="true">📊 </span>Résultats par chapitre</h2>
       ${currentChapters().map(ch => {
         const score = scores[ch.id];
         const pct   = score !== undefined ? (score/10)*100 : 0;
         const color = score === undefined ? 'var(--border)' : score>=7?'var(--green)':score>=5?'var(--yellow)':'var(--red)';
         return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
           <div style="font-size:.78rem;width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted)">${ch.num}. ${ch.title}</div>
-          <div class="card-progress-bar" style="flex:1"><div class="card-progress-fill" style="width:${pct}%;background:${color}"></div></div>
-          <div style="font-family:'DM Mono',monospace;font-size:.78rem;min-width:44px;text-align:right;color:${color}">${score !== undefined ? (score>=7?'✓':score>=5?'~':'!')+' '+score+'/10' : '—'}</div>
+          <div class="card-progress-bar" style="flex:1" aria-hidden="true"><div class="card-progress-fill" style="width:${pct}%;background:${color}"></div></div>
+          <div style="font-family:'DM Mono',monospace;font-size:.78rem;min-width:44px;text-align:right;color:${score === undefined ? 'var(--muted)' : color}">${score !== undefined ? (score>=7?'✓':score>=5?'~':'!')+' '+score+'/10' : '—'}</div>
         </div>`;
       }).join('')}
     </div>
 
     <div class="grades-section">
       <div class="grades-header">
-        <div class="grades-title">📝 Notes de devoirs</div>
-        <button class="btn-secondary" onclick="toggleAddGrade()" style="font-size:.8rem;padding:6px 14px">+ Ajouter</button>
+        <h2 class="grades-title"><span aria-hidden="true">📝 </span>Notes de devoirs</h2>
+        <button class="btn-secondary" onclick="toggleAddGrade()" style="font-size:.8rem;padding:6px 14px;min-height:44px" aria-expanded="false" aria-controls="add-grade-form" id="btn-ajout-note">+ Ajouter</button>
       </div>
       <div class="add-grade-form" id="add-grade-form">
         <div class="form-row">
           <div class="form-group">
-            <label class="form-label">Type</label>
+            <label class="form-label" for="grade-type">Type</label>
             <select class="form-select" id="grade-type">
               <option>DS</option><option>DM</option><option>Interro</option><option>TP noté</option>
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Intitulé</label>
+            <label class="form-label" for="grade-name">Intitulé</label>
             <input type="text" class="form-input" id="grade-name" placeholder="Ex: DS Ch.1-2">
           </div>
           <div class="form-group">
-            <label class="form-label">Note /20</label>
+            <label class="form-label" for="grade-val">Note /20</label>
             <input type="number" class="form-input" id="grade-val" min="0" max="20" step="0.5" placeholder="ex: 14.5">
           </div>
-          <button class="btn-primary" onclick="addGrade()" style="height:36px;padding:0 16px">✓</button>
+          <button class="btn-primary" onclick="addGrade()" style="min-height:44px;padding:0 16px" aria-label="Enregistrer la note">✓</button>
         </div>
       </div>
       ${notes.length === 0
@@ -2248,7 +2355,7 @@ function renderDashboard() {
             <div class="grade-type">${escapeHtml(g.type)}</div>
             <div class="grade-name">${escapeHtml(g.name)}</div>
             <div class="grade-value" style="color:${parseFloat(g.val)>=10?'var(--green)':'var(--red)'}">${parseFloat(g.val)>=10?'✓':'!'} ${parseFloat(g.val).toFixed(1)}/20</div>
-            <div class="grade-del" onclick="deleteGrade(${g.id})">🗑</div>
+            <button type="button" class="grade-del" onclick="deleteGrade(${g.id})" aria-label="Supprimer la note ${escHtmlAttr(g.name)}"><span aria-hidden="true">🗑</span></button>
           </div>`).join('')
       }
     </div>
@@ -2256,7 +2363,10 @@ function renderDashboard() {
 }
 
 function toggleAddGrade() {
-  document.getElementById('add-grade-form').classList.toggle('open');
+  const ouvert = document.getElementById('add-grade-form').classList.toggle('open');
+  const b = document.getElementById('btn-ajout-note');
+  if (b) b.setAttribute('aria-expanded', String(ouvert));
+  if (ouvert) focusSur('#grade-type');
 }
 
 async function addGrade() {
@@ -2388,7 +2498,7 @@ function renderDevoirsHome() {
   if (!devoirs.length) return '';
   const reste = devoirs.filter(x => !devoirFait(x.d)).length;
   return `<div style="margin-top:14px;background:var(--surface2);border:1px solid var(--border);border-left:4px solid ${reste ? 'var(--accent2)' : 'var(--green)'};border-radius:var(--radius-sm);padding:14px 16px">
-    <div style="font-family:Syne,sans-serif;font-weight:800;margin-bottom:8px">📝 ${reste ? `À faire (${reste})` : 'Devoirs terminés'}</div>
+    <h2 style="font-family:Syne,sans-serif;font-size:1rem;font-weight:800;margin-bottom:8px"><span aria-hidden="true">📝 </span>${reste ? `À faire (${reste})` : 'Devoirs terminés'}</h2>
     ${devoirs.map(({ d, ch }) => {
       const fait = devoirFait(d);
       const enRetard = d.statut === 'non_fait';
@@ -2432,7 +2542,7 @@ function showHome() {
   const lastChapter = lastChapterId !== null ? CHAPTERS.find(c => c.id === lastChapterId) : null;
   document.getElementById('content').innerHTML = `
     <div style="margin-bottom:20px">
-      <div style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">${title}</div>
+      <h2 style="font-family:Syne,sans-serif;font-size:1.5rem;font-weight:800;margin-bottom:4px">${title}</h2>
       <p style="color:var(--muted);font-size:.88rem">${notConnected ? 'Connectez-vous avec votre code élève pour accéder aux fiches de cours et aux quiz.' : allLocked ? 'Votre professeur n\'a pas encore activé de chapitre pour votre classe. Revenez plus tard.' : 'Choisissez un chapitre pour commencer à réviser.'}</p>
       ${notConnected ? `<button class="btn-primary" onclick="openStudentModal()" style="margin-top:8px">Se connecter</button>` : ''}
       ${renderDevoirsHome()}
@@ -2447,19 +2557,21 @@ function showHome() {
         const d = getStudentData(state.activeStudentId);
         const score = d[`quiz_${ch.id}`];
         const pct = score !== undefined ? (score/10)*100 : 0;
-        return `<div class="chapter-card${locked ? ' locked' : ''}" data-symbol="${chapterSymbol(ch.title)}" style="--card-color:${CAT_COLORS[ch.category] || ch.color}" onclick="openChapter(${ch.id})">
-          ${locked ? `<span class="chapter-lock-badge" title="${state.activeStudentId ? 'Verrouillé par votre professeur' : 'Connectez-vous pour accéder à ce chapitre'}">🔒</span>` : ''}
+        const raisonVerrou = state.activeStudentId ? 'Verrouillé par votre professeur' : 'Connectez-vous pour accéder à ce chapitre';
+        return `<div class="chapter-card${locked ? ' locked' : ''}" data-symbol="${chapterSymbol(ch.title)}" style="--card-color:${CAT_COLORS[ch.category] || ch.color}" onclick="openChapter(${ch.id})" role="button" tabindex="0"${locked ? ' aria-disabled="true"' : ''}>
+          ${locked ? `<span class="chapter-lock-badge" title="${raisonVerrou}"><span aria-hidden="true">🔒</span><span class="visually-hidden">(${raisonVerrou.toLowerCase()})</span></span>` : ''}
           <div class="card-num">Chapitre ${ch.num}</div>
           <div class="card-title">${ch.title}</div>
-          <span class="card-tag" style="background:${(CAT_COLORS[ch.category] || ch.color)}22;color:${CAT_COLORS[ch.category] || ch.color}">${ch.tag}</span>
+          <span class="card-tag" style="background:${(CAT_COLORS[ch.category] || ch.color)}22;color:${couleurTexteCategorie(ch)}">${ch.tag}</span>
           <div class="card-progress-row">
-            <div class="card-progress-bar"><div class="card-progress-fill" style="width:${pct}%"></div></div>
-            <div class="card-progress-text">${score !== undefined ? score+'/10' : '—'}</div>
+            <div class="card-progress-bar" aria-hidden="true"><div class="card-progress-fill" style="width:${pct}%"></div></div>
+            <div class="card-progress-text">${score !== undefined ? `<span class="visually-hidden">quiz : </span>${score}/10` : '<span aria-hidden="true">—</span><span class="visually-hidden">quiz pas encore fait</span>'}</div>
           </div>
         </div>`;
       }).join('')}
     </div>
   `;
+  focusContenu('Accueil');
 }
 
 function showDashboard() {
@@ -2469,6 +2581,7 @@ function showDashboard() {
   document.getElementById('page-title').textContent = 'Tableau de bord';
   setNavActive('nav-dashboard');
   document.getElementById('content').innerHTML = renderDashboard();
+  focusContenu('Tableau de bord');
 }
 
 // Ouvre un chapitre sur sa fiche de cours. Son contenu est téléchargé à la première ouverture
@@ -2507,11 +2620,12 @@ async function openChapter(id) {
   state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
   document.getElementById('page-title').textContent = `${ch.num}. ${ch.title}`;
   document.getElementById('tab-bar').style.display = 'flex';
-  document.getElementById('tab-cours').classList.add('active');
-  document.getElementById('tab-quiz').classList.remove('active');
-  document.getElementById('tab-annales').classList.remove('active');
+  ['cours', 'quiz', 'exercices', 'annales'].forEach(t => {
+    const b = document.getElementById(`tab-${t}`);
+    b.classList.toggle('active', t === 'cours');
+    b.setAttribute('aria-pressed', String(t === 'cours'));
+  });
   const tabEx = document.getElementById('tab-exercices');
-  tabEx.classList.remove('active');
   tabEx.style.display = chapitreAExercices(ch) ? '' : 'none';
   setNavActive(`nav-ch-${id}`);
   document.getElementById('content').innerHTML = renderFiche(ch);
@@ -2519,6 +2633,7 @@ async function openChapter(id) {
   if (state.activeStudentData?.progression) state.activeStudentData.progression.unshift({ chapitre_id: id, action: 'open', date: new Date().toISOString() });
   closeSidebarOnMobile();
   document.getElementById('content').scrollTop = 0;
+  focusContenu(`${ch.num}. ${ch.title}`);
   return true;
 }
 
@@ -2528,6 +2643,7 @@ function switchTab(tab) {
   if (tab !== 'quiz') state.quiz = { active: false, idx: 0, answers: {}, revealed: {} };
   ['cours','quiz','exercices','annales'].forEach(t => {
     document.getElementById(`tab-${t}`).classList.toggle('active', t === tab);
+    document.getElementById(`tab-${t}`).setAttribute('aria-pressed', String(t === tab));
   });
   refreshContent();
 }
@@ -2550,7 +2666,33 @@ function refreshContent() {
 // CONNEXION ÉLÈVE (via serveur)
 // ═══════════════════════════════════════════════════
 
+// ── Fenêtres (connexion, données personnelles, bienvenue) ──
+// Échap ferme la fenêtre ouverte ; Tab reste à l'intérieur tant qu'elle est ouverte ; à la
+// fermeture, le focus revient là où il était.
+let modaleOuverteDepuis = null;
+document.addEventListener('keydown', e => {
+  const ouvertes = [...document.querySelectorAll('.modal-overlay.open')];
+  const modale = ouvertes[ouvertes.length - 1];
+  if (!modale) return;
+  if (e.key === 'Escape') {
+    e.preventDefault();
+    if (modale.id === 'rgpd-overlay') closeRgpd();
+    else if (modale.id === 'onboarding-overlay') closeOnboarding();
+    else closeStudentModal();
+    return;
+  }
+  if (e.key !== 'Tab') return;
+  const focusables = [...modale.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')]
+    .filter(el => !el.disabled && el.offsetParent !== null);
+  if (!focusables.length) return;
+  const premier = focusables[0], dernier = focusables[focusables.length - 1];
+  if (!modale.contains(document.activeElement)) { e.preventDefault(); premier.focus(); }
+  else if (e.shiftKey && document.activeElement === premier) { e.preventDefault(); dernier.focus(); }
+  else if (!e.shiftKey && document.activeElement === dernier) { e.preventDefault(); premier.focus(); }
+});
+
 function openStudentModal() {
+  if (!document.getElementById('modal-overlay').classList.contains('open')) modaleOuverteDepuis = document.activeElement;
   if (!SERVER_URL) {
     document.getElementById('modal-server-setup').style.display = 'block';
     document.getElementById('modal-login-form').style.display = 'none';
@@ -2571,6 +2713,8 @@ function openStudentModal() {
 
 function closeStudentModal() {
   document.getElementById('modal-overlay').classList.remove('open');
+  if (modaleOuverteDepuis && modaleOuverteDepuis.isConnected && modaleOuverteDepuis.focus) modaleOuverteDepuis.focus();
+  modaleOuverteDepuis = null;
 }
 
 // Information RGPD complète (au-dessus de la fenêtre de connexion si elle est ouverte).
@@ -2672,12 +2816,13 @@ function maybeShowOnboarding(studentId) {
   onboardingStep = 0;
   renderOnboardingStep();
   document.getElementById('onboarding-overlay').classList.add('open');
+  focusSur('#onboarding-next-btn');
 }
 function renderOnboardingStep() {
   const s = ONBOARDING_STEPS[onboardingStep];
   document.getElementById('onboarding-content').innerHTML = `
-    <div style="font-size:3rem;margin-bottom:12px">${s.icon}</div>
-    <div class="modal-title">${s.title}</div>
+    <div style="font-size:3rem;margin-bottom:12px" aria-hidden="true">${s.icon}</div>
+    <h2 class="modal-title" id="onboarding-titre">${s.title}<span class="visually-hidden"> (étape ${onboardingStep + 1} sur ${ONBOARDING_STEPS.length})</span></h2>
     <p style="color:var(--muted);font-size:.9rem;margin-top:8px">${s.text}</p>
   `;
   document.querySelectorAll('.onb-dot').forEach((d, i) => d.style.background = i === onboardingStep ? 'var(--accent)' : 'var(--border)');
@@ -2689,7 +2834,9 @@ function onboardingNext() {
   renderOnboardingStep();
 }
 function closeOnboarding() {
+  const etaitOuvert = document.getElementById('onboarding-overlay').classList.contains('open');
   document.getElementById('onboarding-overlay').classList.remove('open');
+  if (etaitOuvert) focusContenu();
   if (state.activeStudentId) localStorage.setItem('physichim_onboarded_' + state.activeStudentId, '1');
 }
 
@@ -2782,9 +2929,7 @@ function showTeacher() {
         La gestion des élèves, la vue globale des scores et l'export CSV se font depuis l'interface d'administration dédiée.
       </p>
       ${adminUrl
-        ? `<a href="${adminUrl}" target="_blank" rel="noopener">
-            <button class="btn-primary" style="font-size:.95rem;padding:12px 28px">Ouvrir l'interface admin ↗</button>
-           </a>
+        ? `<a href="${adminUrl}" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;text-decoration:none;font-size:.95rem;padding:12px 28px">Ouvrir l'interface admin <span aria-hidden="true">↗</span><span class="visually-hidden">(nouvel onglet)</span></a>
            <p style="color:var(--muted);font-size:.75rem;margin-top:12px">${adminUrl}</p>`
         : `<p style="color:var(--accent2);margin-bottom:16px">⚠️ Configurez d'abord l'adresse du serveur en vous connectant avec votre code élève.</p>
            <button class="btn-secondary" onclick="openStudentModal()">Configurer le serveur</button>`
@@ -2794,6 +2939,7 @@ function showTeacher() {
       </div>
     </div>
   `;
+  focusContenu('Espace enseignant');
 }
 
 // ═══════════════════════════════════════════════════
@@ -2806,7 +2952,8 @@ state.lienDirect = lireLienDirect(); // ?chap=…&ex=… (QR code), ouvert aprè
 
 // Reconnexion automatique si code sauvegardé
 (async () => {
-  document.getElementById('sidebar').classList.toggle('collapsed', !state.sidebarOpen); // replié par défaut sur mobile, sinon la sidebar (280px) recouvre l'écran au premier chargement
+  appliquerEtatSidebar(); // replié par défaut sur mobile, sinon la sidebar (280px) recouvre l'écran au premier chargement
+
   const savedCode = localStorage.getItem('physichim_active_code');
   if (savedCode && SERVER_URL) {
     const result = await apiLogin(savedCode);

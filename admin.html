@@ -11,7 +11,9 @@
   :root {
     --bg:#0d0f14;--surface:#161922;--surface2:#1e2330;--border:#2a3040;
     --accent:#4f8ef7;--accent2:#f7a24f;--green:#4fca7a;--red:#f75959;
-    --yellow:#f7d44f;--text:#e8ecf4;--muted:#7a8399;--radius:12px;
+    --yellow:#f7d44f;--text:#e8ecf4;--muted:#9199ab;--radius:12px;
+    /* Accessibilité : --muted éclairci (avant #7a8399) pour 4,5:1 sur tous les fonds, y compris les badges gris ;
+       bouton principal assombri (avant #4f8ef7) pour 4,5:1 avec le texte blanc. */
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding:24px}
@@ -31,7 +33,7 @@
   .form-select option{background:var(--surface2)}
 
   .btn{padding:10px 20px;border-radius:8px;border:none;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:all .15s}
-  .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:#3a7de8;transform:translateY(-1px)}
+  .btn-primary{background:#2f6fd8;color:#fff}.btn-primary:hover{background:#255fc0;transform:translateY(-1px)}
   .btn-secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}.btn-secondary:hover{border-color:var(--accent);color:var(--accent)}
   .btn-danger{background:rgba(247,89,89,.1);color:var(--red);border:1px solid rgba(247,89,89,.3)}.btn-danger:hover{background:rgba(247,89,89,.2)}
   .btn-sm{padding:6px 12px;font-size:.78rem}
@@ -128,7 +130,23 @@
   .devoir-exos label{display:flex;align-items:center;gap:6px;cursor:pointer}
   .devoir-exos input{accent-color:var(--accent);width:16px;height:16px}
 
+  /* ── Accessibilité ── */
+  .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+  .lien-evitement{position:absolute;left:8px;top:-80px;z-index:3000;background:#2f6fd8;color:#fff;padding:12px 18px;border-radius:8px;font-weight:600;text-decoration:none}
+  .lien-evitement:focus{top:8px}
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .form-input:focus-visible,.form-select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  [tabindex="-1"]:focus{outline:none}
+  button.link-muted{background:none;border:none;font:inherit;padding:4px 0}
+  .class-card:focus-visible{border-color:var(--accent)}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    .btn-primary:hover,.class-card:hover{transform:none!important}
+  }
+
   @media(max-width:600px){
+    /* Zones à toucher d'au moins 44 px au doigt */
+    .btn,.tab,.form-input,.form-select{min-height:44px}
     .stats-grid{grid-template-columns:1fr 1fr}
     .add-eleve-row{flex-direction:column}
     .add-eleve-row .form-group{width:100%}
@@ -142,26 +160,28 @@
 </style>
 </head>
 <body>
+<a class="lien-evitement" href="#principal">Aller au contenu</a>
+<main id="principal" tabindex="-1">
 
 <div id="login-screen">
   <div class="login-box" id="teacher-login-box">
     <div class="logo">⚛ PhysiChim</div>
     <div class="subtitle">Espace enseignant</div>
     <br>
-    <div class="login-title">Connexion</div>
+    <h1 class="login-title">Connexion</h1>
     <div class="login-sub">Entrez votre identifiant et votre code.</div>
     <div id="login-alert"></div>
     <div class="form-group">
-      <label class="form-label">Identifiant</label>
+      <label class="form-label" for="teacher-identifiant">Identifiant</label>
       <input class="form-input" id="teacher-identifiant" placeholder="ex : mjullien" autocomplete="username">
     </div>
     <div class="form-group">
-      <label class="form-label">Code</label>
+      <label class="form-label" for="teacher-code">Code</label>
       <input class="form-input" type="password" id="teacher-code" placeholder="Votre code" autocomplete="current-password">
     </div>
     <button class="btn btn-primary" onclick="doTeacherLogin()" style="width:100%">Se connecter</button>
     <p style="font-size:.75rem;margin-top:14px;text-align:center">
-      <span class="link-muted" onclick="showSuperadminBox()">Vous êtes responsable de l'établissement ?</span>
+      <button type="button" class="link-muted" onclick="showSuperadminBox()">Vous êtes responsable de l'établissement ?</button>
     </p>
   </div>
 
@@ -169,16 +189,16 @@
     <div class="logo">⚛ PhysiChim</div>
     <div class="subtitle">Gestion des comptes enseignants</div>
     <br>
-    <div class="login-title">Clé maître</div>
+    <h1 class="login-title">Clé maître</h1>
     <div class="login-sub">Entrez la clé maître (ADMIN_KEY) pour créer ou supprimer les comptes enseignants (5 maximum).</div>
     <div id="superadmin-alert"></div>
     <div class="form-group">
-      <label class="form-label">Clé maître</label>
+      <label class="form-label" for="superadmin-key">Clé maître</label>
       <input class="form-input" type="password" id="superadmin-key" placeholder="physichim-admin-2024">
     </div>
     <button class="btn btn-primary" onclick="doSuperadminLogin()" style="width:100%">Accéder</button>
     <p style="font-size:.75rem;margin-top:14px;text-align:center">
-      <span class="link-muted" onclick="showTeacherBox()">← Retour à la connexion enseignant</span>
+      <button type="button" class="link-muted" onclick="showTeacherBox()">← Retour à la connexion enseignant</button>
     </p>
   </div>
 </div>
@@ -186,7 +206,7 @@
 <div id="superadmin-screen" style="display:none">
   <header>
     <div class="header-left">
-      <div class="logo">⚛ PhysiChim</div>
+      <h1 class="logo">⚛ PhysiChim</h1>
       <div class="subtitle">Comptes enseignants</div>
     </div>
     <div class="header-right">
@@ -201,18 +221,18 @@
   </div>
 
   <div class="card">
-    <div class="card-title">➕ Créer un compte enseignant (<span id="teacher-count">0</span>/5)</div>
+    <h2 class="card-title">➕ Créer un compte enseignant (<span id="teacher-count">0</span>/5)</h2>
     <div class="add-eleve-row">
       <div class="form-group">
-        <label class="form-label">Identifiant</label>
+        <label class="form-label" for="new-teacher-id">Identifiant</label>
         <input class="form-input" id="new-teacher-id" placeholder="mjullien">
       </div>
       <div class="form-group">
-        <label class="form-label">Code</label>
+        <label class="form-label" for="new-teacher-code">Code</label>
         <input class="form-input" id="new-teacher-code" placeholder="code secret">
       </div>
       <div class="form-group">
-        <label class="form-label">Nom affiché</label>
+        <label class="form-label" for="new-teacher-nom">Nom affiché</label>
         <input class="form-input" id="new-teacher-nom" placeholder="M. Jullien">
       </div>
       <button class="btn btn-primary" onclick="addTeacher()">Créer</button>
@@ -221,7 +241,7 @@
   </div>
 
   <div class="card">
-    <div class="card-title">👥 Comptes enseignants</div>
+    <h2 class="card-title">👥 Comptes enseignants</h2>
     <div class="table-wrap">
       <table>
         <thead><tr><th>Identifiant</th><th>Nom</th><th>Classes</th><th>Élèves</th><th>Dernière connexion</th><th>Actions</th></tr></thead>
@@ -234,7 +254,7 @@
 <div id="main-screen" style="display:none">
   <header>
     <div class="header-left">
-      <div class="logo">⚛ PhysiChim</div>
+      <h1 class="logo">⚛ PhysiChim</h1>
       <div class="subtitle" id="teacher-label">Administration</div>
     </div>
     <div class="header-right">
@@ -245,7 +265,7 @@
   </header>
 
   <div class="card" id="lien-card" style="display:none">
-    <div class="card-title">🔗 Lien à projeter en classe</div>
+    <h2 class="card-title">🔗 Lien à projeter en classe</h2>
     <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
       <img id="lien-qr" width="140" height="140" style="border-radius:8px;background:#fff;padding:6px" alt="QR code du lien élèves">
       <div style="flex:1;min-width:200px">
@@ -260,26 +280,26 @@
   <div id="view-list">
     <div class="stats-grid" id="stats-grid"></div>
 
-    <div class="tabs">
-      <button class="tab active" id="tab-classes" onclick="switchTab('classes')">🏷️ Classes</button>
-      <button class="tab" id="tab-eleves" onclick="switchTab('eleves')">👤 Élèves</button>
-      <button class="tab" id="tab-scores" onclick="switchTab('scores')">📊 Scores quiz</button>
-      <button class="tab" id="tab-notes" onclick="switchTab('notes')">📝 Notes</button>
-      <button class="tab" id="tab-erreurs" onclick="switchTab('erreurs')">⚠️ Erreurs fréquentes</button>
-      <button class="tab" id="tab-exercices" onclick="switchTab('exercices')">✏️ Exercices</button>
+    <div class="tabs" role="group" aria-label="Rubriques">
+      <button class="tab active" aria-pressed="true" id="tab-classes" onclick="switchTab('classes')">🏷️ Classes</button>
+      <button class="tab" aria-pressed="false" id="tab-eleves" onclick="switchTab('eleves')">👤 Élèves</button>
+      <button class="tab" aria-pressed="false" id="tab-scores" onclick="switchTab('scores')">📊 Scores quiz</button>
+      <button class="tab" aria-pressed="false" id="tab-notes" onclick="switchTab('notes')">📝 Notes</button>
+      <button class="tab" aria-pressed="false" id="tab-erreurs" onclick="switchTab('erreurs')">⚠️ Erreurs fréquentes</button>
+      <button class="tab" aria-pressed="false" id="tab-exercices" onclick="switchTab('exercices')">✏️ Exercices</button>
     </div>
 
     <!-- Onglet Classes -->
     <div id="pane-classes">
       <div class="card">
-        <div class="card-title">➕ Créer une classe</div>
+        <h2 class="card-title">➕ Créer une classe</h2>
         <div class="add-eleve-row">
           <div class="form-group">
-            <label class="form-label">Nom de la classe</label>
+            <label class="form-label" for="new-classe-nom">Nom de la classe</label>
             <input class="form-input" id="new-classe-nom" placeholder="ex : Terminale 1">
           </div>
           <div class="form-group">
-            <label class="form-label">Niveau</label>
+            <label class="form-label" for="new-classe-niveau">Niveau</label>
             <select class="form-select" id="new-classe-niveau">
               <option value="2nde">Seconde</option>
               <option value="1ere">Première</option>
@@ -293,7 +313,7 @@
       <div class="home-grid-admin" id="classes-grid"></div>
 
       <div class="card" style="margin-top:24px">
-        <div class="card-title">🧹 Fin d'année : effacer les données des élèves</div>
+        <h2 class="card-title">🧹 Fin d'année : effacer les données des élèves</h2>
         <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Efface les scores de quiz, les erreurs fréquentes, les chapitres ouverts, le suivi des exercices, les notes saisies, le journal des connexions et les devoirs de vos classes. Les classes et leurs chapitres autorisés sont conservés. Pensez à faire l'<button type="button" class="link-muted" style="background:none;border:none;font:inherit;padding:0" onclick="exportCSV()">export CSV</button> avant : cette action est irréversible.</p>
         <div class="add-eleve-row">
           <div class="form-group">
@@ -313,15 +333,15 @@
     <!-- Onglet Élèves -->
     <div id="pane-eleves" style="display:none">
       <div class="card">
-        <div class="card-title">👥 Tous les élèves</div>
+        <h2 class="card-title">👥 Tous les élèves</h2>
         <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Pour ajouter un élève, ouvrez sa classe depuis l'onglet Classes.</p>
         <div class="tabs" style="margin-bottom:14px">
-          <button class="tab active" id="eleves-niveau-all" onclick="setElevesNiveau('all')">Tous</button>
-          <button class="tab" id="eleves-niveau-2nde" onclick="setElevesNiveau('2nde')">Seconde</button>
-          <button class="tab" id="eleves-niveau-1ere" onclick="setElevesNiveau('1ere')">Première</button>
-          <button class="tab" id="eleves-niveau-tle" onclick="setElevesNiveau('tle')">Terminale</button>
+          <button class="tab active" aria-pressed="true" id="eleves-niveau-all" onclick="setElevesNiveau('all')">Tous</button>
+          <button class="tab" aria-pressed="false" id="eleves-niveau-2nde" onclick="setElevesNiveau('2nde')">Seconde</button>
+          <button class="tab" aria-pressed="false" id="eleves-niveau-1ere" onclick="setElevesNiveau('1ere')">Première</button>
+          <button class="tab" aria-pressed="false" id="eleves-niveau-tle" onclick="setElevesNiveau('tle')">Terminale</button>
         </div>
-        <input class="form-input" id="eleves-search" placeholder="🔍 Rechercher un élève (pseudo ou code)…" oninput="renderEleves()" style="margin-bottom:14px;max-width:320px">
+        <input class="form-input" id="eleves-search" aria-label="Rechercher un élève (pseudo ou code)" placeholder="🔍 Rechercher un élève (pseudo ou code)…" oninput="renderEleves()" style="margin-bottom:14px;max-width:320px">
         <div class="table-wrap">
           <table>
             <thead><tr>
@@ -337,11 +357,11 @@
     <!-- Onglet Scores -->
     <div id="pane-scores" style="display:none">
       <div class="card">
-        <div class="card-title">📊 Résultats quiz par chapitre</div>
+        <h2 class="card-title">📊 Résultats quiz par chapitre</h2>
         <div class="tabs" style="margin-bottom:14px">
-          <button class="tab" id="scores-niveau-2nde" onclick="setScoresNiveau('2nde')">Seconde</button>
-          <button class="tab" id="scores-niveau-1ere" onclick="setScoresNiveau('1ere')">Première</button>
-          <button class="tab active" id="scores-niveau-tle" onclick="setScoresNiveau('tle')">Terminale</button>
+          <button class="tab" aria-pressed="false" id="scores-niveau-2nde" onclick="setScoresNiveau('2nde')">Seconde</button>
+          <button class="tab" aria-pressed="false" id="scores-niveau-1ere" onclick="setScoresNiveau('1ere')">Première</button>
+          <button class="tab active" aria-pressed="true" id="scores-niveau-tle" onclick="setScoresNiveau('tle')">Terminale</button>
         </div>
         <div class="table-wrap">
           <table id="scores-table">
@@ -355,7 +375,7 @@
     <!-- Onglet Notes -->
     <div id="pane-notes" style="display:none">
       <div class="card">
-        <div class="card-title">📝 Toutes les notes de devoirs</div>
+        <h2 class="card-title">📝 Toutes les notes de devoirs</h2>
         <div class="table-wrap">
           <table>
             <thead><tr>
@@ -370,7 +390,7 @@
     <!-- Onglet Erreurs fréquentes -->
     <div id="pane-erreurs" style="display:none">
       <div class="card">
-        <div class="card-title">⚠️ Erreurs fréquentes aux quiz</div>
+        <h2 class="card-title">⚠️ Erreurs fréquentes aux quiz</h2>
         <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Chaque mauvaise réponse d'un quiz relu correspond à une erreur d'élève connue. Pour chaque erreur : le nombre d'élèves de la classe qui l'ont commise au moins une fois. Cliquez sur une erreur pour voir les élèves concernés. Seuls les chapitres dont le quiz identifie les erreurs sont suivis.</p>
         <div class="err-filtres">
           <div class="form-group">
@@ -396,7 +416,7 @@
     <!-- Onglet Suivi des exercices -->
     <div id="pane-exercices" style="display:none">
       <div class="card">
-        <div class="card-title">✏️ Suivi des exercices différenciés</div>
+        <h2 class="card-title">✏️ Suivi des exercices différenciés</h2>
         <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Pour chaque élève de la classe et chaque exercice du chapitre : ✓ = « J'ai terminé », 💡 = nombre d'aides dévoilées, « ouvert » = affiché à l'écran mais pas terminé. En bas, par exercice : élèves qui l'ont terminé (sur toute la classe) et moyenne d'aides dévoilées par ceux qui l'ont ouvert. Les numéros sont ceux des fiches (ex4 = Ex. 4 du QR code).</p>
         <div class="err-filtres">
           <div class="form-group">
@@ -425,6 +445,8 @@
     <div id="detail-content"></div>
   </div>
 </div>
+
+</main>
 
 <script>
 // ── Config ──────────────────────────────────────────────
@@ -571,7 +593,8 @@ function sparklineSVG(attempts) {
     const label = `${p.a.score}/${p.a.total || 10} — ${new Date(p.a.date).toLocaleDateString('fr-FR')}`;
     return `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2" style="fill:${color}"><title>${escapeHtml(label)}</title></circle>`;
   }).join('');
-  return `<svg viewBox="0 0 ${w} ${h}" style="width:90px;height:26px;overflow:visible;display:block">${line}${dots}</svg>`;
+  const resume = `Évolution des scores : ${attempts.map(a => `${a.score}/${a.total || 10}`).join(', ')}`;
+  return `<svg viewBox="0 0 ${w} ${h}" style="width:90px;height:26px;overflow:visible;display:block" role="img" aria-label="${escapeHtml(resume)}">${line}${dots}</svg>`;
 }
 
 function headers() {
@@ -788,6 +811,7 @@ function setElevesNiveau(niveau) {
   elevesNiveau = niveau;
   ['all', ...NIVEAU_ORDER].forEach(n => {
     document.getElementById('eleves-niveau-' + n).classList.toggle('active', n === niveau);
+    document.getElementById('eleves-niveau-' + n).setAttribute('aria-pressed', String(n === niveau));
   });
   renderEleves();
 }
@@ -817,7 +841,7 @@ function renderEleves() {
       ? `<span class="badge badge-red">Sans classe</span>`
       : `<span class="badge badge-gray">${escapeHtml(e.classe_nom)}</span> <span class="badge badge-gray">${niveauLabel(e.classe_niveau)}</span>`;
     const assignSelect = isOrphan
-      ? `<select class="form-select" style="padding:4px 6px;font-size:.75rem" onchange="if(this.value) assignEleve('${e.id}', this.value)">
+      ? `<select class="form-select" style="padding:4px 6px;font-size:.75rem" aria-label="Assigner ${escapeHtml(e.pseudo)} à une classe" onchange="if(this.value) assignEleve('${e.id}', this.value)">
           <option value="">Assigner à…</option>
           ${CLASSES.map(c => `<option value="${c.id}">${escapeHtml(c.nom)} (${niveauLabel(c.niveau)})</option>`).join('')}
         </select>`
@@ -852,6 +876,7 @@ function setScoresNiveau(niveau) {
   scoresNiveau = niveau;
   NIVEAU_ORDER.forEach(n => {
     document.getElementById('scores-niveau-' + n).classList.toggle('active', n === niveau);
+    document.getElementById('scores-niveau-' + n).setAttribute('aria-pressed', String(n === niveau));
   });
   renderScores();
 }
@@ -910,7 +935,7 @@ function renderClasses() {
     const pctActifs = elevesClasse.length ? Math.round(100 * elevesClasse.filter(e => !isEleveInactif(e)).length / elevesClasse.length) : null;
     const quizMoyen = elevesClasse.length ? (elevesClasse.reduce((a,e) => a + (e.scores||[]).length, 0) / elevesClasse.length).toFixed(1) : null;
     return `
-    <div class="class-card" onclick="openClasse('${c.id}')">
+    <div class="class-card" onclick="openClasse('${c.id}')" role="button" tabindex="0">
       <div class="class-card-title">${escapeHtml(c.nom)}</div>
       <div class="class-card-meta">
         <span class="badge badge-gray">${niveauLabel(c.niveau)}</span>
@@ -989,17 +1014,17 @@ function openClasse(id) {
     </div>
 
     <div class="card">
-      <div class="card-title">📝 Devoirs</div>
+      <h2 class="card-title">📝 Devoirs</h2>
       <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Donnez un chapitre à travailler pour une date : son quiz, des exercices précis, ou les deux. Le quiz compte s'il est fait après l'assignation ; un exercice compte quand l'élève a cliqué « J'ai terminé » (même avant l'assignation). Le devoir est fait quand tout est fait ; il apparaît en haut de l'accueil de l'élève. Le chapitre est déverrouillé automatiquement pour la classe.</p>
       <div class="add-eleve-row">
         <div class="form-group">
-          <label class="form-label">Chapitre</label>
+          <label class="form-label" for="devoir-chapitre">Chapitre</label>
           <select class="form-select" id="devoir-chapitre" onchange="renderDevoirExosChoix()">
             ${groupesChapitres.slice().reverse().map(g => `<optgroup label="${niveauLabel(g.niveau)}">${g.chapitres.map(ch => `<option value="${ch.id}">${escapeHtml(ch.name)}</option>`).join('')}</optgroup>`).join('')}
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">À faire pour le</label>
+          <label class="form-label" for="devoir-date">À faire pour le</label>
           <input class="form-input" type="date" id="devoir-date" value="${dateIsoDansJours(7)}">
         </div>
         <button class="btn btn-primary" onclick="addDevoir('${c.id}')">Donner le devoir</button>
@@ -1010,7 +1035,7 @@ function openClasse(id) {
     </div>
 
     <div class="card">
-      <div class="card-title">📖 Chapitres autorisés pour cette classe</div>
+      <h2 class="card-title">📖 Chapitres autorisés pour cette classe</h2>
       <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Cochez les chapitres que les élèves de cette classe peuvent consulter. Les années précédentes sont pré-cochées (déjà vues) ; le programme de ${niveauLabel(c.niveau)} démarre décoché, à activer au fil de l'année.</p>
       <div id="chapter-checks">
         ${groupesChapitres.map(g => `
@@ -1036,14 +1061,14 @@ function openClasse(id) {
     </div>
 
     <div class="card">
-      <div class="card-title">➕ Ajouter un élève à cette classe</div>
+      <h2 class="card-title">➕ Ajouter un élève à cette classe</h2>
       <div class="add-eleve-row">
         <div class="form-group">
-          <label class="form-label">Code (vide = généré)</label>
+          <label class="form-label" for="new-code">Code (vide = généré)</label>
           <input class="form-input" id="new-code" placeholder="auto" style="width:110px">
         </div>
         <div class="form-group">
-          <label class="form-label">Pseudo ou initiales</label>
+          <label class="form-label" for="new-pseudo">Pseudo ou initiales</label>
           <input class="form-input" id="new-pseudo" placeholder="ex : ML ou Marie L.">
         </div>
         <button class="btn btn-primary" onclick="addEleve()">Ajouter</button>
@@ -1052,9 +1077,9 @@ function openClasse(id) {
     </div>
 
     <div class="card">
-      <div class="card-title">📋 Import en masse (coller depuis Excel)</div>
+      <h2 class="card-title">📋 Import en masse (coller depuis Excel)</h2>
       <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Collez une liste d'élèves (une ligne par élève, colonnes Prénom puis Nom — le collage direct depuis Excel fonctionne). Les codes sont générés automatiquement (initiale prénom + initiale nom + 4 chiffres, même principe que le classeur Excel).</p>
-      <textarea class="form-input" id="bulk-paste" rows="5" style="width:100%;font-family:'DM Mono',monospace;resize:vertical" placeholder="Camille	Martin&#10;Lucas	Petit&#10;..."></textarea>
+      <textarea class="form-input" id="bulk-paste" aria-label="Liste des élèves à importer : prénom puis nom, une ligne par élève" rows="5" style="width:100%;font-family:'DM Mono',monospace;resize:vertical" placeholder="Camille	Martin&#10;Lucas	Petit&#10;..."></textarea>
       <div style="margin-top:10px;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
         <button class="btn btn-secondary btn-sm" onclick="previewBulkImport()">Prévisualiser</button>
         <span id="bulk-count"></span>
@@ -1063,7 +1088,7 @@ function openClasse(id) {
     </div>
 
     <div class="card">
-      <div class="card-title">👥 Élèves de la classe</div>
+      <h2 class="card-title">👥 Élèves de la classe</h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Code</th><th>Pseudo</th><th>Dernière connexion</th><th>Quiz faits</th><th>Moy. quiz</th><th>Actions</th></tr></thead>
@@ -1075,6 +1100,7 @@ function openClasse(id) {
   document.getElementById('view-list').style.display = 'none';
   document.getElementById('view-detail').style.display = 'none';
   document.getElementById('view-classe-detail').style.display = 'block';
+  focusVue('view-classe-detail');
   loadDevoirs(id);
   renderDevoirExosChoix();
 }
@@ -1156,7 +1182,7 @@ function renderDevoirs() {
           <div style="color:var(--muted);font-size:.78rem">Donné le ${new Date(d.created_at).toLocaleDateString('fr-FR')} · à faire pour le ${dateFr(d.date_limite)}</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-          <input class="form-input" type="date" value="${d.date_limite}" title="Changer la date limite" style="padding:4px 8px;font-size:.78rem" onchange="updateDevoirDate('${d.id}', this.value)">
+          <input class="form-input" type="date" value="${d.date_limite}" title="Changer la date limite" aria-label="Date limite de ${escapeHtml(nom)}" style="padding:4px 8px;font-size:.78rem" onchange="updateDevoirDate('${d.id}', this.value)">
           <button class="btn btn-danger btn-sm" onclick="deleteDevoir('${d.id}')">✕ Supprimer</button>
         </div>
       </div>
@@ -1229,7 +1255,7 @@ function renderEleveRow(e) {
       <button class="btn btn-secondary btn-sm" onclick="showDetail('${e.id}')">Détail</button>
       <button class="btn btn-danger btn-sm" onclick="resetEleve('${e.id}')">Reset</button>
       <button class="btn btn-danger btn-sm" onclick="deleteEleve('${e.id}')">✕</button>
-      ${otherClasses.length ? `<select class="form-select" style="padding:4px 6px;font-size:.75rem" onchange="if(this.value) moveEleve('${e.id}', this.value)">
+      ${otherClasses.length ? `<select class="form-select" style="padding:4px 6px;font-size:.75rem" aria-label="Déplacer ${escapeHtml(e.pseudo)} vers une autre classe" onchange="if(this.value) moveEleve('${e.id}', this.value)">
         <option value="">Déplacer vers…</option>${moveOptions}
       </select>` : ''}
     </td>
@@ -1298,7 +1324,7 @@ function showDetail(id) {
     </div>
 
     <div class="card">
-      <div class="card-title">📊 Progression par chapitre</div>
+      <h2 class="card-title">📊 Progression par chapitre</h2>
       ${niveauxAccessibles(e.classe_niveau || 'tle').map(n => `
         <div style="margin-bottom:14px">
           <div style="font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px">${niveauLabel(n)}</div>
@@ -1318,12 +1344,12 @@ function showDetail(id) {
     </div>
 
     <div class="card" id="historique-card" data-eleve="${e.id}">
-      <div class="card-title">📈 Historique des tentatives</div>
+      <h2 class="card-title">📈 Historique des tentatives</h2>
       <p style="color:var(--muted);font-size:.85rem">Chargement…</p>
     </div>
 
     <div class="card">
-      <div class="card-title">📝 Notes de devoirs</div>
+      <h2 class="card-title">📝 Notes de devoirs</h2>
       ${notes.length ? `<div class="table-wrap"><table>
         <thead><tr><th>Type</th><th>Intitulé</th><th>Note</th><th>Date</th></tr></thead>
         <tbody>${notes.map(n => {
@@ -1338,6 +1364,7 @@ function showDetail(id) {
   document.getElementById('view-list').style.display = 'none';
   document.getElementById('view-classe-detail').style.display = 'none';
   document.getElementById('view-detail').style.display = 'block';
+  focusVue('view-detail');
   renderHistorique(id);
 }
 
@@ -1350,12 +1377,12 @@ async function renderHistorique(eleveId) {
   const card = document.getElementById('historique-card');
   if (!card || card.dataset.eleve !== eleveId) return;
   if (!r.ok) {
-    card.innerHTML = `<div class="card-title">📈 Historique des tentatives</div><p style="color:var(--muted);font-size:.85rem">Impossible de charger l'historique.</p>`;
+    card.innerHTML = `<h2 class="card-title">📈 Historique des tentatives</h2><p style="color:var(--muted);font-size:.85rem">Impossible de charger l'historique.</p>`;
     return;
   }
   const historique = await r.json();
   if (!historique.length) {
-    card.innerHTML = `<div class="card-title">📈 Historique des tentatives</div><p style="color:var(--muted);font-size:.85rem">Aucun quiz passé pour l'instant.</p>`;
+    card.innerHTML = `<h2 class="card-title">📈 Historique des tentatives</h2><p style="color:var(--muted);font-size:.85rem">Aucun quiz passé pour l'instant.</p>`;
     return;
   }
   const byChapitre = {};
@@ -1375,7 +1402,7 @@ async function renderHistorique(eleveId) {
       <div style="font-size:.72rem;color:var(--muted);white-space:nowrap">${attempts.length} tentative${attempts.length > 1 ? 's' : ''}</div>
     </div>`;
   }).join('');
-  card.innerHTML = `<div class="card-title">📈 Historique des tentatives</div>${rows}`;
+  card.innerHTML = `<h2 class="card-title">📈 Historique des tentatives</h2>${rows}`;
 }
 
 function backFromDetail() {
@@ -1789,15 +1816,37 @@ function renderExercicesSuivi(d) {
 function switchTab(tab) {
   ['classes','eleves','scores','notes','erreurs','exercices'].forEach(t => {
     document.getElementById('tab-'+t).classList.toggle('active', t===tab);
+    document.getElementById('tab-'+t).setAttribute('aria-pressed', String(t===tab));
     document.getElementById('pane-'+t).style.display = t===tab ? 'block' : 'none';
   });
   if (tab === 'erreurs') loadErreurs();
   if (tab === 'exercices') loadExercicesSuivi();
 }
 
+// ── Clavier ──────────────────────────────────────────────
+// Éléments role="button" qui ne sont pas de vrais boutons (cartes de classe) : Entrée et
+// Espace les activent. Après un changement de vue, le focus va au début de la nouvelle vue.
+document.addEventListener('keydown', e => {
+  const el = e.target;
+  if ((e.key === 'Enter' || e.key === ' ') && el instanceof HTMLElement && !(el instanceof HTMLButtonElement) && el.getAttribute('role') === 'button') {
+    e.preventDefault();
+    el.click();
+  }
+});
+function focusVue(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const a = document.activeElement;
+  if (!a || a === document.body || !a.isConnected || el.offsetParent === null || !el.contains(a)) {
+    el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+  }
+}
+
 // ── Alerts ───────────────────────────────────────────────
 function showAlert(id, msg, type) {
   const el = document.getElementById(id);
+  el.setAttribute('role', type === 'err' ? 'alert' : 'status');
   el.innerHTML = `<div class="alert alert-${type==='err'?'err':'ok'}">${type==='err'?'⚠':'✓'} ${msg}</div>`;
   setTimeout(() => { el.innerHTML = ''; }, 4000);
 }
