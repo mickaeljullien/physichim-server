@@ -507,14 +507,129 @@ async function getAdminFromToken(req) {
   return appDb.get('SELECT * FROM admins WHERE id = $1', [id]);
 }
 
+// ── Jeton élève ──
+// Délivré à la connexion par code, puis exigé sur toutes les routes élèves : l'identifiant
+// interne de l'élève (eleve_id) ne suffit plus, car il ne change jamais et restait stocké dans
+// le navigateur comme un mot de passe permanent. Même principe que le jeton enseignant
+// (HMAC-SHA256 + expiration), avec une clé dérivée distincte et un préfixe « eleve: » :
+// un jeton élève ne peut jamais être pris pour un jeton enseignant, ni l'inverse.
+// Expiré, il est renouvelé sans rien demander à l'élève : la page se reconnecte avec le code
+// déjà mémorisé, puis renvoie la requête (index.html, apiEleve).
+const ELEVE_TOKEN_MAX_AGE_MS = 24 * 60 * 60 * 1000; // 24 heures
+const CLE_JETON_ELEVE = crypto.createHmac('sha256', ADMIN_KEY).update('physichim:jeton-eleve:v1').digest();
+
+function signerJetonEleve(payload) {
+  return crypto.createHmac('sha256', CLE_JETON_ELEVE).update(payload).digest('hex');
+}
+
+function makeEleveToken(eleve) {
+  const payload = `eleve:${eleve.id}:${Date.now()}`;
+  return Buffer.from(payload, 'utf8').toString('base64url') + '.' + signerJetonEleve(payload);
+}
+
+// Renvoie l'id de l'élève si le jeton est valide et non expiré, sinon null.
+function idEleveDepuisJeton(jeton) {
+  const [encoded, sig] = String(jeton).split('.');
+  if (!encoded || !sig) return null;
+  let payload;
+  try { payload = Buffer.from(encoded, 'base64url').toString('utf8'); } catch { return null; }
+  const expected = signerJetonEleve(payload);
+  if (sig.length !== expected.length || !crypto.timingSafeEqual(Buffer.from(sig), Buffer.from(expected))) return null;
+  const [prefixe, id, issuedAtStr] = payload.split(':');
+  const issuedAt = parseInt(issuedAtStr, 10);
+  if (prefixe !== 'eleve' || !id || !Number.isFinite(issuedAt)) return null;
+  const age = Date.now() - issuedAt;
+  if (age < -60000 || age > ELEVE_TOKEN_MAX_AGE_MS) return null;
+  return id;
+}
+
+// Transition douce : une page élève restée ouverte pendant la mise à jour n'a pas de jeton et
+// envoie encore l'ancien format ({ eleve_id } sans en-tête Authorization). Jusqu'à cette date,
+// ces envois restent acceptés (le score n'est pas perdu) ; ensuite, ils sont refusés. Toute page
+// rechargée après la mise à jour utilise le jeton : passé quelques jours, plus aucune ne s'en sert.
+// À avancer ou reculer si la mise en ligne a lieu bien plus tard.
+const FIN_TRANSITION_JETON_ELEVE = Date.parse('2026-12-31T23:59:59+01:00');
+let ancienFormatCompte = 0;
+
+// Élève authentifié d'une requête élève : { id } ou { erreur: [statut, message] }.
+// Avec un jeton : l'eleve_id éventuellement présent dans le corps doit être le même.
+async function eleveAuthentifie(req, body) {
+  const auth = req.headers['authorization'] || '';
+  const m = auth.match(/^Bearer (.+)$/);
+  let id;
+  if (m) {
+    id = idEleveDepuisJeton(m[1]);
+    if (!id) return { erreur: [401, 'Session expirée : reconnecte-toi.'] };
+    if (body.eleve_id !== undefined && body.eleve_id !== id) return { erreur: [403, 'Non autorisé'] };
+  } else if (!auth && Date.now() < FIN_TRANSITION_JETON_ELEVE && typeof body.eleve_id === 'string' && body.eleve_id) {
+    id = body.eleve_id;
+    if (ancienFormatCompte++ === 0) console.log('🔑 Envoi élève sans jeton accepté (transition) — page ouverte avant la mise à jour.');
+  } else {
+    return { erreur: [401, 'Session expirée : reconnecte-toi.'] };
+  }
+  const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [id]);
+  if (!eleve) return { erreur: [401, 'Élève introuvable : reconnecte-toi.'] };
+  return { id };
+}
+
+// ── En-têtes de sécurité (toutes les réponses) ──
+// CSP compatible avec le site tel qu'il est : scripts et gestionnaires onclick écrits dans la
+// page ('unsafe-inline'), simulations en <iframe srcdoc> (qui héritent de cette politique),
+// polices Google Fonts, QR code de l'espace enseignant (api.qrserver.com). Tout le reste
+// (scripts externes, envoi de données vers un autre site, affichage du site dans un cadre
+// d'un autre site) est bloqué par le navigateur.
+const CSP_PAGES = [
+  "default-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com",
+  "img-src 'self' data: https://api.qrserver.com",
+  "connect-src 'self'",
+  "frame-src 'self'",
+  "object-src 'none'",
+  "base-uri 'none'",
+  "form-action 'self'",
+  "frame-ancestors 'none'"
+].join('; ');
+const CSP_API = "default-src 'none'; frame-ancestors 'none'";
+
+function poserEntetesSecurite(req, res) {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Content-Security-Policy', CSP_API); // remplacée par CSP_PAGES pour les pages HTML
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), payment=()');
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  // HTTPS uniquement (Render) : jamais en local, où le site est servi en http.
+  if (req.headers['x-forwarded-proto'] === 'https') {
+    res.setHeader('Strict-Transport-Security', 'max-age=15552000');
+  }
+}
+
+// Pas d'en-tête Access-Control-Allow-Origin : les pages sont servies par ce même serveur, et
+// aucun autre site n'a à lire ses réponses (avant : « * », n'importe quel site pouvait le faire).
 function json(res, status, data) {
-  res.writeHead(status, {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-  });
+  res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
   res.end(JSON.stringify(data));
+}
+
+// ── Clé maître : limite de tentatives sur TOUTES les routes qui l'acceptent ──
+// 5 essais ratés par adresse IP et par quart d'heure, puis blocage ; un essai réussi remet
+// le compteur de cette adresse à zéro. Renvoie true si la clé est bonne, sinon répond 401/429.
+function exigerCleMaitre(req, res) {
+  const rlKey = 'superadmin-login:' + getClientIp(req);
+  const rl = checkRateLimit(rlKey);
+  if (rl.blocked) {
+    json(res, 429, { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rl.retryAfterSec / 60)} min.` });
+    return false;
+  }
+  if (!isSuperAdmin(req)) {
+    recordFailedAttempt(rlKey);
+    json(res, 401, { error: 'Clé maître requise' });
+    return false;
+  }
+  clearRateLimit(rlKey);
+  return true;
 }
 
 // Neutralise l'injection de formule (=,+,-,@ en tête -> Excel/Sheets l'exécuterait) et
@@ -558,7 +673,7 @@ function servirPage(req, res, fichier) {
     page = { contenu, etag: '"' + crypto.createHash('sha1').update(contenu).digest('hex').slice(0, 20) + '"' };
     pagesCache.set(fichier, page);
   }
-  const entetes = { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache', 'ETag': page.etag };
+  const entetes = { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache', 'ETag': page.etag, 'Content-Security-Policy': CSP_PAGES };
   const demande = (req.headers['if-none-match'] || '').replace(/^W\//, '');
   if (demande === page.etag) {
     res.writeHead(304, entetes);
@@ -566,6 +681,70 @@ function servirPage(req, res, fichier) {
   }
   res.writeHead(200, entetes);
   return res.end(page.contenu);
+}
+
+// ── Purge de fin d'année ───────────────────────────────────
+// Tables de la base élèves qui contiennent l'activité d'un élève (une colonne eleve_id).
+// Toute nouvelle table d'activité élève doit être ajoutée ici (purge) et dans l'export.
+const TABLES_ACTIVITE_ELEVE = ['quiz_scores', 'erreurs_quiz', 'progression', 'notes', 'connexions'];
+
+// Élèves et classes concernés : une classe de l'enseignant, ou (classeId vide) tous ses élèves
+// et toutes ses classes. null si la classe n'existe pas ou n'est pas à lui.
+async function perimetrePurge(adminId, classeId) {
+  if (classeId) {
+    const classe = await appDb.get('SELECT id, admin_id FROM classes WHERE id = $1', [String(classeId)]);
+    if (!classe || classe.admin_id !== adminId) return null;
+    const eleves = await studentDb.all('SELECT id FROM eleves WHERE admin_id = $1 AND classe_id = $2', [adminId, classe.id]);
+    return { classeIds: [classe.id], eleveIds: eleves.map(e => e.id) };
+  }
+  const classes = await appDb.all('SELECT id FROM classes WHERE admin_id = $1', [adminId]);
+  const eleves = await studentDb.all('SELECT id FROM eleves WHERE admin_id = $1', [adminId]);
+  return { classeIds: classes.map(c => c.id), eleveIds: eleves.map(e => e.id) };
+}
+
+async function compterPurge({ classeIds, eleveIds }) {
+  const lignes = {};
+  for (const t of TABLES_ACTIVITE_ELEVE) {
+    lignes[t] = (await studentDb.get(`SELECT COUNT(*)::int AS n FROM ${t} WHERE eleve_id = ANY($1::text[])`, [eleveIds])).n;
+  }
+  const devoirs = (await appDb.get('SELECT COUNT(*)::int AS n FROM devoirs WHERE classe_id = ANY($1::text[])', [classeIds])).n;
+  return { nbEleves: eleveIds.length, nbClasses: classeIds.length, lignes, devoirs };
+}
+
+// Une transaction sur la base élèves : tout est effacé, ou rien. Les devoirs (base appli)
+// ne sont effacés qu'ensuite, une fois les données élèves effacées.
+async function executerPurge(adminId, { classeIds, eleveIds }, supprimerEleves) {
+  const client = await pgPool.connect();
+  const lignes = {};
+  let elevesSupprimes = 0;
+  try {
+    await client.query('BEGIN');
+    for (const t of TABLES_ACTIVITE_ELEVE) {
+      lignes[t] = (await client.query(`DELETE FROM ${t} WHERE eleve_id = ANY($1::text[])`, [eleveIds])).rowCount;
+    }
+    if (supprimerEleves) {
+      elevesSupprimes = (await client.query('DELETE FROM eleves WHERE id = ANY($1::text[]) AND admin_id = $2', [eleveIds, adminId])).rowCount;
+    } else {
+      // La date de dernière connexion est elle aussi une trace d'activité : on la ramène à la création du compte.
+      await client.query('UPDATE eleves SET last_seen = created_at WHERE id = ANY($1::text[]) AND admin_id = $2', [eleveIds, adminId]);
+    }
+    await client.query('COMMIT');
+  } catch (e) {
+    await client.query('ROLLBACK').catch(() => {});
+    throw e;
+  } finally {
+    client.release();
+  }
+  const devoirs = (await appDb.run('DELETE FROM devoirs WHERE classe_id = ANY($1::text[])', [classeIds])).rowCount;
+  return { lignes, devoirs, elevesSupprimes };
+}
+
+// Au démarrage : le journal des connexions n'est jamais gardé plus de 13 mois (RGPD),
+// même si aucune purge de fin d'année n'a été faite.
+const CONSERVATION_CONNEXIONS_MOIS = 13;
+async function purgerVieillesConnexions() {
+  const r = await pgPool.query(`DELETE FROM connexions WHERE date < now() - make_interval(months => $1)`, [CONSERVATION_CONNEXIONS_MOIS]);
+  if (r.rowCount) console.log(`🧹 ${r.rowCount} connexion(s) de plus de ${CONSERVATION_CONNEXIONS_MOIS} mois effacée(s)`);
 }
 
 // Regroupe des lignes SQL par valeur d'une colonne : Map { valeur -> [lignes] }.
@@ -594,13 +773,9 @@ async function router(req, res) {
   const p = url.pathname;
   const method = req.method;
 
-  // CORS preflight
+  // Requête préalable CORS : plus aucune origine extérieure autorisée (voir json()).
   if (method === 'OPTIONS') {
-    res.writeHead(204, {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Authorization'
-    });
+    res.writeHead(204, { 'Allow': 'GET, POST, PUT, DELETE, OPTIONS' });
     return res.end();
   }
 
@@ -663,32 +838,35 @@ async function router(req, res) {
 
     return json(res, 200, {
       eleve: { id: eleve.id, code: eleve.code, pseudo: eleve.pseudo },
+      // Jeton à renvoyer (en-tête Authorization) sur toutes les routes élèves.
+      jeton: makeEleveToken(eleve), jeton_duree_s: ELEVE_TOKEN_MAX_AGE_MS / 1000,
       classe, chapitresAutorises, devoirs,
       scores, notes, progression
     });
   }
 
   // ── API : Sauvegarder un score de quiz (et les erreurs fréquentes commises) ──
-  // POST /api/quiz  { eleve_id, chapitre_id, score, total, erreurs?: [{ code, texte }] }
+  // POST /api/quiz  { chapitre_id, score, total, erreurs?: [{ code, texte }] } + jeton élève
   if (p === '/api/quiz' && method === 'POST') {
     const body = await parseBody(req);
-    const { eleve_id, score, total } = body;
-    if (!eleve_id || body.chapitre_id === undefined || score === undefined) {
+    const auth = await eleveAuthentifie(req, body);
+    if (auth.erreur) return json(res, auth.erreur[0], { error: auth.erreur[1] });
+    const eleve_id = auth.id;
+    const { score, total } = body;
+    if (body.chapitre_id === undefined || score === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
     }
     const chapitre_id = chapitreIdActuel(body.chapitre_id); // ancien chapitre fusionné → chapitre actuel
     // Refuse les valeurs impossibles (999/10, texte, chapitre inexistant) : sans ce
     // contrôle elles étaient enregistrées telles quelles ou faisaient planter la requête.
     const totalQuiz = total === undefined ? 10 : total;
-    if (typeof eleve_id !== 'string' || !isChapitreIdValide(chapitre_id)
+    if (!isChapitreIdValide(chapitre_id)
       || !Number.isInteger(totalQuiz) || totalQuiz < 1 || totalQuiz > 100
       || !Number.isInteger(score) || score < 0 || score > totalQuiz) {
       return json(res, 400, { error: 'Données invalides' });
     }
     const erreurs = erreursQuizValides(body.erreurs, totalQuiz - score);
     if (!erreurs) return json(res, 400, { error: 'Données invalides' });
-    const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
-    if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
 
     if (erreurs.length) {
       // Une seule requête : score et erreurs sont enregistrés ensemble ou pas du tout
@@ -710,54 +888,56 @@ async function router(req, res) {
   }
 
   // ── API : Sauvegarder une note ──
-  // POST /api/notes  { eleve_id, type, intitule, valeur }
+  // POST /api/notes  { type, intitule, valeur } + jeton élève
   if (p === '/api/notes' && method === 'POST') {
     const body = await parseBody(req);
-    const { eleve_id, type, intitule, valeur } = body;
-    if (!eleve_id || !type || !intitule || valeur === undefined) {
+    const auth = await eleveAuthentifie(req, body);
+    if (auth.erreur) return json(res, auth.erreur[0], { error: auth.erreur[1] });
+    const eleve_id = auth.id;
+    const { type, intitule, valeur } = body;
+    if (!type || !intitule || valeur === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
     }
-    if (typeof eleve_id !== 'string' || typeof type !== 'string' || type.length > 40
+    if (typeof type !== 'string' || type.length > 40
       || typeof intitule !== 'string' || intitule.length > 120
       || typeof valeur !== 'number' || !Number.isFinite(valeur) || valeur < 0 || valeur > 20) {
       return json(res, 400, { error: 'Données invalides (note attendue entre 0 et 20)' });
     }
-    const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
-    if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
 
     const inserted = await studentDb.get('INSERT INTO notes (eleve_id, type, intitule, valeur) VALUES ($1, $2, $3, $4) RETURNING id', [eleve_id, type, intitule, valeur]);
     return json(res, 201, { ok: true, id: inserted.id });
   }
 
   // ── API : Supprimer une note ──
-  // DELETE /api/notes/:id
+  // DELETE /api/notes/:id  + jeton élève (seul l'élève qui a saisi la note peut la supprimer)
   if (p.match(/^\/api\/notes\/[^/]+$/) && method === 'DELETE') {
     const noteId = p.split('/')[3];
+    if (!/^\d{1,12}$/.test(noteId)) return json(res, 404, { error: 'Note introuvable' });
     const body = await parseBody(req);
+    const auth = await eleveAuthentifie(req, body);
+    if (auth.erreur) return json(res, auth.erreur[0], { error: auth.erreur[1] });
     const note = await studentDb.get('SELECT * FROM notes WHERE id = $1', [noteId]);
     if (!note) return json(res, 404, { error: 'Note introuvable' });
-    if (note.eleve_id !== body.eleve_id && !isSuperAdmin(req)) {
-      return json(res, 403, { error: 'Non autorisé' });
-    }
+    if (note.eleve_id !== auth.id) return json(res, 403, { error: 'Non autorisé' });
     await studentDb.run('DELETE FROM notes WHERE id = $1', [noteId]);
     return json(res, 200, { ok: true });
   }
 
   // ── API : Enregistrer une progression ──
-  // POST /api/progression  { eleve_id, chapitre_id, action }
+  // POST /api/progression  { chapitre_id, action } + jeton élève
   if (p === '/api/progression' && method === 'POST') {
     const body = await parseBody(req);
-    const { eleve_id, action } = body;
-    if (!eleve_id || body.chapitre_id === undefined || !action) {
+    const auth = await eleveAuthentifie(req, body);
+    if (auth.erreur) return json(res, auth.erreur[0], { error: auth.erreur[1] });
+    const eleve_id = auth.id;
+    const { action } = body;
+    if (body.chapitre_id === undefined || !action) {
       return json(res, 400, { error: 'Données manquantes' });
     }
     const chapitre_id = chapitreIdActuel(body.chapitre_id); // ancien chapitre fusionné → chapitre actuel
-    if (typeof eleve_id !== 'string' || !isChapitreIdValide(chapitre_id)
-      || typeof action !== 'string' || action.length > 60) {
+    if (!isChapitreIdValide(chapitre_id) || typeof action !== 'string' || action.length > 60) {
       return json(res, 400, { error: 'Données invalides' });
     }
-    const eleve = await studentDb.get('SELECT id FROM eleves WHERE id = $1', [eleve_id]);
-    if (!eleve) return json(res, 404, { error: 'Élève introuvable' });
     await studentDb.run('INSERT INTO progression (eleve_id, chapitre_id, action) VALUES ($1, $2, $3)', [eleve_id, chapitre_id, action]);
     return json(res, 201, { ok: true });
   }
@@ -799,7 +979,7 @@ async function router(req, res) {
   // ── Créer un compte enseignant ──
   // POST /api/admin/teachers  { identifiant, code, nom }
   if (p === '/api/admin/teachers' && method === 'POST') {
-    if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
+    if (!exigerCleMaitre(req, res)) return;
     const body = await parseBody(req);
     const identifiant = (body.identifiant || '').trim();
     const code = (body.code || '').trim();
@@ -830,14 +1010,7 @@ async function router(req, res) {
   // ── Rapport d'activité globale (toutes classes, tous enseignants) ──
   // GET /api/admin/rapport-activite  (optionnel : ?depuis=ISO&jusqua=ISO, sinon 7 derniers jours)
   if (p === '/api/admin/rapport-activite' && method === 'GET') {
-    const rlKeySuper = 'superadmin-login:' + getClientIp(req);
-    const rlSuper = checkRateLimit(rlKeySuper);
-    if (rlSuper.blocked) return json(res, 429, { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rlSuper.retryAfterSec / 60)} min.` });
-    if (!isSuperAdmin(req)) {
-      recordFailedAttempt(rlKeySuper);
-      return json(res, 401, { error: 'Clé maître requise' });
-    }
-    clearRateLimit(rlKeySuper);
+    if (!exigerCleMaitre(req, res)) return;
 
     const jusquaParam = url.searchParams.get('jusqua');
     const depuisParam = url.searchParams.get('depuis');
@@ -891,14 +1064,7 @@ async function router(req, res) {
   // ── Liste des comptes enseignants ──
   // GET /api/admin/teachers
   if (p === '/api/admin/teachers' && method === 'GET') {
-    const rlKeySuper = 'superadmin-login:' + getClientIp(req);
-    const rlSuper = checkRateLimit(rlKeySuper);
-    if (rlSuper.blocked) return json(res, 429, { error: `Trop de tentatives. Réessayez dans ${Math.ceil(rlSuper.retryAfterSec / 60)} min.` });
-    if (!isSuperAdmin(req)) {
-      recordFailedAttempt(rlKeySuper);
-      return json(res, 401, { error: 'Clé maître requise' });
-    }
-    clearRateLimit(rlKeySuper);
+    if (!exigerCleMaitre(req, res)) return;
     const admins = await appDb.all('SELECT id, identifiant, nom, created_at, last_seen FROM admins ORDER BY identifiant');
     // Élèves comptés par admin_id (et non par classe) : ceux dont la classe a été
     // supprimée restent rattachés à leur enseignant et doivent être comptés ici.
@@ -920,7 +1086,7 @@ async function router(req, res) {
   // ── Rattacher les élèves sans enseignant à un compte existant ──
   // POST /api/admin/teachers/:id/reprendre-orphelins
   if (p.match(/^\/api\/admin\/teachers\/[^/]+\/reprendre-orphelins$/) && method === 'POST') {
-    if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
+    if (!exigerCleMaitre(req, res)) return;
     const adminId = p.split('/')[4];
     const cible = await appDb.get('SELECT id FROM admins WHERE id = $1', [adminId]);
     if (!cible) return json(res, 404, { error: 'Compte enseignant introuvable' });
@@ -942,7 +1108,7 @@ async function router(req, res) {
   // ── Supprimer un compte enseignant (et ses classes) ──
   // DELETE /api/admin/teachers/:id
   if (p.match(/^\/api\/admin\/teachers\/[^/]+$/) && method === 'DELETE') {
-    if (!isSuperAdmin(req)) return json(res, 401, { error: 'Clé maître requise' });
+    if (!exigerCleMaitre(req, res)) return;
     const adminId = p.split('/')[4];
     const admin = await appDb.get('SELECT id FROM admins WHERE id = $1', [adminId]);
     if (!admin) return json(res, 404, { error: 'Compte enseignant introuvable' });
@@ -1252,6 +1418,31 @@ async function router(req, res) {
   }
 
   // ══════════════════════════════════════════════════════════
+  // PURGE DE FIN D'ANNÉE (scoped à l'enseignant connecté)
+  // ══════════════════════════════════════════════════════════
+
+  // ── Aperçu : nombre de lignes qui seraient effacées ──
+  // GET /api/admin/purge?classe_id=...   (sans classe_id : tous les élèves de l'enseignant)
+  // ── Purge ──
+  // POST /api/admin/purge  { classe_id?, supprimer_eleves: bool, confirmation: "EFFACER" }
+  if (p === '/api/admin/purge' && (method === 'GET' || method === 'POST')) {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    const body = method === 'POST' ? await parseBody(req) : {};
+    const classeId = method === 'POST' ? (body.classe_id || null) : url.searchParams.get('classe_id');
+    const perimetre = await perimetrePurge(admin.id, classeId);
+    if (!perimetre) return json(res, 404, { error: 'Classe introuvable' });
+
+    if (method === 'GET') return json(res, 200, await compterPurge(perimetre));
+
+    if (body.confirmation !== 'EFFACER') return json(res, 400, { error: 'Confirmation manquante' });
+    if (typeof body.supprimer_eleves !== 'boolean') return json(res, 400, { error: 'Données invalides' });
+    const bilan = await executerPurge(admin.id, perimetre, body.supprimer_eleves);
+    console.log(`🧹 Purge de fin d'année (enseignant ${admin.id}) : ${JSON.stringify(bilan)}`);
+    return json(res, 200, { ok: true, ...bilan });
+  }
+
+  // ══════════════════════════════════════════════════════════
   // ROUTES ÉLÈVES (gestion, scoped à l'enseignant connecté)
   // ══════════════════════════════════════════════════════════
 
@@ -1430,7 +1621,7 @@ async function router(req, res) {
     res.writeHead(200, {
       'Content-Type': 'text/csv; charset=utf-8',
       'Content-Disposition': `attachment; filename="physichim_export${slug}_${new Date().toISOString().slice(0,10)}.csv"`,
-      'Access-Control-Allow-Origin': '*'
+      'Cache-Control': 'no-store'
     });
     return res.end('﻿' + csv);
   }
@@ -1467,7 +1658,11 @@ async function router(req, res) {
   }
 
   // ── Health check ──
+  // Public : réponse minimale (le serveur répond). Les détails (durée de fonctionnement,
+  // nombre d'élèves) ne sont donnés qu'avec la clé maître, avec la même limite de tentatives.
   if (p === '/health') {
+    if (!req.headers['authorization']) return json(res, 200, { ok: true });
+    if (!exigerCleMaitre(req, res)) return;
     const elevesRow = await studentDb.get('SELECT COUNT(*)::int as n FROM eleves');
     return json(res, 200, { ok: true, uptime: process.uptime(), eleves: elevesRow.n });
   }
@@ -1478,6 +1673,7 @@ async function router(req, res) {
 // ── Lancement ─────────────────────────────────────────────
 const server = http.createServer(async (req, res) => {
   try {
+    poserEntetesSecurite(req, res);
     await router(req, res);
   } catch (err) {
     console.error('Erreur serveur :', err);
@@ -1515,6 +1711,7 @@ const server = http.createServer(async (req, res) => {
     studentDb = makeQueryHelpers(pgPool);
     await initStudentDB();
     await migrerChapitresFusionnes(pgPool, 'élèves', MIGRATION_FUSION_ELEVES);
+    await purgerVieillesConnexions();
     console.log('✅ Base de données élèves (PostgreSQL) initialisée');
   } catch (e) {
     console.error('❌ Erreur PostgreSQL :', e.message);
