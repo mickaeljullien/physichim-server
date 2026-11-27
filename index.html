@@ -2372,12 +2372,34 @@ const CHAPTERS = [
   {
     id: 2,
     num: "02",
-    title: "Sens d'évolution spontanée",
+    title: "Évolution spontanée et évolution forcée",
     category: "chimie",
     color: "#4f8ef7",
-    tag: "Chimie",
+    tag: "Équilibres & électrochimie",
     fiche: {
       sections: [
+        {
+          title: "Introduction : évolution spontanée, évolution forcée",
+          icon: "🔀",
+          content: [
+            {
+              type: "text",
+              text: "Ce chapitre répond à une seule question : <strong>dans quel sens évolue un système chimique, et peut-on lui imposer ce sens ?</strong>"
+            },
+            {
+              type: "text",
+              text: "<strong>Évolution spontanée (sections 1 à 6)</strong> : laissé à lui-même, un système évolue vers l'état d'équilibre, dans le sens donné par la comparaison du quotient de réaction Qr,i et de la constante d'équilibre K(T). Une <strong>pile</strong> exploite une transformation d'oxydoréduction spontanée pour convertir de l'énergie chimique en énergie électrique."
+            },
+            {
+              type: "text",
+              text: "<strong>Évolution forcée (sections 7 à 11)</strong> : un générateur extérieur impose un courant qui fait évoluer le système dans le sens <strong>inverse</strong> de son sens spontané (Qr s'éloigne de K). C'est l'<strong>électrolyse</strong>, qui convertit de l'énergie électrique en énergie chimique : recharge d'un accumulateur, production de dihydrogène, dépôt métallique."
+            },
+            {
+              type: "warn",
+              text: "Le même critère (comparer Qr à K) sert dans les deux cas : il donne le sens spontané. Une électrolyse se reconnaît justement à ce qu'elle fait évoluer le système dans l'autre sens, grâce à l'énergie apportée par le générateur."
+            }
+          ]
+        },
         {
           title: "1. Équilibre chimique dynamique",
           icon: "⚖️",
@@ -2525,6 +2547,164 @@ const CHAPTERS = [
             {
               type: "text",
               text: "Exemple chiffré : avec [Zn²⁺]ᵢ = 1,0×10⁻² mol·L⁻¹ et [Cu²⁺]ᵢ = 1,0×10⁻¹ mol·L⁻¹ (les solides Zn et Cu n'apparaissent pas dans Qr) :\nQr,i = [Zn²⁺]ᵢ / [Cu²⁺]ᵢ = 1,0×10⁻² / 1,0×10⁻¹ = <strong>0,10</strong>.\nComme Qr,i = 0,10 ≪ K, le système évolue spontanément dans le <strong>sens direct</strong> : le zinc s'oxyde (pôle −, anode) et les ions cuivre(II) se réduisent (pôle +, cathode), conformément au fonctionnement connu de la pile Daniell."
+            }
+          ]
+        },
+        {
+          title: "7. Rappel : la pile, une transformation spontanée",
+          icon: "🔋",
+          content: [
+            {
+              type: "def",
+              term: "Pile électrochimique (rappel des sections 5 et 6)",
+              text: "Dispositif qui convertit de l'énergie chimique en énergie électrique grâce à une réaction d'oxydoréduction <strong>spontanée</strong> (Qr,i < K), réalisée en séparant les deux couples oxydant/réducteur dans deux demi-piles reliées par un pont salin."
+            },
+            {
+              type: "formula",
+              label: "Critère d'évolution / fonctionnement",
+              text: "Qr < K : évolution spontanée dans le sens direct, la pile débite du courant.\nQr = K : la pile est usée (système à l'équilibre)."
+            },
+            {
+              type: "text",
+              text: "Cette partie a été vue en détail plus haut (sections 5 et 6). Elle sert ici de point de départ pour comprendre ce que signifie « forcer » une réaction."
+            }
+          ]
+        },
+        {
+          title: "8. Accumulateurs et stockage de l'énergie électrique",
+          icon: "🔌",
+          content: [
+            {
+              type: "def",
+              term: "Accumulateur",
+              text: "Pile rechargeable : à la différence d'une pile « primaire » (usage unique), la réaction chimique peut être inversée en imposant un courant électrique externe (charge), puis se dérouler à nouveau spontanément lors de l'utilisation (décharge)."
+            },
+            {
+              type: "def",
+              term: "Capacité électrique Q (ou C)",
+              text: "Quantité d'électricité maximale que peut fournir l'accumulateur lors d'une décharge complète : Q = I·Δt. S'exprime généralement en ampère-heure (A·h)."
+            },
+            {
+              type: "text",
+              text: "Exemples courants : accumulateurs lithium-ion (téléphones, véhicules électriques), accumulateurs au plomb (batterie de voiture)."
+            }
+          ]
+        },
+        {
+          title: "9. L'électrolyse : forcer une transformation non spontanée",
+          icon: "⚡",
+          content: [
+            {
+              type: "def",
+              term: "Électrolyse",
+              text: "Transformation chimique <strong>forcée</strong> par un apport d'énergie électrique extérieur (générateur), qui impose au système d'évoluer dans le sens <strong>inverse</strong> de son sens spontané."
+            },
+            {
+              type: "warn",
+              text: "À bien distinguer : dans une <strong>pile</strong>, la réaction est spontanée (Qr évolue vers K en produisant du courant, l'anode est la borne négative). Dans une <strong>électrolyse</strong>, un générateur impose un courant qui force la réaction à s'éloigner de l'équilibre (Qr s'éloigne de K), l'anode devient alors la borne positive reliée au + du générateur."
+            },
+            {
+              type: "table",
+              headers: [
+                "Caractéristique",
+                "Pile",
+                "Électrolyse"
+              ],
+              rows: [
+                [
+                  "Spontanéité",
+                  "Spontanée",
+                  "Forcée"
+                ],
+                [
+                  "Rôle du générateur",
+                  "Aucun (la pile EST le générateur)",
+                  "Impose le sens de la réaction"
+                ],
+                [
+                  "Évolution de Qr",
+                  "Qr → K",
+                  "Qr s'éloigne de K"
+                ],
+                [
+                  "Anode (oxydation)",
+                  "Borne négative (−)",
+                  "Borne positive (+)"
+                ],
+                [
+                  "Cathode (réduction)",
+                  "Borne positive (+)",
+                  "Borne négative (−)"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          title: "10. Bilan de matière dans une électrolyse",
+          icon: "🧪",
+          content: [
+            {
+              type: "text",
+              text: "Méthode : écrire les demi-équations d'oxydation à l'anode et de réduction à la cathode, en déduire l'équation-bilan de l'électrolyse. La quantité de matière transformée est reliée à la charge électrique Q ayant traversé le circuit."
+            },
+            {
+              type: "formula",
+              label: "Relation charge - quantité de matière d'électrons",
+              text: "Q = I·Δt = n(e⁻)·F\nsoit n(e⁻) = I·Δt / F"
+            },
+            {
+              type: "def",
+              term: "Constante de Faraday F",
+              text: "F ≈ 96 500 C·mol⁻¹ : charge électrique portée par une mole d'électrons."
+            },
+            {
+              type: "text",
+              text: "Exemples : électrolyse de l'eau (2 H₂O → 2 H₂ + O₂, production de dihydrogène et de dioxygène), électrolyse d'une solution ionique pour un dépôt métallique (galvanoplastie) ou pour la production industrielle de métaux (aluminium par électrolyse de l'alumine fondue)."
+            }
+          ]
+        },
+        {
+          title: "11. Conversion et stockage de l'énergie chimique",
+          icon: "🌱",
+          content: [
+            {
+              type: "text",
+              text: "La <strong>photosynthèse</strong> est un exemple naturel de transformation forcée : l'énergie apportée par les photons lumineux (et non par un générateur électrique) permet aux plantes de synthétiser des molécules riches en énergie (glucose) à partir de CO₂ et H₂O, stockant ainsi l'énergie solaire sous forme d'énergie chimique."
+            },
+            {
+              type: "table",
+              headers: [
+                "Mode de stockage",
+                "Énergie stockée sous forme",
+                "Restitution"
+              ],
+              rows: [
+                [
+                  "Pile primaire",
+                  "Chimique",
+                  "Électrique (usage unique)"
+                ],
+                [
+                  "Accumulateur",
+                  "Chimique",
+                  "Électrique (rechargeable)"
+                ],
+                [
+                  "Photosynthèse / biomasse",
+                  "Chimique (glucose)",
+                  "Combustion, respiration cellulaire"
+                ],
+                [
+                  "Dihydrogène (produit par électrolyse)",
+                  "Chimique",
+                  "Électrique via pile à combustible"
+                ]
+              ]
+            },
+            {
+              type: "text",
+              text: "Le dihydrogène produit par électrolyse de l'eau constitue ainsi un <strong>vecteur énergétique</strong> : l'énergie électrique est stockée sous forme chimique, puis restituée ultérieurement (par exemple dans une pile à combustible)."
             }
           ]
         }
@@ -2700,6 +2880,176 @@ const CHAPTERS = [
           null
         ],
         exp: "n(e⁻) = 2 × n(Cu²⁺) = 0,020 mol, d'où Q = n(e⁻) × F = 0,020 × 96 500 ≈ 1,9 × 10³ C. Attention : on compte les électrons échangés, pas les ions."
+      },
+      {
+        q: "Une électrolyse est une transformation :",
+        opts: [
+          "spontanée, comme celle qui se produit dans une pile",
+          "forcée par un apport d'énergie électrique",
+          "qui produit de l'énergie électrique",
+          "simplement accélérée par le passage d'un courant"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "electrolyse-vs-pile", texte: "Confondre électrolyse (forcée) et pile (spontanée)" },
+          null,
+          { code: "electrolyse-conversion-inverse", texte: "Inverser la conversion : l'électrolyse consomme de l'énergie électrique" },
+          { code: "forcer-vs-accelerer", texte: "Confondre « forcer » (changer le sens d'évolution) et « accélérer » (rôle d'un catalyseur)" }
+        ],
+        exp: "Un générateur impose au système d'évoluer dans le sens inverse de son sens spontané : l'énergie électrique est convertie en énergie chimique. Attention : une pile fait l'inverse."
+      },
+      {
+        q: "Pendant une électrolyse, le quotient de réaction Qr de la réaction qui se produit :",
+        opts: [
+          "tend vers la constante d'équilibre K",
+          "s'éloigne de K",
+          "reste égal à K",
+          "n'est pas défini, la réaction étant forcée"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "electrolyse-vs-pile", texte: "Confondre électrolyse et pile : dans une pile, Qr évolue vers K" },
+          null,
+          { code: "equilibre-pendant-electrolyse", texte: "Croire que le système reste à l'équilibre : le générateur l'en écarte" },
+          { code: "qr-non-defini", texte: "Croire que Qr n'a pas de sens pour une transformation forcée" }
+        ],
+        exp: "Le générateur force la transformation dans le sens non spontané : Qr s'éloigne de K. Dans une pile, au contraire, Qr évolue spontanément vers K."
+      },
+      {
+        q: "Dans une cellule d'électrolyse, l'anode est :",
+        opts: [
+          "le siège d'une oxydation, reliée à la borne + du générateur",
+          "le siège d'une oxydation, reliée à la borne −, comme dans une pile",
+          "le siège d'une réduction, reliée à la borne +",
+          "l'électrode par laquelle le courant sort de la cellule"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "polarite-anode-pile-electrolyse", texte: "Transposer la polarité de la pile : en électrolyse, l'anode est reliée au pôle + du générateur" },
+          { code: "anode-reduction", texte: "Associer anode et réduction : l'anode est toujours le siège de l'oxydation" },
+          { code: "sens-courant-electrolyse", texte: "Se tromper de sens : le courant entre dans la cellule par l'anode, reliée à la borne +" }
+        ],
+        exp: "Anode = oxydation, toujours. En électrolyse, le générateur arrache des électrons à l'anode : elle est reliée à sa borne +. Attention : dans une pile, l'anode est la borne −."
+      },
+      {
+        q: "Une électrolyse dure Δt = 965 s sous une intensité I = 2,0 A (F = 96 500 C·mol⁻¹). La quantité d'électrons échangés vaut :",
+        opts: [
+          "1,9 × 10⁸ mol",
+          "1,0 × 10⁻² mol",
+          "50 mol",
+          "2,0 × 10⁻² mol"
+        ],
+        ans: 3,
+        pieges: [
+          { code: "faraday-multiplie", texte: "Multiplier par F au lieu de diviser : n(e⁻) = I Δt / F" },
+          { code: "oubli-intensite", texte: "Oublier l'intensité : Δt / F" },
+          { code: "faraday-rapport-inverse", texte: "Inverser le rapport : F / (I Δt)" },
+          null
+        ],
+        exp: "Q = I Δt = 2,0 × 965 = 1 930 C ; n(e⁻) = Q / F = 1 930 / 96 500 = 2,0 × 10⁻² mol. Attention : F est la charge d'une mole d'électrons, on divise par F."
+      },
+      {
+        q: "Dans cette électrolyse, du cuivre se dépose à la cathode (Cu²⁺ + 2 e⁻ → Cu ; M(Cu) = 63,5 g·mol⁻¹) avec n(e⁻) = 2,0 × 10⁻² mol. La masse de cuivre déposée vaut :",
+        opts: [
+          "1,3 g",
+          "0,64 g",
+          "1,6 × 10⁻⁴ g",
+          "1,0 × 10⁻² g"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-electrons-echanges", texte: "Oublier que chaque ion Cu²⁺ capte 2 électrons : n(Cu) = n(e⁻) / 2" },
+          null,
+          { code: "masse-molaire-divisee", texte: "Diviser par la masse molaire au lieu de multiplier : m = n × M" },
+          { code: "quantite-vs-masse", texte: "Confondre quantité de matière et masse" }
+        ],
+        exp: "n(Cu) = n(e⁻) / 2 = 1,0 × 10⁻² mol ; m = n × M = 1,0 × 10⁻² × 63,5 ≈ 0,64 g. Attention : 2 électrons par atome de cuivre déposé."
+      },
+      {
+        q: "Un accumulateur se distingue d'une pile jetable car :",
+        opts: [
+          "sa réaction peut être inversée, lors de la charge, par une électrolyse",
+          "il stocke des électrons, qu'il libère ensuite",
+          "pendant la charge, il fonctionne comme une pile",
+          "sa capacité est illimitée"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "accumulateur-stocke-electrons", texte: "Croire qu'un accumulateur stocke des électrons : il stocke de l'énergie sous forme chimique" },
+          { code: "accumulateur-charge-vs-decharge", texte: "Confondre charge (transformation forcée) et décharge (fonctionnement en pile)" },
+          { code: "capacite-illimitee", texte: "Croire que la capacité est illimitée : elle est fixée par la quantité de réactifs" }
+        ],
+        exp: "À la décharge, l'accumulateur fonctionne comme une pile (réaction spontanée) ; à la charge, un générateur force la réaction inverse. Il stocke de l'énergie chimique, pas des électrons."
+      },
+      {
+        q: "La capacité d'un accumulateur de téléphone vaut Q = 2,0 A·h. En coulombs, cela fait :",
+        opts: [
+          "120 C",
+          "2,0 C",
+          "7,2 × 10³ C",
+          "5,6 × 10⁻⁴ C"
+        ],
+        ans: 2,
+        pieges: [
+          { code: "conversion-heure-minute", texte: "Convertir les heures en minutes au lieu de secondes : 2,0 × 60" },
+          { code: "ah-vs-coulomb", texte: "Croire que 1 A·h = 1 C : 1 A·h = 1 A × 3 600 s" },
+          null,
+          { code: "conversion-heure-inverse", texte: "Diviser par 3 600 au lieu de multiplier" }
+        ],
+        exp: "Q = I × Δt : 1 A·h = 1 A × 3 600 s = 3 600 C, donc 2,0 A·h = 7,2 × 10³ C. Attention : la capacité est une charge électrique, pas une énergie."
+      },
+      {
+        q: "L'électrolyse de l'eau a pour équation 2 H₂O → 2 H₂ + O₂. Elle produit :",
+        opts: [
+          "autant de dihydrogène que de dioxygène",
+          "deux fois plus de dihydrogène que de dioxygène",
+          "deux fois plus de dioxygène que de dihydrogène",
+          "de la vapeur d'eau, l'eau étant chauffée par le courant"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "oubli-stoechiometrie", texte: "Oublier les nombres stœchiométriques de l'équation" },
+          null,
+          { code: "stoechiometrie-inversee", texte: "Inverser les nombres stœchiométriques : 2 H₂ pour 1 O₂" },
+          { code: "electrolyse-vs-ebullition", texte: "Confondre électrolyse (transformation chimique) et ébullition (changement d'état)" }
+        ],
+        exp: "Pour 2 H₂O décomposées : 2 H₂ (à la cathode) et 1 O₂ (à l'anode), soit deux fois plus de dihydrogène. Attention : c'est une transformation chimique, pas une ébullition."
+      },
+      {
+        q: "La photosynthèse est une transformation forcée car :",
+        opts: [
+          "l'énergie lumineuse force la synthèse de molécules riches en énergie",
+          "elle se produit seule dans la nature, sans apport extérieur",
+          "elle libère de l'énergie, comme une combustion",
+          "elle nécessite un générateur électrique naturel"
+        ],
+        ans: 0,
+        pieges: [
+          null,
+          { code: "naturel-donc-spontane", texte: "Croire que tout ce qui se produit dans la nature est spontané : la photosynthèse exige l'énergie de la lumière" },
+          { code: "photosynthese-vs-respiration", texte: "Confondre photosynthèse (stocke de l'énergie) et respiration ou combustion (libèrent de l'énergie)" },
+          { code: "forcer-energie-electrique", texte: "Croire que seule l'énergie électrique peut forcer une transformation : la lumière aussi" }
+        ],
+        exp: "La lumière apporte l'énergie qui force la synthèse du glucose à partir de CO₂ et H₂O : l'énergie solaire est stockée sous forme chimique. Attention : la respiration fait l'inverse."
+      },
+      {
+        q: "Le dihydrogène produit par électrolyse de l'eau est :",
+        opts: [
+          "une source d'énergie primaire, disponible dans la nature",
+          "un vecteur d'énergie, qui restitue dans une pile à combustible l'énergie stockée",
+          "un carburant dont l'utilisation rejette du CO₂",
+          "une énergie gratuite, qui restitue plus que l'énergie de l'électrolyse"
+        ],
+        ans: 1,
+        pieges: [
+          { code: "vecteur-vs-source-energie", texte: "Confondre vecteur et source d'énergie : il faut produire H₂, il n'existe pas libre dans la nature" },
+          null,
+          { code: "h2-rejette-co2", texte: "Croire que H₂ rejette du CO₂ en réagissant : sa réaction avec O₂ ne produit que de l'eau" },
+          { code: "energie-creee", texte: "Croire qu'on récupère plus d'énergie qu'on en a fourni : l'énergie se conserve et une partie est perdue" }
+        ],
+        exp: "H₂ stocke l'énergie électrique fournie lors de l'électrolyse ; une pile à combustible en restitue une partie. C'est un vecteur d'énergie, pas une source. Attention : on ne récupère jamais plus que ce qu'on a fourni."
       }
     ],
     annales: [
@@ -2714,6 +3064,18 @@ const CHAPTERS = [
         title: "L'eau de boisson des poules — piles, constante d'équilibre",
         session: "Réunion · Jour 1",
         link: "https://www.labolycee.org/bac-2023-reunion-jour-1"
+      },
+      {
+        year: "2022",
+        title: "Des piles historiques",
+        session: "Métropole · Jour 2",
+        link: "https://www.labolycee.org/metropole-2022-jour-2"
+      },
+      {
+        year: "2023",
+        title: "Le street — décharge de condensateur, énergie",
+        session: "Amérique du Nord · Jour 1",
+        link: "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-1"
       }
     ],
     exercices: [
@@ -3013,6 +3375,297 @@ const CHAPTERS = [
           "<strong>6.</strong> Δt = Q<sub>exp</sub> / I = 828 / 5,0 × 10⁻⁶ = 1,7 × 10⁸ s, soit 1,66 × 10⁸ / (365,25 × 24 × 3600) ≈ 5,2 ans (en négligeant l'autodécharge).",
           "<strong>7.</strong> Pour aller plus loin : réactifs et produits sont tous solides, donc Qr = 1 pendant toute la décharge. Qr ne se rapproche pas de K : la tension reste presque constante (plateau vers 3 V). La pile ne s'arrête pas parce qu'elle atteint l'équilibre, mais parce que le réactif limitant MnO₂ est presque épuisé : la tension s'effondre alors brutalement. C'est différent d'une pile Daniell, où Qr = [Zn²⁺]/[Cu²⁺] augmente pendant la décharge et la tension diminue progressivement.",
           "<em>⚠ Erreur fréquente : oublier de convertir les heures en secondes pour obtenir des coulombs (ou mélanger mA et A) ; et prendre le lithium comme réactif limitant sans comparer les deux quantités.</em>"
+        ]
+      },
+      {
+        "id": "ex7",
+        "niveau": 1,
+        "titre": "Pile, accumulateur ou électrolyseur ?",
+        "contexte": [
+          "Yanis branche sa trottinette électrique pour la nuit et se demande ce qui se passe dans la batterie. Aide-le à trier ses idées."
+        ],
+        "questions": [
+          {
+            "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Lorsqu'une pile débite, son quotient de réaction Qr se rapproche de la constante d'équilibre K.<br>b. Dans un électrolyseur, l'anode est reliée à la borne négative du générateur.<br>c. Pendant sa charge, la batterie de la trottinette fonctionne comme un électrolyseur.<br>d. Dans un électrolyseur, les électrons traversent la solution d'une électrode à l'autre.<br>e. Une batterie de capacité 2,0 A·h peut faire circuler une charge de 7 200 C.<br>f. La photosynthèse est une transformation spontanée : elle ne nécessite aucun apport d'énergie.",
+            "aides": []
+          },
+          {
+            "texte": "Pour chacun des dispositifs suivants, précise la forme d'énergie reçue et la forme d'énergie stockée ou fournie : une pile alcaline de télécommande qui fonctionne ; la batterie de la trottinette pendant la charge ; une feuille d'arbre au soleil.",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> a. VRAI : la réaction d'une pile est spontanée (Qr &lt; K) ; en débitant, le système évolue vers l'équilibre et Qr tend vers K (pile usée quand Qr = K).",
+          "b. FAUX : dans un électrolyseur, l'anode (siège de l'oxydation) est reliée à la borne + du générateur ; c'est dans une pile que l'anode est la borne −.",
+          "c. VRAI : le chargeur impose un courant qui force la réaction à se faire dans le sens inverse de son sens spontané (Qr s'éloigne de K) : c'est une électrolyse.",
+          "d. FAUX : les électrons circulent seulement dans les fils et les électrodes ; dans la solution, ce sont les ions qui se déplacent et assurent le passage du courant.",
+          "e. VRAI : Q = 2,0 A × 3 600 s = 7 200 C.",
+          "f. FAUX : la photosynthèse est une transformation forcée, rendue possible par l'énergie apportée par la lumière (photons).",
+          "<strong>2.</strong> Pile alcaline : énergie chimique (stockée) → énergie électrique fournie. Batterie en charge : énergie électrique reçue → énergie chimique stockée. Feuille au soleil : énergie lumineuse reçue → énergie chimique stockée (glucose)."
+        ]
+      },
+      {
+        "id": "ex8",
+        "niveau": 1,
+        "titre": "Fabriquer du dihydrogène en TP",
+        "contexte": [
+          "En TP, Inès réalise l'électrolyse de l'eau dans une solution d'acide sulfurique diluée. Deux électrodes inattaquables sont surmontées de tubes gradués, initialement remplis de solution. Le générateur débite un courant d'intensité constante I = 0,200 A pendant Δt = 8,0 min. Le schéma montre le dispositif à la fin de l'expérience.",
+          "Tests des gaz : le gaz du tube A produit une petite détonation au contact d'une flamme ; le gaz du tube B ravive une bûchette incandescente."
+        ],
+        "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"150\" y=\"270\" width=\"460\" height=\"170\" fill=\"#dce8eb\"/><path d=\"M150,240 L150,440 L610,440 L610,240\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><rect x=\"200\" y=\"330.0\" width=\"50\" height=\"90.0\" fill=\"#dce8eb\"/><path d=\"M200,420 L200,82 Q200,70 212,70 L238,70 Q250,70 250,82 L250,420\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"236\" y1=\"90\" x2=\"250\" y2=\"90\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"95\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"242\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"130\" x2=\"250\" y2=\"130\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"150\" x2=\"250\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"170\" x2=\"250\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"236\" y1=\"190\" x2=\"250\" y2=\"190\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"195\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"242\" y1=\"210\" x2=\"250\" y2=\"210\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"230\" x2=\"250\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"250\" x2=\"250\" y2=\"250\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"270\" x2=\"250\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"236\" y1=\"290\" x2=\"250\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"295\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"242\" y1=\"310\" x2=\"250\" y2=\"310\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"330\" x2=\"250\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"350\" x2=\"250\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"370\" x2=\"250\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"236\" y1=\"390\" x2=\"250\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"395\" text-anchor=\"end\" font-size=\"14\">15</text><line x1=\"200\" y1=\"330.0\" x2=\"250\" y2=\"330.0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"225.0\" y=\"60\" text-anchor=\"middle\" font-weight=\"bold\">tube A</text><rect x=\"480\" y=\"210.0\" width=\"50\" height=\"210.0\" fill=\"#dce8eb\"/><path d=\"M480,420 L480,82 Q480,70 492,70 L518,70 Q530,70 530,82 L530,420\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"516\" y1=\"90\" x2=\"530\" y2=\"90\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"95\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"522\" y1=\"110\" x2=\"530\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"130\" x2=\"530\" y2=\"130\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"150\" x2=\"530\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"170\" x2=\"530\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"516\" y1=\"190\" x2=\"530\" y2=\"190\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"195\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"522\" y1=\"210\" x2=\"530\" y2=\"210\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"230\" x2=\"530\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"250\" x2=\"530\" y2=\"250\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"270\" x2=\"530\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"516\" y1=\"290\" x2=\"530\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"295\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"522\" y1=\"310\" x2=\"530\" y2=\"310\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"330\" x2=\"530\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"350\" x2=\"530\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"370\" x2=\"530\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"516\" y1=\"390\" x2=\"530\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"395\" text-anchor=\"end\" font-size=\"14\">15</text><line x1=\"480\" y1=\"210.0\" x2=\"530\" y2=\"210.0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"505.0\" y=\"60\" text-anchor=\"middle\" font-weight=\"bold\">tube B</text><rect x=\"219\" y=\"370\" width=\"12\" height=\"70\" fill=\"#7a7a7a\" stroke=\"#3a3a3a\"/><rect x=\"499\" y=\"370\" width=\"12\" height=\"70\" fill=\"#7a7a7a\" stroke=\"#3a3a3a\"/><rect x=\"320\" y=\"15\" width=\"120\" height=\"50\" rx=\"6\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"380\" y=\"46\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">générateur</text><text x=\"332\" y=\"34\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">−</text><text x=\"428\" y=\"34\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><polyline points=\"320,40 90,40 90,455 225,455 225,440\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polyline points=\"440,40 680,40 680,455 505,455 505,440\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"200\" r=\"20\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"680\" y=\"206\" text-anchor=\"middle\" font-weight=\"bold\">A</text><text x=\"365\" y=\"330\" text-anchor=\"middle\" fill=\"#1F4E5A\">solution d'acide</text><text x=\"365\" y=\"350\" text-anchor=\"middle\" fill=\"#1F4E5A\">sulfurique diluée</text><text x=\"290\" y=\"160\" text-anchor=\"middle\" font-size=\"14\">graduations</text><text x=\"290\" y=\"177\" text-anchor=\"middle\" font-size=\"14\">en mL</text><text x=\"395\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">électrode</text><line x1=\"430\" y1=\"410\" x2=\"498\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"1\"/></svg>",
+        "questions": [
+          {
+            "texte": "Identifie le gaz recueilli dans chaque tube.",
+            "aides": []
+          },
+          {
+            "texte": "Lis le volume de gaz dans chaque tube. Quel est le rapport V(tube A) / V(tube B) ?",
+            "aides": []
+          },
+          {
+            "texte": "Les couples mis en jeu sont H⁺(aq)/H₂(g) et O₂(g)/H₂O(ℓ). Écris la demi-équation à chaque électrode et précise laquelle est l'anode, laquelle est la cathode.",
+            "aides": [
+              "L'électrode reliée à la borne − du générateur reçoit des électrons : y a-t-il oxydation ou réduction ?",
+              "Équilibre O avec H₂O, H avec H⁺, puis les charges avec des électrons e⁻."
+            ]
+          },
+          {
+            "texte": "Déduis-en l'équation de l'électrolyse. Explique pourquoi elle est cohérente avec le rapport des volumes.",
+            "aides": []
+          },
+          {
+            "texte": "Calcule la charge Q qui a traversé le circuit, puis la quantité de matière d'électrons n(e⁻) échangés.",
+            "aides": []
+          },
+          {
+            "texte": "Déduis-en la quantité de dihydrogène formé et son volume. Compare avec ta lecture.",
+            "aides": [
+              "Regarde la demi-équation de formation de H₂ : combien d'électrons faut-il pour une molécule de H₂ ?",
+              "n(H₂) = n(e⁻) / 2, puis V = n × V<sub>m</sub> (V<sub>m</sub> en L·mol⁻¹, résultat en L à convertir en mL)."
+            ]
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> Tube A : dihydrogène H₂ (détonation). Tube B : dioxygène O₂ (bûchette ravivée).",
+          "<strong>2.</strong> V(tube A) = 12 mL et V(tube B) = 6 mL ; rapport = 12 / 6 = 2,0.",
+          "<strong>3.</strong> Tube A (relié à la borne −) : réduction, c'est la cathode : 2 H⁺(aq) + 2 e⁻ → H₂(g). Tube B (relié à la borne +) : oxydation, c'est l'anode : 2 H₂O(ℓ) → O₂(g) + 4 H⁺(aq) + 4 e⁻.",
+          "<strong>4.</strong> On multiplie la première par 2 pour échanger 4 électrons, puis on additionne et on simplifie les ions H⁺ : 2 H₂O(ℓ) → 2 H₂(g) + O₂(g). Il se forme deux fois plus de molécules de H₂ que de O₂ ; à même température et même pression, le volume de H₂ est donc le double de celui de O₂.",
+          "<strong>5.</strong> Q = I·Δt = 0,200 × 8,0 × 60 = 96 C. n(e⁻) = Q / F = 96 / 9,65 × 10⁴ = 9,9 × 10⁻⁴ mol.",
+          "<strong>6.</strong> D'après 2 H⁺ + 2 e⁻ → H₂ : n(H₂) = n(e⁻) / 2 = 5,0 × 10⁻⁴ mol ; V(H₂) = n(H₂) × V<sub>m</sub> = 5,0 × 10⁻⁴ × 24,0 = 1,2 × 10⁻² L = 12 mL : en accord avec la lecture.",
+          "<em>⚠ Erreur fréquente : oublier de convertir la durée en secondes (Q en C = A × s), ou écrire n(H₂) = n(e⁻) en oubliant les 2 électrons par molécule de H₂.</em>"
+        ]
+      },
+      {
+        "id": "ex9",
+        "niveau": 1,
+        "titre": "La batterie de mon smartphone",
+        "contexte": [
+          "La batterie lithium-ion d'un smartphone porte l'indication « 3,85 V – 4 500 mA·h ». Son chargeur lui fournit en moyenne un courant d'intensité I = 1,8 A.",
+          "Données : constante d'Avogadro N<sub>A</sub> = 6,022 × 10²³ mol⁻¹ ; charge élémentaire e = 1,602 × 10⁻¹⁹ C."
+        ],
+        "questions": [
+          {
+            "texte": "La constante de Faraday est la charge d'une mole d'électrons. Montre que F = N<sub>A</sub> × e et vérifie la valeur de l'encadré Données.",
+            "aides": []
+          },
+          {
+            "texte": "Convertis la capacité de la batterie en coulombs.",
+            "aides": [
+              "Une capacité est une charge : Q = I·Δt. Que valent I et Δt dans « 1 A·h » ?",
+              "Convertis d'abord 4 500 mA·h en A·h, puis multiplie par le nombre de secondes dans une heure."
+            ]
+          },
+          {
+            "texte": "Calcule la quantité de matière d'électrons qui circule lors d'une décharge complète.",
+            "aides": []
+          },
+          {
+            "texte": "Estime la durée d'une charge complète (batterie vide au départ, toute la charge servant à la recharger).",
+            "aides": []
+          },
+          {
+            "texte": "Calcule l'énergie électrique stockée, en joules puis en wattheures.",
+            "aides": []
+          },
+          {
+            "texte": "Pendant la charge, la transformation dans la batterie est-elle spontanée ou forcée ? Comment évolue son quotient de réaction ?",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> Une mole d'électrons contient N<sub>A</sub> électrons portant chacun la charge e : F = N<sub>A</sub> × e = 6,022 × 10²³ × 1,602 × 10⁻¹⁹ = 9,647 × 10⁴ C·mol⁻¹ ≈ 9,65 × 10⁴ C·mol⁻¹.",
+          "<strong>2.</strong> Q = 4 500 mA·h = 4,500 A·h ; Q = 4,500 × 3 600 = 1,62 × 10⁴ C.",
+          "<strong>3.</strong> n(e⁻) = Q / F = 1,62 × 10⁴ / 9,65 × 10⁴ = 0,168 mol.",
+          "<strong>4.</strong> Q = I·Δt donc Δt = Q / I = 4,500 A·h / 1,8 A = 2,5 h.",
+          "<strong>5.</strong> E = U·Q = 3,85 × 1,62 × 10⁴ = 6,24 × 10⁴ J ; en W·h : 6,24 × 10⁴ / 3 600 = 17,3 W·h (soit aussi 3,85 V × 4,500 A·h).",
+          "<strong>6.</strong> Forcée : le chargeur impose le sens de la réaction, inverse du sens spontané de la décharge. Le quotient de réaction s'éloigne de K.",
+          "<em>⚠ Erreur fréquente : oublier de convertir les mA·h en A·h (facteur 10⁻³) avant de multiplier par 3 600.</em>"
+        ]
+      },
+      {
+        "id": "ex10",
+        "niveau": 2,
+        "titre": "Une médaille argentée",
+        "contexte": [
+          "Pour le cross du lycée, l'atelier d'un artisan argente des médailles en laiton par galvanoplastie. La médaille et une plaque d'argent pur plongent dans une solution contenant des ions argent Ag⁺(aq). Un générateur impose un courant d'intensité constante I = 0,150 A. Le métal argent se dépose sur la médaille.",
+          "On veut déposer une couche d'argent d'épaisseur e = 8,0 µm sur toute la surface de la médaille, d'aire S = 30,0 cm². Masse volumique de l'argent : ρ = 10,5 g·cm⁻³."
+        ],
+        "questions": [
+          {
+            "texte": "Écris la demi-équation de la transformation qui a lieu à la surface de la médaille. Est-ce l'anode ou la cathode ? À quelle borne du générateur faut-il relier la médaille ?",
+            "aides": []
+          },
+          {
+            "texte": "À l'électrode en argent, le métal argent est oxydé. Écris la demi-équation correspondante et explique pourquoi la concentration en ions Ag⁺ de la solution reste constante.",
+            "aides": []
+          },
+          {
+            "texte": "Calcule la masse d'argent à déposer sur la médaille.",
+            "aides": [
+              "Commence par le volume d'argent : une couche d'aire S et d'épaisseur e a pour volume V = S × e.",
+              "Mets S et e dans la même unité (cm² et cm), puis m = ρ × V."
+            ]
+          },
+          {
+            "texte": "Détermine la durée de l'électrolyse nécessaire, en minutes.",
+            "aides": [
+              "Chaîne de calcul : m → n(Ag) → n(e⁻) → Q → Δt.",
+              "Ag⁺ + e⁻ → Ag : un électron par atome d'argent déposé. Puis Q = n(e⁻)·F et Δt = Q / I."
+            ]
+          },
+          {
+            "texte": "Quelle masse la plaque d'argent a-t-elle perdue pendant ce temps ?",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> Ag⁺(aq) + e⁻ → Ag(s) : c'est une réduction, la médaille est la cathode. Dans un électrolyseur, la cathode est reliée à la borne − du générateur.",
+          "<strong>2.</strong> Ag(s) → Ag⁺(aq) + e⁻ (anode, reliée à la borne +). Pour chaque électron qui circule, un ion Ag⁺ est formé à l'anode et un ion Ag⁺ est consommé à la cathode : la quantité d'ions Ag⁺ en solution ne varie pas.",
+          "<strong>3.</strong> Volume du dépôt : V = S × e = 30,0 × 8,0 × 10⁻⁴ = 2,4 × 10⁻² cm³ (8,0 µm = 8,0 × 10⁻⁴ cm). Masse : m = ρ × V = 10,5 × 2,4 × 10⁻² = 0,25 g (0,252 g avant arrondi).",
+          "<strong>4.</strong> n(Ag) = m / M = 0,252 / 107,9 = 2,34 × 10⁻³ mol. D'après la demi-équation, n(e⁻) = n(Ag) = 2,34 × 10⁻³ mol. Q = n(e⁻)·F = 2,34 × 10⁻³ × 9,65 × 10⁴ = 225 C. Δt = Q / I = 225 / 0,150 = 1,50 × 10³ s, soit 25 min.",
+          "<strong>5.</strong> Il passe autant d'électrons à l'anode qu'à la cathode : la plaque a perdu la même masse d'argent, 0,25 g.",
+          "<em>⚠ Erreur fréquente : mal convertir l'épaisseur (1 µm = 10⁻⁴ cm, et non 10⁻³ cm), ce qui donne une masse et une durée 10 fois trop grandes.</em>"
+        ]
+      },
+      {
+        "id": "ex11",
+        "niveau": 2,
+        "titre": "La batterie de la voiture",
+        "contexte": [
+          "Une batterie de voiture « 12 V » contient six accumulateurs au plomb. Lors de la décharge, les transformations aux électrodes sont :",
+          "Électrode en plomb : Pb(s) + SO₄²⁻(aq) → PbSO₄(s) + 2 e⁻.  Électrode en dioxyde de plomb : PbO₂(s) + 4 H⁺(aq) + SO₄²⁻(aq) + 2 e⁻ → PbSO₄(s) + 2 H₂O(ℓ).",
+          "Un garagiste teste une batterie : il la fait débiter un courant d'intensité constante I = 3,00 A et enregistre la tension U à ses bornes. La batterie est considérée comme déchargée lorsque U atteint 10,5 V."
+        ],
+        "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"109.8\" y1=\"25\" x2=\"109.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"139.5\" y1=\"25\" x2=\"139.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"139.5\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"169.3\" y1=\"25\" x2=\"169.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"199.1\" y1=\"25\" x2=\"199.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"199.1\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"228.9\" y1=\"25\" x2=\"228.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"258.6\" y1=\"25\" x2=\"258.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"258.6\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"288.4\" y1=\"25\" x2=\"288.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"318.2\" y1=\"25\" x2=\"318.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"318.2\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"348.0\" y1=\"25\" x2=\"348.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"377.7\" y1=\"25\" x2=\"377.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"377.7\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"437.3\" y1=\"25\" x2=\"437.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"437.3\" y=\"430\" text-anchor=\"middle\">12</text><line x1=\"467.0\" y1=\"25\" x2=\"467.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"496.8\" y1=\"25\" x2=\"496.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"496.8\" y=\"430\" text-anchor=\"middle\">14</text><line x1=\"526.6\" y1=\"25\" x2=\"526.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"556.4\" y1=\"25\" x2=\"556.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"556.4\" y=\"430\" text-anchor=\"middle\">16</text><line x1=\"586.1\" y1=\"25\" x2=\"586.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"615.9\" y1=\"25\" x2=\"615.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"615.9\" y=\"430\" text-anchor=\"middle\">18</text><line x1=\"645.7\" y1=\"25\" x2=\"645.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"675.5\" y1=\"25\" x2=\"675.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"675.5\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"705.2\" y1=\"25\" x2=\"705.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">22</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">9</text><line x1=\"80\" y1=\"385.9\" x2=\"735\" y2=\"385.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"390.9\" text-anchor=\"end\">9,25</text><line x1=\"80\" y1=\"361.9\" x2=\"735\" y2=\"361.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"366.9\" text-anchor=\"end\">9,5</text><line x1=\"80\" y1=\"337.8\" x2=\"735\" y2=\"337.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"342.8\" text-anchor=\"end\">9,75</text><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"318.8\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"289.7\" x2=\"735\" y2=\"289.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"294.7\" text-anchor=\"end\">10,25</text><line x1=\"80\" y1=\"265.6\" x2=\"735\" y2=\"265.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"270.6\" text-anchor=\"end\">10,5</text><line x1=\"80\" y1=\"241.6\" x2=\"735\" y2=\"241.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"246.6\" text-anchor=\"end\">10,75</text><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">11</text><line x1=\"80\" y1=\"193.4\" x2=\"735\" y2=\"193.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"198.4\" text-anchor=\"end\">11,25</text><line x1=\"80\" y1=\"169.4\" x2=\"735\" y2=\"169.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"174.4\" text-anchor=\"end\">11,5</text><line x1=\"80\" y1=\"145.3\" x2=\"735\" y2=\"145.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"150.3\" text-anchor=\"end\">11,75</text><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"126.2\" text-anchor=\"end\">12</text><line x1=\"80\" y1=\"97.2\" x2=\"735\" y2=\"97.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"102.2\" text-anchor=\"end\">12,25</text><line x1=\"80\" y1=\"73.1\" x2=\"735\" y2=\"73.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"78.1\" text-anchor=\"end\">12,5</text><line x1=\"80\" y1=\"49.1\" x2=\"735\" y2=\"49.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"54.1\" text-anchor=\"end\">12,75</text><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">13</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,49.1 81.5,51.2 83.0,53.1 84.5,54.9 86.0,56.5 87.4,58.1 88.9,59.5 90.4,60.8 91.9,62.1 93.4,63.2 94.9,64.3 96.4,65.3 97.9,66.2 99.4,67.1 100.8,67.9 102.3,68.7 103.8,69.4 105.3,70.1 106.8,70.7 108.3,71.3 109.8,71.9 111.3,72.4 112.8,72.9 114.2,73.3 115.7,73.8 117.2,74.2 118.7,74.6 120.2,75.0 121.7,75.4 123.2,75.7 124.7,76.1 126.1,76.4 127.6,76.7 129.1,77.0 130.6,77.3 132.1,77.5 133.6,77.8 135.1,78.1 136.6,78.3 138.1,78.6 139.5,78.8 141.0,79.0 142.5,79.3 144.0,79.5 145.5,79.7 147.0,79.9 148.5,80.1 150.0,80.3 151.5,80.5 152.9,80.7 154.4,80.9 155.9,81.1 157.4,81.3 158.9,81.5 160.4,81.7 161.9,81.9 163.4,82.1 164.9,82.2 166.3,82.4 167.8,82.6 169.3,82.8 170.8,83.0 172.3,83.1 173.8,83.3 175.3,83.5 176.8,83.7 178.2,83.8 179.7,84.0 181.2,84.2 182.7,84.3 184.2,84.5 185.7,84.7 187.2,84.8 188.7,85.0 190.2,85.2 191.6,85.4 193.1,85.5 194.6,85.7 196.1,85.9 197.6,86.0 199.1,86.2 200.6,86.4 202.1,86.5 203.6,86.7 205.0,86.8 206.5,87.0 208.0,87.2 209.5,87.3 211.0,87.5 212.5,87.7 214.0,87.8 215.5,88.0 217.0,88.2 218.4,88.3 219.9,88.5 221.4,88.7 222.9,88.8 224.4,89.0 225.9,89.2 227.4,89.3 228.9,89.5 230.4,89.6 231.8,89.8 233.3,90.0 234.8,90.1 236.3,90.3 237.8,90.5 239.3,90.6 240.8,90.8 242.3,91.0 243.8,91.1 245.2,91.3 246.7,91.4 248.2,91.6 249.7,91.8 251.2,91.9 252.7,92.1 254.2,92.3 255.7,92.4 257.1,92.6 258.6,92.8 260.1,92.9 261.6,93.1 263.1,93.3 264.6,93.4 266.1,93.6 267.6,93.7 269.1,93.9 270.5,94.1 272.0,94.2 273.5,94.4 275.0,94.6 276.5,94.7 278.0,94.9 279.5,95.1 281.0,95.2 282.5,95.4 283.9,95.5 285.4,95.7 286.9,95.9 288.4,96.0 289.9,96.2 291.4,96.4 292.9,96.5 294.4,96.7 295.9,96.9 297.3,97.0 298.8,97.2 300.3,97.3 301.8,97.5 303.3,97.7 304.8,97.8 306.3,98.0 307.8,98.2 309.2,98.3 310.7,98.5 312.2,98.7 313.7,98.8 315.2,99.0 316.7,99.1 318.2,99.3 319.7,99.5 321.2,99.6 322.6,99.8 324.1,100.0 325.6,100.1 327.1,100.3 328.6,100.5 330.1,100.6 331.6,100.8 333.1,100.9 334.6,101.1 336.0,101.3 337.5,101.4 339.0,101.6 340.5,101.8 342.0,101.9 343.5,102.1 345.0,102.3 346.5,102.4 348.0,102.6 349.4,102.7 350.9,102.9 352.4,103.1 353.9,103.2 355.4,103.4 356.9,103.6 358.4,103.7 359.9,103.9 361.4,104.1 362.8,104.2 364.3,104.4 365.8,104.5 367.3,104.7 368.8,104.9 370.3,105.0 371.8,105.2 373.3,105.4 374.8,105.5 376.2,105.7 377.7,105.9 379.2,106.0 380.7,106.2 382.2,106.3 383.7,106.5 385.2,106.7 386.7,106.8 388.1,107.0 389.6,107.2 391.1,107.3 392.6,107.5 394.1,107.7 395.6,107.8 397.1,108.0 398.6,108.2 400.1,108.3 401.5,108.5 403.0,108.6 404.5,108.8 406.0,109.0 407.5,109.1 409.0,109.3 410.5,109.5 412.0,109.6 413.5,109.8 414.9,110.0 416.4,110.1 417.9,110.3 419.4,110.5 420.9,110.6 422.4,110.8 423.9,110.9 425.4,111.1 426.9,111.3 428.3,111.4 429.8,111.6 431.3,111.8 432.8,111.9 434.3,112.1 435.8,112.3 437.3,112.4 438.8,112.6 440.3,112.8 441.7,112.9 443.2,113.1 444.7,113.3 446.2,113.4 447.7,113.6 449.2,113.8 450.7,113.9 452.2,114.1 453.6,114.3 455.1,114.4 456.6,114.6 458.1,114.8 459.6,114.9 461.1,115.1 462.6,115.3 464.1,115.4 465.6,115.6 467.0,115.8 468.5,116.0 470.0,116.1 471.5,116.3 473.0,116.5 474.5,116.6 476.0,116.8 477.5,117.0 479.0,117.1 480.4,117.3 481.9,117.5 483.4,117.7 484.9,117.8 486.4,118.0 487.9,118.2 489.4,118.4 490.9,118.5 492.4,118.7 493.8,118.9 495.3,119.1 496.8,119.2 498.3,119.4 499.8,119.6 501.3,119.8 502.8,120.0 504.3,120.2 505.8,120.3 507.2,120.5 508.7,120.7 510.2,120.9 511.7,121.1 513.2,121.3 514.7,121.5 516.2,121.7 517.7,121.9 519.1,122.1 520.6,122.2 522.1,122.4 523.6,122.6 525.1,122.8 526.6,123.1 528.1,123.3 529.6,123.5 531.1,123.7 532.5,123.9 534.0,124.1 535.5,124.3 537.0,124.6 538.5,124.8 540.0,125.0 541.5,125.2 543.0,125.5 544.5,125.7 545.9,126.0 547.4,126.2 548.9,126.4 550.4,126.7 551.9,127.0 553.4,127.2 554.9,127.5 556.4,127.8 557.9,128.1 559.3,128.3 560.8,128.6 562.3,128.9 563.8,129.2 565.3,129.6 566.8,129.9 568.3,130.2 569.8,130.5 571.2,130.9 572.7,131.3 574.2,131.6 575.7,132.0 577.2,132.4 578.7,132.8 580.2,133.2 581.7,133.6 583.2,134.1 584.6,134.5 586.1,135.0 587.6,135.5 589.1,136.0 590.6,136.5 592.1,137.0 593.6,137.6 595.1,138.1 596.6,138.7 598.0,139.4 599.5,140.0 601.0,140.7 602.5,141.3 604.0,142.1 605.5,142.8 607.0,143.6 608.5,144.4 610.0,145.2 611.4,146.1 612.9,147.0 614.4,148.0 615.9,148.9 617.4,150.0 618.9,151.1 620.4,152.2 621.9,153.3 623.4,154.6 624.8,155.8 626.3,157.2 627.8,158.6 629.3,160.0 630.8,161.6 632.3,163.1 633.8,164.8 635.3,166.6 636.8,168.4 638.2,170.3 639.7,172.3 641.2,174.4 642.7,176.6 644.2,178.9 645.7,181.3 647.2,183.8 648.7,186.4 650.1,189.2 651.6,192.1 653.1,195.2 654.6,198.4 656.1,201.7 657.6,205.2 659.1,208.9 660.6,212.8 662.1,216.8 663.5,221.1 665.0,225.5 666.5,230.2 668.0,235.1 669.5,240.3 671.0,245.7 672.5,251.3 674.0,257.3 675.5,263.6 676.9,270.1 678.4,277.0 679.9,284.3 681.4,291.9 682.9,299.9 684.4,308.3 685.9,317.1 687.4,326.3 688.9,336.1 690.3,346.3 691.8,357.0 693.3,368.3 694.8,380.1 696.3,392.6 697.8,405.6\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">durée de décharge t (h)</text><text transform=\"translate(22,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">tension U (V)</text></svg>",
+        "questions": [
+          {
+            "texte": "Pendant la décharge, quelle électrode est l'anode ? Est-ce la borne + ou la borne − de la batterie ? Écris l'équation de la réaction de décharge.",
+            "aides": []
+          },
+          {
+            "texte": "Détermine graphiquement la durée de la décharge, puis la capacité de la batterie en A·h et en C.",
+            "aides": [
+              "Cherche sur la courbe l'instant où U = 10,5 V (trace une droite horizontale).",
+              "La capacité est la charge débitée : Q = I·Δt, avec Δt en heures pour obtenir des A·h."
+            ]
+          },
+          {
+            "texte": "Calcule la masse de plomb Pb consommée lors de cette décharge complète.",
+            "aides": [
+              "Convertis d'abord la capacité en coulombs, puis calcule n(e⁻) = Q / F.",
+              "Combien d'électrons libère un atome de plomb dans la demi-équation ?"
+            ]
+          },
+          {
+            "texte": "Pour la recharger, on relie la batterie à un chargeur. Quelle borne du chargeur faut-il relier à l'électrode en dioxyde de plomb ? Écris la demi-équation qui s'y produit pendant la charge.",
+            "aides": [
+              "Pendant la charge, chaque demi-équation de décharge s'écrit dans l'autre sens.",
+              "L'électrode où se produit l'oxydation est l'anode ; dans un électrolyseur, l'anode est reliée à la borne + du générateur."
+            ]
+          },
+          {
+            "texte": "Le chargeur délivre I = 5,0 A. En fin de charge, une partie du courant sert à électrolyser l'eau de la batterie : seuls 90 % de la charge qui traverse la batterie servent à la recharger. Calcule la durée de la recharge complète.",
+            "aides": [
+              "Le chargeur doit fournir plus que les 60,0 A·h : seuls 90 % de la charge servent à recharger.",
+              "Q(utile) = 0,90 × I × Δt : isole Δt."
+            ]
+          },
+          {
+            "texte": "En fin de charge, on observe un dégagement gazeux. Quels gaz se forment ? Pourquoi recommande-t-on de charger une batterie dans un local aéré ?",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> L'anode est le siège de l'oxydation : c'est l'électrode en plomb (Pb perd des électrons). Dans une pile ou un accumulateur qui se décharge, l'anode est la borne −. Équation de décharge : Pb(s) + PbO₂(s) + 4 H⁺(aq) + 2 SO₄²⁻(aq) → 2 PbSO₄(s) + 2 H₂O(ℓ).",
+          "<strong>2.</strong> On lit U = 10,5 V pour Δt = 20,0 h (accepté : 19,8 à 20,2 h). Capacité : Q = I·Δt = 3,00 × 20,0 = 60,0 A·h, soit Q = 60,0 × 3 600 = 2,16 × 10⁵ C.",
+          "<strong>3.</strong> n(e⁻) = Q / F = 2,16 × 10⁵ / 9,65 × 10⁴ = 2,24 mol. D'après Pb → … + 2 e⁻ : n(Pb) = n(e⁻) / 2 = 1,12 mol. m(Pb) = n × M = 1,12 × 207,2 = 232 g.",
+          "<strong>4.</strong> Pendant la charge, la réaction est inversée : l'électrode en dioxyde de plomb est le siège d'une oxydation, c'est l'anode de l'électrolyse ; elle est reliée à la borne + du chargeur. PbSO₄(s) + 2 H₂O(ℓ) → PbO₂(s) + 4 H⁺(aq) + SO₄²⁻(aq) + 2 e⁻.",
+          "<strong>5.</strong> La charge utile à fournir est Q = 2,16 × 10⁵ C, qui ne représente que 90 % de la charge totale : Q(totale) = Q / 0,90. Δt = Q / (0,90 × I) = 2,16 × 10⁵ / (0,90 × 5,0) = 4,8 × 10⁴ s, soit environ 13 h (au lieu de 12 h si tout le courant servait à la recharge).",
+          "<strong>6.</strong> L'électrolyse de l'eau produit du dihydrogène H₂ (à la cathode) et du dioxygène O₂ (à l'anode). Le mélange H₂ + O₂ est explosif : il ne faut pas le laisser s'accumuler, ni approcher une flamme ou une étincelle.",
+          "<em>⚠ Erreur fréquente : garder la polarité de la décharge pendant la charge. La borne + de la batterie (PbO₂) reste reliée au + du chargeur, mais elle devient l'anode : anode et cathode échangent leurs rôles, pas les bornes.</em>"
+        ]
+      },
+      {
+        "id": "ex12",
+        "niveau": 3,
+        "titre": "Stocker le soleil : hydrogène vert ou photosynthèse ?",
+        "contexte": [
+          "Doc. 1 — L'hydrogène « vert ». L'électricité des panneaux solaires est produite le jour, mais on en a aussi besoin la nuit. Une solution consiste à l'utiliser pour électrolyser l'eau, stocker le dihydrogène, puis le transformer à nouveau en électricité dans une pile à combustible. Dans un électrolyseur à membrane échangeuse de protons, les ions H⁺ traversent la membrane d'une électrode à l'autre ; les couples sont O₂(g)/H₂O(ℓ) et H⁺(aq)/H₂(g).",
+          "Doc. 2 — Mesures d'un club scientifique. Un petit électrolyseur de ce type est alimenté sous une tension U = 2,00 V par un courant d'intensité constante I = 0,500 A. Les élèves mesurent le volume de dihydrogène recueilli (à 20 °C, sous 1,013 bar) au cours du temps."
+        ],
+        "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"112.8\" y1=\"25\" x2=\"112.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"145.5\" y1=\"25\" x2=\"145.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.5\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"178.2\" y1=\"25\" x2=\"178.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"211.0\" y1=\"25\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"243.8\" y1=\"25\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"276.5\" y1=\"25\" x2=\"276.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"276.5\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"309.2\" y1=\"25\" x2=\"309.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"342.0\" y1=\"25\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"374.8\" y1=\"25\" x2=\"374.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"440.3\" y1=\"25\" x2=\"440.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"473.0\" y1=\"25\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"505.8\" y1=\"25\" x2=\"505.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"538.5\" y1=\"25\" x2=\"538.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"538.5\" y=\"430\" text-anchor=\"middle\">7</text><line x1=\"571.2\" y1=\"25\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"604.0\" y1=\"25\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"636.8\" y1=\"25\" x2=\"636.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"669.5\" y1=\"25\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.5\" y=\"430\" text-anchor=\"middle\">9</text><line x1=\"702.2\" y1=\"25\" x2=\"702.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"390.8\" x2=\"735\" y2=\"390.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"395.8\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"371.5\" x2=\"735\" y2=\"371.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"376.5\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"352.2\" x2=\"735\" y2=\"352.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"357.2\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"333.0\" x2=\"735\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"338.0\" text-anchor=\"end\">8</text><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"318.8\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"294.5\" x2=\"735\" y2=\"294.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"299.5\" text-anchor=\"end\">12</text><line x1=\"80\" y1=\"275.2\" x2=\"735\" y2=\"275.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"280.2\" text-anchor=\"end\">14</text><line x1=\"80\" y1=\"256.0\" x2=\"735\" y2=\"256.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"261.0\" text-anchor=\"end\">16</text><line x1=\"80\" y1=\"236.8\" x2=\"735\" y2=\"236.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"241.8\" text-anchor=\"end\">18</text><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"198.2\" x2=\"735\" y2=\"198.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"203.2\" text-anchor=\"end\">22</text><line x1=\"80\" y1=\"179.0\" x2=\"735\" y2=\"179.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"184.0\" text-anchor=\"end\">24</text><line x1=\"80\" y1=\"159.8\" x2=\"735\" y2=\"159.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"164.8\" text-anchor=\"end\">26</text><line x1=\"80\" y1=\"140.5\" x2=\"735\" y2=\"140.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"145.5\" text-anchor=\"end\">28</text><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"126.2\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"102.0\" x2=\"735\" y2=\"102.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"107.0\" text-anchor=\"end\">32</text><line x1=\"80\" y1=\"82.8\" x2=\"735\" y2=\"82.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"87.8\" text-anchor=\"end\">34</text><line x1=\"80\" y1=\"63.5\" x2=\"735\" y2=\"63.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"68.5\" text-anchor=\"end\">36</text><line x1=\"80\" y1=\"44.2\" x2=\"735\" y2=\"44.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"49.2\" text-anchor=\"end\">38</text><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">40</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><path d=\"M74.0,410.0 L86.0,410.0 M80.0,404.0 L80.0,416.0\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M139.5,373.4 L151.5,373.4 M145.5,367.4 L145.5,379.4\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M205.0,341.7 L217.0,341.7 M211.0,335.7 L211.0,347.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M270.5,305.1 L282.5,305.1 M276.5,299.1 L276.5,311.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M336.0,273.3 L348.0,273.3 M342.0,267.3 L342.0,279.3\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M401.5,235.8 L413.5,235.8 M407.5,229.8 L407.5,241.8\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M467.0,202.1 L479.0,202.1 M473.0,196.1 L473.0,208.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M532.5,168.4 L544.5,168.4 M538.5,162.4 L538.5,174.4\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M598.0,130.9 L610.0,130.9 M604.0,124.9 L604.0,136.9\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M663.5,99.1 L675.5,99.1 M669.5,93.1 L669.5,105.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M729.0,63.5 L741.0,63.5 M735.0,57.5 L735.0,69.5\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">durée t (min)</text><text transform=\"translate(22,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">volume de H₂ recueilli V (mL)</text></svg>",
+        "contexte2": [
+          "Doc. 3 — Énergie. La transformation de 1 mol de H₂ en eau (par combustion ou dans une pile à combustible idéale) peut libérer au plus 286 kJ. La réaction 2 H₂(g) + O₂(g) → 2 H₂O(ℓ) est totale : sa constante d'équilibre vaut environ 10⁸³ à 25 °C.",
+          "Doc. 4 — Ordres de grandeur couramment cités. Rendement d'un panneau solaire : environ 20 % ; rendement d'une pile à combustible : environ 50 %. Photosynthèse : 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂ ; les plantes convertissent en moyenne de l'ordre de 1 % de l'énergie lumineuse reçue en énergie chimique."
+        ],
+        "questions": [
+          {
+            "texte": "Écris les demi-équations aux deux électrodes de l'électrolyseur et l'équation de l'électrolyse. À quelle borne du générateur est reliée l'électrode où se forme le dihydrogène ?",
+            "aides": []
+          },
+          {
+            "texte": "À l'aide du doc. 3, explique pourquoi l'électrolyse de l'eau est une transformation forcée.",
+            "aides": []
+          },
+          {
+            "texte": "Exploite le doc. 2 : détermine le débit de dihydrogène mesuré, en mL·min⁻¹.",
+            "aides": []
+          },
+          {
+            "texte": "Calcule le débit de dihydrogène prévu si tous les électrons servaient à produire H₂. Déduis-en le rendement faradique η<sub>F</sub> = débit mesuré / débit prévu.",
+            "aides": [
+              "Raisonne sur 1 min = 60 s : calcule la charge Q = I·Δt, puis n(e⁻).",
+              "n(H₂) = n(e⁻) / 2, puis V = n × V<sub>m</sub> (en mL)."
+            ]
+          },
+          {
+            "texte": "Pour 10,0 min de fonctionnement, compare l'énergie électrique consommée E<sub>él</sub> et l'énergie chimique stockée dans le dihydrogène formé. Calcule le rendement énergétique de l'électrolyseur.",
+            "aides": [
+              "E<sub>él</sub> = U·I·Δt avec Δt en secondes.",
+              "Énergie stockée = n(H₂) × 286 kJ·mol⁻¹, avec n(H₂) déduit du volume lu à 10,0 min."
+            ]
+          },
+          {
+            "texte": "Estime le rendement global de la chaîne « soleil → panneau → électrolyseur → pile à combustible → électricité ». Puis, en t'appuyant sur les documents, rédige un paragraphe argumenté comparant ce mode de stockage de l'énergie solaire à la photosynthèse (rendement, usages, enjeux pour la société).",
+            "aides": [
+              "Les rendements successifs se multiplient.",
+              "Pour l'argumentation, compare : rendement, possibilité de restituer de l'électricité, sécurité et matériel nécessaires, effet sur le CO₂, surfaces occupées."
+            ]
+          },
+          {
+            "texte": "Pour aller plus loin (hors capacités exigibles) : l'énergie électrique minimale à fournir pour électrolyser 1 mol de H₂O vaut 237 kJ. Sachant que 2 mol d'électrons sont échangées par mole de H₂O, calcule la tension minimale U<sub>min</sub> qu'il faudrait appliquer, et compare-la à la tension utilisée.",
+            "aides": []
+          }
+        ],
+        "corrige": [
+          "<strong>1.</strong> Cathode (réduction), où se forme H₂ : 2 H⁺(aq) + 2 e⁻ → H₂(g). Anode (oxydation) : 2 H₂O(ℓ) → O₂(g) + 4 H⁺(aq) + 4 e⁻. Bilan (première × 2, puis somme) : 2 H₂O(ℓ) → 2 H₂(g) + O₂(g). La cathode d'un électrolyseur est reliée à la borne − du générateur.",
+          "<strong>2.</strong> La réaction inverse, 2 H₂ + O₂ → 2 H₂O, est spontanée et totale (K ≈ 10⁸³). La décomposition de l'eau en H₂ et O₂ ne se fait donc pas spontanément : il faut que le générateur impose un courant pour forcer le système à évoluer dans le sens inverse de son sens spontané (Qr s'éloigne de la valeur d'équilibre).",
+          "<strong>3.</strong> Les points sont alignés sur une droite passant par l'origine : le débit est constant. On lit V = 36,0 mL à t = 10,0 min, soit un débit de 36,0 / 10,0 = 3,60 mL·min⁻¹ (accepté : 3,5 à 3,7 mL·min⁻¹).",
+          "<strong>4.</strong> En 1 min : n(e⁻) = I·Δt / F = 0,500 × 60 / 9,65 × 10⁴ = 3,11 × 10⁻⁴ mol ; n(H₂) = n(e⁻) / 2 = 1,55 × 10⁻⁴ mol ; V = n × V<sub>m</sub> = 1,55 × 10⁻⁴ × 24,0 × 10³ = 3,73 mL. Débit prévu : 3,73 mL·min⁻¹. η<sub>F</sub> = 3,60 / 3,73 = 0,965 = 96,5 % : presque tous les électrons servent à produire H₂.",
+          "<strong>5.</strong> E<sub>él</sub> = U·I·Δt = 2,00 × 0,500 × 600 = 600 J. n(H₂) = 36,0 × 10⁻³ / 24,0 = 1,50 × 10⁻³ mol ; énergie stockée : 1,50 × 10⁻³ × 286 × 10³ = 429 J. Rendement énergétique : 429 / 600 = 0,715, soit environ 72 % ; le reste est surtout dissipé par effet Joule (transfert thermique).",
+          "<strong>6.</strong> Rendement global ≈ 0,20 × 0,715 × 0,50 = 0,072, soit environ 7 %. Éléments attendus : ce rendement est environ 7 fois meilleur que celui de la photosynthèse (≈ 1 %) ; H₂ permet de restituer de l'électricité à la demande (nuit, véhicules) ; mais il faut des panneaux, un électrolyseur, des réservoirs sous pression, des précautions (gaz inflammable, mélange explosif avec O₂), et l'électrolyse consomme de l'eau pure. La photosynthèse est peu efficace mais « gratuite », autoreproductrice, elle capte du CO₂ et produit nourriture, matériaux et biocarburants ; elle demande de grandes surfaces, en concurrence avec les cultures alimentaires. Enjeux : stocker les énergies renouvelables intermittentes, réduire les émissions de CO₂ (H₂ produit sans énergie fossile), ressources (métaux des électrolyseurs et des panneaux), sécurité.",
+          "<strong>7.</strong> Pour aller plus loin : E = U<sub>min</sub> × Q avec Q = 2 F pour 1 mol de H₂O, donc U<sub>min</sub> = 237 × 10³ / (2 × 9,65 × 10⁴) = 1,23 V. La tension utilisée (2,00 V) est nettement plus grande : l'écart correspond à l'énergie perdue (effet Joule, électrodes), cohérent avec un rendement inférieur à 100 %.",
+          "<em>⚠ Erreur fréquente : utiliser n(H₂) = n(e⁻) (on oublie les 2 électrons par molécule de H₂), ou oublier de convertir la durée en secondes dans E = U·I·Δt.</em>"
         ]
       }
     ],
@@ -13518,656 +14171,6 @@ root.style.display = "flex"; root.style.flexDirection = "column"; root.style.gap
           "<strong>6.</strong> Pour l'échantillon enfermé : 300 = 820·e^(−λt) ⟺ t = ln(820 / 300) / λ = (3,82 / 0,693) × ln(2,73) = 5,5 jours. Le calcul est juste pour l'échantillon isolé, mais l'affirmation est fausse pour la cave : dans la cave, le radon est renouvelé en permanence par le sol (le radium et l'uranium, de très longue demi-vie, en produisent sans cesse), donc l'activité ne décroît pas. Mesures possibles : aérer et ventiler régulièrement la cave (ventilation mécanique), rendre étanches le sol et les passages de canalisations, mettre le sous-sol en dépression.",
           "<strong>7.</strong> Pour aller plus loin : Δm = m(Rn) − [m(Po) + m(He)] = 222,01758 − 222,01157 = 0,00601 u = 9,98 × 10⁻³⁰ kg. E = Δm·c² = 9,98 × 10⁻³⁰ × (2,998 × 10⁸)² = 8,97 × 10⁻¹³ J = 5,60 MeV. (Les masses atomiques incluent les électrons, mais ils sont en même nombre de part et d'autre : 86 = 84 + 2.)",
           "<em>⚠ Erreur fréquente : en question 4, lire 6,71 comme la valeur de A₀ (c'est ln A₀) ; en question 6, appliquer à la cave un raisonnement valable seulement pour un échantillon isolé, sans source de radon.</em>"
-        ]
-      }
-    ],
-    niveau: "tle"
-  },
-  {
-    id: 18,
-    num: "17",
-    title: "Forcer une réaction chimique",
-    category: "chimie",
-    color: "#4f8ef7",
-    tag: "Électrochimie",
-    fiche: {
-      sections: [
-        {
-          title: "1. Rappel : la pile, une transformation spontanée",
-          icon: "🔋",
-          content: [
-            {
-              type: "def",
-              term: "Pile électrochimique (rappel du chapitre 2)",
-              text: "Dispositif qui convertit de l'énergie chimique en énergie électrique grâce à une réaction d'oxydoréduction <strong>spontanée</strong> (Qr,i < K), réalisée en séparant les deux couples oxydant/réducteur dans deux demi-piles reliées par un pont salin."
-            },
-            {
-              type: "formula",
-              label: "Critère d'évolution / fonctionnement",
-              text: "Qr < K : évolution spontanée dans le sens direct, la pile débite du courant.\nQr = K : la pile est usée (système à l'équilibre)."
-            },
-            {
-              type: "text",
-              text: "Cette partie a déjà été vue en détail au chapitre 2. Elle sert ici de point de départ pour comprendre ce que signifie « forcer » une réaction."
-            }
-          ]
-        },
-        {
-          title: "2. Accumulateurs et stockage de l'énergie électrique",
-          icon: "🔌",
-          content: [
-            {
-              type: "def",
-              term: "Accumulateur",
-              text: "Pile rechargeable : à la différence d'une pile « primaire » (usage unique), la réaction chimique peut être inversée en imposant un courant électrique externe (charge), puis se dérouler à nouveau spontanément lors de l'utilisation (décharge)."
-            },
-            {
-              type: "def",
-              term: "Capacité électrique Q (ou C)",
-              text: "Quantité d'électricité maximale que peut fournir l'accumulateur lors d'une décharge complète : Q = I·Δt. S'exprime généralement en ampère-heure (A·h)."
-            },
-            {
-              type: "text",
-              text: "Exemples courants : accumulateurs lithium-ion (téléphones, véhicules électriques), accumulateurs au plomb (batterie de voiture)."
-            }
-          ]
-        },
-        {
-          title: "3. L'électrolyse : forcer une transformation non spontanée",
-          icon: "⚡",
-          content: [
-            {
-              type: "def",
-              term: "Électrolyse",
-              text: "Transformation chimique <strong>forcée</strong> par un apport d'énergie électrique extérieur (générateur), qui impose au système d'évoluer dans le sens <strong>inverse</strong> de son sens spontané."
-            },
-            {
-              type: "warn",
-              text: "À bien distinguer : dans une <strong>pile</strong>, la réaction est spontanée (Qr évolue vers K en produisant du courant, l'anode est la borne négative). Dans une <strong>électrolyse</strong>, un générateur impose un courant qui force la réaction à s'éloigner de l'équilibre (Qr s'éloigne de K), l'anode devient alors la borne positive reliée au + du générateur."
-            },
-            {
-              type: "table",
-              headers: [
-                "Caractéristique",
-                "Pile",
-                "Électrolyse"
-              ],
-              rows: [
-                [
-                  "Spontanéité",
-                  "Spontanée",
-                  "Forcée"
-                ],
-                [
-                  "Rôle du générateur",
-                  "Aucun (la pile EST le générateur)",
-                  "Impose le sens de la réaction"
-                ],
-                [
-                  "Évolution de Qr",
-                  "Qr → K",
-                  "Qr s'éloigne de K"
-                ],
-                [
-                  "Anode (oxydation)",
-                  "Borne négative (−)",
-                  "Borne positive (+)"
-                ],
-                [
-                  "Cathode (réduction)",
-                  "Borne positive (+)",
-                  "Borne négative (−)"
-                ]
-              ]
-            }
-          ]
-        },
-        {
-          title: "4. Bilan de matière dans une électrolyse",
-          icon: "🧪",
-          content: [
-            {
-              type: "text",
-              text: "Méthode : écrire les demi-équations d'oxydation à l'anode et de réduction à la cathode, en déduire l'équation-bilan de l'électrolyse. La quantité de matière transformée est reliée à la charge électrique Q ayant traversé le circuit."
-            },
-            {
-              type: "formula",
-              label: "Relation charge - quantité de matière d'électrons",
-              text: "Q = I·Δt = n(e⁻)·F\nsoit n(e⁻) = I·Δt / F"
-            },
-            {
-              type: "def",
-              term: "Constante de Faraday F",
-              text: "F ≈ 96 500 C·mol⁻¹ : charge électrique portée par une mole d'électrons."
-            },
-            {
-              type: "text",
-              text: "Exemples : électrolyse de l'eau (2 H₂O → 2 H₂ + O₂, production de dihydrogène et de dioxygène), électrolyse d'une solution ionique pour un dépôt métallique (galvanoplastie) ou pour la production industrielle de métaux (aluminium par électrolyse de l'alumine fondue)."
-            }
-          ]
-        },
-        {
-          title: "5. Conversion et stockage de l'énergie chimique",
-          icon: "🌱",
-          content: [
-            {
-              type: "text",
-              text: "La <strong>photosynthèse</strong> est un exemple naturel de transformation forcée : l'énergie apportée par les photons lumineux (et non par un générateur électrique) permet aux plantes de synthétiser des molécules riches en énergie (glucose) à partir de CO₂ et H₂O, stockant ainsi l'énergie solaire sous forme d'énergie chimique."
-            },
-            {
-              type: "table",
-              headers: [
-                "Mode de stockage",
-                "Énergie stockée sous forme",
-                "Restitution"
-              ],
-              rows: [
-                [
-                  "Pile primaire",
-                  "Chimique",
-                  "Électrique (usage unique)"
-                ],
-                [
-                  "Accumulateur",
-                  "Chimique",
-                  "Électrique (rechargeable)"
-                ],
-                [
-                  "Photosynthèse / biomasse",
-                  "Chimique (glucose)",
-                  "Combustion, respiration cellulaire"
-                ],
-                [
-                  "Dihydrogène (produit par électrolyse)",
-                  "Chimique",
-                  "Électrique via pile à combustible"
-                ]
-              ]
-            },
-            {
-              type: "text",
-              text: "Le dihydrogène produit par électrolyse de l'eau constitue ainsi un <strong>vecteur énergétique</strong> : l'énergie électrique est stockée sous forme chimique, puis restituée ultérieurement (par exemple dans une pile à combustible)."
-            }
-          ]
-        }
-      ]
-    },
-    quiz: [
-      {
-        q: "Une électrolyse est une transformation :",
-        opts: [
-          "spontanée, comme celle qui se produit dans une pile",
-          "forcée par un apport d'énergie électrique",
-          "qui produit de l'énergie électrique",
-          "simplement accélérée par le passage d'un courant"
-        ],
-        ans: 1,
-        pieges: [
-          { code: "electrolyse-vs-pile", texte: "Confondre électrolyse (forcée) et pile (spontanée)" },
-          null,
-          { code: "electrolyse-conversion-inverse", texte: "Inverser la conversion : l'électrolyse consomme de l'énergie électrique" },
-          { code: "forcer-vs-accelerer", texte: "Confondre « forcer » (changer le sens d'évolution) et « accélérer » (rôle d'un catalyseur)" }
-        ],
-        exp: "Un générateur impose au système d'évoluer dans le sens inverse de son sens spontané : l'énergie électrique est convertie en énergie chimique. Attention : une pile fait l'inverse."
-      },
-      {
-        q: "Pendant une électrolyse, le quotient de réaction Qr de la réaction qui se produit :",
-        opts: [
-          "tend vers la constante d'équilibre K",
-          "s'éloigne de K",
-          "reste égal à K",
-          "n'est pas défini, la réaction étant forcée"
-        ],
-        ans: 1,
-        pieges: [
-          { code: "electrolyse-vs-pile", texte: "Confondre électrolyse et pile : dans une pile, Qr évolue vers K" },
-          null,
-          { code: "equilibre-pendant-electrolyse", texte: "Croire que le système reste à l'équilibre : le générateur l'en écarte" },
-          { code: "qr-non-defini", texte: "Croire que Qr n'a pas de sens pour une transformation forcée" }
-        ],
-        exp: "Le générateur force la transformation dans le sens non spontané : Qr s'éloigne de K. Dans une pile, au contraire, Qr évolue spontanément vers K."
-      },
-      {
-        q: "Dans une cellule d'électrolyse, l'anode est :",
-        opts: [
-          "le siège d'une oxydation, reliée à la borne + du générateur",
-          "le siège d'une oxydation, reliée à la borne −, comme dans une pile",
-          "le siège d'une réduction, reliée à la borne +",
-          "l'électrode par laquelle le courant sort de la cellule"
-        ],
-        ans: 0,
-        pieges: [
-          null,
-          { code: "polarite-anode-pile-electrolyse", texte: "Transposer la polarité de la pile : en électrolyse, l'anode est reliée au pôle + du générateur" },
-          { code: "anode-reduction", texte: "Associer anode et réduction : l'anode est toujours le siège de l'oxydation" },
-          { code: "sens-courant-electrolyse", texte: "Se tromper de sens : le courant entre dans la cellule par l'anode, reliée à la borne +" }
-        ],
-        exp: "Anode = oxydation, toujours. En électrolyse, le générateur arrache des électrons à l'anode : elle est reliée à sa borne +. Attention : dans une pile, l'anode est la borne −."
-      },
-      {
-        q: "Une électrolyse dure Δt = 965 s sous une intensité I = 2,0 A (F = 96 500 C·mol⁻¹). La quantité d'électrons échangés vaut :",
-        opts: [
-          "1,9 × 10⁸ mol",
-          "1,0 × 10⁻² mol",
-          "50 mol",
-          "2,0 × 10⁻² mol"
-        ],
-        ans: 3,
-        pieges: [
-          { code: "faraday-multiplie", texte: "Multiplier par F au lieu de diviser : n(e⁻) = I Δt / F" },
-          { code: "oubli-intensite", texte: "Oublier l'intensité : Δt / F" },
-          { code: "faraday-rapport-inverse", texte: "Inverser le rapport : F / (I Δt)" },
-          null
-        ],
-        exp: "Q = I Δt = 2,0 × 965 = 1 930 C ; n(e⁻) = Q / F = 1 930 / 96 500 = 2,0 × 10⁻² mol. Attention : F est la charge d'une mole d'électrons, on divise par F."
-      },
-      {
-        q: "Dans cette électrolyse, du cuivre se dépose à la cathode (Cu²⁺ + 2 e⁻ → Cu ; M(Cu) = 63,5 g·mol⁻¹) avec n(e⁻) = 2,0 × 10⁻² mol. La masse de cuivre déposée vaut :",
-        opts: [
-          "1,3 g",
-          "0,64 g",
-          "1,6 × 10⁻⁴ g",
-          "1,0 × 10⁻² g"
-        ],
-        ans: 1,
-        pieges: [
-          { code: "oubli-electrons-echanges", texte: "Oublier que chaque ion Cu²⁺ capte 2 électrons : n(Cu) = n(e⁻) / 2" },
-          null,
-          { code: "masse-molaire-divisee", texte: "Diviser par la masse molaire au lieu de multiplier : m = n × M" },
-          { code: "quantite-vs-masse", texte: "Confondre quantité de matière et masse" }
-        ],
-        exp: "n(Cu) = n(e⁻) / 2 = 1,0 × 10⁻² mol ; m = n × M = 1,0 × 10⁻² × 63,5 ≈ 0,64 g. Attention : 2 électrons par atome de cuivre déposé."
-      },
-      {
-        q: "Un accumulateur se distingue d'une pile jetable car :",
-        opts: [
-          "sa réaction peut être inversée, lors de la charge, par une électrolyse",
-          "il stocke des électrons, qu'il libère ensuite",
-          "pendant la charge, il fonctionne comme une pile",
-          "sa capacité est illimitée"
-        ],
-        ans: 0,
-        pieges: [
-          null,
-          { code: "accumulateur-stocke-electrons", texte: "Croire qu'un accumulateur stocke des électrons : il stocke de l'énergie sous forme chimique" },
-          { code: "accumulateur-charge-vs-decharge", texte: "Confondre charge (transformation forcée) et décharge (fonctionnement en pile)" },
-          { code: "capacite-illimitee", texte: "Croire que la capacité est illimitée : elle est fixée par la quantité de réactifs" }
-        ],
-        exp: "À la décharge, l'accumulateur fonctionne comme une pile (réaction spontanée) ; à la charge, un générateur force la réaction inverse. Il stocke de l'énergie chimique, pas des électrons."
-      },
-      {
-        q: "La capacité d'un accumulateur de téléphone vaut Q = 2,0 A·h. En coulombs, cela fait :",
-        opts: [
-          "120 C",
-          "2,0 C",
-          "7,2 × 10³ C",
-          "5,6 × 10⁻⁴ C"
-        ],
-        ans: 2,
-        pieges: [
-          { code: "conversion-heure-minute", texte: "Convertir les heures en minutes au lieu de secondes : 2,0 × 60" },
-          { code: "ah-vs-coulomb", texte: "Croire que 1 A·h = 1 C : 1 A·h = 1 A × 3 600 s" },
-          null,
-          { code: "conversion-heure-inverse", texte: "Diviser par 3 600 au lieu de multiplier" }
-        ],
-        exp: "Q = I × Δt : 1 A·h = 1 A × 3 600 s = 3 600 C, donc 2,0 A·h = 7,2 × 10³ C. Attention : la capacité est une charge électrique, pas une énergie."
-      },
-      {
-        q: "L'électrolyse de l'eau a pour équation 2 H₂O → 2 H₂ + O₂. Elle produit :",
-        opts: [
-          "autant de dihydrogène que de dioxygène",
-          "deux fois plus de dihydrogène que de dioxygène",
-          "deux fois plus de dioxygène que de dihydrogène",
-          "de la vapeur d'eau, l'eau étant chauffée par le courant"
-        ],
-        ans: 1,
-        pieges: [
-          { code: "oubli-stoechiometrie", texte: "Oublier les nombres stœchiométriques de l'équation" },
-          null,
-          { code: "stoechiometrie-inversee", texte: "Inverser les nombres stœchiométriques : 2 H₂ pour 1 O₂" },
-          { code: "electrolyse-vs-ebullition", texte: "Confondre électrolyse (transformation chimique) et ébullition (changement d'état)" }
-        ],
-        exp: "Pour 2 H₂O décomposées : 2 H₂ (à la cathode) et 1 O₂ (à l'anode), soit deux fois plus de dihydrogène. Attention : c'est une transformation chimique, pas une ébullition."
-      },
-      {
-        q: "La photosynthèse est une transformation forcée car :",
-        opts: [
-          "l'énergie lumineuse force la synthèse de molécules riches en énergie",
-          "elle se produit seule dans la nature, sans apport extérieur",
-          "elle libère de l'énergie, comme une combustion",
-          "elle nécessite un générateur électrique naturel"
-        ],
-        ans: 0,
-        pieges: [
-          null,
-          { code: "naturel-donc-spontane", texte: "Croire que tout ce qui se produit dans la nature est spontané : la photosynthèse exige l'énergie de la lumière" },
-          { code: "photosynthese-vs-respiration", texte: "Confondre photosynthèse (stocke de l'énergie) et respiration ou combustion (libèrent de l'énergie)" },
-          { code: "forcer-energie-electrique", texte: "Croire que seule l'énergie électrique peut forcer une transformation : la lumière aussi" }
-        ],
-        exp: "La lumière apporte l'énergie qui force la synthèse du glucose à partir de CO₂ et H₂O : l'énergie solaire est stockée sous forme chimique. Attention : la respiration fait l'inverse."
-      },
-      {
-        q: "Le dihydrogène produit par électrolyse de l'eau est :",
-        opts: [
-          "une source d'énergie primaire, disponible dans la nature",
-          "un vecteur d'énergie, qui restitue dans une pile à combustible l'énergie stockée",
-          "un carburant dont l'utilisation rejette du CO₂",
-          "une énergie gratuite, qui restitue plus que l'énergie de l'électrolyse"
-        ],
-        ans: 1,
-        pieges: [
-          { code: "vecteur-vs-source-energie", texte: "Confondre vecteur et source d'énergie : il faut produire H₂, il n'existe pas libre dans la nature" },
-          null,
-          { code: "h2-rejette-co2", texte: "Croire que H₂ rejette du CO₂ en réagissant : sa réaction avec O₂ ne produit que de l'eau" },
-          { code: "energie-creee", texte: "Croire qu'on récupère plus d'énergie qu'on en a fourni : l'énergie se conserve et une partie est perdue" }
-        ],
-        exp: "H₂ stocke l'énergie électrique fournie lors de l'électrolyse ; une pile à combustible en restitue une partie. C'est un vecteur d'énergie, pas une source. Attention : on ne récupère jamais plus que ce qu'on a fourni."
-      }
-    ],
-    annales: [
-      {
-        year: "2022",
-        title: "Des piles historiques",
-        session: "Métropole · Jour 2",
-        link: "https://www.labolycee.org/metropole-2022-jour-2"
-      },
-      {
-        year: "2023",
-        title: "Le street — décharge de condensateur, énergie",
-        session: "Amérique du Nord · Jour 1",
-        link: "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-1"
-      }
-    ],
-    exercices: [
-      {
-        "id": "ex1",
-        "niveau": 1,
-        "titre": "Pile, accumulateur ou électrolyseur ?",
-        "contexte": [
-          "Yanis branche sa trottinette électrique pour la nuit et se demande ce qui se passe dans la batterie. Aide-le à trier ses idées."
-        ],
-        "questions": [
-          {
-            "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Lorsqu'une pile débite, son quotient de réaction Qr se rapproche de la constante d'équilibre K.<br>b. Dans un électrolyseur, l'anode est reliée à la borne négative du générateur.<br>c. Pendant sa charge, la batterie de la trottinette fonctionne comme un électrolyseur.<br>d. Dans un électrolyseur, les électrons traversent la solution d'une électrode à l'autre.<br>e. Une batterie de capacité 2,0 A·h peut faire circuler une charge de 7 200 C.<br>f. La photosynthèse est une transformation spontanée : elle ne nécessite aucun apport d'énergie.",
-            "aides": []
-          },
-          {
-            "texte": "Pour chacun des dispositifs suivants, précise la forme d'énergie reçue et la forme d'énergie stockée ou fournie : une pile alcaline de télécommande qui fonctionne ; la batterie de la trottinette pendant la charge ; une feuille d'arbre au soleil.",
-            "aides": []
-          }
-        ],
-        "corrige": [
-          "<strong>1.</strong> a. VRAI : la réaction d'une pile est spontanée (Qr &lt; K) ; en débitant, le système évolue vers l'équilibre et Qr tend vers K (pile usée quand Qr = K).",
-          "b. FAUX : dans un électrolyseur, l'anode (siège de l'oxydation) est reliée à la borne + du générateur ; c'est dans une pile que l'anode est la borne −.",
-          "c. VRAI : le chargeur impose un courant qui force la réaction à se faire dans le sens inverse de son sens spontané (Qr s'éloigne de K) : c'est une électrolyse.",
-          "d. FAUX : les électrons circulent seulement dans les fils et les électrodes ; dans la solution, ce sont les ions qui se déplacent et assurent le passage du courant.",
-          "e. VRAI : Q = 2,0 A × 3 600 s = 7 200 C.",
-          "f. FAUX : la photosynthèse est une transformation forcée, rendue possible par l'énergie apportée par la lumière (photons).",
-          "<strong>2.</strong> Pile alcaline : énergie chimique (stockée) → énergie électrique fournie. Batterie en charge : énergie électrique reçue → énergie chimique stockée. Feuille au soleil : énergie lumineuse reçue → énergie chimique stockée (glucose)."
-        ]
-      },
-      {
-        "id": "ex2",
-        "niveau": 1,
-        "titre": "Fabriquer du dihydrogène en TP",
-        "contexte": [
-          "En TP, Inès réalise l'électrolyse de l'eau dans une solution d'acide sulfurique diluée. Deux électrodes inattaquables sont surmontées de tubes gradués, initialement remplis de solution. Le générateur débite un courant d'intensité constante I = 0,200 A pendant Δt = 8,0 min. Le schéma montre le dispositif à la fin de l'expérience.",
-          "Tests des gaz : le gaz du tube A produit une petite détonation au contact d'une flamme ; le gaz du tube B ravive une bûchette incandescente."
-        ],
-        "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"150\" y=\"270\" width=\"460\" height=\"170\" fill=\"#dce8eb\"/><path d=\"M150,240 L150,440 L610,440 L610,240\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><rect x=\"200\" y=\"330.0\" width=\"50\" height=\"90.0\" fill=\"#dce8eb\"/><path d=\"M200,420 L200,82 Q200,70 212,70 L238,70 Q250,70 250,82 L250,420\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"236\" y1=\"90\" x2=\"250\" y2=\"90\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"95\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"242\" y1=\"110\" x2=\"250\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"130\" x2=\"250\" y2=\"130\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"150\" x2=\"250\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"170\" x2=\"250\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"236\" y1=\"190\" x2=\"250\" y2=\"190\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"195\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"242\" y1=\"210\" x2=\"250\" y2=\"210\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"230\" x2=\"250\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"250\" x2=\"250\" y2=\"250\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"270\" x2=\"250\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"236\" y1=\"290\" x2=\"250\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"295\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"242\" y1=\"310\" x2=\"250\" y2=\"310\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"330\" x2=\"250\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"350\" x2=\"250\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"242\" y1=\"370\" x2=\"250\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"236\" y1=\"390\" x2=\"250\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"194\" y=\"395\" text-anchor=\"end\" font-size=\"14\">15</text><line x1=\"200\" y1=\"330.0\" x2=\"250\" y2=\"330.0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"225.0\" y=\"60\" text-anchor=\"middle\" font-weight=\"bold\">tube A</text><rect x=\"480\" y=\"210.0\" width=\"50\" height=\"210.0\" fill=\"#dce8eb\"/><path d=\"M480,420 L480,82 Q480,70 492,70 L518,70 Q530,70 530,82 L530,420\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"516\" y1=\"90\" x2=\"530\" y2=\"90\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"95\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"522\" y1=\"110\" x2=\"530\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"130\" x2=\"530\" y2=\"130\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"150\" x2=\"530\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"170\" x2=\"530\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"516\" y1=\"190\" x2=\"530\" y2=\"190\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"195\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"522\" y1=\"210\" x2=\"530\" y2=\"210\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"230\" x2=\"530\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"250\" x2=\"530\" y2=\"250\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"270\" x2=\"530\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"516\" y1=\"290\" x2=\"530\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"295\" text-anchor=\"end\" font-size=\"14\">10</text><line x1=\"522\" y1=\"310\" x2=\"530\" y2=\"310\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"330\" x2=\"530\" y2=\"330\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"350\" x2=\"530\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"522\" y1=\"370\" x2=\"530\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"516\" y1=\"390\" x2=\"530\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"474\" y=\"395\" text-anchor=\"end\" font-size=\"14\">15</text><line x1=\"480\" y1=\"210.0\" x2=\"530\" y2=\"210.0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"505.0\" y=\"60\" text-anchor=\"middle\" font-weight=\"bold\">tube B</text><rect x=\"219\" y=\"370\" width=\"12\" height=\"70\" fill=\"#7a7a7a\" stroke=\"#3a3a3a\"/><rect x=\"499\" y=\"370\" width=\"12\" height=\"70\" fill=\"#7a7a7a\" stroke=\"#3a3a3a\"/><rect x=\"320\" y=\"15\" width=\"120\" height=\"50\" rx=\"6\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"380\" y=\"46\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">générateur</text><text x=\"332\" y=\"34\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">−</text><text x=\"428\" y=\"34\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><polyline points=\"320,40 90,40 90,455 225,455 225,440\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polyline points=\"440,40 680,40 680,455 505,455 505,440\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"200\" r=\"20\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"680\" y=\"206\" text-anchor=\"middle\" font-weight=\"bold\">A</text><text x=\"365\" y=\"330\" text-anchor=\"middle\" fill=\"#1F4E5A\">solution d'acide</text><text x=\"365\" y=\"350\" text-anchor=\"middle\" fill=\"#1F4E5A\">sulfurique diluée</text><text x=\"290\" y=\"160\" text-anchor=\"middle\" font-size=\"14\">graduations</text><text x=\"290\" y=\"177\" text-anchor=\"middle\" font-size=\"14\">en mL</text><text x=\"395\" y=\"415\" text-anchor=\"middle\" font-size=\"14\">électrode</text><line x1=\"430\" y1=\"410\" x2=\"498\" y2=\"400\" stroke=\"#3a3a3a\" stroke-width=\"1\"/></svg>",
-        "questions": [
-          {
-            "texte": "Identifie le gaz recueilli dans chaque tube.",
-            "aides": []
-          },
-          {
-            "texte": "Lis le volume de gaz dans chaque tube. Quel est le rapport V(tube A) / V(tube B) ?",
-            "aides": []
-          },
-          {
-            "texte": "Les couples mis en jeu sont H⁺(aq)/H₂(g) et O₂(g)/H₂O(ℓ). Écris la demi-équation à chaque électrode et précise laquelle est l'anode, laquelle est la cathode.",
-            "aides": [
-              "L'électrode reliée à la borne − du générateur reçoit des électrons : y a-t-il oxydation ou réduction ?",
-              "Équilibre O avec H₂O, H avec H⁺, puis les charges avec des électrons e⁻."
-            ]
-          },
-          {
-            "texte": "Déduis-en l'équation de l'électrolyse. Explique pourquoi elle est cohérente avec le rapport des volumes.",
-            "aides": []
-          },
-          {
-            "texte": "Calcule la charge Q qui a traversé le circuit, puis la quantité de matière d'électrons n(e⁻) échangés.",
-            "aides": []
-          },
-          {
-            "texte": "Déduis-en la quantité de dihydrogène formé et son volume. Compare avec ta lecture.",
-            "aides": [
-              "Regarde la demi-équation de formation de H₂ : combien d'électrons faut-il pour une molécule de H₂ ?",
-              "n(H₂) = n(e⁻) / 2, puis V = n × V<sub>m</sub> (V<sub>m</sub> en L·mol⁻¹, résultat en L à convertir en mL)."
-            ]
-          }
-        ],
-        "corrige": [
-          "<strong>1.</strong> Tube A : dihydrogène H₂ (détonation). Tube B : dioxygène O₂ (bûchette ravivée).",
-          "<strong>2.</strong> V(tube A) = 12 mL et V(tube B) = 6 mL ; rapport = 12 / 6 = 2,0.",
-          "<strong>3.</strong> Tube A (relié à la borne −) : réduction, c'est la cathode : 2 H⁺(aq) + 2 e⁻ → H₂(g). Tube B (relié à la borne +) : oxydation, c'est l'anode : 2 H₂O(ℓ) → O₂(g) + 4 H⁺(aq) + 4 e⁻.",
-          "<strong>4.</strong> On multiplie la première par 2 pour échanger 4 électrons, puis on additionne et on simplifie les ions H⁺ : 2 H₂O(ℓ) → 2 H₂(g) + O₂(g). Il se forme deux fois plus de molécules de H₂ que de O₂ ; à même température et même pression, le volume de H₂ est donc le double de celui de O₂.",
-          "<strong>5.</strong> Q = I·Δt = 0,200 × 8,0 × 60 = 96 C. n(e⁻) = Q / F = 96 / 9,65 × 10⁴ = 9,9 × 10⁻⁴ mol.",
-          "<strong>6.</strong> D'après 2 H⁺ + 2 e⁻ → H₂ : n(H₂) = n(e⁻) / 2 = 5,0 × 10⁻⁴ mol ; V(H₂) = n(H₂) × V<sub>m</sub> = 5,0 × 10⁻⁴ × 24,0 = 1,2 × 10⁻² L = 12 mL : en accord avec la lecture.",
-          "<em>⚠ Erreur fréquente : oublier de convertir la durée en secondes (Q en C = A × s), ou écrire n(H₂) = n(e⁻) en oubliant les 2 électrons par molécule de H₂.</em>"
-        ]
-      },
-      {
-        "id": "ex3",
-        "niveau": 1,
-        "titre": "La batterie de mon smartphone",
-        "contexte": [
-          "La batterie lithium-ion d'un smartphone porte l'indication « 3,85 V – 4 500 mA·h ». Son chargeur lui fournit en moyenne un courant d'intensité I = 1,8 A.",
-          "Données : constante d'Avogadro N<sub>A</sub> = 6,022 × 10²³ mol⁻¹ ; charge élémentaire e = 1,602 × 10⁻¹⁹ C."
-        ],
-        "questions": [
-          {
-            "texte": "La constante de Faraday est la charge d'une mole d'électrons. Montre que F = N<sub>A</sub> × e et vérifie la valeur de l'encadré Données.",
-            "aides": []
-          },
-          {
-            "texte": "Convertis la capacité de la batterie en coulombs.",
-            "aides": [
-              "Une capacité est une charge : Q = I·Δt. Que valent I et Δt dans « 1 A·h » ?",
-              "Convertis d'abord 4 500 mA·h en A·h, puis multiplie par le nombre de secondes dans une heure."
-            ]
-          },
-          {
-            "texte": "Calcule la quantité de matière d'électrons qui circule lors d'une décharge complète.",
-            "aides": []
-          },
-          {
-            "texte": "Estime la durée d'une charge complète (batterie vide au départ, toute la charge servant à la recharger).",
-            "aides": []
-          },
-          {
-            "texte": "Calcule l'énergie électrique stockée, en joules puis en wattheures.",
-            "aides": []
-          },
-          {
-            "texte": "Pendant la charge, la transformation dans la batterie est-elle spontanée ou forcée ? Comment évolue son quotient de réaction ?",
-            "aides": []
-          }
-        ],
-        "corrige": [
-          "<strong>1.</strong> Une mole d'électrons contient N<sub>A</sub> électrons portant chacun la charge e : F = N<sub>A</sub> × e = 6,022 × 10²³ × 1,602 × 10⁻¹⁹ = 9,647 × 10⁴ C·mol⁻¹ ≈ 9,65 × 10⁴ C·mol⁻¹.",
-          "<strong>2.</strong> Q = 4 500 mA·h = 4,500 A·h ; Q = 4,500 × 3 600 = 1,62 × 10⁴ C.",
-          "<strong>3.</strong> n(e⁻) = Q / F = 1,62 × 10⁴ / 9,65 × 10⁴ = 0,168 mol.",
-          "<strong>4.</strong> Q = I·Δt donc Δt = Q / I = 4,500 A·h / 1,8 A = 2,5 h.",
-          "<strong>5.</strong> E = U·Q = 3,85 × 1,62 × 10⁴ = 6,24 × 10⁴ J ; en W·h : 6,24 × 10⁴ / 3 600 = 17,3 W·h (soit aussi 3,85 V × 4,500 A·h).",
-          "<strong>6.</strong> Forcée : le chargeur impose le sens de la réaction, inverse du sens spontané de la décharge. Le quotient de réaction s'éloigne de K.",
-          "<em>⚠ Erreur fréquente : oublier de convertir les mA·h en A·h (facteur 10⁻³) avant de multiplier par 3 600.</em>"
-        ]
-      },
-      {
-        "id": "ex4",
-        "niveau": 2,
-        "titre": "Une médaille argentée",
-        "contexte": [
-          "Pour le cross du lycée, l'atelier d'un artisan argente des médailles en laiton par galvanoplastie. La médaille et une plaque d'argent pur plongent dans une solution contenant des ions argent Ag⁺(aq). Un générateur impose un courant d'intensité constante I = 0,150 A. Le métal argent se dépose sur la médaille.",
-          "On veut déposer une couche d'argent d'épaisseur e = 8,0 µm sur toute la surface de la médaille, d'aire S = 30,0 cm². Masse volumique de l'argent : ρ = 10,5 g·cm⁻³."
-        ],
-        "questions": [
-          {
-            "texte": "Écris la demi-équation de la transformation qui a lieu à la surface de la médaille. Est-ce l'anode ou la cathode ? À quelle borne du générateur faut-il relier la médaille ?",
-            "aides": []
-          },
-          {
-            "texte": "À l'électrode en argent, le métal argent est oxydé. Écris la demi-équation correspondante et explique pourquoi la concentration en ions Ag⁺ de la solution reste constante.",
-            "aides": []
-          },
-          {
-            "texte": "Calcule la masse d'argent à déposer sur la médaille.",
-            "aides": [
-              "Commence par le volume d'argent : une couche d'aire S et d'épaisseur e a pour volume V = S × e.",
-              "Mets S et e dans la même unité (cm² et cm), puis m = ρ × V."
-            ]
-          },
-          {
-            "texte": "Détermine la durée de l'électrolyse nécessaire, en minutes.",
-            "aides": [
-              "Chaîne de calcul : m → n(Ag) → n(e⁻) → Q → Δt.",
-              "Ag⁺ + e⁻ → Ag : un électron par atome d'argent déposé. Puis Q = n(e⁻)·F et Δt = Q / I."
-            ]
-          },
-          {
-            "texte": "Quelle masse la plaque d'argent a-t-elle perdue pendant ce temps ?",
-            "aides": []
-          }
-        ],
-        "corrige": [
-          "<strong>1.</strong> Ag⁺(aq) + e⁻ → Ag(s) : c'est une réduction, la médaille est la cathode. Dans un électrolyseur, la cathode est reliée à la borne − du générateur.",
-          "<strong>2.</strong> Ag(s) → Ag⁺(aq) + e⁻ (anode, reliée à la borne +). Pour chaque électron qui circule, un ion Ag⁺ est formé à l'anode et un ion Ag⁺ est consommé à la cathode : la quantité d'ions Ag⁺ en solution ne varie pas.",
-          "<strong>3.</strong> Volume du dépôt : V = S × e = 30,0 × 8,0 × 10⁻⁴ = 2,4 × 10⁻² cm³ (8,0 µm = 8,0 × 10⁻⁴ cm). Masse : m = ρ × V = 10,5 × 2,4 × 10⁻² = 0,25 g (0,252 g avant arrondi).",
-          "<strong>4.</strong> n(Ag) = m / M = 0,252 / 107,9 = 2,34 × 10⁻³ mol. D'après la demi-équation, n(e⁻) = n(Ag) = 2,34 × 10⁻³ mol. Q = n(e⁻)·F = 2,34 × 10⁻³ × 9,65 × 10⁴ = 225 C. Δt = Q / I = 225 / 0,150 = 1,50 × 10³ s, soit 25 min.",
-          "<strong>5.</strong> Il passe autant d'électrons à l'anode qu'à la cathode : la plaque a perdu la même masse d'argent, 0,25 g.",
-          "<em>⚠ Erreur fréquente : mal convertir l'épaisseur (1 µm = 10⁻⁴ cm, et non 10⁻³ cm), ce qui donne une masse et une durée 10 fois trop grandes.</em>"
-        ]
-      },
-      {
-        "id": "ex5",
-        "niveau": 2,
-        "titre": "La batterie de la voiture",
-        "contexte": [
-          "Une batterie de voiture « 12 V » contient six accumulateurs au plomb. Lors de la décharge, les transformations aux électrodes sont :",
-          "Électrode en plomb : Pb(s) + SO₄²⁻(aq) → PbSO₄(s) + 2 e⁻.  Électrode en dioxyde de plomb : PbO₂(s) + 4 H⁺(aq) + SO₄²⁻(aq) + 2 e⁻ → PbSO₄(s) + 2 H₂O(ℓ).",
-          "Un garagiste teste une batterie : il la fait débiter un courant d'intensité constante I = 3,00 A et enregistre la tension U à ses bornes. La batterie est considérée comme déchargée lorsque U atteint 10,5 V."
-        ],
-        "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"109.8\" y1=\"25\" x2=\"109.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"139.5\" y1=\"25\" x2=\"139.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"139.5\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"169.3\" y1=\"25\" x2=\"169.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"199.1\" y1=\"25\" x2=\"199.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"199.1\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"228.9\" y1=\"25\" x2=\"228.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"258.6\" y1=\"25\" x2=\"258.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"258.6\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"288.4\" y1=\"25\" x2=\"288.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"318.2\" y1=\"25\" x2=\"318.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"318.2\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"348.0\" y1=\"25\" x2=\"348.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"377.7\" y1=\"25\" x2=\"377.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"377.7\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"437.3\" y1=\"25\" x2=\"437.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"437.3\" y=\"430\" text-anchor=\"middle\">12</text><line x1=\"467.0\" y1=\"25\" x2=\"467.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"496.8\" y1=\"25\" x2=\"496.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"496.8\" y=\"430\" text-anchor=\"middle\">14</text><line x1=\"526.6\" y1=\"25\" x2=\"526.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"556.4\" y1=\"25\" x2=\"556.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"556.4\" y=\"430\" text-anchor=\"middle\">16</text><line x1=\"586.1\" y1=\"25\" x2=\"586.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"615.9\" y1=\"25\" x2=\"615.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"615.9\" y=\"430\" text-anchor=\"middle\">18</text><line x1=\"645.7\" y1=\"25\" x2=\"645.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"675.5\" y1=\"25\" x2=\"675.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"675.5\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"705.2\" y1=\"25\" x2=\"705.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">22</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">9</text><line x1=\"80\" y1=\"385.9\" x2=\"735\" y2=\"385.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"390.9\" text-anchor=\"end\">9,25</text><line x1=\"80\" y1=\"361.9\" x2=\"735\" y2=\"361.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"366.9\" text-anchor=\"end\">9,5</text><line x1=\"80\" y1=\"337.8\" x2=\"735\" y2=\"337.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"342.8\" text-anchor=\"end\">9,75</text><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"318.8\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"289.7\" x2=\"735\" y2=\"289.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"294.7\" text-anchor=\"end\">10,25</text><line x1=\"80\" y1=\"265.6\" x2=\"735\" y2=\"265.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"270.6\" text-anchor=\"end\">10,5</text><line x1=\"80\" y1=\"241.6\" x2=\"735\" y2=\"241.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"246.6\" text-anchor=\"end\">10,75</text><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">11</text><line x1=\"80\" y1=\"193.4\" x2=\"735\" y2=\"193.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"198.4\" text-anchor=\"end\">11,25</text><line x1=\"80\" y1=\"169.4\" x2=\"735\" y2=\"169.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"174.4\" text-anchor=\"end\">11,5</text><line x1=\"80\" y1=\"145.3\" x2=\"735\" y2=\"145.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"150.3\" text-anchor=\"end\">11,75</text><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"126.2\" text-anchor=\"end\">12</text><line x1=\"80\" y1=\"97.2\" x2=\"735\" y2=\"97.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"102.2\" text-anchor=\"end\">12,25</text><line x1=\"80\" y1=\"73.1\" x2=\"735\" y2=\"73.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"78.1\" text-anchor=\"end\">12,5</text><line x1=\"80\" y1=\"49.1\" x2=\"735\" y2=\"49.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"54.1\" text-anchor=\"end\">12,75</text><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">13</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,49.1 81.5,51.2 83.0,53.1 84.5,54.9 86.0,56.5 87.4,58.1 88.9,59.5 90.4,60.8 91.9,62.1 93.4,63.2 94.9,64.3 96.4,65.3 97.9,66.2 99.4,67.1 100.8,67.9 102.3,68.7 103.8,69.4 105.3,70.1 106.8,70.7 108.3,71.3 109.8,71.9 111.3,72.4 112.8,72.9 114.2,73.3 115.7,73.8 117.2,74.2 118.7,74.6 120.2,75.0 121.7,75.4 123.2,75.7 124.7,76.1 126.1,76.4 127.6,76.7 129.1,77.0 130.6,77.3 132.1,77.5 133.6,77.8 135.1,78.1 136.6,78.3 138.1,78.6 139.5,78.8 141.0,79.0 142.5,79.3 144.0,79.5 145.5,79.7 147.0,79.9 148.5,80.1 150.0,80.3 151.5,80.5 152.9,80.7 154.4,80.9 155.9,81.1 157.4,81.3 158.9,81.5 160.4,81.7 161.9,81.9 163.4,82.1 164.9,82.2 166.3,82.4 167.8,82.6 169.3,82.8 170.8,83.0 172.3,83.1 173.8,83.3 175.3,83.5 176.8,83.7 178.2,83.8 179.7,84.0 181.2,84.2 182.7,84.3 184.2,84.5 185.7,84.7 187.2,84.8 188.7,85.0 190.2,85.2 191.6,85.4 193.1,85.5 194.6,85.7 196.1,85.9 197.6,86.0 199.1,86.2 200.6,86.4 202.1,86.5 203.6,86.7 205.0,86.8 206.5,87.0 208.0,87.2 209.5,87.3 211.0,87.5 212.5,87.7 214.0,87.8 215.5,88.0 217.0,88.2 218.4,88.3 219.9,88.5 221.4,88.7 222.9,88.8 224.4,89.0 225.9,89.2 227.4,89.3 228.9,89.5 230.4,89.6 231.8,89.8 233.3,90.0 234.8,90.1 236.3,90.3 237.8,90.5 239.3,90.6 240.8,90.8 242.3,91.0 243.8,91.1 245.2,91.3 246.7,91.4 248.2,91.6 249.7,91.8 251.2,91.9 252.7,92.1 254.2,92.3 255.7,92.4 257.1,92.6 258.6,92.8 260.1,92.9 261.6,93.1 263.1,93.3 264.6,93.4 266.1,93.6 267.6,93.7 269.1,93.9 270.5,94.1 272.0,94.2 273.5,94.4 275.0,94.6 276.5,94.7 278.0,94.9 279.5,95.1 281.0,95.2 282.5,95.4 283.9,95.5 285.4,95.7 286.9,95.9 288.4,96.0 289.9,96.2 291.4,96.4 292.9,96.5 294.4,96.7 295.9,96.9 297.3,97.0 298.8,97.2 300.3,97.3 301.8,97.5 303.3,97.7 304.8,97.8 306.3,98.0 307.8,98.2 309.2,98.3 310.7,98.5 312.2,98.7 313.7,98.8 315.2,99.0 316.7,99.1 318.2,99.3 319.7,99.5 321.2,99.6 322.6,99.8 324.1,100.0 325.6,100.1 327.1,100.3 328.6,100.5 330.1,100.6 331.6,100.8 333.1,100.9 334.6,101.1 336.0,101.3 337.5,101.4 339.0,101.6 340.5,101.8 342.0,101.9 343.5,102.1 345.0,102.3 346.5,102.4 348.0,102.6 349.4,102.7 350.9,102.9 352.4,103.1 353.9,103.2 355.4,103.4 356.9,103.6 358.4,103.7 359.9,103.9 361.4,104.1 362.8,104.2 364.3,104.4 365.8,104.5 367.3,104.7 368.8,104.9 370.3,105.0 371.8,105.2 373.3,105.4 374.8,105.5 376.2,105.7 377.7,105.9 379.2,106.0 380.7,106.2 382.2,106.3 383.7,106.5 385.2,106.7 386.7,106.8 388.1,107.0 389.6,107.2 391.1,107.3 392.6,107.5 394.1,107.7 395.6,107.8 397.1,108.0 398.6,108.2 400.1,108.3 401.5,108.5 403.0,108.6 404.5,108.8 406.0,109.0 407.5,109.1 409.0,109.3 410.5,109.5 412.0,109.6 413.5,109.8 414.9,110.0 416.4,110.1 417.9,110.3 419.4,110.5 420.9,110.6 422.4,110.8 423.9,110.9 425.4,111.1 426.9,111.3 428.3,111.4 429.8,111.6 431.3,111.8 432.8,111.9 434.3,112.1 435.8,112.3 437.3,112.4 438.8,112.6 440.3,112.8 441.7,112.9 443.2,113.1 444.7,113.3 446.2,113.4 447.7,113.6 449.2,113.8 450.7,113.9 452.2,114.1 453.6,114.3 455.1,114.4 456.6,114.6 458.1,114.8 459.6,114.9 461.1,115.1 462.6,115.3 464.1,115.4 465.6,115.6 467.0,115.8 468.5,116.0 470.0,116.1 471.5,116.3 473.0,116.5 474.5,116.6 476.0,116.8 477.5,117.0 479.0,117.1 480.4,117.3 481.9,117.5 483.4,117.7 484.9,117.8 486.4,118.0 487.9,118.2 489.4,118.4 490.9,118.5 492.4,118.7 493.8,118.9 495.3,119.1 496.8,119.2 498.3,119.4 499.8,119.6 501.3,119.8 502.8,120.0 504.3,120.2 505.8,120.3 507.2,120.5 508.7,120.7 510.2,120.9 511.7,121.1 513.2,121.3 514.7,121.5 516.2,121.7 517.7,121.9 519.1,122.1 520.6,122.2 522.1,122.4 523.6,122.6 525.1,122.8 526.6,123.1 528.1,123.3 529.6,123.5 531.1,123.7 532.5,123.9 534.0,124.1 535.5,124.3 537.0,124.6 538.5,124.8 540.0,125.0 541.5,125.2 543.0,125.5 544.5,125.7 545.9,126.0 547.4,126.2 548.9,126.4 550.4,126.7 551.9,127.0 553.4,127.2 554.9,127.5 556.4,127.8 557.9,128.1 559.3,128.3 560.8,128.6 562.3,128.9 563.8,129.2 565.3,129.6 566.8,129.9 568.3,130.2 569.8,130.5 571.2,130.9 572.7,131.3 574.2,131.6 575.7,132.0 577.2,132.4 578.7,132.8 580.2,133.2 581.7,133.6 583.2,134.1 584.6,134.5 586.1,135.0 587.6,135.5 589.1,136.0 590.6,136.5 592.1,137.0 593.6,137.6 595.1,138.1 596.6,138.7 598.0,139.4 599.5,140.0 601.0,140.7 602.5,141.3 604.0,142.1 605.5,142.8 607.0,143.6 608.5,144.4 610.0,145.2 611.4,146.1 612.9,147.0 614.4,148.0 615.9,148.9 617.4,150.0 618.9,151.1 620.4,152.2 621.9,153.3 623.4,154.6 624.8,155.8 626.3,157.2 627.8,158.6 629.3,160.0 630.8,161.6 632.3,163.1 633.8,164.8 635.3,166.6 636.8,168.4 638.2,170.3 639.7,172.3 641.2,174.4 642.7,176.6 644.2,178.9 645.7,181.3 647.2,183.8 648.7,186.4 650.1,189.2 651.6,192.1 653.1,195.2 654.6,198.4 656.1,201.7 657.6,205.2 659.1,208.9 660.6,212.8 662.1,216.8 663.5,221.1 665.0,225.5 666.5,230.2 668.0,235.1 669.5,240.3 671.0,245.7 672.5,251.3 674.0,257.3 675.5,263.6 676.9,270.1 678.4,277.0 679.9,284.3 681.4,291.9 682.9,299.9 684.4,308.3 685.9,317.1 687.4,326.3 688.9,336.1 690.3,346.3 691.8,357.0 693.3,368.3 694.8,380.1 696.3,392.6 697.8,405.6\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">durée de décharge t (h)</text><text transform=\"translate(22,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">tension U (V)</text></svg>",
-        "questions": [
-          {
-            "texte": "Pendant la décharge, quelle électrode est l'anode ? Est-ce la borne + ou la borne − de la batterie ? Écris l'équation de la réaction de décharge.",
-            "aides": []
-          },
-          {
-            "texte": "Détermine graphiquement la durée de la décharge, puis la capacité de la batterie en A·h et en C.",
-            "aides": [
-              "Cherche sur la courbe l'instant où U = 10,5 V (trace une droite horizontale).",
-              "La capacité est la charge débitée : Q = I·Δt, avec Δt en heures pour obtenir des A·h."
-            ]
-          },
-          {
-            "texte": "Calcule la masse de plomb Pb consommée lors de cette décharge complète.",
-            "aides": [
-              "Convertis d'abord la capacité en coulombs, puis calcule n(e⁻) = Q / F.",
-              "Combien d'électrons libère un atome de plomb dans la demi-équation ?"
-            ]
-          },
-          {
-            "texte": "Pour la recharger, on relie la batterie à un chargeur. Quelle borne du chargeur faut-il relier à l'électrode en dioxyde de plomb ? Écris la demi-équation qui s'y produit pendant la charge.",
-            "aides": [
-              "Pendant la charge, chaque demi-équation de décharge s'écrit dans l'autre sens.",
-              "L'électrode où se produit l'oxydation est l'anode ; dans un électrolyseur, l'anode est reliée à la borne + du générateur."
-            ]
-          },
-          {
-            "texte": "Le chargeur délivre I = 5,0 A. En fin de charge, une partie du courant sert à électrolyser l'eau de la batterie : seuls 90 % de la charge qui traverse la batterie servent à la recharger. Calcule la durée de la recharge complète.",
-            "aides": [
-              "Le chargeur doit fournir plus que les 60,0 A·h : seuls 90 % de la charge servent à recharger.",
-              "Q(utile) = 0,90 × I × Δt : isole Δt."
-            ]
-          },
-          {
-            "texte": "En fin de charge, on observe un dégagement gazeux. Quels gaz se forment ? Pourquoi recommande-t-on de charger une batterie dans un local aéré ?",
-            "aides": []
-          }
-        ],
-        "corrige": [
-          "<strong>1.</strong> L'anode est le siège de l'oxydation : c'est l'électrode en plomb (Pb perd des électrons). Dans une pile ou un accumulateur qui se décharge, l'anode est la borne −. Équation de décharge : Pb(s) + PbO₂(s) + 4 H⁺(aq) + 2 SO₄²⁻(aq) → 2 PbSO₄(s) + 2 H₂O(ℓ).",
-          "<strong>2.</strong> On lit U = 10,5 V pour Δt = 20,0 h (accepté : 19,8 à 20,2 h). Capacité : Q = I·Δt = 3,00 × 20,0 = 60,0 A·h, soit Q = 60,0 × 3 600 = 2,16 × 10⁵ C.",
-          "<strong>3.</strong> n(e⁻) = Q / F = 2,16 × 10⁵ / 9,65 × 10⁴ = 2,24 mol. D'après Pb → … + 2 e⁻ : n(Pb) = n(e⁻) / 2 = 1,12 mol. m(Pb) = n × M = 1,12 × 207,2 = 232 g.",
-          "<strong>4.</strong> Pendant la charge, la réaction est inversée : l'électrode en dioxyde de plomb est le siège d'une oxydation, c'est l'anode de l'électrolyse ; elle est reliée à la borne + du chargeur. PbSO₄(s) + 2 H₂O(ℓ) → PbO₂(s) + 4 H⁺(aq) + SO₄²⁻(aq) + 2 e⁻.",
-          "<strong>5.</strong> La charge utile à fournir est Q = 2,16 × 10⁵ C, qui ne représente que 90 % de la charge totale : Q(totale) = Q / 0,90. Δt = Q / (0,90 × I) = 2,16 × 10⁵ / (0,90 × 5,0) = 4,8 × 10⁴ s, soit environ 13 h (au lieu de 12 h si tout le courant servait à la recharge).",
-          "<strong>6.</strong> L'électrolyse de l'eau produit du dihydrogène H₂ (à la cathode) et du dioxygène O₂ (à l'anode). Le mélange H₂ + O₂ est explosif : il ne faut pas le laisser s'accumuler, ni approcher une flamme ou une étincelle.",
-          "<em>⚠ Erreur fréquente : garder la polarité de la décharge pendant la charge. La borne + de la batterie (PbO₂) reste reliée au + du chargeur, mais elle devient l'anode : anode et cathode échangent leurs rôles, pas les bornes.</em>"
-        ]
-      },
-      {
-        "id": "ex6",
-        "niveau": 3,
-        "titre": "Stocker le soleil : hydrogène vert ou photosynthèse ?",
-        "contexte": [
-          "Doc. 1 — L'hydrogène « vert ». L'électricité des panneaux solaires est produite le jour, mais on en a aussi besoin la nuit. Une solution consiste à l'utiliser pour électrolyser l'eau, stocker le dihydrogène, puis le transformer à nouveau en électricité dans une pile à combustible. Dans un électrolyseur à membrane échangeuse de protons, les ions H⁺ traversent la membrane d'une électrode à l'autre ; les couples sont O₂(g)/H₂O(ℓ) et H⁺(aq)/H₂(g).",
-          "Doc. 2 — Mesures d'un club scientifique. Un petit électrolyseur de ce type est alimenté sous une tension U = 2,00 V par un courant d'intensité constante I = 0,500 A. Les élèves mesurent le volume de dihydrogène recueilli (à 20 °C, sous 1,013 bar) au cours du temps."
-        ],
-        "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"112.8\" y1=\"25\" x2=\"112.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"145.5\" y1=\"25\" x2=\"145.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.5\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"178.2\" y1=\"25\" x2=\"178.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"211.0\" y1=\"25\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"243.8\" y1=\"25\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"276.5\" y1=\"25\" x2=\"276.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"276.5\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"309.2\" y1=\"25\" x2=\"309.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"342.0\" y1=\"25\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"374.8\" y1=\"25\" x2=\"374.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"440.3\" y1=\"25\" x2=\"440.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"473.0\" y1=\"25\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"505.8\" y1=\"25\" x2=\"505.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"538.5\" y1=\"25\" x2=\"538.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"538.5\" y=\"430\" text-anchor=\"middle\">7</text><line x1=\"571.2\" y1=\"25\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"604.0\" y1=\"25\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"430\" text-anchor=\"middle\">8</text><line x1=\"636.8\" y1=\"25\" x2=\"636.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"669.5\" y1=\"25\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.5\" y=\"430\" text-anchor=\"middle\">9</text><line x1=\"702.2\" y1=\"25\" x2=\"702.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"390.8\" x2=\"735\" y2=\"390.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"395.8\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"371.5\" x2=\"735\" y2=\"371.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"376.5\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"352.2\" x2=\"735\" y2=\"352.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"357.2\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"333.0\" x2=\"735\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"338.0\" text-anchor=\"end\">8</text><line x1=\"80\" y1=\"313.8\" x2=\"735\" y2=\"313.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"318.8\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"294.5\" x2=\"735\" y2=\"294.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"299.5\" text-anchor=\"end\">12</text><line x1=\"80\" y1=\"275.2\" x2=\"735\" y2=\"275.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"280.2\" text-anchor=\"end\">14</text><line x1=\"80\" y1=\"256.0\" x2=\"735\" y2=\"256.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"261.0\" text-anchor=\"end\">16</text><line x1=\"80\" y1=\"236.8\" x2=\"735\" y2=\"236.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"241.8\" text-anchor=\"end\">18</text><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"198.2\" x2=\"735\" y2=\"198.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"203.2\" text-anchor=\"end\">22</text><line x1=\"80\" y1=\"179.0\" x2=\"735\" y2=\"179.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"184.0\" text-anchor=\"end\">24</text><line x1=\"80\" y1=\"159.8\" x2=\"735\" y2=\"159.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"164.8\" text-anchor=\"end\">26</text><line x1=\"80\" y1=\"140.5\" x2=\"735\" y2=\"140.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"145.5\" text-anchor=\"end\">28</text><line x1=\"80\" y1=\"121.2\" x2=\"735\" y2=\"121.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"126.2\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"102.0\" x2=\"735\" y2=\"102.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"107.0\" text-anchor=\"end\">32</text><line x1=\"80\" y1=\"82.8\" x2=\"735\" y2=\"82.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"87.8\" text-anchor=\"end\">34</text><line x1=\"80\" y1=\"63.5\" x2=\"735\" y2=\"63.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"68.5\" text-anchor=\"end\">36</text><line x1=\"80\" y1=\"44.2\" x2=\"735\" y2=\"44.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"49.2\" text-anchor=\"end\">38</text><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">40</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><path d=\"M74.0,410.0 L86.0,410.0 M80.0,404.0 L80.0,416.0\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M139.5,373.4 L151.5,373.4 M145.5,367.4 L145.5,379.4\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M205.0,341.7 L217.0,341.7 M211.0,335.7 L211.0,347.7\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M270.5,305.1 L282.5,305.1 M276.5,299.1 L276.5,311.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M336.0,273.3 L348.0,273.3 M342.0,267.3 L342.0,279.3\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M401.5,235.8 L413.5,235.8 M407.5,229.8 L407.5,241.8\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M467.0,202.1 L479.0,202.1 M473.0,196.1 L473.0,208.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M532.5,168.4 L544.5,168.4 M538.5,162.4 L538.5,174.4\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M598.0,130.9 L610.0,130.9 M604.0,124.9 L604.0,136.9\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M663.5,99.1 L675.5,99.1 M669.5,93.1 L669.5,105.1\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><path d=\"M729.0,63.5 L741.0,63.5 M735.0,57.5 L735.0,69.5\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">durée t (min)</text><text transform=\"translate(22,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">volume de H₂ recueilli V (mL)</text></svg>",
-        "contexte2": [
-          "Doc. 3 — Énergie. La transformation de 1 mol de H₂ en eau (par combustion ou dans une pile à combustible idéale) peut libérer au plus 286 kJ. La réaction 2 H₂(g) + O₂(g) → 2 H₂O(ℓ) est totale : sa constante d'équilibre vaut environ 10⁸³ à 25 °C.",
-          "Doc. 4 — Ordres de grandeur couramment cités. Rendement d'un panneau solaire : environ 20 % ; rendement d'une pile à combustible : environ 50 %. Photosynthèse : 6 CO₂ + 6 H₂O → C₆H₁₂O₆ + 6 O₂ ; les plantes convertissent en moyenne de l'ordre de 1 % de l'énergie lumineuse reçue en énergie chimique."
-        ],
-        "questions": [
-          {
-            "texte": "Écris les demi-équations aux deux électrodes de l'électrolyseur et l'équation de l'électrolyse. À quelle borne du générateur est reliée l'électrode où se forme le dihydrogène ?",
-            "aides": []
-          },
-          {
-            "texte": "À l'aide du doc. 3, explique pourquoi l'électrolyse de l'eau est une transformation forcée.",
-            "aides": []
-          },
-          {
-            "texte": "Exploite le doc. 2 : détermine le débit de dihydrogène mesuré, en mL·min⁻¹.",
-            "aides": []
-          },
-          {
-            "texte": "Calcule le débit de dihydrogène prévu si tous les électrons servaient à produire H₂. Déduis-en le rendement faradique η<sub>F</sub> = débit mesuré / débit prévu.",
-            "aides": [
-              "Raisonne sur 1 min = 60 s : calcule la charge Q = I·Δt, puis n(e⁻).",
-              "n(H₂) = n(e⁻) / 2, puis V = n × V<sub>m</sub> (en mL)."
-            ]
-          },
-          {
-            "texte": "Pour 10,0 min de fonctionnement, compare l'énergie électrique consommée E<sub>él</sub> et l'énergie chimique stockée dans le dihydrogène formé. Calcule le rendement énergétique de l'électrolyseur.",
-            "aides": [
-              "E<sub>él</sub> = U·I·Δt avec Δt en secondes.",
-              "Énergie stockée = n(H₂) × 286 kJ·mol⁻¹, avec n(H₂) déduit du volume lu à 10,0 min."
-            ]
-          },
-          {
-            "texte": "Estime le rendement global de la chaîne « soleil → panneau → électrolyseur → pile à combustible → électricité ». Puis, en t'appuyant sur les documents, rédige un paragraphe argumenté comparant ce mode de stockage de l'énergie solaire à la photosynthèse (rendement, usages, enjeux pour la société).",
-            "aides": [
-              "Les rendements successifs se multiplient.",
-              "Pour l'argumentation, compare : rendement, possibilité de restituer de l'électricité, sécurité et matériel nécessaires, effet sur le CO₂, surfaces occupées."
-            ]
-          },
-          {
-            "texte": "Pour aller plus loin (hors capacités exigibles) : l'énergie électrique minimale à fournir pour électrolyser 1 mol de H₂O vaut 237 kJ. Sachant que 2 mol d'électrons sont échangées par mole de H₂O, calcule la tension minimale U<sub>min</sub> qu'il faudrait appliquer, et compare-la à la tension utilisée.",
-            "aides": []
-          }
-        ],
-        "corrige": [
-          "<strong>1.</strong> Cathode (réduction), où se forme H₂ : 2 H⁺(aq) + 2 e⁻ → H₂(g). Anode (oxydation) : 2 H₂O(ℓ) → O₂(g) + 4 H⁺(aq) + 4 e⁻. Bilan (première × 2, puis somme) : 2 H₂O(ℓ) → 2 H₂(g) + O₂(g). La cathode d'un électrolyseur est reliée à la borne − du générateur.",
-          "<strong>2.</strong> La réaction inverse, 2 H₂ + O₂ → 2 H₂O, est spontanée et totale (K ≈ 10⁸³). La décomposition de l'eau en H₂ et O₂ ne se fait donc pas spontanément : il faut que le générateur impose un courant pour forcer le système à évoluer dans le sens inverse de son sens spontané (Qr s'éloigne de la valeur d'équilibre).",
-          "<strong>3.</strong> Les points sont alignés sur une droite passant par l'origine : le débit est constant. On lit V = 36,0 mL à t = 10,0 min, soit un débit de 36,0 / 10,0 = 3,60 mL·min⁻¹ (accepté : 3,5 à 3,7 mL·min⁻¹).",
-          "<strong>4.</strong> En 1 min : n(e⁻) = I·Δt / F = 0,500 × 60 / 9,65 × 10⁴ = 3,11 × 10⁻⁴ mol ; n(H₂) = n(e⁻) / 2 = 1,55 × 10⁻⁴ mol ; V = n × V<sub>m</sub> = 1,55 × 10⁻⁴ × 24,0 × 10³ = 3,73 mL. Débit prévu : 3,73 mL·min⁻¹. η<sub>F</sub> = 3,60 / 3,73 = 0,965 = 96,5 % : presque tous les électrons servent à produire H₂.",
-          "<strong>5.</strong> E<sub>él</sub> = U·I·Δt = 2,00 × 0,500 × 600 = 600 J. n(H₂) = 36,0 × 10⁻³ / 24,0 = 1,50 × 10⁻³ mol ; énergie stockée : 1,50 × 10⁻³ × 286 × 10³ = 429 J. Rendement énergétique : 429 / 600 = 0,715, soit environ 72 % ; le reste est surtout dissipé par effet Joule (transfert thermique).",
-          "<strong>6.</strong> Rendement global ≈ 0,20 × 0,715 × 0,50 = 0,072, soit environ 7 %. Éléments attendus : ce rendement est environ 7 fois meilleur que celui de la photosynthèse (≈ 1 %) ; H₂ permet de restituer de l'électricité à la demande (nuit, véhicules) ; mais il faut des panneaux, un électrolyseur, des réservoirs sous pression, des précautions (gaz inflammable, mélange explosif avec O₂), et l'électrolyse consomme de l'eau pure. La photosynthèse est peu efficace mais « gratuite », autoreproductrice, elle capte du CO₂ et produit nourriture, matériaux et biocarburants ; elle demande de grandes surfaces, en concurrence avec les cultures alimentaires. Enjeux : stocker les énergies renouvelables intermittentes, réduire les émissions de CO₂ (H₂ produit sans énergie fossile), ressources (métaux des électrolyseurs et des panneaux), sécurité.",
-          "<strong>7.</strong> Pour aller plus loin : E = U<sub>min</sub> × Q avec Q = 2 F pour 1 mol de H₂O, donc U<sub>min</sub> = 237 × 10³ / (2 × 9,65 × 10⁴) = 1,23 V. La tension utilisée (2,00 V) est nettement plus grande : l'écart correspond à l'énergie perdue (effet Joule, électrodes), cohérent avec un rendement inférieur à 100 %.",
-          "<em>⚠ Erreur fréquente : utiliser n(H₂) = n(e⁻) (on oublie les 2 électrons par molécule de H₂), ou oublier de convertir la durée en secondes dans E = U·I·Δt.</em>"
         ]
       }
     ],
@@ -41209,6 +41212,45 @@ const CAT_LABELS = {
   thermo: 'Thermodynamique', elec: 'Électricité', organique: 'Chimie Organique'
 };
 
+// Nombre de questions d'un quiz : le score est toujours sur 10 (base, devoirs, tableau de bord).
+const QUIZ_NB_QUESTIONS = 10;
+
+// ── Chapitres fusionnés ──
+// Ancien id → { id: chapitre qui l'a absorbé, decalageExercices }. Les liens et QR codes déjà
+// imprimés restent valables : ?chap=18&ex=ex3 ouvre ?chap=2&ex=ex9 (les exercices de l'ancien
+// chapitre sont numérotés à la suite). Même table dans server.js (CHAPITRES_FUSIONNES), qui
+// rattache les données déjà enregistrées. Un id fusionné ne doit jamais être réutilisé.
+const CHAPITRES_FUSIONNES = {
+  18: { id: 2, decalageExercices: 6 } // Ch.17 « Forcer une réaction chimique » → Ch.02 (novembre 2026)
+};
+function chapitreIdActuel(id) {
+  for (let n = 0; n < 10 && CHAPITRES_FUSIONNES[id]; n++) id = CHAPITRES_FUSIONNES[id].id;
+  return id;
+}
+function exerciceIdActuel(chapitreId, exId) {
+  for (let n = 0; n < 10 && CHAPITRES_FUSIONNES[chapitreId]; n++) {
+    const f = CHAPITRES_FUSIONNES[chapitreId];
+    const m = typeof exId === 'string' && /^ex(\d+)$/.exec(exId);
+    if (m) exId = `ex${Number(m[1]) + f.decalageExercices}`;
+    chapitreId = f.id;
+  }
+  return exId;
+}
+// Exercices déjà marqués « terminés » sur cet appareil (localStorage) sous l'ancien id :
+// recopiés sous le nouvel id, pour que l'élève retrouve ses corrigés débloqués.
+function migrerExercicesTerminesFusionnes() {
+  try {
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const cle = localStorage.key(i);
+      const m = /^physichim_ex_fini_(\d+)_(ex\d+)$/.exec(cle || '');
+      if (!m || !CHAPITRES_FUSIONNES[m[1]]) continue;
+      const nouvelle = `physichim_ex_fini_${chapitreIdActuel(Number(m[1]))}_${exerciceIdActuel(Number(m[1]), m[2])}`;
+      if (localStorage.getItem(cle) === '1') localStorage.setItem(nouvelle, '1');
+      localStorage.removeItem(cle);
+    }
+  } catch (e) {}
+}
+
 // ═══════════════════════════════════════════════════
 // STATE + API
 // ═══════════════════════════════════════════════════
@@ -41332,7 +41374,7 @@ async function apiSaveQuiz(chapitreId, score, erreurs = []) {
     const r = await fetch(SERVER_URL + '/api/quiz', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: 10, erreurs })
+      body: JSON.stringify({ eleve_id: state.activeStudentId, chapitre_id: chapitreId, score, total: QUIZ_NB_QUESTIONS, erreurs })
     });
     return r.ok;
   } catch(e) {
@@ -41508,7 +41550,7 @@ function renderQuiz(ch) {
       <div class="quiz-intro">
         <div class="big-icon">🧠</div>
         <h2>Quiz — ${ch.title}</h2>
-        <p>${ch.quiz.length} questions pour vérifier vos connaissances sur ce chapitre.</p>
+        <p>${Math.min(ch.quiz.length, QUIZ_NB_QUESTIONS)} questions pour vérifier vos connaissances sur ce chapitre${ch.quiz.length > QUIZ_NB_QUESTIONS ? `, tirées au hasard parmi ${ch.quiz.length} : chaque essai est différent` : ''}.</p>
         ${prev !== undefined ? `<p style="color:var(--accent);margin-bottom:16px">Votre score précédent : <strong>${prev}/10</strong></p>` : ''}
         ${!state.activeStudentId ? '<p style="color:var(--accent2);margin-bottom:16px">⚠️ Sélectionnez un élève pour enregistrer votre score.</p>' : ''}
         <button class="btn-primary" onclick="startQuiz()">Commencer le quiz</button>
@@ -41577,8 +41619,10 @@ function shuffleArray(arr) {
 // (en réindexant la bonne réponse au passage) : un élève qui refait le quiz sur le
 // même chapitre ne retombe pas sur exactement le même enchaînement à chaque fois.
 // Les pièges (champ optionnel `pieges`, aligné sur `opts`) suivent leurs options dans le mélange.
+// Un quiz compte toujours QUIZ_NB_QUESTIONS questions (score enregistré sur 10) : un chapitre
+// qui en a davantage (chapitres fusionnés, ex. id 2 : 20 questions) en tire 10 au hasard à chaque essai.
 function buildShuffledQuiz(ch) {
-  return shuffleArray(ch.quiz).map(q => {
+  return shuffleArray(ch.quiz).slice(0, QUIZ_NB_QUESTIONS).map(q => {
     const order = shuffleArray(q.opts.map((_, i) => i));
     const pieges = Array.isArray(q.pieges) && q.pieges.length === q.opts.length
       ? order.map(i => (i === q.ans ? null : normaliserPiege(q.pieges[i])))
@@ -41868,6 +41912,8 @@ function lireLienDirect() {
     else lien = JSON.parse(sessionStorage.getItem('physichim_lien_direct') || 'null');
   } catch (e) {}
   if (!lien || !Number.isInteger(lien.chap)) return null;
+  // Ancien chapitre fusionné (QR code déjà imprimé) : redirigé vers le chapitre qui l'a absorbé.
+  lien = { chap: chapitreIdActuel(lien.chap), ex: lien.ex ? exerciceIdActuel(lien.chap, lien.ex) : null };
   try { sessionStorage.setItem('physichim_lien_direct', JSON.stringify(lien)); } catch (e) {}
   return lien;
 }
@@ -42338,7 +42384,15 @@ function meilleurScoreParChapitre(scores) {
 // Factorisé pour éviter que les deux points d'entrée divergent silencieusement (cf. doStudentLogin
 // et la reconnexion automatique au chargement).
 function applyStudentLoginResult(result, code) {
-  const { eleve, scores, notes } = result;
+  const { eleve, notes } = result;
+  // Le serveur rattache déjà les données des chapitres fusionnés ; on le refait ici par sécurité
+  // (réponse d'un serveur pas encore à jour), pour qu'aucun score ne pointe vers un chapitre disparu.
+  const versActuel = (o) => ({ ...o, chapitre_id: chapitreIdActuel(o.chapitre_id) });
+  const scores = (result.scores || []).map(versActuel);
+  result = { ...result,
+    progression: (result.progression || []).map(versActuel),
+    devoirs: (result.devoirs || []).map(versActuel),
+    chapitresAutorises: [...new Set((result.chapitresAutorises || []).map(chapitreIdActuel))] };
   state.activeStudentId = eleve.id;
   state._savedCode = code;
 
@@ -42502,6 +42556,7 @@ function showTeacher() {
 // ═══════════════════════════════════════════════════
 
 loadState();
+migrerExercicesTerminesFusionnes();
 state.lienDirect = lireLienDirect(); // ?chap=…&ex=… (QR code), ouvert après la connexion
 
 // Reconnexion automatique si code sauvegardé

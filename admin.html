@@ -404,11 +404,12 @@ function copierLien() {
     setTimeout(() => el.style.display = 'none', 2000);
   });
 }
-// Métadonnées de tous les chapitres (Terminale ids 0-20, Seconde ids 21-44)
+// Métadonnées de tous les chapitres (Terminale ids 0-20, Seconde ids 21-44, Première ids 45-62).
+// L'id 18 (Ch.17 Forcer une réaction chimique) a été fusionné dans l'id 2 : il ne doit jamais être réutilisé.
 const CH_META = [
   { id: 0, name: 'Ch.00 Outils maths', niveau: 'tle' },
   { id: 1, name: 'Ch.01 Acide-base', niveau: 'tle' },
-  { id: 2, name: 'Ch.02 Évolution spontanée', niveau: 'tle' },
+  { id: 2, name: 'Ch.02 Évolution spontanée et forcée', niveau: 'tle' },
   { id: 3, name: 'Ch.03 Force acides/bases', niveau: 'tle' },
   { id: 4, name: 'Ch.04 Interférences', niveau: 'tle' },
   { id: 5, name: 'Ch.05 Lunette', niveau: 'tle' },
@@ -424,7 +425,6 @@ const CH_META = [
   { id: 15, name: 'Ch.14 Synthèse organique', niveau: 'tle' },
   { id: 16, name: 'Ch.15 Doppler', niveau: 'tle' },
   { id: 17, name: 'Ch.16 Nucléaire', niveau: 'tle' },
-  { id: 18, name: 'Ch.17 Forcer réaction', niveau: 'tle' },
   { id: 19, name: 'Ch.18 Fluides', niveau: 'tle' },
   { id: 20, name: 'Ch.19 Photoélectrique', niveau: 'tle' },
   { id: 21, name: 'Ch.01 Identification physique', niveau: '2nde' },

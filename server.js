@@ -190,17 +190,83 @@ function isNiveauValide(niveau) {
   return NIVEAU_ORDER.includes(niveau);
 }
 
+// ── Chapitres fusionnés ────────────────────────────────────
+// Ancien id → id du chapitre qui l'a absorbé (même table dans index.html, avec le décalage
+// des exercices pour les QR codes). L'ancien id n'existe plus : rien n'est plus enregistré dessus.
+//   - Au démarrage, migrerChapitresFusionnes() rattache au nouvel id tout ce qui portait l'ancien.
+//   - Ensuite, un ancien id reçu (page restée ouverte pendant la mise à jour, ancien lien) est
+//     redirigé vers le nouvel id par chapitreIdActuel() à l'entrée des routes, puis contrôlé par
+//     isChapitreIdValide(), qui refuse l'ancien id : une route oubliée refuserait au lieu d'écrire.
+// Un id fusionné ne doit jamais être réutilisé pour un autre chapitre.
+const CHAPITRES_FUSIONNES = {
+  18: 2 // Ch.17 « Forcer une réaction chimique » → Ch.02 « Évolution spontanée et évolution forcée » (novembre 2026)
+};
+const estFusionne = (id) => Object.prototype.hasOwnProperty.call(CHAPITRES_FUSIONNES, id);
+
+function chapitreIdActuel(id) {
+  for (let n = 0; n < 10 && Number.isInteger(id) && estFusionne(id); n++) id = CHAPITRES_FUSIONNES[id];
+  return id;
+}
+
 function chapitreIdsDuNiveau(niveau) {
   const range = NIVEAU_RANGES[niveau];
   if (!range) return [];
   const [a, b] = range;
-  return Array.from({ length: b - a + 1 }, (_, i) => a + i);
+  return Array.from({ length: b - a + 1 }, (_, i) => a + i).filter(id => !estFusionne(id));
 }
 
-// Un chapitre_id reçu d'un élève doit correspondre à un chapitre existant d'un des niveaux.
-function isChapitreIdValide(id) {
-  return Number.isInteger(id) && Object.values(NIVEAU_RANGES).some(([a, b]) => id >= a && id <= b);
+// Tous les chapitres existants, dans l'ordre des ids (colonnes de l'export CSV).
+function tousLesChapitreIds() {
+  return Object.keys(NIVEAU_RANGES).flatMap(chapitreIdsDuNiveau).sort((a, b) => a - b);
 }
+
+// Un chapitre_id reçu d'un élève doit correspondre à un chapitre existant d'un des niveaux
+// (un id fusionné n'en est plus un : le passer d'abord par chapitreIdActuel()).
+function isChapitreIdValide(id) {
+  return Number.isInteger(id) && !estFusionne(id)
+    && Object.values(NIVEAU_RANGES).some(([a, b]) => id >= a && id <= b);
+}
+
+// Rattache au chapitre actuel toutes les données d'un chapitre fusionné. Idempotente : relancée
+// à chaque démarrage, elle ne trouve plus rien à déplacer (et rattrape une ligne qu'une ancienne
+// instance du serveur aurait écrite sur l'ancien id pendant un déploiement).
+// Une transaction par base : tout est déplacé, ou rien.
+async function migrerChapitresFusionnes(pool, nomBase, etapes) {
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    const bilan = [];
+    for (const ancien of Object.keys(CHAPITRES_FUSIONNES).map(Number)) {
+      const nouveau = chapitreIdActuel(ancien);
+      for (const [nom, sql] of etapes) {
+        const r = await client.query(sql, [ancien, nouveau]);
+        if (r.rowCount) bilan.push(`${nom} ${ancien}→${nouveau} : ${r.rowCount}`);
+      }
+    }
+    await client.query('COMMIT');
+    if (bilan.length) console.log(`🔀 Chapitres fusionnés (base ${nomBase}) — ${bilan.join(', ')}`);
+  } catch (e) {
+    await client.query('ROLLBACK').catch(() => {});
+    throw e;
+  } finally {
+    client.release();
+  }
+}
+
+// $1 = ancien id, $2 = nouvel id.
+const MIGRATION_FUSION_APPLI = [
+  ['devoirs', 'UPDATE devoirs SET chapitre_id = $2 WHERE chapitre_id = $1'],
+  // Une classe qui avait l'ancien chapitre autorisé obtient le nouveau (sans doublon de clé :
+  // ON CONFLICT si elle l'avait déjà), puis la ligne de l'ancien chapitre est supprimée.
+  ['classe_chapitres ajoutés', `INSERT INTO classe_chapitres (classe_id, chapitre_id)
+     SELECT classe_id, $2 FROM classe_chapitres WHERE chapitre_id = $1 ON CONFLICT DO NOTHING`],
+  ['classe_chapitres supprimés', 'DELETE FROM classe_chapitres WHERE chapitre_id = $1 AND chapitre_id <> $2'],
+];
+const MIGRATION_FUSION_ELEVES = [
+  ['quiz_scores', 'UPDATE quiz_scores SET chapitre_id = $2 WHERE chapitre_id = $1'],
+  ['progression', 'UPDATE progression SET chapitre_id = $2 WHERE chapitre_id = $1'],
+  ['erreurs_quiz', 'UPDATE erreurs_quiz SET chapitre_id = $2 WHERE chapitre_id = $1'],
+];
 
 // ── Erreurs fréquentes aux quiz ────────────────────────────
 // Mêmes règles que index.html (normaliserPiege) et l'outil quiz_tool.js du skill.
@@ -606,10 +672,11 @@ async function router(req, res) {
   // POST /api/quiz  { eleve_id, chapitre_id, score, total, erreurs?: [{ code, texte }] }
   if (p === '/api/quiz' && method === 'POST') {
     const body = await parseBody(req);
-    const { eleve_id, chapitre_id, score, total } = body;
-    if (!eleve_id || chapitre_id === undefined || score === undefined) {
+    const { eleve_id, score, total } = body;
+    if (!eleve_id || body.chapitre_id === undefined || score === undefined) {
       return json(res, 400, { error: 'Données manquantes' });
     }
+    const chapitre_id = chapitreIdActuel(body.chapitre_id); // ancien chapitre fusionné → chapitre actuel
     // Refuse les valeurs impossibles (999/10, texte, chapitre inexistant) : sans ce
     // contrôle elles étaient enregistrées telles quelles ou faisaient planter la requête.
     const totalQuiz = total === undefined ? 10 : total;
@@ -680,10 +747,11 @@ async function router(req, res) {
   // POST /api/progression  { eleve_id, chapitre_id, action }
   if (p === '/api/progression' && method === 'POST') {
     const body = await parseBody(req);
-    const { eleve_id, chapitre_id, action } = body;
-    if (!eleve_id || chapitre_id === undefined || !action) {
+    const { eleve_id, action } = body;
+    if (!eleve_id || body.chapitre_id === undefined || !action) {
       return json(res, 400, { error: 'Données manquantes' });
     }
+    const chapitre_id = chapitreIdActuel(body.chapitre_id); // ancien chapitre fusionné → chapitre actuel
     if (typeof eleve_id !== 'string' || !isChapitreIdValide(chapitre_id)
       || typeof action !== 'string' || action.length > 60) {
       return json(res, 400, { error: 'Données invalides' });
@@ -966,7 +1034,11 @@ async function router(req, res) {
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
     const body = await parseBody(req);
-    const ids = Array.isArray(body.chapitre_ids) ? body.chapitre_ids.filter(n => Number.isInteger(n) && n >= 0 && n <= 99) : [];
+    // Ancien chapitre fusionné → chapitre actuel (page enseignant restée ouverte), sans doublon ;
+    // un id qui ne correspond à aucun chapitre existant est ignoré.
+    const ids = Array.isArray(body.chapitre_ids)
+      ? [...new Set(body.chapitre_ids.filter(Number.isInteger).map(chapitreIdActuel))].filter(isChapitreIdValide)
+      : [];
 
     await appDb.run('DELETE FROM classe_chapitres WHERE classe_id = $1', [classeId]);
     for (const cid of ids) {
@@ -1031,7 +1103,8 @@ async function router(req, res) {
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
     const body = await parseBody(req);
-    const { chapitre_id, date_limite } = body;
+    const { date_limite } = body;
+    const chapitre_id = chapitreIdActuel(body.chapitre_id); // ancien chapitre fusionné → chapitre actuel
     const chapitresDeLaClasse = [...niveauxPrecedents(classe.niveau), classe.niveau].flatMap(chapitreIdsDuNiveau);
     if (!Number.isInteger(chapitre_id) || !chapitresDeLaClasse.includes(chapitre_id)) {
       return json(res, 400, { error: 'Chapitre invalide pour cette classe' });
@@ -1097,7 +1170,7 @@ async function router(req, res) {
     const periode = url.searchParams.get('periode') || 'tout';
     if (periode !== 'tout' && periode !== '30j') return json(res, 400, { error: 'Période invalide (tout ou 30j)' });
     const chapitreParam = url.searchParams.get('chapitre_id');
-    const chapitreId = chapitreParam === null ? null : Number(chapitreParam);
+    const chapitreId = chapitreParam === null ? null : chapitreIdActuel(Number(chapitreParam));
     if (chapitreParam !== null && (!/^\d{1,3}$/.test(chapitreParam) || !isChapitreIdValide(chapitreId))) {
       return json(res, 400, { error: 'Chapitre invalide' });
     }
@@ -1303,7 +1376,9 @@ async function router(req, res) {
     });
     eleves.sort((a, b) => (a.classe_nom || '￿').localeCompare(b.classe_nom || '￿') || a.code.localeCompare(b.code));
 
-    const chapitres = Array.from({length: 63}, (_, i) => i); // ch 0-20 Terminale, 21-44 Seconde, 45-62 Première
+    // Une colonne par chapitre existant (ids 0-20 Terminale, 21-44 Seconde, 45-62 Première),
+    // sans les ids fusionnés : les scores de l'ancien Ch18 sont dans Ch02.
+    const chapitres = tousLesChapitreIds();
 
     let csv = 'Classe;Niveau;Code;Pseudo;Derniere_connexion;';
     csv += chapitres.map(i => `Ch${String(i).padStart(2,'0')}_meilleur_score`).join(';');
@@ -1431,6 +1506,7 @@ const server = http.createServer(async (req, res) => {
     appDb = makeQueryHelpers(appPool);
     await initAppDB();
     await migrerCodesEnseignants();
+    await migrerChapitresFusionnes(appPool, 'appli', MIGRATION_FUSION_APPLI);
     console.log('✅ Base de données appli (PostgreSQL) initialisée');
 
     pgPool = new Pool({ connectionString: STUDENT_DB_URL });
@@ -1438,6 +1514,7 @@ const server = http.createServer(async (req, res) => {
     await pgPool.query('SELECT 1');
     studentDb = makeQueryHelpers(pgPool);
     await initStudentDB();
+    await migrerChapitresFusionnes(pgPool, 'élèves', MIGRATION_FUSION_ELEVES);
     console.log('✅ Base de données élèves (PostgreSQL) initialisée');
   } catch (e) {
     console.error('❌ Erreur PostgreSQL :', e.message);
