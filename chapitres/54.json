@@ -1,0 +1,681 @@
+{
+  "id": 54,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La réaction de combustion",
+        "icon": "🔥",
+        "content": [
+          {
+            "type": "def",
+            "term": "Combustion",
+            "text": "Réaction chimique exothermique entre un combustible et un comburant (le plus souvent le dioxygène de l'air), qui libère de l'énergie sous forme thermique et lumineuse."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : la combustion du méthane s'écrit CH4(g) + 2 O2(g) → CO2(g) + 2 H2O(g). C'est une réaction fortement exothermique."
+          },
+          {
+            "type": "formula",
+            "label": "Équation de combustion du propane (exemple type)",
+            "text": "C3H8(g) + 5 O2(g) → 3 CO2(g) + 4 H2O(g)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 150\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"convArrow54\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><rect x=\"20\" y=\"45\" width=\"170\" height=\"55\" rx=\"6\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"105\" y=\"68\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Combustible + O₂</text><text x=\"105\" y=\"86\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">(énergie chimique)</text><line x1=\"190\" y1=\"72\" x2=\"225\" y2=\"72\" stroke=\"#C0472F\" stroke-width=\"2\"/><text x=\"207\" y=\"64\" font-size=\"9\" fill=\"#C0472F\" text-anchor=\"middle\">combustion</text><line x1=\"225\" y1=\"72\" x2=\"285\" y2=\"38\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#convArrow54)\"/><line x1=\"225\" y1=\"72\" x2=\"285\" y2=\"106\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#convArrow54)\"/><rect x=\"290\" y=\"18\" width=\"170\" height=\"40\" rx=\"6\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"375\" y=\"42\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Énergie thermique</text><rect x=\"290\" y=\"86\" width=\"170\" height=\"40\" rx=\"6\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"375\" y=\"110\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Énergie lumineuse</text></svg>",
+            "caption": "Chaîne de conversion d'énergie lors d'une combustion : l'énergie chimique des réactifs est libérée sous forme d'énergie thermique (chaleur) et d'énergie lumineuse."
+          }
+        ]
+      },
+      {
+        "title": "2. Énergie thermique et température",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie thermique Q",
+            "text": "Lorsqu'un corps de masse m reçoit une énergie thermique Q, sa température varie de ΔT selon la relation Q = m×c×ΔT, où c est sa capacité thermique massique, caractéristique du matériau qui le compose."
+          },
+          {
+            "type": "formula",
+            "label": "Relation fondamentale",
+            "text": "Q = m × c × ΔT\navec Q en J, m en kg, c en J·kg⁻¹·K⁻¹, ΔT = Tfinale − Tinitiale (en K ou °C)"
+          },
+          {
+            "type": "text",
+            "text": "Donnée à connaître : capacité thermique massique de l'eau c(eau) = 4185 J·kg⁻¹·K⁻¹."
+          }
+        ]
+      },
+      {
+        "title": "3. Mesure par calorimétrie",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Calorimètre",
+            "text": "Enceinte calorifugée (isolée thermiquement) permettant de mesurer l'énergie libérée par une réaction chimique."
+          },
+          {
+            "type": "text",
+            "text": "Principe : toute l'énergie thermique produite par la combustion est reçue par l'eau (et le calorimètre). En système isolé, on admet que l'énergie libérée par la combustion est égale à l'énergie thermique reçue par l'eau."
+          },
+          {
+            "type": "warn",
+            "text": "Dans la pratique, une partie de l'énergie libérée est perdue vers l'air ambiant et absorbée par le calorimètre lui-même : la valeur expérimentale du pouvoir calorifique est donc souvent inférieure à la valeur tabulée."
+          }
+        ]
+      },
+      {
+        "title": "4. Pouvoir calorifique d'un combustible",
+        "icon": "⛽",
+        "content": [
+          {
+            "type": "def",
+            "term": "Pouvoir calorifique PC",
+            "text": "Énergie libérée lors de la combustion complète d'une unité de masse (ou de volume) de ce combustible. PC = Q / m(combustible), généralement exprimé en MJ/kg."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Combustible",
+              "Bois sec",
+              "Essence",
+              "Gaz naturel",
+              "Éthanol"
+            ],
+            "rows": [
+              [
+                "PC (MJ/kg)",
+                "≈ 15",
+                "≈ 47",
+                "≈ 50",
+                "≈ 27"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Le pouvoir calorifique permet de comparer quantitativement différents combustibles, mais le choix d'un combustible dépend aussi de critères économiques, pratiques et environnementaux (coût, disponibilité, impact sur l'environnement)."
+          }
+        ]
+      },
+      {
+        "title": "5. Rendement d'une combustion",
+        "icon": "⚙️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Rendement η",
+            "text": "Rapport entre l'énergie utile obtenue et l'énergie totale libérée par la combustion : η = énergie utile / énergie totale libérée."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : un poêle à bois de rendement η = 75 % doit fournir une énergie utile de 40 MJ. L'énergie totale à libérer par combustion est alors énergie totale = énergie utile / η = 40 / 0,75 ≈ 53,3 MJ, soit une masse de bois d'environ 53,3/15 ≈ 3,6 kg (PC(bois) = 15 MJ/kg)."
+          },
+          {
+            "type": "warn",
+            "text": "Le rendement d'un appareil de chauffage est toujours inférieur à 100 % : une partie de l'énergie libérée par la combustion est perdue dans l'environnement (chaleur évacuée par les fumées, pertes thermiques par les parois)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une combustion est une transformation chimique :",
+      "opts": [
+        "endothermique, car il faut chauffer pour l'allumer",
+        "exothermique, entre un combustible et un comburant",
+        "exothermique, dont le dioxygène est le combustible",
+        "physique : le combustible change seulement d'état"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "combustion-endothermique-allumage",
+          "texte": "Confondre l'allumage et le bilan : une petite énergie amorce la combustion, qui libère ensuite bien plus d'énergie"
+        },
+        null,
+        {
+          "code": "combustible-comburant-inverses",
+          "texte": "Inverser combustible et comburant : le dioxygène est le comburant, le bois ou le gaz est le combustible"
+        },
+        {
+          "code": "combustion-changement-etat",
+          "texte": "Confondre combustion et changement d'état : de nouvelles espèces (CO₂, H₂O) se forment"
+        }
+      ],
+      "exp": "Une combustion est une transformation chimique exothermique entre un combustible et un comburant (souvent le dioxygène de l'air). Attention : l'énergie d'allumage ne fait que la déclencher."
+    },
+    {
+      "q": "L'équation de la combustion complète de l'éthanol C₂H₆O dans le dioxygène est :",
+      "opts": [
+        "C₂H₆O + 2 O₂ → 2 CO₂ + 3 H₂O",
+        "C₂H₆O + 3 O₂ → 2 CO₂ + 6 H₂O",
+        "2 C₂H₆O + 7 O₂ → 4 CO₂ + 6 H₂O",
+        "C₂H₆O + 3 O₂ → 2 CO₂ + 3 H₂O"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "ajustement-partiel",
+          "texte": "N'ajuster que C et H : il y a 1 + 4 = 5 O à gauche et 4 + 3 = 7 O à droite"
+        },
+        {
+          "code": "indice-pris-pour-coefficient",
+          "texte": "Prendre l'indice 6 de H pour le nombre de H₂O : 6 H forment 3 molécules H₂O"
+        },
+        {
+          "code": "oubli-oxygene-combustible",
+          "texte": "Oublier l'atome O de l'éthanol : il apporte déjà 1 des 7 atomes O des produits"
+        },
+        null
+      ],
+      "exp": "2 C donnent 2 CO₂, 6 H donnent 3 H₂O ; à droite 4 + 3 = 7 O, dont 1 apporté par l'éthanol : il faut 6 O, soit 3 O₂. Attention : le combustible contient lui-même un atome d'oxygène."
+    },
+    {
+      "q": "Lorsque le dioxygène manque, la combustion d'un hydrocarbure peut produire :",
+      "opts": [
+        "du monoxyde de carbone CO, gaz toxique",
+        "seulement moins de dioxyde de carbone",
+        "rien : sans assez de dioxygène, rien ne brûle",
+        "seulement de l'eau, le carbone disparaissant"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "incomplete-moins-de-co2",
+          "texte": "Croire que la combustion incomplète produit simplement moins de CO₂ : elle forme d'autres espèces, CO et carbone (suies)"
+        },
+        {
+          "code": "combustion-tout-ou-rien",
+          "texte": "Croire que la combustion n'a pas lieu : elle se fait, mais de façon incomplète"
+        },
+        {
+          "code": "carbone-disparait",
+          "texte": "Croire que le carbone disparaît : les éléments se conservent, le carbone se retrouve dans CO, CO₂ ou les suies"
+        }
+      ],
+      "exp": "En manque de dioxygène, la combustion est incomplète : elle forme du monoxyde de carbone CO, gaz inodore et très toxique, et des particules de carbone (suies). Attention : les éléments se conservent."
+    },
+    {
+      "q": "Au cours d'une combustion, d'où vient l'énergie libérée ?",
+      "opts": [
+        "De la rupture des liaisons des réactifs, qui libère de l'énergie",
+        "De la flamme d'allumage, qui est restituée",
+        "Des liaisons formées, qui libèrent plus d'énergie que la rupture n'en consomme",
+        "Du dioxygène seul, qui contient l'énergie"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "rupture-libere-energie",
+          "texte": "Croire que casser une liaison libère de l'énergie : rompre une liaison en consomme, c'est la former qui en libère"
+        },
+        {
+          "code": "energie-vient-allumage",
+          "texte": "Croire que l'énergie vient de l'allumage : la combustion libère bien plus d'énergie qu'il n'en faut pour l'allumer"
+        },
+        null,
+        {
+          "code": "chaleur-contenue-substance",
+          "texte": "Croire que l'énergie est contenue dans une substance : elle vient du bilan entre liaisons rompues et liaisons formées"
+        }
+      ],
+      "exp": "Rompre les liaisons des réactifs consomme de l'énergie ; former celles des produits (C=O, O–H) en libère davantage : le bilan est une énergie libérée. Attention : rompre une liaison ne libère jamais d'énergie."
+    },
+    {
+      "q": "On chauffe 500 mL d'eau (ρ = 1,00 g·mL⁻¹ ; c = 4 185 J·kg⁻¹·K⁻¹) de 20,0 °C à 45,0 °C. L'énergie reçue par l'eau vaut Q = m × c × ΔT, soit :",
+      "opts": [
+        "5,23×10⁷ J",
+        "9,42×10⁴ J",
+        "6,24×10⁵ J",
+        "5,23×10⁴ J"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 500 × 4 185 × 25,0 ; 500 g = 0,500 kg"
+        },
+        {
+          "code": "temperature-vs-variation",
+          "texte": "Utiliser la température finale (45,0) au lieu de la variation ΔT = 25,0 °C"
+        },
+        {
+          "code": "delta-t-plus-273",
+          "texte": "Ajouter 273 à l'écart de température : un écart de 25,0 °C est aussi un écart de 25,0 K"
+        },
+        null
+      ],
+      "exp": "m = 0,500 kg et ΔT = 45,0 − 20,0 = 25,0 °C = 25,0 K, donc Q = 0,500 × 4 185 × 25,0 ≈ 5,23×10⁴ J. Attention : masse en kg et écart de température, pas température finale."
+    },
+    {
+      "q": "La combustion de 15,0 g de bois libère 225 kJ. Le pouvoir calorifique de ce bois vaut :",
+      "opts": [
+        "1,50×10⁴ MJ·kg⁻¹",
+        "15,0 MJ·kg⁻¹",
+        "3,4 kJ·kg",
+        "6,7×10⁻² kg·MJ⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-g-kg",
+          "texte": "Garder la masse en grammes : 225×10³ / 15,0 = 1,50×10⁴ J·g⁻¹, ce ne sont pas des MJ·kg⁻¹"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 225 × 0,0150 ; il faut PC = Q / m"
+        },
+        {
+          "code": "pc-rapport-inverse",
+          "texte": "Inverser le rapport : m / Q = 0,0150 / 0,225 ; le PC est une énergie par kilogramme"
+        }
+      ],
+      "exp": "PC = Q / m = 225×10³ J / 0,0150 kg = 1,50×10⁷ J·kg⁻¹ = 15,0 MJ·kg⁻¹. Attention : la masse doit être en kg."
+    },
+    {
+      "q": "Avec un bois de pouvoir calorifique 15,0 MJ·kg⁻¹, quelle masse faut-il brûler pour libérer 9,0 MJ ?",
+      "opts": [
+        "135 kg",
+        "1,7 kg",
+        "0,60 kg",
+        "0,60 g"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 9,0 × 15,0 = 135 ; il faut m = Q / PC"
+        },
+        {
+          "code": "pc-rapport-inverse",
+          "texte": "Inverser le rapport : PC / Q = 15,0 / 9,0 ≈ 1,7 ; il faut m = Q / PC"
+        },
+        null,
+        {
+          "code": "unite-masse-pc",
+          "texte": "Se tromper d'unité : le PC est en MJ par kilogramme, Q / PC donne donc des kilogrammes"
+        }
+      ],
+      "exp": "m = Q / PC = 9,0 / 15,0 = 0,60 kg. Attention : avec un PC en MJ·kg⁻¹, le résultat est en kilogrammes."
+    },
+    {
+      "q": "On brûle 1,20 g d'éthanol sous une canette contenant 300 g d'eau, qui passe de 19,5 °C à 34,3 °C (c = 4 185 J·kg⁻¹·K⁻¹). Le pouvoir calorifique expérimental de l'éthanol vaut :",
+      "opts": [
+        "15,5 MJ·kg⁻¹",
+        "1,55×10⁻² MJ·kg⁻¹",
+        "35,9 MJ·kg⁻¹",
+        "6,2×10⁻² MJ·kg⁻¹"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse d'éthanol en kg : 1,86×10⁴ / 1,20 ; 1,20 g = 1,20×10⁻³ kg"
+        },
+        {
+          "code": "temperature-vs-variation",
+          "texte": "Utiliser la température finale (34,3 °C) au lieu de la variation ΔT = 14,8 °C"
+        },
+        {
+          "code": "masse-combustible-dans-q",
+          "texte": "Utiliser la masse d'éthanol dans Q = m c ΔT : c'est l'eau qui s'échauffe, m est la masse d'eau"
+        }
+      ],
+      "exp": "Q = 0,300 × 4 185 × 14,8 ≈ 1,86×10⁴ J reçus par l'eau, donc PC = 1,86×10⁴ / 1,20×10⁻³ ≈ 1,55×10⁷ J·kg⁻¹ = 15,5 MJ·kg⁻¹. Attention : Q se calcule avec la masse d'eau."
+    },
+    {
+      "q": "La valeur tabulée du pouvoir calorifique de l'éthanol (≈ 27 MJ·kg⁻¹) est bien supérieure à la valeur mesurée (15,5 MJ·kg⁻¹). Pourquoi ?",
+      "opts": [
+        "Le pouvoir calorifique dépend de la masse brûlée",
+        "Une partie de l'énergie a été détruite pendant la combustion",
+        "Une partie de l'énergie libérée n'a pas chauffé l'eau",
+        "L'eau a reçu plus d'énergie que la combustion n'en a libéré"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "pc-depend-masse",
+          "texte": "Croire que le pouvoir calorifique dépend de la masse brûlée : c'est une énergie par kilogramme, caractéristique du combustible"
+        },
+        {
+          "code": "energie-detruite",
+          "texte": "Croire que l'énergie disparaît : elle se conserve ; une partie a été transférée à l'air et à la canette"
+        },
+        null,
+        {
+          "code": "recu-superieur-libere",
+          "texte": "Inverser le bilan : l'eau reçoit moins que l'énergie libérée, d'où une valeur mesurée trop faible"
+        }
+      ],
+      "exp": "Une partie de l'énergie libérée chauffe l'air, la canette et les fumées au lieu de l'eau : l'énergie reçue par l'eau, et donc le PC calculé, est trop faible. L'énergie n'est pas détruite, elle est transférée ailleurs."
+    },
+    {
+      "q": "Une chaudière de rendement η = 80 % doit fournir 36 MJ d'énergie utile. Quelle énergie la combustion doit-elle libérer ?",
+      "opts": [
+        "28,8 MJ",
+        "36 MJ",
+        "45 MJ",
+        "0,45 MJ"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "rendement-multiplie",
+          "texte": "Multiplier par le rendement : 36 × 0,80 ; l'énergie libérée est plus grande que l'énergie utile"
+        },
+        {
+          "code": "rendement-ignore",
+          "texte": "Oublier le rendement : une partie de l'énergie libérée est perdue (fumées, parois), il faut en libérer plus que 36 MJ"
+        },
+        null,
+        {
+          "code": "pourcentage-non-converti",
+          "texte": "Utiliser 80 au lieu de 0,80 : 36 / 80 = 0,45"
+        }
+      ],
+      "exp": "η = E(utile) / E(libérée), donc E(libérée) = 36 / 0,80 = 45 MJ. Attention : l'énergie libérée est toujours supérieure à l'énergie utile."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Des combustibles partout autour de nous",
+      "contexte": [
+        "Dans la vie de tous les jours, on brûle de nombreux combustibles : le gaz de ville (méthane CH₄) dans la gazinière, le butane C₄H₁₀ dans le réchaud de camping, l'essence dans le scooter, le bioéthanol C₂H₆O (formule semi-développée CH₃–CH₂–OH) dans les voitures roulant au carburant E85, ou encore le bois dans une cheminée.",
+        "La combustion complète du méthane a pour équation : CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(g)."
+      ],
+      "questions": [
+        {
+          "texte": "Dans la combustion du méthane d'une gazinière, nomme le combustible et le comburant. Sous quelle forme l'énergie est-elle stockée dans les réactifs ? Sous quelles formes est-elle libérée ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. Une combustion est une réaction endothermique.<br>b. Une combustion est une réaction d'oxydoréduction dans laquelle le dioxygène joue le rôle d'oxydant.<br>c. La combustion complète d'un alcane ou d'un alcool ne produit que du dioxyde de carbone et de l'eau.<br>d. Le bois, comme le gaz naturel, est un combustible fossile.",
+          "aides": []
+        },
+        {
+          "texte": "Écris l'équation de la combustion complète du butane C₄H₁₀(g), puis celle de l'éthanol C₂H₆O(g). Les produits sont CO₂(g) et H₂O(g).",
+          "aides": [
+            "Commence par équilibrer le carbone (nombre de CO₂), puis l'hydrogène (nombre de H₂O), et termine par l'oxygène (nombre de O₂).",
+            "Pour le butane, compte les atomes O à droite : 4 CO₂ et 5 H₂O donnent 13 atomes O, soit 13/2 O₂. Multiplie alors tous les nombres par 2. Pour l'éthanol, n'oublie pas l'atome O déjà présent dans C₂H₆O."
+          ]
+        },
+        {
+          "texte": "Dans une salle de bains mal aérée, une vieille chaudière à gaz mal réglée produit du monoxyde de carbone CO au lieu de CO₂ : la combustion est incomplète.<br>a. Complète l'équation : … CH₄(g) + … O₂(g) → … CO(g) + … H₂O(g), avec les plus petits nombres entiers possibles.<br>b. Pourquoi le monoxyde de carbone est-il particulièrement dangereux ? Cite deux gestes qui permettent de s'en protéger.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le combustible est le méthane CH₄ ; le comburant est le dioxygène O₂ de l'air. L'énergie est stockée sous forme d'énergie chimique dans les réactifs ; la combustion la libère sous forme d'énergie thermique (chaleur) et d'énergie lumineuse (la flamme).",
+        "<strong>2.</strong> a. FAUX : une combustion libère de l'énergie vers l'extérieur, elle est exothermique.",
+        "b. VRAI : le combustible (réducteur) cède des électrons au dioxygène (oxydant) ; c'est une réaction d'oxydoréduction (notion du chapitre Réactions d'oxydoréduction).",
+        "c. VRAI : un alcane ne contient que C et H, un alcool C, H et O ; lors d'une combustion complète, tout le carbone finit en CO₂ et tout l'hydrogène en H₂O.",
+        "d. FAUX : le gaz naturel (comme le pétrole et le charbon) est un combustible fossile, formé en des millions d'années et non renouvelable à notre échelle. Le bois provient de la biomasse : il se renouvelle si l'on replante les arbres.",
+        "<strong>3.</strong> Butane : 2 C₄H₁₀(g) + 13 O₂(g) → 8 CO₂(g) + 10 H₂O(g). Vérification : 8 C, 20 H et 26 O de chaque côté. Éthanol : C₂H₆O(g) + 3 O₂(g) → 2 CO₂(g) + 3 H₂O(g). Vérification : 2 C, 6 H et 7 O de chaque côté (sans oublier l'atome O de l'éthanol).",
+        "<strong>4.</strong> a. 2 CH₄(g) + 3 O₂(g) → 2 CO(g) + 4 H₂O(g). Vérification : 2 C, 8 H et 6 O de chaque côté.",
+        "b. Le monoxyde de carbone est un gaz incolore et inodore (on ne le détecte pas) et très toxique : il se fixe sur l'hémoglobine du sang à la place du dioxygène et peut provoquer maux de tête, malaise, voire la mort. Gestes de protection : aérer les pièces et ne jamais boucher les aérations, faire entretenir chaque année les chaudières et chauffe-eau, installer un détecteur de monoxyde de carbone, ne pas utiliser de barbecue ou de groupe électrogène en intérieur.",
+        "<em>⚠ Erreur fréquente : pour l'éthanol, oublier l'atome d'oxygène contenu dans la molécule de combustible et écrire 7/2 O₂, ou équilibrer le butane avec 13/2 O₂ sans multiplier ensuite tous les nombres par 2 pour obtenir des entiers.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Les pâtes au camping",
+      "contexte": [
+        "Au camping, Sofiane fait chauffer 1,50 L d'eau dans une casserole posée sur un réchaud à butane. L'eau passe de T<sub>i</sub> = 20 °C à T<sub>f</sub> = 100 °C (début de l'ébullition). En pesant la cartouche avant et après, il constate que 20,0 g de butane ont brûlé. Le pouvoir calorifique du butane vaut PC = 46 MJ·kg⁻¹ (1 MJ = 10⁶ J). Masse volumique de l'eau : 1,00 kg·L⁻¹.",
+        "Rappels : Q = m × c × ΔT (voir « Données ») ; énergie libérée par la combustion d'une masse m de combustible : Q = m × PC ; rendement : η = énergie utile / énergie totale libérée."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse d'eau chauffée et la variation de température ΔT.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie thermique Q reçue par l'eau. C'est l'énergie utile pour Sofiane.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie totale libérée par la combustion des 20,0 g de butane.",
+          "aides": [
+            "Le pouvoir calorifique est l'énergie libérée par kilogramme de combustible.",
+            "Convertis d'abord la masse en kg (20,0 g = 20,0 × 10⁻³ kg) et le PC en J·kg⁻¹ (46 MJ·kg⁻¹ = 46 × 10⁶ J·kg⁻¹), puis multiplie."
+          ]
+        },
+        {
+          "texte": "Calcule le rendement η du chauffage. Que devient l'énergie qui n'a pas servi à chauffer l'eau ?",
+          "aides": []
+        },
+        {
+          "texte": "La cartouche neuve contient 190 g de butane. Combien de fois Sofiane peut-il faire bouillir 1,50 L d'eau dans les mêmes conditions ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> m(eau) = ρ × V = 1,00 × 1,50 = 1,50 kg. ΔT = T<sub>f</sub> − T<sub>i</sub> = 100 − 20 = 80 °C, soit une variation de 80 K.",
+        "<strong>2.</strong> Q = m × c × ΔT = 1,50 × 4185 × 80 = 5,02 × 10⁵ J (502 kJ).",
+        "<strong>3.</strong> Énergie libérée = m(butane) × PC = 20,0 × 10⁻³ × 46 × 10⁶ = 9,2 × 10⁵ J (920 kJ).",
+        "<strong>4.</strong> η = énergie utile / énergie libérée = 5,02 × 10⁵ / 9,2 × 10⁵ = 0,55, soit 55 %. Les 4,2 × 10⁵ J restants ne sont pas perdus (l'énergie se conserve) : ils chauffent l'air autour de la casserole et les fumées, la casserole elle-même et le réchaud (transferts vers l'environnement, surtout en plein air avec du vent).",
+        "<strong>5.</strong> 190 / 20,0 = 9,5 : Sofiane peut faire bouillir l'eau 9 fois complètement.",
+        "<em>⚠ Erreur fréquente : laisser la masse de butane en grammes (20,0 × 46 × 10⁶ donnerait 9,2 × 10⁸ J, un rendement absurde d'environ 0,05 %). Le PC est en MJ par kilogramme : convertir la masse en kg.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Que se passe-t-il dans la flamme du gaz de ville ?",
+      "contexte": [
+        "Dans une flamme, les molécules de méthane et de dioxygène sont « cassées » : toutes leurs liaisons sont rompues, puis les atomes se réassocient pour former de nouvelles liaisons dans les molécules de CO₂ et de H₂O. Les formules développées des espèces de l'équation CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(g) sont représentées ci-dessous.",
+        "Rompre une liaison coûte de l'énergie ; former une liaison en libère autant. On estime l'énergie molaire de réaction, pour des espèces gazeuses, par : E<sub>r</sub> = Σ E(liaisons rompues) − Σ E(liaisons formées). Si E<sub>r</sub> &lt; 0, la réaction libère de l'énergie. Le pouvoir calorifique se déduit de |E<sub>r</sub>| (en kJ·mol⁻¹) et de la masse molaire M du combustible (en g·mol⁻¹) : PC = |E<sub>r</sub>| / M."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"12\" y=\"12\" width=\"736\" height=\"200\" rx=\"10\" fill=\"#F7F3EC\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><rect x=\"12\" y=\"258\" width=\"736\" height=\"200\" rx=\"10\" fill=\"#F7F3EC\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"28\" y=\"38\" font-weight=\"bold\" fill=\"#B5523B\">RÉACTIFS</text><text x=\"28\" y=\"284\" font-weight=\"bold\" fill=\"#B5523B\">PRODUITS</text><text x=\"200\" y=\"123\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#1F4E5A\">C</text><text x=\"200\" y=\"61\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#3a3a3a\">H</text><line x1=\"200.0\" y1=\"91.0\" x2=\"200.0\" y2=\"71.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"200\" y=\"185\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#3a3a3a\">H</text><line x1=\"200.0\" y1=\"133.0\" x2=\"200.0\" y2=\"153.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"128\" y=\"123\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#3a3a3a\">H</text><line x1=\"179.0\" y1=\"112.0\" x2=\"149.0\" y2=\"112.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"272\" y=\"123\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#3a3a3a\">H</text><line x1=\"221.0\" y1=\"112.0\" x2=\"251.0\" y2=\"112.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"200\" y=\"204\" text-anchor=\"middle\" fill=\"#3a3a3a\">1 molécule de méthane CH₄</text><text x=\"360\" y=\"124\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#3a3a3a\">+ 2</text><text x=\"470\" y=\"123\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#B5523B\">O</text><text x=\"560\" y=\"123\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#B5523B\">O</text><line x1=\"491.0\" y1=\"107.0\" x2=\"539.0\" y2=\"107.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><line x1=\"491.0\" y1=\"117.0\" x2=\"539.0\" y2=\"117.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"515\" y=\"204\" text-anchor=\"middle\" fill=\"#3a3a3a\">2 molécules de dioxygène O₂</text><line x1=\"380\" y1=\"216\" x2=\"380\" y2=\"250\" stroke=\"#B5523B\" stroke-width=\"4\"/><path d=\"M368,244 L380,258 L392,244 Z\" fill=\"#B5523B\"/><text x=\"400\" y=\"242\" fill=\"#B5523B\" font-weight=\"bold\">combustion</text><text x=\"110\" y=\"371\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#B5523B\">O</text><text x=\"200\" y=\"371\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#1F4E5A\">C</text><text x=\"290\" y=\"371\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#B5523B\">O</text><line x1=\"131.0\" y1=\"355.0\" x2=\"179.0\" y2=\"355.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><line x1=\"131.0\" y1=\"365.0\" x2=\"179.0\" y2=\"365.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><line x1=\"221.0\" y1=\"355.0\" x2=\"269.0\" y2=\"355.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><line x1=\"221.0\" y1=\"365.0\" x2=\"269.0\" y2=\"365.0\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"200\" y=\"440\" text-anchor=\"middle\" fill=\"#3a3a3a\">1 molécule de dioxyde de carbone CO₂</text><text x=\"410\" y=\"372\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#3a3a3a\">+ 2</text><text x=\"580\" y=\"349\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#B5523B\">O</text><text x=\"520\" y=\"401\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#3a3a3a\">H</text><line x1=\"564.1\" y1=\"351.8\" x2=\"535.9\" y2=\"376.2\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"640\" y=\"401\" text-anchor=\"middle\" font-size=\"32\" font-weight=\"bold\" fill=\"#3a3a3a\">H</text><line x1=\"595.9\" y1=\"351.8\" x2=\"624.1\" y2=\"376.2\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"580\" y=\"440\" text-anchor=\"middle\" fill=\"#3a3a3a\">2 molécules d'eau H₂O</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour une mole de méthane qui brûle, recopie et complète : liaisons rompues : … liaisons C–H et … liaisons O=O ; liaisons formées : … liaisons C=O et … liaisons O–H.",
+          "aides": [
+            "Sur la figure, compte les traits : un trait simple est une liaison simple, un double trait est une liaison double.",
+            "N'oublie pas les nombres 2 devant O₂ et devant H₂O : il y a deux molécules de chacune."
+          ]
+        },
+        {
+          "texte": "Calcule l'énergie qu'il faut fournir pour rompre toutes les liaisons des réactifs, puis l'énergie libérée par la formation de toutes les liaisons des produits (valeurs dans l'encadré « Données »).",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en l'énergie molaire de réaction E<sub>r</sub> de la combustion du méthane. Le signe obtenu est-il cohérent avec ce que tu sais d'une combustion ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le pouvoir calorifique du méthane en kJ·g⁻¹, puis montre qu'il s'exprime avec le même nombre en MJ·kg⁻¹. Compare au pouvoir calorifique du gaz naturel donné dans le cours (environ 50 MJ·kg⁻¹).",
+          "aides": [
+            "Utilise PC = |E<sub>r</sub>| / M avec E<sub>r</sub> en kJ·mol⁻¹ et M en g·mol⁻¹ : quelle est l'unité du résultat ?",
+            "Convertis : 1 kJ = 10³ J et 1 g = 10⁻³ kg. Que vaut 1 kJ·g⁻¹ en J·kg⁻¹ ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Rompues : 4 liaisons C–H (dans CH₄) et 2 liaisons O=O (une dans chacune des 2 molécules O₂). Formées : 2 liaisons C=O (dans CO₂) et 4 liaisons O–H (2 dans chacune des 2 molécules H₂O).",
+        "<strong>2.</strong> Rupture : 4 × 413 + 2 × 498 = 1652 + 996 = 2648 kJ (énergie reçue par le système). Formation : 2 × 804 + 4 × 463 = 1608 + 1852 = 3460 kJ (énergie libérée).",
+        "<strong>3.</strong> E<sub>r</sub> = 2648 − 3460 = −812 kJ·mol⁻¹. E<sub>r</sub> &lt; 0 : former les liaisons des produits libère plus d'énergie qu'il n'en faut pour rompre celles des réactifs. La réaction est exothermique, comme toute combustion.",
+        "<strong>4.</strong> PC = |E<sub>r</sub>| / M(CH₄) avec M(CH₄) = 12,0 + 4 × 1,0 = 16,0 g·mol⁻¹ : PC = 812 / 16,0 = 50,75 kJ·g⁻¹ ≈ 51 kJ·g⁻¹. Or 1 kJ·g⁻¹ = 10³ J / 10⁻³ kg = 10⁶ J·kg⁻¹ = 1 MJ·kg⁻¹ : PC ≈ 51 MJ·kg⁻¹, très proche de la valeur du cours (≈ 50 MJ·kg⁻¹ ; le gaz naturel est surtout du méthane).",
+        "Remarque : la valeur tabulée de l'énergie molaire de combustion du méthane (eau gazeuse) est −802 kJ·mol⁻¹ ; l'estimation est bonne à environ 1 % près. L'écart vient de ce que les énergies de liaison sont des valeurs moyennes.",
+        "<em>⚠ Erreur fréquente : compter une seule liaison O=O (en oubliant le nombre 2 devant O₂) ou 2 liaisons O–H au lieu de 4 (en oubliant le 2 devant H₂O).</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Essence ou bioéthanol pour la voiture de Lina ?",
+      "contexte": [
+        "La voiture de Lina accepte deux carburants : le SP95 (essence) et l'E85, composé majoritairement de bioéthanol C₂H₆O, produit à partir de betteraves ou de céréales. Lina veut comparer les deux pour un trajet d'environ 100 km, pour lequel la combustion doit libérer une énergie de 100 MJ (valeur estimée).",
+        "On modélise l'essence par l'octane C₈H₁₈(g), dont l'énergie molaire de combustion vaut E<sub>comb</sub> = −5,07 × 10³ kJ·mol⁻¹. Dans le moteur, l'éthanol (formule semi-développée CH₃–CH₂–OH) est vaporisé : on le considère à l'état gazeux."
+      ],
+      "questions": [
+        {
+          "texte": "Écris les équations des combustions complètes de l'octane et de l'éthanol (produits gazeux).",
+          "aides": [
+            "Équilibre d'abord C avec CO₂, puis H avec H₂O, et enfin O avec O₂.",
+            "Pour l'octane, tu trouves 8 CO₂ et 9 H₂O, soit 25 atomes O à droite : 25/2 O₂. Multiplie tous les nombres par 2."
+          ]
+        },
+        {
+          "texte": "Estime l'énergie molaire de combustion de l'éthanol à l'aide des énergies de liaison.",
+          "aides": [
+            "Dessine la formule développée de l'éthanol pour compter toutes ses liaisons : combien de C–H, de C–C, de C–O et de O–H ?",
+            "Liaisons rompues : celles de l'éthanol et de 3 O₂. Liaisons formées : celles de 2 CO₂ (2 C=O chacune) et de 3 H₂O (2 O–H chacune).",
+            "E<sub>comb</sub> = Σ E(rompues) − Σ E(formées) : le résultat doit être négatif."
+          ]
+        },
+        {
+          "texte": "Calcule le pouvoir calorifique de chaque carburant en MJ·kg⁻¹. Compare la valeur obtenue pour l'éthanol à celle du cours.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle masse de chaque carburant faut-il brûler pour le trajet ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse de dioxyde de carbone rejetée par le pot d'échappement dans chaque cas. Commente.",
+          "aides": [
+            "Chaîne : masse de carburant → quantité de matière n = m / M → quantité de CO₂ avec l'équation → masse de CO₂.",
+            "D'après l'équation, 2 mol d'octane donnent 16 mol de CO₂, et 1 mol d'éthanol donne 2 mol de CO₂."
+          ]
+        },
+        {
+          "texte": "Le vendeur affirme : « Avec l'E85, vous contribuez moins au réchauffement climatique. » Au vu de ta réponse précédente, cette affirmation te paraît-elle fausse ? Argumente.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Octane : 2 C₈H₁₈(g) + 25 O₂(g) → 16 CO₂(g) + 18 H₂O(g) (16 C, 36 H, 50 O de chaque côté). Éthanol : C₂H₆O(g) + 3 O₂(g) → 2 CO₂(g) + 3 H₂O(g) (2 C, 6 H, 7 O de chaque côté).",
+        "<strong>2.</strong> Liaisons rompues : dans CH₃–CH₂–OH, 5 C–H, 1 C–C, 1 C–O et 1 O–H ; dans 3 O₂, 3 O=O. Énergie : 5 × 413 + 348 + 358 + 463 + 3 × 498 = 4728 kJ. Liaisons formées : 2 CO₂ contiennent 4 C=O, 3 H₂O contiennent 6 O–H. Énergie : 4 × 804 + 6 × 463 = 5994 kJ. E<sub>comb</sub> = 4728 − 5994 = −1266 kJ·mol⁻¹ ≈ −1,27 × 10³ kJ·mol⁻¹.",
+        "<strong>3.</strong> M(C₈H₁₈) = 8 × 12,0 + 18 × 1,0 = 114,0 g·mol⁻¹ ; M(C₂H₆O) = 2 × 12,0 + 6 × 1,0 + 16,0 = 46,0 g·mol⁻¹. PC = |E<sub>comb</sub>| / M (en kJ·g⁻¹, soit en MJ·kg⁻¹) : PC(octane) = 5,07 × 10³ / 114,0 = 44,5 MJ·kg⁻¹ ; PC(éthanol) = 1266 / 46,0 = 27,5 MJ·kg⁻¹, en accord avec la valeur du cours (≈ 27 MJ·kg⁻¹).",
+        "<strong>4.</strong> m = E / PC : m(octane) = 100 / 44,5 = 2,25 kg ; m(éthanol) = 100 / 27,5 = 3,63 kg. Il faut environ 1,6 fois plus de bioéthanol en masse : le plein d'E85 « dure » moins longtemps.",
+        "<strong>5.</strong> n = m / M : n(octane) = 2,25 × 10³ / 114,0 = 19,7 mol, d'où n(CO₂) = 8 × 19,7 = 1,58 × 10² mol (d'après l'équation, 2 mol d'octane donnent 16 mol de CO₂) ; m(CO₂) = n(CO₂) × M(CO₂) ≈ 6,9 kg (6,94 kg sans arrondir les étapes). n(éthanol) = 3,63 × 10³ / 46,0 = 79,0 mol, d'où n(CO₂) = 2 × 79,0 = 1,58 × 10² mol ; m(CO₂) ≈ 6,9 kg (6,95 kg sans arrondir). Les deux carburants rejettent pratiquement la même masse de CO₂ pour la même énergie libérée (environ 69 g par MJ).",
+        "<strong>6.</strong> L'affirmation n'est pas forcément fausse. Éléments attendus : au pot d'échappement, les rejets de CO₂ sont les mêmes ; mais le carbone du bioéthanol a été prélevé dans l'atmosphère, quelques mois plus tôt, par la photosynthèse des plantes cultivées : brûler l'éthanol rend à l'air du CO₂ récemment absorbé, alors que brûler de l'essence (fossile) ajoute du carbone stocké depuis des millions d'années. Limites : la culture (engrais, tracteurs), la transformation et le transport du bioéthanol émettent aussi du CO₂, et ces cultures occupent des terres agricoles. Le bilan est donc meilleur, mais pas nul.",
+        "<em>⚠ Erreur fréquente : écrire n(CO₂) = n(octane) en oubliant le rapport des nombres stœchiométriques (16 pour 2, soit 8 mol de CO₂ par mole d'octane), ou affirmer que le PC de l'éthanol vaut 1266 / 46,0 = 27,5 « J·kg⁻¹ » sans analyser les unités.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Mesurer le pouvoir calorifique d'une bougie",
+      "contexte": [
+        "Pour estimer le pouvoir calorifique de la cire de bougie (paraffine), Emma place une canette en aluminium contenant 200,0 g d'eau au-dessus d'une bougie chauffe-plat. Elle relève la température de l'eau et pèse la bougie avant et après quelques minutes de combustion, en agitant l'eau régulièrement.",
+        "Mesures : T<sub>i</sub> = 18,2 °C ; T<sub>f</sub> = 43,6 °C ; masse de la bougie avant : 15,42 g ; après : 14,48 g. Après l'expérience, le fond de la canette est couvert d'un dépôt noir de suie (carbone C). On modélise la paraffine par l'alcane C₂₅H₅₂. Valeur de référence du pouvoir calorifique de la paraffine : environ 42 MJ·kg⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Écris l'équation de la combustion complète de la paraffine.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie thermique reçue par l'eau.",
+          "aides": [
+            "Quelle masse est chauffée : celle de l'eau ou celle de la bougie ?",
+            "Applique Q = m × c × ΔT avec la masse d'eau en kg et ΔT = T<sub>f</sub> − T<sub>i</sub>."
+          ]
+        },
+        {
+          "texte": "En supposant que toute l'énergie libérée par la combustion a été reçue par l'eau, calcule le pouvoir calorifique expérimental de la paraffine en MJ·kg⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'écart relatif avec la valeur de référence. Explique pourquoi la valeur expérimentale est plus faible.",
+          "aides": [
+            "Écart relatif = |valeur expérimentale − valeur de référence| / valeur de référence.",
+            "Pour expliquer l'écart, demande-toi si toute l'énergie libérée par la flamme a vraiment été reçue par l'eau. Où est passé le reste ?"
+          ]
+        },
+        {
+          "texte": "Que révèle le dépôt de suie sur la canette ? Écris l'équation correspondante, sachant que la paraffine ne forme ici que du carbone C(s) et de l'eau. Quelle conséquence cela a-t-il sur la mesure ?",
+          "aides": []
+        },
+        {
+          "texte": "Propose deux améliorations du protocole pour obtenir une valeur plus proche de la référence.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C₂₅H₅₂(s) + 38 O₂(g) → 25 CO₂(g) + 26 H₂O(g). Vérification : 25 C, 52 H, 76 O de chaque côté.",
+        "<strong>2.</strong> ΔT = 43,6 − 18,2 = 25,4 °C (soit 25,4 K). Q = m(eau) × c × ΔT = 0,2000 × 4185 × 25,4 = 2,13 × 10⁴ J.",
+        "<strong>3.</strong> Masse de paraffine brûlée : Δm = 15,42 − 14,48 = 0,94 g = 0,94 × 10⁻³ kg. PC(exp) = Q / Δm = 2,13 × 10⁴ / 0,94 × 10⁻³ = 2,26 × 10⁷ J·kg⁻¹ ≈ 23 MJ·kg⁻¹ (deux chiffres significatifs, comme Δm).",
+        "<strong>4.</strong> Écart relatif = |PC(exp) − PC(réf)| / PC(réf) = (42 − 22,6) / 42 = 0,46, soit 46 %. La valeur expérimentale est trop faible car l'hypothèse de la question 3 est fausse : une grande partie de l'énergie libérée chauffe l'air autour de la canette (pertes par les côtés, par le haut), la canette elle-même et la bougie ; seule un peu plus de la moitié (environ 54 %) a été reçue par l'eau.",
+        "<strong>5.</strong> La suie (carbone) montre que la combustion est incomplète : faute de dioxygène au contact du fond froid de la canette, une partie du carbone n'est pas transformée en CO₂ (il peut aussi se former du monoxyde de carbone CO, toxique). Équation : C₂₅H₅₂(s) + 13 O₂(g) → 25 C(s) + 26 H₂O(g) (25 C, 52 H, 26 O de chaque côté). Une combustion incomplète libère moins d'énergie qu'une combustion complète : la valeur mesurée est encore sous-estimée.",
+        "<strong>6.</strong> Exemples d'améliorations : entourer la flamme et la canette d'un écran (ou d'un manchon) pour limiter les pertes vers l'air ; couvrir la canette ; régler la hauteur de la canette pour que la flamme ne soit pas « écrasée » (combustion plus complète) ; utiliser un vrai calorimètre ; répéter la mesure et faire la moyenne ; brûler une masse plus grande pour mesurer Δm plus précisément.",
+        "<em>⚠ Erreur fréquente : diviser Q par la masse de la bougie entière (15,42 g) au lieu de la masse brûlée, ou garder Δm en grammes (on trouverait 2,26 × 10⁴ J·g⁻¹ et on se tromperait de facteur 1000 en annonçant des J·kg⁻¹).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le dihydrogène, carburant d'avenir ?",
+      "contexte": [
+        "Doc. 1 — Un combustible qui ne rejette que de l'eau. Le dihydrogène H₂ brûle dans le dioxygène de l'air en ne formant que de l'eau. Des constructeurs étudient des moteurs à combustion d'hydrogène pour les camions et les bus. Mais le dihydrogène n'existe presque pas à l'état naturel : aujourd'hui, il est surtout produit par vaporeformage du méthane, selon l'équation CH₄(g) + 2 H₂O(g) → CO₂(g) + 4 H₂(g). Ce procédé consomme en outre beaucoup d'énergie. Une autre voie, l'électrolyse de l'eau à l'aide d'électricité d'origine éolienne ou solaire, est en plein développement (« hydrogène vert »). Dans les véhicules, le dihydrogène est stocké sous forme de gaz comprimé à 700 bar.",
+        "Doc. 2 — Diagramme énergétique de la réaction 2 H₂(g) + O₂(g) → 2 H₂O(g) (figure ci-dessous) : les réactifs sont d'abord dissociés en atomes, puis les atomes se réassocient pour former les produits."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"95\" y1=\"440.0\" x2=\"740\" y2=\"440.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"445.0\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">− 750</text><line x1=\"95\" y1=\"394.4\" x2=\"740\" y2=\"394.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"399.4\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">− 500</text><line x1=\"95\" y1=\"348.9\" x2=\"740\" y2=\"348.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"353.9\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">− 250</text><line x1=\"95\" y1=\"303.3\" x2=\"740\" y2=\"303.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"308.3\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">0</text><line x1=\"95\" y1=\"257.8\" x2=\"740\" y2=\"257.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"262.8\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">250</text><line x1=\"95\" y1=\"212.2\" x2=\"740\" y2=\"212.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"217.2\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">500</text><line x1=\"95\" y1=\"166.7\" x2=\"740\" y2=\"166.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"171.7\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">750</text><line x1=\"95\" y1=\"121.1\" x2=\"740\" y2=\"121.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"126.1\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">1 000</text><line x1=\"95\" y1=\"75.6\" x2=\"740\" y2=\"75.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"80.6\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">1 250</text><line x1=\"95\" y1=\"30.0\" x2=\"740\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"87\" y=\"35.0\" text-anchor=\"end\" font-size=\"14\" fill=\"#3a3a3a\">1 500</text><line x1=\"95\" y1=\"440\" x2=\"95\" y2=\"18\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M89,24 L95,12 L101,24 Z\" fill=\"#3a3a3a\"/><text x=\"22\" y=\"235.0\" transform=\"rotate(-90 22 235.0)\" text-anchor=\"middle\" fill=\"#3a3a3a\">énergie du système (kJ)</text><line x1=\"120\" y1=\"303.3\" x2=\"340\" y2=\"303.3\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><text x=\"195\" y=\"291.3\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">2 H₂(g) + O₂(g)</text><line x1=\"260\" y1=\"53.7\" x2=\"560\" y2=\"53.7\" stroke=\"#C8962E\" stroke-width=\"5\"/><text x=\"410.0\" y=\"41.7\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#C8962E\">4 H(g) + 2 O(g) (atomes séparés)</text><line x1=\"470\" y1=\"391.2\" x2=\"680\" y2=\"391.2\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><text x=\"575.0\" y=\"417.2\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">2 H₂O(g)</text><line x1=\"340\" y1=\"303.3\" x2=\"725\" y2=\"303.3\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-dasharray=\"8 6\"/><line x1=\"305\" y1=\"303.3\" x2=\"305\" y2=\"65.7\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><path d=\"M296,67.7 L305,53.7 L314,67.7 Z\" fill=\"#B5523B\"/><text x=\"292\" y=\"153.9\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">rupture</text><text x=\"292\" y=\"173.9\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">des liaisons</text><text x=\"292\" y=\"195.9\" text-anchor=\"end\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">+ 1 370 kJ</text><line x1=\"520\" y1=\"53.7\" x2=\"520\" y2=\"379.2\" stroke=\"#1F4E5A\" stroke-width=\"3.5\"/><path d=\"M511,377.2 L520,391.2 L529,377.2 Z\" fill=\"#1F4E5A\"/><text x=\"532\" y=\"153.9\" font-weight=\"bold\" fill=\"#1F4E5A\">formation</text><text x=\"532\" y=\"173.9\" font-weight=\"bold\" fill=\"#1F4E5A\">des liaisons</text><text x=\"532\" y=\"195.9\" font-size=\"18\" font-weight=\"bold\" fill=\"#1F4E5A\">− 1 852 kJ</text><line x1=\"660\" y1=\"303.3\" x2=\"660\" y2=\"379.2\" stroke=\"#C8962E\" stroke-width=\"3.5\" stroke-dasharray=\"7 5\"/><path d=\"M651,377.2 L660,391.2 L669,377.2 Z\" fill=\"#C8962E\"/><text x=\"672\" y=\"345.2\" font-size=\"18\" font-weight=\"bold\" fill=\"#C8962E\">E</text><text x=\"684\" y=\"351.2\" font-size=\"13\" font-weight=\"bold\" fill=\"#C8962E\">r</text><text x=\"694\" y=\"345.2\" font-size=\"18\" font-weight=\"bold\" fill=\"#C8962E\">= ?</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Données sur trois carburants. Dihydrogène H₂ (gaz comprimé à 700 bar) : M = 2,0 g·mol⁻¹ ; masse volumique dans le réservoir ρ ≈ 42 kg·m⁻³ ; énergie molaire de combustion à déterminer. Méthane CH₄ (gaz naturel comprimé à 200 bar) : M = 16,0 g·mol⁻¹ ; ρ ≈ 150 kg·m⁻³ ; E<sub>comb</sub> = −802 kJ·mol⁻¹. Essence (modèle : octane C₈H₁₈, liquide) : M = 114,0 g·mol⁻¹ ; ρ = 750 kg·m⁻³ ; E<sub>comb</sub> = −5,07 × 10³ kJ·mol⁻¹. L'énergie volumique d'un carburant stocké est E<sub>v</sub> = PC × ρ ; elle indique l'énergie libérée par la combustion du carburant contenu dans 1 m³ de réservoir. M(CO₂) = 44,0 g·mol⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "D'après le doc. 1, pourquoi le dihydrogène est-il souvent présenté comme un combustible « propre » ? Pourquoi ne peut-on pas le considérer comme une source d'énergie disponible dans la nature ?",
+          "aides": []
+        },
+        {
+          "texte": "Exploitation du diagramme (doc. 2).<br>a. Que représentent les deux flèches pleines ? Retrouve les valeurs + 1 370 kJ et − 1 852 kJ à l'aide des énergies de liaison.<br>b. Déduis-en l'énergie de réaction E<sub>r</sub> pour l'équation écrite, puis l'énergie molaire de combustion du dihydrogène, c'est-à-dire pour une mole de H₂.",
+          "aides": [
+            "La flèche montante va des réactifs aux atomes séparés : il faut rompre des liaisons. La flèche descendante va des atomes aux produits.",
+            "Compte les liaisons : 2 molécules H₂ (une liaison H–H chacune), 1 molécule O₂ (une liaison O=O), 2 molécules H₂O (deux liaisons O–H chacune).",
+            "E<sub>r</sub> = énergie de rupture − énergie de formation. L'équation contient 2 H₂ : divise par 2 pour avoir l'énergie par mole de H₂."
+          ]
+        },
+        {
+          "texte": "Calcule le pouvoir calorifique des trois carburants du doc. 3. Quel carburant libère le plus d'énergie par kilogramme ?",
+          "aides": [
+            "PC = |E<sub>comb</sub>| / M ; avec E<sub>comb</sub> en kJ·mol⁻¹ et M en g·mol⁻¹, le résultat est en kJ·g⁻¹, c'est-à-dire en MJ·kg⁻¹.",
+            "Pour H₂, utilise l'énergie molaire de combustion trouvée en 2.b (pour une mole de H₂)."
+          ]
+        },
+        {
+          "texte": "Un réservoir de voiture contient 40 L d'essence. Quel volume de réservoir à 700 bar faudrait-il pour emporter la même énergie sous forme de dihydrogène ? Conclus.",
+          "aides": [
+            "Calcule l'énergie volumique E<sub>v</sub> = PC × ρ de l'essence et du dihydrogène, en MJ·m⁻³, puis en MJ·L⁻¹ (1 m³ = 10³ L).",
+            "Énergie emportée dans 40 L d'essence = 40 × E<sub>v</sub>(essence) en MJ·L⁻¹. Divise-la par E<sub>v</sub>(H₂) en MJ·L⁻¹."
+          ]
+        },
+        {
+          "texte": "On cherche la masse de CO₂ rejetée pour libérer une énergie de 1,00 MJ par combustion.<br>a. Calcule-la pour le méthane et pour l'essence.<br>b. Calcule-la pour du dihydrogène produit par vaporeformage, en ne comptant que le CO₂ formé selon l'équation du doc. 1. Cette valeur est-elle surestimée ou sous-estimée ? Justifie.",
+          "aides": [
+            "Pour 1,00 MJ = 1000 kJ, la quantité de combustible brûlé est n = 1000 / |E<sub>comb</sub>|.",
+            "Relie ensuite n(CO₂) à n(combustible) grâce aux nombres stœchiométriques de l'équation (combustion du méthane, de l'octane, ou vaporeformage pour H₂), puis m = n × M(CO₂)."
+          ]
+        },
+        {
+          "texte": "Rédige un avis argumenté d'une dizaine de lignes : « Remplacer l'essence par le dihydrogène, est-ce une bonne idée pour le climat ? ». Tu t'appuieras sur tes résultats, sur les documents et tu évoqueras au moins une limite des modèles utilisés.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Sa combustion (2 H₂ + O₂ → 2 H₂O) ne produit que de l'eau : pas de CO₂ ni de monoxyde de carbone au point d'utilisation. Mais le dihydrogène n'existe presque pas à l'état naturel : il faut le fabriquer (vaporeformage ou électrolyse), ce qui consomme de l'énergie. C'est un moyen de stocker et de transporter l'énergie, pas une source.",
+        "<strong>2.</strong> a. La flèche montante représente l'énergie reçue par le système pour rompre toutes les liaisons des réactifs : 2 H–H et 1 O=O, soit 2 × 436 + 498 = 1370 kJ. La flèche descendante représente l'énergie libérée par la formation des liaisons des produits : 2 H₂O contiennent 4 O–H, soit 4 × 463 = 1852 kJ.",
+        "b. E<sub>r</sub> = 1370 − 1852 = −482 kJ pour 2 mol de H₂ (réaction écrite avec 2 H₂). Pour une mole de dihydrogène : E<sub>comb</sub> = −482 / 2 = −241 kJ·mol⁻¹. (La valeur tabulée, −242 kJ·mol⁻¹, est très proche.)",
+        "<strong>3.</strong> PC = |E<sub>comb</sub>| / M (kJ·g⁻¹ = MJ·kg⁻¹). H₂ : 241 / 2,0 = 1,2 × 10² MJ·kg⁻¹ (120,5). CH₄ : 802 / 16,0 = 50,1 MJ·kg⁻¹. Essence : 5,07 × 10³ / 114,0 = 44,5 MJ·kg⁻¹. Le dihydrogène libère environ 2,7 fois plus d'énergie par kilogramme que l'essence : c'est le meilleur carburant par unité de masse.",
+        "<strong>4.</strong> E<sub>v</sub> = PC × ρ. Essence : 44,5 × 750 = 3,34 × 10⁴ MJ·m⁻³, soit 33,4 MJ·L⁻¹ ; 40 L contiennent 40 × 33,4 = 1,33 × 10³ MJ. Dihydrogène à 700 bar : 120,5 × 42 = 5,1 × 10³ MJ·m⁻³, soit 5,1 MJ·L⁻¹. Volume nécessaire : 1,33 × 10³ / 5,1 = 2,6 × 10² L, environ 6,6 fois le volume du réservoir d'essence. Le dihydrogène est très énergétique par kilogramme mais très peu dense, même comprimé : il faut des réservoirs volumineux (et lourds, pour résister à 700 bar). (Méthane à 200 bar : 50,1 × 150 = 7,5 × 10³ MJ·m⁻³.)",
+        "<strong>5.</strong> a. Méthane : n(CH₄) = 1000 / 802 = 1,25 mol pour 1,00 MJ ; d'après l'équation CH₄ + 2 O₂ → CO₂ + 2 H₂O, n(CO₂) = n(CH₄), d'où m(CO₂) = 1,25 × 44,0 = 55 g. Essence : n(octane) = 1000 / 5070 = 0,197 mol ; n(CO₂) = 8 × 0,197 = 1,58 mol ; m(CO₂) = 1,58 × 44,0 = 69 g.",
+        "b. n(H₂) = 1000 / 241 = 4,15 mol pour 1,00 MJ ; le vaporeformage forme 1 mol de CO₂ pour 4 mol de H₂, d'où n(CO₂) = 4,15 / 4 = 1,04 mol et m(CO₂) = 1,04 × 44,0 = 46 g. Cette valeur est sous-estimée : le doc. 1 précise que le procédé consomme beaucoup d'énergie, souvent obtenue en brûlant encore du méthane, qui rejette du CO₂ supplémentaire non compté ici (sans parler de la compression à 700 bar). Le gain par rapport à l'essence (69 g) est donc bien plus faible qu'il n'y paraît, et peut même disparaître.",
+        "<strong>6.</strong> Éléments attendus : (i) avantage : aucun CO₂ rejeté par le véhicule et un pouvoir calorifique massique record (≈ 120 MJ·kg⁻¹) ; (ii) mais le bilan climatique dépend de la production : par vaporeformage, on rejette au moins 46 g de CO₂ par MJ (davantage en comptant l'énergie du procédé), à comparer à 69 g pour l'essence ; avec de l'hydrogène vert (électrolyse et électricité renouvelable), les rejets deviennent faibles ; (iii) contraintes : énergie volumique faible (réservoir 6 à 7 fois plus grand), stockage sous haute pression, gaz très inflammable (risque d'explosion en cas de fuite) ; (iv) limites des modèles : énergies de liaison moyennes (estimation à quelques % près), essence modélisée par l'octane, masses volumiques approchées, énergie de production et de compression non comptée. Conclusion nuancée : c'est une bonne idée seulement si le dihydrogène est produit avec une énergie peu émettrice de CO₂, et plutôt pour des véhicules lourds qui peuvent embarquer de gros réservoirs.",
+        "<em>⚠ Erreur fréquente : prendre E<sub>r</sub> = −482 kJ·mol⁻¹ comme énergie molaire de combustion de H₂ sans tenir compte du nombre stœchiométrique 2 : on obtiendrait un pouvoir calorifique deux fois trop grand (241 MJ·kg⁻¹).</em>"
+      ]
+    }
+  ]
+}

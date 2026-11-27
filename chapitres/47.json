@@ -1,0 +1,691 @@
+{
+  "id": 47,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Avancement d'une transformation",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "def",
+            "term": "Avancement x",
+            "text": "L'avancement x (en mol) d'une transformation chimique mesure sa progression au cours du temps : x = 0 à l'état initial, et x augmente au fur et à mesure que la réaction se produit."
+          },
+          {
+            "type": "text",
+            "text": "Pour une réaction a A + b B → c C + d D, les quantités de matière de chaque espèce s'expriment en fonction de x et des coefficients stœchiométriques a, b, c, d."
+          }
+        ]
+      },
+      {
+        "title": "2. Construire un tableau d'avancement",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le tableau d'avancement organise l'évolution des quantités de matière de tous les réactifs et produits, entre l'état initial (x = 0) et l'état final (x = xf), pour une réaction a A + b B → c C + d D."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "État",
+              "Avancement",
+              "aA",
+              "bB",
+              "cC",
+              "dD"
+            ],
+            "rows": [
+              [
+                "Initial",
+                "x = 0",
+                "n0(A)",
+                "n0(B)",
+                "0",
+                "0"
+              ],
+              [
+                "Final",
+                "x = xf",
+                "n0(A) − a·xf",
+                "n0(B) − b·xf",
+                "c·xf",
+                "d·xf"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Avancement maximal et réactif limitant",
+        "icon": "🎯",
+        "content": [
+          {
+            "type": "def",
+            "term": "Avancement maximal xmax",
+            "text": "L'avancement maximal xmax correspond à la disparition totale du réactif limitant : c'est la plus petite valeur de x qui annule une quantité de matière dans le tableau d'avancement."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : on fait réagir n0(Zn) = 0,10 mol de zinc avec n0(Cu²⁺) = 0,060 mol d'ions cuivre (II), selon Zn + Cu²⁺ → Zn²⁺ + Cu (transformation totale)."
+          },
+          {
+            "type": "formula",
+            "label": "Recherche du réactif limitant",
+            "text": "On compare n0(Zn)/1 = 0,10 et n0(Cu²⁺)/1 = 0,060 : Cu²⁺ est le réactif limitant, donc xmax = 0,060 mol.\nÀ l'état final : n(Zn) = 0,10 − 0,060 = 0,040 mol ; n(Cu²⁺) = 0 mol ; n(Zn²⁺) = n(Cu) = 0,060 mol."
+          }
+        ]
+      },
+      {
+        "title": "4. Transformation totale ou non totale",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Transformation totale",
+            "text": "Si l'avancement final xf est égal à l'avancement maximal xmax, la transformation est dite totale : le réactif limitant a entièrement disparu."
+          },
+          {
+            "type": "def",
+            "term": "Transformation non totale",
+            "text": "Si xf < xmax, la transformation est dite non totale : les réactifs et les produits coexistent à l'état final."
+          },
+          {
+            "type": "warn",
+            "text": "Lorsque les réactifs sont introduits dans les proportions stœchiométriques, ils disparaissent simultanément à l'état final, pour une transformation totale : on parle de mélange stœchiométrique."
+          }
+        ]
+      },
+      {
+        "title": "5. Synthèse",
+        "icon": "📋",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition / relation"
+            ],
+            "rows": [
+              [
+                "Avancement x",
+                "Progression de la réaction (mol), x = 0 à t = 0"
+              ],
+              [
+                "Avancement maximal xmax",
+                "Plus petite valeur de x qui annule une quantité de matière"
+              ],
+              [
+                "Transformation totale",
+                "xf = xmax (réactif limitant entièrement consommé)"
+              ],
+              [
+                "Transformation non totale",
+                "xf < xmax (réactifs et produits coexistent à l'état final)"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Un langage de programmation (par exemple avec la fonction min()) permet de généraliser la méthode du tableau d'avancement et de déterminer rapidement la composition de l'état final d'un système, pour n'importe quelles quantités initiales."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "L'avancement maximal xmax d'une transformation correspond :",
+      "opts": [
+        "à la disparition de tous les réactifs",
+        "à la disparition totale du réactif limitant",
+        "à la quantité initiale du réactif le plus abondant",
+        "à la somme des quantités initiales des réactifs"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "tous-reactifs-consommes",
+          "texte": "Croire que tous les réactifs disparaissent : seul le réactif limitant est épuisé, sauf mélange stœchiométrique"
+        },
+        null,
+        {
+          "code": "xmax-plus-grande-quantite",
+          "texte": "Prendre la plus grande quantité : la transformation s'arrête dès que le premier réactif est épuisé"
+        },
+        {
+          "code": "xmax-somme-quantites",
+          "texte": "Additionner les quantités des réactifs : xmax est la plus petite valeur de x qui annule une quantité de réactif"
+        }
+      ],
+      "exp": "xmax est la plus petite valeur de x qui annule la quantité d'un réactif : celui-ci, le réactif limitant, a alors entièrement disparu. Attention : l'autre réactif, en excès, n'est pas épuisé."
+    },
+    {
+      "q": "Pour 4 Al(s) + 3 O₂(g) → 2 Al₂O₃(s), on part de n₀(Al) = 0,40 mol et n₀(O₂) = 0,36 mol. Le réactif limitant est :",
+      "opts": [
+        "O₂, car sa quantité initiale est la plus petite",
+        "O₂, car son nombre stœchiométrique est le plus petit",
+        "aucun : le mélange est stœchiométrique",
+        "Al, car 0,40 / 4 est plus petit que 0,36 / 3"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "limitant-plus-petite-quantite",
+          "texte": "Désigner le réactif en plus petite quantité sans tenir compte des nombres stœchiométriques : il faut comparer n₀ / coefficient"
+        },
+        {
+          "code": "limitant-par-coefficient",
+          "texte": "Choisir le réactif selon son seul nombre stœchiométrique : il faut comparer les rapports n₀ / coefficient"
+        },
+        {
+          "code": "stoechiometrique-quantites-proches",
+          "texte": "Croire que des quantités voisines forment un mélange stœchiométrique : il faut des rapports n₀ / coefficient égaux (0,10 ≠ 0,12)"
+        },
+        null
+      ],
+      "exp": "n₀(Al) / 4 = 0,10 mol et n₀(O₂) / 3 = 0,12 mol : le plus petit rapport désigne Al, réactif limitant, bien qu'il soit introduit en plus grande quantité. Attention : on compare toujours n₀ / coefficient."
+    },
+    {
+      "q": "Pour la même transformation (4 Al + 3 O₂ → 2 Al₂O₃ ; n₀(Al) = 0,40 mol, n₀(O₂) = 0,36 mol), l'avancement maximal vaut :",
+      "opts": [
+        "0,40 mol",
+        "0,12 mol",
+        "0,10 mol",
+        "1,6 mol"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique : 0,40 − 4 xmax = 0 donne xmax = 0,40 / 4"
+        },
+        {
+          "code": "produit-avec-reactif-exces",
+          "texte": "Calculer avec le réactif en excès : 0,36 / 3 = 0,12 ; c'est la plus petite valeur (0,10) qui compte"
+        },
+        null,
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Multiplier par le nombre stœchiométrique au lieu de diviser : 0,40 × 4 = 1,6"
+        }
+      ],
+      "exp": "0,40 − 4 xmax = 0 donne 0,10 mol ; 0,36 − 3 xmax = 0 donne 0,12 mol. La plus petite valeur l'emporte : xmax = 0,10 mol. Attention : on divise n₀ par le nombre stœchiométrique."
+    },
+    {
+      "q": "Toujours pour 4 Al + 3 O₂ → 2 Al₂O₃ (n₀(O₂) = 0,36 mol, xmax = 0,10 mol, transformation totale), la quantité de O₂ restant à l'état final vaut :",
+      "opts": [
+        "0,26 mol",
+        "0,06 mol",
+        "0 mol",
+        "0,30 mol"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique : 0,36 − 0,10 ; il disparaît 3 xmax = 0,30 mol de O₂"
+        },
+        null,
+        {
+          "code": "tous-reactifs-consommes",
+          "texte": "Croire que tous les réactifs disparaissent : O₂ est en excès, il en reste à l'état final"
+        },
+        {
+          "code": "consomme-vs-restant",
+          "texte": "Confondre quantité consommée et quantité restante : 3 xmax = 0,30 mol a réagi, il reste 0,36 − 0,30"
+        }
+      ],
+      "exp": "n(O₂) final = n₀(O₂) − 3 xmax = 0,36 − 0,30 = 0,06 mol. Attention : la quantité consommée est 3 xmax, pas xmax."
+    },
+    {
+      "q": "Pour 4 Al + 3 O₂ → 2 Al₂O₃ avec xmax = 0,10 mol, la quantité d'oxyde d'aluminium Al₂O₃ formée vaut :",
+      "opts": [
+        "0,10 mol",
+        "0,050 mol",
+        "0,20 mol",
+        "0,76 mol"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique 2 du produit : n(Al₂O₃) = 2 xmax"
+        },
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Diviser par le nombre stœchiométrique au lieu de multiplier : 0,10 / 2"
+        },
+        null,
+        {
+          "code": "quantite-matiere-conservee",
+          "texte": "Croire que la quantité de matière se conserve (0,40 + 0,36) : c'est la masse qui se conserve, pas le nombre de moles"
+        }
+      ],
+      "exp": "Dans le tableau d'avancement, n(Al₂O₃) = 2 x ; à l'état final, n = 2 xmax = 0,20 mol. Attention : le nombre stœchiométrique du produit multiplie l'avancement."
+    },
+    {
+      "q": "Pour CH₄ + 2 O₂ → CO₂ + 2 H₂O, on introduit n₀(CH₄) = 0,20 mol et n₀(O₂) = 0,40 mol. Ce mélange est-il stœchiométrique ?",
+      "opts": [
+        "Non, car les deux quantités ne sont pas égales",
+        "Oui, car n₀(CH₄) / 1 = n₀(O₂) / 2",
+        "Non, O₂ est en excès car 0,40 > 0,20",
+        "Non, CH₄ est en excès car son coefficient est plus petit"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "stoechiometrique-quantites-egales",
+          "texte": "Croire qu'un mélange stœchiométrique contient des quantités égales : ce sont les rapports n₀ / coefficient qui sont égaux"
+        },
+        null,
+        {
+          "code": "limitant-plus-petite-quantite",
+          "texte": "Comparer les quantités sans les nombres stœchiométriques : il faut 2 O₂ par CH₄, soit 0,40 mol pour 0,20 mol"
+        },
+        {
+          "code": "limitant-par-coefficient",
+          "texte": "Raisonner sur le seul nombre stœchiométrique : il faut comparer les rapports n₀ / coefficient"
+        }
+      ],
+      "exp": "n₀(CH₄) / 1 = 0,20 et n₀(O₂) / 2 = 0,20 : les rapports sont égaux, le mélange est stœchiométrique ; les deux réactifs disparaissent en même temps si la transformation est totale."
+    },
+    {
+      "q": "Le calcul donne xmax = 0,040 mol, mais la mesure indique un avancement final xf = 0,031 mol. On en conclut que :",
+      "opts": [
+        "la transformation est totale",
+        "la transformation est non totale, il ne reste plus de réactifs",
+        "la transformation est non totale, réactifs et produits coexistent",
+        "c'est impossible : xf est toujours égal à xmax"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "total-non-total-inverses",
+          "texte": "Confondre totale et non totale : une transformation totale a xf = xmax ; ici xf < xmax"
+        },
+        {
+          "code": "non-totale-sans-reactifs",
+          "texte": "Croire qu'il ne reste plus de réactifs : si xf < xmax, le réactif limitant n'a pas entièrement disparu"
+        },
+        null,
+        {
+          "code": "xf-toujours-xmax",
+          "texte": "Croire que xf vaut toujours xmax : xmax est une valeur théorique ; beaucoup de transformations s'arrêtent avant"
+        }
+      ],
+      "exp": "xf < xmax : la transformation est non totale ; à l'état final, réactifs et produits coexistent. Attention : xmax n'est atteint que pour une transformation totale."
+    },
+    {
+      "q": "Pour 2 H₂ + O₂ → 2 H₂O, la quantité de dihydrogène, pour un avancement x, s'écrit :",
+      "opts": [
+        "n₀(H₂) − x",
+        "n₀(H₂) + 2 x",
+        "n₀(H₂) − 2 x",
+        "2 n₀(H₂) − x"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique : 2 moles de H₂ disparaissent quand x augmente de 1 mol"
+        },
+        {
+          "code": "signe-avancement-reactif",
+          "texte": "Ajouter au lieu de retrancher : un réactif est consommé, sa quantité diminue quand x augmente"
+        },
+        null,
+        {
+          "code": "coefficient-applique-a-n0",
+          "texte": "Multiplier la quantité initiale par le nombre stœchiométrique : le coefficient multiplie x, pas n₀"
+        }
+      ],
+      "exp": "Pour un réactif de nombre stœchiométrique a : n = n₀ − a x, ici n(H₂) = n₀(H₂) − 2 x. Attention : le coefficient multiplie l'avancement, et le signe est « − » pour un réactif."
+    },
+    {
+      "q": "Zn(s) + 2 H⁺(aq) → Zn²⁺(aq) + H₂(g), transformation totale, avec n₀(H⁺) = 1,0×10⁻² mol (H⁺ limitant). Le volume de dihydrogène formé dans les conditions usuelles (Vm = 24,0 L·mol⁻¹) vaut :",
+      "opts": [
+        "0,24 L",
+        "0,12 L",
+        "0,48 L",
+        "2,1×10⁻⁴ L"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier le nombre stœchiométrique 2 de H⁺ : xmax = 1,0×10⁻² / 2, donc n(H₂) = 5,0×10⁻³ mol"
+        },
+        null,
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Multiplier par 2 au lieu de diviser : 2 × 1,0×10⁻² × 24,0 = 0,48"
+        },
+        {
+          "code": "quotient-au-lieu-produit",
+          "texte": "Diviser au lieu de multiplier : 5,0×10⁻³ / 24,0 ; il faut V = n × Vm"
+        }
+      ],
+      "exp": "xmax = n₀(H⁺) / 2 = 5,0×10⁻³ mol, n(H₂) = xmax, donc V = n × Vm = 5,0×10⁻³ × 24,0 = 0,12 L. Attention : 2 H⁺ sont nécessaires pour former 1 H₂."
+    },
+    {
+      "q": "Un programme Python calcule xmax = min(nA / a, nB / b) pour la réaction a A + b B → produits. Pourquoi la fonction min ?",
+      "opts": [
+        "La transformation s'arrête dès qu'un réactif est épuisé",
+        "Le limitant est toujours le réactif en plus petite quantité",
+        "Le résultat donne directement la quantité de produit formé",
+        "La transformation s'arrête quand tous les réactifs sont épuisés"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "limitant-plus-petite-quantite",
+          "texte": "Croire que le limitant est le réactif en plus petite quantité : le programme compare nA / a et nB / b, pas nA et nB"
+        },
+        {
+          "code": "xmax-vs-quantite-produit",
+          "texte": "Confondre xmax et quantité de produit : un produit de coefficient c a pour quantité c × xmax"
+        },
+        {
+          "code": "tous-reactifs-consommes",
+          "texte": "Croire que tous les réactifs s'épuisent : il faudrait alors max, or la transformation s'arrête au premier réactif épuisé"
+        }
+      ],
+      "exp": "Chaque rapport n / coefficient est la valeur de x qui épuise ce réactif ; la transformation s'arrête à la première atteinte, donc à la plus petite : xmax = min(…). Attention : on compare les rapports, pas les quantités."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le bus à hydrogène",
+      "contexte": [
+        "Certains bus roulent grâce à une pile à combustible : le dihydrogène H₂ stocké dans le réservoir réagit avec le dioxygène O₂ de l'air, et le seul produit formé est de l'eau. L'équation de la réaction est : 2 H₂(g) + O₂(g) → 2 H₂O(g).",
+        "Yanis a préparé des affirmations pour réviser. Aide-le à trier le vrai du faux."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase (avec un calcul si besoin).<br>a. À l'état initial, l'avancement x de la transformation vaut 0 mol.<br>b. Avec n<sub>0</sub>(H₂) = 3,0 mol et n<sub>0</sub>(O₂) = 2,0 mol, le réactif limitant est O₂, car sa quantité de matière initiale est la plus petite.<br>c. Avec n<sub>0</sub>(H₂) = 4,0 mol et n<sub>0</sub>(O₂) = 2,0 mol, le mélange initial est stœchiométrique.<br>d. Une transformation est totale lorsque son avancement final x<sub>f</sub> est égal à son avancement maximal x<sub>max</sub>.<br>e. Si x<sub>f</sub> &lt; x<sub>max</sub>, l'état final ne contient plus que les produits de la réaction.",
+          "aides": [
+            "Pour b et c, ne compare pas directement les quantités de matière : regarde d'abord les nombres devant H₂ et O₂ dans l'équation.",
+            "Divise chaque quantité initiale par le nombre stœchiométrique du réactif ; le plus petit résultat désigne le réactif limitant."
+          ]
+        },
+        {
+          "texte": "Dans le cas de l'affirmation b, détermine x<sub>max</sub>, puis la quantité de matière d'eau formée si la transformation est totale.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : par définition, l'avancement est nul à l'état initial (aucune réaction ne s'est encore produite).",
+        "b. FAUX : il faut comparer les quantités divisées par les nombres stœchiométriques. n<sub>0</sub>(H₂)/2 = 3,0/2 = 1,5 mol et n<sub>0</sub>(O₂)/1 = 2,0 mol : le plus petit rapport est celui de H₂, c'est donc H₂ le réactif limitant.",
+        "c. VRAI : n<sub>0</sub>(H₂)/2 = 4,0/2 = 2,0 mol et n<sub>0</sub>(O₂)/1 = 2,0 mol. Les deux rapports sont égaux : les deux réactifs disparaissent en même temps si la transformation est totale.",
+        "d. VRAI : c'est la définition d'une transformation totale (le réactif limitant a entièrement disparu).",
+        "e. FAUX : si x<sub>f</sub> &lt; x<sub>max</sub>, la transformation est non totale ; à l'état final, les réactifs et les produits coexistent.",
+        "<strong>2.</strong> H₂ est limitant : x<sub>max</sub> = n<sub>0</sub>(H₂)/2 = 1,5 mol. n(H₂O) = 2·x<sub>max</sub> = 2 × 1,5 = 3,0 mol (il reste n(O₂) = 2,0 − 1,5 = 0,5 mol de dioxygène).",
+        "<em>⚠ Erreur fréquente : désigner comme limitant le réactif « en plus petite quantité » sans diviser par les nombres stœchiométriques. Ici O₂ est le moins abondant, mais il en faut deux fois moins que de H₂.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La paille de fer qui brûle",
+      "contexte": [
+        "Au laboratoire, on enflamme de la paille de fer (fils de fer très fins) dans un flacon rempli de dioxygène : elle brûle avec de vives étincelles et se transforme en un solide noir, l'oxyde de fer Fe₃O₄. On introduit n<sub>0</sub>(Fe) = 0,30 mol de fer et n<sub>0</sub>(O₂) = 0,30 mol de dioxygène. La transformation est totale.",
+        "Rappel : pour une réaction a A + b B → c C, au cours de la transformation n(A) = n<sub>0</sub>(A) − a·x, n(B) = n<sub>0</sub>(B) − b·x et n(C) = c·x."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"10\" y=\"25\" width=\"740\" height=\"60\" fill=\"#F3EEE4\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"160.0\" y=\"57\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Équation de la réaction</text><text x=\"530.0\" y=\"58\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#1F4E5A\">3 Fe(s)   +   2 O<tspan baseline-shift=\"sub\" font-size=\"14\">2</tspan>(g)   →   Fe<tspan baseline-shift=\"sub\" font-size=\"14\">3</tspan>O<tspan baseline-shift=\"sub\" font-size=\"14\">4</tspan>(s)</text><rect x=\"10\" y=\"85\" width=\"740\" height=\"65\" fill=\"#1F4E5A\"/><text x=\"80.0\" y=\"119\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#fff\">État du système</text><text x=\"230.0\" y=\"119\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#fff\">Avancement (mol)</text><text x=\"385.0\" y=\"119\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#fff\">n(Fe) (mol)</text><text x=\"535.0\" y=\"119\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#fff\">n(O₂) (mol)</text><text x=\"680.0\" y=\"119\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#fff\">n(Fe₃O₄) (mol)</text><text x=\"80.0\" y=\"208.5\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Initial</text><text x=\"230.0\" y=\"208.5\" text-anchor=\"middle\">x = 0</text><text x=\"385.0\" y=\"208.5\" text-anchor=\"middle\" font-size=\"18\" fill=\"#000\">0,30</text><text x=\"535.0\" y=\"208.5\" text-anchor=\"middle\" font-size=\"18\" fill=\"#000\">0,30</text><text x=\"680.0\" y=\"208.5\" text-anchor=\"middle\" font-size=\"18\" fill=\"#000\">0</text><text x=\"80.0\" y=\"311.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">En cours</text><text x=\"230.0\" y=\"311.0\" text-anchor=\"middle\">x</text><text x=\"385.0\" y=\"311.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#8a8170\">…………</text><text x=\"535.0\" y=\"311.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#8a8170\">…………</text><text x=\"680.0\" y=\"311.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#8a8170\">…………</text><text x=\"80.0\" y=\"411.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Final</text><text x=\"230.0\" y=\"411.0\" text-anchor=\"middle\">x = x<tspan baseline-shift=\"sub\" font-size=\"13\">max</tspan></text><text x=\"385.0\" y=\"411.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#8a8170\">…………</text><text x=\"535.0\" y=\"411.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#8a8170\">…………</text><text x=\"680.0\" y=\"411.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#8a8170\">…………</text><line x1=\"10\" y1=\"85\" x2=\"750\" y2=\"85\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"10\" y1=\"150\" x2=\"750\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"10\" y1=\"255\" x2=\"750\" y2=\"255\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"10\" y1=\"355\" x2=\"750\" y2=\"355\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"10\" y1=\"455\" x2=\"750\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"10\" y1=\"85\" x2=\"10\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"85\" x2=\"150\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"310\" y1=\"85\" x2=\"310\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"460\" y1=\"85\" x2=\"460\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"610\" y1=\"85\" x2=\"610\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"750\" y1=\"85\" x2=\"750\" y2=\"455\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/></svg>",
+      "questions": [
+        {
+          "texte": "Recopie le tableau d'avancement ci-dessus et complète la ligne « En cours » avec des expressions en fonction de x.",
+          "aides": []
+        },
+        {
+          "texte": "On cherche l'avancement maximal.<br>a. Si le fer était le réactif limitant, quelle serait la valeur de x qui annule n(Fe) ?<br>b. Si le dioxygène était le réactif limitant, quelle serait la valeur de x qui annule n(O₂) ?<br>c. Déduis-en x<sub>max</sub> et le réactif limitant.",
+          "aides": [
+            "Si un réactif est limitant, sa quantité de matière est nulle à l'état final : écris n(Fe) = 0 avec l'expression de la ligne « En cours ».",
+            "Résous 0,30 − 3x = 0, puis 0,30 − 2x = 0. Le système s'arrête dès qu'un réactif est épuisé : laquelle des deux valeurs est atteinte en premier ?"
+          ]
+        },
+        {
+          "texte": "Les quantités initiales de fer et de dioxygène sont égales. Explique pourquoi ils ne disparaissent pourtant pas en même temps.",
+          "aides": []
+        },
+        {
+          "texte": "Complète la ligne « Final » du tableau.",
+          "aides": []
+        },
+        {
+          "texte": "Vérifie que la masse totale du système se conserve (m = n × M ; M(O₂) = 32,0 g·mol⁻¹ ; M(Fe₃O₄) = 231,4 g·mol⁻¹).",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> En cours : n(Fe) = 0,30 − 3x ; n(O₂) = 0,30 − 2x ; n(Fe₃O₄) = x.",
+        "<strong>2.</strong> a. 0,30 − 3x = 0 donne x = 0,30/3 = 0,10 mol.",
+        "b. 0,30 − 2x = 0 donne x = 0,30/2 = 0,15 mol.",
+        "c. x<sub>max</sub> est la plus petite des deux valeurs : x<sub>max</sub> = 0,10 mol. Le fer est le réactif limitant.",
+        "<strong>3.</strong> L'équation indique qu'il faut 3 mol de fer pour 2 mol de dioxygène : le fer est consommé 1,5 fois plus vite que le dioxygène. À quantités initiales égales, il s'épuise donc le premier.",
+        "<strong>4.</strong> Final (x<sub>max</sub> = 0,10 mol) : n(Fe) = 0,30 − 3 × 0,10 = 0 mol ; n(O₂) = 0,30 − 2 × 0,10 = 0,10 mol ; n(Fe₃O₄) = 0,10 mol.",
+        "<strong>5.</strong> État initial : m = 0,30 × 55,8 + 0,30 × 32,0 = 16,7 + 9,60 = 26,3 g. État final : m = 0,10 × 32,0 + 0,10 × 231,4 = 3,20 + 23,1 = 26,3 g. La masse totale est conservée (les atomes sont conservés au cours de la transformation).",
+        "<em>⚠ Erreur fréquente : écrire n(Fe) = 0,30 − x en oubliant le nombre stœchiométrique 3 devant Fe.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "La flamme de la gazinière",
+      "contexte": [
+        "Le gaz de ville qui alimente une gazinière est essentiellement du méthane CH₄. Sa combustion complète a pour équation : CH₄(g) + 2 O₂(g) → CO₂(g) + 2 H₂O(g).",
+        "Un logiciel a représenté l'évolution des quantités de matière des quatre espèces en fonction de l'avancement x, pour un mélange initial donné (graphique ci-dessous). Les droites sont notées D1 à D4."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"145.0\" y1=\"20\" x2=\"145.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.0\" y=\"422\" text-anchor=\"middle\">0,05</text><line x1=\"210.0\" y1=\"20\" x2=\"210.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"210.0\" y=\"422\" text-anchor=\"middle\">0,1</text><line x1=\"275.0\" y1=\"20\" x2=\"275.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"275.0\" y=\"422\" text-anchor=\"middle\">0,15</text><line x1=\"340.0\" y1=\"20\" x2=\"340.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"340.0\" y=\"422\" text-anchor=\"middle\">0,2</text><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"405.0\" y=\"422\" text-anchor=\"middle\">0,25</text><line x1=\"470.0\" y1=\"20\" x2=\"470.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"470.0\" y=\"422\" text-anchor=\"middle\">0,3</text><line x1=\"535.0\" y1=\"20\" x2=\"535.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"535.0\" y=\"422\" text-anchor=\"middle\">0,35</text><line x1=\"600.0\" y1=\"20\" x2=\"600.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"600.0\" y=\"422\" text-anchor=\"middle\">0,4</text><line x1=\"665.0\" y1=\"20\" x2=\"665.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"665.0\" y=\"422\" text-anchor=\"middle\">0,45</text><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">0,5</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"357.8\" x2=\"730\" y2=\"357.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"362.8\" text-anchor=\"end\">0,1</text><line x1=\"80\" y1=\"315.6\" x2=\"730\" y2=\"315.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"320.6\" text-anchor=\"end\">0,2</text><line x1=\"80\" y1=\"273.3\" x2=\"730\" y2=\"273.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"278.3\" text-anchor=\"end\">0,3</text><line x1=\"80\" y1=\"231.1\" x2=\"730\" y2=\"231.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"236.1\" text-anchor=\"end\">0,4</text><line x1=\"80\" y1=\"188.9\" x2=\"730\" y2=\"188.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"193.9\" text-anchor=\"end\">0,5</text><line x1=\"80\" y1=\"146.7\" x2=\"730\" y2=\"146.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"151.7\" text-anchor=\"end\">0,6</text><line x1=\"80\" y1=\"104.4\" x2=\"730\" y2=\"104.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"109.4\" text-anchor=\"end\">0,7</text><line x1=\"80\" y1=\"62.2\" x2=\"730\" y2=\"62.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"67.2\" text-anchor=\"end\">0,8</text><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">0,9</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">avancement x (mol)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">quantité de matière n (mol)</text><line x1=\"80.0\" y1=\"62.2\" x2=\"600.0\" y2=\"400.0\" stroke=\"#B5523B\" stroke-width=\"3.2\"/><circle cx=\"600.0\" cy=\"400.0\" r=\"5\" fill=\"#B5523B\"/><text x=\"612.0\" y=\"396.0\" font-weight=\"bold\" font-size=\"18\" fill=\"#B5523B\">D1</text><line x1=\"80.0\" y1=\"400.0\" x2=\"600.0\" y2=\"62.2\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><circle cx=\"600.0\" cy=\"62.2\" r=\"5\" fill=\"#1F4E5A\"/><text x=\"612.0\" y=\"68.2\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">D2</text><line x1=\"80.0\" y1=\"188.9\" x2=\"600.0\" y2=\"357.8\" stroke=\"#C8962E\" stroke-width=\"3.2\"/><circle cx=\"600.0\" cy=\"357.8\" r=\"5\" fill=\"#C8962E\"/><text x=\"612.0\" y=\"363.8\" font-weight=\"bold\" font-size=\"18\" fill=\"#C8962E\">D3</text><line x1=\"80.0\" y1=\"400.0\" x2=\"600.0\" y2=\"231.1\" stroke=\"#3a3a3a\" stroke-width=\"3.2\"/><circle cx=\"600.0\" cy=\"231.1\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"612.0\" y=\"237.1\" font-weight=\"bold\" font-size=\"18\" fill=\"#3a3a3a\">D4</text><text x=\"652.0\" y=\"138.2\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">les droites s'arrêtent</text><text x=\"652.0\" y=\"158.2\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">à l'état final</text></svg>",
+      "questions": [
+        {
+          "texte": "Quelles droites représentent des réactifs ? des produits ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque droite à une espèce chimique, en t'aidant de la valeur de x = 0 et de la pente de chaque droite.",
+          "aides": [
+            "Une droite qui descend représente un réactif ; une droite qui monte, un produit.",
+            "Pour O₂ : n = n<sub>0</sub>(O₂) − 2x ; pour CH₄ : n = n<sub>0</sub>(CH₄) − x. Quelle droite descend le plus vite ?",
+            "Même raisonnement pour les produits : n(H₂O) = 2x et n(CO₂) = x."
+          ]
+        },
+        {
+          "texte": "Lis les quantités de matière initiales de méthane et de dioxygène.",
+          "aides": []
+        },
+        {
+          "texte": "Quel est le réactif limitant ? Lis la valeur de x<sub>max</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Donne la composition du système à l'état final.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle quantité de dioxygène aurait-il fallu introduire, avec la même quantité de méthane, pour que le mélange soit stœchiométrique ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> D1 et D3 décroissent : ce sont des réactifs (ils sont consommés). D2 et D4 partent de 0 et croissent : ce sont des produits (ils sont formés).",
+        "<strong>2.</strong> Réactifs : n(O₂) = n<sub>0</sub>(O₂) − 2x diminue deux fois plus vite que n(CH₄) = n<sub>0</sub>(CH₄) − x. D1 (pente la plus forte, −2) correspond à O₂ et D3 (pente −1) à CH₄. Produits : n(H₂O) = 2x croît deux fois plus vite que n(CO₂) = x : D2 correspond à H₂O et D4 à CO₂.",
+        "<strong>3.</strong> À x = 0 : n<sub>0</sub>(CH₄) = 0,50 mol (D3) et n<sub>0</sub>(O₂) = 0,80 mol (D1).",
+        "<strong>4.</strong> C'est la droite D1 (O₂) qui atteint 0 : le dioxygène est le réactif limitant. Les droites s'arrêtent à x<sub>max</sub> = 0,40 mol (vérification : 0,80/2 = 0,40 mol &lt; 0,50/1 = 0,50 mol).",
+        "<strong>5.</strong> À x = x<sub>max</sub> = 0,40 mol : n(CH₄) = 0,10 mol ; n(O₂) = 0 mol ; n(CO₂) = 0,40 mol ; n(H₂O) = 0,80 mol.",
+        "<strong>6.</strong> Mélange stœchiométrique : n<sub>0</sub>(O₂)/2 = n<sub>0</sub>(CH₄)/1, donc n<sub>0</sub>(O₂) = 2 × 0,50 = 1,00 mol.",
+        "<em>⚠ Erreur fréquente : croire que le réactif limitant est celui dont la droite part le plus bas (ici CH₄, 0,50 mol). C'est celui dont la droite atteint zéro en premier.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Gonfler un ballon sans souffler",
+      "contexte": [
+        "Inès verse 50,0 mL de vinaigre blanc dans une petite bouteille. Elle place 3,50 g de bicarbonate de soude (hydrogénocarbonate de sodium NaHCO₃) dans un ballon de baudruche, fixe le ballon sur le goulot, puis le redresse : le bicarbonate tombe dans le vinaigre, une vive effervescence se produit et le ballon gonfle.",
+        "Le vinaigre utilisé contient de l'acide éthanoïque CH₃COOH à la concentration c = 1,00 mol·L⁻¹. Le bicarbonate se dissout en ions Na⁺ et HCO₃⁻, et l'équation de la réaction est : HCO₃⁻(aq) + CH₃COOH(aq) → CH₃COO⁻(aq) + CO₂(g) + H₂O(ℓ)."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule les quantités de matière initiales d'ions hydrogénocarbonate HCO₃⁻ et d'acide éthanoïque.",
+          "aides": [
+            "Le bicarbonate est un solide : on connaît sa masse. Le vinaigre est une solution : on connaît sa concentration et son volume.",
+            "Utilise n = m / M pour le solide (calcule d'abord M(NaHCO₃)) et n = c × V pour la solution (V en litres)."
+          ]
+        },
+        {
+          "texte": "Établis le tableau d'avancement, puis détermine le réactif limitant et l'avancement maximal.",
+          "aides": []
+        },
+        {
+          "texte": "En supposant la transformation totale, donne la composition du système à l'état final (sans tenir compte de l'eau, qui est le solvant). N'oublie pas les ions Na⁺.",
+          "aides": []
+        },
+        {
+          "texte": "Quel volume de dioxyde de carbone devrait-on recueillir ?",
+          "aides": [
+            "D'après l'équation, quelle quantité de CO₂ est formée quand x = x<sub>max</sub> ?",
+            "Pour un gaz : V = n × V<sub>m</sub>."
+          ]
+        },
+        {
+          "texte": "Inès estime le volume de gaz recueilli dans le ballon : V = 0,96 L. Déduis-en l'avancement final x<sub>f</sub>, compare-le à x<sub>max</sub> et calcule l'écart relatif. La transformation peut-elle être considérée comme totale ? Propose une explication de l'écart.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle masse de bicarbonate aurait-il fallu utiliser pour réaliser un mélange stœchiométrique avec les 50,0 mL de vinaigre ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(NaHCO₃) = 23,0 + 1,0 + 12,0 + 3 × 16,0 = 84,0 g·mol⁻¹. n<sub>0</sub>(HCO₃⁻) = n(NaHCO₃) = m / M = 3,50 / 84,0 = 4,17 × 10⁻² mol. n<sub>0</sub>(CH₃COOH) = c × V = 1,00 × 50,0 × 10⁻³ = 5,00 × 10⁻² mol.",
+        "<strong>2.</strong> Tableau (en mol) : état initial (x = 0) : 4,17 × 10⁻² ; 5,00 × 10⁻² ; 0 ; 0. En cours : 4,17 × 10⁻² − x ; 5,00 × 10⁻² − x ; x ; x. Les nombres stœchiométriques valent tous 1 : on compare 4,17 × 10⁻² et 5,00 × 10⁻². Le réactif limitant est l'ion HCO₃⁻ et x<sub>max</sub> = 4,17 × 10⁻² mol.",
+        "<strong>3.</strong> État final (x = x<sub>max</sub>) : n(HCO₃⁻) = 0 mol ; n(CH₃COOH) = 5,00 × 10⁻² − 4,17 × 10⁻² = 8,3 × 10⁻³ mol ; n(CH₃COO⁻) = n(CO₂) = 4,17 × 10⁻² mol ; n(Na⁺) = 4,17 × 10⁻² mol (ion spectateur, sa quantité ne change pas).",
+        "<strong>4.</strong> n(CO₂) = x<sub>max</sub>, donc V(CO₂) = x<sub>max</sub> × V<sub>m</sub> = 4,17 × 10⁻² × 24,0 = 1,00 L.",
+        "<strong>5.</strong> x<sub>f</sub> = V / V<sub>m</sub> = 0,96 / 24,0 = 4,0 × 10⁻² mol, légèrement inférieur à x<sub>max</sub> = 4,17 × 10⁻² mol. Écart relatif = (1,00 − 0,96) / 1,00 = 4 %. L'écart est faible : on peut considérer la transformation comme totale. Explications possibles : une partie du CO₂ reste dissoute dans la solution, l'estimation du volume du ballon est imprécise.",
+        "<strong>6.</strong> Mélange stœchiométrique : n(HCO₃⁻) = n<sub>0</sub>(CH₃COOH) = 5,00 × 10⁻² mol, soit m = 5,00 × 10⁻² × 84,0 = 4,20 g de bicarbonate.",
+        "<em>⚠ Erreur fréquente : comparer les masses au lieu des quantités de matière. Il y a 3,50 g de bicarbonate et seulement 3,0 g d'acide éthanoïque (5,00 × 10⁻² × 60,0), et pourtant c'est le bicarbonate qui est limitant.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "L'arôme de banane",
+      "contexte": [
+        "L'arôme de banane utilisé dans les bonbons est souvent de l'éthanoate de 3-méthylbutyle, C₇H₁₄O₂, que l'on peut synthétiser au lycée. Un élève mélange V<sub>1</sub> = 10,0 mL d'acide éthanoïque C₂H₄O₂ (masse volumique 1,05 g·mL⁻¹) et V<sub>2</sub> = 15,0 mL de 3-méthylbutan-1-ol C₅H₁₂O (masse volumique 0,810 g·mL⁻¹), puis chauffe à reflux pendant une heure.",
+        "Équation de la réaction : C₂H₄O₂(ℓ) + C₅H₁₂O(ℓ) → C₇H₁₄O₂(ℓ) + H₂O(ℓ).",
+        "Après traitement, il mesure la masse d'arôme formé : m = 12,5 g. On admet que toute la quantité d'ester formée a été récupérée."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule les masses molaires des trois espèces organiques, puis les quantités de matière initiales des deux réactifs.",
+          "aides": [
+            "Pour un liquide, on connaît le volume : passe par la masse avec m = ρ × V.",
+            "Puis n = m / M. Calcule M à partir des masses molaires atomiques de l'encadré « Données »."
+          ]
+        },
+        {
+          "texte": "Détermine le réactif limitant et l'avancement maximal x<sub>max</sub>. Quelle masse d'ester obtiendrait-on si la transformation était totale ?",
+          "aides": []
+        },
+        {
+          "texte": "Déduis de la mesure l'avancement final x<sub>f</sub>. La transformation est-elle totale ? Exprime x<sub>f</sub> en pourcentage de x<sub>max</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la composition du système à l'état final.",
+          "aides": [
+            "La transformation n'est pas totale : quelle valeur de l'avancement faut-il utiliser dans le tableau à l'état final ?",
+            "Remplace x par x<sub>f</sub> dans chaque expression de la ligne « En cours » : n(acide) = n<sub>0</sub>(acide) − x<sub>f</sub>, etc."
+          ]
+        },
+        {
+          "texte": "À la fin de la synthèse, le mélange sent encore le vinaigre. Un camarade affirme : « C'est parce que l'acide était en excès. Avec un mélange stœchiométrique, il ne resterait plus du tout d'acide à la fin. » Discute son affirmation.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(C₂H₄O₂) = 2 × 12,0 + 4 × 1,0 + 2 × 16,0 = 60,0 g·mol⁻¹ ; M(C₅H₁₂O) = 5 × 12,0 + 12 × 1,0 + 16,0 = 88,0 g·mol⁻¹ ; M(C₇H₁₄O₂) = 7 × 12,0 + 14 × 1,0 + 2 × 16,0 = 130,0 g·mol⁻¹. Acide : m = ρ × V = 1,05 × 10,0 = 10,5 g, n<sub>0</sub> = 10,5 / 60,0 = 0,175 mol. Alcool : m = 0,810 × 15,0 = 12,2 g (12,15), n<sub>0</sub> = 12,15 / 88,0 = 0,138 mol.",
+        "<strong>2.</strong> Les nombres stœchiométriques valent 1 : le réactif limitant est l'alcool et x<sub>max</sub> = 0,138 mol. Masse maximale d'ester : m<sub>max</sub> = x<sub>max</sub> × M = 0,138 × 130,0 = 17,9 g.",
+        "<strong>3.</strong> n(ester) = x<sub>f</sub> = m / M = 12,5 / 130,0 = 9,62 × 10⁻² mol. x<sub>f</sub> &lt; x<sub>max</sub> : la transformation est non totale. x<sub>f</sub> / x<sub>max</sub> = 0,0962 / 0,138 = 0,70, soit 70 % (ce rapport est le rendement de la synthèse, notion du chapitre Synthèse d'espèces chimiques organiques).",
+        "<strong>4.</strong> On utilise x<sub>f</sub> (et non x<sub>max</sub>) : n(acide) = 0,175 − 0,0962 = 7,9 × 10⁻² mol ; n(alcool) = 0,138 − 0,0962 = 4,2 × 10⁻² mol ; n(ester) = n(eau) = 9,6 × 10⁻² mol. Réactifs et produits coexistent, ce qui est caractéristique d'une transformation non totale.",
+        "<strong>5.</strong> La première phrase est en partie juste : l'acide en excès ne peut pas disparaître entièrement (il en reste 7,9 × 10⁻² mol). La seconde est fausse : la transformation est non totale (x<sub>f</sub> &lt; x<sub>max</sub>), donc même le réactif limitant ne disparaît pas entièrement. Avec un mélange stœchiométrique, il resterait encore de l'acide et de l'alcool à l'état final, et l'odeur de vinaigre persisterait.",
+        "<em>⚠ Erreur fréquente : calculer la composition finale avec x<sub>max</sub> alors que la transformation est non totale. On trouverait n(alcool) = 0 mol, ce qui est contredit par l'expérience.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Graver son propre circuit imprimé",
+      "contexte": [
+        "Doc. 1 — La gravure. Au club électronique du lycée, Amine fabrique un circuit imprimé : une plaque isolante de 10,0 cm × 16,0 cm, recouverte d'une couche de cuivre d'épaisseur e = 35 µm. Les pistes du circuit sont protégées par un vernis ; le reste du cuivre, soit 65 % de la surface, doit être dissous dans une solution de chlorure de fer(III) contenant des ions Fe³⁺ à la concentration c = 1,50 mol·L⁻¹. Équation de la réaction, supposée totale : Cu(s) + 2 Fe³⁺(aq) → Cu²⁺(aq) + 2 Fe²⁺(aq). Données : masse volumique du cuivre ρ = 8,96 g·cm⁻³ ; 1 µm = 10⁻⁴ cm. La notice indique : « pour une plaque de ce format, prévoir 100 mL de solution ».",
+        "Doc. 2 — Quantités finales de cuivre et d'ions Fe³⁺ en fonction du volume V de solution utilisé (figure ci-dessous), tracées à partir des valeurs calculées par le script du doc. 3, avec un pas de 1 mL.",
+        "Doc. 3 — Script Python incomplet (sous la figure) qui calcule la composition de l'état final pour différents volumes de solution."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"422\" text-anchor=\"middle\">0</text><line x1=\"134.2\" y1=\"20\" x2=\"134.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"134.2\" y=\"422\" text-anchor=\"middle\">10</text><line x1=\"188.3\" y1=\"20\" x2=\"188.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"188.3\" y=\"422\" text-anchor=\"middle\">20</text><line x1=\"242.5\" y1=\"20\" x2=\"242.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"242.5\" y=\"422\" text-anchor=\"middle\">30</text><line x1=\"296.7\" y1=\"20\" x2=\"296.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"296.7\" y=\"422\" text-anchor=\"middle\">40</text><line x1=\"350.8\" y1=\"20\" x2=\"350.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"350.8\" y=\"422\" text-anchor=\"middle\">50</text><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"405.0\" y=\"422\" text-anchor=\"middle\">60</text><line x1=\"459.2\" y1=\"20\" x2=\"459.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"459.2\" y=\"422\" text-anchor=\"middle\">70</text><line x1=\"513.3\" y1=\"20\" x2=\"513.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"513.3\" y=\"422\" text-anchor=\"middle\">80</text><line x1=\"567.5\" y1=\"20\" x2=\"567.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"567.5\" y=\"422\" text-anchor=\"middle\">90</text><line x1=\"621.7\" y1=\"20\" x2=\"621.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"621.7\" y=\"422\" text-anchor=\"middle\">100</text><line x1=\"675.8\" y1=\"20\" x2=\"675.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"675.8\" y=\"422\" text-anchor=\"middle\">110</text><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"730.0\" y=\"422\" text-anchor=\"middle\">120</text><line x1=\"80\" y1=\"400.0\" x2=\"730\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"405.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"352.5\" x2=\"730\" y2=\"352.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"357.5\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"305.0\" x2=\"730\" y2=\"305.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"310.0\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"257.5\" x2=\"730\" y2=\"257.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"262.5\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"210.0\" x2=\"730\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"215.0\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"162.5\" x2=\"730\" y2=\"162.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"167.5\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"115.0\" x2=\"730\" y2=\"115.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"120.0\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"67.5\" x2=\"730\" y2=\"67.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"72.5\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">80</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"450\" text-anchor=\"middle\" font-weight=\"bold\">volume V de solution de chlorure de fer(III) (mL)</text><text transform=\"translate(22,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">quantité finale n (mmol)</text><polyline points=\"80.0,155.9 85.4,159.4 90.8,163.0 96.2,166.5 101.7,170.1 107.1,173.7 112.5,177.2 117.9,180.8 123.3,184.3 128.8,187.9 134.2,191.5 139.6,195.0 145.0,198.6 150.4,202.2 155.8,205.7 161.2,209.3 166.7,212.8 172.1,216.4 177.5,220.0 182.9,223.5 188.3,227.1 193.8,230.7 199.2,234.2 204.6,237.8 210.0,241.3 215.4,244.9 220.8,248.5 226.2,252.0 231.7,255.6 237.1,259.2 242.5,262.7 247.9,266.3 253.3,269.9 258.8,273.4 264.2,277.0 269.6,280.5 275.0,284.1 280.4,287.7 285.8,291.2 291.2,294.8 296.7,298.4 302.1,301.9 307.5,305.5 312.9,309.0 318.3,312.6 323.8,316.2 329.2,319.7 334.6,323.3 340.0,326.9 345.4,330.4 350.8,334.0 356.2,337.5 361.7,341.1 367.1,344.7 372.5,348.2 377.9,351.8 383.3,355.4 388.8,358.9 394.2,362.5 399.6,366.0 405.0,369.6 410.4,373.2 415.8,376.7 421.2,380.3 426.7,383.9 432.1,387.4 437.5,391.0 442.9,394.5 448.3,398.1 453.7,400.0 459.2,400.0 464.6,400.0 470.0,400.0 475.4,400.0 480.8,400.0 486.2,400.0 491.7,400.0 497.1,400.0 502.5,400.0 507.9,400.0 513.3,400.0 518.8,400.0 524.2,400.0 529.6,400.0 535.0,400.0 540.4,400.0 545.8,400.0 551.2,400.0 556.7,400.0 562.1,400.0 567.5,400.0 572.9,400.0 578.3,400.0 583.8,400.0 589.2,400.0 594.6,400.0 600.0,400.0 605.4,400.0 610.8,400.0 616.2,400.0 621.7,400.0 627.1,400.0 632.5,400.0 637.9,400.0 643.3,400.0 648.8,400.0 654.2,400.0 659.6,400.0 665.0,400.0 670.4,400.0 675.8,400.0 681.2,400.0 686.7,400.0 692.1,400.0 697.5,400.0 702.9,400.0 708.3,400.0 713.8,400.0 719.2,400.0 724.6,400.0 730.0,400.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><polyline points=\"80.0,400.0 85.4,400.0 90.8,400.0 96.2,400.0 101.7,400.0 107.1,400.0 112.5,400.0 117.9,400.0 123.3,400.0 128.8,400.0 134.2,400.0 139.6,400.0 145.0,400.0 150.4,400.0 155.8,400.0 161.2,400.0 166.7,400.0 172.1,400.0 177.5,400.0 182.9,400.0 188.3,400.0 193.8,400.0 199.2,400.0 204.6,400.0 210.0,400.0 215.4,400.0 220.8,400.0 226.2,400.0 231.7,400.0 237.1,400.0 242.5,400.0 247.9,400.0 253.3,400.0 258.8,400.0 264.2,400.0 269.6,400.0 275.0,400.0 280.4,400.0 285.8,400.0 291.2,400.0 296.7,400.0 302.1,400.0 307.5,400.0 312.9,400.0 318.3,400.0 323.8,400.0 329.2,400.0 334.6,400.0 340.0,400.0 345.4,400.0 350.8,400.0 356.2,400.0 361.7,400.0 367.1,400.0 372.5,400.0 377.9,400.0 383.3,400.0 388.8,400.0 394.2,400.0 399.6,400.0 405.0,400.0 410.4,400.0 415.8,400.0 421.2,400.0 426.7,400.0 432.1,400.0 437.5,400.0 442.9,400.0 448.3,400.0 453.7,396.7 459.2,389.6 464.6,382.4 470.0,375.3 475.4,368.2 480.8,361.1 486.2,353.9 491.7,346.8 497.1,339.7 502.5,332.5 507.9,325.4 513.3,318.3 518.8,311.2 524.2,304.1 529.6,296.9 535.0,289.8 540.4,282.7 545.8,275.6 551.2,268.4 556.7,261.3 562.1,254.2 567.5,247.0 572.9,239.9 578.3,232.8 583.8,225.7 589.2,218.5 594.6,211.4 600.0,204.3 605.4,197.2 610.8,190.1 616.2,182.9 621.7,175.8 627.1,168.7 632.5,161.6 637.9,154.4 643.3,147.3 648.8,140.2 654.2,133.1 659.6,125.9 665.0,118.8 670.4,111.7 675.8,104.5 681.2,97.4 686.7,90.3 692.1,83.2 697.5,76.0 702.9,68.9 708.3,61.8 713.8,54.7 719.2,47.6 724.6,40.4 730.0,33.3\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.2\" stroke-dasharray=\"9 5\"/><rect x=\"200.0\" y=\"17.0\" width=\"330\" height=\"62\" fill=\"#fff\" stroke=\"#d9d2c5\"/><line x1=\"210.0\" y1=\"33.0\" x2=\"250.0\" y2=\"33.0\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><text x=\"260.0\" y=\"38.0\">cuivre Cu restant</text><line x1=\"210.0\" y1=\"61.0\" x2=\"250.0\" y2=\"61.0\" stroke=\"#B5523B\" stroke-width=\"3.2\" stroke-dasharray=\"9 5\"/><text x=\"260.0\" y=\"66.0\">ions Fe³⁺ restants</text></svg>",
+      "code": [
+        "c = 1.50          # concentration en ions Fe3+ (mol/L)",
+        "nCu0 = 0.0514     # quantité de cuivre à graver (mol)",
+        "for V in range(0, 130, 10):          # volume de solution (mL)",
+        "    nFe0 = c * V * 1e-3              # ions Fe3+ apportés (mol)",
+        "    xmax = ...                       # ligne A, à compléter",
+        "    nCu = nCu0 - xmax                # cuivre restant (mol)",
+        "    nFe3 = ...                       # ligne B, à compléter",
+        "    nCu2 = xmax                      # ions Cu2+ formés (mol)",
+        "    nFe2 = ...                       # ligne C, à compléter",
+        "    print(V, round(nCu, 4), round(nFe3, 4), round(nCu2, 4), round(nFe2, 4))"
+      ],
+      "questions": [
+        {
+          "texte": "Montre que la quantité de matière de cuivre à dissoudre est n<sub>0</sub>(Cu) ≈ 5,14 × 10⁻² mol.",
+          "aides": [
+            "Chaîne de calcul : surface → volume de cuivre → volume à dissoudre → masse → quantité de matière.",
+            "Volume d'une couche = surface × épaisseur, avec l'épaisseur convertie en cm : 35 µm = 35 × 10⁻⁴ cm.",
+            "Puis m = ρ × V (V en cm³) et n = m / M(Cu)."
+          ]
+        },
+        {
+          "texte": "Amine ne dispose que de V = 50,0 mL de solution. Détermine le réactif limitant et l'avancement maximal. La plaque sera-t-elle entièrement gravée ? Si non, quelle masse de cuivre restera-t-il ?",
+          "aides": [
+            "Calcule d'abord n<sub>0</sub>(Fe³⁺) avec n = c × V.",
+            "Compare n<sub>0</sub>(Cu)/1 et n<sub>0</sub>(Fe³⁺)/2 : attention au nombre stœchiométrique 2 devant Fe³⁺."
+          ]
+        },
+        {
+          "texte": "Exploitation du script (doc. 3).<br>a. Complète les lignes A, B et C.<br>b. Quels sont les cinq nombres affichés pour V = 50 ? Vérifie la cohérence avec la question 2.",
+          "aides": [
+            "La ligne A doit traduire la recherche de l'avancement maximal : la plus petite des valeurs de x qui annulent un réactif.",
+            "Pour les lignes B et C, écris n(Fe³⁺) et n(Fe²⁺) en fonction de x avec le tableau d'avancement, puis remplace x par xmax."
+          ]
+        },
+        {
+          "texte": "Exploitation du graphique (doc. 2).<br>a. Explique pourquoi chaque courbe est formée de deux segments de droite.<br>b. Lis le volume minimal V<sub>min</sub> de solution qui permet de dissoudre tout le cuivre, puis retrouve-le par le calcul.",
+          "aides": [
+            "Avant le changement de pente, quel réactif est épuisé ? Et après ?",
+            "Le volume minimal correspond au mélange stœchiométrique : n<sub>0</sub>(Fe³⁺)/2 = n<sub>0</sub>(Cu)."
+          ]
+        },
+        {
+          "texte": "La notice recommande 100 mL de solution. Détermine la composition finale du système dans ce cas, puis rédige un avis argumenté : cette recommandation est-elle justifiée ? Tu pourras discuter les limites des données du doc. 1 et le devenir de la solution usagée.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Surface : S = 10,0 × 16,0 = 160 cm². Volume de cuivre : 160 × 35 × 10⁻⁴ = 0,560 cm³, dont 65 % à dissoudre : 0,65 × 0,560 = 0,364 cm³. Masse : m = ρ × V = 8,96 × 0,364 = 3,26 g. n<sub>0</sub>(Cu) = m / M = 3,26 / 63,5 = 5,14 × 10⁻² mol.",
+        "<strong>2.</strong> n<sub>0</sub>(Fe³⁺) = c × V = 1,50 × 50,0 × 10⁻³ = 7,50 × 10⁻² mol. Hypothèses : n<sub>0</sub>(Cu)/1 = 5,14 × 10⁻² mol ; n<sub>0</sub>(Fe³⁺)/2 = 3,75 × 10⁻² mol. Le plus petit rapport est celui de Fe³⁺ : les ions Fe³⁺ sont limitants et x<sub>max</sub> = 3,75 × 10⁻² mol. Cuivre restant : n(Cu) = 5,14 × 10⁻² − 3,75 × 10⁻² = 1,39 × 10⁻² mol, soit m = 1,39 × 10⁻² × 63,5 = 0,88 g (27 % du cuivre à dissoudre) : la plaque ne sera pas entièrement gravée.",
+        "<strong>3.</strong> a. Ligne A : xmax = min(nCu0 / 1, nFe0 / 2) ; ligne B : nFe3 = nFe0 - 2 * xmax ; ligne C : nFe2 = 2 * xmax. (La fonction min() donne la plus petite des deux valeurs possibles de x, c'est-à-dire x<sub>max</sub>.)",
+        "b. Le script affiche cinq nombres (avec des points décimaux, comme toujours en Python), soit 50 ; 0,0139 ; 0,0 ; 0,0375 ; 0,075 : V = 50 mL ; n(Cu) = 1,39 × 10⁻² mol ; n(Fe³⁺) = 0 mol ; n(Cu²⁺) = 3,75 × 10⁻² mol ; n(Fe²⁺) = 7,50 × 10⁻² mol. On retrouve les résultats de la question 2 (Fe³⁺ limitant, cuivre restant).",
+        "<strong>4.</strong> a. Pour les petits volumes, Fe³⁺ est limitant : il n'en reste pas, et la quantité de cuivre restant diminue proportionnellement au volume versé (n(Cu) = n<sub>0</sub>(Cu) − c·V/2). Au-delà d'un certain volume, c'est le cuivre qui est limitant : il n'en reste plus, et les ions Fe³⁺ en excès s'accumulent proportionnellement au volume (n(Fe³⁺) = c·V − 2 n<sub>0</sub>(Cu)). Le changement de pente correspond au mélange stœchiométrique.",
+        "b. Lecture : les deux courbes touchent l'axe des abscisses pour V<sub>min</sub> ≈ 68 à 69 mL. Calcul : mélange stœchiométrique pour n<sub>0</sub>(Fe³⁺)/2 = n<sub>0</sub>(Cu), soit c × V<sub>min</sub> = 2 n<sub>0</sub>(Cu) et V<sub>min</sub> = 2 × 5,14 × 10⁻² / 1,50 = 6,85 × 10⁻² L = 68,5 mL.",
+        "<strong>5.</strong> Avec V = 100 mL : n<sub>0</sub>(Fe³⁺) = 1,50 × 0,100 = 0,150 mol ; n<sub>0</sub>(Fe³⁺)/2 = 7,50 × 10⁻² mol &gt; 5,14 × 10⁻² mol : le cuivre est limitant et x<sub>max</sub> = 5,14 × 10⁻² mol. État final : n(Cu) = 0 mol ; n(Fe³⁺) = 0,150 − 2 × 5,14 × 10⁻² = 4,72 × 10⁻² mol ; n(Cu²⁺) = 5,14 × 10⁻² mol ; n(Fe²⁺) = 0,103 mol.",
+        "Éléments attendus pour l'avis : 100 mL représentent environ 1,5 fois V<sub>min</sub> (100 / 68,5 = 1,46). Cet excès est justifié pour être sûr que le cuivre soit le réactif limitant et disparaisse entièrement (sinon, des courts-circuits entre pistes), car les données du doc. 1 sont approximatives : épaisseur de cuivre et pourcentage de surface à graver estimés, concentration de la solution qui diminue si elle a déjà servi ; le modèle suppose aussi la transformation totale. En revanche, il reste près de 5 × 10⁻² mol d'ions Fe³⁺ et on a formé des ions Cu²⁺, toxiques pour les organismes aquatiques : la solution usagée ne doit pas être jetée à l'évier, mais récupérée (ou réutilisée pour une autre plaque, ce qui est possible tant qu'il reste des ions Fe³⁺).",
+        "<em>⚠ Erreur fréquente : conclure à la question 2 que le cuivre est limitant parce que n<sub>0</sub>(Cu) = 5,14 × 10⁻² mol &lt; n<sub>0</sub>(Fe³⁺) = 7,50 × 10⁻² mol, en oubliant le nombre stœchiométrique 2 devant Fe³⁺.</em>"
+      ]
+    }
+  ]
+}

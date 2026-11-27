@@ -1,0 +1,751 @@
+{
+  "id": 39,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Espèces naturelles, synthétiques et artificielles",
+        "icon": "🌿",
+        "content": [
+          {
+            "type": "def",
+            "term": "Espèce naturelle",
+            "text": "Espèce chimique préexistant dans la nature (végétaux, animaux, minéraux) et que l'on peut en extraire par une technique d'extraction (macération, hydrodistillation, expression à froid...)."
+          },
+          {
+            "type": "def",
+            "term": "Espèce synthétique",
+            "text": "Espèce chimique fabriquée par l'être humain en laboratoire, mais qui existe aussi dans la nature : elle est identique à l'espèce naturelle correspondante (même formule chimique, même structure)."
+          },
+          {
+            "type": "def",
+            "term": "Espèce artificielle",
+            "text": "Espèce chimique fabriquée par l'être humain en laboratoire et qui n'existe pas dans la nature (aucun équivalent naturel connu)."
+          },
+          {
+            "type": "warn",
+            "text": "Une espèce synthétique et l'espèce naturelle correspondante ont exactement les mêmes propriétés physiques et chimiques, car ce sont rigoureusement la même molécule : seule leur origine (naturelle ou fabriquée en laboratoire) diffère."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Critère",
+              "Espèce naturelle",
+              "Espèce synthétique"
+            ],
+            "rows": [
+              [
+                "Origine",
+                "Extraite d'un organisme vivant",
+                "Fabriquée en laboratoire"
+              ],
+              [
+                "Propriétés physico-chimiques",
+                "Identiques",
+                "Identiques (même molécule)"
+              ],
+              [
+                "Coût de production",
+                "Souvent élevé (extraction longue)",
+                "Souvent plus faible"
+              ],
+              [
+                "Quantité disponible",
+                "Limitée par la ressource naturelle",
+                "Peut être produite en grande quantité"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Protocole de synthèse organique",
+        "icon": "⚗️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Chauffage à reflux",
+            "text": "Montage permettant de chauffer un mélange réactionnel pour accélérer la réaction chimique, sans perte de matière : les vapeurs qui s'échappent sont condensées par un réfrigérant (à eau ou à boules) et retombent en gouttes liquides dans le ballon."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Élément du montage",
+              "Rôle"
+            ],
+            "rows": [
+              [
+                "Ballon",
+                "Contient le mélange réactionnel chauffé"
+              ],
+              [
+                "Chauffe-ballon",
+                "Apporte la chaleur nécessaire à la réaction"
+              ],
+              [
+                "Réfrigérant (à eau)",
+                "Condense les vapeurs qui s'échappent (évite les pertes de matière)"
+              ],
+              [
+                "Pierre ponce (ou grains de pierre ponce)",
+                "Régularise l'ébullition et évite les projections (ébullition brutale)"
+              ],
+              [
+                "Support élévateur",
+                "Permet d'écarter rapidement le chauffe-ballon en cas de besoin"
+              ]
+            ]
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 380\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"eauArrowL39\" markerWidth=\"7\" markerHeight=\"7\" refX=\"2\" refY=\"3.5\" orient=\"auto\"><path d=\"M7,0 L0,3.5 L7,7 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"eauArrowR39\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#3E7DBF\"/></marker></defs><line x1=\"280\" y1=\"20\" x2=\"280\" y2=\"360\" stroke=\"#1B2420\" stroke-width=\"3\"/><line x1=\"280\" y1=\"110\" x2=\"225\" y2=\"110\" stroke=\"#1B2420\" stroke-width=\"4\"/><rect x=\"205\" y=\"100\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"90\" y=\"60\" width=\"40\" height=\"140\" rx=\"6\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"110\" y1=\"45\" x2=\"110\" y2=\"215\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"140\" y1=\"185\" x2=\"133\" y2=\"185\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#eauArrowL39)\"/><text x=\"144\" y=\"189\" font-size=\"10\" fill=\"#3E7DBF\">eau</text><line x1=\"133\" y1=\"75\" x2=\"140\" y2=\"75\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#eauArrowR39)\"/><text x=\"144\" y=\"79\" font-size=\"10\" fill=\"#3E7DBF\">eau</text><text x=\"135\" y=\"50\" font-size=\"11\" fill=\"#5C6B60\">Réfrigérant</text><rect x=\"103\" y=\"210\" width=\"14\" height=\"35\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><circle cx=\"110\" cy=\"300\" r=\"55\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><path d=\"M62,315 Q110,300 158,315 L158,340 Q110,355 62,340 Z\" fill=\"#3E7DBF\" fill-opacity=\"0.3\"/><circle cx=\"95\" cy=\"325\" r=\"3\" fill=\"#5C6B60\"/><circle cx=\"120\" cy=\"330\" r=\"3\" fill=\"#5C6B60\"/><text x=\"172\" y=\"300\" font-size=\"11\" fill=\"#5C6B60\">Ballon</text><rect x=\"60\" y=\"350\" width=\"100\" height=\"25\" rx=\"8\" fill=\"#B9C0AC\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><text x=\"172\" y=\"366\" font-size=\"11\" fill=\"#5C6B60\">Chauffe-ballon</text></svg>",
+            "caption": "Montage à reflux : les vapeurs qui s'échappent du ballon chauffé sont condensées par le réfrigérant (refroidi par une circulation d'eau à contre-courant) et retombent dans le ballon, sans perte de matière."
+          },
+          {
+            "type": "def",
+            "term": "Extraction liquide-liquide",
+            "text": "Technique utilisant une ampoule à décanter pour isoler l'espèce chimique synthétisée du reste du mélange réactionnel, à l'aide d'un solvant extracteur non miscible avec l'eau, dans lequel l'espèce recherchée est plus soluble."
+          },
+          {
+            "type": "def",
+            "term": "Filtration sous vide (filtration Büchner)",
+            "text": "Technique permettant de séparer rapidement un solide d'un liquide à l'aide d'un entonnoir Büchner relié à une trompe à eau (ou une pompe) qui crée une dépression : elle est plus rapide qu'une filtration simple."
+          },
+          {
+            "type": "def",
+            "term": "Chromatographie sur couche mince (CCM)",
+            "text": "Technique permettant de vérifier la pureté d'une espèce synthétisée et de l'identifier, en comparant sa migration (son rapport frontal Rf) sur une plaque à celle d'espèces de référence."
+          },
+          {
+            "type": "warn",
+            "text": "Si le produit synthétisé est pur et identique à l'espèce de référence, la CCM ne révèle qu'une seule tache, à la même hauteur (même Rf) que la référence déposée sur la même plaque."
+          }
+        ]
+      },
+      {
+        "title": "3. Exemple : la synthèse de l'acétate de linalyle",
+        "icon": "🌸",
+        "content": [
+          {
+            "type": "text",
+            "text": "L'acétate de linalyle est la molécule responsable de l'odeur caractéristique de la lavande. Elle peut être extraite des fleurs de lavande (espèce naturelle) ou synthétisée au laboratoire à partir de linalol et d'acide éthanoïque (acide acétique)."
+          },
+          {
+            "type": "formula",
+            "label": "Réaction de synthèse (estérification)",
+            "text": "Linalol + Acide éthanoïque  →  Acétate de linalyle + Eau\n(catalyseur : acide sulfurique, chauffage à reflux)"
+          },
+          {
+            "type": "text",
+            "text": "Protocole résumé : 1) chauffage à reflux du linalol, de l'acide éthanoïque et du catalyseur ; 2) extraction liquide-liquide du produit formé à l'aide d'un solvant extracteur ; 3) éventuelle filtration sous vide si un solide se forme ; 4) contrôle de la pureté et de l'identité du produit par CCM, en comparant la tache obtenue à celle d'un échantillon d'acétate de linalyle naturel (extrait de lavande) et à celle d'une référence commerciale."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Dépôt sur la plaque CCM",
+              "Résultat attendu"
+            ],
+            "rows": [
+              [
+                "Extrait naturel de lavande",
+                "Tache au Rf de l'acétate de linalyle (+ autres taches, mélange complexe)"
+              ],
+              [
+                "Produit de synthèse",
+                "Tache unique, au même Rf que la référence"
+              ],
+              [
+                "Référence (acétate de linalyle pur)",
+                "Tache unique de comparaison"
+              ]
+            ]
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"20\" width=\"240\" height=\"245\" fill=\"#FAFAF5\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"40\" y1=\"250\" x2=\"280\" y2=\"250\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"4\" y=\"254\" font-size=\"9\" fill=\"#5C6B60\">Dépôt</text><line x1=\"40\" y1=\"50\" x2=\"280\" y2=\"50\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"178\" y=\"44\" font-size=\"9\" fill=\"#5C6B60\">Front de l'éluant</text><line x1=\"70\" y1=\"130\" x2=\"260\" y2=\"130\" stroke=\"#2F7D75\" stroke-width=\"1\" stroke-dasharray=\"2 2\" opacity=\"0.5\"/><circle cx=\"90\" cy=\"130\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"90\" cy=\"190\" r=\"6\" fill=\"#1B2420\"/><circle cx=\"90\" cy=\"90\" r=\"6\" fill=\"#1B2420\"/><circle cx=\"165\" cy=\"130\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"240\" cy=\"130\" r=\"6\" fill=\"#2F7D75\"/><text x=\"90\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Extrait naturel</text><text x=\"165\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Synthèse</text><text x=\"240\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Référence</text></svg>",
+            "caption": "Chromatogramme comparatif : l'extrait naturel de lavande révèle plusieurs taches (mélange complexe), dont une (en vert) à la même hauteur — donc au même Rf — que la tache unique du produit de synthèse et de la référence commerciale, confirmant la présence d'acétate de linalyle dans les trois dépôts."
+          }
+        ]
+      },
+      {
+        "title": "4. Comparaison chiffrée naturel / synthétique",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Acétate de linalyle naturel (extrait)",
+              "Acétate de linalyle synthétisé"
+            ],
+            "rows": [
+              [
+                "Formule chimique",
+                "C₁₂H₂₀O₂",
+                "C₁₂H₂₀O₂ (identique)"
+              ],
+              [
+                "Odeur",
+                "Florale, lavande",
+                "Florale, lavande (identique)"
+              ],
+              [
+                "Masse obtenue pour 1 kg de matière première",
+                "Quelques grammes (rendement d'extraction faible)",
+                "Plusieurs dizaines de grammes (meilleur rendement)"
+              ],
+              [
+                "Coût de production",
+                "Élevé",
+                "Plus faible"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Cette comparaison explique pourquoi de nombreux arômes et parfums utilisés dans l'industrie sont aujourd'hui synthétisés plutôt qu'extraits : le produit obtenu est chimiquement identique, mais la production est moins coûteuse et plus abondante."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La vanilline fabriquée en usine est identique à celle contenue dans les gousses de vanille. Cette vanilline d'usine est une espèce :",
+      "opts": [
+        "artificielle",
+        "synthétique",
+        "naturelle, puisqu'elle existe dans la nature",
+        "imitée, aux propriétés un peu différentes"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "synthetique-vs-artificielle",
+          "texte": "Confondre synthétique et artificielle : une espèce artificielle n'existe pas dans la nature, la vanilline si"
+        },
+        null,
+        {
+          "code": "origine-ignoree",
+          "texte": "Oublier l'origine : on dit « naturelle » pour une espèce extraite de la nature, pas fabriquée en usine"
+        },
+        {
+          "code": "naturel-different-synthetique",
+          "texte": "Croire qu'une espèce synthétique diffère de l'espèce naturelle : c'est la même molécule, aux mêmes propriétés"
+        }
+      ],
+      "exp": "Fabriquée par l'être humain mais existant aussi dans la nature : c'est une espèce synthétique, identique à l'espèce naturelle. Une espèce artificielle, elle, n'existe pas dans la nature."
+    },
+    {
+      "q": "On compare l'acétate de linalyle pur extrait de la lavande et celui synthétisé au laboratoire. Ils ont :",
+      "opts": [
+        "les mêmes propriétés : c'est la même molécule",
+        "des propriétés différentes : le naturel est plus sain",
+        "des odeurs différentes, car l'un est « chimique »",
+        "des formules différentes, mais la même odeur"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "naturel-plus-sain",
+          "texte": "Croire qu'une molécule naturelle est meilleure que la même molécule synthétisée : ce sont exactement les mêmes molécules"
+        },
+        {
+          "code": "naturel-vs-chimique",
+          "texte": "Opposer « naturel » et « chimique » : toute matière est faite d'espèces chimiques, naturelles ou non"
+        },
+        {
+          "code": "meme-espece-formule-differente",
+          "texte": "Croire que deux espèces identiques peuvent avoir des formules différentes : même espèce = même formule = mêmes propriétés"
+        }
+      ],
+      "exp": "L'espèce synthétique est rigoureusement la même molécule (C₁₂H₂₀O₂) que l'espèce naturelle : mêmes propriétés physiques et chimiques. Seule l'origine diffère."
+    },
+    {
+      "q": "Le chauffage à reflux permet :",
+      "opts": [
+        "de refroidir le mélange pour qu'il ne bouille pas",
+        "de séparer le produit formé par distillation",
+        "de chauffer pour accélérer la réaction, sans perte de matière",
+        "d'obtenir un produit différent de celui obtenu à froid"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "reflux-refroidit-melange",
+          "texte": "Croire que le réfrigérant refroidit le mélange : il condense seulement les vapeurs, le mélange reste chaud"
+        },
+        {
+          "code": "reflux-vs-distillation",
+          "texte": "Confondre reflux et distillation : au reflux, les vapeurs condensées retombent dans le ballon"
+        },
+        null,
+        {
+          "code": "facteur-cinetique-etat-final",
+          "texte": "Croire que chauffer change les produits : la température accélère la réaction, elle ne change pas ce qui se forme"
+        }
+      ],
+      "exp": "On chauffe pour accélérer la transformation ; le réfrigérant condense les vapeurs, qui retombent dans le ballon : aucune perte de matière. Attention : le produit formé est le même qu'à froid, il se forme plus vite."
+    },
+    {
+      "q": "Dans le réfrigérant à eau d'un montage à reflux, l'eau froide doit :",
+      "opts": [
+        "entrer par le haut, pour couler plus facilement",
+        "entrer par le bas et sortir par le haut",
+        "entrer dans le ballon pour refroidir le mélange",
+        "circuler dans n'importe quel sens"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "sens-eau-refrigerant",
+          "texte": "Faire entrer l'eau par le haut : le réfrigérant se viderait en partie ; l'eau entre par le bas pour le remplir entièrement"
+        },
+        null,
+        {
+          "code": "refrigerant-eau-dans-ballon",
+          "texte": "Croire que l'eau du réfrigérant va dans le ballon : elle circule dans une enveloppe séparée, sans toucher le mélange"
+        },
+        {
+          "code": "sens-eau-sans-importance",
+          "texte": "Croire que le sens de circulation n'a pas d'importance : par le haut, le réfrigérant ne serait pas rempli d'eau"
+        }
+      ],
+      "exp": "L'eau entre par le bas et sort par le haut : le réfrigérant reste plein d'eau froide et condense efficacement les vapeurs. Attention : elle ne se mélange jamais au contenu du ballon."
+    },
+    {
+      "q": "Pourquoi ne faut-il jamais boucher le haut du réfrigérant d'un montage à reflux ?",
+      "opts": [
+        "pour que les vapeurs puissent s'échapper du montage",
+        "parce que la pression augmenterait dans le montage chauffé",
+        "pour pouvoir ajouter des réactifs pendant la réaction",
+        "pour que l'eau de refroidissement puisse entrer"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "reflux-laisse-echapper",
+          "texte": "Croire que les vapeurs doivent s'échapper : elles sont condensées et retombent dans le ballon"
+        },
+        null,
+        {
+          "code": "ajout-pendant-reflux",
+          "texte": "Croire que le haut ouvert sert à ajouter des réactifs : il sert à éviter une surpression"
+        },
+        {
+          "code": "refrigerant-eau-dans-ballon",
+          "texte": "Croire que l'eau du réfrigérant passe par le haut ouvert : elle circule dans une enveloppe séparée"
+        }
+      ],
+      "exp": "Un montage fermé et chauffé verrait sa pression augmenter, avec un risque d'explosion. Le haut reste ouvert ; les vapeurs, condensées, ne s'échappent pas pour autant."
+    },
+    {
+      "q": "Dans un montage à reflux, on ajoute quelques grains de pierre ponce dans le ballon pour :",
+      "opts": [
+        "régulariser l'ébullition",
+        "catalyser la réaction",
+        "condenser les vapeurs",
+        "absorber l'eau formée"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "pierre-ponce-catalyseur",
+          "texte": "Croire que la pierre ponce est un catalyseur : elle ne participe pas à la réaction, elle évite l'ébullition brutale"
+        },
+        {
+          "code": "role-refrigerant-confondu",
+          "texte": "Confondre avec le rôle du réfrigérant, qui condense les vapeurs"
+        },
+        {
+          "code": "pierre-ponce-dessechant",
+          "texte": "Croire que la pierre ponce absorbe l'eau : elle sert seulement à régulariser l'ébullition"
+        }
+      ],
+      "exp": "La pierre ponce, poreuse, permet une ébullition régulière et évite les projections de liquide bouillant. Elle ne réagit pas."
+    },
+    {
+      "q": "Dans un protocole de synthèse, l'extraction liquide-liquide sert à :",
+      "opts": [
+        "transformer les réactifs en produit",
+        "identifier le produit obtenu",
+        "accélérer la transformation",
+        "séparer le produit du reste du mélange"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "etapes-synthese-confondues",
+          "texte": "Confondre les étapes : la transformation a lieu dans le ballon, l'extraction vient après"
+        },
+        {
+          "code": "isolement-vs-analyse",
+          "texte": "Confondre isolement et analyse : l'identification se fait ensuite, par exemple par CCM"
+        },
+        {
+          "code": "extraction-accelere",
+          "texte": "Croire que l'extraction agit sur la vitesse de réaction : elle sert seulement à isoler le produit"
+        },
+        null
+      ],
+      "exp": "Les étapes d'une synthèse : transformation (reflux), isolement (extraction, filtration), purification, puis analyse (CCM). L'extraction isole le produit du mélange réactionnel."
+    },
+    {
+      "q": "Pour extraire un produit d'une solution aqueuse, le solvant extracteur doit être :",
+      "opts": [
+        "miscible à l'eau, pour bien se mélanger",
+        "non miscible à l'eau, le produit y étant très soluble",
+        "plus dense que l'eau, sinon l'extraction échoue",
+        "non miscible à l'eau, le produit y étant peu soluble"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "solvant-miscible",
+          "texte": "Choisir un solvant miscible : on n'obtiendrait qu'une phase, impossible à séparer dans l'ampoule à décanter"
+        },
+        null,
+        {
+          "code": "solvant-densite-obligatoire",
+          "texte": "Croire que le solvant doit être plus dense : sa densité dit seulement si sa phase est en haut ou en bas"
+        },
+        {
+          "code": "solubilite-inversee",
+          "texte": "Inverser le critère : le produit doit être très soluble dans le solvant extracteur pour passer dans sa phase"
+        }
+      ],
+      "exp": "Le solvant doit former une phase séparée (non miscible) et bien dissoudre le produit. Sa densité indique seulement s'il sera en haut ou en bas de l'ampoule."
+    },
+    {
+      "q": "CCM : l'extrait naturel de lavande donne trois taches ; le produit de synthèse, une seule tache, à la hauteur de la référence d'acétate de linalyle. On peut conclure que :",
+      "opts": [
+        "le produit de synthèse est impur, car il ne donne pas les trois taches de l'extrait naturel",
+        "l'extrait naturel ne contient pas d'acétate de linalyle, puisqu'il donne plusieurs taches",
+        "le produit de synthèse est probablement de l'acétate de linalyle pur",
+        "le produit de synthèse est une autre espèce, puisqu'il a été fabriqué"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "naturel-reference-purete",
+          "texte": "Prendre l'extrait naturel pour la référence de pureté : c'est un mélange de plusieurs espèces"
+        },
+        {
+          "code": "melange-exclut-espece",
+          "texte": "Croire qu'un mélange ne peut pas contenir l'espèce cherchée : une de ses taches est à la hauteur de la référence"
+        },
+        null,
+        {
+          "code": "naturel-different-synthetique",
+          "texte": "Croire qu'une espèce synthétique diffère de l'espèce naturelle : même Rf que la référence, c'est probablement la même molécule"
+        }
+      ],
+      "exp": "Une seule tache, au même Rf que la référence : le produit est probablement pur et identique à la référence. L'extrait naturel, mélange, contient aussi cette espèce (une tache à la même hauteur)."
+    },
+    {
+      "q": "À la fin d'une synthèse, le produit est un solide dispersé dans un liquide. Pour le récupérer rapidement, on utilise :",
+      "opts": [
+        "une ampoule à décanter",
+        "une filtration sous vide (Büchner)",
+        "une évaporation complète du liquide",
+        "un chauffage à reflux"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "decantation-vs-filtration",
+          "texte": "Utiliser l'ampoule à décanter, qui sépare deux liquides non miscibles, pas un solide d'un liquide"
+        },
+        null,
+        {
+          "code": "evaporation-recupere-impuretes",
+          "texte": "Évaporer tout le liquide : les espèces dissoutes resteraient mélangées au solide"
+        },
+        {
+          "code": "reflux-vs-separation",
+          "texte": "Croire que le reflux sépare : il sert à réaliser la transformation, pas à isoler le produit"
+        }
+      ],
+      "exp": "La filtration sous vide sépare rapidement un solide d'un liquide. L'ampoule à décanter sert à séparer deux liquides non miscibles."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Vanille, aspartame, lavande : d'où viennent ces espèces ?",
+      "contexte": [
+        "En préparant un gâteau, Maëlys lit les étiquettes de la cuisine et de la salle de bain. Elle relève sept espèces chimiques :",
+        "(a) la vanilline extraite de gousses de vanille de Madagascar ; (b) la vanilline fabriquée en usine à partir de dérivés du pétrole, présente dans le sucre « arôme vanille » ; (c) l'aspartame des sodas « zéro », une molécule inventée en laboratoire et qu'on n'a jamais trouvée dans la nature ; (d) l'acide citrique extrait du jus de citron ; (e) l'acétate de linalyle fabriqué au laboratoire à partir de linalol (c'est la molécule qui donne son odeur à la lavande) ; (f) le nylon des cordes de sa guitare, qui n'existe pas dans la nature ; (g) le menthol obtenu en refroidissant l'huile essentielle de menthe."
+      ],
+      "questions": [
+        {
+          "texte": "Classe les espèces (a) à (g) en trois catégories : espèce naturelle, espèce synthétique, espèce artificielle.",
+          "aides": [
+            "Pose-toi deux questions pour chaque espèce : existe-t-elle dans la nature ? A-t-elle été extraite d'un être vivant ou fabriquée par l'être humain ?",
+            "Une espèce fabriquée qui existe aussi dans la nature est synthétique ; une espèce fabriquée sans équivalent naturel est artificielle."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse.<br>a. « La vanilline (b) n'a pas la même formule chimique que la vanilline (a). »<br>b. « La vanilline (a) et la vanilline (b) fondent à la même température. »<br>c. « Un extrait de gousse de vanille a exactement la même odeur que la vanilline de synthèse pure. »<br>d. « Une espèce artificielle peut être extraite d'une plante. »",
+          "aides": []
+        },
+        {
+          "texte": "Les gousses de vanille séchées contiennent environ 2 % en masse de vanilline. Formule utile : m(vanilline) = (2 / 100) × m(gousses). Quelle masse de vanilline peut-on extraire, au mieux, de 1 kg de gousses ? Quelle masse de gousses faudrait-il pour obtenir 1 kg de vanilline ?",
+          "aides": [
+            "Remplace m(gousses) par 1 000 g dans la formule.",
+            "Pour la deuxième partie, demande-toi combien de fois 1 kg de vanilline contient la masse que tu viens de trouver."
+          ]
+        },
+        {
+          "texte": "La plus grande partie de la vanilline utilisée dans le monde est fabriquée en usine. Donne deux raisons qui l'expliquent.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Espèces naturelles (présentes dans la nature et extraites d'un être vivant) : (a) vanilline des gousses, (d) acide citrique du citron, (g) menthol de la menthe. Espèces synthétiques (fabriquées par l'être humain mais existant aussi dans la nature) : (b) vanilline d'usine, (e) acétate de linalyle de laboratoire. Espèces artificielles (fabriquées et sans équivalent dans la nature) : (c) aspartame, (f) nylon.",
+        "<em>⚠ Erreur fréquente : classer la vanilline d'usine parmi les espèces artificielles parce qu'elle est fabriquée. Elle existe aussi dans la gousse : c'est une espèce synthétique.</em>",
+        "<strong>2.</strong> a. Faux : c'est la même espèce chimique (même molécule, même formule C₈H₈O₃) ; seule l'origine change.",
+        "b. Vrai : une espèce synthétique et l'espèce naturelle correspondante ont exactement les mêmes propriétés physiques (température de fusion, masse volumique…) et chimiques.",
+        "c. Faux : l'extrait de gousse est un mélange de très nombreuses espèces chimiques (la vanilline et beaucoup d'autres) ; son odeur est donc plus complexe que celle de la vanilline pure. La vanilline, elle, est la même dans les deux cas.",
+        "d. Faux : une espèce artificielle n'existe pas dans la nature, on ne peut donc pas l'extraire d'une plante.",
+        "<strong>3.</strong> m(vanilline) = (2 / 100) × 1 000 g = 20 g de vanilline (au mieux) pour 1 kg de gousses. Pour 1 kg = 1 000 g de vanilline, il faut 1 000 / 20 = 50 fois plus de gousses, soit 50 kg de gousses.",
+        "<strong>4.</strong> La synthèse coûte beaucoup moins cher qu'une extraction longue à partir de gousses rares, et elle permet de produire de grandes quantités, sans être limitée par la récolte. Le produit obtenu est la même molécule."
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le montage de chauffage à reflux",
+      "contexte": [
+        "Pour synthétiser un arôme au laboratoire, Kenza réalise le montage ci-dessous. Les tuyaux d'eau sont branchés au réfrigérant en A et en B, mais elle ne sait plus dans quel sens faire circuler l'eau."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\">Montage de chauffage à reflux</text><rect x=\"150\" y=\"452\" width=\"160\" height=\"10\" fill=\"#d9d2c5\" stroke=\"#3a3a3a\"/><line x1=\"200\" y1=\"452\" x2=\"200\" y2=\"50\" stroke=\"#777\" stroke-width=\"6\"/><line x1=\"200\" y1=\"150\" x2=\"356\" y2=\"150\" stroke=\"#777\" stroke-width=\"4\"/><line x1=\"200\" y1=\"262\" x2=\"368\" y2=\"262\" stroke=\"#777\" stroke-width=\"4\"/><rect x=\"352\" y=\"70\" width=\"56\" height=\"165\" rx=\"10\" fill=\"#cfe0e3\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"371\" y=\"44\" width=\"18\" height=\"215\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M408,212 L480,212 M408,226 L480,226\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M408,80 L480,80 M408,94 L480,94\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"492\" y=\"226\" font-weight=\"bold\" font-size=\"20\" fill=\"#1F4E5A\">A</text><text x=\"492\" y=\"94\" font-weight=\"bold\" font-size=\"20\" fill=\"#1F4E5A\">B</text><text x=\"362\" y=\"58\" text-anchor=\"end\" font-size=\"14\">haut ouvert</text><defs><clipPath id=\"ex2ballon\"><circle cx=\"380\" cy=\"320\" r=\"55\"/></clipPath></defs><rect x=\"324\" y=\"318\" width=\"112\" height=\"60\" fill=\"#f3e2b8\" clip-path=\"url(#ex2ballon)\"/><path d=\"M371,259 L371,266 A55,55 0 1 0 389,266 L389,259\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><line x1=\"324\" y1=\"318\" x2=\"436\" y2=\"318\" stroke=\"#C8962E\" stroke-width=\"1.5\"/><polygon points=\"351,352 356,347 362,351 359,357 353,356\" fill=\"#8a8a8a\"/><polygon points=\"373,360 378,355 384,359 381,365 375,364\" fill=\"#8a8a8a\"/><polygon points=\"395,349 400,344 406,348 403,354 397,353\" fill=\"#8a8a8a\"/><polygon points=\"363,340 368,335 374,339 371,345 365,344\" fill=\"#8a8a8a\"/><path d=\"M300,330 L300,412 L460,412 L460,330 L446,330 A66,66 0 0 1 314,330 Z\" fill=\"#C8962E\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"310\" y=\"412\" width=\"140\" height=\"40\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M318,418 L442,446 M318,446 L442,418\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"270\" y1=\"120\" x2=\"352\" y2=\"120\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"120\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"270\" y=\"126\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">1</text><line x1=\"270\" y1=\"300\" x2=\"326\" y2=\"300\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"270\" cy=\"300\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"270\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">2</text><line x1=\"600\" y1=\"300\" x2=\"402\" y2=\"348\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"300\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">3</text><line x1=\"600\" y1=\"380\" x2=\"460\" y2=\"380\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"380\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"386\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">4</text><line x1=\"600\" y1=\"440\" x2=\"450\" y2=\"440\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"440\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"446\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">5</text></svg>",
+      "questions": [
+        {
+          "texte": "Légende le schéma : associe chaque numéro (1 à 5) à l'un des éléments suivants : ballon ; support élévateur ; réfrigérant à eau ; chauffe-ballon ; grains de pierre ponce.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque élément à son rôle : (R1) apporter la chaleur nécessaire à la réaction ; (R2) condenser les vapeurs qui s'échappent ; (R3) régulariser l'ébullition et éviter les projections ; (R4) écarter rapidement le chauffage en cas de problème ; (R5) contenir le mélange réactionnel.",
+          "aides": []
+        },
+        {
+          "texte": "L'eau froide doit-elle entrer dans le réfrigérant par A ou par B ? Justifie.",
+          "aides": [
+            "L'eau qui entre par le haut du manchon peut-elle le remplir entièrement ? Où s'écoulerait-elle ?",
+            "Les vapeurs montent dans le tube central : l'eau froide doit circuler en sens inverse (à contre-courant) pour les refroidir au mieux."
+          ]
+        },
+        {
+          "texte": "Le haut du réfrigérant est ouvert. Pourquoi ne faut-il surtout pas le boucher ?",
+          "aides": [
+            "Que produit le mélange quand on le chauffe ? Que se passe-t-il quand un gaz est enfermé et chauffé ?",
+            "Pense à une cocotte-minute sans soupape."
+          ]
+        },
+        {
+          "texte": "Kenza demande : « Pourquoi ne pas chauffer simplement le mélange dans un bécher ? » Donne-lui deux raisons d'utiliser un montage à reflux.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : réfrigérant à eau ; 2 : ballon ; 3 : grains de pierre ponce ; 4 : chauffe-ballon ; 5 : support élévateur.",
+        "<strong>2.</strong> Chauffe-ballon : R1. Réfrigérant : R2. Pierre ponce : R3. Support élévateur : R4. Ballon : R5.",
+        "<strong>3.</strong> Par A, en bas : l'eau remplit alors complètement le manchon du réfrigérant avant de ressortir en B, en haut. Elle circule de bas en haut, à contre-courant des vapeurs qui montent : le refroidissement est le plus efficace possible.",
+        "<em>⚠ Erreur fréquente : faire entrer l'eau par le haut. Elle s'écoulerait directement vers la sortie du bas sans remplir le manchon : les vapeurs ne seraient pas bien condensées.</em>",
+        "<strong>4.</strong> En chauffant, le mélange produit des vapeurs et la pression augmente. Si le montage était fermé, la pression monterait jusqu'à faire sauter le bouchon ou éclater la verrerie (risque d'explosion et de projections).",
+        "<strong>5.</strong> Le chauffage accélère la réaction chimique. Le réfrigérant condense les vapeurs qui retombent dans le ballon : on chauffe sans perdre de matière (réactifs ou produit), alors que dans un bécher ouvert les vapeurs s'échapperaient. En plus, ces vapeurs (souvent inflammables, irritantes ou nocives) ne se répandent pas dans la salle."
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le parfum de jasmin : étapes d'un protocole et sécurité",
+      "contexte": [
+        "L'acétate de benzyle est présent dans le parfum des fleurs de jasmin. On peut le synthétiser au laboratoire en faisant réagir de l'alcool benzylique avec de l'acide éthanoïque ; l'acide sulfurique sert de catalyseur. Il se forme aussi de l'eau.",
+        "Doc. 1 — Protocole. (1) Dans un ballon, introduire 10 mL d'alcool benzylique, 15 mL d'acide éthanoïque, 1 mL d'acide sulfurique concentré et quelques grains de pierre ponce. (2) Chauffer à reflux pendant 30 minutes. (3) Après refroidissement, verser le mélange dans une ampoule à décanter contenant de l'eau salée froide ; agiter, laisser décanter et garder la phase organique, qui contient l'acétate de benzyle. (4) Laver cette phase avec une solution d'hydrogénocarbonate de sodium pour éliminer l'acide restant. (5) Sécher la phase organique avec du sulfate de magnésium anhydre (un solide qui capte l'eau), puis filtrer. (6) Réaliser une CCM du liquide obtenu, à côté d'un échantillon d'acétate de benzyle pur.",
+        "Doc. 2 — Pictogrammes de danger sur les flacons. Acide sulfurique concentré : « corrosion ». Acide éthanoïque pur : « flamme » et « corrosion ». Alcool benzylique : « point d'exclamation »."
+      ],
+      "questions": [
+        {
+          "texte": "Complète la phrase avec le bon vocabulaire : « Dans l'équation de la transformation, l'alcool benzylique et l'acide éthanoïque sont les ………, l'acétate de benzyle et l'eau sont les ……… et l'acide sulfurique est un ……… . »",
+          "aides": []
+        },
+        {
+          "texte": "Une synthèse comporte quatre étapes : transformation des réactifs, isolement du produit, purification du produit, analyse du produit. Range les étapes (1) à (6) du doc. 1 dans ces quatre catégories.",
+          "aides": [
+            "Transformation : on fait réagir. Isolement : on sépare le produit du mélange réactionnel. Purification : on enlève les impuretés restées avec le produit. Analyse : on vérifie ce qu'on a obtenu.",
+            "Les étapes (4) et (5) travaillent sur la phase organique déjà séparée à l'étape (3)."
+          ]
+        },
+        {
+          "texte": "Associe chaque pictogramme du doc. 2 à sa signification : inflammable ; corrosif (brûle la peau et les yeux) ; nocif ou irritant.",
+          "aides": []
+        },
+        {
+          "texte": "Cite trois précautions que Kenza doit prendre pendant ce TP.",
+          "aides": [
+            "Aide-toi des pictogrammes : quelles parties du corps faut-il protéger d'une espèce corrosive ?",
+            "Une espèce inflammable ne doit pas approcher d'une flamme ; des vapeurs irritantes se manipulent sous la hotte."
+          ]
+        },
+        {
+          "texte": "La CCM de l'étape (6) donne une seule tache, à la même hauteur que celle de l'échantillon pur. Que peut-on conclure ? L'acétate de benzyle obtenu est-il une espèce naturelle, synthétique ou artificielle ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'alcool benzylique et l'acide éthanoïque sont les réactifs, l'acétate de benzyle et l'eau sont les produits, et l'acide sulfurique est un catalyseur (il accélère la réaction sans être consommé).",
+        "<strong>2.</strong> Transformation des réactifs : (1) et (2). Isolement du produit : (3) (extraction et décantation dans l'ampoule). Purification : (4) (lavage) et (5) (séchage puis filtration). Analyse : (6) (CCM).",
+        "<em>⚠ Erreur fréquente : ranger le lavage (4) dans l'isolement. Le produit est déjà séparé du mélange réactionnel à l'étape (3) ; ensuite on enlève les impuretés qui restent avec lui : c'est la purification.</em>",
+        "<strong>3.</strong> « Flamme » : inflammable. « Corrosion » : corrosif, brûle la peau et les yeux. « Point d'exclamation » : nocif ou irritant.",
+        "<strong>4.</strong> Par exemple : porter une blouse en coton fermée, des lunettes de protection et des gants ; manipuler les acides sous la hotte ; éloigner toute flamme (acide éthanoïque inflammable) ; verser l'acide sulfurique lentement, en dernier.",
+        "<strong>5.</strong> Une seule tache : le produit est pur (aucune autre espèce détectée). Même hauteur, donc même Rf que la référence : c'est bien de l'acétate de benzyle. Fabriqué au laboratoire et présent dans le jasmin, c'est une espèce synthétique."
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Isoler l'arôme de banane",
+      "contexte": [
+        "Nassim a synthétisé de l'acétate d'isoamyle, l'espèce chimique responsable de l'odeur de banane. Pour l'isoler, il verse le mélange réactionnel refroidi dans une ampoule à décanter, ajoute de l'eau salée et 20 mL d'un solvant extracteur. Il bouche, agite en dégazant régulièrement, puis laisse reposer. Le schéma montre l'ampoule après décantation.",
+        "Données. Eau salée : d = 1,20. Acétate d'isoamyle : d = 0,87 ; très peu soluble dans l'eau salée ; très soluble dans l'éthanol, le cyclohexane et le dichlorométhane. L'acide éthanoïque et l'acide sulfurique restants sont très solubles dans l'eau. Solvants disponibles : éthanol (d = 0,79 ; miscible à l'eau ; pictogramme « flamme ») ; cyclohexane (d = 0,78 ; non miscible à l'eau ; « flamme », « point d'exclamation ») ; dichlorométhane (d = 1,33 ; non miscible à l'eau ; « danger pour la santé » : suspecté de provoquer le cancer)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\">Ampoule à décanter après agitation et décantation</text><defs><clipPath id=\"ex4corps\"><path d=\"M370,86 C300,118 288,215 330,262 L374,328 L386,328 L430,262 C472,215 460,118 390,86 Z\"/></clipPath></defs><line x1=\"170\" y1=\"455\" x2=\"170\" y2=\"45\" stroke=\"#777\" stroke-width=\"6\"/><rect x=\"120\" y=\"452\" width=\"120\" height=\"10\" fill=\"#d9d2c5\" stroke=\"#3a3a3a\"/><line x1=\"170\" y1=\"274\" x2=\"334\" y2=\"274\" stroke=\"#777\" stroke-width=\"4\"/><rect x=\"300\" y=\"140\" width=\"160\" height=\"96\" fill=\"#f3e2b8\" clip-path=\"url(#ex4corps)\"/><rect x=\"300\" y=\"236\" width=\"160\" height=\"100\" fill=\"#cfe0e3\" clip-path=\"url(#ex4corps)\"/><line x1=\"300\" y1=\"236\" x2=\"460\" y2=\"236\" stroke=\"#1F4E5A\" stroke-width=\"2\" clip-path=\"url(#ex4corps)\"/><line x1=\"300\" y1=\"140\" x2=\"460\" y2=\"140\" stroke=\"#C8962E\" stroke-width=\"2\" clip-path=\"url(#ex4corps)\"/><path d=\"M370,86 C300,118 288,215 330,262 L374,328 L386,328 L430,262 C472,215 460,118 390,86 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><rect x=\"370\" y=\"60\" width=\"20\" height=\"28\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"364\" y=\"46\" width=\"32\" height=\"18\" rx=\"3\" fill=\"#d9d2c5\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><ellipse cx=\"380\" cy=\"274\" rx=\"48\" ry=\"6\" fill=\"none\" stroke=\"#777\" stroke-width=\"4\"/><rect x=\"374\" y=\"328\" width=\"12\" height=\"62\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"356\" y=\"340\" width=\"48\" height=\"12\" rx=\"3\" fill=\"#1F4E5A\"/><path d=\"M335,398 L335,455 L425,455 L425,398\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><line x1=\"560\" y1=\"55\" x2=\"396\" y2=\"55\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"560\" cy=\"55\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"560\" y=\"61\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">1</text><line x1=\"590\" y1=\"180\" x2=\"452\" y2=\"180\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"590\" cy=\"180\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"590\" y=\"186\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">2</text><line x1=\"590\" y1=\"285\" x2=\"418\" y2=\"285\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"590\" cy=\"285\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"590\" y=\"291\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">3</text><line x1=\"560\" y1=\"346\" x2=\"404\" y2=\"346\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"560\" cy=\"346\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"560\" y=\"352\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">4</text><line x1=\"560\" y1=\"430\" x2=\"425\" y2=\"430\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"560\" cy=\"430\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"560\" y=\"436\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">5</text></svg>",
+      "questions": [
+        {
+          "texte": "Donne le nom des éléments 1, 4 et 5 du schéma.",
+          "aides": []
+        },
+        {
+          "texte": "Quelles sont les deux conditions qu'un solvant extracteur doit remplir ? Lequel des trois solvants Nassim doit-il choisir ? Justifie en éliminant les deux autres.",
+          "aides": [
+            "Pour former deux phases, comment le solvant doit-il se comporter avec l'eau ? Dans quel liquide l'espèce doit-elle être la plus soluble ?",
+            "Élimine d'abord le solvant miscible à l'eau, puis départage les deux autres grâce à leurs pictogrammes."
+          ]
+        },
+        {
+          "texte": "Nassim a choisi le cyclohexane. Indique ce que contient la phase 2 et ce que contient la phase 3. Justifie leur position.",
+          "aides": [
+            "L'acétate d'isoamyle va dans le liquide où il est le plus soluble. Les acides restants vont dans l'eau.",
+            "Compare les densités : le liquide le moins dense se place au-dessus."
+          ]
+        },
+        {
+          "texte": "Pour vérifier, Nassim prélève 10,0 mL de la phase 2 : leur masse est 8,1 g. Calcule la densité de cette phase. Le résultat est-il cohérent avec ta réponse précédente ?",
+          "aides": [
+            "Calcule d'abord la masse volumique de la phase 2, puis divise par ρ(eau).",
+            "Compare la densité trouvée à celles de l'eau salée, du cyclohexane et de l'acétate d'isoamyle."
+          ]
+        },
+        {
+          "texte": "Comment Nassim récupère-t-il la phase qui contient l'arôme ?",
+          "aides": []
+        },
+        {
+          "texte": "Avec du dichlorométhane, où se trouverait la phase contenant l'acétate d'isoamyle ? Pourquoi le professeur a-t-il tout de même préféré le cyclohexane ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : bouchon ; 4 : robinet ; 5 : bécher (ou erlenmeyer) qui recueille la phase inférieure.",
+        "<strong>2.</strong> Le solvant extracteur doit être non miscible avec l'eau (pour former deux phases) et l'espèce à extraire doit y être plus soluble que dans l'eau. L'éthanol est éliminé : il est miscible à l'eau, on n'obtiendrait qu'une seule phase. Le cyclohexane et le dichlorométhane conviennent tous les deux sur le plan chimique ; on choisit le moins dangereux : le cyclohexane (le dichlorométhane est suspecté de provoquer le cancer).",
+        "<strong>3.</strong> Phase 2 (en haut) : la phase organique, cyclohexane + acétate d'isoamyle. Phase 3 (en bas) : la phase aqueuse, eau salée + acides restants. Les deux liquides ne sont pas miscibles et le moins dense se place au-dessus : d(cyclohexane) = 0,78 et d(acétate d'isoamyle) = 0,87 sont inférieures à d(eau salée) = 1,20.",
+        "<strong>4.</strong> ρ = m / V = 8,1 / 10,0 = 0,81 g·mL⁻¹, donc d = 0,81 / 1,00 = 0,81. C'est cohérent : la valeur est inférieure à 1,20 (phase du haut) et comprise entre 0,78 (cyclohexane) et 0,87 (acétate d'isoamyle), ce qu'on attend pour un mélange de ces deux liquides.",
+        "<strong>5.</strong> Il retire le bouchon, ouvre le robinet et laisse s'écouler la phase inférieure (aqueuse) dans le bécher, qu'il élimine. Il recueille ensuite la phase supérieure (organique) dans un autre récipient : elle contient l'arôme.",
+        "<strong>6.</strong> d(dichlorométhane) = 1,33 &gt; 1,20 : la phase organique serait en bas, sous l'eau salée. Le dichlorométhane convient pour l'extraction, mais il est plus dangereux pour la santé : on choisit le solvant le moins dangereux parmi ceux qui conviennent.",
+        "<em>⚠ Erreur fréquente : croire que la phase aqueuse est toujours en bas, ou que l'espèce extraite est toujours en haut. C'est la densité qui décide : avec le dichlorométhane, la phase organique est en bas.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Un conservateur au banc Kofler",
+      "contexte": [
+        "L'acide benzoïque (E210) est un conservateur alimentaire. On le trouve naturellement dans les canneberges (cranberries) et dans une résine, le benjoin. Lina le synthétise au laboratoire en suivant ce protocole.",
+        "(A) Dans un ballon, introduire 2,0 mL d'alcool benzylique, 100 mL d'une solution de permanganate de potassium et quelques grains de pierre ponce ; chauffer à reflux 20 minutes. (B) Refroidir, puis filtrer pour éliminer le solide brun formé. (C) Ajouter de l'acide chlorhydrique au filtrat : un solide blanc, l'acide benzoïque, apparaît. (D) Récupérer ce solide par filtration sous vide (Büchner) et le rincer avec un peu d'eau glacée. (E) Dissoudre le solide dans un minimum d'eau bouillante, puis refroidir dans un bain d'eau glacée : des cristaux se reforment, on les filtre sous vide (recristallisation). (F) Sécher les cristaux à l'étuve. (G) Mesurer la température de fusion des cristaux au banc Kofler.",
+        "Données sur l'acide benzoïque : solide blanc ; température de fusion 122 °C. Solubilité dans l'eau (masse maximale qu'on peut dissoudre dans 1 L) : 1,7 g·L⁻¹ à 0 °C ; 3,4 g·L⁻¹ à 25 °C ; 56 g·L⁻¹ à 100 °C."
+      ],
+      "questions": [
+        {
+          "texte": "Associe chaque étape (A) à (G) à l'une des quatre étapes d'une synthèse : transformation, isolement, purification, analyse.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi utilise-t-on une filtration sous vide à l'étape (D) plutôt qu'une filtration simple ? Pourquoi rince-t-on à l'eau glacée plutôt qu'à l'eau du robinet (25 °C) ?",
+          "aides": [
+            "Lis les solubilités : à quelle température l'acide benzoïque se dissout-il le moins dans l'eau ?",
+            "Le rinçage doit enlever les impuretés sans dissoudre le produit : quelle eau en dissout le moins ?"
+          ]
+        },
+        {
+          "texte": "Avant l'étape (E), Lina a obtenu 1,40 g de solide brut. On néglige la masse des impuretés.<br>a. Quel volume minimal d'eau bouillante faut-il pour dissoudre tout le solide ?<br>b. Après refroidissement à 0 °C, quelle masse d'acide benzoïque reste dissoute dans ce volume d'eau ? Quelle masse maximale de cristaux Lina peut-elle récupérer ?",
+          "aides": []
+        },
+        {
+          "texte": "Au banc Kofler, le solide brut commence à fondre à 112 °C et finit de fondre vers 118 °C ; les cristaux obtenus après l'étape (E) fondent nettement à 122 °C. Que peut-on en conclure ?",
+          "aides": []
+        },
+        {
+          "texte": "L'acide benzoïque de Lina est-il une espèce naturelle, synthétique ou artificielle ? A-t-il les mêmes propriétés que celui des canneberges ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Transformation : (A). Isolement : (B), (C) et (D) (on sépare l'acide benzoïque du reste du mélange). Purification : (E) recristallisation et (F) séchage. Analyse : (G) mesure de la température de fusion.",
+        "<strong>2.</strong> La filtration sous vide est plus rapide qu'une filtration simple et essore mieux le solide (la trompe à eau aspire le liquide). On rince à l'eau glacée car l'acide benzoïque y est deux fois moins soluble qu'à 25 °C (1,7 g·L⁻¹ contre 3,4 g·L⁻¹, rapport 3,4 / 1,7 = 2,0) : on enlève les impuretés solubles en perdant le moins possible de produit.",
+        "<strong>3.</strong> a. À 100 °C, 1 L d'eau dissout au maximum 56 g d'acide benzoïque. Par proportionnalité : V = 1,40 / 56 = 0,025 L, soit 25 mL d'eau bouillante.",
+        "b. À 0 °C, 1 L dissout 1,7 g, donc 0,025 L dissout 1,7 × 0,025 = 0,042 g (0,0425 g). Masse maximale de cristaux : 1,40 − 0,042 = 1,36 g.",
+        "<em>⚠ Erreur fréquente : utiliser la solubilité à 100 °C pour la masse restée dissoute. Après refroidissement, c'est la solubilité à 0 °C qui compte ; c'est justement parce qu'elle est beaucoup plus faible que les cristaux se reforment.</em>",
+        "<strong>4.</strong> Le solide brut fond sur une plage de températures, en dessous de 122 °C : il n'est pas pur (c'est un mélange). Les cristaux fondent nettement à 122 °C, la température de fusion de l'acide benzoïque : ils sont constitués d'acide benzoïque, et la recristallisation a bien purifié le produit.",
+        "<strong>5.</strong> C'est une espèce synthétique : fabriquée au laboratoire, mais elle existe dans la nature (canneberges, benjoin). Pure, elle a exactement les mêmes propriétés (température de fusion de 122 °C, solubilité…) que l'acide benzoïque d'origine naturelle : c'est la même espèce chimique."
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Savon à la lavande : huile essentielle ou synthèse ?",
+      "contexte": [
+        "Doc. 1 — La situation. Une savonnerie artisanale du Val-d'Oise fabrique 2 000 savons « parfum lavande » par mois. Chaque savon doit contenir 1,0 g d'acétate de linalyle, la molécule responsable de l'odeur de lavande. La gérante hésite entre deux fournisseurs : (A) de l'huile essentielle de lavande, qui contient environ 35 % en masse d'acétate de linalyle (et du linalol, ainsi que d'autres espèces odorantes), vendue 120 € le kilogramme ; (B) de l'acétate de linalyle de synthèse, pur à 98 % en masse, vendu 30 € le kilogramme (prix fictifs mais vraisemblables).",
+        "Doc. 2 — Production de l'huile essentielle. On l'obtient par hydrodistillation des fleurs de lavande : environ 10 kg d'huile essentielle pour 1 tonne de fleurs. Synthèse de l'acétate de linalyle : linalol + acide éthanoïque → acétate de linalyle + eau, par chauffage à reflux, puis extraction liquide-liquide et contrôle par CCM.",
+        "Doc. 3 — Analyse réalisée par un laboratoire. Acétate de linalyle extrait de l'huile essentielle puis purifié : formule C₁₂H₂₀O₂, densité 0,90, température d'ébullition 220 °C. Produit de synthèse : formule C₁₂H₂₀O₂, densité 0,90, température d'ébullition 220 °C. Chromatogramme ci-dessous (même plaque, même éluant)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 3 : chromatogramme révélé (plaque de silice)</text><rect x=\"230\" y=\"70.0\" width=\"240\" height=\"360.0\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"168\" y=\"62.0\" width=\"44\" height=\"376.0\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"198\" y1=\"430.0\" x2=\"212\" y2=\"430.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"435.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"204\" y1=\"407.5\" x2=\"212\" y2=\"407.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"385.0\" x2=\"212\" y2=\"385.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"390.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"204\" y1=\"362.5\" x2=\"212\" y2=\"362.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"340.0\" x2=\"212\" y2=\"340.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"345.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"204\" y1=\"317.5\" x2=\"212\" y2=\"317.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"295.0\" x2=\"212\" y2=\"295.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"300.0\" text-anchor=\"end\" font-size=\"14\">3</text><line x1=\"204\" y1=\"272.5\" x2=\"212\" y2=\"272.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"250.0\" x2=\"212\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"255.0\" text-anchor=\"end\" font-size=\"14\">4</text><line x1=\"204\" y1=\"227.5\" x2=\"212\" y2=\"227.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"205.0\" x2=\"212\" y2=\"205.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"210.0\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"204\" y1=\"182.5\" x2=\"212\" y2=\"182.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"160.0\" x2=\"212\" y2=\"160.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"165.0\" text-anchor=\"end\" font-size=\"14\">6</text><line x1=\"204\" y1=\"137.5\" x2=\"212\" y2=\"137.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"115.0\" x2=\"212\" y2=\"115.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"120.0\" text-anchor=\"end\" font-size=\"14\">7</text><line x1=\"204\" y1=\"92.5\" x2=\"212\" y2=\"92.5\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"198\" y1=\"70.0\" x2=\"212\" y2=\"70.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"194\" y=\"75.0\" text-anchor=\"end\" font-size=\"14\">8</text><text x=\"190\" y=\"56.0\" text-anchor=\"middle\" font-size=\"14\">cm</text><line x1=\"230\" y1=\"385.0\" x2=\"470\" y2=\"385.0\" stroke=\"#555\" stroke-width=\"1.6\" stroke-dasharray=\"3 3\"/><text x=\"484\" y=\"390.0\" font-size=\"15\" fill=\"#555\">ligne de dépôt</text><line x1=\"230\" y1=\"115.0\" x2=\"470\" y2=\"115.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-dasharray=\"7 4\"/><text x=\"484\" y=\"120.0\" font-size=\"15\" fill=\"#1F4E5A\">front de l'éluant</text><circle cx=\"270.0\" cy=\"385.0\" r=\"3.5\" fill=\"#777\"/><text x=\"270.0\" y=\"454\" text-anchor=\"middle\" font-weight=\"bold\">H</text><ellipse cx=\"270.0\" cy=\"340.0\" rx=\"13\" ry=\"8\" fill=\"#e8c9bd\" stroke=\"#B5523B\" stroke-width=\"2\"/><ellipse cx=\"270.0\" cy=\"272.5\" rx=\"13\" ry=\"8\" fill=\"#e8c9bd\" stroke=\"#B5523B\" stroke-width=\"2\"/><ellipse cx=\"270.0\" cy=\"182.5\" rx=\"13\" ry=\"8\" fill=\"#e8c9bd\" stroke=\"#B5523B\" stroke-width=\"2\"/><ellipse cx=\"270.0\" cy=\"137.5\" rx=\"13\" ry=\"8\" fill=\"#e8c9bd\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"350.0\" cy=\"385.0\" r=\"3.5\" fill=\"#777\"/><text x=\"350.0\" y=\"454\" text-anchor=\"middle\" font-weight=\"bold\">S</text><ellipse cx=\"350.0\" cy=\"182.5\" rx=\"13\" ry=\"8\" fill=\"#e8c9bd\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"430.0\" cy=\"385.0\" r=\"3.5\" fill=\"#777\"/><text x=\"430.0\" y=\"454\" text-anchor=\"middle\" font-weight=\"bold\">R</text><ellipse cx=\"430.0\" cy=\"182.5\" rx=\"13\" ry=\"8\" fill=\"#e8c9bd\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"484\" y=\"196.0\" font-size=\"15\" xml:space=\"preserve\">H : huile essentielle</text><text x=\"484\" y=\"220.0\" font-size=\"15\" xml:space=\"preserve\">      de lavande</text><text x=\"484\" y=\"244.0\" font-size=\"15\" xml:space=\"preserve\">S : produit de synthèse</text><text x=\"484\" y=\"268.0\" font-size=\"15\" xml:space=\"preserve\">R : acétate de linalyle</text><text x=\"484\" y=\"292.0\" font-size=\"15\" xml:space=\"preserve\">      pur (référence)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour t'approprier les documents : que contient le dépôt H ? Pourquoi donne-t-il plusieurs taches alors que S et R n'en donnent qu'une ?",
+          "aides": []
+        },
+        {
+          "texte": "Quel fournisseur conseilles-tu à la gérante ? Construis ta réponse à partir des documents : montre d'abord que le produit de synthèse est bien la même espèce chimique que celle de la lavande, puis compare les deux fournisseurs (masse à acheter, coût, quantité de fleurs nécessaire).",
+          "aides": [
+            "S'approprier : surligne dans les documents tout ce qui permet de comparer le produit de synthèse à l'acétate de linalyle de la lavande (CCM, formule, propriétés physiques).",
+            "Analyser : calcule d'abord la masse d'acétate de linalyle dont la savonnerie a besoin chaque mois. Attention, chaque fournisseur ne vend pas de l'acétate de linalyle pur.",
+            "Réaliser : 35 % de la masse d'huile doit valoir la masse nécessaire ; même raisonnement avec 98 %. Multiplie ensuite chaque masse par le prix au kilogramme."
+          ]
+        },
+        {
+          "texte": "Regard critique : un client affirme que les savons à l'huile essentielle « sentent plus la vraie lavande ». A-t-il forcément tort ? La gérante pourrait-elle écrire « parfum 100 % naturel » sur l'emballage avec le fournisseur B ?",
+          "aides": [
+            "Le dépôt H donne-t-il une seule tache ? Que t'apprend ce chromatogramme sur la composition de l'huile essentielle ?",
+            "« Naturel » parle de l'origine de l'espèce, pas de sa formule."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> H est l'huile essentielle de lavande : c'est un mélange de plusieurs espèces chimiques (acétate de linalyle, linalol, autres espèces odorantes). Chaque espèce migre à sa propre hauteur : on obtient plusieurs taches. S (produit de synthèse) et R (référence) sont des espèces pures : une seule tache chacun.",
+        "<strong>2.</strong> Démarche attendue : (i) vérifier que S est de l'acétate de linalyle (doc. 3) ; (ii) calculer la masse d'acétate de linalyle nécessaire par mois ; (iii) en déduire la masse à acheter et le coût pour chaque fournisseur ; (iv) conclure en tenant compte aussi des ressources naturelles.",
+        "(i) Identité : S donne une seule tache (produit pur) à la même hauteur que R. Avec H = 7,0 − 1,0 = 6,0 cm et h = 5,5 − 1,0 = 4,5 cm : Rf(S) = Rf(R) = 4,5 / 6,0 = 0,75. L'une des taches de H a aussi Rf = 0,75 : l'huile essentielle contient bien cette espèce. Même formule C₁₂H₂₀O₂, même densité, même température d'ébullition : le produit de synthèse est la même espèce que l'acétate de linalyle de la lavande (espèce synthétique).",
+        "(ii) Masse nécessaire par mois : 2 000 × 1,0 g = 2 000 g = 2,0 kg d'acétate de linalyle.",
+        "(iii) Fournisseur A : l'huile n'en contient que 35 %, donc m(huile) = 2,0 / 0,35 = 5,7 kg (5,71 kg) ; coût : 5,71 × 120 ≈ 690 € (685,7 €). Il faut environ 571 kg de fleurs (5,71 / 10 × 1 000), soit plus d'une demi-tonne par mois. Fournisseur B : m = 2,0 / 0,98 = 2,04 kg ; coût : 2,04 × 30 ≈ 61 € (61,2 €).",
+        "(iv) Conclusion : pour apporter la même masse d'acétate de linalyle, la même molécule, le fournisseur B coûte environ 11 fois moins cher (685,7 / 61,2 = 11,2) et n'utilise pas de fleurs. On conseille B si la gérante veut seulement l'odeur due à l'acétate de linalyle au meilleur prix.",
+        "<strong>3.</strong> Le client n'a pas forcément tort : l'huile essentielle apporte aussi du linalol et d'autres espèces odorantes (plusieurs taches sur la CCM), donc une odeur plus complexe que l'acétate de linalyle seul. Ce n'est pas la molécule qui change, c'est le mélange. En revanche, avec le fournisseur B, la gérante ne peut pas écrire « 100 % naturel » : l'acétate de linalyle est identique au naturel, mais il est d'origine synthétique (fabriqué au laboratoire).",
+        "Éléments valorisés (même si la conclusion est fausse) : utilisation de la CCM (même hauteur ou même Rf que la référence, tache unique = pur) et des propriétés physiques pour établir l'identité ; calcul de la masse totale nécessaire ; prise en compte des 35 % et des 98 % ; comparaison chiffrée des coûts ; conclusion qui répond à la question de la gérante.",
+        "<em>⚠ Erreur fréquente : calculer le coût de A avec 2,0 kg d'huile essentielle, en oubliant qu'elle ne contient que 35 % d'acétate de linalyle ; ou conclure que l'huile essentielle et le produit de synthèse sont « la même chose » : seule la molécule d'acétate de linalyle est la même.</em>"
+      ]
+    }
+  ]
+}

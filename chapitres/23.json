@@ -1,0 +1,637 @@
+{
+  "id": 23,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Émission d'un son",
+        "icon": "🔊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Son",
+            "text": "Signal résultant de la mise en vibration d'une source sonore (corde, membrane, colonne d'air...)."
+          },
+          {
+            "type": "text",
+            "text": "Un son est produit par la <strong>vibration mécanique</strong> d'un objet (corde de guitare, cordes vocales, membrane de haut-parleur, diapason). Cette vibration se transmet ensuite de proche en proche au milieu environnant."
+          },
+          {
+            "type": "def",
+            "term": "Caisse de résonance",
+            "text": "Élément creux d'un instrument (guitare, violon...) qui amplifie et enrichit le son émis par la vibration de la source (par exemple les cordes), en la mettant en résonance."
+          }
+        ]
+      },
+      {
+        "title": "2. Nécessité d'un milieu matériel",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "warn",
+            "text": "Un son est une onde mécanique : il ne peut se propager que dans un <strong>milieu matériel</strong> (solide, liquide ou gaz), jamais dans le vide."
+          },
+          {
+            "type": "text",
+            "text": "Expérience classique : une sonnerie électrique placée sous une cloche à vide est entendue tant que l'air est présent. Au fur et à mesure que l'on aspire l'air de la cloche (mise sous vide), le son s'atténue puis disparaît complètement, bien que l'on voie toujours le marteau vibrer."
+          },
+          {
+            "type": "text",
+            "text": "Le son se propage également dans les liquides (les baleines communiquent sous l'eau) et dans les solides (on entend un bruit en collant l'oreille contre un mur ou un rail)."
+          }
+        ]
+      },
+      {
+        "title": "3. Vitesse de propagation",
+        "icon": "🚀",
+        "content": [
+          {
+            "type": "def",
+            "term": "Célérité (vitesse de propagation)",
+            "text": "Vitesse à laquelle le signal sonore se propage dans un milieu donné."
+          },
+          {
+            "type": "formula",
+            "label": "Vitesse de propagation",
+            "text": "v = d / t\nv : célérité du son (m·s⁻¹)\nd : distance parcourue (m)\nt : durée de propagation (s)"
+          },
+          {
+            "type": "warn",
+            "text": "Dans l'air, à 20 °C, la célérité du son vaut environ v ≈ 340 m·s⁻¹ (soit environ 1224 km·h⁻¹). Le son se propage plus vite dans les liquides (environ 1500 m·s⁻¹ dans l'eau) et encore plus vite dans les solides (plusieurs milliers de m·s⁻¹ dans l'acier), car les molécules y sont plus proches les unes des autres."
+          }
+        ]
+      },
+      {
+        "title": "4. Signal périodique : période et fréquence",
+        "icon": "⏱️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Signal périodique",
+            "text": "Signal qui se reproduit identique à lui-même à intervalles de temps réguliers."
+          },
+          {
+            "type": "def",
+            "term": "Période T",
+            "text": "Durée d'un motif élémentaire qui se répète, exprimée en secondes (s)."
+          },
+          {
+            "type": "def",
+            "term": "Fréquence f",
+            "text": "Nombre de motifs (de périodes) se répétant par seconde, exprimée en hertz (Hz)."
+          },
+          {
+            "type": "formula",
+            "label": "Relation période-fréquence",
+            "text": "f = 1 / T\nf : fréquence (Hz)\nT : période (s)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : sur un oscillogramme, on lit une durée de 5 divisions pour un motif périodique, avec une durée de 0,5 ms par division, soit T = 5 × 0,5 = 2,5 ms = 2,5×10⁻³ s. La fréquence du signal est alors f = 1 / T = 1 / (2,5×10⁻³) = 400 Hz."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 200\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"tArrowL23\" markerWidth=\"8\" markerHeight=\"8\" refX=\"2\" refY=\"4\" orient=\"auto\"><path d=\"M8,0 L0,4 L8,8 Z\" fill=\"#5C6B60\"/></marker><marker id=\"tArrowR23\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#5C6B60\"/></marker></defs><line x1=\"20\" y1=\"100\" x2=\"460\" y2=\"100\" stroke=\"#B9C0AC\" stroke-width=\"1.2\"/><line x1=\"40\" y1=\"20\" x2=\"40\" y2=\"180\" stroke=\"#B9C0AC\" stroke-width=\"1.2\"/><text x=\"465\" y=\"104\" font-size=\"11\" fill=\"#5C6B60\">t</text><path d=\"M40,100 C70,30 90,30 120,100 C150,170 170,170 200,100 C230,30 250,30 280,100 C310,170 330,170 360,100 C390,30 410,30 440,100\" fill=\"none\" stroke=\"#a44ff7\" stroke-width=\"2.2\"/><line x1=\"40\" y1=\"188\" x2=\"160\" y2=\"188\" stroke=\"#5C6B60\" stroke-width=\"1.3\" marker-start=\"url(#tArrowL23)\" marker-end=\"url(#tArrowR23)\"/><text x=\"92\" y=\"180\" font-size=\"12\" fill=\"#5C6B60\" text-anchor=\"middle\">T</text></svg>",
+            "caption": "Signal périodique : le motif élémentaire (un « creux-bosse ») se répète à l'identique toutes les durées T (la période)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Quand le son d'une guitare se propage dans l'air jusqu'à l'oreille :",
+      "opts": [
+        "l'air proche des cordes est transporté jusqu'à l'oreille",
+        "la vibration se transmet instantanément jusqu'à l'oreille",
+        "la vibration se transmet de proche en proche, sans transport d'air",
+        "des particules de son voyagent entre les molécules d'air"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "onde-transporte-matiere",
+          "texte": "Croire qu'une onde transporte de la matière : l'air vibre sur place et transmet la vibration à l'air voisin"
+        },
+        {
+          "code": "propagation-instantanee",
+          "texte": "Croire que le son arrive instantanément : il met du temps à se propager (environ 340 m par seconde dans l'air)"
+        },
+        null,
+        {
+          "code": "son-fait-de-particules",
+          "texte": "Croire que le son est fait de particules qui voyagent : c'est une vibration du milieu matériel lui-même"
+        }
+      ],
+      "exp": "Le son est une onde mécanique : chaque couche d'air vibre sur place et transmet sa vibration à la suivante. Attention : l'air ne voyage pas de la guitare jusqu'à l'oreille."
+    },
+    {
+      "q": "Une sonnerie électrique est placée sous une cloche dont on aspire l'air peu à peu. Le son entendu :",
+      "opts": [
+        "ne change pas, puisque la sonnerie vibre toujours",
+        "s'atténue puis disparaît",
+        "disparaît parce que le marteau s'arrête de vibrer",
+        "devient plus fort, car l'air ne le freine plus"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "vibration-suffit",
+          "texte": "Croire qu'une source qui vibre suffit : sans milieu matériel autour d'elle, le son ne se propage pas"
+        },
+        null,
+        {
+          "code": "vide-arrete-source",
+          "texte": "Croire que le vide arrête la source : le marteau vibre toujours, c'est la propagation qui devient impossible"
+        },
+        {
+          "code": "son-dans-le-vide",
+          "texte": "Croire que le son se propage dans le vide (ou mieux sans air) : il a besoin d'un milieu matériel"
+        }
+      ],
+      "exp": "En retirant l'air, on supprime le milieu de propagation : le son s'atténue puis n'est plus entendu, alors que le marteau vibre toujours. Attention : contrairement à la lumière, le son ne se propage pas dans le vide."
+    },
+    {
+      "q": "Dans quel ordre la vitesse du son augmente-t-elle, de la plus petite à la plus grande ?",
+      "opts": [
+        "acier, eau, air",
+        "air, eau, acier",
+        "eau, air, acier",
+        "elle est la même dans ces trois milieux"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "son-plus-vite-dans-air",
+          "texte": "Croire que le son va plus vite dans l'air, « moins encombré » : il est plus rapide dans les liquides et encore plus dans les solides"
+        },
+        null,
+        {
+          "code": "son-lent-dans-eau",
+          "texte": "Croire que le son est plus lent dans l'eau que dans l'air : environ 1 500 m·s⁻¹ dans l'eau contre 340 m·s⁻¹ dans l'air"
+        },
+        {
+          "code": "vitesse-son-universelle",
+          "texte": "Croire que la vitesse du son ne dépend pas du milieu : elle en dépend beaucoup"
+        }
+      ],
+      "exp": "Environ 340 m·s⁻¹ dans l'air, 1 500 m·s⁻¹ dans l'eau et plusieurs milliers de m·s⁻¹ dans l'acier. Attention : le son va plus vite dans les milieux où les particules sont proches."
+    },
+    {
+      "q": "Un coup de marteau sur un rail est entendu 0,20 s plus tard par une personne qui colle l'oreille au rail, à 1,2 km de là. La vitesse du son dans le rail vaut :",
+      "opts": [
+        "6,0 m·s⁻¹",
+        "240 m·s⁻¹",
+        "1,7×10⁻⁴ m·s⁻¹",
+        "6,0×10³ m·s⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "conversion-km-m",
+          "texte": "Oublier de convertir les kilomètres en mètres : 1,2 / 0,20 = 6,0"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 1 200 × 0,20 = 240"
+        },
+        {
+          "code": "vitesse-rapport-inverse",
+          "texte": "Inverser le rapport : t / d = 0,20 / 1 200 au lieu de v = d / t"
+        },
+        null
+      ],
+      "exp": "v = d / t = 1 200 / 0,20 = 6,0×10³ m·s⁻¹. Attention : la distance doit être en mètres et la durée en secondes."
+    },
+    {
+      "q": "Face à une falaise, un randonneur crie et entend l'écho 2,0 s plus tard. Le son se propage à 340 m·s⁻¹. La falaise est à :",
+      "opts": [
+        "680 m",
+        "340 m",
+        "170 m",
+        "5,9×10⁻³ m"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-aller-retour",
+          "texte": "Oublier l'aller-retour : en 2,0 s le son parcourt 680 m, mais il va à la falaise et revient"
+        },
+        null,
+        {
+          "code": "distance-v-sur-t",
+          "texte": "Diviser la vitesse par la durée : 340 / 2,0 = 170 ; la distance vaut d = v × t"
+        },
+        {
+          "code": "vitesse-rapport-inverse",
+          "texte": "Inverser le rapport : t / v = 2,0 / 340 au lieu de d = v × t"
+        }
+      ],
+      "exp": "En 2,0 s, le son parcourt d = v × t = 340 × 2,0 = 680 m, soit un aller et un retour : la falaise est à 680 / 2 = 340 m. Attention : l'écho fait l'aller-retour."
+    },
+    {
+      "q": "Pendant un orage, on entend le tonnerre 3,0 s après avoir vu l'éclair. Le son se propage à 340 m·s⁻¹. L'orage est à environ :",
+      "opts": [
+        "1,0 km",
+        "113 m",
+        "2,0 km",
+        "9×10⁸ m"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "distance-v-sur-t",
+          "texte": "Diviser la vitesse par la durée : 340 / 3,0 ≈ 113 ; la distance vaut d = v × t"
+        },
+        {
+          "code": "aller-retour-a-tort",
+          "texte": "Compter un aller-retour qui n'existe pas : le son du tonnerre ne fait qu'un aller jusqu'à nous"
+        },
+        {
+          "code": "vitesse-lumiere-vs-son",
+          "texte": "Utiliser la vitesse de la lumière (3×10⁸ m·s⁻¹) : la lumière arrive presque instantanément, c'est le retard du son qu'on mesure"
+        }
+      ],
+      "exp": "La lumière arrive presque instantanément ; le son met 3,0 s : d = v × t = 340 × 3,0 ≈ 1,0×10³ m, soit 1,0 km. Attention : ici pas d'aller-retour, contrairement à l'écho."
+    },
+    {
+      "q": "La fréquence d'un son périodique est :",
+      "opts": [
+        "la durée d'un motif élémentaire",
+        "le nombre de motifs qui se répètent en une seconde",
+        "la hauteur maximale de la courbe du signal",
+        "la vitesse à laquelle le son se propage"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "periode-vs-frequence",
+          "texte": "Confondre période et fréquence : la période est la durée d'un motif, la fréquence le nombre de motifs par seconde (f = 1 / T)"
+        },
+        null,
+        {
+          "code": "frequence-vs-amplitude",
+          "texte": "Confondre fréquence et amplitude : l'amplitude est la hauteur de la courbe, la fréquence dit combien de motifs par seconde"
+        },
+        {
+          "code": "frequence-vs-celerite",
+          "texte": "Confondre fréquence et vitesse de propagation : la fréquence s'exprime en hertz, la vitesse en m·s⁻¹"
+        }
+      ],
+      "exp": "La fréquence f (en hertz) est le nombre de motifs par seconde ; c'est l'inverse de la période : f = 1 / T. Attention : la période est une durée, la fréquence un nombre par seconde."
+    },
+    {
+      "q": "Sur un oscillogramme, 3 motifs complets occupent 6,0 divisions horizontales. La base de temps est réglée sur 0,5 ms par division. La période du signal vaut :",
+      "opts": [
+        "3,0 ms",
+        "12 ms",
+        "1,0 ms",
+        "2,0 ms"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "lecture-plusieurs-periodes",
+          "texte": "Oublier de diviser par le nombre de motifs : 6,0 × 0,5 = 3,0 ms est la durée de 3 périodes"
+        },
+        {
+          "code": "sensibilite-divisee",
+          "texte": "Diviser par la base de temps au lieu de multiplier : 6,0 / 0,5 = 12"
+        },
+        null,
+        {
+          "code": "divisions-prises-pour-duree",
+          "texte": "Oublier la base de temps : 6,0 / 3 = 2,0 divisions, pas 2,0 ms"
+        }
+      ],
+      "exp": "Les 3 motifs durent 6,0 × 0,5 = 3,0 ms, donc T = 3,0 / 3 = 1,0 ms. Attention : on mesure souvent plusieurs périodes pour être plus précis, puis on divise."
+    },
+    {
+      "q": "La période d'un son vaut T = 2,5 ms. Sa fréquence vaut :",
+      "opts": [
+        "0,40 Hz",
+        "400 Hz",
+        "2,5×10⁻³ Hz",
+        "2 500 Hz"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-ms-s",
+          "texte": "Oublier de convertir les millisecondes en secondes : 1 / 2,5 = 0,40"
+        },
+        null,
+        {
+          "code": "periode-vs-frequence",
+          "texte": "Confondre période et fréquence : f = 1 / T, pas f = T"
+        },
+        {
+          "code": "inverse-oublie",
+          "texte": "Convertir au lieu d'inverser : 2,5 × 1 000 = 2 500 ; il faut calculer f = 1 / T"
+        }
+      ],
+      "exp": "T = 2,5 ms = 2,5×10⁻³ s, donc f = 1 / T = 1 / (2,5×10⁻³) = 400 Hz. Attention : la période doit être en secondes pour obtenir des hertz."
+    },
+    {
+      "q": "Un diapason émet un son de fréquence 440 Hz. Cela signifie que :",
+      "opts": [
+        "le son parcourt 440 m en une seconde",
+        "un motif du signal dure 440 s",
+        "le motif du signal se répète 440 fois par seconde",
+        "le son est 440 fois plus fort qu'un son de 1 Hz"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "frequence-vs-celerite",
+          "texte": "Confondre fréquence et vitesse de propagation : la fréquence s'exprime en hertz, la vitesse en m·s⁻¹"
+        },
+        {
+          "code": "periode-vs-frequence",
+          "texte": "Confondre période et fréquence : ici T = 1 / 440 ≈ 2,3×10⁻³ s"
+        },
+        null,
+        {
+          "code": "frequence-vs-amplitude",
+          "texte": "Confondre fréquence et intensité : la fréquence dit combien de motifs par seconde, pas si le son est fort"
+        }
+      ],
+      "exp": "440 Hz : 440 motifs par seconde, donc une période T = 1 / 440 ≈ 2,3 ms. Attention : la fréquence ne renseigne ni sur la vitesse du son ni sur son intensité."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Vrai ou faux au concert",
+      "contexte": [
+        "Samedi soir, Inès et Rayan assistent à un concert en plein air. Entre deux morceaux, ils discutent de ce qu'ils ont vu en cours sur le son. Aide-les à trier le vrai du faux."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. « Le son de la guitare est produit par la vibration de ses cordes. »<br>b. « Sans sa caisse de résonance, une guitare ne produirait aucun son. »<br>c. « Dans l'espace, un astronaute entendrait l'explosion d'un satellite situé à quelques kilomètres de lui. »<br>d. « Quand le son va de l'enceinte à nos oreilles, ce sont les molécules d'air de l'enceinte qui voyagent jusqu'à nous. »<br>e. « Le son se propage plus vite dans l'air que dans l'eau. »",
+          "aides": []
+        },
+        {
+          "texte": "Dans l'expérience de la cloche à vide, une sonnerie électrique est placée sous une cloche dont on pompe l'air petit à petit. On voit toujours le marteau frapper le timbre.<br>a. Qu'entend-on au fur et à mesure que l'on retire l'air ?<br>b. Le marteau vibre-t-il moins ? Qu'est-ce qui empêche alors le son d'arriver jusqu'à nous ?",
+          "aides": []
+        },
+        {
+          "texte": "Dans les vieux westerns, un personnage colle son oreille contre un rail pour savoir si un train approche. Explique pourquoi il peut entendre le train dans le rail avant de l'entendre dans l'air.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : un son est produit par la vibration mécanique d'une source ; ici, les cordes pincées.",
+        "b. FAUX : les cordes vibrent et émettent un son, mais très faible. La caisse de résonance amplifie et enrichit ce son ; elle ne le crée pas.",
+        "c. FAUX : le son ne se propage que dans un milieu matériel (solide, liquide ou gaz). Entre le satellite et l'astronaute, il y a le vide : le son ne peut pas se propager.",
+        "d. FAUX : chaque molécule d'air vibre sur place, autour de sa position ; c'est la vibration qui se transmet de proche en proche, pas la matière qui se déplace de l'enceinte jusqu'à nous.",
+        "e. FAUX : environ 340 m·s⁻¹ dans l'air et environ 1 500 m·s⁻¹ dans l'eau ; le son va plus vite dans l'eau.",
+        "<strong>2.</strong> a. Le son s'atténue de plus en plus, puis on ne l'entend plus du tout.",
+        "b. Non, le marteau vibre toujours de la même façon. C'est le milieu de propagation (l'air) qui manque : sans milieu matériel, la vibration ne peut pas être transmise jusqu'à la paroi de la cloche puis jusqu'à nous.",
+        "<strong>3.</strong> Le son se propage dans les solides, et beaucoup plus vite que dans l'air (environ 5 900 m·s⁻¹ dans l'acier contre 340 m·s⁻¹ dans l'air) ; de plus, il s'atténue moins dans le rail. Le son du train arrive donc d'abord par le rail.",
+        "<em>⚠ Erreur fréquente : croire que le son « transporte de l'air ». Le son transporte une vibration, pas de la matière.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Compter les secondes pendant l'orage",
+      "contexte": [
+        "Pendant un orage au-dessus d'Argenteuil, Lina voit un éclair, puis compte « un, deux, trois » : elle entend le tonnerre t = 3,0 s plus tard.",
+        "Le son de l'éclair et sa lumière sont émis au même instant. La lumière met une durée négligeable pour arriver. La célérité du son dans l'air vaut v = 340 m·s⁻¹ et la vitesse de propagation se calcule par v = d / t."
+      ],
+      "questions": [
+        {
+          "texte": "Montre que la distance d entre Lina et l'éclair vérifie d = v × t, puis calcule d en mètres et en kilomètres.",
+          "aides": [
+            "Pour isoler d dans v = d / t, multiplie les deux côtés de l'égalité par la même grandeur.",
+            "Vérifie les unités : m·s⁻¹ multiplié par s donne des mètres."
+          ]
+        },
+        {
+          "texte": "Vérifie que la lumière met bien une durée négligeable : calcule la durée qu'elle met pour parcourir la même distance.",
+          "aides": []
+        },
+        {
+          "texte": "Une règle populaire dit : « Le nombre de secondes divisé par 3 donne la distance de l'orage en kilomètres. » Calcule la durée mise par le son pour parcourir 1 km, et dis si cette règle est raisonnable.",
+          "aides": []
+        },
+        {
+          "texte": "Exprime la célérité du son dans l'air en km·h⁻¹, puis range ces vitesses dans l'ordre croissant : piéton (5 km·h⁻¹) ; TGV (320 km·h⁻¹) ; avion de ligne (900 km·h⁻¹) ; son dans l'air ; lumière.",
+          "aides": [
+            "Pour passer des m·s⁻¹ aux km·h⁻¹, on multiplie par 3,6 (voir les données).",
+            "Pour comparer, exprime toutes les vitesses dans la même unité."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> v = d / t, donc en multipliant les deux membres par t : d = v × t = 340 × 3,0 = 1 020 m, soit environ 1,0 km (deux chiffres significatifs, comme t).",
+        "<strong>2.</strong> t = d / c = 1 020 / (3,00 × 10⁸) = 3,4 × 10⁻⁶ s = 3,4 µs : c'est un million de fois plus court que 3,0 s, donc négligeable.",
+        "<strong>3.</strong> t = 1 000 / 340 = 2,9 s ≈ 3 s. La règle est raisonnable : le son parcourt environ 1 km toutes les 3 secondes.",
+        "<strong>4.</strong> v = 340 × 3,6 = 1 224 km·h⁻¹. Ordre croissant : piéton (5 km·h⁻¹) &lt; TGV (320 km·h⁻¹) &lt; avion de ligne (900 km·h⁻¹) &lt; son (environ 1 200 km·h⁻¹) &lt; lumière (3,00 × 10⁸ m·s⁻¹, soit 1,08 × 10⁹ km·h⁻¹).",
+        "<em>⚠ Erreur fréquente : écrire d = v / t. Vérifie avec les unités : (m·s⁻¹) × s = m.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Lire un oscillogramme",
+      "contexte": [
+        "Un élève joue une note à la flûte devant un microphone relié à une carte d'acquisition. Le logiciel affiche la tension u délivrée par le microphone en fonction du temps."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"30\" x2=\"85.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"85.0\" y=\"412\" text-anchor=\"middle\">0</text><line x1=\"117.5\" y1=\"30\" x2=\"117.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"150.0\" y1=\"30\" x2=\"150.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"150.0\" y=\"412\" text-anchor=\"middle\">1</text><line x1=\"182.5\" y1=\"30\" x2=\"182.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"215.0\" y1=\"30\" x2=\"215.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"215.0\" y=\"412\" text-anchor=\"middle\">2</text><line x1=\"247.5\" y1=\"30\" x2=\"247.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"280.0\" y1=\"30\" x2=\"280.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"280.0\" y=\"412\" text-anchor=\"middle\">3</text><line x1=\"312.5\" y1=\"30\" x2=\"312.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"345.0\" y1=\"30\" x2=\"345.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"345.0\" y=\"412\" text-anchor=\"middle\">4</text><line x1=\"377.5\" y1=\"30\" x2=\"377.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"410.0\" y1=\"30\" x2=\"410.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"410.0\" y=\"412\" text-anchor=\"middle\">5</text><line x1=\"442.5\" y1=\"30\" x2=\"442.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"475.0\" y1=\"30\" x2=\"475.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"475.0\" y=\"412\" text-anchor=\"middle\">6</text><line x1=\"507.5\" y1=\"30\" x2=\"507.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"540.0\" y1=\"30\" x2=\"540.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"540.0\" y=\"412\" text-anchor=\"middle\">7</text><line x1=\"572.5\" y1=\"30\" x2=\"572.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"605.0\" y1=\"30\" x2=\"605.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"605.0\" y=\"412\" text-anchor=\"middle\">8</text><line x1=\"637.5\" y1=\"30\" x2=\"637.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"670.0\" y1=\"30\" x2=\"670.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"670.0\" y=\"412\" text-anchor=\"middle\">9</text><line x1=\"702.5\" y1=\"30\" x2=\"702.5\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"390\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"735.0\" y=\"412\" text-anchor=\"middle\">10</text><line x1=\"85\" y1=\"390.0\" x2=\"735\" y2=\"390.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"395.0\" text-anchor=\"end\">-80</text><line x1=\"85\" y1=\"345.0\" x2=\"735\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"350.0\" text-anchor=\"end\">-60</text><line x1=\"85\" y1=\"300.0\" x2=\"735\" y2=\"300.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"305.0\" text-anchor=\"end\">-40</text><line x1=\"85\" y1=\"255.0\" x2=\"735\" y2=\"255.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"260.0\" text-anchor=\"end\">-20</text><line x1=\"85\" y1=\"210.0\" x2=\"735\" y2=\"210.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"215.0\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"165.0\" x2=\"735\" y2=\"165.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"170.0\" text-anchor=\"end\">20</text><line x1=\"85\" y1=\"120.0\" x2=\"735\" y2=\"120.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"125.0\" text-anchor=\"end\">40</text><line x1=\"85\" y1=\"75.0\" x2=\"735\" y2=\"75.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"80.0\" text-anchor=\"end\">60</text><line x1=\"85\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"35.0\" text-anchor=\"end\">80</text><line x1=\"85\" y1=\"210.0\" x2=\"735\" y2=\"210.0\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><rect x=\"85\" y=\"30\" width=\"650\" height=\"360\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"85.0,154.9 85.7,150.6 86.3,146.6 87.0,143.0 87.6,139.6 88.2,136.6 88.9,133.8 89.5,131.4 90.2,129.2 90.8,127.3 91.5,125.7 92.2,124.3 92.8,123.2 93.5,122.3 94.1,121.7 94.8,121.2 95.4,120.9 96.0,120.8 96.7,120.9 97.3,121.1 98.0,121.4 98.7,121.9 99.3,122.4 100.0,123.1 100.6,123.8 101.2,124.5 101.9,125.3 102.5,126.1 103.2,127.0 103.8,127.8 104.5,128.7 105.2,129.5 105.8,130.4 106.5,131.2 107.1,131.9 107.8,132.7 108.4,133.4 109.0,134.1 109.7,134.7 110.3,135.3 111.0,135.8 111.7,136.3 112.3,136.8 113.0,137.3 113.6,137.7 114.2,138.1 114.9,138.5 115.5,138.9 116.2,139.3 116.8,139.6 117.5,140.0 118.2,140.4 118.8,140.9 119.5,141.3 120.1,141.8 120.8,142.3 121.4,142.8 122.1,143.4 122.7,144.1 123.3,144.8 124.0,145.5 124.7,146.3 125.3,147.2 126.0,148.1 126.6,149.1 127.2,150.1 127.9,151.2 128.6,152.4 129.2,153.6 129.8,154.8 130.5,156.1 131.2,157.4 131.8,158.7 132.4,160.1 133.1,161.5 133.8,162.9 134.4,164.3 135.1,165.7 135.7,167.1 136.3,168.5 137.0,169.8 137.7,171.2 138.3,172.5 138.9,173.7 139.6,174.9 140.2,176.1 140.9,177.2 141.6,178.3 142.2,179.3 142.8,180.2 143.5,181.1 144.2,181.9 144.8,182.7 145.4,183.5 146.1,184.1 146.8,184.8 147.4,185.4 148.1,186.0 148.7,186.5 149.4,187.1 150.0,187.6 150.7,188.1 151.3,188.7 151.9,189.3 152.6,189.9 153.2,190.6 153.9,191.4 154.6,192.2 155.2,193.2 155.9,194.2 156.5,195.4 157.2,196.7 157.8,198.1 158.5,199.7 159.1,201.5 159.8,203.4 160.4,205.6 161.1,207.9 161.7,210.4 162.3,213.1 163.0,216.1 163.6,219.2 164.3,222.6 164.9,226.2 165.6,230.0 166.2,234.0 166.9,238.1 167.6,242.5 168.2,247.1 168.9,251.8 169.5,256.8 170.2,261.8 170.8,267.0 171.4,272.3 172.1,277.7 172.8,283.1 173.4,288.6 174.1,294.2 174.7,299.7 175.4,305.3 176.0,310.7 176.6,316.2 177.3,321.5 177.9,326.7 178.6,331.7 179.2,336.6 179.9,341.3 180.6,345.7 181.2,350.0 181.8,353.9 182.5,357.5 183.1,360.8 183.8,363.8 184.4,366.4 185.1,368.7 185.8,370.5 186.4,371.9 187.1,372.9 187.7,373.5 188.4,373.7 189.0,373.4 189.7,372.7 190.3,371.5 190.9,369.8 191.6,367.8 192.2,365.2 192.9,362.3 193.5,358.9 194.2,355.1 194.8,351.0 195.5,346.4 196.1,341.5 196.8,336.2 197.4,330.7 198.1,324.8 198.8,318.6 199.4,312.2 200.1,305.6 200.7,298.8 201.3,291.8 202.0,284.7 202.6,277.5 203.3,270.2 203.9,262.9 204.6,255.5 205.2,248.1 205.9,240.8 206.6,233.5 207.2,226.3 207.8,219.3 208.5,212.3 209.2,205.6 209.8,199.0 210.4,192.6 211.1,186.4 211.8,180.5 212.4,174.8 213.1,169.4 213.7,164.3 214.3,159.4 215.0,154.9 215.7,150.6 216.3,146.6 217.0,143.0 217.6,139.6 218.2,136.6 218.9,133.8 219.5,131.4 220.2,129.2 220.8,127.3 221.5,125.7 222.2,124.3 222.8,123.2 223.4,122.3 224.1,121.7 224.8,121.2 225.4,120.9 226.1,120.8 226.7,120.9 227.3,121.1 228.0,121.4 228.7,121.9 229.3,122.4 229.9,123.1 230.6,123.8 231.2,124.5 231.9,125.3 232.6,126.1 233.2,127.0 233.8,127.8 234.5,128.7 235.2,129.5 235.8,130.4 236.5,131.2 237.1,131.9 237.8,132.7 238.4,133.4 239.1,134.1 239.7,134.7 240.4,135.3 241.0,135.8 241.7,136.3 242.3,136.8 243.0,137.3 243.6,137.7 244.3,138.1 244.9,138.5 245.6,138.9 246.2,139.3 246.9,139.6 247.5,140.0 248.2,140.4 248.8,140.9 249.4,141.3 250.1,141.8 250.8,142.3 251.4,142.8 252.1,143.4 252.7,144.1 253.3,144.8 254.0,145.5 254.7,146.3 255.3,147.2 256.0,148.1 256.6,149.1 257.2,150.1 257.9,151.2 258.6,152.4 259.2,153.6 259.9,154.8 260.5,156.1 261.1,157.4 261.8,158.7 262.5,160.1 263.1,161.5 263.8,162.9 264.4,164.3 265.1,165.7 265.7,167.1 266.4,168.5 267.0,169.8 267.6,171.2 268.3,172.5 269.0,173.7 269.6,174.9 270.2,176.1 270.9,177.2 271.6,178.3 272.2,179.3 272.9,180.2 273.5,181.1 274.2,181.9 274.8,182.7 275.5,183.5 276.1,184.1 276.8,184.8 277.4,185.4 278.1,186.0 278.7,186.5 279.4,187.1 280.0,187.6 280.7,188.1 281.3,188.7 282.0,189.3 282.6,189.9 283.2,190.6 283.9,191.4 284.6,192.2 285.2,193.2 285.9,194.2 286.5,195.4 287.1,196.7 287.8,198.1 288.4,199.7 289.1,201.5 289.8,203.4 290.4,205.6 291.1,207.9 291.7,210.4 292.4,213.1 293.0,216.1 293.6,219.2 294.3,222.6 295.0,226.2 295.6,230.0 296.2,234.0 296.9,238.1 297.6,242.5 298.2,247.1 298.9,251.8 299.5,256.8 300.1,261.8 300.8,267.0 301.5,272.3 302.1,277.7 302.8,283.1 303.4,288.6 304.1,294.2 304.7,299.7 305.4,305.3 306.0,310.7 306.6,316.2 307.3,321.5 308.0,326.7 308.6,331.7 309.2,336.6 309.9,341.3 310.6,345.7 311.2,350.0 311.9,353.9 312.5,357.5 313.2,360.8 313.8,363.8 314.5,366.4 315.1,368.7 315.8,370.5 316.4,371.9 317.1,372.9 317.7,373.5 318.4,373.7 319.0,373.4 319.6,372.7 320.3,371.5 320.9,369.8 321.6,367.8 322.2,365.2 322.9,362.3 323.5,358.9 324.2,355.1 324.9,351.0 325.5,346.4 326.1,341.5 326.8,336.2 327.4,330.7 328.1,324.8 328.8,318.6 329.4,312.2 330.1,305.6 330.7,298.8 331.4,291.8 332.0,284.7 332.6,277.5 333.3,270.2 334.0,262.9 334.6,255.5 335.2,248.1 335.9,240.8 336.6,233.5 337.2,226.3 337.9,219.3 338.5,212.3 339.1,205.6 339.8,199.0 340.5,192.6 341.1,186.4 341.8,180.5 342.4,174.8 343.1,169.4 343.7,164.3 344.4,159.4 345.0,154.9 345.6,150.6 346.3,146.6 346.9,143.0 347.6,139.6 348.2,136.6 348.9,133.8 349.6,131.4 350.2,129.2 350.8,127.3 351.5,125.7 352.2,124.3 352.8,123.2 353.4,122.3 354.1,121.7 354.8,121.2 355.4,120.9 356.1,120.8 356.7,120.9 357.4,121.1 358.0,121.4 358.6,121.9 359.3,122.4 360.0,123.1 360.6,123.8 361.2,124.5 361.9,125.3 362.6,126.1 363.2,127.0 363.9,127.8 364.5,128.7 365.2,129.5 365.8,130.4 366.4,131.2 367.1,131.9 367.8,132.7 368.4,133.4 369.1,134.1 369.7,134.7 370.3,135.3 371.0,135.8 371.6,136.3 372.3,136.8 372.9,137.3 373.6,137.7 374.2,138.1 374.9,138.5 375.5,138.9 376.2,139.3 376.9,139.6 377.5,140.0 378.1,140.4 378.8,140.9 379.4,141.3 380.1,141.8 380.8,142.3 381.4,142.8 382.1,143.4 382.7,144.1 383.3,144.8 384.0,145.5 384.7,146.3 385.3,147.2 385.9,148.1 386.6,149.1 387.2,150.1 387.9,151.2 388.5,152.4 389.2,153.6 389.9,154.8 390.5,156.1 391.1,157.4 391.8,158.7 392.5,160.1 393.1,161.5 393.8,162.9 394.4,164.3 395.1,165.7 395.7,167.1 396.3,168.5 397.0,169.8 397.7,171.2 398.3,172.5 398.9,173.7 399.6,174.9 400.2,176.1 400.9,177.2 401.6,178.3 402.2,179.3 402.8,180.2 403.5,181.1 404.1,181.9 404.8,182.7 405.4,183.5 406.1,184.1 406.8,184.8 407.4,185.4 408.1,186.0 408.7,186.5 409.4,187.1 410.0,187.6 410.6,188.1 411.3,188.7 411.9,189.3 412.6,189.9 413.2,190.6 413.9,191.4 414.6,192.2 415.2,193.2 415.9,194.2 416.5,195.4 417.2,196.7 417.8,198.1 418.4,199.7 419.1,201.5 419.8,203.4 420.4,205.6 421.1,207.9 421.7,210.4 422.4,213.1 423.0,216.1 423.7,219.2 424.3,222.6 424.9,226.2 425.6,230.0 426.2,234.0 426.9,238.1 427.6,242.5 428.2,247.1 428.9,251.8 429.5,256.8 430.2,261.8 430.8,267.0 431.5,272.3 432.1,277.7 432.8,283.1 433.4,288.6 434.1,294.2 434.7,299.7 435.3,305.3 436.0,310.7 436.7,316.2 437.3,321.5 437.9,326.7 438.6,331.7 439.2,336.6 439.9,341.3 440.5,345.7 441.2,350.0 441.9,353.9 442.5,357.5 443.1,360.8 443.8,363.8 444.5,366.4 445.1,368.7 445.7,370.5 446.4,371.9 447.1,372.9 447.7,373.5 448.3,373.7 449.0,373.4 449.7,372.7 450.3,371.5 450.9,369.8 451.6,367.8 452.3,365.2 452.9,362.3 453.5,358.9 454.2,355.1 454.9,351.0 455.5,346.4 456.1,341.5 456.8,336.2 457.5,330.7 458.1,324.8 458.7,318.6 459.4,312.2 460.1,305.6 460.7,298.8 461.3,291.8 462.0,284.7 462.7,277.5 463.3,270.2 463.9,262.9 464.6,255.5 465.3,248.1 465.9,240.8 466.5,233.5 467.2,226.3 467.8,219.3 468.5,212.3 469.1,205.6 469.8,199.0 470.4,192.6 471.1,186.4 471.8,180.5 472.4,174.8 473.1,169.4 473.7,164.3 474.3,159.4 475.0,154.9 475.6,150.6 476.3,146.6 476.9,143.0 477.6,139.6 478.2,136.6 478.9,133.8 479.6,131.4 480.2,129.2 480.8,127.3 481.5,125.7 482.1,124.3 482.8,123.2 483.4,122.3 484.1,121.7 484.8,121.2 485.4,120.9 486.1,120.8 486.7,120.9 487.4,121.1 488.0,121.4 488.6,121.9 489.3,122.4 489.9,123.1 490.6,123.8 491.2,124.5 491.9,125.3 492.6,126.1 493.2,127.0 493.9,127.8 494.5,128.7 495.1,129.5 495.8,130.4 496.4,131.2 497.1,131.9 497.8,132.7 498.4,133.4 499.1,134.1 499.7,134.7 500.4,135.3 501.0,135.8 501.7,136.3 502.3,136.8 502.9,137.3 503.6,137.7 504.2,138.1 504.9,138.5 505.6,138.9 506.2,139.3 506.9,139.6 507.5,140.0 508.2,140.4 508.8,140.9 509.4,141.3 510.1,141.8 510.8,142.3 511.4,142.8 512.0,143.4 512.7,144.1 513.4,144.8 514.0,145.5 514.7,146.3 515.3,147.2 516.0,148.1 516.6,149.1 517.2,150.1 517.9,151.2 518.5,152.4 519.2,153.6 519.9,154.8 520.5,156.1 521.2,157.4 521.8,158.7 522.5,160.1 523.1,161.5 523.8,162.9 524.4,164.3 525.0,165.7 525.7,167.1 526.4,168.5 527.0,169.8 527.7,171.2 528.3,172.5 529.0,173.7 529.6,174.9 530.2,176.1 530.9,177.2 531.5,178.3 532.2,179.3 532.9,180.2 533.5,181.1 534.2,181.9 534.8,182.7 535.5,183.5 536.1,184.1 536.8,184.8 537.4,185.4 538.0,186.0 538.7,186.5 539.4,187.1 540.0,187.6 540.6,188.1 541.3,188.7 542.0,189.3 542.6,189.9 543.2,190.6 543.9,191.4 544.6,192.2 545.2,193.2 545.8,194.2 546.5,195.4 547.2,196.7 547.8,198.1 548.5,199.7 549.1,201.5 549.8,203.4 550.4,205.6 551.0,207.9 551.7,210.4 552.4,213.1 553.0,216.1 553.6,219.2 554.3,222.6 555.0,226.2 555.6,230.0 556.2,234.0 556.9,238.1 557.6,242.5 558.2,247.1 558.8,251.8 559.5,256.8 560.2,261.8 560.8,267.0 561.5,272.3 562.1,277.7 562.8,283.1 563.4,288.6 564.0,294.2 564.7,299.7 565.4,305.3 566.0,310.7 566.6,316.2 567.3,321.5 568.0,326.7 568.6,331.7 569.2,336.6 569.9,341.3 570.5,345.7 571.2,350.0 571.9,353.9 572.5,357.5 573.1,360.8 573.8,363.8 574.5,366.4 575.1,368.7 575.8,370.5 576.4,371.9 577.0,372.9 577.7,373.5 578.4,373.7 579.0,373.4 579.7,372.7 580.3,371.5 581.0,369.8 581.6,367.8 582.2,365.2 582.9,362.3 583.5,358.9 584.2,355.1 584.9,351.0 585.5,346.4 586.2,341.5 586.8,336.2 587.5,330.7 588.1,324.8 588.8,318.6 589.4,312.2 590.0,305.6 590.7,298.8 591.4,291.8 592.0,284.7 592.7,277.5 593.3,270.2 594.0,262.9 594.6,255.5 595.2,248.1 595.9,240.8 596.5,233.5 597.2,226.3 597.9,219.3 598.5,212.3 599.1,205.6 599.8,199.0 600.5,192.6 601.1,186.4 601.8,180.5 602.4,174.8 603.0,169.4 603.7,164.3 604.4,159.4 605.0,154.9 605.6,150.6 606.3,146.6 606.9,143.0 607.6,139.6 608.2,136.6 608.9,133.8 609.6,131.4 610.2,129.2 610.8,127.3 611.5,125.7 612.1,124.3 612.8,123.2 613.5,122.3 614.1,121.7 614.8,121.2 615.4,120.9 616.0,120.8 616.7,120.9 617.4,121.1 618.0,121.4 618.7,121.9 619.3,122.4 620.0,123.1 620.6,123.8 621.2,124.5 621.9,125.3 622.5,126.1 623.2,127.0 623.9,127.8 624.5,128.7 625.2,129.5 625.8,130.4 626.4,131.2 627.1,131.9 627.8,132.7 628.4,133.4 629.1,134.1 629.7,134.7 630.4,135.3 631.0,135.8 631.6,136.3 632.3,136.8 632.9,137.3 633.6,137.7 634.2,138.1 634.9,138.5 635.6,138.9 636.2,139.3 636.9,139.6 637.5,140.0 638.1,140.4 638.8,140.9 639.4,141.3 640.1,141.8 640.8,142.3 641.4,142.8 642.0,143.4 642.7,144.1 643.4,144.8 644.0,145.5 644.6,146.3 645.3,147.2 646.0,148.1 646.6,149.1 647.2,150.1 647.9,151.2 648.5,152.4 649.2,153.6 649.9,154.8 650.5,156.1 651.2,157.4 651.8,158.7 652.5,160.1 653.1,161.5 653.8,162.9 654.4,164.3 655.0,165.7 655.7,167.1 656.4,168.5 657.0,169.8 657.6,171.2 658.3,172.5 659.0,173.7 659.6,174.9 660.2,176.1 660.9,177.2 661.6,178.3 662.2,179.3 662.9,180.2 663.5,181.1 664.1,181.9 664.8,182.7 665.5,183.5 666.1,184.1 666.8,184.8 667.4,185.4 668.1,186.0 668.7,186.5 669.4,187.1 670.0,187.6 670.6,188.1 671.3,188.7 671.9,189.3 672.6,189.9 673.2,190.6 673.9,191.4 674.6,192.2 675.2,193.2 675.9,194.2 676.5,195.4 677.1,196.7 677.8,198.1 678.5,199.7 679.1,201.5 679.8,203.4 680.4,205.6 681.1,207.9 681.7,210.4 682.3,213.1 683.0,216.1 683.6,219.2 684.3,222.6 685.0,226.2 685.6,230.0 686.2,234.0 686.9,238.1 687.5,242.5 688.2,247.1 688.9,251.8 689.5,256.8 690.1,261.8 690.8,267.0 691.5,272.3 692.1,277.7 692.8,283.1 693.4,288.6 694.1,294.2 694.7,299.7 695.4,305.3 696.0,310.7 696.7,316.2 697.3,321.5 697.9,326.7 698.6,331.7 699.2,336.6 699.9,341.3 700.6,345.7 701.2,350.0 701.9,353.9 702.5,357.5 703.1,360.8 703.8,363.8 704.4,366.4 705.1,368.7 705.8,370.5 706.4,371.9 707.1,372.9 707.7,373.5 708.4,373.7 709.0,373.4 709.6,372.7 710.3,371.5 711.0,369.8 711.6,367.8 712.2,365.2 712.9,362.3 713.5,358.9 714.2,355.1 714.9,351.0 715.5,346.4 716.2,341.5 716.8,336.2 717.5,330.7 718.1,324.8 718.8,318.6 719.4,312.2 720.0,305.6 720.7,298.8 721.4,291.8 722.0,284.7 722.7,277.5 723.3,270.2 724.0,262.9 724.6,255.5 725.2,248.1 725.9,240.8 726.6,233.5 727.2,226.3 727.9,219.3 728.5,212.3 729.1,205.6 729.8,199.0 730.5,192.6 731.1,186.4 731.8,180.5 732.4,174.8 733.1,169.4 733.7,164.3 734.4,159.4 735.0,154.9\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><text x=\"410.0\" y=\"440\" text-anchor=\"middle\" font-weight=\"bold\">t (ms)</text><text transform=\"translate(24,210.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">u (mV)</text></svg>",
+      "questions": [
+        {
+          "texte": "Ce signal est-il périodique ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Recopie la phrase en complétant : « La période T est la … d'un … élémentaire qui se … identique à lui-même. Elle s'exprime en … . »",
+          "aides": []
+        },
+        {
+          "texte": "Combien de motifs complets vois-tu entre t = 0 ms et t = 10 ms ? Déduis-en la période T en ms, puis en s.",
+          "aides": [
+            "Repère un point remarquable du signal (par exemple le sommet le plus haut) et compte combien de fois il revient.",
+            "Si 5 motifs durent 10 ms, combien dure un seul motif ?"
+          ]
+        },
+        {
+          "texte": "La fréquence f se calcule par f = 1 / T, avec T en secondes. Calcule f et donne son unité.",
+          "aides": [
+            "Avant de calculer f, convertis T en secondes : 1 ms = 10⁻³ s.",
+            "Calcule 1 / (2,0 × 10⁻³) à la calculatrice."
+          ]
+        },
+        {
+          "texte": "Que signifie concrètement cette valeur de f pour la membrane du microphone ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Oui : le même motif se reproduit identique à lui-même à intervalles de temps réguliers.",
+        "<strong>2.</strong> « La période T est la durée d'un motif élémentaire qui se répète identique à lui-même. Elle s'exprime en secondes (s). »",
+        "<strong>3.</strong> On compte 5 motifs complets en 10 ms, donc T = 10 / 5 = 2,0 ms = 2,0 × 10⁻³ s.",
+        "<strong>4.</strong> f = 1 / T = 1 / (2,0 × 10⁻³) = 500 Hz (hertz).",
+        "<strong>5.</strong> La membrane du microphone effectue 500 vibrations (500 allers-retours) par seconde.",
+        "<em>⚠ Erreur fréquente : calculer f = 1 / 2,0 = 0,50 Hz en oubliant de convertir les millisecondes en secondes. Mesurer plusieurs périodes d'un coup (ici 5) est plus précis que d'en mesurer une seule.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Mesurer la vitesse du son en TP",
+      "contexte": [
+        "Pour mesurer la célérité du son dans l'air de la salle, des élèves placent deux microphones sur une même droite, séparés d'une distance d = 1,20 m. Un élève claque deux planchettes l'une contre l'autre, sur cette droite, juste à côté du micro 1.",
+        "Les deux microphones sont reliés à une carte d'acquisition qui enregistre simultanément leurs signaux. On obtient l'enregistrement ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"110.0\" y1=\"25\" x2=\"110.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"110.0\" y=\"427\" text-anchor=\"middle\">0</text><line x1=\"148.8\" y1=\"25\" x2=\"148.8\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"187.5\" y1=\"25\" x2=\"187.5\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"187.5\" y=\"427\" text-anchor=\"middle\">1</text><line x1=\"226.2\" y1=\"25\" x2=\"226.2\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"265.0\" y1=\"25\" x2=\"265.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"265.0\" y=\"427\" text-anchor=\"middle\">2</text><line x1=\"303.8\" y1=\"25\" x2=\"303.8\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"342.5\" y1=\"25\" x2=\"342.5\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"342.5\" y=\"427\" text-anchor=\"middle\">3</text><line x1=\"381.2\" y1=\"25\" x2=\"381.2\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"420.0\" y1=\"25\" x2=\"420.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"420.0\" y=\"427\" text-anchor=\"middle\">4</text><line x1=\"458.8\" y1=\"25\" x2=\"458.8\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"497.5\" y1=\"25\" x2=\"497.5\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"497.5\" y=\"427\" text-anchor=\"middle\">5</text><line x1=\"536.2\" y1=\"25\" x2=\"536.2\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"575.0\" y1=\"25\" x2=\"575.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"575.0\" y=\"427\" text-anchor=\"middle\">6</text><line x1=\"613.8\" y1=\"25\" x2=\"613.8\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"652.5\" y1=\"25\" x2=\"652.5\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"652.5\" y=\"427\" text-anchor=\"middle\">7</text><line x1=\"691.2\" y1=\"25\" x2=\"691.2\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"730.0\" y1=\"25\" x2=\"730.0\" y2=\"405\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"730.0\" y=\"427\" text-anchor=\"middle\">8</text><line x1=\"110\" y1=\"215.0\" x2=\"730\" y2=\"215.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"110\" y1=\"120.0\" x2=\"730\" y2=\"120.0\" stroke=\"#9a9a9a\" stroke-width=\"1\"/><line x1=\"110\" y1=\"310.0\" x2=\"730\" y2=\"310.0\" stroke=\"#9a9a9a\" stroke-width=\"1\"/><rect x=\"110\" y=\"25\" width=\"620\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"110.0,120.0 110.4,120.0 110.8,120.0 111.2,120.0 111.5,120.0 111.9,120.0 112.3,120.0 112.7,120.0 113.1,120.0 113.5,120.0 113.9,120.0 114.3,120.0 114.7,120.0 115.0,120.0 115.4,120.0 115.8,120.0 116.2,120.0 116.6,120.0 117.0,120.0 117.4,120.0 117.8,120.0 118.1,120.0 118.5,120.0 118.9,120.0 119.3,120.0 119.7,120.0 120.1,120.0 120.5,120.0 120.8,120.0 121.2,120.0 121.6,120.0 122.0,120.0 122.4,120.0 122.8,120.0 123.2,120.0 123.6,120.0 124.0,120.0 124.3,120.0 124.7,120.0 125.1,120.0 125.5,120.0 125.9,120.0 126.3,120.0 126.7,120.0 127.0,120.0 127.4,120.0 127.8,120.0 128.2,120.0 128.6,120.0 129.0,120.0 129.4,120.0 129.8,120.0 130.2,120.0 130.5,120.0 130.9,120.0 131.3,120.0 131.7,120.0 132.1,120.0 132.5,120.0 132.9,120.0 133.2,120.0 133.6,120.0 134.0,120.0 134.4,120.0 134.8,120.0 135.2,120.0 135.6,120.0 136.0,120.0 136.3,120.0 136.7,120.0 137.1,120.0 137.5,120.0 137.9,120.0 138.3,120.0 138.7,120.0 139.1,120.0 139.4,120.0 139.8,120.0 140.2,120.0 140.6,120.0 141.0,120.0 141.4,120.0 141.8,120.0 142.2,120.0 142.6,120.0 142.9,120.0 143.3,120.0 143.7,120.0 144.1,120.0 144.5,120.0 144.9,120.0 145.3,120.0 145.7,120.0 146.0,120.0 146.4,120.0 146.8,120.0 147.2,120.0 147.6,120.0 148.0,120.0 148.4,120.0 148.8,120.0 149.1,120.0 149.5,120.0 149.9,120.0 150.3,120.0 150.7,120.0 151.1,120.0 151.5,120.0 151.8,120.0 152.2,120.0 152.6,120.0 153.0,120.0 153.4,120.0 153.8,120.0 154.2,120.0 154.6,120.0 154.9,120.0 155.3,120.0 155.7,120.0 156.1,120.0 156.5,120.0 156.9,120.0 157.3,120.0 157.7,120.0 158.1,120.0 158.4,120.0 158.8,120.0 159.2,120.0 159.6,120.0 160.0,120.0 160.4,120.0 160.8,120.0 161.2,120.0 161.5,120.0 161.9,120.0 162.3,120.0 162.7,120.0 163.1,120.0 163.5,120.0 163.9,120.0 164.2,120.0 164.6,120.0 165.0,120.0 165.4,120.0 165.8,120.0 166.2,120.0 166.6,120.0 167.0,120.0 167.3,120.0 167.7,120.0 168.1,120.0 168.5,120.0 168.9,120.0 169.3,120.0 169.7,120.0 170.1,120.0 170.4,120.0 170.8,120.0 171.2,120.0 171.6,120.0 172.0,120.0 172.4,120.0 172.8,120.0 173.2,120.0 173.6,120.0 173.9,120.0 174.3,120.0 174.7,120.0 175.1,120.0 175.5,120.0 175.9,120.0 176.3,120.0 176.7,120.0 177.0,120.0 177.4,120.0 177.8,120.0 178.2,120.0 178.6,120.0 179.0,120.0 179.4,120.0 179.8,120.0 180.1,120.0 180.5,120.0 180.9,120.0 181.3,120.0 181.7,120.0 182.1,120.0 182.5,120.0 182.9,120.0 183.2,120.0 183.6,120.0 184.0,120.0 184.4,120.0 184.8,120.0 185.2,120.0 185.6,120.0 185.9,120.0 186.3,120.0 186.7,120.0 187.1,120.0 187.5,120.0 187.9,116.2 188.3,112.4 188.7,108.7 189.1,105.1 189.4,101.6 189.8,98.1 190.2,94.7 190.6,91.4 191.0,88.2 191.4,85.1 191.8,82.1 192.2,79.3 192.5,76.5 192.9,73.9 193.3,71.5 193.7,69.1 194.1,66.9 194.5,64.9 194.9,63.0 195.2,61.2 195.6,59.6 196.0,58.1 196.4,56.8 196.8,55.7 197.2,54.7 197.6,53.9 198.0,53.2 198.4,52.7 198.7,52.3 199.1,52.1 199.5,52.0 199.9,52.1 200.3,52.4 200.7,52.8 201.1,53.3 201.4,54.0 201.8,54.9 202.2,55.8 202.6,56.9 203.0,58.1 203.4,59.5 203.8,61.0 204.2,62.6 204.6,64.3 204.9,66.1 205.3,68.0 205.7,70.0 206.1,72.1 206.5,74.2 206.9,76.5 207.3,78.8 207.7,81.2 208.0,83.7 208.4,86.2 208.8,88.7 209.2,91.3 209.6,94.0 210.0,96.6 210.4,99.3 210.8,102.0 211.1,104.7 211.5,107.4 211.9,110.2 212.3,112.9 212.7,115.6 213.1,118.2 213.5,120.9 213.9,123.5 214.2,126.1 214.6,128.6 215.0,131.1 215.4,133.5 215.8,135.9 216.2,138.2 216.6,140.5 216.9,142.7 217.3,144.8 217.7,146.8 218.1,148.8 218.5,150.6 218.9,152.4 219.3,154.1 219.7,155.6 220.1,157.1 220.4,158.5 220.8,159.8 221.2,161.0 221.6,162.1 222.0,163.0 222.4,163.9 222.8,164.7 223.1,165.3 223.5,165.8 223.9,166.3 224.3,166.6 224.7,166.8 225.1,166.9 225.5,166.9 225.9,166.8 226.2,166.6 226.6,166.3 227.0,165.9 227.4,165.4 227.8,164.8 228.2,164.1 228.6,163.3 229.0,162.4 229.4,161.4 229.7,160.4 230.1,159.3 230.5,158.1 230.9,156.8 231.3,155.5 231.7,154.1 232.1,152.6 232.4,151.1 232.8,149.5 233.2,147.9 233.6,146.2 234.0,144.5 234.4,142.8 234.8,141.0 235.2,139.2 235.6,137.4 235.9,135.5 236.3,133.7 236.7,131.8 237.1,129.9 237.5,128.0 237.9,126.2 238.3,124.3 238.7,122.4 239.0,120.6 239.4,118.8 239.8,117.0 240.2,115.2 240.6,113.5 241.0,111.8 241.4,110.1 241.8,108.5 242.1,106.9 242.5,105.3 242.9,103.9 243.3,102.4 243.7,101.0 244.1,99.7 244.5,98.4 244.8,97.2 245.2,96.1 245.6,95.0 246.0,94.0 246.4,93.1 246.8,92.2 247.2,91.4 247.6,90.7 247.9,90.1 248.3,89.5 248.7,89.0 249.1,88.6 249.5,88.2 249.9,88.0 250.3,87.8 250.7,87.6 251.1,87.6 251.4,87.6 251.8,87.7 252.2,87.9 252.6,88.1 253.0,88.4 253.4,88.8 253.8,89.2 254.2,89.7 254.5,90.3 254.9,90.9 255.3,91.6 255.7,92.4 256.1,93.1 256.5,94.0 256.9,94.9 257.2,95.8 257.6,96.8 258.0,97.8 258.4,98.9 258.8,100.0 259.2,101.1 259.6,102.3 260.0,103.5 260.4,104.7 260.7,105.9 261.1,107.2 261.5,108.4 261.9,109.7 262.3,111.0 262.7,112.3 263.1,113.6 263.4,114.9 263.8,116.2 264.2,117.5 264.6,118.7 265.0,120.0 265.4,121.3 265.8,122.5 266.2,123.7 266.6,124.9 266.9,126.1 267.3,127.2 267.7,128.3 268.1,129.4 268.5,130.5 268.9,131.5 269.3,132.5 269.6,133.4 270.0,134.3 270.4,135.2 270.8,136.0 271.2,136.7 271.6,137.5 272.0,138.1 272.4,138.8 272.8,139.4 273.1,139.9 273.5,140.4 273.9,140.8 274.3,141.2 274.7,141.5 275.1,141.8 275.5,142.0 275.9,142.2 276.2,142.3 276.6,142.4 277.0,142.4 277.4,142.3 277.8,142.3 278.2,142.1 278.6,141.9 279.0,141.7 279.3,141.4 279.7,141.1 280.1,140.8 280.5,140.4 280.9,139.9 281.3,139.4 281.7,138.9 282.1,138.3 282.4,137.8 282.8,137.1 283.2,136.5 283.6,135.8 284.0,135.1 284.4,134.3 284.8,133.6 285.1,132.8 285.5,132.0 285.9,131.1 286.3,130.3 286.7,129.4 287.1,128.6 287.5,127.7 287.9,126.8 288.2,125.9 288.6,125.0 289.0,124.1 289.4,123.2 289.8,122.3 290.2,121.5 290.6,120.6 291.0,119.7 291.4,118.8 291.7,118.0 292.1,117.2 292.5,116.3 292.9,115.5 293.3,114.8 293.7,114.0 294.1,113.3 294.4,112.5 294.8,111.8 295.2,111.2 295.6,110.5 296.0,109.9 296.4,109.3 296.8,108.8 297.2,108.3 297.5,107.8 297.9,107.3 298.3,106.9 298.7,106.5 299.1,106.2 299.5,105.8 299.9,105.5 300.3,105.3 300.6,105.1 301.0,104.9 301.4,104.8 301.8,104.7 302.2,104.6 302.6,104.6 303.0,104.6 303.4,104.6 303.8,104.7 304.1,104.8 304.5,104.9 304.9,105.1 305.3,105.3 305.7,105.5 306.1,105.8 306.5,106.0 306.9,106.4 307.2,106.7 307.6,107.1 308.0,107.5 308.4,107.9 308.8,108.3 309.2,108.8 309.6,109.3 310.0,109.8 310.3,110.3 310.7,110.8 311.1,111.4 311.5,111.9 311.9,112.5 312.3,113.1 312.7,113.7 313.1,114.3 313.4,114.9 313.8,115.5 314.2,116.1 314.6,116.7 315.0,117.4 315.4,118.0 315.8,118.6 316.1,119.2 316.5,119.8 316.9,120.4 317.3,121.0 317.7,121.6 318.1,122.1 318.5,122.7 318.9,123.3 319.2,123.8 319.6,124.3 320.0,124.8 320.4,125.3 320.8,125.8 321.2,126.2 321.6,126.7 322.0,127.1 322.4,127.5 322.7,127.9 323.1,128.2 323.5,128.5 323.9,128.9 324.3,129.1 324.7,129.4 325.1,129.6 325.5,129.8 325.8,130.0 326.2,130.2 326.6,130.3 327.0,130.5 327.4,130.5 327.8,130.6 328.2,130.6 328.5,130.7 328.9,130.7 329.3,130.6 329.7,130.6 330.1,130.5 330.5,130.4 330.9,130.3 331.3,130.1 331.6,130.0 332.0,129.8 332.4,129.6 332.8,129.3 333.2,129.1 333.6,128.8 334.0,128.6 334.4,128.3 334.8,128.0 335.1,127.6 335.5,127.3 335.9,126.9 336.3,126.6 336.7,126.2 337.1,125.8 337.5,125.4 337.9,125.0 338.2,124.6 338.6,124.2 339.0,123.8 339.4,123.4 339.8,123.0 340.2,122.5 340.6,122.1 340.9,121.7 341.3,121.3 341.7,120.8 342.1,120.4 342.5,120.0 342.9,119.6 343.3,119.2 343.7,118.8 344.1,118.4 344.4,118.0 344.8,117.6 345.2,117.3 345.6,116.9 346.0,116.6 346.4,116.2 346.8,115.9 347.1,115.6 347.5,115.3 347.9,115.0 348.3,114.7 348.7,114.5 349.1,114.2 349.5,114.0 349.9,113.8 350.2,113.6 350.6,113.5 351.0,113.3 351.4,113.2 351.8,113.0 352.2,112.9 352.6,112.8 353.0,112.8 353.4,112.7 353.7,112.7 354.1,112.6 354.5,112.6 354.9,112.6 355.3,112.7 355.7,112.7 356.1,112.8 356.5,112.9 356.8,112.9 357.2,113.0 357.6,113.2 358.0,113.3 358.4,113.4 358.8,113.6 359.2,113.8 359.6,114.0 359.9,114.2 360.3,114.4 360.7,114.6 361.1,114.8 361.5,115.0 361.9,115.3 362.3,115.5 362.6,115.8 363.0,116.1 363.4,116.3 363.8,116.6 364.2,116.9 364.6,117.2 365.0,117.5 365.4,117.8 365.8,118.1 366.1,118.3 366.5,118.6 366.9,118.9 367.3,119.2 367.7,119.5 368.1,119.8 368.5,120.1 368.8,120.4 369.2,120.7 369.6,120.9 370.0,121.2 370.4,121.5 370.8,121.7 371.2,122.0 371.6,122.2 371.9,122.5 372.3,122.7 372.7,122.9 373.1,123.1 373.5,123.3 373.9,123.5 374.3,123.7 374.7,123.9 375.1,124.0 375.4,124.2 375.8,124.3 376.2,124.4 376.6,124.6 377.0,124.7 377.4,124.8 377.8,124.8 378.1,124.9 378.5,125.0 378.9,125.0 379.3,125.0 379.7,125.1 380.1,125.1 380.5,125.1 380.9,125.1 381.2,125.1 381.6,125.0 382.0,125.0 382.4,124.9 382.8,124.9 383.2,124.8 383.6,124.7 384.0,124.6 384.4,124.5 384.7,124.4 385.1,124.3 385.5,124.1 385.9,124.0 386.3,123.8 386.7,123.7 387.1,123.5 387.4,123.4 387.8,123.2 388.2,123.0 388.6,122.8 389.0,122.7 389.4,122.5 389.8,122.3 390.2,122.1 390.6,121.9 390.9,121.7 391.3,121.5 391.7,121.3 392.1,121.1 392.5,120.9 392.9,120.7 393.3,120.5 393.7,120.3 394.0,120.1 394.4,119.9 394.8,119.7 395.2,119.5 395.6,119.3 396.0,119.1 396.4,118.9 396.8,118.8 397.1,118.6 397.5,118.4 397.9,118.3 398.3,118.1 398.7,117.9 399.1,117.8 399.5,117.7 399.9,117.5 400.2,117.4 400.6,117.3 401.0,117.2 401.4,117.1 401.8,117.0 402.2,116.9 402.6,116.8 403.0,116.8 403.3,116.7 403.7,116.6 404.1,116.6 404.5,116.6 404.9,116.5 405.3,116.5 405.7,116.5 406.1,116.5 406.4,116.5 406.8,116.5 407.2,116.5 407.6,116.5 408.0,116.6 408.4,116.6 408.8,116.7 409.1,116.7 409.5,116.8 409.9,116.9 410.3,116.9 410.7,117.0 411.1,117.1 411.5,117.2 411.9,117.3 412.2,117.4 412.6,117.5 413.0,117.6 413.4,117.7 413.8,117.8 414.2,118.0 414.6,118.1 415.0,118.2 415.4,118.3 415.7,118.5 416.1,118.6 416.5,118.7 416.9,118.9 417.3,119.0 417.7,119.2 418.1,119.3 418.4,119.4 418.8,119.6 419.2,119.7 419.6,119.9 420.0,120.0 420.4,120.1 420.8,120.3 421.2,120.4 421.6,120.5 421.9,120.7 422.3,120.8 422.7,120.9 423.1,121.0 423.5,121.1 423.9,121.2 424.3,121.4 424.7,121.5 425.0,121.6 425.4,121.6 425.8,121.7 426.2,121.8 426.6,121.9 427.0,122.0 427.4,122.0 427.8,122.1 428.1,122.2 428.5,122.2 428.9,122.3 429.3,122.3 429.7,122.3 430.1,122.4 430.5,122.4 430.8,122.4 431.2,122.4 431.6,122.4 432.0,122.4 432.4,122.4 432.8,122.4 433.2,122.4 433.6,122.4 433.9,122.4 434.3,122.3 434.7,122.3 435.1,122.3 435.5,122.2 435.9,122.2 436.3,122.1 436.7,122.0 437.0,122.0 437.4,121.9 437.8,121.9 438.2,121.8 438.6,121.7 439.0,121.6 439.4,121.6 439.8,121.5 440.1,121.4 440.5,121.3 440.9,121.2 441.3,121.1 441.7,121.0 442.1,120.9 442.5,120.8 442.9,120.7 443.2,120.6 443.6,120.5 444.0,120.4 444.4,120.4 444.8,120.3 445.2,120.2 445.6,120.1 446.0,120.0 446.3,119.9 446.7,119.8 447.1,119.7 447.5,119.6 447.9,119.5 448.3,119.4 448.7,119.3 449.1,119.3 449.4,119.2 449.8,119.1 450.2,119.0 450.6,119.0 451.0,118.9 451.4,118.8 451.8,118.8 452.2,118.7 452.6,118.7 452.9,118.6 453.3,118.6 453.7,118.5 454.1,118.5 454.5,118.5 454.9,118.4 455.3,118.4 455.6,118.4 456.0,118.4 456.4,118.3 456.8,118.3 457.2,118.3 457.6,118.3 458.0,118.3 458.4,118.3 458.8,118.3 459.1,118.3 459.5,118.4 459.9,118.4 460.3,118.4 460.7,118.4 461.1,118.5 461.5,118.5 461.9,118.5 462.2,118.6 462.6,118.6 463.0,118.6 463.4,118.7 463.8,118.7 464.2,118.8 464.6,118.8 464.9,118.9 465.3,118.9 465.7,119.0 466.1,119.1 466.5,119.1 466.9,119.2 467.3,119.3 467.7,119.3 468.1,119.4 468.4,119.4 468.8,119.5 469.2,119.6 469.6,119.6 470.0,119.7 470.4,119.8 470.8,119.8 471.2,119.9 471.5,120.0 471.9,120.0 472.3,120.1 472.7,120.2 473.1,120.2 473.5,120.3 473.9,120.4 474.2,120.4 474.6,120.5 475.0,120.5 475.4,120.6 475.8,120.6 476.2,120.7 476.6,120.7 477.0,120.8 477.4,120.8 477.7,120.9 478.1,120.9 478.5,120.9 478.9,121.0 479.3,121.0 479.7,121.0 480.1,121.0 480.5,121.1 480.8,121.1 481.2,121.1 481.6,121.1 482.0,121.1 482.4,121.1 482.8,121.1 483.2,121.2 483.6,121.2 483.9,121.2 484.3,121.2 484.7,121.1 485.1,121.1 485.5,121.1 485.9,121.1 486.3,121.1 486.7,121.1 487.0,121.1 487.4,121.0 487.8,121.0 488.2,121.0 488.6,121.0 489.0,120.9 489.4,120.9 489.8,120.9 490.1,120.8 490.5,120.8 490.9,120.8 491.3,120.7 491.7,120.7 492.1,120.6 492.5,120.6 492.9,120.5 493.2,120.5 493.6,120.5 494.0,120.4 494.4,120.4 494.8,120.3 495.2,120.3 495.6,120.2 496.0,120.2 496.3,120.1 496.7,120.1 497.1,120.0 497.5,120.0 497.9,120.0 498.3,119.9 498.7,119.9 499.1,119.8 499.4,119.8 499.8,119.7 500.2,119.7 500.6,119.7 501.0,119.6 501.4,119.6 501.8,119.6 502.2,119.5 502.5,119.5 502.9,119.5 503.3,119.4 503.7,119.4 504.1,119.4 504.5,119.4 504.9,119.3 505.3,119.3 505.6,119.3 506.0,119.3 506.4,119.3 506.8,119.2 507.2,119.2 507.6,119.2 508.0,119.2 508.3,119.2 508.7,119.2 509.1,119.2 509.5,119.2 509.9,119.2 510.3,119.2 510.7,119.2 511.1,119.2 511.4,119.2 511.8,119.2 512.2,119.2 512.6,119.3 513.0,119.3 513.4,119.3 513.8,119.3 514.2,119.3 514.5,119.3 514.9,119.4 515.3,119.4 515.7,119.4 516.1,119.4 516.5,119.5 516.9,119.5 517.3,119.5 517.6,119.5 518.0,119.6 518.4,119.6 518.8,119.6 519.2,119.7 519.6,119.7 520.0,119.7 520.4,119.8 520.8,119.8 521.1,119.8 521.5,119.9 521.9,119.9 522.3,119.9 522.7,119.9 523.1,120.0 523.5,120.0 523.8,120.0 524.2,120.1 524.6,120.1 525.0,120.1 525.4,120.2 525.8,120.2 526.2,120.2 526.6,120.2 527.0,120.3 527.3,120.3 527.7,120.3 528.1,120.3 528.5,120.4 528.9,120.4 529.3,120.4 529.7,120.4 530.0,120.4 530.4,120.5 530.8,120.5 531.2,120.5 531.6,120.5 532.0,120.5 532.4,120.5 532.8,120.5 533.1,120.5 533.5,120.5 533.9,120.5 534.3,120.5 534.7,120.5 535.1,120.6 535.5,120.6 535.9,120.5 536.2,120.5 536.6,120.5 537.0,120.5 537.4,120.5 537.8,120.5 538.2,120.5 538.6,120.5 539.0,120.5 539.4,120.5 539.7,120.5 540.1,120.5 540.5,120.4 540.9,120.4 541.3,120.4 541.7,120.4 542.1,120.4 542.5,120.4 542.8,120.3 543.2,120.3 543.6,120.3 544.0,120.3 544.4,120.3 544.8,120.2 545.2,120.2 545.5,120.2 545.9,120.2 546.3,120.2 546.7,120.1 547.1,120.1 547.5,120.1 547.9,120.1 548.3,120.1 548.7,120.0 549.0,120.0 549.4,120.0 549.8,120.0 550.2,119.9 550.6,119.9 551.0,119.9 551.4,119.9 551.8,119.9 552.1,119.8 552.5,119.8 552.9,119.8 553.3,119.8 553.7,119.8 554.1,119.8 554.5,119.7 554.9,119.7 555.2,119.7 555.6,119.7 556.0,119.7 556.4,119.7 556.8,119.7 557.2,119.7 557.6,119.7 558.0,119.6 558.3,119.6 558.7,119.6 559.1,119.6 559.5,119.6 559.9,119.6 560.3,119.6 560.7,119.6 561.0,119.6 561.4,119.6 561.8,119.6 562.2,119.6 562.6,119.6 563.0,119.6 563.4,119.6 563.8,119.6 564.2,119.6 564.5,119.7 564.9,119.7 565.3,119.7 565.7,119.7 566.1,119.7 566.5,119.7 566.9,119.7 567.2,119.7 567.6,119.7 568.0,119.7 568.4,119.8 568.8,119.8 569.2,119.8 569.6,119.8 570.0,119.8 570.4,119.8 570.7,119.8 571.1,119.8 571.5,119.9 571.9,119.9 572.3,119.9 572.7,119.9 573.1,119.9 573.5,119.9 573.8,120.0 574.2,120.0 574.6,120.0 575.0,120.0 575.4,120.0 575.8,120.0 576.2,120.0 576.5,120.1 576.9,120.1 577.3,120.1 577.7,120.1 578.1,120.1 578.5,120.1 578.9,120.1 579.3,120.1 579.7,120.2 580.0,120.2 580.4,120.2 580.8,120.2 581.2,120.2 581.6,120.2 582.0,120.2 582.4,120.2 582.8,120.2 583.1,120.2 583.5,120.2 583.9,120.2 584.3,120.2 584.7,120.3 585.1,120.3 585.5,120.3 585.9,120.3 586.2,120.3 586.6,120.3 587.0,120.3 587.4,120.3 587.8,120.3 588.2,120.3 588.6,120.3 589.0,120.3 589.3,120.3 589.7,120.2 590.1,120.2 590.5,120.2 590.9,120.2 591.3,120.2 591.7,120.2 592.0,120.2 592.4,120.2 592.8,120.2 593.2,120.2 593.6,120.2 594.0,120.2 594.4,120.2 594.8,120.2 595.1,120.1 595.5,120.1 595.9,120.1 596.3,120.1 596.7,120.1 597.1,120.1 597.5,120.1 597.9,120.1 598.2,120.1 598.6,120.1 599.0,120.0 599.4,120.0 599.8,120.0 600.2,120.0 600.6,120.0 601.0,120.0 601.3,120.0 601.7,120.0 602.1,120.0 602.5,120.0 602.9,119.9 603.3,119.9 603.7,119.9 604.1,119.9 604.5,119.9 604.8,119.9 605.2,119.9 605.6,119.9 606.0,119.9 606.4,119.9 606.8,119.9 607.2,119.9 607.5,119.9 607.9,119.9 608.3,119.8 608.7,119.8 609.1,119.8 609.5,119.8 609.9,119.8 610.3,119.8 610.6,119.8 611.0,119.8 611.4,119.8 611.8,119.8 612.2,119.8 612.6,119.8 613.0,119.8 613.4,119.8 613.8,119.8 614.1,119.8 614.5,119.8 614.9,119.8 615.3,119.8 615.7,119.8 616.1,119.8 616.5,119.8 616.9,119.8 617.2,119.8 617.6,119.8 618.0,119.9 618.4,119.9 618.8,119.9 619.2,119.9 619.6,119.9 620.0,119.9 620.3,119.9 620.7,119.9 621.1,119.9 621.5,119.9 621.9,119.9 622.3,119.9 622.7,119.9 623.0,119.9 623.4,119.9 623.8,119.9 624.2,120.0 624.6,120.0 625.0,120.0 625.4,120.0 625.8,120.0 626.1,120.0 626.5,120.0 626.9,120.0 627.3,120.0 627.7,120.0 628.1,120.0 628.5,120.0 628.9,120.0 629.2,120.0 629.6,120.1 630.0,120.1 630.4,120.1 630.8,120.1 631.2,120.1 631.6,120.1 632.0,120.1 632.4,120.1 632.7,120.1 633.1,120.1 633.5,120.1 633.9,120.1 634.3,120.1 634.7,120.1 635.1,120.1 635.5,120.1 635.8,120.1 636.2,120.1 636.6,120.1 637.0,120.1 637.4,120.1 637.8,120.1 638.2,120.1 638.6,120.1 638.9,120.1 639.3,120.1 639.7,120.1 640.1,120.1 640.5,120.1 640.9,120.1 641.3,120.1 641.6,120.1 642.0,120.1 642.4,120.1 642.8,120.1 643.2,120.1 643.6,120.1 644.0,120.1 644.4,120.1 644.8,120.1 645.1,120.1 645.5,120.1 645.9,120.1 646.3,120.1 646.7,120.1 647.1,120.1 647.5,120.1 647.9,120.1 648.2,120.1 648.6,120.0 649.0,120.0 649.4,120.0 649.8,120.0 650.2,120.0 650.6,120.0 651.0,120.0 651.3,120.0 651.7,120.0 652.1,120.0 652.5,120.0 652.9,120.0 653.3,120.0 653.7,120.0 654.1,120.0 654.4,120.0 654.8,120.0 655.2,120.0 655.6,120.0 656.0,120.0 656.4,120.0 656.8,120.0 657.2,119.9 657.5,119.9 657.9,119.9 658.3,119.9 658.7,119.9 659.1,119.9 659.5,119.9 659.9,119.9 660.2,119.9 660.6,119.9 661.0,119.9 661.4,119.9 661.8,119.9 662.2,119.9 662.6,119.9 663.0,119.9 663.4,119.9 663.7,119.9 664.1,119.9 664.5,119.9 664.9,119.9 665.3,119.9 665.7,119.9 666.1,119.9 666.4,119.9 666.8,119.9 667.2,119.9 667.6,119.9 668.0,119.9 668.4,119.9 668.8,119.9 669.2,119.9 669.5,119.9 669.9,119.9 670.3,119.9 670.7,119.9 671.1,119.9 671.5,119.9 671.9,119.9 672.3,119.9 672.6,120.0 673.0,120.0 673.4,120.0 673.8,120.0 674.2,120.0 674.6,120.0 675.0,120.0 675.4,120.0 675.8,120.0 676.1,120.0 676.5,120.0 676.9,120.0 677.3,120.0 677.7,120.0 678.1,120.0 678.5,120.0 678.9,120.0 679.2,120.0 679.6,120.0 680.0,120.0 680.4,120.0 680.8,120.0 681.2,120.0 681.6,120.0 682.0,120.0 682.3,120.0 682.7,120.0 683.1,120.0 683.5,120.0 683.9,120.0 684.3,120.0 684.7,120.0 685.0,120.0 685.4,120.0 685.8,120.1 686.2,120.1 686.6,120.1 687.0,120.1 687.4,120.1 687.8,120.1 688.1,120.1 688.5,120.1 688.9,120.1 689.3,120.1 689.7,120.1 690.1,120.1 690.5,120.1 690.9,120.1 691.2,120.1 691.6,120.1 692.0,120.1 692.4,120.1 692.8,120.1 693.2,120.1 693.6,120.1 694.0,120.1 694.4,120.1 694.7,120.1 695.1,120.0 695.5,120.0 695.9,120.0 696.3,120.0 696.7,120.0 697.1,120.0 697.5,120.0 697.8,120.0 698.2,120.0 698.6,120.0 699.0,120.0 699.4,120.0 699.8,120.0 700.2,120.0 700.5,120.0 700.9,120.0 701.3,120.0 701.7,120.0 702.1,120.0 702.5,120.0 702.9,120.0 703.3,120.0 703.6,120.0 704.0,120.0 704.4,120.0 704.8,120.0 705.2,120.0 705.6,120.0 706.0,120.0 706.4,120.0 706.8,120.0 707.1,120.0 707.5,120.0 707.9,120.0 708.3,120.0 708.7,120.0 709.1,120.0 709.5,120.0 709.9,120.0 710.2,120.0 710.6,120.0 711.0,120.0 711.4,120.0 711.8,120.0 712.2,120.0 712.6,120.0 713.0,120.0 713.3,120.0 713.7,120.0 714.1,120.0 714.5,120.0 714.9,120.0 715.3,120.0 715.7,120.0 716.1,120.0 716.4,120.0 716.8,120.0 717.2,120.0 717.6,120.0 718.0,120.0 718.4,120.0 718.8,120.0 719.1,120.0 719.5,120.0 719.9,120.0 720.3,120.0 720.7,120.0 721.1,120.0 721.5,120.0 721.9,120.0 722.2,120.0 722.6,120.0 723.0,120.0 723.4,120.0 723.8,120.0 724.2,120.0 724.6,120.0 725.0,120.0 725.4,120.0 725.7,120.0 726.1,120.0 726.5,120.0 726.9,120.0 727.3,120.0 727.7,120.0 728.1,120.0 728.5,120.0 728.8,120.0 729.2,120.0 729.6,120.0 730.0,120.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polyline points=\"110.0,310.0 110.4,310.0 110.8,310.0 111.2,310.0 111.5,310.0 111.9,310.0 112.3,310.0 112.7,310.0 113.1,310.0 113.5,310.0 113.9,310.0 114.3,310.0 114.7,310.0 115.0,310.0 115.4,310.0 115.8,310.0 116.2,310.0 116.6,310.0 117.0,310.0 117.4,310.0 117.8,310.0 118.1,310.0 118.5,310.0 118.9,310.0 119.3,310.0 119.7,310.0 120.1,310.0 120.5,310.0 120.8,310.0 121.2,310.0 121.6,310.0 122.0,310.0 122.4,310.0 122.8,310.0 123.2,310.0 123.6,310.0 124.0,310.0 124.3,310.0 124.7,310.0 125.1,310.0 125.5,310.0 125.9,310.0 126.3,310.0 126.7,310.0 127.0,310.0 127.4,310.0 127.8,310.0 128.2,310.0 128.6,310.0 129.0,310.0 129.4,310.0 129.8,310.0 130.2,310.0 130.5,310.0 130.9,310.0 131.3,310.0 131.7,310.0 132.1,310.0 132.5,310.0 132.9,310.0 133.2,310.0 133.6,310.0 134.0,310.0 134.4,310.0 134.8,310.0 135.2,310.0 135.6,310.0 136.0,310.0 136.3,310.0 136.7,310.0 137.1,310.0 137.5,310.0 137.9,310.0 138.3,310.0 138.7,310.0 139.1,310.0 139.4,310.0 139.8,310.0 140.2,310.0 140.6,310.0 141.0,310.0 141.4,310.0 141.8,310.0 142.2,310.0 142.6,310.0 142.9,310.0 143.3,310.0 143.7,310.0 144.1,310.0 144.5,310.0 144.9,310.0 145.3,310.0 145.7,310.0 146.0,310.0 146.4,310.0 146.8,310.0 147.2,310.0 147.6,310.0 148.0,310.0 148.4,310.0 148.8,310.0 149.1,310.0 149.5,310.0 149.9,310.0 150.3,310.0 150.7,310.0 151.1,310.0 151.5,310.0 151.8,310.0 152.2,310.0 152.6,310.0 153.0,310.0 153.4,310.0 153.8,310.0 154.2,310.0 154.6,310.0 154.9,310.0 155.3,310.0 155.7,310.0 156.1,310.0 156.5,310.0 156.9,310.0 157.3,310.0 157.7,310.0 158.1,310.0 158.4,310.0 158.8,310.0 159.2,310.0 159.6,310.0 160.0,310.0 160.4,310.0 160.8,310.0 161.2,310.0 161.5,310.0 161.9,310.0 162.3,310.0 162.7,310.0 163.1,310.0 163.5,310.0 163.9,310.0 164.2,310.0 164.6,310.0 165.0,310.0 165.4,310.0 165.8,310.0 166.2,310.0 166.6,310.0 167.0,310.0 167.3,310.0 167.7,310.0 168.1,310.0 168.5,310.0 168.9,310.0 169.3,310.0 169.7,310.0 170.1,310.0 170.4,310.0 170.8,310.0 171.2,310.0 171.6,310.0 172.0,310.0 172.4,310.0 172.8,310.0 173.2,310.0 173.6,310.0 173.9,310.0 174.3,310.0 174.7,310.0 175.1,310.0 175.5,310.0 175.9,310.0 176.3,310.0 176.7,310.0 177.0,310.0 177.4,310.0 177.8,310.0 178.2,310.0 178.6,310.0 179.0,310.0 179.4,310.0 179.8,310.0 180.1,310.0 180.5,310.0 180.9,310.0 181.3,310.0 181.7,310.0 182.1,310.0 182.5,310.0 182.9,310.0 183.2,310.0 183.6,310.0 184.0,310.0 184.4,310.0 184.8,310.0 185.2,310.0 185.6,310.0 185.9,310.0 186.3,310.0 186.7,310.0 187.1,310.0 187.5,310.0 187.9,310.0 188.3,310.0 188.7,310.0 189.1,310.0 189.4,310.0 189.8,310.0 190.2,310.0 190.6,310.0 191.0,310.0 191.4,310.0 191.8,310.0 192.2,310.0 192.5,310.0 192.9,310.0 193.3,310.0 193.7,310.0 194.1,310.0 194.5,310.0 194.9,310.0 195.2,310.0 195.6,310.0 196.0,310.0 196.4,310.0 196.8,310.0 197.2,310.0 197.6,310.0 198.0,310.0 198.4,310.0 198.7,310.0 199.1,310.0 199.5,310.0 199.9,310.0 200.3,310.0 200.7,310.0 201.1,310.0 201.4,310.0 201.8,310.0 202.2,310.0 202.6,310.0 203.0,310.0 203.4,310.0 203.8,310.0 204.2,310.0 204.6,310.0 204.9,310.0 205.3,310.0 205.7,310.0 206.1,310.0 206.5,310.0 206.9,310.0 207.3,310.0 207.7,310.0 208.0,310.0 208.4,310.0 208.8,310.0 209.2,310.0 209.6,310.0 210.0,310.0 210.4,310.0 210.8,310.0 211.1,310.0 211.5,310.0 211.9,310.0 212.3,310.0 212.7,310.0 213.1,310.0 213.5,310.0 213.9,310.0 214.2,310.0 214.6,310.0 215.0,310.0 215.4,310.0 215.8,310.0 216.2,310.0 216.6,310.0 216.9,310.0 217.3,310.0 217.7,310.0 218.1,310.0 218.5,310.0 218.9,310.0 219.3,310.0 219.7,310.0 220.1,310.0 220.4,310.0 220.8,310.0 221.2,310.0 221.6,310.0 222.0,310.0 222.4,310.0 222.8,310.0 223.1,310.0 223.5,310.0 223.9,310.0 224.3,310.0 224.7,310.0 225.1,310.0 225.5,310.0 225.9,310.0 226.2,310.0 226.6,310.0 227.0,310.0 227.4,310.0 227.8,310.0 228.2,310.0 228.6,310.0 229.0,310.0 229.4,310.0 229.7,310.0 230.1,310.0 230.5,310.0 230.9,310.0 231.3,310.0 231.7,310.0 232.1,310.0 232.4,310.0 232.8,310.0 233.2,310.0 233.6,310.0 234.0,310.0 234.4,310.0 234.8,310.0 235.2,310.0 235.6,310.0 235.9,310.0 236.3,310.0 236.7,310.0 237.1,310.0 237.5,310.0 237.9,310.0 238.3,310.0 238.7,310.0 239.0,310.0 239.4,310.0 239.8,310.0 240.2,310.0 240.6,310.0 241.0,310.0 241.4,310.0 241.8,310.0 242.1,310.0 242.5,310.0 242.9,310.0 243.3,310.0 243.7,310.0 244.1,310.0 244.5,310.0 244.8,310.0 245.2,310.0 245.6,310.0 246.0,310.0 246.4,310.0 246.8,310.0 247.2,310.0 247.6,310.0 247.9,310.0 248.3,310.0 248.7,310.0 249.1,310.0 249.5,310.0 249.9,310.0 250.3,310.0 250.7,310.0 251.1,310.0 251.4,310.0 251.8,310.0 252.2,310.0 252.6,310.0 253.0,310.0 253.4,310.0 253.8,310.0 254.2,310.0 254.5,310.0 254.9,310.0 255.3,310.0 255.7,310.0 256.1,310.0 256.5,310.0 256.9,310.0 257.2,310.0 257.6,310.0 258.0,310.0 258.4,310.0 258.8,310.0 259.2,310.0 259.6,310.0 260.0,310.0 260.4,310.0 260.7,310.0 261.1,310.0 261.5,310.0 261.9,310.0 262.3,310.0 262.7,310.0 263.1,310.0 263.4,310.0 263.8,310.0 264.2,310.0 264.6,310.0 265.0,310.0 265.4,310.0 265.8,310.0 266.2,310.0 266.6,310.0 266.9,310.0 267.3,310.0 267.7,310.0 268.1,310.0 268.5,310.0 268.9,310.0 269.3,310.0 269.6,310.0 270.0,310.0 270.4,310.0 270.8,310.0 271.2,310.0 271.6,310.0 272.0,310.0 272.4,310.0 272.8,310.0 273.1,310.0 273.5,310.0 273.9,310.0 274.3,310.0 274.7,310.0 275.1,310.0 275.5,310.0 275.9,310.0 276.2,310.0 276.6,310.0 277.0,310.0 277.4,310.0 277.8,310.0 278.2,310.0 278.6,310.0 279.0,310.0 279.3,310.0 279.7,310.0 280.1,310.0 280.5,310.0 280.9,310.0 281.3,310.0 281.7,310.0 282.1,310.0 282.4,310.0 282.8,310.0 283.2,310.0 283.6,310.0 284.0,310.0 284.4,310.0 284.8,310.0 285.1,310.0 285.5,310.0 285.9,310.0 286.3,310.0 286.7,310.0 287.1,310.0 287.5,310.0 287.9,310.0 288.2,310.0 288.6,310.0 289.0,310.0 289.4,310.0 289.8,310.0 290.2,310.0 290.6,310.0 291.0,310.0 291.4,310.0 291.7,310.0 292.1,310.0 292.5,310.0 292.9,310.0 293.3,310.0 293.7,310.0 294.1,310.0 294.4,310.0 294.8,310.0 295.2,310.0 295.6,310.0 296.0,310.0 296.4,310.0 296.8,310.0 297.2,310.0 297.5,310.0 297.9,310.0 298.3,310.0 298.7,310.0 299.1,310.0 299.5,310.0 299.9,310.0 300.3,310.0 300.6,310.0 301.0,310.0 301.4,310.0 301.8,310.0 302.2,310.0 302.6,310.0 303.0,310.0 303.4,310.0 303.8,310.0 304.1,310.0 304.5,310.0 304.9,310.0 305.3,310.0 305.7,310.0 306.1,310.0 306.5,310.0 306.9,310.0 307.2,310.0 307.6,310.0 308.0,310.0 308.4,310.0 308.8,310.0 309.2,310.0 309.6,310.0 310.0,310.0 310.3,310.0 310.7,310.0 311.1,310.0 311.5,310.0 311.9,310.0 312.3,310.0 312.7,310.0 313.1,310.0 313.4,310.0 313.8,310.0 314.2,310.0 314.6,310.0 315.0,310.0 315.4,310.0 315.8,310.0 316.1,310.0 316.5,310.0 316.9,310.0 317.3,310.0 317.7,310.0 318.1,310.0 318.5,310.0 318.9,310.0 319.2,310.0 319.6,310.0 320.0,310.0 320.4,310.0 320.8,310.0 321.2,310.0 321.6,310.0 322.0,310.0 322.4,310.0 322.7,310.0 323.1,310.0 323.5,310.0 323.9,310.0 324.3,310.0 324.7,310.0 325.1,310.0 325.5,310.0 325.8,310.0 326.2,310.0 326.6,310.0 327.0,310.0 327.4,310.0 327.8,310.0 328.2,310.0 328.5,310.0 328.9,310.0 329.3,310.0 329.7,310.0 330.1,310.0 330.5,310.0 330.9,310.0 331.3,310.0 331.6,310.0 332.0,310.0 332.4,310.0 332.8,310.0 333.2,310.0 333.6,310.0 334.0,310.0 334.4,310.0 334.8,310.0 335.1,310.0 335.5,310.0 335.9,310.0 336.3,310.0 336.7,310.0 337.1,310.0 337.5,310.0 337.9,310.0 338.2,310.0 338.6,310.0 339.0,310.0 339.4,310.0 339.8,310.0 340.2,310.0 340.6,310.0 340.9,310.0 341.3,310.0 341.7,310.0 342.1,310.0 342.5,310.0 342.9,310.0 343.3,310.0 343.7,310.0 344.1,310.0 344.4,310.0 344.8,310.0 345.2,310.0 345.6,310.0 346.0,310.0 346.4,310.0 346.8,310.0 347.1,310.0 347.5,310.0 347.9,310.0 348.3,310.0 348.7,310.0 349.1,310.0 349.5,310.0 349.9,310.0 350.2,310.0 350.6,310.0 351.0,310.0 351.4,310.0 351.8,310.0 352.2,310.0 352.6,310.0 353.0,310.0 353.4,310.0 353.7,310.0 354.1,310.0 354.5,310.0 354.9,310.0 355.3,310.0 355.7,310.0 356.1,310.0 356.5,310.0 356.8,310.0 357.2,310.0 357.6,310.0 358.0,310.0 358.4,310.0 358.8,310.0 359.2,310.0 359.6,310.0 359.9,310.0 360.3,310.0 360.7,310.0 361.1,310.0 361.5,310.0 361.9,310.0 362.3,310.0 362.6,310.0 363.0,310.0 363.4,310.0 363.8,310.0 364.2,310.0 364.6,310.0 365.0,310.0 365.4,310.0 365.8,310.0 366.1,310.0 366.5,310.0 366.9,310.0 367.3,310.0 367.7,310.0 368.1,310.0 368.5,310.0 368.8,310.0 369.2,310.0 369.6,310.0 370.0,310.0 370.4,310.0 370.8,310.0 371.2,310.0 371.6,310.0 371.9,310.0 372.3,310.0 372.7,310.0 373.1,310.0 373.5,310.0 373.9,310.0 374.3,310.0 374.7,310.0 375.1,310.0 375.4,310.0 375.8,310.0 376.2,310.0 376.6,310.0 377.0,310.0 377.4,310.0 377.8,310.0 378.1,310.0 378.5,310.0 378.9,310.0 379.3,310.0 379.7,310.0 380.1,310.0 380.5,310.0 380.9,310.0 381.2,310.0 381.6,310.0 382.0,310.0 382.4,310.0 382.8,310.0 383.2,310.0 383.6,310.0 384.0,310.0 384.4,310.0 384.7,310.0 385.1,310.0 385.5,310.0 385.9,310.0 386.3,310.0 386.7,310.0 387.1,310.0 387.4,310.0 387.8,310.0 388.2,310.0 388.6,310.0 389.0,310.0 389.4,310.0 389.8,310.0 390.2,310.0 390.6,310.0 390.9,310.0 391.3,310.0 391.7,310.0 392.1,310.0 392.5,310.0 392.9,310.0 393.3,310.0 393.7,310.0 394.0,310.0 394.4,310.0 394.8,310.0 395.2,310.0 395.6,310.0 396.0,310.0 396.4,310.0 396.8,310.0 397.1,310.0 397.5,310.0 397.9,310.0 398.3,310.0 398.7,310.0 399.1,310.0 399.5,310.0 399.9,310.0 400.2,310.0 400.6,310.0 401.0,310.0 401.4,310.0 401.8,310.0 402.2,310.0 402.6,310.0 403.0,310.0 403.3,310.0 403.7,310.0 404.1,310.0 404.5,310.0 404.9,310.0 405.3,310.0 405.7,310.0 406.1,310.0 406.4,310.0 406.8,310.0 407.2,310.0 407.6,310.0 408.0,310.0 408.4,310.0 408.8,310.0 409.1,310.0 409.5,310.0 409.9,310.0 410.3,310.0 410.7,310.0 411.1,310.0 411.5,310.0 411.9,310.0 412.2,310.0 412.6,310.0 413.0,310.0 413.4,310.0 413.8,310.0 414.2,310.0 414.6,310.0 415.0,310.0 415.4,310.0 415.7,310.0 416.1,310.0 416.5,310.0 416.9,310.0 417.3,310.0 417.7,310.0 418.1,310.0 418.4,310.0 418.8,310.0 419.2,310.0 419.6,310.0 420.0,310.0 420.4,310.0 420.8,310.0 421.2,310.0 421.6,310.0 421.9,310.0 422.3,310.0 422.7,310.0 423.1,310.0 423.5,310.0 423.9,310.0 424.3,310.0 424.7,310.0 425.0,310.0 425.4,310.0 425.8,310.0 426.2,310.0 426.6,310.0 427.0,310.0 427.4,310.0 427.8,310.0 428.1,310.0 428.5,310.0 428.9,310.0 429.3,310.0 429.7,310.0 430.1,310.0 430.5,310.0 430.8,310.0 431.2,310.0 431.6,310.0 432.0,310.0 432.4,310.0 432.8,310.0 433.2,310.0 433.6,310.0 433.9,310.0 434.3,310.0 434.7,310.0 435.1,310.0 435.5,310.0 435.9,310.0 436.3,310.0 436.7,310.0 437.0,310.0 437.4,310.0 437.8,310.0 438.2,310.0 438.6,310.0 439.0,310.0 439.4,310.0 439.8,310.0 440.1,310.0 440.5,310.0 440.9,310.0 441.3,310.0 441.7,310.0 442.1,310.0 442.5,310.0 442.9,310.0 443.2,310.0 443.6,310.0 444.0,310.0 444.4,310.0 444.8,310.0 445.2,310.0 445.6,310.0 446.0,310.0 446.3,310.0 446.7,310.0 447.1,310.0 447.5,310.0 447.9,310.0 448.3,310.0 448.7,310.0 449.1,310.0 449.4,310.0 449.8,310.0 450.2,310.0 450.6,310.0 451.0,310.0 451.4,310.0 451.8,310.0 452.2,310.0 452.6,310.0 452.9,310.0 453.3,310.0 453.7,310.0 454.1,310.0 454.5,310.0 454.9,310.0 455.3,310.0 455.6,310.0 456.0,310.0 456.4,310.0 456.8,310.0 457.2,310.0 457.6,310.0 458.0,310.0 458.4,310.0 458.8,310.0 459.1,307.2 459.5,304.4 459.9,301.7 460.3,299.0 460.7,296.4 461.1,293.8 461.5,291.4 461.9,288.9 462.2,286.6 462.6,284.3 463.0,282.1 463.4,280.0 463.8,278.0 464.2,276.1 464.6,274.2 464.9,272.5 465.3,270.9 465.7,269.4 466.1,268.0 466.5,266.7 466.9,265.5 467.3,264.4 467.7,263.5 468.1,262.6 468.4,261.9 468.8,261.3 469.2,260.8 469.6,260.4 470.0,260.1 470.4,260.0 470.8,259.9 471.2,260.0 471.5,260.2 471.9,260.5 472.3,260.9 472.7,261.4 473.1,262.0 473.5,262.7 473.9,263.5 474.2,264.4 474.6,265.4 475.0,266.5 475.4,267.7 475.8,268.9 476.2,270.3 476.6,271.7 477.0,273.1 477.4,274.7 477.7,276.3 478.1,277.9 478.5,279.7 478.9,281.4 479.3,283.2 479.7,285.1 480.1,287.0 480.5,288.9 480.8,290.8 481.2,292.8 481.6,294.8 482.0,296.7 482.4,298.7 482.8,300.7 483.2,302.7 483.6,304.7 483.9,306.7 484.3,308.7 484.7,310.6 485.1,312.6 485.5,314.5 485.9,316.3 486.3,318.2 486.7,320.0 487.0,321.7 487.4,323.4 487.8,325.1 488.2,326.7 488.6,328.3 489.0,329.8 489.4,331.2 489.8,332.6 490.1,333.9 490.5,335.1 490.9,336.3 491.3,337.4 491.7,338.4 492.1,339.3 492.5,340.2 492.9,341.0 493.2,341.7 493.6,342.3 494.0,342.9 494.4,343.4 494.8,343.8 495.2,344.1 495.6,344.3 496.0,344.5 496.3,344.6 496.7,344.6 497.1,344.5 497.5,344.3 497.9,344.1 498.3,343.8 498.7,343.4 499.1,343.0 499.4,342.5 499.8,341.9 500.2,341.2 500.6,340.5 501.0,339.8 501.4,338.9 501.8,338.1 502.2,337.1 502.5,336.1 502.9,335.1 503.3,334.0 503.7,332.9 504.1,331.7 504.5,330.5 504.9,329.3 505.3,328.1 505.6,326.8 506.0,325.5 506.4,324.1 506.8,322.8 507.2,321.4 507.6,320.1 508.0,318.7 508.3,317.3 508.7,315.9 509.1,314.5 509.5,313.2 509.9,311.8 510.3,310.4 510.7,309.1 511.1,307.8 511.4,306.5 511.8,305.2 512.2,303.9 512.6,302.7 513.0,301.5 513.4,300.3 513.8,299.2 514.2,298.1 514.5,297.0 514.9,296.0 515.3,295.1 515.7,294.1 516.1,293.2 516.5,292.4 516.9,291.6 517.3,290.9 517.6,290.2 518.0,289.5 518.4,289.0 518.8,288.4 519.2,288.0 519.6,287.5 520.0,287.2 520.4,286.9 520.8,286.6 521.1,286.4 521.5,286.3 521.9,286.2 522.3,286.1 522.7,286.1 523.1,286.2 523.5,286.3 523.8,286.5 524.2,286.7 524.6,287.0 525.0,287.3 525.4,287.7 525.8,288.1 526.2,288.6 526.6,289.1 527.0,289.6 527.3,290.2 527.7,290.8 528.1,291.5 528.5,292.2 528.9,292.9 529.3,293.7 529.7,294.4 530.0,295.3 530.4,296.1 530.8,296.9 531.2,297.8 531.6,298.7 532.0,299.6 532.4,300.5 532.8,301.5 533.1,302.4 533.5,303.4 533.9,304.3 534.3,305.3 534.7,306.2 535.1,307.2 535.5,308.1 535.9,309.1 536.2,310.0 536.6,310.9 537.0,311.8 537.4,312.7 537.8,313.6 538.2,314.5 538.6,315.3 539.0,316.1 539.4,316.9 539.7,317.7 540.1,318.5 540.5,319.2 540.9,319.9 541.3,320.5 541.7,321.2 542.1,321.8 542.5,322.3 542.8,322.9 543.2,323.4 543.6,323.8 544.0,324.3 544.4,324.7 544.8,325.0 545.2,325.3 545.5,325.6 545.9,325.8 546.3,326.0 546.7,326.2 547.1,326.3 547.5,326.4 547.9,326.5 548.3,326.5 548.7,326.5 549.0,326.4 549.4,326.3 549.8,326.2 550.2,326.0 550.6,325.8 551.0,325.6 551.4,325.3 551.8,325.0 552.1,324.7 552.5,324.3 552.9,323.9 553.3,323.5 553.7,323.1 554.1,322.6 554.5,322.1 554.9,321.6 555.2,321.1 555.6,320.6 556.0,320.0 556.4,319.4 556.8,318.8 557.2,318.2 557.6,317.6 558.0,317.0 558.3,316.3 558.7,315.7 559.1,315.0 559.5,314.4 559.9,313.7 560.3,313.0 560.7,312.4 561.0,311.7 561.4,311.1 561.8,310.4 562.2,309.8 562.6,309.2 563.0,308.5 563.4,307.9 563.8,307.3 564.2,306.7 564.5,306.1 564.9,305.6 565.3,305.0 565.7,304.5 566.1,304.0 566.5,303.5 566.9,303.0 567.2,302.6 567.6,302.1 568.0,301.7 568.4,301.4 568.8,301.0 569.2,300.7 569.6,300.3 570.0,300.1 570.4,299.8 570.7,299.6 571.1,299.4 571.5,299.2 571.9,299.0 572.3,298.9 572.7,298.8 573.1,298.7 573.5,298.6 573.8,298.6 574.2,298.6 574.6,298.6 575.0,298.7 575.4,298.8 575.8,298.9 576.2,299.0 576.5,299.1 576.9,299.3 577.3,299.5 577.7,299.7 578.1,299.9 578.5,300.2 578.9,300.5 579.3,300.8 579.7,301.1 580.0,301.4 580.4,301.7 580.8,302.1 581.2,302.5 581.6,302.8 582.0,303.2 582.4,303.6 582.8,304.1 583.1,304.5 583.5,304.9 583.9,305.3 584.3,305.8 584.7,306.2 585.1,306.7 585.5,307.1 585.9,307.6 586.2,308.0 586.6,308.5 587.0,309.0 587.4,309.4 587.8,309.9 588.2,310.3 588.6,310.7 589.0,311.2 589.3,311.6 589.7,312.0 590.1,312.4 590.5,312.8 590.9,313.2 591.3,313.6 591.7,313.9 592.0,314.3 592.4,314.6 592.8,314.9 593.2,315.2 593.6,315.5 594.0,315.8 594.4,316.1 594.8,316.3 595.1,316.5 595.5,316.7 595.9,316.9 596.3,317.1 596.7,317.3 597.1,317.4 597.5,317.5 597.9,317.6 598.2,317.7 598.6,317.8 599.0,317.8 599.4,317.8 599.8,317.9 600.2,317.9 600.6,317.8 601.0,317.8 601.3,317.7 601.7,317.7 602.1,317.6 602.5,317.5 602.9,317.3 603.3,317.2 603.7,317.1 604.1,316.9 604.5,316.7 604.8,316.5 605.2,316.3 605.6,316.1 606.0,315.9 606.4,315.6 606.8,315.4 607.2,315.1 607.5,314.9 607.9,314.6 608.3,314.3 608.7,314.0 609.1,313.7 609.5,313.4 609.9,313.1 610.3,312.8 610.6,312.5 611.0,312.2 611.4,311.9 611.8,311.6 612.2,311.2 612.6,310.9 613.0,310.6 613.4,310.3 613.8,310.0 614.1,309.7 614.5,309.4 614.9,309.1 615.3,308.8 615.7,308.5 616.1,308.2 616.5,308.0 616.9,307.7 617.2,307.5 617.6,307.2 618.0,307.0 618.4,306.7 618.8,306.5 619.2,306.3 619.6,306.1 620.0,305.9 620.3,305.8 620.7,305.6 621.1,305.4 621.5,305.3 621.9,305.2 622.3,305.1 622.7,305.0 623.0,304.9 623.4,304.8 623.8,304.7 624.2,304.7 624.6,304.6 625.0,304.6 625.4,304.6 625.8,304.6 626.1,304.6 626.5,304.6 626.9,304.6 627.3,304.7 627.7,304.7 628.1,304.8 628.5,304.9 628.9,305.0 629.2,305.1 629.6,305.2 630.0,305.3 630.4,305.4 630.8,305.5 631.2,305.7 631.6,305.8 632.0,306.0 632.4,306.2 632.7,306.3 633.1,306.5 633.5,306.7 633.9,306.9 634.3,307.1 634.7,307.3 635.1,307.5 635.5,307.7 635.8,307.9 636.2,308.1 636.6,308.3 637.0,308.6 637.4,308.8 637.8,309.0 638.2,309.2 638.6,309.4 638.9,309.6 639.3,309.9 639.7,310.1 640.1,310.3 640.5,310.5 640.9,310.7 641.3,310.9 641.6,311.1 642.0,311.3 642.4,311.5 642.8,311.6 643.2,311.8 643.6,312.0 644.0,312.1 644.4,312.3 644.8,312.4 645.1,312.6 645.5,312.7 645.9,312.8 646.3,313.0 646.7,313.1 647.1,313.2 647.5,313.3 647.9,313.4 648.2,313.4 648.6,313.5 649.0,313.6 649.4,313.6 649.8,313.7 650.2,313.7 650.6,313.7 651.0,313.7 651.3,313.7 651.7,313.7 652.1,313.7 652.5,313.7 652.9,313.7 653.3,313.7 653.7,313.6 654.1,313.6 654.4,313.5 654.8,313.5 655.2,313.4 655.6,313.3 656.0,313.2 656.4,313.1 656.8,313.0 657.2,312.9 657.5,312.8 657.9,312.7 658.3,312.6 658.7,312.5 659.1,312.4 659.5,312.2 659.9,312.1 660.2,312.0 660.6,311.8 661.0,311.7 661.4,311.5 661.8,311.4 662.2,311.2 662.6,311.1 663.0,310.9 663.4,310.8 663.7,310.6 664.1,310.5 664.5,310.3 664.9,310.2 665.3,310.0 665.7,309.9 666.1,309.8 666.4,309.6 666.8,309.5 667.2,309.3 667.6,309.2 668.0,309.1 668.4,309.0 668.8,308.8 669.2,308.7 669.5,308.6 669.9,308.5 670.3,308.4 670.7,308.3 671.1,308.2 671.5,308.1 671.9,308.0 672.3,307.9 672.6,307.9 673.0,307.8 673.4,307.7 673.8,307.7 674.2,307.6 674.6,307.6 675.0,307.5 675.4,307.5 675.8,307.5 676.1,307.4 676.5,307.4 676.9,307.4 677.3,307.4 677.7,307.4 678.1,307.4 678.5,307.4 678.9,307.5 679.2,307.5 679.6,307.5 680.0,307.5 680.4,307.6 680.8,307.6 681.2,307.7 681.6,307.7 682.0,307.8 682.3,307.9 682.7,307.9 683.1,308.0 683.5,308.1 683.9,308.1 684.3,308.2 684.7,308.3 685.0,308.4 685.4,308.5 685.8,308.6 686.2,308.7 686.6,308.8 687.0,308.9 687.4,309.0 687.8,309.1 688.1,309.2 688.5,309.3 688.9,309.4 689.3,309.5 689.7,309.6 690.1,309.7 690.5,309.8 690.9,309.9 691.2,310.0 691.6,310.1 692.0,310.2 692.4,310.3 692.8,310.4 693.2,310.5 693.6,310.6 694.0,310.7 694.4,310.8 694.7,310.8 695.1,310.9 695.5,311.0 695.9,311.1 696.3,311.1 696.7,311.2 697.1,311.3 697.5,311.3 697.8,311.4 698.2,311.4 698.6,311.5 699.0,311.5 699.4,311.6 699.8,311.6 700.2,311.7 700.5,311.7 700.9,311.7 701.3,311.7 701.7,311.8 702.1,311.8 702.5,311.8 702.9,311.8 703.3,311.8 703.6,311.8 704.0,311.8 704.4,311.8 704.8,311.8 705.2,311.7 705.6,311.7 706.0,311.7 706.4,311.7 706.8,311.6 707.1,311.6 707.5,311.6 707.9,311.5 708.3,311.5 708.7,311.4 709.1,311.4 709.5,311.3 709.9,311.3 710.2,311.2 710.6,311.1 711.0,311.1 711.4,311.0 711.8,311.0 712.2,310.9 712.6,310.8 713.0,310.8 713.3,310.7 713.7,310.6 714.1,310.5 714.5,310.5 714.9,310.4 715.3,310.3 715.7,310.3 716.1,310.2 716.4,310.1 716.8,310.0 717.2,310.0 717.6,309.9 718.0,309.8 718.4,309.8 718.8,309.7 719.1,309.6 719.5,309.6 719.9,309.5 720.3,309.5 720.7,309.4 721.1,309.3 721.5,309.3 721.9,309.2 722.2,309.2 722.6,309.1 723.0,309.1 723.4,309.1 723.8,309.0 724.2,309.0 724.6,309.0 725.0,308.9 725.4,308.9 725.7,308.9 726.1,308.8 726.5,308.8 726.9,308.8 727.3,308.8 727.7,308.8 728.1,308.8 728.5,308.8 728.8,308.8 729.2,308.8 729.6,308.8 730.0,308.8\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"100\" y=\"125.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">Micro 1</text><text x=\"100\" y=\"315.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">Micro 2</text><text x=\"420.0\" y=\"455\" text-anchor=\"middle\" font-weight=\"bold\">t (ms)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pourquoi le claquement doit-il être produit sur la droite qui passe par les deux micros, du côté du micro 1 ?",
+          "aides": []
+        },
+        {
+          "texte": "Repère sur l'enregistrement l'instant où le son arrive sur chaque micro, puis détermine la durée t mise par le son pour aller du micro 1 au micro 2.",
+          "aides": [
+            "Avant l'arrivée du son, le signal d'un micro est plat. Repère sur l'axe du temps l'instant où chaque courbe commence à osciller.",
+            "La durée cherchée est la différence entre ces deux instants."
+          ]
+        },
+        {
+          "texte": "Calcule la célérité v du son mesurée par ce groupe. Exprime-la aussi en km·h⁻¹.",
+          "aides": [
+            "Quelle relation du cours relie distance, durée et vitesse ?",
+            "Attention aux unités : d en mètres et t en secondes (1 ms = 10⁻³ s)."
+          ]
+        },
+        {
+          "texte": "Ce résultat est-il cohérent avec la valeur que tu connais ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Les élèves estiment qu'ils lisent chaque instant à 0,1 ms près. Entre quelles valeurs la célérité mesurée pourrait-elle se trouver ? Pourquoi a-t-on intérêt à éloigner davantage les deux micros ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le son doit parcourir exactement la distance d entre les deux micros : il passe d'abord devant le micro 1, puis parcourt 1,20 m en ligne droite jusqu'au micro 2.",
+        "<strong>2.</strong> Le signal commence sur le micro 1 à 1,0 ms et sur le micro 2 à 4,5 ms : t = 4,5 − 1,0 = 3,5 ms = 3,5 × 10⁻³ s.",
+        "<strong>3.</strong> v = d / t = 1,20 / (3,5 × 10⁻³) = 3,4 × 10² m·s⁻¹ (343 m·s⁻¹ avant arrondi à 2 chiffres significatifs). En km·h⁻¹ : 343 × 3,6 ≈ 1,2 × 10³ km·h⁻¹.",
+        "<strong>4.</strong> Oui : on attend environ 340 m·s⁻¹ dans l'air ; l'écart est inférieur à 1 %. L'ordre de grandeur (quelques centaines de m·s⁻¹) est le bon.",
+        "<strong>5.</strong> Si chaque lecture est faite à 0,1 ms près, t est compris entre 3,3 ms et 3,7 ms, donc v entre 1,20 / (3,7 × 10⁻³) = 324 m·s⁻¹ et 1,20 / (3,3 × 10⁻³) = 364 m·s⁻¹. Avec des micros plus éloignés, t est plus grande : la même erreur de lecture de 0,1 ms compte beaucoup moins, la mesure est plus précise.",
+        "<em>⚠ Erreur fréquente : laisser t en millisecondes. On trouve alors v = 1,20 / 3,5 = 0,34 m·s⁻¹, plus lent qu'un escargot pressé : le résultat doit alerter.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Programmer un buzzer",
+      "contexte": [
+        "En atelier de programmation, Sofiane relie un petit buzzer (haut-parleur miniature) à la broche 15 d'une carte à microcontrôleur programmée en MicroPython. Son programme est le suivant (on() met la broche à 3,3 V, off() la remet à 0 V ; la pause est donnée en microsecondes)."
+      ],
+      "code": [
+        "from machine import Pin",
+        "import time",
+        "buzzer = Pin(15, Pin.OUT)",
+        "while True:              # répète sans fin",
+        "    buzzer.on()          # tension 3,3 V",
+        "    time.sleep_us(625)   # pause de 625 µs",
+        "    buzzer.off()         # tension 0 V",
+        "    time.sleep_us(625)   # pause de 625 µs"
+      ],
+      "questions": [
+        {
+          "texte": "Quel élément du buzzer vibre pour produire le son ?",
+          "aides": []
+        },
+        {
+          "texte": "Décris la tension envoyée au buzzer : est-elle périodique ? Quelle est la durée d'un motif élémentaire ?",
+          "aides": [
+            "Suis le programme ligne par ligne : combien de temps la broche reste-t-elle à 3,3 V ? puis à 0 V ?",
+            "Le motif élémentaire est ce qui se répète à chaque tour de la boucle « while »."
+          ]
+        },
+        {
+          "texte": "Calcule la fréquence du son émis.",
+          "aides": []
+        },
+        {
+          "texte": "Sofiane veut jouer le la du diapason, de fréquence 440 Hz. Quelle durée de pause doit-il écrire dans les deux lignes de pause (arrondie à la microseconde) ?",
+          "aides": [
+            "Commence par calculer la période T qui correspond à 440 Hz.",
+            "Dans le programme, une période contient deux pauses identiques."
+          ]
+        },
+        {
+          "texte": "Son camarade est assis à 6,8 m du buzzer (programme d'origine). Calcule la durée que met le son pour lui parvenir, puis le nombre de périodes émises par le buzzer pendant cette durée.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La membrane du buzzer : elle est mise en vibration par la tension qui varie, et transmet cette vibration à l'air.",
+        "<strong>2.</strong> C'est une tension « en créneaux » : 3,3 V pendant 625 µs, puis 0 V pendant 625 µs, et ainsi de suite. Elle est périodique ; un motif = une phase haute + une phase basse : T = 2 × 625 = 1 250 µs = 1,25 × 10⁻³ s.",
+        "<strong>3.</strong> f = 1 / T = 1 / (1,25 × 10⁻³) = 800 Hz.",
+        "<strong>4.</strong> T = 1 / f = 1 / 440 = 2,273 × 10⁻³ s = 2 273 µs. Chaque pause dure la moitié de T : 2 273 / 2 = 1 136 µs (on obtient alors 440,1 Hz).",
+        "<strong>5.</strong> t = d / v = 6,8 / 340 = 0,020 s = 20 ms. Nombre de périodes : 20 ms / 1,25 ms = 16 périodes.",
+        "<em>⚠ Erreur fréquente : prendre T = 625 µs (une seule pause) ; on trouverait 1 600 Hz, le double de la bonne valeur. Un motif contient une phase haute ET une phase basse.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un centième de seconde au 100 m",
+      "contexte": [
+        "Doc. 1 — Le départ d'un 100 m. Le starter donne le départ d'un coup de pistolet. Le chronométrage électronique démarre à l'instant exact du coup de feu, mais chaque coureur ne s'élance qu'après avoir entendu le signal. Dans les grands championnats, un haut-parleur placé juste derrière chaque bloc de départ diffuse le signal en même temps à tous les coureurs. Lors de la finale régionale décrite ici, il n'y a pas de haut-parleurs : le starter se tient seul au bord de la piste, au niveau de la ligne de départ, côté couloir 1.",
+        "Doc. 2 — Schéma du départ, vue de dessus (à l'échelle). Chaque couloir mesure 1,22 m de large ; le starter est à 3,0 m du bord intérieur du couloir 1 ; on considère que chaque coureur a la tête au milieu de son couloir, sur la ligne de départ."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"60\" y=\"135.8\" width=\"660\" height=\"234.2\" fill=\"#f3ece0\"/><line x1=\"60\" y1=\"370.0\" x2=\"720\" y2=\"370.0\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"370.0\" x2=\"720\" y2=\"370.0\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"340.7\" x2=\"720\" y2=\"340.7\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"340.7\" x2=\"720\" y2=\"340.7\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"311.4\" x2=\"720\" y2=\"311.4\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"311.4\" x2=\"720\" y2=\"311.4\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"282.2\" x2=\"720\" y2=\"282.2\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"282.2\" x2=\"720\" y2=\"282.2\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"252.9\" x2=\"720\" y2=\"252.9\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"252.9\" x2=\"720\" y2=\"252.9\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"223.6\" x2=\"720\" y2=\"223.6\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"223.6\" x2=\"720\" y2=\"223.6\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"194.3\" x2=\"720\" y2=\"194.3\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"194.3\" x2=\"720\" y2=\"194.3\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"165.0\" x2=\"720\" y2=\"165.0\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"165.0\" x2=\"720\" y2=\"165.0\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><line x1=\"60\" y1=\"135.8\" x2=\"720\" y2=\"135.8\" stroke=\"#ffffff\" stroke-width=\"3\"/><line x1=\"60\" y1=\"135.8\" x2=\"720\" y2=\"135.8\" stroke=\"#8a7f6e\" stroke-width=\"1\"/><text x=\"75\" y=\"360.4\" font-size=\"14\">couloir 1</text><circle cx=\"288\" cy=\"355.4\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"331.1\" font-size=\"14\">couloir 2</text><circle cx=\"288\" cy=\"326.1\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"301.8\" font-size=\"14\">couloir 3</text><circle cx=\"288\" cy=\"296.8\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"272.5\" font-size=\"14\">couloir 4</text><circle cx=\"288\" cy=\"267.5\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"243.2\" font-size=\"14\">couloir 5</text><circle cx=\"288\" cy=\"238.2\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"214.0\" font-size=\"14\">couloir 6</text><circle cx=\"288\" cy=\"209.0\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"184.7\" font-size=\"14\">couloir 7</text><circle cx=\"288\" cy=\"179.7\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"75\" y=\"155.4\" font-size=\"14\">couloir 8</text><circle cx=\"288\" cy=\"150.4\" r=\"7\" fill=\"#1F4E5A\"/><line x1=\"300\" y1=\"135.8\" x2=\"300\" y2=\"370\" stroke=\"#C8962E\" stroke-width=\"4\"/><text x=\"308\" y=\"127.8\" font-size=\"14\" fill=\"#C8962E\" font-weight=\"bold\">ligne de départ</text><circle cx=\"300\" cy=\"442.0\" r=\"8\" fill=\"#B5523B\"/><text x=\"316\" y=\"447.0\" fill=\"#B5523B\" font-weight=\"bold\">starter (pistolet)</text><line x1=\"240\" y1=\"370\" x2=\"240\" y2=\"442.0\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><line x1=\"234\" y1=\"370\" x2=\"246\" y2=\"370\" stroke=\"#3a3a3a\" stroke-width=\"1.3\"/><line x1=\"234\" y1=\"442.0\" x2=\"291\" y2=\"442.0\" stroke=\"#3a3a3a\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/><text x=\"232\" y=\"411.0\" text-anchor=\"end\" font-weight=\"bold\">3,0 m</text><line x1=\"560\" y1=\"135.8\" x2=\"560\" y2=\"165.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"554\" y1=\"135.8\" x2=\"566\" y2=\"135.8\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"554\" y1=\"165.0\" x2=\"566\" y2=\"165.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"570\" y=\"155.4\" font-weight=\"bold\">1,22 m</text><line x1=\"440\" y1=\"50\" x2=\"540\" y2=\"50\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"540,44 552,50 540,56\" fill=\"#1F4E5A\"/><text x=\"560\" y=\"55\" fill=\"#1F4E5A\">sens de la course</text><circle cx=\"430\" cy=\"85\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"445\" y=\"90\" font-size=\"14\">coureur, au milieu de son couloir</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Résultats de la finale (données fictives, temps mesurés au millième par photo-finish) : 1er Yanis (couloir 4) : 10,618 s ; 2e Moussa (couloir 8) : 10,627 s ; 3e Théo (couloir 5) : 10,703 s.",
+        "Après la course, Moussa est déçu : « J'étais dans le couloir 8, le plus loin du starter. Si on avait tous entendu le coup de feu en même temps, c'est moi qui aurais gagné ! »"
+      ],
+      "questions": [
+        {
+          "texte": "Appropriation : d'après le doc. 2, quel coureur entend le coup de feu en premier ? en dernier ? Pourquoi ?",
+          "aides": []
+        },
+        {
+          "texte": "Moussa a-t-il raison ? Construis ta démarche et argumente à l'aide de calculs.",
+          "aides": [
+            "S'approprier : le chronomètre démarre au coup de feu, mais chaque coureur part seulement quand le son lui parvient. Quelle distance le son parcourt-il jusqu'à Moussa ? jusqu'à Yanis ?",
+            "Analyser : utilise le doc. 2 pour calculer ces distances (starter → milieu du couloir 4, starter → milieu du couloir 8), puis la relation entre vitesse, distance et durée.",
+            "Réaliser : compare l'écart entre les deux retards à l'écart entre les deux temps d'arrivée (doc. 3)."
+          ]
+        },
+        {
+          "texte": "Regard critique : cite deux approximations faites dans ton raisonnement et dis si elles peuvent changer la conclusion. Quelle solution les grands championnats ont-ils adoptée, et pourquoi règle-t-elle le problème ?",
+          "aides": [
+            "Reprends chaque donnée que tu as utilisée : est-elle exacte ou approchée ?",
+            "Avec un haut-parleur derrière chaque bloc, à quelle distance chaque coureur est-il de la source du son ?"
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors programme de Seconde) : la célérité du son dans l'air dépend de la température θ (en °C) selon v ≈ 331 + 0,6 × θ (en m·s⁻¹). La course a lieu par 30 °C : la conclusion change-t-elle ?",
+          "aides": [
+            "Calcule d'abord la nouvelle célérité, puis recalcule l'écart entre les deux retards.",
+            "La différence de distance entre Moussa et Yanis vaut 12,15 − 7,27 = 4,88 m."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le coureur du couloir 1 entend le coup de feu en premier et celui du couloir 8 en dernier : le son se propage à une vitesse finie (environ 340 m·s⁻¹) et le couloir 8 est le plus éloigné du starter.",
+        "<strong>2.</strong> Démarche attendue : (a) calculer la distance starter-coureur pour les couloirs 4 et 8 ; (b) en déduire le retard t = d / v avec lequel chacun entend le signal ; (c) retrancher ces retards aux temps mesurés (le chrono démarre au coup de feu) et comparer.",
+        "a. Couloir 4 : d = 3,0 + 3,5 × 1,22 = 7,27 m ; couloir 8 : d = 3,0 + 7,5 × 1,22 = 12,15 m.",
+        "b. Retards : couloir 4 : t = 7,27 / 340 = 0,0214 s ; couloir 8 : t = 12,15 / 340 = 0,0357 s. Moussa entend le départ 0,0144 s (environ 1,4 centième) après Yanis.",
+        "c. Temps de course réels (à partir de l'instant où chacun entend le signal) : Yanis : 10,618 − 0,0214 = 10,597 s ; Moussa : 10,627 − 0,0357 = 10,591 s.",
+        "Conclusion : le handicap de Moussa (0,014 s) est plus grand que son retard à l'arrivée (0,009 s). À conditions égales, il aurait devancé Yanis d'environ 0,005 s : Moussa a raison.",
+        "<strong>3.</strong> Approximations : têtes des coureurs exactement sur la ligne et au milieu du couloir ; célérité prise égale à 340 m·s⁻¹ ; positions mesurées à quelques centimètres près ; temps de réaction supposé identique. Une erreur de 10 cm sur une distance ne change le retard que de 0,1 / 340 ≈ 0,3 ms : la conclusion tient, mais l'avance de Moussa (5 ms) reste faible, il faut rester prudent. Solution : un haut-parleur derrière chaque bloc ; tous les coureurs sont alors à la même (petite) distance de leur source sonore et entendent le signal en même temps.",
+        "<strong>4.</strong> Pour aller plus loin : v ≈ 331 + 0,6 × 30 = 349 m·s⁻¹ ; l'écart de retard devient 4,88 / 349 = 0,0140 s, toujours supérieur à 0,009 s : la conclusion ne change pas.",
+        "Éléments valorisés (même si le résultat final est faux) : idée que le son met du temps à parvenir à chaque coureur ; calcul de distances à partir du schéma ; utilisation correcte de t = d / v ; comparaison du décalage obtenu avec l'écart à l'arrivée ; conclusion argumentée.",
+        "<em>⚠ Erreur fréquente : comparer seulement les couloirs 1 et 8 (écart de 0,025 s) alors que le vainqueur est au couloir 4 ; ou oublier que le chronomètre démarre au coup de feu, pas quand le coureur l'entend.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,636 @@
+{
+  "id": 25,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Structure lacunaire de l'atome",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Atome",
+            "text": "Entité électriquement neutre, constituée d'un noyau chargé positivement autour duquel se déplacent des électrons chargés négativement."
+          },
+          {
+            "type": "warn",
+            "text": "L'atome est essentiellement constitué de <strong>vide</strong> : sa structure est dite <strong>lacunaire</strong>. Presque toute sa masse est concentrée dans un noyau minuscule, autour duquel le nuage électronique occupe un volume bien plus grand."
+          },
+          {
+            "type": "def",
+            "term": "Charge élémentaire e",
+            "text": "Charge électrique de référence, e ≈ 1,6×10⁻¹⁹ C. Un électron porte la charge −e, un proton porte la charge +e, un neutron est électriquement neutre."
+          }
+        ]
+      },
+      {
+        "title": "2. Le noyau et la notation ZAX",
+        "icon": "🔢",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le noyau est constitué de <strong>nucléons</strong> : des protons (charge +e) et des neutrons (électriquement neutres). Le nombre de protons, appelé <strong>numéro atomique</strong> Z, caractérise l'élément chimique. Le <strong>nombre de masse</strong> A est le nombre total de nucléons."
+          },
+          {
+            "type": "formula",
+            "label": "Nombre de nucléons",
+            "text": "A = Z + N\nA : nombre de masse (nombre de nucléons)\nZ : numéro atomique (nombre de protons)\nN : nombre de neutrons"
+          },
+          {
+            "type": "formula",
+            "label": "Notation du noyau",
+            "text": "ᴬZX\nX : symbole de l'élément chimique\nA : en haut à gauche (nombre de masse)\nZ : en bas à gauche (numéro atomique)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le noyau de carbone ¹²₆C contient A = 12 nucléons, dont Z = 6 protons et N = A − Z = 12 − 6 = 6 neutrons. Le nuage électronique de l'atome de carbone (neutre) contient 6 électrons, autant que de protons."
+          }
+        ]
+      },
+      {
+        "title": "3. Comparer taille et masse de l'atome et du noyau",
+        "icon": "📏",
+        "content": [
+          {
+            "type": "warn",
+            "text": "Ordres de grandeur à connaître : la taille d'un atome est de l'ordre de 10⁻¹⁰ m, alors que la taille de son noyau est de l'ordre de 10⁻¹⁵ m. Le rapport entre les deux tailles est donc de l'ordre de 10⁻¹⁰ / 10⁻¹⁵ = 10⁵, soit environ <strong>100 000 fois</strong> : l'atome est environ cent mille fois plus grand que son noyau."
+          },
+          {
+            "type": "text",
+            "text": "Analogie : si le noyau était une bille d'environ 1 cm de diamètre, l'atome tout entier aurait la taille d'un stade de football (environ 1 km), le nuage électronique occupant tout cet espace immense mais quasiment vide."
+          },
+          {
+            "type": "text",
+            "text": "En revanche, la <strong>masse</strong> de l'atome est presque entièrement concentrée dans le noyau : la masse d'un électron est environ 2000 fois plus petite que celle d'un proton ou d'un neutron, et donc négligeable devant la masse du noyau."
+          }
+        ]
+      },
+      {
+        "title": "4. Cortège électronique et configuration électronique",
+        "icon": "🌀",
+        "content": [
+          {
+            "type": "def",
+            "term": "Configuration électronique",
+            "text": "Répartition des électrons d'un atome dans les différentes couches électroniques, numérotées n = 1, n = 2, n = 3 (historiquement appelées couches K, L, M), elles-mêmes divisées en sous-couches notées s et p."
+          },
+          {
+            "type": "warn",
+            "text": "Règles de remplissage (pour Z ≤ 18) : la sous-couche s contient au maximum 2 électrons, la sous-couche p contient au maximum 6 électrons. Les sous-couches se remplissent dans l'ordre : 1s, 2s, 2p, 3s, 3p."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le lithium Li (Z = 3, 3 électrons) a pour configuration électronique <strong>1s² 2s¹</strong>. Le chlore Cl (Z = 17, 17 électrons) a pour configuration <strong>1s² 2s² 2p⁶ 3s² 3p⁵</strong>."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 320\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"160\" cy=\"160\" r=\"130\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"160\" cy=\"160\" r=\"90\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"160\" cy=\"160\" r=\"50\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"160\" cy=\"160\" r=\"18\" fill=\"#C0472F\"/><text x=\"160\" y=\"164\" font-size=\"11\" fill=\"#FAFAF5\" text-anchor=\"middle\" font-weight=\"600\">17+</text><circle cx=\"210\" cy=\"160\" r=\"6\" fill=\"#3E7DBF\"/><circle cx=\"110\" cy=\"160\" r=\"6\" fill=\"#3E7DBF\"/><circle cx=\"250\" cy=\"160\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"223.6\" cy=\"223.6\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"160\" cy=\"250\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"96.4\" cy=\"223.6\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"70\" cy=\"160\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"96.4\" cy=\"96.4\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"160\" cy=\"70\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"223.6\" cy=\"96.4\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"290\" cy=\"160\" r=\"6\" fill=\"#B8862E\"/><circle cx=\"241.1\" cy=\"261.6\" r=\"6\" fill=\"#B8862E\"/><circle cx=\"131.1\" cy=\"286.7\" r=\"6\" fill=\"#B8862E\"/><circle cx=\"42.9\" cy=\"216.4\" r=\"6\" fill=\"#B8862E\"/><circle cx=\"42.9\" cy=\"103.6\" r=\"6\" fill=\"#B8862E\"/><circle cx=\"131.1\" cy=\"33.3\" r=\"6\" fill=\"#B8862E\"/><circle cx=\"241.1\" cy=\"58.4\" r=\"6\" fill=\"#B8862E\"/></svg>",
+            "caption": "Cortège électronique de l'atome de chlore (Z = 17) : couche K (2 e⁻, bleu), couche L (8 e⁻, vert), couche M (7 e⁻, jaune) — soit la configuration 1s² 2s² 2p⁶ 3s² 3p⁵."
+          }
+        ]
+      },
+      {
+        "title": "5. Électrons de valence",
+        "icon": "🔗",
+        "content": [
+          {
+            "type": "def",
+            "term": "Électrons de valence",
+            "text": "Pour Z ≤ 18, ce sont les électrons occupant la couche électronique de plus grand nombre n dans la configuration électronique de l'atome. Cette couche est appelée couche de valence."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : pour le chlore (1s² 2s² 2p⁶ 3s² 3p⁵), la couche de valence est la couche n = 3, qui contient 2 + 5 = 7 électrons de valence. Ce sont ces électrons de valence qui déterminent les propriétés chimiques de l'atome, notamment sa capacité à former des liaisons."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "On dit que l'atome a une structure lacunaire. Cela signifie que :",
+      "opts": [
+        "il est essentiellement constitué de vide",
+        "ses électrons sont collés contre le noyau",
+        "ses électrons se trouvent dans le noyau",
+        "la matière remplit tout son volume, comme une bille pleine"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "electrons-colles-noyau",
+          "texte": "Croire que les électrons sont collés au noyau : ils se déplacent dans un volume environ 100 000 fois plus grand que lui"
+        },
+        {
+          "code": "electrons-dans-noyau",
+          "texte": "Croire que les électrons sont dans le noyau : le noyau ne contient que des protons et des neutrons"
+        },
+        {
+          "code": "atome-plein",
+          "texte": "Se représenter l'atome comme une bille pleine : entre le noyau et les électrons, il n'y a que du vide"
+        }
+      ],
+      "exp": "Le noyau, minuscule, est entouré d'électrons qui occupent un volume immense par rapport à lui : l'atome est essentiellement vide. Attention : les électrons ne sont pas dans le noyau."
+    },
+    {
+      "q": "Le noyau de l'atome de sodium se note ²³₁₁Na. L'atome de sodium contient :",
+      "opts": [
+        "23 protons, 12 neutrons et 23 électrons",
+        "11 protons, 23 neutrons et 11 électrons",
+        "11 protons, 12 neutrons et 23 électrons",
+        "11 protons, 12 neutrons et 11 électrons"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "z-a-inverses",
+          "texte": "Inverser Z et A : le nombre du bas (Z = 11) compte les protons, celui du haut (A = 23) les nucléons"
+        },
+        {
+          "code": "neutrons-egal-a",
+          "texte": "Prendre A pour le nombre de neutrons : N = A − Z = 23 − 11 = 12"
+        },
+        {
+          "code": "electrons-egal-a",
+          "texte": "Prendre A pour le nombre d'électrons : un atome neutre a autant d'électrons que de protons (Z = 11)"
+        },
+        null
+      ],
+      "exp": "Z = 11 protons ; N = A − Z = 23 − 11 = 12 neutrons ; l'atome est neutre, donc 11 électrons. Attention : A compte tous les nucléons, protons et neutrons."
+    },
+    {
+      "q": "Le numéro atomique Z d'un atome est :",
+      "opts": [
+        "le nombre de nucléons de son noyau",
+        "le nombre de neutrons de son noyau",
+        "le nombre de protons de son noyau",
+        "le nombre de ses électrons de valence"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "z-a-inverses",
+          "texte": "Confondre Z et A : A est le nombre de nucléons, Z le nombre de protons"
+        },
+        {
+          "code": "z-vs-n",
+          "texte": "Confondre Z et N : N = A − Z est le nombre de neutrons"
+        },
+        null,
+        {
+          "code": "z-vs-valence",
+          "texte": "Confondre Z et le nombre d'électrons de valence : Z compte les protons (et tous les électrons de l'atome neutre)"
+        }
+      ],
+      "exp": "Z est le nombre de protons ; il caractérise l'élément chimique. Attention : A = Z + N est le nombre de nucléons."
+    },
+    {
+      "q": "Un atome a une taille de l'ordre de 10⁻¹⁰ m et son noyau de l'ordre de 10⁻¹⁵ m. L'atome est plus grand que son noyau d'un facteur de l'ordre de :",
+      "opts": [
+        "5",
+        "10⁵",
+        "10⁻⁵",
+        "10²⁵"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ecart-exposants-pris-pour-rapport",
+          "texte": "Prendre l'écart des exposants pour le rapport : 10⁻¹⁰ / 10⁻¹⁵ = 10⁵, pas 5"
+        },
+        null,
+        {
+          "code": "puissance-rapport-inverse",
+          "texte": "Inverser le rapport : 10⁻¹⁵ / 10⁻¹⁰ = 10⁻⁵, alors que l'atome est plus grand que le noyau"
+        },
+        {
+          "code": "exposants-mal-soustraits",
+          "texte": "Mal combiner les exposants (10 + 15 = 25) : 10⁻¹⁰ / 10⁻¹⁵ = 10⁻¹⁰⁺¹⁵ = 10⁵"
+        }
+      ],
+      "exp": "10⁻¹⁰ / 10⁻¹⁵ = 10⁻¹⁰⁻⁽⁻¹⁵⁾ = 10⁵ : l'atome est environ 100 000 fois plus grand que son noyau. Attention à la règle 10ᵃ / 10ᵇ = 10ᵃ⁻ᵇ."
+    },
+    {
+      "q": "La masse d'un atome est :",
+      "opts": [
+        "concentrée presque entièrement dans son noyau",
+        "surtout portée par les électrons, qui occupent presque tout le volume",
+        "répartie à peu près à égalité entre le noyau et les électrons",
+        "surtout portée par les électrons, plus nombreux que les protons"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "masse-suit-volume",
+          "texte": "Croire que la masse suit le volume occupé : le nuage électronique est immense mais presque sans masse"
+        },
+        {
+          "code": "masse-electron-non-negligeable",
+          "texte": "Croire que les électrons pèsent autant que les nucléons : un électron est environ 2 000 fois plus léger qu'un proton"
+        },
+        {
+          "code": "electrons-plus-nombreux",
+          "texte": "Croire qu'il y a plus d'électrons que de protons : un atome neutre en a autant"
+        }
+      ],
+      "exp": "Un électron est environ 2 000 fois plus léger qu'un proton ou qu'un neutron : la masse de l'atome est presque entièrement celle de son noyau. Attention : le noyau est minuscule mais contient presque toute la masse."
+    },
+    {
+      "q": "Un atome est électriquement neutre parce que :",
+      "opts": [
+        "il a autant de neutrons que de protons",
+        "il a autant d'électrons que de protons",
+        "ses électrons ne portent pas de charge",
+        "ses neutrons portent une charge négative"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "neutralite-par-neutrons",
+          "texte": "Croire que les neutrons compensent la charge des protons : ils ne sont pas chargés, ce sont les électrons qui la compensent"
+        },
+        null,
+        {
+          "code": "electron-neutre",
+          "texte": "Croire que l'électron n'est pas chargé : il porte la charge −e"
+        },
+        {
+          "code": "neutron-charge-negative",
+          "texte": "Croire que le neutron est chargé négativement : il est électriquement neutre"
+        }
+      ],
+      "exp": "Chaque proton porte +e et chaque électron −e : avec autant d'électrons que de protons, les charges se compensent. Attention : les neutrons ne portent pas de charge."
+    },
+    {
+      "q": "Le noyau d'oxygène se note ¹⁶₈O ; la charge élémentaire vaut e = 1,6×10⁻¹⁹ C. La charge de ce noyau vaut :",
+      "opts": [
+        "2,6×10⁻¹⁸ C",
+        "1,3×10⁻¹⁸ C",
+        "0 C",
+        "−1,3×10⁻¹⁸ C"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "charge-avec-a",
+          "texte": "Compter tous les nucléons : 16 × 1,6×10⁻¹⁹ ; les neutrons ne sont pas chargés, seuls les 8 protons comptent"
+        },
+        null,
+        {
+          "code": "noyau-neutre",
+          "texte": "Confondre noyau et atome : l'atome est neutre, mais le noyau est chargé positivement"
+        },
+        {
+          "code": "signe-charge-noyau",
+          "texte": "Se tromper de signe : le noyau contient des protons, il est chargé positivement"
+        }
+      ],
+      "exp": "Le noyau contient Z = 8 protons de charge +e : q = 8 × 1,6×10⁻¹⁹ ≈ 1,3×10⁻¹⁸ C. Attention : c'est l'atome entier qui est neutre, pas son noyau."
+    },
+    {
+      "q": "Quelle est la configuration électronique de l'atome de soufre (Z = 16) ?",
+      "opts": [
+        "1s² 2s² 2p⁶ 3s² 3p⁶",
+        "1s² 2s² 2p⁸ 3s² 3p²",
+        "1s² 2s² 2p⁶ 3s² 3p⁴",
+        "1s² 2s² 2p⁶ 3s¹ 3p⁵"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "couche-completee-a-tort",
+          "texte": "Compléter la dernière sous-couche : 3p⁶ donne 18 électrons, alors que le soufre n'en a que 16"
+        },
+        {
+          "code": "p-max-8",
+          "texte": "Croire qu'une sous-couche p peut contenir 8 électrons : elle en contient au maximum 6"
+        },
+        null,
+        {
+          "code": "ordre-remplissage",
+          "texte": "Commencer 3p avant d'avoir rempli 3s : les sous-couches se remplissent dans l'ordre 1s, 2s, 2p, 3s, 3p"
+        }
+      ],
+      "exp": "16 électrons : 1s² (2), 2s² (2), 2p⁶ (6), 3s² (2), puis les 4 restants en 3p : 1s² 2s² 2p⁶ 3s² 3p⁴. Attention : s contient au plus 2 électrons, p au plus 6."
+    },
+    {
+      "q": "La configuration électronique du chlore est 1s² 2s² 2p⁶ 3s² 3p⁵. Combien a-t-il d'électrons de valence ?",
+      "opts": [
+        "5",
+        "17",
+        "7",
+        "8"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "valence-derniere-sous-couche",
+          "texte": "Ne compter que la dernière sous-couche (3p⁵) : la couche de valence n = 3 contient 3s² et 3p⁵, soit 7 électrons"
+        },
+        {
+          "code": "valence-tous-electrons",
+          "texte": "Compter tous les électrons : seuls ceux de la couche de plus grand n sont des électrons de valence"
+        },
+        null,
+        {
+          "code": "valence-toujours-8",
+          "texte": "Croire qu'un atome a toujours 8 électrons de valence : 8 est le nombre d'une couche n = 2 ou n = 3 remplie (s et p)"
+        }
+      ],
+      "exp": "La couche de plus grand n est n = 3 : 3s² 3p⁵, soit 2 + 5 = 7 électrons de valence. Attention : on compte toute la couche, pas seulement la dernière sous-couche."
+    },
+    {
+      "q": "L'électron porte une charge électrique égale à :",
+      "opts": [
+        "+1,6×10⁻¹⁹ C",
+        "9,1×10⁻³¹ C",
+        "−1,6×10⁻¹⁹ C",
+        "0 C"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "signe-charge-electron",
+          "texte": "Oublier le signe : l'électron porte −e, c'est le proton qui porte +e"
+        },
+        {
+          "code": "masse-prise-pour-charge",
+          "texte": "Confondre la masse de l'électron (9,1×10⁻³¹ kg) et sa charge"
+        },
+        null,
+        {
+          "code": "electron-neutre",
+          "texte": "Croire que l'électron n'est pas chargé : il porte la charge −e"
+        }
+      ],
+      "exp": "L'électron porte la charge −e = −1,6×10⁻¹⁹ C ; le proton porte +e et le neutron n'est pas chargé. Attention à ne pas confondre charge (en C) et masse (en kg)."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Les fiches flash d'Inès",
+      "contexte": [
+        "Pour réviser le contrôle, Inès a écrit des fiches flash sur l'atome. Certaines contiennent des erreurs."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse. Corrige celles qui sont fausses.<br>a. Un atome est électriquement neutre.<br>b. Le noyau d'un atome contient des protons et des électrons.<br>c. Le neutron porte la charge −e.<br>d. L'atome est essentiellement constitué de vide : on dit que sa structure est lacunaire.<br>e. Un électron est environ 2000 fois moins lourd qu'un proton.<br>f. Le numéro atomique Z est le nombre de nucléons du noyau.<br>g. Deux atomes qui ont le même numéro atomique Z appartiennent au même élément chimique.",
+          "aides": []
+        },
+        {
+          "texte": "L'atome de carbone possède 6 protons. La charge de son noyau se calcule avec Q = Z × e. Calcule Q, puis déduis-en la charge totale de ses électrons.",
+          "aides": [
+            "Remplace Z par le nombre de protons et e par sa valeur (encadré « Données »).",
+            "L'atome est neutre : la charge de tous les électrons est l'opposé de celle du noyau."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : il contient autant d'électrons (charge −e) que de protons (charge +e).",
+        "b. FAUX : le noyau contient des protons et des neutrons (les nucléons) ; les électrons se déplacent autour du noyau.",
+        "c. FAUX : le neutron est électriquement neutre ; c'est l'électron qui porte la charge −e.",
+        "d. VRAI : le noyau est minuscule et les électrons occupent un volume immense autour de lui, quasiment vide.",
+        "e. VRAI : la masse de l'électron est négligeable devant celle d'un proton ou d'un neutron.",
+        "f. FAUX : Z est le nombre de protons ; le nombre de nucléons est le nombre de masse A.",
+        "g. VRAI : c'est le nombre de protons Z qui caractérise l'élément chimique.",
+        "<strong>2.</strong> Q = Z × e = 6 × 1,60 × 10⁻¹⁹ = 9,60 × 10⁻¹⁹ C. L'atome est neutre, donc la charge totale des 6 électrons vaut −9,60 × 10⁻¹⁹ C.",
+        "<em>⚠ Erreur fréquente : confondre Z (protons) et A (nucléons = protons + neutrons).</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Les atomes de notre corps",
+      "contexte": [
+        "Notre corps est constitué d'atomes de nombreux éléments : oxygène, carbone, azote, calcium (os, dents), phosphore, potassium… Le tableau ci-dessous rassemble quelques informations sur certains de leurs noyaux.",
+        "Rappel : le nombre de masse A, le numéro atomique Z et le nombre de neutrons N sont liés par A = Z + N. Dans l'écriture conventionnelle ᴬZX, A est écrit en haut à gauche du symbole X et Z en bas à gauche."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"26\" text-anchor=\"middle\" font-weight=\"bold\">Composition de quelques atomes présents dans le corps humain</text><rect x=\"20\" y=\"40\" width=\"720\" height=\"46\" fill=\"#1F4E5A\"/><text x=\"85.0\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Élément</text><text x=\"205.0\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Notation</text><text x=\"300.0\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Z</text><text x=\"380.0\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">A</text><text x=\"472.5\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Protons</text><text x=\"580.0\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Neutrons</text><text x=\"687.5\" y=\"70\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Électrons</text><rect x=\"20\" y=\"86\" width=\"720\" height=\"56\" fill=\"#f4ede1\"/><text x=\"30\" y=\"120.0\">Oxygène</text><text x=\"205\" y=\"105.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#1F4E5A\">16</text><text x=\"205\" y=\"123.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#1F4E5A\">8</text><text x=\"207\" y=\"120.0\" font-size=\"20\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"278\" y1=\"126.0\" x2=\"322\" y2=\"126.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"358\" y1=\"126.0\" x2=\"402\" y2=\"126.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"438\" y1=\"126.0\" x2=\"507\" y2=\"126.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"543\" y1=\"126.0\" x2=\"617\" y2=\"126.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"653\" y1=\"126.0\" x2=\"722\" y2=\"126.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"20\" y=\"142\" width=\"720\" height=\"56\" fill=\"#fff\"/><text x=\"30\" y=\"176.0\">Carbone</text><text x=\"472.5\" y=\"177.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">6</text><text x=\"580.0\" y=\"177.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">8</text><line x1=\"168\" y1=\"182.0\" x2=\"242\" y2=\"182.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"278\" y1=\"182.0\" x2=\"322\" y2=\"182.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"358\" y1=\"182.0\" x2=\"402\" y2=\"182.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"653\" y1=\"182.0\" x2=\"722\" y2=\"182.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"20\" y=\"198\" width=\"720\" height=\"56\" fill=\"#f4ede1\"/><text x=\"30\" y=\"232.0\">Azote</text><text x=\"300.0\" y=\"233.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">7</text><text x=\"380.0\" y=\"233.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">14</text><line x1=\"168\" y1=\"238.0\" x2=\"242\" y2=\"238.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"438\" y1=\"238.0\" x2=\"507\" y2=\"238.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"543\" y1=\"238.0\" x2=\"617\" y2=\"238.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"653\" y1=\"238.0\" x2=\"722\" y2=\"238.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"20\" y=\"254\" width=\"720\" height=\"56\" fill=\"#fff\"/><text x=\"30\" y=\"288.0\">Phosphore</text><text x=\"300.0\" y=\"289.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">15</text><text x=\"580.0\" y=\"289.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">16</text><line x1=\"168\" y1=\"294.0\" x2=\"242\" y2=\"294.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"358\" y1=\"294.0\" x2=\"402\" y2=\"294.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"438\" y1=\"294.0\" x2=\"507\" y2=\"294.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"653\" y1=\"294.0\" x2=\"722\" y2=\"294.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"20\" y=\"310\" width=\"720\" height=\"56\" fill=\"#f4ede1\"/><text x=\"30\" y=\"344.0\">Calcium</text><text x=\"205\" y=\"329.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#1F4E5A\">40</text><text x=\"205\" y=\"347.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#1F4E5A\">20</text><text x=\"207\" y=\"344.0\" font-size=\"20\" font-weight=\"bold\" fill=\"#1F4E5A\">Ca</text><line x1=\"278\" y1=\"350.0\" x2=\"322\" y2=\"350.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"358\" y1=\"350.0\" x2=\"402\" y2=\"350.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"438\" y1=\"350.0\" x2=\"507\" y2=\"350.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"543\" y1=\"350.0\" x2=\"617\" y2=\"350.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"653\" y1=\"350.0\" x2=\"722\" y2=\"350.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><rect x=\"20\" y=\"366\" width=\"720\" height=\"56\" fill=\"#fff\"/><text x=\"30\" y=\"400.0\">Potassium</text><text x=\"380.0\" y=\"401.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">39</text><text x=\"687.5\" y=\"401.0\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">19</text><line x1=\"168\" y1=\"406.0\" x2=\"242\" y2=\"406.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"278\" y1=\"406.0\" x2=\"322\" y2=\"406.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"438\" y1=\"406.0\" x2=\"507\" y2=\"406.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"543\" y1=\"406.0\" x2=\"617\" y2=\"406.0\" stroke=\"#C8962E\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><line x1=\"20\" y1=\"40\" x2=\"20\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"40\" x2=\"150\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"260\" y1=\"40\" x2=\"260\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"340\" y1=\"40\" x2=\"340\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"420\" y1=\"40\" x2=\"420\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"525\" y1=\"40\" x2=\"525\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"635\" y1=\"40\" x2=\"635\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"740\" y1=\"40\" x2=\"740\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"86\" x2=\"740\" y2=\"86\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"142\" x2=\"740\" y2=\"142\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"198\" x2=\"740\" y2=\"198\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"254\" x2=\"740\" y2=\"254\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"310\" x2=\"740\" y2=\"310\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"366\" x2=\"740\" y2=\"366\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"20\" y1=\"422\" x2=\"740\" y2=\"422\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><rect x=\"20\" y=\"40\" width=\"720\" height=\"382\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"380\" y=\"450\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">En gras : valeurs données. Pointillés : cases à compléter.</text></svg>",
+      "questions": [
+        {
+          "texte": "Recopie et complète le tableau (les atomes sont électriquement neutres).",
+          "aides": [
+            "Dans un atome neutre, nombre d'électrons = nombre de protons = Z.",
+            "Pour trouver le nombre de neutrons : N = A − Z. Pour trouver A : A = Z + N.",
+            "Ligne du potassium : commence par les électrons, ils te donnent Z."
+          ]
+        },
+        {
+          "texte": "Quels noyaux du tableau contiennent autant de protons que de neutrons ?",
+          "aides": []
+        },
+        {
+          "texte": "Les noyaux de carbone et d'azote du tableau ont le même nombre de masse A = 14. Appartiennent-ils au même élément chimique ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Oxygène ¹⁶₈O : Z = 8 ; A = 16 ; 8 protons ; N = 16 − 8 = 8 neutrons ; 8 électrons.",
+        "Carbone ¹⁴₆C : Z = 6 (nombre de protons) ; A = 6 + 8 = 14 ; 6 électrons.",
+        "Azote ¹⁴₇N : 7 protons ; N = 14 − 7 = 7 neutrons ; 7 électrons.",
+        "Phosphore ³¹₁₅P : A = 15 + 16 = 31 ; 15 protons ; 15 électrons.",
+        "Calcium ⁴⁰₂₀Ca : Z = 20 ; A = 40 ; 20 protons ; 20 neutrons ; 20 électrons.",
+        "Potassium ³⁹₁₉K : l'atome est neutre, donc 19 électrons ⇒ 19 protons, Z = 19 ; N = 39 − 19 = 20 neutrons.",
+        "<strong>2.</strong> Oxygène (8 et 8), azote (7 et 7) et calcium (20 et 20).",
+        "<strong>3.</strong> Non : le carbone a Z = 6 et l'azote Z = 7. C'est Z (le nombre de protons), et non A, qui caractérise l'élément chimique.",
+        "<em>⚠ Erreur fréquente : écrire N = A + Z au lieu de N = A − Z, ou inverser A et Z dans l'écriture conventionnelle (le plus grand nombre, A, est en haut).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Du cheveu au noyau",
+      "contexte": [
+        "Sur l'axe ci-dessous, les longueurs sont repérées par des puissances de dix. Les lettres A à E indiquent l'ordre de grandeur de la taille de cinq objets : l'épaisseur d'un cheveu, un globule rouge, un virus de la grippe, un atome, un noyau d'atome."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"40\" text-anchor=\"middle\" font-weight=\"bold\">Échelle des longueurs (en mètre)</text><text x=\"380\" y=\"66\" text-anchor=\"middle\" font-size=\"15\">Chaque graduation correspond à une longueur 10 fois plus grande que la précédente.</text><line x1=\"30\" y1=\"300\" x2=\"740\" y2=\"300\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"740,292 755,300 740,308\" fill=\"#1F4E5A\"/><line x1=\"45.0\" y1=\"291\" x2=\"45.0\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"45.0\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−16</tspan></text><line x1=\"96.5\" y1=\"291\" x2=\"96.5\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"96.5\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−15</tspan></text><line x1=\"148.1\" y1=\"291\" x2=\"148.1\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"148.1\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−14</tspan></text><line x1=\"199.6\" y1=\"291\" x2=\"199.6\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"199.6\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−13</tspan></text><line x1=\"251.2\" y1=\"291\" x2=\"251.2\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"251.2\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−12</tspan></text><line x1=\"302.7\" y1=\"291\" x2=\"302.7\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"302.7\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−11</tspan></text><line x1=\"354.2\" y1=\"291\" x2=\"354.2\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"354.2\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−10</tspan></text><line x1=\"405.8\" y1=\"291\" x2=\"405.8\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"405.8\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−9</tspan></text><line x1=\"457.3\" y1=\"291\" x2=\"457.3\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"457.3\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−8</tspan></text><line x1=\"508.8\" y1=\"291\" x2=\"508.8\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"508.8\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−7</tspan></text><line x1=\"560.4\" y1=\"291\" x2=\"560.4\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"560.4\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−6</tspan></text><line x1=\"611.9\" y1=\"291\" x2=\"611.9\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"611.9\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−5</tspan></text><line x1=\"663.5\" y1=\"291\" x2=\"663.5\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"663.5\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−4</tspan></text><line x1=\"715.0\" y1=\"291\" x2=\"715.0\" y2=\"309\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"715.0\" y=\"336\" text-anchor=\"middle\" font-size=\"14\" fill=\"#000\">10<tspan dy=\"-7\" font-size=\"11\">−3</tspan></text><text x=\"755\" y=\"278\" text-anchor=\"end\" font-size=\"14\">longueur (m)</text><line x1=\"96.5\" y1=\"288\" x2=\"96.5\" y2=\"180\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"96.5\" cy=\"300\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"96.5\" cy=\"162\" r=\"17\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"96.5\" y=\"168\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">A</text><line x1=\"354.2\" y1=\"288\" x2=\"354.2\" y2=\"220\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"354.2\" cy=\"300\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"354.2\" cy=\"202\" r=\"17\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"354.2\" y=\"208\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">B</text><line x1=\"508.8\" y1=\"288\" x2=\"508.8\" y2=\"180\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"508.8\" cy=\"300\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"508.8\" cy=\"162\" r=\"17\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"508.8\" y=\"168\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">C</text><line x1=\"611.9\" y1=\"288\" x2=\"611.9\" y2=\"220\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"611.9\" cy=\"300\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"611.9\" cy=\"202\" r=\"17\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"611.9\" y=\"208\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">D</text><line x1=\"663.5\" y1=\"288\" x2=\"663.5\" y2=\"180\" stroke=\"#B5523B\" stroke-width=\"2\"/><circle cx=\"663.5\" cy=\"300\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"663.5\" cy=\"162\" r=\"17\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"663.5\" y=\"168\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#B5523B\">E</text><line x1=\"200\" y1=\"380\" x2=\"560\" y2=\"380\" stroke=\"#C8962E\" stroke-width=\"2.5\"/><polygon points=\"560,373 574,380 560,387\" fill=\"#C8962E\"/><text x=\"380\" y=\"408\" text-anchor=\"middle\" fill=\"#C8962E\" font-weight=\"bold\">objets de plus en plus grands</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe chaque lettre à l'objet correspondant, puis écris l'ordre de grandeur de la taille d'un atome et de celle de son noyau.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le rapport r = (taille de l'atome) / (taille du noyau). Combien de fois l'atome est-il plus grand que son noyau ?",
+          "aides": [
+            "Pour diviser deux puissances de dix : 10ᵃ / 10ᵇ = 10ᵃ⁻ᵇ.",
+            "Ici a = −10 et b = −15 : calcule −10 − (−15)."
+          ]
+        },
+        {
+          "texte": "Le club sciences veut fabriquer une maquette à l'échelle : le noyau est représenté par une tête d'épingle de 1 mm de diamètre. Quel devrait être le diamètre de l'atome sur la maquette ? Compare à la longueur d'un terrain de football (environ 100 m).",
+          "aides": [
+            "Sur la maquette, toutes les longueurs sont multipliées par le même nombre : l'atome reste r fois plus grand que le noyau.",
+            "Multiplie 1 mm par r, puis convertis le résultat en mètres."
+          ]
+        },
+        {
+          "texte": "Explique, à l'aide de cette maquette, pourquoi on dit que la structure de l'atome est lacunaire.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : noyau d'atome ; B : atome ; C : virus de la grippe ; D : globule rouge ; E : épaisseur d'un cheveu. Taille d'un atome : de l'ordre de 10⁻¹⁰ m ; taille d'un noyau : de l'ordre de 10⁻¹⁵ m.",
+        "<strong>2.</strong> r = 10⁻¹⁰ / 10⁻¹⁵ = 10⁻¹⁰⁺¹⁵ = 10⁵ : l'atome est environ 100 000 fois plus grand que son noyau.",
+        "<strong>3.</strong> Diamètre de l'atome sur la maquette = 1 mm × 10⁵ = 10⁵ mm = 100 m : l'atome aurait la taille d'un terrain de football, avec la tête d'épingle au centre.",
+        "<strong>4.</strong> Entre la tête d'épingle (le noyau) et le bord du terrain (là où se déplacent les électrons), il n'y a pratiquement rien : l'atome est essentiellement constitué de vide.",
+        "<em>⚠ Erreur fréquente : diviser les exposants entre eux ou se tromper de signe (10⁻²⁵, 10⁻⁵). Pour diviser deux puissances de dix, on soustrait les exposants : −10 − (−15) = +5.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le fer de nos globules rouges",
+      "contexte": [
+        "Le fer est indispensable à notre organisme : il se trouve au cœur de l'hémoglobine des globules rouges, qui transporte le dioxygène dans le sang. Le noyau de fer le plus répandu est ⁵⁶₂₆Fe.",
+        "Une boîte de complément alimentaire (fictive) indique : « 14 mg de fer par comprimé »."
+      ],
+      "questions": [
+        {
+          "texte": "Donne la composition de l'atome de fer 56 : nombre de protons, de neutrons et d'électrons.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse m<sub>noyau</sub> du noyau de fer.",
+          "aides": [
+            "Le noyau contient des protons ET des neutrons : combien de chaque ?",
+            "m<sub>noyau</sub> = (nombre de protons) × m<sub>p</sub> + (nombre de neutrons) × m<sub>n</sub>."
+          ]
+        },
+        {
+          "texte": "Calcule la masse totale des électrons de l'atome, puis compare-la à m<sub>noyau</sub> en calculant leur quotient. Que peut-on dire de la masse de l'atome ?",
+          "aides": [
+            "Masse des électrons = (nombre d'électrons) × m<sub>e</sub>.",
+            "Pour comparer deux grandeurs, calcule le quotient de la plus grande par la plus petite."
+          ]
+        },
+        {
+          "texte": "Calcule la charge électrique du noyau et celle du cortège électronique. Justifie que l'atome est électriquement neutre.",
+          "aides": []
+        },
+        {
+          "texte": "Estime le nombre d'atomes de fer contenus dans un comprimé.",
+          "aides": [
+            "Chaque atome a la même masse : nombre d'atomes = masse de fer / masse d'un atome.",
+            "Les deux masses doivent être dans la même unité : 1 mg = 10⁻³ g = 10⁻⁶ kg."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Z = 26 : 26 protons ; N = A − Z = 56 − 26 = 30 neutrons ; l'atome est neutre : 26 électrons.",
+        "<strong>2.</strong> m<sub>noyau</sub> = 26 × m<sub>p</sub> + 30 × m<sub>n</sub> = 26 × 1,673 × 10⁻²⁷ + 30 × 1,675 × 10⁻²⁷ = 9,375 × 10⁻²⁶ kg.",
+        "<strong>3.</strong> m<sub>électrons</sub> = 26 × m<sub>e</sub> = 26 × 9,11 × 10⁻³¹ = 2,37 × 10⁻²⁹ kg. Quotient : m<sub>noyau</sub> / m<sub>électrons</sub> = 9,375 × 10⁻²⁶ / 2,37 × 10⁻²⁹ ≈ 4,0 × 10³ : le noyau est environ 4 000 fois plus lourd que l'ensemble des électrons (ils ne représentent qu'environ 0,03 % de la masse). La masse de l'atome est pratiquement égale à celle de son noyau : m<sub>atome</sub> = 9,377 × 10⁻²⁶ kg ≈ m<sub>noyau</sub>.",
+        "<strong>4.</strong> Q<sub>noyau</sub> = 26 × e = 26 × 1,60 × 10⁻¹⁹ = 4,16 × 10⁻¹⁸ C ; Q<sub>électrons</sub> = 26 × (−e) = −4,16 × 10⁻¹⁸ C. La somme est nulle : l'atome est électriquement neutre.",
+        "<strong>5.</strong> N<sub>atomes</sub> = m / m<sub>atome</sub> = 14 × 10⁻⁶ kg / 9,38 × 10⁻²⁶ kg ≈ 1,5 × 10²⁰ atomes (14 mg = 14 × 10⁻³ g = 14 × 10⁻⁶ kg).",
+        "Vérification d'ordre de grandeur : un atome est extrêmement léger, il en faut donc un nombre énorme pour faire quelques milligrammes.",
+        "<em>⚠ Erreur fréquente : oublier de convertir 14 mg en kg (on trouverait 1,5 × 10²⁶ ou 1,5 × 10²³ atomes), ou calculer la masse du noyau avec Z au lieu de A nucléons.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Les électrons de valence",
+      "contexte": [
+        "Les atomes d'azote (N) forment le diazote, principal gaz de l'air ; le sodium (Na) est présent dans le sel de cuisine ; le soufre (S) entre dans la composition du gaz à l'odeur d'œuf pourri. Les propriétés chimiques d'un atome dépendent de ses électrons, en particulier de ses électrons de valence."
+      ],
+      "questions": [
+        {
+          "texte": "Écris la configuration électronique de l'atome d'azote, de sodium et de soufre.",
+          "aides": [
+            "Le nombre d'électrons de l'atome neutre est égal à Z (encadré « Données »).",
+            "Remplis dans l'ordre 1s, 2s, 2p, 3s, 3p : 2 électrons au maximum dans une sous-couche s, 6 dans une sous-couche p."
+          ]
+        },
+        {
+          "texte": "Pour chacun de ces trois atomes, indique la couche de valence et le nombre d'électrons de valence.",
+          "aides": [
+            "La couche de valence est celle qui a le plus grand nombre n (le chiffre devant s ou p).",
+            "Additionne les électrons de toutes les sous-couches de cette couche, s et p."
+          ]
+        },
+        {
+          "texte": "Un atome a pour configuration électronique 1s² 2s² 2p⁶ 3s² 3p³ et son noyau contient 16 neutrons. Identifie l'élément, puis donne l'écriture conventionnelle de son noyau.",
+          "aides": []
+        },
+        {
+          "texte": "Deux élèves ont fait des erreurs. Trouve-les et corrige-les.<br>a. Léo, pour le magnésium (Z = 12) : « 1s² 2s² 2p⁸ ».<br>b. Lou, pour l'oxygène (Z = 8) : « 1s² 2s² 2p⁴, donc l'oxygène a 4 électrons de valence ».",
+          "aides": []
+        },
+        {
+          "texte": "Quel atome étudié dans cet exercice a le même nombre d'électrons de valence que l'oxygène ? Que peut-on en prévoir sur leurs propriétés chimiques ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Azote (Z = 7, 7 électrons) : 1s² 2s² 2p³. Sodium (Z = 11) : 1s² 2s² 2p⁶ 3s¹. Soufre (Z = 16) : 1s² 2s² 2p⁶ 3s² 3p⁴.",
+        "<strong>2.</strong> Azote : couche n = 2, 2 + 3 = 5 électrons de valence. Sodium : couche n = 3, 1 électron de valence. Soufre : couche n = 3, 2 + 4 = 6 électrons de valence.",
+        "<strong>3.</strong> Nombre d'électrons : 2 + 2 + 6 + 2 + 3 = 15, donc Z = 15 (atome neutre) : c'est le phosphore P. A = Z + N = 15 + 16 = 31 : ³¹₁₅P.",
+        "<strong>4.</strong> a. Une sous-couche p contient au maximum 6 électrons : la configuration correcte est 1s² 2s² 2p⁶ 3s².",
+        "b. La configuration est juste, mais la couche de valence (n = 2) contient 2s² et 2p⁴ : l'oxygène a 2 + 4 = 6 électrons de valence.",
+        "<strong>5.</strong> Le soufre (6 électrons de valence, comme l'oxygène). On peut prévoir que l'oxygène et le soufre ont des propriétés chimiques voisines.",
+        "<em>⚠ Erreur fréquente : ne compter que les électrons de la sous-couche p pour la valence. Les électrons de valence sont tous ceux de la couche de plus grand n (sous-couches s ET p).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le feu d'artifice sera-t-il rouge ?",
+      "contexte": [
+        "Doc. 1 — La commande. Pour la fête de la ville, un artificier doit préparer une gerbe d'étincelles rouges. Dans son atelier, il retrouve un pot de poudre métallique dont l'étiquette, abîmée, ne laisse lire que « … rouge … ». La couleur d'un feu d'artifice dépend de l'élément chimique présent dans la poudre (doc. 2). Prudent, l'artificier fait analyser un échantillon par un laboratoire."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"32\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 2 — Couleur donnée à une flamme par quelques éléments</text><rect x=\"80\" y=\"50\" width=\"600\" height=\"44\" fill=\"#1F4E5A\"/><text x=\"165.0\" y=\"78\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Élément</text><text x=\"305.0\" y=\"78\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Symbole</text><text x=\"405.0\" y=\"78\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Z</text><text x=\"565.0\" y=\"78\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Couleur de la flamme</text><rect x=\"80\" y=\"94\" width=\"600\" height=\"52\" fill=\"#f4ede1\"/><text x=\"94\" y=\"126.0\">Lithium</text><text x=\"305.0\" y=\"126.0\" text-anchor=\"middle\" font-weight=\"bold\">Li</text><text x=\"405.0\" y=\"126.0\" text-anchor=\"middle\">3</text><path d=\"M476,101.0 C489,116.0 489,135.0 476,136.0 C463,135.0 463,116.0 476,101.0 Z\" fill=\"#B0173A\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"126.0\">rouge carmin</text><rect x=\"80\" y=\"146\" width=\"600\" height=\"52\" fill=\"#fff\"/><text x=\"94\" y=\"178.0\">Sodium</text><text x=\"305.0\" y=\"178.0\" text-anchor=\"middle\" font-weight=\"bold\">Na</text><text x=\"405.0\" y=\"178.0\" text-anchor=\"middle\">11</text><path d=\"M476,153.0 C489,168.0 489,187.0 476,188.0 C463,187.0 463,168.0 476,153.0 Z\" fill=\"#F2A900\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"178.0\">jaune orangé</text><rect x=\"80\" y=\"198\" width=\"600\" height=\"52\" fill=\"#f4ede1\"/><text x=\"94\" y=\"230.0\">Potassium</text><text x=\"305.0\" y=\"230.0\" text-anchor=\"middle\" font-weight=\"bold\">K</text><text x=\"405.0\" y=\"230.0\" text-anchor=\"middle\">19</text><path d=\"M476,205.0 C489,220.0 489,239.0 476,240.0 C463,239.0 463,220.0 476,205.0 Z\" fill=\"#B79FD6\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"230.0\">violet pâle</text><rect x=\"80\" y=\"250\" width=\"600\" height=\"52\" fill=\"#fff\"/><text x=\"94\" y=\"282.0\">Calcium</text><text x=\"305.0\" y=\"282.0\" text-anchor=\"middle\" font-weight=\"bold\">Ca</text><text x=\"405.0\" y=\"282.0\" text-anchor=\"middle\">20</text><path d=\"M476,257.0 C489,272.0 489,291.0 476,292.0 C463,291.0 463,272.0 476,257.0 Z\" fill=\"#E4572E\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"282.0\">rouge orangé</text><rect x=\"80\" y=\"302\" width=\"600\" height=\"52\" fill=\"#f4ede1\"/><text x=\"94\" y=\"334.0\">Cuivre</text><text x=\"305.0\" y=\"334.0\" text-anchor=\"middle\" font-weight=\"bold\">Cu</text><text x=\"405.0\" y=\"334.0\" text-anchor=\"middle\">29</text><path d=\"M476,309.0 C489,324.0 489,343.0 476,344.0 C463,343.0 463,324.0 476,309.0 Z\" fill=\"#1E9E9A\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"334.0\">bleu-vert</text><rect x=\"80\" y=\"354\" width=\"600\" height=\"52\" fill=\"#fff\"/><text x=\"94\" y=\"386.0\">Strontium</text><text x=\"305.0\" y=\"386.0\" text-anchor=\"middle\" font-weight=\"bold\">Sr</text><text x=\"405.0\" y=\"386.0\" text-anchor=\"middle\">38</text><path d=\"M476,361.0 C489,376.0 489,395.0 476,396.0 C463,395.0 463,376.0 476,361.0 Z\" fill=\"#D7191C\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"386.0\">rouge vif</text><rect x=\"80\" y=\"406\" width=\"600\" height=\"52\" fill=\"#f4ede1\"/><text x=\"94\" y=\"438.0\">Baryum</text><text x=\"305.0\" y=\"438.0\" text-anchor=\"middle\" font-weight=\"bold\">Ba</text><text x=\"405.0\" y=\"438.0\" text-anchor=\"middle\">56</text><path d=\"M476,413.0 C489,428.0 489,447.0 476,448.0 C463,447.0 463,428.0 476,413.0 Z\" fill=\"#8DC63F\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><text x=\"500\" y=\"438.0\">vert pomme</text><line x1=\"80\" y1=\"50\" x2=\"80\" y2=\"458\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"250\" y1=\"50\" x2=\"250\" y2=\"458\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"360\" y1=\"50\" x2=\"360\" y2=\"458\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"450\" y1=\"50\" x2=\"450\" y2=\"458\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"680\" y1=\"50\" x2=\"680\" y2=\"458\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><rect x=\"80\" y=\"50\" width=\"600\" height=\"408\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/></svg>",
+      "contexte2": [
+        "Doc. 3 — Extrait du rapport d'analyse. « La poudre contient un seul élément métallique. Masse d'un atome de cet élément : m = 3,85 × 10⁻²⁶ kg. Charge électrique totale du cortège électronique d'un atome : q = −1,76 × 10⁻¹⁸ C. »",
+        "Utilise aussi l'encadré « Données » de la fiche."
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : que vaut la charge électrique du noyau d'un atome de cet élément ? Justifie.",
+          "aides": [
+            "Un atome est électriquement neutre : que vaut la somme de la charge du noyau et de celle du cortège ?",
+            "La charge du noyau est l'opposé de la charge du cortège."
+          ]
+        },
+        {
+          "texte": "L'artificier peut-il utiliser cette poudre pour obtenir sa gerbe rouge ? Ta réponse s'appuiera sur l'identification de l'élément et sur l'écriture conventionnelle complète de son noyau.",
+          "aides": [
+            "S'approprier : d'après le doc. 2, quelle information sur l'élément suffit pour connaître la couleur ?",
+            "Analyser : chaque proton porte la charge +e ; la masse de l'atome est presque égale à celle de son noyau.",
+            "Réaliser : Z = Q<sub>noyau</sub> / e, puis A ≈ m / (masse d'un nucléon), puis N = A − Z."
+          ]
+        },
+        {
+          "texte": "Regard critique : le nombre de nucléons calculé à partir de la masse n'est pas exactement un nombre entier. Pourquoi ? Pourquoi a-t-on pu négliger les électrons ?",
+          "aides": [
+            "Compare la valeur 1,67 × 10⁻²⁷ kg aux masses exactes du proton et du neutron.",
+            "Calcule la masse des 11 électrons et compare-la à la masse de l'atome."
+          ]
+        },
+        {
+          "texte": "Écris la configuration électronique de l'atome identifié et donne son nombre d'électrons de valence.",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (notion du chapitre Transformations nucléaires) : le lithium naturel est un mélange de deux sortes de noyaux, ⁶₃Li et ⁷₃Li, appelés isotopes. Compare leur composition. Une poudre de lithium donnera-t-elle une flamme rouge quel que soit le noyau ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'atome est électriquement neutre : charge du noyau + charge du cortège = 0, donc Q<sub>noyau</sub> = −q = +1,76 × 10⁻¹⁸ C.",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Nombre de protons : Z = Q<sub>noyau</sub> / e = 1,76 × 10⁻¹⁸ / 1,60 × 10⁻¹⁹ = 11,0, donc Z = 11 : c'est le sodium Na (données ou doc. 2).",
+        "• Nombre de nucléons : la masse de l'atome est pratiquement celle de son noyau, donc A ≈ m / m<sub>nucléon</sub> = 3,85 × 10⁻²⁶ / 1,67 × 10⁻²⁷ = 23,05, soit A = 23. N = A − Z = 23 − 11 = 12 neutrons. Écriture conventionnelle : ²³₁₁Na.",
+        "• Doc. 2 : le sodium colore la flamme en jaune orangé.",
+        "• Conclusion : la poudre contient du sodium et non du lithium ou du strontium ; elle donnerait une gerbe jaune orangé. L'artificier ne doit pas l'utiliser pour sa gerbe rouge. (Pour du strontium, Z = 38, le noyau porterait 38 × 1,60 × 10⁻¹⁹ = 6,08 × 10⁻¹⁸ C.)",
+        "<strong>3.</strong> Les masses du proton (1,673 × 10⁻²⁷ kg) et du neutron (1,675 × 10⁻²⁷ kg) ne valent pas exactement 1,67 × 10⁻²⁷ kg, et les données sont arrondies : on trouve 23,01 avec m<sub>p</sub>, 22,99 avec m<sub>n</sub>. Le nombre de nucléons étant forcément entier, on arrondit à 23. Les 11 électrons ont une masse de 11 × 9,11 × 10⁻³¹ = 1,00 × 10⁻²⁹ kg, soit environ 0,03 % de la masse de l'atome : négligeable.",
+        "<strong>4.</strong> Sodium (11 électrons) : 1s² 2s² 2p⁶ 3s¹ ; couche de valence n = 3 : 1 électron de valence.",
+        "<strong>5.</strong> Pour aller plus loin : les deux noyaux ont 3 protons (même élément, le lithium) ; ⁶₃Li a 3 neutrons, ⁷₃Li en a 4. Leurs atomes ont les mêmes 3 électrons, et la couleur de la flamme est liée aux électrons : la flamme est rouge dans les deux cas.",
+        "Éléments valorisés (même si le résultat final est faux) : utilisation de la neutralité de l'atome ; relation Z = Q / e ; idée que la masse de l'atome est concentrée dans le noyau ; lien entre Z et l'élément (doc. 2) ; conclusion cohérente avec les calculs de l'élève.",
+        "<em>⚠ Erreur fréquente : identifier l'élément avec A (23) au lieu de Z (11), ou oublier que la charge du noyau est l'opposé de celle du cortège.</em>"
+      ]
+    }
+  ]
+}

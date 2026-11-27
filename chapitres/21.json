@@ -1,0 +1,712 @@
+{
+  "id": 21,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Corps purs et mélanges",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Corps pur",
+            "text": "Espèce chimique ne contenant qu'une seule sorte d'entité chimique (atomes, ions ou molécules). Exemple : l'eau distillée ne contient que des molécules d'eau."
+          },
+          {
+            "type": "def",
+            "term": "Mélange",
+            "text": "Association d'au moins deux espèces chimiques différentes."
+          },
+          {
+            "type": "text",
+            "text": "Un mélange est <strong>homogène</strong> lorsque l'œil ne distingue pas les différents constituants (une seule phase visible). Exemple : l'eau de mer contient de l'eau et des ions dissous (Na⁺ + Cl⁻) que l'on ne distingue pas à l'œil nu."
+          },
+          {
+            "type": "text",
+            "text": "Un mélange est <strong>hétérogène</strong> lorsque l'œil peut distinguer au moins deux constituants (plusieurs phases visibles). Exemple : la vinaigrette, avec l'huile et le vinaigre qui forment deux phases séparées ; l'eau gazeuse, où l'on voit les bulles de dioxyde de carbone."
+          }
+        ]
+      },
+      {
+        "title": "2. Composition d'un mélange",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Composition massique",
+            "text": "Rapport de la masse de chaque constituant sur la masse totale du mélange, souvent exprimé en pourcentage."
+          },
+          {
+            "type": "def",
+            "term": "Composition volumique",
+            "text": "Rapport du volume de chaque constituant sur le volume total du mélange, souvent exprimé en pourcentage."
+          },
+          {
+            "type": "formula",
+            "label": "Pourcentage massique",
+            "text": "%massique = (masse du constituant / masse totale) × 100"
+          },
+          {
+            "type": "warn",
+            "text": "Composition volumique de l'air (à connaître) : environ 78 % de diazote N₂, 21 % de dioxygène O₂ et 1 % d'argon (et d'autres gaz en très faible quantité). Le dioxyde de carbone n'est présent qu'à l'état de trace (environ 0,04 %) : il ne représente donc pas 1 % de l'air, contrairement à une confusion fréquente."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le vinaigre blanc a une composition massique usuelle d'environ 8 g d'acide éthanoïque pour 92 g d'eau, dans 100 g de vinaigre."
+          }
+        ]
+      },
+      {
+        "title": "3. Température de changement d'état et masse volumique",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Changement d'état",
+            "text": "Transformation physique correspondant au passage d'un état physique (solide, liquide, gazeux) à un autre."
+          },
+          {
+            "type": "warn",
+            "text": "Sous une pression donnée, le changement d'état d'un corps pur s'effectue à <strong>température constante</strong>, caractéristique de cette espèce chimique. Cette propriété permet de l'identifier (ex. l'eau pure fond à 0 °C et bout à 100 °C sous pression atmosphérique normale)."
+          },
+          {
+            "type": "def",
+            "term": "Masse volumique",
+            "text": "Masse d'un volume unité d'une espèce chimique, notée ρ (rhô)."
+          },
+          {
+            "type": "formula",
+            "label": "Masse volumique",
+            "text": "ρ = m / V\nρ : masse volumique (kg·m⁻³ ou g·mL⁻¹)\nm : masse (kg ou g)\nV : volume (m³ ou mL)"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Espèce",
+              "Masse volumique ρ"
+            ],
+            "rows": [
+              [
+                "Eau",
+                "1,00 g·mL⁻¹ (1000 kg·m⁻³)"
+              ],
+              [
+                "Huile alimentaire",
+                "≈ 0,92 g·mL⁻¹ (920 kg·m⁻³)"
+              ],
+              [
+                "Alcool (éthanol)",
+                "≈ 0,79 g·mL⁻¹ (790 kg·m⁻³)"
+              ],
+              [
+                "Mercure",
+                "≈ 13,6 g·mL⁻¹ (13 600 kg·m⁻³)"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Densité et miscibilité",
+        "icon": "🧴",
+        "content": [
+          {
+            "type": "def",
+            "term": "Densité d'un liquide (ou d'un solide)",
+            "text": "Grandeur sans unité obtenue en divisant la masse volumique de l'espèce par celle de l'eau (les deux masses volumiques devant être exprimées dans la même unité)."
+          },
+          {
+            "type": "formula",
+            "label": "Densité",
+            "text": "d = ρ / ρ(eau)"
+          },
+          {
+            "type": "def",
+            "term": "Miscibilité",
+            "text": "Deux liquides sont miscibles s'ils forment un mélange homogène en les mélangeant. Ils sont non miscibles s'ils forment un mélange hétérogène (deux phases distinctes)."
+          },
+          {
+            "type": "text",
+            "text": "Pour deux liquides non miscibles, le liquide le <strong>plus dense</strong> (densité la plus grande) se retrouve en <strong>position inférieure</strong>, et le moins dense en position supérieure. Exemple : l'huile (moins dense) flotte au-dessus de l'eau."
+          }
+        ]
+      },
+      {
+        "title": "5. Tests physiques d'identification courants",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "text",
+            "text": "Certaines espèces chimiques usuelles peuvent être identifiées rapidement grâce à des tests caractéristiques simples, à connaître par cœur."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Espèce à identifier",
+              "Test",
+              "Résultat positif"
+            ],
+            "rows": [
+              [
+                "Eau",
+                "Sulfate de cuivre anhydre (poudre blanche)",
+                "La poudre blanche devient bleue"
+              ],
+              [
+                "Dihydrogène H₂",
+                "Approche d'une flamme (test à la flamme)",
+                "Détonation (petit « pop »)"
+              ],
+              [
+                "Dioxygène O₂",
+                "Bûchette (ou allumette) incandescente",
+                "La bûchette se ravive (se rallume)"
+              ],
+              [
+                "Dioxyde de carbone CO₂",
+                "Bullage dans l'eau de chaux",
+                "L'eau de chaux se trouble (devient blanchâtre)"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "L'étiquette d'une eau minérale limpide indique la présence d'ions calcium, magnésium et hydrogénocarbonate. Cette eau est :",
+      "opts": [
+        "un mélange homogène",
+        "un corps pur, car on ne voit qu'une seule phase",
+        "un mélange hétérogène, car elle contient plusieurs espèces",
+        "un corps pur, car c'est une eau naturelle de source"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "homogene-vs-corps-pur",
+          "texte": "Confondre mélange homogène et corps pur : une seule phase visible ne veut pas dire une seule espèce chimique"
+        },
+        {
+          "code": "melange-donc-heterogene",
+          "texte": "Croire qu'un mélange est forcément hétérogène : on parle d'hétérogène seulement si l'on distingue plusieurs phases"
+        },
+        {
+          "code": "naturel-donc-pur",
+          "texte": "Croire que « naturel » veut dire « pur » : une eau de source contient de nombreux ions dissous"
+        }
+      ],
+      "exp": "L'eau minérale contient de l'eau et des ions dissous (plusieurs espèces) que l'œil ne distingue pas : c'est un mélange homogène. Attention : limpide ou naturelle ne veut pas dire corps pur."
+    },
+    {
+      "q": "L'air contient, en volume, environ 78 % de diazote et 21 % de dioxygène. Quel volume de dioxygène y a-t-il dans 10 L d'air ?",
+      "opts": [
+        "7,8 L",
+        "2,1 L",
+        "21 L",
+        "10 L"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "air-n2-o2-inverses",
+          "texte": "Inverser diazote et dioxygène : le gaz majoritaire de l'air est le diazote (78 %), pas le dioxygène"
+        },
+        null,
+        {
+          "code": "pourcentage-pris-pour-valeur",
+          "texte": "Prendre le pourcentage pour le résultat : 21 % de 10 L, c'est 10 × 21 / 100 = 2,1 L, pas 21 L"
+        },
+        {
+          "code": "air-egal-dioxygene",
+          "texte": "Croire que l'air est du dioxygène : il n'en contient qu'environ 21 % en volume"
+        }
+      ],
+      "exp": "V(O₂) = 10 × 21 / 100 = 2,1 L. Attention : le constituant majoritaire de l'air est le diazote (78 %) ; le dioxyde de carbone n'est qu'à l'état de trace (0,04 %)."
+    },
+    {
+      "q": "On dissout 10 g de sucre dans 90 g d'eau. Quel est le pourcentage massique de sucre dans la solution obtenue ?",
+      "opts": [
+        "11 %",
+        "90 %",
+        "10 %",
+        "0,10 %"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "masse-solvant-vs-solution",
+          "texte": "Diviser par la masse du solvant au lieu de la masse totale : 10 / 90 × 100 ≈ 11 %"
+        },
+        {
+          "code": "constituant-inverse",
+          "texte": "Calculer le pourcentage de l'autre constituant (l'eau) : 90 / 100 × 100 = 90 %"
+        },
+        null,
+        {
+          "code": "oubli-facteur-100",
+          "texte": "Oublier de multiplier par 100 : 10 / 100 = 0,10 est une fraction, soit 10 %"
+        }
+      ],
+      "exp": "La masse totale vaut 10 + 90 = 100 g, donc %massique = 10 / 100 × 100 = 10 %. Attention : on divise par la masse totale du mélange, pas par la masse d'eau."
+    },
+    {
+      "q": "Sous la pression atmosphérique normale, pendant toute la solidification de l'eau pure, sa température :",
+      "opts": [
+        "diminue régulièrement jusqu'à ce que toute l'eau soit gelée",
+        "reste constante, à une valeur qui dépend de la masse d'eau",
+        "reste constante à 0 °C",
+        "reste constante à 0 °C, comme pour tous les corps purs"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "palier-temperature-varie",
+          "texte": "Croire que la température d'un corps pur varie pendant un changement d'état : elle reste constante (palier)"
+        },
+        {
+          "code": "temperature-depend-quantite",
+          "texte": "Croire que la température de changement d'état dépend de la quantité : elle est caractéristique de l'espèce, pas de sa masse"
+        },
+        null,
+        {
+          "code": "temperature-changement-etat-universelle",
+          "texte": "Croire que tous les corps purs changent d'état à la même température : chaque espèce a la sienne (l'éthanol bout à 78 °C)"
+        }
+      ],
+      "exp": "Pour un corps pur, sous une pression donnée, le changement d'état se fait à température constante, caractéristique de l'espèce : 0 °C pour l'eau. Attention : c'est ce palier qui permet d'identifier une espèce."
+    },
+    {
+      "q": "Pendant l'ébullition d'un liquide incolore, la température passe de 78 °C à 85 °C. Données : l'éthanol pur bout à 78 °C. On peut conclure que ce liquide est :",
+      "opts": [
+        "de l'éthanol pur, car l'ébullition commence à 78 °C",
+        "un mélange",
+        "un corps pur, puisqu'il bout",
+        "un corps pur, dont la température monte parce qu'on le chauffe"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "debut-palier-suffit",
+          "texte": "Ne regarder que le début de l'ébullition : pour un corps pur, la température doit rester constante pendant tout le changement d'état"
+        },
+        null,
+        {
+          "code": "ebullition-preuve-purete",
+          "texte": "Croire que bouillir prouve qu'un liquide est pur : un mélange bout aussi, mais sans palier de température"
+        },
+        {
+          "code": "palier-temperature-varie",
+          "texte": "Croire que la température d'un corps pur varie pendant un changement d'état : elle reste constante (palier)"
+        }
+      ],
+      "exp": "La température varie pendant l'ébullition : il n'y a pas de palier, donc ce n'est pas un corps pur, c'est un mélange. Attention : un corps pur chauffé garde une température constante tant qu'il bout."
+    },
+    {
+      "q": "Un petit bloc de métal a une masse de 54 g et un volume de 20 mL. Sa masse volumique vaut :",
+      "opts": [
+        "0,37 g·mL⁻¹",
+        "1 080 g·mL⁻¹",
+        "2,7 kg·m⁻³",
+        "2,7 g·mL⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "masse-volumique-inverse",
+          "texte": "Inverser le rapport : ρ = V / m = 20 / 54 ≈ 0,37 au lieu de ρ = m / V"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 54 × 20 = 1 080"
+        },
+        {
+          "code": "unite-changee-sans-conversion",
+          "texte": "Changer d'unité sans convertir : 2,7 g·mL⁻¹ = 2 700 kg·m⁻³, pas 2,7 kg·m⁻³"
+        },
+        null
+      ],
+      "exp": "ρ = m / V = 54 / 20 = 2,7 g·mL⁻¹ (soit 2 700 kg·m⁻³). Attention : la masse volumique est une masse divisée par un volume, et changer d'unité oblige à convertir la valeur."
+    },
+    {
+      "q": "L'huile alimentaire a une masse volumique ρ = 0,92 g·mL⁻¹ ; celle de l'eau vaut 1,00 g·mL⁻¹. La densité de l'huile est :",
+      "opts": [
+        "0,92",
+        "0,92 g·mL⁻¹",
+        "920",
+        "1,09"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "densite-avec-unite",
+          "texte": "Donner une unité à la densité : c'est un quotient de deux masses volumiques, elle n'a pas d'unité"
+        },
+        {
+          "code": "densite-unites-differentes",
+          "texte": "Diviser deux masses volumiques exprimées dans des unités différentes : 920 kg·m⁻³ / 1,00 g·mL⁻¹ = 920"
+        },
+        {
+          "code": "densite-inverse",
+          "texte": "Inverser le rapport : 1,00 / 0,92 ≈ 1,09 au lieu de d = ρ / ρ(eau)"
+        }
+      ],
+      "exp": "d = ρ / ρ(eau) = 0,92 / 1,00 = 0,92, sans unité. Attention : les deux masses volumiques doivent être dans la même unité."
+    },
+    {
+      "q": "Le cyclohexane (densité 0,78) et l'eau ne sont pas miscibles. On verse 20 mL de cyclohexane et 100 mL d'eau dans une ampoule à décanter. On observe :",
+      "opts": [
+        "une seule phase, car on a beaucoup plus d'eau",
+        "deux phases, le cyclohexane en haut",
+        "deux phases, le cyclohexane en bas",
+        "deux phases, l'eau en haut car son volume est le plus grand"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "non-miscible-homogene",
+          "texte": "Oublier que deux liquides non miscibles forment toujours deux phases, quelles que soient les quantités"
+        },
+        null,
+        {
+          "code": "plus-dense-en-haut",
+          "texte": "Inverser la règle : le liquide le moins dense (densité la plus petite) se place au-dessus"
+        },
+        {
+          "code": "position-selon-quantite",
+          "texte": "Croire que la position des phases dépend des volumes versés : elle dépend seulement des densités"
+        }
+      ],
+      "exp": "Non miscibles : deux phases. Le cyclohexane, moins dense que l'eau (0,78 < 1,00), forme la phase supérieure. Attention : la quantité versée ne change pas l'ordre des phases."
+    },
+    {
+      "q": "On introduit une bûchette incandescente (sans flamme) dans un tube rempli d'un gaz incolore : elle se rallume. Ce gaz est :",
+      "opts": [
+        "du dihydrogène",
+        "du dioxyde de carbone",
+        "de la vapeur d'eau",
+        "du dioxygène"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "test-h2-vs-o2",
+          "texte": "Confondre les tests : le dihydrogène produit une petite détonation avec une flamme ; c'est le dioxygène qui ravive une bûchette"
+        },
+        {
+          "code": "test-co2-vs-o2",
+          "texte": "Confondre les tests : le dioxyde de carbone trouble l'eau de chaux et n'entretient pas la combustion"
+        },
+        {
+          "code": "test-eau-vs-o2",
+          "texte": "Confondre les tests : l'eau se détecte avec le sulfate de cuivre anhydre, qui devient bleu"
+        },
+        null
+      ],
+      "exp": "Le dioxygène entretient la combustion : il ravive une bûchette incandescente. Attention : la détonation (« pop ») à l'approche d'une flamme est le test du dihydrogène."
+    },
+    {
+      "q": "Pour savoir si un liquide incolore contient de l'eau, on peut :",
+      "opts": [
+        "y ajouter du sulfate de cuivre anhydre, qui devient bleu",
+        "vérifier qu'il est incolore et sans odeur",
+        "y faire buller de l'eau de chaux, qui se trouble",
+        "approcher une flamme et vérifier qu'il ne brûle pas"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "identification-par-aspect",
+          "texte": "Croire que l'aspect suffit à identifier une espèce : beaucoup de liquides incolores et inodores ne sont pas de l'eau"
+        },
+        {
+          "code": "test-co2-vs-eau",
+          "texte": "Confondre les tests : l'eau de chaux se trouble en présence de dioxyde de carbone, pas d'eau"
+        },
+        {
+          "code": "ininflammable-donc-eau",
+          "texte": "Croire qu'un liquide qui ne brûle pas est de l'eau : ce n'est pas un test caractéristique de l'eau"
+        }
+      ],
+      "exp": "Le sulfate de cuivre anhydre, poudre blanche, devient bleu au contact de l'eau : c'est le test caractéristique. Attention : un liquide incolore n'est pas forcément de l'eau."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Corps purs, mélanges et tests d'identification",
+      "contexte": [
+        "Pendant la pause déjeuner, Inès fait l'inventaire de ce qu'il y a sur la table de la cantine et dans la salle.",
+        "Liste : (a) eau distillée du labo de chimie ; (b) eau minérale plate ; (c) jus d'orange avec pulpe ; (d) air de la salle, débarrassé de ses poussières ; (e) vinaigrette (huile + vinaigre) ; (f) chlorure de sodium pur ; (g) eau gazeuse qu'on vient de servir dans un verre ; (h) sirop de menthe dilué dans l'eau."
+      ],
+      "questions": [
+        {
+          "texte": "Range chaque élément (a) à (h) dans l'une des trois colonnes d'un tableau : « corps pur », « mélange homogène », « mélange hétérogène ».",
+          "aides": [
+            "Pose-toi deux questions : y a-t-il une seule espèce chimique ? Si non, distingue-t-on plusieurs constituants à l'œil nu ?",
+            "Une eau limpide n'est pas forcément un corps pur : regarde l'étiquette d'une bouteille d'eau minérale (ions calcium, magnésium…)."
+          ]
+        },
+        {
+          "texte": "Complète le texte : « L'air est un mélange ……… . En volume, il contient environ ……… % de diazote, ……… % de dioxygène et ……… % d'argon. Le dioxyde de carbone n'y est présent qu'à l'état de ……… (environ ……… %). »",
+          "aides": []
+        },
+        {
+          "texte": "La salle de classe mesure 10 m de long, 5 m de large et 3 m de haut. Calcule le volume d'air de la salle, puis le volume de dioxygène qu'elle contient. Formule utile : V(gaz) = (pourcentage du gaz / 100) × V(air).",
+          "aides": [
+            "Le volume d'un pavé droit se calcule ainsi : longueur × largeur × hauteur.",
+            "Le dioxygène représente 21 % du volume d'air : remplace « pourcentage du gaz » par 21 dans la formule."
+          ]
+        },
+        {
+          "texte": "Yanis affirme : « Dans la salle, il y a autant de dioxyde de carbone que d'argon. » Calcule le volume de chacun de ces deux gaz dans la salle et réponds-lui.",
+          "aides": []
+        },
+        {
+          "texte": "De retour au labo, Inès doit identifier le contenu de quatre tubes : (1) le gaz dégagé par un comprimé effervescent de vitamine C ; (2) le gaz produit par une pastille de nettoyage de lentilles dans l'eau oxygénée ; (3) le gaz dégagé par du zinc dans l'acide chlorhydrique ; (4) les gouttelettes formées sur une vitre froide. Ces tubes contiennent du dioxyde de carbone, du dioxygène, du dihydrogène et de l'eau. Associe chaque tube à son espèce, à son test (A à D) et au résultat positif attendu (W à Z).<br>Tests : A. sulfate de cuivre anhydre ; B. bûchette incandescente ; C. flamme approchée de l'ouverture du tube ; D. bullage dans l'eau de chaux. Résultats : W. détonation (petit « pop ») ; X. l'eau de chaux se trouble ; Y. la poudre blanche devient bleue ; Z. la bûchette se ravive.",
+          "aides": [
+            "Commence par le plus facile : quelle espèce le sulfate de cuivre anhydre met-il en évidence ?",
+            "Le dioxygène entretient une combustion déjà commencée ; le dihydrogène brûle en détonant. Le gaz qui trouble l'eau de chaux est celui des bulles des boissons gazeuses."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Corps purs : (a) eau distillée (seulement des molécules d'eau) et (f) chlorure de sodium pur. Mélanges homogènes (une seule phase visible) : (b) eau minérale (eau + ions dissous), (d) air (N₂, O₂, Ar…), (h) sirop de menthe dilué. Mélanges hétérogènes (plusieurs phases visibles) : (c) jus d'orange avec pulpe, (e) vinaigrette (huile et vinaigre forment deux phases), (g) eau gazeuse servie (on voit les bulles de CO₂).",
+        "<em>⚠ Erreur fréquente : classer l'eau minérale parmi les corps purs parce qu'elle est limpide. Lis l'étiquette : elle contient des ions dissous (calcium, magnésium…), c'est un mélange homogène.</em>",
+        "<strong>2.</strong> L'air est un mélange homogène. En volume : environ 78 % de diazote, 21 % de dioxygène et 1 % d'argon. Le dioxyde de carbone n'y est présent qu'à l'état de trace (environ 0,04 %).",
+        "<strong>3.</strong> V(air) = 10 × 5 × 3 = 150 m³. V(O₂) = (21 / 100) × 150 = 31,5 m³ (environ 32 m³).",
+        "<strong>4.</strong> V(Ar) = (1 / 100) × 150 = 1,5 m³ ; V(CO₂) = (0,04 / 100) × 150 = 0,06 m³, soit 60 L. Yanis a tort : il y a 25 fois moins de CO₂ que d'argon. Le CO₂ ne représente pas 1 % de l'air.",
+        "<strong>5.</strong> Tube (1) : dioxyde de carbone, test D, résultat X (l'eau de chaux se trouble). Tube (2) : dioxygène, test B, résultat Z (la bûchette se ravive). Tube (3) : dihydrogène, test C, résultat W (détonation). Tube (4) : eau, test A, résultat Y (le sulfate de cuivre anhydre bleuit).",
+        "<em>⚠ Erreur fréquente : inverser les tests du dioxygène et du dihydrogène. Le dioxygène ravive une combustion déjà commencée (bûchette incandescente) ; le dihydrogène brûle lui-même en détonant au contact d'une flamme.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Une bougie et un mystérieux solide blanc",
+      "contexte": [
+        "En TP, on fait fondre au bain-marie deux solides blancs : A, un solide inconnu, et B, de la paraffine (la « cire » d'une bougie). Une fois liquides et chauds (90 °C), on les laisse refroidir à l'air libre et on relève leur température toutes les 30 secondes. On obtient les courbes ci-dessous.",
+        "Températures de fusion de quelques espèces chimiques (pression atmosphérique normale) : acide laurique : 44 °C ; acide palmitique : 63 °C ; acide stéarique : 69 °C ; naphtalène : 80 °C."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"397.0\" x2=\"735\" y2=\"397.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"385.9\" x2=\"735\" y2=\"385.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"374.9\" x2=\"735\" y2=\"374.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"363.9\" x2=\"735\" y2=\"363.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"352.9\" x2=\"735\" y2=\"352.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"341.8\" x2=\"735\" y2=\"341.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"330.8\" x2=\"735\" y2=\"330.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"319.8\" x2=\"735\" y2=\"319.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"308.7\" x2=\"735\" y2=\"308.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"297.7\" x2=\"735\" y2=\"297.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"286.7\" x2=\"735\" y2=\"286.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"275.7\" x2=\"735\" y2=\"275.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"264.6\" x2=\"735\" y2=\"264.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"253.6\" x2=\"735\" y2=\"253.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"242.6\" x2=\"735\" y2=\"242.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"231.5\" x2=\"735\" y2=\"231.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"220.5\" x2=\"735\" y2=\"220.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"209.5\" x2=\"735\" y2=\"209.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"198.5\" x2=\"735\" y2=\"198.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"187.4\" x2=\"735\" y2=\"187.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"176.4\" x2=\"735\" y2=\"176.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"165.4\" x2=\"735\" y2=\"165.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"154.3\" x2=\"735\" y2=\"154.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"143.3\" x2=\"735\" y2=\"143.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"132.3\" x2=\"735\" y2=\"132.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"121.3\" x2=\"735\" y2=\"121.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"110.2\" x2=\"735\" y2=\"110.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"99.2\" x2=\"735\" y2=\"99.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"88.2\" x2=\"735\" y2=\"88.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"77.1\" x2=\"735\" y2=\"77.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"66.1\" x2=\"735\" y2=\"66.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"55.1\" x2=\"735\" y2=\"55.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"44.1\" x2=\"735\" y2=\"44.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"33.0\" x2=\"735\" y2=\"33.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80.0\" y1=\"22\" x2=\"80.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"123.7\" y1=\"22\" x2=\"123.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"123.7\" y=\"428\" text-anchor=\"middle\">1</text><line x1=\"167.3\" y1=\"22\" x2=\"167.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"167.3\" y=\"428\" text-anchor=\"middle\">2</text><line x1=\"211.0\" y1=\"22\" x2=\"211.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"428\" text-anchor=\"middle\">3</text><line x1=\"254.7\" y1=\"22\" x2=\"254.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"254.7\" y=\"428\" text-anchor=\"middle\">4</text><line x1=\"298.3\" y1=\"22\" x2=\"298.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"428\" text-anchor=\"middle\">5</text><line x1=\"342.0\" y1=\"22\" x2=\"342.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"428\" text-anchor=\"middle\">6</text><line x1=\"385.7\" y1=\"22\" x2=\"385.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"385.7\" y=\"428\" text-anchor=\"middle\">7</text><line x1=\"429.3\" y1=\"22\" x2=\"429.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"429.3\" y=\"428\" text-anchor=\"middle\">8</text><line x1=\"473.0\" y1=\"22\" x2=\"473.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"428\" text-anchor=\"middle\">9</text><line x1=\"516.7\" y1=\"22\" x2=\"516.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"428\" text-anchor=\"middle\">10</text><line x1=\"560.3\" y1=\"22\" x2=\"560.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"560.3\" y=\"428\" text-anchor=\"middle\">11</text><line x1=\"604.0\" y1=\"22\" x2=\"604.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"428\" text-anchor=\"middle\">12</text><line x1=\"647.7\" y1=\"22\" x2=\"647.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"647.7\" y=\"428\" text-anchor=\"middle\">13</text><line x1=\"691.3\" y1=\"22\" x2=\"691.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"691.3\" y=\"428\" text-anchor=\"middle\">14</text><line x1=\"735.0\" y1=\"22\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">15</text><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"413.0\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"352.9\" x2=\"735\" y2=\"352.9\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"357.9\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"297.7\" x2=\"735\" y2=\"297.7\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"302.7\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"242.6\" x2=\"735\" y2=\"242.6\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"247.6\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"187.4\" x2=\"735\" y2=\"187.4\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"192.4\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"132.3\" x2=\"735\" y2=\"132.3\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"137.3\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"77.1\" x2=\"735\" y2=\"77.1\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"82.1\" text-anchor=\"end\">90</text><line x1=\"80\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"27.0\" text-anchor=\"end\">100</text><rect x=\"80\" y=\"22\" width=\"655\" height=\"386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,77.1 84.4,82.1 88.7,87.0 93.1,91.8 97.5,96.6 101.8,101.3 106.2,105.9 110.6,110.4 114.9,114.8 119.3,119.2 123.7,123.5 128.0,127.7 132.4,131.8 136.8,135.9 141.1,139.8 145.5,143.7 149.9,147.5 154.2,151.3 158.6,155.0 163.0,158.6 167.3,162.1 171.7,165.5 176.1,168.9 180.4,172.1 184.8,175.3 189.2,178.5 193.5,181.5 197.9,184.5 202.3,187.4 206.6,190.2 211.0,192.9 215.4,192.9 219.7,192.9 224.1,192.9 228.5,192.9 232.8,192.9 237.2,192.9 241.6,192.9 245.9,192.9 250.3,192.9 254.7,192.9 259.0,192.9 263.4,192.9 267.8,192.9 272.1,192.9 276.5,192.9 280.9,192.9 285.2,192.9 289.6,192.9 294.0,192.9 298.3,192.9 302.7,192.9 307.1,192.9 311.4,192.9 315.8,192.9 320.2,192.9 324.5,192.9 328.9,192.9 333.3,192.9 337.6,192.9 342.0,192.9 346.4,192.9 350.7,192.9 355.1,192.9 359.5,192.9 363.8,192.9 368.2,192.9 372.6,192.9 376.9,192.9 381.3,192.9 385.7,192.9 390.0,192.9 394.4,192.9 398.8,192.9 403.1,192.9 407.5,192.9 411.9,192.9 416.2,192.9 420.6,192.9 425.0,192.9 429.3,192.9 433.7,192.9 438.1,192.9 442.4,192.9 446.8,192.9 451.2,192.9 455.5,192.9 459.9,192.9 464.3,192.9 468.6,192.9 473.0,192.9 477.4,195.8 481.7,198.6 486.1,201.4 490.5,204.2 494.8,207.0 499.2,209.8 503.6,212.5 507.9,215.2 512.3,217.9 516.7,220.5 521.0,223.2 525.4,225.8 529.8,228.4 534.1,230.9 538.5,233.5 542.9,236.0 547.2,238.5 551.6,241.0 556.0,243.4 560.3,245.9 564.7,248.3 569.1,250.7 573.4,253.1 577.8,255.4 582.2,257.7 586.5,260.0 590.9,262.3 595.3,264.6 599.6,266.8 604.0,269.0 608.4,271.2 612.7,273.4 617.1,275.6 621.5,277.7 625.8,279.8 630.2,281.9 634.6,283.9 638.9,286.0 643.3,288.0 647.7,290.0 652.0,292.0 656.4,293.9 660.8,295.9 665.1,297.8 669.5,299.6 673.9,301.5 678.2,303.3 682.6,305.2 687.0,307.0 691.3,308.7 695.7,310.5 700.1,312.2 704.4,313.9 708.8,315.6 713.2,317.3 717.5,318.9 721.9,320.6 726.3,322.2 730.6,323.7 735.0,325.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.8\"/><polyline points=\"80.0,77.1 84.4,82.5 88.7,87.8 93.1,93.0 97.5,98.2 101.8,103.2 106.2,108.3 110.6,113.3 114.9,118.2 119.3,123.0 123.7,127.8 128.0,132.5 132.4,137.2 136.8,141.8 141.1,146.3 145.5,150.8 149.9,155.2 154.2,159.6 158.6,163.9 163.0,168.1 167.3,172.3 171.7,176.4 176.1,180.4 180.4,184.4 184.8,188.3 189.2,192.2 193.5,196.0 197.9,199.7 202.3,203.4 206.6,207.0 211.0,210.5 215.4,214.0 219.7,217.4 224.1,220.8 228.5,224.1 232.8,227.3 237.2,230.5 241.6,233.6 245.9,236.7 250.3,239.6 254.7,242.6 259.0,243.3 263.4,244.0 267.8,244.8 272.1,245.5 276.5,246.2 280.9,247.0 285.2,247.7 289.6,248.5 294.0,249.2 298.3,249.9 302.7,250.7 307.1,251.4 311.4,252.1 315.8,252.9 320.2,253.6 324.5,254.3 328.9,255.1 333.3,255.8 337.6,256.5 342.0,257.3 346.4,258.0 350.7,258.7 355.1,259.5 359.5,260.2 363.8,261.0 368.2,261.7 372.6,262.4 376.9,263.2 381.3,263.9 385.7,264.6 390.0,265.4 394.4,266.1 398.8,266.8 403.1,267.6 407.5,268.3 411.9,269.0 416.2,269.8 420.6,270.5 425.0,271.2 429.3,272.0 433.7,272.7 438.1,273.5 442.4,274.2 446.8,274.9 451.2,275.7 455.5,276.4 459.9,277.1 464.3,277.9 468.6,278.6 473.0,279.3 477.4,280.1 481.7,280.8 486.1,281.5 490.5,282.3 494.8,283.0 499.2,283.7 503.6,284.5 507.9,285.2 512.3,286.0 516.7,286.7 521.0,288.7 525.4,290.7 529.8,292.6 534.1,294.6 538.5,296.5 542.9,298.4 547.2,300.3 551.6,302.2 556.0,304.0 560.3,305.8 564.7,307.6 569.1,309.4 573.4,311.2 577.8,313.0 582.2,314.7 586.5,316.4 590.9,318.1 595.3,319.8 599.6,321.5 604.0,323.1 608.4,324.8 612.7,326.4 617.1,328.0 621.5,329.5 625.8,331.1 630.2,332.6 634.6,334.1 638.9,335.6 643.3,337.1 647.7,338.6 652.0,340.0 656.4,341.4 660.8,342.8 665.1,344.2 669.5,345.6 673.9,346.9 678.2,348.3 682.6,349.6 687.0,350.9 691.3,352.2 695.7,353.4 700.1,354.6 704.4,355.9 708.8,357.1 713.2,358.3 717.5,359.4 721.9,360.6 726.3,361.7 730.6,362.8 735.0,363.9\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.8\"/><text x=\"673.9\" y=\"278.4\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"17\">A</text><text x=\"673.9\" y=\"322.5\" fill=\"#B5523B\" font-weight=\"bold\" font-size=\"17\">B</text><rect x=\"485\" y=\"30\" width=\"240\" height=\"22\" fill=\"#fff\" opacity=\"0.9\"/><line x1=\"490\" y1=\"40\" x2=\"520\" y2=\"40\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"527\" y=\"45\">A : solide blanc inconnu</text><rect x=\"485\" y=\"54\" width=\"240\" height=\"22\" fill=\"#fff\" opacity=\"0.9\"/><line x1=\"490\" y1=\"64\" x2=\"520\" y2=\"64\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"527\" y=\"69\">B : paraffine (bougie)</text><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Temps t (min)</text><text transform=\"translate(22,215.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Température θ (°C)</text></svg>",
+      "questions": [
+        {
+          "texte": "Dans quel état physique se trouve A au début de l'expérience ? Et à la fin (t = 15 min) ?",
+          "aides": []
+        },
+        {
+          "texte": "Entre t = 3 min et t = 9 min, comment évolue la température de A ? Quel changement d'état se produit pendant cette durée ?",
+          "aides": []
+        },
+        {
+          "texte": "Lis sur le graphique la température de ce changement d'état et identifie l'espèce chimique A.",
+          "aides": [
+            "Le palier est la partie horizontale de la courbe A : repère sa hauteur sur l'axe des températures.",
+            "Chaque petite ligne de la grille vaut 2 °C. Compare ensuite ta lecture au tableau : un corps pur se solidifie à la même température qu'il fond."
+          ]
+        },
+        {
+          "texte": "La courbe de la paraffine B présente-t-elle un palier ? Déduis-en si la paraffine est un corps pur ou un mélange.",
+          "aides": [
+            "Pendant un palier, la température ne varie pas du tout. Est-ce le cas pour B à un moment ?",
+            "Rappel du cours : seul un corps pur change d'état à température constante."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Au début, A est liquide (on l'a fondu et chauffé à 90 °C) ; à la fin, il est solide.",
+        "<strong>2.</strong> Entre 3 et 9 min, la température de A reste constante (palier) : A se solidifie (passage de l'état liquide à l'état solide).",
+        "<strong>3.</strong> Le palier est à θ = 69 °C (lecture entre 68 et 70 °C acceptée). Sous une pression donnée, un corps pur change d'état à une température constante caractéristique : la température de solidification est égale à la température de fusion. A est donc l'acide stéarique (69 °C).",
+        "<strong>4.</strong> Non : la température de B diminue en permanence ; elle ralentit seulement entre 60 °C et 52 °C environ, sans rester constante. Le changement d'état ne se fait pas à température constante : la paraffine est un mélange (de plusieurs espèces chimiques).",
+        "<em>⚠ Erreur fréquente : confondre « la courbe ralentit » et « palier ». Un palier est horizontal : la température ne varie plus du tout.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Ma gourmette est-elle en argent ?",
+      "contexte": [
+        "Samir a reçu une gourmette (bracelet en chaîne) présentée comme étant « en argent ». Il la pèse : m = 21,0 g. Pour mesurer son volume, il verse de l'eau dans une éprouvette graduée (éprouvette 1), puis il y plonge entièrement la gourmette (éprouvette 2). La lecture se fait au bas du ménisque.",
+        "Formule utile : ρ = m / V. Masses volumiques de quelques métaux (en g·mL⁻¹) : aluminium : 2,70 ; fer : 7,87 ; cuivre : 8,96 ; argent : 10,5 ; or : 19,3."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><path d=\"M195.0,213.0 Q230,227.0 265.0,213.0 L265.0,430 L195.0,430 Z\" fill=\"#cfe3ea\"/><path d=\"M195.0,213.0 Q230,227.0 265.0,213.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><path d=\"M189.0,48 L195.0,55 L195.0,432 Q195.0,440 203.0,440 L257.0,440 Q265.0,440 265.0,432 L265.0,55 L271.0,48\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.2\"/><rect x=\"165.0\" y=\"440\" width=\"130\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"195.0\" y1=\"370.0\" x2=\"219.0\" y2=\"370.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"195.0\" y1=\"355.0\" x2=\"208.0\" y2=\"355.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"340.0\" x2=\"219.0\" y2=\"340.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"187.0\" y=\"345.0\" text-anchor=\"end\" font-size=\"15\">16</text><line x1=\"195.0\" y1=\"325.0\" x2=\"208.0\" y2=\"325.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"310.0\" x2=\"219.0\" y2=\"310.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"195.0\" y1=\"295.0\" x2=\"208.0\" y2=\"295.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"280.0\" x2=\"219.0\" y2=\"280.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"187.0\" y=\"285.0\" text-anchor=\"end\" font-size=\"15\">18</text><line x1=\"195.0\" y1=\"265.0\" x2=\"208.0\" y2=\"265.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"250.0\" x2=\"219.0\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"195.0\" y1=\"235.0\" x2=\"208.0\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"220.0\" x2=\"219.0\" y2=\"220.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"187.0\" y=\"225.0\" text-anchor=\"end\" font-size=\"15\">20</text><line x1=\"195.0\" y1=\"205.0\" x2=\"208.0\" y2=\"205.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"190.0\" x2=\"219.0\" y2=\"190.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"195.0\" y1=\"175.0\" x2=\"208.0\" y2=\"175.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"160.0\" x2=\"219.0\" y2=\"160.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"187.0\" y=\"165.0\" text-anchor=\"end\" font-size=\"15\">22</text><line x1=\"195.0\" y1=\"145.0\" x2=\"208.0\" y2=\"145.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"130.0\" x2=\"219.0\" y2=\"130.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"195.0\" y1=\"115.0\" x2=\"208.0\" y2=\"115.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"100.0\" x2=\"219.0\" y2=\"100.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"187.0\" y=\"105.0\" text-anchor=\"end\" font-size=\"15\">24</text><line x1=\"195.0\" y1=\"85.0\" x2=\"208.0\" y2=\"85.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"195.0\" y1=\"70.0\" x2=\"219.0\" y2=\"70.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"187.0\" y=\"40\" text-anchor=\"end\" font-size=\"14\">mL</text><text x=\"230\" y=\"466\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"16\">Éprouvette 1 : eau seule</text><path d=\"M495.0,153.0 Q530,167.0 565.0,153.0 L565.0,430 L495.0,430 Z\" fill=\"#cfe3ea\"/><path d=\"M495.0,153.0 Q530,167.0 565.0,153.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><path d=\"M489.0,48 L495.0,55 L495.0,432 Q495.0,440 503.0,440 L557.0,440 Q565.0,440 565.0,432 L565.0,55 L571.0,48\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.2\"/><rect x=\"465.0\" y=\"440\" width=\"130\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"495.0\" y1=\"370.0\" x2=\"519.0\" y2=\"370.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"495.0\" y1=\"355.0\" x2=\"508.0\" y2=\"355.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"340.0\" x2=\"519.0\" y2=\"340.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"487.0\" y=\"345.0\" text-anchor=\"end\" font-size=\"15\">16</text><line x1=\"495.0\" y1=\"325.0\" x2=\"508.0\" y2=\"325.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"310.0\" x2=\"519.0\" y2=\"310.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"495.0\" y1=\"295.0\" x2=\"508.0\" y2=\"295.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"280.0\" x2=\"519.0\" y2=\"280.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"487.0\" y=\"285.0\" text-anchor=\"end\" font-size=\"15\">18</text><line x1=\"495.0\" y1=\"265.0\" x2=\"508.0\" y2=\"265.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"250.0\" x2=\"519.0\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"495.0\" y1=\"235.0\" x2=\"508.0\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"220.0\" x2=\"519.0\" y2=\"220.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"487.0\" y=\"225.0\" text-anchor=\"end\" font-size=\"15\">20</text><line x1=\"495.0\" y1=\"205.0\" x2=\"508.0\" y2=\"205.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"190.0\" x2=\"519.0\" y2=\"190.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"495.0\" y1=\"175.0\" x2=\"508.0\" y2=\"175.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"160.0\" x2=\"519.0\" y2=\"160.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"487.0\" y=\"165.0\" text-anchor=\"end\" font-size=\"15\">22</text><line x1=\"495.0\" y1=\"145.0\" x2=\"508.0\" y2=\"145.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"130.0\" x2=\"519.0\" y2=\"130.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"495.0\" y1=\"115.0\" x2=\"508.0\" y2=\"115.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"100.0\" x2=\"519.0\" y2=\"100.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"487.0\" y=\"105.0\" text-anchor=\"end\" font-size=\"15\">24</text><line x1=\"495.0\" y1=\"85.0\" x2=\"508.0\" y2=\"85.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"495.0\" y1=\"70.0\" x2=\"519.0\" y2=\"70.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"487.0\" y=\"40\" text-anchor=\"end\" font-size=\"14\">mL</text><ellipse cx=\"510\" cy=\"422\" rx=\"7\" ry=\"5\" fill=\"none\" stroke=\"#7d7d7d\" stroke-width=\"3\"/><ellipse cx=\"520\" cy=\"418\" rx=\"7\" ry=\"5\" fill=\"none\" stroke=\"#7d7d7d\" stroke-width=\"3\"/><ellipse cx=\"530\" cy=\"422\" rx=\"7\" ry=\"5\" fill=\"none\" stroke=\"#7d7d7d\" stroke-width=\"3\"/><ellipse cx=\"540\" cy=\"418\" rx=\"7\" ry=\"5\" fill=\"none\" stroke=\"#7d7d7d\" stroke-width=\"3\"/><ellipse cx=\"550\" cy=\"422\" rx=\"7\" ry=\"5\" fill=\"none\" stroke=\"#7d7d7d\" stroke-width=\"3\"/><text x=\"530\" y=\"466\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"16\">Éprouvette 2 : eau + gourmette</text><text x=\"380\" y=\"240\" text-anchor=\"middle\" font-size=\"30\" fill=\"#C8962E\">→</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis le volume d'eau V<sub>1</sub> dans l'éprouvette 1 et le volume V<sub>2</sub> dans l'éprouvette 2. Déduis-en le volume V de la gourmette.",
+          "aides": [
+            "Lis chaque niveau au bas du ménisque : entre deux nombres écrits, chaque petit trait vaut 0,5 mL.",
+            "La gourmette a fait monter l'eau : son volume est égal à l'augmentation du volume lu."
+          ]
+        },
+        {
+          "texte": "Calcule la masse volumique ρ de la gourmette en g·mL⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "La gourmette peut-elle être en argent ? Justifie à l'aide des valeurs de référence.",
+          "aides": []
+        },
+        {
+          "texte": "Exprime ρ en kg·m⁻³, puis calcule la densité d de la gourmette (d = ρ / ρ(eau)).",
+          "aides": []
+        },
+        {
+          "texte": "La masse volumique de l'air vaut environ 1,2 g·L⁻¹. Combien de fois l'eau liquide est-elle plus dense que l'air ?",
+          "aides": [
+            "Pour comparer deux masses volumiques, il faut qu'elles soient dans la même unité.",
+            "1,2 g·L⁻¹ signifie 1,2 g pour 1 000 mL : convertis en g·mL⁻¹, puis divise ρ(eau) par ρ(air)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> V<sub>1</sub> = 20,0 mL ; V<sub>2</sub> = 22,0 mL. Le volume de la gourmette est le volume d'eau déplacé : V = V<sub>2</sub> − V<sub>1</sub> = 22,0 − 20,0 = 2,0 mL.",
+        "<strong>2.</strong> ρ = m / V = 21,0 / 2,0 = 10,5 g·mL⁻¹.",
+        "<strong>3.</strong> 10,5 g·mL⁻¹ correspond exactement à la valeur de référence de l'argent (et à aucun autre métal du tableau) : la gourmette peut être en argent. Remarque : les bijoux « en argent » sont en général un alliage (argent 925 : 92,5 % d'argent en masse) dont la masse volumique est très proche.",
+        "<strong>4.</strong> 1 g·mL⁻¹ = 1 000 kg·m⁻³, donc ρ = 10 500 kg·m⁻³. d = ρ / ρ(eau) = 10,5 / 1,00 = 10,5 (sans unité).",
+        "<strong>5.</strong> ρ(air) = 1,2 g·L⁻¹ = 1,2 / 1 000 = 0,0012 g·mL⁻¹. ρ(eau) / ρ(air) = 1,00 / 0,0012 ≈ 830 : l'eau liquide est environ 800 fois plus dense que l'air.",
+        "<em>⚠ Erreur fréquente : prendre V<sub>2</sub> (22,0 mL) comme volume de la gourmette. Le volume de l'objet est la différence V<sub>2</sub> − V<sub>1</sub>.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "La colonne de densité",
+      "contexte": [
+        "Pour une vidéo de sciences, Léa veut réaliser une « colonne de densité » : des liquides versés délicatement, sans agiter, l'un après l'autre dans un grand verre, qui forment des couches superposées. Elle mesure d'abord la masse de différents volumes de liquides avec une balance et une éprouvette graduée.",
+        "Mesures de Léa — Miel : 20,0 mL ont une masse de 28,4 g. Huile de tournesol : 40,0 mL, 36,8 g. Eau : 30,0 mL, 30,0 g. Liquide L (incolore, flacon sans étiquette) : 25,0 mL, 19,7 g.",
+        "Données de référence — Éthanol : ρ = 0,789 g·mL⁻¹, miscible à l'eau. Cyclohexane : ρ = 0,779 g·mL⁻¹, non miscible à l'eau."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse volumique de chacun des quatre liquides, en g·mL⁻¹.",
+          "aides": [
+            "La masse volumique est le quotient d'une masse par un volume.",
+            "Vérifie l'ordre de grandeur : tu dois retrouver 1,00 g·mL⁻¹ pour l'eau."
+          ]
+        },
+        {
+          "texte": "Exprime la masse volumique du miel en kg·m⁻³, puis calcule sa densité.",
+          "aides": [
+            "1 g·mL⁻¹ = 1 g·cm⁻³. Combien de grammes dans 1 kg ? Combien de cm³ dans 1 m³ ?",
+            "1 g·mL⁻¹ = 1 000 kg·m⁻³ ; la densité est un quotient de deux masses volumiques dans la même unité."
+          ]
+        },
+        {
+          "texte": "Léa verse le miel, l'eau et l'huile dans le verre. Fais un schéma légendé de la colonne obtenue et justifie l'ordre des couches.",
+          "aides": []
+        },
+        {
+          "texte": "Le liquide L peut être de l'éthanol ou du cyclohexane.<br>a. La masse volumique trouvée permet-elle de conclure avec certitude ? Justifie.<br>b. Léa verse un peu de L dans de l'eau : elle n'observe qu'une seule phase. Identifie L.",
+          "aides": []
+        },
+        {
+          "texte": "Sur Internet, Léa constate que la masse volumique du miel n'est pas la même d'un pot à l'autre. Le miel est-il un corps pur ou un mélange ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> ρ = m / V. Miel : 28,4 / 20,0 = 1,42 g·mL⁻¹. Huile : 36,8 / 40,0 = 0,920 g·mL⁻¹. Eau : 30,0 / 30,0 = 1,00 g·mL⁻¹. Liquide L : 19,7 / 25,0 = 0,788 g·mL⁻¹.",
+        "<strong>2.</strong> 1 g·mL⁻¹ = 1 000 kg·m⁻³, donc ρ(miel) = 1 420 kg·m⁻³. d = ρ(miel) / ρ(eau) = 1,42 / 1,00 = 1,42 (sans unité).",
+        "<strong>3.</strong> De bas en haut : miel (d = 1,42), eau (d = 1,00), huile (d = 0,920). Le liquide le plus dense se place en position inférieure, le moins dense en position supérieure. Remarque : l'huile ne se mélange jamais à l'eau (non miscibles) ; le miel, lui, finit par se dissoudre dans l'eau si on agite : c'est pour cela qu'il faut verser délicatement.",
+        "<strong>4.</strong> a. 0,788 g·mL⁻¹ est plus proche de l'éthanol (écart 0,001) que du cyclohexane (écart 0,009), mais les deux valeurs de référence ne diffèrent que d'environ 1 % : une erreur de 0,2 g sur la pesée suffirait à changer la conclusion. La masse volumique seule ne permet pas de conclure avec certitude.",
+        "b. Une seule phase : L est miscible à l'eau, c'est donc l'éthanol (le cyclohexane aurait formé deux phases). Les deux propriétés physiques (ρ et miscibilité) concordent.",
+        "<strong>5.</strong> Le miel est un mélange (eau, plusieurs sucres…) : sa composition varie d'un pot à l'autre, donc sa masse volumique aussi. Un corps pur a une masse volumique caractéristique, la même pour tous les échantillons (à température donnée).",
+        "<em>⚠ Erreur fréquente : calculer V / m au lieu de m / V (on trouverait 0,704 pour le miel, moins dense que l'eau : impossible, puisqu'il coule au fond).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Combien de sucre dans ma canette ?",
+      "contexte": [
+        "L'étiquette d'une canette de soda au cola (volume 330 mL) indique : « Sucres : 10,6 g pour 100 mL ». La masse volumique de ce soda est ρ = 1,04 g·mL⁻¹.",
+        "L'Organisation mondiale de la santé (OMS) recommande de limiter les sucres libres (sucres ajoutés aux aliments et aux boissons, miel, jus de fruits) à moins de 10 % des apports énergétiques, et idéalement à moins de 5 %, soit environ 25 g par jour pour un adulte. Un morceau de sucre a une masse d'environ 5 g."
+      ],
+      "questions": [
+        {
+          "texte": "Le soda qu'on vient de verser dans un verre est-il un mélange homogène ou hétérogène ? Et une fois dégazé (« éventé ») ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse de soda contenue dans la canette.",
+          "aides": [
+            "On connaît le volume et la masse volumique : quelle relation relie m, ρ et V ?",
+            "ρ = m / V, donc m = ρ × V (garde V en mL puisque ρ est en g·mL⁻¹)."
+          ]
+        },
+        {
+          "texte": "Calcule la masse de sucres contenue dans la canette.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine le pourcentage massique de sucres dans ce soda.",
+          "aides": [
+            "Le pourcentage massique compare deux masses : celle des sucres et celle de tout le soda.",
+            "Attention : 100 mL de soda n'ont pas une masse de 100 g. Utilise les masses calculées aux questions 2 et 3."
+          ]
+        },
+        {
+          "texte": "À combien de morceaux de sucre la canette correspond-elle ? Compare à la recommandation de l'OMS et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Fraîchement servi : mélange hétérogène (on voit les bulles de dioxyde de carbone). Une fois dégazé : mélange homogène (eau, sucres, arômes… en une seule phase).",
+        "<strong>2.</strong> m = ρ × V = 1,04 × 330 = 343 g (343,2 g).",
+        "<strong>3.</strong> Proportionnalité : 10,6 g pour 100 mL, donc pour 330 mL : m(sucres) = 10,6 × 330 / 100 = 35,0 g (34,98 g).",
+        "<strong>4.</strong> %massique = (m(sucres) / m(soda)) × 100 = (34,98 / 343,2) × 100 = 10,2 %.",
+        "<strong>5.</strong> 34,98 / 5 ≈ 7 morceaux de sucre. C'est environ 1,4 fois la quantité idéale de 25 g recommandée pour une journée entière : une seule canette dépasse déjà cette limite.",
+        "<em>⚠ Erreur fréquente : répondre 10,6 % à la question 4. L'étiquette donne la masse de sucres pour 100 mL, pas pour 100 g ; 100 mL de soda ont une masse de 104 g, d'où un pourcentage massique un peu plus faible.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le technicien et les étiquettes décollées",
+      "contexte": [
+        "Doc. 1 — La situation. Demain, la classe fait un TP d'extraction qui nécessite du cyclohexane. Dans la réserve, le technicien de laboratoire découvre trois flacons, A, B et C, de liquides incolores dont les étiquettes se sont décollées. D'après le registre, ces flacons contiennent trois des liquides suivants : eau distillée, eau salée, éthanol, acétone, cyclohexane. Avec un élève volontaire, il réalise quelques mesures.",
+        "Doc. 2 — Propriétés physiques de référence (pression atmosphérique normale). Eau : ρ = 1,00 g·mL⁻¹, température d'ébullition 100 °C. Éthanol : ρ = 0,79 g·mL⁻¹, 78 °C, miscible à l'eau. Acétone : ρ = 0,79 g·mL⁻¹, 56 °C, miscible à l'eau. Cyclohexane : ρ = 0,78 g·mL⁻¹, 81 °C, non miscible à l'eau.",
+        "Doc. 3 — Mesures. Masse d'une éprouvette vide : 52,4 g. Masse de l'éprouvette contenant 20,0 mL de liquide : A : 68,0 g ; B : 68,2 g ; C : 74,0 g. Test de miscibilité (quelques mL de liquide versés dans de l'eau) : A forme deux phases, A étant au-dessus ; B et C ne forment qu'une seule phase. Une goutte de C sur du sulfate de cuivre anhydre le fait devenir bleu.",
+        "Doc. 4 — Chauffage de chaque liquide sous la hotte jusqu'à l'ébullition (évolution de la température au cours du temps)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"399.4\" x2=\"735\" y2=\"399.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"390.8\" x2=\"735\" y2=\"390.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"382.3\" x2=\"735\" y2=\"382.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"373.7\" x2=\"735\" y2=\"373.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"365.1\" x2=\"735\" y2=\"365.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"356.5\" x2=\"735\" y2=\"356.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"348.0\" x2=\"735\" y2=\"348.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"339.4\" x2=\"735\" y2=\"339.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"330.8\" x2=\"735\" y2=\"330.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"322.2\" x2=\"735\" y2=\"322.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"313.6\" x2=\"735\" y2=\"313.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"305.1\" x2=\"735\" y2=\"305.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"296.5\" x2=\"735\" y2=\"296.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"287.9\" x2=\"735\" y2=\"287.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"279.3\" x2=\"735\" y2=\"279.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"270.8\" x2=\"735\" y2=\"270.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"262.2\" x2=\"735\" y2=\"262.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"253.6\" x2=\"735\" y2=\"253.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"245.0\" x2=\"735\" y2=\"245.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"236.4\" x2=\"735\" y2=\"236.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"227.9\" x2=\"735\" y2=\"227.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"219.3\" x2=\"735\" y2=\"219.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"210.7\" x2=\"735\" y2=\"210.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"202.1\" x2=\"735\" y2=\"202.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"193.6\" x2=\"735\" y2=\"193.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"185.0\" x2=\"735\" y2=\"185.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"176.4\" x2=\"735\" y2=\"176.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"167.8\" x2=\"735\" y2=\"167.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"159.2\" x2=\"735\" y2=\"159.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"150.7\" x2=\"735\" y2=\"150.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"142.1\" x2=\"735\" y2=\"142.1\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"133.5\" x2=\"735\" y2=\"133.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"124.9\" x2=\"735\" y2=\"124.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"116.4\" x2=\"735\" y2=\"116.4\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"107.8\" x2=\"735\" y2=\"107.8\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"99.2\" x2=\"735\" y2=\"99.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"90.6\" x2=\"735\" y2=\"90.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"82.0\" x2=\"735\" y2=\"82.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"73.5\" x2=\"735\" y2=\"73.5\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"64.9\" x2=\"735\" y2=\"64.9\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"56.3\" x2=\"735\" y2=\"56.3\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"47.7\" x2=\"735\" y2=\"47.7\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"39.2\" x2=\"735\" y2=\"39.2\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"30.6\" x2=\"735\" y2=\"30.6\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#ece7dd\" stroke-width=\"1\"/><line x1=\"80.0\" y1=\"22\" x2=\"80.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"145.5\" y1=\"22\" x2=\"145.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.5\" y=\"428\" text-anchor=\"middle\">1</text><line x1=\"211.0\" y1=\"22\" x2=\"211.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"428\" text-anchor=\"middle\">2</text><line x1=\"276.5\" y1=\"22\" x2=\"276.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"276.5\" y=\"428\" text-anchor=\"middle\">3</text><line x1=\"342.0\" y1=\"22\" x2=\"342.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"428\" text-anchor=\"middle\">4</text><line x1=\"407.5\" y1=\"22\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"428\" text-anchor=\"middle\">5</text><line x1=\"473.0\" y1=\"22\" x2=\"473.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"428\" text-anchor=\"middle\">6</text><line x1=\"538.5\" y1=\"22\" x2=\"538.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"538.5\" y=\"428\" text-anchor=\"middle\">7</text><line x1=\"604.0\" y1=\"22\" x2=\"604.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"428\" text-anchor=\"middle\">8</text><line x1=\"669.5\" y1=\"22\" x2=\"669.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.5\" y=\"428\" text-anchor=\"middle\">9</text><line x1=\"735.0\" y1=\"22\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">10</text><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"413.0\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"365.1\" x2=\"735\" y2=\"365.1\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"370.1\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"322.2\" x2=\"735\" y2=\"322.2\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"327.2\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"279.3\" x2=\"735\" y2=\"279.3\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"284.3\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"236.4\" x2=\"735\" y2=\"236.4\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"241.4\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"193.6\" x2=\"735\" y2=\"193.6\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"198.6\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"150.7\" x2=\"735\" y2=\"150.7\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"155.7\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"107.8\" x2=\"735\" y2=\"107.8\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"112.8\" text-anchor=\"end\">90</text><line x1=\"80\" y1=\"64.9\" x2=\"735\" y2=\"64.9\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"69.9\" text-anchor=\"end\">100</text><line x1=\"80\" y1=\"22.0\" x2=\"735\" y2=\"22.0\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><text x=\"72\" y=\"27.0\" text-anchor=\"end\">110</text><rect x=\"80\" y=\"22\" width=\"655\" height=\"386\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,408.0 83.3,403.8 86.5,399.5 89.8,395.4 93.1,391.2 96.4,387.0 99.7,382.9 102.9,378.8 106.2,374.8 109.5,370.7 112.8,366.7 116.0,362.7 119.3,358.7 122.6,354.8 125.8,350.9 129.1,347.0 132.4,343.1 135.7,339.3 138.9,335.4 142.2,331.7 145.5,327.9 148.8,324.1 152.1,320.4 155.3,316.7 158.6,313.0 161.9,309.4 165.2,305.8 168.4,302.2 171.7,298.6 175.0,295.0 178.2,291.5 181.5,288.0 184.8,284.5 188.1,281.1 191.4,277.6 194.6,274.2 197.9,270.8 201.2,267.5 204.4,264.2 207.7,260.8 211.0,257.6 214.3,254.3 217.6,251.1 220.8,247.9 224.1,244.7 227.4,241.5 230.7,238.4 233.9,235.3 237.2,232.2 240.5,229.1 243.8,226.1 247.0,223.1 250.3,220.1 253.6,217.1 256.9,214.2 260.1,211.3 263.4,208.4 266.7,205.5 270.0,202.7 273.2,199.9 276.5,197.1 279.8,194.3 283.1,191.6 286.3,188.8 289.6,186.1 292.9,183.5 296.1,180.8 299.4,178.2 302.7,175.6 306.0,173.0 309.2,170.5 312.5,168.0 315.8,165.5 319.1,163.0 322.4,160.6 325.6,158.1 328.9,155.7 332.2,153.4 335.5,151.0 338.7,148.7 342.0,146.4 345.3,146.4 348.6,146.4 351.8,146.4 355.1,146.4 358.4,146.4 361.6,146.4 364.9,146.4 368.2,146.4 371.5,146.4 374.8,146.4 378.0,146.4 381.3,146.4 384.6,146.4 387.9,146.4 391.1,146.4 394.4,146.4 397.7,146.4 401.0,146.4 404.2,146.4 407.5,146.4 410.8,146.4 414.1,146.4 417.3,146.4 420.6,146.4 423.9,146.4 427.2,146.4 430.4,146.4 433.7,146.4 437.0,146.4 440.3,146.4 443.5,146.4 446.8,146.4 450.1,146.4 453.4,146.4 456.6,146.4 459.9,146.4 463.2,146.4 466.5,146.4 469.7,146.4 473.0,146.4 476.3,146.4 479.6,146.4 482.8,146.4 486.1,146.4 489.4,146.4 492.7,146.4 495.9,146.4 499.2,146.4 502.5,146.4 505.8,146.4 509.0,146.4 512.3,146.4 515.6,146.4 518.9,146.4 522.1,146.4 525.4,146.4 528.7,146.4 532.0,146.4 535.2,146.4 538.5,146.4 541.8,146.4 545.1,146.4 548.3,146.4 551.6,146.4 554.9,146.4 558.2,146.4 561.4,146.4 564.7,146.4 568.0,146.4 571.2,146.4 574.5,146.4 577.8,146.4 581.1,146.4 584.4,146.4 587.6,146.4 590.9,146.4 594.2,146.4 597.5,146.4 600.7,146.4 604.0,146.4 607.3,146.4 610.5,146.4 613.8,146.4 617.1,146.4 620.4,146.4 623.7,146.4 626.9,146.4 630.2,146.4 633.5,146.4 636.8,146.4 640.0,146.4 643.3,146.4 646.6,146.4 649.9,146.4 653.1,146.4 656.4,146.4 659.7,146.4 663.0,146.4 666.2,146.4 669.5,146.4 672.8,146.4 676.0,146.4 679.3,146.4 682.6,146.4 685.9,146.4 689.1,146.4 692.4,146.4 695.7,146.4 699.0,146.4 702.2,146.4 705.5,146.4 708.8,146.4 712.1,146.4 715.4,146.4 718.6,146.4 721.9,146.4 725.2,146.4 728.5,146.4 731.7,146.4 735.0,146.4\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.8\"/><polyline points=\"80.0,408.0 83.3,403.4 86.5,398.8 89.8,394.3 93.1,389.8 96.4,385.3 99.7,380.8 102.9,376.4 106.2,372.0 109.5,367.7 112.8,363.3 116.0,359.0 119.3,354.8 122.6,350.5 125.8,346.3 129.1,342.1 132.4,338.0 135.7,333.9 138.9,329.8 142.2,325.7 145.5,321.7 148.8,317.7 152.1,313.7 155.3,309.8 158.6,305.9 161.9,302.0 165.2,298.2 168.4,294.4 171.7,290.6 175.0,286.8 178.2,283.1 181.5,279.4 184.8,275.8 188.1,272.1 191.4,268.5 194.6,265.0 197.9,261.4 201.2,257.9 204.4,254.4 207.7,251.0 211.0,247.6 214.3,244.2 217.6,240.8 220.8,237.5 224.1,234.2 227.4,231.0 230.7,227.7 233.9,224.5 237.2,221.3 240.5,218.2 243.8,215.1 247.0,212.0 250.3,209.0 253.6,205.9 256.9,202.9 260.1,200.0 263.4,197.1 266.7,194.2 270.0,191.3 273.2,188.5 276.5,185.6 279.8,182.9 283.1,180.1 286.3,177.4 289.6,174.7 292.9,172.1 296.1,169.4 299.4,166.8 302.7,164.3 306.0,161.7 309.2,159.2 312.5,159.2 315.8,159.2 319.1,159.2 322.4,159.2 325.6,159.2 328.9,159.2 332.2,159.2 335.5,159.2 338.7,159.2 342.0,159.2 345.3,159.2 348.6,159.2 351.8,159.2 355.1,159.2 358.4,159.2 361.6,159.2 364.9,159.2 368.2,159.2 371.5,159.2 374.8,159.2 378.0,159.2 381.3,159.2 384.6,159.2 387.9,159.2 391.1,159.2 394.4,159.2 397.7,159.2 401.0,159.2 404.2,159.2 407.5,159.2 410.8,159.2 414.1,159.2 417.3,159.2 420.6,159.2 423.9,159.2 427.2,159.2 430.4,159.2 433.7,159.2 437.0,159.2 440.3,159.2 443.5,159.2 446.8,159.2 450.1,159.2 453.4,159.2 456.6,159.2 459.9,159.2 463.2,159.2 466.5,159.2 469.7,159.2 473.0,159.2 476.3,159.2 479.6,159.2 482.8,159.2 486.1,159.2 489.4,159.2 492.7,159.2 495.9,159.2 499.2,159.2 502.5,159.2 505.8,159.2 509.0,159.2 512.3,159.2 515.6,159.2 518.9,159.2 522.1,159.2 525.4,159.2 528.7,159.2 532.0,159.2 535.2,159.2 538.5,159.2 541.8,159.2 545.1,159.2 548.3,159.2 551.6,159.2 554.9,159.2 558.2,159.2 561.4,159.2 564.7,159.2 568.0,159.2 571.2,159.2 574.5,159.2 577.8,159.2 581.1,159.2 584.4,159.2 587.6,159.2 590.9,159.2 594.2,159.2 597.5,159.2 600.7,159.2 604.0,159.2 607.3,159.2 610.5,159.2 613.8,159.2 617.1,159.2 620.4,159.2 623.7,159.2 626.9,159.2 630.2,159.2 633.5,159.2 636.8,159.2 640.0,159.2 643.3,159.2 646.6,159.2 649.9,159.2 653.1,159.2 656.4,159.2 659.7,159.2 663.0,159.2 666.2,159.2 669.5,159.2 672.8,159.2 676.0,159.2 679.3,159.2 682.6,159.2 685.9,159.2 689.1,159.2 692.4,159.2 695.7,159.2 699.0,159.2 702.2,159.2 705.5,159.2 708.8,159.2 712.1,159.2 715.4,159.2 718.6,159.2 721.9,159.2 725.2,159.2 728.5,159.2 731.7,159.2 735.0,159.2\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.8\"/><polyline points=\"80.0,408.0 83.3,404.7 86.5,401.5 89.8,398.3 93.1,395.0 96.4,391.8 99.7,388.6 102.9,385.4 106.2,382.2 109.5,379.0 112.8,375.9 116.0,372.7 119.3,369.6 122.6,366.5 125.8,363.3 129.1,360.2 132.4,357.1 135.7,354.0 138.9,351.0 142.2,347.9 145.5,344.8 148.8,341.8 152.1,338.8 155.3,335.7 158.6,332.7 161.9,329.7 165.2,326.7 168.4,323.8 171.7,320.8 175.0,317.8 178.2,314.9 181.5,311.9 184.8,309.0 188.1,306.1 191.4,303.2 194.6,300.3 197.9,297.4 201.2,294.5 204.4,291.7 207.7,288.8 211.0,286.0 214.3,283.2 217.6,280.3 220.8,277.5 224.1,274.7 227.4,271.9 230.7,269.2 233.9,266.4 237.2,263.6 240.5,260.9 243.8,258.2 247.0,255.5 250.3,252.7 253.6,250.0 256.9,247.3 260.1,244.7 263.4,242.0 266.7,239.3 270.0,236.7 273.2,234.1 276.5,231.4 279.8,228.8 283.1,226.2 286.3,223.6 289.6,221.0 292.9,218.5 296.1,215.9 299.4,213.4 302.7,210.8 306.0,208.3 309.2,205.8 312.5,203.3 315.8,200.8 319.1,198.3 322.4,195.8 325.6,193.4 328.9,190.9 332.2,188.5 335.5,186.0 338.7,183.6 342.0,181.2 345.3,178.8 348.6,176.4 351.8,174.0 355.1,171.7 358.4,169.3 361.6,167.0 364.9,164.6 368.2,162.3 371.5,160.0 374.8,157.7 378.0,155.4 381.3,153.1 384.6,150.8 387.9,148.6 391.1,146.3 394.4,144.1 397.7,141.9 401.0,139.7 404.2,137.5 407.5,135.3 410.8,133.1 414.1,130.9 417.3,128.7 420.6,126.6 423.9,124.5 427.2,122.3 430.4,120.2 433.7,118.1 437.0,116.0 440.3,113.9 443.5,111.8 446.8,109.8 450.1,107.7 453.4,105.7 456.6,103.6 459.9,101.6 463.2,99.6 466.5,97.6 469.7,95.6 473.0,93.6 476.3,91.7 479.6,89.7 482.8,87.8 486.1,85.8 489.4,83.9 492.7,82.0 495.9,80.1 499.2,78.2 502.5,76.3 505.8,74.4 509.0,72.6 512.3,70.7 515.6,68.9 518.9,67.1 522.1,65.2 525.4,63.4 528.7,61.6 532.0,59.8 535.2,58.1 538.5,56.3 541.8,56.2 545.1,56.0 548.3,55.9 551.6,55.7 554.9,55.6 558.2,55.5 561.4,55.3 564.7,55.2 568.0,55.0 571.2,54.9 574.5,54.7 577.8,54.6 581.1,54.5 584.4,54.3 587.6,54.2 590.9,54.0 594.2,53.9 597.5,53.7 600.7,53.6 604.0,53.5 607.3,53.3 610.5,53.2 613.8,53.0 617.1,52.9 620.4,52.7 623.7,52.6 626.9,52.5 630.2,52.3 633.5,52.2 636.8,52.0 640.0,51.9 643.3,51.7 646.6,51.6 649.9,51.5 653.1,51.3 656.4,51.2 659.7,51.0 663.0,50.9 666.2,50.7 669.5,50.6 672.8,50.4 676.0,50.3 679.3,50.2 682.6,50.0 685.9,49.9 689.1,49.7 692.4,49.6 695.7,49.4 699.0,49.3 702.2,49.2 705.5,49.0 708.8,48.9 712.1,48.7 715.4,48.6 718.6,48.4 721.9,48.3 725.2,48.2 728.5,48.0 731.7,47.9 735.0,47.7\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.8\"/><text x=\"695.7\" y=\"129.2\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"17\">A</text><text x=\"695.7\" y=\"176.4\" fill=\"#C8962E\" font-weight=\"bold\" font-size=\"17\">B</text><text x=\"695.7\" y=\"34.9\" fill=\"#B5523B\" font-weight=\"bold\" font-size=\"17\">C</text><rect x=\"485\" y=\"324\" width=\"240\" height=\"22\" fill=\"#fff\" opacity=\"0.9\"/><line x1=\"490\" y1=\"334\" x2=\"520\" y2=\"334\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"527\" y=\"339\">Flacon A</text><rect x=\"485\" y=\"348\" width=\"240\" height=\"22\" fill=\"#fff\" opacity=\"0.9\"/><line x1=\"490\" y1=\"358\" x2=\"520\" y2=\"358\" stroke=\"#C8962E\" stroke-width=\"3\"/><text x=\"527\" y=\"363\">Flacon B</text><rect x=\"485\" y=\"372\" width=\"240\" height=\"22\" fill=\"#fff\" opacity=\"0.9\"/><line x1=\"490\" y1=\"382\" x2=\"520\" y2=\"382\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"527\" y=\"387\">Flacon C</text><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">Temps de chauffage t (min)</text><text transform=\"translate(22,215.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Température θ (°C)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour t'approprier les documents : quelles propriétés physiques ont été mesurées ? Pourquoi la masse volumique seule ne suffit-elle pas à distinguer certains liquides du doc. 2 ?",
+          "aides": []
+        },
+        {
+          "texte": "Quel flacon le technicien doit-il préparer pour le TP de demain ? Identifie le contenu des trois flacons en présentant clairement ta démarche.",
+          "aides": [
+            "S'approprier : fais un tableau avec une ligne par flacon et une colonne par propriété (ρ, température d'ébullition, miscibilité, test au sulfate de cuivre).",
+            "Analyser : la masse de liquide s'obtient par différence (éprouvette pleine − éprouvette vide), puis ρ = m / V. Sur le doc. 4, cherche les paliers.",
+            "Réaliser : compare chaque ligne de ton tableau au doc. 2. Un liquide sans palier peut-il être un corps pur ?"
+          ]
+        },
+        {
+          "texte": "Regard critique : l'élève volontaire affirme « C fait bleuir le sulfate de cuivre anhydre, donc C est de l'eau distillée ». Qu'en penses-tu ? Appuie-toi sur au moins deux arguments tirés des documents.",
+          "aides": [
+            "Que prouve exactement le test au sulfate de cuivre anhydre : la présence d'eau ou l'absence de toute autre espèce ?",
+            "Compare la masse volumique et le comportement à l'ébullition de C à ceux de l'eau pure (doc. 2)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> On a mesuré la masse volumique (masse d'un volume connu), la température d'ébullition (doc. 4) et la miscibilité avec l'eau ; un test au sulfate de cuivre anhydre a aussi été fait. L'éthanol, l'acétone et le cyclohexane ont des masses volumiques presque égales (0,78 à 0,79 g·mL⁻¹) : il faut une autre propriété pour les distinguer.",
+        "<strong>2.</strong> Démarche attendue : (i) calculer ρ de chaque liquide ; (ii) lire la température d'ébullition sur le doc. 4 ; (iii) utiliser la miscibilité ; (iv) comparer aux valeurs de référence du doc. 2 et conclure.",
+        "Masses de liquide : A : 68,0 − 52,4 = 15,6 g ; B : 68,2 − 52,4 = 15,8 g ; C : 74,0 − 52,4 = 21,6 g. Masses volumiques (ρ = m / V, V = 20,0 mL) : A : 0,780 g·mL⁻¹ ; B : 0,790 g·mL⁻¹ ; C : 1,08 g·mL⁻¹.",
+        "Flacon A : ρ = 0,780 g·mL⁻¹, palier d'ébullition à 81 °C, non miscible à l'eau et moins dense qu'elle (au-dessus) : c'est le cyclohexane. Flacon B : ρ = 0,790 g·mL⁻¹, palier à 78 °C (et non 56 °C), miscible à l'eau : c'est l'éthanol, pas l'acétone.",
+        "Flacon C : ρ = 1,08 g·mL⁻¹, différente de celle de l'eau pure (écart de 8 %) ; pas de palier : l'ébullition commence vers 102 °C et la température continue de monter. C n'est pas un corps pur : c'est un mélange contenant de l'eau, donc l'eau salée.",
+        "Conclusion : le technicien doit préparer le flacon A (cyclohexane) et réétiqueter les trois flacons : A cyclohexane, B éthanol, C eau salée.",
+        "<strong>3.</strong> L'élève a raison sur un point : le sulfate de cuivre anhydre qui bleuit prouve la présence d'eau. Mais ce test ne prouve pas que C est de l'eau pure. Arguments : ρ(C) = 1,08 g·mL⁻¹ ≠ 1,00 g·mL⁻¹ ; l'ébullition ne se fait pas à température constante (pas de palier) et pas à 100 °C. C est un mélange contenant de l'eau (eau salée), pas de l'eau distillée.",
+        "Éléments valorisés (même si la conclusion finale est fausse) : calcul correct d'une masse du liquide par différence et d'une masse volumique ; lecture d'un palier sur le doc. 4 ; utilisation d'au moins deux propriétés pour identifier une espèce ; lien « pas de palier → mélange » ; conclusion répondant à la question du technicien.",
+        "<em>⚠ Erreur fréquente : calculer ρ avec la masse totale (éprouvette comprise), par exemple 68,0 / 20,0 = 3,4 g·mL⁻¹, ou identifier B à l'acétone en se fiant à la seule masse volumique.</em>"
+      ]
+    }
+  ]
+}

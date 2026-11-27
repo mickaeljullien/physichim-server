@@ -1,0 +1,682 @@
+{
+  "id": 34,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Compter les entités chimiques",
+        "icon": "🔢",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un échantillon de matière, même minuscule, contient un nombre immense d'entités chimiques (atomes, ions, molécules). Comme on compte les œufs par douzaine ou les chaussettes par paire, les chimistes regroupent les entités par « paquets » pour éviter de manipuler de très grands nombres."
+          },
+          {
+            "type": "def",
+            "term": "Mole",
+            "text": "Unité de quantité de matière. Une mole d'entités chimiques (atomes, ions, molécules...) contient exactement 6,02×10²³ entités. Le symbole de la mole est mol."
+          },
+          {
+            "type": "def",
+            "term": "Constante d'Avogadro",
+            "text": "Notée NA, elle représente le nombre d'entités contenues dans une mole : NA ≈ 6,02×10²³ mol⁻¹. Ce nombre est le même quelle que soit l'entité chimique considérée."
+          }
+        ]
+      },
+      {
+        "title": "2. Quantité de matière et nombre d'entités",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Quantité de matière",
+            "text": "Notée n, elle exprime, en mol, le nombre de « paquets » (moles) d'entités chimiques présents dans un échantillon."
+          },
+          {
+            "type": "formula",
+            "label": "Relation entre N et n",
+            "text": "N = NA × n\navec N : nombre d'entités (sans unité)\nNA : constante d'Avogadro (mol⁻¹)\nn : quantité de matière (mol)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le charbon actif utilisé en pharmacie est assimilé à du carbone pur. Un atome de carbone a une masse mC = 2,00×10⁻²⁶ kg. Une capsule contient m = 125 mg = 125×10⁻⁶ kg de carbone."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul du nombre d'atomes",
+            "text": "N = m / mC = (125×10⁻⁶) / (2,00×10⁻²⁶) ≈ 6,25×10²¹ atomes de carbone"
+          }
+        ]
+      },
+      {
+        "title": "3. Quantité de matière et masse molaire",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Masse molaire atomique M",
+            "text": "Masse d'une mole d'atomes d'un élément chimique, exprimée en g·mol⁻¹. Elle se lit dans la classification périodique."
+          },
+          {
+            "type": "def",
+            "term": "Masse molaire moléculaire",
+            "text": "Masse d'une mole de molécules. Elle s'obtient en additionnant les masses molaires atomiques de tous les atomes constituant la molécule."
+          },
+          {
+            "type": "formula",
+            "label": "Relation entre masse et quantité de matière",
+            "text": "m = n × M\nsoit n = m / M\navec m : masse (g)\nn : quantité de matière (mol)\nM : masse molaire (g·mol⁻¹)"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Molécule",
+              "Formule",
+              "Masse molaire M (g·mol⁻¹)"
+            ],
+            "rows": [
+              [
+                "Eau",
+                "H2O",
+                "18,0"
+              ],
+              [
+                "Urée",
+                "CH4N2O",
+                "60,0"
+              ],
+              [
+                "Dioxyde de carbone",
+                "CO2",
+                "44,0"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Exercice type : de la masse au nombre d'entités",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "text",
+            "text": "Reprenons la capsule de charbon de Belloc contenant m = 125 mg de carbone (masse molaire M(C) = 12,0 g·mol⁻¹). On veut déterminer successivement la quantité de matière n, puis le nombre d'atomes N."
+          },
+          {
+            "type": "formula",
+            "label": "Étape 1 : masse → quantité de matière",
+            "text": "n = m / M = (125×10⁻³) / 12,0 ≈ 1,04×10⁻² mol"
+          },
+          {
+            "type": "formula",
+            "label": "Étape 2 : quantité de matière → nombre d'entités",
+            "text": "N = NA × n = 6,02×10²³ × 1,04×10⁻² ≈ 6,25×10²¹ atomes"
+          },
+          {
+            "type": "warn",
+            "text": "On retrouve bien le même résultat qu'en passant directement par la masse d'un atome : les deux méthodes (masse d'une entité, ou masse molaire) sont équivalentes."
+          }
+        ]
+      },
+      {
+        "title": "5. Vers la concentration en masse",
+        "icon": "🧴",
+        "content": [
+          {
+            "type": "text",
+            "text": "La quantité de matière permet de définir la concentration en masse d'une espèce dissoute dans une solution (notion approfondie dans le chapitre sur les solutions)."
+          },
+          {
+            "type": "formula",
+            "label": "Concentration en masse",
+            "text": "cm = m / V\nOr m = n × M, donc :\ncm = n × M / V\navec cm en g·L⁻¹, n en mol, M en g·mol⁻¹, V en L"
+          },
+          {
+            "type": "text",
+            "text": "Ce lien montre que la quantité de matière est une grandeur centrale en chimie : elle relie le comptage des entités (N), la masse (m) et, plus tard, la concentration (cm) d'une espèce en solution."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une mole de molécules d'eau, c'est :",
+      "opts": [
+        "une masse de 1 g d'eau",
+        "un volume de 1 L d'eau",
+        "6,02×10²³ molécules d'eau",
+        "une seule molécule d'eau"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "mole-pese-1g",
+          "texte": "Croire qu'une mole pèse 1 g : la mole est un nombre d'entités ; sa masse dépend de l'espèce"
+        },
+        {
+          "code": "mole-volume",
+          "texte": "Croire qu'une mole est un volume : c'est un « paquet » de 6,02×10²³ entités"
+        },
+        null,
+        {
+          "code": "mole-une-entite",
+          "texte": "Confondre une mole et une entité : une mole contient 6,02×10²³ entités"
+        }
+      ],
+      "exp": "Une mole est un paquet de NA = 6,02×10²³ entités, ici des molécules d'eau. Attention : la mole compte des entités, ce n'est ni une masse ni un volume."
+    },
+    {
+      "q": "Une mole d'atomes de carbone et une mole d'atomes de soufre contiennent :",
+      "opts": [
+        "le même nombre d'atomes et ont la même masse",
+        "le même nombre d'atomes, mais n'ont pas la même masse",
+        "des nombres d'atomes différents, mais ont la même masse",
+        "plus d'atomes pour le soufre, dont les atomes sont plus gros"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "mole-meme-masse",
+          "texte": "Croire que toutes les moles ont la même masse : un atome de soufre est plus lourd qu'un atome de carbone"
+        },
+        null,
+        {
+          "code": "mole-masse-fixe",
+          "texte": "Croire qu'une mole est une masse fixe : c'est un nombre fixe d'entités (NA)"
+        },
+        {
+          "code": "na-depend-espece",
+          "texte": "Croire que NA dépend de l'espèce : une mole contient toujours 6,02×10²³ entités"
+        }
+      ],
+      "exp": "Une mole contient toujours NA = 6,02×10²³ entités, quelle que soit l'espèce ; mais les atomes de soufre étant plus lourds, une mole de soufre a une masse plus grande."
+    },
+    {
+      "q": "Masses : m(H) = 1,67×10⁻²⁷ kg, m(O) = 2,66×10⁻²⁶ kg. La masse d'une molécule d'eau H₂O vaut :",
+      "opts": [
+        "2,83×10⁻²⁶ kg",
+        "2,99×10⁻²⁶ kg",
+        "5,49×10⁻²⁶ kg",
+        "8,88×10⁻⁵³ kg"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-indice",
+          "texte": "Oublier l'indice 2 : la molécule contient 2 atomes H, soit 2 × 1,67×10⁻²⁷ + 2,66×10⁻²⁶"
+        },
+        null,
+        {
+          "code": "indice-mal-applique",
+          "texte": "Appliquer l'indice au mauvais atome : 1,67×10⁻²⁷ + 2 × 2,66×10⁻²⁶ ; H₂O contient 2 H et 1 O"
+        },
+        {
+          "code": "masses-multipliees",
+          "texte": "Multiplier les masses des atomes au lieu de les additionner"
+        }
+      ],
+      "exp": "m(H₂O) = 2 × m(H) + m(O) = 2 × 1,67×10⁻²⁷ + 2,66×10⁻²⁶ ≈ 2,99×10⁻²⁶ kg. Attention : l'indice 2 porte sur l'atome qui le précède, H."
+    },
+    {
+      "q": "Un clou en fer a une masse de 1,00 g ; un atome de fer a une masse de 9,27×10⁻²⁶ kg. Le clou contient environ :",
+      "opts": [
+        "1,08×10²⁵ atomes",
+        "9,27×10⁻²³ atomes",
+        "9,27×10⁻²⁹ atomes",
+        "1,08×10²² atomes"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 1,00 / 9,27×10⁻²⁶ ; il faut 1,00×10⁻³ kg"
+        },
+        {
+          "code": "nombre-entites-rapport-inverse",
+          "texte": "Inverser le rapport : m(atome) / m(échantillon) ; il faut N = m(échantillon) / m(atome)"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 1,00×10⁻³ × 9,27×10⁻²⁶"
+        },
+        null
+      ],
+      "exp": "N = m(clou) / m(atome) = 1,00×10⁻³ / 9,27×10⁻²⁶ ≈ 1,08×10²² atomes. Attention : les deux masses doivent être dans la même unité (kg)."
+    },
+    {
+      "q": "Un échantillon contient 3,01×10²³ molécules. Sa quantité de matière vaut :",
+      "opts": [
+        "0,500 mol",
+        "1,81×10⁴⁷ mol",
+        "2,00 mol",
+        "3,01×10²³ mol"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : N × NA ; il faut n = N / NA"
+        },
+        {
+          "code": "n-rapport-inverse",
+          "texte": "Inverser le rapport : NA / N = 2,00 ; il faut n = N / NA"
+        },
+        {
+          "code": "nombre-pris-pour-quantite",
+          "texte": "Confondre nombre d'entités N (sans unité) et quantité de matière n (en mol)"
+        }
+      ],
+      "exp": "n = N / NA = 3,01×10²³ / 6,02×10²³ = 0,500 mol. Attention : N est un nombre d'entités, n un nombre de moles."
+    },
+    {
+      "q": "Combien d'atomes contiennent 0,20 mol de fer ? (NA = 6,02×10²³ mol⁻¹)",
+      "opts": [
+        "3,3×10⁻²⁵",
+        "3,0×10²⁴",
+        "6,02×10²³, comme tout échantillon de fer",
+        "1,2×10²³"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "n-sur-na",
+          "texte": "Diviser au lieu de multiplier : n / NA ; il faut N = n × NA"
+        },
+        {
+          "code": "n-rapport-inverse",
+          "texte": "Inverser le rapport : NA / n ; il faut N = n × NA"
+        },
+        {
+          "code": "na-pour-toute-quantite",
+          "texte": "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement"
+        },
+        null
+      ],
+      "exp": "N = n × NA = 0,20 × 6,02×10²³ ≈ 1,2×10²³ atomes. Attention : NA est le nombre d'entités dans une mole, pas dans n'importe quel échantillon."
+    },
+    {
+      "q": "Une molécule de CO₂ a une masse de 7,31×10⁻²⁶ kg. La quantité de matière de CO₂ dans 22,0 g de ce gaz vaut :",
+      "opts": [
+        "3,01×10²³ mol",
+        "0,500 mol",
+        "500 mol",
+        "1,81×10⁴⁷ mol"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "nombre-pris-pour-quantite",
+          "texte": "S'arrêter au nombre de molécules N : il faut ensuite calculer n = N / NA"
+        },
+        null,
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 22,0 / 7,31×10⁻²⁶ donne 1 000 fois trop de molécules"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier par NA au lieu de diviser : n = N / NA"
+        }
+      ],
+      "exp": "N = 22,0×10⁻³ / 7,31×10⁻²⁶ ≈ 3,01×10²³ molécules, puis n = N / NA ≈ 0,500 mol. Attention : deux étapes, et la masse en kg."
+    },
+    {
+      "q": "Une molécule d'eau a une masse de 2,99×10⁻²⁶ kg. Une goutte d'eau de 0,050 g contient environ :",
+      "opts": [
+        "un millier de molécules",
+        "1,7×10²¹ molécules",
+        "6,02×10²³ molécules, une mole",
+        "1,7×10²⁴ molécules"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "nombre-entites-sous-estime",
+          "texte": "Sous-estimer le nombre d'entités : même une goutte en contient des milliards de milliards"
+        },
+        null,
+        {
+          "code": "na-pour-toute-quantite",
+          "texte": "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement"
+        },
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 0,050 / 2,99×10⁻²⁶ ; il faut 0,050×10⁻³ kg"
+        }
+      ],
+      "exp": "N = 0,050×10⁻³ / 2,99×10⁻²⁶ ≈ 1,7×10²¹ molécules. C'est pour compter des nombres aussi grands qu'on utilise la mole."
+    },
+    {
+      "q": "Les chimistes comptent les entités en moles parce que :",
+      "opts": [
+        "les entités ont toutes la même masse",
+        "la mole est une unité de masse plus précise que le gramme",
+        "les nombres d'entités dans un échantillon sont gigantesques",
+        "le nombre d'entités par mole change selon l'espèce, ce qui simplifie les calculs"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "entites-meme-masse",
+          "texte": "Croire que toutes les entités ont la même masse : un atome de fer est bien plus lourd qu'un atome d'hydrogène"
+        },
+        {
+          "code": "mole-unite-masse",
+          "texte": "Croire que la mole est une unité de masse : c'est une unité de quantité de matière (un nombre de paquets)"
+        },
+        null,
+        {
+          "code": "na-depend-espece",
+          "texte": "Croire que NA dépend de l'espèce : une mole contient toujours 6,02×10²³ entités"
+        }
+      ],
+      "exp": "Un échantillon courant contient de l'ordre de 10²⁰ à 10²⁵ entités : on les regroupe par paquets de 6,02×10²³, comme on compte les œufs par douzaines."
+    },
+    {
+      "q": "Un atome de fer est environ 4,7 fois plus lourd qu'un atome de carbone. On compare 1,0 g de carbone et 1,0 g de fer :",
+      "opts": [
+        "le fer contient plus d'atomes, car il est plus lourd",
+        "ils contiennent le même nombre d'atomes, car ils ont la même masse",
+        "le carbone contient plus d'atomes",
+        "ils contiennent tous les deux NA atomes"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "lourd-plus-entites",
+          "texte": "Croire qu'à masse égale l'élément le plus lourd a plus d'atomes : c'est l'inverse, il en faut moins pour faire 1,0 g"
+        },
+        {
+          "code": "masse-egale-meme-nombre",
+          "texte": "Croire que même masse veut dire même nombre d'atomes : les atomes n'ont pas tous la même masse"
+        },
+        null,
+        {
+          "code": "na-pour-toute-quantite",
+          "texte": "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement"
+        }
+      ],
+      "exp": "N = m / m(atome) : à masse égale, plus l'atome est léger, plus il y en a. Le carbone contient environ 4,7 fois plus d'atomes que le fer."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Compter par paquets",
+      "contexte": [
+        "Au supermarché, Inès remarque que les œufs sont vendus par boîtes de 12 et les feuilles de papier par ramettes de 500. Son professeur lui explique que les chimistes font pareil : ils comptent les entités chimiques (atomes, ions, molécules) par « paquets » appelés moles. Une mole contient 6,02 × 10²³ entités."
+      ],
+      "questions": [
+        {
+          "texte": "Complète le tableau : 60 œufs = … boîtes de 12 ; 2 500 feuilles = … ramettes de 500 ; 1,204 × 10²⁴ molécules d'eau = … mol de molécules d'eau.",
+          "aides": [
+            "Pour les œufs, on se demande : combien de fois 12 dans 60 ? Fais le même raisonnement pour les molécules.",
+            "Une mole = 6,02 × 10²³ molécules : divise le nombre de molécules par 6,02 × 10²³. Pense à 1,204 × 10²⁴ = 12,04 × 10²³."
+          ]
+        },
+        {
+          "texte": "QCM. La constante d'Avogadro N<sub>A</sub> représente : (A) la masse d'une mole d'entités ; (B) le nombre d'entités contenues dans une mole ; (C) le nombre de moles dans un échantillon.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie en une phrase.<br>a. Une mole d'atomes de fer et une mole de molécules d'eau contiennent le même nombre d'entités.<br>b. Une mole d'atomes de fer et une mole de molécules d'eau ont la même masse. (Un atome de fer 56 contient 56 nucléons ; une molécule d'eau en contient 18.)<br>c. La quantité de matière n s'exprime en mol⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque formule, indique s'il s'agit d'un atome, d'une molécule, d'un cation ou d'un anion : Fe ; H₂O ; Na⁺ ; Cl⁻ ; CO₂ ; Ca²⁺ ; HO⁻ ; Cu.",
+          "aides": [
+            "Regarde d'abord s'il y a une charge (+ ou −) écrite en exposant à droite de la formule.",
+            "Avec une charge : c'est un ion (cation si +, anion si −). Sans charge : un seul symbole = un atome ; plusieurs atomes liés = une molécule."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 60 / 12 = 5 boîtes ; 2 500 / 500 = 5 ramettes ; 1,204 × 10²⁴ / 6,02 × 10²³ = 2,00 mol de molécules d'eau.",
+        "<strong>2.</strong> Réponse (B) : N<sub>A</sub> ≈ 6,02 × 10²³ mol⁻¹ est le nombre d'entités contenues dans une mole, quelle que soit l'entité.",
+        "<strong>3.</strong> a. VRAI : une mole contient toujours N<sub>A</sub> = 6,02 × 10²³ entités, quelle que soit l'entité chimique.",
+        "b. FAUX : elles contiennent le même nombre d'entités, mais un atome de fer (56 nucléons) est environ trois fois plus lourd qu'une molécule d'eau (18 nucléons). La mole de fer est donc plus lourde.",
+        "c. FAUX : n s'exprime en mol. C'est la constante d'Avogadro N<sub>A</sub> qui s'exprime en mol⁻¹.",
+        "<strong>4.</strong> Atomes : Fe, Cu. Molécules : H₂O, CO₂. Cations (charge positive) : Na⁺, Ca²⁺. Anions (charge négative) : Cl⁻, HO⁻.",
+        "<em>⚠ Erreur fréquente : classer HO⁻ parmi les molécules parce qu'il contient deux atomes. Il porte une charge : c'est un ion (un anion).</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Combien de molécules dans un verre d'eau ?",
+      "contexte": [
+        "Hugo boit un verre d'eau après son entraînement de foot. Il se demande combien de molécules d'eau il avale.",
+        "Relation utile : N = N<sub>A</sub> × n, soit n = N / N<sub>A</sub>, avec N le nombre d'entités (sans unité), n la quantité de matière (en mol) et N<sub>A</sub> = 6,02 × 10²³ mol⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Le verre contient n = 10,0 mol de molécules d'eau. Calcule le nombre N de molécules d'eau dans le verre.",
+          "aides": []
+        },
+        {
+          "texte": "Une grosse goutte d'eau contient N = 3,01 × 10²¹ molécules d'eau. Calcule la quantité de matière n d'eau dans la goutte.",
+          "aides": [
+            "Utilise n = N / N<sub>A</sub> : il faut diviser.",
+            "Divise séparément les nombres (3,01 / 6,02) et les puissances de dix (10²¹ / 10²³ = 10²¹⁻²³).",
+            "Tu obtiens 0,500 × 10⁻² : écris-le en écriture scientifique."
+          ]
+        },
+        {
+          "texte": "Lucas a calculé pour la goutte : n = 3,01 × 10²¹ × 6,02 × 10²³ = 1,81 × 10⁴⁵ mol. Sans refaire le calcul, explique pourquoi ce résultat est forcément faux.",
+          "aides": [
+            "Compare avec le verre d'eau de la question 1 : une goutte peut-elle contenir plus de moles qu'un verre ?",
+            "Pour passer de N à n, faut-il multiplier ou diviser par N<sub>A</sub> ?"
+          ]
+        },
+        {
+          "texte": "D'après tes résultats, pourquoi les chimistes préfèrent-ils utiliser la quantité de matière n plutôt que le nombre d'entités N ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> N = N<sub>A</sub> × n = 6,02 × 10²³ × 10,0 = 6,02 × 10²⁴ molécules d'eau.",
+        "<strong>2.</strong> n = N / N<sub>A</sub> = 3,01 × 10²¹ / 6,02 × 10²³ = 0,500 × 10⁻² = 5,00 × 10⁻³ mol.",
+        "<strong>3.</strong> Une goutte contient beaucoup moins d'eau qu'un verre (10,0 mol) : on ne peut pas y trouver 10⁴⁵ mol ! Lucas a multiplié par N<sub>A</sub> au lieu de diviser. Le nombre de moles n est toujours beaucoup plus petit que le nombre d'entités N.",
+        "<strong>4.</strong> N est un nombre immense (10²¹, 10²⁴…), difficile à manipuler et à comparer ; n donne des valeurs simples (5,00 × 10⁻³ mol, 10,0 mol), comme on dit « 5 boîtes d'œufs » plutôt que « 60 œufs ».",
+        "<em>⚠ Erreur fréquente : se tromper dans les puissances de dix en divisant. 10²¹ / 10²³ = 10²¹⁻²³ = 10⁻².</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "La masse d'une molécule",
+      "contexte": [
+        "En TP, Malik construit trois molécules avec une boîte de modèles moléculaires : chaque boule représente un atome.",
+        "La masse d'une molécule est égale à la somme des masses des atomes qui la composent. Exemple : pour le monoxyde de carbone CO, m(CO) = m<sub>C</sub> + m<sub>O</sub>. Les masses des atomes sont dans l'encadré « Données »."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"36\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\">Modèles moléculaires de trois molécules</text><line x1=\"130\" y1=\"175\" x2=\"82\" y2=\"225\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><line x1=\"130\" y1=\"175\" x2=\"178\" y2=\"225\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><circle cx=\"130\" cy=\"175\" r=\"32\" fill=\"#c8382c\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"82\" cy=\"225\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"178\" cy=\"225\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"310\" y1=\"190\" x2=\"450\" y2=\"190\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><circle cx=\"310\" cy=\"190\" r=\"32\" fill=\"#c8382c\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"380\" cy=\"190\" r=\"30\" fill=\"#333333\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"450\" cy=\"190\" r=\"32\" fill=\"#c8382c\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"630\" y1=\"185\" x2=\"630\" y2=\"120\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><line x1=\"630\" y1=\"185\" x2=\"630\" y2=\"250\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><line x1=\"630\" y1=\"185\" x2=\"565\" y2=\"185\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><line x1=\"630\" y1=\"185\" x2=\"695\" y2=\"185\" stroke=\"#9a9a9a\" stroke-width=\"9\"/><circle cx=\"630\" cy=\"120\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"630\" cy=\"250\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"565\" cy=\"185\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"695\" cy=\"185\" r=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"630\" cy=\"185\" r=\"30\" fill=\"#333333\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"130\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">A : eau</text><text x=\"380\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">B : dioxyde de carbone</text><text x=\"630\" y=\"310\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">C : méthane</text><rect x=\"60\" y=\"355\" width=\"640\" height=\"80\" rx=\"10\" fill=\"#f4ede1\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"380\" y=\"380\" text-anchor=\"middle\" font-size=\"15\">Légende (couleurs des boîtes de modèles moléculaires)</text><circle cx=\"140\" cy=\"410\" r=\"13\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"162\" y=\"416\" font-size=\"16\">hydrogène H</text><circle cx=\"340\" cy=\"410\" r=\"13\" fill=\"#333333\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"362\" y=\"416\" font-size=\"16\">carbone C</text><circle cx=\"540\" cy=\"410\" r=\"13\" fill=\"#c8382c\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"562\" y=\"416\" font-size=\"16\">oxygène O</text></svg>",
+      "questions": [
+        {
+          "texte": "Écris la formule brute de chacune des trois molécules A, B et C.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse d'une molécule d'eau.",
+          "aides": [
+            "Compte les atomes dans la formule H₂O : combien de H ? combien de O ?",
+            "m(H₂O) = 2 × m<sub>H</sub> + m<sub>O</sub>.",
+            "Pour additionner, écris 1,67 × 10⁻²⁷ sous la forme 0,167 × 10⁻²⁶."
+          ]
+        },
+        {
+          "texte": "Calcule de même la masse d'une molécule de dioxyde de carbone, puis celle d'une molécule de méthane. Classe les trois molécules de la plus légère à la plus lourde.",
+          "aides": []
+        },
+        {
+          "texte": "Le nombre de molécules dans un échantillon de masse m se calcule par N = m / m(molécule), les deux masses étant exprimées dans la même unité. Calcule le nombre de molécules d'eau dans m = 18,0 g d'eau, puis la quantité de matière n correspondante. Que remarques-tu ?",
+          "aides": [
+            "Convertis d'abord 18,0 g en kilogrammes, puisque m(H₂O) est en kilogrammes.",
+            "1 g = 10⁻³ kg. Ensuite N = m / m(H₂O), puis n = N / N<sub>A</sub>."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : H₂O ; B : CO₂ ; C : CH₄.",
+        "<strong>2.</strong> m(H₂O) = 2 × m<sub>H</sub> + m<sub>O</sub> = 2 × 1,67 × 10⁻²⁷ + 2,66 × 10⁻²⁶ = 0,334 × 10⁻²⁶ + 2,66 × 10⁻²⁶ = 2,99 × 10⁻²⁶ kg.",
+        "<strong>3.</strong> m(CO₂) = m<sub>C</sub> + 2 × m<sub>O</sub> = 1,99 × 10⁻²⁶ + 2 × 2,66 × 10⁻²⁶ = 7,31 × 10⁻²⁶ kg.",
+        "m(CH₄) = m<sub>C</sub> + 4 × m<sub>H</sub> = 1,99 × 10⁻²⁶ + 4 × 1,67 × 10⁻²⁷ = 2,66 × 10⁻²⁶ kg.",
+        "Classement : CH₄ (2,66 × 10⁻²⁶ kg) &lt; H₂O (2,99 × 10⁻²⁶ kg) &lt; CO₂ (7,31 × 10⁻²⁶ kg).",
+        "<strong>4.</strong> m = 18,0 g = 18,0 × 10⁻³ kg. N = m / m(H₂O) = 18,0 × 10⁻³ / 2,99 × 10⁻²⁶ = 6,02 × 10²³ molécules ; n = N / N<sub>A</sub> = 6,02 × 10²³ / 6,02 × 10²³ = 1,00 mol.",
+        "Remarque : 18,0 g d'eau contiennent une mole de molécules d'eau. On retrouve la masse molaire de l'eau donnée dans le cours (M(H₂O) = 18,0 g·mol⁻¹).",
+        "<em>⚠ Erreur fréquente : oublier le chiffre en indice (écrire m<sub>H</sub> + m<sub>O</sub> pour l'eau) ou ajouter des puissances de dix différentes sans les mettre à la même puissance (1,67 × 10⁻²⁷ = 0,167 × 10⁻²⁶).</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Combien de molécules dans un morceau de sucre ?",
+      "contexte": [
+        "Yasmine met un morceau de sucre dans son thé. Le sucre est du saccharose pur, de formule brute C₁₂H₂₂O₁₁. Elle pèse le morceau : m = 6,00 g."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse d'une molécule de saccharose.",
+          "aides": [
+            "Lis la formule brute : 12 atomes de C, 22 atomes de H, 11 atomes de O.",
+            "m(molécule) = 12 × m<sub>C</sub> + 22 × m<sub>H</sub> + 11 × m<sub>O</sub>. Calcule chaque terme, puis additionne."
+          ]
+        },
+        {
+          "texte": "Détermine le nombre N de molécules de saccharose dans le morceau de sucre.",
+          "aides": [
+            "Le nombre de molécules est le nombre de fois que la masse d'une molécule « rentre » dans la masse du morceau.",
+            "N = m / m(molécule), les deux masses dans la même unité : convertis 6,00 g en kg."
+          ]
+        },
+        {
+          "texte": "Déduis-en la quantité de matière n de saccharose dans le morceau.",
+          "aides": []
+        },
+        {
+          "texte": "Vérifie ton résultat avec une autre méthode : calcule la masse molaire M du saccharose, puis n.",
+          "aides": [
+            "La masse molaire d'une molécule s'obtient en additionnant les masses molaires atomiques de tous ses atomes.",
+            "M = 12 × M(C) + 22 × M(H) + 11 × M(O), puis n = m / M avec m en grammes."
+          ]
+        },
+        {
+          "texte": "Son frère Sami trouve N = 1,06 × 10¹⁹ molécules. Quelle erreur a-t-il probablement commise ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> m(C₁₂H₂₂O₁₁) = 12 × m<sub>C</sub> + 22 × m<sub>H</sub> + 11 × m<sub>O</sub> = 12 × 1,99 × 10⁻²⁶ + 22 × 1,67 × 10⁻²⁷ + 11 × 2,66 × 10⁻²⁶ = 2,388 × 10⁻²⁵ + 0,367 × 10⁻²⁵ + 2,926 × 10⁻²⁵ = 5,68 × 10⁻²⁵ kg.",
+        "<strong>2.</strong> m = 6,00 g = 6,00 × 10⁻³ kg. N = m / m(C₁₂H₂₂O₁₁) = 6,00 × 10⁻³ / 5,68 × 10⁻²⁵ = 1,06 × 10²² molécules.",
+        "<strong>3.</strong> n = N / N<sub>A</sub> = 1,06 × 10²² / 6,02 × 10²³ = 1,75 × 10⁻² mol (en gardant les valeurs non arrondies en mémoire).",
+        "<strong>4.</strong> M(C₁₂H₂₂O₁₁) = 12 × M(C) + 22 × M(H) + 11 × M(O) = 12 × 12,0 + 22 × 1,0 + 11 × 16,0 = 342,0 g·mol⁻¹. n = m / M = 6,00 / 342,0 = 1,75 × 10⁻² mol : on retrouve le même résultat.",
+        "Ordre de grandeur : un morceau de quelques grammes contient environ 10²² molécules, soit environ un centième de mole. C'est cohérent.",
+        "<strong>5.</strong> 1,06 × 10¹⁹ est 1 000 fois trop petit : Sami a converti 6,00 g en 6,00 × 10⁻⁶ kg (il a confondu avec les mg) au lieu de 6,00 × 10⁻³ kg.",
+        "<em>⚠ Erreur fréquente : laisser la masse de l'échantillon en grammes alors que la masse d'une molécule est en kilogrammes. Les deux masses doivent être dans la même unité.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le comprimé de vitamine C",
+      "contexte": [
+        "Un comprimé effervescent de vitamine C contient m = 500 mg d'acide ascorbique, de formule brute C₆H₈O₆. Mehdi le dissout dans un verre d'eau ; on considère que la solution obtenue a un volume V = 200 mL.",
+        "Donnée : masse volumique de l'eau : 1,00 g·mL⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse molaire M de l'acide ascorbique.",
+          "aides": [
+            "Additionne les masses molaires atomiques de TOUS les atomes de la molécule.",
+            "M = 6 × M(C) + 8 × M(H) + 6 × M(O)."
+          ]
+        },
+        {
+          "texte": "Calcule la quantité de matière n d'acide ascorbique dans un comprimé.",
+          "aides": [
+            "Utilise n = m / M. Dans quelle unité doit être m si M est en g·mol⁻¹ ?",
+            "500 mg = 0,500 g."
+          ]
+        },
+        {
+          "texte": "Calcule le nombre N de molécules d'acide ascorbique dans un comprimé.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la concentration en masse c<sub>m</sub> d'acide ascorbique dans le verre, puis vérifie que c<sub>m</sub> = n × M / V.",
+          "aides": []
+        },
+        {
+          "texte": "Le verre contient environ 200 mL d'eau. Combien y a-t-il de molécules d'eau pour une molécule d'acide ascorbique ?",
+          "aides": [
+            "Il faut comparer deux nombres de molécules : celui de l'eau et celui de l'acide ascorbique (question 3).",
+            "Masse de 200 mL d'eau : 200 g. Calcule M(H₂O), puis n(eau) = m / M, puis N(eau) = N<sub>A</sub> × n(eau).",
+            "Enfin, divise N(eau) par N(acide ascorbique)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(C₆H₈O₆) = 6 × M(C) + 8 × M(H) + 6 × M(O) = 6 × 12,0 + 8 × 1,0 + 6 × 16,0 = 176,0 g·mol⁻¹.",
+        "<strong>2.</strong> m = 500 mg = 0,500 g. n = m / M = 0,500 / 176,0 = 2,84 × 10⁻³ mol.",
+        "<strong>3.</strong> N = N<sub>A</sub> × n = 6,02 × 10²³ × 2,84 × 10⁻³ = 1,71 × 10²¹ molécules.",
+        "<strong>4.</strong> c<sub>m</sub> = m / V = 0,500 / 0,200 = 2,50 g·L⁻¹. Vérification : n × M / V = 2,84 × 10⁻³ × 176,0 / 0,200 = 2,50 g·L⁻¹ (en gardant n non arrondi) : c'est bien la même valeur, puisque n × M = m.",
+        "<strong>5.</strong> Masse d'eau : 200 mL × 1,00 g·mL⁻¹ = 200 g. M(H₂O) = 2 × 1,0 + 16,0 = 18,0 g·mol⁻¹, donc n(eau) = 200 / 18,0 = 11,1 mol et N(eau) = 6,02 × 10²³ × 11,1 = 6,69 × 10²⁴ molécules.",
+        "Rapport : N(eau) / N(acide ascorbique) = 6,69 × 10²⁴ / 1,71 × 10²¹ ≈ 3,9 × 10³ : environ 4 000 molécules d'eau pour une molécule de vitamine C.",
+        "<em>⚠ Erreur fréquente : oublier de convertir 500 mg en 0,500 g (on trouverait n = 2,84 mol, soit 500 g d'acide ascorbique dans un comprimé !), ou oublier de convertir 200 mL en 0,200 L pour c<sub>m</sub>.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Soda ou boisson de l'effort ?",
+      "contexte": [
+        "Après son match de basket, Leïla hésite entre une canette de soda A et une bouteille de boisson de l'effort B. Son frère affirme : « Prends le soda : il contient plus de grammes de sucre, donc il t'apporte plus de molécules de sucre. »",
+        "Doc. 1 — Extraits des étiquettes des deux boissons (données fictives mais vraisemblables)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"38\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\">Doc. 1 — Extraits des étiquettes</text><rect x=\"30\" y=\"60\" width=\"330\" height=\"370\" rx=\"14\" fill=\"#ffffff\" stroke=\"#B5523B\" stroke-width=\"3\"/><rect x=\"30\" y=\"60\" width=\"330\" height=\"62\" rx=\"14\" fill=\"#B5523B\"/><rect x=\"30\" y=\"100\" width=\"330\" height=\"22\" fill=\"#B5523B\"/><text x=\"195\" y=\"90\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\" font-size=\"20\">Soda A</text><text x=\"195\" y=\"113\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"15\">boisson gazeuse sucrée</text><text x=\"195\" y=\"152\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\">Canette de 33 cL</text><text x=\"50\" y=\"190\" font-weight=\"bold\" font-size=\"16\" fill=\"#1F4E5A\">Valeurs nutritionnelles pour 100 mL</text><line x1=\"50\" y1=\"200\" x2=\"340\" y2=\"200\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"50\" y=\"228\" font-size=\"16\">Énergie</text><text x=\"340\" y=\"228\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">180 kJ</text><line x1=\"50\" y1=\"238\" x2=\"340\" y2=\"238\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"50\" y=\"266\" font-size=\"16\">Glucides</text><text x=\"340\" y=\"266\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">10,6 g</text><line x1=\"50\" y1=\"276\" x2=\"340\" y2=\"276\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"50\" y=\"304\" font-size=\"16\">dont sucres</text><text x=\"340\" y=\"304\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">10,6 g</text><line x1=\"50\" y1=\"314\" x2=\"340\" y2=\"314\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"50\" y=\"342\" font-size=\"16\">Sel</text><text x=\"340\" y=\"342\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">0 g</text><line x1=\"50\" y1=\"352\" x2=\"340\" y2=\"352\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><rect x=\"400\" y=\"60\" width=\"330\" height=\"370\" rx=\"14\" fill=\"#ffffff\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><rect x=\"400\" y=\"60\" width=\"330\" height=\"62\" rx=\"14\" fill=\"#1F4E5A\"/><rect x=\"400\" y=\"100\" width=\"330\" height=\"22\" fill=\"#1F4E5A\"/><text x=\"565\" y=\"90\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\" font-size=\"20\">Boisson B</text><text x=\"565\" y=\"113\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"15\">boisson de l’effort</text><text x=\"565\" y=\"152\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\">Bouteille de 50 cL</text><text x=\"420\" y=\"190\" font-weight=\"bold\" font-size=\"16\" fill=\"#1F4E5A\">Valeurs nutritionnelles pour 100 mL</text><line x1=\"420\" y1=\"200\" x2=\"710\" y2=\"200\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"420\" y=\"228\" font-size=\"16\">Énergie</text><text x=\"710\" y=\"228\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">102 kJ</text><line x1=\"420\" y1=\"238\" x2=\"710\" y2=\"238\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"420\" y=\"266\" font-size=\"16\">Glucides</text><text x=\"710\" y=\"266\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">6,0 g</text><line x1=\"420\" y1=\"276\" x2=\"710\" y2=\"276\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"420\" y=\"304\" font-size=\"16\">dont sucres</text><text x=\"710\" y=\"304\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">6,0 g</text><line x1=\"420\" y1=\"314\" x2=\"710\" y2=\"314\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"420\" y=\"342\" font-size=\"16\">Sel</text><text x=\"710\" y=\"342\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">0,12 g</text><line x1=\"420\" y1=\"352\" x2=\"710\" y2=\"352\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"195\" y=\"394\" text-anchor=\"middle\" font-size=\"15\" font-style=\"italic\">Ingrédients : eau, sucre (saccharose),</text><text x=\"195\" y=\"416\" text-anchor=\"middle\" font-size=\"15\" font-style=\"italic\">dioxyde de carbone, arômes.</text><text x=\"565\" y=\"394\" text-anchor=\"middle\" font-size=\"15\" font-style=\"italic\">Ingrédients : eau, glucose,</text><text x=\"565\" y=\"416\" text-anchor=\"middle\" font-size=\"15\" font-style=\"italic\">sel, arômes.</text></svg>",
+      "contexte2": [
+        "Doc. 2 — Les sucres. Le sucre du soda A est du saccharose, de formule brute C₁₂H₂₂O₁₁. Le sucre de la boisson B est du glucose, de formule brute C₆H₁₂O₆. Les masses des atomes et les masses molaires atomiques sont dans l'encadré « Données ».",
+        "Doc. 3 — La digestion du saccharose. Dans l'intestin, chaque molécule de saccharose réagit avec une molécule d'eau et se coupe en une molécule de glucose et une molécule de fructose. Le fructose a la même formule brute que le glucose : C₆H₁₂O₆. Équation : C₁₂H₂₂O₁₁ + H₂O → C₆H₁₂O₆ + C₆H₁₂O₆. Seules les molécules C₆H₁₂O₆ passent dans le sang."
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : calcule la masse de sucre contenue dans la canette de soda A et dans la bouteille de boisson B.",
+          "aides": [
+            "Sur chaque étiquette, la masse de sucres est donnée pour 100 mL. Quel est le volume de chaque boisson en mL ?",
+            "1 cL = 10 mL : 33 cL = 330 mL. Utilise la proportionnalité."
+          ]
+        },
+        {
+          "texte": "Le frère de Leïla a-t-il raison ? Construis ta démarche, présente tes calculs (nombres de molécules et quantités de matière) et conclus.",
+          "aides": [
+            "Pour comparer des nombres de molécules, il ne suffit pas de comparer des masses : une molécule de saccharose et une molécule de glucose n'ont pas la même masse.",
+            "Calcule la masse d'une molécule de chaque sucre à partir de sa formule brute (doc. 2 et Données).",
+            "Puis, pour chaque boisson : N = m(sucre) / m(molécule), avec les masses en kg, et n = N / N<sub>A</sub>."
+          ]
+        },
+        {
+          "texte": "Regard critique : à l'aide du doc. 3, vérifie que l'équation de la digestion est ajustée. Ta conclusion change-t-elle si l'on compte les molécules C₆H₁₂O₆ qui passent dans le sang ? Que penses-tu finalement de l'argument du frère ?",
+          "aides": [
+            "Compte les atomes de chaque élément de part et d'autre de la flèche.",
+            "Une molécule de saccharose donne combien de molécules C₆H₁₂O₆ ? Multiplie le nombre de molécules de saccharose du soda par ce nombre, et compare à la boisson B."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Soda A : 33 cL = 330 mL, et 10,6 g de sucres pour 100 mL, donc m(saccharose) = 10,6 × 330 / 100 = 35,0 g. Boisson B : 50 cL = 500 mL, donc m(glucose) = 6,0 × 500 / 100 = 30 g. Le soda contient bien plus de grammes de sucre.",
+        "<strong>2.</strong> Démarche attendue : masse d'une molécule de chaque sucre (formule brute) → nombre de molécules N = m / m(molécule) → quantité de matière n = N / N<sub>A</sub> → comparaison.",
+        "a. m(C₁₂H₂₂O₁₁) = 12 × m<sub>C</sub> + 22 × m<sub>H</sub> + 11 × m<sub>O</sub> = 5,68 × 10⁻²⁵ kg (voir exercice 4). m(C₆H₁₂O₆) = 6 × m<sub>C</sub> + 12 × m<sub>H</sub> + 6 × m<sub>O</sub> = 6 × 1,99 × 10⁻²⁶ + 12 × 1,67 × 10⁻²⁷ + 6 × 2,66 × 10⁻²⁶ = 2,99 × 10⁻²⁵ kg.",
+        "b. Soda A : N(saccharose) = 35,0 × 10⁻³ / 5,68 × 10⁻²⁵ = 6,16 × 10²² molécules, soit n = 6,16 × 10²² / 6,02 × 10²³ = 0,102 mol. Boisson B : N(glucose) = 30 × 10⁻³ / 2,99 × 10⁻²⁵ = 1,0 × 10²³ molécules, soit n = 0,17 mol.",
+        "Autre méthode acceptée (masses molaires) : M(C₁₂H₂₂O₁₁) = 342,0 g·mol⁻¹, n = 35,0 / 342,0 = 0,102 mol ; M(C₆H₁₂O₆) = 180,0 g·mol⁻¹, n = 30 / 180,0 = 0,17 mol.",
+        "c. Conclusion : le frère a tort. La boisson B apporte environ 1,6 fois plus de molécules de sucre que le soda, alors qu'elle contient moins de grammes de sucre : une molécule de glucose est environ 1,9 fois plus légère qu'une molécule de saccharose. Plus de grammes ne veut pas dire plus de molécules.",
+        "<strong>3.</strong> Atomes à gauche : C : 12 ; H : 22 + 2 = 24 ; O : 11 + 1 = 12. À droite : C : 2 × 6 = 12 ; H : 2 × 12 = 24 ; O : 2 × 6 = 12. L'équation est ajustée.",
+        "Chaque molécule de saccharose donne 2 molécules C₆H₁₂O₆ : le soda en fournit 2 × 6,16 × 10²² = 1,23 × 10²³, un peu plus que la boisson B (1,0 × 10²³, rapport ≈ 1,2). En comptant les molécules qui passent dans le sang, le soda en apporte donc un peu plus : la conclusion de la question 2 s'inverse.",
+        "Regard critique : le frère arrive à une conclusion à peu près juste avec un raisonnement faux (comparer des masses ne permet pas de comparer des nombres de molécules). La réponse dépend de ce qu'on compte. Pour une sportive, d'autres critères comptent : la boisson B apporte aussi du sel (perdu dans la sueur), et un soda gazeux est moins adapté à l'effort.",
+        "Éléments valorisés (grille indicative) : avoir converti les volumes et calculé les masses de sucre ; avoir compris qu'il faut comparer des nombres de molécules et pas des masses ; avoir calculé la masse d'une molécule à partir de la formule brute ; cohérence des unités (kg) et des puissances de dix ; conclusion argumentée, même si un calcul est faux.",
+        "<em>⚠ Erreur fréquente : comparer directement les masses de sucre (35,0 g &gt; 30 g), ou diviser une masse en grammes par une masse de molécule en kilogrammes.</em>"
+      ]
+    }
+  ]
+}

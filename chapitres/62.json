@@ -1,0 +1,716 @@
+{
+  "id": 62,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La diffraction de la lumière",
+        "icon": "🌊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Diffraction",
+            "text": "Lorsqu'un faisceau lumineux traverse une ouverture ou contourne un obstacle de petite dimension, il s'écarte de sa propagation rectiligne. La diffraction est caractéristique du comportement ondulatoire de la lumière."
+          },
+          {
+            "type": "formula",
+            "label": "Écart angulaire de diffraction",
+            "text": "θ = λ / a\n(θ en radians rad, λ longueur d'onde en m, a taille de l'ouverture en m)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : un laser de longueur d'onde λ = 633 nm traverse une fente de largeur a = 0,10 mm. θ = λ/a = 633×10⁻⁹/1,0×10⁻⁴ = 6,33×10⁻³ rad. Si la fente est deux fois plus étroite, θ double : la diffraction est plus marquée pour une ouverture plus petite."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 200\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"20\" y1=\"30\" x2=\"140\" y2=\"30\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"20\" y1=\"60\" x2=\"140\" y2=\"60\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"20\" y1=\"140\" x2=\"140\" y2=\"140\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"20\" y1=\"170\" x2=\"140\" y2=\"170\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><rect x=\"140\" y=\"10\" width=\"16\" height=\"80\" fill=\"#1B2420\"/><rect x=\"140\" y=\"110\" width=\"16\" height=\"80\" fill=\"#1B2420\"/><text x=\"124\" y=\"104\" font-size=\"11\" fill=\"#5C6B60\">a</text><line x1=\"156\" y1=\"100\" x2=\"460\" y2=\"100\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"156\" y1=\"90\" x2=\"460\" y2=\"25\" stroke=\"#a44ff7\" stroke-width=\"2\"/><line x1=\"156\" y1=\"110\" x2=\"460\" y2=\"175\" stroke=\"#a44ff7\" stroke-width=\"2\"/><path d=\"M186,100 A30,30 0 0,0 184,89\" fill=\"none\" stroke=\"#C0472F\" stroke-width=\"1.3\"/><text x=\"192\" y=\"85\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">θ</text><rect x=\"460\" y=\"80\" width=\"12\" height=\"40\" fill=\"#B8862E\"/><rect x=\"460\" y=\"40\" width=\"8\" height=\"16\" fill=\"#B8862E\" fill-opacity=\"0.4\"/><rect x=\"460\" y=\"144\" width=\"8\" height=\"16\" fill=\"#B8862E\" fill-opacity=\"0.4\"/><text x=\"440\" y=\"195\" font-size=\"10\" fill=\"#5C6B60\">écran</text></svg>",
+            "caption": "Diffraction par une fente de largeur a : le faisceau s'écarte de sa propagation rectiligne d'un angle θ = λ/a et forme sur l'écran une tache centrale large et lumineuse, encadrée de franges secondaires plus faibles."
+          }
+        ]
+      },
+      {
+        "title": "2. Le modèle particulaire : le photon",
+        "icon": "✨",
+        "content": [
+          {
+            "type": "def",
+            "term": "Photon",
+            "text": "Dans le modèle particulaire, la lumière est constituée de grains d'énergie appelés photons, chacun transportant une énergie proportionnelle à la fréquence de la radiation lumineuse."
+          },
+          {
+            "type": "formula",
+            "label": "Énergie d'un photon",
+            "text": "E = h × f = h × c / λ\n(E en joules J, h = 6,63×10⁻³⁴ J·s, f fréquence en Hz, c = 3,00×10⁸ m/s, λ en m)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : une radiation de λ = 500 nm a pour fréquence f = c/λ = 6,00×10¹⁴ Hz et pour énergie de photon E = h×f ≈ 3,98×10⁻¹⁹ J. Comme E est inversement proportionnelle à λ, un photon violet (λ plus petite) transporte plus d'énergie qu'un photon rouge (λ plus grande) : E(violet, 400 nm) ≈ 4,97×10⁻¹⁹ J > E(rouge, 700 nm) ≈ 2,84×10⁻¹⁹ J."
+          }
+        ]
+      },
+      {
+        "title": "3. Les interférences",
+        "icon": "〰️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Interférences",
+            "text": "Lorsque deux ondes lumineuses cohérentes se superposent, elles peuvent s'additionner (interférences constructives) ou s'annuler (interférences destructives), donnant naissance à des franges alternativement lumineuses et sombres."
+          },
+          {
+            "type": "warn",
+            "text": "Comme la diffraction, le phénomène d'interférences ne s'explique que par le modèle ondulatoire de la lumière : il constitue une preuve du caractère ondulatoire de la lumière."
+          }
+        ]
+      },
+      {
+        "title": "4. Spectres et quantification de l'énergie",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "def",
+            "term": "Niveaux d'énergie quantifiés",
+            "text": "L'énergie d'un atome ne peut prendre que certaines valeurs discrètes, appelées niveaux d'énergie quantifiés. Un photon est émis ou absorbé lors d'une transition entre deux niveaux, avec une énergie égale à la différence d'énergie ΔE = |E2 − E1| entre ces niveaux."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : dans l'atome d'hydrogène, une transition électronique s'accompagne de l'émission d'un photon de longueur d'onde λ = 486 nm (raie Hβ du spectre de Balmer). f = c/λ ≈ 6,17×10¹⁴ Hz et E = h×f ≈ 4,09×10⁻¹⁹ J. Cette énergie correspond exactement à une différence entre deux niveaux d'énergie précis, ce qui confirme la quantification des niveaux d'énergie de l'atome. En absorption, la transition se fait du niveau le plus bas vers le niveau le plus élevé ; en émission, du niveau le plus élevé vers le niveau le plus bas."
+          }
+        ]
+      },
+      {
+        "title": "5. Spectres continus et spectres de raies",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Type de spectre",
+              "Origine",
+              "Ce qu'il permet de savoir"
+            ],
+            "rows": [
+              [
+                "Continu",
+                "Filament d'une lampe à incandescence",
+                "Renseigne sur la température de la source, pas sur sa composition"
+              ],
+              [
+                "De raies",
+                "Lampe spectrale, vapeur d'un élément (sodium, hydrogène...)",
+                "Signature propre à chaque élément chimique : permet son identification certaine"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Un spectre de raies (d'émission ou d'absorption) est la signature des transitions quantifiées, propre à chaque élément chimique : deux éléments différents ne peuvent pas présenter exactement le même spectre de raies."
+          }
+        ]
+      },
+      {
+        "title": "6. Synthèse",
+        "icon": "🧩",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition / formule"
+            ],
+            "rows": [
+              [
+                "Diffraction",
+                "Écart à la propagation rectiligne, θ = λ/a"
+              ],
+              [
+                "Photon",
+                "Grain de lumière d'énergie E = h·f"
+              ],
+              [
+                "Spectre de raies",
+                "Signature des transitions entre niveaux d'énergie quantifiés"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans le modèle particulaire, un photon est :",
+      "opts": [
+        "un électron émis par la source de lumière",
+        "un grain d'énergie lumineuse, d'énergie E = h × f",
+        "une petite particule de matière, de masse non nulle",
+        "l'énergie totale transportée par un faisceau"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "photon-vs-electron",
+          "texte": "Confondre photon et électron : le photon est un grain de lumière, sans charge électrique"
+        },
+        null,
+        {
+          "code": "photon-particule-matiere",
+          "texte": "Croire que le photon est un grain de matière : c'est un « paquet » d'énergie, de masse nulle"
+        },
+        {
+          "code": "photon-vs-faisceau",
+          "texte": "Confondre un photon et le faisceau : un faisceau transporte un très grand nombre de photons"
+        }
+      ],
+      "exp": "La lumière peut être décrite comme un flux de photons, grains d'énergie E = h × f = h c / λ. Attention : un photon n'est pas un électron, et un faisceau en contient un nombre immense."
+    },
+    {
+      "q": "L'énergie d'un photon de longueur d'onde λ = 600 nm vaut E = h c / λ (h = 6,63×10⁻³⁴ J·s ; c = 3,00×10⁸ m·s⁻¹), soit :",
+      "opts": [
+        "3,32×10⁻²⁸ J",
+        "3,98×10⁻⁴⁰ J",
+        "3,32×10⁻¹⁹ J",
+        "1,99×10⁻²⁵ J"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-nm-m",
+          "texte": "Oublier de convertir λ en mètres : 600 nm = 6,00×10⁻⁷ m"
+        },
+        {
+          "code": "energie-photon-h-lambda",
+          "texte": "Multiplier h par λ au lieu de calculer h c / λ"
+        },
+        null,
+        {
+          "code": "oubli-longueur-onde",
+          "texte": "Oublier de diviser par λ : h × c"
+        }
+      ],
+      "exp": "E = h c / λ = 6,63×10⁻³⁴ × 3,00×10⁸ / 6,00×10⁻⁷ ≈ 3,32×10⁻¹⁹ J. Attention : λ en mètres (1 nm = 10⁻⁹ m)."
+    },
+    {
+      "q": "Quel photon transporte le plus d'énergie : un photon rouge (λ = 700 nm) ou un photon violet (λ = 400 nm) ?",
+      "opts": [
+        "Le rouge, car E est proportionnelle à λ",
+        "Les deux transportent la même énergie",
+        "Le violet, car E est inversement proportionnelle à λ",
+        "Cela dépend de l'intensité de la lumière"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "energie-proportionnelle-lambda",
+          "texte": "Croire que E est proportionnelle à λ : E = h c / λ, une petite longueur d'onde donne une grande énergie"
+        },
+        {
+          "code": "energie-photon-constante",
+          "texte": "Croire que tous les photons ont la même énergie : elle dépend de la fréquence de la radiation"
+        },
+        null,
+        {
+          "code": "energie-photon-intensite",
+          "texte": "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence"
+        }
+      ],
+      "exp": "E = h c / λ : plus λ est petite, plus le photon est énergétique. E(violet) ≈ 4,97×10⁻¹⁹ J > E(rouge) ≈ 2,84×10⁻¹⁹ J. L'intensité change le nombre de photons, pas l'énergie de chacun."
+    },
+    {
+      "q": "Une radiation de longueur d'onde λ = 300 nm dans le vide appartient au domaine :",
+      "opts": [
+        "infrarouge",
+        "visible, violet",
+        "ultraviolet",
+        "des ondes radio"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "uv-ir-inverses",
+          "texte": "Inverser ultraviolet et infrarouge : en dessous de 400 nm (avant le violet), c'est l'ultraviolet"
+        },
+        {
+          "code": "visible-mal-borne",
+          "texte": "Mal placer les limites du visible : il s'étend d'environ 400 nm (violet) à 800 nm (rouge)"
+        },
+        null,
+        {
+          "code": "domaines-ondes-inverses",
+          "texte": "Inverser l'échelle : les ondes radio ont des longueurs d'onde bien plus grandes (du cm au km)"
+        }
+      ],
+      "exp": "Le visible va d'environ 400 nm (violet) à 800 nm (rouge). En dessous de 400 nm : ultraviolet ; au-dessus de 800 nm : infrarouge. 300 nm est donc dans l'ultraviolet."
+    },
+    {
+      "q": "L'énergie d'un photon émis par un atome correspond exactement à l'écart entre deux de ses niveaux d'énergie. Cela montre que :",
+      "opts": [
+        "l'énergie de l'atome peut prendre n'importe quelle valeur",
+        "tous les photons émis ont la même énergie",
+        "l'énergie du photon est la somme des énergies des deux niveaux",
+        "l'énergie de l'atome ne peut prendre que certaines valeurs"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "energie-atome-continue",
+          "texte": "Croire que l'atome peut absorber ou émettre n'importe quelle énergie : ses niveaux sont quantifiés"
+        },
+        {
+          "code": "photons-tous-identiques",
+          "texte": "Croire qu'un atome n'émet qu'un seul type de photon : chaque transition entre deux niveaux donne une raie"
+        },
+        {
+          "code": "delta-e-somme-niveaux",
+          "texte": "Additionner les énergies des niveaux : l'énergie du photon est l'écart ΔE = |E₂ − E₁|"
+        },
+        null
+      ],
+      "exp": "Les niveaux d'énergie d'un atome sont quantifiés : seules certaines valeurs sont permises. Un photon émis a l'énergie ΔE = |E₂ − E₁| d'une transition, d'où des raies de longueurs d'onde bien précises."
+    },
+    {
+      "q": "Un atome passe du niveau E₂ = −5,45×10⁻¹⁹ J au niveau E₁ = −2,18×10⁻¹⁸ J en émettant un photon (h c = 1,99×10⁻²⁵ J·m). Sa longueur d'onde vaut λ = h c / ΔE, soit environ :",
+      "opts": [
+        "91 nm",
+        "73 nm",
+        "122 nm",
+        "1,22×10⁻⁷ nm"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "niveau-au-lieu-ecart",
+          "texte": "Utiliser l'énergie d'un seul niveau (2,18×10⁻¹⁸ J) au lieu de l'écart ΔE = 1,64×10⁻¹⁸ J"
+        },
+        {
+          "code": "delta-e-somme-niveaux",
+          "texte": "Additionner les valeurs absolues des niveaux : ΔE = |E₂ − E₁| est une différence"
+        },
+        null,
+        {
+          "code": "conversion-m-nm",
+          "texte": "Mal convertir : 1,22×10⁻⁷ m = 122 nm"
+        }
+      ],
+      "exp": "ΔE = E₂ − E₁ = −5,45×10⁻¹⁹ − (−2,18×10⁻¹⁸) ≈ 1,64×10⁻¹⁸ J, donc λ = 1,99×10⁻²⁵ / 1,64×10⁻¹⁸ ≈ 1,22×10⁻⁷ m = 122 nm (ultraviolet). Attention : c'est l'écart entre les niveaux qui compte."
+    },
+    {
+      "q": "Lorsqu'un atome émet un photon, il passe :",
+      "opts": [
+        "d'un niveau d'énergie à un niveau plus élevé",
+        "d'un niveau d'énergie à un niveau plus bas",
+        "à un niveau quelconque, l'énergie du photon s'ajustant",
+        "d'un niveau à l'autre en perdant un électron"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "emission-absorption-inversees",
+          "texte": "Inverser émission et absorption : en émettant, l'atome perd de l'énergie, il descend vers un niveau plus bas"
+        },
+        null,
+        {
+          "code": "energie-atome-continue",
+          "texte": "Croire que l'atome peut aller à n'importe quel niveau : seuls les niveaux permis existent"
+        },
+        {
+          "code": "photon-vs-electron",
+          "texte": "Confondre photon et électron : l'atome émet un photon, il garde ses électrons"
+        }
+      ],
+      "exp": "En émission, l'atome passe d'un niveau élevé à un niveau plus bas et cède l'écart d'énergie au photon. En absorption, c'est l'inverse : le photon absorbé fait monter l'atome."
+    },
+    {
+      "q": "Quel spectre permet d'identifier les éléments chimiques présents dans une source ?",
+      "opts": [
+        "Son spectre de raies",
+        "Son spectre continu",
+        "La longueur d'onde du maximum d'émission",
+        "L'intensité totale de la lumière émise"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "spectre-continu-composition",
+          "texte": "Croire qu'un spectre continu renseigne sur la composition : il dépend seulement de la température de la source"
+        },
+        {
+          "code": "wien-identifie-element",
+          "texte": "Confondre les informations : le maximum d'émission d'un spectre continu donne la température, pas la composition"
+        },
+        {
+          "code": "intensite-identifie",
+          "texte": "Croire que l'intensité identifie un élément : ce sont les longueurs d'onde des raies, propres à chaque élément"
+        }
+      ],
+      "exp": "Chaque élément a un spectre de raies qui lui est propre (signature de ses niveaux d'énergie) : c'est ainsi qu'on l'identifie. Le spectre continu d'un corps chaud renseigne seulement sur sa température."
+    },
+    {
+      "q": "Le spectre de la lumière du Soleil présente de fines raies sombres. Elles sont dues :",
+      "opts": [
+        "à des éléments que le Soleil ne contient pas",
+        "à l'absorption de certaines radiations par les gaz de l'atmosphère du Soleil",
+        "à des couleurs entières supprimées par le Soleil",
+        "à des radiations que ces gaz sont incapables d'émettre"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "raies-elements-absents",
+          "texte": "Inverser l'interprétation : une raie d'absorption révèle la présence de l'élément qui absorbe"
+        },
+        null,
+        {
+          "code": "absorption-totale-couleur",
+          "texte": "Croire qu'une raie noire supprime toute une couleur : seules des longueurs d'onde précises sont absorbées"
+        },
+        {
+          "code": "raies-absorption-complementaires",
+          "texte": "Croire que le gaz absorbe ce qu'il n'émet pas : il absorbe exactement les radiations qu'il est capable d'émettre"
+        }
+      ],
+      "exp": "La lumière émise par la surface du Soleil traverse son atmosphère : les entités présentes absorbent les radiations correspondant à leurs transitions. Ces raies sombres permettent d'identifier les éléments présents."
+    },
+    {
+      "q": "La fréquence d'une radiation de longueur d'onde λ = 500 nm dans le vide (c = 3,00×10⁸ m·s⁻¹) vaut f = c / λ, soit :",
+      "opts": [
+        "6,00×10⁵ Hz",
+        "6,00×10¹⁴ Hz",
+        "1,67×10⁻¹⁵ Hz",
+        "150 Hz"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-nm-m",
+          "texte": "Oublier de convertir λ en mètres : 500 nm = 5,00×10⁻⁷ m"
+        },
+        null,
+        {
+          "code": "frequence-rapport-inverse",
+          "texte": "Inverser le rapport : λ / c ; il faut f = c / λ"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : c × λ = 3,00×10⁸ × 5,00×10⁻⁷"
+        }
+      ],
+      "exp": "f = c / λ = 3,00×10⁸ / 5,00×10⁻⁷ = 6,00×10¹⁴ Hz. Attention : λ en mètres."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Les ondes de la maison",
+      "contexte": [
+        "Chez Yanis, de nombreux appareils utilisent des ondes électromagnétiques : la box wifi, la radio FM, la télécommande de la télévision, la lampe de séchage du vernis à ongles de sa sœur, le four à micro-ondes… Le document ci-dessous situe les différents domaines des ondes électromagnétiques.",
+        "Rappel : dans le vide (et pratiquement dans l'air), la longueur d'onde λ (en m) et la fréquence f (en Hz) d'une onde électromagnétique sont liées par λ = c / f."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">Domaines des ondes électromagnétiques (longueur d'onde dans le vide)</text><rect x=\"40.0\" y=\"120\" width=\"45.3\" height=\"70\" fill=\"#efe6d6\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"62.7\" y=\"161.0\" text-anchor=\"middle\" font-weight=\"bold\">γ</text><rect x=\"85.3\" y=\"120\" width=\"136.0\" height=\"70\" fill=\"#e6d3c4\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"153.3\" y=\"161.0\" text-anchor=\"middle\" font-weight=\"bold\">rayons X</text><rect x=\"221.3\" y=\"120\" width=\"72.6\" height=\"70\" fill=\"#d9c8e6\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"257.6\" y=\"161.0\" text-anchor=\"middle\" font-weight=\"bold\">UV</text><rect x=\"307.6\" y=\"120\" width=\"140.4\" height=\"70\" fill=\"#f1d2c8\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"377.8\" y=\"161.0\" text-anchor=\"middle\" font-weight=\"bold\">infrarouge (IR)</text><rect x=\"448.0\" y=\"120\" width=\"136.0\" height=\"70\" fill=\"#d3e2e5\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"516.0\" y=\"161.0\" text-anchor=\"middle\" font-weight=\"bold\">micro-ondes</text><rect x=\"584.0\" y=\"120\" width=\"136.0\" height=\"70\" fill=\"#e8e1cc\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"652.0\" y=\"161.0\" text-anchor=\"middle\" font-weight=\"bold\">ondes radio</text><defs><linearGradient id=\"ch18ex1vis\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"-0.0500\" stop-color=\"#b48ad9\"/><stop offset=\"0.0750\" stop-color=\"#8f8cf0\"/><stop offset=\"0.1750\" stop-color=\"#6fa8f2\"/><stop offset=\"0.2375\" stop-color=\"#6fd3e0\"/><stop offset=\"0.3000\" stop-color=\"#7ed97e\"/><stop offset=\"0.4125\" stop-color=\"#e8e45c\"/><stop offset=\"0.4750\" stop-color=\"#f6c052\"/><stop offset=\"0.5500\" stop-color=\"#f49a52\"/><stop offset=\"0.6500\" stop-color=\"#ee6a5a\"/><stop offset=\"0.7500\" stop-color=\"#d94a4a\"/></linearGradient></defs><rect x=\"294.0\" y=\"120\" width=\"13.6\" height=\"70\" fill=\"url(#ch18ex1vis)\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"40.0\" y1=\"190\" x2=\"40.0\" y2=\"202\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"40.0\" y=\"222\" text-anchor=\"middle\">1 pm</text><line x1=\"176.0\" y1=\"190\" x2=\"176.0\" y2=\"202\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"176.0\" y=\"222\" text-anchor=\"middle\">1 nm</text><line x1=\"312.0\" y1=\"190\" x2=\"312.0\" y2=\"202\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"312.0\" y=\"222\" text-anchor=\"middle\">1 µm</text><line x1=\"448.0\" y1=\"190\" x2=\"448.0\" y2=\"202\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"448.0\" y=\"222\" text-anchor=\"middle\">1 mm</text><line x1=\"584.0\" y1=\"190\" x2=\"584.0\" y2=\"202\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"584.0\" y=\"222\" text-anchor=\"middle\">1 m</text><line x1=\"720.0\" y1=\"190\" x2=\"720.0\" y2=\"202\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"720.0\" y=\"222\" text-anchor=\"middle\">1 km</text><text x=\"380\" y=\"458\" text-anchor=\"middle\" fill=\"#3a3a3a\" font-size=\"14\">Échelle non linéaire : on passe d'une graduation à la suivante en multipliant λ par 1 000.</text><line x1=\"300.0\" y1=\"100.0\" x2=\"507.0\" y2=\"100.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"520.0,100.0 507.0,94.0 507.0,106.0\" fill=\"#1F4E5A\"/><text x=\"290\" y=\"106\" text-anchor=\"end\" fill=\"#1F4E5A\">longueur d'onde λ croissante</text><line x1=\"294.0\" y1=\"190\" x2=\"120\" y2=\"330\" stroke=\"#3a3a3a\" stroke-dasharray=\"5 4\"/><line x1=\"307.6\" y1=\"190\" x2=\"640\" y2=\"330\" stroke=\"#3a3a3a\" stroke-dasharray=\"5 4\"/><rect x=\"120\" y=\"330\" width=\"520\" height=\"50\" fill=\"url(#ch18ex1vis)\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"110\" y=\"361.0\" text-anchor=\"end\" font-weight=\"bold\">visible</text><line x1=\"120.0\" y1=\"380\" x2=\"120.0\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"120.0\" y=\"410\" text-anchor=\"middle\">400 nm</text><line x1=\"250.0\" y1=\"380\" x2=\"250.0\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"250.0\" y=\"410\" text-anchor=\"middle\">500 nm</text><line x1=\"380.0\" y1=\"380\" x2=\"380.0\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"380.0\" y=\"410\" text-anchor=\"middle\">600 nm</text><line x1=\"510.0\" y1=\"380\" x2=\"510.0\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"510.0\" y=\"410\" text-anchor=\"middle\">700 nm</text><line x1=\"640.0\" y1=\"380\" x2=\"640.0\" y2=\"390\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"640.0\" y=\"410\" text-anchor=\"middle\">800 nm</text></svg>",
+      "questions": [
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. La lumière visible et les ondes wifi sont des ondes de même nature.<br>b. Comme le son, la lumière a besoin d'un milieu matériel (air, eau…) pour se propager.<br>c. Dans le vide, toutes les ondes électromagnétiques se propagent à la même vitesse.<br>d. Plus la fréquence d'une onde électromagnétique est grande, plus sa longueur d'onde est grande.",
+          "aides": []
+        },
+        {
+          "texte": "La box wifi émet des ondes de fréquence f = 2,40 GHz. Calcule leur longueur d'onde et indique leur domaine.",
+          "aides": [
+            "Convertis d'abord la fréquence en hertz : 1 GHz = 10⁹ Hz.",
+            "Puis λ = c / f, avec c en m·s⁻¹ : λ est en mètres. Situe la valeur sur l'échelle du document."
+          ]
+        },
+        {
+          "texte": "Une station de radio FM émet à la fréquence f = 100 MHz. Calcule la longueur d'onde et indique le domaine.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque radiation à son domaine : télécommande (λ = 940 nm) ; lampe de séchage du vernis (λ = 365 nm) ; feu rouge (λ = 650 nm) ; appareil de radiographie (λ = 0,050 nm) ; four à micro-ondes (λ = 12,2 cm).",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la fréquence de la radiation émise par la télécommande, puis les fréquences limites du domaine visible. Explique pourquoi Yanis ne voit pas le signal de sa télécommande.",
+          "aides": [
+            "Convertis λ en mètres : 940 nm = 940 × 10⁻⁹ m, puis f = c / λ.",
+            "Calcule de la même façon f pour λ = 400 nm et pour λ = 800 nm : l'œil ne perçoit que les fréquences comprises entre ces deux valeurs."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : ce sont toutes deux des ondes électromagnétiques ; seules leurs fréquences (et donc leurs longueurs d'onde) diffèrent.",
+        "b. FAUX : contrairement au son (onde mécanique), une onde électromagnétique se propage dans le vide ; c'est ainsi que la lumière du Soleil nous parvient.",
+        "c. VRAI : dans le vide, toutes les ondes électromagnétiques se propagent à c = 3,00 × 10⁸ m·s⁻¹, quelle que soit leur fréquence.",
+        "d. FAUX : λ = c / f, donc λ et f sont inversement proportionnelles : quand f augmente, λ diminue.",
+        "<strong>2.</strong> f = 2,40 GHz = 2,40 × 10⁹ Hz ; λ = c / f = 3,00 × 10⁸ / 2,40 × 10⁹ = 0,125 m = 12,5 cm : domaine des micro-ondes (entre 1 mm et 1 m).",
+        "<strong>3.</strong> f = 100 MHz = 1,00 × 10⁸ Hz ; λ = 3,00 × 10⁸ / 1,00 × 10⁸ = 3,00 m : domaine des ondes radio (λ &gt; 1 m).",
+        "<strong>4.</strong> Télécommande (940 nm) : infrarouge (entre 800 nm et 1 mm). Lampe de séchage (365 nm) : ultraviolet (entre 10 nm et 400 nm). Feu rouge (650 nm) : visible. Radiographie (0,050 nm) : rayons X. Four (12,2 cm) : micro-ondes, comme le wifi (f = c / λ ≈ 2,46 GHz, fréquence voisine de celle de la box).",
+        "<strong>5.</strong> λ = 940 nm = 940 × 10⁻⁹ m ; f = c / λ = 3,00 × 10⁸ / 940 × 10⁻⁹ = 3,19 × 10¹⁴ Hz.",
+        "Limites du visible : f(400 nm) = 3,00 × 10⁸ / 400 × 10⁻⁹ = 7,50 × 10¹⁴ Hz et f(800 nm) = 3,00 × 10⁸ / 800 × 10⁻⁹ = 3,75 × 10¹⁴ Hz. La fréquence de la télécommande est inférieure à 3,75 × 10¹⁴ Hz : la radiation n'est pas dans le domaine visible (c'est de l'infrarouge), l'œil ne la perçoit pas.",
+        "<em>⚠ Erreur fréquente : oublier de convertir les GHz en Hz ou les nm en m. Par exemple 3,00 × 10⁸ / 2,40 donne λ = 1,25 × 10⁸ m pour le wifi : une longueur d'onde de 125 000 km est absurde pour une box !</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Photons UV, visibles et infrarouges",
+      "contexte": [
+        "Avant d'aller à la plage, Maëlle lit qu'il faut protéger sa peau des ultraviolets (UV), alors qu'on ne se protège ni de la lumière visible, ni de l'infrarouge d'un radiateur. Le modèle particulaire de la lumière permet de comprendre pourquoi.",
+        "Rappel : la lumière est constituée de photons. Un photon associé à une radiation de fréquence f et de longueur d'onde λ (dans le vide) transporte l'énergie E = h × f = h × c / λ (E en J, f en Hz, λ en m). Pour exprimer E en électronvolts, on divise sa valeur en joules par 1,60 × 10⁻¹⁹."
+      ],
+      "questions": [
+        {
+          "texte": "On considère une radiation violette de longueur d'onde λ = 400 nm.<br>a. Calcule sa fréquence f.<br>b. Calcule l'énergie E d'un photon de cette radiation, en joules.<br>c. Exprime cette énergie en électronvolts.",
+          "aides": []
+        },
+        {
+          "texte": "Recopie et complète le tableau suivant, en donnant pour chaque radiation l'énergie d'un photon en J et en eV : UV-B (λ = 300 nm) ; rouge (λ = 663 nm) ; infrarouge de télécommande (λ = 940 nm).",
+          "aides": []
+        },
+        {
+          "texte": "On admet, pour simplifier, qu'un photon peut endommager une molécule d'ADN des cellules de la peau s'il transporte une énergie d'au moins 4 eV environ. Parmi les radiations des questions 1 et 2, lesquelles sont dangereuses pour la peau ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie.<br>a. L'énergie d'un photon est proportionnelle à la longueur d'onde de la radiation.<br>b. Un photon de longueur d'onde 300 nm transporte deux fois plus d'énergie qu'un photon de longueur d'onde 600 nm.<br>c. Un radiateur infrarouge très puissant émet des photons plus énergétiques qu'une petite lampe UV.<br>d. Tous les photons d'une même radiation monochromatique transportent la même énergie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. λ = 400 × 10⁻⁹ m ; f = c / λ = 3,00 × 10⁸ / 400 × 10⁻⁹ = 7,50 × 10¹⁴ Hz.",
+        "b. E = h × f = 6,63 × 10⁻³⁴ × 7,50 × 10¹⁴ = 4,97 × 10⁻¹⁹ J.",
+        "c. E = 4,97 × 10⁻¹⁹ / 1,60 × 10⁻¹⁹ = 3,11 eV.",
+        "<strong>2.</strong> E = h × c / λ. UV-B : E = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 300 × 10⁻⁹ = 6,63 × 10⁻¹⁹ J, soit 4,14 eV. Rouge : E = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 663 × 10⁻⁹ = 3,00 × 10⁻¹⁹ J, soit 1,875 ≈ 1,88 eV. Infrarouge : E = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 940 × 10⁻⁹ = 2,12 × 10⁻¹⁹ J, soit 1,32 eV.",
+        "<strong>3.</strong> Seuls les photons UV-B (4,14 eV &gt; 4 eV) sont dangereux. Les photons visibles (de 1,88 eV pour le rouge à 3,11 eV pour le violet) et infrarouges (1,32 eV) n'ont pas assez d'énergie, chacun, pour endommager l'ADN.",
+        "<strong>4.</strong> a. FAUX : E = h × c / λ, l'énergie est inversement proportionnelle à λ (le photon violet est plus énergétique que le photon rouge).",
+        "b. VRAI : si λ est divisée par 2, E est multipliée par 2 : E(300 nm) = 6,63 × 10⁻¹⁹ J et E(600 nm) = 3,32 × 10⁻¹⁹ J.",
+        "c. FAUX : l'énergie d'un photon ne dépend que de sa longueur d'onde (ou de sa fréquence). Un radiateur puissant émet beaucoup plus de photons par seconde, mais chacun transporte moins de 1,3 eV, moins qu'un photon UV.",
+        "d. VRAI : ils ont tous la même longueur d'onde, donc la même énergie E = h × c / λ.",
+        "<em>⚠ Erreur fréquente : croire que l'énergie d'un photon dépend de la puissance (de l'intensité) de la source. Une source plus puissante émet plus de photons, pas des photons plus énergétiques.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le diagramme de l'atome d'hydrogène",
+      "contexte": [
+        "L'atome d'hydrogène est le plus simple des atomes. Ses premiers niveaux d'énergie sont représentés sur le diagramme ci-dessous ; les flèches 1, 2 et 3 représentent trois transitions de l'atome.",
+        "Rappels : lors d'une transition entre un niveau d'énergie E<sub>haut</sub> et un niveau d'énergie E<sub>bas</sub>, l'atome absorbe ou émet un photon d'énergie ΔE = E<sub>haut</sub> − E<sub>bas</sub>. La longueur d'onde de ce photon vaut λ = h × c / ΔE (λ en m si ΔE est en J)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">Niveaux d'énergie de l'atome d'hydrogène (échelle non respectée)</text><line x1=\"60.0\" y1=\"445.0\" x2=\"60.0\" y2=\"73.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polygon points=\"60.0,60.0 54.0,73.0 66.0,73.0\" fill=\"#3a3a3a\"/><text x=\"72\" y=\"70\" font-weight=\"bold\">E (eV)</text><line x1=\"230\" y1=\"95\" x2=\"700\" y2=\"95\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"220\" y=\"101\" text-anchor=\"end\">E = 0 eV</text><line x1=\"230\" y1=\"145\" x2=\"700\" y2=\"145\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"220\" y=\"151\" text-anchor=\"end\">E₄ = −0,85 eV</text><line x1=\"230\" y1=\"197\" x2=\"700\" y2=\"197\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"220\" y=\"203\" text-anchor=\"end\">E₃ = −1,51 eV</text><line x1=\"230\" y1=\"275\" x2=\"700\" y2=\"275\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"220\" y=\"281\" text-anchor=\"end\">E₂ = −3,40 eV</text><line x1=\"230\" y1=\"420\" x2=\"700\" y2=\"420\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"220\" y=\"426\" text-anchor=\"end\">E₁ = −13,6 eV</text><text x=\"700\" y=\"85\" text-anchor=\"end\" font-size=\"15\">atome ionisé</text><line x1=\"330.0\" y1=\"420.0\" x2=\"330.0\" y2=\"288.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><polygon points=\"330.0,275.0 324.0,288.0 336.0,288.0\" fill=\"#B5523B\"/><circle cx=\"305\" cy=\"347.5\" r=\"14\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"305\" y=\"353.5\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">1</text><line x1=\"470.0\" y1=\"197.0\" x2=\"470.0\" y2=\"262.0\" stroke=\"#C8962E\" stroke-width=\"3\"/><polygon points=\"470.0,275.0 476.0,262.0 464.0,262.0\" fill=\"#C8962E\"/><circle cx=\"445\" cy=\"236.0\" r=\"14\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"445\" y=\"242.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">2</text><line x1=\"600.0\" y1=\"145.0\" x2=\"600.0\" y2=\"262.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"600.0,275.0 606.0,262.0 594.0,262.0\" fill=\"#1F4E5A\"/><circle cx=\"575\" cy=\"230.0\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"575\" y=\"236.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">3</text></svg>",
+      "questions": [
+        {
+          "texte": "Quel niveau correspond à l'état fondamental de l'atome ? Comment appelle-t-on les autres niveaux (sauf E = 0) ?",
+          "aides": []
+        },
+        {
+          "texte": "Pour chacune des flèches 1, 2 et 3, indique s'il s'agit de l'émission ou de l'absorption d'un photon. Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "On étudie la transition 2.<br>a. Calcule l'énergie ΔE du photon, en eV puis en J.<br>b. Calcule la longueur d'onde de ce photon. Est-il visible ? Si oui, de quelle couleur ?",
+          "aides": [
+            "ΔE = E<sub>haut</sub> − E<sub>bas</sub> : attention aux signes, les énergies des niveaux sont négatives.",
+            "Convertis ΔE en joules (multiplie par 1,60 × 10⁻¹⁹) avant d'utiliser λ = h × c / ΔE.",
+            "Convertis enfin λ en nm pour la comparer aux limites du domaine visible."
+          ]
+        },
+        {
+          "texte": "On étudie la transition 1. Calcule l'énergie du photon en eV, puis montre que sa longueur d'onde est voisine de 122 nm. Dans quel domaine se situe-t-il ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie à l'aide du diagramme.<br>a. Un atome d'hydrogène dans l'état fondamental peut absorber un photon d'énergie 5,0 eV.<br>b. Un atome d'hydrogène dans l'état fondamental peut absorber un photon d'énergie 12,09 eV.<br>c. Un atome d'hydrogène dans l'état E₂ peut émettre un photon d'énergie 1,89 eV.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'état fondamental est le niveau de plus basse énergie : E₁ = −13,6 eV. Les niveaux E₂, E₃, E₄… sont des états excités. Le niveau E = 0 correspond à l'atome ionisé (l'électron a été arraché).",
+        "<strong>2.</strong> Flèche 1 : de E₁ vers E₂, l'énergie de l'atome augmente : il absorbe un photon (absorption). Flèches 2 (E₃ → E₂) et 3 (E₄ → E₂) : l'atome passe à un niveau plus bas, son énergie diminue : il émet un photon (émission).",
+        "<strong>3.</strong> a. ΔE = E₃ − E₂ = −1,51 − (−3,40) = 1,89 eV, soit ΔE = 1,89 × 1,60 × 10⁻¹⁹ = 3,024 × 10⁻¹⁹ J ≈ 3,02 × 10⁻¹⁹ J.",
+        "b. λ = h × c / ΔE = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 3,024 × 10⁻¹⁹ = 6,58 × 10⁻⁷ m = 658 nm : radiation visible, de couleur rouge. C'est la raie rouge de l'hydrogène, mesurée à 656 nm : le petit écart vient des arrondis des niveaux d'énergie.",
+        "<strong>4.</strong> ΔE = E₂ − E₁ = −3,40 − (−13,6) = 10,2 eV = 10,2 × 1,60 × 10⁻¹⁹ = 1,632 × 10⁻¹⁸ J. λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 1,632 × 10⁻¹⁸ = 1,22 × 10⁻⁷ m = 122 nm : domaine des ultraviolets (entre 10 nm et 400 nm).",
+        "<strong>5.</strong> a. FAUX : l'atome atteindrait −13,6 + 5,0 = −8,6 eV, qui n'est pas un niveau d'énergie de l'atome ; et 5,0 eV &lt; 13,6 eV ne suffit pas à l'ioniser. Les niveaux d'énergie sont quantifiés : le photon n'est pas absorbé.",
+        "b. VRAI : −13,6 + 12,09 = −1,51 eV = E₃ ; l'atome passe de E₁ à E₃.",
+        "c. FAUX : depuis E₂, le seul niveau plus bas est E₁ ; l'atome ne peut émettre qu'un photon de 10,2 eV. Un photon de 1,89 eV est émis lors de la transition E₃ → E₂.",
+        "<em>⚠ Erreur fréquente : utiliser ΔE en eV dans la relation λ = h × c / ΔE, alors que h est en J·s ; il faut d'abord convertir ΔE en joules. Attention aussi aux signes : ΔE = E<sub>haut</sub> − E<sub>bas</sub> est toujours positive.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "La lampe à vapeur de sodium",
+      "contexte": [
+        "Les lampes à vapeur de sodium à basse pression, reconnaissables à leur lumière jaune-orangé, ont longtemps éclairé les tunnels et les routes. Dans la lampe, des décharges électriques font passer des atomes de sodium dans des états excités ; en revenant vers des niveaux d'énergie plus bas, ils émettent de la lumière.",
+        "Le diagramme ci-dessous donne quelques niveaux d'énergie de l'atome de sodium."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">Niveaux d'énergie de l'atome de sodium (simplifié)</text><line x1=\"80.0\" y1=\"445.0\" x2=\"80.0\" y2=\"68.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polygon points=\"80.0,55.0 74.0,68.0 86.0,68.0\" fill=\"#3a3a3a\"/><text x=\"92\" y=\"66\" font-weight=\"bold\">E (eV)</text><line x1=\"74\" y1=\"70.0\" x2=\"86\" y2=\"70.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"75.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"74\" y1=\"138.0\" x2=\"86\" y2=\"138.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"143.0\" text-anchor=\"end\" font-size=\"14\">−1</text><line x1=\"74\" y1=\"206.0\" x2=\"86\" y2=\"206.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"211.0\" text-anchor=\"end\" font-size=\"14\">−2</text><line x1=\"74\" y1=\"274.0\" x2=\"86\" y2=\"274.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"279.0\" text-anchor=\"end\" font-size=\"14\">−3</text><line x1=\"74\" y1=\"342.0\" x2=\"86\" y2=\"342.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"347.0\" text-anchor=\"end\" font-size=\"14\">−4</text><line x1=\"74\" y1=\"410.0\" x2=\"86\" y2=\"410.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"415.0\" text-anchor=\"end\" font-size=\"14\">−5</text><line x1=\"300\" y1=\"70.0\" x2=\"640\" y2=\"70.0\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-dasharray=\"8 5\"/><text x=\"640\" y=\"60.0\" text-anchor=\"end\" font-size=\"15\">E = 0 eV (atome ionisé)</text><line x1=\"300\" y1=\"173.4\" x2=\"640\" y2=\"173.4\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"650\" y=\"177.4\" font-size=\"15\">E₃ = −1,52 eV</text><line x1=\"300\" y1=\"201.9\" x2=\"640\" y2=\"201.9\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"650\" y=\"213.9\" font-size=\"15\">E₂ = −1,94 eV</text><line x1=\"300\" y1=\"276.0\" x2=\"640\" y2=\"276.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"650\" y=\"281.0\" font-size=\"15\">E₁ = −3,03 eV</text><line x1=\"300\" y1=\"419.5\" x2=\"640\" y2=\"419.5\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"470\" y=\"445.5\" text-anchor=\"middle\" font-size=\"15\">E₀ = −5,14 eV (état fondamental)</text></svg>",
+      "questions": [
+        {
+          "texte": "Un atome de sodium passe du niveau E₁ à l'état fondamental. S'agit-il d'une émission ou d'une absorption ? Calcule la longueur d'onde du photon correspondant et précise sa couleur.",
+          "aides": [
+            "Lis E₁ et E₀ sur le diagramme : l'énergie du photon émis est égale à E₁ − E₀.",
+            "Convertis cette énergie en joules, puis isole λ dans E = h × c / λ."
+          ]
+        },
+        {
+          "texte": "Calcule les longueurs d'onde des photons émis lors des transitions E₂ → E₁ et E₃ → E₁. Ces radiations sont-elles visibles ?",
+          "aides": []
+        },
+        {
+          "texte": "Quel type de spectre émet cette lampe ? Représente l'allure de sa partie visible.",
+          "aides": []
+        },
+        {
+          "texte": "On admet que la lampe émet une puissance lumineuse de 18 W, uniquement sous forme de photons de longueur d'onde 589 nm. Combien de photons émet-elle chaque seconde ?",
+          "aides": [
+            "Une puissance de 18 W signifie que la lampe émet 18 J d'énergie lumineuse chaque seconde.",
+            "Cette énergie est partagée entre N photons ayant chacun l'énergie calculée à la question 1 : 18 J = N × E(photon)."
+          ]
+        },
+        {
+          "texte": "On éclaire de la vapeur de sodium froide, dont tous les atomes sont dans l'état fondamental, avec la lumière blanche d'une lampe à incandescence, puis on observe le spectre de la lumière qui a traversé la vapeur.<br>a. Décris ce spectre et explique son allure.<br>b. Un photon infrarouge d'énergie 1,09 eV traverse la vapeur. Peut-il être absorbé ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'atome passe d'un niveau d'énergie élevé (E₁) au niveau le plus bas (E₀) : son énergie diminue, il émet un photon. ΔE = E₁ − E₀ = −3,03 − (−5,14) = 2,11 eV, soit ΔE = 2,11 × 1,60 × 10⁻¹⁹ = 3,376 × 10⁻¹⁹ J.",
+        "λ = h × c / ΔE = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 3,376 × 10⁻¹⁹ = 5,89 × 10⁻⁷ m = 589 nm : radiation visible, jaune-orangé (c'est la couleur de la lampe).",
+        "<strong>2.</strong> E₂ → E₁ : ΔE = −1,94 − (−3,03) = 1,09 eV = 1,744 × 10⁻¹⁹ J, d'où λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 1,744 × 10⁻¹⁹ = 1,14 × 10⁻⁶ m = 1 140 nm.",
+        "E₃ → E₁ : ΔE = −1,52 − (−3,03) = 1,51 eV = 2,416 × 10⁻¹⁹ J, d'où λ = 8,23 × 10⁻⁷ m = 823 nm.",
+        "Les deux longueurs d'onde sont supérieures à 800 nm : ces radiations appartiennent à l'infrarouge, elles sont invisibles.",
+        "<strong>3.</strong> Un spectre de raies d'émission : dans le visible, une raie jaune-orangé intense à 589 nm sur fond noir (en réalité un doublet très serré, 589,0 nm et 589,6 nm). Les autres raies calculées sont dans l'infrarouge. La lumière de la lampe est presque monochromatique.",
+        "<strong>4.</strong> Chaque seconde, la lampe émet une énergie lumineuse E = P × Δt = 18 × 1 = 18 J. Cette énergie est transportée par N photons d'énergie 3,376 × 10⁻¹⁹ J chacun : N = 18 / 3,376 × 10⁻¹⁹ = 5,3 × 10¹⁹ photons par seconde.",
+        "<strong>5.</strong> a. On observe le spectre continu de la lumière blanche (toutes les couleurs du violet au rouge), barré d'une raie noire à 589 nm : c'est un spectre de raies d'absorption. Les atomes dans l'état fondamental absorbent les photons dont l'énergie est exactement E₁ − E₀ = 2,11 eV, c'est-à-dire ceux de longueur d'onde 589 nm : la raie d'absorption est à la même place que la raie d'émission.",
+        "b. Non : à partir de l'état fondamental, l'atome atteindrait E₀ + 1,09 = −5,14 + 1,09 = −4,05 eV, qui n'est pas un niveau d'énergie de l'atome de sodium. Les niveaux étant quantifiés, ce photon n'est pas absorbé (il ne pourrait l'être que par un atome déjà dans l'état E₁).",
+        "<em>⚠ Erreur fréquente : oublier de convertir ΔE en joules avant d'utiliser λ = h × c / ΔE, ou donner λ en mètres sans la convertir en nm pour la comparer au domaine visible. Autre erreur : croire que la vapeur absorbe « un peu de toutes les couleurs » ; elle n'absorbe que des radiations bien précises.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Fluo sous lumière noire",
+      "contexte": [
+        "Dans une salle de laser game, les surligneurs, certains t-shirts et les bandes de sécurité des billets de banque brillent sous la « lumière noire » : une lampe qui émet surtout des ultraviolets, de longueur d'onde λ = 365 nm.",
+        "Le surligneur jaune contient une molécule fluorescente. Le diagramme ci-dessous en donne un modèle simplifié à trois niveaux d'énergie (les énergies sont comptées à partir de l'état fondamental). Les flèches 1, 2 et 3 décrivent ce qui arrive à une molécule éclairée par la lampe ; la transition 2 (en pointillés) ne s'accompagne d'aucune émission de lumière."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">Molécule fluorescente du surligneur : modèle simplifié à trois niveaux</text><line x1=\"80.0\" y1=\"440.0\" x2=\"80.0\" y2=\"68.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polygon points=\"80.0,55.0 74.0,68.0 86.0,68.0\" fill=\"#3a3a3a\"/><text x=\"92\" y=\"66\" font-weight=\"bold\">E (eV)</text><line x1=\"74\" y1=\"410.0\" x2=\"86\" y2=\"410.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"415.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"74\" y1=\"315.0\" x2=\"86\" y2=\"315.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"320.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"74\" y1=\"220.0\" x2=\"86\" y2=\"220.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"225.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"74\" y1=\"125.0\" x2=\"86\" y2=\"125.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"66\" y=\"130.0\" text-anchor=\"end\" font-size=\"14\">3</text><line x1=\"250\" y1=\"410.0\" x2=\"620\" y2=\"410.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"435.0\" y=\"438.0\" text-anchor=\"middle\">E₀ = 0 eV (état fondamental)</text><line x1=\"250\" y1=\"183.9\" x2=\"620\" y2=\"183.9\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"630\" y=\"188.9\">E₁ = 2,38 eV</text><line x1=\"250\" y1=\"86.1\" x2=\"620\" y2=\"86.1\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"630\" y=\"91.1\">E₂ = 3,41 eV</text><line x1=\"320.0\" y1=\"410.0\" x2=\"320.0\" y2=\"99.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><polygon points=\"320.0,86.1 314.0,99.1 326.0,99.1\" fill=\"#B5523B\"/><circle cx=\"295\" cy=\"248.025\" r=\"14\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"295\" y=\"254.025\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">1</text><line x1=\"440.0\" y1=\"86.1\" x2=\"440.0\" y2=\"170.9\" stroke=\"#C8962E\" stroke-width=\"3\" stroke-dasharray=\"6 4\"/><polygon points=\"440.0,183.9 446.0,170.9 434.0,170.9\" fill=\"#C8962E\"/><circle cx=\"415\" cy=\"134.97500000000002\" r=\"14\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"415\" y=\"140.97500000000002\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">2</text><line x1=\"550.0\" y1=\"183.9\" x2=\"550.0\" y2=\"397.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"550.0,410.0 556.0,397.0 544.0,397.0\" fill=\"#1F4E5A\"/><circle cx=\"525\" cy=\"296.95\" r=\"14\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"525\" y=\"302.95\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">3</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule l'énergie, en J puis en eV, d'un photon émis par la lampe. Quelle flèche correspond à l'absorption de ce photon ? Justifie.",
+          "aides": [
+            "Calcule E = h × c / λ avec λ = 365 × 10⁻⁹ m, puis divise par 1,60 × 10⁻¹⁹ pour l'obtenir en eV.",
+            "Cherche sur le diagramme deux niveaux dont l'écart est égal à cette énergie."
+          ]
+        },
+        {
+          "texte": "Lors de la transition 2, la molécule cède de l'énergie au milieu qui l'entoure, sans émettre de lumière. Calcule cette énergie en eV puis en J. Sous quelle forme est-elle transférée ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la longueur d'onde de la lumière émise lors de la transition 3. Est-elle visible ? De quelle couleur ?",
+          "aides": [
+            "L'énergie du photon émis est l'écart entre les niveaux de départ et d'arrivée de la flèche 3.",
+            "Convertis cet écart en joules, puis λ = h × c / ΔE."
+          ]
+        },
+        {
+          "texte": "Quel pourcentage de l'énergie du photon absorbé est réémis sous forme de lumière ?",
+          "aides": []
+        },
+        {
+          "texte": "Lucas éclaire le surligneur avec un pointeur laser rouge (λ = 650 nm), puis avec un pointeur rouge beaucoup plus puissant. Dans ce modèle, le surligneur peut-il devenir fluorescent ? Justifie.",
+          "aides": [
+            "Calcule l'énergie d'un photon du laser rouge, en eV.",
+            "Compare-la aux écarts entre niveaux du diagramme. Un laser plus puissant change-t-il l'énergie de chaque photon, ou seulement le nombre de photons émis chaque seconde ?"
+          ]
+        },
+        {
+          "texte": "Explique pourquoi la lumière émise par fluorescence a une longueur d'onde plus grande que celle de la lumière absorbée.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> E = h × c / λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 365 × 10⁻⁹ = 5,45 × 10⁻¹⁹ J, soit 5,45 × 10⁻¹⁹ / 1,60 × 10⁻¹⁹ = 3,41 eV.",
+        "Cette énergie est égale à l'écart E₂ − E₀ = 3,41 − 0 = 3,41 eV : la flèche 1, de E₀ vers E₂ (vers le haut), représente l'absorption du photon UV.",
+        "<strong>2.</strong> E₂ − E₁ = 3,41 − 2,38 = 1,03 eV = 1,03 × 1,60 × 10⁻¹⁹ = 1,65 × 10⁻¹⁹ J. Cette énergie est transférée au milieu sous forme thermique (agitation des molécules voisines) : le surligneur s'échauffe très légèrement.",
+        "<strong>3.</strong> Le photon émis a l'énergie ΔE = E₁ − E₀ = 2,38 eV = 3,808 × 10⁻¹⁹ J. λ = h × c / ΔE = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 3,808 × 10⁻¹⁹ = 5,22 × 10⁻⁷ m = 522 nm : radiation visible, de couleur verte (vert-jaune), d'où l'éclat du surligneur.",
+        "<strong>4.</strong> 2,38 / 3,41 = 0,698 : environ 70 % de l'énergie du photon UV est réémise sous forme de lumière visible ; les 30 % restants sont dissipés sous forme thermique.",
+        "<strong>5.</strong> E = h × c / λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 650 × 10⁻⁹ = 3,06 × 10⁻¹⁹ J = 1,91 eV. Cette énergie n'est égale à aucun écart entre niveaux (2,38 eV, 3,41 eV ou 1,03 eV), et elle est inférieure à E₁ − E₀ : le photon rouge ne peut pas exciter la molécule, il n'y a pas de fluorescence.",
+        "Avec le laser plus puissant, chaque photon a toujours 1,91 eV (même longueur d'onde) ; il y a seulement plus de photons par seconde. Le résultat est le même : pas de fluorescence.",
+        "<strong>6.</strong> Une partie de l'énergie absorbée est cédée au milieu (transition 2) : le photon émis (E₁ − E₀) est donc moins énergétique que le photon absorbé (E₂ − E₀). Comme E = h × c / λ, un photon moins énergétique a une longueur d'onde plus grande : 522 nm &gt; 365 nm.",
+        "<em>⚠ Erreur fréquente : penser qu'une source plus puissante finit par provoquer la fluorescence. C'est l'énergie de CHAQUE photon (fixée par λ) qui compte, pas le nombre de photons.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Que contient l'atmosphère du Soleil ?",
+      "contexte": [
+        "Doc. 1 — Les raies de Fraunhofer. En 1814, l'opticien allemand Joseph von Fraunhofer observe, dans le spectre de la lumière du Soleil, des centaines de fines raies sombres, dont il repère les plus marquées par des lettres. Vers 1860, Gustav Kirchhoff et Robert Bunsen montrent que chaque élément chimique absorbe des radiations bien précises : ces raies révèlent la composition de l'atmosphère du Soleil. La lumière solaire est émise par la photosphère, couche de gaz très chaud et dense ; elle traverse ensuite l'atmosphère solaire, gaz moins chaud et peu dense.",
+        "Doc. 2 — Spectre simplifié de la lumière du Soleil (figure ci-dessous).",
+        "Doc. 3 et Doc. 4 : sous la figure."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">Spectre de la lumière du Soleil (simplifié)</text><defs><linearGradient id=\"ch18ex6sol\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0.0000\" stop-color=\"#b48ad9\"/><stop offset=\"0.1562\" stop-color=\"#8f8cf0\"/><stop offset=\"0.2812\" stop-color=\"#6fa8f2\"/><stop offset=\"0.3594\" stop-color=\"#6fd3e0\"/><stop offset=\"0.4375\" stop-color=\"#7ed97e\"/><stop offset=\"0.5781\" stop-color=\"#e8e45c\"/><stop offset=\"0.6562\" stop-color=\"#f6c052\"/><stop offset=\"0.7500\" stop-color=\"#f49a52\"/><stop offset=\"0.8750\" stop-color=\"#ee6a5a\"/><stop offset=\"1.0000\" stop-color=\"#d94a4a\"/></linearGradient></defs><rect x=\"50.0\" y=\"120\" width=\"640.0\" height=\"150\" fill=\"url(#ch18ex6sol)\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"76.8\" y1=\"120\" x2=\"76.8\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"76.8\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">1</text><line x1=\"110.4\" y1=\"120\" x2=\"110.4\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"110.4\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">2</text><line x1=\"158.0\" y1=\"120\" x2=\"158.0\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"158.0\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">3</text><line x1=\"262.2\" y1=\"120\" x2=\"262.2\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"262.2\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">4</text><line x1=\"326.8\" y1=\"120\" x2=\"326.8\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"326.8\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">5</text><line x1=\"468.0\" y1=\"120\" x2=\"468.0\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"468.0\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">6</text><line x1=\"602.6\" y1=\"120\" x2=\"602.6\" y2=\"270\" stroke=\"#111\" stroke-width=\"2.5\"/><text x=\"602.6\" y=\"108\" text-anchor=\"middle\" font-weight=\"bold\">7</text><line x1=\"50.0\" y1=\"270\" x2=\"50.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"60.0\" y1=\"270\" x2=\"60.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"70.0\" y1=\"270\" x2=\"70.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"80.0\" y1=\"270\" x2=\"80.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"90.0\" y1=\"270\" x2=\"90.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"90.0\" y=\"306\" text-anchor=\"middle\">400</text><line x1=\"100.0\" y1=\"270\" x2=\"100.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"110.0\" y1=\"270\" x2=\"110.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"120.0\" y1=\"270\" x2=\"120.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"130.0\" y1=\"270\" x2=\"130.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"140.0\" y1=\"270\" x2=\"140.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"150.0\" y1=\"270\" x2=\"150.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"160.0\" y1=\"270\" x2=\"160.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"170.0\" y1=\"270\" x2=\"170.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"180.0\" y1=\"270\" x2=\"180.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"190.0\" y1=\"270\" x2=\"190.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"190.0\" y=\"306\" text-anchor=\"middle\">450</text><line x1=\"200.0\" y1=\"270\" x2=\"200.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"210.0\" y1=\"270\" x2=\"210.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"220.0\" y1=\"270\" x2=\"220.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"230.0\" y1=\"270\" x2=\"230.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"240.0\" y1=\"270\" x2=\"240.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"250.0\" y1=\"270\" x2=\"250.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"260.0\" y1=\"270\" x2=\"260.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"270.0\" y1=\"270\" x2=\"270.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"280.0\" y1=\"270\" x2=\"280.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"290.0\" y1=\"270\" x2=\"290.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"290.0\" y=\"306\" text-anchor=\"middle\">500</text><line x1=\"300.0\" y1=\"270\" x2=\"300.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"310.0\" y1=\"270\" x2=\"310.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"320.0\" y1=\"270\" x2=\"320.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"330.0\" y1=\"270\" x2=\"330.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"340.0\" y1=\"270\" x2=\"340.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"350.0\" y1=\"270\" x2=\"350.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"360.0\" y1=\"270\" x2=\"360.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"370.0\" y1=\"270\" x2=\"370.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"380.0\" y1=\"270\" x2=\"380.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"390.0\" y1=\"270\" x2=\"390.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"390.0\" y=\"306\" text-anchor=\"middle\">550</text><line x1=\"400.0\" y1=\"270\" x2=\"400.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"410.0\" y1=\"270\" x2=\"410.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"420.0\" y1=\"270\" x2=\"420.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"430.0\" y1=\"270\" x2=\"430.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"440.0\" y1=\"270\" x2=\"440.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"450.0\" y1=\"270\" x2=\"450.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"460.0\" y1=\"270\" x2=\"460.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"470.0\" y1=\"270\" x2=\"470.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"480.0\" y1=\"270\" x2=\"480.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"490.0\" y1=\"270\" x2=\"490.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"490.0\" y=\"306\" text-anchor=\"middle\">600</text><line x1=\"500.0\" y1=\"270\" x2=\"500.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"510.0\" y1=\"270\" x2=\"510.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"520.0\" y1=\"270\" x2=\"520.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"530.0\" y1=\"270\" x2=\"530.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"540.0\" y1=\"270\" x2=\"540.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"550.0\" y1=\"270\" x2=\"550.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"560.0\" y1=\"270\" x2=\"560.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"570.0\" y1=\"270\" x2=\"570.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"580.0\" y1=\"270\" x2=\"580.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"590.0\" y1=\"270\" x2=\"590.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"590.0\" y=\"306\" text-anchor=\"middle\">650</text><line x1=\"600.0\" y1=\"270\" x2=\"600.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"610.0\" y1=\"270\" x2=\"610.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"620.0\" y1=\"270\" x2=\"620.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"630.0\" y1=\"270\" x2=\"630.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"640.0\" y1=\"270\" x2=\"640.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"650.0\" y1=\"270\" x2=\"650.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"660.0\" y1=\"270\" x2=\"660.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"670.0\" y1=\"270\" x2=\"670.0\" y2=\"281\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"680.0\" y1=\"270\" x2=\"680.0\" y2=\"276\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"690.0\" y1=\"270\" x2=\"690.0\" y2=\"286\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><text x=\"690.0\" y=\"306\" text-anchor=\"middle\">700</text><line x1=\"50.0\" y1=\"270\" x2=\"690.0\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"380\" y=\"340\" text-anchor=\"middle\" font-weight=\"bold\">longueur d'onde λ (nm)</text><text x=\"380\" y=\"370\" text-anchor=\"middle\" font-size=\"14\" fill=\"#3a3a3a\">Petites graduations : 5 nm. Les raies sombres sont numérotées de 1 à 7.</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Quelques raies caractéristiques (longueurs d'onde en nm) : hydrogène H : 410,2 ; 434,0 ; 486,1 ; 656,3. Hélium He : 447,1 ; 492,2 ; 587,6 ; 667,8. Sodium Na : 589,0 ; 589,6 (doublet non séparé sur le doc. 2). Magnésium Mg : 518,4. Ion calcium Ca⁺ : 393,4. Mercure Hg : 404,7 ; 435,8 ; 546,1 ; 577,0.",
+        "Doc. 4 — Niveaux d'énergie de l'atome d'hydrogène : E₁ = −13,6 eV ; E₂ = −3,40 eV ; E₃ = −1,51 eV ; E₄ = −0,85 eV ; E₅ = −0,54 eV ; E₆ = −0,38 eV."
+      ],
+      "questions": [
+        {
+          "texte": "Le spectre du doc. 2 est-il un spectre d'émission ou d'absorption ? Continu ou de raies ? D'où vient le fond coloré continu, et quelle information sur la source permet-il d'obtenir ?",
+          "aides": []
+        },
+        {
+          "texte": "En utilisant le modèle du photon et la quantification des niveaux d'énergie, explique en quelques lignes pourquoi des raies sombres apparaissent à des longueurs d'onde bien précises.",
+          "aides": [
+            "Que contient la lumière émise par la photosphère ? Que lui arrive-t-il quand elle traverse le gaz de l'atmosphère solaire ?",
+            "Un atome ne peut absorber un photon que si l'énergie de ce photon est exactement égale à la différence entre deux de ses niveaux d'énergie."
+          ]
+        },
+        {
+          "texte": "Mesure les longueurs d'onde des sept raies du doc. 2, puis identifie, à l'aide du doc. 3, les entités présentes dans l'atmosphère du Soleil. Explique pourquoi on peut affirmer que le mercure n'est pas détecté.",
+          "aides": [
+            "Une petite graduation vaut 5 nm : repère la graduation la plus proche de chaque raie et estime l'écart.",
+            "Un élément est détecté si TOUTES ses raies du doc. 3 apparaissent dans le spectre ; une seule raie qui coïncide ne suffit pas."
+          ]
+        },
+        {
+          "texte": "Montre, à l'aide du doc. 4, que la raie 4 est due à une transition entre les niveaux E₂ et E₄ de l'atome d'hydrogène. Calcule l'écart relatif entre la longueur d'onde calculée et la valeur du doc. 3, puis commente.",
+          "aides": [
+            "Calcule E₄ − E₂ en eV, puis en J.",
+            "λ = h × c / ΔE ; écart relatif = |valeur calculée − valeur de référence| / valeur de référence."
+          ]
+        },
+        {
+          "texte": "Détermine, par un calcul, la transition de l'atome d'hydrogène responsable de la raie 3.",
+          "aides": [
+            "Calcule l'énergie, en eV, d'un photon de longueur d'onde 434,0 nm.",
+            "Ce photon est absorbé par un atome dans le niveau E₂ : ajoute son énergie à E₂ et cherche le niveau obtenu dans le doc. 4."
+          ]
+        },
+        {
+          "texte": "Regard critique.<br>a. La raie 6 pourrait-elle être due à l'hélium plutôt qu'au sodium ? Discute, en tenant compte de la précision de ta lecture et des autres raies de l'hélium.<br>b. Pour absorber les raies 2, 3, 4 et 7, un atome d'hydrogène doit se trouver dans le niveau E₂, et non dans l'état fondamental. Pourquoi ? Que peut-on en déduire sur l'atmosphère du Soleil ?",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (programme de Terminale) : dans un spectroscope, les radiations sont séparées grâce à la diffraction. Pour une fente de largeur a, l'écart angulaire de diffraction vaut θ = λ / a (θ en rad). Calcule θ pour les raies 4 et 7 avec a = 50,0 µm. Quel modèle de la lumière permet d'interpréter la diffraction ? Lequel permet d'interpréter les raies d'absorption ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C'est un spectre d'absorption : un fond continu (toutes les couleurs du violet au rouge) barré de raies sombres. Le fond continu est émis par la photosphère, gaz dense et très chaud ; un spectre continu renseigne sur la température de la source, mais pas sur sa composition.",
+        "<strong>2.</strong> Éléments attendus : la lumière de la photosphère contient des photons de toutes les énergies. Les atomes (et ions) de l'atmosphère solaire ont des niveaux d'énergie quantifiés : ils n'absorbent que les photons dont l'énergie E = h × c / λ est exactement égale à la différence entre deux de leurs niveaux. Ces photons manquent dans la lumière qui nous parvient : d'où des raies sombres à des longueurs d'onde précises, propres à chaque élément (sa « signature »).",
+        "<strong>3.</strong> Lectures (à environ 1 nm près) : raie 1 : 393 nm ; raie 2 : 410 nm ; raie 3 : 434 nm ; raie 4 : 486 nm ; raie 5 : 518 nm ; raie 6 : 589 nm ; raie 7 : 656 nm.",
+        "Identification : raies 2, 3, 4 et 7 : hydrogène (ses quatre raies du doc. 3 sont présentes) ; raie 1 : ion calcium Ca⁺ ; raie 5 : magnésium ; raie 6 : sodium (voir question 6). Le mercure n'est pas détecté : ses raies à 546,1 nm et 577,0 nm sont absentes du spectre (la raie 3, à 434 nm, proche de 435,8 nm, est celle de l'hydrogène). Pour conclure qu'un élément est présent, toutes ses raies caractéristiques doivent apparaître.",
+        "<strong>4.</strong> ΔE = E₄ − E₂ = −0,85 − (−3,40) = 2,55 eV = 2,55 × 1,60 × 10⁻¹⁹ = 4,08 × 10⁻¹⁹ J. λ = h × c / ΔE = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 4,08 × 10⁻¹⁹ = 4,875 × 10⁻⁷ m ≈ 488 nm.",
+        "Écart relatif : (487,5 − 486,1) / 486,1 = 0,003, soit 0,3 %. L'écart est très faible et s'explique par l'arrondi des niveaux d'énergie (donnés au centième d'eV) : la raie 4 correspond bien à l'absorption E₂ → E₄.",
+        "<strong>5.</strong> Énergie d'un photon de la raie 3 : E = h × c / λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 434,0 × 10⁻⁹ = 4,58 × 10⁻¹⁹ J, soit 4,58 × 10⁻¹⁹ / 1,60 × 10⁻¹⁹ = 2,86 eV. Absorbé par un atome dans le niveau E₂, il l'amène au niveau −3,40 + 2,86 = −0,54 eV = E₅ : transition E₂ → E₅.",
+        "<strong>6.</strong> a. 587,6 nm et 589,0 nm ne diffèrent que de 1,4 nm, à peine plus que la précision de lecture (environ 1 nm) : la seule raie 6 ne permet pas de trancher. Mais les autres raies de l'hélium (447,1 ; 492,2 ; 667,8 nm) sont absentes du spectre : l'hélium n'est pas détecté ici, la raie 6 est attribuée au sodium. Une mesure plus précise (spectroscope plus dispersif) permettrait de confirmer, et même de séparer le doublet du sodium.",
+        "b. Depuis l'état fondamental E₁, la plus petite énergie absorbable est E₂ − E₁ = 10,2 eV, ce qui correspond à l'ultraviolet (122 nm, exercice 3) : un atome dans l'état fondamental n'absorbe aucun photon visible. Pour observer ces raies visibles, une partie des atomes d'hydrogène doit être dans l'état excité E₂ : l'atmosphère solaire est assez chaude (plusieurs milliers de degrés) pour que les chocs entre atomes en excitent une partie.",
+        "<strong>7.</strong> Pour aller plus loin : θ = λ / a. Raie 4 : θ = 486,1 × 10⁻⁹ / 50,0 × 10⁻⁶ = 9,72 × 10⁻³ rad ; raie 7 : θ = 656,3 × 10⁻⁹ / 50,0 × 10⁻⁶ = 1,31 × 10⁻² rad. La lumière rouge est davantage diffractée (θ proportionnel à λ), ce qui permet de séparer les radiations. La diffraction s'interprète avec le modèle ondulatoire ; l'absorption de photons d'énergie précise, avec le modèle particulaire : les deux modèles sont complémentaires.",
+        "<em>⚠ Erreur fréquente : conclure qu'un élément est présent parce qu'UNE de ses raies coïncide avec une raie du spectre (ici le mercure à 435,8 nm ou l'hélium à 587,6 nm). Autre erreur : utiliser ΔE en eV dans λ = h × c / ΔE.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,659 @@
+{
+  "id": 22,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Tests chimiques caractéristiques des ions",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "Certaines espèces chimiques ne peuvent pas être identifiées par une simple observation physique : on utilise alors des <strong>tests chimiques</strong>, qui reposent sur une réaction produisant un précipité (solide qui apparaît) de couleur caractéristique."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Ion recherché",
+              "Réactif ajouté",
+              "Précipité obtenu"
+            ],
+            "rows": [
+              [
+                "Chlorure Cl⁻",
+                "Nitrate d'argent (Ag⁺)",
+                "Précipité blanc de chlorure d'argent AgCl, qui noircit à la lumière"
+              ],
+              [
+                "Fer (II) Fe²⁺",
+                "Soude (ions hydroxyde HO⁻)",
+                "Précipité vert d'hydroxyde de fer (II)"
+              ],
+              [
+                "Fer (III) Fe³⁺",
+                "Soude (ions hydroxyde HO⁻)",
+                "Précipité rouille d'hydroxyde de fer (III)"
+              ],
+              [
+                "Cuivre (II) Cu²⁺",
+                "Soude (ions hydroxyde HO⁻)",
+                "Précipité bleu d'hydroxyde de cuivre (II)"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "La couleur du précipité permet d'identifier l'ion présent dans la solution testée, à condition de comparer le résultat à une table de référence."
+          }
+        ]
+      },
+      {
+        "title": "2. Principe de la chromatographie",
+        "icon": "🧫",
+        "content": [
+          {
+            "type": "def",
+            "term": "Chromatographie",
+            "text": "Méthode d'analyse chimique permettant de séparer et d'identifier les espèces chimiques présentes dans un mélange, en exploitant leurs différences d'affinité pour deux phases."
+          },
+          {
+            "type": "def",
+            "term": "Phase fixe",
+            "text": "Support poreux (papier, plaque de silice ou d'alumine) sur lequel on dépose l'échantillon."
+          },
+          {
+            "type": "def",
+            "term": "Phase mobile (éluant)",
+            "text": "Solvant qui migre le long de la phase fixe par capillarité et entraîne avec lui les espèces chimiques du mélange, chacune à une vitesse qui lui est propre."
+          },
+          {
+            "type": "text",
+            "text": "Une chromatographie sur couche mince (CCM) se déroule en <strong>trois étapes</strong> : le <strong>dépôt</strong> (une goutte du mélange à environ 1 cm du bas de la plaque), l'<strong>élution</strong> (la plaque trempe dans l'éluant qui migre par capillarité) et la <strong>révélation</strong> (mise en évidence des taches, par exemple sous lampe UV ou avec des vapeurs de diiode, pour les espèces incolores)."
+          }
+        ]
+      },
+      {
+        "title": "3. Le rapport frontal",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Rapport frontal Rf",
+            "text": "Nombre sans unité caractéristique d'une espèce chimique pour un couple (éluant, phase fixe) donné, qui permet de comparer sa vitesse de migration à celle de l'éluant."
+          },
+          {
+            "type": "formula",
+            "label": "Rapport frontal",
+            "text": "Rf = h / H\nh : distance parcourue par l'espèce chimique (du dépôt à la tache)\nH : distance parcourue par l'éluant (du dépôt au front de l'éluant)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"20\" width=\"240\" height=\"245\" fill=\"#FAFAF5\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"40\" y1=\"250\" x2=\"280\" y2=\"250\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"4\" y=\"254\" font-size=\"9\" fill=\"#5C6B60\">Dépôt</text><line x1=\"40\" y1=\"50\" x2=\"280\" y2=\"50\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"178\" y=\"44\" font-size=\"9\" fill=\"#5C6B60\">Front de l'éluant</text><line x1=\"18\" y1=\"50\" x2=\"18\" y2=\"250\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><line x1=\"12\" y1=\"50\" x2=\"24\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><line x1=\"12\" y1=\"250\" x2=\"24\" y2=\"250\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><text x=\"2\" y=\"153\" font-size=\"10\" fill=\"#1B2420\">H</text><line x1=\"70\" y1=\"120\" x2=\"70\" y2=\"250\" stroke=\"#2F7D75\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"120\" x2=\"76\" y2=\"120\" stroke=\"#2F7D75\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"250\" x2=\"76\" y2=\"250\" stroke=\"#2F7D75\" stroke-width=\"1.2\"/><text x=\"76\" y=\"188\" font-size=\"10\" fill=\"#2F7D75\">h</text><line x1=\"90\" y1=\"120\" x2=\"230\" y2=\"120\" stroke=\"#2F7D75\" stroke-width=\"1\" stroke-dasharray=\"2 2\" opacity=\"0.5\"/><circle cx=\"110\" cy=\"120\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"210\" cy=\"120\" r=\"6\" fill=\"#2F7D75\"/><text x=\"110\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Échantillon</text><text x=\"210\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Témoin</text></svg>",
+            "caption": "Rapport frontal Rf = h/H : ici, l'échantillon et le témoin migrent à la même hauteur (même Rf) — un argument pour identifier l'espèce chimique inconnue à celle du témoin."
+          },
+          {
+            "type": "warn",
+            "text": "Le rapport frontal Rf est toujours compris entre 0 et 1. Pour un même éluant et une même phase fixe, deux espèces chimiques identiques migrent à la même hauteur : elles ont donc le même Rf."
+          }
+        ]
+      },
+      {
+        "title": "4. Interpréter un chromatogramme",
+        "icon": "🔍",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sur un chromatogramme, on dépose côte à côte le mélange à étudier et des espèces chimiques de référence (témoins) connues. Si une tache du mélange migre à la <strong>même hauteur</strong> qu'un témoin (même Rf), on en déduit que cette espèce chimique est probablement présente dans le mélange."
+          },
+          {
+            "type": "text",
+            "text": "Le <strong>nombre de taches</strong> obtenu pour un échantillon indique le nombre d'espèces chimiques différentes qu'il contient : une seule tache signale un corps pur, plusieurs taches un mélange."
+          },
+          {
+            "type": "warn",
+            "text": "Attention : deux espèces différentes peuvent exceptionnellement migrer à la même hauteur avec un éluant donné. Pour confirmer une identification, il est prudent de refaire la chromatographie avec un autre éluant."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "On ajoute quelques gouttes de soude à une solution de chlorure de fer (III). On observe :",
+      "opts": [
+        "un précipité vert",
+        "un précipité rouille",
+        "un précipité blanc qui noircit à la lumière",
+        "un précipité bleu"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "fe2-fe3-inverses",
+          "texte": "Inverser les couleurs des deux ions du fer : fer (II) → précipité vert, fer (III) → précipité rouille"
+        },
+        null,
+        {
+          "code": "soude-revele-chlorure",
+          "texte": "Croire que la soude révèle les ions chlorure : c'est le nitrate d'argent qui donne le précipité blanc"
+        },
+        {
+          "code": "couleurs-precipites-confondues",
+          "texte": "Confondre avec le précipité bleu, qui révèle les ions cuivre (II)"
+        }
+      ],
+      "exp": "Les ions Fe³⁺ forment avec les ions hydroxyde HO⁻ de la soude un précipité rouille. Attention : le précipité vert est celui des ions Fe²⁺."
+    },
+    {
+      "q": "Pour mettre en évidence les ions chlorure Cl⁻ dans une eau, on y ajoute :",
+      "opts": [
+        "de la soude",
+        "de l'eau de chaux",
+        "quelques gouttes de nitrate d'argent",
+        "du sulfate de cuivre anhydre"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "soude-revele-chlorure",
+          "texte": "Croire que la soude révèle les ions chlorure : elle révèle les ions métalliques (Fe²⁺, Fe³⁺, Cu²⁺)"
+        },
+        {
+          "code": "test-co2-pour-ion",
+          "texte": "Confondre avec le test du dioxyde de carbone : l'eau de chaux ne révèle pas d'ion"
+        },
+        null,
+        {
+          "code": "test-eau-pour-ion",
+          "texte": "Confondre avec le test de l'eau : le sulfate de cuivre anhydre bleuit au contact de l'eau, pas des ions chlorure"
+        }
+      ],
+      "exp": "Les ions argent Ag⁺ forment avec les ions Cl⁻ un précipité blanc de chlorure d'argent, qui noircit à la lumière. Attention : la soude sert à identifier les ions métalliques."
+    },
+    {
+      "q": "On ajoute de la soude à une solution inconnue : un précipité vert apparaît. La solution contient :",
+      "opts": [
+        "des ions fer (II) Fe²⁺",
+        "des ions fer (III) Fe³⁺",
+        "des ions cuivre (II) Cu²⁺",
+        "des ions hydroxyde HO⁻"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "fe2-fe3-inverses",
+          "texte": "Inverser les couleurs des deux ions du fer : fer (II) → précipité vert, fer (III) → précipité rouille"
+        },
+        {
+          "code": "couleurs-precipites-confondues",
+          "texte": "Confondre les couleurs : le précipité obtenu avec les ions cuivre (II) est bleu"
+        },
+        {
+          "code": "precipite-revele-reactif",
+          "texte": "Croire que le test révèle le réactif ajouté : les ions HO⁻ viennent de la soude, le test révèle l'ion de la solution"
+        }
+      ],
+      "exp": "Un précipité vert avec la soude révèle les ions Fe²⁺. Attention : les ions hydroxyde sont apportés par la soude, ils ne sont pas ce que l'on cherche."
+    },
+    {
+      "q": "Lors de l'élution d'une chromatographie sur couche mince, l'éluant :",
+      "opts": [
+        "reste immobile : c'est la plaque qui entraîne les espèces",
+        "rend visibles les taches des espèces incolores",
+        "entraîne toutes les espèces à la même vitesse",
+        "monte par capillarité et entraîne les espèces à des vitesses différentes"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "phases-fixe-mobile-inversees",
+          "texte": "Inverser les rôles : la plaque est la phase fixe, l'éluant est la phase mobile qui monte"
+        },
+        {
+          "code": "elution-vs-revelation",
+          "texte": "Confondre élution et révélation : on rend les taches visibles après l'élution, par exemple sous lampe UV"
+        },
+        {
+          "code": "meme-vitesse-migration",
+          "texte": "Croire que toutes les espèces migrent ensemble : c'est parce qu'elles migrent à des vitesses différentes qu'on les sépare"
+        },
+        null
+      ],
+      "exp": "L'éluant (phase mobile) monte le long de la plaque (phase fixe) par capillarité ; chaque espèce est entraînée à sa propre vitesse, ce qui les sépare. Attention : l'éluant ne rend pas les taches visibles."
+    },
+    {
+      "q": "Au début d'une chromatographie sur couche mince, le niveau de l'éluant dans la cuve doit se trouver :",
+      "opts": [
+        "au-dessus de la ligne des dépôts, pour bien les mouiller",
+        "sous la ligne des dépôts",
+        "jusqu'en haut de la plaque, pour gagner du temps",
+        "à n'importe quelle hauteur : seul le choix de l'éluant compte"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "depot-immerge",
+          "texte": "Croire qu'il faut immerger les dépôts : ils se dissoudraient dans l'éluant de la cuve au lieu de migrer sur la plaque"
+        },
+        null,
+        {
+          "code": "plaque-immergee",
+          "texte": "Croire que l'élution consiste à plonger la plaque : l'éluant doit monter seul, par capillarité"
+        },
+        {
+          "code": "niveau-eluant-sans-importance",
+          "texte": "Négliger la position des dépôts : s'ils trempent dans l'éluant, la chromatographie est ratée"
+        }
+      ],
+      "exp": "Les dépôts (à environ 1 cm du bas) doivent rester au-dessus de l'éluant, qui monte ensuite par capillarité. Attention : des dépôts immergés se dissolvent dans la cuve."
+    },
+    {
+      "q": "Sur une plaque de CCM, la ligne des dépôts est à 1,0 cm du bas. Après élution, une tache est à 4,0 cm du bas et le front de l'éluant à 8,5 cm du bas. Le rapport frontal de l'espèce vaut :",
+      "opts": [
+        "0,40",
+        "2,5",
+        "0,47",
+        "0,40 cm"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "rf-inverse",
+          "texte": "Inverser le rapport : H / h = 7,5 / 3,0 = 2,5, alors que Rf = h / H est toujours inférieur à 1"
+        },
+        {
+          "code": "rf-mesure-depuis-bord",
+          "texte": "Mesurer depuis le bas de la plaque au lieu de la ligne des dépôts : 4,0 / 8,5 ≈ 0,47"
+        },
+        {
+          "code": "rf-avec-unite",
+          "texte": "Donner une unité au rapport frontal : c'est un quotient de deux distances, il est sans unité"
+        }
+      ],
+      "exp": "Distances mesurées depuis la ligne des dépôts : h = 4,0 − 1,0 = 3,0 cm et H = 8,5 − 1,0 = 7,5 cm, donc Rf = h / H = 3,0 / 7,5 = 0,40. Attention : Rf est sans unité et compris entre 0 et 1."
+    },
+    {
+      "q": "Sur un même chromatogramme, la tache de l'espèce A est montée plus haut que celle de l'espèce B. Cela signifie que :",
+      "opts": [
+        "A est plus lourde que B",
+        "A a été déposée en plus grande quantité que B",
+        "A est entraînée plus facilement par l'éluant que B",
+        "A a un rapport frontal plus petit que B"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "tache-haute-lourde",
+          "texte": "Croire que la hauteur de migration dépend de la masse des espèces : elle dépend de leur affinité pour l'éluant et pour la plaque"
+        },
+        {
+          "code": "hauteur-selon-quantite",
+          "texte": "Croire que la hauteur dépend de la quantité déposée : une espèce migre à la même hauteur quelle que soit sa quantité"
+        },
+        null,
+        {
+          "code": "rf-hauteur-inverse",
+          "texte": "Inverser le lien : plus une tache monte haut, plus h est grand, donc plus son Rf est grand"
+        }
+      ],
+      "exp": "Plus une espèce a d'affinité pour l'éluant, plus elle est entraînée loin : sa tache monte plus haut et son Rf est plus grand. Attention : la masse des espèces n'est pas ce qui compte."
+    },
+    {
+      "q": "Sur une même plaque, on dépose un mélange M et trois espèces témoins A, B et C. M donne trois taches : une à la hauteur de A, une à la hauteur de C et une à une hauteur qu'aucun témoin n'atteint. Le mélange M contient :",
+      "opts": [
+        "A, B et C, puisqu'il donne trois taches",
+        "seulement A et C",
+        "au moins trois espèces, dont probablement A et C",
+        "on ne peut rien dire sans calculer chaque Rf"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "nombre-taches-egal-temoins",
+          "texte": "Associer chaque tache à un témoin sans comparer les hauteurs : B ne correspond à aucune tache de M"
+        },
+        {
+          "code": "oubli-tache-inconnue",
+          "texte": "Oublier la tache qui ne correspond à aucun témoin : c'est une espèce présente dans M mais non identifiée"
+        },
+        null,
+        {
+          "code": "rf-calcul-obligatoire",
+          "texte": "Croire qu'il faut calculer les Rf : sur une même plaque, comparer les hauteurs des taches suffit"
+        }
+      ],
+      "exp": "Trois taches : au moins trois espèces. Deux sont à la hauteur de A et de C (même Rf) : M contient probablement A et C, plus une espèce inconnue. Attention : sur une même plaque, on compare directement les hauteurs."
+    },
+    {
+      "q": "Le rapport frontal Rf d'une espèce chimique dépend :",
+      "opts": [
+        "seulement de l'espèce : il est le même avec tous les éluants",
+        "de l'éluant et de la phase fixe utilisés",
+        "de la quantité d'espèce déposée",
+        "de la durée de l'élution"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "rf-independant-eluant",
+          "texte": "Croire que Rf ne dépend que de l'espèce : il change si l'on change d'éluant ou de phase fixe"
+        },
+        null,
+        {
+          "code": "hauteur-selon-quantite",
+          "texte": "Croire que la migration dépend de la quantité déposée : une espèce a le même Rf quelle que soit sa quantité"
+        },
+        {
+          "code": "rf-depend-duree",
+          "texte": "Croire que Rf change avec la durée : h et H augmentent ensemble, leur rapport reste le même"
+        }
+      ],
+      "exp": "Rf caractérise une espèce pour un couple (éluant, phase fixe) donné. C'est pourquoi on confirme une identification avec un autre éluant. Attention : Rf est un rapport, il ne dépend pas de la durée de l'élution."
+    },
+    {
+      "q": "Après l'élution, une espèce incolore déposée sur la plaque ne donne aucune tache visible. Il faut :",
+      "opts": [
+        "conclure qu'elle n'a pas migré",
+        "conclure qu'elle n'était pas présente dans l'échantillon",
+        "prolonger l'élution jusqu'à ce que la tache apparaisse",
+        "révéler la plaque, par exemple sous une lampe UV"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "invisible-pas-migre",
+          "texte": "Croire qu'une tache invisible n'a pas migré : une espèce incolore migre aussi, mais on ne la voit pas sans révélation"
+        },
+        {
+          "code": "invisible-absent",
+          "texte": "Croire qu'une espèce invisible est absente : il faut d'abord révéler la plaque"
+        },
+        {
+          "code": "elution-vs-revelation",
+          "texte": "Confondre élution et révélation : on rend les taches visibles après l'élution, par exemple sous lampe UV"
+        },
+        null
+      ],
+      "exp": "Les espèces incolores migrent comme les autres ; on les rend visibles par révélation (lampe UV, vapeurs de diiode). Attention : ne pas conclure avant d'avoir révélé la plaque."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le carnet de TP d'Inès",
+      "contexte": [
+        "Inès révise ses tests d'identification d'ions pour le prochain TP. Dans son carnet, certaines cases sont restées vides et une camarade lui a écrit quelques affirmations à vérifier."
+      ],
+      "questions": [
+        {
+          "texte": "Complète les phrases du carnet d'Inès.<br>a. Avec la soude, les ions cuivre (II) Cu²⁺ donnent un précipité …………<br>b. Avec le nitrate d'argent, les ions ………… donnent un précipité blanc qui noircit à la lumière.<br>c. Avec la soude, un précipité vert révèle la présence des ions …………<br>d. Les ions fer (III) Fe³⁺ donnent avec la ………… un précipité de couleur …………",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. Un précipité est un solide qui apparaît dans une solution.<br>b. Pour mettre en évidence les ions chlorure Cl⁻, on ajoute quelques gouttes de soude.<br>c. Un précipité rouille obtenu avec la soude indique la présence d'ions fer (II) Fe²⁺.",
+          "aides": [
+            "Relis le tableau du cours : chaque ion a SON réactif et SA couleur de précipité.",
+            "Le réactif des ions chlorure n'est pas la soude. Pour le fer, le chiffre romain compte : (II) → vert, (III) → rouille."
+          ]
+        },
+        {
+          "texte": "Inès ajoute quelques gouttes de soude à une solution inconnue : un précipité bleu apparaît. Elle écrit : « La solution contient du sulfate de cuivre. » A-t-elle le droit d'être aussi précise ? Que peut-elle conclure exactement ?",
+          "aides": [
+            "Une solution de sulfate de cuivre contient deux sortes d'ions : lesquels ?",
+            "Le test à la soude met en évidence lequel de ces deux ions ? L'autre a-t-il été testé ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. … un précipité bleu (hydroxyde de cuivre (II)).",
+        "b. … les ions chlorure Cl⁻ (précipité de chlorure d'argent AgCl).",
+        "c. … les ions fer (II) Fe²⁺ (hydroxyde de fer (II)).",
+        "d. … avec la soude, un précipité de couleur rouille (hydroxyde de fer (III)).",
+        "<strong>2.</strong> a. VRAI : un précipité est un solide qui se forme dans la solution lors d'une réaction ; il la rend trouble puis peut se déposer au fond du tube.",
+        "b. FAUX : le réactif des ions chlorure est le nitrate d'argent (ions Ag⁺) ; la soude sert à tester les ions métalliques Cu²⁺, Fe²⁺ et Fe³⁺.",
+        "c. FAUX : un précipité rouille indique les ions fer (III) Fe³⁺ ; les ions fer (II) Fe²⁺ donnent un précipité vert.",
+        "<strong>3.</strong> Non. Le précipité bleu avec la soude prouve seulement la présence d'ions cuivre (II) Cu²⁺. Le test ne dit rien de l'ion négatif présent avec eux : ce pourrait être du sulfate, du chlorure, du nitrate de cuivre… Inès peut seulement conclure : « la solution contient des ions Cu²⁺ ».",
+        "<em>⚠ Erreur fréquente : confondre fer (II) et fer (III). Moyen mnémotechnique possible : le fer (III), celui de la rouille, donne le précipité rouille.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le montage de la chromatographie",
+      "contexte": [
+        "Pour savoir quels colorants contient un bonbon, Sofiane réalise une chromatographie sur couche mince (CCM). Le schéma ci-dessous montre son montage pendant l'élution."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\">Chromatographie sur couche mince pendant l'élution</text><rect x=\"218\" y=\"66\" width=\"264\" height=\"16\" rx=\"3\" fill=\"#d9d2c5\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"232\" y=\"378\" width=\"236\" height=\"40\" fill=\"#cfe0e3\"/><line x1=\"232\" y1=\"378\" x2=\"468\" y2=\"378\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><path d=\"M230,84 L230,420 L470,420 L470,84\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><rect x=\"300\" y=\"100\" width=\"100\" height=\"314\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"301\" y=\"170\" width=\"98\" height=\"244\" fill=\"#e6dccb\"/><line x1=\"300\" y1=\"170\" x2=\"400\" y2=\"170\" stroke=\"#1F4E5A\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><line x1=\"300\" y1=\"352\" x2=\"400\" y2=\"352\" stroke=\"#555\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/><circle cx=\"330\" cy=\"352\" r=\"4\" fill=\"#777\"/><circle cx=\"370\" cy=\"352\" r=\"4\" fill=\"#777\"/><ellipse cx=\"330\" cy=\"250\" rx=\"9\" ry=\"6\" fill=\"#D9B02E\"/><ellipse cx=\"370\" cy=\"215\" rx=\"9\" ry=\"6\" fill=\"#2E6FA8\"/><ellipse cx=\"370\" cy=\"300\" rx=\"9\" ry=\"6\" fill=\"#B5523B\"/><line x1=\"140\" y1=\"74\" x2=\"218\" y2=\"74\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"140\" cy=\"74\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"140\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">1</text><line x1=\"140\" y1=\"250\" x2=\"230\" y2=\"250\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"140\" cy=\"250\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"140\" y=\"256\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">2</text><line x1=\"600\" y1=\"125\" x2=\"400\" y2=\"125\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"125\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"131\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">3</text><line x1=\"600\" y1=\"175\" x2=\"400\" y2=\"170\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"175\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"181\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">4</text><line x1=\"600\" y1=\"330\" x2=\"400\" y2=\"352\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"330\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"336\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">5</text><line x1=\"600\" y1=\"405\" x2=\"466\" y2=\"400\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"600\" cy=\"405\" r=\"15\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"600\" y=\"411\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">6</text><text x=\"380\" y=\"455\" text-anchor=\"middle\" font-size=\"15\">Les taches colorées migrent vers le haut avec l'éluant.</text></svg>",
+      "questions": [
+        {
+          "texte": "Légende le schéma : associe chaque numéro (1 à 6) à l'un des mots suivants : couvercle ; cuve à chromatographie ; plaque de silice ; éluant ; ligne de dépôt ; front de l'éluant.",
+          "aides": []
+        },
+        {
+          "texte": "Parmi les éléments légendés, lequel constitue la phase fixe ? Lequel constitue la phase mobile ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète le texte : « Une CCM se déroule en trois étapes. D'abord le ………… : une goutte du mélange est déposée à environ 1 cm du bas de la plaque. Puis l'………… : l'éluant monte le long de la plaque par ………… et entraîne les espèces chimiques. Enfin la ………… : on fait apparaître les taches, par exemple sous lampe UV si les espèces sont incolores. »",
+          "aides": []
+        },
+        {
+          "texte": "Pour sa première tentative, Sofiane avait versé l'éluant sur 2 cm de hauteur dans la cuve, alors que ses dépôts étaient à 1 cm du bas de la plaque. Explique pourquoi l'expérience a échoué et ce qu'il fallait faire.",
+          "aides": [
+            "Où se trouvent les dépôts par rapport à la surface de l'éluant dans la cuve ?",
+            "Si un dépôt trempe dans l'éluant, les colorants restent-ils sur la plaque ou passent-ils dans le liquide de la cuve ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : couvercle ; 2 : cuve à chromatographie ; 3 : plaque de silice ; 4 : front de l'éluant ; 5 : ligne de dépôt ; 6 : éluant.",
+        "<strong>2.</strong> Phase fixe : la plaque de silice (3), support poreux sur lequel on dépose l'échantillon. Phase mobile : l'éluant (6), le solvant qui migre et entraîne les espèces chimiques.",
+        "<strong>3.</strong> Dans l'ordre : dépôt ; élution ; capillarité ; révélation.",
+        "<strong>4.</strong> Les dépôts étaient plongés dans l'éluant : les colorants se sont dissous dans l'éluant de la cuve au lieu de migrer le long de la plaque, et on n'obtient pas de taches exploitables. Il faut que la ligne de dépôt reste AU-DESSUS du niveau de l'éluant (par exemple moins de 0,5 cm d'éluant pour des dépôts à 1 cm).",
+        "<em>⚠ Erreur fréquente : confondre le front de l'éluant (la limite atteinte par le solvant en haut de la plaque) avec le niveau de l'éluant dans la cuve.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Que contient le bonbon vert ?",
+      "contexte": [
+        "Sofiane recommence sa CCM. Il dépose sur la plaque : J (colorant jaune), R (colorant rouge), B (colorant bleu) et V (bonbon vert dissous dans un peu d'eau). Après élution et séchage, il obtient le chromatogramme ci-dessous. La règle est graduée en cm à partir du bas de la plaque.",
+        "Donnée : rapport frontal Rf = h / H, où h est la distance parcourue par l'espèce chimique (de la ligne de dépôt au centre de la tache) et H la distance parcourue par l'éluant (de la ligne de dépôt au front de l'éluant)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"200\" y=\"60.0\" width=\"300\" height=\"380.0\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"138\" y=\"52.0\" width=\"44\" height=\"396.0\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"168\" y1=\"440.0\" x2=\"182\" y2=\"440.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"445.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"174\" y1=\"421.0\" x2=\"182\" y2=\"421.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"402.0\" x2=\"182\" y2=\"402.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"407.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"174\" y1=\"383.0\" x2=\"182\" y2=\"383.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"364.0\" x2=\"182\" y2=\"364.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"369.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"174\" y1=\"345.0\" x2=\"182\" y2=\"345.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"326.0\" x2=\"182\" y2=\"326.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"331.0\" text-anchor=\"end\" font-size=\"14\">3</text><line x1=\"174\" y1=\"307.0\" x2=\"182\" y2=\"307.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"288.0\" x2=\"182\" y2=\"288.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"293.0\" text-anchor=\"end\" font-size=\"14\">4</text><line x1=\"174\" y1=\"269.0\" x2=\"182\" y2=\"269.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"250.0\" x2=\"182\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"255.0\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"174\" y1=\"231.0\" x2=\"182\" y2=\"231.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"212.0\" x2=\"182\" y2=\"212.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"217.0\" text-anchor=\"end\" font-size=\"14\">6</text><line x1=\"174\" y1=\"193.0\" x2=\"182\" y2=\"193.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"174.0\" x2=\"182\" y2=\"174.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"179.0\" text-anchor=\"end\" font-size=\"14\">7</text><line x1=\"174\" y1=\"155.0\" x2=\"182\" y2=\"155.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"136.0\" x2=\"182\" y2=\"136.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"141.0\" text-anchor=\"end\" font-size=\"14\">8</text><line x1=\"174\" y1=\"117.0\" x2=\"182\" y2=\"117.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"98.0\" x2=\"182\" y2=\"98.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"103.0\" text-anchor=\"end\" font-size=\"14\">9</text><line x1=\"174\" y1=\"79.0\" x2=\"182\" y2=\"79.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"168\" y1=\"60.0\" x2=\"182\" y2=\"60.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"164\" y=\"65.0\" text-anchor=\"end\" font-size=\"14\">10</text><text x=\"160\" y=\"46.0\" text-anchor=\"middle\" font-size=\"14\">cm</text><line x1=\"200\" y1=\"402.0\" x2=\"500\" y2=\"402.0\" stroke=\"#555\" stroke-width=\"1.6\" stroke-dasharray=\"3 3\"/><line x1=\"500\" y1=\"402.0\" x2=\"530\" y2=\"402.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"534\" y=\"407.0\" font-size=\"15\" fill=\"#555\">ligne de dépôt</text><line x1=\"200\" y1=\"98.0\" x2=\"500\" y2=\"98.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-dasharray=\"7 4\"/><line x1=\"500\" y1=\"98.0\" x2=\"530\" y2=\"98.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"534\" y=\"103.0\" font-size=\"15\" fill=\"#1F4E5A\">front de l'éluant</text><circle cx=\"237.5\" cy=\"402.0\" r=\"3.5\" fill=\"#777\"/><text x=\"237.5\" y=\"48.0\" text-anchor=\"middle\" font-weight=\"bold\">J</text><ellipse cx=\"237.5\" cy=\"326.0\" rx=\"13\" ry=\"8\" fill=\"#D9B02E\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><circle cx=\"312.5\" cy=\"402.0\" r=\"3.5\" fill=\"#777\"/><text x=\"312.5\" y=\"48.0\" text-anchor=\"middle\" font-weight=\"bold\">R</text><ellipse cx=\"312.5\" cy=\"250.0\" rx=\"13\" ry=\"8\" fill=\"#B5523B\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><circle cx=\"387.5\" cy=\"402.0\" r=\"3.5\" fill=\"#777\"/><text x=\"387.5\" y=\"48.0\" text-anchor=\"middle\" font-weight=\"bold\">B</text><ellipse cx=\"387.5\" cy=\"174.0\" rx=\"13\" ry=\"8\" fill=\"#2E6FA8\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><circle cx=\"462.5\" cy=\"402.0\" r=\"3.5\" fill=\"#777\"/><text x=\"462.5\" y=\"48.0\" text-anchor=\"middle\" font-weight=\"bold\">V</text><ellipse cx=\"462.5\" cy=\"326.0\" rx=\"13\" ry=\"8\" fill=\"#D9B02E\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><ellipse cx=\"462.5\" cy=\"174.0\" rx=\"13\" ry=\"8\" fill=\"#2E6FA8\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><text x=\"534\" y=\"181.6\" font-size=\"15\" font-weight=\"bold\">Chromatogramme</text><text x=\"534\" y=\"205.6\" font-size=\"15\">J : colorant jaune</text><text x=\"534\" y=\"229.6\" font-size=\"15\">R : colorant rouge</text><text x=\"534\" y=\"253.6\" font-size=\"15\">B : colorant bleu</text><text x=\"534\" y=\"277.6\" font-size=\"15\">V : bonbon vert</text></svg>",
+      "questions": [
+        {
+          "texte": "Lis sur la règle la position de la ligne de dépôt et celle du front de l'éluant. Déduis-en la distance H.",
+          "aides": [
+            "Attention : la règle commence au bas de la plaque, pas à la ligne de dépôt.",
+            "H est la distance entre la ligne de dépôt et le front de l'éluant : fais une soustraction."
+          ]
+        },
+        {
+          "texte": "Recopie et complète le tableau : pour les taches J, R et B, indique la position lue sur la règle, la distance h, puis le rapport frontal Rf.",
+          "aides": []
+        },
+        {
+          "texte": "Combien de taches le dépôt V donne-t-il ? Le bonbon vert est-il un corps pur ou un mélange ?",
+          "aides": []
+        },
+        {
+          "texte": "Quels colorants le bonbon vert contient-il ? Justifie.",
+          "aides": [
+            "Compare la hauteur de chaque tache de V avec celles des taches J, R et B.",
+            "Deux taches à la même hauteur ont le même Rf : ce sont probablement la même espèce chimique."
+          ]
+        },
+        {
+          "texte": "Explique pourquoi un rapport frontal est toujours compris entre 0 et 1.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Ligne de dépôt : 1,0 cm ; front de l'éluant : 9,0 cm. H = 9,0 − 1,0 = 8,0 cm.",
+        "<strong>2.</strong> J : position 3,0 cm ; h = 3,0 − 1,0 = 2,0 cm ; Rf = 2,0 / 8,0 = 0,25.",
+        "R : position 5,0 cm ; h = 4,0 cm ; Rf = 4,0 / 8,0 = 0,50.",
+        "B : position 7,0 cm ; h = 6,0 cm ; Rf = 6,0 / 8,0 = 0,75.",
+        "<strong>3.</strong> Le dépôt V donne deux taches : le bonbon contient au moins deux espèces chimiques, c'est un mélange.",
+        "<strong>4.</strong> Ses deux taches sont à la même hauteur que celles de J (Rf = 0,25) et de B (Rf = 0,75) : le bonbon contient (probablement) le colorant jaune et le colorant bleu, pas le rouge. C'est cohérent : jaune + bleu donnent du vert.",
+        "<strong>5.</strong> L'espèce chimique est entraînée par l'éluant : elle ne peut pas aller plus loin que lui, donc h ≤ H et Rf = h / H ≤ 1. Une distance ne peut pas être négative, donc Rf ≥ 0 (Rf = 0 : l'espèce n'a pas migré).",
+        "<em>⚠ Erreur fréquente : lire les distances directement sur la règle, à partir du bas de la plaque (H = 9,0 cm, Rf(J) = 3,0 / 9,0). Les distances se mesurent à partir de la ligne de dépôt.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Cinq flacons sans étiquette",
+      "contexte": [
+        "Au laboratoire du lycée, cinq flacons ont perdu leur étiquette. Le technicien sait qu'il s'agit de : eau distillée ; solution de chlorure de sodium (Na⁺ + Cl⁻) ; solution de sulfate de cuivre (II) (Cu²⁺ + SO₄²⁻) ; solution de chlorure de fer (III) (Fe³⁺ + 3 Cl⁻) ; solution de sulfate de fer (II) (Fe²⁺ + SO₄²⁻).",
+        "Il numérote les flacons de 1 à 5. Il ne dispose que de deux réactifs : la soude et le nitrate d'argent."
+      ],
+      "questions": [
+        {
+          "texte": "Pourquoi prélève-t-on quelques millilitres de chaque flacon dans un tube à essais, au lieu de verser le réactif directement dans le flacon ?",
+          "aides": []
+        },
+        {
+          "texte": "Le technicien commence par ajouter de la soude à un prélèvement de chaque solution. Présente dans un tableau l'observation attendue pour chacune des cinq solutions.",
+          "aides": [
+            "Quels ions chaque solution contient-elle ? Lesquels réagissent avec la soude ?",
+            "Seuls Cu²⁺, Fe²⁺ et Fe³⁺ donnent un précipité avec la soude (voir les données)."
+          ]
+        },
+        {
+          "texte": "Montre que ce premier test ne suffit pas à identifier les cinq flacons. Quel second test faut-il faire, et sur quel(s) flacon(s) seulement ?",
+          "aides": [
+            "Repère dans ton tableau les solutions qui donnent la même observation avec la soude.",
+            "Qu'est-ce qui différencie ces deux solutions ? Quel réactif permet de mettre en évidence cette différence ?"
+          ]
+        },
+        {
+          "texte": "Voici ses observations. Soude : flacon 1 : précipité rouille ; flacon 2 : rien ; flacon 3 : précipité bleu ; flacon 4 : rien ; flacon 5 : précipité vert. Nitrate d'argent : flacon 2 : rien ; flacon 4 : précipité blanc qui noircit à la lumière. Identifie le contenu de chaque flacon en justifiant.",
+          "aides": []
+        },
+        {
+          "texte": "Le technicien veut vérifier que le flacon 1 contient bien des ions chlorure. Quel test doit-il réaliser et quelle observation attend-il ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le test ajoute un réactif et forme un précipité : il détruit l'échantillon testé. On ne travaille que sur un petit prélèvement pour ne pas polluer tout le flacon (et pour économiser les réactifs).",
+        "<strong>2.</strong> Soude : eau distillée → rien ; chlorure de sodium → rien ; sulfate de cuivre (II) → précipité bleu (Cu²⁺) ; chlorure de fer (III) → précipité rouille (Fe³⁺) ; sulfate de fer (II) → précipité vert (Fe²⁺).",
+        "<strong>3.</strong> L'eau distillée et la solution de chlorure de sodium ne donnent aucun précipité avec la soude (les ions Na⁺ et Cl⁻ ne réagissent pas avec elle) : on ne peut pas les distinguer. Il faut faire le test au nitrate d'argent, seulement sur les deux flacons restés sans précipité : celui qui contient des ions Cl⁻ donnera un précipité blanc.",
+        "<strong>4.</strong> Flacon 1 : précipité rouille avec la soude → ions Fe³⁺ → chlorure de fer (III).",
+        "Flacon 3 : précipité bleu → ions Cu²⁺ → sulfate de cuivre (II).",
+        "Flacon 5 : précipité vert → ions Fe²⁺ → sulfate de fer (II).",
+        "Flacon 4 : rien avec la soude, précipité blanc qui noircit avec le nitrate d'argent → ions Cl⁻ sans ion métallique testé → chlorure de sodium.",
+        "Flacon 2 : aucun précipité avec les deux réactifs → eau distillée.",
+        "<strong>5.</strong> Il ajoute quelques gouttes de nitrate d'argent à un nouveau prélèvement du flacon 1 : il attend un précipité blanc de chlorure d'argent AgCl qui noircit à la lumière (sa couleur peut être un peu masquée par la couleur de la solution).",
+        "<em>⚠ Erreur fréquente : conclure « eau distillée » dès qu'il n'y a pas de précipité avec la soude. L'absence de précipité prouve seulement l'absence des ions Cu²⁺, Fe²⁺ et Fe³⁺, pas l'absence de tout ion.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Un comprimé mystère",
+      "contexte": [
+        "Mehdi a mal à la tête. Dans l'armoire à pharmacie, il trouve une plaquette de comprimés sans boîte ni notice. Or Mehdi est allergique à l'aspirine. Son professeur propose de réaliser une CCM.",
+        "Dépôts : X (comprimé broyé et dissous dans un solvant) ; P (paracétamol pur) ; C (caféine pure) ; A (aspirine pure). Les espèces étant incolores, la plaque est révélée sous lampe UV et les taches sont entourées au crayon.",
+        "Mesures de Mehdi, à partir de la ligne de dépôt : front de l'éluant : 6,4 cm ; X : deux taches, à 1,3 cm et à 2,9 cm ; P : 2,9 cm ; C : 1,3 cm ; A : 4,8 cm."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\">Chromatogramme révélé sous lampe UV</text><rect x=\"170\" y=\"74.5\" width=\"320\" height=\"365.5\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"170\" y1=\"397.0\" x2=\"490\" y2=\"397.0\" stroke=\"#555\" stroke-width=\"1.6\" stroke-dasharray=\"3 3\"/><text x=\"504\" y=\"402.0\" font-size=\"15\" fill=\"#555\">ligne de dépôt</text><line x1=\"170\" y1=\"121.8\" x2=\"490\" y2=\"121.8\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-dasharray=\"7 4\"/><text x=\"504\" y=\"126.8\" font-size=\"15\" fill=\"#1F4E5A\">front de l'éluant</text><circle cx=\"210.0\" cy=\"397.0\" r=\"3.5\" fill=\"#777\"/><text x=\"210.0\" y=\"462\" text-anchor=\"middle\" font-weight=\"bold\">X</text><ellipse cx=\"210.0\" cy=\"341.1\" rx=\"14\" ry=\"9\" fill=\"#e4e0ee\" stroke=\"#4a3f6b\" stroke-width=\"2\"/><ellipse cx=\"210.0\" cy=\"272.3\" rx=\"14\" ry=\"9\" fill=\"#e4e0ee\" stroke=\"#4a3f6b\" stroke-width=\"2\"/><circle cx=\"290.0\" cy=\"397.0\" r=\"3.5\" fill=\"#777\"/><text x=\"290.0\" y=\"462\" text-anchor=\"middle\" font-weight=\"bold\">P</text><ellipse cx=\"290.0\" cy=\"272.3\" rx=\"14\" ry=\"9\" fill=\"#e4e0ee\" stroke=\"#4a3f6b\" stroke-width=\"2\"/><circle cx=\"370.0\" cy=\"397.0\" r=\"3.5\" fill=\"#777\"/><text x=\"370.0\" y=\"462\" text-anchor=\"middle\" font-weight=\"bold\">C</text><ellipse cx=\"370.0\" cy=\"341.1\" rx=\"14\" ry=\"9\" fill=\"#e4e0ee\" stroke=\"#4a3f6b\" stroke-width=\"2\"/><circle cx=\"450.0\" cy=\"397.0\" r=\"3.5\" fill=\"#777\"/><text x=\"450.0\" y=\"462\" text-anchor=\"middle\" font-weight=\"bold\">A</text><ellipse cx=\"450.0\" cy=\"190.6\" rx=\"14\" ry=\"9\" fill=\"#e4e0ee\" stroke=\"#4a3f6b\" stroke-width=\"2\"/><text x=\"504\" y=\"199.2\" font-size=\"15\">X : comprimé à identifier</text><text x=\"504\" y=\"223.2\" font-size=\"15\">P : paracétamol</text><text x=\"504\" y=\"247.2\" font-size=\"15\">C : caféine</text><text x=\"504\" y=\"271.2\" font-size=\"15\">A : aspirine</text><text x=\"504\" y=\"295.2\" font-size=\"15\">taches entourées</text><text x=\"504\" y=\"319.2\" font-size=\"15\">au crayon sous UV</text></svg>",
+      "questions": [
+        {
+          "texte": "Pourquoi faut-il une lampe UV pour voir les taches ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le rapport frontal de chaque tache et présente les résultats dans un tableau.",
+          "aides": [
+            "Toutes les distances sont déjà mesurées à partir de la ligne de dépôt : quelle est la valeur de H ?",
+            "Rf = h / H, avec h la distance de la tache considérée ; les deux distances dans la même unité."
+          ]
+        },
+        {
+          "texte": "Le comprimé X est-il un corps pur ou un mélange ? Quelles espèces chimiques contient-il ?",
+          "aides": []
+        },
+        {
+          "texte": "Mehdi peut-il penser que ce comprimé ne contient pas d'aspirine ? Quel conseil lui donnerais-tu malgré tout ?",
+          "aides": []
+        },
+        {
+          "texte": "Son camarade Lucas a mesuré, lui, toutes les distances à partir du bas de la plaque (la ligne de dépôt est à 1,0 cm du bas). Calcule le rapport frontal qu'il obtient pour l'aspirine, puis explique pourquoi sa méthode est fausse.",
+          "aides": [
+            "Ajoute 1,0 cm à chaque distance de Mehdi pour retrouver les mesures de Lucas.",
+            "D'où les espèces chimiques et l'éluant partent-ils au début de l'élution ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le paracétamol, la caféine et l'aspirine sont incolores : leurs taches sont invisibles à l'œil nu. La plaque contient un indicateur qui brille sous UV ; les taches apparaissent sombres sur ce fond lumineux. C'est l'étape de révélation.",
+        "<strong>2.</strong> Rf = h / H avec H = 6,4 cm.",
+        "X (tache basse) : Rf = 1,3 / 6,4 = 0,20 ; X (tache haute) : Rf = 2,9 / 6,4 = 0,45.",
+        "P : Rf = 2,9 / 6,4 = 0,45 ; C : Rf = 1,3 / 6,4 = 0,20 ; A : Rf = 4,8 / 6,4 = 0,75.",
+        "Vérification : tous les Rf sont compris entre 0 et 1, et sans unité (cm / cm).",
+        "<strong>3.</strong> X donne deux taches : c'est un mélange. Ses taches ont les mêmes Rf que celles de la caféine (0,20) et du paracétamol (0,45) : le comprimé contient de la caféine et du paracétamol.",
+        "<strong>4.</strong> Aucune tache de X n'a le Rf de l'aspirine (0,75) : l'aspirine n'a pas été détectée, ce qui est rassurant. Mais une CCM ne détecte pas les très petites quantités et ne dit pas tout du comprimé : avant de prendre un médicament non identifié, il faut demander l'avis d'un pharmacien.",
+        "<strong>5.</strong> Lucas : h = 4,8 + 1,0 = 5,8 cm et H = 6,4 + 1,0 = 7,4 cm, donc Rf = 5,8 / 7,4 = 0,78 au lieu de 0,75. Sa méthode est fausse car les espèces et l'éluant ne commencent à migrer qu'à partir de la ligne de dépôt : c'est elle l'origine des distances. Son erreur ne change pas les Rf de la même façon pour toutes les taches (caféine : 2,3 / 7,4 = 0,31 au lieu de 0,20), donc ses valeurs ne sont plus comparables à des Rf de référence.",
+        "<em>⚠ Erreur fréquente : calculer H / h au lieu de h / H ; un Rf supérieur à 1 doit alerter.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un sirop de menthe vraiment « coloré à la chlorophylle » ?",
+      "contexte": [
+        "Doc. 1 — L'étiquette et le soupçon. Un sirop de menthe (marque fictive « Glacimenthe ») porte sur son étiquette : « Colorant : chlorophylles (E140), d'origine naturelle ». Une association de consommateurs soupçonne le fabricant de colorer en réalité son sirop avec un mélange de colorants de synthèse jaune et bleu, moins chers. Tous les colorants ajoutés doivent figurer dans la liste des ingrédients.",
+        "Doc. 2 — Rapports frontaux de référence mesurés par le laboratoire de l'association, sur des plaques de silice avec de l'eau salée comme éluant : E102 tartrazine (jaune) : Rf = 0,40 ; E104 jaune de quinoléine (jaune) : Rf = 0,25 ; E131 bleu patenté V (bleu) : Rf = 0,80 ; E133 bleu brillant FCF (bleu) : Rf = 0,60 ; E140 chlorophylles (vert) : Rf = 0 (elles ne migrent pas avec cet éluant).",
+        "Doc. 3 — Le laboratoire dépose une goutte du sirop S sur une plaque de silice et réalise une CCM avec le même éluant. Le chromatogramme obtenu est reproduit ci-dessous (règle graduée en cm à partir du bas de la plaque)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"250\" y=\"60.0\" width=\"170\" height=\"380.0\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><rect x=\"188\" y=\"52.0\" width=\"44\" height=\"396.0\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"218\" y1=\"440.0\" x2=\"232\" y2=\"440.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"445.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"224\" y1=\"421.0\" x2=\"232\" y2=\"421.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"402.0\" x2=\"232\" y2=\"402.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"407.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"224\" y1=\"383.0\" x2=\"232\" y2=\"383.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"364.0\" x2=\"232\" y2=\"364.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"369.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"224\" y1=\"345.0\" x2=\"232\" y2=\"345.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"326.0\" x2=\"232\" y2=\"326.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"331.0\" text-anchor=\"end\" font-size=\"14\">3</text><line x1=\"224\" y1=\"307.0\" x2=\"232\" y2=\"307.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"288.0\" x2=\"232\" y2=\"288.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"293.0\" text-anchor=\"end\" font-size=\"14\">4</text><line x1=\"224\" y1=\"269.0\" x2=\"232\" y2=\"269.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"250.0\" x2=\"232\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"255.0\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"224\" y1=\"231.0\" x2=\"232\" y2=\"231.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"212.0\" x2=\"232\" y2=\"212.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"217.0\" text-anchor=\"end\" font-size=\"14\">6</text><line x1=\"224\" y1=\"193.0\" x2=\"232\" y2=\"193.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"174.0\" x2=\"232\" y2=\"174.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"179.0\" text-anchor=\"end\" font-size=\"14\">7</text><line x1=\"224\" y1=\"155.0\" x2=\"232\" y2=\"155.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"136.0\" x2=\"232\" y2=\"136.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"141.0\" text-anchor=\"end\" font-size=\"14\">8</text><line x1=\"224\" y1=\"117.0\" x2=\"232\" y2=\"117.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"98.0\" x2=\"232\" y2=\"98.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"103.0\" text-anchor=\"end\" font-size=\"14\">9</text><line x1=\"224\" y1=\"79.0\" x2=\"232\" y2=\"79.0\" stroke=\"#3a3a3a\" stroke-width=\"0.9\"/><line x1=\"218\" y1=\"60.0\" x2=\"232\" y2=\"60.0\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"214\" y=\"65.0\" text-anchor=\"end\" font-size=\"14\">10</text><text x=\"210\" y=\"46.0\" text-anchor=\"middle\" font-size=\"14\">cm</text><line x1=\"250\" y1=\"402.0\" x2=\"420\" y2=\"402.0\" stroke=\"#555\" stroke-width=\"1.6\" stroke-dasharray=\"3 3\"/><line x1=\"420\" y1=\"402.0\" x2=\"450\" y2=\"402.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"454\" y=\"407.0\" font-size=\"15\" fill=\"#555\">ligne de dépôt</text><line x1=\"250\" y1=\"117.0\" x2=\"420\" y2=\"117.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-dasharray=\"7 4\"/><line x1=\"420\" y1=\"117.0\" x2=\"450\" y2=\"117.0\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"454\" y=\"122.0\" font-size=\"15\" fill=\"#1F4E5A\">front de l'éluant</text><circle cx=\"335.0\" cy=\"402.0\" r=\"3.5\" fill=\"#777\"/><text x=\"335.0\" y=\"48.0\" text-anchor=\"middle\" font-weight=\"bold\">S</text><ellipse cx=\"335.0\" cy=\"288.0\" rx=\"13\" ry=\"8\" fill=\"#D9B02E\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><ellipse cx=\"335.0\" cy=\"231.0\" rx=\"13\" ry=\"8\" fill=\"#2E6FA8\" stroke=\"#3a3a3a\" stroke-width=\"0.6\"/><text x=\"454\" y=\"181.6\" font-size=\"15\" font-weight=\"bold\">Doc. 3 : chromatogramme</text><text x=\"454\" y=\"205.6\" font-size=\"15\">S : sirop de menthe</text><text x=\"454\" y=\"229.6\" font-size=\"15\">éluant : eau salée</text><text x=\"454\" y=\"253.6\" font-size=\"15\">phase fixe : silice</text></svg>",
+      "questions": [
+        {
+          "texte": "D'après le doc. 1 et le doc. 2, quelle(s) tache(s) devrait-on observer sur le chromatogramme si l'étiquette disait vrai ? À quelle hauteur ?",
+          "aides": [
+            "Dans le doc. 2, repère le Rf des chlorophylles (E140). Que signifie Rf = 0 ?",
+            "Rf = 0 signifie h = 0 : où la tache se trouve-t-elle alors ?"
+          ]
+        },
+        {
+          "texte": "Problème : l'association de consommateurs a-t-elle raison ? Le sirop contient-il le colorant annoncé ? Contient-il d'autres colorants, et lesquels ? Construis ta démarche et appuie-toi sur des mesures faites sur le doc. 3.",
+          "aides": [
+            "Pour identifier une tache, il faut son Rf, puis le comparer au doc. 2 (même éluant, même plaque).",
+            "Mesure sur la règle la position de la ligne de dépôt, du front de l'éluant et de chaque tache, puis calcule H et les distances h par soustraction.",
+            "Pour chaque tache : Rf = h / H ; cherche dans le doc. 2 un colorant de même couleur et de même Rf. Regarde aussi s'il reste une tache sur la ligne de dépôt."
+          ]
+        },
+        {
+          "texte": "Regard critique : ta conclusion est-elle certaine ? Propose une expérience complémentaire pour la confirmer.",
+          "aides": [
+            "Relis la dernière remarque du cours sur l'interprétation d'un chromatogramme.",
+            "Que pourrait-on déposer sur la même plaque que le sirop ? Et que changer dans l'expérience ?"
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors programme de Seconde) : les colorants E102 et E133 sont très solubles dans l'eau, les chlorophylles ne le sont pas. Propose une explication au fait que les chlorophylles ne migrent pas avec l'eau salée.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Si l'étiquette disait vrai, le sirop ne contiendrait que des chlorophylles (E140), de Rf = 0 : on observerait une seule tache verte, restée sur la ligne de dépôt, et aucune tache plus haut.",
+        "<strong>2.</strong> Démarche attendue : (a) mesurer H à partir de la ligne de dépôt ; (b) mesurer h pour chaque tache ; (c) calculer les Rf ; (d) les comparer aux Rf de référence du doc. 2 (même éluant, même phase fixe) ; (e) conclure.",
+        "a. Ligne de dépôt : 1,0 cm ; front de l'éluant : 8,5 cm ; H = 8,5 − 1,0 = 7,5 cm.",
+        "b. Tache jaune : position 4,0 cm, h = 3,0 cm ; tache bleue : position 5,5 cm, h = 4,5 cm.",
+        "c. Rf(jaune) = 3,0 / 7,5 = 0,40 ; Rf(bleu) = 4,5 / 7,5 = 0,60.",
+        "d. Rf = 0,40 et tache jaune : tartrazine E102 (le jaune de quinoléine E104 a un Rf de 0,25). Rf = 0,60 et tache bleue : bleu brillant E133 (le bleu patenté E131 a un Rf de 0,80). Aucune tache verte n'est restée sur la ligne de dépôt : les chlorophylles annoncées ne sont pas détectées.",
+        "e. Conclusion : le sirop est un mélange de deux colorants de synthèse, la tartrazine (E102) et le bleu brillant (E133), qui donnent ensemble la couleur verte ; ils ne figurent pas sur l'étiquette, et le colorant annoncé (E140) n'est pas détecté. L'association a raison.",
+        "Éléments valorisés même si le résultat final est faux : mesures faites à partir de la ligne de dépôt, relation Rf = h / H, comparaison argumentée avec le doc. 2, conclusion qui répond à la question. Une erreur de lecture de ± 0,1 cm (Rf entre 0,39 et 0,41 pour la tache jaune, entre 0,59 et 0,61 pour la tache bleue) ne change pas l'identification.",
+        "<strong>3.</strong> Un même Rf est un argument fort mais pas une preuve absolue : deux espèces différentes peuvent migrer à la même hauteur avec un éluant donné. Pour confirmer : refaire la CCM en déposant sur la même plaque le sirop et les témoins E102, E133 et E140 (mêmes conditions exactes), puis recommencer avec un autre éluant ; on peut aussi utiliser un éluant dans lequel les chlorophylles migrent, pour vérifier qu'elles sont vraiment absentes.",
+        "<strong>4.</strong> Pour aller plus loin : une espèce chimique n'est entraînée par l'éluant que si elle s'y dissout. Les chlorophylles, insolubles dans l'eau salée, ont plus d'affinité pour la phase fixe que pour la phase mobile : elles restent sur la ligne de dépôt.",
+        "<em>⚠ Erreur fréquente : lire les positions sur la règle sans retrancher la ligne de dépôt. On obtiendrait Rf = 4,0 / 8,5 = 0,47 et 5,5 / 8,5 = 0,65, qui ne correspondent à aucune valeur du doc. 2.</em>"
+      ]
+    }
+  ]
+}

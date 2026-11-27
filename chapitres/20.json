@@ -1,0 +1,690 @@
+{
+  "id": 20,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Modèle corpusculaire de la lumière : le photon",
+        "icon": "💡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Photon",
+            "text": "Grain (quantum) d'énergie associé à une onde électromagnétique de fréquence ν. La lumière présente une <strong>dualité onde-corpuscule</strong> : modèle ondulatoire pour décrire la propagation (diffraction, interférences), modèle corpusculaire (photons) pour décrire certaines interactions lumière-matière."
+          },
+          {
+            "type": "formula",
+            "label": "Énergie d'un photon",
+            "text": "E = h·ν = h·c / λ"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Symbole",
+              "Unité"
+            ],
+            "rows": [
+              [
+                "Constante de Planck",
+                "h",
+                "h ≈ 6,63×10⁻³⁴ J·s"
+              ],
+              [
+                "Fréquence",
+                "ν",
+                "Hz"
+              ],
+              [
+                "Longueur d'onde dans le vide",
+                "λ",
+                "m"
+              ],
+              [
+                "Célérité de la lumière",
+                "c",
+                "c ≈ 3,00×10⁸ m·s⁻¹"
+              ],
+              [
+                "Énergie du photon",
+                "E",
+                "J (ou eV, 1 eV = 1,60×10⁻¹⁹ J)"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Émission et absorption de photons",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un atome ou une molécule ne peut absorber un photon que si l'énergie de celui-ci correspond exactement à un écart entre deux niveaux d'énergie permis (transition électronique). Il peut ensuite émettre un photon lors d'une désexcitation. Cette <strong>quantification des niveaux d'énergie</strong> explique l'existence des spectres de raies d'émission et d'absorption."
+          }
+        ]
+      },
+      {
+        "title": "3. L'effet photoélectrique",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Effet photoélectrique",
+            "text": "Émission d'électrons par un matériau (souvent métallique) sous l'effet de l'absorption de photons lumineux incidents."
+          },
+          {
+            "type": "def",
+            "term": "Travail d'extraction W₀",
+            "text": "Énergie minimale nécessaire pour arracher un électron du matériau considéré. Caractéristique du matériau (J ou eV)."
+          },
+          {
+            "type": "def",
+            "term": "Fréquence seuil ν₀",
+            "text": "Fréquence minimale de la lumière incidente en dessous de laquelle aucun électron n'est émis, quelle que soit l'intensité lumineuse : ν₀ = W₀ / h."
+          },
+          {
+            "type": "formula",
+            "label": "Énergie cinétique des électrons éjectés",
+            "text": "Ec = h·ν − W₀   (si ν ≥ ν₀)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"50\" y1=\"190\" x2=\"455\" y2=\"190\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"140\" y1=\"18\" x2=\"140\" y2=\"250\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"460\" y=\"194\" font-size=\"12\" fill=\"#1B2420\">ν</text><text x=\"120\" y=\"22\" font-size=\"12\" fill=\"#1B2420\">Ec</text><text x=\"146\" y=\"203\" font-size=\"11\" fill=\"#5C6B60\">O</text><line x1=\"140\" y1=\"242\" x2=\"220\" y2=\"190\" stroke=\"#a44ff7\" stroke-width=\"2\" stroke-dasharray=\"5 3\"/><line x1=\"220\" y1=\"190\" x2=\"420\" y2=\"60\" stroke=\"#a44ff7\" stroke-width=\"2.2\"/><line x1=\"110\" y1=\"242\" x2=\"140\" y2=\"242\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"140\" cy=\"242\" r=\"3.5\" fill=\"#C0472F\"/><text x=\"55\" y=\"246\" font-size=\"11\" fill=\"#C0472F\">−W₀</text><line x1=\"220\" y1=\"190\" x2=\"220\" y2=\"210\" stroke=\"#B9C0AC\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><circle cx=\"220\" cy=\"190\" r=\"3.5\" fill=\"#C0472F\"/><text x=\"208\" y=\"224\" font-size=\"11\" fill=\"#C0472F\">ν₀</text><text x=\"320\" y=\"95\" font-size=\"11\" fill=\"#5C6B60\">pente = h</text></svg>",
+            "caption": "Tracé de Ec en fonction de ν : droite de pente h, dont le prolongement (pointillés, zone non physique ν &lt; ν₀) coupe l'axe des ν en ν₀ et l'axe des Ec en −W₀."
+          },
+          {
+            "type": "warn",
+            "text": "En dessous du seuil (ν < ν₀), augmenter l'intensité lumineuse (donc le nombre de photons par seconde) n'a AUCUN effet : aucun électron n'est émis. Seul un photon individuellement plus énergétique (fréquence plus élevée) le permet. Ce comportement est inexplicable avec un modèle purement ondulatoire de la lumière, d'où la nécessité du modèle corpusculaire du photon."
+          }
+        ]
+      },
+      {
+        "title": "4. Cellules photovoltaïques et rendement",
+        "icon": "🔆",
+        "content": [
+          {
+            "type": "def",
+            "term": "Cellule photovoltaïque",
+            "text": "Dispositif à base de matériau semi-conducteur (silicium) qui convertit directement l'énergie lumineuse en énergie électrique : les photons absorbés libèrent des porteurs de charge qui créent un courant électrique, phénomène apparenté à l'effet photoélectrique."
+          },
+          {
+            "type": "def",
+            "term": "Rendement η d'une cellule photovoltaïque",
+            "text": "Rapport entre la puissance électrique produite P_élec et la puissance lumineuse reçue P_reçue : η = P_élec / P_reçue, souvent exprimé en pourcentage. Les cellules commerciales au silicium ont un rendement typique de 15 % à 22 %."
+          },
+          {
+            "type": "formula",
+            "label": "Exemple chiffré de calcul de rendement",
+            "text": "Cellule de surface S = 1,6 m², éclairement reçu 800 W·m⁻², puissance électrique fournie 240 W.\nP_reçue = 800 × 1,6 = 1280 W\nη = 240 / 1280 ≈ 0,1875 soit η ≈ 19 %"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "L'énergie d'un photon de longueur d'onde λ = 500 nm vaut (h = 6,63 × 10⁻³⁴ J·s, c = 3,00 × 10⁸ m·s⁻¹) :",
+      "opts": [
+        "4,0 × 10⁻¹⁹ J",
+        "4,0 × 10⁻²⁸ J",
+        "3,3 × 10⁻⁴⁰ J",
+        "2,0 × 10⁻²⁵ J"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-nm-m",
+          "texte": "Oublier de convertir λ en mètres : 500 nm = 5,00 × 10⁻⁷ m"
+        },
+        {
+          "code": "energie-photon-h-lambda",
+          "texte": "Multiplier h par λ au lieu de calculer h c / λ"
+        },
+        {
+          "code": "oubli-longueur-onde",
+          "texte": "Oublier de diviser par λ : h × c"
+        }
+      ],
+      "exp": "E = h c / λ = 6,63 × 10⁻³⁴ × 3,00 × 10⁸ / 5,00 × 10⁻⁷ ≈ 4,0 × 10⁻¹⁹ J (environ 2,5 eV). Attention : λ en mètres."
+    },
+    {
+      "q": "Un atome isolé absorbe un photon seulement si l'énergie de ce photon :",
+      "opts": [
+        "a n'importe quelle valeur",
+        "est égale à l'écart entre deux de ses niveaux d'énergie",
+        "est supérieure ou égale à un certain seuil",
+        "est grande parce que la lumière est intense"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "energie-atome-continue",
+          "texte": "Croire que l'atome peut absorber n'importe quelle énergie : ses niveaux sont quantifiés"
+        },
+        null,
+        {
+          "code": "absorption-vs-seuil-photoelectrique",
+          "texte": "Confondre absorption par un atome (énergie exacte) et effet photoélectrique (énergie supérieure à un seuil)"
+        },
+        {
+          "code": "energie-photon-intensite",
+          "texte": "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence"
+        }
+      ],
+      "exp": "Les niveaux d'énergie de l'atome sont quantifiés : seul un photon d'énergie exactement égale à un écart entre niveaux peut être absorbé. D'où les raies des spectres."
+    },
+    {
+      "q": "Dans l'effet photoélectrique (ν ≥ ν₀), l'énergie cinétique maximale des électrons émis s'écrit :",
+      "opts": [
+        "Ec = h ν + W₀",
+        "Ec = h ν − W₀",
+        "Ec = W₀ − h ν",
+        "Ec = h ν"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "photoelectrique-signe-w0",
+          "texte": "Ajouter le travail d'extraction au lieu de le retrancher : W₀ est l'énergie dépensée pour arracher l'électron"
+        },
+        null,
+        {
+          "code": "photoelectrique-ordre-inverse",
+          "texte": "Inverser l'ordre : avec ν ≥ ν₀, hν ≥ W₀ et Ec ≥ 0"
+        },
+        {
+          "code": "oubli-travail-extraction",
+          "texte": "Oublier le travail d'extraction : une partie de l'énergie du photon sert à arracher l'électron"
+        }
+      ],
+      "exp": "L'énergie du photon sert d'abord à arracher l'électron (W₀), le reste devient énergie cinétique : Ec = hν − W₀. Attention : Ec n'est jamais négative."
+    },
+    {
+      "q": "Un métal a un travail d'extraction W₀ = 2,3 eV. Il est éclairé par des photons d'énergie 3,1 eV. L'énergie cinétique maximale des électrons émis vaut :",
+      "opts": [
+        "5,4 eV",
+        "−0,8 eV",
+        "3,1 eV",
+        "0,8 eV"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "photoelectrique-signe-w0",
+          "texte": "Ajouter W₀ au lieu de le retrancher : 3,1 + 2,3"
+        },
+        {
+          "code": "photoelectrique-ordre-inverse",
+          "texte": "Inverser la soustraction : W₀ − hν"
+        },
+        {
+          "code": "oubli-travail-extraction",
+          "texte": "Oublier le travail d'extraction"
+        },
+        null
+      ],
+      "exp": "Ec = hν − W₀ = 3,1 − 2,3 = 0,8 eV. Attention : une énergie cinétique négative est impossible."
+    },
+    {
+      "q": "Un métal est éclairé par une lumière de fréquence inférieure à sa fréquence seuil ν₀. Si l'on augmente l'intensité lumineuse :",
+      "opts": [
+        "des électrons finissent par être émis",
+        "les électrons sont émis après un temps d'accumulation d'énergie",
+        "aucun électron n'est émis, quelle que soit l'intensité",
+        "les électrons émis sont plus rapides"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "intensite-depasse-seuil",
+          "texte": "Croire qu'une lumière plus intense finit par arracher des électrons : chaque photon reste trop peu énergétique"
+        },
+        {
+          "code": "accumulation-energie-ondulatoire",
+          "texte": "Raisonner avec le modèle ondulatoire (accumulation d'énergie) : l'énergie arrive par paquets, les photons"
+        },
+        null,
+        {
+          "code": "energie-photon-intensite",
+          "texte": "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence"
+        }
+      ],
+      "exp": "Chaque photon a une énergie hν < W₀ : aucun ne peut arracher un électron, et augmenter leur nombre n'y change rien. Seul le modèle du photon explique ce seuil."
+    },
+    {
+      "q": "Au-dessus de la fréquence seuil, on augmente l'intensité lumineuse sans changer la fréquence. Alors :",
+      "opts": [
+        "le nombre d'électrons émis augmente, pas leur énergie cinétique maximale",
+        "l'énergie cinétique des électrons émis augmente",
+        "le nombre d'électrons et leur énergie cinétique augmentent",
+        "rien ne change"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "energie-photon-intensite",
+          "texte": "Croire que l'énergie d'un photon dépend de l'intensité lumineuse : elle ne dépend que de sa fréquence"
+        },
+        {
+          "code": "intensite-augmente-tout",
+          "texte": "Croire que l'intensité agit sur l'énergie des électrons : elle n'agit que sur le nombre de photons"
+        },
+        {
+          "code": "intensite-sans-effet",
+          "texte": "Croire que l'intensité n'a aucun effet : plus de photons arrachent plus d'électrons"
+        }
+      ],
+      "exp": "Plus intense = plus de photons par seconde, chacun d'énergie hν inchangée : plus d'électrons émis, avec la même Ec max = hν − W₀."
+    },
+    {
+      "q": "Un métal a un travail d'extraction W₀ = 3,3 × 10⁻¹⁹ J (h = 6,63 × 10⁻³⁴ J·s). Sa fréquence seuil vaut environ :",
+      "opts": [
+        "5,0 × 10¹⁴ Hz",
+        "2,2 × 10⁻⁵² Hz",
+        "2,0 × 10⁻¹⁵ Hz",
+        "6,0 × 10⁻⁷ Hz"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier W₀ par h au lieu de diviser"
+        },
+        {
+          "code": "seuil-rapport-inverse",
+          "texte": "Inverser le rapport : h / W₀"
+        },
+        {
+          "code": "frequence-vs-longueur-onde",
+          "texte": "Donner la longueur d'onde seuil (en m) au lieu de la fréquence"
+        }
+      ],
+      "exp": "ν₀ = W₀ / h = 3,3 × 10⁻¹⁹ / 6,63 × 10⁻³⁴ ≈ 5,0 × 10¹⁴ Hz (λ₀ = c / ν₀ ≈ 600 nm). Attention aux unités : une fréquence s'exprime en Hz."
+    },
+    {
+      "q": "L'existence d'une fréquence seuil, indépendante de l'intensité lumineuse, s'explique par :",
+      "opts": [
+        "le modèle ondulatoire de la lumière",
+        "le modèle du photon : l'énergie arrive par paquets hν",
+        "la transformation des photons en électrons",
+        "l'échauffement du métal par la lumière"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "modele-ondulatoire-seuil",
+          "texte": "Croire que le modèle ondulatoire explique le seuil : il prévoit qu'une onde assez intense arrache des électrons"
+        },
+        null,
+        {
+          "code": "photon-vs-electron",
+          "texte": "Confondre photon et électron : le photon est absorbé, l'électron vient du métal"
+        },
+        {
+          "code": "photoelectrique-vs-thermique",
+          "texte": "Confondre effet photoélectrique et effet thermique"
+        }
+      ],
+      "exp": "Chaque électron est arraché par un seul photon d'énergie hν : il faut hν ≥ W₀, quelle que soit l'intensité. Le modèle ondulatoire ne l'explique pas."
+    },
+    {
+      "q": "Une cellule photovoltaïque de surface 1,6 m² reçoit un éclairement de 800 W·m⁻² et fournit une puissance électrique de 240 W. Son rendement vaut environ :",
+      "opts": [
+        "30 %",
+        "19 %",
+        "530 %",
+        "81 %"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-surface",
+          "texte": "Oublier la surface : 240 / 800 compare une puissance à un éclairement (W·m⁻²)"
+        },
+        null,
+        {
+          "code": "rendement-inverse",
+          "texte": "Inverser le rapport : P(reçue) / P(électrique), un rendement ne dépasse pas 100 %"
+        },
+        {
+          "code": "rendement-vs-pertes",
+          "texte": "Calculer la part perdue (1 − η) au lieu du rendement"
+        }
+      ],
+      "exp": "P(reçue) = 800 × 1,6 = 1 280 W ; η = 240 / 1 280 ≈ 0,19 = 19 %. Attention : l'éclairement est une puissance par m², il faut multiplier par la surface."
+    },
+    {
+      "q": "Une cellule photovoltaïque convertit :",
+      "opts": [
+        "de l'énergie électrique en énergie lumineuse",
+        "de l'énergie lumineuse en énergie électrique",
+        "la chaleur du Soleil en énergie électrique",
+        "de l'énergie lumineuse en énergie chimique"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-inverse-led",
+          "texte": "Inverser la conversion : c'est une diode électroluminescente qui convertit l'électricité en lumière"
+        },
+        null,
+        {
+          "code": "photovoltaique-vs-thermique",
+          "texte": "Confondre panneau photovoltaïque (lumière → électricité) et capteur solaire thermique"
+        },
+        {
+          "code": "photovoltaique-vs-photosynthese",
+          "texte": "Confondre cellule photovoltaïque et photosynthèse (lumière → énergie chimique)"
+        }
+      ],
+      "exp": "Les photons absorbés par le semi-conducteur libèrent des porteurs de charge : la lumière est directement convertie en énergie électrique. Attention : un panneau chaud produit d'ailleurs moins bien."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2026",
+      "title": "L'effet photoélectrique et ses applications — relation d'Einstein, rendement",
+      "session": "Amérique du Nord · J1",
+      "link": "https://www.labolycee.org/leffet-photoelectrique-et-ses-applications"
+    },
+    {
+      "year": "2025",
+      "title": "Installation d'un panneau routier — rendement photovoltaïque",
+      "session": "Nouvelle-Calédonie · Jour 2",
+      "link": "https://www.labolycee.org/installation-dun-panneau-routier"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le photon en six affirmations",
+      "contexte": [
+        "Yanis révise le chapitre avec ses camarades. Chacun a noté une affirmation sur la lumière ; aide-les à trier le vrai du faux."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Le photon a une masse nulle et se déplace dans le vide à la vitesse c.<br>b. Un photon de lumière rouge transporte plus d'énergie qu'un photon de lumière bleue.<br>c. Doubler l'intensité d'une lumière monochromatique double l'énergie de chacun de ses photons.<br>d. Un atome peut absorber un photon de n'importe quelle énergie.<br>e. Les interférences s'expliquent avec le modèle ondulatoire de la lumière, l'effet photoélectrique avec le modèle corpusculaire.<br>f. Dans une LED, de la lumière est émise lorsque des électrons perdent de l'énergie en émettant des photons.",
+          "aides": []
+        },
+        {
+          "texte": "Cite deux objets ou appareils du quotidien dont le fonctionnement repose sur une interaction entre photons et matière, en précisant pour chacun s'il absorbe ou émet des photons.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : le photon est une particule de masse nulle qui se déplace toujours, dans le vide, à la célérité c ≈ 3,00 × 10⁸ m·s⁻¹.",
+        "b. FAUX : E = h·c / λ ; le rouge a une plus grande longueur d'onde que le bleu, donc ses photons transportent MOINS d'énergie.",
+        "c. FAUX : l'énergie d'un photon ne dépend que de sa fréquence (E = h·ν). Doubler l'intensité double le NOMBRE de photons par seconde, pas l'énergie de chacun.",
+        "d. FAUX : les niveaux d'énergie de l'atome sont quantifiés ; il n'absorbe un photon que si son énergie est exactement égale à l'écart entre deux niveaux permis.",
+        "e. VRAI : c'est la dualité onde-corpuscule ; la propagation (diffraction, interférences) relève du modèle ondulatoire, certaines interactions lumière-matière (effet photoélectrique) du modèle corpusculaire.",
+        "f. VRAI : en passant à un niveau d'énergie plus bas, l'électron cède de l'énergie sous forme d'un photon (émission).",
+        "<strong>2.</strong> Exemples acceptés : panneau ou cellule photovoltaïque, capteur photo d'un smartphone, photodiode d'une barrière de parking ou d'une télécommande (absorption de photons) ; LED, écran OLED, laser (émission de photons) ; spectrophotomètre UV-visible (absorption).",
+        "<em>⚠ Erreur fréquente : confondre « lumière plus intense » et « photons plus énergétiques ». L'intensité fixe le nombre de photons ; la fréquence (ou la couleur) fixe l'énergie de chacun.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Laser vert, laser rouge et lampe UV",
+      "contexte": [
+        "Inès compare trois sources lumineuses rangées dans le placard du labo : un pointeur laser vert (λ = 532 nm), un pointeur laser rouge (λ = 650 nm) et une lampe UV de détection des faux billets (λ = 365 nm).",
+        "Elle se demande lesquelles pourraient arracher des électrons à une plaque de potassium, dont le travail d'extraction vaut W₀ = 2,30 eV."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la fréquence ν de la radiation émise par le laser vert.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule, en joule, l'énergie E d'un photon émis par chacune des trois sources.",
+          "aides": []
+        },
+        {
+          "texte": "Convertis ces trois énergies en électronvolt (eV).",
+          "aides": [
+            "Combien de joules vaut 1 eV ? Regarde les données.",
+            "Pour passer des joules aux électronvolts, on divise par 1,602 × 10⁻¹⁹ (le résultat doit être de l'ordre de quelques eV pour de la lumière visible)."
+          ]
+        },
+        {
+          "texte": "Quelles sources peuvent provoquer l'effet photoélectrique sur le potassium ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Avec la lampe UV, calcule l'énergie cinétique maximale E<sub>c</sub> des électrons arrachés, en eV, à l'aide de la relation E<sub>c</sub> = h·ν − W₀.",
+          "aides": [
+            "Utilise l'énergie du photon UV en eV, calculée à la question 3.",
+            "L'énergie du photon sert d'abord à extraire l'électron (W₀) ; ce qui reste est l'énergie cinétique."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> ν = c / λ = 2,998 × 10⁸ / (532 × 10⁻⁹) = 5,64 × 10¹⁴ Hz.",
+        "<strong>2.</strong> E = h·c / λ. Vert : E = 6,626 × 10⁻³⁴ × 2,998 × 10⁸ / (532 × 10⁻⁹) = 3,73 × 10⁻¹⁹ J ; rouge (650 nm) : 3,06 × 10⁻¹⁹ J ; UV (365 nm) : 5,44 × 10⁻¹⁹ J.",
+        "<strong>3.</strong> E (eV) = E (J) / 1,602 × 10⁻¹⁹. Vert : 2,33 eV ; rouge : 1,91 eV ; UV : 3,40 eV.",
+        "<strong>4.</strong> Il faut E ≥ W₀ = 2,30 eV. Le laser rouge (1,91 eV) ne convient pas. La lampe UV (3,40 eV) convient. Le laser vert (2,33 eV) convient tout juste : ses photons ont à peine plus que l'énergie nécessaire.",
+        "<strong>5.</strong> E<sub>c</sub> = E − W₀ = 3,40 − 2,30 = 1,10 eV (soit 1,76 × 10⁻¹⁹ J).",
+        "<em>⚠ Erreur fréquente : oublier de convertir λ en mètre (532 nm = 532 × 10⁻⁹ m), ou multiplier par 1,602 × 10⁻¹⁹ au lieu de diviser pour passer des joules aux électronvolts.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "L'expérience de la plaque de zinc",
+      "contexte": [
+        "En 1888, Wilhelm Hallwachs fixe une plaque de zinc bien décapée sur un électroscope (appareil dont les feuilles s'écartent quand il est chargé) et le charge négativement. On reproduit l'expérience en classe :",
+        "• éclairée par une lampe à vapeur de mercure, qui émet notamment un rayonnement UV de longueur d'onde 253,7 nm, la plaque se décharge : les feuilles retombent ;",
+        "• si l'on place une vitre en verre ordinaire entre la lampe et la plaque, rien ne se passe (le verre ordinaire absorbe les UV de longueur d'onde inférieure à 300 nm environ) ;",
+        "• éclairée par un puissant projecteur halogène (lumière visible et infrarouge), la plaque reste chargée, même au bout de plusieurs minutes."
+      ],
+      "questions": [
+        {
+          "texte": "Quelles particules la plaque de zinc perd-elle lorsqu'elle se décharge ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le travail d'extraction W₀ du zinc en joule, puis la fréquence seuil ν₀ et la longueur d'onde seuil λ₀ correspondantes.",
+          "aides": [
+            "Convertis d'abord W₀ en joule (1 eV = 1,602 × 10⁻¹⁹ J).",
+            "Au seuil, le photon a juste l'énergie W₀ : h·ν₀ = W₀.",
+            "Puis λ₀ = c / ν₀ ; compare λ₀ aux limites du domaine visible."
+          ]
+        },
+        {
+          "texte": "Explique pourquoi la vitre en verre empêche la décharge.",
+          "aides": []
+        },
+        {
+          "texte": "QCM. Le projecteur halogène ne décharge pas la plaque, même très puissant, parce que :<br>A. il n'éclaire pas assez longtemps la plaque ;<br>B. chacun de ses photons a une énergie inférieure au travail d'extraction du zinc ;<br>C. sa lumière n'est pas assez intense ;<br>D. la lumière visible ne transporte pas d'énergie.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi ce résultat ne peut-il pas s'expliquer avec un modèle purement ondulatoire de la lumière ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La plaque perd des électrons : ils sont arrachés au zinc par la lumière (effet photoélectrique), donc la charge négative de l'électroscope diminue.",
+        "<strong>2.</strong> W₀ = 4,33 × 1,602 × 10⁻¹⁹ = 6,94 × 10⁻¹⁹ J. ν₀ = W₀ / h = 6,94 × 10⁻¹⁹ / 6,626 × 10⁻³⁴ = 1,05 × 10¹⁵ Hz. λ₀ = c / ν₀ = h·c / W₀ = 2,86 × 10⁻⁷ m = 286 nm (domaine UV).",
+        "<strong>3.</strong> Seuls les photons de longueur d'onde inférieure à λ₀ = 286 nm peuvent arracher des électrons au zinc (par exemple ceux à 253,7 nm, d'énergie 4,89 eV &gt; 4,33 eV). Or le verre absorbe justement les UV de longueur d'onde inférieure à 300 nm : plus aucun photon assez énergétique n'atteint la plaque.",
+        "<strong>4.</strong> Réponse B : les photons visibles et infrarouges ont λ &gt; 400 nm &gt; λ₀ (par exemple 2,07 eV à 600 nm), donc une énergie inférieure à W₀. Augmenter la puissance augmente le nombre de photons, pas l'énergie de chacun.",
+        "<strong>5.</strong> Dans un modèle ondulatoire, l'énergie apportée augmente avec l'intensité et avec la durée d'éclairement : une lumière très intense ou très longue devrait finir par arracher des électrons, quelle que soit sa fréquence. L'existence d'un seuil en fréquence, indépendant de l'intensité, s'explique seulement si l'énergie arrive par « paquets » h·ν (photons) absorbés un par un."
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Mesurer la constante de Planck",
+      "contexte": [
+        "En 1916, Robert Millikan a vérifié expérimentalement la relation d'Einstein. On reproduit son principe : on éclaire la cathode métallique d'une cellule photoélectrique avec différentes raies d'une lampe à vapeur de mercure, et on mesure, pour chacune, l'énergie cinétique maximale E<sub>c</sub> des électrons émis.",
+        "Mesures (données fictives mais vraisemblables) :",
+        "λ (nm) : 253,7 ; 296,7 ; 313,2 ; 334,1 ; 365,0 ; 404,7 ; 435,8 ; 546,1",
+        "ν (10¹⁴ Hz) : 11,82 ; 10,10 ; 9,57 ; 8,97 ; ? ; 7,41 ; 6,88 ; 5,49",
+        "E<sub>c</sub> (eV) : 2,55 ; 1,81 ; 1,61 ; 1,33 ; 1,04 ; 0,71 ; 0,48 ; aucun électron émis",
+        "Le graphique représente E<sub>c</sub> en fonction de ν, avec la droite qui modélise les mesures."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"134.6\" y1=\"25\" x2=\"134.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"134.6\" y=\"428\" text-anchor=\"middle\">1</text><line x1=\"189.2\" y1=\"25\" x2=\"189.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"189.2\" y=\"428\" text-anchor=\"middle\">2</text><line x1=\"243.8\" y1=\"25\" x2=\"243.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"243.8\" y=\"428\" text-anchor=\"middle\">3</text><line x1=\"298.3\" y1=\"25\" x2=\"298.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"428\" text-anchor=\"middle\">4</text><line x1=\"352.9\" y1=\"25\" x2=\"352.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"352.9\" y=\"428\" text-anchor=\"middle\">5</text><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"428\" text-anchor=\"middle\">6</text><line x1=\"462.1\" y1=\"25\" x2=\"462.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"462.1\" y=\"428\" text-anchor=\"middle\">7</text><line x1=\"516.7\" y1=\"25\" x2=\"516.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"428\" text-anchor=\"middle\">8</text><line x1=\"571.2\" y1=\"25\" x2=\"571.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"571.2\" y=\"428\" text-anchor=\"middle\">9</text><line x1=\"625.8\" y1=\"25\" x2=\"625.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"625.8\" y=\"428\" text-anchor=\"middle\">10</text><line x1=\"680.4\" y1=\"25\" x2=\"680.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"680.4\" y=\"428\" text-anchor=\"middle\">11</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">12</text><line x1=\"80\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"413.0\" text-anchor=\"end\">−3</text><line x1=\"80\" y1=\"392.0\" x2=\"735\" y2=\"392.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"376.1\" x2=\"735\" y2=\"376.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"381.1\" text-anchor=\"end\">−2,5</text><line x1=\"80\" y1=\"360.1\" x2=\"735\" y2=\"360.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"344.2\" x2=\"735\" y2=\"344.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"349.2\" text-anchor=\"end\">−2</text><line x1=\"80\" y1=\"328.2\" x2=\"735\" y2=\"328.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"312.2\" x2=\"735\" y2=\"312.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"317.2\" text-anchor=\"end\">−1,5</text><line x1=\"80\" y1=\"296.3\" x2=\"735\" y2=\"296.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"280.3\" x2=\"735\" y2=\"280.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"285.3\" text-anchor=\"end\">−1</text><line x1=\"80\" y1=\"264.4\" x2=\"735\" y2=\"264.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"248.4\" x2=\"735\" y2=\"248.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"253.4\" text-anchor=\"end\">−0,5</text><line x1=\"80\" y1=\"232.5\" x2=\"735\" y2=\"232.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"216.5\" x2=\"735\" y2=\"216.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"221.5\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"200.5\" x2=\"735\" y2=\"200.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"184.6\" x2=\"735\" y2=\"184.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"189.6\" text-anchor=\"end\">0,5</text><line x1=\"80\" y1=\"168.6\" x2=\"735\" y2=\"168.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"152.7\" x2=\"735\" y2=\"152.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"157.7\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"136.7\" x2=\"735\" y2=\"136.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"120.8\" x2=\"735\" y2=\"120.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"125.8\" text-anchor=\"end\">1,5</text><line x1=\"80\" y1=\"104.8\" x2=\"735\" y2=\"104.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"88.8\" x2=\"735\" y2=\"88.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"93.8\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"72.9\" x2=\"735\" y2=\"72.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"56.9\" x2=\"735\" y2=\"56.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"61.9\" text-anchor=\"end\">2,5</text><line x1=\"80\" y1=\"41.0\" x2=\"735\" y2=\"41.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">3</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"383\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"216.5\" x2=\"735\" y2=\"216.5\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"80.0\" y1=\"369.0\" x2=\"392.8\" y2=\"216.5\" stroke=\"#1F4E5A\" stroke-width=\"2.4\" stroke-dasharray=\"8 6\"/><line x1=\"392.8\" y1=\"216.5\" x2=\"735.0\" y2=\"49.6\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><circle cx=\"725.2\" cy=\"53.7\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"631.3\" cy=\"101.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"602.4\" cy=\"113.7\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"569.6\" cy=\"131.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"528.1\" cy=\"150.1\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"484.5\" cy=\"171.2\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"455.5\" cy=\"185.9\" r=\"5\" fill=\"#B5523B\"/><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">ν (10¹⁴ Hz)</text><text transform=\"translate(24,216.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">E<tspan baseline-shift=\"sub\" font-size=\"12\">c</tspan> max (eV)</text><text x=\"96.4\" y=\"50.5\" fill=\"#B5523B\">● mesures</text><text x=\"96.4\" y=\"72.9\" fill=\"#1F4E5A\">— droite modélisée (prolongée en pointillés)</text></svg>",
+      "questions": [
+        {
+          "texte": "Par un bilan d'énergie sur un électron qui absorbe un photon de fréquence ν, établis la relation entre E<sub>c</sub>, h, ν et le travail d'extraction W₀.",
+          "aides": [
+            "Où va l'énergie h·ν apportée par le photon ? En deux parties.",
+            "Une partie sert à arracher l'électron du métal ; l'autre reste à l'électron sous forme d'énergie cinétique."
+          ]
+        },
+        {
+          "texte": "Calcule la fréquence manquante (raie à 365,0 nm).",
+          "aides": []
+        },
+        {
+          "texte": "Détermine le coefficient directeur de la droite, en eV·s, puis déduis-en une valeur de la constante de Planck en J·s. Calcule l'écart relatif avec la valeur de référence.",
+          "aides": [
+            "Choisis deux points de la DROITE (pas forcément des mesures), bien éloignés l'un de l'autre.",
+            "a = ΔE<sub>c</sub> / Δν ; attention, l'axe des fréquences est gradué en 10¹⁴ Hz.",
+            "Compare l'équation de la droite (E<sub>c</sub> = a·ν + b) avec la relation de la question 1 : à quoi correspond a ?"
+          ]
+        },
+        {
+          "texte": "Lis graphiquement la fréquence seuil ν₀ et le travail d'extraction W₀ du métal de la cathode. Identifie ce métal à l'aide des données.",
+          "aides": [
+            "ν₀ est la fréquence pour laquelle E<sub>c</sub> = 0.",
+            "Le prolongement en pointillés coupe l'axe vertical (ν = 0) en E<sub>c</sub> = −W₀."
+          ]
+        },
+        {
+          "texte": "Explique pourquoi la raie à 546,1 nm n'arrache aucun électron. Utiliser une lampe plus puissante changerait-il ce résultat ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le photon apporte l'énergie h·ν. Une partie, W₀, sert à arracher l'électron du métal ; le reste devient l'énergie cinétique de l'électron : h·ν = W₀ + E<sub>c</sub>, donc E<sub>c</sub> = h·ν − W₀ (valable si ν ≥ ν₀). Pour les électrons les moins liés, c'est l'énergie cinétique maximale.",
+        "<strong>2.</strong> ν = c / λ = 2,998 × 10⁸ / (365,0 × 10⁻⁹) = 8,21 × 10¹⁴ Hz.",
+        "<strong>3.</strong> Deux points éloignés de la droite : (6,0 × 10¹⁴ Hz ; 0,11 eV) et (12,0 × 10¹⁴ Hz ; 2,62 eV). Coefficient directeur : a = (2,62 − 0,11) / (6,0 × 10¹⁴) ≈ 4,2 × 10⁻¹⁵ eV·s (la régression linéaire des mesures donne a = 4,17 × 10⁻¹⁵ eV·s, valeur gardée pour la suite). D'après la relation E<sub>c</sub> = h·ν − W₀, a = h, donc h = 4,17 × 10⁻¹⁵ × 1,602 × 10⁻¹⁹ = 6,68 × 10⁻³⁴ J·s.",
+        "Écart relatif : |6,68 − 6,626| / 6,626 = 0,8 % : la mesure est en très bon accord avec la valeur de référence (on accepte h entre 6,5 et 6,9 × 10⁻³⁴ J·s selon la lecture).",
+        "<strong>4.</strong> La droite coupe l'axe des fréquences en ν₀ ≈ 5,7 × 10¹⁴ Hz et l'axe des énergies (ν = 0, prolongement en pointillés) en −W₀ ≈ −2,4 eV, donc W₀ ≈ 2,4 eV (calcul : W₀ = h·ν₀ = 4,17 × 10⁻¹⁵ × 5,73 × 10¹⁴ = 2,39 eV). La valeur la plus proche dans les données est celle du sodium (2,36 eV) : la cathode est en sodium.",
+        "<strong>5.</strong> Pour 546,1 nm, ν = 5,49 × 10¹⁴ Hz &lt; ν₀ ≈ 5,7 × 10¹⁴ Hz : chaque photon (2,27 eV) a une énergie inférieure à W₀. Une lampe plus puissante enverrait plus de photons, mais chacun resterait trop peu énergétique : toujours aucun électron émis.",
+        "<em>⚠ Erreur fréquente : lire la pente en « eV par 10¹⁴ Hz » et oublier la puissance de dix, ou oublier de convertir les eV en joules pour obtenir h en J·s.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le rendement d'un mini-panneau solaire",
+      "contexte": [
+        "Pour alimenter une station météo de jardin, Noé teste un mini-panneau photovoltaïque rectangulaire de 10,0 cm × 12,0 cm. Un solarimètre indique que le panneau reçoit un éclairement de 850 W·m⁻² (puissance lumineuse reçue par mètre carré).",
+        "Il branche différentes résistances aux bornes du panneau et mesure, pour chacune, la tension U et l'intensité I :",
+        "U (V) : 0 ; 2,0 ; 4,0 ; 4,8 ; 5,2 ; 5,6 ; 6,0 ; 6,4",
+        "I (mA) : 330 ; 328 ; 318 ; 300 ; 282 ; 240 ; 160 ; 40"
+      ],
+      "questions": [
+        {
+          "texte": "Explique qualitativement comment une cellule photovoltaïque convertit la lumière en électricité. Quelle conversion d'énergie réalise-t-elle ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la puissance lumineuse P<sub>lum</sub> reçue par le panneau.",
+          "aides": [
+            "L'éclairement est une puissance par mètre carré : P<sub>lum</sub> = éclairement × surface.",
+            "La surface doit être en m² : 10,0 cm = 0,100 m."
+          ]
+        },
+        {
+          "texte": "Calcule la puissance électrique P<sub>élec</sub> = U × I fournie pour chaque mesure, et repère la puissance maximale.",
+          "aides": [
+            "Les intensités sont en mA : convertis-les en A avant de multiplier.",
+            "La puissance est maximale ni à U = 0 (pas de tension) ni à la tension maximale (presque pas de courant), mais entre les deux."
+          ]
+        },
+        {
+          "texte": "Déduis-en le rendement maximal η du panneau. Est-il cohérent avec les panneaux du commerce ?",
+          "aides": []
+        },
+        {
+          "texte": "Que devient le reste de l'énergie lumineuse reçue ? Donne deux raisons pour lesquelles le rendement est loin de 100 %.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le panneau contient un semi-conducteur (silicium). Les photons absorbés libèrent des porteurs de charge (électrons) qui sont mis en mouvement : un courant circule dans le circuit extérieur. Conversion : énergie lumineuse → énergie électrique (et une partie en énergie thermique).",
+        "<strong>2.</strong> S = 0,100 × 0,120 = 1,20 × 10⁻² m². P<sub>lum</sub> = 850 × 1,20 × 10⁻² = 10,2 W.",
+        "<strong>3.</strong> P<sub>élec</sub> (W) : 0 ; 0,656 ; 1,27 ; 1,44 ; 1,47 ; 1,34 ; 0,960 ; 0,256. Puissance maximale : P<sub>max</sub> = 5,2 × 0,282 = 1,47 W (pour U = 5,2 V).",
+        "<strong>4.</strong> η = P<sub>max</sub> / P<sub>lum</sub> = 1,466 / 10,2 = 0,144, soit η ≈ 14 %. C'est un peu en dessous des panneaux au silicium du commerce (15 à 22 %), mais du même ordre : c'est cohérent pour un petit panneau bon marché.",
+        "<strong>5.</strong> Environ 10,2 − 1,47 = 8,7 W ne sont pas convertis en électricité : ils sont réfléchis, ou surtout convertis en énergie thermique (le panneau chauffe). Raisons : certains photons (infrarouge lointain) n'ont pas assez d'énergie pour libérer un porteur de charge ; les photons trop énergétiques n'en libèrent qu'un, l'excédent d'énergie est perdu en chaleur ; une partie de la lumière est réfléchie ; pertes par effet Joule dans le panneau.",
+        "<em>⚠ Erreur fréquente : oublier de convertir les cm² en m² (120 cm² = 1,20 × 10⁻² m²) ou les mA en A, ce qui donne un rendement absurde (supérieur à 100 % ou de 0,01 %).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "De la cellule au césium à la barrière infrarouge",
+      "contexte": [
+        "Doc. 1 — Une découverte historique. En 1887, Heinrich Hertz remarque qu'un rayonnement ultraviolet facilite la production d'étincelles entre deux électrodes. En 1902, Philipp Lenard observe que l'énergie cinétique des électrons arrachés à un métal ne dépend pas de l'intensité de la lumière, mais de sa fréquence. En 1905, Albert Einstein interprète ces observations en supposant que la lumière est formée de « quanta » d'énergie h·ν ; il reçoit pour cela le prix Nobel de physique 1921.",
+        "Doc. 2 — La cellule photoélectrique. C'est une ampoule de verre vide d'air contenant une cathode métallique, ici recouverte de césium, et une anode. Un générateur maintient l'anode à un potentiel plus élevé que la cathode. Quand la cathode est éclairée, un courant d'intensité I peut traverser le circuit. Ce type de cellule a longtemps servi à commander l'ouverture de portes automatiques.",
+        "Doc. 3 — Essais avec quatre LED. Un technicien éclaire successivement la cathode avec quatre LED : bleue (470 nm), verte (525 nm), rouge (625 nm) et infrarouge (850 nm). Avec la LED bleue, la cathode reçoit une puissance lumineuse P = 0,50 mW et l'intensité mesurée vaut I = 38 µA.",
+        "Doc. 4 — Les photodiodes au silicium. Dans le silicium, un photon libère un porteur de charge s'il apporte au moins 1,12 eV. Les photodiodes au silicium équipent aujourd'hui la plupart des barrières de détection et des télécommandes."
+      ],
+      "questions": [
+        {
+          "texte": "À l'aide du doc. 1, décris l'effet photoélectrique et explique en quelques lignes pourquoi il a joué un rôle historique dans la description de la lumière.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide du doc. 2, explique pourquoi un courant circule dans le circuit lorsque la cathode est éclairée par une lumière convenable.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la longueur d'onde seuil λ₀ du césium. Avec quelles LED du doc. 3 la cellule fonctionne-t-elle ?",
+          "aides": [
+            "Au seuil, h·c / λ₀ = W₀ ; W₀ doit être en joule.",
+            "La cellule fonctionne si l'énergie du photon est supérieure à W₀, c'est-à-dire si λ &lt; λ₀."
+          ]
+        },
+        {
+          "texte": "Avec la LED bleue, calcule l'énergie cinétique maximale des électrons émis (en eV puis en J), puis leur vitesse maximale.",
+          "aides": [
+            "Bilan d'énergie : E<sub>c</sub> max = E(photon) − W₀, tout en eV.",
+            "Pour la vitesse : E<sub>c</sub> = ½ m<sub>e</sub> v², avec E<sub>c</sub> en joule et m<sub>e</sub> en kg."
+          ]
+        },
+        {
+          "texte": "Avec la LED bleue, calcule le nombre de photons reçus par la cathode chaque seconde, puis le nombre d'électrons qui traversent le circuit chaque seconde. Quelle proportion des photons arrache effectivement un électron collecté ?",
+          "aides": [
+            "Chaque photon apporte l'énergie E = h·c / λ : combien en faut-il par seconde pour faire P = 0,50 mW ?",
+            "L'intensité est une charge par seconde : chaque électron porte la charge e, donc N<sub>e</sub> = I / e."
+          ]
+        },
+        {
+          "texte": "Le technicien double la puissance lumineuse de la LED bleue, puis celle de la LED rouge. Prévois, dans chaque cas, l'effet sur l'intensité I et sur l'énergie cinétique maximale des électrons.",
+          "aides": []
+        },
+        {
+          "texte": "Pour une barrière de parking invisible, on veut utiliser la LED infrarouge. Peut-on garder la cellule au césium ? Argumente et propose une solution à l'aide du doc. 4.",
+          "aides": [
+            "Calcule l'énergie d'un photon à 850 nm en eV et compare-la au travail d'extraction du césium.",
+            "Compare-la ensuite à l'énergie minimale pour le silicium (doc. 4)."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : si l'on inverse le générateur, les électrons sont freinés en allant vers l'anode. Le courant s'annule pour une tension U₀ telle que e·U₀ = E<sub>c</sub> max. Calcule U₀ avec la LED bleue.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Éléments attendus : l'effet photoélectrique est l'émission d'électrons par un matériau (métal) qui absorbe de la lumière. Caractéristiques : il n'a lieu qu'au-dessus d'une fréquence seuil ν₀ propre au métal, quelle que soit l'intensité ; l'énergie cinétique des électrons dépend de la fréquence, pas de l'intensité ; l'intensité ne fixe que le nombre d'électrons émis. Le modèle ondulatoire ne l'explique pas ; Einstein l'interprète avec des photons d'énergie h·ν absorbés un par un. Rôle historique : c'est l'une des expériences fondatrices du modèle corpusculaire de la lumière (dualité onde-corpuscule) et de la physique quantique.",
+        "<strong>2.</strong> Les photons absorbés arrachent des électrons à la cathode (effet photoélectrique). L'anode, à un potentiel plus élevé, attire ces électrons : ils traversent le vide de la cathode vers l'anode puis reviennent par le circuit et le générateur. Ce déplacement de charges est un courant électrique. Sans lumière convenable, aucun électron n'est arraché : I = 0.",
+        "<strong>3.</strong> λ₀ = h·c / W₀ = 6,626 × 10⁻³⁴ × 2,998 × 10⁸ / (2,14 × 1,602 × 10⁻¹⁹) = 5,79 × 10⁻⁷ m = 579 nm. Il faut λ &lt; λ₀ : la cellule fonctionne avec les LED bleue (470 nm, 2,64 eV) et verte (525 nm, 2,36 eV), pas avec la rouge (625 nm, 1,98 eV) ni l'infrarouge (850 nm, 1,46 eV).",
+        "<strong>4.</strong> E (photon bleu) = h·c / λ = 4,23 × 10⁻¹⁹ J = 2,64 eV. E<sub>c</sub> max = E − W₀ = 2,64 − 2,14 = 0,50 eV = 0,498 × 1,602 × 10⁻¹⁹ = 7,98 × 10⁻²⁰ J. Avec E<sub>c</sub> = ½ m<sub>e</sub> v² : v = √(2 E<sub>c</sub> / m<sub>e</sub>) = √(2 × 7,98 × 10⁻²⁰ / 9,109 × 10⁻³¹) = 4,2 × 10⁵ m·s⁻¹.",
+        "<strong>5.</strong> Photons par seconde : N<sub>ph</sub> = P / E = 0,50 × 10⁻³ / 4,23 × 10⁻¹⁹ = 1,2 × 10¹⁵ photons par seconde. Électrons par seconde : N<sub>e</sub> = I / e = 38 × 10⁻⁶ / 1,602 × 10⁻¹⁹ = 2,4 × 10¹⁴ électrons par seconde. Proportion : N<sub>e</sub> / N<sub>ph</sub> = 0,20, soit environ 1 photon sur 5 (les autres sont réfléchis ou absorbés sans libérer d'électron collecté).",
+        "<strong>6.</strong> LED bleue : deux fois plus de photons par seconde, donc environ deux fois plus d'électrons arrachés : I double (environ 76 µA) ; E<sub>c</sub> max ne change pas (0,50 eV), car l'énergie de chaque photon est la même. LED rouge : ses photons (1,98 eV) restent sous le seuil (2,14 eV) ; aucun électron n'est arraché : I reste nul, quelle que soit la puissance.",
+        "<strong>7.</strong> Non : les photons à 850 nm ont 1,46 eV &lt; W₀ = 2,14 eV, la cellule au césium ne détecterait rien. En revanche, 1,46 eV &gt; 1,12 eV : une photodiode au silicium les détecte. Elle convient pour λ &lt; h·c / (1,12 eV) = 1,11 × 10⁻⁶ m = 1 107 nm, ce qui inclut 850 nm. On remplace donc la cellule par une photodiode au silicium.",
+        "<strong>8.</strong> Pour aller plus loin : U₀ = E<sub>c</sub> max / e ; avec E<sub>c</sub> max = 0,50 eV, U₀ = 0,50 V.",
+        "<em>⚠ Erreur fréquente : penser qu'une lumière plus puissante augmente la vitesse des électrons. Elle augmente leur nombre (donc I), pas leur énergie cinétique maximale, qui ne dépend que de la fréquence.</em>",
+        "<em>⚠ Erreur fréquente : calculer v avec E<sub>c</sub> en eV ; il faut l'énergie en joule pour obtenir v en m·s⁻¹.</em>"
+      ]
+    }
+  ]
+}

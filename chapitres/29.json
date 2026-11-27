@@ -1,0 +1,624 @@
+{
+  "id": 29,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Organisation générale du tableau périodique",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dans le tableau périodique, les éléments chimiques sont rangés par numéro atomique Z croissant, de gauche à droite et de haut en bas."
+          },
+          {
+            "type": "def",
+            "term": "Période",
+            "text": "Ligne du tableau périodique. Le tableau actuel compte 7 périodes."
+          },
+          {
+            "type": "def",
+            "term": "Famille chimique",
+            "text": "Colonne du tableau périodique. Le tableau actuel compte 18 colonnes (familles)."
+          },
+          {
+            "type": "text",
+            "text": "Une nouvelle période commence à chaque fois que la configuration électronique fait intervenir une nouvelle couche électronique (nouvelle valeur du nombre quantique principal n)."
+          }
+        ]
+      },
+      {
+        "title": "2. Blocs s et p",
+        "icon": "🧩",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le tableau périodique, dans sa version simplifiée étudiée au lycée, se divise en blocs selon la sous-couche électronique en cours de remplissage."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 440 222\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"20\" y=\"24\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"24\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"20\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"42\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"284\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"306\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"328\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"350\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"372\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"46\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"20\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"42\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"284\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"306\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"328\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"350\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"372\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"68\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"20\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"42\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"64\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"86\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"108\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"130\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"152\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"174\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"196\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"218\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"240\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"262\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"284\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"306\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"328\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"350\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"372\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"90\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"20\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"42\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"64\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"86\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"108\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"130\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"152\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"174\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"196\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"218\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"240\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"262\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"284\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"306\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"328\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"350\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"372\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"112\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"20\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"42\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"64\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"86\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"108\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"130\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"152\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"174\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"196\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"218\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"240\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"262\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"284\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"306\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"328\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"350\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"372\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"134\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"20\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"42\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#2F7D75\" fill-opacity=\"0.85\"/><rect x=\"64\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"86\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"108\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"130\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"152\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"174\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"196\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"218\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"240\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"262\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><rect x=\"284\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"306\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"328\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"350\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"372\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><rect x=\"394\" y=\"156\" width=\"20\" height=\"20\" rx=\"2\" fill=\"#C0472F\" fill-opacity=\"0.85\"/><text x=\"6\" y=\"38\" font-size=\"9\" fill=\"#5C6B60\">1</text><text x=\"6\" y=\"60\" font-size=\"9\" fill=\"#5C6B60\">2</text><text x=\"6\" y=\"82\" font-size=\"9\" fill=\"#5C6B60\">3</text><text x=\"6\" y=\"104\" font-size=\"9\" fill=\"#5C6B60\">4</text><text x=\"6\" y=\"126\" font-size=\"9\" fill=\"#5C6B60\">5</text><text x=\"6\" y=\"148\" font-size=\"9\" fill=\"#5C6B60\">6</text><text x=\"6\" y=\"170\" font-size=\"9\" fill=\"#5C6B60\">7</text><rect x=\"20\" y=\"198\" width=\"14\" height=\"14\" rx=\"2\" fill=\"#2F7D75\"/><text x=\"40\" y=\"209\" font-size=\"10\" fill=\"#1B2420\">Bloc s</text><rect x=\"110\" y=\"198\" width=\"14\" height=\"14\" rx=\"2\" fill=\"#C0472F\"/><text x=\"130\" y=\"209\" font-size=\"10\" fill=\"#1B2420\">Bloc p</text><rect x=\"200\" y=\"198\" width=\"14\" height=\"14\" rx=\"2\" fill=\"#B9C0AC\" fill-opacity=\"0.35\"/><text x=\"220\" y=\"209\" font-size=\"10\" fill=\"#5C6B60\">Bloc d (hors programme)</text></svg>",
+            "caption": "Schéma simplifié du tableau périodique : 7 périodes (lignes), organisées en blocs selon la sous-couche en cours de remplissage. Le bloc d (colonnes 3 à 12, à partir de la période 4) n'est pas étudié au lycée."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Bloc",
+              "Colonnes",
+              "Sous-couche en cours de remplissage"
+            ],
+            "rows": [
+              [
+                "Bloc s",
+                "1 et 2",
+                "s"
+              ],
+              [
+                "Bloc p",
+                "13 à 18",
+                "p"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Les éléments du bloc s ont leur électron le plus externe sur une sous-couche s ; ceux du bloc p ont leur électron le plus externe sur une sous-couche p."
+          }
+        ]
+      },
+      {
+        "title": "3. Familles chimiques et gaz nobles",
+        "icon": "👪",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les éléments chimiques d'une même colonne possèdent le même nombre d'électrons de valence (électrons de la couche externe). Ils ont donc des propriétés chimiques voisines et constituent une famille chimique."
+          },
+          {
+            "type": "def",
+            "term": "Gaz nobles",
+            "text": "Éléments de la colonne 18 (hélium, néon, argon...). Leur couche externe est saturée (duet ou octet), ce qui les rend chimiquement très stables et peu réactifs."
+          }
+        ]
+      },
+      {
+        "title": "4. Déterminer la position d'un élément à partir de sa configuration électronique",
+        "icon": "🔍",
+        "content": [
+          {
+            "type": "text",
+            "text": "La configuration électronique d'un atome dans son état fondamental permet de retrouver directement sa position dans le tableau périodique simplifié."
+          },
+          {
+            "type": "formula",
+            "label": "Méthode",
+            "text": "Numéro de la période = valeur de n de la couche de valence (couche externe)\nBloc s : numéro de la colonne = nombre d'électrons de valence (colonnes 1 et 2)\nBloc p : numéro de la colonne = 10 + nombre d'électrons de valence (colonnes 13 à 18)\nCas particulier : l'hélium (2 électrons de valence) est placé dans la colonne 18, avec les gaz nobles."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le chlore a pour configuration électronique (K)² (L)⁸ (M)⁷. Sa couche externe est M, donc n = 3 : le chlore est situé en période 3. Il possède 7 électrons de valence et appartient au bloc p : il est donc situé dans la colonne 10 + 7 = 17."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans le tableau périodique actuel, les éléments sont rangés par :",
+      "opts": [
+        "masse croissante",
+        "numéro atomique Z croissant",
+        "nombre de neutrons croissant",
+        "nombre d'électrons de valence croissant"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "rangement-par-masse",
+          "texte": "Croire qu'on range les éléments par masse : c'était l'idée de départ de Mendeleïev, le tableau actuel suit Z"
+        },
+        null,
+        {
+          "code": "rangement-par-neutrons",
+          "texte": "Croire qu'on range par nombre de neutrons : c'est le nombre de protons Z qui définit l'élément"
+        },
+        {
+          "code": "rangement-par-valence",
+          "texte": "Croire qu'on range par électrons de valence : leur nombre se répète d'une ligne à l'autre, c'est ce qui forme les colonnes"
+        }
+      ],
+      "exp": "Les éléments sont rangés par numéro atomique Z croissant, de gauche à droite et de haut en bas. Attention : le nombre d'électrons de valence est commun aux éléments d'une même colonne."
+    },
+    {
+      "q": "Le soufre a pour configuration électronique 1s² 2s² 2p⁶ 3s² 3p⁴. Il se trouve :",
+      "opts": [
+        "période 3, colonne 6",
+        "période 6, colonne 3",
+        "période 3, colonne 16",
+        "période 4, colonne 16"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "colonne-p-egale-valence",
+          "texte": "Prendre le nombre d'électrons de valence (6) pour le numéro de colonne : dans le bloc p, la colonne vaut 10 + 6 = 16"
+        },
+        {
+          "code": "ligne-colonne-inverses",
+          "texte": "Inverser période et colonne : la période est donnée par n de la couche externe (n = 3)"
+        },
+        null,
+        {
+          "code": "periode-vs-derniere-sous-couche",
+          "texte": "Prendre le nombre d'électrons de la dernière sous-couche (3p⁴) pour la période : la période est donnée par n = 3"
+        }
+      ],
+      "exp": "Couche externe n = 3 : période 3. 6 électrons de valence (3s² 3p⁴), bloc p : colonne 16. Attention : dans le bloc p, le numéro de colonne (de 13 à 18) vaut 10 + le nombre d'électrons de valence."
+    },
+    {
+      "q": "Le magnésium a pour configuration électronique 1s² 2s² 2p⁶ 3s². Il se trouve :",
+      "opts": [
+        "période 3, colonne 2, bloc s",
+        "période 2, colonne 2, bloc s",
+        "période 3, colonne 12, bloc s",
+        "période 3, colonne 2, bloc p"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "periode-vs-valence",
+          "texte": "Prendre le nombre d'électrons de valence (2) pour la période : la période est donnée par n de la couche externe (n = 3)"
+        },
+        {
+          "code": "colonne-s-plus-10",
+          "texte": "Ajouter 10 pour un élément du bloc s : on ajoute 10 seulement dans le bloc p (colonnes 13 à 18)"
+        },
+        {
+          "code": "bloc-mal-identifie",
+          "texte": "Se tromper de bloc : la dernière sous-couche remplie est 3s, c'est le bloc s"
+        }
+      ],
+      "exp": "Couche externe n = 3 : période 3 ; 2 électrons de valence en 3s : bloc s, colonne 2. Attention : le bloc est donné par la sous-couche en cours de remplissage."
+    },
+    {
+      "q": "Le phosphore se trouve dans la période 3, colonne 15. Sa configuration électronique est :",
+      "opts": [
+        "1s² 2s² 2p³",
+        "1s² 2s² 2p⁶ 3s² 3p⁵",
+        "1s² 2s² 2p⁶ 3s² 3p³",
+        "1s² 2s² 2p⁶ 3s⁵"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "periode-vs-n",
+          "texte": "Placer les électrons de valence sur la couche n = 2 : la période 3 correspond à n = 3"
+        },
+        {
+          "code": "colonne-mal-convertie",
+          "texte": "Colonne 15 = 5 électrons de valence au total (3s² 3p³), pas 5 électrons dans la seule sous-couche 3p"
+        },
+        null,
+        {
+          "code": "s-max-2",
+          "texte": "Mettre plus de 2 électrons dans une sous-couche s : elle en contient au maximum 2"
+        }
+      ],
+      "exp": "Colonne 15 du bloc p : 15 − 10 = 5 électrons de valence, sur la couche n = 3 (période 3) : 3s² 3p³, d'où 1s² 2s² 2p⁶ 3s² 3p³ (15 électrons). Attention : les électrons de valence sont ceux de toute la couche externe."
+    },
+    {
+      "q": "Le lithium, le sodium et le potassium ont des propriétés chimiques voisines parce que :",
+      "opts": [
+        "ils ont le même nombre total d'électrons",
+        "ils sont dans la même période",
+        "ils ont des masses voisines",
+        "ils ont le même nombre d'électrons de valence"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "famille-meme-nombre-electrons",
+          "texte": "Croire que les éléments d'une famille ont le même nombre d'électrons : ils ont le même nombre d'électrons de valence"
+        },
+        {
+          "code": "ligne-colonne-inverses",
+          "texte": "Confondre période (ligne) et famille (colonne) : ces trois éléments sont dans la même colonne"
+        },
+        {
+          "code": "proprietes-par-masse",
+          "texte": "Croire que les propriétés chimiques dépendent de la masse : elles dépendent des électrons de valence"
+        },
+        null
+      ],
+      "exp": "Ils sont dans la même colonne (colonne 1) : même nombre d'électrons de valence (1), donc propriétés chimiques voisines. C'est une famille chimique. Attention : la famille est une colonne, pas une ligne."
+    },
+    {
+      "q": "L'hélium (1s²) est placé dans la colonne 18, avec les gaz nobles, parce que :",
+      "opts": [
+        "il a 8 électrons de valence",
+        "sa couche externe est saturée, comme celle des autres gaz nobles",
+        "il a 18 électrons",
+        "c'est un gaz, comme les autres éléments de cette colonne"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "valence-toujours-8",
+          "texte": "Croire qu'un gaz noble a toujours 8 électrons de valence : l'hélium n'en a que 2 (duet)"
+        },
+        null,
+        {
+          "code": "colonne-egale-z",
+          "texte": "Prendre le numéro de colonne pour le nombre total d'électrons : l'hélium n'en a que 2"
+        },
+        {
+          "code": "gaz-donc-inerte",
+          "texte": "Croire que l'état gazeux explique le classement : le dioxygène ou le dichlore sont des gaz très réactifs"
+        }
+      ],
+      "exp": "La couche n = 1 ne peut contenir que 2 électrons : celle de l'hélium est saturée (duet), ce qui le rend très stable comme les autres gaz nobles. Attention : saturée veut dire 2 électrons pour n = 1, 8 pour n = 2 ou 3."
+    },
+    {
+      "q": "Un élément de la colonne 2 forme en général l'ion :",
+      "opts": [
+        "X²⁻",
+        "X⁶⁻",
+        "X²⁺",
+        "X⁺"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ion-signe-inverse",
+          "texte": "Se tromper sur le signe : perdre 2 électrons (négatifs) rend l'ion positif"
+        },
+        {
+          "code": "gain-au-lieu-perte",
+          "texte": "Croire que l'atome gagne 6 électrons pour compléter l'octet : il est bien plus simple d'en perdre 2"
+        },
+        null,
+        {
+          "code": "charge-sans-lien-colonne",
+          "texte": "Ne pas relier la charge aux électrons de valence : 2 électrons de valence à perdre donnent la charge 2+"
+        }
+      ],
+      "exp": "Les éléments de la colonne 2 ont 2 électrons de valence ; en les perdant, ils obtiennent la structure d'un gaz noble : ion X²⁺ (Mg²⁺, Ca²⁺). Attention : perdre des électrons donne un ion positif."
+    },
+    {
+      "q": "Les éléments d'une même période (ligne) ont en commun :",
+      "opts": [
+        "le même nombre d'électrons de valence",
+        "la même couche externe (même valeur de n)",
+        "des propriétés chimiques voisines",
+        "le même nombre de neutrons"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ligne-colonne-inverses",
+          "texte": "Confondre période (ligne) et famille (colonne) : c'est dans une colonne qu'on a le même nombre d'électrons de valence"
+        },
+        null,
+        {
+          "code": "ligne-proprietes-communes",
+          "texte": "Croire que les éléments d'une ligne se ressemblent : ce sont ceux d'une même colonne qui ont des propriétés voisines"
+        },
+        {
+          "code": "rangement-par-neutrons",
+          "texte": "Croire que le tableau classe les éléments par nombre de neutrons : seul Z compte"
+        }
+      ],
+      "exp": "Dans une période, les électrons de valence sont sur la même couche n (n = 3 pour la période 3). Attention : les propriétés voisines sont celles d'une même colonne."
+    },
+    {
+      "q": "Après le néon (Z = 10), le sodium (Z = 11) commence la période 3 parce que :",
+      "opts": [
+        "chaque période contient 10 éléments",
+        "le néon est un gaz et le sodium un métal",
+        "le sodium a 3 électrons de valence",
+        "son électron externe occupe une nouvelle couche, n = 3"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "periode-nombre-fixe",
+          "texte": "Croire que toutes les périodes ont la même longueur : la période 1 compte 2 éléments, les périodes 2 et 3 en comptent 8"
+        },
+        {
+          "code": "etat-physique-classement",
+          "texte": "Croire que le tableau classe selon l'état physique : il suit Z et le remplissage des couches électroniques"
+        },
+        {
+          "code": "periode-vs-valence",
+          "texte": "Prendre le numéro de la période pour le nombre d'électrons de valence : le sodium n'en a qu'un (3s¹)"
+        },
+        null
+      ],
+      "exp": "Na : 1s² 2s² 2p⁶ 3s¹. Son électron externe est sur la couche n = 3 : une nouvelle période commence. Attention : la période donne n, la colonne renseigne sur les électrons de valence."
+    },
+    {
+      "q": "Le bloc p du tableau périodique regroupe les colonnes :",
+      "opts": [
+        "13 à 18",
+        "1 et 2",
+        "3 à 12",
+        "1 à 6"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "blocs-s-p-inverses",
+          "texte": "Inverser les blocs : les colonnes 1 et 2 forment le bloc s"
+        },
+        {
+          "code": "bloc-d-vs-p",
+          "texte": "Confondre avec le bloc d (colonnes 3 à 12), qui n'est pas étudié en Seconde"
+        },
+        {
+          "code": "colonnes-p-de-1-a-6",
+          "texte": "Croire que le bloc p occupe les colonnes 1 à 6 parce que p contient 6 électrons : ce sont les 6 colonnes 13 à 18"
+        }
+      ],
+      "exp": "Bloc s : colonnes 1 et 2 (sous-couche s, 2 électrons au plus) ; bloc p : colonnes 13 à 18 (sous-couche p, 6 électrons au plus). Attention : pour le bloc p, colonne = 10 + nombre d'électrons de valence."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le tableau de Mendeleïev",
+      "contexte": [
+        "En 1869, le chimiste russe Dmitri Mendeleïev range les 63 éléments chimiques connus à son époque par masse atomique croissante, et place dans une même colonne ceux qui ont des propriétés chimiques semblables. Il laisse des cases vides et prédit les propriétés d'éléments encore inconnus : le gallium et le germanium, découverts quelques années plus tard, lui donnent raison.",
+        "Le tableau affiché aujourd'hui dans la salle de chimie compte 118 éléments. Sami relit ses notes de cours à son sujet ; certaines phrases sont fausses."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse. Corrige celles qui sont fausses.<br>a. Aujourd'hui, comme Mendeleïev, on range les éléments par masse atomique croissante.<br>b. Une ligne du tableau s'appelle une période ; le tableau actuel compte 7 périodes.<br>c. Les éléments d'une même colonne ont le même numéro atomique Z.<br>d. Les éléments d'une même colonne ont des propriétés chimiques voisines : ils forment une famille chimique.<br>e. Une nouvelle période commence chaque fois qu'une nouvelle couche électronique (nouvelle valeur de n) commence à se remplir.<br>f. Le bloc p regroupe les colonnes 1 et 2.<br>g. Le tableau actuel compte 18 colonnes.",
+          "aides": [
+            "Relis la définition de période (ligne) et de famille chimique (colonne) dans le cours.",
+            "Pour a. et c. : quelle grandeur augmente de 1 à chaque case ? Deux éléments différents peuvent-ils avoir le même Z ?"
+          ]
+        },
+        {
+          "texte": "QCM : pourquoi Mendeleïev a-t-il laissé des cases vides dans son tableau ? (une seule bonne réponse)<br>a. Pour que le tableau soit symétrique.<br>b. Parce que certains éléments n'avaient pas encore été découverts.<br>c. Parce que certains éléments sont radioactifs.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : aujourd'hui, les éléments sont rangés par numéro atomique Z croissant (de gauche à droite et de haut en bas). Le numéro atomique n'était pas connu en 1869.",
+        "b. VRAI.",
+        "c. FAUX : le numéro atomique Z augmente d'une case à l'autre ; deux éléments différents n'ont jamais le même Z. Les éléments d'une même colonne ont le même nombre d'électrons de valence.",
+        "d. VRAI : c'est l'idée de Mendeleïev, que l'on explique aujourd'hui par le même nombre d'électrons de valence.",
+        "e. VRAI : par exemple, le sodium (Z = 11) est le premier élément dont la couche n = 3 commence à se remplir (3s¹) : il ouvre la période 3.",
+        "f. FAUX : le bloc s regroupe les colonnes 1 et 2 ; le bloc p regroupe les colonnes 13 à 18.",
+        "g. VRAI.",
+        "<strong>2.</strong> Réponse b : Mendeleïev avait compris que des éléments manquaient ; il a laissé leur place libre et prédit leurs propriétés.",
+        "<em>⚠ Erreur fréquente : confondre période (ligne) et famille (colonne). Astuce : une famille « se tient debout », en colonne.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Les cases vides de l'affiche",
+      "contexte": [
+        "Sur l'affiche de la salle, quelques étiquettes se sont décollées dans les trois premières périodes : elles sont repérées par les numéros ① à ⑤ dans l'extrait ci-dessous.",
+        "Méthode du cours (blocs s et p) : le numéro de la période est la valeur de n de la couche de valence (couche externe). Dans le bloc s, le nombre d'électrons de valence est égal au numéro de la colonne ; dans le bloc p, il est égal au numéro de la colonne moins 10 (sauf l'hélium, placé en colonne 18 avec seulement 2 électrons)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\">Extrait du tableau périodique : les trois premières périodes</text><text x=\"154.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">1</text><text x=\"222.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">2</text><text x=\"336.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">13</text><text x=\"404.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">14</text><text x=\"472.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">15</text><text x=\"540.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">16</text><text x=\"608.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">17</text><text x=\"676.0\" y=\"80\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">18</text><text x=\"108\" y=\"80\" text-anchor=\"end\" font-size=\"15\" fill=\"#1F4E5A\">Colonne :</text><text x=\"279.0\" y=\"328.0\" text-anchor=\"middle\" font-size=\"18\" fill=\"#777\">…</text><text x=\"106\" y=\"144.0\" text-anchor=\"end\" fill=\"#1F4E5A\" font-weight=\"bold\">Période 1</text><text x=\"106\" y=\"236.0\" text-anchor=\"end\" fill=\"#1F4E5A\" font-weight=\"bold\">Période 2</text><text x=\"106\" y=\"328.0\" text-anchor=\"end\" fill=\"#1F4E5A\" font-weight=\"bold\">Période 3</text><rect x=\"123\" y=\"95\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"130\" y=\"116\" font-size=\"15\" fill=\"#B5523B\">1</text><text x=\"154.0\" y=\"158.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">H</text><rect x=\"645\" y=\"95\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"652\" y=\"116\" font-size=\"15\" fill=\"#B5523B\">2</text><text x=\"676.0\" y=\"158.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">He</text><rect x=\"123\" y=\"187\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"130\" y=\"208\" font-size=\"15\" fill=\"#B5523B\">3</text><text x=\"154.0\" y=\"250.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">Li</text><rect x=\"191\" y=\"187\" width=\"62\" height=\"86\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"222.0\" y=\"242.0\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#C8962E\">①</text><rect x=\"305\" y=\"187\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"312\" y=\"208\" font-size=\"15\" fill=\"#B5523B\">5</text><text x=\"336.0\" y=\"250.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">B</text><rect x=\"373\" y=\"187\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"380\" y=\"208\" font-size=\"15\" fill=\"#B5523B\">6</text><text x=\"404.0\" y=\"250.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">C</text><rect x=\"441\" y=\"187\" width=\"62\" height=\"86\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"472.0\" y=\"242.0\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#C8962E\">②</text><rect x=\"509\" y=\"187\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"516\" y=\"208\" font-size=\"15\" fill=\"#B5523B\">8</text><text x=\"540.0\" y=\"250.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><rect x=\"577\" y=\"187\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"584\" y=\"208\" font-size=\"15\" fill=\"#B5523B\">9</text><text x=\"608.0\" y=\"250.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">F</text><rect x=\"645\" y=\"187\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"652\" y=\"208\" font-size=\"15\" fill=\"#B5523B\">10</text><text x=\"676.0\" y=\"250.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">Ne</text><rect x=\"123\" y=\"279\" width=\"62\" height=\"86\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"154.0\" y=\"334.0\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#C8962E\">③</text><rect x=\"191\" y=\"279\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"198\" y=\"300\" font-size=\"15\" fill=\"#B5523B\">12</text><text x=\"222.0\" y=\"342.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">Mg</text><rect x=\"305\" y=\"279\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"312\" y=\"300\" font-size=\"15\" fill=\"#B5523B\">13</text><text x=\"336.0\" y=\"342.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">Al</text><rect x=\"373\" y=\"279\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"380\" y=\"300\" font-size=\"15\" fill=\"#B5523B\">14</text><text x=\"404.0\" y=\"342.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">Si</text><rect x=\"441\" y=\"279\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"448\" y=\"300\" font-size=\"15\" fill=\"#B5523B\">15</text><text x=\"472.0\" y=\"342.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">P</text><rect x=\"509\" y=\"279\" width=\"62\" height=\"86\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"540.0\" y=\"334.0\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#C8962E\">④</text><rect x=\"577\" y=\"279\" width=\"62\" height=\"86\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"584\" y=\"300\" font-size=\"15\" fill=\"#B5523B\">17</text><text x=\"608.0\" y=\"342.0\" text-anchor=\"middle\" font-size=\"28\" font-weight=\"bold\" fill=\"#1F4E5A\">Cl</text><rect x=\"645\" y=\"279\" width=\"62\" height=\"86\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><text x=\"676.0\" y=\"334.0\" text-anchor=\"middle\" font-size=\"34\" font-weight=\"bold\" fill=\"#C8962E\">⑤</text><rect x=\"120\" y=\"384\" width=\"62\" height=\"40\" fill=\"#eef3f4\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"128\" y=\"401\" font-size=\"14\" fill=\"#B5523B\">Z</text><text x=\"154\" y=\"417\" text-anchor=\"middle\" font-size=\"18\" font-weight=\"bold\" fill=\"#1F4E5A\">X</text><text x=\"194\" y=\"409\" font-size=\"15\">Z : numéro atomique (en haut à gauche) ; X : symbole de l'élément.</text><text x=\"194\" y=\"433\" font-size=\"15\">Cases ① à ⑤ (pointillés) : éléments à retrouver.</text></svg>",
+      "questions": [
+        {
+          "texte": "Les éléments sont rangés par numéro atomique Z croissant. Donne le numéro atomique de chacune des cases ① à ⑤, puis le symbole de l'élément (encadré « Données »).",
+          "aides": [
+            "Z augmente de 1 d'une case à la suivante, de gauche à droite, puis on passe à la ligne suivante.",
+            "Case ① : elle suit le lithium (Z = 3). Case ③ : elle suit le néon (Z = 10), qui termine la période 2."
+          ]
+        },
+        {
+          "texte": "Quelles colonnes de l'extrait forment le bloc s ? Lesquelles forment le bloc p ?",
+          "aides": []
+        },
+        {
+          "texte": "Combien d'électrons de valence possèdent les éléments des cases ③ et ④ ? Vérifie ta réponse pour la case ④ en écrivant la configuration électronique de l'atome.",
+          "aides": [
+            "Lis d'abord la colonne de la case, puis applique la méthode rappelée dans l'énoncé (bloc s ou bloc p ?).",
+            "Pour la configuration de la case ④ : Z électrons à placer dans 1s, 2s, 2p, 3s, 3p ; les électrons de valence sont ceux de la couche n = 3 (3s et 3p)."
+          ]
+        },
+        {
+          "texte": "La période 1 ne contient que 2 éléments, alors que les périodes 2 et 3 en contiennent 8. Explique pourquoi à l'aide de la couche n = 1.",
+          "aides": [
+            "Quelles sous-couches la couche n = 1 contient-elle ? Et la couche n = 2 ?",
+            "Compte le nombre maximal d'électrons de chaque couche : un élément de plus = un électron de plus."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> ① : Z = 4, béryllium Be ; ② : Z = 7, azote N ; ③ : Z = 11, sodium Na ; ④ : Z = 16, soufre S ; ⑤ : Z = 18, argon Ar.",
+        "<strong>2.</strong> Bloc s : colonnes 1 et 2 (hélium compris, voir ci-dessous) ; bloc p : colonnes 13 à 18.",
+        "<strong>3.</strong> Case ③ (sodium) : colonne 1, bloc s : 1 électron de valence. Case ④ (soufre) : colonne 16, bloc p : 16 − 10 = 6 électrons de valence.",
+        "Vérification : soufre, 16 électrons : 1s² 2s² 2p⁶ 3s² 3p⁴. Couche de valence n = 3 (période 3) : 2 + 4 = 6 électrons de valence.",
+        "<strong>4.</strong> La couche n = 1 ne contient qu'une sous-couche, 1s, qui accueille au maximum 2 électrons : seuls deux éléments (H : 1s¹ et He : 1s²) ont leur couche externe en n = 1. La couche n = 2 (2s et 2p) accueille 2 + 6 = 8 électrons, d'où 8 éléments dans la période 2.",
+        "Remarque : l'hélium appartient au bloc s (1s²) mais il est placé en colonne 18, avec les gaz nobles, car il a les mêmes propriétés qu'eux.",
+        "<em>⚠ Erreur fréquente : donner 16 électrons de valence au soufre parce qu'il est en colonne 16. Dans le bloc p, il faut retirer 10.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Trois familles, trois caractères",
+      "contexte": [
+        "Document — Le professeur a présenté trois familles d'éléments.",
+        "• Le lithium Li, le sodium Na et le potassium K sont des métaux mous qui réagissent violemment avec l'eau : on les conserve dans l'huile. Ce sont les alcalins (l'hydrogène, placé dans la même colonne, est un gaz qui ne fait pas partie de cette famille).",
+        "• Le fluor F et le chlore Cl réagissent avec de nombreux métaux pour former des sels (comme le chlorure de sodium, le sel de cuisine). Ce sont les halogènes.",
+        "• L'hélium He (ballons de fête), le néon Ne (enseignes lumineuses) et l'argon Ar (gaz isolant des doubles vitrages) ne réagissent pratiquement avec aucune espèce chimique. Ce sont les gaz nobles."
+      ],
+      "questions": [
+        {
+          "texte": "Écris la configuration électronique des atomes de lithium, sodium, fluor, chlore, hélium, néon et argon, puis donne leur nombre d'électrons de valence.",
+          "aides": [
+            "Le nombre d'électrons d'un atome neutre est égal à Z (encadré « Données »).",
+            "Les électrons de valence sont ceux de la couche de plus grand n : additionne ceux des sous-couches s ET p de cette couche."
+          ]
+        },
+        {
+          "texte": "Associe chaque famille à son numéro de colonne : 1, 17 ou 18. Justifie avec le nombre d'électrons de valence.",
+          "aides": []
+        },
+        {
+          "texte": "Complète le texte avec les mots suivants : stables, duet, octet, externe, réagissent, 18.<br>« Les gaz nobles sont dans la colonne … . Leur couche … est saturée : elle contient 2 électrons pour l'hélium (règle du …) et 8 électrons pour le néon et l'argon (règle de l'…). Cette configuration les rend chimiquement très … : ils ne … pratiquement pas. »",
+          "aides": []
+        },
+        {
+          "texte": "Le potassium K (Z = 19) a pour configuration 1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹. Dans quelle période se trouve-t-il ? Explique pourquoi on s'attend à ce qu'il réagisse, lui aussi, violemment avec l'eau.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lithium : 1s² 2s¹ → 1 électron de valence. Sodium : 1s² 2s² 2p⁶ 3s¹ → 1. Fluor : 1s² 2s² 2p⁵ → 2 + 5 = 7. Chlore : 1s² 2s² 2p⁶ 3s² 3p⁵ → 2 + 5 = 7. Hélium : 1s² → 2. Néon : 1s² 2s² 2p⁶ → 8. Argon : 1s² 2s² 2p⁶ 3s² 3p⁶ → 8.",
+        "<strong>2.</strong> Alcalins : colonne 1 (1 électron de valence, bloc s). Halogènes : colonne 17 (7 électrons de valence = 17 − 10, bloc p). Gaz nobles : colonne 18 (couche externe saturée).",
+        "<strong>3.</strong> « Les gaz nobles sont dans la colonne 18. Leur couche externe est saturée : elle contient 2 électrons pour l'hélium (règle du duet) et 8 électrons pour le néon et l'argon (règle de l'octet). Cette configuration les rend chimiquement très stables : ils ne réagissent pratiquement pas. »",
+        "<strong>4.</strong> Sa couche de valence est n = 4 : le potassium est dans la période 4. Il a 1 électron de valence (4s¹), comme le lithium et le sodium : il est dans la colonne 1, famille des alcalins, et a donc des propriétés chimiques voisines des leurs.",
+        "<em>⚠ Erreur fréquente : classer l'hydrogène parmi les alcalins parce qu'il est dans la colonne 1. C'est un gaz aux propriétés différentes : il ne fait pas partie de cette famille.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Les éléments de mon smartphone",
+      "contexte": [
+        "Un smartphone contient une soixantaine d'éléments chimiques. En voici quelques-uns : le lithium (batterie), le carbone (graphite de la batterie), l'aluminium (coque de certains modèles), le silicium (puces électroniques) et le phosphore (ajouté en très petite quantité au silicium des puces)."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chacun des atomes Li, C, Al, Si et P, écris la configuration électronique, puis donne le nombre d'électrons de valence, le bloc, la période et la colonne. Présente tes résultats dans un tableau.",
+          "aides": [
+            "Commence par chercher Z dans l'encadré « Données » : c'est le nombre d'électrons à placer.",
+            "Période = n de la couche de valence. Bloc = type (s ou p) de la dernière sous-couche remplie.",
+            "Colonne : bloc s → nombre d'électrons de valence ; bloc p → nombre d'électrons de valence + 10."
+          ]
+        },
+        {
+          "texte": "Deux de ces éléments appartiennent à la même famille. Lesquels ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Le cadre de certains smartphones est fait d'un alliage contenant un élément situé dans la période 3 et la colonne 2. Écris la configuration électronique de son atome et identifie-le.",
+          "aides": [
+            "Période 3 : quelle est la couche de valence ? Colonne 2 : combien d'électrons de valence, dans quelle sous-couche ?",
+            "Écris toutes les couches complètes avant la couche n = 3, puis compte le nombre total d'électrons."
+          ]
+        },
+        {
+          "texte": "L'écran (ou ses LED) contient un élément de la période 2 dont l'atome possède 5 électrons de valence. Dans quelle colonne est-il placé ? Écris la configuration électronique de son atome et identifie-le.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lithium (Z = 3) : 1s² 2s¹ ; 1 électron de valence ; bloc s ; période 2 ; colonne 1.",
+        "Carbone (Z = 6) : 1s² 2s² 2p² ; 2 + 2 = 4 électrons de valence ; bloc p ; période 2 ; colonne 10 + 4 = 14.",
+        "Aluminium (Z = 13) : 1s² 2s² 2p⁶ 3s² 3p¹ ; 3 électrons de valence ; bloc p ; période 3 ; colonne 13.",
+        "Silicium (Z = 14) : 1s² 2s² 2p⁶ 3s² 3p² ; 4 électrons de valence ; bloc p ; période 3 ; colonne 14.",
+        "Phosphore (Z = 15) : 1s² 2s² 2p⁶ 3s² 3p³ ; 5 électrons de valence ; bloc p ; période 3 ; colonne 15.",
+        "<strong>2.</strong> Le carbone et le silicium : tous deux ont 4 électrons de valence et sont dans la colonne 14. Ils forment une même famille et ont des propriétés chimiques voisines.",
+        "<strong>3.</strong> Période 3 → couche de valence n = 3 ; colonne 2 → bloc s, 2 électrons de valence : 3s². Configuration : 1s² 2s² 2p⁶ 3s², soit 12 électrons : Z = 12, c'est le magnésium Mg.",
+        "<strong>4.</strong> 5 électrons de valence dans le bloc p → colonne 10 + 5 = 15. Période 2 → couche de valence n = 2 : 2s² 2p³. Configuration : 1s² 2s² 2p³, soit 7 électrons : Z = 7, c'est l'azote N (dans les nitrures de l'écran ou des LED, par exemple).",
+        "Vérification de cohérence : le nombre total d'électrons de chaque configuration est égal au numéro atomique Z de l'encadré « Données ».",
+        "<em>⚠ Erreur fréquente : placer l'azote dans la colonne 5 parce qu'il a 5 électrons de valence. Dans le bloc p, colonne = nombre d'électrons de valence + 10. Autre erreur : compter seulement les électrons de la sous-couche p (2p³ → 3) au lieu de toute la couche n = 2 (2s² 2p³ → 5).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Qui suis-je ?",
+      "contexte": [
+        "Au club sciences, Lina et Mehdi se lancent des devinettes sur les éléments de numéro atomique Z ≤ 18."
+      ],
+      "questions": [
+        {
+          "texte": "Identifie chaque élément et écris la configuration électronique de son atome.<br>a. « Je suis dans la même famille que le fluor, juste une période en dessous. »<br>b. « Je suis dans la période 3 et j'ai 2 électrons de valence. »<br>c. « Je suis un gaz noble et ma couche externe est saturée avec un duet. »<br>d. « J'ai le même nombre d'électrons de valence que l'oxygène, mais je ne suis pas l'oxygène. »<br>e. « Ma configuration électronique se termine par 3p¹. »",
+          "aides": [
+            "Pour chaque devinette, cherche d'abord la colonne (famille) ou la période, puis place l'élément dans un tableau des trois premières périodes.",
+            "a. Le fluor est en colonne 17. d. L'oxygène est en colonne 16. e. Compte tous les électrons de la configuration."
+          ]
+        },
+        {
+          "texte": "Mehdi affirme : « Le magnésium et l'hélium ont tous les deux 2 électrons de valence, donc ils devraient être dans la même colonne. » Explique pourquoi l'hélium n'est pas placé avec le magnésium, mais dans la colonne 18.",
+          "aides": [
+            "Qu'est-ce qui définit une famille chimique : le nombre d'électrons, ou les propriétés chimiques ?",
+            "Compare la couche externe de l'hélium (n = 1) et celle du magnésium (n = 3) : laquelle est saturée ?"
+          ]
+        },
+        {
+          "texte": "Avec quel élément de la période 2 le magnésium a-t-il des propriétés chimiques voisines ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Le fluor est en colonne 17, période 2 ; juste en dessous : colonne 17, période 3 → chlore Cl (Z = 17) : 1s² 2s² 2p⁶ 3s² 3p⁵.",
+        "b. Période 3 → couche de valence n = 3 ; 2 électrons de valence → 3s² : magnésium Mg (Z = 12) : 1s² 2s² 2p⁶ 3s².",
+        "c. Couche externe à 2 électrons (duet) et gaz noble → hélium He (Z = 2) : 1s².",
+        "d. L'oxygène a 6 électrons de valence (colonne 16) ; l'autre élément de la colonne 16 pour Z ≤ 18 est le soufre S (Z = 16) : 1s² 2s² 2p⁶ 3s² 3p⁴.",
+        "e. 1s² 2s² 2p⁶ 3s² 3p¹ : 2 + 2 + 6 + 2 + 1 = 13 électrons → aluminium Al (Z = 13).",
+        "<strong>2.</strong> Ce qui compte pour la famille, ce sont les propriétés chimiques. La couche externe de l'hélium (n = 1) est saturée avec 2 électrons : il est très stable et ne réagit pratiquement pas, comme le néon et l'argon. Celle du magnésium (n = 3) n'est pas saturée : il réagit facilement (il brûle dans l'air avec une flamme éblouissante). L'hélium est donc rangé avec les gaz nobles, en colonne 18.",
+        "<strong>3.</strong> Avec le béryllium Be (1s² 2s²) : il est dans la même colonne 2, avec 2 électrons de valence ; ils appartiennent à la même famille.",
+        "<em>⚠ Erreur fréquente : croire que « même nombre d'électrons de valence » suffit toujours. L'hélium est l'exception : son duet est une couche externe complète, ce qui n'est pas le cas des 2 électrons de valence du magnésium.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Quel gaz pour la soudure de Yanis ?",
+      "contexte": [
+        "Doc. 1 — Le problème. Yanis est en apprentissage dans un atelier de métallerie. Il réalise des soudures « TIG » : un arc électrique fait fondre le métal à plus de 1 500 °C. À cette température, le métal fondu réagit avec le dioxygène de l'air : la soudure devient poreuse et cassante. Pour l'éviter, on souffle autour de la soudure un gaz de protection qui ne doit réagir ni avec le métal chaud, ni avec l'électrode. Les étiquettes des bouteilles de l'atelier se sont abîmées : il ne reste que le numéro de la bouteille et la configuration électronique de l'atome de l'élément qui le forme (doc. 2)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"32\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\">Doc. 2 — Les quatre bouteilles de gaz de l'atelier</text><rect x=\"83\" y=\"62\" width=\"24\" height=\"22\" rx=\"3\" fill=\"#8a8a8a\"/><rect x=\"69\" y=\"56\" width=\"52\" height=\"10\" rx=\"3\" fill=\"#6d6d6d\"/><path d=\"M 47 120 Q 47 84 95 84 Q 143 84 143 120 L 143 330 Q 143 342 131 342 L 59 342 Q 47 342 47 330 Z\" fill=\"#1F4E5A\"/><rect x=\"57\" y=\"150\" width=\"76\" height=\"120\" rx=\"6\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\"/><text x=\"95\" y=\"190\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">Bouteille</text><text x=\"95\" y=\"240\" text-anchor=\"middle\" font-size=\"44\" font-weight=\"bold\" fill=\"#B5523B\">1</text><rect x=\"7\" y=\"362\" width=\"176\" height=\"64\" rx=\"8\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"1.5\"/><text x=\"95\" y=\"385\" text-anchor=\"middle\" font-size=\"14\" fill=\"#3a3a3a\">Atome :</text><text x=\"95\" y=\"412\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F4E5A\">1s² 2s² 2p⁴</text><rect x=\"273\" y=\"62\" width=\"24\" height=\"22\" rx=\"3\" fill=\"#8a8a8a\"/><rect x=\"259\" y=\"56\" width=\"52\" height=\"10\" rx=\"3\" fill=\"#6d6d6d\"/><path d=\"M 237 120 Q 237 84 285 84 Q 333 84 333 120 L 333 330 Q 333 342 321 342 L 249 342 Q 237 342 237 330 Z\" fill=\"#1F4E5A\"/><rect x=\"247\" y=\"150\" width=\"76\" height=\"120\" rx=\"6\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\"/><text x=\"285\" y=\"190\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">Bouteille</text><text x=\"285\" y=\"240\" text-anchor=\"middle\" font-size=\"44\" font-weight=\"bold\" fill=\"#B5523B\">2</text><rect x=\"197\" y=\"362\" width=\"176\" height=\"64\" rx=\"8\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"1.5\"/><text x=\"285\" y=\"385\" text-anchor=\"middle\" font-size=\"14\" fill=\"#3a3a3a\">Atome :</text><text x=\"285\" y=\"412\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F4E5A\">1s² 2s² 2p⁶ 3s² 3p⁵</text><rect x=\"463\" y=\"62\" width=\"24\" height=\"22\" rx=\"3\" fill=\"#8a8a8a\"/><rect x=\"449\" y=\"56\" width=\"52\" height=\"10\" rx=\"3\" fill=\"#6d6d6d\"/><path d=\"M 427 120 Q 427 84 475 84 Q 523 84 523 120 L 523 330 Q 523 342 511 342 L 439 342 Q 427 342 427 330 Z\" fill=\"#1F4E5A\"/><rect x=\"437\" y=\"150\" width=\"76\" height=\"120\" rx=\"6\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\"/><text x=\"475\" y=\"190\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">Bouteille</text><text x=\"475\" y=\"240\" text-anchor=\"middle\" font-size=\"44\" font-weight=\"bold\" fill=\"#B5523B\">3</text><rect x=\"387\" y=\"362\" width=\"176\" height=\"64\" rx=\"8\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"1.5\"/><text x=\"475\" y=\"385\" text-anchor=\"middle\" font-size=\"14\" fill=\"#3a3a3a\">Atome :</text><text x=\"475\" y=\"412\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F4E5A\">1s² 2s² 2p⁶</text><rect x=\"653\" y=\"62\" width=\"24\" height=\"22\" rx=\"3\" fill=\"#8a8a8a\"/><rect x=\"639\" y=\"56\" width=\"52\" height=\"10\" rx=\"3\" fill=\"#6d6d6d\"/><path d=\"M 617 120 Q 617 84 665 84 Q 713 84 713 120 L 713 330 Q 713 342 701 342 L 629 342 Q 617 342 617 330 Z\" fill=\"#1F4E5A\"/><rect x=\"627\" y=\"150\" width=\"76\" height=\"120\" rx=\"6\" fill=\"#fff\" stroke=\"#C8962E\" stroke-width=\"3\"/><text x=\"665\" y=\"190\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">Bouteille</text><text x=\"665\" y=\"240\" text-anchor=\"middle\" font-size=\"44\" font-weight=\"bold\" fill=\"#B5523B\">4</text><rect x=\"577\" y=\"362\" width=\"176\" height=\"64\" rx=\"8\" fill=\"#fbf6ec\" stroke=\"#C8962E\" stroke-width=\"1.5\"/><text x=\"665\" y=\"385\" text-anchor=\"middle\" font-size=\"14\" fill=\"#3a3a3a\">Atome :</text><text x=\"665\" y=\"412\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#1F4E5A\">1s² 2s² 2p⁶ 3s² 3p⁶</text><text x=\"380\" y=\"455\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">Étiquette : configuration électronique (état fondamental) d'un atome de l'élément qui forme le gaz.</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Composition de l'air sec (en volume) : diazote 78,08 % ; dioxygène 20,95 % ; argon 0,93 % ; néon 0,0018 % ; hélium 0,0005 %. Les gaz de l'air sont obtenus par distillation de l'air liquéfié : plus un gaz est rare dans l'air, plus il est coûteux à produire. Le chlore, lui, ne se trouve pas dans l'air : on le fabrique à partir d'eau salée.",
+        "Doc. 4 — Le gérant de l'atelier : « Prends le gaz qui protège le mieux la soudure, et, si deux gaz conviennent, le moins cher. »"
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : identifie l'élément qui forme le gaz de chaque bouteille 1, 2, 3 et 4.",
+          "aides": [
+            "Dans un atome neutre, le nombre d'électrons est égal au numéro atomique Z.",
+            "Additionne les exposants de chaque configuration, puis cherche l'élément dans l'encadré « Données »."
+          ]
+        },
+        {
+          "texte": "Quelle bouteille Yanis doit-il brancher sur son poste à souder ? Argumente ta réponse en t'appuyant sur la position des éléments dans le tableau périodique et sur les documents.",
+          "aides": [
+            "S'approprier : quelle propriété le gaz de protection doit-il avoir (doc. 1) ? Quelle famille d'éléments possède cette propriété ?",
+            "Analyser : place les quatre éléments dans le tableau périodique ; regarde leur colonne et leur couche externe.",
+            "Réaliser : s'il reste deux gaz possibles, compare leurs pourcentages dans l'air (doc. 3) en calculant leur rapport."
+          ]
+        },
+        {
+          "texte": "Regard critique : TIG signifie en anglais « Tungsten Inert Gas », c'est-à-dire « tungstène, gaz inerte ». Le mot « inerte » est-il bien choisi pour le gaz retenu ? Cite un autre gaz du doc. 3 qui pourrait aussi convenir, et donne une raison pour laquelle on l'utilise moins.",
+          "aides": [
+            "Cherche le sens du mot « inerte » ; relie-le à la configuration électronique des gaz nobles.",
+            "Parmi les gaz du doc. 3, lequel est aussi un gaz noble ? Compare son abondance à celle du gaz choisi."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (notion du chapitre Les ions) : le chlore de la bouteille 2 réagit très facilement. Combien d'électrons son atome doit-il gagner pour acquérir la configuration électronique du gaz noble le plus proche ? Quel ion forme-t-il ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> On compte les électrons de chaque configuration (= Z, atome neutre) : bouteille 1 : 2 + 2 + 4 = 8 → oxygène O (période 2, colonne 16) ; bouteille 2 : 2 + 2 + 6 + 2 + 5 = 17 → chlore Cl (période 3, colonne 17, halogène) ; bouteille 3 : 2 + 2 + 6 = 10 → néon Ne (période 2, colonne 18) ; bouteille 4 : 2 + 2 + 6 + 2 + 6 = 18 → argon Ar (période 3, colonne 18).",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Le gaz ne doit pas réagir (doc. 1) : il faut un élément chimiquement très stable.",
+        "• Bouteille 1 (oxygène, 6 électrons de valence) : c'est justement le dioxygène qui abîme la soudure ; à exclure. Bouteille 2 (chlore, 7 électrons de valence, famille des halogènes) : couche externe non saturée, très réactif avec les métaux (il forme des sels) ; à exclure.",
+        "• Bouteilles 3 (néon) et 4 (argon) sont dans la colonne 18 : ce sont des gaz nobles, leur couche externe est saturée (octet : 2s² 2p⁶ et 3s² 3p⁶). Ils sont très stables et ne réagissent pratiquement pas : les deux protègent la soudure.",
+        "• Doc. 3 et 4 : l'argon représente 0,93 % de l'air, le néon 0,0018 %. Rapport : 0,93 / 0,0018 ≈ 5,2 × 10² : l'argon est environ 500 fois plus abondant, donc moins cher à produire.",
+        "• Conclusion : Yanis doit brancher la bouteille 4 (argon). C'est d'ailleurs le gaz de protection le plus utilisé en soudage TIG.",
+        "<strong>3.</strong> Oui : « inerte » signifie qui ne réagit pas, ce qui correspond à la grande stabilité chimique des gaz nobles (couche externe saturée). Il faut seulement nuancer : les gaz nobles ne réagissent « pratiquement » pas, et seulement dans des conditions très particulières pour certains. Autre gaz possible : l'hélium (gaz noble, duet 1s²), utilisé aussi en soudage ; il est encore plus rare dans l'air (0,0005 %), donc plus coûteux. Le néon convient aussi chimiquement, mais il est rare et cher.",
+        "<strong>4.</strong> Pour aller plus loin : le chlore (3s² 3p⁵) a 7 électrons de valence ; le gaz noble le plus proche est l'argon (3s² 3p⁶). Il doit gagner 1 électron : il forme l'ion chlorure Cl⁻, de configuration 1s² 2s² 2p⁶ 3s² 3p⁶.",
+        "Éléments valorisés (même si la conclusion est fausse) : identification des éléments par le décompte des électrons ; lien entre colonne 18, couche externe saturée et stabilité chimique ; élimination argumentée de l'oxygène et du chlore ; utilisation du doc. 3 pour départager néon et argon ; conclusion cohérente avec les arguments.",
+        "<em>⚠ Erreur fréquente : garder le chlore parce qu'il a 7 électrons de valence, « presque 8 » : c'est au contraire parce qu'il lui manque un seul électron qu'il réagit si facilement.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+{
+  "id": 57,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Décrire un mouvement",
+        "icon": "🧭",
+        "content": [
+          {
+            "type": "def",
+            "term": "Référentiel",
+            "text": "Solide de référence associé à une horloge, par rapport auquel on décrit le mouvement d'un système. Le mouvement d'un système ne peut être décrit que par rapport à un référentiel donné."
+          },
+          {
+            "type": "def",
+            "term": "Trajectoire",
+            "text": "Ensemble des positions successives occupées par un système au cours du temps, dans un référentiel donné."
+          },
+          {
+            "type": "warn",
+            "text": "Un même mouvement peut apparaître rectiligne dans un référentiel et curviligne dans un autre : le mouvement est relatif au référentiel choisi."
+          }
+        ]
+      },
+      {
+        "title": "2. Le vecteur vitesse",
+        "icon": "➡️",
+        "content": [
+          {
+            "type": "text",
+            "text": "À partir des positions successives Mi relevées à intervalles de temps réguliers τ (chronophotographie ou pointage vidéo), on construit le vecteur vitesse en chaque point, tangent à la trajectoire, à l'aide de la position des points encadrants."
+          },
+          {
+            "type": "formula",
+            "label": "Vitesse approchée au point Mi",
+            "text": "vi ≈ M(i-1)M(i+1) / (2τ)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 220\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"vArrow57\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#3E7DBF\"/></marker></defs><path d=\"M60,190 Q230,40 420,170\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><line x1=\"164\" y1=\"125\" x2=\"308\" y2=\"117\" stroke=\"#5C6B60\" stroke-width=\"1.3\" stroke-dasharray=\"3 3\"/><circle cx=\"164\" cy=\"125\" r=\"4.5\" fill=\"#1B2420\"/><text x=\"140\" y=\"148\" font-size=\"12\" fill=\"#1B2420\">M(i-1)</text><circle cx=\"235\" cy=\"110\" r=\"4.5\" fill=\"#1B2420\"/><text x=\"222\" y=\"92\" font-size=\"12\" fill=\"#1B2420\" font-weight=\"600\">Mi</text><circle cx=\"308\" cy=\"117\" r=\"4.5\" fill=\"#1B2420\"/><text x=\"300\" y=\"100\" font-size=\"12\" fill=\"#1B2420\">M(i+1)</text><line x1=\"235\" y1=\"110\" x2=\"320\" y2=\"105.3\" stroke=\"#3E7DBF\" stroke-width=\"2.4\" marker-end=\"url(#vArrow57)\"/><text x=\"330\" y=\"100\" font-size=\"13\" fill=\"#3E7DBF\" font-weight=\"600\">vi</text></svg>",
+            "caption": "Construction du vecteur vitesse instantanée en Mi : on trace le vecteur M(i-1)M(i+1) (pointillés), tangent à la trajectoire, puis on le reporte en Mi — sa longueur, divisée par 2τ, donne la norme de vi."
+          }
+        ]
+      },
+      {
+        "title": "3. Le vecteur accélération",
+        "icon": "📈",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le vecteur accélération traduit la variation du vecteur vitesse au cours du temps. Il se construit de façon analogue, à partir des vecteurs vitesse encadrants."
+          },
+          {
+            "type": "formula",
+            "label": "Accélération approchée au point i",
+            "text": "ai ≈ (v(i+1) − v(i-1)) / (2τ)"
+          }
+        ]
+      },
+      {
+        "title": "4. La deuxième loi de Newton",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Deuxième loi de Newton",
+            "text": "Dans un référentiel galiléen, la somme vectorielle des forces appliquées à un système de masse m est égale au produit de cette masse par le vecteur accélération de son centre de masse : ΣF = m × a."
+          },
+          {
+            "type": "text",
+            "text": "Cette relation permet, selon les cas, d'estimer la variation de vitesse à partir des forces connues, ou d'estimer les forces appliquées à partir du comportement cinématique observé."
+          }
+        ]
+      },
+      {
+        "title": "5. Types de mouvement",
+        "icon": "🏃",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Mouvement",
+              "Caractéristique"
+            ],
+            "rows": [
+              [
+                "Rectiligne uniforme",
+                "Trajectoire droite, vecteur vitesse constant, accélération nulle"
+              ],
+              [
+                "Rectiligne uniformément varié",
+                "Trajectoire droite, accélération constante non nulle"
+              ],
+              [
+                "Circulaire uniforme",
+                "Trajectoire circulaire, valeur de la vitesse constante"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Si le vecteur accélération est nul, d'après la deuxième loi de Newton, la somme vectorielle des forces appliquées au système est nulle (système pseudo-isolé ou à l'équilibre)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Un passager est assis dans un train qui roule. Il est immobile par rapport au train. Par rapport au quai, il est :",
+      "opts": [
+        "immobile aussi : on est immobile ou on ne l'est pas",
+        "immobile, car il ne marche pas",
+        "en mouvement : le mouvement dépend du référentiel",
+        "en mouvement seulement si le train accélère"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "mouvement-absolu",
+          "texte": "Oublier que le mouvement est relatif : il faut toujours préciser par rapport à quoi on est immobile"
+        },
+        {
+          "code": "mouvement-sans-referentiel",
+          "texte": "Croire qu'on bouge seulement si l'on se déplace soi-même : par rapport au quai, le passager avance avec le train"
+        },
+        null,
+        {
+          "code": "mouvement-si-acceleration",
+          "texte": "Croire qu'il n'y a mouvement que si la vitesse change : à vitesse constante, le passager se déplace par rapport au quai"
+        }
+      ],
+      "exp": "Le passager est immobile dans le référentiel du train et en mouvement dans le référentiel terrestre (le quai). Attention : on décrit toujours un mouvement par rapport à un référentiel précisé."
+    },
+    {
+      "q": "Sur une chronophotographie de période τ = 40 ms, les positions M₃ et M₅ sont distantes de 6,0 cm. La vitesse au point M₄ vaut environ v₄ = M₃M₅ / (2τ), soit :",
+      "opts": [
+        "1,5 m·s⁻¹",
+        "7,5×10⁻⁴ m·s⁻¹",
+        "75 m·s⁻¹",
+        "0,75 m·s⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-facteur-2-tau",
+          "texte": "Diviser par τ au lieu de 2τ : entre M₃ et M₅, il s'écoule deux intervalles τ"
+        },
+        {
+          "code": "conversion-ms-s",
+          "texte": "Oublier de convertir les millisecondes : 2τ = 80 ms = 0,080 s"
+        },
+        {
+          "code": "conversion-cm-m",
+          "texte": "Oublier de convertir les centimètres : M₃M₅ = 6,0 cm = 0,060 m"
+        },
+        null
+      ],
+      "exp": "v₄ = M₃M₅ / (2τ) = 0,060 / 0,080 = 0,75 m·s⁻¹. Attention : deux intervalles séparent M₃ et M₅, et les unités doivent être en m et en s."
+    },
+    {
+      "q": "En un point de la trajectoire, le vecteur vitesse est :",
+      "opts": [
+        "tangent à la trajectoire, dans le sens du mouvement",
+        "perpendiculaire à la trajectoire",
+        "dirigé vers le centre du virage",
+        "tangent, mais orienté vers la position précédente"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "vitesse-perpendiculaire-trajectoire",
+          "texte": "Dessiner le vecteur vitesse perpendiculaire à la trajectoire : il est tangent à la trajectoire"
+        },
+        {
+          "code": "vitesse-vers-centre",
+          "texte": "Croire que la vitesse est dirigée vers le centre d'un virage : elle est tangente, c'est la variation de vitesse qui pointe vers l'intérieur"
+        },
+        {
+          "code": "sens-vitesse-inverse",
+          "texte": "Se tromper de sens : le vecteur vitesse est orienté dans le sens du mouvement"
+        }
+      ],
+      "exp": "Le vecteur vitesse est tangent à la trajectoire et orienté dans le sens du mouvement ; sa longueur représente la valeur de la vitesse (à l'échelle choisie)."
+    },
+    {
+      "q": "Un point se déplace sur un cercle à vitesse de valeur constante. Le vecteur variation de vitesse Δv entre deux instants voisins est :",
+      "opts": [
+        "nul, car la valeur de la vitesse ne change pas",
+        "tangent à la trajectoire, dans le sens du mouvement",
+        "dirigé vers le centre du cercle",
+        "dirigé vers l'extérieur du cercle"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "uniforme-acceleration-nulle",
+          "texte": "Croire que Δv est nul si la valeur de la vitesse est constante : la direction du vecteur vitesse change"
+        },
+        {
+          "code": "vitesse-acceleration-meme-direction",
+          "texte": "Croire que Δv a la direction de la vitesse : dans un virage, il est dirigé vers l'intérieur"
+        },
+        null,
+        {
+          "code": "acceleration-centrifuge",
+          "texte": "Croire que Δv pointe vers l'extérieur (« force centrifuge ») : il est dirigé vers le centre"
+        }
+      ],
+      "exp": "La valeur de la vitesse est constante, mais sa direction tourne : Δv n'est pas nul et pointe vers le centre du cercle, comme la somme des forces (m Δv / Δt ≈ ΣF)."
+    },
+    {
+      "q": "D'après la relation m × Δv / Δt ≈ ΣF, si la somme des forces appliquées à un système est nulle, son vecteur vitesse :",
+      "opts": [
+        "diminue jusqu'à s'annuler",
+        "ne varie pas",
+        "est forcément nul",
+        "change de direction sans changer de valeur"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "sans-force-arret",
+          "texte": "Croire qu'un objet s'arrête s'il n'est plus poussé : sans force (ou avec des forces compensées), sa vitesse ne change pas"
+        },
+        null,
+        {
+          "code": "compense-donc-immobile",
+          "texte": "Croire que des forces compensées imposent l'immobilité : elles permettent aussi un mouvement rectiligne uniforme"
+        },
+        {
+          "code": "circulaire-uniforme-compense",
+          "texte": "Croire qu'un changement de direction est possible sans force : tourner exige une somme des forces non nulle"
+        }
+      ],
+      "exp": "Si ΣF = 0, Δv = 0 : le vecteur vitesse est constant (en valeur et en direction). Le système est immobile ou en mouvement rectiligne uniforme (principe d'inertie)."
+    },
+    {
+      "q": "Entre deux instants voisins, le vecteur variation de vitesse Δv d'un système a toujours la même direction et le même sens que :",
+      "opts": [
+        "le vecteur vitesse",
+        "le poids",
+        "la somme des forces appliquées",
+        "la force de frottement"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "vitesse-acceleration-meme-direction",
+          "texte": "Confondre v et Δv : un objet qui freine a une vitesse vers l'avant et un Δv vers l'arrière"
+        },
+        {
+          "code": "newton-chute-libre-generalisee",
+          "texte": "Généraliser le cas de la chute libre : Δv a la direction du poids seulement si le poids est la seule force"
+        },
+        null,
+        {
+          "code": "delta-v-force-isolee",
+          "texte": "Ne retenir qu'une force : c'est la somme de toutes les forces qui fixe la direction de Δv"
+        }
+      ],
+      "exp": "m × Δv / Δt ≈ ΣF, avec m > 0 : Δv a la direction et le sens de la somme des forces. Attention : il n'a pas forcément la direction de la vitesse."
+    },
+    {
+      "q": "Un skieur de 70 kg descend une pente en ligne droite ; sa vitesse passe de 4,0 m·s⁻¹ à 6,5 m·s⁻¹ en 1,0 s. La somme des forces qui s'exercent sur lui vaut environ ΣF ≈ m × Δv / Δt, soit :",
+      "opts": [
+        "455 N",
+        "175 N",
+        "28 N",
+        "3,6×10⁻² N"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "vitesse-au-lieu-variation",
+          "texte": "Utiliser la vitesse finale (6,5 m·s⁻¹) au lieu de la variation Δv = 2,5 m·s⁻¹"
+        },
+        null,
+        {
+          "code": "masse-sur-delta-v",
+          "texte": "Inverser le rapport : m / Δv = 70 / 2,5 ; il faut m × Δv / Δt"
+        },
+        {
+          "code": "quotient-au-lieu-produit",
+          "texte": "Diviser par la masse au lieu de multiplier : Δv / (m Δt) = 2,5 / 70"
+        }
+      ],
+      "exp": "Δv = 6,5 − 4,0 = 2,5 m·s⁻¹, donc ΣF ≈ 70 × 2,5 / 1,0 = 175 N, dirigée vers le bas de la pente. Attention : c'est la variation de vitesse qui compte, pas la vitesse."
+    },
+    {
+      "q": "Une même somme des forces s'exerce, pendant la même durée, sur deux chariots ; l'un a une masse double de l'autre. Pour le chariot le plus lourd, la variation de vitesse Δv est :",
+      "opts": [
+        "deux fois plus grande",
+        "la même",
+        "deux fois plus petite",
+        "quatre fois plus petite"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "masse-plus-grande-plus-rapide",
+          "texte": "Croire qu'un objet plus lourd prend plus de vitesse : à force égale, Δv = ΣF Δt / m est plus petit"
+        },
+        {
+          "code": "delta-v-independante-masse",
+          "texte": "Croire que Δv ne dépend pas de la masse : à force égale, un objet plus massif est plus difficile à mettre en mouvement"
+        },
+        null,
+        {
+          "code": "proportionnalite-au-carre",
+          "texte": "Appliquer une dépendance au carré : Δv est inversement proportionnel à m, pas à m²"
+        }
+      ],
+      "exp": "Δv ≈ ΣF × Δt / m : à force et durée égales, doubler la masse divise Δv par deux. Attention : la masse s'oppose à la variation de vitesse."
+    },
+    {
+      "q": "Une voiture roule à vitesse constante sur une route droite et horizontale. La somme des forces qui s'exercent sur elle est :",
+      "opts": [
+        "dirigée vers l'avant, sinon la voiture ralentirait",
+        "nulle, les forces se compensent",
+        "égale au poids de la voiture",
+        "nulle, car aucune force ne s'exerce sur la voiture"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "force-sens-mouvement",
+          "texte": "Croire qu'un mouvement exige une force vers l'avant : à vitesse constante en ligne droite, Δv = 0 donc ΣF = 0"
+        },
+        null,
+        {
+          "code": "somme-forces-egale-poids",
+          "texte": "Confondre la somme des forces et le poids : le poids est compensé par l'action de la route"
+        },
+        {
+          "code": "compense-vs-aucune-force",
+          "texte": "Confondre forces qui se compensent et absence de force : poids, réaction de la route, frottements et force motrice existent"
+        }
+      ],
+      "exp": "Le vecteur vitesse est constant (Δv = 0) : la somme des forces est nulle. La force motrice compense les frottements, l'action de la route compense le poids. Attention : nulle ne veut pas dire absente."
+    },
+    {
+      "q": "Une balle est lancée verticalement vers le haut (frottements négligés). Pendant la montée, le vecteur variation de vitesse Δv est dirigé :",
+      "opts": [
+        "vers le haut, à cause de la force du lancer",
+        "vers le bas, comme le poids",
+        "vers le haut, dans le sens du mouvement",
+        "nul, tant que la balle monte"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "force-du-lancer",
+          "texte": "Croire que la force du lancer accompagne la balle : elle cesse dès que la balle quitte la main"
+        },
+        null,
+        {
+          "code": "delta-v-sens-mouvement",
+          "texte": "Confondre le sens de Δv et le sens du mouvement : Δv a le sens de la somme des forces, ici le poids"
+        },
+        {
+          "code": "acceleration-nulle-montee",
+          "texte": "Croire que la vitesse ne varie pas pendant la montée : la balle ralentit, Δv n'est pas nul"
+        }
+      ],
+      "exp": "Après le lancer, seul le poids agit : Δv est vertical, vers le bas, pendant toute la montée (la balle ralentit) et la descente (elle accélère). Attention : Δv n'a pas le sens du mouvement."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Un samedi à Argenteuil : les forces se compensent-elles ?",
+      "contexte": [
+        "Lina note cinq mouvements observés dans la journée, tous décrits dans le référentiel terrestre :",
+        "A. un palet de hockey glisse sur la glace de la patinoire, en ligne droite, à vitesse constante ; B. une nacelle de la grande roue de la fête foraine tourne à vitesse constante ; C. un parachutiste, parachute ouvert, descend verticalement à vitesse constante ; D. une pomme se détache de l'arbre et tombe (frottements de l'air négligés) ; E. le tram freine en ligne droite à l'approche d'une station.",
+        "Rappel — principe d'inertie : dans un référentiel galiléen, si les forces qui s'exercent sur un système se compensent (ΣF = 0), alors le système est immobile ou en mouvement rectiligne uniforme, et réciproquement. Contraposée : si le vecteur vitesse d'un système varie (en direction, en sens ou en valeur), alors les forces qui s'exercent sur lui ne se compensent pas."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque mouvement A à E, indique la forme de la trajectoire (rectiligne ou circulaire) et l'évolution de la valeur de la vitesse (uniforme, accéléré ou ralenti).",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque mouvement, le vecteur vitesse est-il constant ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en, à l'aide du principe d'inertie ou de sa contraposée, les mouvements pour lesquels les forces qui s'exercent sur le système se compensent.",
+          "aides": [
+            "Un seul cas permet de conclure que les forces se compensent : le vecteur vitesse est constant (immobilité ou mouvement rectiligne uniforme).",
+            "Pour la grande roue, demande-toi si la direction du vecteur vitesse reste la même d'un instant à l'autre."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. « Le parachutiste descend : la somme des forces qui s'exercent sur lui est donc dirigée vers le bas. »<br>b. « Pour que le palet continue d'avancer, il faut qu'une force s'exerce sur lui dans le sens de son mouvement. »<br>c. « La nacelle tourne à vitesse constante, donc les forces qui s'exercent sur elle se compensent. »<br>d. « Un passager assis dans un tram qui roule en ligne droite à vitesse constante est immobile dans le référentiel du tram et en mouvement rectiligne uniforme dans le référentiel terrestre : dans les deux cas, les forces qui s'exercent sur lui se compensent. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : rectiligne uniforme. B : circulaire uniforme. C : rectiligne uniforme (verticale). D : rectiligne accéléré (la pomme tombe de plus en plus vite). E : rectiligne ralenti.",
+        "<strong>2.</strong> Un vecteur est constant si sa direction, son sens ET sa valeur restent les mêmes. A et C : oui (même droite, même sens, même valeur). B : non, la valeur est constante mais la direction change à chaque instant (le vecteur vitesse reste tangent au cercle). D et E : non, la valeur varie.",
+        "<strong>3.</strong> Les forces se compensent seulement pour A (palet) et C (parachutiste) : mouvements rectilignes uniformes (principe d'inertie). Pour B, D et E, le vecteur vitesse varie : d'après la contraposée, les forces ne se compensent pas.",
+        "<strong>4.</strong> a. FAUX : le parachutiste est en mouvement rectiligne uniforme, donc les forces qui s'exercent sur lui se compensent (ΣF = 0) : le poids est compensé par les actions de l'air sur le parachute. Le sens du mouvement ne donne pas le sens de la somme des forces.",
+        "b. FAUX : si les frottements sont négligeables, les forces se compensent (poids et action de la glace) et le palet continue en ligne droite à vitesse constante sans qu'aucune force ne le « pousse ».",
+        "c. FAUX : la direction du vecteur vitesse change, donc le vecteur vitesse n'est pas constant ; d'après la contraposée du principe d'inertie, les forces ne se compensent pas.",
+        "d. VRAI : le mouvement dépend du référentiel, mais les deux référentiels sont galiléens (le tram roule en ligne droite à vitesse constante par rapport au sol) ; dans les deux cas, le principe d'inertie s'applique et les forces se compensent.",
+        "<em>⚠ Erreur fréquente : croire qu'un mouvement a toujours besoin d'une force dans le sens du mouvement (affirmations a et b), ou confondre « vitesse constante » (la valeur) et « vecteur vitesse constant » (affirmation c).</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le démarrage de la trottinette",
+      "contexte": [
+        "Inès démarre en trottinette électrique sur une piste cyclable rectiligne. Son frère filme la scène et relève, par pointage vidéo, la position d'Inès toutes les τ = 0,50 s (document ci-dessous). La masse d'Inès et de sa trottinette vaut m = 80 kg.",
+        "Rappels : la valeur du vecteur vitesse au point M₃ est v₃ ≈ M₂M₄ / (2τ). Le vecteur variation de vitesse au point M₃ est Δv₃ = v₄ − v₂, entre deux instants séparés de Δt = 2τ. Relation approchée : m × Δv/Δt ≈ ΣF ; le vecteur Δv a la même direction et le même sens que la somme des forces ΣF."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Départ d'Inès en trottinette (vue de dessus) : une position toutes les τ = 0,50 s</text><rect x=\"28.0\" y=\"95\" width=\"699.0\" height=\"72\" fill=\"#f6f1e7\" stroke=\"#d9d2c5\"/><circle cx=\"40.0\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"40.0\" y=\"124.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">0</tspan></text><circle cx=\"58.8\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"64.8\" y=\"164.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">1</tspan></text><circle cx=\"115.0\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"115.0\" y=\"124.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">2</tspan></text><circle cx=\"208.8\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"208.8\" y=\"124.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">3</tspan></text><circle cx=\"340.0\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"340.0\" y=\"124.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">4</tspan></text><circle cx=\"508.8\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"508.8\" y=\"124.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">5</tspan></text><circle cx=\"715.0\" cy=\"140\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"715.0\" y=\"124.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">6</tspan></text><line x1=\"40.0\" y1=\"205\" x2=\"715.0\" y2=\"205\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"40.0\" y1=\"205\" x2=\"40.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"40.0\" y=\"235\" text-anchor=\"middle\">0</text><line x1=\"77.5\" y1=\"205\" x2=\"77.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"115.0\" y1=\"205\" x2=\"115.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"115.0\" y=\"235\" text-anchor=\"middle\">1</text><line x1=\"152.5\" y1=\"205\" x2=\"152.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"190.0\" y1=\"205\" x2=\"190.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"190.0\" y=\"235\" text-anchor=\"middle\">2</text><line x1=\"227.5\" y1=\"205\" x2=\"227.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"265.0\" y1=\"205\" x2=\"265.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"265.0\" y=\"235\" text-anchor=\"middle\">3</text><line x1=\"302.5\" y1=\"205\" x2=\"302.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"340.0\" y1=\"205\" x2=\"340.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"340.0\" y=\"235\" text-anchor=\"middle\">4</text><line x1=\"377.5\" y1=\"205\" x2=\"377.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"415.0\" y1=\"205\" x2=\"415.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"415.0\" y=\"235\" text-anchor=\"middle\">5</text><line x1=\"452.5\" y1=\"205\" x2=\"452.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"490.0\" y1=\"205\" x2=\"490.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"490.0\" y=\"235\" text-anchor=\"middle\">6</text><line x1=\"527.5\" y1=\"205\" x2=\"527.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"565.0\" y1=\"205\" x2=\"565.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"565.0\" y=\"235\" text-anchor=\"middle\">7</text><line x1=\"602.5\" y1=\"205\" x2=\"602.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"640.0\" y1=\"205\" x2=\"640.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"640.0\" y=\"235\" text-anchor=\"middle\">8</text><line x1=\"677.5\" y1=\"205\" x2=\"677.5\" y2=\"211\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"715.0\" y1=\"205\" x2=\"715.0\" y2=\"217\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"715.0\" y=\"235\" text-anchor=\"middle\">9</text><text x=\"715.0\" y=\"257\" text-anchor=\"end\" font-weight=\"bold\">x (m)</text><line x1=\"62.5\" y1=\"251.0\" x2=\"178.0\" y2=\"251.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"190.0,251.0 178.0,256.4 178.0,245.6\" fill=\"#1F4E5A\"/><text x=\"200.0\" y=\"256\">sens du mouvement</text><rect x=\"40\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"85.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">Point</text><rect x=\"130\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"175.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">0</tspan></text><rect x=\"220\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"265.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">1</tspan></text><rect x=\"310\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"355.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">2</tspan></text><rect x=\"400\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"445.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">3</tspan></text><rect x=\"490\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"535.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">4</tspan></text><rect x=\"580\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"625.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">5</tspan></text><rect x=\"670\" y=\"300\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"715.0\" y=\"324.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">6</tspan></text><rect x=\"40\" y=\"338\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"85.0\" y=\"362.0\" text-anchor=\"middle\" font-weight=\"bold\">t (s)</text><rect x=\"130\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"175.0\" y=\"362.0\" text-anchor=\"middle\">0,00</text><rect x=\"220\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"265.0\" y=\"362.0\" text-anchor=\"middle\">0,50</text><rect x=\"310\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"355.0\" y=\"362.0\" text-anchor=\"middle\">1,00</text><rect x=\"400\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"445.0\" y=\"362.0\" text-anchor=\"middle\">1,50</text><rect x=\"490\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"535.0\" y=\"362.0\" text-anchor=\"middle\">2,00</text><rect x=\"580\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"625.0\" y=\"362.0\" text-anchor=\"middle\">2,50</text><rect x=\"670\" y=\"338\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"715.0\" y=\"362.0\" text-anchor=\"middle\">3,00</text><rect x=\"40\" y=\"376\" width=\"90\" height=\"38\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"85.0\" y=\"400.0\" text-anchor=\"middle\" font-weight=\"bold\">x (m)</text><rect x=\"130\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"175.0\" y=\"400.0\" text-anchor=\"middle\">0,00</text><rect x=\"220\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"265.0\" y=\"400.0\" text-anchor=\"middle\">0,25</text><rect x=\"310\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"355.0\" y=\"400.0\" text-anchor=\"middle\">1,00</text><rect x=\"400\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"445.0\" y=\"400.0\" text-anchor=\"middle\">2,25</text><rect x=\"490\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"535.0\" y=\"400.0\" text-anchor=\"middle\">4,00</text><rect x=\"580\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"625.0\" y=\"400.0\" text-anchor=\"middle\">6,25</text><rect x=\"670\" y=\"376\" width=\"90\" height=\"38\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"715.0\" y=\"400.0\" text-anchor=\"middle\">9,00</text><text x=\"40\" y=\"440\" font-size=\"14\">Référentiel terrestre. Positions mesurées par pointage vidéo (origine : position de départ).</text></svg>",
+      "questions": [
+        {
+          "texte": "D'après le document, le mouvement d'Inès est-il uniforme, accéléré ou ralenti ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur v₂ du vecteur vitesse au point M₂, puis la valeur v₄ au point M₄.",
+          "aides": []
+        },
+        {
+          "texte": "Les vecteurs v₂ et v₄ ont la même direction et le même sens. Donne les caractéristiques (direction, sens, valeur) du vecteur Δv₃ = v₄ − v₂.",
+          "aides": [
+            "Les deux vecteurs sont sur la même droite et dans le même sens : la soustraction se fait directement sur les valeurs.",
+            "Si v₄ est plus long que v₂, le vecteur Δv₃ est dans le sens du mouvement."
+          ]
+        },
+        {
+          "texte": "Représente sur ta copie v₂, v₄ et Δv₃ avec l'échelle 1 cm pour 1 m·s⁻¹ (trace v₂ et v₄ à partir d'un même point).",
+          "aides": []
+        },
+        {
+          "texte": "Quelle est la durée Δt correspondant à Δv₃ ? Déduis-en, avec la relation rappelée, la valeur de la somme des forces ΣF exercées sur Inès et sa trottinette. Précise sa direction et son sens.",
+          "aides": []
+        },
+        {
+          "texte": "Plus loin, Inès freine en ligne droite : sa vitesse passe de 5,0 m·s⁻¹ à 3,0 m·s⁻¹ en Δt = 1,0 s. Donne le sens du vecteur Δv et celui de ΣF, puis la valeur de ΣF.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La trajectoire est rectiligne et les écarts entre deux positions successives augmentent (0,25 m ; 0,75 m ; 1,25 m ; …) pour la même durée τ : le mouvement est rectiligne accéléré.",
+        "<strong>2.</strong> v₂ ≈ M₁M₃ / (2τ) = (2,25 − 0,25) / (2 × 0,50) = 2,00 / 1,0 = 2,0 m·s⁻¹. v₄ ≈ M₃M₅ / (2τ) = (6,25 − 2,25) / 1,0 = 4,0 m·s⁻¹.",
+        "<strong>3.</strong> Δv₃ a la direction de la piste (celle de v₂ et v₄), le sens du mouvement (v₄ est plus long que v₂) et pour valeur Δv₃ = v₄ − v₂ = 4,0 − 2,0 = 2,0 m·s⁻¹.",
+        "<strong>4.</strong> À partir d'un même point : v₂ = flèche de 2,0 cm, v₄ = flèche de 4,0 cm dans la même direction et le même sens ; Δv₃ va de l'extrémité de v₂ à l'extrémité de v₄ : flèche de 2,0 cm, dans le sens du mouvement.",
+        "<strong>5.</strong> Δt = t₄ − t₂ = 2τ = 1,0 s. ΣF ≈ m × Δv₃ / Δt = 80 × 2,0 / 1,0 = 1,6 × 10² N (160 N). Direction : celle de la piste ; sens : celui du mouvement (même sens que Δv₃).",
+        "<strong>6.</strong> La vitesse diminue : Δv est dans le sens opposé au mouvement, donc ΣF aussi. Valeur : Δv = 5,0 − 3,0 = 2,0 m·s⁻¹, ΣF ≈ 80 × 2,0 / 1,0 = 1,6 × 10² N, dans le sens opposé au mouvement.",
+        "<em>⚠ Erreur fréquente : prendre Δt = τ = 0,50 s au lieu de 2τ (on trouverait 320 N, deux fois trop) : v₂ et v₄ correspondent aux instants t₂ et t₄, séparés de deux intervalles τ.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "La boule de pétanque en chute libre",
+      "contexte": [
+        "Au boulodrome, Moussa joue une boule « en portée » : il la lance en l'air pour qu'elle retombe près du cochonnet. La boule a une masse m = 0,700 kg. La chronophotographie ci-dessous donne ses positions toutes les τ = 0,10 s. Les frottements de l'air sont négligés.",
+        "Rappel : relation approchée m × Δv/Δt ≈ ΣF ; le vecteur Δv a la même direction et le même sens que la somme des forces ΣF."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Lancer d'une boule de pétanque (vue de côté) : une position toutes les τ = 0,10 s</text><line x1=\"30\" y1=\"403.0\" x2=\"740\" y2=\"403.0\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><polyline points=\"100.0,395.0 103.5,389.5 107.0,384.2 110.5,378.8 114.0,373.6 117.5,368.4 121.0,363.3 124.5,358.2 128.0,353.2 131.5,348.3 135.0,343.5 138.5,338.7 142.0,334.0 145.5,329.4 149.0,324.8 152.5,320.3 156.0,315.9 159.5,311.5 163.0,307.2 166.5,303.0 170.0,298.9 173.5,294.8 177.0,290.8 180.5,286.8 184.0,282.9 187.5,279.1 191.0,275.4 194.5,271.7 198.0,268.1 201.5,264.6 205.0,261.1 208.5,257.7 212.0,254.4 215.5,251.1 219.0,247.9 222.5,244.8 226.0,241.7 229.5,238.7 233.0,235.8 236.5,233.0 240.0,230.2 243.5,227.5 247.0,224.8 250.5,222.3 254.0,219.8 257.5,217.3 261.0,214.9 264.5,212.6 268.0,210.4 271.5,208.3 275.0,206.2 278.5,204.1 282.0,202.2 285.5,200.3 289.0,198.5 292.5,196.7 296.0,195.0 299.5,193.4 303.0,191.9 306.5,190.4 310.0,189.0 313.5,187.7 317.0,186.4 320.5,185.2 324.0,184.0 327.5,183.0 331.0,182.0 334.5,181.1 338.0,180.2 341.5,179.4 345.0,178.7 348.5,178.0 352.0,177.5 355.5,176.9 359.0,176.5 362.5,176.1 366.0,175.8 369.5,175.6 373.0,175.4 376.5,175.3 380.0,175.3 383.5,175.3 387.0,175.4 390.5,175.6 394.0,175.8 397.5,176.1 401.0,176.5 404.5,176.9 408.0,177.5 411.5,178.0 415.0,178.7 418.5,179.4 422.0,180.2 425.5,181.1 429.0,182.0 432.5,183.0 436.0,184.0 439.5,185.2 443.0,186.4 446.5,187.7 450.0,189.0 453.5,190.4 457.0,191.9 460.5,193.4 464.0,195.0 467.5,196.7 471.0,198.5 474.5,200.3 478.0,202.2 481.5,204.1 485.0,206.2 488.5,208.3 492.0,210.4 495.5,212.6 499.0,214.9 502.5,217.3 506.0,219.8 509.5,222.3 513.0,224.8 516.5,227.5 520.0,230.2 523.5,233.0 527.0,235.8 530.5,238.7 534.0,241.7 537.5,244.8 541.0,247.9 544.5,251.1 548.0,254.4 551.5,257.7 555.0,261.1 558.5,264.6 562.0,268.1 565.5,271.7 569.0,275.4 572.5,279.1 576.0,282.9 579.5,286.8 583.0,290.8 586.5,294.8 590.0,298.9 593.5,303.0 597.0,307.2 600.5,311.5 604.0,315.9 607.5,320.3 611.0,324.8 614.5,329.4 618.0,334.0 621.5,338.7 625.0,343.5 628.5,348.3 632.0,353.2 635.5,358.2 639.0,363.3 642.5,368.4 646.0,373.6 649.5,378.8 653.0,384.2 656.5,389.5 660.0,395.0\" fill=\"none\" stroke=\"#9a9a9a\" stroke-width=\"1.5\" stroke-dasharray=\"5 5\"/><circle cx=\"100.0\" cy=\"395.0\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"74.0\" y=\"389.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">0</tspan></text><circle cx=\"170.0\" cy=\"298.9\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"144.0\" y=\"292.9\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">1</tspan></text><circle cx=\"240.0\" cy=\"230.2\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"214.0\" y=\"224.2\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">2</tspan></text><circle cx=\"310.0\" cy=\"189.0\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"284.0\" y=\"183.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">3</tspan></text><circle cx=\"380.0\" cy=\"175.3\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"354.0\" y=\"163.3\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">4</tspan></text><circle cx=\"450.0\" cy=\"189.0\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"476.0\" y=\"213.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">5</tspan></text><circle cx=\"520.0\" cy=\"230.2\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"546.0\" y=\"254.2\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">6</tspan></text><circle cx=\"590.0\" cy=\"298.9\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"616.0\" y=\"322.9\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">7</tspan></text><circle cx=\"660.0\" cy=\"395.0\" r=\"7\" fill=\"#1F4E5A\"/><text x=\"686.0\" y=\"385.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">8</tspan></text><line x1=\"380.0\" y1=\"175.3\" x2=\"463.0\" y2=\"175.3\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"475.0,175.3 463.0,180.7 463.0,169.9\" fill=\"#B5523B\"/><text x=\"482.0\" y=\"181.3\" font-weight=\"bold\" font-size=\"19\" fill=\"#B5523B\">a</text><line x1=\"380.0\" y1=\"175.3\" x2=\"380.0\" y2=\"258.3\" stroke=\"#C8962E\" stroke-width=\"3.5\"/><polygon points=\"380.0,270.3 374.6,258.3 385.4,258.3\" fill=\"#C8962E\"/><text x=\"390.0\" y=\"267.3\" font-weight=\"bold\" font-size=\"19\" fill=\"#8a6418\">b</text><line x1=\"380.0\" y1=\"175.3\" x2=\"380.0\" y2=\"107.3\" stroke=\"#555\" stroke-width=\"3.5\"/><polygon points=\"380.0,95.3 385.4,107.3 374.6,107.3\" fill=\"#555\"/><text x=\"390.0\" y=\"109.3\" font-weight=\"bold\" font-size=\"19\" fill=\"#555\">c</text><text x=\"40\" y=\"440\" font-size=\"14\">Les flèches a, b et c partent du point M₄, le plus haut de la trajectoire (tracée en pointillés).</text><text x=\"40\" y=\"460\" font-size=\"14\">Référentiel terrestre ; les frottements de l'air sont négligés.</text></svg>",
+      "questions": [
+        {
+          "texte": "QCM. Après le lâcher, la ou les forces qui s'exercent sur la boule sont : A. le poids seulement ; B. le poids et la force du lancer de Moussa ; C. aucune force au sommet M₄ ; D. le poids et une force dans le sens du mouvement.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en la direction et le sens du vecteur variation de vitesse Δv en tout point de la trajectoire. Laquelle des flèches a, b ou c peut représenter Δv₄ au sommet ? Pourquoi les deux autres ne conviennent-elles pas ?",
+          "aides": [
+            "Δv a toujours la direction et le sens de la somme des forces. Quelle est ici la seule force ?",
+            "Le poids est vertical et dirigé vers le bas. Ne confonds pas Δv avec le vecteur vitesse, qui est tangent à la trajectoire."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur du poids P de la boule, puis la valeur de Δv₄ = v₅ − v₃, sachant que les instants t₃ et t₅ sont séparés de Δt = 2τ.",
+          "aides": [
+            "P = m × g, avec g dans l'encadré « Données ».",
+            "De m × Δv/Δt ≈ P, on tire Δv ≈ P × Δt / m, avec Δt = 2τ = 0,20 s."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie.<br>a. « Au sommet M₄, la vitesse de la boule est nulle. »<br>b. « Avec une boule deux fois plus lourde, lancée de la même façon, Δv₄ serait deux fois plus grand. »<br>c. « Le vecteur Δv₂ = v₃ − v₁ est égal au vecteur Δv₄. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réponse A : la boule n'est plus en contact avec la main de Moussa, et les frottements sont négligés : seul le poids s'exerce. On dit que la boule est en chute libre.",
+        "<strong>2.</strong> ΣF = P, vertical et vers le bas : Δv est donc vertical et vers le bas, en tout point. Au sommet, c'est la flèche b. La flèche a est tangente à la trajectoire : elle a la direction du vecteur vitesse v₄, pas celle de Δv₄. La flèche c est verticale mais vers le haut : sens opposé au poids.",
+        "<strong>3.</strong> P = m × g = 0,700 × 9,81 = 6,87 N. Δv₄ ≈ ΣF × Δt / m = P × 2τ / m = 6,87 × 0,20 / 0,700 = 1,96 m·s⁻¹ (c'est aussi g × Δt = 9,81 × 0,20).",
+        "<strong>4.</strong> a. FAUX : au sommet, le vecteur vitesse est horizontal (tangent à la trajectoire) mais pas nul : la boule continue d'avancer horizontalement.",
+        "b. FAUX : si la masse double, le poids double aussi ; Δv ≈ P × Δt / m = g × Δt ne dépend pas de la masse : Δv₄ vaut toujours 1,96 m·s⁻¹.",
+        "c. VRAI : la somme des forces (le poids) est la même en tout point et les durées Δt sont égales ; Δv₂ et Δv₄ ont donc la même direction, le même sens et la même valeur.",
+        "<em>⚠ Erreur fréquente : confondre le vecteur vitesse (tangent à la trajectoire, flèche a) et le vecteur variation de vitesse (dans le sens de la somme des forces, flèche b).</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le lancer du marteau",
+      "contexte": [
+        "Au lancer du marteau, l'athlète fait tourner une boule métallique reliée à une poignée par un câble d'acier. Pour les hommes, le marteau a une masse m = 7,26 kg.",
+        "Un club d'athlétisme filme un lanceur par-dessus (vue de dessus) et pointe la position de la boule toutes les τ = 0,020 s pendant une partie d'un tour (document ci-dessous). On modélise la boule par un point matériel en mouvement dans un plan horizontal, autour d'un centre O fixe (l'axe du lanceur)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Lancer du marteau (vue de dessus) : une position toutes les τ = 0,020 s</text><circle cx=\"225\" cy=\"262\" r=\"150\" fill=\"none\" stroke=\"#9a9a9a\" stroke-width=\"1.5\" stroke-dasharray=\"5 5\"/><line x1=\"60.0\" y1=\"262.0\" x2=\"390.0\" y2=\"262.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polygon points=\"400.0,262.0 390.0,266.5 390.0,257.5\" fill=\"#3a3a3a\"/><line x1=\"225.0\" y1=\"427.0\" x2=\"225.0\" y2=\"72.0\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polygon points=\"225.0,62.0 229.5,72.0 220.5,72.0\" fill=\"#3a3a3a\"/><text x=\"397\" y=\"284\" font-size=\"15\">x</text><text x=\"207\" y=\"74\" font-size=\"15\">y</text><circle cx=\"225\" cy=\"262\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"217\" y=\"284\" text-anchor=\"end\" font-weight=\"bold\">O</text><text x=\"233\" y=\"322\" font-size=\"14\">(lanceur)</text><circle cx=\"313.2\" cy=\"140.7\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"327.3\" y=\"125.3\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">0</tspan></text><circle cx=\"286.0\" cy=\"125.0\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"295.8\" y=\"107.1\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">1</tspan></text><circle cx=\"256.2\" cy=\"115.3\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"261.2\" y=\"95.8\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">2</tspan></text><circle cx=\"225.0\" cy=\"112.0\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"247.0\" y=\"140.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">3</tspan></text><circle cx=\"193.8\" cy=\"115.3\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"188.8\" y=\"95.8\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">4</tspan></text><circle cx=\"164.0\" cy=\"125.0\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"154.2\" y=\"107.1\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">5</tspan></text><circle cx=\"136.8\" cy=\"140.7\" r=\"6.5\" fill=\"#1F4E5A\"/><text x=\"122.7\" y=\"125.3\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"15\">M<tspan font-size=\"12\" dy=\"4\">6</tspan></text><line x1=\"133.1\" y1=\"184.9\" x2=\"117.7\" y2=\"211.4\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><polygon points=\"112.2,221.0 113.5,209.0 122.0,213.9\" fill=\"#B5523B\"/><text x=\"137\" y=\"214\" font-size=\"14\" fill=\"#B5523B\">sens du</text><text x=\"137\" y=\"232\" font-size=\"14\" fill=\"#B5523B\">mouvement</text><line x1=\"165\" y1=\"446\" x2=\"248.33333333333331\" y2=\"446\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><text x=\"256.3\" y=\"451\" font-size=\"14\">1 m</text><rect x=\"465\" y=\"70\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"95.0\" text-anchor=\"middle\" font-weight=\"bold\">Point</text><rect x=\"545\" y=\"70\" width=\"100\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"95.0\" text-anchor=\"middle\" font-weight=\"bold\">x (m)</text><rect x=\"645\" y=\"70\" width=\"100\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"95.0\" text-anchor=\"middle\" font-weight=\"bold\">y (m)</text><rect x=\"465\" y=\"110\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"135.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">0</tspan></text><rect x=\"545\" y=\"110\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"135.0\" text-anchor=\"middle\">1,058</text><rect x=\"645\" y=\"110\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"135.0\" text-anchor=\"middle\">1,456</text><rect x=\"465\" y=\"150\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"175.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">1</tspan></text><rect x=\"545\" y=\"150\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"175.0\" text-anchor=\"middle\">0,732</text><rect x=\"645\" y=\"150\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"175.0\" text-anchor=\"middle\">1,644</text><rect x=\"465\" y=\"190\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"215.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">2</tspan></text><rect x=\"545\" y=\"190\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"215.0\" text-anchor=\"middle\">0,374</text><rect x=\"645\" y=\"190\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"215.0\" text-anchor=\"middle\">1,761</text><rect x=\"465\" y=\"230\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"255.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">3</tspan></text><rect x=\"545\" y=\"230\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"255.0\" text-anchor=\"middle\">0,000</text><rect x=\"645\" y=\"230\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"255.0\" text-anchor=\"middle\">1,800</text><rect x=\"465\" y=\"270\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"295.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">4</tspan></text><rect x=\"545\" y=\"270\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"295.0\" text-anchor=\"middle\">−0,374</text><rect x=\"645\" y=\"270\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"295.0\" text-anchor=\"middle\">1,761</text><rect x=\"465\" y=\"310\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"335.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">5</tspan></text><rect x=\"545\" y=\"310\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"335.0\" text-anchor=\"middle\">−0,732</text><rect x=\"645\" y=\"310\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"335.0\" text-anchor=\"middle\">1,644</text><rect x=\"465\" y=\"350\" width=\"80\" height=\"40\" fill=\"#efe8da\" stroke=\"#7a7a7a\"/><text x=\"505.0\" y=\"375.0\" text-anchor=\"middle\" font-weight=\"bold\">M<tspan font-size=\"12\" dy=\"4\">6</tspan></text><rect x=\"545\" y=\"350\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"595.0\" y=\"375.0\" text-anchor=\"middle\">−1,058</text><rect x=\"645\" y=\"350\" width=\"100\" height=\"40\" fill=\"#fff\" stroke=\"#7a7a7a\"/><text x=\"695.0\" y=\"375.0\" text-anchor=\"middle\">1,456</text><text x=\"470\" y=\"420\" font-size=\"14\">Coordonnées de la boule dans le</text><text x=\"470\" y=\"440\" font-size=\"14\">repère (O ; x, y), référentiel terrestre.</text></svg>",
+      "questions": [
+        {
+          "texte": "À l'aide du tableau, calcule les distances OM₁ et OM₃, puis la distance M₂M₃. Quelle est la nature du mouvement de la boule sur cet enregistrement ?",
+          "aides": [
+            "La distance entre deux points A et B de coordonnées (xA ; yA) et (xB ; yB) vaut √((xB − xA)² + (yB − yA)²).",
+            "Si tous les points sont à la même distance de O, la trajectoire est un cercle de centre O. Si, en plus, les points sont régulièrement espacés, que peux-tu dire de la valeur de la vitesse ?"
+          ]
+        },
+        {
+          "texte": "Détermine les coordonnées du vecteur vitesse v₂ au point M₂, puis celles de v₄ au point M₄. Calcule leurs valeurs, en m·s⁻¹ et en km·h⁻¹.",
+          "aides": [
+            "Le vecteur vitesse en M₂ se construit avec M₁ et M₃ : ses coordonnées sont les coordonnées du vecteur M₁M₃ divisées par 2τ.",
+            "Coordonnées de M₁M₃ : (x de M₃ − x de M₁ ; y de M₃ − y de M₁). Puis valeur = √(première coordonnée² + seconde coordonnée²)."
+          ]
+        },
+        {
+          "texte": "Les vecteurs v₂ et v₄ sont-ils égaux ? Que peut-on en conclure sur les forces qui s'exercent sur la boule ?",
+          "aides": []
+        },
+        {
+          "texte": "Détermine les coordonnées et la valeur du vecteur variation de vitesse Δv₃. Montre que ce vecteur est dirigé vers le centre O.",
+          "aides": [
+            "Pour soustraire deux vecteurs, on soustrait leurs coordonnées une à une : Δv₃ = v₄ − v₂.",
+            "Compare les coordonnées de Δv₃ à celles du vecteur M₃O, qui va de M₃ vers le centre O."
+          ]
+        },
+        {
+          "texte": "Estime la valeur de la somme des forces ΣF exercées sur la boule au point M₃. Compare-la à la valeur du poids de la boule. Quelle force est principalement responsable de ΣF ? Quels sont sa direction et son sens ?",
+          "aides": []
+        },
+        {
+          "texte": "Le lanceur lâche la poignée lorsque la boule passe en M₃. Que serait le mouvement de la boule si aucune force ne s'exerçait sur elle ? Dans quelle direction partirait-elle ? En réalité, quel mouvement a-t-elle (frottements de l'air négligés) ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> OM₃ = √(0² + 1,800²) = 1,80 m ; OM₁ = √(0,732² + 1,644²) = 1,80 m. M₂M₃ = √((0 − 0,374)² + (1,800 − 1,761)²) = 0,376 m (même valeur entre deux positions successives quelconques). Tous les points sont à la même distance de O et parcourent des distances égales pendant des durées égales : mouvement circulaire uniforme (sur cet enregistrement).",
+        "<strong>2.</strong> v₂ ≈ M₁M₃ / (2τ) : coordonnées ((0 − 0,732) / 0,040 ; (1,800 − 1,644) / 0,040) = (−18,3 ; 3,90) m·s⁻¹. v₄ ≈ M₃M₅ / (2τ) : ((−0,732 − 0) / 0,040 ; (1,644 − 1,800) / 0,040) = (−18,3 ; −3,90) m·s⁻¹. Valeurs : v₂ = v₄ = √(18,3² + 3,90²) = 18,7 m·s⁻¹, soit 18,7 × 3,6 = 67 km·h⁻¹.",
+        "<strong>3.</strong> Non : ils ont la même valeur, mais pas la même direction (la seconde coordonnée change de signe). Le vecteur vitesse varie, donc, d'après la contraposée du principe d'inertie, les forces qui s'exercent sur la boule ne se compensent pas.",
+        "<strong>4.</strong> Δv₃ = v₄ − v₂ : coordonnées (−18,3 − (−18,3) ; −3,90 − 3,90) = (0 ; −7,80) m·s⁻¹, valeur Δv₃ = 7,80 m·s⁻¹. Le vecteur M₃O a pour coordonnées (0 − 0 ; 0 − 1,800) = (0 ; −1,80) m : Δv₃ a la même direction et le même sens que M₃O, il est dirigé vers le centre O.",
+        "<strong>5.</strong> Δt = 2τ = 0,040 s. ΣF ≈ m × Δv₃ / Δt = 7,26 × 7,80 / 0,040 = 1,4 × 10³ N (1 416 N). Poids : P = m × g = 7,26 × 9,81 = 71,2 N, environ 20 fois plus petit. ΣF est due principalement à la force exercée par le câble sur la boule : direction du câble (de M₃ vers O), sens vers le centre O, comme Δv₃ (le lanceur « retient » la boule, qui sinon partirait tout droit).",
+        "<strong>6.</strong> Si aucune force ne s'exerçait, le principe d'inertie indique un mouvement rectiligne uniforme : la boule partirait en ligne droite avec la vitesse qu'elle avait en M₃, tangente au cercle, v₃ ≈ M₂M₄ / (2τ) = ((−0,374 − 0,374) / 0,040 ; 0) = (−18,7 ; 0) m·s⁻¹, c'est-à-dire parallèlement à l'axe des x, vers les x négatifs. En réalité, le poids s'exerce : la boule est en chute libre et décrit une trajectoire courbe (parabolique) jusqu'au sol.",
+        "<em>⚠ Erreur fréquente : calculer Δv₃ comme la différence des valeurs, v₄ − v₂ = 18,7 − 18,7 = 0, et conclure que les forces se compensent. Il faut soustraire les vecteurs (coordonnée par coordonnée) : la valeur de la vitesse est constante, mais pas le vecteur vitesse.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Service et retour au tennis",
+      "contexte": [
+        "Lors d'un service, la joueuse lance la balle verticalement et la frappe au sommet, quand sa vitesse est quasi nulle. Une caméra rapide montre que la raquette reste en contact avec la balle pendant Δt = 5,0 ms et que la balle repart horizontalement à 50 m·s⁻¹. La masse d'une balle de tennis vaut m = 57 g.",
+        "Données : masse d'un ballon de volley : 0,27 kg."
+      ],
+      "questions": [
+        {
+          "texte": "Donne les caractéristiques (direction, sens, valeur) du vecteur Δv de la balle entre le début et la fin du contact. Convertis la vitesse finale en km·h⁻¹ : cette valeur te paraît-elle réaliste pour un service ?",
+          "aides": []
+        },
+        {
+          "texte": "Estime la valeur de la somme des forces ΣF exercées sur la balle pendant le contact. Compare-la au poids de la balle et conclus sur la force exercée par la raquette (direction, sens, valeur).",
+          "aides": [
+            "Commence par convertir : m en kg et Δt en s.",
+            "ΣF ≈ m × Δv / Δt ; puis calcule P = m × g et compare les deux valeurs (fais leur rapport)."
+          ]
+        },
+        {
+          "texte": "Avec la même raquette, on frappe un ballon de volley immobile : on admet que la force et la durée du contact sont les mêmes. Estime la vitesse du ballon après la frappe. Quel est le rôle de la masse ?",
+          "aides": []
+        },
+        {
+          "texte": "En retour de service, la balle arrive horizontalement sur la raquette de l'adversaire à 30 m·s⁻¹ et repart dans la direction opposée à 25 m·s⁻¹. Le contact dure 4,0 ms. Détermine la valeur de Δv, puis celle de ΣF.",
+          "aides": [
+            "Choisis un sens positif sur l'axe horizontal, par exemple le sens du départ de la balle. Quel est alors le signe de la vitesse d'arrivée ?",
+            "Δv = v(après) − v(avant), avec les signes : 25 − (−30)."
+          ]
+        },
+        {
+          "texte": "Regard critique : pendant le contact, la force exercée par la raquette n'est pas constante (elle augmente, puis diminue). Que représente alors la valeur calculée à la question 2 ? La force maximale exercée par la raquette est-elle plus grande ou plus petite ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Vitesse initiale quasi nulle, vitesse finale horizontale de 50 m·s⁻¹ : Δv = v(fin) − v(début) ≈ v(fin). Δv est horizontal, dans le sens du départ de la balle, de valeur 50 m·s⁻¹. 50 × 3,6 = 180 km·h⁻¹ : réaliste pour un service puissant (les meilleurs services dépassent 200 km·h⁻¹).",
+        "<strong>2.</strong> ΣF ≈ m × Δv / Δt = 0,057 × 50 / (5,0 × 10⁻³) = 5,7 × 10² N. Poids : P = m × g = 0,057 × 9,81 = 0,56 N, environ 1 000 fois plus petit : il est négligeable pendant le contact. La force exercée par la raquette est donc pratiquement égale à ΣF : horizontale, dans le sens du départ de la balle, de valeur 5,7 × 10² N environ.",
+        "<strong>3.</strong> Δv ≈ ΣF × Δt / m = 570 × 5,0 × 10⁻³ / 0,27 = 11 m·s⁻¹ (10,6). Pour une même force pendant la même durée, la variation de vitesse est d'autant plus petite que la masse est grande : un système de grande masse est plus difficile à mettre en mouvement (ou à arrêter).",
+        "<strong>4.</strong> On oriente l'axe horizontal dans le sens du départ : vitesse avant le contact −30 m·s⁻¹, après +25 m·s⁻¹. Δv = 25 − (−30) = 55 m·s⁻¹, dans le sens du départ. ΣF ≈ 0,057 × 55 / (4,0 × 10⁻³) = 7,8 × 10² N.",
+        "<strong>5.</strong> La relation donne une valeur moyenne de ΣF sur la durée du contact. Comme la force passe par un maximum, la force maximale est plus grande que cette valeur moyenne. Plus Δt est court, plus la relation approchée décrit bien ce qui se passe à chaque instant.",
+        "<em>⚠ Erreur fréquente : à la question 4, soustraire les valeurs (30 − 25 = 5 m·s⁻¹, ce qui donnerait 71 N) au lieu des vecteurs : la balle change de sens, les deux vitesses s'ajoutent dans Δv.</em>",
+        "<em>⚠ Erreur fréquente : oublier de convertir Δt en secondes (5,0 ms = 5,0 × 10⁻³ s) ou la masse en kilogrammes (57 g = 0,057 kg).</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le volant de badminton est-il en chute libre ?",
+      "contexte": [
+        "Doc. 1 — Le volant. Un volant de badminton, de masse m = 5,0 g, est formé d'une tête arrondie et d'une jupe de plumes : il est très léger pour sa taille et l'air le freine beaucoup. Au club du lycée, Ilyes frappe un dégagé (coup haut et long). Une caméra fixe filme la scène et un logiciel de pointage donne, au millimètre près, les positions successives M₀, M₁, … du volant toutes les τ = 0,080 s : x horizontalement et y verticalement, en mètres, à partir du point de frappe.",
+        "Doc. 2 — Résultats du programme du doc. 3 une fois complété, représentés sur un graphique (figure ci-dessous) : les positions du volant et, en chaque point Mi où c'est possible, le vecteur m × Δv/Δt (en terracotta) et le poids P (en bleu pétrole), à la même échelle.",
+        "Doc. 3 — Programme Python incomplet (sous la figure). Pour chaque point Mi, il calcule les coordonnées des vecteurs vitesse aux points M(i−1) et M(i+1), puis celles du vecteur variation de vitesse Δv au point Mi et du vecteur m × Δv/Δt, avec Δt = 2τ. Il affiche i, les deux coordonnées et la valeur de m × Δv/Δt (en N), puis la valeur de P (en N)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"24\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Doc. 2 — Résultats du programme, représentés graphiquement (volant de badminton, τ = 0,080 s)</text><line x1=\"80.0\" y1=\"420.0\" x2=\"80.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"80.0\" y=\"440.0\" text-anchor=\"middle\">0</text><line x1=\"136.0\" y1=\"420.0\" x2=\"136.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"192.0\" y1=\"420.0\" x2=\"192.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"192.0\" y=\"440.0\" text-anchor=\"middle\">1</text><line x1=\"248.0\" y1=\"420.0\" x2=\"248.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"304.0\" y1=\"420.0\" x2=\"304.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"304.0\" y=\"440.0\" text-anchor=\"middle\">2</text><line x1=\"360.0\" y1=\"420.0\" x2=\"360.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"416.0\" y1=\"420.0\" x2=\"416.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"416.0\" y=\"440.0\" text-anchor=\"middle\">3</text><line x1=\"472.0\" y1=\"420.0\" x2=\"472.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"528.0\" y1=\"420.0\" x2=\"528.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"528.0\" y=\"440.0\" text-anchor=\"middle\">4</text><line x1=\"584.0\" y1=\"420.0\" x2=\"584.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"640.0\" y1=\"420.0\" x2=\"640.0\" y2=\"56.0\" stroke=\"#d9d2c5\" stroke-width=\"1.3\"/><text x=\"640.0\" y=\"440.0\" text-anchor=\"middle\">5</text><line x1=\"80.0\" y1=\"420.0\" x2=\"640.0\" y2=\"420.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"425.0\" text-anchor=\"end\">0</text><line x1=\"80.0\" y1=\"364.0\" x2=\"640.0\" y2=\"364.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"369.0\" text-anchor=\"end\">0,5</text><line x1=\"80.0\" y1=\"308.0\" x2=\"640.0\" y2=\"308.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"313.0\" text-anchor=\"end\">1</text><line x1=\"80.0\" y1=\"252.0\" x2=\"640.0\" y2=\"252.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"257.0\" text-anchor=\"end\">1,5</text><line x1=\"80.0\" y1=\"196.0\" x2=\"640.0\" y2=\"196.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"201.0\" text-anchor=\"end\">2</text><line x1=\"80.0\" y1=\"140.0\" x2=\"640.0\" y2=\"140.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"145.0\" text-anchor=\"end\">2,5</text><line x1=\"80.0\" y1=\"84.0\" x2=\"640.0\" y2=\"84.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72.0\" y=\"89.0\" text-anchor=\"end\">3</text><rect x=\"80.0\" y=\"56.0\" width=\"560.0\" height=\"364.0\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"644.0\" y=\"460.0\" text-anchor=\"end\" font-weight=\"bold\">x (m)</text><text x=\"72.0\" y=\"48.0\" text-anchor=\"end\" font-weight=\"bold\">y (m)</text><line x1=\"212.0\" y1=\"243.7\" x2=\"212.0\" y2=\"264.1\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"212.0,273.1 208.0,264.1 216.1,264.1\" fill=\"#1F4E5A\"/><line x1=\"212.0\" y1=\"243.7\" x2=\"177.2\" y2=\"313.1\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"172.7,322.0 173.1,311.0 181.2,315.1\" fill=\"#B5523B\"/><line x1=\"262.3\" y1=\"186.1\" x2=\"262.3\" y2=\"206.6\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"262.3,215.6 258.3,206.6 266.4,206.6\" fill=\"#1F4E5A\"/><line x1=\"262.3\" y1=\"186.1\" x2=\"239.6\" y2=\"236.0\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"235.5,245.1 235.5,234.1 243.7,237.9\" fill=\"#B5523B\"/><line x1=\"306.5\" y1=\"142.2\" x2=\"306.5\" y2=\"162.7\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"306.5,171.7 302.4,162.7 310.5,162.7\" fill=\"#1F4E5A\"/><line x1=\"306.5\" y1=\"142.2\" x2=\"290.8\" y2=\"180.6\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"287.0,189.8 286.6,178.9 295.0,182.3\" fill=\"#B5523B\"/><line x1=\"346.1\" y1=\"109.4\" x2=\"346.1\" y2=\"129.9\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"346.1,138.9 342.1,129.9 350.2,129.9\" fill=\"#1F4E5A\"/><line x1=\"346.1\" y1=\"109.4\" x2=\"335.0\" y2=\"140.6\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"331.6,150.0 330.7,139.0 339.2,142.1\" fill=\"#B5523B\"/><line x1=\"382.3\" y1=\"86.2\" x2=\"382.3\" y2=\"106.7\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"382.3,115.7 378.2,106.7 386.3,106.7\" fill=\"#1F4E5A\"/><line x1=\"382.3\" y1=\"86.2\" x2=\"374.1\" y2=\"112.5\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"371.2,122.1 369.8,111.2 378.4,113.9\" fill=\"#B5523B\"/><line x1=\"416.0\" y1=\"71.5\" x2=\"416.0\" y2=\"91.9\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"416.0,100.9 411.9,91.9 420.1,91.9\" fill=\"#1F4E5A\"/><line x1=\"416.0\" y1=\"71.5\" x2=\"409.6\" y2=\"94.5\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"406.9,104.2 405.2,93.3 413.9,95.7\" fill=\"#B5523B\"/><line x1=\"447.5\" y1=\"64.5\" x2=\"447.5\" y2=\"84.9\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"447.5,93.9 443.4,84.9 451.5,84.9\" fill=\"#1F4E5A\"/><line x1=\"447.5\" y1=\"64.5\" x2=\"442.2\" y2=\"85.2\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"439.7,94.9 437.8,84.1 446.6,86.3\" fill=\"#B5523B\"/><line x1=\"477.2\" y1=\"64.7\" x2=\"477.2\" y2=\"85.2\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"477.2,94.2 473.1,85.2 481.2,85.2\" fill=\"#1F4E5A\"/><line x1=\"477.2\" y1=\"64.7\" x2=\"472.7\" y2=\"83.6\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"470.4,93.3 468.3,82.6 477.0,84.6\" fill=\"#B5523B\"/><line x1=\"505.3\" y1=\"71.8\" x2=\"505.3\" y2=\"92.2\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"505.3,101.2 501.2,92.2 509.3,92.2\" fill=\"#1F4E5A\"/><line x1=\"505.3\" y1=\"71.8\" x2=\"501.1\" y2=\"89.1\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"498.8,98.9 496.8,88.1 505.5,90.2\" fill=\"#B5523B\"/><line x1=\"531.8\" y1=\"85.3\" x2=\"531.8\" y2=\"105.8\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"531.8,114.8 527.8,105.8 535.9,105.8\" fill=\"#1F4E5A\"/><line x1=\"531.8\" y1=\"85.3\" x2=\"527.9\" y2=\"101.0\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"525.5,110.7 523.5,99.9 532.3,102.0\" fill=\"#B5523B\"/><line x1=\"556.9\" y1=\"104.9\" x2=\"556.9\" y2=\"125.4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"556.9,134.4 552.8,125.4 560.9,125.4\" fill=\"#1F4E5A\"/><line x1=\"556.9\" y1=\"104.9\" x2=\"553.2\" y2=\"118.7\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"550.6,128.4 548.8,117.6 557.5,119.9\" fill=\"#B5523B\"/><circle cx=\"80.0\" cy=\"420.0\" r=\"5\" fill=\"#222\"/><text x=\"102.0\" y=\"416.0\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\" font-size=\"14\">M<tspan font-size=\"11\" dy=\"4\">0</tspan></text><circle cx=\"152.9\" cy=\"319.2\" r=\"5\" fill=\"#222\"/><circle cx=\"212.0\" cy=\"243.7\" r=\"5\" fill=\"#222\"/><text x=\"186.0\" y=\"237.7\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\" font-size=\"14\">M<tspan font-size=\"11\" dy=\"4\">2</tspan></text><circle cx=\"262.3\" cy=\"186.1\" r=\"5\" fill=\"#222\"/><circle cx=\"306.5\" cy=\"142.2\" r=\"5\" fill=\"#222\"/><text x=\"280.5\" y=\"136.2\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\" font-size=\"14\">M<tspan font-size=\"11\" dy=\"4\">4</tspan></text><circle cx=\"346.1\" cy=\"109.4\" r=\"5\" fill=\"#222\"/><circle cx=\"382.3\" cy=\"86.2\" r=\"5\" fill=\"#222\"/><circle cx=\"416.0\" cy=\"71.5\" r=\"5\" fill=\"#222\"/><circle cx=\"447.5\" cy=\"64.5\" r=\"5\" fill=\"#222\"/><text x=\"447.5\" y=\"50.5\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\" font-size=\"14\">M<tspan font-size=\"11\" dy=\"4\">8</tspan></text><circle cx=\"477.2\" cy=\"64.7\" r=\"5\" fill=\"#222\"/><circle cx=\"505.3\" cy=\"71.8\" r=\"5\" fill=\"#222\"/><circle cx=\"531.8\" cy=\"85.3\" r=\"5\" fill=\"#222\"/><circle cx=\"556.9\" cy=\"104.9\" r=\"5\" fill=\"#222\"/><text x=\"580.9\" y=\"96.9\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\" font-size=\"14\">M<tspan font-size=\"11\" dy=\"4\">12</tspan></text><circle cx=\"580.4\" cy=\"130.1\" r=\"5\" fill=\"#222\"/><circle cx=\"602.5\" cy=\"160.5\" r=\"5\" fill=\"#222\"/><text x=\"626.5\" y=\"152.5\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\" font-size=\"14\">M<tspan font-size=\"11\" dy=\"4\">14</tspan></text><rect x=\"406.0\" y=\"289.6\" width=\"240\" height=\"102\" fill=\"#fff\" stroke=\"#d9d2c5\"/><line x1=\"416.0\" y1=\"307.6\" x2=\"446.0\" y2=\"307.6\" stroke=\"#B5523B\" stroke-width=\"2.6\"/><polygon points=\"456.0,307.6 446.0,312.1 446.0,303.1\" fill=\"#B5523B\"/><text x=\"466.0\" y=\"312.6\">vecteur m × Δv/Δt</text><line x1=\"416.0\" y1=\"337.6\" x2=\"447.0\" y2=\"337.6\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><polygon points=\"456.0,337.6 447.0,341.7 447.0,333.6\" fill=\"#1F4E5A\"/><text x=\"466.0\" y=\"342.6\">poids P</text><line x1=\"416.0\" y1=\"367.6\" x2=\"437.0\" y2=\"367.6\" stroke=\"#555\" stroke-width=\"2.2\"/><polygon points=\"446.0,367.6 437.0,371.7 437.0,363.6\" fill=\"#555\"/><text x=\"456.0\" y=\"372.6\">échelle : 0,05 N</text><text x=\"80.0\" y=\"462\" font-size=\"14\">Toutes les flèches de forces sont tracées à la même échelle. Référentiel terrestre.</text></svg>",
+      "code": [
+        "m = 0.0050        # masse du volant (kg)",
+        "g = 9.81          # intensité de la pesanteur (N/kg)",
+        "tau = 0.080       # durée entre deux positions (s)",
+        "x = [0.000, 0.651, 1.179, 1.628, 2.022, 2.376, 2.699, 3.000,",
+        "     3.281, 3.546, 3.797, 4.034, 4.258, 4.468, 4.665]",
+        "y = [0.000, 0.900, 1.574, 2.088, 2.480, 2.773, 2.980, 3.112,",
+        "     3.174, 3.172, 3.109, 2.988, 2.813, 2.588, 2.317]",
+        "P = m * g",
+        "for i in range(2, len(x) - 2):",
+        "    vx1 = (x[i] - x[i - 2]) / (2 * tau)     # vecteur vitesse en M(i-1)",
+        "    vy1 = (y[i] - y[i - 2]) / (2 * tau)",
+        "    vx2 = (x[i + 2] - x[i]) / (2 * tau)     # vecteur vitesse en M(i+1)",
+        "    vy2 = ...                               # ligne A, à compléter",
+        "    dvx = vx2 - vx1                         # vecteur Δv au point Mi",
+        "    dvy = ...                               # ligne B, à compléter",
+        "    Fx = m * dvx / (2 * tau)                # vecteur m × Δv/Δt",
+        "    Fy = ...                                # ligne C, à compléter",
+        "    F = (Fx**2 + Fy**2) ** 0.5",
+        "    print(i, round(Fx, 4), round(Fy, 4), round(F, 4), round(P, 4))"
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier. Fais le bilan des forces qui s'exercent sur le volant après la frappe (la poussée d'Archimède est négligée). S'il était en chute libre, que vaudrait le vecteur m × Δv/Δt en chaque point (direction, sens, valeur) ?",
+          "aides": [
+            "Deux actions s'exercent sur le volant en vol : celle de la Terre et celle de l'air.",
+            "En chute libre, ΣF = P : remplace ΣF par P dans la relation approchée m × Δv/Δt ≈ ΣF."
+          ]
+        },
+        {
+          "texte": "Le programme (doc. 3).<br>a. Complète les lignes A, B et C.<br>b. La boucle parcourt i = 2, 3, …, 12. Explique pourquoi le programme ne peut rien calculer aux points M₀, M₁, M₁₃ et M₁₄.",
+          "aides": [
+            "Les lignes A, B et C se calquent sur les lignes juste au-dessus, en remplaçant x par y.",
+            "Pour calculer Δv en Mi, le programme utilise x[i − 2] et x[i + 2] : quelles valeurs de i rendent ces indices impossibles dans une liste de 15 valeurs (indices 0 à 14) ?"
+          ]
+        },
+        {
+          "texte": "Réaliser. Calcule « à la main » les coordonnées des vecteurs v₁ et v₃, puis du vecteur Δv₂, et enfin la valeur de m × Δv₂/Δt au point M₂. Compare-la à la valeur du poids. Pour i = 2, le programme affiche (avec des points décimaux, comme toujours en Python) : 2 ; −0,0656 ; −0,1305 ; 0,146 ; 0,0491. Tes résultats sont-ils cohérents ?",
+          "aides": [
+            "v₁ se construit avec M₀ et M₂, v₃ avec M₂ et M₄ : lis les valeurs dans les listes x et y (la première valeur a l'indice 0).",
+            "Δv₂ = v₃ − v₁ coordonnée par coordonnée ; puis multiplie par m et divise par Δt = 2τ = 0,160 s.",
+            "Valeur d'un vecteur de coordonnées (a ; b) : √(a² + b²)."
+          ]
+        },
+        {
+          "texte": "Analyser. D'après le doc. 2, compare le vecteur m × Δv/Δt au poids au début, au sommet (M₈) et à la fin de l'enregistrement. Le modèle de la chute libre convient-il pour le volant ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "On note f la force exercée par l'air sur le volant. En utilisant m × Δv/Δt ≈ P + f, estime les coordonnées et la valeur de f au point M₂. Compare la direction et le sens de f à ceux du vecteur vitesse v₂, que tu calculeras.",
+          "aides": [
+            "f ≈ m × Δv/Δt − P : soustrais les coordonnées du poids, (0 ; −0,0491) N.",
+            "Deux vecteurs ont la même direction si leurs coordonnées sont proportionnelles ; ils sont de sens opposés si les coordonnées sont de signes contraires."
+          ]
+        },
+        {
+          "texte": "Regard critique. Au point M₈, le programme affiche : 8 ; −0,0129 ; −0,0506 ; 0,0522 ; 0,0491. Un camarade affirme : « Au sommet, m × Δv/Δt a presque la même valeur que P : à cet endroit, le volant est en chute libre. » Calcule l'écart relatif entre ces deux valeurs, puis discute cette affirmation. Indique aussi une limite de la méthode utilisée (pointage, durée τ).",
+          "aides": [
+            "Écart relatif = |valeur calculée − P| / P.",
+            "Deux vecteurs ne sont égaux que s'ils ont aussi la même direction : regarde la première coordonnée affichée par le programme."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (programme de Terminale) : en Terminale, le rapport Δv/Δt, calculé pour une durée Δt de plus en plus petite, définit le vecteur accélération, et la relation de Première devient une égalité (deuxième loi de Newton). Calcule la valeur de Δv/Δt au point M₂ et au point M₈, et compare-les à g. Que vaudrait ce rapport pour une boule de pétanque ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Après la frappe, le volant n'est soumis qu'à son poids P (vertical, vers le bas, P = m × g = 0,0050 × 9,81 = 4,9 × 10⁻² N) et à l'action de l'air (force de frottement, opposée au mouvement). En chute libre, seul le poids s'exercerait : on aurait m × Δv/Δt ≈ P en chaque point, c'est-à-dire un vecteur vertical, vers le bas, de valeur 4,9 × 10⁻² N, le même partout.",
+        "<strong>2.</strong> a. Ligne A : vy2 = (y[i + 2] - y[i]) / (2 * tau) ; ligne B : dvy = vy2 - vy1 ; ligne C : Fy = m * dvy / (2 * tau).",
+        "b. Pour obtenir Δv au point Mi, il faut les vecteurs vitesse en M(i−1) et M(i+1), donc les positions M(i−2) à M(i+2). Pour M₀ et M₁, il manque des positions avant ; pour M₁₃ et M₁₄, des positions après (x[15] et x[16] n'existent pas). range(2, len(x) − 2) = range(2, 13) donne bien i = 2 à 12.",
+        "<strong>3.</strong> v₁ ≈ M₀M₂ / (2τ) : ((1,179 − 0) / 0,160 ; (1,574 − 0) / 0,160) = (7,37 ; 9,84) m·s⁻¹. v₃ ≈ M₂M₄ / (2τ) : ((2,022 − 1,179) / 0,160 ; (2,480 − 1,574) / 0,160) = (5,27 ; 5,66) m·s⁻¹. Δv₂ = v₃ − v₁ = (5,27 − 7,37 ; 5,66 − 9,84) = (−2,10 ; −4,18) m·s⁻¹ (le calcul sans arrondi intermédiaire donne −4,175). Avec Δt = 2τ = 0,160 s : m × Δv₂/Δt = (0,0050 × (−2,10) / 0,160 ; 0,0050 × (−4,175) / 0,160) = (−6,6 × 10⁻² ; −1,30 × 10⁻¹) N ; valeur √(0,0656² + 0,1305²) = 0,146 N, environ 3 fois le poids (0,146 / 0,0491 = 3,0). On retrouve les valeurs affichées par le programme.",
+        "<strong>4.</strong> Au début (M₂ à M₄), les flèches m × Δv/Δt sont bien plus longues que P et inclinées vers l'arrière (vers les x négatifs) : la somme des forces n'est pas égale au poids. Au sommet (M₈), la flèche a presque la longueur de P mais reste un peu inclinée vers l'arrière. À la fin (M₁₂), elle est plus courte que P (le programme affiche 0,0405 N contre 0,0491 N) et toujours inclinée. Le vecteur m × Δv/Δt n'est jamais égal au poids : le modèle de la chute libre ne convient pas, l'action de l'air n'est pas négligeable, surtout au début, quand le volant va vite.",
+        "<strong>5.</strong> f ≈ m × Δv/Δt − P, avec P de coordonnées (0 ; −0,0491) N : f ≈ (−0,0656 − 0 ; −0,1305 − (−0,0491)) = (−0,066 ; −0,081) N, valeur √(0,0656² + 0,0814²) = 0,105 N, environ 2 fois le poids. v₂ ≈ M₁M₃ / (2τ) : ((1,628 − 0,651) / 0,160 ; (2,088 − 0,900) / 0,160) = (6,11 ; 7,43) m·s⁻¹. Les coordonnées de f et de v₂ sont de signes opposés et dans des rapports voisins (0,0814 / 0,0656 = 1,24 ; 7,43 / 6,11 = 1,22) : f a (aux erreurs de mesure près) la direction de v₂ et le sens opposé. C'est bien une force de frottement, qui s'oppose au mouvement.",
+        "<strong>6.</strong> Écart relatif = (0,0522 − 0,0491) / 0,0491 = 6 % (6,4 %). Les valeurs sont proches, mais l'affirmation est fausse : le vecteur m × Δv/Δt n'est pas vertical, sa coordonnée horizontale (−0,0129 N) vaut environ un quart du poids. Au sommet, la vitesse est horizontale (v₈ ≈ 3,4 m·s⁻¹ vers l'avant) et la force de l'air, horizontale vers l'arrière, vaut environ 0,013 N : elle est plus faible qu'au début parce que le volant va moins vite, mais elle n'est pas négligeable. Comparer seulement les valeurs ne suffit pas : il faut comparer les vecteurs (direction, sens et valeur). Limites de la méthode : positions pointées au millimètre près (erreur sur Δv, donc sur m × Δv/Δt, d'autant plus grande que τ est petit) ; durée τ = 0,080 s assez grande devant la durée pendant laquelle la vitesse change beaucoup au début (la relation n'est qu'approchée pour Δt = 2τ = 0,16 s) ; repère et échelle de la vidéo, volant modélisé par un point.",
+        "<strong>7.</strong> Pour aller plus loin : Δv/Δt = (m × Δv/Δt) / m. En M₂ : 0,146 / 0,0050 = 29 m·s⁻², environ 3 fois g. En M₈ : 0,0522 / 0,0050 = 10,4 m·s⁻², proche de g = 9,81 m·s⁻² (6 % d'écart) mais pas vertical. Pour une boule de pétanque en chute libre, Δv/Δt vaudrait g en tout point (vertical, vers le bas), comme à l'exercice 3 : Δv / Δt = 1,96 / 0,20 = 9,8 m·s⁻².",
+        "Éléments valorisés : bilan des forces complet ; utilisation des positions M(i−2) à M(i+2) et de Δt = 2τ ; soustraction des vecteurs coordonnée par coordonnée ; comparaison des vecteurs (et pas seulement des valeurs) ; conclusion argumentée sur la validité du modèle de la chute libre.",
+        "<em>⚠ Erreur fréquente : diviser Δv par τ au lieu de 2τ, ou calculer Δv₂ avec v₂ et v₁ (vecteurs vitesse de deux points consécutifs) au lieu de v₃ et v₁.</em>",
+        "<em>⚠ Erreur fréquente : conclure à la chute libre parce que la valeur de m × Δv/Δt est proche de P, sans regarder sa direction.</em>"
+      ]
+    }
+  ]
+}

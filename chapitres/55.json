@@ -1,0 +1,693 @@
+{
+  "id": 55,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. L'interaction gravitationnelle",
+        "icon": "🪐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi de gravitation universelle",
+            "text": "Deux corps ponctuels de masses m1 et m2, séparés d'une distance r, exercent l'un sur l'autre des forces attractives, dirigées suivant la droite qui les relie, de même valeur : F = G × m1×m2 / r²."
+          },
+          {
+            "type": "formula",
+            "label": "Constante de gravitation",
+            "text": "G = 6,67×10⁻¹¹ N·m²·kg⁻²"
+          }
+        ]
+      },
+      {
+        "title": "2. Champ de pesanteur",
+        "icon": "🌍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Champ de pesanteur",
+            "text": "Au voisinage de la surface d'une planète, le champ de pesanteur peut être considéré comme uniforme : il a même valeur g, même direction (verticale) et même sens (vers le bas) en tout point d'une petite région de l'espace."
+          },
+          {
+            "type": "formula",
+            "label": "Poids d'un corps",
+            "text": "P = m × g\navec g ≈ 9,81 N/kg à la surface de la Terre"
+          },
+          {
+            "type": "text",
+            "text": "Sur la Lune, g_Lune ≈ 1,62 N/kg : le poids d'un même objet y est donc plus faible, bien que sa masse (propriété intrinsèque, indépendante du lieu) reste inchangée."
+          }
+        ]
+      },
+      {
+        "title": "3. L'interaction électrostatique",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Loi de Coulomb",
+            "text": "Deux corps ponctuels chargés électriquement, de charges q1 et q2, séparés d'une distance r, exercent l'un sur l'autre des forces de même valeur F = k × |q1×q2| / r², attractives si les charges sont de signes opposés, répulsives si elles sont de même signe."
+          },
+          {
+            "type": "formula",
+            "label": "Constante de Coulomb",
+            "text": "k = 9,0×10⁹ N·m²·C⁻²"
+          }
+        ]
+      },
+      {
+        "title": "4. Champ électrostatique",
+        "icon": "🔋",
+        "content": [
+          {
+            "type": "def",
+            "term": "Champ électrostatique uniforme",
+            "text": "Entre deux plaques planes et parallèles portées à des potentiels différents, le champ électrostatique est uniforme. Une charge q placée dans ce champ subit une force F = q × E, où E est la valeur du champ (en V/m)."
+          },
+          {
+            "type": "formula",
+            "label": "Champ créé par deux plaques",
+            "text": "E = U / d\navec U la tension entre les plaques (V) et d leur distance (m)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 500 155\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"arrB55\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"arrR55\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker><marker id=\"arrT55\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#2F7D75\"/></marker></defs><circle cx=\"50\" cy=\"70\" r=\"18\" fill=\"none\" stroke=\"#3E7DBF\" stroke-width=\"1.5\"/><text x=\"50\" y=\"75\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\">m₁</text><circle cx=\"130\" cy=\"70\" r=\"18\" fill=\"none\" stroke=\"#3E7DBF\" stroke-width=\"1.5\"/><text x=\"130\" y=\"75\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\">m₂</text><line x1=\"78\" y1=\"58\" x2=\"98\" y2=\"58\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#arrB55)\"/><line x1=\"102\" y1=\"82\" x2=\"82\" y2=\"82\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#arrB55)\"/><text x=\"90\" y=\"122\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Gravitation</text><text x=\"90\" y=\"137\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">toujours attractive</text><circle cx=\"220\" cy=\"70\" r=\"18\" fill=\"none\" stroke=\"#C0472F\" stroke-width=\"1.5\"/><text x=\"220\" y=\"75\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\">+</text><circle cx=\"290\" cy=\"70\" r=\"18\" fill=\"none\" stroke=\"#C0472F\" stroke-width=\"1.5\"/><text x=\"290\" y=\"75\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\">+</text><line x1=\"195\" y1=\"58\" x2=\"175\" y2=\"58\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#arrR55)\"/><line x1=\"315\" y1=\"82\" x2=\"335\" y2=\"82\" stroke=\"#C0472F\" stroke-width=\"2\" marker-end=\"url(#arrR55)\"/><text x=\"255\" y=\"122\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Répulsion</text><text x=\"255\" y=\"137\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">charges de même signe</text><circle cx=\"390\" cy=\"70\" r=\"18\" fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"1.5\"/><text x=\"390\" y=\"75\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\">+</text><circle cx=\"460\" cy=\"70\" r=\"18\" fill=\"none\" stroke=\"#2F7D75\" stroke-width=\"1.5\"/><text x=\"460\" y=\"75\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\">−</text><line x1=\"408\" y1=\"58\" x2=\"428\" y2=\"58\" stroke=\"#2F7D75\" stroke-width=\"2\" marker-end=\"url(#arrT55)\"/><line x1=\"442\" y1=\"82\" x2=\"422\" y2=\"82\" stroke=\"#2F7D75\" stroke-width=\"2\" marker-end=\"url(#arrT55)\"/><text x=\"425\" y=\"122\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Attraction</text><text x=\"425\" y=\"137\" font-size=\"10\" fill=\"#5C6B60\" text-anchor=\"middle\">charges opposées</text></svg>",
+            "caption": "L'interaction gravitationnelle est toujours attractive. L'interaction électrostatique dépend du signe des charges : répulsive entre charges de même signe, attractive entre charges opposées."
+          }
+        ]
+      },
+      {
+        "title": "5. Lignes de champ",
+        "icon": "🧭",
+        "content": [
+          {
+            "type": "def",
+            "term": "Ligne de champ",
+            "text": "Courbe tangente en chacun de ses points au vecteur champ (gravitationnel ou électrostatique). Une ligne de champ est orientée dans le sens du vecteur champ ; les lignes sont d'autant plus resserrées que le champ est intense."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 500 220\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"flB55\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"flR55\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#C0472F\"/></marker><marker id=\"flT55\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#2F7D75\"/></marker></defs><line x1=\"147.0\" y1=\"90.0\" x2=\"105.0\" y2=\"90.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"128.8\" y1=\"133.8\" x2=\"99.1\" y2=\"104.1\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"85.0\" y1=\"152.0\" x2=\"85.0\" y2=\"110.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"41.2\" y1=\"133.8\" x2=\"70.9\" y2=\"104.1\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"23.0\" y1=\"90.0\" x2=\"65.0\" y2=\"90.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"41.2\" y1=\"46.2\" x2=\"70.9\" y2=\"75.9\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"85.0\" y1=\"28.0\" x2=\"85.0\" y2=\"70.0\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><line x1=\"128.8\" y1=\"46.2\" x2=\"99.1\" y2=\"75.9\" stroke=\"#3E7DBF\" stroke-width=\"1.6\" marker-end=\"url(#flB55)\"/><circle cx=\"85\" cy=\"90\" r=\"16\" fill=\"#FAFAF5\" stroke=\"#3E7DBF\" stroke-width=\"1.8\"/><text x=\"85\" y=\"95\" font-size=\"12\" fill=\"#1B2420\" text-anchor=\"middle\">m</text><text x=\"85\" y=\"188\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Champ gravitationnel</text><text x=\"85\" y=\"202\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">toujours convergent (attractif)</text><line x1=\"270.0\" y1=\"90.0\" x2=\"312.0\" y2=\"90.0\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"264.1\" y1=\"104.1\" x2=\"293.8\" y2=\"133.8\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"250.0\" y1=\"110.0\" x2=\"250.0\" y2=\"152.0\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"235.9\" y1=\"104.1\" x2=\"206.2\" y2=\"133.8\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"230.0\" y1=\"90.0\" x2=\"188.0\" y2=\"90.0\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"235.9\" y1=\"75.9\" x2=\"206.2\" y2=\"46.2\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"250.0\" y1=\"70.0\" x2=\"250.0\" y2=\"28.0\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><line x1=\"264.1\" y1=\"75.9\" x2=\"293.8\" y2=\"46.2\" stroke=\"#C0472F\" stroke-width=\"1.6\" marker-end=\"url(#flR55)\"/><circle cx=\"250\" cy=\"90\" r=\"16\" fill=\"#FAFAF5\" stroke=\"#C0472F\" stroke-width=\"1.8\"/><text x=\"250\" y=\"95\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\">+</text><text x=\"250\" y=\"188\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Champ électrostatique</text><text x=\"250\" y=\"202\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">charge positive : divergent</text><line x1=\"477.0\" y1=\"90.0\" x2=\"435.0\" y2=\"90.0\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"458.8\" y1=\"133.8\" x2=\"429.1\" y2=\"104.1\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"415.0\" y1=\"152.0\" x2=\"415.0\" y2=\"110.0\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"371.2\" y1=\"133.8\" x2=\"400.9\" y2=\"104.1\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"353.0\" y1=\"90.0\" x2=\"395.0\" y2=\"90.0\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"371.2\" y1=\"46.2\" x2=\"400.9\" y2=\"75.9\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"415.0\" y1=\"28.0\" x2=\"415.0\" y2=\"70.0\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><line x1=\"458.8\" y1=\"46.2\" x2=\"429.1\" y2=\"75.9\" stroke=\"#2F7D75\" stroke-width=\"1.6\" marker-end=\"url(#flT55)\"/><circle cx=\"415\" cy=\"90\" r=\"16\" fill=\"#FAFAF5\" stroke=\"#2F7D75\" stroke-width=\"1.8\"/><text x=\"415\" y=\"95\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\">−</text><text x=\"415\" y=\"188\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Champ électrostatique</text><text x=\"415\" y=\"202\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">charge négative : convergent</text></svg>",
+            "caption": "Lignes de champ créées par une source ponctuelle : le champ gravitationnel converge toujours vers la masse qui le crée (attraction seule) ; le champ électrostatique diverge à partir d'une charge positive et converge vers une charge négative."
+          },
+          {
+            "type": "warn",
+            "text": "Un champ uniforme (champ de pesanteur au voisinage du sol, champ électrostatique entre deux plaques planes parallèles) est représenté par des lignes de champ parallèles, de même sens et régulièrement espacées."
+          }
+        ]
+      },
+      {
+        "title": "6. Comparer les deux interactions",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "",
+              "Interaction gravitationnelle",
+              "Interaction électrostatique"
+            ],
+            "rows": [
+              [
+                "Toujours attractive ?",
+                "Oui",
+                "Non (dépend des signes des charges)"
+              ],
+              [
+                "Intensité relative",
+                "Très faible (négligeable devant l'électrostatique à l'échelle atomique)",
+                "Beaucoup plus intense à l'échelle atomique"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "À l'échelle atomique (ex. atome d'hydrogène), le rapport FE/FG est de l'ordre de 10³⁹ : l'interaction électrostatique domine totalement. Mais à l'échelle du système solaire, la matière est globalement neutre électriquement : les interactions électrostatiques s'annulent en moyenne, laissant l'interaction gravitationnelle, cumulée sur d'énormes masses, dominer."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Deux corps s'attirent par interaction gravitationnelle. Si la distance qui les sépare double, la valeur de la force :",
+      "opts": [
+        "est divisée par 2",
+        "double",
+        "est divisée par 4",
+        "est multipliée par 4"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-carre-distance",
+          "texte": "Oublier le carré de la distance : F = G m₁ m₂ / r², doubler r divise F par 2² = 4"
+        },
+        {
+          "code": "force-augmente-avec-distance",
+          "texte": "Croire que la force augmente avec la distance : plus les corps sont éloignés, plus ils s'attirent faiblement"
+        },
+        null,
+        {
+          "code": "carre-sens-inverse",
+          "texte": "Multiplier au lieu de diviser : r est au dénominateur, la force diminue quand r augmente"
+        }
+      ],
+      "exp": "F = G m₁ m₂ / r² : si r double, r² est multiplié par 4, donc F est divisée par 4. Attention : la distance est au carré et au dénominateur."
+    },
+    {
+      "q": "Terre : M = 5,97×10²⁴ kg ; Lune : m = 7,35×10²² kg ; distance d = 3,84×10⁵ km ; G = 6,67×10⁻¹¹ N·m²·kg⁻². La force d'attraction gravitationnelle entre la Terre et la Lune vaut environ :",
+      "opts": [
+        "1,98×10²⁰ N",
+        "7,62×10²⁸ N",
+        "1,98×10²⁶ N",
+        "2,73×10⁻³ N"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-carre-distance",
+          "texte": "Oublier le carré de la distance : G M m / d ; il faut diviser par d²"
+        },
+        {
+          "code": "conversion-km-m",
+          "texte": "Oublier de convertir les kilomètres en mètres : d = 3,84×10⁸ m"
+        },
+        {
+          "code": "masses-additionnees",
+          "texte": "Additionner les masses au lieu de les multiplier : F = G × M × m / d²"
+        }
+      ],
+      "exp": "F = G M m / d² = 6,67×10⁻¹¹ × 5,97×10²⁴ × 7,35×10²² / (3,84×10⁸)² ≈ 1,98×10²⁰ N. Attention : d en mètres et au carré."
+    },
+    {
+      "q": "La Terre attire la Lune avec une force de valeur F. La force exercée par la Lune sur la Terre :",
+      "opts": [
+        "est bien plus faible, car la Lune est moins massive",
+        "a la même valeur F, mais un sens opposé",
+        "est nulle : seule la Terre attire",
+        "a la même valeur F et le même sens"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "reciproque-plus-massif-plus-fort",
+          "texte": "Croire que l'objet le plus massif exerce la plus grande force : les deux forces réciproques ont toujours la même valeur"
+        },
+        null,
+        {
+          "code": "attraction-a-sens-unique",
+          "texte": "Croire que seul le plus gros corps attire : l'interaction est réciproque, chaque corps attire l'autre"
+        },
+        {
+          "code": "reciproque-meme-sens",
+          "texte": "Oublier que les forces réciproques sont de sens opposés : chaque astre attire l'autre vers lui"
+        }
+      ],
+      "exp": "Les deux forces ont même direction (la droite Terre-Lune), même valeur G M m / d², et des sens opposés : chaque astre attire l'autre vers lui. Attention : la masse de chacun intervient dans la même formule."
+    },
+    {
+      "q": "Un objet de masse 2,5 kg pèse 24,5 N sur Terre (g = 9,81 N·kg⁻¹). Sur la Lune (g = 1,62 N·kg⁻¹), son poids vaut :",
+      "opts": [
+        "24,5 N",
+        "1,62 N",
+        "15,1 N",
+        "4,05 N"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "poids-independant-astre",
+          "texte": "Croire que le poids ne dépend pas de l'astre : P = m × g, et g est environ 6 fois plus faible sur la Lune"
+        },
+        {
+          "code": "poids-egal-g",
+          "texte": "Prendre g pour le poids : P = m × g = 2,5 × 1,62"
+        },
+        {
+          "code": "rapport-g-inverse",
+          "texte": "Inverser le rapport des g : 2,5 × 9,81 / 1,62 ; le poids est plus faible sur la Lune"
+        },
+        null
+      ],
+      "exp": "P = m × g(Lune) = 2,5 × 1,62 ≈ 4,05 N. La masse (2,5 kg) ne change pas ; le poids dépend du champ de pesanteur de l'astre."
+    },
+    {
+      "q": "Deux charges q₁ = +2,0 μC et q₂ = −3,0 μC sont proches l'une de l'autre. L'interaction entre elles est :",
+      "opts": [
+        "répulsive, car les charges sont différentes",
+        "attractive, car les charges sont de signes opposés",
+        "répulsive, car |q₂| est la plus grande",
+        "nulle, car les charges se compensent presque"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "signes-charges-regle-inversee",
+          "texte": "Inverser la règle : des charges de signes opposés s'attirent, des charges de même signe se repoussent"
+        },
+        null,
+        {
+          "code": "charge-plus-grande-repousse",
+          "texte": "Croire que la charge la plus grande repousse l'autre : seul le signe des charges fixe le sens de l'interaction"
+        },
+        {
+          "code": "charges-se-compensent",
+          "texte": "Croire que deux charges de signes opposés s'annulent : elles restent distinctes et s'attirent"
+        }
+      ],
+      "exp": "Des charges de signes opposés s'attirent ; de même signe, elles se repoussent. Attention : la valeur des charges fixe l'intensité de la force, pas son sens."
+    },
+    {
+      "q": "Deux charges de valeurs |q₁| = 2,0 μC et |q₂| = 3,0 μC sont distantes de 50 cm (k = 9,0×10⁹ N·m²·C⁻²). La valeur de la force électrostatique vaut :",
+      "opts": [
+        "0,22 N",
+        "0,11 N",
+        "2,2×10¹¹ N",
+        "2,2×10⁻⁵ N"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-carre-distance",
+          "texte": "Oublier le carré de la distance : k |q₁ q₂| / r ; il faut diviser par r² = 0,25 m²"
+        },
+        {
+          "code": "conversion-microcoulomb",
+          "texte": "Oublier de convertir les microcoulombs : 1 μC = 1×10⁻⁶ C"
+        },
+        {
+          "code": "conversion-cm-m",
+          "texte": "Garder la distance en centimètres : r = 50 cm = 0,50 m"
+        }
+      ],
+      "exp": "F = k |q₁ q₂| / r² = 9,0×10⁹ × 2,0×10⁻⁶ × 3,0×10⁻⁶ / 0,50² ≈ 0,22 N. Attention : charges en coulombs, distance en mètres et au carré."
+    },
+    {
+      "q": "Deux plaques planes parallèles, distantes de 5,0 cm, sont soumises à une tension U = 250 V. Le champ électrostatique entre elles vaut E = U / d, soit :",
+      "opts": [
+        "50 V·m⁻¹",
+        "5,0×10³ V·m⁻¹",
+        "12,5 V·m",
+        "2,0×10⁻⁴ m·V⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-cm-m",
+          "texte": "Garder la distance en centimètres : 250 / 5,0 ; d = 5,0 cm = 0,050 m"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 250 × 0,050 ; il faut E = U / d"
+        },
+        {
+          "code": "champ-rapport-inverse",
+          "texte": "Inverser le rapport : d / U ; il faut E = U / d, en V·m⁻¹"
+        }
+      ],
+      "exp": "E = U / d = 250 / 0,050 = 5,0×10³ V·m⁻¹. Attention : la distance doit être en mètres."
+    },
+    {
+      "q": "Entre deux plaques planes parallèles chargées, les lignes du champ électrostatique sont :",
+      "opts": [
+        "parallèles, régulièrement espacées, orientées de la plaque + vers la plaque −",
+        "parallèles, régulièrement espacées, orientées de la plaque − vers la plaque +",
+        "plus resserrées près des plaques qu'au milieu",
+        "absentes entre les plaques : le champ n'existe que sur les plaques"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "sens-champ-inverse",
+          "texte": "Inverser le sens du champ : il est orienté de la plaque positive vers la plaque négative"
+        },
+        {
+          "code": "champ-plus-fort-pres-plaque",
+          "texte": "Croire que le champ est plus intense près des plaques : entre deux plaques parallèles, il est uniforme (même valeur partout)"
+        },
+        {
+          "code": "champ-seulement-sur-plaques",
+          "texte": "Croire que le champ n'existe que sur les plaques : il existe dans tout l'espace entre elles"
+        }
+      ],
+      "exp": "Le champ entre deux plaques parallèles est uniforme : ses lignes sont parallèles, régulièrement espacées et orientées de la plaque + vers la plaque −. Attention : uniforme signifie même valeur, même direction et même sens partout."
+    },
+    {
+      "q": "Un électron (charge négative) est placé entre ces plaques. La force électrique qu'il subit est :",
+      "opts": [
+        "de même sens que le champ E",
+        "perpendiculaire au champ E",
+        "nulle, car l'électron est très léger",
+        "de sens opposé au champ E"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "signe-charge-force-champ",
+          "texte": "Oublier le signe de la charge : F = q × E, avec q < 0 la force est de sens opposé au champ"
+        },
+        {
+          "code": "force-perpendiculaire-champ",
+          "texte": "Croire que la force électrique est perpendiculaire au champ : F = q E lui est colinéaire"
+        },
+        {
+          "code": "masse-annule-force",
+          "texte": "Confondre masse et charge : la force électrique dépend de la charge, pas de la masse"
+        },
+        null
+      ],
+      "exp": "F = q × E : pour une charge négative, la force a la direction du champ mais le sens opposé ; l'électron est attiré vers la plaque positive. Attention au signe de la charge."
+    },
+    {
+      "q": "Dans l'atome, la force électrostatique est environ 10³⁹ fois plus intense que la force gravitationnelle. Pourquoi est-ce pourtant la gravitation qui gouverne le mouvement des planètes ?",
+      "opts": [
+        "La loi de Coulomb ne s'applique pas à grande distance",
+        "La force électrostatique diminue plus vite avec la distance",
+        "Les astres sont trop massifs pour porter des charges",
+        "Les astres sont globalement neutres, alors que les masses s'additionnent"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "coulomb-portee-limitee",
+          "texte": "Croire que la loi de Coulomb a une portée limitée : elle s'applique à toute distance"
+        },
+        {
+          "code": "decroissance-differente",
+          "texte": "Croire que les deux forces décroissent différemment : toutes deux varient en 1 / r²"
+        },
+        {
+          "code": "masse-empeche-charge",
+          "texte": "Croire que la masse empêche de porter des charges : un astre contient autant de charges + que de charges −"
+        },
+        null
+      ],
+      "exp": "La matière contient autant de charges positives que négatives : à grande échelle, les forces électrostatiques se compensent. Les masses, toujours positives, s'additionnent : la gravitation domine. Les deux forces varient pourtant en 1 / r²."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Électricité statique : ballon, cheveux et pendules",
+      "contexte": [
+        "Sofiane frotte un ballon de baudruche sur ses cheveux secs : au cours du frottement, des électrons passent des cheveux vers le ballon. Quand il éloigne le ballon, ses cheveux se dressent et s'écartent les uns des autres.",
+        "Il approche ensuite le ballon de deux petites boules légères, suspendues à des fils isolants (pendules électrostatiques). La figure ci-dessous montre deux situations ; dans chacune, la boule 1 a été touchée avec le ballon, mais on ne sait pas ce qui a été fait à la boule 2.",
+        "Rappel : un corps qui porte N électrons en excès a une charge q = −N × e."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"aP\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#1F4E5A\"/></marker><marker id=\"aT\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#B5523B\"/></marker><marker id=\"aG\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#3a3a3a\"/></marker><marker id=\"aGs\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"2\" refY=\"6\" orient=\"auto\"><path d=\"M16,0 L0,6 L16,12 Z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"55\" y=\"48\" width=\"280\" height=\"12\" fill=\"#C8962E\"/><line x1=\"145\" y1=\"60\" x2=\"145\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"245\" y1=\"60\" x2=\"245\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"145\" y1=\"60\" x2=\"107\" y2=\"300\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"245\" y1=\"60\" x2=\"283\" y2=\"300\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><circle cx=\"107\" cy=\"300\" r=\"18\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"107\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">1</text><circle cx=\"283\" cy=\"300\" r=\"18\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"283\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">2</text><text x=\"195\" y=\"372\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">Situation A</text><rect x=\"425\" y=\"48\" width=\"280\" height=\"12\" fill=\"#C8962E\"/><line x1=\"515\" y1=\"60\" x2=\"515\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"615\" y1=\"60\" x2=\"615\" y2=\"330\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"515\" y1=\"60\" x2=\"540\" y2=\"300\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><line x1=\"615\" y1=\"60\" x2=\"590\" y2=\"300\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><circle cx=\"540\" cy=\"300\" r=\"18\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"540\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">1</text><circle cx=\"590\" cy=\"300\" r=\"18\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"590\" y=\"306\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">2</text><text x=\"565\" y=\"372\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">Situation B</text><line x1=\"380\" y1=\"40\" x2=\"380\" y2=\"385\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><text x=\"380\" y=\"420\" text-anchor=\"middle\" fill=\"#3a3a3a\">Pointillés : position des fils lorsque les boules ne sont pas chargées.</text><text x=\"380\" y=\"447\" text-anchor=\"middle\" fill=\"#3a3a3a\">Dans les deux situations, la boule 1 a été touchée avec le ballon frotté.</text></svg>",
+      "questions": [
+        {
+          "texte": "Le ballon et les cheveux.<br>a. Quel est le signe de la charge du ballon après le frottement ? Justifie.<br>b. Quel est le signe de la charge des cheveux ? Justifie.<br>c. Explique pourquoi les cheveux s'écartent les uns des autres.",
+          "aides": []
+        },
+        {
+          "texte": "La charge du ballon vaut q = −8,0 × 10⁻⁸ C. Calcule le nombre N d'électrons en excès sur le ballon.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse et justifie.<br>a. Dans la situation A, la boule 2 est chargée négativement.<br>b. Dans la situation B, la boule 2 est forcément chargée positivement.<br>c. Dans la situation A, si la boule 1 porte une charge plus grande que la boule 2, elle exerce sur la boule 2 une force plus grande que celle que la boule 2 exerce sur elle.",
+          "aides": [
+            "Dans quelle situation les boules s'éloignent-elles l'une de l'autre ? Dans laquelle se rapprochent-elles ?",
+            "Pour b : un corps neutre contient des charges positives et négatives ; une charge négative proche peut les répartir autrement. Pour c : quelle relation donne la valeur de la force, et que dit le principe des actions réciproques ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Le ballon gagne des électrons, qui portent une charge négative : le ballon est chargé négativement.",
+        "b. Les cheveux perdent des électrons : ils ont plus de protons que d'électrons, ils sont chargés positivement. (La charge totale se conserve : les électrons ne sont pas créés, ils sont transférés.)",
+        "c. Tous les cheveux portent une charge de même signe (positive) : deux corps chargés de même signe se repoussent, donc les cheveux s'écartent les uns des autres.",
+        "<strong>2.</strong> q = −N × e donc N = |q| / e = 8,0 × 10⁻⁸ / 1,6 × 10⁻¹⁹ = 5,0 × 10¹¹ électrons.",
+        "<strong>3.</strong> a. VRAI : la boule 1 est chargée négativement (touchée par le ballon). Dans la situation A, les fils s'écartent de la verticale en s'éloignant l'un de l'autre : les boules se repoussent, elles portent donc des charges de même signe. La boule 2 est négative.",
+        "b. FAUX : les boules s'attirent. La boule 2 peut être chargée positivement, mais elle peut aussi être neutre : la boule 1 négative repousse les électrons de la boule 2 vers le côté opposé, le côté de la boule 2 tourné vers la boule 1 devient positif et il est attiré (électrisation par influence). Une attraction ne prouve donc pas que les deux corps sont chargés.",
+        "c. FAUX : d'après la loi de Coulomb, les deux forces ont la même valeur F = k × |q₁ × q₂| / r², qui dépend du produit des deux charges. Les deux boules exercent l'une sur l'autre des forces de même valeur, de même direction et de sens opposés (principe des actions réciproques).",
+        "<em>⚠ Erreur fréquente : croire qu'un corps qui gagne des électrons devient positif. Gagner des électrons, c'est gagner des charges négatives.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Combien « pèse » Yanis, ici et dans l'ISS ?",
+      "contexte": [
+        "Yanis a une masse m = 60,0 kg. On modélise la Terre par une sphère de masse M<sub>T</sub> = 5,97 × 10²⁴ kg et de rayon R<sub>T</sub> = 6,37 × 10⁶ m ; elle se comporte, pour un corps situé à sa surface ou au-dessus, comme si toute sa masse était concentrée en son centre.",
+        "Rappels : loi de la gravitation universelle F = G × m₁ × m₂ / r², où r est la distance entre les centres des deux corps ; poids P = m × g."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la valeur F de la force d'attraction gravitationnelle exercée par la Terre sur Yanis lorsqu'il est debout sur le sol.",
+          "aides": [
+            "Ici m₁ = M<sub>T</sub>, m₂ = m et r = R<sub>T</sub> (Yanis est à la surface, à la distance R<sub>T</sub> du centre de la Terre).",
+            "Calcule d'abord R<sub>T</sub>² = (6,37 × 10⁶)² : élève au carré 6,37 et la puissance de dix (10⁶ au carré donne 10¹²)."
+          ]
+        },
+        {
+          "texte": "Calcule le poids P de Yanis avec g = 9,81 N·kg⁻¹. Compare à F et conclus.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en l'expression de g en fonction de G, M<sub>T</sub> et R<sub>T</sub>, puis vérifie sa valeur numérique.",
+          "aides": []
+        },
+        {
+          "texte": "Donne la direction et le sens du vecteur champ de pesanteur en un point du sol. Pourquoi peut-on le considérer comme uniforme à l'échelle d'un terrain de football ? Décris alors ses lignes de champ.",
+          "aides": []
+        },
+        {
+          "texte": "Inès (m = 55,0 kg) est assise à côté de Yanis : la distance entre leurs centres est r = 1,0 m. Calcule la force gravitationnelle qu'ils exercent l'un sur l'autre et compare-la au poids de Yanis.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? « Dans la Station spatiale internationale (ISS), à h = 400 km d'altitude, il n'y a plus de pesanteur. » Justifie par un calcul de la valeur du champ de pesanteur à cette altitude.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F = G × M<sub>T</sub> × m / R<sub>T</sub>² = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ × 60,0 / (6,37 × 10⁶)² = 589 N.",
+        "<strong>2.</strong> P = m × g = 60,0 × 9,81 = 589 N. On trouve la même valeur : le poids de Yanis est (pratiquement) la force d'attraction gravitationnelle exercée par la Terre.",
+        "<strong>3.</strong> m × g = G × M<sub>T</sub> × m / R<sub>T</sub>², donc g = G × M<sub>T</sub> / R<sub>T</sub>² = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ / (6,37 × 10⁶)² = 9,81 N·kg⁻¹.",
+        "<strong>4.</strong> Le vecteur g est vertical, dirigé vers le bas (vers le centre de la Terre). Sur un terrain de 100 m, très petit devant R<sub>T</sub>, les verticales sont pratiquement parallèles et la distance au centre de la Terre ne change presque pas : le champ a partout la même direction, le même sens et la même valeur, il est uniforme. Ses lignes de champ sont des droites verticales, parallèles, régulièrement espacées, orientées vers le bas.",
+        "<strong>5.</strong> F = G × m₁ × m₂ / r² = 6,67 × 10⁻¹¹ × 60,0 × 55,0 / 1,0² = 2,2 × 10⁻⁷ N. Le poids de Yanis est environ 3 × 10⁹ fois plus grand (589 / 2,2 × 10⁻⁷ ≈ 2,7 × 10⁹) : l'attraction entre deux personnes est totalement imperceptible.",
+        "<strong>6.</strong> FAUX. r = R<sub>T</sub> + h = 6,37 × 10⁶ + 400 × 10³ = 6,77 × 10⁶ m ; g = G × M<sub>T</sub> / r² = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ / (6,77 × 10⁶)² = 8,69 N·kg⁻¹, soit environ 89 % de sa valeur au sol. Le champ de pesanteur n'est pas nul dans l'ISS ; si les astronautes flottent, c'est à cause du mouvement de la station autour de la Terre (étudié en Terminale).",
+        "<em>⚠ Erreur fréquente : additionner R<sub>T</sub> et h sans convertir h en mètres (6,37 × 10⁶ + 400), ou oublier d'élever la distance au carré.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Dans la tête d'une imprimante à jet d'encre",
+      "contexte": [
+        "Les dates de péremption imprimées sur les bouteilles d'eau sont souvent écrites par une imprimante à jet d'encre continu : des gouttelettes d'encre chargées électriquement passent entre deux plaques métalliques planes et parallèles, distantes de d = 2,0 mm, entre lesquelles on applique une tension U = 400 V. La plaque A est chargée positivement, la plaque B négativement (figure ci-dessous).",
+        "Au laboratoire, on peut visualiser les lignes de champ entre deux plaques semblables avec des grains de semoule flottant dans de l'huile : les grains s'alignent le long des lignes de champ.",
+        "Rappels : entre deux plaques planes parallèles, E = U / d ; une charge q placée dans un champ électrostatique subit la force vecteur F = q × vecteur E, de valeur F = |q| × E."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"aP\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#1F4E5A\"/></marker><marker id=\"aT\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#B5523B\"/></marker><marker id=\"aG\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#3a3a3a\"/></marker><marker id=\"aGs\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"2\" refY=\"6\" orient=\"auto\"><path d=\"M16,0 L0,6 L16,12 Z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"130\" y=\"71\" width=\"520\" height=\"14\" fill=\"#B5523B\"/><rect x=\"130\" y=\"375\" width=\"520\" height=\"14\" fill=\"#1F4E5A\"/><text x=\"160\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"160\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"218\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"218\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"275\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"275\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"332\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"332\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"390\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"390\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"448\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"448\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"505\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"505\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"562\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"562\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"620\" y=\"63\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">+</text><text x=\"620\" y=\"413\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">−</text><text x=\"662\" y=\"83\" fill=\"#B5523B\" font-weight=\"bold\">plaque A</text><text x=\"662\" y=\"387\" fill=\"#1F4E5A\" font-weight=\"bold\">plaque B</text><line x1=\"95\" y1=\"89\" x2=\"95\" y2=\"371\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" marker-end=\"url(#aG)\" marker-start=\"url(#aGs)\"/><text x=\"80\" y=\"236.0\" text-anchor=\"end\" font-size=\"18\" font-style=\"italic\">d</text><line x1=\"300\" y1=\"235\" x2=\"300\" y2=\"165\" stroke=\"#C8962E\" stroke-width=\"3\" marker-end=\"url(#aG)\"/><text x=\"300\" y=\"150\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#3a3a3a\">①</text><line x1=\"300\" y1=\"235\" x2=\"370\" y2=\"235\" stroke=\"#C8962E\" stroke-width=\"3\" marker-end=\"url(#aG)\"/><text x=\"392\" y=\"242\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#3a3a3a\">②</text><line x1=\"300\" y1=\"235\" x2=\"300\" y2=\"305\" stroke=\"#C8962E\" stroke-width=\"3\" marker-end=\"url(#aG)\"/><text x=\"300\" y=\"334\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#3a3a3a\">③</text><line x1=\"300\" y1=\"235\" x2=\"230\" y2=\"235\" stroke=\"#C8962E\" stroke-width=\"3\" marker-end=\"url(#aG)\"/><text x=\"208\" y=\"242\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#3a3a3a\">④</text><circle cx=\"300\" cy=\"235\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"286\" y=\"223\" text-anchor=\"end\" font-size=\"18\" font-weight=\"bold\">M</text><circle cx=\"530\" cy=\"170\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"542\" y=\"165\" font-size=\"18\" font-weight=\"bold\">N</text><text x=\"380\" y=\"455\" text-anchor=\"middle\" fill=\"#3a3a3a\">Tension entre les plaques : U = 400 V (plaque A au potentiel le plus élevé)</text></svg>",
+      "questions": [
+        {
+          "texte": "Décris les lignes de champ entre les plaques (forme, espacement, orientation) : comment les grains de semoule sont-ils disposés ?",
+          "aides": []
+        },
+        {
+          "texte": "Parmi les flèches ① à ④ tracées au point M, laquelle a la direction et le sens du vecteur champ électrostatique ? Le vecteur champ est-il le même au point N ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur E du champ électrostatique entre les plaques.",
+          "aides": [
+            "Vérifie les unités : dans E = U / d, U est en volts et d doit être en mètres.",
+            "1 mm = 10⁻³ m."
+          ]
+        },
+        {
+          "texte": "Une gouttelette d'encre de charge q = −1,0 × 10⁻¹³ C passe au point M. Calcule la valeur de la force électrostatique qu'elle subit et indique la flèche qui a la direction et le sens de cette force.",
+          "aides": [
+            "La valeur de la force s'obtient avec |q|, mais son sens dépend du signe de q.",
+            "Si q &lt; 0, le vecteur F = q × vecteur E a la même direction que le vecteur E mais le sens opposé."
+          ]
+        },
+        {
+          "texte": "La gouttelette a une masse m = 2,0 × 10⁻¹¹ kg. Calcule son poids et compare-le à la force électrostatique. Peut-on négliger le poids ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les lignes de champ sont des droites parallèles entre elles, perpendiculaires aux plaques, régulièrement espacées, orientées de la plaque positive A vers la plaque négative B (vers le bas sur la figure) : le champ est uniforme. Les grains de semoule forment des lignes droites parallèles allant d'une plaque à l'autre.",
+        "<strong>2.</strong> Flèche ③ : le champ électrostatique est perpendiculaire aux plaques et dirigé de la plaque positive vers la plaque négative. Le champ est uniforme entre les plaques : en N, le vecteur champ est le même qu'en M (même direction, même sens, même valeur).",
+        "<strong>3.</strong> d = 2,0 mm = 2,0 × 10⁻³ m ; E = U / d = 400 / 2,0 × 10⁻³ = 2,0 × 10⁵ V·m⁻¹.",
+        "<strong>4.</strong> F = |q| × E = 1,0 × 10⁻¹³ × 2,0 × 10⁵ = 2,0 × 10⁻⁸ N. La charge est négative : vecteur F = q × vecteur E est de sens opposé au vecteur E. C'est la flèche ① : la gouttelette négative est attirée par la plaque positive A.",
+        "<strong>5.</strong> P = m × g = 2,0 × 10⁻¹¹ × 9,81 = 2,0 × 10⁻¹⁰ N. F / P = 2,0 × 10⁻⁸ / 2,0 × 10⁻¹⁰ ≈ 1,0 × 10² : la force électrostatique est environ 100 fois plus grande que le poids, qu'on peut négliger entre les plaques.",
+        "<em>⚠ Erreur fréquente : garder d en millimètres (on trouverait E = 200 V·m⁻¹, mille fois trop petit), ou donner à la force le sens du champ alors que la charge est négative.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Deux pendules électrostatiques",
+      "contexte": [
+        "En TP, Lina étudie l'interaction entre deux petites boules légères recouvertes d'une peinture conductrice, de diamètre 1 cm. Après les avoir électrisées, elle mesure leurs charges avec un électromètre : q₁ = −3,2 × 10⁻⁸ C pour la boule 1, fixée sur une tige isolante, et q₂ = −1,8 × 10⁻⁸ C pour la boule 2, de masse m₂ = 0,60 g, suspendue à un fil. À l'équilibre, la distance entre leurs centres vaut r = 5,5 cm (figure ci-dessous). Les boules sont assimilées à des corps ponctuels.",
+        "On admet l'expression vectorielle de la force exercée par la boule 1 sur la boule 2 : vecteur F<sub>2</sub> = k × q₁ × q₂ / r² × vecteur u, où vecteur u est le vecteur unitaire (de norme 1) dirigé de la boule 1 vers la boule 2."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"aP\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#1F4E5A\"/></marker><marker id=\"aT\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#B5523B\"/></marker><marker id=\"aG\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"14\" refY=\"6\" orient=\"auto\"><path d=\"M0,0 L16,6 L0,12 Z\" fill=\"#3a3a3a\"/></marker><marker id=\"aGs\" markerUnits=\"userSpaceOnUse\" markerWidth=\"16\" markerHeight=\"12\" refX=\"2\" refY=\"6\" orient=\"auto\"><path d=\"M16,0 L0,6 L16,12 Z\" fill=\"#3a3a3a\"/></marker></defs><rect x=\"226\" y=\"288\" width=\"8\" height=\"132\" fill=\"#C8962E\"/><rect x=\"175\" y=\"420\" width=\"110\" height=\"14\" fill=\"#3a3a3a\"/><rect x=\"390\" y=\"40\" width=\"200\" height=\"12\" fill=\"#C8962E\"/><line x1=\"480\" y1=\"52\" x2=\"480\" y2=\"310\" stroke=\"#d9d2c5\" stroke-width=\"1.5\" stroke-dasharray=\"6 5\"/><line x1=\"480\" y1=\"52\" x2=\"520\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1.8\"/><circle cx=\"230\" cy=\"270\" r=\"18\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"230\" y=\"276\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">1</text><circle cx=\"520\" cy=\"270\" r=\"18\" fill=\"#F3EEE4\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><text x=\"520\" y=\"276\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">2</text><text x=\"200\" y=\"242\" text-anchor=\"end\" fill=\"#1F4E5A\" font-weight=\"bold\">boule 1</text><text x=\"550\" y=\"246\" fill=\"#1F4E5A\" font-weight=\"bold\">boule 2</text><line x1=\"248\" y1=\"270\" x2=\"328\" y2=\"270\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#aT)\"/><text x=\"288\" y=\"256\" text-anchor=\"middle\" font-size=\"22\" font-style=\"italic\" font-weight=\"bold\" fill=\"#B5523B\">u</text><line x1=\"276\" y1=\"230\" x2=\"296\" y2=\"230\" stroke=\"#B5523B\" stroke-width=\"1.6\"/><path d=\"M296,226 L304,230 L296,234 Z\" fill=\"#B5523B\"/><line x1=\"230\" y1=\"292\" x2=\"230\" y2=\"355\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><line x1=\"520\" y1=\"292\" x2=\"520\" y2=\"355\" stroke=\"#d9d2c5\" stroke-width=\"1.2\"/><line x1=\"234\" y1=\"345\" x2=\"516\" y2=\"345\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" marker-end=\"url(#aG)\" marker-start=\"url(#aGs)\"/><text x=\"375.0\" y=\"335\" text-anchor=\"middle\" font-size=\"18\">r = 5,5 cm</text><text x=\"300\" y=\"420\" fill=\"#3a3a3a\">tige isolante</text><text x=\"380\" y=\"455\" text-anchor=\"middle\" fill=\"#3a3a3a\">Le vecteur unitaire u est dirigé de la boule 1 vers la boule 2 (schéma sans échelle).</text></svg>",
+      "questions": [
+        {
+          "texte": "L'interaction entre les deux boules est-elle attractive ou répulsive ? La position du fil sur la figure est-elle cohérente ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur F de la force électrostatique exercée par la boule 1 sur la boule 2.",
+          "aides": [
+            "Relation de Coulomb : F = k × |q₁ × q₂| / r², avec r en mètres.",
+            "r = 5,5 cm = 5,5 × 10⁻² m ; calcule séparément |q₁ × q₂| puis r²."
+          ]
+        },
+        {
+          "texte": "Montre que l'expression vectorielle de vecteur F<sub>2</sub> confirme la réponse à la question 1. Donne ensuite les caractéristiques (direction, sens, valeur) de la force vecteur F<sub>1</sub> exercée par la boule 2 sur la boule 1.",
+          "aides": [
+            "Cherche le signe du produit q₁ × q₂ : le coefficient devant le vecteur u est-il positif ou négatif ?",
+            "Un coefficient positif donne un vecteur de même sens que u (de 1 vers 2). Pour la force exercée sur la boule 1, pense au principe des actions réciproques."
+          ]
+        },
+        {
+          "texte": "Détermine la valeur du champ électrostatique créé par la boule 1 à l'endroit où se trouve la boule 2, ainsi que son sens. Ce champ dépend-il de la charge de la boule 2 ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le poids de la boule 2 et compare-le à F. Pourquoi le fil est-il nettement incliné ?",
+          "aides": []
+        },
+        {
+          "texte": "Sans refaire le calcul complet, que deviendrait la valeur de la force si la distance entre les centres était divisée par deux ? si la charge de la boule 2 était divisée par deux ?",
+          "aides": [
+            "Dans la loi de Coulomb, la distance apparaît au carré au dénominateur.",
+            "Si r devient r/2, alors r² devient r²/4 : que devient F ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les deux charges sont négatives (même signe) : l'interaction est répulsive. C'est cohérent avec la figure : le fil s'écarte de la verticale en éloignant la boule 2 de la boule 1.",
+        "<strong>2.</strong> r = 5,5 cm = 5,5 × 10⁻² m. F = k × |q₁ × q₂| / r² = 9,0 × 10⁹ × (3,2 × 10⁻⁸ × 1,8 × 10⁻⁸) / (5,5 × 10⁻²)² = 9,0 × 10⁹ × 5,76 × 10⁻¹⁶ / 3,025 × 10⁻³ = 1,7 × 10⁻³ N.",
+        "<strong>3.</strong> q₁ × q₂ = (−3,2 × 10⁻⁸) × (−1,8 × 10⁻⁸) = +5,76 × 10⁻¹⁶ C² &gt; 0 : le coefficient k × q₁ × q₂ / r² est positif, donc vecteur F<sub>2</sub> a le sens de vecteur u, de la boule 1 vers la boule 2. La boule 2 est repoussée : l'interaction est bien répulsive. D'après le principe des actions réciproques, vecteur F<sub>1</sub> = − vecteur F<sub>2</sub> : même direction (la droite qui joint les centres), sens opposé à vecteur u (vers la gauche sur la figure : la boule 1 est repoussée elle aussi), même valeur F<sub>1</sub> = 1,7 × 10⁻³ N.",
+        "<strong>4.</strong> vecteur F<sub>2</sub> = q₂ × vecteur E, donc E = F / |q₂| = 1,714 × 10⁻³ / 1,8 × 10⁻⁸ = 9,5 × 10⁴ V·m⁻¹ (ou N·C⁻¹). Comme q₂ &lt; 0, vecteur E est de sens opposé à vecteur F<sub>2</sub> : il est dirigé vers la boule 1 (le champ créé par une charge négative converge vers elle). On a aussi E = k × |q₁| / r² = 9,0 × 10⁹ × 3,2 × 10⁻⁸ / 3,025 × 10⁻³ = 9,5 × 10⁴ V·m⁻¹ : le champ ne dépend que de la charge q₁ qui le crée et de la distance, pas de q₂.",
+        "<strong>5.</strong> P = m₂ × g = 0,60 × 10⁻³ × 9,81 = 5,9 × 10⁻³ N. F / P = 1,714 × 10⁻³ / 5,886 × 10⁻³ = 0,29 : la force électrostatique vaut environ 30 % du poids. Elle n'est pas négligeable devant le poids, c'est pourquoi le fil est nettement écarté de la verticale.",
+        "<strong>6.</strong> F est inversement proportionnelle à r² : si r est divisée par 2, F est multipliée par 2² = 4, soit F = 6,9 × 10⁻³ N (elle deviendrait plus grande que le poids). F est proportionnelle à |q₂| : si q₂ est divisée par 2, F est divisée par 2, soit 8,6 × 10⁻⁴ N.",
+        "<em>⚠ Erreur fréquente : laisser r en centimètres, oublier d'élever r au carré, ou mettre le signe « − » dans la valeur de la force (une valeur de force est toujours positive : on utilise |q₁ × q₂|).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Un rover sur Mars",
+      "contexte": [
+        "Le rover Perseverance, d'une masse d'environ 1 025 kg, explore depuis 2021 le cratère Jezero sur Mars, un cratère d'environ 45 km de diamètre.",
+        "Données : masse de Mars M<sub>Mars</sub> = 6,42 × 10²³ kg ; rayon de Mars R<sub>Mars</sub> = 3,39 × 10⁶ m ; masse du Soleil M<sub>S</sub> = 1,99 × 10³⁰ kg ; distance moyenne Soleil-Mars d = 2,28 × 10¹¹ m. Mars et le Soleil sont modélisés par des sphères dont la masse est répartie de façon homogène."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la valeur de la force d'attraction gravitationnelle exercée par Mars sur le rover posé au sol. Que peut-on dire de la force exercée par le rover sur Mars ?",
+          "aides": [
+            "Utilise la loi de la gravitation universelle avec la distance entre le centre de Mars et le rover.",
+            "Le rover est au sol : r = R<sub>Mars</sub>."
+          ]
+        },
+        {
+          "texte": "Déduis-en la valeur g<sub>Mars</sub> du champ de pesanteur à la surface de Mars. Exprime-la en pourcentage de la valeur sur Terre.",
+          "aides": []
+        },
+        {
+          "texte": "Compare le poids et la masse du rover sur Terre et sur Mars.",
+          "aides": []
+        },
+        {
+          "texte": "Décris les lignes du champ de gravitation créé par Mars, puis justifie, par un calcul à 10 km d'altitude, que le champ de pesanteur peut être considéré comme uniforme au-dessus du cratère Jezero.",
+          "aides": [
+            "Un champ uniforme a même direction, même sens et même valeur dans toute la zone étudiée.",
+            "À 10 km d'altitude, r = R<sub>Mars</sub> + 10 × 10³ m ; calcule g et compare-le à g<sub>Mars</sub> par un écart relatif."
+          ]
+        },
+        {
+          "texte": "À quelle altitude h au-dessus du sol martien le champ de gravitation de Mars vaut-il la moitié de sa valeur à la surface ?",
+          "aides": [
+            "Écris l'égalité G × M<sub>Mars</sub> / (R<sub>Mars</sub> + h)² = g<sub>Mars</sub> / 2 avec g<sub>Mars</sub> = G × M<sub>Mars</sub> / R<sub>Mars</sub>².",
+            "Simplifie par G × M<sub>Mars</sub> : tu obtiens (R<sub>Mars</sub> + h)² = 2 × R<sub>Mars</sub>². Prends la racine carrée des deux membres."
+          ]
+        },
+        {
+          "texte": "Calcule la force d'attraction exercée par le Soleil sur le rover. Peut-on la négliger devant celle exercée par Mars ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F = G × M<sub>Mars</sub> × m / R<sub>Mars</sub>² = 6,67 × 10⁻¹¹ × 6,42 × 10²³ × 1 025 / (3,39 × 10⁶)² = 3,82 × 10³ N. D'après le principe des actions réciproques, le rover exerce sur Mars une force de même valeur (3,82 × 10³ N), de même direction et de sens opposé (dirigée vers le rover).",
+        "<strong>2.</strong> g<sub>Mars</sub> = F / m = 3,82 × 10³ / 1 025 = 3,73 N·kg⁻¹ (on retrouve g<sub>Mars</sub> = G × M<sub>Mars</sub> / R<sub>Mars</sub>²). g<sub>Mars</sub> / g = 3,73 / 9,81 = 0,380 : le champ de pesanteur martien vaut environ 38 % de celui de la Terre.",
+        "<strong>3.</strong> La masse est une propriété du rover, indépendante du lieu : m = 1 025 kg sur Terre comme sur Mars. Le poids dépend du champ de pesanteur local : P<sub>Terre</sub> = m × g = 1 025 × 9,81 = 1,01 × 10⁴ N ; P<sub>Mars</sub> = m × g<sub>Mars</sub> = 3,82 × 10³ N, environ 2,6 fois plus faible.",
+        "<strong>4.</strong> Les lignes du champ de gravitation de Mars sont des droites dirigées vers le centre de la planète (lignes radiales, convergentes) : le champ est attractif. À 10 km d'altitude : g = G × M<sub>Mars</sub> / (R<sub>Mars</sub> + h)² = 6,67 × 10⁻¹¹ × 6,42 × 10²³ / (3,40 × 10⁶)² = 3,70 N·kg⁻¹, soit une variation de (3,73 − 3,70) / 3,73 ≈ 0,6 % seulement. Sur une zone de 45 km de large, très petite devant R<sub>Mars</sub>, les lignes de champ sont pratiquement parallèles et la valeur ne varie presque pas : le champ est quasiment uniforme.",
+        "<strong>5.</strong> On cherche h tel que G × M<sub>Mars</sub> / (R<sub>Mars</sub> + h)² = (1/2) × G × M<sub>Mars</sub> / R<sub>Mars</sub>², soit (R<sub>Mars</sub> + h)² = 2 R<sub>Mars</sub>², donc R<sub>Mars</sub> + h = √2 × R<sub>Mars</sub> et h = (√2 − 1) × R<sub>Mars</sub> = 0,414 × 3,39 × 10⁶ = 1,40 × 10⁶ m, soit environ 1 400 km.",
+        "<strong>6.</strong> F<sub>S</sub> = G × M<sub>S</sub> × m / d² = 6,67 × 10⁻¹¹ × 1,99 × 10³⁰ × 1 025 / (2,28 × 10¹¹)² = 2,6 N. F<sub>S</sub> / F = 2,6 / 3,82 × 10³ ≈ 7 × 10⁻⁴ : la force exercée par le Soleil est environ 1 500 fois plus faible, on peut la négliger devant celle de Mars.",
+        "<em>⚠ Erreur fréquente : croire que h = R<sub>Mars</sub> / 2 (ou R<sub>Mars</sub>) pour diviser le champ par deux. Le champ varie comme 1 / r², pas comme 1 / r : il faut une racine carrée.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "De l'atome à la Lune : quelle interaction domine ?",
+      "contexte": [
+        "Doc. 1 — L'atome d'hydrogène. Dans un modèle simple, l'atome d'hydrogène est formé d'un proton (charge +e, masse m<sub>p</sub> = 1,67 × 10⁻²⁷ kg) et d'un électron (charge −e, masse m<sub>e</sub> = 9,11 × 10⁻³¹ kg), séparés d'une distance moyenne r = 5,3 × 10⁻¹¹ m.",
+        "Doc. 2 — Le système Terre-Lune. Masse de la Terre M<sub>T</sub> = 5,97 × 10²⁴ kg ; masse de la Lune M<sub>L</sub> = 7,35 × 10²² kg ; distance entre leurs centres D = 3,84 × 10⁸ m. La Terre contient environ 1,8 × 10⁵¹ protons, et autant d'électrons (ordre de grandeur estimé). Le graphique ci-dessous donne les valeurs g<sub>T</sub> du champ de gravitation créé par la Terre et g<sub>L</sub> du champ créé par la Lune, en un point situé sur le segment Terre-Lune, à la distance x du centre de la Terre.",
+        "Doc. 3 — Le Soleil. Masse du Soleil M<sub>S</sub> = 1,99 × 10³⁰ kg ; distance Terre-Soleil ≈ 1,50 × 10¹¹ m."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><clipPath id=\"zone\"><rect x=\"80\" y=\"20\" width=\"650\" height=\"375\"/></clipPath><line x1=\"80.0\" y1=\"20\" x2=\"80.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"80.0\" y=\"417\" text-anchor=\"middle\">3,0</text><line x1=\"101.7\" y1=\"20\" x2=\"101.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"123.3\" y1=\"20\" x2=\"123.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"145.0\" y1=\"20\" x2=\"145.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"166.7\" y1=\"20\" x2=\"166.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"188.3\" y1=\"20\" x2=\"188.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"188.3\" y=\"417\" text-anchor=\"middle\">3,1</text><line x1=\"210.0\" y1=\"20\" x2=\"210.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"231.7\" y1=\"20\" x2=\"231.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"253.3\" y1=\"20\" x2=\"253.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"275.0\" y1=\"20\" x2=\"275.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"296.7\" y1=\"20\" x2=\"296.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"296.7\" y=\"417\" text-anchor=\"middle\">3,2</text><line x1=\"318.3\" y1=\"20\" x2=\"318.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"340.0\" y1=\"20\" x2=\"340.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"361.7\" y1=\"20\" x2=\"361.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"383.3\" y1=\"20\" x2=\"383.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"405.0\" y1=\"20\" x2=\"405.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"405.0\" y=\"417\" text-anchor=\"middle\">3,3</text><line x1=\"426.7\" y1=\"20\" x2=\"426.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"448.3\" y1=\"20\" x2=\"448.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"470.0\" y1=\"20\" x2=\"470.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"491.7\" y1=\"20\" x2=\"491.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"513.3\" y1=\"20\" x2=\"513.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"513.3\" y=\"417\" text-anchor=\"middle\">3,4</text><line x1=\"535.0\" y1=\"20\" x2=\"535.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"556.7\" y1=\"20\" x2=\"556.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"578.3\" y1=\"20\" x2=\"578.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"600.0\" y1=\"20\" x2=\"600.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"621.7\" y1=\"20\" x2=\"621.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"621.7\" y=\"417\" text-anchor=\"middle\">3,5</text><line x1=\"643.3\" y1=\"20\" x2=\"643.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"665.0\" y1=\"20\" x2=\"665.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"686.7\" y1=\"20\" x2=\"686.7\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"708.3\" y1=\"20\" x2=\"708.3\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"730.0\" y1=\"20\" x2=\"730.0\" y2=\"395\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"730.0\" y=\"417\" text-anchor=\"middle\">3,6</text><line x1=\"80\" y1=\"395.0\" x2=\"730\" y2=\"395.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"400.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"376.2\" x2=\"730\" y2=\"376.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"357.5\" x2=\"730\" y2=\"357.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"362.5\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"338.8\" x2=\"730\" y2=\"338.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"320.0\" x2=\"730\" y2=\"320.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"325.0\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"301.2\" x2=\"730\" y2=\"301.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"282.5\" x2=\"730\" y2=\"282.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"287.5\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"263.8\" x2=\"730\" y2=\"263.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"245.0\" x2=\"730\" y2=\"245.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"250.0\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"226.2\" x2=\"730\" y2=\"226.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"207.5\" x2=\"730\" y2=\"207.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"212.5\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"188.7\" x2=\"730\" y2=\"188.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"170.0\" x2=\"730\" y2=\"170.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"175.0\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"151.2\" x2=\"730\" y2=\"151.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"132.5\" x2=\"730\" y2=\"132.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"137.5\" text-anchor=\"end\">7</text><line x1=\"80\" y1=\"113.8\" x2=\"730\" y2=\"113.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"95.0\" x2=\"730\" y2=\"95.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"100.0\" text-anchor=\"end\">8</text><line x1=\"80\" y1=\"76.2\" x2=\"730\" y2=\"76.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"57.5\" x2=\"730\" y2=\"57.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"62.5\" text-anchor=\"end\">9</text><line x1=\"80\" y1=\"38.8\" x2=\"730\" y2=\"38.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"20.0\" x2=\"730\" y2=\"20.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"25.0\" text-anchor=\"end\">10</text><rect x=\"80\" y=\"20\" width=\"650\" height=\"375\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"405.0\" y=\"447\" text-anchor=\"middle\" font-weight=\"bold\">distance x au centre de la Terre (× 10⁸ m)</text><text transform=\"translate(24,207.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">valeur du champ (× 10⁻³ N·kg⁻¹)</text><polyline points=\"80.0,229.1 82.2,229.3 84.3,229.5 86.5,229.7 88.7,230.0 90.8,230.2 93.0,230.4 95.2,230.6 97.3,230.8 99.5,231.1 101.7,231.3 103.8,231.5 106.0,231.7 108.2,231.9 110.3,232.1 112.5,232.4 114.7,232.6 116.8,232.8 119.0,233.0 121.2,233.2 123.3,233.4 125.5,233.6 127.7,233.8 129.8,234.1 132.0,234.3 134.2,234.5 136.3,234.7 138.5,234.9 140.7,235.1 142.8,235.3 145.0,235.5 147.2,235.7 149.3,235.9 151.5,236.2 153.7,236.4 155.8,236.6 158.0,236.8 160.2,237.0 162.3,237.2 164.5,237.4 166.7,237.6 168.8,237.8 171.0,238.0 173.2,238.2 175.3,238.4 177.5,238.6 179.7,238.8 181.8,239.0 184.0,239.2 186.2,239.4 188.3,239.6 190.5,239.8 192.7,240.0 194.8,240.2 197.0,240.4 199.2,240.6 201.3,240.8 203.5,241.0 205.7,241.2 207.8,241.4 210.0,241.6 212.2,241.8 214.3,242.0 216.5,242.2 218.7,242.4 220.8,242.6 223.0,242.8 225.2,243.0 227.3,243.2 229.5,243.4 231.7,243.5 233.8,243.7 236.0,243.9 238.2,244.1 240.3,244.3 242.5,244.5 244.7,244.7 246.8,244.9 249.0,245.1 251.2,245.3 253.3,245.5 255.5,245.6 257.7,245.8 259.8,246.0 262.0,246.2 264.2,246.4 266.3,246.6 268.5,246.8 270.7,247.0 272.8,247.1 275.0,247.3 277.2,247.5 279.3,247.7 281.5,247.9 283.7,248.1 285.8,248.3 288.0,248.4 290.2,248.6 292.3,248.8 294.5,249.0 296.7,249.2 298.8,249.4 301.0,249.5 303.2,249.7 305.3,249.9 307.5,250.1 309.7,250.3 311.8,250.4 314.0,250.6 316.2,250.8 318.3,251.0 320.5,251.2 322.7,251.3 324.8,251.5 327.0,251.7 329.2,251.9 331.3,252.0 333.5,252.2 335.7,252.4 337.8,252.6 340.0,252.8 342.2,252.9 344.3,253.1 346.5,253.3 348.7,253.5 350.8,253.6 353.0,253.8 355.2,254.0 357.3,254.1 359.5,254.3 361.7,254.5 363.8,254.7 366.0,254.8 368.2,255.0 370.3,255.2 372.5,255.4 374.7,255.5 376.8,255.7 379.0,255.9 381.2,256.0 383.3,256.2 385.5,256.4 387.7,256.5 389.8,256.7 392.0,256.9 394.2,257.0 396.3,257.2 398.5,257.4 400.7,257.5 402.8,257.7 405.0,257.9 407.2,258.0 409.3,258.2 411.5,258.4 413.7,258.5 415.8,258.7 418.0,258.9 420.2,259.0 422.3,259.2 424.5,259.4 426.7,259.5 428.8,259.7 431.0,259.9 433.2,260.0 435.3,260.2 437.5,260.3 439.7,260.5 441.8,260.7 444.0,260.8 446.2,261.0 448.3,261.1 450.5,261.3 452.7,261.5 454.8,261.6 457.0,261.8 459.2,261.9 461.3,262.1 463.5,262.3 465.7,262.4 467.8,262.6 470.0,262.7 472.2,262.9 474.3,263.0 476.5,263.2 478.7,263.4 480.8,263.5 483.0,263.7 485.2,263.8 487.3,264.0 489.5,264.1 491.7,264.3 493.8,264.4 496.0,264.6 498.2,264.8 500.3,264.9 502.5,265.1 504.7,265.2 506.8,265.4 509.0,265.5 511.2,265.7 513.3,265.8 515.5,266.0 517.7,266.1 519.8,266.3 522.0,266.4 524.2,266.6 526.3,266.7 528.5,266.9 530.7,267.0 532.8,267.2 535.0,267.3 537.2,267.5 539.3,267.6 541.5,267.8 543.7,267.9 545.8,268.1 548.0,268.2 550.2,268.4 552.3,268.5 554.5,268.7 556.7,268.8 558.8,269.0 561.0,269.1 563.2,269.3 565.3,269.4 567.5,269.5 569.7,269.7 571.8,269.8 574.0,270.0 576.2,270.1 578.3,270.3 580.5,270.4 582.7,270.6 584.8,270.7 587.0,270.8 589.2,271.0 591.3,271.1 593.5,271.3 595.7,271.4 597.8,271.6 600.0,271.7 602.2,271.8 604.3,272.0 606.5,272.1 608.7,272.3 610.8,272.4 613.0,272.5 615.2,272.7 617.3,272.8 619.5,273.0 621.7,273.1 623.8,273.2 626.0,273.4 628.2,273.5 630.3,273.7 632.5,273.8 634.7,273.9 636.8,274.1 639.0,274.2 641.2,274.3 643.3,274.5 645.5,274.6 647.7,274.8 649.8,274.9 652.0,275.0 654.2,275.2 656.3,275.3 658.5,275.4 660.7,275.6 662.8,275.7 665.0,275.8 667.2,276.0 669.3,276.1 671.5,276.2 673.7,276.4 675.8,276.5 678.0,276.6 680.2,276.8 682.3,276.9 684.5,277.0 686.7,277.2 688.8,277.3 691.0,277.4 693.2,277.6 695.3,277.7 697.5,277.8 699.7,278.0 701.8,278.1 704.0,278.2 706.2,278.4 708.3,278.5 710.5,278.6 712.7,278.7 714.8,278.9 717.0,279.0 719.2,279.1 721.3,279.3 723.5,279.4 725.7,279.5 727.8,279.7 730.0,279.8\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3.2\" clip-path=\"url(#zone)\"/><polyline points=\"80.0,368.9 82.2,368.8 84.3,368.7 86.5,368.6 88.7,368.4 90.8,368.3 93.0,368.2 95.2,368.1 97.3,367.9 99.5,367.8 101.7,367.7 103.8,367.5 106.0,367.4 108.2,367.3 110.3,367.1 112.5,367.0 114.7,366.8 116.8,366.7 119.0,366.6 121.2,366.4 123.3,366.3 125.5,366.1 127.7,366.0 129.8,365.8 132.0,365.7 134.2,365.5 136.3,365.4 138.5,365.2 140.7,365.1 142.8,364.9 145.0,364.8 147.2,364.6 149.3,364.5 151.5,364.3 153.7,364.2 155.8,364.0 158.0,363.8 160.2,363.7 162.3,363.5 164.5,363.3 166.7,363.2 168.8,363.0 171.0,362.8 173.2,362.7 175.3,362.5 177.5,362.3 179.7,362.1 181.8,362.0 184.0,361.8 186.2,361.6 188.3,361.4 190.5,361.2 192.7,361.1 194.8,360.9 197.0,360.7 199.2,360.5 201.3,360.3 203.5,360.1 205.7,359.9 207.8,359.7 210.0,359.5 212.2,359.3 214.3,359.1 216.5,358.9 218.7,358.7 220.8,358.5 223.0,358.3 225.2,358.1 227.3,357.9 229.5,357.7 231.7,357.5 233.8,357.3 236.0,357.0 238.2,356.8 240.3,356.6 242.5,356.4 244.7,356.2 246.8,355.9 249.0,355.7 251.2,355.5 253.3,355.2 255.5,355.0 257.7,354.8 259.8,354.5 262.0,354.3 264.2,354.0 266.3,353.8 268.5,353.6 270.7,353.3 272.8,353.1 275.0,352.8 277.2,352.5 279.3,352.3 281.5,352.0 283.7,351.8 285.8,351.5 288.0,351.2 290.2,350.9 292.3,350.7 294.5,350.4 296.7,350.1 298.8,349.8 301.0,349.6 303.2,349.3 305.3,349.0 307.5,348.7 309.7,348.4 311.8,348.1 314.0,347.8 316.2,347.5 318.3,347.2 320.5,346.9 322.7,346.6 324.8,346.2 327.0,345.9 329.2,345.6 331.3,345.3 333.5,344.9 335.7,344.6 337.8,344.3 340.0,343.9 342.2,343.6 344.3,343.2 346.5,342.9 348.7,342.5 350.8,342.2 353.0,341.8 355.2,341.5 357.3,341.1 359.5,340.7 361.7,340.4 363.8,340.0 366.0,339.6 368.2,339.2 370.3,338.8 372.5,338.4 374.7,338.0 376.8,337.6 379.0,337.2 381.2,336.8 383.3,336.4 385.5,336.0 387.7,335.5 389.8,335.1 392.0,334.7 394.2,334.2 396.3,333.8 398.5,333.3 400.7,332.9 402.8,332.4 405.0,332.0 407.2,331.5 409.3,331.0 411.5,330.5 413.7,330.0 415.8,329.6 418.0,329.1 420.2,328.6 422.3,328.0 424.5,327.5 426.7,327.0 428.8,326.5 431.0,326.0 433.2,325.4 435.3,324.9 437.5,324.3 439.7,323.8 441.8,323.2 444.0,322.6 446.2,322.0 448.3,321.5 450.5,320.9 452.7,320.3 454.8,319.7 457.0,319.1 459.2,318.4 461.3,317.8 463.5,317.2 465.7,316.5 467.8,315.9 470.0,315.2 472.2,314.5 474.3,313.9 476.5,313.2 478.7,312.5 480.8,311.8 483.0,311.1 485.2,310.3 487.3,309.6 489.5,308.9 491.7,308.1 493.8,307.4 496.0,306.6 498.2,305.8 500.3,305.0 502.5,304.2 504.7,303.4 506.8,302.6 509.0,301.7 511.2,300.9 513.3,300.0 515.5,299.2 517.7,298.3 519.8,297.4 522.0,296.5 524.2,295.6 526.3,294.6 528.5,293.7 530.7,292.7 532.8,291.8 535.0,290.8 537.2,289.8 539.3,288.8 541.5,287.7 543.7,286.7 545.8,285.6 548.0,284.6 550.2,283.5 552.3,282.4 554.5,281.2 556.7,280.1 558.8,278.9 561.0,277.8 563.2,276.6 565.3,275.4 567.5,274.1 569.7,272.9 571.8,271.6 574.0,270.3 576.2,269.0 578.3,267.7 580.5,266.3 582.7,265.0 584.8,263.6 587.0,262.2 589.2,260.7 591.3,259.2 593.5,257.8 595.7,256.2 597.8,254.7 600.0,253.1 602.2,251.6 604.3,249.9 606.5,248.3 608.7,246.6 610.8,244.9 613.0,243.2 615.2,241.4 617.3,239.6 619.5,237.8 621.7,236.0 623.8,234.1 626.0,232.2 628.2,230.2 630.3,228.2 632.5,226.2 634.7,224.1 636.8,222.0 639.0,219.9 641.2,217.7 643.3,215.5 645.5,213.2 647.7,210.9 649.8,208.5 652.0,206.1 654.2,203.7 656.3,201.2 658.5,198.7 660.7,196.1 662.8,193.4 665.0,190.7 667.2,188.0 669.3,185.2 671.5,182.3 673.7,179.4 675.8,176.4 678.0,173.4 680.2,170.2 682.3,167.1 684.5,163.8 686.7,160.5 688.8,157.1 691.0,153.7 693.2,150.1 695.3,146.5 697.5,142.8 699.7,139.0 701.8,135.2 704.0,131.2 706.2,127.2 708.3,123.0 710.5,118.8 712.7,114.5 714.8,110.0 717.0,105.5 719.2,100.9 721.3,96.1 723.5,91.2 725.7,86.2 727.8,81.1 730.0,75.8\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.2\" stroke-dasharray=\"10 5\" clip-path=\"url(#zone)\"/><rect x=\"102.49999999999979\" y=\"24.25\" width=\"345\" height=\"64\" fill=\"#fff\" stroke=\"#d9d2c5\"/><line x1=\"112.49999999999979\" y1=\"40.25\" x2=\"152.49999999999977\" y2=\"40.25\" stroke=\"#1F4E5A\" stroke-width=\"3.2\"/><text x=\"162.49999999999977\" y=\"45.25\">g<tspan baseline-shift=\"sub\" font-size=\"12\">T</tspan> : champ créé par la Terre</text><line x1=\"112.49999999999979\" y1=\"70.25\" x2=\"152.49999999999977\" y2=\"70.25\" stroke=\"#B5523B\" stroke-width=\"3.2\" stroke-dasharray=\"10 5\"/><text x=\"162.49999999999977\" y=\"75.25\">g<tspan baseline-shift=\"sub\" font-size=\"12\">L</tspan> : champ créé par la Lune</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule la valeur F<sub>e</sub> de la force électrostatique et la valeur F<sub>g</sub> de la force gravitationnelle qui s'exercent entre le proton et l'électron de l'atome d'hydrogène. Ces forces sont-elles attractives ou répulsives ?",
+          "aides": [
+            "Les deux charges ont la même valeur absolue e : |q₁ × q₂| = e².",
+            "Pour la gravitation, les deux masses sont m<sub>p</sub> et m<sub>e</sub> ; la distance est la même dans les deux cas."
+          ]
+        },
+        {
+          "texte": "Calcule le rapport F<sub>e</sub> / F<sub>g</sub>. Montre qu'il ne dépend pas de la distance r, puis conclus sur l'interaction qui domine à l'échelle de l'atome.",
+          "aides": [
+            "Écris le rapport des deux expressions littérales avant de remplacer par les valeurs numériques.",
+            "Le r² du numérateur et celui du dénominateur se simplifient."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur de la force gravitationnelle entre la Terre et la Lune. Si la Terre et la Lune portaient chacune une même charge Q, quelle valeur de |Q| faudrait-il pour que la force électrostatique entre elles soit aussi intense que la force gravitationnelle ? Compare le nombre de charges élémentaires correspondant au nombre de protons de la Terre et explique pourquoi c'est la gravitation qui gouverne le mouvement des astres.",
+          "aides": [
+            "Écris l'égalité k × Q² / D² = G × M<sub>T</sub> × M<sub>L</sub> / D² : les D² se simplifient.",
+            "Isole Q², prends la racine carrée, puis divise |Q| par e pour obtenir un nombre de charges élémentaires."
+          ]
+        },
+        {
+          "texte": "Exploitation du graphique (doc. 2).<br>a. En un point situé entre la Terre et la Lune, représente sur un schéma les vecteurs champ de gravitation vecteur g<sub>T</sub> et vecteur g<sub>L</sub> (sans souci d'échelle).<br>b. Lis l'abscisse x<sub>E</sub> du point E où les deux champs ont la même valeur. Que vaut alors le champ de gravitation total créé par la Terre et la Lune en ce point ?",
+          "aides": []
+        },
+        {
+          "texte": "Retrouve x<sub>E</sub> par le calcul, puis calcule l'écart relatif entre ta lecture graphique et la valeur calculée.",
+          "aides": [
+            "En E, les valeurs sont égales : G × M<sub>T</sub> / x<sub>E</sub>² = G × M<sub>L</sub> / (D − x<sub>E</sub>)².",
+            "Simplifie par G, puis prends la racine carrée : (D − x<sub>E</sub>) / x<sub>E</sub> = √(M<sub>L</sub> / M<sub>T</sub>). C'est une équation du premier degré en x<sub>E</sub>."
+          ]
+        },
+        {
+          "texte": "Un site de vulgarisation affirme : « Au point E, un vaisseau spatial ne subit aucune force de gravitation. » En t'appuyant sur le doc. 3 et sur un calcul, discute cette affirmation et les limites du modèle utilisé.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F<sub>e</sub> = k × e² / r² = 9,0 × 10⁹ × (1,6 × 10⁻¹⁹)² / (5,3 × 10⁻¹¹)² = 8,2 × 10⁻⁸ N. F<sub>g</sub> = G × m<sub>p</sub> × m<sub>e</sub> / r² = 6,67 × 10⁻¹¹ × 1,67 × 10⁻²⁷ × 9,11 × 10⁻³¹ / (5,3 × 10⁻¹¹)² = 3,6 × 10⁻⁴⁷ N. Les deux forces sont attractives : la gravitation l'est toujours, et le proton et l'électron ont des charges de signes opposés.",
+        "<strong>2.</strong> F<sub>e</sub> / F<sub>g</sub> = (k × e² / r²) / (G × m<sub>p</sub> × m<sub>e</sub> / r²) = k × e² / (G × m<sub>p</sub> × m<sub>e</sub>) : le terme r² se simplifie, le rapport ne dépend pas de la distance. F<sub>e</sub> / F<sub>g</sub> = 9,0 × 10⁹ × (1,6 × 10⁻¹⁹)² / (6,67 × 10⁻¹¹ × 1,67 × 10⁻²⁷ × 9,11 × 10⁻³¹) = 2,3 × 10³⁹. À l'échelle de l'atome, l'interaction électrostatique domine totalement : l'interaction gravitationnelle y est négligeable.",
+        "<strong>3.</strong> F = G × M<sub>T</sub> × M<sub>L</sub> / D² = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ × 7,35 × 10²² / (3,84 × 10⁸)² = 1,98 × 10²⁰ N. On veut k × Q² / D² = G × M<sub>T</sub> × M<sub>L</sub> / D², soit |Q| = √(G × M<sub>T</sub> × M<sub>L</sub> / k) = √(6,67 × 10⁻¹¹ × 5,97 × 10²⁴ × 7,35 × 10²² / 9,0 × 10⁹) = 5,7 × 10¹³ C. Cela correspond à N = |Q| / e = 5,7 × 10¹³ / 1,6 × 10⁻¹⁹ = 3,6 × 10³² charges élémentaires non compensées, soit une fraction 3,6 × 10³² / 1,8 × 10⁵¹ ≈ 2 × 10⁻¹⁹ du nombre de protons de la Terre. Un déséquilibre aussi infime suffirait à rendre l'interaction électrostatique comparable à la gravitation ; or la matière est globalement neutre (autant de charges positives que négatives) et les forces électrostatiques se compensent, alors que les masses s'additionnent toujours. À l'échelle astronomique, c'est donc la gravitation qui domine.",
+        "<strong>4.</strong> a. Les deux vecteurs sont portés par la droite Terre-Lune : vecteur g<sub>T</sub> est dirigé vers le centre de la Terre, vecteur g<sub>L</sub> vers le centre de la Lune ; ils sont de sens opposés.",
+        "b. Les deux courbes se croisent pour x<sub>E</sub> ≈ 3,46 × 10⁸ m (valeur commune ≈ 3,3 × 10⁻³ N·kg⁻¹). Les deux vecteurs ont même valeur, même direction et des sens opposés : leur somme, le champ de gravitation total, est nulle en E.",
+        "<strong>5.</strong> En E : G × M<sub>T</sub> / x<sub>E</sub>² = G × M<sub>L</sub> / (D − x<sub>E</sub>)², soit (D − x<sub>E</sub>) / x<sub>E</sub> = √(M<sub>L</sub> / M<sub>T</sub>) = √(7,35 × 10²² / 5,97 × 10²⁴) = 0,111. Donc x<sub>E</sub> = D / (1 + 0,111) = 3,84 × 10⁸ / 1,111 = 3,46 × 10⁸ m (soit environ 90 % de la distance Terre-Lune). Écart relatif avec une lecture de 3,46 × 10⁸ m : |3,46 − 3,456| / 3,456 ≈ 0,1 % : lecture et calcul concordent.",
+        "<strong>6.</strong> Éléments attendus : l'affirmation est fausse. Au point E, les champs de la Terre et de la Lune se compensent, mais le vaisseau subit aussi l'attraction du Soleil : g<sub>S</sub> = G × M<sub>S</sub> / d² = 6,67 × 10⁻¹¹ × 1,99 × 10³⁰ / (1,50 × 10¹¹)² = 5,9 × 10⁻³ N·kg⁻¹, valeur plus grande que g<sub>T</sub> ou g<sub>L</sub> en E (3,3 × 10⁻³ N·kg⁻¹) : elle n'est pas négligeable. Limites du modèle : seuls la Terre et la Lune sont pris en compte (ni le Soleil, ni les autres planètes) ; la Terre et la Lune sont supposées sphériques et homogènes (assimilables à des points) ; la Lune n'est pas immobile, la position de E par rapport aux astres évolue au cours du temps. Seul le champ total « Terre + Lune » s'annule en E, pas la force de gravitation totale.",
+        "<em>⚠ Erreur fréquente : additionner les valeurs g<sub>T</sub> et g<sub>L</sub> au point E (on trouverait 6,7 × 10⁻³ N·kg⁻¹) alors que les vecteurs sont de sens opposés : on additionne des vecteurs, pas des valeurs.</em>"
+      ]
+    }
+  ]
+}

@@ -23,6 +23,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const util = require('util');
+const zlib = require('zlib');
 const { Pool } = require('pg');
 
 // Petite fabrique de raccourcis .get()/.all()/.run(), pour garder le vocabulaire
@@ -304,54 +305,65 @@ function exerciceIdActuel(chapitreId, exId) {
   return exId;
 }
 
-// ── Catalogue des exercices ────────────────────────────────
-// Lu au démarrage dans le contenu des chapitres (constante CHAPTERS d'index.html) : liste des
-// exercices de chaque chapitre, pour refuser un exercice inexistant et pour que l'espace
-// enseignant affiche leurs titres. Map { chapitre_id -> [{ id, titre, niveau, nbQuestions }] }.
-// null si la lecture a échoué : on se contente alors de contrôler le format des identifiants.
-const EXERCICE_ID_RE = /^ex\d{1,3}$/;
-let catalogueExercices = null;
+// ── Contenu des chapitres (dossier chapitres/) ─────────────
+// index.html ne contient que la liste légère des chapitres (id, num, titre, niveau, couleur,
+// tag) ; le contenu de chacun (fiche, quiz, annales, exercices) est dans chapitres/<id>.json,
+// envoyé au navigateur à la première ouverture du chapitre (GET /chapitres/<id>.json).
+// Lu une fois au démarrage : un fichier illisible arrête le serveur (le déploiement échoue et
+// Render garde la version précédente en ligne, au lieu de servir un site cassé).
+// Pour chaque chapitre : le JSON compacté, une empreinte courte de son contenu (v), qui
+// change à chaque modification et sert d'adresse de cache, et la liste de ses exercices.
+const DOSSIER_CHAPITRES = path.join(__dirname, 'chapitres');
+const chapitresContenu = new Map(); // id -> { corps: Buffer, v, etag, exercices: [ids dans l'ordre d'affichage] }
 
-function finLitteral(src, start) {
-  const open = src[start], close = open === '[' ? ']' : '}';
-  let depth = 0;
-  for (let i = start; i < src.length; i++) {
-    const c = src[i];
-    if (c === '"' || c === "'" || c === '`') { for (i++; i < src.length && src[i] !== c; i++) if (src[i] === '\\') i++; continue; }
-    if (c === '/' && src[i + 1] === '/') { while (i < src.length && src[i] !== '\n') i++; continue; }
-    if (c === '/' && src[i + 1] === '*') { i = src.indexOf('*/', i + 2) + 1; continue; }
-    if (c === open) depth++;
-    else if (c === close && --depth === 0) return i;
-  }
-  throw new Error('fin de CHAPTERS introuvable');
-}
+// Catalogue des exercices, tiré du même contenu : pour refuser un exercice inexistant et pour
+// que l'espace enseignant affiche leurs titres. Map { chapitre_id -> [{ id, titre, niveau, nbQuestions }] }.
+const EXERCICE_ID_RE = /^ex\d{1,3}$/;
+let catalogueExercices = new Map();
 
 const texteSansBalises = (html) => String(html || '').replace(/<[^>]*>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
 
-function chargerCatalogueExercices() {
-  try {
-    const src = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
-    const debut = src.indexOf('[', src.indexOf('const CHAPTERS'));
-    const chapitres = require('vm').runInNewContext('(' + src.slice(debut, finLitteral(src, debut) + 1) + ')', {}, { timeout: 5000 });
-    const cat = new Map();
-    for (const ch of chapitres) {
-      if (!Array.isArray(ch.exercices)) continue;
-      cat.set(ch.id, ch.exercices.map(ex => ({
+function chargerChapitres() {
+  const cat = new Map();
+  for (const f of fs.readdirSync(DOSSIER_CHAPITRES).sort()) {
+    const m = /^(\d{1,3})\.json$/.exec(f);
+    if (!m) continue;
+    const id = Number(m[1]);
+    if (estFusionne(id)) { console.warn(`⚠ chapitres/${f} ignoré : le chapitre ${id} a été fusionné`); continue; }
+    let d;
+    try { d = JSON.parse(fs.readFileSync(path.join(DOSSIER_CHAPITRES, f), 'utf8')); }
+    catch (e) { throw new Error(`chapitres/${f} illisible : ${e.message}`); }
+    if (!d || d.id !== id) throw new Error(`chapitres/${f} : id ${d && d.id} différent du nom du fichier`);
+    if (!d.fiche || !Array.isArray(d.quiz)) throw new Error(`chapitres/${f} : fiche ou quiz manquant`);
+    const corps = Buffer.from(JSON.stringify(d), 'utf8');
+    const v = crypto.createHash('sha1').update(corps).digest('hex').slice(0, 12);
+    const exercices = Array.isArray(d.exercices) ? d.exercices : [];
+    // Même ordre que l'onglet Exercices (par niveau, puis dans l'ordre du fichier) : « Ex. 3 ».
+    const ordre = [1, 2, 3].flatMap(n => exercices.filter(e => Number(e.niveau) === n)).map(e => e.id);
+    chapitresContenu.set(id, { corps, v, etag: `"ch${id}-${v}"`, exercices: ordre });
+    if (exercices.length) {
+      cat.set(id, exercices.map(ex => ({
         id: ex.id, titre: texteSansBalises(ex.titre), niveau: Number(ex.niveau) || 1,
         nbQuestions: Array.isArray(ex.questions) ? ex.questions.length : 0
       })));
     }
-    catalogueExercices = cat;
-    console.log(`✏️  Catalogue des exercices : ${[...cat.values()].reduce((n, l) => n + l.length, 0)} exercices dans ${cat.size} chapitres`);
-  } catch (e) {
-    catalogueExercices = null;
-    console.error('⚠ Catalogue des exercices illisible (identifiants contrôlés sur leur seul format) :', e.message);
   }
+  if (!chapitresContenu.size) throw new Error('aucun chapitre dans le dossier chapitres/');
+  catalogueExercices = cat;
+  const ko = [...chapitresContenu.values()].reduce((n, c) => n + c.corps.length, 0) / 1024;
+  console.log(`📚 ${chapitresContenu.size} chapitres chargés (${Math.round(ko)} Ko), ${[...cat.values()].reduce((n, l) => n + l.length, 0)} exercices`);
+}
+
+// Ajouté à index.html quand il est servi (à la place de /*CHAPITRES_INFOS*/{}) : pour chaque
+// chapitre, l'empreinte de son contenu et l'ordre de ses exercices (affichés avant chargement).
+function infosChapitresPourPage() {
+  const infos = {};
+  for (const [id, c] of chapitresContenu) infos[id] = { v: c.v, ex: c.exercices };
+  return infos;
 }
 
 function exerciceDuCatalogue(chapitreId, exId) {
   if (typeof exId !== 'string' || !EXERCICE_ID_RE.test(exId)) return null;
-  if (!catalogueExercices) return { id: exId, nbQuestions: 30 };
   return (catalogueExercices.get(chapitreId) || []).find(e => e.id === exId) || null;
 }
 
@@ -724,11 +736,59 @@ function poserEntetesSecurite(req, res) {
   }
 }
 
+// ── Compression des réponses (brotli ou gzip, selon ce qu'accepte le navigateur) ──
+// Le texte (HTML, JSON) se compresse très bien : 4 à 7 fois moins d'octets à télécharger.
+function encodageAccepte(req) {
+  const ae = String((req && req.headers['accept-encoding']) || '');
+  if (/\bbr\b/.test(ae)) return 'br';
+  if (/\bgzip\b/.test(ae)) return 'gzip';
+  return null;
+}
+function compresser(buf, enc) {
+  return enc === 'br'
+    ? zlib.brotliCompressSync(buf, { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 9, [zlib.constants.BROTLI_PARAM_SIZE_HINT]: buf.length } })
+    : zlib.gzipSync(buf, { level: 9 });
+}
+
+// Envoie un contenu fixe (page HTML, chapitre) : empreinte (ETag) pour répondre 304 « pas
+// changé » sans renvoyer le contenu, et versions compressées calculées une fois puis gardées.
+// fichier = { corps: Buffer, etag, compresse?: { br, gzip } } (complété ici).
+function envoyerFixe(req, res, fichier, type, cacheControl, entetes = {}) {
+  const enc = fichier.corps.length > 1024 ? encodageAccepte(req) : null;
+  // Une ETag par variante (le contenu compressé n'est pas le même octet pour octet).
+  const etag = enc ? fichier.etag.replace(/"$/, `-${enc}"`) : fichier.etag;
+  const base = fichier.etag.slice(1, -1);
+  const h = { 'Content-Type': type, 'Cache-Control': cacheControl, 'ETag': etag, 'Vary': 'Accept-Encoding', ...entetes };
+  const demandes = String(req.headers['if-none-match'] || '').split(',').map(s => s.trim().replace(/^W\//, '').replace(/^"|"$/g, ''));
+  if (demandes.some(d => d === base || d.startsWith(base + '-'))) {
+    res.writeHead(304, h);
+    return res.end();
+  }
+  let corps = fichier.corps;
+  if (enc) {
+    fichier.compresse = fichier.compresse || {};
+    if (!fichier.compresse[enc]) fichier.compresse[enc] = compresser(fichier.corps, enc);
+    corps = fichier.compresse[enc];
+    h['Content-Encoding'] = enc;
+  }
+  h['Content-Length'] = corps.length;
+  res.writeHead(200, h);
+  return res.end(corps);
+}
+
 // Pas d'en-tête Access-Control-Allow-Origin : les pages sont servies par ce même serveur, et
 // aucun autre site n'a à lire ses réponses (avant : « * », n'importe quel site pouvait le faire).
+// Réponses de plus de 1,5 Ko compressées en gzip (rapide) si le navigateur l'accepte.
 function json(res, status, data) {
-  res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
-  res.end(JSON.stringify(data));
+  const h = { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store', 'Vary': 'Accept-Encoding' };
+  let corps = Buffer.from(JSON.stringify(data), 'utf8');
+  if (corps.length > 1500 && encodageAccepte(res.req)) {
+    corps = zlib.gzipSync(corps, { level: 6 });
+    h['Content-Encoding'] = 'gzip';
+  }
+  h['Content-Length'] = corps.length;
+  res.writeHead(status, h);
+  res.end(corps);
 }
 
 // ── Clé maître : limite de tentatives sur TOUTES les routes qui l'acceptent ──
@@ -778,27 +838,33 @@ function parseBody(req) {
 }
 
 // ── Pages HTML : lues une fois, puis servies avec une empreinte (ETag) ──
-// Le navigateur garde la page (~935 Ko) et se contente de demander « a-t-elle changé ? » :
-// si non, le serveur répond 304 sans renvoyer le contenu. Un nouveau déploiement change
-// l'empreinte, donc les élèves reçoivent toujours la dernière version.
+// Le navigateur garde la page et se contente de demander « a-t-elle changé ? » : si non, le
+// serveur répond 304 sans renvoyer le contenu. Un nouveau déploiement change l'empreinte, donc
+// les élèves reçoivent toujours la dernière version. index.html reçoit au passage les
+// empreintes des chapitres (CHAPITRES_INFOS) : un chapitre modifié change donc aussi la page.
 const pagesCache = new Map();
 function servirPage(req, res, fichier) {
   let page = pagesCache.get(fichier);
   if (!page) {
     const htmlPath = path.join(__dirname, fichier);
     if (!fs.existsSync(htmlPath)) return json(res, 404, { error: `${fichier} introuvable` });
-    const contenu = fs.readFileSync(htmlPath);
-    page = { contenu, etag: '"' + crypto.createHash('sha1').update(contenu).digest('hex').slice(0, 20) + '"' };
+    let texte = fs.readFileSync(htmlPath, 'utf8');
+    if (fichier === 'index.html') texte = texte.replace('/*CHAPITRES_INFOS*/{}', JSON.stringify(infosChapitresPourPage()));
+    const corps = Buffer.from(texte, 'utf8');
+    page = { corps, etag: '"' + crypto.createHash('sha1').update(corps).digest('hex').slice(0, 20) + '"' };
     pagesCache.set(fichier, page);
   }
-  const entetes = { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache', 'ETag': page.etag, 'Content-Security-Policy': CSP_PAGES };
-  const demande = (req.headers['if-none-match'] || '').replace(/^W\//, '');
-  if (demande === page.etag) {
-    res.writeHead(304, entetes);
-    return res.end();
-  }
-  res.writeHead(200, entetes);
-  return res.end(page.contenu);
+  return envoyerFixe(req, res, page, 'text/html; charset=utf-8', 'no-cache', { 'Content-Security-Policy': CSP_PAGES });
+}
+
+// Contenu d'un chapitre. Avec la bonne empreinte (?v=…, celle que la page connaît), il ne
+// change jamais : le navigateur le garde un an sans redemander. Sans empreinte, ou avec une
+// ancienne, il revérifie à chaque fois (ETag), comme pour index.html.
+function servirChapitre(req, res, id, v) {
+  const c = chapitresContenu.get(id);
+  if (!c) return json(res, 404, { error: 'Chapitre introuvable' });
+  const cache = v === c.v ? 'public, max-age=31536000, immutable' : 'no-cache';
+  return envoyerFixe(req, res, c, 'application/json; charset=utf-8', cache);
 }
 
 // ── Purge de fin d'année ───────────────────────────────────
@@ -902,6 +968,11 @@ async function router(req, res) {
 
   // ── Servir l'interface admin ──
   if (p === '/admin' || p === '/admin.html') return servirPage(req, res, 'admin.html');
+
+  // ── Contenu d'un chapitre (fiche, quiz, annales, exercices) ──
+  // GET /chapitres/<id>.json[?v=<empreinte>]
+  const mChap = /^\/chapitres\/(\d{1,3})\.json$/.exec(p);
+  if (mChap && (method === 'GET' || method === 'HEAD')) return servirChapitre(req, res, Number(mChap[1]), url.searchParams.get('v'));
 
   // ── Réveil : répond sans toucher aux bases ──
   // Appelé régulièrement par la tâche GitHub « keep-alive » pour que Render ne mette pas
@@ -1956,7 +2027,14 @@ const server = http.createServer(async (req, res) => {
 });
 
 (async () => {
+  try {
+    chargerChapitres();
+  } catch (e) {
+    console.error('❌ Contenu des chapitres :', e.message);
+    process.exit(1);
+  }
   if (!APP_DB_URL) {
+
     console.error('❌ APP_DATABASE_URL non définie — la base appli PostgreSQL est obligatoire.');
     console.error('   En local : STUDENT_DATABASE_URL=postgres://postgres:MOTDEPASSE@localhost:5432/physichim_app');
     process.exit(1);
@@ -1986,7 +2064,6 @@ const server = http.createServer(async (req, res) => {
     await initStudentDB();
     await migrerChapitresFusionnes(pgPool, 'élèves', MIGRATION_FUSION_ELEVES);
     await purgerVieillesConnexions();
-    chargerCatalogueExercices();
 
     console.log('✅ Base de données élèves (PostgreSQL) initialisée');
   } catch (e) {

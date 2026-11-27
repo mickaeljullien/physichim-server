@@ -1,0 +1,624 @@
+{
+  "id": 24,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Concentration en masse",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Concentration en masse",
+            "text": "Quotient de la masse de soluté dissous par le volume de la solution obtenue. Notée cm. (À ne pas confondre avec le titre massique, vu en Terminale, qui est un rapport de deux masses.)"
+          },
+          {
+            "type": "formula",
+            "label": "Concentration en masse",
+            "text": "cm = m(soluté) / V(solution)\ncm : concentration en masse (g·L⁻¹)\nm : masse de soluté dissous (g)\nV : volume de la solution (L)"
+          },
+          {
+            "type": "warn",
+            "text": "À ne pas confondre : la <strong>masse volumique</strong> ρ = m/V compare la masse totale d'un échantillon à son volume (elle caractérise une espèce chimique pure). La <strong>concentration en masse</strong> cm = m(soluté)/V(solution) compare la masse du soluté <strong>dissous</strong> au volume total de la solution. Les deux grandeurs s'expriment dans la même unité (g·L⁻¹ par exemple) mais ne représentent pas la même chose."
+          }
+        ]
+      },
+      {
+        "title": "2. Préparation par dissolution",
+        "icon": "⚗️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Dissolution",
+            "text": "Obtention d'une solution en dispersant une espèce chimique (le soluté) dans un solvant (souvent l'eau)."
+          },
+          {
+            "type": "text",
+            "text": "Protocole pour préparer un volume V d'une solution de concentration en masse cm connue : <strong>1)</strong> Calculer la masse m de soluté à peser, avec m = cm × V. <strong>2)</strong> Peser cette masse à l'aide d'une balance et d'une coupelle. <strong>3)</strong> Introduire le solide dans une fiole jaugée de volume V à l'aide d'un entonnoir, rincer. <strong>4)</strong> Ajouter de l'eau distillée aux deux tiers, dissoudre en agitant. <strong>5)</strong> Compléter avec de l'eau distillée jusqu'au trait de jauge (le bas du ménisque doit affleurer le trait). <strong>6)</strong> Boucher et homogénéiser en retournant la fiole plusieurs fois."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : pour préparer 50 mL d'une solution de sérum physiologique (chlorure de sodium) à la concentration en masse cm = 9 g·L⁻¹, on calcule m = cm × V = 9 × 0,050 = 0,45 g de NaCl(s) à peser."
+          }
+        ]
+      },
+      {
+        "title": "3. Préparation par dilution",
+        "icon": "💧",
+        "content": [
+          {
+            "type": "def",
+            "term": "Dilution",
+            "text": "Opération qui consiste à ajouter du solvant à une solution (la solution mère) pour obtenir une solution moins concentrée (la solution fille)."
+          },
+          {
+            "type": "warn",
+            "text": "Lors d'une dilution, la masse de soluté prélevée dans la solution mère est identique à la masse de soluté présente dans la solution fille : seuls le volume et la concentration changent."
+          },
+          {
+            "type": "formula",
+            "label": "Conservation de la masse de soluté",
+            "text": "cm(mère) × V(mère) = cm(fille) × V(fille)"
+          },
+          {
+            "type": "def",
+            "term": "Facteur de dilution F",
+            "text": "Nombre, toujours supérieur à 1, indiquant combien de fois la concentration a été divisée."
+          },
+          {
+            "type": "formula",
+            "label": "Facteur de dilution",
+            "text": "F = cm(mère) / cm(fille) = V(fille) / V(mère)"
+          },
+          {
+            "type": "text",
+            "text": "Protocole : <strong>1)</strong> Calculer le volume V(mère) à prélever, avec V(mère) = cm(fille) × V(fille) / cm(mère). <strong>2)</strong> Prélever ce volume de solution mère à l'aide d'une pipette jaugée munie d'une propipette. <strong>3)</strong> Verser dans une fiole jaugée de volume V(fille). <strong>4)</strong> Compléter avec de l'eau distillée jusqu'au trait de jauge. <strong>5)</strong> Boucher et homogénéiser."
+          }
+        ]
+      },
+      {
+        "title": "4. Exemple combiné : dissolution puis dilution",
+        "icon": "🧮",
+        "content": [
+          {
+            "type": "text",
+            "text": "On souhaite préparer 100 mL d'une solution mère S₀ de permanganate de potassium (KMnO₄) à cm = 4,0×10⁻² g·L⁻¹, par dissolution, puis en diluer une partie pour obtenir 50 mL d'une solution fille à 8,0×10⁻³ g·L⁻¹."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Étape 1 (dissolution)</strong> : masse à peser m = cm × V = 4,0×10⁻² × 0,100 = 4,0×10⁻³ g de KMnO₄, à dissoudre dans une fiole jaugée de 100 mL complétée au trait de jauge."
+          },
+          {
+            "type": "text",
+            "text": "<strong>Étape 2 (dilution)</strong> : facteur de dilution F = cm(mère)/cm(fille) = 4,0×10⁻² / 8,0×10⁻³ = 5. Le volume de solution mère à prélever est V(mère) = V(fille) / F = 50 / 5 = 10 mL, à prélever à la pipette jaugée puis à compléter à 50 mL dans une fiole jaugée avec de l'eau distillée."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "On dissout 5,0 g de sel dans de l'eau et on obtient 250 mL de solution. La concentration en masse du sel vaut :",
+      "opts": [
+        "20 g·L⁻¹",
+        "0,020 g·L⁻¹",
+        "0,050 g·L⁻¹",
+        "1,25 g·L⁻¹"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-ml-l",
+          "texte": "Oublier de convertir les mL en L : 5,0 / 250 = 0,020"
+        },
+        {
+          "code": "cm-rapport-inverse",
+          "texte": "Inverser le rapport : V / m = 0,250 / 5,0 = 0,050 au lieu de cm = m / V"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 5,0 × 0,250 = 1,25"
+        }
+      ],
+      "exp": "cm = m(soluté) / V(solution) = 5,0 / 0,250 = 20 g·L⁻¹. Attention : le volume doit être en litres pour obtenir des g·L⁻¹."
+    },
+    {
+      "q": "Pour préparer 50 mL de sérum physiologique à 9 g·L⁻¹ de chlorure de sodium, la masse de sel à peser est :",
+      "opts": [
+        "450 g",
+        "180 g",
+        "0,45 g",
+        "5,6×10⁻³ g"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-ml-l",
+          "texte": "Oublier de convertir les mL en L : 9 × 50 = 450"
+        },
+        {
+          "code": "masse-cm-sur-v",
+          "texte": "Diviser la concentration par le volume : 9 / 0,050 = 180 ; il faut m = cm × V"
+        },
+        null,
+        {
+          "code": "masse-v-sur-cm",
+          "texte": "Diviser le volume par la concentration : 0,050 / 9 ≈ 5,6×10⁻³ ; il faut m = cm × V"
+        }
+      ],
+      "exp": "m = cm × V = 9 × 0,050 = 0,45 g. Attention : convertir 50 mL en 0,050 L avant de calculer."
+    },
+    {
+      "q": "On dissout 9 g de sel dans de l'eau pour obtenir 1,0 L d'eau salée. Ce litre de solution a une masse de 1 006 g. La concentration en masse du sel vaut :",
+      "opts": [
+        "1 006 g·L⁻¹",
+        "997 g·L⁻¹",
+        "9 g·L⁻¹",
+        "9×10⁻³ g·L⁻¹"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "cm-vs-masse-volumique",
+          "texte": "Confondre concentration en masse et masse volumique : 1 006 g·L⁻¹ est la masse volumique de la solution"
+        },
+        {
+          "code": "solvant-au-lieu-solute",
+          "texte": "Utiliser la masse du solvant (1 006 − 9 = 997 g) au lieu de la masse du soluté dissous"
+        },
+        null,
+        {
+          "code": "conversion-ml-l",
+          "texte": "Exprimer le volume en mL : 9 / 1 000 = 9×10⁻³, ce sont des g·mL⁻¹ et non des g·L⁻¹"
+        }
+      ],
+      "exp": "cm = m(soluté) / V(solution) = 9 / 1,0 = 9 g·L⁻¹. Attention : 1 006 g·L⁻¹ est la masse volumique de la solution (masse totale / volume), une autre grandeur dans la même unité."
+    },
+    {
+      "q": "Pour préparer une solution par dissolution, on a introduit le solide pesé dans une fiole jaugée de 100,0 mL. Ensuite, on :",
+      "opts": [
+        "remplit d'eau aux deux tiers, agite pour dissoudre, puis complète au trait",
+        "ajoute 100,0 mL d'eau mesurés à l'éprouvette graduée",
+        "complète tout de suite au trait de jauge, puis agite pour dissoudre",
+        "remplit d'eau jusqu'à ce que le haut du ménisque touche le trait"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "volume-solvant-vs-solution",
+          "texte": "Confondre volume de solvant et volume de solution : on complète jusqu'à 100,0 mL de solution, on n'ajoute pas 100,0 mL d'eau"
+        },
+        {
+          "code": "completer-avant-dissoudre",
+          "texte": "Compléter avant d'avoir dissous le solide : on dissout d'abord, car le volume peut varier pendant la dissolution"
+        },
+        {
+          "code": "menisque-haut",
+          "texte": "Lire le haut du ménisque : c'est le bas du ménisque qui doit affleurer le trait de jauge"
+        }
+      ],
+      "exp": "On dissout le solide dans environ deux tiers d'eau, puis on complète jusqu'au trait (bas du ménisque) et on homogénéise. Attention : le volume final est celui de la solution, pas celui de l'eau ajoutée."
+    },
+    {
+      "q": "Lors d'une dilution, pour prélever avec précision 10,0 mL de solution mère, on utilise :",
+      "opts": [
+        "une éprouvette graduée de 10 mL",
+        "une pipette jaugée de 10,0 mL",
+        "un bécher gradué",
+        "une fiole jaugée de 10,0 mL"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "eprouvette-precise",
+          "texte": "Croire que l'éprouvette graduée est précise : elle sert pour des volumes approximatifs"
+        },
+        null,
+        {
+          "code": "becher-mesure-volume",
+          "texte": "Croire qu'un bécher mesure un volume : ses graduations sont très approximatives"
+        },
+        {
+          "code": "fiole-pour-prelever",
+          "texte": "Confondre fiole jaugée et pipette jaugée : la fiole contient un volume précis, la pipette en prélève un"
+        }
+      ],
+      "exp": "La pipette jaugée (avec une propipette) prélève un volume précis ; la fiole jaugée sert à obtenir le volume final précis. Attention : éprouvette et bécher ne sont pas assez précis."
+    },
+    {
+      "q": "Lors d'une dilution, la masse de soluté présente dans la solution fille, par rapport à celle du volume de solution mère prélevé :",
+      "opts": [
+        "est plus petite, car on a ajouté de l'eau",
+        "est plus grande, car le volume a augmenté",
+        "est divisée par le facteur de dilution",
+        "est la même"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "dilution-change-masse",
+          "texte": "Croire que la dilution enlève du soluté : on ajoute seulement du solvant, la masse de soluté ne change pas"
+        },
+        {
+          "code": "masse-augmente-avec-volume",
+          "texte": "Croire que la masse de soluté augmente avec le volume : l'eau ajoutée n'apporte pas de soluté"
+        },
+        {
+          "code": "facteur-applique-a-masse",
+          "texte": "Appliquer le facteur de dilution à la masse : c'est la concentration qui est divisée par F, pas la masse"
+        },
+        null
+      ],
+      "exp": "On n'ajoute que de l'eau : la masse de soluté prélevée se retrouve entièrement dans la solution fille, d'où cm(mère) × V(mère) = cm(fille) × V(fille). Attention : seules la concentration et le volume changent."
+    },
+    {
+      "q": "Une solution mère a une concentration en masse de 4,0×10⁻² g·L⁻¹ ; la solution fille, 8,0×10⁻³ g·L⁻¹. Le facteur de dilution vaut :",
+      "opts": [
+        "0,20",
+        "5,0",
+        "3,2×10⁻⁴",
+        "3,2×10⁻²"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "facteur-dilution-inverse",
+          "texte": "Inverser le rapport : cm(fille) / cm(mère) = 0,20 ; F est toujours supérieur à 1"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 4,0×10⁻² × 8,0×10⁻³ = 3,2×10⁻⁴"
+        },
+        {
+          "code": "difference-au-lieu-quotient",
+          "texte": "Soustraire au lieu de diviser : 4,0×10⁻² − 8,0×10⁻³ = 3,2×10⁻²"
+        }
+      ],
+      "exp": "F = cm(mère) / cm(fille) = 4,0×10⁻² / 8,0×10⁻³ = 5,0 : la concentration a été divisée par 5. Attention : F est toujours supérieur à 1."
+    },
+    {
+      "q": "On prélève 10,0 mL d'une solution mère à 2,5 g·L⁻¹ et on complète à 100,0 mL avec de l'eau distillée. La concentration en masse de la solution fille vaut :",
+      "opts": [
+        "25 g·L⁻¹",
+        "2,5 g·L⁻¹",
+        "0,23 g·L⁻¹",
+        "0,25 g·L⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "multiplier-au-lieu-diviser",
+          "texte": "Multiplier par le facteur de dilution au lieu de diviser : 2,5 × 10 = 25"
+        },
+        {
+          "code": "dilution-concentration-inchangee",
+          "texte": "Croire que la concentration ne change pas : la même masse de soluté est répartie dans un volume 10 fois plus grand"
+        },
+        {
+          "code": "dilution-volume-final-additionne",
+          "texte": "Ajouter 100,0 mL au volume prélevé : 2,5 × 10,0 / 110,0 ≈ 0,23 ; on complète jusqu'à 100,0 mL au total"
+        },
+        null
+      ],
+      "exp": "F = V(fille) / V(mère) = 100,0 / 10,0 = 10, donc cm(fille) = 2,5 / 10 = 0,25 g·L⁻¹. Attention : on complète jusqu'au trait de 100,0 mL, on n'ajoute pas 100,0 mL d'eau."
+    },
+    {
+      "q": "On veut 50,0 mL d'une solution fille cinq fois moins concentrée que la solution mère. Le volume de solution mère à prélever est :",
+      "opts": [
+        "250 mL",
+        "10,0 mL",
+        "40,0 mL",
+        "5,0 mL"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "multiplier-au-lieu-diviser",
+          "texte": "Multiplier par le facteur de dilution au lieu de diviser : 50,0 × 5 = 250"
+        },
+        null,
+        {
+          "code": "volume-eau-vs-volume-mere",
+          "texte": "Donner le volume d'eau à ajouter (50,0 − 10,0 = 40,0 mL) au lieu du volume de solution mère à prélever"
+        },
+        {
+          "code": "facteur-pris-pour-volume",
+          "texte": "Prendre le facteur de dilution pour un volume : F = 5 ne veut pas dire prélever 5 mL"
+        }
+      ],
+      "exp": "V(mère) = V(fille) / F = 50,0 / 5 = 10,0 mL, prélevés à la pipette jaugée, puis complétés à 50,0 mL en fiole jaugée. Attention : on prélève un volume plus petit que le volume final."
+    },
+    {
+      "q": "Pour diluer une solution 20 fois avec précision, on peut utiliser :",
+      "opts": [
+        "une pipette jaugée de 20,0 mL et une fiole jaugée de 100,0 mL",
+        "une pipette jaugée de 5,0 mL, puis ajouter 100,0 mL d'eau",
+        "une pipette jaugée de 5,0 mL et une fiole jaugée de 100,0 mL",
+        "une éprouvette de 5 mL et un bécher de 100 mL"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "facteur-pris-pour-volume",
+          "texte": "Prendre le facteur de dilution pour un volume : 100,0 / 20,0 = 5, cette verrerie dilue 5 fois et non 20 fois"
+        },
+        {
+          "code": "dilution-volume-final-additionne",
+          "texte": "Ajouter 100,0 mL d'eau au prélèvement : le volume final serait 105,0 mL, soit F = 21"
+        },
+        null,
+        {
+          "code": "eprouvette-precise",
+          "texte": "Utiliser une verrerie imprécise : éprouvette et bécher ne conviennent pas pour une dilution précise"
+        }
+      ],
+      "exp": "F = V(fille) / V(mère) = 100,0 / 5,0 = 20 : pipette jaugée de 5,0 mL et fiole jaugée de 100,0 mL. Attention : le facteur est le rapport des deux volumes, pas le volume prélevé."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Soluté ou solvant ?",
+      "contexte": [
+        "En rangeant l'armoire à pharmacie et la cuisine, Yanis trouve quatre solutions. Il lit leur composition :",
+        "(1) Eau sucrée préparée pour le match de foot : saccharose (sucre) dissous dans de l'eau.",
+        "(2) Sérum physiologique : chlorure de sodium (sel) dissous dans de l'eau.",
+        "(3) Teinture d'iode (antiseptique) : diiode dissous dans de l'éthanol (alcool).",
+        "(4) Eau gazeuse : dioxyde de carbone (un gaz) dissous dans de l'eau."
+      ],
+      "questions": [
+        {
+          "texte": "Recopie et complète le tableau : pour chaque solution (1) à (4), indique le soluté et le solvant.",
+          "aides": [
+            "Le solvant est l'espèce qui dissout ; le soluté est l'espèce dissoute. Dans la composition, repère le mot « dissous dans ».",
+            "Ce qui suit « dissous dans » est le solvant. Attention : un soluté peut aussi être un liquide ou un gaz."
+          ]
+        },
+        {
+          "texte": "Parmi ces quatre solutions, lesquelles sont des solutions aqueuses ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Une solution est un mélange homogène : on ne distingue plus le soluté à l'œil nu.<br>b. Un soluté est toujours un solide.<br>c. Quand le sucre est dissous, il a disparu : la masse de l'eau sucrée est égale à la masse de l'eau utilisée.<br>d. On peut dissoudre autant de sel que l'on veut dans un verre d'eau.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> (1) soluté : saccharose ; solvant : eau. (2) soluté : chlorure de sodium ; solvant : eau. (3) soluté : diiode ; solvant : éthanol. (4) soluté : dioxyde de carbone ; solvant : eau.",
+        "<strong>2.</strong> Une solution aqueuse est une solution dont le solvant est l'eau : ce sont les solutions (1), (2) et (4). La teinture d'iode (3) n'est pas aqueuse, son solvant est l'éthanol.",
+        "<strong>3.</strong> a. VRAI : le soluté est dispersé dans le solvant, le mélange obtenu est homogène.",
+        "b. FAUX : un soluté peut être solide (sucre, sel), liquide ou gazeux (dioxyde de carbone de l'eau gazeuse).",
+        "c. FAUX : le sucre est toujours présent, dispersé dans l'eau (le goût sucré le prouve). La masse de la solution est égale à la masse d'eau + la masse de sucre.",
+        "d. FAUX : il existe une concentration maximale. Au-delà, le sel ne se dissout plus et reste au fond du verre : la solution est saturée.",
+        "<em>⚠ Erreur fréquente : croire que le solvant est toujours l'eau. Le solvant est l'espèce qui dissout le soluté ; c'est l'eau seulement pour les solutions aqueuses.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La boisson de l'effort",
+      "contexte": [
+        "Pour son entraînement de foot, Lina prépare une boisson sucrée. Elle verse m = 30 g de sucre dans sa gourde, puis ajoute de l'eau jusqu'à la graduation 500 mL et agite jusqu'à dissolution complète.",
+        "Rappel : la concentration en masse d'un soluté se calcule avec c<sub>m</sub> = m(soluté) / V(solution), avec m en g, V en L et c<sub>m</sub> en g·L⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Convertis le volume de la solution en litres.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la concentration en masse c<sub>m</sub> du sucre dans la boisson de Lina.",
+          "aides": []
+        },
+        {
+          "texte": "QCM — Laquelle de ces unités convient aussi pour une concentration en masse ? (A) g·mL⁻¹ (B) L·g⁻¹ (C) g·L (D) mL. Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Son ami Sami veut une boisson identique (même concentration en masse) mais dans une gourde de 750 mL. Quelle masse de sucre doit-il dissoudre ?",
+          "aides": [
+            "La concentration doit rester la même : c<sub>m</sub> = 60 g·L⁻¹ (question 2). Tu cherches cette fois la masse.",
+            "À partir de c<sub>m</sub> = m / V, isole m : m = c<sub>m</sub> × V, avec V en litres (750 mL = 0,750 L)."
+          ]
+        },
+        {
+          "texte": "Inès, elle, dissout 30 g de sucre dans 1,0 L de boisson. Sa boisson est-elle plus ou moins sucrée que celle de Lina ? Justifie par un calcul.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> V = 500 mL = 500 × 10⁻³ L = 0,500 L.",
+        "<strong>2.</strong> c<sub>m</sub> = m(soluté) / V(solution) = 30 / 0,500 = 60 g·L⁻¹.",
+        "<strong>3.</strong> Réponse (A) : une concentration en masse est une masse divisée par un volume ; le g·mL⁻¹ est donc possible (1 g·mL⁻¹ = 1 000 g·L⁻¹). (B) est l'inverse, (C) est un produit, (D) est un volume.",
+        "<strong>4.</strong> On isole la masse : m = c<sub>m</sub> × V = 60 × 0,750 = 45 g de sucre.",
+        "<strong>5.</strong> c<sub>m</sub> = 30 / 1,0 = 30 g·L⁻¹ &lt; 60 g·L⁻¹ : la boisson d'Inès est deux fois moins sucrée (même masse de sucre dans un volume deux fois plus grand).",
+        "<em>⚠ Erreur fréquente : calculer 30 / 500 = 0,06 en oubliant de convertir les mL en L. Une boisson sucrée à 0,06 g·L⁻¹ n'aurait aucun goût : vérifie toujours l'ordre de grandeur.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Masse volumique ou concentration en masse ?",
+      "contexte": [
+        "Un élève dissout 20,0 g de sucre dans de l'eau et obtient V = 250 mL d'eau sucrée. Il pèse cette solution : sa masse est m(solution) = 257,5 g.",
+        "Rappels : masse volumique de la solution ρ = m(solution) / V(solution) ; concentration en masse du sucre c<sub>m</sub> = m(soluté) / V(solution)."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse volumique ρ de l'eau sucrée en g·mL⁻¹, puis en g·L⁻¹.",
+          "aides": [
+            "Pour la masse volumique, on utilise la masse de TOUTE la solution (257,5 g).",
+            "1 L = 1 000 mL : une masse volumique en g·L⁻¹ est 1 000 fois plus grande que la même en g·mL⁻¹."
+          ]
+        },
+        {
+          "texte": "Calcule la concentration en masse c<sub>m</sub> du sucre dans cette solution, en g·L⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Complète la phrase avec les mots : soluté, solution, même unité, toute la solution. « La masse volumique et la concentration en masse s'expriment dans la … . Mais la masse volumique utilise la masse de … , alors que la concentration en masse n'utilise que la masse du … dissous. Dans les deux cas, on divise par le volume de la … . »",
+          "aides": []
+        },
+        {
+          "texte": "Explique pourquoi, pour une solution aqueuse, la masse volumique est toujours bien plus grande que la concentration en masse du soluté.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> ρ = m(solution) / V(solution) = 257,5 / 250 = 1,03 g·mL⁻¹. En g·L⁻¹ : ρ = 257,5 / 0,250 = 1,03 × 10³ g·L⁻¹ (soit 1 030 g·L⁻¹).",
+        "<strong>2.</strong> c<sub>m</sub> = m(soluté) / V(solution) = 20,0 / 0,250 = 80,0 g·L⁻¹.",
+        "<strong>3.</strong> « … s'expriment dans la même unité. Mais la masse volumique utilise la masse de toute la solution, alors que la concentration en masse n'utilise que la masse du soluté dissous. Dans les deux cas, on divise par le volume de la solution. »",
+        "<strong>4.</strong> La masse de la solution contient la masse du soluté ET celle du solvant (ici 257,5 − 20,0 = 237,5 g d'eau). On divise par le même volume : ρ est donc plus grande que c<sub>m</sub> (1 030 g·L⁻¹ contre 80,0 g·L⁻¹).",
+        "<em>⚠ Erreur fréquente : utiliser la masse de la solution (257,5 g) pour calculer c<sub>m</sub>. Pour la concentration en masse, on ne prend que la masse du soluté.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "De l'eau de mer pour l'aquarium",
+      "contexte": [
+        "Yanis veut installer un aquarium d'eau de mer. Pour vérifier le réglage de son appareil de mesure de la salinité, il prépare au laboratoire du lycée V = 250,0 mL d'une eau salée de concentration en masse c<sub>m</sub> = 35,0 g·L⁻¹ en sel (assimilé à du chlorure de sodium).",
+        "Matériel disponible : bécher de 250 mL ; éprouvette graduée de 250 mL ; fiole jaugée de 250,0 mL avec bouchon ; pipette jaugée de 25,0 mL ; balance ; coupelle ; spatule ; entonnoir ; pissette d'eau distillée.",
+        "Le document ci-dessous montre les étapes de la préparation, dans le désordre."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\">Les étapes de la dissolution… dans le désordre</text><rect x=\"20\" y=\"45\" width=\"220\" height=\"200\" rx=\"8\" fill=\"#fbf8f2\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"42\" cy=\"67\" r=\"15\" fill=\"#1F4E5A\"/><text x=\"42\" y=\"73\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">A</text><text x=\"130\" y=\"217\" text-anchor=\"middle\" font-size=\"14\">Compléter à l'eau distillée</text><text x=\"130\" y=\"235\" text-anchor=\"middle\" font-size=\"14\">jusqu'au trait de jauge</text><g transform=\"translate(120,197) scale(0.85)\"><clipPath id=\"clipf1\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><rect x=\"-50\" y=\"-104\" width=\"100\" height=\"104\" fill=\"#9fc3cf\" clip-path=\"url(#clipf1)\"/><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.35294\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"2.82353\"/></g><rect x=\"175\" y=\"135\" width=\"30\" height=\"62\" rx=\"7\" fill=\"#eef4f6\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"184\" y=\"127\" width=\"12\" height=\"8\" fill=\"#3a3a3a\"/><polyline points=\"190,127 190,53 128,65\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.4\"/><text x=\"190\" y=\"171\" text-anchor=\"middle\" font-size=\"14\">eau</text><rect x=\"270\" y=\"45\" width=\"220\" height=\"200\" rx=\"8\" fill=\"#fbf8f2\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"292\" cy=\"67\" r=\"15\" fill=\"#1F4E5A\"/><text x=\"292\" y=\"73\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">B</text><text x=\"380\" y=\"217\" text-anchor=\"middle\" font-size=\"14\">Peser le solide</text><text x=\"380\" y=\"235\" text-anchor=\"middle\" font-size=\"14\">dans une coupelle</text><rect x=\"320\" y=\"157\" width=\"120\" height=\"40\" rx=\"5\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"347\" y=\"166\" width=\"66\" height=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\"/><text x=\"380\" y=\"183\" text-anchor=\"middle\" font-size=\"15\">?,?? g</text><rect x=\"376\" y=\"149\" width=\"8\" height=\"8\" fill=\"#3a3a3a\"/><rect x=\"335\" y=\"144\" width=\"90\" height=\"5\" rx=\"2\" fill=\"#3a3a3a\"/><g transform=\"translate(380,143) rotate(0)\"><path d=\"M -26,-14 Q -22,0 0,0 Q 22,0 26,-14 Z\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M -18,-14 Q 0,-26 18,-14 Z\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\"/></g><rect x=\"520\" y=\"45\" width=\"220\" height=\"200\" rx=\"8\" fill=\"#fbf8f2\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"542\" cy=\"67\" r=\"15\" fill=\"#1F4E5A\"/><text x=\"542\" y=\"73\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">C</text><text x=\"630\" y=\"217\" text-anchor=\"middle\" font-size=\"14\">Boucher, puis retourner</text><text x=\"630\" y=\"235\" text-anchor=\"middle\" font-size=\"14\">la fiole plusieurs fois</text><g transform=\"translate(630,199) scale(0.85)\"><clipPath id=\"clipf2\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><rect x=\"-50\" y=\"-110\" width=\"100\" height=\"110\" fill=\"#9fc3cf\" clip-path=\"url(#clipf2)\"/><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.35294\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"2.82353\"/><rect x=\"-10\" y=\"-152\" width=\"20\" height=\"14\" rx=\"3\" fill=\"#C8962E\"/></g><path d=\"M 570,157 A 60,60 0 0 1 600,77\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><polygon points=\"600,77 586,79 596,91\" fill=\"#B5523B\"/><path d=\"M 690,137 A 60,60 0 0 1 660,67\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><polygon points=\"690,137 692,122 680,129\" fill=\"#B5523B\"/><rect x=\"145\" y=\"260\" width=\"220\" height=\"200\" rx=\"8\" fill=\"#fbf8f2\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"167\" cy=\"282\" r=\"15\" fill=\"#1F4E5A\"/><text x=\"167\" y=\"288\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">D</text><text x=\"255\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">Introduire le solide avec</text><text x=\"255\" y=\"450\" text-anchor=\"middle\" font-size=\"14\">un entonnoir, puis rincer</text><g transform=\"translate(245,412) scale(0.75)\"><clipPath id=\"clipf3\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><circle cx=\"-14\" cy=\"-4\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"-6\" cy=\"-6\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"3\" cy=\"-4\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"11\" cy=\"-5\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"-10\" cy=\"-9\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"6\" cy=\"-9\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"0\" cy=\"-12\" r=\"2.4\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.66667\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"3.2\"/></g><path d=\"M 221,277 L 269,277 L 249,299 L 249,315 L 241,315 L 241,299 Z\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><g transform=\"translate(301,299) rotate(-35)\"><path d=\"M -26,-14 Q -22,0 0,0 Q 22,0 26,-14 Z\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><path d=\"M -18,-14 Q 0,-26 18,-14 Z\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\"/></g><circle cx=\"275\" cy=\"293\" r=\"2.2\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"265\" cy=\"297\" r=\"2.2\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><circle cx=\"257\" cy=\"289\" r=\"2.2\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><rect x=\"395\" y=\"260\" width=\"220\" height=\"200\" rx=\"8\" fill=\"#fbf8f2\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><circle cx=\"417\" cy=\"282\" r=\"15\" fill=\"#1F4E5A\"/><text x=\"417\" y=\"288\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">E</text><text x=\"505\" y=\"432\" text-anchor=\"middle\" font-size=\"14\">Remplir aux deux tiers</text><text x=\"505\" y=\"450\" text-anchor=\"middle\" font-size=\"14\">d'eau, agiter pour dissoudre</text><g transform=\"translate(495,412) scale(0.85)\"><clipPath id=\"clipf4\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><rect x=\"-50\" y=\"-48\" width=\"100\" height=\"48\" fill=\"#9fc3cf\" clip-path=\"url(#clipf4)\"/><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.35294\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"2.82353\"/></g><path d=\"M 477,390 A 22,8 0 1 0 513,390\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"565\" y=\"388\" text-anchor=\"middle\" font-size=\"15\" fill=\"#B5523B\">agiter</text><text x=\"565\" y=\"362\" text-anchor=\"middle\" font-size=\"14\">≈ 2/3</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule la masse m de sel que Yanis doit peser.",
+          "aides": []
+        },
+        {
+          "texte": "Choisis dans la liste le matériel nécessaire. Pourquoi utilise-t-on une fiole jaugée plutôt qu'un bécher ?",
+          "aides": []
+        },
+        {
+          "texte": "Remets les étapes A à E du document dans le bon ordre.",
+          "aides": [
+            "Avant de remplir la fiole, il faut avoir pesé le solide et l'avoir mis dedans.",
+            "On complète au trait de jauge seulement quand le solide est entièrement dissous ; on homogénéise en tout dernier."
+          ]
+        },
+        {
+          "texte": "Au moment de compléter, Yanis verse trop d'eau : le bas du ménisque dépasse le trait de jauge et le volume de la solution vaut en réalité 254 mL. Calcule la concentration en masse réellement obtenue. Que doit-il faire ?",
+          "aides": [
+            "La masse de sel dans la fiole a-t-elle changé ? Et le volume ?",
+            "Utilise c<sub>m</sub> = m / V avec m = masse pesée à la question 1 et V = 0,254 L."
+          ]
+        },
+        {
+          "texte": "Son professeur lui indique qu'à 20 °C, on ne peut pas dissoudre plus d'environ 350 g de chlorure de sodium par litre d'eau. Yanis pourrait-il préparer 250,0 mL d'une solution salée à 4,0 × 10² g·L⁻¹ ? Justifie.",
+          "aides": [
+            "Calcule d'abord la masse de sel qu'il faudrait dissoudre dans 250,0 mL.",
+            "Combien de sel peut-on dissoudre au maximum dans 0,250 L d'eau ? Compare."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> m = c<sub>m</sub> × V = 35,0 × 0,2500 = 8,75 g de sel.",
+        "<strong>2.</strong> Balance, coupelle, spatule, entonnoir, fiole jaugée de 250,0 mL avec bouchon, pissette d'eau distillée. La fiole jaugée donne le volume final de la solution avec précision grâce à son trait de jauge ; les graduations d'un bécher ne sont qu'indicatives. (L'éprouvette et la pipette sont inutiles ici.)",
+        "<strong>3.</strong> Ordre : B (peser) → D (introduire avec l'entonnoir et rincer la coupelle et l'entonnoir) → E (remplir aux deux tiers et agiter pour dissoudre) → A (compléter jusqu'au trait de jauge) → C (boucher et homogénéiser).",
+        "<strong>4.</strong> La masse de sel n'a pas changé : c<sub>m</sub> = m / V = 8,75 / 0,254 = 34,4 g·L⁻¹ (au lieu de 35,0 g·L⁻¹). La solution est un peu trop diluée : on ne peut pas retirer l'eau en trop, Yanis doit recommencer la préparation.",
+        "<strong>5.</strong> Il faudrait m = 4,0 × 10² × 0,2500 = 1,0 × 10² g de sel. Or les 250,0 mL de solution contiennent moins de 250 mL d'eau, dans lesquels on peut dissoudre au plus 350 × 0,250 ≈ 88 g de sel. C'est impossible : la concentration demandée dépasse la concentration maximale, le sel en excès resterait au fond (solution saturée).",
+        "<em>⚠ Erreur fréquente : laisser V en mL (35,0 × 250 = 8 750 g, soit près de 9 kg de sel !). Vérifie toujours l'ordre de grandeur du résultat.</em>",
+        "<em>⚠ Erreur fréquente : dissoudre le solide dans 250 mL d'eau mesurés à l'éprouvette. C'est le volume de la SOLUTION qui doit valoir 250,0 mL, d'où l'ajout d'eau jusqu'au trait de jauge après dissolution.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le sirop de menthe",
+      "contexte": [
+        "Sur l'étiquette d'une bouteille de sirop de menthe, on lit : « Sucres : 86 g pour 100 mL de sirop » et « Préparation : 1 volume de sirop pour 7 volumes d'eau ».",
+        "Inès verse 25 mL de sirop dans un grand verre, puis ajoute de l'eau jusqu'à obtenir 200 mL de boisson. On considère qu'un morceau de sucre a une masse de 5,0 g."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la concentration en masse des sucres dans le sirop, en g·L⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Lors de la préparation de la boisson, quelle est la solution mère ? la solution fille ? Montre que le facteur de dilution conseillé par l'étiquette vaut F = 8, et vérifie que la boisson d'Inès respecte ce conseil.",
+          "aides": [
+            "La solution mère est la plus concentrée ; on ajoute de l'eau pour obtenir la solution fille.",
+            "1 volume de sirop + 7 volumes d'eau : combien de volumes de boisson obtient-on au total ?",
+            "F = V(fille) / V(mère)."
+          ]
+        },
+        {
+          "texte": "Calcule la concentration en masse des sucres dans la boisson d'Inès.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse de sucres apportée par les 25 mL de sirop, puis la masse de sucres contenue dans les 200 mL de boisson. Quelle propriété de la dilution retrouves-tu ? À combien de morceaux de sucre cela correspond-il ?",
+          "aides": []
+        },
+        {
+          "texte": "Au laboratoire, on veut préparer 100,0 mL d'une solution de sirop diluée 10 fois. Quel volume de sirop faut-il prélever ? Décris le protocole avec la verrerie adaptée, et donne la concentration en masse des sucres dans la solution obtenue.",
+          "aides": [
+            "Utilise F = V(fille) / V(mère) pour trouver V(mère).",
+            "Pour prélever un volume précis, on utilise une pipette jaugée ; pour obtenir un volume final précis, une fiole jaugée."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> c<sub>m</sub>(sirop) = m / V = 86 / 0,100 = 860 g·L⁻¹ = 8,6 × 10² g·L⁻¹.",
+        "<strong>2.</strong> Solution mère : le sirop ; solution fille : la boisson. 1 volume de sirop + 7 volumes d'eau donnent 8 volumes de boisson : F = V(fille) / V(mère) = 8 / 1 = 8. Pour Inès : F = 200 / 25 = 8, le conseil est respecté.",
+        "<strong>3.</strong> c<sub>m</sub>(fille) = c<sub>m</sub>(mère) / F = 860 / 8 = 107,5 g·L⁻¹ ≈ 1,1 × 10² g·L⁻¹.",
+        "<strong>4.</strong> Dans le sirop prélevé : m = c<sub>m</sub>(mère) × V(mère) = 860 × 0,025 = 21,5 g. Dans la boisson : m = c<sub>m</sub>(fille) × V(fille) = 107,5 × 0,200 = 21,5 g. On retrouve la conservation de la masse de soluté : on a seulement ajouté de l'eau. 21,5 / 5,0 ≈ 4,3 : environ 4 morceaux de sucre dans un verre !",
+        "<strong>5.</strong> V(mère) = V(fille) / F = 100,0 / 10 = 10,0 mL. Protocole : verser un peu de sirop dans un bécher ; prélever 10,0 mL avec une pipette jaugée de 10,0 mL munie d'une propipette ; les verser dans une fiole jaugée de 100,0 mL ; compléter avec de l'eau distillée jusqu'au trait de jauge ; boucher et homogénéiser. c<sub>m</sub>(fille) = 860 / 10 = 86 g·L⁻¹.",
+        "<em>⚠ Erreur fréquente : prendre F = 7 en lisant « 7 volumes d'eau ». Le facteur de dilution compare le volume de la solution fille (sirop + eau) au volume de solution mère.</em>",
+        "<em>⚠ Erreur fréquente : prélever directement dans la bouteille ou avec une éprouvette. On prélève dans un bécher, et seule la pipette jaugée donne un volume précis.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le technicien prépare le TP",
+      "contexte": [
+        "Doc. 1 — Le message du professeur. « Pour le TP de demain, j'ai 6 groupes. Chaque groupe aura besoin de 40 mL d'une solution S₁ de sulfate de cuivre de concentration en masse c<sub>m</sub> = 2,50 g·L⁻¹. Merci de la préparer avec la meilleure précision possible. »",
+        "Doc. 2 — Le matériel et les produits disponibles (une seule pièce de verrerie de chaque modèle)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"26\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 2 — Matériel et produits de la salle de préparation</text><text x=\"190\" y=\"54\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Fioles jaugées</text><g transform=\"translate(50,215) scale(0.55)\"><clipPath id=\"clipf5\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"3.63636\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"4.36364\"/></g><text x=\"50\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">50,0 mL</text><g transform=\"translate(125,215) scale(0.68)\"><clipPath id=\"clipf6\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.94118\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"3.52941\"/></g><text x=\"125\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">100,0 mL</text><g transform=\"translate(215,215) scale(0.82)\"><clipPath id=\"clipf7\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.43902\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"2.92683\"/></g><text x=\"215\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">250,0 mL</text><g transform=\"translate(320,215) scale(0.97)\"><clipPath id=\"clipf8\"><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\"/></clipPath><path d=\"M -7,-140 L -7,-72 C -7,-62 -42,-58 -42,-30 L -42,-8 Q -42,0 -34,0 L 34,0 Q 42,0 42,-8 L 42,-30 C 42,-58 7,-62 7,-72 L 7,-140 Z\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.06186\"/><line x1=\"-12\" y1=\"-110\" x2=\"12\" y2=\"-110\" stroke=\"#B5523B\" stroke-width=\"2.47423\"/></g><text x=\"320\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">500,0 mL</text><text x=\"497\" y=\"54\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Pipettes jaugées</text><line x1=\"425\" y1=\"105\" x2=\"425\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><ellipse cx=\"425\" cy=\"168\" rx=\"7\" ry=\"14.2857\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"418\" y1=\"117\" x2=\"432\" y2=\"117\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"425\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">5,0 mL</text><line x1=\"473\" y1=\"90\" x2=\"473\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><ellipse cx=\"473\" cy=\"160.5\" rx=\"7\" ry=\"16.4286\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"466\" y1=\"102\" x2=\"480\" y2=\"102\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"473\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">10,0</text><line x1=\"521\" y1=\"75\" x2=\"521\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><ellipse cx=\"521\" cy=\"153\" rx=\"7\" ry=\"18.5714\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"514\" y1=\"87\" x2=\"528\" y2=\"87\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"521\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">20,0</text><line x1=\"569\" y1=\"65\" x2=\"569\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><ellipse cx=\"569\" cy=\"148\" rx=\"7\" ry=\"20\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"562\" y1=\"77\" x2=\"576\" y2=\"77\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"569\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">25,0 mL</text><text x=\"680\" y=\"54\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">Éprouvettes</text><rect x=\"642\" y=\"95\" width=\"16\" height=\"110\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"634\" y=\"205\" width=\"32\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"642\" y1=\"106\" x2=\"650\" y2=\"106\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"117\" x2=\"650\" y2=\"117\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"128\" x2=\"650\" y2=\"128\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"139\" x2=\"650\" y2=\"139\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"150\" x2=\"654\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"161\" x2=\"650\" y2=\"161\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"172\" x2=\"650\" y2=\"172\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"183\" x2=\"650\" y2=\"183\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"642\" y1=\"194\" x2=\"650\" y2=\"194\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"650\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">25 mL</text><rect x=\"703\" y=\"65\" width=\"24\" height=\"140\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"695\" y=\"205\" width=\"40\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"703\" y1=\"79\" x2=\"711\" y2=\"79\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"93\" x2=\"711\" y2=\"93\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"107\" x2=\"711\" y2=\"107\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"121\" x2=\"711\" y2=\"121\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"135\" x2=\"715\" y2=\"135\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"149\" x2=\"711\" y2=\"149\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"163\" x2=\"711\" y2=\"163\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"177\" x2=\"711\" y2=\"177\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"703\" y1=\"191\" x2=\"711\" y2=\"191\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"715\" y=\"238\" text-anchor=\"middle\" font-size=\"14\">100 mL</text><line x1=\"20\" y1=\"262\" x2=\"740\" y2=\"262\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><rect x=\"20\" y=\"360\" width=\"120\" height=\"40\" rx=\"5\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"47\" y=\"369\" width=\"66\" height=\"22\" fill=\"#ffffff\" stroke=\"#3a3a3a\"/><text x=\"80\" y=\"386\" text-anchor=\"middle\" font-size=\"15\">0,00 g</text><rect x=\"76\" y=\"352\" width=\"8\" height=\"8\" fill=\"#3a3a3a\"/><rect x=\"35\" y=\"347\" width=\"90\" height=\"5\" rx=\"2\" fill=\"#3a3a3a\"/><text x=\"150\" y=\"350\" font-size=\"14\">Balance :</text><text x=\"150\" y=\"370\" font-size=\"14\">affichage</text><text x=\"150\" y=\"390\" font-size=\"14\">au 0,01 g</text><rect x=\"247\" y=\"300\" width=\"56\" height=\"100\" rx=\"8\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"248\" y=\"378\" width=\"54\" height=\"21\" fill=\"#1F4E5A\" opacity=\"0.55\"/><rect x=\"263\" y=\"284\" width=\"24\" height=\"16\" fill=\"#3a3a3a\"/><text x=\"275\" y=\"345\" text-anchor=\"middle\" font-weight=\"bold\">S₀</text><text x=\"318\" y=\"320\" font-size=\"14\" font-weight=\"bold\">Flacon de solution S₀</text><text x=\"318\" y=\"342\" font-size=\"14\">50,0 g·L⁻¹ de sulfate</text><text x=\"318\" y=\"362\" font-size=\"14\">de cuivre</text><text x=\"318\" y=\"384\" font-size=\"14\" fill=\"#B5523B\">il en reste environ 20 mL</text><rect x=\"518\" y=\"320\" width=\"54\" height=\"80\" rx=\"6\" fill=\"#ffffff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"514\" y=\"308\" width=\"62\" height=\"14\" rx=\"3\" fill=\"#C8962E\"/><rect x=\"523\" y=\"340\" width=\"44\" height=\"34\" fill=\"#f4ede1\" stroke=\"#3a3a3a\"/><text x=\"545\" y=\"362\" text-anchor=\"middle\" font-size=\"14\">CuSO₄</text><text x=\"585\" y=\"335\" font-size=\"14\" font-weight=\"bold\">Pot de sulfate</text><text x=\"585\" y=\"355\" font-size=\"14\" font-weight=\"bold\">de cuivre solide</text><text x=\"585\" y=\"375\" font-size=\"14\">(poudre)</text><text x=\"380\" y=\"445\" text-anchor=\"middle\" font-size=\"14\">Aussi : coupelles, entonnoirs, béchers, propipette, pissette d'eau distillée.</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Précision du matériel (indiquée sur la verrerie du lycée). Pipette jaugée : ± 0,02 mL. Fiole jaugée : ± 0,2 mL au plus. Éprouvette graduée de 25 mL : ± 0,5 mL. Balance : ± 0,01 g."
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : quel volume de solution S₁ le technicien doit-il préparer au minimum ? Quelle fiole jaugée peut contenir ce volume en une seule fois ?",
+          "aides": []
+        },
+        {
+          "texte": "Le technicien hésite entre une dilution de la solution S₀ et une dissolution du solide. Quelle méthode doit-il choisir, et comment doit-il procéder ? Rédige un protocole complet (méthode, verrerie, masse ou volume à utiliser), en justifiant tes choix à l'aide des documents.",
+          "aides": [
+            "Commence par la dilution : calcule le facteur de dilution F entre S₀ et S₁, puis le volume de S₀ à prélever pour chaque fiole jaugée du doc. 2.",
+            "Pour chaque fiole, vérifie deux choses : existe-t-il une pipette jaugée de ce volume ? Reste-t-il assez de S₀ ?",
+            "Pour la dissolution, calcule la masse à peser avec m = c<sub>m</sub> × V : la balance du doc. 2 peut-elle la mesurer ?"
+          ]
+        },
+        {
+          "texte": "Regard critique.<br>a. Le technicien choisit la dissolution, mais sa balance n'affiche que deux chiffres après la virgule : il pèse 0,63 g. Calcule la concentration en masse réellement obtenue et l'écart relatif avec la valeur demandée. Est-ce acceptable ?<br>b. Un collègue propose plutôt de prélever 12,5 mL de S₀ avec l'éprouvette graduée de 25 mL, puis de compléter à 250,0 mL dans la fiole. Pourquoi est-ce moins précis ?",
+          "aides": [
+            "Avec la masse réellement pesée, recalcule c<sub>m</sub> = m / V (V en litres).",
+            "Écart relatif = |valeur obtenue − valeur demandée| / valeur demandée, à exprimer en %."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> V = 6 × 40 = 240 mL au minimum. La fiole jaugée de 250,0 mL convient (celle de 100,0 mL est trop petite, celle de 500,0 mL est inutilement grande).",
+        "<strong>2.</strong> Démarche attendue — on examine les deux méthodes :",
+        "• Dilution de S₀ : F = c<sub>m</sub>(mère) / c<sub>m</sub>(fille) = 50,0 / 2,50 = 20. Dans la fiole de 250,0 mL, il faudrait V(mère) = 250,0 / 20 = 12,5 mL : aucune pipette jaugée de 12,5 mL. Dans la fiole de 500,0 mL, il faudrait 25,0 mL (pipette disponible) mais il ne reste qu'environ 20 mL de S₀. La dilution en une seule fois est donc impossible avec précision.",
+        "• Dissolution du solide : m = c<sub>m</sub> × V = 2,50 × 0,2500 = 0,625 g, mesurable avec la balance au 0,01 g. C'est la méthode à choisir.",
+        "Protocole : peser environ 0,63 g (ou 0,62 g) de sulfate de cuivre dans une coupelle ; l'introduire dans la fiole jaugée de 250,0 mL avec un entonnoir, rincer coupelle et entonnoir à l'eau distillée ; remplir aux deux tiers et agiter jusqu'à dissolution ; compléter jusqu'au trait de jauge (bas du ménisque) ; boucher et retourner plusieurs fois.",
+        "Autre réponse acceptée : réaliser 3 fois la dilution « 5,0 mL de S₀ (pipette jaugée de 5,0 mL) complétés à 100,0 mL dans la fiole jaugée » (F = 100,0 / 5,0 = 20), et réunir les solutions : 300 mL de S₁, en utilisant 15 mL de S₀. C'est précis, mais plus long et cela vide presque le flacon de S₀.",
+        "<strong>3.</strong> a. c<sub>m</sub> = m / V = 0,63 / 0,2500 = 2,52 g·L⁻¹. Écart relatif = |2,52 − 2,50| / 2,50 = 0,008, soit 0,8 % : c'est très acceptable pour un TP (la balance ne permet pas mieux : ± 0,01 g sur 0,63 g, soit environ 1,6 %).",
+        "b. L'éprouvette graduée est peu précise : ± 0,5 mL sur 12,5 mL, soit 4 % d'erreur possible sur le volume prélevé, donc sur la concentration de S₁. La pipette jaugée (± 0,02 mL) ou la pesée (environ 1,6 %) font bien mieux.",
+        "Éléments valorisés même si le résultat final est faux : calcul du volume total (240 mL) et choix de la fiole de 250,0 mL ; calcul du facteur de dilution ; prise en compte du stock de S₀ et des pipettes disponibles ; relation m = c<sub>m</sub> × V avec V en litres ; protocole cohérent avec la verrerie jaugée.",
+        "<em>⚠ Erreur fréquente : proposer de prélever 12,5 mL « à la pipette » sans vérifier qu'une telle pipette existe, ou oublier que le stock de S₀ est limité. Une tâche complexe demande de confronter le calcul aux documents.</em>"
+      ]
+    }
+  ]
+}

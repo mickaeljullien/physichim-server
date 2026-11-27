@@ -1,0 +1,726 @@
+{
+  "id": 12,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Notion de système thermodynamique",
+        "icon": "📦",
+        "content": [
+          {
+            "type": "def",
+            "term": "Système",
+            "text": "Portion de l'univers délimitée par une frontière (réelle ou fictive), que l'on étudie en l'isolant du reste de l'univers appelé <strong>milieu extérieur</strong>."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Type de système",
+              "Échange de matière",
+              "Échange d'énergie"
+            ],
+            "rows": [
+              [
+                "Ouvert",
+                "Oui",
+                "Oui"
+              ],
+              [
+                "Fermé",
+                "Non",
+                "Oui"
+              ],
+              [
+                "Isolé",
+                "Non",
+                "Non"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "En pratique, on étudie très souvent des systèmes <strong>fermés</strong> (quantité de matière constante) échangeant du travail W et/ou un transfert thermique Q avec l'extérieur."
+          }
+        ]
+      },
+      {
+        "title": "2. Énergie interne U",
+        "icon": "🔋",
+        "content": [
+          {
+            "type": "def",
+            "term": "Énergie interne U",
+            "text": "Somme, à l'échelle microscopique, de l'énergie cinétique d'agitation thermique des particules (translation, rotation, vibration) et de l'énergie potentielle d'interaction entre elles. U s'exprime en joules (J)."
+          },
+          {
+            "type": "text",
+            "text": "Seule la <strong>variation</strong> ΔU = U_final − U_initial a un sens physique mesurable ; on ne connaît pas la valeur absolue de U."
+          },
+          {
+            "type": "text",
+            "text": "Pour un gaz parfait, U ne dépend que de la température T (et de la quantité de matière n) : U est indépendante du volume et de la pression (première loi de Joule)."
+          }
+        ]
+      },
+      {
+        "title": "3. Modèle du gaz parfait",
+        "icon": "💨",
+        "content": [
+          {
+            "type": "def",
+            "term": "Gaz parfait",
+            "text": "Modèle dans lequel les particules du gaz sont assimilées à des points matériels sans interaction entre elles (hormis des chocs parfaitement élastiques), et dont le volume propre est négligeable devant le volume occupé par le gaz."
+          },
+          {
+            "type": "formula",
+            "label": "Équation d'état des gaz parfaits",
+            "text": "P × V = n × R × T\navec P en Pa, V en m³, n en mol, T en K, R = 8,314 J·mol⁻¹·K⁻¹ (constante des gaz parfaits)."
+          },
+          {
+            "type": "text",
+            "text": "Ce modèle décrit correctement le comportement des gaz réels dans les conditions usuelles de <strong>basse pression</strong> et de <strong>température pas trop basse</strong>, où les interactions entre particules sont négligeables."
+          }
+        ]
+      },
+      {
+        "title": "4. Limites du modèle du gaz parfait",
+        "icon": "⚠️",
+        "content": [
+          {
+            "type": "warn",
+            "text": "Le modèle du gaz parfait n'est qu'une approximation : il devient inexact à <strong>haute pression</strong> et/ou à <strong>basse température</strong>, en particulier au voisinage du changement d'état (liquéfaction)."
+          },
+          {
+            "type": "text",
+            "text": "Dans un <strong>gaz réel</strong>, contrairement aux hypothèses du gaz parfait : les molécules ont un volume propre non négligeable (elles ne sont plus ponctuelles) ; il existe des interactions attractives ou répulsives entre elles (forces de van der Waals), qui modifient l'énergie interne et l'équation d'état."
+          },
+          {
+            "type": "formula",
+            "label": "Équation de van der Waals (aperçu, hors calcul)",
+            "text": "(P + a·n²/V²)(V − n·b) = n·R·T\nLe terme a·n²/V² corrige la pression pour tenir compte des interactions attractives, et n·b corrige le volume disponible en tenant compte du volume propre des molécules."
+          },
+          {
+            "type": "text",
+            "text": "Conséquence pratique : plus la pression est élevée et la température basse, plus l'écart entre le comportement réel d'un gaz et les prédictions du modèle du gaz parfait devient important."
+          }
+        ]
+      },
+      {
+        "title": "5. Premier principe de la thermodynamique",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Premier principe (système fermé, au repos macroscopique)",
+            "text": "La variation d'énergie interne d'un système entre deux états est égale à la somme du travail W et du transfert thermique Q échangés avec le milieu extérieur."
+          },
+          {
+            "type": "formula",
+            "label": "Premier principe",
+            "text": "ΔU = W + Q"
+          },
+          {
+            "type": "warn",
+            "text": "Convention du \"banquier\" : toute énergie <strong>reçue</strong> par le système est comptée <strong>positivement</strong>, toute énergie <strong>cédée</strong> est comptée <strong>négativement</strong>."
+          },
+          {
+            "type": "text",
+            "text": "Pour un système isolé (W = 0 et Q = 0), l'énergie interne se conserve : ΔU = 0."
+          }
+        ]
+      },
+      {
+        "title": "6. Capacité thermique",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Capacité thermique C",
+            "text": "Énergie qu'il faut fournir à un système pour élever sa température de 1 K (ou 1°C), à volume constant. Elle s'exprime en J·K⁻¹."
+          },
+          {
+            "type": "formula",
+            "label": "Relation avec la variation de température",
+            "text": "Q = C × ΔT   (à volume constant, transformation sans changement d'état)"
+          },
+          {
+            "type": "def",
+            "term": "Capacité thermique massique c",
+            "text": "Capacité thermique ramenée à l'unité de masse : C = m × c, avec c en J·kg⁻¹·K⁻¹. Exemple : c(eau liquide) ≈ 4185 J·kg⁻¹·K⁻¹."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Un système fermé est un système qui :",
+      "opts": [
+        "n'échange ni matière ni énergie avec l'extérieur",
+        "échange de la matière mais pas d'énergie",
+        "échange de l'énergie mais pas de matière",
+        "échange de la matière et de l'énergie"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ferme-vs-isole",
+          "texte": "Confondre système fermé et système isolé (qui n'échange ni matière ni énergie)"
+        },
+        {
+          "code": "systeme-matiere-sans-energie",
+          "texte": "Croire qu'un système peut échanger de la matière sans énergie : la matière transporte de l'énergie"
+        },
+        null,
+        {
+          "code": "ferme-vs-ouvert",
+          "texte": "Confondre système fermé et système ouvert (qui échange matière et énergie)"
+        }
+      ],
+      "exp": "Fermé : pas d'échange de matière, mais échanges d'énergie possibles (travail W, transfert thermique Q). Isolé : aucun échange. Ouvert : échanges de matière et d'énergie."
+    },
+    {
+      "q": "À l'échelle microscopique, l'énergie interne U d'un système correspond :",
+      "opts": [
+        "à l'énergie cinétique du système qui se déplace dans son ensemble",
+        "à l'énergie potentielle de pesanteur du système dans le champ terrestre",
+        "à l'agitation thermique des particules et à leurs interactions",
+        "à la quantité de chaleur contenue dans le système à cette température"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "energie-interne-vs-cinetique-macro",
+          "texte": "Confondre énergie interne (microscopique) et énergie cinétique du mouvement d'ensemble"
+        },
+        {
+          "code": "energie-interne-vs-pesanteur",
+          "texte": "Confondre énergie interne et énergie potentielle de pesanteur, qui sont des énergies macroscopiques"
+        },
+        null,
+        {
+          "code": "chaleur-contenue",
+          "texte": "Croire qu'un corps « contient de la chaleur » : la chaleur (Q) est un transfert, pas une énergie stockée"
+        }
+      ],
+      "exp": "U regroupe les énergies microscopiques : agitation thermique des particules et interactions entre elles. Attention : Q désigne un transfert d'énergie, un corps ne « contient » pas de chaleur."
+    },
+    {
+      "q": "Un gaz parfait (n = 0,10 mol) occupe un volume V = 2,0 L à la température θ = 27 °C. Avec R = 8,314 J·mol⁻¹·K⁻¹, sa pression vaut environ :",
+      "opts": [
+        "1,2 × 10² Pa",
+        "1,1 × 10⁴ Pa",
+        "1,2 × 10⁵ Pa",
+        "8,0 × 10⁻⁶ Pa"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "conversion-l-m3",
+          "texte": "Oublier de convertir V en m³ : 2,0 L = 2,0 × 10⁻³ m³"
+        },
+        {
+          "code": "celsius-au-lieu-kelvin",
+          "texte": "Utiliser la température en °C au lieu de kelvins : T = 27 + 273 = 300 K"
+        },
+        null,
+        {
+          "code": "gaz-parfait-rapport-inverse",
+          "texte": "Inverser la relation : V / (nRT) au lieu de nRT / V"
+        }
+      ],
+      "exp": "T = 300 K et V = 2,0 × 10⁻³ m³ : P = nRT / V = 0,10 × 8,314 × 300 / 2,0 × 10⁻³ ≈ 1,2 × 10⁵ Pa. Attention : dans PV = nRT, P en Pa, V en m³ et T en K."
+    },
+    {
+      "q": "Dans le modèle du gaz parfait, les particules sont supposées :",
+      "opts": [
+        "ponctuelles et immobiles",
+        "ponctuelles et sans interaction entre elles, hors chocs",
+        "en forte interaction attractive les unes avec les autres",
+        "de volume croissant quand la température augmente"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "particules-gaz-immobiles",
+          "texte": "Croire que les particules d'un gaz sont immobiles : elles sont en agitation permanente"
+        },
+        null,
+        {
+          "code": "gaz-parfait-interactions",
+          "texte": "Croire que le modèle du gaz parfait tient compte des interactions : il les néglige"
+        },
+        {
+          "code": "dilatation-des-particules",
+          "texte": "Croire que les particules grossissent quand la température augmente : seule leur agitation change"
+        }
+      ],
+      "exp": "Gaz parfait : particules ponctuelles, en agitation désordonnée, sans interaction entre elles en dehors des chocs. Attention : quand on chauffe un gaz, ses particules s'agitent davantage, elles ne grossissent pas."
+    },
+    {
+      "q": "Le modèle du gaz parfait décrit mal le comportement d'un gaz réel :",
+      "opts": [
+        "à basse pression et à haute température",
+        "à haute pression et à basse température",
+        "jamais : il est exact pour tous les gaz",
+        "dès que le récipient est petit, quelle que soit la quantité de gaz"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "limites-gaz-parfait-inversees",
+          "texte": "Inverser les conditions : à basse pression, les particules sont éloignées et le modèle est bon"
+        },
+        null,
+        {
+          "code": "gaz-parfait-toujours-exact",
+          "texte": "Croire que le modèle est exact : c'est une approximation, mise en défaut près de la liquéfaction"
+        },
+        {
+          "code": "volume-recipient-vs-densite",
+          "texte": "Raisonner sur la taille du récipient : c'est la densité de particules (la pression) qui compte"
+        }
+      ],
+      "exp": "À haute pression et basse température, les particules sont proches : leur volume propre et leurs interactions ne sont plus négligeables. Attention : c'est le cas au voisinage de la liquéfaction."
+    },
+    {
+      "q": "Pour un système fermé au repos, le premier principe de la thermodynamique s'écrit :",
+      "opts": [
+        "ΔU = W − Q",
+        "ΔU = Q, le travail n'intervenant pas",
+        "U = W + Q",
+        "ΔU = W + Q"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "convention-signe-q",
+          "texte": "Se tromper de convention : W et Q sont tous deux comptés positivement quand le système les reçoit"
+        },
+        {
+          "code": "oubli-travail",
+          "texte": "Oublier le travail W : un système peut aussi échanger de l'énergie par travail"
+        },
+        {
+          "code": "u-vs-delta-u",
+          "texte": "Écrire U au lieu de ΔU : seule la variation d'énergie interne est accessible"
+        },
+        null
+      ],
+      "exp": "ΔU = W + Q : la variation d'énergie interne est égale à la somme des énergies reçues par travail et par transfert thermique. Attention : convention du banquier, énergie reçue positive."
+    },
+    {
+      "q": "Un gaz reçoit un travail W = 200 J et cède un transfert thermique de 50 J au milieu extérieur. La variation de son énergie interne vaut :",
+      "opts": [
+        "250 J",
+        "150 J",
+        "−150 J",
+        "200 J"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "convention-signe-q",
+          "texte": "Compter positivement l'énergie cédée : Q = −50 J puisque le gaz la cède"
+        },
+        null,
+        {
+          "code": "convention-banquier-inversee",
+          "texte": "Inverser la convention : l'énergie reçue par le système est comptée positivement"
+        },
+        {
+          "code": "oubli-transfert-thermique",
+          "texte": "Oublier le transfert thermique Q dans le bilan"
+        }
+      ],
+      "exp": "W = +200 J (reçu), Q = −50 J (cédé) : ΔU = W + Q = 200 − 50 = 150 J. Attention : une énergie cédée par le système est négative."
+    },
+    {
+      "q": "Pour un système isolé, on peut affirmer que :",
+      "opts": [
+        "ΔU = 0",
+        "U = 0",
+        "sa température reste forcément constante",
+        "Q = 0, mais W peut être non nul"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "u-vs-delta-u",
+          "texte": "Confondre U et ΔU : U se conserve, elle n'est pas nulle"
+        },
+        {
+          "code": "delta-u-nul-temperature-constante",
+          "texte": "Croire que ΔU = 0 impose une température constante : une transformation chimique interne peut la modifier"
+        },
+        {
+          "code": "isole-vs-adiabatique",
+          "texte": "Confondre isolé (W = 0 et Q = 0) et sans transfert thermique (Q = 0 seulement)"
+        }
+      ],
+      "exp": "Un système isolé n'échange ni travail ni transfert thermique : W = Q = 0, donc ΔU = 0, son énergie interne se conserve. Attention : U est conservée, pas nulle."
+    },
+    {
+      "q": "On chauffe 500 g d'eau liquide de 20 °C à 70 °C (c = 4 185 J·kg⁻¹·K⁻¹). L'énergie reçue par l'eau vaut environ :",
+      "opts": [
+        "1,0 × 10⁸ J",
+        "1,5 × 10⁵ J",
+        "2,1 × 10³ J",
+        "1,0 × 10⁵ J"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "conversion-g-kg",
+          "texte": "Oublier de convertir la masse en kg : 500 au lieu de 0,500"
+        },
+        {
+          "code": "temperature-vs-variation",
+          "texte": "Utiliser la température finale (70) au lieu de la variation ΔT = 50 °C"
+        },
+        {
+          "code": "oubli-variation-temperature",
+          "texte": "Oublier de multiplier par ΔT : m × c = 2,1 × 10³"
+        },
+        null
+      ],
+      "exp": "Q = m × c × ΔT = 0,500 × 4 185 × (70 − 20) ≈ 1,0 × 10⁵ J. Attention : masse en kg et variation de température (une variation de 50 °C vaut 50 K)."
+    },
+    {
+      "q": "La capacité thermique C d'un corps incompressible de masse m et de capacité thermique massique c :",
+      "opts": [
+        "vaut C = c, elle ne dépend pas de la masse",
+        "vaut C = m × c et s'exprime en J·K⁻¹",
+        "vaut C = c / m et s'exprime en J·K⁻¹",
+        "vaut C = m × c et s'exprime en J·kg⁻¹·K⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "capacite-vs-capacite-massique",
+          "texte": "Confondre capacité thermique C (du corps) et capacité thermique massique c (du matériau)"
+        },
+        null,
+        {
+          "code": "capacite-rapport-inverse",
+          "texte": "Diviser par la masse au lieu de multiplier"
+        },
+        {
+          "code": "unite-capacite-thermique",
+          "texte": "Donner à C l'unité de c : C = m × c s'exprime en J·K⁻¹"
+        }
+      ],
+      "exp": "C = m × c, en J·K⁻¹ : énergie à fournir au corps pour élever sa température de 1 K. c, en J·kg⁻¹·K⁻¹, caractérise le matériau. Attention à ne pas confondre les deux."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Bicycle Moto cross — premier principe, thermodynamique",
+      "session": "Amérique du Nord · Jour 2",
+      "link": "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-2"
+    },
+    {
+      "year": "2025",
+      "title": "Cargo dirigeable — loi des gaz parfaits",
+      "session": "Amérique du Sud · Jour 2",
+      "link": "https://www.labolycee.org/cargo-dirigeable"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Les mots de la thermodynamique",
+      "contexte": [
+        "Yanis prépare une fiche de révision sur le chapitre. Aide-le à vérifier ses exemples et ses affirmations."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque système, indique s'il est ouvert, fermé ou (quasiment) isolé, en justifiant en une phrase.<br>a. L'eau d'une casserole sans couvercle qui bout sur la plaque de cuisson.<br>b. Le gaz d'une bouteille de soda bien bouchée, que l'on place au réfrigérateur.<br>c. Le café contenu dans une bouteille isotherme fermée, pendant une dizaine de minutes.<br>d. La batterie d'un smartphone en cours de charge.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse.<br>a. L'énergie interne d'une tasse de thé qui refroidit diminue.<br>b. Un ballon de foot lancé à 100 km·h⁻¹ a une énergie interne plus grande que le même ballon posé au sol, à la même température.<br>c. On peut mesurer directement l'énergie interne d'un verre d'eau.<br>d. Quand un glaçon fond à 0 °C, sa température ne change pas, donc son énergie interne ne change pas.",
+          "aides": []
+        },
+        {
+          "texte": "Lors d'une compression, un gaz reçoit un travail de 300 J et cède 120 J au milieu extérieur par transfert thermique. Donne les valeurs (avec leur signe) de W et de Q, puis calcule la variation ΔU de son énergie interne.",
+          "aides": [
+            "Convention « du banquier » : ce que le système reçoit est compté positivement, ce qu'il cède négativement.",
+            "Le premier principe s'écrit ΔU = W + Q : remplace W et Q par leurs valeurs signées."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Ouvert : l'eau échange de l'énergie (elle reçoit un transfert thermique de la plaque) ET de la matière (la vapeur d'eau s'échappe).",
+        "b. Fermé : la bouteille bouchée ne laisse passer aucune matière, mais le gaz cède de l'énergie (transfert thermique) à l'air froid du réfrigérateur.",
+        "c. Quasiment isolé : aucun échange de matière et (presque) aucun échange d'énergie pendant une durée courte ; c'est un modèle, car le café finit quand même par refroidir.",
+        "d. Fermé : la batterie reçoit de l'énergie (électrique) mais n'échange pas de matière avec l'extérieur.",
+        "<strong>2.</strong> a. VRAI : sa température baisse, donc l'agitation thermique des particules (énergie cinétique microscopique) diminue : U diminue.",
+        "b. FAUX : l'énergie interne est une énergie microscopique (agitation thermique et interactions entre particules). La vitesse d'ensemble du ballon donne une énergie cinétique macroscopique, qui ne fait pas partie de U. À même température, U est la même.",
+        "c. FAUX : on ne connaît pas la valeur absolue de U ; seule sa variation ΔU = U<sub>final</sub> − U<sub>initial</sub> est mesurable.",
+        "d. FAUX : pendant la fusion, les interactions entre molécules d'eau sont en partie rompues : l'énergie potentielle d'interaction augmente, donc U augmente (le glaçon reçoit de l'énergie), même si l'agitation thermique ne change pas.",
+        "<strong>3.</strong> Le gaz reçoit le travail : W = +300 J ; il cède de l'énergie par transfert thermique : Q = −120 J (convention : énergie reçue &gt; 0, énergie cédée &lt; 0).",
+        "Premier principe : ΔU = W + Q = 300 + (−120) = 180 J. L'énergie interne du gaz augmente de 180 J.",
+        "<em>⚠ Erreur fréquente : écrire ΔU = 300 + 120 = 420 J en oubliant que l'énergie cédée est comptée négativement.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Gonfler son pneu de vélo",
+      "contexte": [
+        "Inès gonfle le pneu de son vélo de route. Une fois le gonflage terminé, l'air contenu dans la chambre à air occupe un volume V = 1,20 L, à la température θ = 20 °C, sous une pression P = 7,00 × 10⁵ Pa (7 bar). On modélise l'air par un gaz parfait."
+      ],
+      "questions": [
+        {
+          "texte": "Exprime la température T en kelvins et le volume V en mètres cubes.",
+          "aides": [
+            "T (K) = θ (°C) + 273,15.",
+            "1 L = 1 dm³ = 10⁻³ m³."
+          ]
+        },
+        {
+          "texte": "À l'aide de l'équation d'état des gaz parfaits, calcule la quantité de matière n d'air contenue dans la chambre à air.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse m de cet air, puis sa masse volumique ρ en kg·m⁻³.",
+          "aides": []
+        },
+        {
+          "texte": "À 20 °C et sous 1,013 × 10⁵ Pa, l'air extérieur a une masse volumique de 1,20 kg·m⁻³. Compare et interprète cette différence à l'échelle microscopique.",
+          "aides": []
+        },
+        {
+          "texte": "Après une longue sortie au soleil, l'air du pneu est à 35 °C. Le volume de la chambre à air ne change pas. Calcule la nouvelle pression, puis explique à l'échelle microscopique pourquoi elle a augmenté.",
+          "aides": [
+            "Dans P × V = n × R × T, quelles grandeurs restent constantes ici ?",
+            "n, R et V sont constants, donc le rapport P / T est constant : P' / T' = P / T (températures en kelvins)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> T = θ + 273,15 = 20 + 273,15 = 293,15 K (≈ 293 K). V = 1,20 L = 1,20 × 10⁻³ m³.",
+        "<strong>2.</strong> P × V = n × R × T, donc n = P × V / (R × T) = 7,00 × 10⁵ × 1,20 × 10⁻³ / (8,314 × 293,15) = 0,345 mol.",
+        "<strong>3.</strong> m = n × M = 0,345 × 29,0 = 10,0 g = 1,00 × 10⁻² kg. ρ = m / V = 1,00 × 10⁻² / 1,20 × 10⁻³ = 8,33 kg·m⁻³.",
+        "<strong>4.</strong> ρ(pneu) / ρ(extérieur) = 8,33 / 1,20 ≈ 6,9 : l'air du pneu est environ 7 fois plus dense. À l'échelle microscopique, il y a environ 7 fois plus de molécules par unité de volume ; elles frappent donc beaucoup plus souvent les parois, d'où une pression environ 7 fois plus grande.",
+        "<strong>5.</strong> n et V sont constants, donc P / T = constante : P' = P × T' / T = 7,00 × 10⁵ × 308,15 / 293,15 = 7,36 × 10⁵ Pa (hausse d'environ 5 %).",
+        "Quand la température augmente, l'agitation thermique des molécules augmente : elles frappent les parois plus souvent et plus fort, donc la pression augmente.",
+        "<em>⚠ Erreur fréquente : garder θ en °C (à la question 5, on trouverait une pression multipliée par 35/20 = 1,75 au lieu de 1,05 !). La température doit toujours être en kelvins.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Comprimer l'air d'une seringue",
+      "contexte": [
+        "Un élève enferme de l'air dans une seringue reliée à un capteur de pression. Il enfonce lentement le piston, à température ambiante constante (θ = 20 °C), et relève la pression P pour différents volumes V (de 60 mL à 20 mL). Il trace P en fonction de 1/V : on obtient le graphique ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"85.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"144.1\" y1=\"25\" x2=\"144.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"144.1\" y=\"428\" text-anchor=\"middle\">5</text><line x1=\"203.2\" y1=\"25\" x2=\"203.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"203.2\" y=\"428\" text-anchor=\"middle\">10</text><line x1=\"262.3\" y1=\"25\" x2=\"262.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"262.3\" y=\"428\" text-anchor=\"middle\">15</text><line x1=\"321.4\" y1=\"25\" x2=\"321.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"321.4\" y=\"428\" text-anchor=\"middle\">20</text><line x1=\"380.5\" y1=\"25\" x2=\"380.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"380.5\" y=\"428\" text-anchor=\"middle\">25</text><line x1=\"439.5\" y1=\"25\" x2=\"439.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"439.5\" y=\"428\" text-anchor=\"middle\">30</text><line x1=\"498.6\" y1=\"25\" x2=\"498.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"498.6\" y=\"428\" text-anchor=\"middle\">35</text><line x1=\"557.7\" y1=\"25\" x2=\"557.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"557.7\" y=\"428\" text-anchor=\"middle\">40</text><line x1=\"616.8\" y1=\"25\" x2=\"616.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"616.8\" y=\"428\" text-anchor=\"middle\">45</text><line x1=\"675.9\" y1=\"25\" x2=\"675.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"675.9\" y=\"428\" text-anchor=\"middle\">50</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">55</text><line x1=\"85\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"380.6\" x2=\"735\" y2=\"380.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"385.6\" text-anchor=\"end\">0,25</text><line x1=\"85\" y1=\"353.3\" x2=\"735\" y2=\"353.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"358.3\" text-anchor=\"end\">0,5</text><line x1=\"85\" y1=\"325.9\" x2=\"735\" y2=\"325.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"330.9\" text-anchor=\"end\">0,75</text><line x1=\"85\" y1=\"298.6\" x2=\"735\" y2=\"298.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"303.6\" text-anchor=\"end\">1</text><line x1=\"85\" y1=\"271.2\" x2=\"735\" y2=\"271.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"276.2\" text-anchor=\"end\">1,25</text><line x1=\"85\" y1=\"243.9\" x2=\"735\" y2=\"243.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"248.9\" text-anchor=\"end\">1,5</text><line x1=\"85\" y1=\"216.5\" x2=\"735\" y2=\"216.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"221.5\" text-anchor=\"end\">1,75</text><line x1=\"85\" y1=\"189.1\" x2=\"735\" y2=\"189.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"194.1\" text-anchor=\"end\">2</text><line x1=\"85\" y1=\"161.8\" x2=\"735\" y2=\"161.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"166.8\" text-anchor=\"end\">2,25</text><line x1=\"85\" y1=\"134.4\" x2=\"735\" y2=\"134.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"139.4\" text-anchor=\"end\">2,5</text><line x1=\"85\" y1=\"107.1\" x2=\"735\" y2=\"107.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"112.1\" text-anchor=\"end\">2,75</text><line x1=\"85\" y1=\"79.7\" x2=\"735\" y2=\"79.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"84.7\" text-anchor=\"end\">3</text><line x1=\"85\" y1=\"52.4\" x2=\"735\" y2=\"52.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"57.4\" text-anchor=\"end\">3,25</text><line x1=\"85\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\">3,5</text><rect x=\"85\" y=\"25\" width=\"650\" height=\"383\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"410.0\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">1/V (L⁻¹)</text><text transform=\"translate(22,216.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">P (× 10⁵ Pa)</text><line x1=\"85.0\" y1=\"408.0\" x2=\"735.0\" y2=\"46.9\" stroke=\"#1F4E5A\" stroke-width=\"2.4\"/><circle cx=\"282.0\" cy=\"297.5\" r=\"5.5\" fill=\"#B5523B\"/><circle cx=\"321.4\" cy=\"278.9\" r=\"5.5\" fill=\"#B5523B\"/><circle cx=\"380.5\" cy=\"242.8\" r=\"5.5\" fill=\"#B5523B\"/><circle cx=\"422.7\" cy=\"222.0\" r=\"5.5\" fill=\"#B5523B\"/><circle cx=\"478.9\" cy=\"187.0\" r=\"5.5\" fill=\"#B5523B\"/><circle cx=\"557.7\" cy=\"146.5\" r=\"5.5\" fill=\"#B5523B\"/><circle cx=\"675.9\" cy=\"78.6\" r=\"5.5\" fill=\"#B5523B\"/><text x=\"120.5\" y=\"52.4\" fill=\"#B5523B\" font-weight=\"bold\">● mesures</text><text x=\"120.5\" y=\"74.2\" fill=\"#1F4E5A\" font-weight=\"bold\">— droite modélisant les mesures</text></svg>",
+      "questions": [
+        {
+          "texte": "Le système {air dans la seringue} est-il ouvert, fermé ou isolé ?",
+          "aides": []
+        },
+        {
+          "texte": "Quelle relation simple entre P et V le graphique met-il en évidence ? Est-ce cohérent avec l'équation d'état des gaz parfaits ?",
+          "aides": []
+        },
+        {
+          "texte": "Lis sur la droite la pression pour 1/V = 40 L⁻¹. Déduis-en le volume V correspondant (en m³) puis le produit P × V en Pa·m³.",
+          "aides": [
+            "Sur l'axe horizontal, repère 40 L⁻¹, monte jusqu'à la droite, puis lis la valeur sur l'axe vertical (attention : elle est en 10⁵ Pa).",
+            "Si 1/V = 40 L⁻¹, alors V = 1/40 L ; convertis-le en m³ avant de calculer P × V."
+          ]
+        },
+        {
+          "texte": "Calcule la quantité de matière d'air enfermée dans la seringue.",
+          "aides": []
+        },
+        {
+          "texte": "Explique à l'échelle microscopique pourquoi la pression augmente quand on diminue le volume.",
+          "aides": []
+        },
+        {
+          "texte": "Prévois la pression si l'élève parvenait à réduire le volume à 10 mL, à la même température.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Fermé : la seringue et le capteur forment une enceinte étanche (pas d'échange de matière), mais l'air peut échanger de l'énergie (travail du piston, transfert thermique).",
+        "<strong>2.</strong> Les points sont alignés sur une droite passant par l'origine : P est proportionnelle à 1/V, donc P × V = constante. C'est cohérent avec P × V = n × R × T, puisque n et T sont constants.",
+        "<strong>3.</strong> Lecture : P ≈ 2,4 × 10⁵ Pa (on accepte de 2,35 à 2,45 × 10⁵ Pa). V = 1 / 40 = 0,025 L = 25 mL = 2,5 × 10⁻⁵ m³. P × V = 2,4 × 10⁵ × 2,5 × 10⁻⁵ = 6,0 Pa·m³.",
+        "<strong>4.</strong> n = P × V / (R × T) = 6,0 / (8,314 × 293,15) = 2,5 × 10⁻³ mol (2,46 × 10⁻³ mol).",
+        "<strong>5.</strong> Le nombre de molécules ne change pas, mais elles occupent un volume plus petit : il y a plus de molécules par unité de volume, donc davantage de chocs sur chaque centimètre carré de paroi chaque seconde. La pression augmente.",
+        "<strong>6.</strong> P = (P × V) / V = 6,0 / (10 × 10⁻⁶) = 6,0 × 10⁵ Pa. (À cette pression modérée, le modèle du gaz parfait reste valable.)",
+        "<em>⚠ Erreur fréquente : multiplier P par 1/V au lieu de diviser, ou oublier de convertir les litres en m³.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Freinage d'urgence à vélo",
+      "contexte": [
+        "Un cycliste roule sur une route plate à 36,0 km·h⁻¹. La masse de l'ensemble {cycliste + vélo} vaut 90,0 kg. Il freine brusquement jusqu'à l'arrêt. Son vélo est équipé de deux freins à disque ; la masse totale des deux disques en acier vaut m<sub>d</sub> = 0,250 kg, et la capacité thermique massique de l'acier vaut c = 460 J·kg⁻¹·K⁻¹. Avant le freinage, les disques sont à 20 °C.",
+        "Hypothèses : le freinage est bref (environ 3 s) ; toute l'énergie cinétique perdue par l'ensemble est reçue par les disques sous forme de travail des forces de frottement des plaquettes, et l'on néglige les transferts thermiques entre les disques et l'air pendant le freinage."
+      ],
+      "questions": [
+        {
+          "texte": "On choisit comme système les deux disques. Ce système est-il ouvert, fermé ou isolé ? Sous quelle forme reçoit-il de l'énergie pendant le freinage ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'énergie cinétique perdue par l'ensemble {cycliste + vélo} au cours du freinage.",
+          "aides": []
+        },
+        {
+          "texte": "Applique le premier principe aux disques : dans le bilan, distingue le terme qui représente la variation d'énergie du système des termes qui représentent des transferts. Déduis-en la variation de température des disques et leur température à la fin du freinage.",
+          "aides": [
+            "Le premier principe s'écrit ΔU = W + Q : que valent W et Q pendant le freinage bref ?",
+            "Les disques sont des solides (incompressibles) : ΔU = m<sub>d</sub> × c × ΔT."
+          ]
+        },
+        {
+          "texte": "À l'arrêt, les disques refroidissent jusqu'à 20 °C. Dans quel sens se fait le transfert thermique ? Donne la valeur de Q (avec son signe) pour ce refroidissement.",
+          "aides": []
+        },
+        {
+          "texte": "Le cycliste descend maintenant un col à vitesse constante, sur un dénivelé de 600 m, en freinant en permanence. En gardant les hypothèses de l'énoncé (et en négligeant les frottements de l'air), calcule l'élévation de température qu'auraient les disques. Que peux-tu en conclure ?",
+          "aides": [
+            "À vitesse constante, quelle forme d'énergie mécanique diminue au cours de la descente ?",
+            "E<sub>pp</sub> = m × g × h ; compare l'élévation de température obtenue avec la température de fusion de l'acier (environ 1 500 °C)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Fermé : les disques n'échangent pas de matière avec l'extérieur, mais ils échangent de l'énergie. Pendant le freinage, ils reçoivent un travail W &gt; 0 (travail des forces de frottement exercées par les plaquettes).",
+        "<strong>2.</strong> v = 36,0 / 3,6 = 10,0 m·s⁻¹. E<sub>c</sub> = ½ × m × v² = 0,5 × 90,0 × 10,0² = 4,50 × 10³ J. Toute cette énergie cinétique est perdue (vitesse finale nulle).",
+        "<strong>3.</strong> Premier principe : ΔU = W + Q. ΔU est la variation d'énergie (interne) du système ; W et Q sont les transferts avec l'extérieur. Ici Q = 0 (hypothèse) et W = 4,50 × 10³ J, donc ΔU = 4,50 × 10³ J.",
+        "Système incompressible : ΔU = m<sub>d</sub> × c × ΔT, donc ΔT = ΔU / (m<sub>d</sub> × c) = 4,50 × 10³ / (0,250 × 460) = 39,1 K, soit 39,1 °C d'élévation. Température finale : θ ≈ 20 + 39 = 59 °C.",
+        "<strong>4.</strong> Le transfert thermique se fait spontanément du corps le plus chaud (disques à 59 °C) vers le plus froid (air à 20 °C). Pendant le refroidissement, W = 0 et ΔU = −4,50 × 10³ J (retour à 20 °C), donc Q = ΔU = −4,50 × 10³ J : les disques cèdent 4,50 kJ à l'air.",
+        "<strong>5.</strong> À vitesse constante, l'énergie cinétique ne change pas : c'est l'énergie potentielle de pesanteur perdue qui serait reçue par les disques. E<sub>pp</sub> = m × g × h = 90,0 × 9,81 × 600 = 5,30 × 10⁵ J. ΔT = 5,30 × 10⁵ / (0,250 × 460) = 4,6 × 10³ K !",
+        "Ce résultat est absurde (l'acier fondrait vers 1 500 °C). Sur une longue descente, l'hypothèse Q = 0 n'est plus valable : les disques cèdent en permanence de l'énergie à l'air par transfert thermique (Q &lt; 0 et important) ; une partie de l'énergie est aussi perdue par les frottements de l'air et chauffe les plaquettes. Les disques chauffent tout de même beaucoup, d'où le risque de surchauffe des freins en montagne.",
+        "<em>⚠ Erreur fréquente : oublier de convertir 36,0 km·h⁻¹ en m·s⁻¹ (on trouverait une énergie 13 fois trop grande). Rappel : une variation de 1 K est égale à une variation de 1 °C.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Quel est ce métal ?",
+      "contexte": [
+        "Pour identifier un cylindre métallique gris, un groupe d'élèves mesure sa capacité thermique massique avec un calorimètre (récipient à double paroi, fermé par un couvercle isolant).",
+        "Protocole et mesures : on verse m₁ = 200,0 g d'eau dans le calorimètre ; la température de l'ensemble {eau + calorimètre} se stabilise à θ₁ = 20,0 °C. Le cylindre, de masse m₂ = 150,0 g, est laissé plusieurs minutes dans de l'eau bouillante, à θ₂ = 100,0 °C. On le plonge rapidement dans le calorimètre, on ferme et on agite : la température finale de l'ensemble vaut θ<sub>f</sub> = 30,2 °C.",
+        "Capacité thermique du calorimètre et de ses accessoires : C<sub>cal</sub> = 80 J·K⁻¹.",
+        "Capacités thermiques massiques (J·kg⁻¹·K⁻¹) : aluminium : 897 ; fer : 449 ; cuivre : 385 ; plomb : 129."
+      ],
+      "questions": [
+        {
+          "texte": "On choisit comme système {eau + calorimètre + cylindre}. Pourquoi peut-on le considérer comme isolé ? Que vaut alors sa variation d'énergie interne ΔU ?",
+          "aides": []
+        },
+        {
+          "texte": "Exprime la variation d'énergie interne de chacune des trois parties du système (ΔU<sub>eau</sub>, ΔU<sub>cal</sub> et ΔU<sub>cyl</sub>) en fonction des données et de la capacité thermique massique c du métal. Précise le signe de chacune.",
+          "aides": [
+            "Pour chaque partie : ΔU = (capacité thermique) × (θ<sub>final</sub> − θ<sub>initial</sub>).",
+            "L'eau et le calorimètre passent de θ₁ à θ<sub>f</sub> ; le cylindre passe de θ₂ à θ<sub>f</sub>.",
+            "La capacité thermique de l'eau vaut m₁ × c(eau) ; celle du cylindre vaut m₂ × c."
+          ]
+        },
+        {
+          "texte": "Déduis-en la valeur de c, puis identifie le métal. Calcule l'écart relatif avec la valeur des tables.",
+          "aides": [
+            "Écris ΔU<sub>eau</sub> + ΔU<sub>cal</sub> + ΔU<sub>cyl</sub> = 0, puis isole c.",
+            "Attention aux unités : les masses doivent être en kilogrammes."
+          ]
+        },
+        {
+          "texte": "Un élève a oublié de tenir compte du calorimètre (il a pris C<sub>cal</sub> = 0). Quelle valeur de c trouve-t-il ? Conclus sur l'intérêt de connaître C<sub>cal</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi faut-il transférer le cylindre rapidement de l'eau bouillante au calorimètre ? Dans quel sens cette erreur ferait-elle varier la valeur de c obtenue ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le calorimètre, fermé et à double paroi, limite fortement les transferts thermiques avec l'extérieur ; aucun travail n'est échangé et la mesure est rapide. On néglige donc W et Q : ΔU = W + Q = 0.",
+        "<strong>2.</strong> ΔU<sub>eau</sub> = m₁ × c(eau) × (θ<sub>f</sub> − θ₁) &gt; 0 (l'eau se réchauffe) ; ΔU<sub>cal</sub> = C<sub>cal</sub> × (θ<sub>f</sub> − θ₁) &gt; 0 ; ΔU<sub>cyl</sub> = m₂ × c × (θ<sub>f</sub> − θ₂) &lt; 0 (le cylindre se refroidit).",
+        "<strong>3.</strong> ΔU = ΔU<sub>eau</sub> + ΔU<sub>cal</sub> + ΔU<sub>cyl</sub> = 0, donc m₂ × c × (θ₂ − θ<sub>f</sub>) = (m₁ × c(eau) + C<sub>cal</sub>) × (θ<sub>f</sub> − θ₁).",
+        "c = (m₁ × c(eau) + C<sub>cal</sub>) × (θ<sub>f</sub> − θ₁) / [m₂ × (θ₂ − θ<sub>f</sub>)] = (0,2000 × 4 185 + 80) × 10,2 / (0,1500 × 69,8) = 893 J·kg⁻¹·K⁻¹.",
+        "C'est l'aluminium (897 J·kg⁻¹·K⁻¹). Écart relatif : |893 − 897| / 897 = 0,4 %. (Détail : ΔU<sub>eau</sub> = 8,54 × 10³ J, ΔU<sub>cal</sub> = 816 J, ΔU<sub>cyl</sub> = −9,35 × 10³ J.)",
+        "<strong>4.</strong> Sans C<sub>cal</sub> : c = 0,2000 × 4 185 × 10,2 / (0,1500 × 69,8) = 815 J·kg⁻¹·K⁻¹, soit un écart de 9 % avec l'aluminium. Le calorimètre reçoit lui aussi de l'énergie : l'ignorer sous-estime c. On reconnaît encore l'aluminium ici, mais la mesure est nettement moins juste.",
+        "<strong>5.</strong> Pendant le transfert, le cylindre chaud cède de l'énergie à l'air (transfert thermique du chaud vers le froid) : il arrive dans le calorimètre à moins de 100 °C. Il apporte alors moins d'énergie, θ<sub>f</sub> est plus basse, et le calcul (qui suppose θ₂ = 100,0 °C) donne une valeur de c trop faible.",
+        "<em>⚠ Erreur fréquente : écrire ΔU<sub>cyl</sub> = m₂ × c × (θ₂ − θ<sub>f</sub>) avec un signe +, puis ajouter les trois termes : la somme ne peut alors pas être nulle. Écris toujours ΔT = T<sub>final</sub> − T<sub>initial</sub>.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Plongée : la bouteille d'air",
+      "contexte": [
+        "Doc. 1 — Le gonflage. Une bouteille de plongée en acier a un volume intérieur V = 12,0 L. Au club, on la remplit d'air avec un compresseur ; le remplissage est rapide. À la fin du gonflage, le manomètre indique P₁ = 230 bar et l'air de la bouteille est à θ₁ = 45 °C. On laisse ensuite la bouteille, fermée, revenir à la température de l'eau du bassin, θ₂ = 20 °C.",
+        "Doc. 2 — L'autonomie. On considère qu'un plongeur au repos respire 20 L d'air par minute, ce volume étant mesuré à la pression de l'eau qui l'entoure. À 20 m de profondeur, cette pression vaut 3,0 bar. Par sécurité, il doit remonter quand la pression dans la bouteille descend à 50 bar. On suppose la température constante (20 °C) pendant la plongée.",
+        "Doc. 3 — Un modèle de gaz réel. L'air est assimilé à du diazote. Le graphique donne, selon le modèle de van der Waals (constantes tabulées du diazote), le rapport Z = P·V / (n·R·T) en fonction de la pression, à 20 °C. Pour un gaz parfait, Z = 1.",
+        "Donnée : capacité thermique molaire de l'air à volume constant : 20,8 J·mol⁻¹·K⁻¹ (la capacité thermique de n moles d'air vaut donc C = n × 20,8 J·K⁻¹)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"85.0\" y=\"428\" text-anchor=\"middle\">0</text><line x1=\"150.0\" y1=\"25\" x2=\"150.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"150.0\" y=\"428\" text-anchor=\"middle\">50</text><line x1=\"215.0\" y1=\"25\" x2=\"215.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"215.0\" y=\"428\" text-anchor=\"middle\">100</text><line x1=\"280.0\" y1=\"25\" x2=\"280.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"280.0\" y=\"428\" text-anchor=\"middle\">150</text><line x1=\"345.0\" y1=\"25\" x2=\"345.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"345.0\" y=\"428\" text-anchor=\"middle\">200</text><line x1=\"410.0\" y1=\"25\" x2=\"410.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"410.0\" y=\"428\" text-anchor=\"middle\">250</text><line x1=\"475.0\" y1=\"25\" x2=\"475.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"475.0\" y=\"428\" text-anchor=\"middle\">300</text><line x1=\"540.0\" y1=\"25\" x2=\"540.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"540.0\" y=\"428\" text-anchor=\"middle\">350</text><line x1=\"605.0\" y1=\"25\" x2=\"605.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"605.0\" y=\"428\" text-anchor=\"middle\">400</text><line x1=\"670.0\" y1=\"25\" x2=\"670.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"670.0\" y=\"428\" text-anchor=\"middle\">450</text><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"428\" text-anchor=\"middle\">500</text><line x1=\"85\" y1=\"408.0\" x2=\"735\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"413.0\" text-anchor=\"end\">0,9</text><line x1=\"85\" y1=\"376.1\" x2=\"735\" y2=\"376.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"381.1\" text-anchor=\"end\">0,95</text><line x1=\"85\" y1=\"344.2\" x2=\"735\" y2=\"344.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"349.2\" text-anchor=\"end\">1</text><line x1=\"85\" y1=\"312.2\" x2=\"735\" y2=\"312.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"317.2\" text-anchor=\"end\">1,05</text><line x1=\"85\" y1=\"280.3\" x2=\"735\" y2=\"280.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"285.3\" text-anchor=\"end\">1,1</text><line x1=\"85\" y1=\"248.4\" x2=\"735\" y2=\"248.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"253.4\" text-anchor=\"end\">1,15</text><line x1=\"85\" y1=\"216.5\" x2=\"735\" y2=\"216.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"221.5\" text-anchor=\"end\">1,2</text><line x1=\"85\" y1=\"184.6\" x2=\"735\" y2=\"184.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"189.6\" text-anchor=\"end\">1,25</text><line x1=\"85\" y1=\"152.7\" x2=\"735\" y2=\"152.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"157.7\" text-anchor=\"end\">1,3</text><line x1=\"85\" y1=\"120.7\" x2=\"735\" y2=\"120.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"125.7\" text-anchor=\"end\">1,35</text><line x1=\"85\" y1=\"88.8\" x2=\"735\" y2=\"88.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"93.8\" text-anchor=\"end\">1,4</text><line x1=\"85\" y1=\"56.9\" x2=\"735\" y2=\"56.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"61.9\" text-anchor=\"end\">1,45</text><line x1=\"85\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\">1,5</text><rect x=\"85\" y=\"25\" width=\"650\" height=\"383\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><text x=\"410.0\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">P (bar)</text><text transform=\"translate(22,216.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">Z = P·V / (n·R·T)</text><line x1=\"85.0\" y1=\"344.2\" x2=\"735.0\" y2=\"344.2\" stroke=\"#C8962E\" stroke-width=\"2.6\" stroke-dasharray=\"8 5\"/><polyline points=\"86.3,344.6 88.9,345.5 91.5,346.4 94.1,347.3 96.7,348.2 99.3,349.0 101.9,349.9 104.5,350.7 107.1,351.6 109.7,352.4 112.3,353.2 114.9,354.0 117.5,354.7 120.1,355.5 122.7,356.2 125.3,357.0 127.9,357.7 130.5,358.4 133.1,359.1 135.7,359.8 138.3,360.4 140.9,361.0 143.5,361.7 146.1,362.3 148.7,362.9 151.3,363.4 153.9,364.0 156.5,364.5 159.1,365.0 161.7,365.5 164.3,366.0 166.9,366.5 169.5,366.9 172.1,367.3 174.7,367.7 177.3,368.1 179.9,368.4 182.5,368.8 185.1,369.1 187.7,369.4 190.3,369.6 192.9,369.9 195.5,370.1 198.1,370.3 200.7,370.5 203.3,370.6 205.9,370.8 208.5,370.9 211.1,370.9 213.7,371.0 216.3,371.0 218.9,371.0 221.5,371.0 224.1,371.0 226.7,370.9 229.3,370.8 231.9,370.7 234.5,370.6 237.1,370.4 239.7,370.2 242.3,370.0 244.9,369.8 247.5,369.5 250.1,369.2 252.7,368.9 255.3,368.5 257.9,368.2 260.5,367.8 263.1,367.4 265.7,366.9 268.3,366.4 270.9,365.9 273.5,365.4 276.1,364.9 278.7,364.3 281.3,363.7 283.9,363.1 286.5,362.5 289.1,361.8 291.7,361.1 294.3,360.4 296.9,359.7 299.5,358.9 302.1,358.1 304.7,357.3 307.3,356.5 309.9,355.6 312.5,354.7 315.1,353.8 317.7,352.9 320.3,352.0 322.9,351.0 325.5,350.0 328.1,349.0 330.7,348.0 333.3,347.0 335.9,345.9 338.5,344.8 341.1,343.7 343.7,342.6 346.3,341.5 348.9,340.3 351.5,339.1 354.1,337.9 356.7,336.7 359.3,335.5 361.9,334.2 364.5,332.9 367.1,331.7 369.7,330.4 372.3,329.0 374.9,327.7 377.5,326.4 380.1,325.0 382.7,323.6 385.3,322.2 387.9,320.8 390.5,319.4 393.1,317.9 395.7,316.5 398.3,315.0 400.9,313.5 403.5,312.1 406.1,310.5 408.7,309.0 411.3,307.5 413.9,306.0 416.5,304.4 419.1,302.8 421.7,301.3 424.3,299.7 426.9,298.1 429.5,296.4 432.1,294.8 434.7,293.2 437.3,291.5 439.9,289.9 442.5,288.2 445.1,286.5 447.7,284.9 450.3,283.2 452.9,281.5 455.5,279.8 458.1,278.0 460.7,276.3 463.3,274.6 465.9,272.8 468.5,271.1 471.1,269.3 473.7,267.5 476.3,265.7 478.9,264.0 481.5,262.2 484.1,260.4 486.7,258.6 489.3,256.7 491.9,254.9 494.5,253.1 497.1,251.2 499.7,249.4 502.3,247.6 504.9,245.7 507.5,243.8 510.1,242.0 512.7,240.1 515.3,238.2 517.9,236.3 520.5,234.4 523.1,232.5 525.7,230.6 528.3,228.7 530.9,226.8 533.5,224.9 536.1,223.0 538.7,221.1 541.3,219.1 543.9,217.2 546.5,215.2 549.1,213.3 551.7,211.3 554.3,209.4 556.9,207.4 559.5,205.5 562.1,203.5 564.7,201.5 567.3,199.6 569.9,197.6 572.5,195.6 575.1,193.6 577.7,191.6 580.3,189.6 582.9,187.6 585.5,185.6 588.1,183.6 590.7,181.6 593.3,179.6 595.9,177.6 598.5,175.6 601.1,173.6 603.7,171.5 606.3,169.5 608.9,167.5 611.5,165.5 614.1,163.4 616.7,161.4 619.3,159.3 621.9,157.3 624.5,155.3 627.1,153.2 629.7,151.2 632.3,149.1 634.9,147.1 637.5,145.0 640.1,142.9 642.7,140.9 645.3,138.8 647.9,136.7 650.5,134.7 653.1,132.6 655.7,130.5 658.3,128.5 660.9,126.4 663.5,124.3 666.1,122.2 668.7,120.1 671.3,118.1 673.9,116.0 676.5,113.9 679.1,111.8 681.7,109.7 684.3,107.6 686.9,105.5 689.5,103.4 692.1,101.3 694.7,99.2 697.3,97.1 699.9,95.0 702.5,92.9 705.1,90.8 707.7,88.7 710.3,86.6 712.9,84.5 715.5,82.4 718.1,80.3 720.7,78.2 723.3,76.1 725.9,73.9 728.5,71.8 731.1,69.7 733.7,67.6\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.8\"/><text x=\"111.0\" y=\"334.6\" fill=\"#C8962E\" font-weight=\"bold\">modèle du gaz parfait (Z = 1)</text><text x=\"111.0\" y=\"56.9\" fill=\"#1F4E5A\" font-weight=\"bold\">modèle de gaz réel (van der Waals)</text><text x=\"111.0\" y=\"76.1\" fill=\"#1F4E5A\">diazote, 20 °C</text></svg>",
+      "questions": [
+        {
+          "texte": "Pendant le remplissage rapide, l'air comprimé reçoit un travail W &gt; 0 et l'on peut négliger les transferts thermiques. À l'aide du premier principe, explique pourquoi la température de l'air augmente.",
+          "aides": []
+        },
+        {
+          "texte": "Pendant le refroidissement de 45 °C à 20 °C, le système {air de la bouteille} est-il ouvert, fermé ou isolé ? Montre que la pression finale vérifie P₂ = P₁ × T₂ / T₁ et calcule-la. Le plongeur s'étonne de ne pas lire 230 bar au moment de plonger : que lui répondre ?",
+          "aides": [
+            "Quelles grandeurs restent constantes dans P × V = n × R × T pendant le refroidissement ?",
+            "Écris l'équation d'état à l'état 1 et à l'état 2, puis fais le rapport des deux."
+          ]
+        },
+        {
+          "texte": "Calcule la quantité de matière n d'air dans la bouteille (modèle du gaz parfait).",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la variation d'énergie interne de l'air pendant le refroidissement, puis le transfert thermique Q correspondant. Interprète son signe.",
+          "aides": [
+            "Le volume de la bouteille ne change pas : que vaut le travail W ?",
+            "ΔU = C × ΔT avec C = n × 20,8 J·K⁻¹ et ΔT = θ₂ − θ₁ (négatif)."
+          ]
+        },
+        {
+          "texte": "Évalue la durée pendant laquelle le plongeur peut rester à 20 m de profondeur avant de devoir remonter.",
+          "aides": [
+            "L'air utilisable est celui qui fait passer la pression de la bouteille de P₂ à 50 bar.",
+            "À température constante et pour une même quantité d'air, P × V = constante : calcule le volume de cet air à 3,0 bar.",
+            "Divise ce volume par la consommation par minute."
+          ]
+        },
+        {
+          "texte": "Doc. 3 : lis la valeur de Z à 212 bar. Le modèle du gaz parfait surestime-t-il ou sous-estime-t-il la quantité d'air dans la bouteille ? De combien (en %) ? Le modèle est-il encore acceptable pour une bouteille gonflée à 300 bar ?",
+          "aides": [
+            "Z = P × V / (n × R × T), donc n(réel) = P × V / (Z × R × T) : compare à n calculé avec le gaz parfait (Z = 1).",
+            "Si Z &gt; 1, la vraie quantité de matière est plus petite que celle du modèle du gaz parfait."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : l'équation de van der Waals s'écrit (P + a·n²/V²)(V − n·b) = n·R·T. En t'appuyant sur le rôle des termes a (attractions entre molécules) et b (volume propre des molécules), explique l'allure de la courbe du doc. 3 : Z &lt; 1 vers 100 bar, Z &gt; 1 à haute pression.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Premier principe : ΔU = W + Q avec Q ≈ 0 et W &gt; 0, donc ΔU &gt; 0 : l'énergie interne de l'air augmente. Pour un gaz (assimilé à un gaz parfait), U ne dépend que de la température : l'agitation thermique augmente, la température s'élève (d'où les 45 °C mesurés).",
+        "<strong>2.</strong> Fermé : la bouteille est close (pas d'échange de matière), mais l'air cède de l'énergie par transfert thermique à l'eau du bassin. n, R et V sont constants : P₁ / T₁ = n × R / V = P₂ / T₂, donc P₂ = P₁ × T₂ / T₁.",
+        "T₁ = 45 + 273,15 = 318,15 K ; T₂ = 293,15 K. P₂ = 230 × 293,15 / 318,15 = 212 bar. En refroidissant, l'air s'agite moins et frappe moins les parois : la pression baisse, alors que la bouteille contient toujours la même quantité d'air (rien n'a fui).",
+        "<strong>3.</strong> n = P₂ × V / (R × T₂) = 212 × 10⁵ × 12,0 × 10⁻³ / (8,314 × 293,15) = 104 mol (même résultat avec P₁ et T₁).",
+        "<strong>4.</strong> Système fermé à volume constant : W = 0, donc ΔU = Q. ΔU = C × ΔT = n × 20,8 × (θ₂ − θ₁) = 104,3 × 20,8 × (20 − 45) = −5,43 × 10⁴ J. Q = −5,43 × 10⁴ J &lt; 0 : l'air cède environ 54 kJ à l'eau du bassin (et à l'acier de la bouteille).",
+        "<strong>5.</strong> L'air utilisable correspond au passage de 212 bar à 50 bar. À température constante, P × V = constante pour cet air : à 3,0 bar, il occupe V' = (212 − 50) × 12,0 / 3,0 = 6,5 × 10² L (648 L). Durée : t = 648 / 20 = 32 min environ.",
+        "<strong>6.</strong> On lit Z ≈ 1,015 à 212 bar (on accepte 1,01 à 1,02). n(réel) = P × V / (Z × R × T) = 104,3 / 1,015 = 103 mol : le modèle du gaz parfait surestime la quantité d'air d'environ 1,5 %. C'est acceptable pour estimer l'autonomie.",
+        "À 300 bar, Z ≈ 1,12 : l'écart atteint environ 12 %, le modèle du gaz parfait n'est plus acceptable (à haute pression, le volume propre des molécules et leurs interactions ne sont plus négligeables).",
+        "<strong>7.</strong> Pour aller plus loin : le terme a·n²/V² traduit les attractions entre molécules, qui « retiennent » les molécules près des parois : la pression est plus faible que pour un gaz parfait (Z &lt; 1), effet dominant aux pressions moyennes. Le terme n·b traduit le volume propre des molécules : le volume réellement disponible est plus petit, les chocs sont plus fréquents, la pression est plus forte (Z &gt; 1). Quand le gaz est très comprimé, les molécules sont très proches et cet effet l'emporte.",
+        "<em>⚠ Erreur fréquente : utiliser les températures en °C dans P₂ = P₁ × T₂ / T₁ (on trouverait 102 bar !) ou oublier de retirer la réserve de 50 bar dans le calcul d'autonomie.</em>"
+      ]
+    }
+  ]
+}

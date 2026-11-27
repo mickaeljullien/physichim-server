@@ -1,0 +1,826 @@
+{
+  "id": 52,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Représenter une molécule organique",
+        "icon": "📝",
+        "content": [
+          {
+            "type": "def",
+            "term": "Formule brute",
+            "text": "Indique la nature et le nombre d'atomes présents dans la molécule (ex. C4H10)."
+          },
+          {
+            "type": "def",
+            "term": "Formule développée",
+            "text": "Représente toutes les liaisons entre les atomes, y compris les liaisons C–H."
+          },
+          {
+            "type": "def",
+            "term": "Formule semi-développée",
+            "text": "N'explicite pas les liaisons C–H (les autres liaisons sont représentées)."
+          },
+          {
+            "type": "def",
+            "term": "Formule topologique",
+            "text": "La chaîne carbonée est représentée par une ligne brisée : chaque sommet ou extrémité correspond à un atome de carbone, et les atomes d'hydrogène liés aux carbones ne sont pas écrits. Les autres atomes (O, N, Cl…) sont écrits, ainsi que les atomes d'hydrogène qu'ils portent (par exemple –OH)."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : la molécule de formule brute C5H12 dont la chaîne principale porte un groupe méthyle sur son deuxième carbone se note ainsi selon la représentation choisie :"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Représentation",
+              "Écriture"
+            ],
+            "rows": [
+              [
+                "Formule brute",
+                "C5H12"
+              ],
+              [
+                "Formule semi-développée",
+                "CH3–CH(CH3)–CH2–CH3"
+              ],
+              [
+                "Formule topologique",
+                "voir schéma ci-dessous"
+              ]
+            ]
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 260 160\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"40\" y1=\"110\" x2=\"85\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"85\" y1=\"60\" x2=\"130\" y2=\"110\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"130\" y1=\"110\" x2=\"175\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"85\" y1=\"60\" x2=\"85\" y2=\"10\" stroke=\"#1B2420\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"110\" r=\"2.6\" fill=\"#1B2420\"/><circle cx=\"85\" cy=\"60\" r=\"2.6\" fill=\"#1B2420\"/><circle cx=\"130\" cy=\"110\" r=\"2.6\" fill=\"#1B2420\"/><circle cx=\"175\" cy=\"60\" r=\"2.6\" fill=\"#1B2420\"/><circle cx=\"85\" cy=\"10\" r=\"2.6\" fill=\"#1B2420\"/><text x=\"130\" y=\"145\" font-size=\"11\" fill=\"#5C6B60\" text-anchor=\"middle\">Formule topologique du 2-méthylbutane</text></svg>",
+            "caption": "Chaque sommet ou extrémité de trait représente un atome de carbone ; les atomes d'hydrogène nécessaires pour compléter sa valence 4 ne sont pas dessinés mais sont sous-entendus. Ici : 4 carbones alignés (chaîne principale) + 1 carbone en ramification (groupe méthyle) = 5 carbones, cohérent avec la formule brute C5H12."
+          }
+        ]
+      },
+      {
+        "title": "2. Le squelette carboné",
+        "icon": "🔗",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une chaîne carbonée peut être linéaire (non ramifiée), ramifiée (présence de chaînes latérales) ou cyclique (fermée sur elle-même)."
+          },
+          {
+            "type": "def",
+            "term": "Squelette saturé / insaturé",
+            "text": "Un squelette est dit saturé s'il ne comporte que des liaisons simples C–C, et insaturé s'il comporte au moins une liaison double ou triple."
+          }
+        ]
+      },
+      {
+        "title": "3. Groupes caractéristiques et familles",
+        "icon": "🧬",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Groupe",
+              "Formule",
+              "Famille / exemple"
+            ],
+            "rows": [
+              [
+                "Hydroxyle",
+                "–OH",
+                "Alcool (éthanol CH3–CH2–OH)"
+              ],
+              [
+                "Carbonyle (aldéhyde)",
+                "–CHO",
+                "Aldéhyde (éthanal)"
+              ],
+              [
+                "Carbonyle (cétone)",
+                ">C=O",
+                "Cétone (propanone)"
+              ],
+              [
+                "Carboxyle",
+                "–COOH",
+                "Acide carboxylique (acide éthanoïque)"
+              ],
+              [
+                "Amine",
+                "–NH2",
+                "Amine (éthanamine)"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "4. Nomenclature des alcanes",
+        "icon": "🔤",
+        "content": [
+          {
+            "type": "text",
+            "text": "On repère la chaîne carbonée la plus longue, on la numérote de façon à attribuer les plus petits indices possibles aux ramifications, puis on nomme : préfixe (nombre de carbones) + terminaison -ane pour un alcane."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Nombre de carbones",
+              "Préfixe",
+              "Alcane correspondant"
+            ],
+            "rows": [
+              [
+                "1",
+                "méth-",
+                "méthane"
+              ],
+              [
+                "2",
+                "éth-",
+                "éthane"
+              ],
+              [
+                "3",
+                "prop-",
+                "propane"
+              ],
+              [
+                "4",
+                "but-",
+                "butane"
+              ],
+              [
+                "5",
+                "pent-",
+                "pentane"
+              ],
+              [
+                "6",
+                "hex-",
+                "hexane"
+              ],
+              [
+                "7",
+                "hept-",
+                "heptane"
+              ],
+              [
+                "8",
+                "oct-",
+                "octane"
+              ],
+              [
+                "9",
+                "non-",
+                "nonane"
+              ],
+              [
+                "10",
+                "déc-",
+                "décane"
+              ]
+            ]
+          },
+          {
+            "type": "formula",
+            "label": "Exemple de nomenclature",
+            "text": "CH3–CH(CH3)–CH2–CH3 : chaîne principale de 4 carbones (butane), groupe méthyle sur le carbone 2\n→ nom : 2-méthylbutane (formule brute C5H12)"
+          },
+          {
+            "type": "text",
+            "text": "La démarche inverse — construire une molécule à partir de son nom — suit les mêmes règles, dans l'ordre. Exemple : construire le 2-méthylpentane."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 575 190\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"20\" y1=\"105\" x2=\"60\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"60\" y1=\"60\" x2=\"100\" y2=\"105\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"100\" y1=\"105\" x2=\"140\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"140\" y1=\"60\" x2=\"180\" y2=\"105\" stroke=\"#1B2420\" stroke-width=\"2\"/><circle cx=\"20\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><circle cx=\"60\" cy=\"60\" r=\"2.8\" fill=\"#1B2420\"/><circle cx=\"100\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><circle cx=\"140\" cy=\"60\" r=\"2.8\" fill=\"#1B2420\"/><circle cx=\"180\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"110\" y=\"170\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">1. Chaîne principale</text><text x=\"110\" y=\"184\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">5 carbones → pentane</text><line x1=\"210\" y1=\"105\" x2=\"250\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"250\" y1=\"60\" x2=\"290\" y2=\"105\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"290\" y1=\"105\" x2=\"330\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"330\" y1=\"60\" x2=\"370\" y2=\"105\" stroke=\"#1B2420\" stroke-width=\"2\"/><circle cx=\"210\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"210\" y=\"121\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">1</text><circle cx=\"250\" cy=\"60\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"250\" y=\"50\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">2</text><circle cx=\"290\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"290\" y=\"121\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">3</text><circle cx=\"330\" cy=\"60\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"330\" y=\"50\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">4</text><circle cx=\"370\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"370\" y=\"121\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">5</text><text x=\"300\" y=\"170\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">2. Numéroter</text><text x=\"300\" y=\"184\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">plus petit indice pour le substituant</text><line x1=\"400\" y1=\"105\" x2=\"440\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"440\" y1=\"60\" x2=\"480\" y2=\"105\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"480\" y1=\"105\" x2=\"520\" y2=\"60\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"520\" y1=\"60\" x2=\"560\" y2=\"105\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"440\" y1=\"60\" x2=\"440\" y2=\"18\" stroke=\"#C0472F\" stroke-width=\"2.2\"/><circle cx=\"440\" cy=\"18\" r=\"2.8\" fill=\"#C0472F\"/><circle cx=\"400\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"400\" y=\"121\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">1</text><circle cx=\"440\" cy=\"60\" r=\"2.8\" fill=\"#C0472F\"/><text x=\"456\" y=\"56\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">2</text><circle cx=\"480\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"480\" y=\"121\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">3</text><circle cx=\"520\" cy=\"60\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"520\" y=\"50\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">4</text><circle cx=\"560\" cy=\"105\" r=\"2.8\" fill=\"#1B2420\"/><text x=\"560\" y=\"121\" font-size=\"10\" fill=\"#2F7D75\" text-anchor=\"middle\" font-weight=\"600\">5</text><text x=\"490\" y=\"170\" font-size=\"10\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">3. Placer le substituant</text><text x=\"490\" y=\"184\" font-size=\"9\" fill=\"#5C6B60\" text-anchor=\"middle\">méthyle en position 2</text></svg>",
+            "caption": "« 2-méthylpentane » se lit de droite à gauche : pentane = chaîne de 5 carbones ; méthyl = un groupe CH3 en ramification ; 2- = ce groupe est porté par le carbone n°2. En numérotant depuis l'autre extrémité, ce même carbone serait en position 4 : on garde donc la numérotation de gauche, qui donne le plus petit indice (2 < 4)."
+          }
+        ]
+      },
+      {
+        "title": "5. Isomérie de constitution",
+        "icon": "🔀",
+        "content": [
+          {
+            "type": "def",
+            "term": "Isomères de constitution",
+            "text": "Deux isomères de constitution ont la même formule brute mais des formules développées différentes : ils diffèrent par l'enchaînement des atomes (chaîne, position d'un groupe, ou nature du groupe caractéristique)."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le butane et le méthylpropane sont deux isomères de constitution de formule brute C4H10."
+          },
+          {
+            "type": "text",
+            "text": "Autre exemple : le propan-1-ol (CH3–CH2–CH2–OH, molécule A) et le propan-2-ol (CH3–CH(OH)–CH3, molécule B) ont tous deux pour formule brute C3H8O, mais des formules semi-développées différentes (position du groupe –OH) : ce sont des isomères de constitution, tous deux de la famille des alcools."
+          },
+          {
+            "type": "warn",
+            "text": "Bien que le groupe caractéristique soit le même, sa position différente sur le squelette carboné modifie l'environnement de la molécule et donc l'intensité des interactions intermoléculaires, ce qui explique de légers écarts de température d'ébullition entre isomères."
+          }
+        ]
+      },
+      {
+        "title": "6. Synthèse",
+        "icon": "📌",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Squelette carboné",
+                "Enchaînement des atomes de carbone (linéaire, ramifié, cyclique)"
+              ],
+              [
+                "Groupe caractéristique",
+                "Groupe d'atomes qui détermine la famille et les propriétés"
+              ],
+              [
+                "Isomères de constitution",
+                "Même formule brute, formules développées différentes"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La formule brute du propan-1-ol CH₃–CH₂–CH₂–OH est :",
+      "opts": [
+        "C₃H₇O",
+        "C₃H₈O",
+        "C₃H₇OH",
+        "C₃H₈"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-h-hydroxyle",
+          "texte": "Oublier l'atome H du groupe –OH : 3 + 2 + 2 + 1 = 8 atomes H"
+        },
+        null,
+        {
+          "code": "formule-brute-vs-semi-developpee",
+          "texte": "Garder le groupe –OH à part : une formule brute regroupe tous les atomes d'un même élément (C₃H₈O)"
+        },
+        {
+          "code": "oubli-heteroatome",
+          "texte": "Oublier l'atome d'oxygène : la formule brute compte tous les atomes de la molécule"
+        }
+      ],
+      "exp": "On compte tous les atomes : 3 C, 3 + 2 + 2 + 1 = 8 H et 1 O, d'où C₃H₈O. Attention à l'hydrogène du groupe hydroxyle."
+    },
+    {
+      "q": "Dans une formule topologique, l'extrémité d'un trait ou un sommet sans symbole représente :",
+      "opts": [
+        "un atome d'hydrogène",
+        "un atome de carbone, sans aucun hydrogène",
+        "un atome de carbone et ses atomes H sous-entendus",
+        "une liaison double"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "sommet-hydrogene",
+          "texte": "Prendre les sommets pour des atomes H : ce sont des atomes de carbone ; les H liés aux C ne sont pas dessinés"
+        },
+        {
+          "code": "h-implicites-oublies",
+          "texte": "Oublier les H sous-entendus : chaque carbone porte autant de H qu'il faut pour faire 4 liaisons"
+        },
+        null,
+        {
+          "code": "sommet-liaison-double",
+          "texte": "Confondre sommet et liaison double : une liaison double est représentée par un double trait"
+        }
+      ],
+      "exp": "Chaque sommet ou extrémité est un atome de carbone ; les atomes H liés aux carbones sont sous-entendus (4 liaisons par carbone). Les autres atomes (O, N…) et leurs H sont écrits."
+    },
+    {
+      "q": "Dans la formule topologique du butane (zigzag de 4 sommets), combien d'atomes H porte le deuxième carbone ?",
+      "opts": [
+        "0",
+        "3",
+        "4",
+        "2"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "h-implicites-oublies",
+          "texte": "Oublier les H sous-entendus : un carbone fait toujours 4 liaisons, ici 2 avec des C et 2 avec des H"
+        },
+        {
+          "code": "h-carbone-interne-comme-extremite",
+          "texte": "Compter comme pour un carbone d'extrémité (CH₃) : un carbone lié à 2 autres carbones ne porte que 2 H"
+        },
+        {
+          "code": "valence-sans-liaisons-cc",
+          "texte": "Oublier que les liaisons C–C occupent 2 des 4 liaisons du carbone : il reste 4 − 2 = 2 H"
+        },
+        null
+      ],
+      "exp": "Le 2ᵉ carbone est lié à 2 carbones : il lui reste 4 − 2 = 2 liaisons avec des H (CH₂). Les carbones d'extrémité, liés à un seul C, portent 3 H."
+    },
+    {
+      "q": "La molécule CH₃–CH₂–COOH appartient à la famille des :",
+      "opts": [
+        "alcools, car elle contient –OH",
+        "cétones, car elle contient C=O",
+        "acides carboxyliques",
+        "aldéhydes, car C=O est en bout de chaîne"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "alcool-vs-acide-carboxylique",
+          "texte": "Confondre alcool et acide carboxylique : un –OH porté par un carbone qui porte aussi C=O forme le groupe carboxyle"
+        },
+        {
+          "code": "cetone-vs-acide-carboxylique",
+          "texte": "Voir seulement le C=O : quand il est sur le même carbone que –OH, c'est le groupe carboxyle –COOH"
+        },
+        null,
+        {
+          "code": "aldehyde-vs-acide-carboxylique",
+          "texte": "Confondre –CHO et –COOH : l'aldéhyde a un H sur le carbone du C=O, l'acide un –OH"
+        }
+      ],
+      "exp": "Le groupe –COOH (carboxyle : C=O et –OH sur le même carbone) caractérise les acides carboxyliques ; ici l'acide propanoïque. Attention : ce n'est ni un alcool ni une cétone."
+    },
+    {
+      "q": "La molécule CH₃–CH₂–CHO appartient à la famille des :",
+      "opts": [
+        "aldéhydes",
+        "cétones",
+        "alcools, car elle contient un atome O",
+        "acides carboxyliques"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "aldehyde-cetone-confondus",
+          "texte": "Confondre aldéhyde et cétone : C=O en bout de chaîne (carbone lié à un H) donne un aldéhyde ; au milieu de la chaîne, une cétone"
+        },
+        {
+          "code": "o-donc-alcool",
+          "texte": "Croire qu'un atome O suffit pour un alcool : il faut un groupe –OH, absent ici"
+        },
+        {
+          "code": "aldehyde-vs-acide-carboxylique",
+          "texte": "Confondre –CHO et –COOH : il n'y a qu'un atome O, pas de groupe –OH"
+        }
+      ],
+      "exp": "Le groupe –CHO (carbonyle en bout de chaîne, le carbone portant un H) caractérise les aldéhydes : c'est le propanal. Attention : un groupe carbonyle entre deux carbones caractérise une cétone."
+    },
+    {
+      "q": "Le cyclohexane C₆H₁₂ (six carbones formant un cycle, uniquement des liaisons simples) a un squelette :",
+      "opts": [
+        "cyclique et insaturé, car il a moins de H que l'hexane",
+        "linéaire et saturé",
+        "cyclique et saturé",
+        "ramifié et saturé"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "insature-car-moins-h",
+          "texte": "Croire qu'un squelette avec moins de H est insaturé : insaturé signifie avec une liaison double ou triple, absente ici"
+        },
+        {
+          "code": "cyclique-vs-lineaire",
+          "texte": "Confondre cyclique et linéaire : la chaîne est fermée sur elle-même"
+        },
+        null,
+        {
+          "code": "ramifie-vs-cyclique",
+          "texte": "Confondre cyclique et ramifié : une chaîne ramifiée porte des chaînes latérales, une chaîne cyclique est fermée"
+        }
+      ],
+      "exp": "La chaîne est fermée (cyclique) et ne comporte que des liaisons simples C–C (saturée). Attention : le cycle explique les 2 H de moins que l'hexane C₆H₁₄, sans liaison double."
+    },
+    {
+      "q": "Quel est le nom de l'alcane CH₃–CH(CH₃)–CH₂–CH₃ ?",
+      "opts": [
+        "3-méthylbutane",
+        "2-méthylbutane",
+        "pentane",
+        "2-éthylpropane"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "numerotation-chaine",
+          "texte": "Numéroter la chaîne dans le mauvais sens : on donne au groupe méthyle le plus petit numéro (2 et non 3)"
+        },
+        null,
+        {
+          "code": "isomere-nomme-par-formule-brute",
+          "texte": "Nommer d'après le nombre total de carbones : le pentane est linéaire, cette molécule est ramifiée"
+        },
+        {
+          "code": "chaine-pas-la-plus-longue",
+          "texte": "Choisir une chaîne principale qui n'est pas la plus longue (3 carbones au lieu de 4)"
+        }
+      ],
+      "exp": "Chaîne la plus longue : 4 carbones (butane) ; numérotée pour donner le plus petit indice au méthyle : 2-méthylbutane (C₅H₁₂). Attention : chaîne la plus longue et plus petit indice."
+    },
+    {
+      "q": "La formule semi-développée du 3-méthylpentane est :",
+      "opts": [
+        "CH₃–CH(CH₃)–CH₂–CH₂–CH₃",
+        "CH₃–CH₂–CH(CH₃)–CH₃",
+        "CH₃–CH₂–CH₂–CH₂–CH₂–CH₃",
+        "CH₃–CH₂–CH(CH₃)–CH₂–CH₃"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "position-ramification-erronee",
+          "texte": "Placer le méthyle sur le mauvais carbone : 3- indique le 3ᵉ carbone de la chaîne de 5 (ici, c'est le 2-méthylpentane)"
+        },
+        {
+          "code": "prefixe-chaine-mal-lu",
+          "texte": "Mal lire le préfixe : « pent » désigne une chaîne principale de 5 carbones, sans compter la ramification"
+        },
+        {
+          "code": "ramification-comptee-dans-chaine",
+          "texte": "Ajouter le méthyle au bout de la chaîne : on obtient l'hexane, linéaire ; le méthyle est une ramification"
+        },
+        null
+      ],
+      "exp": "Pentane : chaîne de 5 carbones ; 3-méthyl : un groupe CH₃ sur le carbone 3 : CH₃–CH₂–CH(CH₃)–CH₂–CH₃ (C₆H₁₄). Attention : le méthyle est une ramification, pas un carbone de la chaîne principale."
+    },
+    {
+      "q": "Deux isomères de constitution ont :",
+      "opts": [
+        "la même formule brute et la même formule semi-développée",
+        "la même formule brute, mais des enchaînements d'atomes différents",
+        "forcément le même groupe caractéristique",
+        "le même nombre de carbones, quelle que soit la formule brute"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "isomeres-meme-molecule",
+          "texte": "Croire que des isomères ont la même formule semi-développée : ce serait la même molécule"
+        },
+        null,
+        {
+          "code": "isomeres-meme-famille",
+          "texte": "Croire que des isomères sont forcément de la même famille : C₃H₆O peut être un aldéhyde (propanal) ou une cétone (propanone)"
+        },
+        {
+          "code": "isomeres-meme-nb-carbones",
+          "texte": "Croire que le même nombre de carbones suffit : il faut la même formule brute, donc aussi les mêmes nombres de H, O…"
+        }
+      ],
+      "exp": "Des isomères de constitution ont la même formule brute mais des enchaînements d'atomes différents (chaîne, position ou nature du groupe caractéristique). Attention : ils peuvent appartenir à des familles différentes."
+    },
+    {
+      "q": "Quelle molécule est un isomère de constitution du butan-1-ol CH₃–CH₂–CH₂–CH₂–OH ?",
+      "opts": [
+        "HO–CH₂–CH₂–CH₂–CH₃",
+        "CH₃–CH₂–CH₂–OH",
+        "CH₃–CH(OH)–CH₂–CH₃",
+        "CH₃–CH₂–CH₂–CHO"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "isomeres-meme-molecule",
+          "texte": "Prendre la même molécule écrite à l'envers pour un isomère : l'enchaînement des atomes est identique"
+        },
+        {
+          "code": "isomeres-meme-famille",
+          "texte": "Croire qu'être de la même famille suffit : le propan-1-ol (C₃H₈O) n'a pas la même formule brute (C₄H₁₀O)"
+        },
+        null,
+        {
+          "code": "isomeres-meme-nb-carbones",
+          "texte": "Croire que 4 carbones suffisent : le butanal C₄H₈O n'a pas la même formule brute que C₄H₁₀O"
+        }
+      ],
+      "exp": "Le butan-2-ol CH₃–CH(OH)–CH₂–CH₃ a la même formule brute C₄H₁₀O, mais le groupe –OH est sur le carbone 2 : c'est un isomère de constitution. Attention : HO–CH₂–CH₂–CH₂–CH₃ est le butan-1-ol lui-même."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le gaz du briquet",
+      "contexte": [
+        "Les briquets contiennent du butane, stocké à l'état liquide sous pression. Sur sa fiche de révision, Sarah a représenté la molécule de butane de quatre façons différentes (A, B, C et D, figure ci-dessous). La représentation E correspond à un autre gaz que l'on trouve aussi dans certains briquets."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"15\" y=\"15\" width=\"440\" height=\"225\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"29\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">A</text><rect x=\"470\" y=\"15\" width=\"275\" height=\"225\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"484\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">B</text><rect x=\"15\" y=\"255\" width=\"250\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"29\" y=\"283\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">C</text><rect x=\"280\" y=\"255\" width=\"200\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"294\" y=\"283\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">D</text><rect x=\"495\" y=\"255\" width=\"250\" height=\"200\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"509\" y=\"283\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">E</text><line x1=\"154\" y1=\"130\" x2=\"196\" y2=\"130\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"224\" y1=\"130\" x2=\"266\" y2=\"130\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"294\" y1=\"130\" x2=\"336\" y2=\"130\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"140\" y1=\"116\" x2=\"140\" y2=\"82\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"210\" y1=\"116\" x2=\"210\" y2=\"82\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"280\" y1=\"116\" x2=\"280\" y2=\"82\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"350\" y1=\"116\" x2=\"350\" y2=\"82\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"140\" y1=\"144\" x2=\"140\" y2=\"178\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"210\" y1=\"144\" x2=\"210\" y2=\"178\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"280\" y1=\"144\" x2=\"280\" y2=\"178\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"350\" y1=\"144\" x2=\"350\" y2=\"178\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"126\" y1=\"130\" x2=\"84\" y2=\"130\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><line x1=\"364\" y1=\"130\" x2=\"406\" y2=\"130\" stroke=\"#1B2420\" stroke-width=\"2.5\"/><text x=\"140\" y=\"138\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">C</text><text x=\"210\" y=\"138\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">C</text><text x=\"280\" y=\"138\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">C</text><text x=\"350\" y=\"138\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">C</text><text x=\"140\" y=\"76\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"210\" y=\"76\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"280\" y=\"76\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"350\" y=\"76\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"140\" y=\"200\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"210\" y=\"200\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"280\" y=\"200\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"350\" y=\"200\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"70\" y=\"138\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"420\" y=\"138\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">H</text><text x=\"607\" y=\"140\" font-size=\"24\" text-anchor=\"middle\" fill=\"#1B2420\">CH₃–CH₂–CH₂–CH₃</text><line x1=\"62.0\" y1=\"376.0\" x2=\"115.7\" y2=\"345.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"115.7\" y1=\"345.0\" x2=\"169.4\" y2=\"376.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"169.4\" y1=\"376.0\" x2=\"223.1\" y2=\"345.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"62.0\" cy=\"376.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"115.7\" cy=\"345.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"169.4\" cy=\"376.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"223.1\" cy=\"345.0\" r=\"4\" fill=\"#1F4E5A\"/><text x=\"380\" y=\"368\" font-size=\"34\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">C₄H₁₀</text><line x1=\"620.0\" y1=\"370.0\" x2=\"566.3\" y2=\"401.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"620.0\" y1=\"370.0\" x2=\"673.7\" y2=\"401.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"620.0\" y1=\"370.0\" x2=\"620.0\" y2=\"308.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"620.0\" cy=\"370.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"566.3\" cy=\"401.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"673.7\" cy=\"401.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"620.0\" cy=\"308.0\" r=\"4\" fill=\"#1F4E5A\"/></svg>",
+      "questions": [
+        {
+          "texte": "Associe chaque représentation A, B, C et D à son nom : formule brute, formule développée, formule semi-développée, formule topologique.",
+          "aides": []
+        },
+        {
+          "texte": "Dans la représentation C, que représente chaque sommet ou extrémité de la ligne brisée ? Pourquoi les atomes d'hydrogène n'y sont-ils pas dessinés ?",
+          "aides": []
+        },
+        {
+          "texte": "Dans la représentation C, combien d'atomes d'hydrogène sont « sous-entendus » sur un carbone situé à une extrémité de la chaîne ? Sur un carbone situé au milieu ? Vérifie que tu retrouves la formule brute D.",
+          "aides": [
+            "Compte les liaisons C–C que forme ce carbone sur le dessin : 1 trait pour un carbone d'extrémité, 2 pour un carbone du milieu.",
+            "Pour arriver à 4 liaisons, chaque liaison manquante est une liaison C–H."
+          ]
+        },
+        {
+          "texte": "Détermine la formule brute de la molécule E, puis écris sa formule semi-développée.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie. « Les molécules C et E sont la même molécule, dessinée de deux façons différentes. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : formule développée (toutes les liaisons sont dessinées, y compris les liaisons C–H). B : formule semi-développée (les liaisons C–H ne sont pas explicitées). C : formule topologique (la chaîne carbonée est dessinée en ligne brisée, sans écrire les atomes C ni les H qu'ils portent ; les autres atomes seraient écrits). D : formule brute (nature et nombre des atomes).",
+        "<strong>2.</strong> Chaque sommet et chaque extrémité de la ligne brisée représente un atome de carbone. Les atomes d'hydrogène liés aux carbones ne sont pas dessinés : on les retrouve en complétant chaque carbone pour qu'il forme 4 liaisons.",
+        "<strong>3.</strong> Un carbone d'extrémité n'est lié qu'à un seul autre carbone : il lui manque 3 liaisons, il porte donc 3 atomes H (groupe CH₃). Un carbone du milieu est lié à 2 carbones : il porte 2 atomes H (groupe CH₂). Total : 4 atomes de carbone et 2 × 3 + 2 × 2 = 10 atomes d'hydrogène, soit C₄H₁₀ : on retrouve bien D.",
+        "<em>⚠ Erreur fréquente : oublier de compter les extrémités de la ligne brisée comme des carbones, ou croire que les sommets sont des atomes d'hydrogène.</em>",
+        "<strong>4.</strong> E compte 4 atomes de carbone : le carbone central est lié à 3 carbones, il porte 1 atome H ; les 3 carbones d'extrémité portent chacun 3 atomes H. Nombre d'atomes H : 3 × 3 + 1 = 10. Formule brute : C₄H₁₀. Formule semi-développée : CH₃–CH(CH₃)–CH₃ (c'est le méthylpropane).",
+        "<strong>5.</strong> FAUX. C et E ont la même formule brute C₄H₁₀, mais leurs atomes ne sont pas enchaînés de la même façon : la chaîne de C est linéaire (4 carbones à la suite), celle de E est ramifiée (aucune chaîne de 4 carbones à la suite). Ce sont deux molécules différentes, appelées isomères de constitution."
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Dans le réservoir d'une voiture",
+      "contexte": [
+        "L'essence est un mélange de nombreux hydrocarbures, molécules formées uniquement d'atomes de carbone et d'hydrogène. La figure ci-dessous donne la formule topologique de quatre d'entre eux : A, l'heptane ; B, l'isooctane (de nom systématique 2,2,4-triméthylpentane) ; C, le cyclohexane ; D, l'hex-1-ène.",
+        "L'heptane et l'isooctane servent de référence pour l'indice d'octane d'une essence : l'isooctane résiste bien à l'auto-inflammation dans le moteur, l'heptane très mal."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"15\" y=\"15\" width=\"357\" height=\"215\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"29\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">A</text><rect x=\"388\" y=\"15\" width=\"357\" height=\"215\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"402\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">B</text><rect x=\"15\" y=\"245\" width=\"357\" height=\"210\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"29\" y=\"273\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">C</text><rect x=\"388\" y=\"245\" width=\"357\" height=\"210\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"402\" y=\"273\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">D</text><line x1=\"62.0\" y1=\"155.0\" x2=\"105.3\" y2=\"105.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"105.3\" y1=\"105.0\" x2=\"148.6\" y2=\"155.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"148.6\" y1=\"155.0\" x2=\"191.9\" y2=\"105.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"191.9\" y1=\"105.0\" x2=\"235.2\" y2=\"155.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"235.2\" y1=\"155.0\" x2=\"278.5\" y2=\"105.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"278.5\" y1=\"105.0\" x2=\"321.8\" y2=\"155.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"62.0\" cy=\"155.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"105.3\" cy=\"105.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"148.6\" cy=\"155.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"191.9\" cy=\"105.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"235.2\" cy=\"155.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"278.5\" cy=\"105.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"321.8\" cy=\"155.0\" r=\"4\" fill=\"#1F4E5A\"/><line x1=\"470.0\" y1=\"175.0\" x2=\"513.3\" y2=\"125.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"513.3\" y1=\"125.0\" x2=\"556.6\" y2=\"175.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"556.6\" y1=\"175.0\" x2=\"599.9\" y2=\"125.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"599.9\" y1=\"125.0\" x2=\"643.2\" y2=\"175.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"513.3\" y1=\"125.0\" x2=\"470.0\" y2=\"100.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"513.3\" y1=\"125.0\" x2=\"556.6\" y2=\"100.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"599.9\" y1=\"125.0\" x2=\"599.9\" y2=\"75.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"470.0\" cy=\"175.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"513.3\" cy=\"125.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"556.6\" cy=\"175.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"599.9\" cy=\"125.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"643.2\" cy=\"175.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"470.0\" cy=\"100.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"556.6\" cy=\"100.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"599.9\" cy=\"75.0\" r=\"4\" fill=\"#1F4E5A\"/><line x1=\"193.0\" y1=\"410.0\" x2=\"145.4\" y2=\"382.5\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"145.4\" y1=\"382.5\" x2=\"145.4\" y2=\"327.5\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"145.4\" y1=\"327.5\" x2=\"193.0\" y2=\"300.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"193.0\" y1=\"300.0\" x2=\"240.6\" y2=\"327.5\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"240.6\" y1=\"327.5\" x2=\"240.6\" y2=\"382.5\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"240.6\" y1=\"382.5\" x2=\"193.0\" y2=\"410.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"193.0\" cy=\"410.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"145.4\" cy=\"382.5\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"145.4\" cy=\"327.5\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"193.0\" cy=\"300.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"240.6\" cy=\"327.5\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"240.6\" cy=\"382.5\" r=\"4\" fill=\"#1F4E5A\"/><line x1=\"460.0\" y1=\"385.0\" x2=\"503.3\" y2=\"335.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"503.3\" y1=\"335.0\" x2=\"546.6\" y2=\"385.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"546.6\" y1=\"385.0\" x2=\"589.9\" y2=\"335.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"589.9\" y1=\"335.0\" x2=\"633.2\" y2=\"385.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"633.2\" y1=\"385.0\" x2=\"676.5\" y2=\"335.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"472.5\" y1=\"382.7\" x2=\"502.9\" y2=\"347.7\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"460.0\" cy=\"385.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"503.3\" cy=\"335.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"546.6\" cy=\"385.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"589.9\" cy=\"335.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"633.2\" cy=\"385.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"676.5\" cy=\"335.0\" r=\"4\" fill=\"#1F4E5A\"/></svg>",
+      "questions": [
+        {
+          "texte": "Recopie et complète le tableau suivant pour les molécules A, B, C et D : nombre d'atomes de carbone ; chaîne linéaire, ramifiée ou cyclique ; squelette saturé ou insaturé ; formule brute.",
+          "aides": [
+            "Nombre de carbones = nombre de sommets et d'extrémités de la ligne brisée.",
+            "Pour chaque carbone : nombre d'atomes H = 4 − nombre de liaisons dessinées (un double trait compte pour 2).",
+            "Pour B, repère le carbone relié à 4 traits : il ne porte aucun atome H."
+          ]
+        },
+        {
+          "texte": "Rappelle la définition d'un squelette carboné insaturé. Quel détail de la figure montre qu'une des molécules a un squelette insaturé ?",
+          "aides": []
+        },
+        {
+          "texte": "Deux molécules de la figure ont la même formule brute. Lesquelles ? Comment appelle-t-on de telles molécules ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie à l'aide de la figure. « Une molécule qui compte 6 atomes de carbone et uniquement des atomes d'hydrogène a toujours pour formule brute C₆H₁₄. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A (heptane) : 7 C ; chaîne linéaire ; saturé ; 2 carbones d'extrémité (CH₃) et 5 carbones de milieu (CH₂) : 2 × 3 + 5 × 2 = 16 H, formule C₇H₁₆.",
+        "B (isooctane) : 8 C ; chaîne ramifiée ; saturé ; 5 groupes CH₃ (5 × 3 = 15 H), 1 groupe CH₂ (2 H), 1 groupe CH (1 H) et 1 carbone lié à 4 carbones (0 H) : 18 H, formule C₈H₁₈.",
+        "C (cyclohexane) : 6 C ; chaîne cyclique ; saturé ; chaque carbone est lié à 2 carbones et porte 2 H : 12 H, formule C₆H₁₂.",
+        "D (hex-1-ène) : 6 C ; chaîne linéaire ; insaturé ; CH₂=CH–CH₂–CH₂–CH₂–CH₃ : 2 + 1 + 2 + 2 + 2 + 3 = 12 H, formule C₆H₁₂.",
+        "<em>⚠ Erreur fréquente : oublier que la liaison double compte pour 2 liaisons ; le carbone d'extrémité de D ne porte alors que 2 atomes H, et non 3.</em>",
+        "<strong>2.</strong> Un squelette carboné est insaturé s'il comporte au moins une liaison double (ou triple) entre deux atomes de carbone. Sur la figure, le double trait entre les deux premiers carbones de D montre une liaison double C=C : D a un squelette insaturé (A, B et C sont saturés).",
+        "<strong>3.</strong> C (cyclohexane) et D (hex-1-ène) ont la même formule brute C₆H₁₂, mais des enchaînements d'atomes différents (cycle pour C, chaîne linéaire avec une liaison double pour D) : ce sont des isomères de constitution.",
+        "<strong>4.</strong> FAUX. L'hexane CH₃–CH₂–CH₂–CH₂–CH₂–CH₃ a bien pour formule C₆H₁₄, mais C et D comptent aussi 6 carbones et ont pour formule C₆H₁₂ : un cycle ou une liaison double « coûte » 2 atomes d'hydrogène."
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Des molécules qui ont du nez",
+      "contexte": [
+        "Voici six molécules organiques de la vie courante, avec leur formule semi-développée.",
+        "A. Éthanol, dans les gels hydroalcooliques : CH₃–CH₂–OH.   B. Acide éthanoïque, dans le vinaigre : CH₃–COOH.   C. Propanone (ou acétone), dans certains dissolvants de vernis à ongles : CH₃–CO–CH₃.   D. Hexanal, responsable de l'odeur d'herbe fraîchement coupée : CH₃–CH₂–CH₂–CH₂–CH₂–CHO.   E. Acide butanoïque, responsable de l'odeur du beurre rance : CH₃–CH₂–CH₂–COOH.   F. Butan-2-ol, un solvant : CH₃–CH(OH)–CH₂–CH₃."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque molécule A à F, nomme le groupe caractéristique présent et la famille à laquelle elle appartient.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse.<br>a. « La molécule B contient les atomes O et H liés l'un à l'autre, c'est donc un alcool. »<br>b. « A et F appartiennent à la même famille. »<br>c. « C et D possèdent le même groupe d'atomes C=O, elles appartiennent donc à la même famille. »",
+          "aides": []
+        },
+        {
+          "texte": "Dans la formule de la propanone CH₃–CO–CH₃, à quels atomes le carbone du groupe carbonyle est-il lié ? Explique pourquoi c'est une cétone et non un aldéhyde.",
+          "aides": [
+            "Repère le carbone qui porte la double liaison avec l'oxygène (le « C » de « CO »).",
+            "Compte ses voisins dans la formule : est-il lié à un atome d'hydrogène, ou à deux atomes de carbone ?"
+          ]
+        },
+        {
+          "texte": "Le propanal a pour formule semi-développée CH₃–CH₂–CHO. Donne la formule brute du propanal et celle de la propanone. Que constates-tu ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : groupe hydroxyle –OH, famille des alcools. B : groupe carboxyle –COOH, famille des acides carboxyliques. C : groupe carbonyle à l'intérieur de la chaîne, famille des cétones. D : groupe carbonyle en bout de chaîne (–CHO), famille des aldéhydes. E : groupe carboxyle –COOH, acide carboxylique. F : groupe hydroxyle –OH, alcool.",
+        "<strong>2.</strong> a. FAUX : dans B, l'atome O du groupe –OH est lié à un carbone qui porte aussi un atome O par une liaison double. L'ensemble –COOH forme le groupe carboxyle : B est un acide carboxylique, pas un alcool.",
+        "b. VRAI : A et F possèdent toutes les deux un groupe hydroxyle –OH lié à un carbone qui n'a pas de liaison double avec un oxygène : ce sont deux alcools.",
+        "c. FAUX : le groupe C=O est le même, mais sa position change la famille. Dans D, le carbone du groupe C=O est en bout de chaîne et porte un atome H (aldéhyde) ; dans C, il est lié à deux atomes de carbone (cétone).",
+        "<em>⚠ Erreur fréquente : classer un acide carboxylique parmi les alcools parce qu'il contient « OH ». Il faut regarder tout le groupe : –COOH n'est pas un groupe hydroxyle.</em>",
+        "<strong>3.</strong> Le carbone du groupe carbonyle est lié à l'atome O (liaison double) et à deux atomes de carbone (les deux groupes CH₃) ; il ne porte aucun atome H. Le groupe C=O est donc à l'intérieur de la chaîne : c'est une cétone. Dans un aldéhyde, le carbone du groupe C=O est en bout de chaîne et porte un atome H (–CHO).",
+        "<strong>4.</strong> Propanal CH₃–CH₂–CHO : 3 C, 3 + 2 + 1 = 6 H, 1 O, soit C₃H₆O. Propanone CH₃–CO–CH₃ : 3 C, 3 + 3 = 6 H, 1 O, soit C₃H₆O. Même formule brute, mais groupes caractéristiques (et familles) différents : ce sont des isomères de constitution."
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Nommer comme un chimiste",
+      "contexte": [
+        "Doc. — Règles de nomenclature pour une molécule à chaîne saturée, non cyclique, avec au plus un groupe caractéristique.",
+        "• La chaîne principale est la chaîne de carbones la plus longue ; si la molécule a un groupe caractéristique, elle doit contenir le carbone qui le porte (carbone fonctionnel). Son nombre de carbones donne le préfixe : méth- (1), éth- (2), prop- (3), but- (4), pent- (5), hex- (6), hept- (7).",
+        "• On numérote la chaîne principale de façon à donner le plus petit indice au carbone fonctionnel ; pour un alcane, aux ramifications.",
+        "• Une ramification –CH₃ se nomme méthyl, une ramification –CH₂–CH₃ éthyl ; on l'écrit devant le nom, précédée de son indice.",
+        "• Terminaisons : alcane : -ane ; alcool : -an-x-ol (x : indice du carbone qui porte –OH) ; aldéhyde : -anal ; cétone : -an-x-one ; acide carboxylique : acide …-anoïque. Pour un aldéhyde ou un acide, le carbone fonctionnel est en bout de chaîne : il porte toujours le n° 1, et on n'écrit pas cet indice. On n'écrit pas non plus l'indice quand une seule position est possible (exemple : propanone)."
+      ],
+      "questions": [
+        {
+          "texte": "Nomme les alcanes suivants.<br>a. CH₃–CH₂–CH(CH₃)–CH₂–CH₂–CH₃<br>b. CH₃–CH(CH₃)–CH₂–CH₂–CH₃<br>c. CH₃–CH₂–CH(CH₂–CH₃)–CH₂–CH₃",
+          "aides": [
+            "Cherche d'abord la chaîne de carbones la plus longue : elle n'est pas toujours écrite en ligne, une ramification peut en faire partie.",
+            "Numérote la chaîne dans les deux sens et garde le sens qui donne le plus petit indice à la ramification."
+          ]
+        },
+        {
+          "texte": "Un élève a proposé les noms ci-dessous. Explique son erreur et corrige le nom. Que remarques-tu en comparant avec la question 1 ?<br>a. CH₃–CH₂–CH₂–CH(CH₃)–CH₃ : « 4-méthylpentane »<br>b. CH₃–CH(CH₂–CH₃)–CH₂–CH₂–CH₃ : « 2-éthylpentane »",
+          "aides": []
+        },
+        {
+          "texte": "Donne la famille et le nom de chaque molécule : a. CH₃–CH₂–CH₂–CH₂–OH ; b. CH₃–CH₂–CH(OH)–CH₃ ; c. CH₃–CH₂–CH₂–CHO ; d. CH₃–CH₂–CO–CH₂–CH₃ ; e. CH₃–CH(CH₃)–COOH.",
+          "aides": [
+            "Repère le groupe caractéristique : il donne la famille, donc la terminaison du nom.",
+            "Numérote la chaîne principale en partant de l'extrémité la plus proche du carbone fonctionnel.",
+            "Pour e., la chaîne principale doit contenir le carbone de –COOH : combien de carbones compte-t-elle ?"
+          ]
+        },
+        {
+          "texte": "Écris la formule semi-développée et la formule brute de : a. propan-2-ol (désinfectant) ; b. butanone (solvant de colles) ; c. acide pentanoïque ; d. 2-méthylbutan-1-ol.",
+          "aides": [
+            "Lis le nom en partant de la fin : la terminaison donne la famille, la racine donne le nombre de carbones de la chaîne principale, les indices donnent les positions.",
+            "Écris d'abord la chaîne de carbones, place le groupe caractéristique et les ramifications, puis complète chaque carbone avec des atomes H pour qu'il forme 4 liaisons."
+          ]
+        },
+        {
+          "texte": "Explique pourquoi on ne rencontre jamais les noms « butan-1-one » et « propan-3-ol ».",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. Chaîne la plus longue : 6 carbones (hexane). En numérotant depuis la gauche, le groupe méthyle est sur le carbone 3 (depuis la droite : 4). Nom : 3-méthylhexane.",
+        "b. Chaîne de 5 carbones (pentane), groupe méthyle sur le carbone 2 (et non 4) : 2-méthylpentane.",
+        "c. La chaîne la plus longue compte 5 carbones, quel que soit le chemin choisi (CH₃–CH₂–CH–CH₂–CH₃) ; le carbone 3 porte un groupe éthyle –CH₂–CH₃ : 3-éthylpentane.",
+        "<strong>2.</strong> a. L'élève a numéroté depuis la mauvaise extrémité : il faut donner le plus petit indice à la ramification (2 &lt; 4). Nom correct : 2-méthylpentane, c'est la molécule 1. b.",
+        "b. L'élève n'a pas pris la chaîne la plus longue : en passant par le groupe éthyle, on trouve une chaîne de 6 carbones (CH₃–CH₂–CH–CH₂–CH₂–CH₃) qui porte un groupe méthyle sur le carbone 3. Nom correct : 3-méthylhexane, c'est la molécule 1. a.",
+        "On remarque qu'une même molécule peut s'écrire de plusieurs façons : seul le nom systématique, construit avec les règles, est unique.",
+        "<em>⚠ Erreur fréquente : prendre comme chaîne principale la chaîne écrite « en ligne ». Une ramification éthyle placée sur le carbone 2 prolonge toujours la chaîne principale.</em>",
+        "<strong>3.</strong> a. Groupe –OH sur le carbone 1 : alcool, butan-1-ol. b. Groupe –OH : alcool ; en numérotant depuis la droite, le –OH est sur le carbone 2 (et non 3) : butan-2-ol. c. Groupe –CHO : aldéhyde, butanal. d. Groupe C=O sur le carbone 3 d'une chaîne de 5 carbones : cétone, pentan-3-one. e. Groupe –COOH : acide carboxylique ; le carbone de –COOH porte le n° 1, le groupe méthyle est sur le carbone 2 : acide 2-méthylpropanoïque.",
+        "<strong>4.</strong> a. Propan-2-ol : CH₃–CH(OH)–CH₃ ; formule brute C₃H₈O.",
+        "b. Butanone : CH₃–CO–CH₂–CH₃ ; formule brute C₄H₈O. (Le C=O ne peut être que sur le carbone 2 : sur le carbone 1, ce serait un aldéhyde ; on n'écrit donc pas l'indice.)",
+        "c. Acide pentanoïque : CH₃–CH₂–CH₂–CH₂–COOH ; formule brute C₅H₁₀O₂.",
+        "d. 2-méthylbutan-1-ol : HO–CH₂–CH(CH₃)–CH₂–CH₃ (chaîne de 4 carbones, –OH sur le carbone 1, méthyle sur le carbone 2) ; formule brute C₅H₁₂O.",
+        "<strong>5.</strong> « Butan-1-one » placerait le groupe C=O en bout de chaîne : le carbone porterait alors un atome H, ce serait un aldéhyde, le butanal (CH₃–CH₂–CH₂–CHO). « Propan-3-ol » désigne HO–CH₂–CH₂–CH₃, numéroté depuis la mauvaise extrémité : son nom correct est propan-1-ol.",
+        "<em>⚠ Erreur fréquente : oublier les atomes d'hydrogène du groupe –OH ou du groupe –COOH en comptant la formule brute (C₅H₁₀O₂ et non C₅H₉O₂ pour l'acide pentanoïque).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Une formule brute, plusieurs molécules",
+      "contexte": [
+        "Le pentane, de formule brute C₅H₁₂, est utilisé comme solvant et pour faire gonfler certaines mousses isolantes. La figure ci-dessous donne la formule topologique de trois molécules A, B et C, et les températures d'ébullition des trois molécules, dans le désordre.",
+        "Règle complémentaire de nomenclature : quand une chaîne porte deux ramifications identiques, on l'indique par le préfixe di- et on écrit les deux indices, séparés par une virgule (exemple : 2,3-diméthylbutane)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"15\" y=\"15\" width=\"236\" height=\"300\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"29\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">A</text><rect x=\"262\" y=\"15\" width=\"236\" height=\"300\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"276\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">B</text><rect x=\"509\" y=\"15\" width=\"236\" height=\"300\" rx=\"10\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"523\" y=\"43\" font-size=\"20\" font-weight=\"bold\" fill=\"#B5523B\">C</text><line x1=\"36.0\" y1=\"203.0\" x2=\"84.5\" y2=\"147.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"84.5\" y1=\"147.0\" x2=\"133.0\" y2=\"203.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"133.0\" y1=\"203.0\" x2=\"181.5\" y2=\"147.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"181.5\" y1=\"147.0\" x2=\"230.0\" y2=\"203.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"36.0\" cy=\"203.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"84.5\" cy=\"147.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"133.0\" cy=\"203.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"181.5\" cy=\"147.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"230.0\" cy=\"203.0\" r=\"4\" fill=\"#1F4E5A\"/><line x1=\"307.3\" y1=\"223.0\" x2=\"355.8\" y2=\"167.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"355.8\" y1=\"167.0\" x2=\"404.2\" y2=\"223.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"404.2\" y1=\"223.0\" x2=\"452.7\" y2=\"167.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"355.8\" y1=\"167.0\" x2=\"355.8\" y2=\"111.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"307.3\" cy=\"223.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"355.8\" cy=\"167.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"404.2\" cy=\"223.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"452.7\" cy=\"167.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"355.8\" cy=\"111.0\" r=\"4\" fill=\"#1F4E5A\"/><line x1=\"627.0\" y1=\"175.0\" x2=\"571.0\" y2=\"175.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"627.0\" y1=\"175.0\" x2=\"683.0\" y2=\"175.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"627.0\" y1=\"175.0\" x2=\"627.0\" y2=\"119.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"627.0\" y1=\"175.0\" x2=\"627.0\" y2=\"231.0\" stroke=\"#1B2420\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"627.0\" cy=\"175.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"571.0\" cy=\"175.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"683.0\" cy=\"175.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"627.0\" cy=\"119.0\" r=\"4\" fill=\"#1F4E5A\"/><circle cx=\"627.0\" cy=\"231.0\" r=\"4\" fill=\"#1F4E5A\"/><rect x=\"15\" y=\"330\" width=\"730\" height=\"125\" rx=\"10\" fill=\"#f7f3ec\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"380\" y=\"372\" font-size=\"18\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">Températures d'ébullition des trois isomères (sous 1,013 bar)</text><text x=\"230\" y=\"418\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">9,5 °C</text><text x=\"380\" y=\"418\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">27,8 °C</text><text x=\"530\" y=\"418\" font-size=\"22\" text-anchor=\"middle\" fill=\"#1B2420\">36,1 °C</text></svg>",
+      "questions": [
+        {
+          "texte": "Montre que les molécules A, B et C ont toutes les trois la formule brute C₅H₁₂.",
+          "aides": [
+            "Applique la méthode de l'exercice 1 : sommets et extrémités sont des carbones.",
+            "Un carbone lié à 1, 2, 3 ou 4 autres carbones porte respectivement 3, 2, 1 ou 0 atome H."
+          ]
+        },
+        {
+          "texte": "Écris la formule semi-développée de chaque molécule, puis nomme-la à l'aide des règles de l'exercice 4.",
+          "aides": [
+            "Cherche la chaîne la plus longue de chaque molécule : elle n'a pas la même longueur pour A, B et C.",
+            "Pour C, aucun chemin ne compte plus de 3 carbones à la suite : quelles ramifications porte le carbone central ?"
+          ]
+        },
+        {
+          "texte": "Pourquoi A, B et C sont-elles des isomères de constitution ? En quoi diffèrent-elles ?",
+          "aides": []
+        },
+        {
+          "texte": "Attribue chaque température d'ébullition à une molécule, en argumentant (notion du chapitre Interpréter les propriétés d'une espèce chimique).",
+          "aides": []
+        },
+        {
+          "texte": "Un élève affirme : « CH₃–CH₂–CH₂–CH₂–OH et HO–CH₂–CH₂–CH₂–CH₃ sont deux isomères de constitution. » A-t-il raison ?",
+          "aides": []
+        },
+        {
+          "texte": "Le butan-1-ol, de formule brute C₄H₁₀O, possède trois isomères de constitution qui sont eux aussi des alcools. Écris leur formule semi-développée et nomme-les.",
+          "aides": [
+            "Garde 4 carbones et un groupe –OH : tu peux déplacer le –OH, ou changer la forme de la chaîne.",
+            "Il existe deux chaînes de 4 carbones : linéaire ou ramifiée (méthylpropane). Sur chacune, place le –OH sur un carbone d'extrémité, puis sur un carbone intérieur.",
+            "Nomme chaque formule obtenue : deux noms identiques signifient que tu as écrit deux fois la même molécule."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Chaque molécule compte 5 sommets ou extrémités, donc 5 carbones. A : 2 CH₃ + 3 CH₂, soit 6 + 6 = 12 H. B : 3 CH₃ + 1 CH₂ + 1 CH, soit 9 + 2 + 1 = 12 H. C : 4 CH₃ + 1 carbone lié à 4 carbones (0 H), soit 12 H. Les trois molécules ont la formule C₅H₁₂.",
+        "<strong>2.</strong> A : CH₃–CH₂–CH₂–CH₂–CH₃, chaîne de 5 carbones sans ramification : pentane.",
+        "B : CH₃–CH(CH₃)–CH₂–CH₃, chaîne principale de 4 carbones, méthyle sur le carbone 2 : 2-méthylbutane.",
+        "C : CH₃–C(CH₃)₂–CH₃, chaîne principale de 3 carbones, deux groupes méthyle sur le carbone 2 : 2,2-diméthylpropane.",
+        "<em>⚠ Erreur fréquente : nommer C « méthylbutane » en suivant un chemin qui « tourne » au carbone central : la chaîne la plus longue de C ne compte que 3 carbones, quel que soit le chemin.</em>",
+        "<strong>3.</strong> Elles ont la même formule brute C₅H₁₂ mais des formules développées différentes : ce sont des isomères de constitution. Elles diffèrent par leur squelette carboné : linéaire pour A, ramifié pour B (une ramification) et pour C (deux ramifications sur le même carbone).",
+        "<strong>4.</strong> Plus une molécule est ramifiée, plus elle est compacte (presque sphérique pour C) : la surface de contact entre deux molécules voisines est plus petite, les interactions de van der Waals sont plus faibles, et la température d'ébullition est plus basse. Attribution : A (pentane, linéaire) : 36,1 °C ; B (2-méthylbutane) : 27,8 °C ; C (2,2-diméthylpropane) : 9,5 °C.",
+        "<strong>5.</strong> Non. C'est la même molécule écrite de droite à gauche : chaîne linéaire de 4 carbones avec –OH sur un carbone d'extrémité ; les deux formules se nomment butan-1-ol.",
+        "<em>⚠ Erreur fréquente : écrire la même molécule deux fois (chaîne retournée ou « pliée ») en croyant avoir trouvé deux isomères. Pour s'en assurer, on nomme chaque formule : deux noms identiques désignent la même molécule.</em>",
+        "<strong>6.</strong> On garde 4 carbones et un groupe –OH, en changeant la position du –OH ou le squelette : butan-2-ol CH₃–CH(OH)–CH₂–CH₃ (isomère de position) ; 2-méthylpropan-1-ol CH₃–CH(CH₃)–CH₂–OH et 2-méthylpropan-2-ol CH₃–C(OH)(CH₃)–CH₃ (squelette ramifié). Avec le butan-1-ol, cela fait 4 alcools de formule C₄H₁₀O."
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Quand le vin tourne au vinaigre",
+      "contexte": [
+        "Doc. 1 — Du vin au vinaigre. Laissé au contact de l'air, un vin finit par « tourner au vinaigre » : des bactéries transforment l'éthanol CH₃–CH₂–OH en acide éthanoïque CH₃–COOH, en utilisant le dioxygène de l'air. La transformation passe par une espèce intermédiaire, l'éthanal CH₃–CHO. Équation de la réaction globale : C₂H₆O + O₂ → C₂H₄O₂ + H₂O.",
+        "Doc. 2 — Table simplifiée de spectroscopie infrarouge (IR). Liaison : nombre d'onde σ (cm⁻¹) ; allure de la bande. O–H d'un alcool : 3200 à 3400 ; forte et large. O–H d'un acide carboxylique : 2500 à 3200 ; forte et très large. C–H (carbone lié à 4 atomes) : 2800 à 3000 ; forte à moyenne, plutôt fine. C–H d'un aldéhyde (–CHO) : 2700 à 2900 ; moyenne (souvent deux bandes). C=O (aldéhyde, cétone, acide) : 1650 à 1750 ; forte et fine. C–O : 1000 à 1300 ; forte.",
+        "Doc. 3 — Spectres IR (figure ci-dessous). A : éthanol pur. B : espèce majoritaire isolée d'un vinaigre de vin, après élimination de l'eau. Sur un spectre IR, une bande d'absorption apparaît comme un creux : la transmittance T diminue."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"32\" x2=\"80.0\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">4000</text><line x1=\"173.6\" y1=\"32\" x2=\"173.6\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"173.6\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">3500</text><line x1=\"267.1\" y1=\"32\" x2=\"267.1\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"267.1\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">3000</text><line x1=\"360.7\" y1=\"32\" x2=\"360.7\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"360.7\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">2500</text><line x1=\"454.3\" y1=\"32\" x2=\"454.3\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"454.3\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">2000</text><line x1=\"547.9\" y1=\"32\" x2=\"547.9\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"547.9\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">1500</text><line x1=\"641.4\" y1=\"32\" x2=\"641.4\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"641.4\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">1000</text><line x1=\"735.0\" y1=\"32\" x2=\"735.0\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">500</text><line x1=\"126.8\" y1=\"32\" x2=\"126.8\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"220.4\" y1=\"32\" x2=\"220.4\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"313.9\" y1=\"32\" x2=\"313.9\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"407.5\" y1=\"32\" x2=\"407.5\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"501.1\" y1=\"32\" x2=\"501.1\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"594.6\" y1=\"32\" x2=\"594.6\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"688.2\" y1=\"32\" x2=\"688.2\" y2=\"192\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"80\" y1=\"192.0\" x2=\"735\" y2=\"192.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"197.0\" font-size=\"14\" text-anchor=\"end\" fill=\"#1B2420\">0</text><line x1=\"80\" y1=\"112.0\" x2=\"735\" y2=\"112.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"117.0\" font-size=\"14\" text-anchor=\"end\" fill=\"#1B2420\">50</text><line x1=\"80\" y1=\"32.0\" x2=\"735\" y2=\"32.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"37.0\" font-size=\"14\" text-anchor=\"end\" fill=\"#1B2420\">100</text><rect x=\"80\" y=\"32\" width=\"655\" height=\"160\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><path d=\"M80.0,41.6 L80.9,41.6 L81.9,41.6 L82.8,41.6 L83.7,41.6 L84.7,41.6 L85.6,41.6 L86.5,41.6 L87.5,41.6 L88.4,41.6 L89.4,41.6 L90.3,41.6 L91.2,41.6 L92.2,41.6 L93.1,41.6 L94.0,41.6 L95.0,41.6 L95.9,41.6 L96.8,41.6 L97.8,41.6 L98.7,41.6 L99.7,41.6 L100.6,41.6 L101.5,41.6 L102.5,41.6 L103.4,41.6 L104.3,41.6 L105.3,41.6 L106.2,41.6 L107.1,41.6 L108.1,41.6 L109.0,41.6 L109.9,41.6 L110.9,41.6 L111.8,41.6 L112.8,41.6 L113.7,41.6 L114.6,41.6 L115.6,41.6 L116.5,41.6 L117.4,41.6 L118.4,41.6 L119.3,41.6 L120.2,41.6 L121.2,41.6 L122.1,41.6 L123.0,41.6 L124.0,41.6 L124.9,41.6 L125.8,41.6 L126.8,41.6 L127.7,41.6 L128.7,41.6 L129.6,41.6 L130.5,41.7 L131.5,41.7 L132.4,41.7 L133.3,41.7 L134.3,41.7 L135.2,41.7 L136.1,41.8 L137.1,41.8 L138.0,41.8 L138.9,41.9 L139.9,41.9 L140.8,42.0 L141.8,42.1 L142.7,42.1 L143.6,42.2 L144.6,42.3 L145.5,42.5 L146.4,42.6 L147.4,42.8 L148.3,43.0 L149.2,43.2 L150.2,43.5 L151.1,43.7 L152.1,44.1 L153.0,44.4 L153.9,44.9 L154.9,45.3 L155.8,45.9 L156.7,46.4 L157.7,47.1 L158.6,47.8 L159.5,48.6 L160.5,49.5 L161.4,50.5 L162.3,51.5 L163.3,52.7 L164.2,54.0 L165.2,55.3 L166.1,56.8 L167.0,58.5 L168.0,60.2 L168.9,62.1 L169.8,64.1 L170.8,66.2 L171.7,68.5 L172.6,70.8 L173.6,73.4 L174.5,76.0 L175.4,78.8 L176.4,81.7 L177.3,84.8 L178.2,87.9 L179.2,91.1 L180.1,94.5 L181.1,97.9 L182.0,101.3 L182.9,104.9 L183.9,108.4 L184.8,112.0 L185.7,115.6 L186.7,119.2 L187.6,122.7 L188.5,126.2 L189.5,129.6 L190.4,133.0 L191.4,136.2 L192.3,139.2 L193.2,142.1 L194.2,144.9 L195.1,147.4 L196.0,149.7 L197.0,151.8 L197.9,153.6 L198.8,155.2 L199.8,156.5 L200.7,157.6 L201.6,158.3 L202.6,158.8 L203.5,158.9 L204.4,158.8 L205.4,158.3 L206.3,157.6 L207.3,156.5 L208.2,155.2 L209.1,153.6 L210.1,151.8 L211.0,149.7 L211.9,147.4 L212.9,144.9 L213.8,142.1 L214.7,139.2 L215.7,136.2 L216.6,133.0 L217.5,129.6 L218.5,126.2 L219.4,122.7 L220.4,119.2 L221.3,115.6 L222.2,112.0 L223.2,108.4 L224.1,104.9 L225.0,101.3 L226.0,97.9 L226.9,94.5 L227.8,91.1 L228.8,87.9 L229.7,84.8 L230.7,81.7 L231.6,78.8 L232.5,76.0 L233.5,73.4 L234.4,70.8 L235.3,68.5 L236.3,66.2 L237.2,64.1 L238.1,62.1 L239.1,60.2 L240.0,58.5 L240.9,56.8 L241.9,55.3 L242.8,54.0 L243.8,52.7 L244.7,51.5 L245.6,50.5 L246.6,49.5 L247.5,48.6 L248.4,47.8 L249.4,47.1 L250.3,46.4 L251.2,45.9 L252.2,45.3 L253.1,44.9 L254.0,44.4 L255.0,44.1 L255.9,43.7 L256.9,43.5 L257.8,43.2 L258.7,43.0 L259.7,42.8 L260.6,42.7 L261.5,42.6 L262.5,42.9 L263.4,43.6 L264.3,45.5 L265.3,49.5 L266.2,56.5 L267.1,67.5 L268.1,82.6 L269.0,100.3 L269.9,117.5 L270.9,130.2 L271.8,134.9 L272.8,130.4 L273.7,118.1 L274.6,102.4 L275.6,88.5 L276.5,81.1 L277.4,81.9 L278.4,89.0 L279.3,96.8 L280.2,99.7 L281.2,95.1 L282.1,84.5 L283.1,72.6 L284.0,64.5 L284.9,63.1 L285.9,68.6 L286.8,77.9 L287.7,86.4 L288.7,89.8 L289.6,86.2 L290.5,77.0 L291.5,65.6 L292.4,55.6 L293.3,48.6 L294.3,44.6 L295.2,42.7 L296.1,41.9 L297.1,41.7 L298.0,41.6 L299.0,41.6 L299.9,41.6 L300.8,41.6 L301.8,41.6 L302.7,41.6 L303.6,41.6 L304.6,41.6 L305.5,41.6 L306.4,41.6 L307.4,41.6 L308.3,41.6 L309.2,41.6 L310.2,41.6 L311.1,41.6 L312.1,41.6 L313.0,41.6 L313.9,41.6 L314.9,41.6 L315.8,41.6 L316.7,41.6 L317.7,41.6 L318.6,41.6 L319.5,41.6 L320.5,41.6 L321.4,41.6 L322.4,41.6 L323.3,41.6 L324.2,41.6 L325.2,41.6 L326.1,41.6 L327.0,41.6 L328.0,41.6 L328.9,41.6 L329.8,41.6 L330.8,41.6 L331.7,41.6 L332.6,41.6 L333.6,41.6 L334.5,41.6 L335.5,41.6 L336.4,41.6 L337.3,41.6 L338.3,41.6 L339.2,41.6 L340.1,41.6 L341.1,41.6 L342.0,41.6 L342.9,41.6 L343.9,41.6 L344.8,41.6 L345.7,41.6 L346.7,41.6 L347.6,41.6 L348.6,41.6 L349.5,41.6 L350.4,41.6 L351.4,41.6 L352.3,41.6 L353.2,41.6 L354.2,41.6 L355.1,41.6 L356.0,41.6 L357.0,41.6 L357.9,41.6 L358.8,41.6 L359.8,41.6 L360.7,41.6 L361.6,41.6 L362.6,41.6 L363.5,41.6 L364.5,41.6 L365.4,41.6 L366.3,41.6 L367.3,41.6 L368.2,41.6 L369.1,41.6 L370.1,41.6 L371.0,41.6 L371.9,41.6 L372.9,41.6 L373.8,41.6 L374.8,41.6 L375.7,41.6 L376.6,41.6 L377.6,41.6 L378.5,41.6 L379.4,41.6 L380.4,41.6 L381.3,41.6 L382.2,41.6 L383.2,41.6 L384.1,41.6 L385.0,41.6 L386.0,41.6 L386.9,41.6 L387.8,41.6 L388.8,41.6 L389.7,41.6 L390.7,41.6 L391.6,41.6 L392.5,41.6 L393.5,41.6 L394.4,41.6 L395.3,41.6 L396.3,41.6 L397.2,41.6 L398.1,41.6 L399.1,41.6 L400.0,41.6 L400.9,41.6 L401.9,41.6 L402.8,41.6 L403.8,41.6 L404.7,41.6 L405.6,41.6 L406.6,41.6 L407.5,41.6 L408.4,41.6 L409.4,41.6 L410.3,41.6 L411.2,41.6 L412.2,41.6 L413.1,41.6 L414.1,41.6 L415.0,41.6 L415.9,41.6 L416.9,41.6 L417.8,41.6 L418.7,41.6 L419.7,41.6 L420.6,41.6 L421.5,41.6 L422.5,41.6 L423.4,41.6 L424.3,41.6 L425.3,41.6 L426.2,41.6 L427.2,41.6 L428.1,41.6 L429.0,41.6 L430.0,41.6 L430.9,41.6 L431.8,41.6 L432.8,41.6 L433.7,41.6 L434.6,41.6 L435.6,41.6 L436.5,41.6 L437.4,41.6 L438.4,41.6 L439.3,41.6 L440.3,41.6 L441.2,41.6 L442.1,41.6 L443.1,41.6 L444.0,41.6 L444.9,41.6 L445.9,41.6 L446.8,41.6 L447.7,41.6 L448.7,41.6 L449.6,41.6 L450.5,41.6 L451.5,41.6 L452.4,41.6 L453.3,41.6 L454.3,41.6 L455.2,41.6 L456.2,41.6 L457.1,41.6 L458.0,41.6 L459.0,41.6 L459.9,41.6 L460.8,41.6 L461.8,41.6 L462.7,41.6 L463.6,41.6 L464.6,41.6 L465.5,41.6 L466.4,41.6 L467.4,41.6 L468.3,41.6 L469.3,41.6 L470.2,41.6 L471.1,41.6 L472.1,41.6 L473.0,41.6 L473.9,41.6 L474.9,41.6 L475.8,41.6 L476.7,41.6 L477.7,41.6 L478.6,41.6 L479.6,41.6 L480.5,41.6 L481.4,41.6 L482.4,41.6 L483.3,41.6 L484.2,41.6 L485.2,41.6 L486.1,41.6 L487.0,41.6 L488.0,41.6 L488.9,41.6 L489.8,41.6 L490.8,41.6 L491.7,41.6 L492.6,41.6 L493.6,41.6 L494.5,41.6 L495.5,41.6 L496.4,41.6 L497.3,41.6 L498.3,41.6 L499.2,41.6 L500.1,41.6 L501.1,41.6 L502.0,41.6 L502.9,41.6 L503.9,41.6 L504.8,41.6 L505.8,41.6 L506.7,41.6 L507.6,41.6 L508.6,41.6 L509.5,41.6 L510.4,41.6 L511.4,41.6 L512.3,41.6 L513.2,41.6 L514.2,41.6 L515.1,41.6 L516.0,41.6 L517.0,41.6 L517.9,41.6 L518.9,41.6 L519.8,41.6 L520.7,41.6 L521.7,41.6 L522.6,41.6 L523.5,41.6 L524.5,41.6 L525.4,41.6 L526.3,41.6 L527.3,41.6 L528.2,41.6 L529.1,41.6 L530.1,41.6 L531.0,41.6 L532.0,41.6 L532.9,41.6 L533.8,41.6 L534.8,41.6 L535.7,41.6 L536.6,41.6 L537.6,41.6 L538.5,41.6 L539.4,41.6 L540.4,41.6 L541.3,41.6 L542.2,41.6 L543.2,41.6 L544.1,41.6 L545.0,41.6 L546.0,41.6 L546.9,41.6 L547.9,41.6 L548.8,41.6 L549.7,41.6 L550.7,41.7 L551.6,42.1 L552.5,43.8 L553.5,48.4 L554.4,58.3 L555.3,73.2 L556.3,87.9 L557.2,94.2 L558.1,87.9 L559.1,73.2 L560.0,58.3 L561.0,48.4 L561.9,43.8 L562.8,42.1 L563.8,41.7 L564.7,41.7 L565.6,42.2 L566.6,44.7 L567.5,52.0 L568.4,66.4 L569.4,83.3 L570.3,91.2 L571.2,83.3 L572.2,66.4 L573.1,52.0 L574.1,44.7 L575.0,42.6 L575.9,43.6 L576.9,47.9 L577.8,56.6 L578.7,66.9 L579.7,71.7 L580.6,66.9 L581.5,56.6 L582.5,47.9 L583.4,43.5 L584.4,42.0 L585.3,41.7 L586.2,41.6 L587.2,41.6 L588.1,41.6 L589.0,41.6 L590.0,41.6 L590.9,41.6 L591.8,41.6 L592.8,41.6 L593.7,41.6 L594.6,41.6 L595.6,41.6 L596.5,41.6 L597.5,41.6 L598.4,41.6 L599.3,41.6 L600.3,41.6 L601.2,41.6 L602.1,41.6 L603.1,41.6 L604.0,41.6 L604.9,41.6 L605.9,41.6 L606.8,41.6 L607.7,41.6 L608.7,41.6 L609.6,41.6 L610.6,41.6 L611.5,41.6 L612.4,41.6 L613.4,41.6 L614.3,41.6 L615.2,41.6 L616.2,41.6 L617.1,41.6 L618.0,41.7 L619.0,42.4 L619.9,44.7 L620.8,51.4 L621.8,65.5 L622.7,86.8 L623.6,107.8 L624.6,116.9 L625.5,108.4 L626.5,89.4 L627.4,74.8 L628.3,76.4 L629.3,96.7 L630.2,128.4 L631.1,157.6 L632.1,169.4 L633.0,157.5 L633.9,128.1 L634.9,94.7 L635.8,68.4 L636.8,52.7 L637.7,45.4 L638.6,42.7 L639.6,41.8 L640.5,41.6 L641.4,41.6 L642.4,41.6 L643.3,41.6 L644.2,41.6 L645.2,41.6 L646.1,41.6 L647.0,41.6 L648.0,41.6 L648.9,41.6 L649.9,41.6 L650.8,41.6 L651.7,41.6 L652.7,41.6 L653.6,41.6 L654.5,41.6 L655.5,41.6 L656.4,41.6 L657.3,41.6 L658.3,41.7 L659.2,42.6 L660.1,46.3 L661.1,57.4 L662.0,79.2 L663.0,104.8 L663.9,116.8 L664.8,104.8 L665.8,79.2 L666.7,57.4 L667.6,46.3 L668.6,42.6 L669.5,41.7 L670.4,41.6 L671.4,41.6 L672.3,41.6 L673.2,41.6 L674.2,41.6 L675.1,41.6 L676.1,41.6 L677.0,41.6 L677.9,41.6 L678.9,41.6 L679.8,41.6 L680.7,41.6 L681.7,41.6 L682.6,41.6 L683.5,41.6 L684.5,41.6 L685.4,41.6 L686.3,41.6 L687.3,41.6 L688.2,41.6 L689.1,41.6 L690.1,41.6 L691.0,41.6 L692.0,41.6 L692.9,41.6 L693.8,41.6 L694.8,41.6 L695.7,41.6 L696.6,41.6 L697.6,41.6 L698.5,41.6 L699.4,41.6 L700.4,41.6 L701.3,41.6 L702.2,41.6 L703.2,41.6 L704.1,41.6 L705.1,41.6 L706.0,41.6 L706.9,41.6 L707.9,41.6 L708.8,41.6 L709.7,41.6 L710.7,41.6 L711.6,41.6 L712.5,41.6 L713.5,41.6 L714.4,41.6 L715.4,41.6 L716.3,41.6 L717.2,41.6 L718.2,41.6 L719.1,41.6 L720.0,41.6 L721.0,41.6 L721.9,41.6 L722.8,41.6 L723.8,41.6 L724.7,41.6 L725.6,41.6 L726.6,41.6 L727.5,41.6 L728.5,41.6 L729.4,41.6 L730.3,41.6 L731.3,41.6 L732.2,41.6 L733.1,41.6 L734.1,41.6 L735.0,41.6\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"90\" y=\"24\" font-size=\"16\" text-anchor=\"start\" fill=\"#1F4E5A\" font-weight=\"bold\">Spectre A : éthanol pur</text><text x=\"30\" y=\"112.0\" font-size=\"14\" text-anchor=\"middle\" transform=\"rotate(-90 30 112.0)\">T (%)</text><line x1=\"80.0\" y1=\"255\" x2=\"80.0\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">4000</text><line x1=\"173.6\" y1=\"255\" x2=\"173.6\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"173.6\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">3500</text><line x1=\"267.1\" y1=\"255\" x2=\"267.1\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"267.1\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">3000</text><line x1=\"360.7\" y1=\"255\" x2=\"360.7\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"360.7\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">2500</text><line x1=\"454.3\" y1=\"255\" x2=\"454.3\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"454.3\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">2000</text><line x1=\"547.9\" y1=\"255\" x2=\"547.9\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"547.9\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">1500</text><line x1=\"641.4\" y1=\"255\" x2=\"641.4\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"641.4\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">1000</text><line x1=\"735.0\" y1=\"255\" x2=\"735.0\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"435\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1B2420\">500</text><line x1=\"126.8\" y1=\"255\" x2=\"126.8\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"220.4\" y1=\"255\" x2=\"220.4\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"313.9\" y1=\"255\" x2=\"313.9\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"407.5\" y1=\"255\" x2=\"407.5\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"501.1\" y1=\"255\" x2=\"501.1\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"594.6\" y1=\"255\" x2=\"594.6\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"688.2\" y1=\"255\" x2=\"688.2\" y2=\"415\" stroke=\"#d9d2c5\" stroke-width=\"0.6\" stroke-dasharray=\"3 4\"/><line x1=\"80\" y1=\"415.0\" x2=\"735\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"420.0\" font-size=\"14\" text-anchor=\"end\" fill=\"#1B2420\">0</text><line x1=\"80\" y1=\"335.0\" x2=\"735\" y2=\"335.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"340.0\" font-size=\"14\" text-anchor=\"end\" fill=\"#1B2420\">50</text><line x1=\"80\" y1=\"255.0\" x2=\"735\" y2=\"255.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"260.0\" font-size=\"14\" text-anchor=\"end\" fill=\"#1B2420\">100</text><rect x=\"80\" y=\"255\" width=\"655\" height=\"160\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><path d=\"M80.0,264.6 L80.9,264.6 L81.9,264.6 L82.8,264.6 L83.7,264.6 L84.7,264.6 L85.6,264.6 L86.5,264.6 L87.5,264.6 L88.4,264.6 L89.4,264.6 L90.3,264.6 L91.2,264.6 L92.2,264.6 L93.1,264.6 L94.0,264.6 L95.0,264.6 L95.9,264.6 L96.8,264.6 L97.8,264.6 L98.7,264.6 L99.7,264.6 L100.6,264.6 L101.5,264.6 L102.5,264.6 L103.4,264.6 L104.3,264.6 L105.3,264.6 L106.2,264.6 L107.1,264.6 L108.1,264.6 L109.0,264.6 L109.9,264.6 L110.9,264.6 L111.8,264.6 L112.8,264.6 L113.7,264.6 L114.6,264.6 L115.6,264.6 L116.5,264.6 L117.4,264.6 L118.4,264.6 L119.3,264.6 L120.2,264.6 L121.2,264.6 L122.1,264.6 L123.0,264.6 L124.0,264.6 L124.9,264.6 L125.8,264.6 L126.8,264.6 L127.7,264.6 L128.7,264.6 L129.6,264.6 L130.5,264.6 L131.5,264.6 L132.4,264.6 L133.3,264.6 L134.3,264.6 L135.2,264.7 L136.1,264.7 L137.1,264.7 L138.0,264.7 L138.9,264.7 L139.9,264.7 L140.8,264.7 L141.8,264.7 L142.7,264.7 L143.6,264.7 L144.6,264.7 L145.5,264.8 L146.4,264.8 L147.4,264.8 L148.3,264.8 L149.2,264.8 L150.2,264.9 L151.1,264.9 L152.1,264.9 L153.0,264.9 L153.9,265.0 L154.9,265.0 L155.8,265.0 L156.7,265.1 L157.7,265.1 L158.6,265.2 L159.5,265.2 L160.5,265.3 L161.4,265.3 L162.3,265.4 L163.3,265.4 L164.2,265.5 L165.2,265.6 L166.1,265.7 L167.0,265.8 L168.0,265.9 L168.9,266.0 L169.8,266.1 L170.8,266.2 L171.7,266.3 L172.6,266.4 L173.6,266.6 L174.5,266.7 L175.4,266.9 L176.4,267.1 L177.3,267.3 L178.2,267.4 L179.2,267.7 L180.1,267.9 L181.1,268.1 L182.0,268.4 L182.9,268.6 L183.9,268.9 L184.8,269.2 L185.7,269.5 L186.7,269.8 L187.6,270.2 L188.5,270.5 L189.5,270.9 L190.4,271.3 L191.4,271.8 L192.3,272.2 L193.2,272.7 L194.2,273.2 L195.1,273.7 L196.0,274.2 L197.0,274.8 L197.9,275.4 L198.8,276.0 L199.8,276.7 L200.7,277.3 L201.6,278.0 L202.6,278.8 L203.5,279.5 L204.4,280.3 L205.4,281.2 L206.3,282.0 L207.3,282.9 L208.2,283.8 L209.1,284.8 L210.1,285.8 L211.0,286.8 L211.9,287.8 L212.9,288.9 L213.8,290.0 L214.7,291.2 L215.7,292.4 L216.6,293.6 L217.5,294.8 L218.5,296.1 L219.4,297.4 L220.4,298.8 L221.3,300.1 L222.2,301.5 L223.2,303.0 L224.1,304.4 L225.0,305.9 L226.0,307.4 L226.9,309.0 L227.8,310.5 L228.8,312.1 L229.7,313.7 L230.7,315.4 L231.6,317.0 L232.5,318.7 L233.5,320.3 L234.4,322.0 L235.3,323.7 L236.3,325.4 L237.2,327.2 L238.1,328.9 L239.1,330.6 L240.0,332.3 L240.9,334.0 L241.9,335.7 L242.8,337.4 L243.8,339.1 L244.7,340.8 L245.6,342.5 L246.6,344.1 L247.5,345.8 L248.4,347.4 L249.4,348.9 L250.3,350.5 L251.2,352.0 L252.2,353.5 L253.1,354.9 L254.0,356.3 L255.0,357.7 L255.9,359.0 L256.9,360.3 L257.8,361.5 L258.7,362.7 L259.7,363.8 L260.6,364.8 L261.5,365.9 L262.5,366.8 L263.4,367.8 L264.3,368.9 L265.3,370.4 L266.2,372.4 L267.1,374.8 L268.1,377.0 L269.0,378.1 L269.9,377.7 L270.9,376.4 L271.8,374.9 L272.8,373.8 L273.7,373.2 L274.6,373.0 L275.6,372.9 L276.5,372.8 L277.4,372.6 L278.4,372.3 L279.3,372.0 L280.2,371.6 L281.2,371.1 L282.1,370.6 L283.1,370.0 L284.0,369.3 L284.9,368.5 L285.9,367.7 L286.8,366.9 L287.7,366.0 L288.7,365.0 L289.6,364.0 L290.5,362.9 L291.5,361.8 L292.4,360.6 L293.3,359.4 L294.3,358.2 L295.2,356.9 L296.1,355.6 L297.1,354.3 L298.0,353.0 L299.0,351.7 L299.9,350.4 L300.8,349.1 L301.8,347.8 L302.7,346.5 L303.6,345.3 L304.6,344.1 L305.5,342.9 L306.4,341.7 L307.4,340.7 L308.3,339.6 L309.2,338.7 L310.2,337.8 L311.1,337.0 L312.1,336.2 L313.0,335.5 L313.9,334.9 L314.9,334.4 L315.8,333.9 L316.7,333.5 L317.7,333.2 L318.6,332.9 L319.5,332.7 L320.5,332.4 L321.4,332.3 L322.4,332.1 L323.3,331.9 L324.2,331.8 L325.2,331.6 L326.1,331.3 L327.0,331.0 L328.0,330.7 L328.9,330.3 L329.8,329.7 L330.8,329.1 L331.7,328.4 L332.6,327.6 L333.6,326.6 L334.5,325.6 L335.5,324.4 L336.4,323.1 L337.3,321.6 L338.3,320.1 L339.2,318.5 L340.1,316.7 L341.1,314.9 L342.0,313.0 L342.9,311.0 L343.9,309.0 L344.8,306.9 L345.7,304.8 L346.7,302.7 L347.6,300.6 L348.6,298.6 L349.5,296.5 L350.4,294.5 L351.4,292.5 L352.3,290.6 L353.2,288.7 L354.2,287.0 L355.1,285.3 L356.0,283.6 L357.0,282.1 L357.9,280.7 L358.8,279.3 L359.8,278.0 L360.7,276.8 L361.6,275.7 L362.6,274.7 L363.5,273.8 L364.5,272.9 L365.4,272.2 L366.3,271.4 L367.3,270.8 L368.2,270.2 L369.1,269.7 L370.1,269.2 L371.0,268.7 L371.9,268.3 L372.9,268.0 L373.8,267.7 L374.8,267.4 L375.7,267.1 L376.6,266.9 L377.6,266.7 L378.5,266.5 L379.4,266.3 L380.4,266.2 L381.3,266.0 L382.2,265.9 L383.2,265.8 L384.1,265.7 L385.0,265.6 L386.0,265.5 L386.9,265.4 L387.8,265.3 L388.8,265.3 L389.7,265.2 L390.7,265.2 L391.6,265.1 L392.5,265.1 L393.5,265.0 L394.4,265.0 L395.3,265.0 L396.3,264.9 L397.2,264.9 L398.1,264.9 L399.1,264.9 L400.0,264.8 L400.9,264.8 L401.9,264.8 L402.8,264.8 L403.8,264.8 L404.7,264.7 L405.6,264.7 L406.6,264.7 L407.5,264.7 L408.4,264.7 L409.4,264.7 L410.3,264.7 L411.2,264.7 L412.2,264.7 L413.1,264.7 L414.1,264.7 L415.0,264.6 L415.9,264.6 L416.9,264.6 L417.8,264.6 L418.7,264.6 L419.7,264.6 L420.6,264.6 L421.5,264.6 L422.5,264.6 L423.4,264.6 L424.3,264.6 L425.3,264.6 L426.2,264.6 L427.2,264.6 L428.1,264.6 L429.0,264.6 L430.0,264.6 L430.9,264.6 L431.8,264.6 L432.8,264.6 L433.7,264.6 L434.6,264.6 L435.6,264.6 L436.5,264.6 L437.4,264.6 L438.4,264.6 L439.3,264.6 L440.3,264.6 L441.2,264.6 L442.1,264.6 L443.1,264.6 L444.0,264.6 L444.9,264.6 L445.9,264.6 L446.8,264.6 L447.7,264.6 L448.7,264.6 L449.6,264.6 L450.5,264.6 L451.5,264.6 L452.4,264.6 L453.3,264.6 L454.3,264.6 L455.2,264.6 L456.2,264.6 L457.1,264.6 L458.0,264.6 L459.0,264.6 L459.9,264.6 L460.8,264.6 L461.8,264.6 L462.7,264.6 L463.6,264.6 L464.6,264.6 L465.5,264.6 L466.4,264.6 L467.4,264.6 L468.3,264.6 L469.3,264.6 L470.2,264.6 L471.1,264.6 L472.1,264.6 L473.0,264.6 L473.9,264.6 L474.9,264.6 L475.8,264.6 L476.7,264.6 L477.7,264.6 L478.6,264.6 L479.6,264.6 L480.5,264.6 L481.4,264.6 L482.4,264.6 L483.3,264.6 L484.2,264.6 L485.2,264.6 L486.1,264.6 L487.0,264.6 L488.0,264.6 L488.9,264.6 L489.8,264.6 L490.8,264.6 L491.7,264.6 L492.6,264.6 L493.6,264.6 L494.5,264.6 L495.5,264.6 L496.4,264.7 L497.3,264.9 L498.3,265.3 L499.2,266.4 L500.1,268.7 L501.1,273.2 L502.0,281.1 L502.9,293.6 L503.9,311.4 L504.8,333.7 L505.8,358.2 L506.7,380.9 L507.6,397.1 L508.6,403.0 L509.5,397.1 L510.4,380.9 L511.4,358.2 L512.3,333.7 L513.2,311.4 L514.2,293.6 L515.1,281.1 L516.0,273.2 L517.0,268.7 L517.9,266.4 L518.9,265.3 L519.8,264.9 L520.7,264.7 L521.7,264.6 L522.6,264.6 L523.5,264.6 L524.5,264.6 L525.4,264.6 L526.3,264.6 L527.3,264.6 L528.2,264.6 L529.1,264.6 L530.1,264.6 L531.0,264.6 L532.0,264.6 L532.9,264.6 L533.8,264.6 L534.8,264.6 L535.7,264.6 L536.6,264.6 L537.6,264.6 L538.5,264.6 L539.4,264.6 L540.4,264.6 L541.3,264.6 L542.2,264.6 L543.2,264.6 L544.1,264.6 L545.0,264.6 L546.0,264.6 L546.9,264.6 L547.9,264.6 L548.8,264.6 L549.7,264.6 L550.7,264.6 L551.6,264.6 L552.5,264.6 L553.5,264.6 L554.4,264.6 L555.3,264.6 L556.3,264.7 L557.2,265.1 L558.1,266.2 L559.1,269.1 L560.0,275.1 L561.0,285.6 L561.9,300.6 L562.8,317.6 L563.8,331.4 L564.7,336.8 L565.6,331.4 L566.6,317.6 L567.5,300.6 L568.4,285.6 L569.4,275.1 L570.3,269.1 L571.2,266.2 L572.2,265.1 L573.1,264.7 L574.1,264.6 L575.0,264.6 L575.9,264.6 L576.9,264.7 L577.8,264.8 L578.7,265.3 L579.7,266.6 L580.6,269.7 L581.5,276.0 L582.5,287.3 L583.4,304.4 L584.4,326.3 L585.3,348.9 L586.2,366.3 L587.2,372.9 L588.1,366.3 L589.0,348.9 L590.0,326.3 L590.9,304.4 L591.8,287.3 L592.8,276.0 L593.7,269.7 L594.6,266.6 L595.6,265.3 L596.5,264.8 L597.5,264.7 L598.4,264.6 L599.3,264.6 L600.3,264.6 L601.2,264.6 L602.1,264.6 L603.1,264.6 L604.0,264.6 L604.9,264.6 L605.9,264.6 L606.8,264.6 L607.7,264.6 L608.7,264.6 L609.6,264.6 L610.6,264.6 L611.5,264.6 L612.4,264.6 L613.4,264.6 L614.3,264.6 L615.2,264.6 L616.2,264.6 L617.1,264.6 L618.0,264.6 L619.0,264.6 L619.9,264.6 L620.8,264.6 L621.8,264.6 L622.7,264.6 L623.6,264.6 L624.6,264.6 L625.5,264.7 L626.5,265.1 L627.4,266.5 L628.3,270.5 L629.3,278.9 L630.2,291.7 L631.1,304.3 L632.1,309.7 L633.0,304.3 L633.9,291.7 L634.9,278.9 L635.8,270.5 L636.8,266.5 L637.7,265.1 L638.6,264.8 L639.6,264.9 L640.5,265.3 L641.4,266.0 L642.4,267.2 L643.3,269.3 L644.2,272.5 L645.2,277.3 L646.1,283.9 L647.0,292.3 L648.0,302.2 L648.9,312.8 L649.9,323.2 L650.8,331.9 L651.7,337.7 L652.7,339.8 L653.6,337.7 L654.5,331.9 L655.5,323.2 L656.4,312.8 L657.3,302.2 L658.3,292.3 L659.2,283.9 L660.1,277.3 L661.1,272.5 L662.0,269.3 L663.0,267.2 L663.9,266.0 L664.8,265.3 L665.8,264.9 L666.7,264.7 L667.6,264.7 L668.6,264.6 L669.5,264.6 L670.4,264.6 L671.4,264.6 L672.3,264.6 L673.2,264.6 L674.2,264.6 L675.1,264.6 L676.1,264.6 L677.0,264.6 L677.9,264.6 L678.9,264.6 L679.8,264.6 L680.7,264.6 L681.7,264.6 L682.6,264.6 L683.5,264.6 L684.5,264.6 L685.4,264.6 L686.3,264.6 L687.3,264.6 L688.2,264.6 L689.1,264.6 L690.1,264.6 L691.0,264.6 L692.0,264.6 L692.9,264.6 L693.8,264.6 L694.8,264.6 L695.7,264.6 L696.6,264.6 L697.6,264.6 L698.5,264.6 L699.4,264.6 L700.4,264.6 L701.3,264.6 L702.2,264.6 L703.2,264.6 L704.1,264.6 L705.1,264.7 L706.0,265.2 L706.9,266.6 L707.9,270.5 L708.8,278.8 L709.7,292.7 L710.7,310.4 L711.6,326.0 L712.5,332.3 L713.5,326.0 L714.4,310.4 L715.4,292.7 L716.3,278.8 L717.2,270.5 L718.2,266.6 L719.1,265.2 L720.0,264.7 L721.0,264.6 L721.9,264.6 L722.8,264.6 L723.8,264.6 L724.7,264.6 L725.6,264.6 L726.6,264.6 L727.5,264.6 L728.5,264.6 L729.4,264.6 L730.3,264.6 L731.3,264.6 L732.2,264.6 L733.1,264.6 L734.1,264.6 L735.0,264.6\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><text x=\"90\" y=\"247\" font-size=\"16\" text-anchor=\"start\" fill=\"#1F4E5A\" font-weight=\"bold\">Spectre B : espèce isolée du vinaigre (eau éliminée)</text><text x=\"30\" y=\"335.0\" font-size=\"14\" text-anchor=\"middle\" transform=\"rotate(-90 30 335.0)\">T (%)</text><text x=\"408\" y=\"462\" font-size=\"15\" text-anchor=\"middle\" fill=\"#1B2420\">nombre d'onde σ (cm⁻¹)</text></svg>",
+      "contexte2": [
+        "Doc. 4 — Quelques données. Un vin « à 11 % vol » contient 11 mL d'éthanol pour 100 mL de vin. Masse volumique de l'éthanol : ρ = 0,789 g·mL⁻¹. Un vinaigre de vin étiqueté « 7° » contient environ 70 g d'acide éthanoïque par litre. On admet que le volume du liquide ne varie pas pendant la transformation."
+      ],
+      "questions": [
+        {
+          "texte": "Pour l'éthanol, l'éthanal et l'acide éthanoïque, donne la formule brute, le groupe caractéristique et la famille. Ces trois molécules sont-elles des isomères ?",
+          "aides": []
+        },
+        {
+          "texte": "Justifie le nom « éthanal » à partir de la formule semi-développée CH₃–CHO.",
+          "aides": []
+        },
+        {
+          "texte": "Spectre A : à l'aide du doc. 2, attribue la bande large située vers 3350 cm⁻¹ et les bandes situées vers 2900 à 3000 cm⁻¹. Pourquoi n'observe-t-on aucune bande forte entre 1650 et 1750 cm⁻¹ ?",
+          "aides": [
+            "Une bande d'absorption est un creux du spectre : lis son nombre d'onde sur l'axe horizontal (gradué de 4000 à 500 cm⁻¹).",
+            "Compare chaque creux aux intervalles du doc. 2, en tenant compte de sa forme (large ou fine). Pour la dernière partie : l'éthanol possède-t-il une liaison C=O ?"
+          ]
+        },
+        {
+          "texte": "Spectre B : montre qu'il est compatible avec l'acide éthanoïque, mais ni avec l'éthanol ni avec l'éthanal.",
+          "aides": [
+            "Liste les liaisons de chaque molécule candidate, puis les bandes que chacune devrait donner d'après le doc. 2.",
+            "Une bande présente prouve une liaison ; une bande attendue mais absente permet d'éliminer une molécule."
+          ]
+        },
+        {
+          "texte": "Calcule la masse maximale d'acide éthanoïque que l'on peut obtenir à partir d'un litre de vin à 11 % vol. Compare-la à la masse contenue dans un litre de vinaigre « 7° » (écart relatif) et propose deux explications à l'écart.",
+          "aides": [
+            "Chaîne de calcul : volume d'éthanol → masse (avec ρ) → quantité de matière (avec M) → quantité d'acide (avec l'équation) → masse d'acide.",
+            "D'après l'équation, 1 mol d'éthanol donne au maximum 1 mol d'acide éthanoïque.",
+            "Écart relatif = |valeur mesurée − valeur attendue| / valeur attendue."
+          ]
+        },
+        {
+          "texte": "Regard critique. a. Pourquoi a-t-on éliminé l'eau du vinaigre avant d'enregistrer le spectre B ? b. Le spectre B suffit-il à affirmer que l'espèce est l'acide éthanoïque, et non l'acide propanoïque CH₃–CH₂–COOH ? Quelle autre information serait utile ?",
+          "aides": [
+            "Quelle liaison possède la molécule d'eau ? Dans quelle zone du doc. 2 absorbe-t-elle ?",
+            "Un spectre IR renseigne sur les liaisons et les groupes caractéristiques ; donne-t-il le nombre d'atomes de carbone ?"
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Éthanol CH₃–CH₂–OH : C₂H₆O ; groupe hydroxyle –OH ; famille des alcools. Éthanal CH₃–CHO : C₂H₄O ; groupe carbonyle en bout de chaîne (–CHO) ; famille des aldéhydes. Acide éthanoïque CH₃–COOH : C₂H₄O₂ ; groupe carboxyle –COOH ; famille des acides carboxyliques. Leurs formules brutes sont différentes : ce ne sont pas des isomères.",
+        "<strong>2.</strong> La chaîne principale compte 2 carbones (préfixe éth-) ; la molécule possède un groupe –CHO en bout de chaîne, c'est un aldéhyde (terminaison -anal) : éth + anal = éthanal.",
+        "<strong>3.</strong> La bande forte et large vers 3350 cm⁻¹ (entre 3200 et 3400 cm⁻¹) correspond à la liaison O–H d'un alcool. Les bandes plus fines vers 2900 à 3000 cm⁻¹ correspondent aux liaisons C–H des groupes CH₃ et CH₂. Il n'y a aucune bande forte entre 1650 et 1750 cm⁻¹ car l'éthanol ne possède pas de liaison C=O.",
+        "<em>⚠ Erreur fréquente : chercher les bandes « vers le haut ». Sur un spectre IR, une bande d'absorption est un creux de transmittance ; et l'axe des nombres d'onde est orienté vers la gauche (de 4000 à 500 cm⁻¹).</em>",
+        "<strong>4.</strong> Le spectre B présente une bande forte et fine vers 1710 cm⁻¹ : liaison C=O. Il présente aussi une bande très large, entre 2500 et 3300 cm⁻¹ environ, qui recouvre les bandes C–H : liaison O–H d'un acide carboxylique. Ces deux bandes ensemble signalent le groupe carboxyle –COOH : c'est compatible avec l'acide éthanoïque.",
+        "Ce n'est pas l'éthanol : l'éthanol n'a pas de liaison C=O (pas de bande vers 1710 cm⁻¹, voir spectre A). Ce n'est pas l'éthanal : l'éthanal possède une liaison C=O mais aucune liaison O–H, il ne donnerait pas la bande très large entre 2500 et 3300 cm⁻¹.",
+        "<strong>5.</strong> Volume d'éthanol dans 1,00 L de vin : V = 11 / 100 × 1000 = 110 mL. Masse : m = ρ × V = 0,789 × 110 = 86,8 g. Masse molaire : M(C₂H₆O) = 2 × 12,0 + 6 × 1,0 + 16,0 = 46,0 g·mol⁻¹, donc n(éthanol) = m / M = 86,8 / 46,0 = 1,89 mol.",
+        "D'après l'équation, 1 mol d'éthanol donne au plus 1 mol d'acide : n(acide) = 1,89 mol. M(C₂H₄O₂) = 2 × 12,0 + 4 × 1,0 + 2 × 16,0 = 60,0 g·mol⁻¹, donc m(acide) = 1,89 × 60,0 = 113 g pour un litre (en gardant les valeurs non arrondies dans la calculatrice).",
+        "Écart relatif : |70 − 113| / 113 = 38 %. Le vinaigre contient nettement moins d'acide que le maximum possible. Explications possibles (deux attendues) : la transformation n'est pas totale (il reste de l'éthanol, ou de l'éthanal) ; une partie de l'éthanol, volatil, s'est évaporée ; le vin a pu être dilué avant ou après la transformation pour obtenir un vinaigre à 7° ; une partie de l'éthanol a pu être consommée par d'autres transformations.",
+        "<em>⚠ Erreur fréquente : confondre le pourcentage en volume (11 mL d'éthanol pour 100 mL de vin) et un pourcentage en masse ; il faut passer par la masse volumique pour obtenir la masse d'éthanol.</em>",
+        "<strong>6.</strong> a. L'eau possède des liaisons O–H : elle donne une bande forte et large dans la même zone que la liaison O–H de l'acide. Le vinaigre étant composé surtout d'eau, cette bande masquerait la bande caractéristique de l'acide carboxylique.",
+        "b. Non : le spectre IR indique les groupes caractéristiques présents (ici –COOH), pas la longueur de la chaîne carbonée. L'acide propanoïque, qui possède aussi un groupe –COOH, aurait un spectre IR très proche dans cette zone. Il faut une autre information : la formule brute ou la masse molaire de l'espèce, une température d'ébullition ou une masse volumique à comparer aux tables, ou une comparaison avec le spectre d'un échantillon pur d'acide éthanoïque. Le contexte (vin → vinaigre) rend toutefois l'acide éthanoïque très probable."
+      ]
+    }
+  ]
+}

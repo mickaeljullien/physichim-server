@@ -1,0 +1,704 @@
+{
+  "id": 45,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. La mole et la constante d'Avogadro",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "text",
+            "text": "À l'échelle macroscopique, on manipule des masses ou des volumes. Mais les transformations chimiques se produisent à l'échelle des entités (atomes, ions, molécules), extrêmement nombreuses et petites. Les chimistes utilisent donc une unité adaptée à cette échelle : la mole."
+          },
+          {
+            "type": "def",
+            "term": "Mole et constante d'Avogadro",
+            "text": "La mole (symbole mol) est l'unité de quantité de matière n. Une mole de n'importe quelle entité contient toujours le même nombre d'entités, noté NA et appelé constante d'Avogadro : NA = 6,02×10²³ mol⁻¹."
+          },
+          {
+            "type": "formula",
+            "label": "Relation entre nombre d'entités et quantité de matière",
+            "text": "N = n × NA\navec N : nombre d'entités (sans unité) · n : quantité de matière (mol) · NA : constante d'Avogadro (mol⁻¹)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple d'application : une quantité de matière n = 0,50 mol de fer contient N = n × NA = 0,50 × 6,02×10²³ = 3,0×10²³ atomes de fer."
+          }
+        ]
+      },
+      {
+        "title": "2. Masse molaire d'une espèce chimique",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Masse molaire atomique M(X)",
+            "text": "La masse molaire atomique M(X) d'un élément X est la masse d'une mole d'atomes de cet élément. Elle s'exprime en g·mol⁻¹ et se lit directement dans le tableau périodique (nombre situé sous le symbole de l'élément)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Élément",
+              "H",
+              "C",
+              "N",
+              "O",
+              "Na",
+              "S",
+              "Cl"
+            ],
+            "rows": [
+              [
+                "M (g/mol)",
+                "1,0",
+                "12,0",
+                "14,0",
+                "16,0",
+                "23,0",
+                "32,1",
+                "35,5"
+              ]
+            ]
+          },
+          {
+            "type": "def",
+            "term": "Masse molaire moléculaire",
+            "text": "La masse molaire M d'une espèce chimique (molécule ou ion polyatomique) est égale à la somme des masses molaires atomiques des éléments qui la constituent, chacune multipliée par le nombre d'atomes correspondant dans la formule."
+          },
+          {
+            "type": "formula",
+            "label": "Exemples de calcul",
+            "text": "M(H2O) = 2×M(H) + M(O) = 2×1,0 + 16,0 = 18,0 g/mol\nM(C6H12O6) = 6×M(C)+12×M(H)+6×M(O) = 72,0+12,0+96,0 = 180,0 g/mol"
+          },
+          {
+            "type": "formula",
+            "label": "Relation fondamentale",
+            "text": "n = m / M     ⇔     m = n × M     ⇔     M = m / n\navec n en mol · m en g · M en g/mol"
+          },
+          {
+            "type": "text",
+            "text": "Exemple d'application : quelle quantité de matière de glucose contient un comprimé de masse m = 900 mg ? n = m/M = 0,900 / 180,0 = 5,00×10⁻³ mol."
+          }
+        ]
+      },
+      {
+        "title": "3. Volume molaire d'un gaz",
+        "icon": "🎈",
+        "content": [
+          {
+            "type": "def",
+            "term": "Volume molaire Vm",
+            "text": "Le volume molaire Vm d'un gaz est le volume occupé par une mole de ce gaz, dans des conditions de température et de pression données. À conditions identiques, tous les gaz ont (quasiment) le même volume molaire, quelle que soit leur nature chimique."
+          },
+          {
+            "type": "formula",
+            "label": "Valeur usuelle et relation",
+            "text": "Dans les conditions usuelles de température et de pression (θ = 20 °C ; P = 1013 hPa) : Vm ≈ 24,0 L/mol\nn = V / Vm     ⇔     V = n × Vm     (avec V en L · Vm en L/mol)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple d'application : un ballon de baudruche contient un volume V = 3,0 L de dioxyde de carbone, dans les conditions usuelles. n(CO2) = V / Vm = 3,0 / 24,0 = 0,125 mol."
+          }
+        ]
+      },
+      {
+        "title": "4. Quantité de matière dans un mélange",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un système chimique étudié est très souvent un mélange de plusieurs espèces (solution, alliage, mélange gazeux...). Pour déterminer la quantité de matière d'une espèce présente dans un mélange, on procède en deux étapes."
+          },
+          {
+            "type": "formula",
+            "label": "Méthode",
+            "text": "1. Identifier la masse (ou le volume, pour un gaz) de l'espèce considérée, à partir de la composition du mélange (masse totale, pourcentage massique, volume...).\n2. Appliquer la relation adaptée : n = m/M pour un solide ou un liquide, n = V/Vm pour un gaz."
+          },
+          {
+            "type": "text",
+            "text": "Exemple d'application : un alliage de laiton de masse totale m = 50,0 g contient 65 % en masse de cuivre (M(Cu) = 63,5 g/mol). m(Cu) = 0,65 × 50,0 = 32,5 g puis n(Cu) = m(Cu) / M(Cu) = 32,5 / 63,5 = 0,512 mol."
+          }
+        ]
+      },
+      {
+        "title": "5. Synthèse",
+        "icon": "📊",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Symbole (unité)",
+              "Relation"
+            ],
+            "rows": [
+              [
+                "Quantité de matière",
+                "n (mol)",
+                "n = N/NA = m/M = V/Vm"
+              ],
+              [
+                "Nombre d'entités",
+                "N",
+                "N = n × NA"
+              ],
+              [
+                "Masse molaire",
+                "M (g/mol)",
+                "M = m/n"
+              ],
+              [
+                "Volume molaire (gaz)",
+                "Vm (L/mol)",
+                "Vm = V/n ≈ 24,0 L/mol (conditions usuelles)"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Vocabulaire à connaître : mole, quantité de matière, constante d'Avogadro, masse molaire atomique, masse molaire moléculaire, volume molaire, conditions usuelles de température et de pression."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Que représente la constante d'Avogadro NA = 6,02×10²³ mol⁻¹ ?",
+      "opts": [
+        "Le nombre d'entités contenues dans une mole",
+        "La masse d'une mole d'atomes de carbone",
+        "Le volume occupé par une mole de gaz",
+        "Le nombre d'atomes contenus dans 1 g de matière"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "mole-masse-fixe",
+          "texte": "Croire qu'une mole est une masse fixe : NA est un nombre d'entités ; la masse d'une mole (M) dépend de l'espèce"
+        },
+        {
+          "code": "mole-volume",
+          "texte": "Confondre NA et le volume molaire : NA compte des entités, Vm est un volume (en L·mol⁻¹)"
+        },
+        {
+          "code": "mole-pese-1g",
+          "texte": "Croire qu'une mole pèse 1 g : 1 g d'hydrogène et 1 g de fer ne contiennent pas le même nombre d'atomes"
+        }
+      ],
+      "exp": "Une mole contient toujours NA = 6,02×10²³ entités (atomes, ions, molécules), quelle que soit l'espèce. Attention : la mole est un nombre d'entités, ce n'est ni une masse ni un volume."
+    },
+    {
+      "q": "M(H) = 1,0 g·mol⁻¹ ; M(C) = 12,0 g·mol⁻¹ ; M(O) = 16,0 g·mol⁻¹. La masse molaire de l'éthanol C₂H₆O vaut :",
+      "opts": [
+        "29,0 g·mol⁻¹",
+        "46,0 g·mol⁻¹",
+        "37,0 g·mol⁻¹",
+        "2,30×10³ g·mol⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-indice",
+          "texte": "Oublier les indices : 12,0 + 1,0 + 16,0 = 29,0 ; la molécule contient 2 atomes C et 6 atomes H"
+        },
+        null,
+        {
+          "code": "indices-additionnes",
+          "texte": "Ajouter les indices au lieu de les multiplier : (12,0 + 2) + (1,0 + 6) + 16,0 = 37,0"
+        },
+        {
+          "code": "masses-multipliees",
+          "texte": "Multiplier les masses molaires entre elles : on les additionne, chacune multipliée par son indice"
+        }
+      ],
+      "exp": "M(C₂H₆O) = 2 × M(C) + 6 × M(H) + M(O) = 24,0 + 6,0 + 16,0 = 46,0 g·mol⁻¹. Attention : chaque masse molaire atomique est multipliée par l'indice de l'élément."
+    },
+    {
+      "q": "Un comprimé contient 500 mg de paracétamol (M = 151 g·mol⁻¹). La quantité de matière de paracétamol vaut :",
+      "opts": [
+        "3,31 mol",
+        "3,31×10⁻³ mol",
+        "3,31×10⁻⁶ mol",
+        "302 mol"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-mg-g",
+          "texte": "Oublier de convertir les milligrammes en grammes : 500 / 151 ≈ 3,31 ; 500 mg = 0,500 g"
+        },
+        null,
+        {
+          "code": "masse-en-kg-avec-m-en-g",
+          "texte": "Convertir la masse en kg alors que M est en g·mol⁻¹ : 5,00×10⁻⁴ / 151 ; m doit être en g"
+        },
+        {
+          "code": "masse-molaire-rapport-inverse",
+          "texte": "Inverser le rapport : M / m = 151 / 0,500 = 302 ; il faut n = m / M"
+        }
+      ],
+      "exp": "m = 500 mg = 0,500 g, donc n = m / M = 0,500 / 151 ≈ 3,31×10⁻³ mol. Attention : avec M en g·mol⁻¹, la masse doit être en grammes."
+    },
+    {
+      "q": "Quelle masse de chlorure de sodium NaCl (M = 58,5 g·mol⁻¹) faut-il peser pour disposer de n = 0,200 mol ?",
+      "opts": [
+        "3,42×10⁻³ g",
+        "0,200 g",
+        "58,5 g",
+        "11,7 g"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "masse-molaire-divisee",
+          "texte": "Diviser par la masse molaire au lieu de multiplier : 0,200 / 58,5 ; il faut m = n × M"
+        },
+        {
+          "code": "masse-vs-quantite-matiere",
+          "texte": "Confondre masse et quantité de matière : 0,200 mol ne pèse pas 0,200 g"
+        },
+        {
+          "code": "masse-molaire-prise-pour-masse",
+          "texte": "Prendre la masse molaire pour la masse cherchée : 58,5 g est la masse d'une mole, pas de 0,200 mol"
+        },
+        null
+      ],
+      "exp": "m = n × M = 0,200 × 58,5 = 11,7 g. Attention : la masse molaire est la masse d'une mole ; pour 0,200 mol, il faut la multiplier par 0,200."
+    },
+    {
+      "q": "Un échantillon contient n = 0,10 mol de chlorure de magnésium MgCl₂. Combien contient-il d'ions chlorure Cl⁻ ? (NA = 6,02×10²³ mol⁻¹)",
+      "opts": [
+        "6,0×10²² ions",
+        "1,2×10²³ ions",
+        "1,7×10⁻²⁵ ions",
+        "6,02×10²³ ions"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-indice",
+          "texte": "Oublier l'indice 2 : chaque MgCl₂ apporte 2 ions Cl⁻, donc n(Cl⁻) = 2 × 0,10 = 0,20 mol"
+        },
+        null,
+        {
+          "code": "n-sur-na",
+          "texte": "Diviser au lieu de multiplier : 0,10 / 6,02×10²³ ; il faut N = n × NA"
+        },
+        {
+          "code": "na-pour-toute-quantite",
+          "texte": "Croire que tout échantillon contient NA entités : c'est le cas d'une mole seulement"
+        }
+      ],
+      "exp": "n(Cl⁻) = 2 × n(MgCl₂) = 0,20 mol, donc N = n × NA = 0,20 × 6,02×10²³ ≈ 1,2×10²³ ions. Attention à l'indice : un MgCl₂ contient deux ions Cl⁻."
+    },
+    {
+      "q": "Dans les conditions usuelles (20 °C ; 1 013 hPa), une mole de dihydrogène H₂ et une mole de dioxyde de carbone CO₂ occupent :",
+      "opts": [
+        "le même volume, environ 24 L",
+        "22,4 L chacune",
+        "un volume plus grand pour CO₂, plus lourd",
+        "un volume plus grand pour CO₂, de plus grosses molécules"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "vm-22-4",
+          "texte": "Prendre 22,4 L·mol⁻¹ : c'est le volume molaire à 0 °C ; à 20 °C et 1 013 hPa, Vm ≈ 24,0 L·mol⁻¹"
+        },
+        {
+          "code": "vm-depend-masse-gaz",
+          "texte": "Croire que le volume molaire dépend de la masse du gaz : à mêmes T et P, tous les gaz ont le même Vm"
+        },
+        {
+          "code": "vm-depend-taille-molecules",
+          "texte": "Croire que le volume d'un gaz vient de la taille des molécules : il est surtout fait de vide entre elles"
+        }
+      ],
+      "exp": "À température et pression données, tous les gaz ont (quasiment) le même volume molaire : Vm ≈ 24,0 L·mol⁻¹ dans les conditions usuelles. Attention : 22,4 L·mol⁻¹ correspond à 0 °C, pas à 20 °C."
+    },
+    {
+      "q": "Un ballon contient 600 mL d'hélium dans les conditions usuelles (Vm = 24,0 L·mol⁻¹). Sa quantité de matière d'hélium vaut :",
+      "opts": [
+        "25,0 mol",
+        "14,4 mol",
+        "40,0 mol",
+        "2,50×10⁻² mol"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "conversion-ml-l",
+          "texte": "Oublier de convertir les mL en L : 600 / 24,0 = 25,0 ; 600 mL = 0,600 L"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 0,600 × 24,0 = 14,4 ; il faut n = V / Vm"
+        },
+        {
+          "code": "vm-rapport-inverse",
+          "texte": "Inverser le rapport : Vm / V = 24,0 / 0,600 = 40,0 ; il faut n = V / Vm"
+        },
+        null
+      ],
+      "exp": "n = V / Vm = 0,600 / 24,0 = 2,50×10⁻² mol. Attention : Vm est en L·mol⁻¹, le volume doit donc être en litres."
+    },
+    {
+      "q": "On prélève 100 mL d'eau liquide (ρ = 1,00 g·mL⁻¹ ; M(H₂O) = 18,0 g·mol⁻¹). La quantité de matière d'eau prélevée vaut :",
+      "opts": [
+        "5,56 mol",
+        "4,17×10⁻³ mol",
+        "1,80×10³ mol",
+        "5,56×10⁻² mol"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "vm-pour-liquide",
+          "texte": "Utiliser le volume molaire pour un liquide : 0,100 / 24,0 ; Vm ne s'applique qu'aux gaz"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 100 × 18,0 = 1,80×10³ ; il faut n = m / M"
+        },
+        {
+          "code": "masse-volumique-prise-pour-masse",
+          "texte": "Prendre la masse volumique pour la masse : 1,00 / 18,0 ; il faut d'abord m = ρ × V = 100 g"
+        }
+      ],
+      "exp": "Pour un liquide : m = ρ × V = 1,00 × 100 = 100 g, puis n = m / M = 100 / 18,0 ≈ 5,56 mol. Attention : le volume molaire Vm ne concerne que les gaz."
+    },
+    {
+      "q": "Un bijou en or « 18 carats » de masse 6,0 g contient 75 % en masse d'or (M(Au) = 197 g·mol⁻¹). Sa quantité de matière d'or vaut :",
+      "opts": [
+        "3,0×10⁻² mol",
+        "2,3 mol",
+        "7,6×10⁻³ mol",
+        "2,3×10⁻² mol"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "masse-totale-au-lieu-espece",
+          "texte": "Utiliser la masse totale du bijou : 6,0 / 197 ; seule la masse d'or (0,75 × 6,0 = 4,5 g) compte"
+        },
+        {
+          "code": "pourcentage-non-converti",
+          "texte": "Utiliser 75 au lieu de 0,75 : 75 × 6,0 / 197 ≈ 2,3"
+        },
+        {
+          "code": "constituant-inverse",
+          "texte": "Calculer avec l'autre constituant (25 %) : 0,25 × 6,0 / 197 ; l'or représente 75 % de la masse"
+        },
+        null
+      ],
+      "exp": "m(Au) = 0,75 × 6,0 = 4,5 g, puis n(Au) = 4,5 / 197 ≈ 2,3×10⁻² mol. Attention : dans un mélange, on calcule d'abord la masse de l'espèce, pas celle du mélange."
+    },
+    {
+      "q": "On compare 1,0 g de dihydrogène H₂ (M = 2,0 g·mol⁻¹) et 1,0 g de dioxygène O₂ (M = 32,0 g·mol⁻¹). Quel échantillon contient le plus de molécules ?",
+      "opts": [
+        "Les deux, car ils ont la même masse",
+        "Le dioxygène, car ses molécules sont plus lourdes",
+        "Le dihydrogène, 16 fois plus de molécules",
+        "Le dioxygène, 16 fois plus de molécules"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "masse-egale-meme-nombre",
+          "texte": "Croire que même masse veut dire même nombre de molécules : les molécules n'ont pas toutes la même masse"
+        },
+        {
+          "code": "lourd-plus-entites",
+          "texte": "Croire qu'à masse égale l'espèce la plus lourde a plus de molécules : c'est l'inverse, il en faut moins pour faire 1,0 g"
+        },
+        null,
+        {
+          "code": "masse-molaire-rapport-inverse",
+          "texte": "Inverser le lien entre n et M : n = m / M est d'autant plus petit que M est grand"
+        }
+      ],
+      "exp": "n(H₂) = 1,0 / 2,0 = 0,50 mol et n(O₂) = 1,0 / 32,0 ≈ 3,1×10⁻² mol : 16 fois plus de molécules de H₂. Attention : à masse égale, plus M est grand, moins il y a d'entités."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Compter les atomes par paquets",
+      "contexte": [
+        "Sofiane trouve que « compter en moles », c'est comme acheter les œufs par douzaines : on compte des paquets plutôt que des unités. Mais un paquet d'une mole contient N<sub>A</sub> = 6,02 × 10²³ entités !"
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Une mole de sucre et une mole de fer contiennent le même nombre d'entités.<br>b. Une mole de n'importe quelle espèce chimique a une masse de 1 g.<br>c. La constante d'Avogadro N<sub>A</sub> n'a pas d'unité.<br>d. Une mole de molécules d'eau H₂O contient trois moles d'atomes.",
+          "aides": []
+        },
+        {
+          "texte": "Un clou en fer contient une quantité de matière de fer n = 0,050 mol. Calcule le nombre N d'atomes de fer qu'il contient, à l'aide de la relation N = n × N<sub>A</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Une goutte d'eau contient N = 3,01 × 10²¹ molécules d'eau. Calcule la quantité de matière n d'eau dans cette goutte.",
+          "aides": [
+            "Pars de la relation N = n × N<sub>A</sub> et isole n.",
+            "n = N / N<sub>A</sub> : divise le nombre de molécules par N<sub>A</sub> (attention aux puissances de dix : 10²¹ / 10²³ = 10⁻²)."
+          ]
+        },
+        {
+          "texte": "Sofiane veut compter une mole de grains de sable, à raison d'un grain par seconde, sans jamais s'arrêter. Sachant qu'une année dure environ 3,16 × 10⁷ s, combien d'années lui faudrait-il ? Conclus sur l'intérêt de la mole.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. VRAI : une mole contient toujours N<sub>A</sub> = 6,02 × 10²³ entités, quelle que soit l'entité (molécules de sucre ou atomes de fer).",
+        "b. FAUX : la masse d'une mole est la masse molaire M, qui dépend de l'espèce (par exemple 18,0 g pour l'eau, 342,0 g pour le saccharose).",
+        "c. FAUX : N<sub>A</sub> s'exprime en mol⁻¹ (c'est un nombre d'entités PAR mole).",
+        "d. VRAI : chaque molécule H₂O contient 3 atomes (2 H et 1 O), donc 1 mol de molécules contient 3 mol d'atomes.",
+        "<strong>2.</strong> N = n × N<sub>A</sub> = 0,050 × 6,02 × 10²³ = 3,0 × 10²² atomes de fer.",
+        "<strong>3.</strong> n = N / N<sub>A</sub> = 3,01 × 10²¹ / 6,02 × 10²³ = 5,00 × 10⁻³ mol.",
+        "<strong>4.</strong> Durée = 6,02 × 10²³ / 3,16 × 10⁷ = 1,9 × 10¹⁶ années (plus d'un million de fois l'âge de l'Univers, environ 1,4 × 10¹⁰ ans). Les entités sont si nombreuses qu'on ne peut pas les compter une à une : on les compte par paquets d'une mole.",
+        "<em>⚠ Erreur fréquente : à la question 3, multiplier par N<sub>A</sub> au lieu de diviser. Vérifie l'ordre de grandeur : une goutte contient bien moins d'une mole d'eau.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Des masses molaires du quotidien",
+      "contexte": [
+        "Dans la cuisine de Maëlle, on trouve du sel (chlorure de sodium NaCl), du sucre (saccharose C₁₂H₂₂O₁₁), du café (qui contient de la caféine C₈H₁₀N₄O₂) et une bouteille d'eau gazeuse (eau H₂O et dioxyde de carbone CO₂). Le vinaigre de cidre a été fabriqué à partir d'un cidre contenant de l'éthanol C₂H₆O.",
+        "Rappel : la masse molaire d'une espèce est la somme des masses molaires atomiques des éléments qui la constituent, chacune multipliée par le nombre d'atomes correspondant dans la formule."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse molaire du dioxyde de carbone CO₂ en détaillant le calcul.",
+          "aides": [
+            "Dans la formule CO₂, combien y a-t-il d'atomes de carbone ? d'oxygène ?",
+            "Chaque masse molaire atomique est multipliée par l'indice de l'élément : M(CO₂) = 1 × M(C) + 2 × M(O)."
+          ]
+        },
+        {
+          "texte": "Associe chaque espèce à sa masse molaire, en justifiant par un calcul.<br>Espèces : chlorure de sodium NaCl — saccharose C₁₂H₂₂O₁₁ — caféine C₈H₁₀N₄O₂ — éthanol C₂H₆O.<br>Masses molaires (g·mol⁻¹) : 46,0 — 194,0 — 58,5 — 342,0.",
+          "aides": []
+        },
+        {
+          "texte": "Un morceau de sucre (saccharose pur) a une masse m = 5,13 g. Calcule la quantité de matière de saccharose qu'il contient, à l'aide de la relation n = m / M.",
+          "aides": []
+        },
+        {
+          "texte": "La masse molaire est la masse d'une mole d'entités : M = m(entité) × N<sub>A</sub>. Calcule la masse, en gramme, d'une seule molécule d'eau H₂O.",
+          "aides": [
+            "Commence par calculer M(H₂O).",
+            "Isole m(entité) dans M = m(entité) × N<sub>A</sub> : m(entité) = M / N<sub>A</sub>. Le résultat est en g (M en g·mol⁻¹ et N<sub>A</sub> en mol⁻¹)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(CO₂) = M(C) + 2 × M(O) = 12,0 + 2 × 16,0 = 44,0 g·mol⁻¹.",
+        "<strong>2.</strong> M(NaCl) = 23,0 + 35,5 = 58,5 g·mol⁻¹ ; M(C₁₂H₂₂O₁₁) = 12 × 12,0 + 22 × 1,0 + 11 × 16,0 = 342,0 g·mol⁻¹ ; M(C₈H₁₀N₄O₂) = 8 × 12,0 + 10 × 1,0 + 4 × 14,0 + 2 × 16,0 = 194,0 g·mol⁻¹ ; M(C₂H₆O) = 2 × 12,0 + 6 × 1,0 + 16,0 = 46,0 g·mol⁻¹.",
+        "<strong>3.</strong> n = m / M = 5,13 / 342,0 = 1,50 × 10⁻² mol.",
+        "<strong>4.</strong> M(H₂O) = 2 × 1,0 + 16,0 = 18,0 g·mol⁻¹, donc m(molécule) = M / N<sub>A</sub> = 18,0 / 6,02 × 10²³ = 2,99 × 10⁻²³ g.",
+        "<em>⚠ Erreur fréquente : oublier de multiplier la masse molaire atomique par l'indice (écrire M(CO₂) = 12,0 + 16,0 = 28,0 g·mol⁻¹).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Un ballon de baudruche et le volume molaire",
+      "contexte": [
+        "Pour préparer un anniversaire, Kenza se demande combien de gaz contient un ballon. En TP, un élève mesure, à 20 °C et 1013 hPa, le volume V occupé par différentes quantités de matière n de dioxygène O₂. Ses mesures sont représentées ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"85.0\" y1=\"30\" x2=\"85.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"85.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"103.4\" y1=\"30\" x2=\"103.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"121.9\" y1=\"30\" x2=\"121.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"140.3\" y1=\"30\" x2=\"140.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"158.7\" y1=\"30\" x2=\"158.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"177.1\" y1=\"30\" x2=\"177.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"177.1\" y=\"430\" text-anchor=\"middle\">0,05</text><line x1=\"195.6\" y1=\"30\" x2=\"195.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"214.0\" y1=\"30\" x2=\"214.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"232.4\" y1=\"30\" x2=\"232.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"250.9\" y1=\"30\" x2=\"250.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"269.3\" y1=\"30\" x2=\"269.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"269.3\" y=\"430\" text-anchor=\"middle\">0,1</text><line x1=\"287.7\" y1=\"30\" x2=\"287.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"306.1\" y1=\"30\" x2=\"306.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"324.6\" y1=\"30\" x2=\"324.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"343.0\" y1=\"30\" x2=\"343.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"361.4\" y1=\"30\" x2=\"361.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"361.4\" y=\"430\" text-anchor=\"middle\">0,15</text><line x1=\"379.9\" y1=\"30\" x2=\"379.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"398.3\" y1=\"30\" x2=\"398.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"416.7\" y1=\"30\" x2=\"416.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"435.1\" y1=\"30\" x2=\"435.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"453.6\" y1=\"30\" x2=\"453.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"453.6\" y=\"430\" text-anchor=\"middle\">0,2</text><line x1=\"472.0\" y1=\"30\" x2=\"472.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"490.4\" y1=\"30\" x2=\"490.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"508.9\" y1=\"30\" x2=\"508.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"527.3\" y1=\"30\" x2=\"527.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"545.7\" y1=\"30\" x2=\"545.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"545.7\" y=\"430\" text-anchor=\"middle\">0,25</text><line x1=\"564.1\" y1=\"30\" x2=\"564.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"582.6\" y1=\"30\" x2=\"582.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"601.0\" y1=\"30\" x2=\"601.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"619.4\" y1=\"30\" x2=\"619.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"637.9\" y1=\"30\" x2=\"637.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"637.9\" y=\"430\" text-anchor=\"middle\">0,3</text><line x1=\"656.3\" y1=\"30\" x2=\"656.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"674.7\" y1=\"30\" x2=\"674.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"693.1\" y1=\"30\" x2=\"693.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"711.6\" y1=\"30\" x2=\"711.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"730.0\" y1=\"30\" x2=\"730.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"730.0\" y=\"430\" text-anchor=\"middle\">0,35</text><line x1=\"85\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"413.0\" text-anchor=\"end\">0</text><line x1=\"85\" y1=\"387.0\" x2=\"730\" y2=\"387.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"366.0\" x2=\"730\" y2=\"366.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"371.0\" text-anchor=\"end\">1</text><line x1=\"85\" y1=\"345.0\" x2=\"730\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"324.0\" x2=\"730\" y2=\"324.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"329.0\" text-anchor=\"end\">2</text><line x1=\"85\" y1=\"303.0\" x2=\"730\" y2=\"303.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"282.0\" x2=\"730\" y2=\"282.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"287.0\" text-anchor=\"end\">3</text><line x1=\"85\" y1=\"261.0\" x2=\"730\" y2=\"261.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"240.0\" x2=\"730\" y2=\"240.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"245.0\" text-anchor=\"end\">4</text><line x1=\"85\" y1=\"219.0\" x2=\"730\" y2=\"219.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"198.0\" x2=\"730\" y2=\"198.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"203.0\" text-anchor=\"end\">5</text><line x1=\"85\" y1=\"177.0\" x2=\"730\" y2=\"177.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"156.0\" x2=\"730\" y2=\"156.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"161.0\" text-anchor=\"end\">6</text><line x1=\"85\" y1=\"135.0\" x2=\"730\" y2=\"135.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"114.0\" x2=\"730\" y2=\"114.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"119.0\" text-anchor=\"end\">7</text><line x1=\"85\" y1=\"93.0\" x2=\"730\" y2=\"93.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"72.0\" x2=\"730\" y2=\"72.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"77.0\" text-anchor=\"end\">8</text><line x1=\"85\" y1=\"51.0\" x2=\"730\" y2=\"51.0\" stroke=\"#d9d2c5\" stroke-width=\"0.6\"/><line x1=\"85\" y1=\"30.0\" x2=\"730\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"75\" y=\"35.0\" text-anchor=\"end\">9</text><rect x=\"85\" y=\"30\" width=\"645\" height=\"378\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"85.0\" y1=\"408.0\" x2=\"730.0\" y2=\"55.2\" stroke=\"#1F4E5A\" stroke-width=\"2.6\"/><circle cx=\"177.1\" cy=\"357.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"269.3\" cy=\"307.2\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"361.4\" cy=\"256.8\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"453.6\" cy=\"206.4\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"545.7\" cy=\"156.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"637.9\" cy=\"105.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">n (mol) de dioxygène</text><text transform=\"translate(24,219.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">V (L)</text><text x=\"101\" y=\"56\" fill=\"#1F4E5A\">20 °C ; 1013 hPa</text></svg>",
+      "questions": [
+        {
+          "texte": "QCM : dans des conditions de température et de pression données, le volume molaire d'un gaz dépend… (une seule bonne réponse)<br>A. de la nature du gaz. — B. de la masse de gaz. — C. de rien d'autre : il est le même pour tous les gaz.",
+          "aides": []
+        },
+        {
+          "texte": "Le volume V est-il proportionnel à la quantité de matière n ? Justifie à l'aide du graphique.",
+          "aides": []
+        },
+        {
+          "texte": "Lis sur le graphique le volume occupé par 0,20 mol de dioxygène, puis détermine le coefficient directeur de la droite. Que représente-t-il ?",
+          "aides": [
+            "Le coefficient directeur d'une droite qui passe par l'origine s'obtient avec un seul point : ordonnée / abscisse.",
+            "Ici, c'est V / n : quelle grandeur du cours a pour unité des L·mol⁻¹ ?"
+          ]
+        },
+        {
+          "texte": "Le ballon de Kenza, gonflé à l'hélium He, a un volume V = 6,0 L dans les mêmes conditions. Calcule la quantité de matière d'hélium qu'il contient, à l'aide de la relation n = V / V<sub>m</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Un ballon identique (même volume, mêmes conditions) est gonflé au dioxyde de carbone. Contient-il plus, moins ou autant de molécules que le ballon d'hélium contient d'atomes ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réponse C : à température et pression données, tous les gaz ont (quasiment) le même volume molaire, quelle que soit leur nature ; il ne dépend pas non plus de la quantité de gaz.",
+        "<strong>2.</strong> Oui : les points sont alignés sur une droite qui passe par l'origine.",
+        "<strong>3.</strong> Pour n = 0,20 mol, on lit V = 4,8 L. Coefficient directeur : 4,8 / 0,20 = 24 L·mol⁻¹ (même résultat avec tout autre point, par exemple 7,2 / 0,30). C'est le volume molaire V<sub>m</sub> du gaz dans ces conditions : V = n × V<sub>m</sub>.",
+        "<strong>4.</strong> n = V / V<sub>m</sub> = 6,0 / 24,0 = 0,25 mol d'hélium.",
+        "<strong>5.</strong> Autant : même volume et même volume molaire, donc même quantité de matière (0,25 mol), donc même nombre d'entités (N = n × N<sub>A</sub>), bien que les masses soient différentes."
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le flacon de dissolvant",
+      "contexte": [
+        "Le dissolvant pour vernis à ongles de Lina est de l'acétone pure, de formule C₃H₆O. Le flacon contient V = 125 mL d'acétone liquide.",
+        "Donnée : masse volumique de l'acétone liquide à 20 °C : ρ = 0,790 g·mL⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse molaire de l'acétone.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la masse d'acétone contenue dans le flacon.",
+          "aides": [
+            "On connaît un volume de liquide et sa masse volumique : quelle relation relie m, ρ et V ?",
+            "m = ρ × V. Vérifie que les unités sont cohérentes (ρ en g·mL⁻¹, donc V en mL)."
+          ]
+        },
+        {
+          "texte": "Déduis-en la quantité de matière d'acétone, puis le nombre de molécules d'acétone dans le flacon.",
+          "aides": []
+        },
+        {
+          "texte": "Lina laisse le flacon ouvert : 1,00 mL d'acétone liquide s'évapore dans la pièce (20 °C, 1013 hPa). Quel volume occupe cette acétone à l'état gazeux ?",
+          "aides": [
+            "Chaîne de calcul : volume de liquide → masse → quantité de matière → volume de gaz.",
+            "Pour l'état gazeux, utilise V = n × V<sub>m</sub>."
+          ]
+        },
+        {
+          "texte": "Compare ce volume à celui du liquide de départ. Pourquoi ne peut-on pas utiliser le volume molaire V<sub>m</sub> pour calculer la quantité de matière d'acétone liquide ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(C₃H₆O) = 3 × 12,0 + 6 × 1,0 + 16,0 = 58,0 g·mol⁻¹.",
+        "<strong>2.</strong> m = ρ × V = 0,790 × 125 = 98,8 g.",
+        "<strong>3.</strong> n = m / M = 98,8 / 58,0 = 1,70 mol ; N = n × N<sub>A</sub> = 1,70 × 6,02 × 10²³ = 1,02 × 10²⁴ molécules.",
+        "<strong>4.</strong> Masse évaporée : m = 0,790 × 1,00 = 0,790 g ; n = 0,790 / 58,0 = 1,36 × 10⁻² mol ; V = n × V<sub>m</sub> = 1,36 × 10⁻² × 24,0 = 0,327 L = 327 mL.",
+        "<strong>5.</strong> Le gaz occupe environ 330 fois plus de place que le liquide (327 mL contre 1,00 mL). Le volume molaire V<sub>m</sub> ne concerne que les gaz : dans un liquide, les molécules sont au contact les unes des autres et le volume occupé par une mole dépend de l'espèce. Pour un liquide, on passe par la masse (m = ρ × V) puis n = m / M.",
+        "<em>⚠ Erreur fréquente : calculer n = V / V<sub>m</sub> = 0,125 / 24,0 pour le liquide, ou mélanger les unités de ρ (g·mL⁻¹) et de V (L). Ici V est en mL et ρ en g·mL⁻¹ : la masse sort directement en g.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Que contient une pièce de 10 centimes ?",
+      "contexte": [
+        "Les pièces de 10, 20 et 50 centimes d'euro sont en « or nordique », un alliage (mélange solide) de plusieurs métaux. Une pièce de 10 centimes a une masse de 4,10 g. Sa composition en masse est : cuivre Cu : 89 % ; aluminium Al : 5 % ; zinc Zn : 5 % ; étain Sn : 1 %."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la masse de chaque métal dans la pièce.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la quantité de matière de chaque métal dans la pièce.",
+          "aides": [
+            "Il y a quatre espèces : il faut faire quatre fois le même calcul.",
+            "Pour chaque métal : n = m / M, avec la masse du métal trouvée à la question 1 (et pas la masse totale de la pièce)."
+          ]
+        },
+        {
+          "texte": "La pièce contient la même masse d'aluminium et de zinc. Contient-elle le même nombre d'atomes de ces deux métaux ? Explique, puis calcule le rapport n(Al) / n(Zn).",
+          "aides": [
+            "Compare les masses molaires de l'aluminium et du zinc : quel atome est le plus léger ?",
+            "Pour une même masse m, n = m / M est d'autant plus grand que M est petit."
+          ]
+        },
+        {
+          "texte": "Calcule le nombre total d'atomes métalliques dans la pièce.",
+          "aides": []
+        },
+        {
+          "texte": "Quel pourcentage des atomes de la pièce sont des atomes de cuivre ? Compare à 89 % et explique la différence.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> m(Cu) = 0,89 × 4,10 = 3,65 g ; m(Al) = 0,05 × 4,10 = 0,205 g ; m(Zn) = 0,205 g ; m(Sn) = 0,01 × 4,10 = 0,041 g.",
+        "<strong>2.</strong> n = m / M : n(Cu) = 3,649 / 63,5 = 5,75 × 10⁻² mol ; n(Al) = 0,205 / 27,0 = 7,59 × 10⁻³ mol ; n(Zn) = 0,205 / 65,4 = 3,13 × 10⁻³ mol ; n(Sn) = 0,041 / 118,7 = 3,45 × 10⁻⁴ mol.",
+        "<strong>3.</strong> Non : un atome d'aluminium est plus léger qu'un atome de zinc (M(Al) &lt; M(Zn)), donc la même masse contient plus d'atomes d'aluminium. n(Al) / n(Zn) = 7,59 × 10⁻³ / 3,13 × 10⁻³ = 2,4 (c'est aussi M(Zn) / M(Al) = 65,4 / 27,0 = 2,4).",
+        "<strong>4.</strong> n(total) = 5,75 × 10⁻² + 7,59 × 10⁻³ + 3,13 × 10⁻³ + 3,45 × 10⁻⁴ = 6,85 × 10⁻² mol ; N = n × N<sub>A</sub> = 6,85 × 10⁻² × 6,02 × 10²³ = 4,13 × 10²² atomes.",
+        "<strong>5.</strong> 5,75 × 10⁻² / 6,85 × 10⁻² = 0,838, soit environ 84 % des atomes. C'est moins que 89 % : le pourcentage en masse n'est pas un pourcentage en nombre d'atomes. L'aluminium, léger, « compte » davantage en atomes qu'en masse, ce qui fait baisser la part des atomes de cuivre.",
+        "<em>⚠ Erreur fréquente : appliquer n = m / M avec la masse totale de la pièce (4,10 / 63,5 = 6,46 × 10⁻² mol) : dans un mélange, on calcule d'abord la masse de CHAQUE espèce à partir de la composition.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Que contient vraiment un gel hydroalcoolique ?",
+      "contexte": [
+        "Doc. 1 — Composition. Une solution hydroalcoolique pour les mains, préparée selon la formulation n° 1 recommandée par l'OMS, contient en volume : éthanol C₂H₆O : 80 % ; glycérol C₃H₈O₃ : 1,45 % ; peroxyde d'hydrogène : 0,125 % ; le reste est de l'eau. « 80 % en volume » signifie que 100,0 mL de solution sont préparés avec 80,0 mL d'éthanol pur.",
+        "Doc. 2 — Masses volumiques à 20 °C : éthanol pur : 0,789 g·mL⁻¹ ; glycérol pur : 1,26 g·mL⁻¹ ; eau pure : 1,00 g·mL⁻¹.",
+        "Doc. 3 — Une mesure. Un élève remplit une fiole jaugée de 100,0 mL avec la solution hydroalcoolique et mesure sa masse : m(solution) = 86,8 g.",
+        "Doc. 4 — Une expérience surprenante (figure ci-dessous). Un élève mélange 50,0 mL d'éthanol et 50,0 mL d'eau, puis lit le volume du mélange."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\">Mélange de 50,0 mL d'éthanol et de 50,0 mL d'eau (20 °C)</text><rect x=\"85\" y=\"230.0\" width=\"90\" height=\"150.0\" fill=\"#C8962E\" fill-opacity=\"0.35\"/><line x1=\"85\" y1=\"230.0\" x2=\"175\" y2=\"230.0\" stroke=\"#C8962E\" stroke-width=\"3\"/><path d=\"M85,56 L85,380 L175,380 L175,56\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.2\"/><rect x=\"65\" y=\"380\" width=\"130\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"153\" y1=\"380\" x2=\"175\" y2=\"380\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"164\" y1=\"365\" x2=\"175\" y2=\"365\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"350\" x2=\"175\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"164\" y1=\"335\" x2=\"175\" y2=\"335\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"320\" x2=\"175\" y2=\"320\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"148\" y=\"325\" text-anchor=\"end\" font-size=\"14\">20</text><line x1=\"164\" y1=\"305\" x2=\"175\" y2=\"305\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"290\" x2=\"175\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"164\" y1=\"275\" x2=\"175\" y2=\"275\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"260\" x2=\"175\" y2=\"260\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"148\" y=\"265\" text-anchor=\"end\" font-size=\"14\">40</text><line x1=\"164\" y1=\"245\" x2=\"175\" y2=\"245\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"230\" x2=\"175\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"164\" y1=\"215\" x2=\"175\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"200\" x2=\"175\" y2=\"200\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"148\" y=\"205\" text-anchor=\"end\" font-size=\"14\">60</text><line x1=\"164\" y1=\"185\" x2=\"175\" y2=\"185\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"170\" x2=\"175\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"164\" y1=\"155\" x2=\"175\" y2=\"155\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"140\" x2=\"175\" y2=\"140\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"148\" y=\"145\" text-anchor=\"end\" font-size=\"14\">80</text><line x1=\"164\" y1=\"125\" x2=\"175\" y2=\"125\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"110\" x2=\"175\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"164\" y1=\"95\" x2=\"175\" y2=\"95\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"153\" y1=\"80\" x2=\"175\" y2=\"80\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"148\" y=\"85\" text-anchor=\"end\" font-size=\"14\">100</text><text x=\"130.0\" y=\"418\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">éthanol</text><text x=\"130.0\" y=\"440\" text-anchor=\"middle\">50,0 mL</text><text x=\"232\" y=\"240\" text-anchor=\"middle\" font-size=\"40\" fill=\"#3a3a3a\">+</text><rect x=\"290\" y=\"230.0\" width=\"90\" height=\"150.0\" fill=\"#1F4E5A\" fill-opacity=\"0.35\"/><line x1=\"290\" y1=\"230.0\" x2=\"380\" y2=\"230.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M290,56 L290,380 L380,380 L380,56\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.2\"/><rect x=\"270\" y=\"380\" width=\"130\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"358\" y1=\"380\" x2=\"380\" y2=\"380\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"369\" y1=\"365\" x2=\"380\" y2=\"365\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"350\" x2=\"380\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"369\" y1=\"335\" x2=\"380\" y2=\"335\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"320\" x2=\"380\" y2=\"320\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"353\" y=\"325\" text-anchor=\"end\" font-size=\"14\">20</text><line x1=\"369\" y1=\"305\" x2=\"380\" y2=\"305\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"290\" x2=\"380\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"369\" y1=\"275\" x2=\"380\" y2=\"275\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"260\" x2=\"380\" y2=\"260\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"353\" y=\"265\" text-anchor=\"end\" font-size=\"14\">40</text><line x1=\"369\" y1=\"245\" x2=\"380\" y2=\"245\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"230\" x2=\"380\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"369\" y1=\"215\" x2=\"380\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"200\" x2=\"380\" y2=\"200\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"353\" y=\"205\" text-anchor=\"end\" font-size=\"14\">60</text><line x1=\"369\" y1=\"185\" x2=\"380\" y2=\"185\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"170\" x2=\"380\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"369\" y1=\"155\" x2=\"380\" y2=\"155\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"140\" x2=\"380\" y2=\"140\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"353\" y=\"145\" text-anchor=\"end\" font-size=\"14\">80</text><line x1=\"369\" y1=\"125\" x2=\"380\" y2=\"125\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"110\" x2=\"380\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"369\" y1=\"95\" x2=\"380\" y2=\"95\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"358\" y1=\"80\" x2=\"380\" y2=\"80\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"353\" y=\"85\" text-anchor=\"end\" font-size=\"14\">100</text><text x=\"335.0\" y=\"418\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">eau</text><text x=\"335.0\" y=\"440\" text-anchor=\"middle\">50,0 mL</text><path d=\"M420,230 L500,230\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M500,220 L516,230 L500,240 Z\" fill=\"#B5523B\"/><text x=\"468\" y=\"215\" text-anchor=\"middle\" font-size=\"14\">on mélange,</text><text x=\"468\" y=\"258\" text-anchor=\"middle\" font-size=\"14\">on agite</text><rect x=\"560\" y=\"90.8\" width=\"90\" height=\"289.2\" fill=\"#B5523B\" fill-opacity=\"0.35\"/><line x1=\"560\" y1=\"90.8\" x2=\"650\" y2=\"90.8\" stroke=\"#B5523B\" stroke-width=\"3\"/><path d=\"M560,56 L560,380 L650,380 L650,56\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.2\"/><rect x=\"540\" y=\"380\" width=\"130\" height=\"10\" fill=\"#3a3a3a\"/><line x1=\"628\" y1=\"380\" x2=\"650\" y2=\"380\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"639\" y1=\"365\" x2=\"650\" y2=\"365\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"350\" x2=\"650\" y2=\"350\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"639\" y1=\"335\" x2=\"650\" y2=\"335\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"320\" x2=\"650\" y2=\"320\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"623\" y=\"325\" text-anchor=\"end\" font-size=\"14\">20</text><line x1=\"639\" y1=\"305\" x2=\"650\" y2=\"305\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"290\" x2=\"650\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"639\" y1=\"275\" x2=\"650\" y2=\"275\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"260\" x2=\"650\" y2=\"260\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"623\" y=\"265\" text-anchor=\"end\" font-size=\"14\">40</text><line x1=\"639\" y1=\"245\" x2=\"650\" y2=\"245\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"230\" x2=\"650\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"639\" y1=\"215\" x2=\"650\" y2=\"215\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"200\" x2=\"650\" y2=\"200\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"623\" y=\"205\" text-anchor=\"end\" font-size=\"14\">60</text><line x1=\"639\" y1=\"185\" x2=\"650\" y2=\"185\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"170\" x2=\"650\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"639\" y1=\"155\" x2=\"650\" y2=\"155\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"140\" x2=\"650\" y2=\"140\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"623\" y=\"145\" text-anchor=\"end\" font-size=\"14\">80</text><line x1=\"639\" y1=\"125\" x2=\"650\" y2=\"125\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"110\" x2=\"650\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"639\" y1=\"95\" x2=\"650\" y2=\"95\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"628\" y1=\"80\" x2=\"650\" y2=\"80\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><text x=\"623\" y=\"85\" text-anchor=\"end\" font-size=\"14\">100</text><text x=\"605.0\" y=\"418\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">mélange</text><text x=\"605.0\" y=\"440\" text-anchor=\"middle\">lecture : 96,4 mL</text><text x=\"700\" y=\"70\" text-anchor=\"start\" font-size=\"14\" fill=\"#3a3a3a\">mL</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule les masses molaires de l'éthanol et du glycérol.",
+          "aides": []
+        },
+        {
+          "texte": "L'éthanol dans 100,0 mL de solution.<br>a. Montre que 100,0 mL de solution contiennent environ 63 g d'éthanol, puis détermine la quantité de matière d'éthanol correspondante.<br>b. (notion du chapitre Composition chimique des solutions) Déduis-en la concentration en quantité de matière d'éthanol dans la solution.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la quantité de matière de glycérol dans 100,0 mL de solution.",
+          "aides": []
+        },
+        {
+          "texte": "En négligeant le peroxyde d'hydrogène, exploite le doc. 3 pour déterminer la quantité de matière d'eau dans 100,0 mL de solution.",
+          "aides": [
+            "La masse de la solution est la somme des masses de ses constituants.",
+            "m(eau) = m(solution) − m(éthanol) − m(glycérol), puis n = m / M(H₂O).",
+            "Calcule d'abord M(H₂O)."
+          ]
+        },
+        {
+          "texte": "Inès affirme : « La solution contient 80 % d'éthanol, donc il y a quatre fois plus de molécules d'éthanol que de molécules d'eau. » Discute cette affirmation.",
+          "aides": [
+            "Un pourcentage en volume est-il un pourcentage en nombre de molécules ?",
+            "Compare les quantités de matière d'éthanol et d'eau trouvées aux questions 2 et 4."
+          ]
+        },
+        {
+          "texte": "Calcule le volume qu'occuperait l'eau trouvée à la question 4 si elle était pure, puis la somme des volumes d'éthanol, de glycérol et d'eau. Compare à 100,0 mL (écart relatif) et explique le résultat à l'aide du doc. 4. Quelle hypothèse simple ce résultat remet-il en cause ?",
+          "aides": [
+            "Volume de l'eau pure : V = m / ρ.",
+            "Additionne les trois volumes et calcule l'écart relatif : (somme − 100,0) / 100,0.",
+            "Doc. 4 : 50,0 mL + 50,0 mL donnent-ils 100,0 mL ?"
+          ]
+        },
+        {
+          "texte": "On se frotte les mains avec 3,0 mL de solution, et tout l'éthanol s'évapore (20 °C, 1013 hPa). Quel volume de vapeur d'éthanol est libéré ? Pourquoi est-il conseillé d'utiliser ces solutions dans une pièce aérée et loin d'une flamme ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M(C₂H₆O) = 2 × 12,0 + 6 × 1,0 + 16,0 = 46,0 g·mol⁻¹ ; M(C₃H₈O₃) = 3 × 12,0 + 8 × 1,0 + 3 × 16,0 = 92,0 g·mol⁻¹.",
+        "<strong>2.</strong> a. V(éthanol) = 80,0 mL ; m = ρ × V = 0,789 × 80,0 = 63,1 g ≈ 63 g. n = m / M = 63,12 / 46,0 = 1,37 mol.",
+        "b. c = n / V = 1,37 / 0,1000 = 13,7 mol·L⁻¹.",
+        "<strong>3.</strong> V(glycérol) = 1,45 mL ; m = 1,26 × 1,45 = 1,83 g ; n = 1,827 / 92,0 = 1,99 × 10⁻² mol.",
+        "<strong>4.</strong> m(eau) = m(solution) − m(éthanol) − m(glycérol) = 86,8 − 63,12 − 1,83 = 21,9 g ; n(eau) = 21,85 / 18,0 = 1,21 mol.",
+        "<strong>5.</strong> Faux. Les 80 % sont un pourcentage en VOLUME, pas en nombre de molécules. En quantité de matière : n(éthanol) / n(eau) = 1,37 / 1,21 = 1,1. Il y a à peine plus de molécules d'éthanol que d'eau, car une molécule d'eau est bien plus légère (M = 18,0 g·mol⁻¹ contre 46,0 g·mol⁻¹) et l'éthanol est moins dense que l'eau.",
+        "<strong>6.</strong> V(eau pure) = m / ρ = 21,9 / 1,00 = 21,9 mL. Somme : 80,0 + 1,45 + 21,9 = 103,3 mL, soit 3,3 % de plus que 100,0 mL. Le doc. 4 montre que 50,0 mL d'éthanol et 50,0 mL d'eau ne donnent que 96,4 mL de mélange : il y a contraction de volume lors du mélange (les molécules d'eau et d'éthanol s'arrangent de façon plus compacte). Les volumes des liquides ne s'additionnent pas : l'hypothèse « volume du mélange = somme des volumes des constituants » est fausse. En revanche, les masses s'additionnent (conservation de la masse) : c'est pour cela qu'on a raisonné sur les masses à la question 4.",
+        "<strong>7.</strong> n(éthanol) dans 3,0 mL = 1,372 × 3,0 / 100,0 = 4,12 × 10⁻² mol ; V = n × V<sub>m</sub> = 4,12 × 10⁻² × 24,0 = 0,99 L, soit environ 1 L de vapeur. Éléments attendus : l'éthanol est volatil et inflammable ; ses vapeurs (environ un litre à chaque friction) s'accumulent dans une pièce fermée et peuvent s'enflammer au contact d'une flamme ou d'une étincelle.",
+        "<em>⚠ Erreur fréquente : calculer n(éthanol) = 80,0 / 46,0 en prenant le VOLUME à la place de la masse. On passe toujours par m = ρ × V pour un liquide.</em>",
+        "<em>⚠ Erreur fréquente : calculer le volume d'eau par 100,0 − 80,0 − 1,45 = 18,55 mL : ce serait juste seulement si les volumes s'additionnaient.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "id": 49,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Principe d'un titrage",
+        "icon": "⚗️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Titrage",
+            "text": "Titrer une espèce, c'est déterminer sa quantité de matière dans un échantillon en la faisant réagir avec une autre espèce, appelée réactif titrant, apportée par une solution titrante de concentration connue."
+          },
+          {
+            "type": "text",
+            "text": "Le réactif titré est l'espèce à doser ; le réactif titrant est versé progressivement, en général à l'aide d'une burette graduée."
+          }
+        ]
+      },
+      {
+        "title": "2. L'équivalence d'un titrage",
+        "icon": "🎯",
+        "content": [
+          {
+            "type": "def",
+            "term": "Équivalence",
+            "text": "L'équivalence est atteinte lorsque les réactifs titrant et titré ont été introduits dans les proportions stœchiométriques : à l'équivalence, on assiste au changement de réactif limitant (limitant avant l'équivalence, en excès après)."
+          }
+        ]
+      },
+      {
+        "title": "3. Repérer l'équivalence par colorimétrie",
+        "icon": "🌈",
+        "content": [
+          {
+            "type": "text",
+            "text": "Lorsque le réactif titrant (ou le réactif titré) est coloré, sa disparition (ou son apparition) en excès après l'équivalence provoque un changement net de couleur du mélange réactionnel."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : lors d'un titrage par une solution de permanganate de potassium (violet), le mélange reste incolore tant que les ions MnO4⁻ sont consommés ; à l'équivalence, la moindre goutte supplémentaire colore la solution en rose persistant."
+          },
+          {
+            "type": "warn",
+            "text": "Il est conseillé de réaliser un premier titrage rapide pour obtenir un ordre de grandeur du volume à l'équivalence, puis un second titrage plus lent (goutte à goutte au voisinage de l'équivalence attendue) pour affiner la précision de la mesure."
+          }
+        ]
+      },
+      {
+        "title": "4. Exploiter un titrage",
+        "icon": "🧮",
+        "content": [
+          {
+            "type": "text",
+            "text": "On titre V0 = 20,0 mL d'une solution de Fe²⁺ par une solution de permanganate de potassium de concentration C = 2,0×10⁻² mol/L. L'équivalence est repérée pour Véq = 8,0 mL."
+          },
+          {
+            "type": "formula",
+            "label": "Réaction support du titrage (couples MnO4⁻/Mn²⁺ et Fe³⁺/Fe²⁺)",
+            "text": "MnO4⁻ + 5 Fe²⁺ + 8 H⁺ → Mn²⁺ + 5 Fe³⁺ + 4 H2O\nn(MnO4⁻)éq = C × Véq = 2,0×10⁻² × 8,0×10⁻³ = 1,6×10⁻⁴ mol\nn0(Fe²⁺) = 5 × n(MnO4⁻)éq = 8,0×10⁻⁴ mol  →  C0(Fe²⁺) = n0/V0 = 4,0×10⁻² mol/L"
+          },
+          {
+            "type": "formula",
+            "label": "Relation générale à l'équivalence",
+            "text": "Pour a A(titrant) + b B(titré) → produits :   n(A)éq / a = n0(B) / b"
+          }
+        ]
+      },
+      {
+        "title": "5. Synthèse",
+        "icon": "📋",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Solution titrante",
+                "Contient le réactif titrant, de concentration connue"
+              ],
+              [
+                "Équivalence",
+                "Changement de réactif limitant (proportions stœchiométriques)"
+              ],
+              [
+                "Repérage colorimétrique",
+                "Changement net de couleur du mélange à l'équivalence"
+              ]
+            ]
+          },
+          {
+            "type": "warn",
+            "text": "Verrerie adaptée : une pipette jaugée permet de prélever précisément le volume V0 de solution titrée ; une burette graduée permet de verser progressivement la solution titrante et de lire précisément le volume versé. Une éprouvette graduée est nettement moins précise et ne doit pas être utilisée pour ces opérations."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Dans un titrage, le réactif titrant est :",
+      "opts": [
+        "l'espèce dont on cherche la quantité de matière",
+        "le réactif de concentration connue, versé à la burette",
+        "le réactif toujours en excès dans le bécher",
+        "forcément une espèce colorée"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "titrant-titre-inverses",
+          "texte": "Inverser titrant et titré : l'espèce à doser est le réactif titré, placé dans le bécher"
+        },
+        null,
+        {
+          "code": "titrant-toujours-exces",
+          "texte": "Croire que le titrant est toujours en excès : avant l'équivalence, c'est lui le réactif limitant"
+        },
+        {
+          "code": "titrant-forcement-colore",
+          "texte": "Croire que le titrant est forcément coloré : il suffit qu'une espèce (titrant, titré ou produit) change la couleur à l'équivalence"
+        }
+      ],
+      "exp": "Le réactif titrant est apporté par une solution de concentration connue, versée progressivement à la burette ; le réactif titré est l'espèce à doser. Attention à ne pas inverser les deux."
+    },
+    {
+      "q": "L'équivalence d'un titrage est atteinte lorsque :",
+      "opts": [
+        "on a versé autant de moles de titrant qu'il y avait de titré",
+        "toute la solution de la burette a été versée",
+        "les réactifs titrant et titré ont été introduits dans les proportions stœchiométriques",
+        "le réactif titrant commence à réagir"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "equivalence-quantites-egales",
+          "texte": "Croire qu'à l'équivalence les quantités sont égales : elles sont dans le rapport des nombres stœchiométriques"
+        },
+        {
+          "code": "equivalence-burette-vide",
+          "texte": "Croire que l'équivalence correspond à la burette vide : le volume équivalent dépend de la quantité de titré"
+        },
+        null,
+        {
+          "code": "pas-de-reaction-avant-equivalence",
+          "texte": "Croire que la réaction commence à l'équivalence : le titrant réagit dès la première goutte"
+        }
+      ],
+      "exp": "À l'équivalence, titrant et titré ont été introduits dans les proportions stœchiométriques : le réactif limitant change (titrant avant, titré après). Attention : « stœchiométriques » ne veut pas dire « égales »."
+    },
+    {
+      "q": "Avant l'équivalence, dans le bécher, le réactif limitant est :",
+      "opts": [
+        "le réactif titré",
+        "aucun : avant l'équivalence il n'y a pas de réaction",
+        "les deux réactifs, en proportions stœchiométriques",
+        "le réactif titrant"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "limitant-avant-apres-inverses",
+          "texte": "Inverser avant et après : avant l'équivalence, le titrant versé est entièrement consommé, il est limitant"
+        },
+        {
+          "code": "pas-de-reaction-avant-equivalence",
+          "texte": "Croire que la réaction attend l'équivalence : chaque goutte de titrant réagit aussitôt"
+        },
+        {
+          "code": "stoechiometrique-tout-le-long",
+          "texte": "Croire que les proportions sont stœchiométriques pendant tout le titrage : elles ne le sont qu'à l'équivalence"
+        },
+        null
+      ],
+      "exp": "Avant l'équivalence, le titrant versé est entièrement consommé : il est limitant et le titré est en excès. Après l'équivalence, c'est l'inverse."
+    },
+    {
+      "q": "On verse une solution de permanganate de potassium de concentration C = 2,0×10⁻² mol·L⁻¹ ; l'équivalence est obtenue pour Véq = 12,5 mL. La quantité d'ions MnO₄⁻ versée à l'équivalence vaut :",
+      "opts": [
+        "2,5×10⁻⁴ mol",
+        "0,25 mol",
+        "1,6 mol",
+        "2,0×10⁻² mol"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-ml-l",
+          "texte": "Oublier de convertir les mL en L : 2,0×10⁻² × 12,5 = 0,25 ; 12,5 mL = 12,5×10⁻³ L"
+        },
+        {
+          "code": "quotient-au-lieu-produit",
+          "texte": "Diviser au lieu de multiplier : 2,0×10⁻² / 12,5×10⁻³ = 1,6 ; il faut n = C × V"
+        },
+        {
+          "code": "recopie-concentration-titrante",
+          "texte": "Recopier la concentration de la solution titrante : 2,0×10⁻² est en mol·L⁻¹, il faut la multiplier par Véq"
+        }
+      ],
+      "exp": "n(MnO₄⁻)éq = C × Véq = 2,0×10⁻² × 12,5×10⁻³ = 2,5×10⁻⁴ mol. Attention : le volume doit être converti en litres."
+    },
+    {
+      "q": "Ce permanganate titre de l'acide oxalique selon 2 MnO₄⁻ + 5 H₂C₂O₄ + 6 H⁺ → 2 Mn²⁺ + 10 CO₂ + 8 H₂O. Avec n(MnO₄⁻)éq = 2,5×10⁻⁴ mol, la quantité d'acide oxalique titrée vaut :",
+      "opts": [
+        "2,5×10⁻⁴ mol",
+        "1,0×10⁻⁴ mol",
+        "6,3×10⁻⁴ mol",
+        "1,3×10⁻³ mol"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-stoechiometrie",
+          "texte": "Oublier les nombres stœchiométriques : à l'équivalence, n(acide) / 5 = n(MnO₄⁻) / 2"
+        },
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Inverser le rapport stœchiométrique : 2,5×10⁻⁴ × 2 / 5 ; il faut × 5 / 2"
+        },
+        null,
+        {
+          "code": "coefficient-titre-seul",
+          "texte": "Multiplier par 5 sans diviser par 2 : 5 × 2,5×10⁻⁴ ; les deux nombres stœchiométriques comptent"
+        }
+      ],
+      "exp": "À l'équivalence : n(acide) / 5 = n(MnO₄⁻)éq / 2, donc n(acide) = 5 / 2 × 2,5×10⁻⁴ ≈ 6,3×10⁻⁴ mol. Attention : chaque quantité est divisée par son propre nombre stœchiométrique."
+    },
+    {
+      "q": "Cette quantité n = 6,3×10⁻⁴ mol d'acide oxalique était contenue dans V₀ = 10,0 mL de solution. Sa concentration vaut :",
+      "opts": [
+        "6,3×10⁻⁵ mol·L⁻¹",
+        "6,3×10⁻² mol·L⁻¹",
+        "6,3×10⁻⁶ mol·L⁻¹",
+        "1,6×10¹ mol·L⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-ml-l",
+          "texte": "Oublier de convertir les mL en L : 6,3×10⁻⁴ / 10,0 ; 10,0 mL = 1,00×10⁻² L"
+        },
+        null,
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier au lieu de diviser : 6,3×10⁻⁴ × 1,00×10⁻² ; il faut C = n / V"
+        },
+        {
+          "code": "c-rapport-inverse",
+          "texte": "Inverser le rapport : V / n = 1,00×10⁻² / 6,3×10⁻⁴ ≈ 16 ; il faut C = n / V"
+        }
+      ],
+      "exp": "C₀ = n / V₀ = 6,3×10⁻⁴ / 1,00×10⁻² = 6,3×10⁻² mol·L⁻¹. Attention : V₀ en litres."
+    },
+    {
+      "q": "On titre des ions Fe²⁺ (solution quasi incolore) par le permanganate de potassium (violet). L'équivalence est repérée :",
+      "opts": [
+        "quand le mélange se décolore",
+        "à la première goutte qui donne une teinte rose persistante",
+        "quand la burette est vide",
+        "dès la première goutte, qui colore le mélange"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "couleur-equivalence-inversee",
+          "texte": "Inverser le changement de couleur : le mélange est incolore avant l'équivalence et devient rose après"
+        },
+        null,
+        {
+          "code": "equivalence-burette-vide",
+          "texte": "Croire que l'équivalence correspond à la burette vide : elle dépend de la quantité de Fe²⁺ à titrer"
+        },
+        {
+          "code": "coloration-avant-equivalence",
+          "texte": "Croire que la coloration apparaît dès le début : tant qu'il reste des ions Fe²⁺, les ions MnO₄⁻ versés sont consommés"
+        }
+      ],
+      "exp": "Avant l'équivalence, MnO₄⁻ est limitant et disparaît aussitôt : le mélange reste incolore. Juste après, MnO₄⁻ est en excès : la teinte rose persiste. Attention au sens du changement de couleur."
+    },
+    {
+      "q": "Pendant ce titrage, pourquoi le mélange reste-t-il incolore avant l'équivalence ?",
+      "opts": [
+        "Les ions MnO₄⁻ n'ont pas encore commencé à réagir",
+        "Les ions Fe²⁺ sont le réactif limitant",
+        "Les ions MnO₄⁻ versés sont entièrement consommés",
+        "La solution est trop diluée pour être colorée"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "pas-de-reaction-avant-equivalence",
+          "texte": "Croire que la réaction attend l'équivalence : chaque goutte de MnO₄⁻ réagit aussitôt avec Fe²⁺"
+        },
+        {
+          "code": "limitant-avant-apres-inverses",
+          "texte": "Inverser le réactif limitant : avant l'équivalence, Fe²⁺ est en excès et MnO₄⁻ est limitant"
+        },
+        null,
+        {
+          "code": "dilution-efface-couleur",
+          "texte": "Attribuer l'absence de couleur à la dilution : après l'équivalence, le mélange, aussi dilué, devient rose"
+        }
+      ],
+      "exp": "Avant l'équivalence, MnO₄⁻ (violet) est le réactif limitant : il est entièrement consommé et se transforme en Mn²⁺, quasi incolore. La couleur n'apparaît que lorsqu'il est en excès."
+    },
+    {
+      "q": "Pour prélever précisément V₀ = 10,0 mL de la solution à titrer, on utilise :",
+      "opts": [
+        "une éprouvette graduée",
+        "une fiole jaugée",
+        "une pipette jaugée",
+        "un bécher gradué"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "eprouvette-precise",
+          "texte": "Croire que l'éprouvette graduée est précise : son incertitude est bien plus grande que celle d'une pipette jaugée"
+        },
+        {
+          "code": "fiole-pour-prelever",
+          "texte": "Confondre fiole jaugée et pipette jaugée : la fiole contient un volume précis, la pipette en prélève un"
+        },
+        null,
+        {
+          "code": "becher-mesure-volume",
+          "texte": "Croire qu'un bécher mesure un volume : ses graduations sont très approximatives"
+        }
+      ],
+      "exp": "La pipette jaugée prélève un volume précis ; la burette graduée verse le titrant et mesure Véq. Attention : l'éprouvette et le bécher ne conviennent pas à un titrage."
+    },
+    {
+      "q": "Avant de titrer, on ajoute 20 mL d'eau distillée dans le bécher qui contient V₀ = 10,0 mL de solution à titrer. Le volume versé à l'équivalence :",
+      "opts": [
+        "augmente, car le volume total est plus grand",
+        "ne change pas",
+        "diminue, car la solution est diluée",
+        "ne peut plus être exploité"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "veq-proportionnel-volume",
+          "texte": "Croire que le volume équivalent dépend du volume total : il dépend de la quantité de réactif titré"
+        },
+        null,
+        {
+          "code": "dilution-change-n",
+          "texte": "Croire que diluer modifie la quantité de réactif titré : l'eau n'apporte ni n'enlève de réactif"
+        },
+        {
+          "code": "eau-fausse-titrage",
+          "texte": "Croire que l'eau ajoutée fausse le titrage : seule compte la quantité de titré, mesurée par V₀"
+        }
+      ],
+      "exp": "L'eau ne change pas la quantité de réactif titré (n₀ = C₀ × V₀) : il faut toujours la même quantité de titrant, donc le même Véq. Attention : c'est la quantité qui compte, pas la concentration dans le bécher."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le montage et les mots du titrage",
+      "contexte": [
+        "En TP, Inès doit titrer une eau oxygénée diluée (incolore) par une solution violette de permanganate de potassium (K⁺(aq) + MnO₄⁻(aq)) de concentration connue. Elle a réalisé le montage schématisé ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"90\" y=\"430\" width=\"138\" height=\"16\" fill=\"#1F4E5A\" opacity=\"0.85\"/><rect x=\"150\" y=\"40\" width=\"10\" height=\"392\" fill=\"#6b6b6b\"/><rect x=\"158\" y=\"96\" width=\"150\" height=\"9\" fill=\"#6b6b6b\"/><rect x=\"296\" y=\"88\" width=\"40\" height=\"26\" rx=\"4\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"304\" y=\"70\" width=\"24\" height=\"230\" fill=\"#9b6aa8\" opacity=\"0.55\"/><rect x=\"304\" y=\"30\" width=\"24\" height=\"270\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><line x1=\"304\" y1=\"40\" x2=\"314\" y2=\"40\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"50\" x2=\"309\" y2=\"50\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"60\" x2=\"309\" y2=\"60\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"70\" x2=\"309\" y2=\"70\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"80\" x2=\"309\" y2=\"80\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"90\" x2=\"314\" y2=\"90\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"100\" x2=\"309\" y2=\"100\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"110\" x2=\"309\" y2=\"110\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"120\" x2=\"309\" y2=\"120\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"130\" x2=\"309\" y2=\"130\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"140\" x2=\"314\" y2=\"140\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"150\" x2=\"309\" y2=\"150\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"160\" x2=\"309\" y2=\"160\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"170\" x2=\"309\" y2=\"170\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"180\" x2=\"309\" y2=\"180\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"190\" x2=\"314\" y2=\"190\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"200\" x2=\"309\" y2=\"200\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"210\" x2=\"309\" y2=\"210\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"220\" x2=\"309\" y2=\"220\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"230\" x2=\"309\" y2=\"230\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"240\" x2=\"314\" y2=\"240\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"250\" x2=\"309\" y2=\"250\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"260\" x2=\"309\" y2=\"260\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"270\" x2=\"309\" y2=\"270\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"280\" x2=\"309\" y2=\"280\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"304\" y1=\"290\" x2=\"314\" y2=\"290\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><path d=\"M304 300 L328 300 L319 318 L313 318 Z\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><rect x=\"290\" y=\"306\" width=\"52\" height=\"8\" rx=\"3\" fill=\"#C8962E\"/><line x1=\"316\" y1=\"318\" x2=\"316\" y2=\"344\" stroke=\"#3a3a3a\" stroke-width=\"3\"/><rect x=\"258\" y=\"356\" width=\"110\" height=\"64\" fill=\"#e9eef0\"/><path d=\"M252 330 L256 334 L256 420 L370 420 L370 334 L374 330\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.5\"/><rect x=\"295\" y=\"410\" width=\"36\" height=\"7\" rx=\"3.5\" fill=\"#B5523B\"/><rect x=\"230\" y=\"420\" width=\"166\" height=\"30\" rx=\"5\" fill=\"#cfc8bb\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><circle cx=\"370\" cy=\"435\" r=\"7\" fill=\"#fff\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"328\" y1=\"50\" x2=\"520\" y2=\"120\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"120\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"125.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">1</text><line x1=\"316\" y1=\"190\" x2=\"520\" y2=\"190\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"190\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"195.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">2</text><line x1=\"352\" y1=\"307\" x2=\"520\" y2=\"270\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"270\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"275.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">3</text><line x1=\"372\" y1=\"340\" x2=\"520\" y2=\"330\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"330\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"335.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">4</text><line x1=\"345\" y1=\"385\" x2=\"520\" y2=\"385\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"385\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"390.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">5</text><line x1=\"331\" y1=\"413\" x2=\"520\" y2=\"425\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"425\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"430.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">6</text><line x1=\"396\" y1=\"445\" x2=\"520\" y2=\"455\" stroke=\"#1F4E5A\" stroke-width=\"1.3\"/><circle cx=\"534\" cy=\"455\" r=\"14\" fill=\"#1F4E5A\"/><text x=\"534\" y=\"460.5\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">7</text><text x=\"570\" y=\"60\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">Montage de titrage</text><text x=\"570\" y=\"84\" font-size=\"15\" fill=\"#3a3a3a\">(légendes 1 à 7</text><text x=\"570\" y=\"104\" font-size=\"15\" fill=\"#3a3a3a\">à compléter)</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe à chaque numéro du schéma le terme qui convient : agitateur magnétique ; barreau aimanté ; bécher ; burette graduée ; robinet ; solution titrante ; solution titrée.",
+          "aides": []
+        },
+        {
+          "texte": "Pour prélever V<sub>0</sub> = 10,0 mL d'eau oxygénée diluée, Inès hésite entre une éprouvette graduée de 25 mL et une pipette jaugée de 10,0 mL. Laquelle choisir ? Pourquoi ?",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. Le réactif titré est l'espèce dont on connaît la concentration.<br>b. À l'équivalence, les réactifs titrant et titré ont été introduits dans les proportions stœchiométriques.<br>c. Avant l'équivalence, le réactif titrant versé est entièrement consommé : c'est le réactif limitant.<br>d. Ajouter 20 mL d'eau distillée dans le bécher avant de commencer augmente le volume à l'équivalence.",
+          "aides": [
+            "Relis la définition de l'équivalence dans ton cours : que se passe-t-il pour les deux réactifs à ce moment-là ?",
+            "Pour d. : l'eau ajoute-t-elle ou enlève-t-elle de l'espèce titrée ?"
+          ]
+        },
+        {
+          "texte": "Le professeur conseille de faire d'abord un titrage rapide, puis un second titrage plus lent. À quoi sert le premier ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : burette graduée ; 2 : solution titrante (permanganate de potassium) ; 3 : robinet ; 4 : bécher ; 5 : solution titrée (eau oxygénée diluée) ; 6 : barreau aimanté ; 7 : agitateur magnétique.",
+        "<strong>2.</strong> La pipette jaugée de 10,0 mL : elle permet de prélever un volume précis, alors que l'éprouvette graduée est nettement moins précise. Toute erreur sur V<sub>0</sub> se reporte sur le résultat.",
+        "<strong>3.</strong> a. FAUX : c'est le réactif TITRANT qui a une concentration connue ; le réactif titré est l'espèce dont on cherche la quantité de matière.",
+        "b. VRAI : c'est la définition de l'équivalence.",
+        "c. VRAI : tant que l'espèce titrée n'est pas épuisée, chaque goutte de titrant réagit entièrement ; le titrant est limitant. Après l'équivalence, c'est l'inverse : le titré est épuisé et le titrant s'accumule (changement de réactif limitant).",
+        "d. FAUX : l'eau ne change pas la quantité de matière d'espèce titrée dans le bécher, donc ne change pas la quantité de titrant nécessaire, ni V<sub>éq</sub>.",
+        "<strong>4.</strong> Le titrage rapide donne un ordre de grandeur de V<sub>éq</sub>. Lors du second titrage, on verse rapidement jusqu'à environ 1 mL avant cette valeur, puis goutte à goutte : on repère l'équivalence beaucoup plus précisément.",
+        "<em>⚠ Erreur fréquente : croire qu'à l'équivalence seul le réactif titrant est consommé. Les DEUX réactifs sont alors entièrement consommés.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Prévoir le changement de couleur",
+      "contexte": [
+        "Voici trois titrages réalisés au laboratoire du lycée. Utilise les couleurs données dans l'encadré « Données ».",
+        "Titrage A : une eau oxygénée (H₂O₂, incolore) est titrée par une solution de permanganate de potassium (MnO₄⁻, violet). Les produits formés sont incolores.",
+        "Titrage B : une solution de diiode (I₂, jaune-brun) est titrée par une solution de thiosulfate de sodium (S₂O₃²⁻, incolore). Les produits formés (I⁻ et S₄O₆²⁻) sont incolores.",
+        "Titrage C : une solution de vitamine C (incolore), additionnée de quelques gouttes d'empois d'amidon, est titrée par une solution de diiode. Les produits formés sont incolores."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque titrage, indique quel est le réactif titrant et quel est le réactif titré.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque titrage, prévois la couleur du mélange dans le bécher avant l'équivalence, puis juste après l'équivalence.",
+          "aides": [
+            "Repère dans chaque titrage QUELLE espèce est colorée : le titrant ou le titré ?",
+            "Avant l'équivalence, le titrant est limitant (il disparaît dès qu'il est versé) ; après, il est en excès. Le titré, lui, est présent au début et épuisé à l'équivalence."
+          ]
+        },
+        {
+          "texte": "Dans le titrage A, une couleur apparaît à l'équivalence ; dans le titrage B, une couleur disparaît. Explique cette différence.",
+          "aides": []
+        },
+        {
+          "texte": "QCM. Dans le titrage C, l'empois d'amidon sert à : (a) accélérer la réaction ; (b) rendre bien visible la présence de diiode en excès ; (c) consommer le diiode ; (d) augmenter le volume à l'équivalence.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A : titrant MnO₄⁻, titré H₂O₂. B : titrant S₂O₃²⁻, titré I₂. C : titrant I₂, titré vitamine C.",
+        "<strong>2.</strong> A : avant l'équivalence, incolore (MnO₄⁻ versé est aussitôt consommé) ; après, rose-violet persistant (MnO₄⁻ en excès).",
+        "B : avant l'équivalence, jaune-brun (il reste du diiode, qui s'éclaircit peu à peu) ; à l'équivalence, le diiode est entièrement consommé : le mélange devient incolore.",
+        "C : avant l'équivalence, incolore (I₂ versé est aussitôt consommé) ; après, bleu foncé persistant (I₂ en excès + empois d'amidon).",
+        "<strong>3.</strong> Dans A, l'espèce colorée est le réactif TITRANT : limitant avant l'équivalence, il disparaît dès qu'il est versé, puis il s'accumule après : la couleur apparaît. Dans B, l'espèce colorée est le réactif TITRÉ : présent depuis le début, il est entièrement consommé à l'équivalence : la couleur disparaît.",
+        "<strong>4.</strong> Réponse (b) : la couleur jaune pâle d'un peu de diiode est difficile à voir ; avec l'empois d'amidon, la moindre trace de diiode donne une couleur bleu foncé, et le repérage de l'équivalence est plus net.",
+        "<em>⚠ Erreur fréquente : dire que la couleur à l'équivalence vient d'un produit de la réaction. Ici, elle vient toujours d'un réactif coloré qui disparaît (titré épuisé) ou qui s'accumule (titrant en excès).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le Lugol du labo de SVT",
+      "contexte": [
+        "Le Lugol, utilisé en SVT pour mettre en évidence l'amidon, est une solution de diiode I₂. Pour vérifier un flacon, on titre V<sub>0</sub> = 10,0 mL de Lugol dilué par une solution de thiosulfate de sodium de concentration C = 2,00 × 10⁻² mol·L⁻¹. La décoloration a lieu pour V<sub>éq</sub> = 12,0 mL.",
+        "Réaction support du titrage : I₂(aq) + 2 S₂O₃²⁻(aq) → 2 I⁻(aq) + S₄O₆²⁻(aq)"
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la quantité de matière d'ions thiosulfate versée à l'équivalence, avec la relation n(S₂O₃²⁻)<sub>éq</sub> = C × V<sub>éq</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "À l'équivalence, n<sub>0</sub>(I₂) = n(S₂O₃²⁻)<sub>éq</sub> / 2. Explique d'où vient le « / 2 », puis calcule n<sub>0</sub>(I₂).",
+          "aides": [
+            "Lis l'équation : combien d'ions S₂O₃²⁻ faut-il pour une molécule de I₂ ?",
+            "Il faut donc plus de thiosulfate que de diiode : faut-il multiplier ou diviser par 2 pour passer du thiosulfate au diiode ?"
+          ]
+        },
+        {
+          "texte": "Calcule la concentration C<sub>0</sub> en diiode du Lugol dilué, avec C<sub>0</sub> = n<sub>0</sub>(I₂) / V<sub>0</sub>.",
+          "aides": []
+        },
+        {
+          "texte": "Complète ce raisonnement pour deux moments du titrage.<br>a. Après avoir versé 6,0 mL de thiosulfate, le réactif limitant est … ; il reste … mol de diiode ; le mélange est de couleur … .<br>b. Après avoir versé 18,0 mL de thiosulfate, le réactif limitant est … ; le mélange est de couleur … .",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> n(S₂O₃²⁻)<sub>éq</sub> = C × V<sub>éq</sub> = 2,00 × 10⁻² × 12,0 × 10⁻³ = 2,40 × 10⁻⁴ mol.",
+        "<strong>2.</strong> D'après l'équation, une molécule de I₂ réagit avec DEUX ions S₂O₃²⁻ : il faut verser deux fois plus d'ions thiosulfate qu'il n'y a de diiode. n<sub>0</sub>(I₂) = 2,40 × 10⁻⁴ / 2 = 1,20 × 10⁻⁴ mol.",
+        "<strong>3.</strong> C<sub>0</sub> = n<sub>0</sub>(I₂) / V<sub>0</sub> = 1,20 × 10⁻⁴ / (10,0 × 10⁻³) = 1,20 × 10⁻² mol·L⁻¹.",
+        "<strong>4.</strong> a. 6,0 mL &lt; V<sub>éq</sub> : le thiosulfate est limitant. Thiosulfate versé : 2,00 × 10⁻² × 6,0 × 10⁻³ = 1,2 × 10⁻⁴ mol, qui consomme 0,60 × 10⁻⁴ mol de I₂. Il reste 1,20 × 10⁻⁴ − 0,60 × 10⁻⁴ = 6,0 × 10⁻⁵ mol de diiode : le mélange est jaune-brun.",
+        "b. 18,0 mL &gt; V<sub>éq</sub> : le diiode est limitant (entièrement consommé) ; le thiosulfate est en excès. Le mélange est incolore.",
+        "<em>⚠ Erreur fréquente : multiplier par 2 au lieu de diviser. Vérifie avec le bon sens : il y a MOINS de diiode que de thiosulfate versé.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "L'eau oxygénée de la pharmacie",
+      "contexte": [
+        "L'eau oxygénée vendue en pharmacie pour désinfecter les petites plaies est une solution de peroxyde d'hydrogène H₂O₂. L'étiquette indique « 3 % » : 3 g de H₂O₂ pour 100 g de solution.",
+        "Un élève dilue l'eau oxygénée 10 fois. Il prélève V<sub>0</sub> = 10,0 mL de solution diluée, ajoute un peu d'acide sulfurique, puis titre par une solution de permanganate de potassium de concentration C = 2,00 × 10⁻² mol·L⁻¹. La teinte rose persiste à partir de V<sub>éq</sub> = 17,6 mL.",
+        "Réaction support : 2 MnO₄⁻(aq) + 5 H₂O₂(aq) + 6 H⁺(aq) → 2 Mn²⁺(aq) + 5 O₂(g) + 8 H₂O(ℓ). Couples : MnO₄⁻/Mn²⁺ et O₂/H₂O₂.",
+        "Donnée : masse volumique de l'eau oxygénée ρ = 1,01 g·mL⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Dans cette réaction, quel réactif joue le rôle d'oxydant ? de réducteur ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Établis la relation entre n<sub>0</sub>(H₂O₂) et n(MnO₄⁻)<sub>éq</sub>.",
+          "aides": [
+            "À l'équivalence, les réactifs sont dans les proportions stœchiométriques de l'équation.",
+            "Pour a A + b B → produits : n(A) / a = n(B) / b. Ici, quels sont a et b ?"
+          ]
+        },
+        {
+          "texte": "Détermine la concentration de la solution diluée en H₂O₂, puis celle de l'eau oxygénée commerciale.",
+          "aides": [
+            "Commence par n(MnO₄⁻)<sub>éq</sub> = C × V<sub>éq</sub> (V<sub>éq</sub> en litres).",
+            "Utilise la relation de la question 2, puis C = n / V<sub>0</sub>. N'oublie pas que la solution titrée a été diluée 10 fois."
+          ]
+        },
+        {
+          "texte": "Calcule la concentration en masse de H₂O₂ dans l'eau oxygénée commerciale, puis le pourcentage en masse de H₂O₂.",
+          "aides": [
+            "C<sub>m</sub> = C × M donne la masse de H₂O₂ dans 1 L de solution.",
+            "Quelle est la masse de 1 L (1000 mL) d'eau oxygénée ? Utilise ρ.",
+            "Pourcentage en masse = masse de H₂O₂ / masse de solution × 100."
+          ]
+        },
+        {
+          "texte": "Calcule l'écart relatif avec l'indication de l'étiquette et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> MnO₄⁻ est l'oxydant (il capte des électrons et se transforme en Mn²⁺) ; H₂O₂ est le réducteur (il cède des électrons et se transforme en O₂). (Notion du chapitre Réactions d'oxydoréduction.)",
+        "<strong>2.</strong> À l'équivalence, les réactifs sont introduits dans les proportions stœchiométriques : n<sub>0</sub>(H₂O₂) / 5 = n(MnO₄⁻)<sub>éq</sub> / 2, soit n<sub>0</sub>(H₂O₂) = (5/2) × n(MnO₄⁻)<sub>éq</sub>.",
+        "<strong>3.</strong> n(MnO₄⁻)<sub>éq</sub> = C × V<sub>éq</sub> = 2,00 × 10⁻² × 17,6 × 10⁻³ = 3,52 × 10⁻⁴ mol ; n<sub>0</sub>(H₂O₂) = 2,5 × 3,52 × 10⁻⁴ = 8,80 × 10⁻⁴ mol.",
+        "Solution diluée : C<sub>dil</sub> = n<sub>0</sub>(H₂O₂) / V<sub>0</sub> = 8,80 × 10⁻⁴ / (10,0 × 10⁻³) = 8,80 × 10⁻² mol·L⁻¹. Eau oxygénée commerciale : 10 fois plus concentrée, soit 0,880 mol·L⁻¹.",
+        "<strong>4.</strong> C<sub>m</sub> = C × M = 0,880 × 34,0 = 29,9 g·L⁻¹. Un litre de solution a une masse de 1,01 × 1000 = 1010 g et contient 29,9 g de H₂O₂ : pourcentage en masse = 29,9 / 1010 × 100 = 2,96 %.",
+        "<strong>5.</strong> Écart relatif = |2,96 − 3| / 3 = 1,3 % : la valeur est très proche de l'indication de l'étiquette (3 %), qui est vérifiée.",
+        "<em>⚠ Erreur fréquente : écrire n<sub>0</sub>(H₂O₂) = (2/5) × n(MnO₄⁻)<sub>éq</sub> (relation inversée), ce qui donne une concentration plus de 6 fois trop petite. Vérifie : il faut 5 H₂O₂ pour 2 MnO₄⁻, donc n<sub>0</sub>(H₂O₂) &gt; n(MnO₄⁻)<sub>éq</sub>.</em>",
+        "<em>⚠ Autre erreur fréquente : oublier le facteur de dilution 10 (on trouverait 0,3 %).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le fer d'un complément alimentaire",
+      "contexte": [
+        "Un complément alimentaire contre la fatigue est vendu en comprimés contenant chacun « 50 mg de fer », sous forme d'ions Fe²⁺ (produit fictif).",
+        "Protocole : on dissout un comprimé dans de l'acide sulfurique dilué, dans une fiole jaugée de 100,0 mL complétée jusqu'au trait de jauge. On prélève V<sub>0</sub> = 20,0 mL de cette solution, que l'on titre par une solution de permanganate de potassium de concentration C = 2,00 × 10⁻³ mol·L⁻¹.",
+        "Un premier titrage rapide montre que la teinte rose apparaît entre 17 et 18 mL. Le titrage précis donne V<sub>éq</sub> = 17,4 mL.",
+        "Réaction support : MnO₄⁻(aq) + 5 Fe²⁺(aq) + 8 H⁺(aq) → Mn²⁺(aq) + 5 Fe³⁺(aq) + 4 H₂O(ℓ)"
+      ],
+      "questions": [
+        {
+          "texte": "Comment repère-t-on l'équivalence de ce titrage ? Comment faut-il verser la solution titrante lors du titrage précis ?",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la quantité de matière d'ions Fe²⁺ contenue dans les 20,0 mL titrés.",
+          "aides": [
+            "Calcule d'abord n(MnO₄⁻)<sub>éq</sub>.",
+            "Équation : 1 MnO₄⁻ pour 5 Fe²⁺. Qui est le plus nombreux à l'équivalence ?"
+          ]
+        },
+        {
+          "texte": "Déduis-en la masse de fer contenue dans un comprimé.",
+          "aides": [
+            "Les 20,0 mL titrés ne sont qu'une partie de la solution préparée avec le comprimé.",
+            "Combien de fois 20,0 mL y a-t-il dans 100,0 mL ? Puis m = n × M (résultat en mg)."
+          ]
+        },
+        {
+          "texte": "Compare au « 50 mg » annoncé à l'aide d'un écart relatif.",
+          "aides": []
+        },
+        {
+          "texte": "Au cours du titrage précis, on a versé 10,0 mL de solution titrante. Quel est alors le réactif limitant ? Quelle quantité d'ions Fe²⁺ reste-t-il dans le bécher ? Quelle est la couleur du mélange ?",
+          "aides": [
+            "10,0 mL est-il avant ou après l'équivalence ? Déduis-en le réactif limitant.",
+            "Calcule n(MnO₄⁻) versé, puis la quantité d'ions Fe²⁺ qu'il consomme (équation), et retire-la de n<sub>0</sub>(Fe²⁺)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les ions MnO₄⁻ (violets) sont consommés tant qu'il reste des ions Fe²⁺ : le mélange reste quasi incolore. À l'équivalence, la première goutte en excès colore la solution en rose persistant. Pour le titrage précis : on verse rapidement jusqu'à 16 mL environ, puis goutte à goutte en agitant, jusqu'à la première teinte rose qui persiste.",
+        "<strong>2.</strong> n(MnO₄⁻)<sub>éq</sub> = C × V<sub>éq</sub> = 2,00 × 10⁻³ × 17,4 × 10⁻³ = 3,48 × 10⁻⁵ mol. À l'équivalence : n<sub>0</sub>(Fe²⁺) / 5 = n(MnO₄⁻)<sub>éq</sub> / 1, donc n<sub>0</sub>(Fe²⁺) = 5 × 3,48 × 10⁻⁵ = 1,74 × 10⁻⁴ mol dans 20,0 mL.",
+        "<strong>3.</strong> La fiole de 100,0 mL contient 5 fois plus d'ions Fe²⁺ que la prise de 20,0 mL : n(Fe) = 5 × 1,74 × 10⁻⁴ = 8,70 × 10⁻⁴ mol par comprimé. m = n × M = 8,70 × 10⁻⁴ × 55,8 = 4,85 × 10⁻² g = 48,5 mg.",
+        "<strong>4.</strong> Écart relatif = |48,5 − 50| / 50 = 2,9 % : l'indication du fabricant est cohérente avec la mesure.",
+        "<strong>5.</strong> 10,0 mL &lt; V<sub>éq</sub> : MnO₄⁻ est limitant. n(MnO₄⁻) versé = 2,00 × 10⁻³ × 10,0 × 10⁻³ = 2,00 × 10⁻⁵ mol, qui consomme 5 × 2,00 × 10⁻⁵ = 1,00 × 10⁻⁴ mol de Fe²⁺. Il reste 1,74 × 10⁻⁴ − 1,00 × 10⁻⁴ = 7,4 × 10⁻⁵ mol d'ions Fe²⁺ ; il n'y a pas de MnO₄⁻ en excès : le mélange est quasi incolore.",
+        "<em>⚠ Erreur fréquente : oublier l'un des deux facteurs 5 : celui de l'équation (5 Fe²⁺ pour 1 MnO₄⁻) et celui du prélèvement (20,0 mL sur 100,0 mL). Ce sont deux « 5 » qui n'ont rien à voir.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un comprimé de vitamine C « 500 mg » ?",
+      "contexte": [
+        "Doc. 1 — La vitamine C. La vitamine C (acide ascorbique C₆H₈O₆) est un réducteur. La valeur nutritionnelle de référence pour un adulte est de 80 mg par jour. Des comprimés effervescents annoncent « 500 mg de vitamine C » par comprimé. En solution, la vitamine C est lentement oxydée par le dioxygène de l'air.",
+        "Doc. 2 — Protocole. On dissout un comprimé dans de l'eau distillée, dans une fiole jaugée de 200,0 mL. On prélève V<sub>0</sub> = 10,0 mL de cette solution, on ajoute quelques gouttes d'empois d'amidon, puis on titre par une solution de diiode de concentration C = 1,00 × 10⁻² mol·L⁻¹. Réaction support : C₆H₈O₆(aq) + I₂(aq) → C₆H₆O₆(aq) + 2 I⁻(aq) + 2 H⁺(aq).",
+        "Doc. 3 — Résultats de la classe (V<sub>éq</sub> en mL). Groupe 1 : 14,0 ; groupe 2 : 13,9 ; groupe 3 : 14,1 ; groupe 4 : 13,8 ; groupe 5 : 14,2 ; groupe 6 : 13,9 ; groupe 7 : 14,0 ; groupe 8 : 15,6 (ce groupe n'a fait qu'un seul titrage, versé rapidement). L'incertitude-type sur la masse de vitamine C obtenue à partir de la moyenne est estimée à u(m) = 5 mg.",
+        "Doc. 4 — Simulation (figure ci-dessous) : évolution des quantités de matière de trois espèces A, B et C dans le bécher, calculée en supposant que le comprimé contient exactement 500 mg de vitamine C.",
+        "Doc. 5 — Script Python (sous la figure) qui a servi à calculer ces quantités, en partie effacé."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"25\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"431\" text-anchor=\"middle\">0</text><line x1=\"112.8\" y1=\"25\" x2=\"112.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"145.5\" y1=\"25\" x2=\"145.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"145.5\" y=\"431\" text-anchor=\"middle\">2</text><line x1=\"178.2\" y1=\"25\" x2=\"178.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"211.0\" y1=\"25\" x2=\"211.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"211.0\" y=\"431\" text-anchor=\"middle\">4</text><line x1=\"243.8\" y1=\"25\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"276.5\" y1=\"25\" x2=\"276.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"276.5\" y=\"431\" text-anchor=\"middle\">6</text><line x1=\"309.2\" y1=\"25\" x2=\"309.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"342.0\" y1=\"25\" x2=\"342.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"342.0\" y=\"431\" text-anchor=\"middle\">8</text><line x1=\"374.8\" y1=\"25\" x2=\"374.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"431\" text-anchor=\"middle\">10</text><line x1=\"440.3\" y1=\"25\" x2=\"440.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"473.0\" y1=\"25\" x2=\"473.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"473.0\" y=\"431\" text-anchor=\"middle\">12</text><line x1=\"505.8\" y1=\"25\" x2=\"505.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"538.5\" y1=\"25\" x2=\"538.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"538.5\" y=\"431\" text-anchor=\"middle\">14</text><line x1=\"571.2\" y1=\"25\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"604.0\" y1=\"25\" x2=\"604.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"604.0\" y=\"431\" text-anchor=\"middle\">16</text><line x1=\"636.8\" y1=\"25\" x2=\"636.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"669.5\" y1=\"25\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"669.5\" y=\"431\" text-anchor=\"middle\">18</text><line x1=\"702.2\" y1=\"25\" x2=\"702.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"25\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"431\" text-anchor=\"middle\">20</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"397.2\" x2=\"735\" y2=\"397.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"384.3\" x2=\"735\" y2=\"384.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"371.5\" x2=\"735\" y2=\"371.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"358.7\" x2=\"735\" y2=\"358.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"345.8\" x2=\"735\" y2=\"345.8\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"350.8\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"333.0\" x2=\"735\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"320.2\" x2=\"735\" y2=\"320.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"307.3\" x2=\"735\" y2=\"307.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"294.5\" x2=\"735\" y2=\"294.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"281.7\" x2=\"735\" y2=\"281.7\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"286.7\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"268.8\" x2=\"735\" y2=\"268.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"256.0\" x2=\"735\" y2=\"256.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"243.2\" x2=\"735\" y2=\"243.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"230.3\" x2=\"735\" y2=\"230.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"217.5\" x2=\"735\" y2=\"217.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"222.5\" text-anchor=\"end\">15</text><line x1=\"80\" y1=\"204.7\" x2=\"735\" y2=\"204.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"191.8\" x2=\"735\" y2=\"191.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"179.0\" x2=\"735\" y2=\"179.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"166.2\" x2=\"735\" y2=\"166.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"153.3\" x2=\"735\" y2=\"153.3\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"158.3\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"140.5\" x2=\"735\" y2=\"140.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"127.7\" x2=\"735\" y2=\"127.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"114.8\" x2=\"735\" y2=\"114.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"102.0\" x2=\"735\" y2=\"102.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"89.2\" x2=\"735\" y2=\"89.2\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"94.2\" text-anchor=\"end\">25</text><line x1=\"80\" y1=\"76.3\" x2=\"735\" y2=\"76.3\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"63.5\" x2=\"735\" y2=\"63.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"50.7\" x2=\"735\" y2=\"50.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"37.8\" x2=\"735\" y2=\"37.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"80\" y1=\"25.0\" x2=\"735\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"72\" y=\"30.0\" text-anchor=\"end\">30</text><rect x=\"80\" y=\"25\" width=\"655\" height=\"385\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,227.8 83.3,229.0 86.5,230.3 89.8,231.6 93.1,232.9 96.4,234.2 99.7,235.5 102.9,236.8 106.2,238.0 109.5,239.3 112.8,240.6 116.0,241.9 119.3,243.2 122.6,244.4 125.8,245.7 129.1,247.0 132.4,248.3 135.7,249.6 138.9,250.9 142.2,252.1 145.5,253.4 148.8,254.7 152.1,256.0 155.3,257.3 158.6,258.6 161.9,259.9 165.2,261.1 168.4,262.4 171.7,263.7 175.0,265.0 178.2,266.3 181.5,267.5 184.8,268.8 188.1,270.1 191.4,271.4 194.6,272.7 197.9,274.0 201.2,275.2 204.4,276.5 207.7,277.8 211.0,279.1 214.3,280.4 217.6,281.7 220.8,282.9 224.1,284.2 227.4,285.5 230.7,286.8 233.9,288.1 237.2,289.4 240.5,290.6 243.8,291.9 247.0,293.2 250.3,294.5 253.6,295.8 256.9,297.1 260.1,298.4 263.4,299.6 266.7,300.9 270.0,302.2 273.2,303.5 276.5,304.8 279.8,306.1 283.1,307.3 286.3,308.6 289.6,309.9 292.9,311.2 296.1,312.5 299.4,313.8 302.7,315.0 306.0,316.3 309.2,317.6 312.5,318.9 315.8,320.2 319.1,321.4 322.4,322.7 325.6,324.0 328.9,325.3 332.2,326.6 335.5,327.9 338.7,329.1 342.0,330.4 345.3,331.7 348.6,333.0 351.8,334.3 355.1,335.6 358.4,336.9 361.6,338.1 364.9,339.4 368.2,340.7 371.5,342.0 374.8,343.3 378.0,344.6 381.3,345.8 384.6,347.1 387.9,348.4 391.1,349.7 394.4,351.0 397.7,352.2 401.0,353.5 404.2,354.8 407.5,356.1 410.8,357.4 414.1,358.7 417.3,359.9 420.6,361.2 423.9,362.5 427.2,363.8 430.4,365.1 433.7,366.4 437.0,367.6 440.3,368.9 443.5,370.2 446.8,371.5 450.1,372.8 453.4,374.1 456.6,375.3 459.9,376.6 463.2,377.9 466.5,379.2 469.7,380.5 473.0,381.8 476.3,383.1 479.6,384.3 482.8,385.6 486.1,386.9 489.4,388.2 492.7,389.5 495.9,390.8 499.2,392.0 502.5,393.3 505.8,394.6 509.0,395.9 512.3,397.2 515.6,398.4 518.9,399.7 522.1,401.0 525.4,402.3 528.7,403.6 532.0,404.9 535.2,406.2 538.5,407.4 541.8,408.7 545.1,410.0 548.3,410.0 551.6,410.0 554.9,410.0 558.2,410.0 561.4,410.0 564.7,410.0 568.0,410.0 571.2,410.0 574.5,410.0 577.8,410.0 581.1,410.0 584.4,410.0 587.6,410.0 590.9,410.0 594.2,410.0 597.5,410.0 600.7,410.0 604.0,410.0 607.3,410.0 610.5,410.0 613.8,410.0 617.1,410.0 620.4,410.0 623.7,410.0 626.9,410.0 630.2,410.0 633.5,410.0 636.8,410.0 640.0,410.0 643.3,410.0 646.6,410.0 649.9,410.0 653.1,410.0 656.4,410.0 659.7,410.0 663.0,410.0 666.2,410.0 669.5,410.0 672.8,410.0 676.0,410.0 679.3,410.0 682.6,410.0 685.9,410.0 689.1,410.0 692.4,410.0 695.7,410.0 699.0,410.0 702.2,410.0 705.5,410.0 708.8,410.0 712.1,410.0 715.4,410.0 718.6,410.0 721.9,410.0 725.2,410.0 728.5,410.0 731.7,410.0 735.0,410.0\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3\" /><polyline points=\"80.0,410.0 83.3,407.4 86.5,404.9 89.8,402.3 93.1,399.7 96.4,397.2 99.7,394.6 102.9,392.0 106.2,389.5 109.5,386.9 112.8,384.3 116.0,381.8 119.3,379.2 122.6,376.6 125.8,374.1 129.1,371.5 132.4,368.9 135.7,366.4 138.9,363.8 142.2,361.2 145.5,358.7 148.8,356.1 152.1,353.5 155.3,351.0 158.6,348.4 161.9,345.8 165.2,343.3 168.4,340.7 171.7,338.1 175.0,335.6 178.2,333.0 181.5,330.4 184.8,327.9 188.1,325.3 191.4,322.7 194.6,320.2 197.9,317.6 201.2,315.0 204.4,312.5 207.7,309.9 211.0,307.3 214.3,304.8 217.6,302.2 220.8,299.6 224.1,297.1 227.4,294.5 230.7,291.9 233.9,289.4 237.2,286.8 240.5,284.2 243.8,281.7 247.0,279.1 250.3,276.5 253.6,274.0 256.9,271.4 260.1,268.8 263.4,266.3 266.7,263.7 270.0,261.1 273.2,258.6 276.5,256.0 279.8,253.4 283.1,250.9 286.3,248.3 289.6,245.7 292.9,243.2 296.1,240.6 299.4,238.0 302.7,235.5 306.0,232.9 309.2,230.3 312.5,227.8 315.8,225.2 319.1,222.6 322.4,220.1 325.6,217.5 328.9,214.9 332.2,212.4 335.5,209.8 338.7,207.2 342.0,204.7 345.3,202.1 348.6,199.5 351.8,197.0 355.1,194.4 358.4,191.8 361.6,189.3 364.9,186.7 368.2,184.1 371.5,181.6 374.8,179.0 378.0,176.4 381.3,173.9 384.6,171.3 387.9,168.7 391.1,166.2 394.4,163.6 397.7,161.0 401.0,158.5 404.2,155.9 407.5,153.3 410.8,150.8 414.1,148.2 417.3,145.6 420.6,143.1 423.9,140.5 427.2,137.9 430.4,135.4 433.7,132.8 437.0,130.2 440.3,127.7 443.5,125.1 446.8,122.5 450.1,120.0 453.4,117.4 456.6,114.8 459.9,112.3 463.2,109.7 466.5,107.1 469.7,104.6 473.0,102.0 476.3,99.4 479.6,96.9 482.8,94.3 486.1,91.7 489.4,89.2 492.7,86.6 495.9,84.0 499.2,81.5 502.5,78.9 505.8,76.3 509.0,73.8 512.3,71.2 515.6,68.6 518.9,66.1 522.1,63.5 525.4,60.9 528.7,58.4 532.0,55.8 535.2,53.2 538.5,50.7 541.8,48.1 545.1,45.5 548.3,45.5 551.6,45.5 554.9,45.5 558.2,45.5 561.4,45.5 564.7,45.5 568.0,45.5 571.2,45.5 574.5,45.5 577.8,45.5 581.1,45.5 584.4,45.5 587.6,45.5 590.9,45.5 594.2,45.5 597.5,45.5 600.7,45.5 604.0,45.5 607.3,45.5 610.5,45.5 613.8,45.5 617.1,45.5 620.4,45.5 623.7,45.5 626.9,45.5 630.2,45.5 633.5,45.5 636.8,45.5 640.0,45.5 643.3,45.5 646.6,45.5 649.9,45.5 653.1,45.5 656.4,45.5 659.7,45.5 663.0,45.5 666.2,45.5 669.5,45.5 672.8,45.5 676.0,45.5 679.3,45.5 682.6,45.5 685.9,45.5 689.1,45.5 692.4,45.5 695.7,45.5 699.0,45.5 702.2,45.5 705.5,45.5 708.8,45.5 712.1,45.5 715.4,45.5 718.6,45.5 721.9,45.5 725.2,45.5 728.5,45.5 731.7,45.5 735.0,45.5\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" /><polyline points=\"80.0,410.0 83.3,410.0 86.5,410.0 89.8,410.0 93.1,410.0 96.4,410.0 99.7,410.0 102.9,410.0 106.2,410.0 109.5,410.0 112.8,410.0 116.0,410.0 119.3,410.0 122.6,410.0 125.8,410.0 129.1,410.0 132.4,410.0 135.7,410.0 138.9,410.0 142.2,410.0 145.5,410.0 148.8,410.0 152.1,410.0 155.3,410.0 158.6,410.0 161.9,410.0 165.2,410.0 168.4,410.0 171.7,410.0 175.0,410.0 178.2,410.0 181.5,410.0 184.8,410.0 188.1,410.0 191.4,410.0 194.6,410.0 197.9,410.0 201.2,410.0 204.4,410.0 207.7,410.0 211.0,410.0 214.3,410.0 217.6,410.0 220.8,410.0 224.1,410.0 227.4,410.0 230.7,410.0 233.9,410.0 237.2,410.0 240.5,410.0 243.8,410.0 247.0,410.0 250.3,410.0 253.6,410.0 256.9,410.0 260.1,410.0 263.4,410.0 266.7,410.0 270.0,410.0 273.2,410.0 276.5,410.0 279.8,410.0 283.1,410.0 286.3,410.0 289.6,410.0 292.9,410.0 296.1,410.0 299.4,410.0 302.7,410.0 306.0,410.0 309.2,410.0 312.5,410.0 315.8,410.0 319.1,410.0 322.4,410.0 325.6,410.0 328.9,410.0 332.2,410.0 335.5,410.0 338.7,410.0 342.0,410.0 345.3,410.0 348.6,410.0 351.8,410.0 355.1,410.0 358.4,410.0 361.6,410.0 364.9,410.0 368.2,410.0 371.5,410.0 374.8,410.0 378.0,410.0 381.3,410.0 384.6,410.0 387.9,410.0 391.1,410.0 394.4,410.0 397.7,410.0 401.0,410.0 404.2,410.0 407.5,410.0 410.8,410.0 414.1,410.0 417.3,410.0 420.6,410.0 423.9,410.0 427.2,410.0 430.4,410.0 433.7,410.0 437.0,410.0 440.3,410.0 443.5,410.0 446.8,410.0 450.1,410.0 453.4,410.0 456.6,410.0 459.9,410.0 463.2,410.0 466.5,410.0 469.7,410.0 473.0,410.0 476.3,410.0 479.6,410.0 482.8,410.0 486.1,410.0 489.4,410.0 492.7,410.0 495.9,410.0 499.2,410.0 502.5,410.0 505.8,410.0 509.0,410.0 512.3,410.0 515.6,410.0 518.9,410.0 522.1,410.0 525.4,410.0 528.7,410.0 532.0,410.0 535.2,410.0 538.5,410.0 541.8,410.0 545.1,410.0 548.3,408.7 551.6,407.4 554.9,406.2 558.2,404.9 561.4,403.6 564.7,402.3 568.0,401.0 571.2,399.7 574.5,398.4 577.8,397.2 581.1,395.9 584.4,394.6 587.6,393.3 590.9,392.0 594.2,390.8 597.5,389.5 600.7,388.2 604.0,386.9 607.3,385.6 610.5,384.3 613.8,383.1 617.1,381.8 620.4,380.5 623.7,379.2 626.9,377.9 630.2,376.6 633.5,375.3 636.8,374.1 640.0,372.8 643.3,371.5 646.6,370.2 649.9,368.9 653.1,367.6 656.4,366.4 659.7,365.1 663.0,363.8 666.2,362.5 669.5,361.2 672.8,359.9 676.0,358.7 679.3,357.4 682.6,356.1 685.9,354.8 689.1,353.5 692.4,352.2 695.7,351.0 699.0,349.7 702.2,348.4 705.5,347.1 708.8,345.8 712.1,344.6 715.4,343.3 718.6,342.0 721.9,340.7 725.2,339.4 728.5,338.1 731.7,336.8 735.0,335.6\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"3\" stroke-dasharray=\"9 5\"/><rect x=\"164.2\" y=\"229.7\" width=\"28\" height=\"24\" fill=\"#fff\"/><text x=\"178.2\" y=\"247.7\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#B5523B\">A</text><rect x=\"639.1\" y=\"60.3\" width=\"28\" height=\"24\" fill=\"#fff\"/><text x=\"653.1\" y=\"78.3\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#1F4E5A\">B</text><rect x=\"675.1\" y=\"304.2\" width=\"28\" height=\"24\" fill=\"#fff\"/><text x=\"689.1\" y=\"322.2\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#C8962E\">C</text><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">V (mL) de solution de diiode versée</text><text transform=\"translate(24,217.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">n (10⁻⁵ mol)</text></svg>",
+      "code": [
+        "C = 1.00e-2      # concentration de la solution de diiode (mol/L)",
+        "n0 = 1.42e-4     # vitamine C initiale dans le bécher (mol)",
+        "for VmL in range(0, 22, 2):",
+        "    nI2verse = C * VmL * 1e-3    # diiode versé (mol)",
+        "    x = min(n0, nI2verse)        # avancement final (mol)",
+        "    nvitC = ...                  # à compléter",
+        "    nI2reste = ...               # à compléter",
+        "    niodure = ...                # à compléter",
+        "    print(VmL, nvitC, nI2reste, niodure)"
+      ],
+      "questions": [
+        {
+          "texte": "Doc. 2 : explique le changement de couleur observé à l'équivalence. Pourquoi utilise-t-on une fiole jaugée et une pipette jaugée ?",
+          "aides": []
+        },
+        {
+          "texte": "Établis la relation entre la quantité de vitamine C titrée n<sub>0</sub>(C₆H₈O₆) et la quantité de diiode versée à l'équivalence.",
+          "aides": []
+        },
+        {
+          "texte": "Doc. 5 : que représente l'instruction x = min(n0, nI2verse) ? Complète les trois lignes « ... » du script.",
+          "aides": [
+            "Avant l'équivalence, quel réactif s'épuise le premier ? Et après ? min() choisit la plus petite des deux valeurs.",
+            "Avancement x : chaque réactif perd « nombre stœchiométrique × x », chaque produit gagne « nombre stœchiométrique × x »."
+          ]
+        },
+        {
+          "texte": "Doc. 4 : attribue chaque courbe A, B, C à une espèce, puis lis le volume à l'équivalence attendu si l'étiquette est exacte. Décris ce qui change pour le réactif limitant à ce volume.",
+          "aides": [
+            "Une seule espèce est présente au départ ; une autre n'apparaît qu'après l'équivalence ; la troisième est un produit.",
+            "Le volume à l'équivalence correspond au point où toutes les courbes changent d'allure (lecture sur l'axe horizontal)."
+          ]
+        },
+        {
+          "texte": "Doc. 3 : quel résultat faut-il écarter ? Justifie, puis calcule le volume à l'équivalence moyen des autres groupes.",
+          "aides": [
+            "Relis la fiche : pourquoi conseille-t-on de faire deux titrages, dont un goutte à goutte ?",
+            "Un volume trop grand signifie qu'on a versé trop de diiode : dans quel cas cela arrive-t-il ?"
+          ]
+        },
+        {
+          "texte": "Détermine la masse de vitamine C dans un comprimé. Le résultat est-il compatible avec l'étiquette ?",
+          "aides": [
+            "Chaîne : V<sub>éq</sub> moyen → n(I₂)<sub>éq</sub> → n<sub>0</sub> dans 10,0 mL → n dans 200,0 mL → masse.",
+            "Pour conclure, compare l'écart |m − 500 mg| à 2 u(m)."
+          ]
+        },
+        {
+          "texte": "Propose une cause expérimentale qui expliquerait que la masse mesurée soit légèrement inférieure à 500 mg, et une précaution pour la limiter.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Avant l'équivalence, le diiode versé est aussitôt consommé par la vitamine C : le mélange reste incolore. Après l'équivalence, la vitamine C est épuisée, le diiode s'accumule et donne avec l'empois d'amidon une couleur bleu foncé persistante. Fiole jaugée et pipette jaugée donnent des volumes précis (200,0 mL et 10,0 mL) : la quantité de vitamine C prélevée est connue précisément.",
+        "<strong>2.</strong> Nombres stœchiométriques 1 et 1 : à l'équivalence, n<sub>0</sub>(C₆H₈O₆) = n(I₂)<sub>éq</sub> = C × V<sub>éq</sub>.",
+        "<strong>3.</strong> x = min(n0, nI2verse) : l'avancement final est fixé par le réactif limitant, celui qui donne la plus petite valeur (diiode avant l'équivalence, vitamine C après). Lignes à compléter : nvitC = n0 - x ; nI2reste = nI2verse - x ; niodure = 2 * x.",
+        "<strong>4.</strong> A (décroît puis reste nulle) : vitamine C. B (croît puis reste constante) : ions iodure I⁻ (2x, jusqu'à 2,84 × 10⁻⁴ mol). C (nulle puis croissante) : diiode restant. Les courbes changent de pente à V<sub>éq</sub> ≈ 14,2 mL (on accepte 14,1 à 14,3 mL). Avant ce volume, le diiode est limitant ; après, c'est la vitamine C qui est limitante, et le diiode est en excès.",
+        "<strong>5.</strong> On écarte le groupe 8 : un seul titrage versé rapidement fait dépasser l'équivalence (on verse plusieurs gouttes de trop avant de voir le bleu), d'où un volume trop grand. Moyenne des 7 autres : (14,0 + 13,9 + 14,1 + 13,8 + 14,2 + 13,9 + 14,0) / 7 = 13,99 mL ≈ 14,0 mL.",
+        "<strong>6.</strong> n<sub>0</sub>(C₆H₈O₆) = C × V<sub>éq</sub> = 1,00 × 10⁻² × 14,0 × 10⁻³ = 1,40 × 10⁻⁴ mol dans 10,0 mL. Fiole de 200,0 mL : 20 fois plus, soit 2,80 × 10⁻³ mol. m = n × M = 2,80 × 10⁻³ × 176,1 = 0,493 g = 493 mg. Écart à l'étiquette : 500 − 493 = 7 mg, inférieur à 2 u(m) = 10 mg (écart relatif 1,4 %) : le résultat est compatible avec l'indication « 500 mg ».",
+        "<strong>7.</strong> Éléments attendus : la vitamine C est lentement oxydée par le dioxygène de l'air (doc. 1) ; si la solution attend avant d'être titrée, une partie de la vitamine C a déjà disparu, d'où une masse mesurée un peu trop faible. Précaution : préparer la solution juste avant le titrage, titrer rapidement, limiter l'agitation à l'air. (Autres réponses acceptées : perte de solution lors du transfert du comprimé, mauvaise lecture de la burette.)",
+        "<em>⚠ Erreur fréquente : oublier le facteur 20 (200,0 mL / 10,0 mL) et conclure qu'un comprimé ne contient que 25 mg de vitamine C.</em>",
+        "<em>⚠ Autre erreur fréquente : garder le groupe 8 dans la moyenne. On trouverait 14,19 mL, donc une masse proche de 500 mg « par hasard » : un résultat qui « tombe juste » n'est pas pour autant un résultat fiable.</em>"
+      ]
+    }
+  ]
+}

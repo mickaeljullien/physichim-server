@@ -1,0 +1,709 @@
+{
+  "id": 10,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Rappel : la loi de gravitation universelle",
+        "icon": "🌌",
+        "content": [
+          {
+            "type": "formula",
+            "label": "Loi de gravitation universelle (Newton)",
+            "text": "F = G × (m₁ × m₂) / r²\nG = 6,67×10⁻¹¹ N·m²·kg⁻² (constante de gravitation universelle)\nm₁, m₂ : masses des deux corps en interaction (kg)\nr : distance séparant leurs centres (m)"
+          },
+          {
+            "type": "text",
+            "text": "Cette force est <strong>attractive</strong>, dirigée selon la droite reliant les centres des deux corps. C'est elle qui est à l'origine du mouvement des planètes autour du Soleil et des satellites autour de la Terre."
+          }
+        ]
+      },
+      {
+        "title": "2. Les trois lois de Kepler",
+        "icon": "🪐",
+        "content": [
+          {
+            "type": "def",
+            "term": "Première loi de Kepler (loi des orbites)",
+            "text": "Dans le référentiel héliocentrique, les planètes décrivent des trajectoires <strong>elliptiques</strong> dont le Soleil occupe l'un des deux foyers."
+          },
+          {
+            "type": "def",
+            "term": "Deuxième loi de Kepler (loi des aires)",
+            "text": "Le rayon vecteur reliant le centre du Soleil au centre de la planète balaie des aires égales pendant des durées égales. La vitesse d'une planète n'est donc pas constante : elle est maximale au périhélie (position la plus proche du Soleil) et minimale à l'aphélie (position la plus éloignée)."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><ellipse cx=\"260\" cy=\"140\" rx=\"180\" ry=\"95\" fill=\"none\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><circle cx=\"107\" cy=\"140\" r=\"7\" fill=\"#B8862E\"/><text x=\"115\" y=\"127\" font-size=\"12\" fill=\"#1B2420\" font-weight=\"600\">Soleil</text><path d=\"M107,140 L104,187.5 L80,140 L104,92.5 Z\" fill=\"#2F7D75\" fill-opacity=\"0.28\" stroke=\"#2F7D75\" stroke-width=\"1\"/><path d=\"M107,140 L437,123.5 L440,140 L437,156.5 Z\" fill=\"#2F7D75\" fill-opacity=\"0.28\" stroke=\"#2F7D75\" stroke-width=\"1\"/><circle cx=\"80\" cy=\"140\" r=\"4.5\" fill=\"#C0472F\"/><text x=\"55\" y=\"165\" font-size=\"11\" fill=\"#5C6B60\">périhélie</text><circle cx=\"440\" cy=\"140\" r=\"4.5\" fill=\"#C0472F\"/><text x=\"400\" y=\"165\" font-size=\"11\" fill=\"#5C6B60\">aphélie</text><text x=\"70\" y=\"115\" font-size=\"12\" fill=\"#2F7D75\" font-weight=\"600\">Aire A</text><text x=\"370\" y=\"105\" font-size=\"12\" fill=\"#2F7D75\" font-weight=\"600\">Aire A</text></svg>",
+            "caption": "Loi des aires : entre le périhélie et l'aphélie, la planète balaie des aires égales (en teinte) en des durées égales — elle est donc plus rapide près du Soleil qu'au loin."
+          },
+          {
+            "type": "def",
+            "term": "Troisième loi de Kepler (loi des périodes)",
+            "text": "Le carré de la période de révolution T d'une planète est proportionnel au cube du demi-grand axe a de sa trajectoire elliptique."
+          },
+          {
+            "type": "formula",
+            "label": "Troisième loi de Kepler",
+            "text": "T² / a³ = 4π² / (G × M) = constante\nT : période de révolution (s)\na : demi-grand axe de la trajectoire (m)\nM : masse de l'astre attracteur (kg)"
+          },
+          {
+            "type": "warn",
+            "text": "Ces trois lois, énoncées initialement pour les planètes autour du Soleil, s'appliquent de la même manière à tout satellite en orbite autour d'un astre : Lune et satellites artificiels autour de la Terre, par exemple."
+          }
+        ]
+      },
+      {
+        "title": "3. Mouvement circulaire uniforme des satellites",
+        "icon": "🛰️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour un satellite en orbite circulaire de rayon r autour d'un astre de masse M, la seule force appliquée est la force gravitationnelle, dirigée en permanence vers le centre de l'astre. D'après la 2e loi de Newton et l'expression de l'accélération dans le repère de Frenet, l'accélération est purement normale (centripète) : le mouvement est donc <strong>circulaire uniforme</strong>."
+          },
+          {
+            "type": "formula",
+            "label": "Vitesse et période d'un satellite en orbite circulaire",
+            "text": "v = √(G×M / r)\nT = 2π × √(r³ / (G×M))\n(établies en écrivant a = v²/r = G×M/r², issue de la 2e loi de Newton appliquée au satellite)"
+          }
+        ]
+      },
+      {
+        "title": "4. Satellite géostationnaire",
+        "icon": "🌍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Satellite géostationnaire",
+            "text": "Satellite dont la période de révolution est égale à la période de rotation propre de la Terre (jour sidéral, T = 23 h 56 min ≈ 86 164 s), dont l'orbite est <strong>circulaire</strong>, <strong>équatoriale</strong> (dans le plan de l'équateur) et <strong>directe</strong> (même sens que la rotation terrestre). Un tel satellite paraît immobile pour un observateur terrestre."
+          },
+          {
+            "type": "text",
+            "text": "L'altitude d'un satellite géostationnaire est unique (elle ne dépend pas de sa masse) et vaut environ 35 786 km, soit un rayon orbital a ≈ 42 164 km en ajoutant le rayon terrestre RT ≈ 6 378 km."
+          }
+        ]
+      },
+      {
+        "title": "5. Exemple numérique : altitude d'un satellite géostationnaire",
+        "icon": "🧮",
+        "content": [
+          {
+            "type": "text",
+            "text": "Données : G = 6,67×10⁻¹¹ N·m²·kg⁻² ; masse de la Terre M = 5,97×10²⁴ kg ; période T = 86 164 s ; rayon terrestre RT = 6 378 km."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul du demi-grand axe a",
+            "text": "D'après la 3e loi de Kepler : a³ = G × M × T² / (4π²)\na³ = (6,67×10⁻¹¹ × 5,97×10²⁴ × (86164)²) / (4π²)\na³ ≈ 7,54×10²² m³\na ≈ 4,22×10⁷ m = 42 200 km"
+          },
+          {
+            "type": "formula",
+            "label": "Calcul de l'altitude",
+            "text": "h = a - RT ≈ 42 200 - 6 378 ≈ 35 800 km"
+          },
+          {
+            "type": "text",
+            "text": "On retrouve bien l'altitude caractéristique d'environ 36 000 km commune à tous les satellites géostationnaires : la troisième loi de Kepler ne fait intervenir que la masse de l'astre attracteur (ici la Terre), et non celle du satellite."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "D'après la première loi de Kepler, dans le référentiel héliocentrique, une planète décrit :",
+      "opts": [
+        "un cercle centré sur le Soleil",
+        "une ellipse dont le Soleil occupe le centre",
+        "une ellipse dont le Soleil occupe un des foyers",
+        "une ellipse, quel que soit le référentiel d'étude"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "orbite-cercle-centre",
+          "texte": "Croire que les orbites sont des cercles centrés sur le Soleil : ce sont des ellipses (parfois presque circulaires)"
+        },
+        {
+          "code": "ellipse-centre-vs-foyer",
+          "texte": "Placer le Soleil au centre de l'ellipse : il occupe un de ses foyers"
+        },
+        null,
+        {
+          "code": "trajectoire-independante-referentiel",
+          "texte": "Oublier le référentiel : les lois de Kepler sont énoncées dans le référentiel héliocentrique"
+        }
+      ],
+      "exp": "Première loi : orbite elliptique dont le Soleil occupe un foyer, dans le référentiel héliocentrique. Attention : le Soleil n'est pas au centre de l'ellipse."
+    },
+    {
+      "q": "D'après la loi des aires (deuxième loi de Kepler), la vitesse d'une planète sur son orbite elliptique est :",
+      "opts": [
+        "constante, puisque les aires balayées en des durées égales sont égales",
+        "maximale à l'aphélie, minimale au périhélie",
+        "maximale au périhélie, minimale à l'aphélie",
+        "nulle à l'aphélie, où la planète fait demi-tour"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "aires-egales-vitesse-constante",
+          "texte": "Croire que des aires égales impliquent une vitesse constante : près du Soleil, l'arc parcouru est plus long"
+        },
+        {
+          "code": "perihelie-aphelie-inverses",
+          "texte": "Inverser périhélie (point le plus proche du Soleil) et aphélie (le plus éloigné)"
+        },
+        null,
+        {
+          "code": "vitesse-nulle-sommet",
+          "texte": "Croire que la vitesse s'annule au point le plus éloigné, comme au sommet d'un lancer : la planète ne s'arrête jamais"
+        }
+      ],
+      "exp": "Pour balayer la même aire en une même durée, la planète parcourt un arc plus long quand elle est proche du Soleil : elle va plus vite au périhélie. Attention : aires égales ne veut pas dire distances égales."
+    },
+    {
+      "q": "La troisième loi de Kepler, pour des corps en orbite autour d'un astre de masse M, s'écrit :",
+      "opts": [
+        "T² / a³ = 4π² / (G × M)",
+        "T² / a³ = 4π² / (G × m), m masse du satellite",
+        "T / a = constante",
+        "T³ / a² = constante"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "orbite-depend-masse-satellite",
+          "texte": "Croire que l'orbite dépend de la masse du satellite : seule la masse M de l'astre attracteur intervient"
+        },
+        {
+          "code": "kepler-proportionnalite-simple",
+          "texte": "Croire que T est proportionnelle à a : c'est T² qui est proportionnel à a³"
+        },
+        {
+          "code": "kepler-exposants-inverses",
+          "texte": "Inverser les exposants : le carré porte sur la période, le cube sur le demi-grand axe"
+        }
+      ],
+      "exp": "T² / a³ = 4π² / (G M) : la constante ne dépend que de l'astre attracteur. Attention : tous les satellites d'un même astre ont la même valeur de T² / a³, quelle que soit leur masse."
+    },
+    {
+      "q": "Un satellite décrit une orbite circulaire autour de la Terre. Son mouvement est uniforme car :",
+      "opts": [
+        "aucune force ne s'exerce sur lui dans le vide spatial",
+        "une force motrice compense l'attraction terrestre",
+        "la force centrifuge compense exactement son poids",
+        "la force de gravitation est à chaque instant perpendiculaire à sa vitesse"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "pas-de-gravite-en-orbite",
+          "texte": "Croire qu'il n'y a pas de gravité en orbite : c'est elle qui courbe la trajectoire du satellite"
+        },
+        {
+          "code": "force-sens-mouvement",
+          "texte": "Croire qu'un mouvement nécessite une force dans son sens : aucune force motrice n'est nécessaire"
+        },
+        {
+          "code": "satellite-forces-compensees",
+          "texte": "Croire que les forces se compensent : si c'était le cas, le satellite irait en ligne droite"
+        },
+        null
+      ],
+      "exp": "La seule force est la gravitation, dirigée vers le centre de la Terre, donc perpendiculaire à la vitesse : at = 0 (v constante) et an = v²/r. Attention : les forces ne se compensent pas, sinon le mouvement serait rectiligne."
+    },
+    {
+      "q": "Pour un satellite en orbite circulaire de rayon r autour d'un astre de masse M, la vitesse vaut :",
+      "opts": [
+        "v = G × M / r",
+        "v = √(G × M / r)",
+        "v = √(G × M / r²)",
+        "v = √(G × M × m / r)"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-racine",
+          "texte": "Oublier la racine carrée : G M / r donne v², pas v"
+        },
+        null,
+        {
+          "code": "vitesse-vs-acceleration-gravitation",
+          "texte": "Confondre avec l'accélération G M / r² : on écrit v² / r = G M / r²"
+        },
+        {
+          "code": "orbite-depend-masse-satellite",
+          "texte": "Faire intervenir la masse du satellite : elle se simplifie dans la deuxième loi de Newton"
+        }
+      ],
+      "exp": "La deuxième loi de Newton donne v² / r = G M / r², donc v = √(G M / r) : elle ne dépend pas de la masse du satellite. Attention à ne pas oublier la racine."
+    },
+    {
+      "q": "Un satellite orbite à l'altitude h = 600 km au-dessus de la Terre (RT = 6 400 km, M = 5,97 × 10²⁴ kg, G = 6,67 × 10⁻¹¹ N·m²·kg⁻²). Sa vitesse vaut environ :",
+      "opts": [
+        "7,5 × 10³ m·s⁻¹",
+        "5,7 × 10⁷ m·s⁻¹",
+        "2,6 × 10⁴ m·s⁻¹",
+        "2,4 × 10⁵ m·s⁻¹"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-racine",
+          "texte": "Oublier la racine carrée : G M / r = 5,7 × 10⁷ donne v², pas v"
+        },
+        {
+          "code": "altitude-vs-rayon-orbite",
+          "texte": "Prendre r = h au lieu de r = RT + h : la distance se mesure depuis le centre de la Terre"
+        },
+        {
+          "code": "conversion-km-m",
+          "texte": "Oublier de convertir r en mètres : r = 7 000 au lieu de 7,0 × 10⁶ m"
+        }
+      ],
+      "exp": "r = RT + h = 7,0 × 10⁶ m ; v = √(G M / r) = √(6,67 × 10⁻¹¹ × 5,97 × 10²⁴ / 7,0 × 10⁶) ≈ 7,5 × 10³ m·s⁻¹. Attention : r est la distance au centre de la Terre, en mètres."
+    },
+    {
+      "q": "Un satellite a un demi-grand axe a = 8,0 × 10³ km autour de la Terre (M = 5,97 × 10²⁴ kg, G = 6,67 × 10⁻¹¹ N·m²·kg⁻²). Avec T = 2π √(a³ / (G M)), sa période vaut environ :",
+      "opts": [
+        "7,1 × 10³ s",
+        "0,23 s",
+        "8,1 × 10⁶ s",
+        "1,1 × 10³ s"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conversion-km-m",
+          "texte": "Oublier de convertir a en mètres : a = 8 000 m au lieu de 8,0 × 10⁶ m"
+        },
+        {
+          "code": "oubli-racine",
+          "texte": "Oublier la racine carrée : 2π × a³ / (G M)"
+        },
+        {
+          "code": "oubli-2pi",
+          "texte": "Oublier le facteur 2π : √(a³ / (G M)) = 1,1 × 10³ s"
+        }
+      ],
+      "exp": "a = 8,0 × 10⁶ m ; T = 2π √((8,0 × 10⁶)³ / (6,67 × 10⁻¹¹ × 5,97 × 10²⁴)) ≈ 7,1 × 10³ s, soit environ 2 h. Attention aux conversions : les distances en mètres."
+    },
+    {
+      "q": "Un satellite géostationnaire :",
+      "opts": [
+        "est immobile dans le référentiel géocentrique",
+        "a une orbite circulaire, dans le plan de l'équateur, de période égale à la rotation propre de la Terre",
+        "peut avoir une orbite polaire, si sa période vaut 24 h",
+        "a une orbite dont le plan peut être quelconque, si sa période vaut 24 h"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "geostationnaire-referentiel",
+          "texte": "Confondre les référentiels : il est immobile dans le référentiel terrestre, mais tourne dans le référentiel géocentrique"
+        },
+        null,
+        {
+          "code": "geostationnaire-orbite-polaire",
+          "texte": "Croire qu'une orbite polaire peut être géostationnaire : le satellite passerait au-dessus des pôles"
+        },
+        {
+          "code": "geostationnaire-plan-quelconque",
+          "texte": "Croire que la période suffit : il faut aussi une orbite équatoriale, circulaire et dans le sens de rotation de la Terre"
+        }
+      ],
+      "exp": "Géostationnaire : orbite circulaire, équatoriale, parcourue dans le sens de rotation de la Terre, avec T = 1 jour sidéral (≈ 23 h 56 min). Attention : il est fixe pour un observateur terrestre, pas dans le référentiel géocentrique."
+    },
+    {
+      "q": "On veut placer en orbite géostationnaire un satellite deux fois plus lourd qu'un autre déjà en place. Il faut le placer :",
+      "opts": [
+        "à la même altitude",
+        "plus bas, car il est plus attiré par la Terre",
+        "à n'importe quelle altitude, pourvu que l'orbite soit équatoriale",
+        "à la même altitude, mais avec une vitesse deux fois plus faible"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "orbite-depend-masse-satellite",
+          "texte": "Croire que l'orbite dépend de la masse du satellite : seule la masse M de l'astre attracteur intervient"
+        },
+        {
+          "code": "geostationnaire-plan-quelconque",
+          "texte": "Croire que l'orbite équatoriale suffit : la période impose aussi le rayon de l'orbite (3ᵉ loi de Kepler)"
+        },
+        {
+          "code": "vitesse-depend-masse-satellite",
+          "texte": "Croire que la vitesse orbitale dépend de la masse du satellite : v = √(G M / r)"
+        }
+      ],
+      "exp": "T imposé (1 jour sidéral) et T² / a³ = 4π² / (G M) : le rayon de l'orbite est unique (altitude ≈ 36 000 km), sans faire intervenir la masse du satellite. Attention : plus lourd ne veut pas dire « tombe plus vite »."
+    },
+    {
+      "q": "La Station spatiale internationale (ISS) orbite à environ 400 km d'altitude (RT = 6 400 km). À cette altitude, l'intensité de la pesanteur terrestre vaut :",
+      "opts": [
+        "environ 89 % de sa valeur au sol",
+        "zéro : les astronautes flottent",
+        "zéro, car il n'y a plus d'air",
+        "zéro, car la force centrifuge compense le poids"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "pas-de-gravite-en-orbite",
+          "texte": "Croire qu'il n'y a pas de gravité en orbite : les astronautes flottent parce qu'ils tombent avec la station"
+        },
+        {
+          "code": "gravite-liee-atmosphere",
+          "texte": "Croire que la gravité est due à l'air : elle agit aussi dans le vide"
+        },
+        {
+          "code": "satellite-forces-compensees",
+          "texte": "Croire que les forces se compensent : si c'était le cas, la station irait en ligne droite"
+        }
+      ],
+      "exp": "g ∝ 1/r² : g(h)/g₀ = (6 400 / 6 800)² ≈ 0,89. Les astronautes « flottent » car la station et eux tombent ensemble autour de la Terre, avec la même accélération. Attention : apesanteur ne veut pas dire absence de pesanteur."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "À la découverte de Saturne — satellites, lois de Kepler",
+      "session": "Métropole · Jour 1",
+      "link": "https://www.labolycee.org/metropole-2023-jour-1"
+    },
+    {
+      "year": "2023",
+      "title": "À la recherche d'une autre Terre — satellites, Kepler",
+      "session": "Centres étrangers · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-centres-etrangers-1-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Le passage de la comète",
+      "contexte": [
+        "Inès regarde une vidéo de vulgarisation sur les comètes. La figure ci-dessous montre la trajectoire d'une comète autour du Soleil, dans le référentiel héliocentrique. Les points sont les positions successives de la comète, relevées à intervalles de temps égaux. Le Soleil n'a pas été dessiné : il se trouve en F₁ ou en F₂, les deux foyers de l'ellipse."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"flP\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker id=\"flT\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker id=\"flO\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#C8962E\"/></marker><marker id=\"flN\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker></defs><polyline points=\"620.0,222.0 619.9,216.0 619.5,209.9 618.9,203.9 618.1,197.9 617.0,192.0 615.7,186.0 614.2,180.1 612.5,174.3 610.5,168.4 608.3,162.7 605.8,157.0 603.1,151.3 600.3,145.7 597.2,140.3 593.8,134.8 590.3,129.5 586.6,124.3 582.6,119.1 578.5,114.1 574.2,109.1 569.6,104.3 564.9,99.6 560.0,95.0 555.0,90.6 549.7,86.2 544.3,82.0 538.7,78.0 533.0,74.1 527.1,70.3 521.1,66.7 514.9,63.2 508.6,59.9 502.2,56.7 495.6,53.7 489.0,50.9 482.2,48.3 475.3,45.8 468.3,43.5 461.3,41.4 454.2,39.4 447.0,37.6 439.7,36.0 432.4,34.6 425.0,33.4 417.5,32.4 410.1,31.5 402.6,30.9 395.1,30.4 387.5,30.1 380.0,30.0 372.5,30.1 364.9,30.4 357.4,30.9 349.9,31.5 342.5,32.4 335.0,33.4 327.6,34.6 320.3,36.0 313.0,37.6 305.8,39.4 298.7,41.4 291.7,43.5 284.7,45.8 277.8,48.3 271.0,50.9 264.4,53.7 257.8,56.7 251.4,59.9 245.1,63.2 238.9,66.7 232.9,70.3 227.0,74.1 221.3,78.0 215.7,82.0 210.3,86.2 205.0,90.6 200.0,95.0 195.1,99.6 190.4,104.3 185.8,109.1 181.5,114.1 177.4,119.1 173.4,124.3 169.7,129.5 166.2,134.8 162.8,140.3 159.7,145.7 156.9,151.3 154.2,157.0 151.7,162.7 149.5,168.4 147.5,174.3 145.8,180.1 144.3,186.0 143.0,192.0 141.9,197.9 141.1,203.9 140.5,209.9 140.1,216.0 140.0,222.0 140.1,228.0 140.5,234.1 141.1,240.1 141.9,246.1 143.0,252.0 144.3,258.0 145.8,263.9 147.5,269.7 149.5,275.6 151.7,281.3 154.2,287.0 156.9,292.7 159.7,298.3 162.8,303.7 166.2,309.2 169.7,314.5 173.4,319.7 177.4,324.9 181.5,329.9 185.8,334.9 190.4,339.7 195.1,344.4 200.0,349.0 205.0,353.4 210.3,357.8 215.7,362.0 221.3,366.0 227.0,369.9 232.9,373.7 238.9,377.3 245.1,380.8 251.4,384.1 257.8,387.3 264.4,390.3 271.0,393.1 277.8,395.7 284.7,398.2 291.7,400.5 298.7,402.6 305.8,404.6 313.0,406.4 320.3,408.0 327.6,409.4 335.0,410.6 342.5,411.6 349.9,412.5 357.4,413.1 364.9,413.6 372.5,413.9 380.0,414.0 387.5,413.9 395.1,413.6 402.6,413.1 410.1,412.5 417.5,411.6 425.0,410.6 432.4,409.4 439.7,408.0 447.0,406.4 454.2,404.6 461.3,402.6 468.3,400.5 475.3,398.2 482.2,395.7 489.0,393.1 495.6,390.3 502.2,387.3 508.6,384.1 514.9,380.8 521.1,377.3 527.1,373.7 533.0,369.9 538.7,366.0 544.3,362.0 549.7,357.8 555.0,353.4 560.0,349.0 564.9,344.4 569.6,339.7 574.2,334.9 578.5,329.9 582.6,324.9 586.6,319.7 590.3,314.5 593.8,309.2 597.2,303.7 600.3,298.3 603.1,292.7 605.8,287.0 608.3,281.3 610.5,275.6 612.5,269.7 614.2,263.9 615.7,258.0 617.0,252.0 618.1,246.1 618.9,240.1 619.5,234.1 619.9,228.0 620.0,222.0\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2.5\"/><circle cx=\"620.0\" cy=\"222.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"540.3\" cy=\"79.1\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"427.0\" cy=\"33.7\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"333.3\" cy=\"33.7\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"260.6\" cy=\"55.4\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"206.6\" cy=\"89.3\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"169.2\" cy=\"130.2\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"147.2\" cy=\"175.2\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"140.0\" cy=\"222.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"147.2\" cy=\"268.8\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"169.2\" cy=\"313.8\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"206.6\" cy=\"354.7\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"260.6\" cy=\"388.6\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"333.3\" cy=\"410.3\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"427.0\" cy=\"410.3\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"540.3\" cy=\"364.9\" r=\"6\" fill=\"#B5523B\"/><path d=\"M228.0,214 l16,16 M228.0,230 l16,-16\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"236.0\" y=\"254\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"18\">F₁</text><path d=\"M516.0,214 l16,16 M516.0,230 l16,-16\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"524.0\" y=\"254\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\" font-size=\"18\">F₂</text><text x=\"634.0\" y=\"228\" font-weight=\"bold\" font-size=\"18\">A</text><text x=\"112.0\" y=\"228\" font-weight=\"bold\" font-size=\"18\">B</text><path d=\"M452.0,64.0 L368.0,64.0\" stroke=\"#3a3a3a\" stroke-width=\"2\" marker-end=\"url(#flN)\"/><text x=\"408.8\" y=\"90.0\" text-anchor=\"middle\">sens de parcours</text><text x=\"20\" y=\"455\" font-size=\"15\">Positions de la comète (points) relevées à intervalles de temps égaux Δt. F₁ et F₂ : foyers de l'ellipse.</text></svg>",
+      "questions": [
+        {
+          "texte": "Quelle loi de Kepler permet d'affirmer que le Soleil se trouve en F₁ ou en F₂ ? Énonce-la.",
+          "aides": []
+        },
+        {
+          "texte": "Compare les distances parcourues par la comète pendant une même durée Δt près de A et près de B. Où la comète est-elle la plus rapide ?",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en dans quel foyer se trouve le Soleil, puis nomme les points A et B (périhélie ou aphélie).",
+          "aides": [
+            "D'après la loi des aires, où une planète va-t-elle le plus vite : près du Soleil ou loin de lui ?",
+            "Le Soleil est donc dans le foyer le plus proche de la zone où les points sont les plus espacés."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. Les aires balayées par le segment Soleil–comète entre deux positions consécutives de la figure sont égales.<br>b. La trajectoire d'une planète autour du Soleil est toujours un cercle centré sur le Soleil.<br>c. Plus une planète est éloignée du Soleil, plus sa période de révolution est longue.<br>d. Le rapport T²/a³ a la même valeur pour la Terre tournant autour du Soleil et pour la Lune tournant autour de la Terre.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> La première loi de Kepler (loi des orbites) : dans le référentiel héliocentrique, la trajectoire d'une planète (ou d'une comète) est une ellipse dont le Soleil occupe l'un des deux foyers.",
+        "<strong>2.</strong> Près de A, les points sont très espacés ; près de B, ils sont très rapprochés. Pendant la même durée Δt, la comète parcourt une distance bien plus grande près de A : elle y est la plus rapide.",
+        "<strong>3.</strong> D'après la deuxième loi de Kepler (loi des aires), la comète va le plus vite quand elle est le plus près du Soleil. Le Soleil est donc en F₂, le foyer le plus proche de A. A est le périhélie (position la plus proche du Soleil), B est l'aphélie (position la plus éloignée).",
+        "<strong>4.</strong> a. VRAI : c'est la loi des aires ; les positions sont séparées par des durées égales, donc les aires balayées sont égales.",
+        "b. FAUX : la trajectoire est une ellipse dont le Soleil occupe un foyer. Le cercle n'est qu'un cas particulier (ellipse dont les deux foyers sont confondus au centre), qui est un bon modèle pour la plupart des planètes.",
+        "c. VRAI : d'après la troisième loi de Kepler, T²/a³ est constant, donc si le demi-grand axe a augmente, la période T augmente aussi.",
+        "d. FAUX : T²/a³ = 4π²/(G × M), où M est la masse de l'astre attracteur. Le Soleil et la Terre n'ont pas la même masse, donc les deux constantes sont différentes.",
+        "<em>⚠ Erreur fréquente : placer le Soleil au foyer près duquel les points sont serrés. Des points serrés signifient une faible vitesse, donc une grande distance au Soleil.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La Station spatiale internationale",
+      "contexte": [
+        "La Station spatiale internationale (ISS), de masse m ≈ 4,2 × 10⁵ kg, tourne autour de la Terre sur une orbite pratiquement circulaire, à une altitude h ≈ 420 km. Les astronautes y flottent en « apesanteur ». Yanis en conclut : « là-haut, la Terre n'attire plus rien ».",
+        "Pour un satellite en orbite circulaire de rayon r autour d'un astre de masse M : v = √(G × M / r)."
+      ],
+      "questions": [
+        {
+          "texte": "Dans quel référentiel étudie-t-on le mouvement de l'ISS ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le rayon r de l'orbite de l'ISS, en mètres.",
+          "aides": [
+            "Le rayon de l'orbite se mesure depuis le centre de la Terre, pas depuis le sol.",
+            "r = R<sub>T</sub> + h ; convertis ensuite les km en m (1 km = 10³ m)."
+          ]
+        },
+        {
+          "texte": "Écris l'expression de la valeur F de la force d'attraction gravitationnelle exercée par la Terre sur l'ISS, puis calcule-la.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur F<sub>sol</sub> de cette force si l'ISS était posée au sol, puis le rapport F / F<sub>sol</sub>. Que penses-tu de la phrase de Yanis ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la vitesse v de l'ISS en m·s⁻¹, puis en km·h⁻¹.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la période de révolution T de l'ISS (en minutes), puis le nombre de tours de la Terre qu'elle effectue en 24 h.",
+          "aides": [
+            "Le mouvement est circulaire uniforme : pendant une période, l'ISS parcourt le périmètre du cercle.",
+            "T = 2π r / v ; pour le nombre de tours, divise la durée d'une journée (en s) par T (en s)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Dans le référentiel géocentrique (centré sur le centre de la Terre, axes pointant vers des étoiles lointaines), supposé galiléen.",
+        "<strong>2.</strong> r = R<sub>T</sub> + h = 6 378 + 420 = 6 798 km = 6,798 × 10⁶ m.",
+        "<strong>3.</strong> F = G × M<sub>T</sub> × m / r² = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ × 4,2 × 10⁵ / (6,798 × 10⁶)² = 3,6 × 10⁶ N.",
+        "<strong>4.</strong> F<sub>sol</sub> = G × M<sub>T</sub> × m / R<sub>T</sub>² = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ × 4,2 × 10⁵ / (6,378 × 10⁶)² = 4,1 × 10⁶ N. F / F<sub>sol</sub> = (R<sub>T</sub> / r)² = 0,88 : à 420 km d'altitude, l'attraction de la Terre vaut encore 88 % de sa valeur au sol. Yanis a tort : l'ISS et les astronautes « tombent » ensemble en permanence autour de la Terre, c'est pour cela qu'ils flottent les uns par rapport aux autres.",
+        "<strong>5.</strong> v = √(G × M<sub>T</sub> / r) = √(6,67 × 10⁻¹¹ × 5,97 × 10²⁴ / 6,798 × 10⁶) = 7 653 m·s⁻¹ ≈ 7,65 × 10³ m·s⁻¹, soit 7 653 × 3,6 = 2,76 × 10⁴ km·h⁻¹.",
+        "<strong>6.</strong> Le mouvement est circulaire uniforme : T = 2π × r / v = 2π × 6,798 × 10⁶ / 7,65 × 10³ = 5,58 × 10³ s ≈ 93,0 min. En 24 h : 86 400 / 5 581 = 15,5 tours (les astronautes voient environ 16 levers de Soleil par jour).",
+        "<em>⚠ Erreur fréquente : utiliser l'altitude h au lieu du rayon r = R<sub>T</sub> + h, ou laisser r en km dans la formule.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Galileo, le GPS européen de ton smartphone",
+      "contexte": [
+        "Ton smartphone se localise grâce aux satellites de plusieurs constellations, dont Galileo (Union européenne). Un satellite Galileo S décrit une orbite circulaire de centre O (centre de la Terre) et de rayon r = 29 600 km, dans le référentiel géocentrique.",
+        "Dans le repère de Frenet, l'accélération s'écrit : vecteur a = (dv/dt) vecteur u<sub>T</sub> + (v²/r) vecteur u<sub>N</sub>, où vecteur u<sub>T</sub> est tangent à la trajectoire (sens du mouvement) et vecteur u<sub>N</sub> dirigé vers le centre."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"flP\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker id=\"flT\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker id=\"flO\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#C8962E\"/></marker><marker id=\"flN\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker></defs><circle cx=\"300\" cy=\"245\" r=\"170\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2.5\"/><circle cx=\"300\" cy=\"245\" r=\"37\" fill=\"#1F4E5A\"/><text x=\"300\" y=\"250\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Terre</text><text x=\"300\" y=\"302\" text-anchor=\"middle\">O</text><line x1=\"430.2\" y1=\"135.7\" x2=\"369.2\" y2=\"63.0\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#flT)\"/><text x=\"355.0\" y=\"53.1\" text-anchor=\"middle\" font-size=\"22\" fill=\"#B5523B\">①</text><line x1=\"430.2\" y1=\"135.7\" x2=\"357.5\" y2=\"196.8\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#flT)\"/><text x=\"340.6\" y=\"217.9\" text-anchor=\"middle\" font-size=\"22\" fill=\"#B5523B\">②</text><line x1=\"430.2\" y1=\"135.7\" x2=\"503.0\" y2=\"74.7\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#flT)\"/><text x=\"519.9\" y=\"67.5\" text-anchor=\"middle\" font-size=\"22\" fill=\"#B5523B\">③</text><line x1=\"430.2\" y1=\"135.7\" x2=\"491.3\" y2=\"208.5\" stroke=\"#B5523B\" stroke-width=\"3\" marker-end=\"url(#flT)\"/><text x=\"505.4\" y=\"232.4\" text-anchor=\"middle\" font-size=\"22\" fill=\"#B5523B\">④</text><circle cx=\"430.2\" cy=\"135.7\" r=\"8\" fill=\"#C8962E\" stroke=\"#3a3a3a\"/><text x=\"394.2\" y=\"143.7\" font-weight=\"bold\">S</text><path d=\"M140.3,303.1 A170,170 0 0 0 202.5,384.3\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"3\" marker-end=\"url(#flN)\"/><text x=\"128.3\" y=\"351.1\" text-anchor=\"end\">sens du</text><text x=\"128.3\" y=\"371.1\" text-anchor=\"end\">mouvement</text><text x=\"560\" y=\"200\" font-size=\"15\">S : satellite Galileo</text><text x=\"560\" y=\"225\" font-size=\"15\">O : centre de la Terre</text><text x=\"560\" y=\"250\" font-size=\"15\">Orbite circulaire</text><text x=\"560\" y=\"275\" font-size=\"15\">de centre O</text><text x=\"560\" y=\"320\" font-size=\"15\" font-style=\"italic\">Échelle des</text><text x=\"560\" y=\"342\" font-size=\"15\" font-style=\"italic\">vecteurs arbitraire</text></svg>",
+      "questions": [
+        {
+          "texte": "Parmi les flèches ① à ④, laquelle peut représenter le vecteur vitesse du satellite ? Justifie.",
+          "aides": [
+            "Le vecteur vitesse est toujours tangent à la trajectoire.",
+            "Deux flèches sont tangentes : regarde le sens du mouvement indiqué sur la figure."
+          ]
+        },
+        {
+          "texte": "Laquelle représente la force exercée par la Terre sur le satellite ? Et le vecteur accélération ? Justifie avec la deuxième loi de Newton.",
+          "aides": []
+        },
+        {
+          "texte": "QCM — Pour ce satellite, la composante tangentielle de l'accélération dv/dt est nulle. Cela signifie que :<br>(A) la trajectoire est rectiligne ;  (B) la valeur de la vitesse est constante ;  (C) le vecteur vitesse est constant ;  (D) aucune force ne s'exerce sur le satellite.",
+          "aides": []
+        },
+        {
+          "texte": "La valeur de l'accélération vaut a = G × M<sub>T</sub> / r². Calcule-la.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide de l'expression de a dans le repère de Frenet, calcule la vitesse v du satellite.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule sa période de révolution T, en heures. Le satellite tourne-t-il plus vite ou moins vite que la Terre sur elle-même ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Flèche ① : le vecteur vitesse est tangent à la trajectoire et orienté dans le sens du mouvement (② et ③ sont radiales, ④ est tangente mais dans le mauvais sens).",
+        "<strong>2.</strong> La force est attractive, dirigée de S vers le centre O de la Terre : flèche ②. D'après la deuxième loi de Newton, vecteur F = m × vecteur a : vecteur a a la même direction et le même sens que vecteur F, c'est aussi la flèche ② (accélération centripète, selon vecteur u<sub>N</sub>).",
+        "<strong>3.</strong> Réponse (B). dv/dt = 0 signifie que la valeur v de la vitesse ne varie pas : le mouvement est uniforme. Le vecteur v change quand même de direction (il reste tangent au cercle), donc (C) est faux ; la trajectoire est un cercle, donc (A) est faux ; la force gravitationnelle existe, donc (D) est faux.",
+        "<strong>4.</strong> r = 29 600 km = 2,96 × 10⁷ m ; a = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ / (2,96 × 10⁷)² = 0,454 m·s⁻².",
+        "<strong>5.</strong> a = v² / r, donc v = √(a × r) = √(0,454 × 2,96 × 10⁷) = 3,67 × 10³ m·s⁻¹.",
+        "<strong>6.</strong> T = 2π × r / v = 2π × 2,96 × 10⁷ / 3,67 × 10³ = 5,07 × 10⁴ s = 14,1 h (environ 14 h 5 min). C'est moins que la durée d'un tour de la Terre sur elle-même (environ 24 h) : le satellite tourne plus vite, il n'est donc pas géostationnaire.",
+        "<em>⚠ Erreur fréquente : croire qu'un mouvement « uniforme » a une accélération nulle. Dans un mouvement circulaire uniforme, l'accélération est normale (centripète) et non nulle.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Météosat, un œil fixe au-dessus de l'équateur",
+      "contexte": [
+        "Les satellites Météosat fournissent des images de l'Europe et de l'Afrique toutes les quelques minutes : ils sont géostationnaires, c'est-à-dire immobiles pour un observateur terrestre.",
+        "On étudie un satellite Météosat de masse m, en orbite circulaire de rayon r autour de la Terre, soumis uniquement à l'attraction gravitationnelle de celle-ci."
+      ],
+      "questions": [
+        {
+          "texte": "Précise le système et le référentiel d'étude. Donne l'expression vectorielle de la force exercée par la Terre sur le satellite, à l'aide du vecteur unitaire u<sub>N</sub> dirigé du satellite vers le centre de la Terre.",
+          "aides": []
+        },
+        {
+          "texte": "En appliquant la deuxième loi de Newton, établis l'expression vectorielle de l'accélération du satellite. Montre que son mouvement circulaire est uniforme.",
+          "aides": [
+            "Écris Σ vecteur F = m × vecteur a avec une seule force, puis simplifie par m.",
+            "Compare ton résultat à vecteur a = (dv/dt) vecteur u<sub>T</sub> + (v²/r) vecteur u<sub>N</sub> : que vaut la composante selon vecteur u<sub>T</sub> ?"
+          ]
+        },
+        {
+          "texte": "Établis l'expression de la vitesse v du satellite en fonction de G, M<sub>T</sub> et r.",
+          "aides": []
+        },
+        {
+          "texte": "Établis la troisième loi de Kepler dans le cas de l'orbite circulaire : T² / r³ = 4π² / (G × M<sub>T</sub>).",
+          "aides": [
+            "Pendant une période T, le satellite parcourt une fois le cercle de rayon r.",
+            "Écris T = 2π r / v, remplace v par son expression, puis élève au carré."
+          ]
+        },
+        {
+          "texte": "Quelle doit être la période T d'un satellite géostationnaire ? Calcule alors le rayon r de son orbite, puis son altitude h.",
+          "aides": [
+            "Le satellite doit faire un tour pendant que la Terre fait un tour sur elle-même par rapport aux étoiles.",
+            "Isole r³ dans la troisième loi de Kepler, puis prends la racine cubique (puissance 1/3 sur la calculatrice).",
+            "Le rayon r se compte depuis le centre de la Terre : l'altitude est h = r − R<sub>T</sub>."
+          ]
+        },
+        {
+          "texte": "Une station de réception est située exactement sous le satellite. Calcule la durée d'un aller-retour sol → satellite → sol pour un signal radio (qui se propage à la vitesse c).",
+          "aides": []
+        },
+        {
+          "texte": "Explique pourquoi un satellite géostationnaire ne peut pas rester immobile au-dessus de Paris.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Système : le satellite (modélisé par son centre de masse S). Référentiel géocentrique, supposé galiléen. vecteur F = (G × M<sub>T</sub> × m / r²) vecteur u<sub>N</sub>.",
+        "<strong>2.</strong> Deuxième loi de Newton : Σ vecteur F = m × vecteur a, soit m × vecteur a = (G × M<sub>T</sub> × m / r²) vecteur u<sub>N</sub>, donc vecteur a = (G × M<sub>T</sub> / r²) vecteur u<sub>N</sub>. Dans le repère de Frenet, vecteur a = (dv/dt) vecteur u<sub>T</sub> + (v²/r) vecteur u<sub>N</sub>. Par identification, dv/dt = 0 : la valeur de la vitesse est constante, le mouvement circulaire est uniforme.",
+        "<strong>3.</strong> Par identification des composantes normales : v² / r = G × M<sub>T</sub> / r², donc v = √(G × M<sub>T</sub> / r).",
+        "<strong>4.</strong> Le satellite parcourt la circonférence 2π r en une période T : T = 2π r / v = 2π r × √(r / (G × M<sub>T</sub>)), donc T² = 4π² r³ / (G × M<sub>T</sub>), soit T² / r³ = 4π² / (G × M<sub>T</sub>).",
+        "<strong>5.</strong> T doit être égale à la période de rotation propre de la Terre, le jour sidéral : T = 86 164 s (orbite circulaire, dans le plan de l'équateur, parcourue dans le sens de rotation de la Terre). r³ = G × M<sub>T</sub> × T² / (4π²) = 6,67 × 10⁻¹¹ × 5,97 × 10²⁴ × 86 164² / (4π²) = 7,49 × 10²² m³, donc r = 4,21 × 10⁷ m = 42 150 km. h = r − R<sub>T</sub> = 42 150 − 6 378 = 3,58 × 10⁴ km (environ 35 800 km).",
+        "<strong>6.</strong> Δt = 2h / c = 2 × 3,577 × 10⁷ / 2,998 × 10⁸ = 0,239 s : environ un quart de seconde, ce qui explique le léger décalage des duplex par satellite.",
+        "<strong>7.</strong> La force gravitationnelle est dirigée vers le centre de la Terre : l'orbite est donc un cercle centré sur le centre de la Terre. Un satellite au-dessus de Paris (latitude 49° N) tournant avec la Terre décrirait un cercle centré sur l'axe des pôles mais pas sur le centre de la Terre : impossible. Le seul cercle qui convient est dans le plan de l'équateur.",
+        "<em>⚠ Erreur fréquente : prendre T = 24 h = 86 400 s (jour solaire). On trouverait h ≈ 35 850 km, soit environ 77 km de trop. Autre erreur : oublier de soustraire R<sub>T</sub> pour passer du rayon à l'altitude.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Peser Jupiter grâce à ses lunes",
+      "contexte": [
+        "En 1610, Galilée découvre quatre lunes autour de Jupiter. Leurs orbites sont quasi circulaires. Le tableau donne le rayon a de leur orbite et leur période de révolution T (données NASA), dans le référentiel « jovicentrique » (centré sur Jupiter).",
+        "Io : a = 421,8 × 10³ km ; T = 1,769 jour.   Europe : a = 671,1 × 10³ km ; T = 3,551 jours.   Ganymède : a = 1 070,4 × 10³ km ; T = 7,155 jours.   Callisto : a = 1 882,7 × 10³ km ; T = 16,689 jours.",
+        "Masse de Jupiter (valeur de référence NASA) : M<sub>J</sub> = 1,898 × 10²⁷ kg."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"flP\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker id=\"flT\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker id=\"flO\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#C8962E\"/></marker><marker id=\"flN\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker></defs><line x1=\"85.0\" y1=\"25\" x2=\"85.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"85.0\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">0</text><line x1=\"131.1\" y1=\"25\" x2=\"131.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"131.1\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">0,5</text><line x1=\"177.1\" y1=\"25\" x2=\"177.1\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"177.1\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">1</text><line x1=\"223.2\" y1=\"25\" x2=\"223.2\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"223.2\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">1,5</text><line x1=\"269.3\" y1=\"25\" x2=\"269.3\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"269.3\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">2</text><line x1=\"315.4\" y1=\"25\" x2=\"315.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"315.4\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">2,5</text><line x1=\"361.4\" y1=\"25\" x2=\"361.4\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"361.4\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">3</text><line x1=\"407.5\" y1=\"25\" x2=\"407.5\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">3,5</text><line x1=\"453.6\" y1=\"25\" x2=\"453.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"453.6\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">4</text><line x1=\"499.6\" y1=\"25\" x2=\"499.6\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"499.6\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">4,5</text><line x1=\"545.7\" y1=\"25\" x2=\"545.7\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"545.7\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">5</text><line x1=\"591.8\" y1=\"25\" x2=\"591.8\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"591.8\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">5,5</text><line x1=\"637.9\" y1=\"25\" x2=\"637.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"637.9\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">6</text><line x1=\"683.9\" y1=\"25\" x2=\"683.9\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"683.9\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">6,5</text><line x1=\"730.0\" y1=\"25\" x2=\"730.0\" y2=\"408\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"730.0\" y=\"429\" text-anchor=\"middle\" font-size=\"15\">7</text><line x1=\"85\" y1=\"408.0\" x2=\"730\" y2=\"408.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"413.0\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"85\" y1=\"373.2\" x2=\"730\" y2=\"373.2\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"378.2\" text-anchor=\"end\" font-size=\"15\">0,2</text><line x1=\"85\" y1=\"338.4\" x2=\"730\" y2=\"338.4\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"343.4\" text-anchor=\"end\" font-size=\"15\">0,4</text><line x1=\"85\" y1=\"303.5\" x2=\"730\" y2=\"303.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"308.5\" text-anchor=\"end\" font-size=\"15\">0,6</text><line x1=\"85\" y1=\"268.7\" x2=\"730\" y2=\"268.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"273.7\" text-anchor=\"end\" font-size=\"15\">0,8</text><line x1=\"85\" y1=\"233.9\" x2=\"730\" y2=\"233.9\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"238.9\" text-anchor=\"end\" font-size=\"15\">1</text><line x1=\"85\" y1=\"199.1\" x2=\"730\" y2=\"199.1\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"204.1\" text-anchor=\"end\" font-size=\"15\">1,2</text><line x1=\"85\" y1=\"164.3\" x2=\"730\" y2=\"164.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"169.3\" text-anchor=\"end\" font-size=\"15\">1,4</text><line x1=\"85\" y1=\"129.5\" x2=\"730\" y2=\"129.5\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"134.5\" text-anchor=\"end\" font-size=\"15\">1,6</text><line x1=\"85\" y1=\"94.6\" x2=\"730\" y2=\"94.6\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"99.6\" text-anchor=\"end\" font-size=\"15\">1,8</text><line x1=\"85\" y1=\"59.8\" x2=\"730\" y2=\"59.8\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"64.8\" text-anchor=\"end\" font-size=\"15\">2</text><line x1=\"85\" y1=\"25.0\" x2=\"730\" y2=\"25.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"77\" y=\"30.0\" text-anchor=\"end\" font-size=\"15\">2,2</text><rect x=\"85\" y=\"25\" width=\"645\" height=\"383\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><path d=\"M84.9,396.9 l14,14 M84.9,410.9 l14,-14\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"87.9\" y=\"363.9\" font-size=\"15\" fill=\"#1F4E5A\">Io</text><path d=\"M105.8,384.6 l14,14 M105.8,398.6 l14,-14\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"126.8\" y=\"391.6\" font-size=\"15\" fill=\"#1F4E5A\">Europe</text><path d=\"M191.0,334.5 l14,14 M191.0,348.5 l14,-14\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"208.0\" y=\"331.5\" font-size=\"15\" fill=\"#1F4E5A\">Ganymède</text><path d=\"M692.9,39.0 l14,14 M692.9,53.0 l14,-14\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"619.9\" y=\"78.0\" font-size=\"15\" fill=\"#1F4E5A\">Callisto</text><text x=\"407.5\" y=\"456\" text-anchor=\"middle\" font-weight=\"bold\">a³ (× 10²⁷ m³)</text><text transform=\"translate(22,216.5) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">T² (× 10¹² s²)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour Europe, calcule a³ (en m³) et T² (en s²), et vérifie que le point correspondant du graphique est bien placé.",
+          "aides": [
+            "Convertis d'abord : a en mètres (1 km = 10³ m) et T en secondes (1 jour = 86 400 s).",
+            "Puis exprime tes résultats en 10²⁷ m³ et en 10¹² s² pour les comparer aux graduations."
+          ]
+        },
+        {
+          "texte": "Que peut-on dire des points du graphique ? Quelle loi est ainsi vérifiée ?",
+          "aides": []
+        },
+        {
+          "texte": "Trace la droite modélisant les points et détermine son coefficient directeur k, en s²·m⁻³.",
+          "aides": []
+        },
+        {
+          "texte": "Sachant que T² / a³ = 4π² / (G × M<sub>J</sub>), déduis-en la masse M<sub>J</sub> de Jupiter, puis calcule l'écart relatif avec la valeur de référence.",
+          "aides": [
+            "La pente k est égale à T²/a³.",
+            "Isole M<sub>J</sub> : M<sub>J</sub> = 4π² / (G × k). Écart relatif = |valeur trouvée − référence| / référence."
+          ]
+        },
+        {
+          "texte": "Amalthée, une petite lune découverte en 1892, tourne autour de Jupiter sur une orbite de rayon a = 181,4 × 10³ km. Prévois sa période de révolution en heures, puis compare avec la valeur mesurée : 0,498 jour.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a = 671,1 × 10³ km = 6,711 × 10⁸ m, donc a³ = 3,02 × 10²⁶ m³ = 0,302 × 10²⁷ m³. T = 3,551 × 86 400 = 3,068 × 10⁵ s, donc T² = 9,41 × 10¹⁰ s² = 0,0941 × 10¹² s². Le point (0,302 ; 0,0941) est bien celui d'Europe sur le graphique.",
+        "<strong>2.</strong> Les points sont alignés sur une droite passant par l'origine : T² est proportionnel à a³. C'est la troisième loi de Kepler (loi des périodes), vérifiée pour les satellites de Jupiter.",
+        "<strong>3.</strong> Avec le point de Callisto, qui est sur la droite : k = 2,08 × 10¹² / 6,67 × 10²⁷ = 3,12 × 10⁻¹⁶ s²·m⁻³ (on accepte 3,0 à 3,2 × 10⁻¹⁶ selon la lecture).",
+        "<strong>4.</strong> M<sub>J</sub> = 4π² / (G × k) = 4π² / (6,67 × 10⁻¹¹ × 3,12 × 10⁻¹⁶) = 1,90 × 10²⁷ kg. Écart relatif : |1,897 − 1,898| / 1,898 &lt; 0,1 % : excellent accord (le résultat dépend un peu de la pente lue).",
+        "<strong>5.</strong> T = √(k × a³) = √(3,12 × 10⁻¹⁶ × (1,814 × 10⁸)³) = 4,31 × 10⁴ s ≈ 12,0 h. Valeur mesurée : 0,498 × 24 = 12,0 h. La prévision est confirmée.",
+        "<em>⚠ Erreur fréquente : garder a en km et T en jours ; la relation T²/a³ = 4π²/(G × M) n'est valable qu'en unités SI (m et s). Autre piège : tracer T en fonction de a (courbe non linéaire) au lieu de T² en fonction de a³.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Mars obéit-elle aux lois de Kepler ?",
+      "contexte": [
+        "Avec les données des agences spatiales, on peut tester les lois de Kepler sur la planète Mars, dans le référentiel héliocentrique.",
+        "Doc. 1 — Orbite de Mars. Positions M₀ à M₁₇ de Mars, calculées tous les 40 jours à partir de ses paramètres orbitaux (le Soleil est à l'origine du repère). Distance minimale au Soleil : r<sub>p</sub> = 2,0665 × 10¹¹ m ; distance maximale : r<sub>a</sub> = 2,4926 × 10¹¹ m. Période de révolution : T = 686,98 jours."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"flP\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker id=\"flT\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker><marker id=\"flO\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#C8962E\"/></marker><marker id=\"flN\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#3a3a3a\"/></marker></defs><line x1=\"144.0\" y1=\"20\" x2=\"144.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"144.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">−3</text><line x1=\"185.0\" y1=\"20\" x2=\"185.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"226.0\" y1=\"20\" x2=\"226.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"226.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">−2</text><line x1=\"40\" y1=\"392.0\" x2=\"740\" y2=\"392.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"34\" y=\"397.0\" text-anchor=\"end\" font-size=\"15\">−2</text><line x1=\"267.0\" y1=\"20\" x2=\"267.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40\" y1=\"351.0\" x2=\"740\" y2=\"351.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"308.0\" y1=\"20\" x2=\"308.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"308.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">−1</text><line x1=\"40\" y1=\"310.0\" x2=\"740\" y2=\"310.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"34\" y=\"315.0\" text-anchor=\"end\" font-size=\"15\">−1</text><line x1=\"349.0\" y1=\"20\" x2=\"349.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40\" y1=\"269.0\" x2=\"740\" y2=\"269.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"390.0\" y1=\"20\" x2=\"390.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"390.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">0</text><line x1=\"40\" y1=\"228.0\" x2=\"740\" y2=\"228.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"34\" y=\"233.0\" text-anchor=\"end\" font-size=\"15\">0</text><line x1=\"431.0\" y1=\"20\" x2=\"431.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40\" y1=\"187.0\" x2=\"740\" y2=\"187.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"472.0\" y1=\"20\" x2=\"472.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"472.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">1</text><line x1=\"40\" y1=\"146.0\" x2=\"740\" y2=\"146.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"34\" y=\"151.0\" text-anchor=\"end\" font-size=\"15\">1</text><line x1=\"513.0\" y1=\"20\" x2=\"513.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40\" y1=\"105.0\" x2=\"740\" y2=\"105.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"554.0\" y1=\"20\" x2=\"554.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"554.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">2</text><line x1=\"40\" y1=\"64.0\" x2=\"740\" y2=\"64.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"34\" y=\"69.0\" text-anchor=\"end\" font-size=\"15\">2</text><line x1=\"595.0\" y1=\"20\" x2=\"595.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40\" y1=\"23.0\" x2=\"740\" y2=\"23.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"636.0\" y1=\"20\" x2=\"636.0\" y2=\"432\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"636.0\" y=\"452\" text-anchor=\"middle\" font-size=\"15\">3</text><polygon points=\"390,228 559.5,228.0 544.5,155.1\" fill=\"#C8962E\" fill-opacity=\"0.35\" stroke=\"#C8962E\"/><polygon points=\"390,228 189.2,191.6 187.4,253.6\" fill=\"#C8962E\" fill-opacity=\"0.35\" stroke=\"#C8962E\"/><polyline points=\"559.5,228.0 559.4,222.2 559.1,216.3 558.6,210.5 558.0,204.7 557.2,198.9 556.1,193.1 555.0,187.4 553.6,181.7 552.0,176.1 550.3,170.5 548.4,165.0 546.3,159.5 544.1,154.1 541.7,148.8 539.1,143.5 536.3,138.3 533.4,133.3 530.4,128.3 527.1,123.4 523.8,118.6 520.2,113.9 516.6,109.4 512.7,104.9 508.8,100.6 504.7,96.4 500.5,92.3 496.1,88.4 491.7,84.6 487.1,80.9 482.4,77.4 477.6,74.1 472.7,70.9 467.7,67.8 462.6,64.9 457.4,62.2 452.1,59.6 446.8,57.2 441.3,55.0 435.8,52.9 430.3,51.0 424.7,49.3 419.0,47.7 413.3,46.4 407.6,45.2 401.8,44.2 396.0,43.4 390.1,42.7 384.3,42.3 378.4,42.0 372.5,41.9 366.7,42.0 360.8,42.3 354.9,42.7 349.1,43.4 343.3,44.2 337.5,45.2 331.8,46.4 326.0,47.7 320.4,49.3 314.8,51.0 309.2,52.9 303.7,55.0 298.3,57.2 292.9,59.6 287.7,62.2 282.5,64.9 277.4,67.8 272.4,70.9 267.5,74.1 262.7,77.4 258.0,80.9 253.4,84.6 248.9,88.4 244.6,92.3 240.4,96.4 236.3,100.6 232.3,104.9 228.5,109.4 224.8,113.9 221.3,118.6 217.9,123.4 214.7,128.3 211.6,133.3 208.7,138.3 206.0,143.5 203.4,148.8 201.0,154.1 198.7,159.5 196.7,165.0 194.8,170.5 193.0,176.1 191.5,181.7 190.1,187.4 188.9,193.1 187.9,198.9 187.1,204.7 186.4,210.5 186.0,216.3 185.7,222.2 185.6,228.0 185.7,233.8 186.0,239.7 186.4,245.5 187.1,251.3 187.9,257.1 188.9,262.9 190.1,268.6 191.5,274.3 193.0,279.9 194.8,285.5 196.7,291.0 198.7,296.5 201.0,301.9 203.4,307.2 206.0,312.5 208.7,317.7 211.6,322.7 214.7,327.7 217.9,332.6 221.3,337.4 224.8,342.1 228.5,346.6 232.3,351.1 236.3,355.4 240.4,359.6 244.6,363.7 248.9,367.6 253.4,371.4 258.0,375.1 262.7,378.6 267.5,381.9 272.4,385.1 277.4,388.2 282.5,391.1 287.7,393.8 292.9,396.4 298.3,398.8 303.7,401.0 309.2,403.1 314.8,405.0 320.4,406.7 326.0,408.3 331.8,409.6 337.5,410.8 343.3,411.8 349.1,412.6 354.9,413.3 360.8,413.7 366.7,414.0 372.5,414.1 378.4,414.0 384.3,413.7 390.1,413.3 396.0,412.6 401.8,411.8 407.6,410.8 413.3,409.6 419.0,408.3 424.7,406.7 430.3,405.0 435.8,403.1 441.3,401.0 446.8,398.8 452.1,396.4 457.4,393.8 462.6,391.1 467.7,388.2 472.7,385.1 477.6,381.9 482.4,378.6 487.1,375.1 491.7,371.4 496.1,367.6 500.5,363.7 504.7,359.6 508.8,355.4 512.7,351.1 516.6,346.6 520.2,342.1 523.8,337.4 527.1,332.6 530.4,327.7 533.4,322.7 536.3,317.7 539.1,312.5 541.7,307.2 544.1,301.9 546.3,296.5 548.4,291.0 550.3,285.5 552.0,279.9 553.6,274.3 555.0,268.6 556.1,262.9 557.2,257.1 558.0,251.3 558.6,245.5 559.1,239.7 559.4,233.8 559.5,228.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\"/><circle cx=\"559.5\" cy=\"228.0\" r=\"5\" fill=\"#B5523B\"/><text x=\"578.1\" y=\"233.0\" text-anchor=\"middle\" font-size=\"14\">M₀</text><circle cx=\"544.5\" cy=\"155.1\" r=\"5\" fill=\"#B5523B\"/><text x=\"561.5\" y=\"152.1\" text-anchor=\"middle\" font-size=\"14\">M₁</text><circle cx=\"502.9\" cy=\"94.7\" r=\"5\" fill=\"#B5523B\"/><text x=\"515.3\" y=\"85.0\" text-anchor=\"middle\" font-size=\"14\">M₂</text><circle cx=\"443.0\" cy=\"55.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"448.8\" y=\"41.7\" text-anchor=\"middle\" font-size=\"14\">M₃</text><circle cx=\"375.1\" cy=\"41.9\" r=\"5\" fill=\"#B5523B\"/><text x=\"373.5\" y=\"26.5\" text-anchor=\"middle\" font-size=\"14\">M₄</text><circle cx=\"309.1\" cy=\"52.9\" r=\"5\" fill=\"#B5523B\"/><text x=\"300.2\" y=\"38.7\" text-anchor=\"middle\" font-size=\"14\">M₅</text><circle cx=\"252.7\" cy=\"85.2\" r=\"5\" fill=\"#B5523B\"/><text x=\"237.6\" y=\"74.5\" text-anchor=\"middle\" font-size=\"14\">M₆</text><circle cx=\"211.6\" cy=\"133.4\" r=\"5\" fill=\"#B5523B\"/><text x=\"192.0\" y=\"128.0\" text-anchor=\"middle\" font-size=\"14\">M₇</text><circle cx=\"189.2\" cy=\"191.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"167.2\" y=\"192.7\" text-anchor=\"middle\" font-size=\"14\">M₈</text><circle cx=\"187.4\" cy=\"253.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"165.1\" y=\"261.4\" text-anchor=\"middle\" font-size=\"14\">M₉</text><circle cx=\"206.2\" cy=\"313.0\" r=\"5\" fill=\"#B5523B\"/><text x=\"186.1\" y=\"327.3\" text-anchor=\"middle\" font-size=\"14\">M₁₀</text><circle cx=\"244.3\" cy=\"363.4\" r=\"5\" fill=\"#B5523B\"/><text x=\"228.3\" y=\"383.3\" text-anchor=\"middle\" font-size=\"14\">M₁₁</text><circle cx=\"298.4\" cy=\"398.8\" r=\"5\" fill=\"#B5523B\"/><text x=\"288.3\" y=\"422.6\" text-anchor=\"middle\" font-size=\"14\">M₁₂</text><circle cx=\"363.2\" cy=\"413.9\" r=\"5\" fill=\"#B5523B\"/><text x=\"360.3\" y=\"439.3\" text-anchor=\"middle\" font-size=\"14\">M₁₃</text><circle cx=\"431.5\" cy=\"404.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"436.0\" y=\"429.0\" text-anchor=\"middle\" font-size=\"14\">M₁₄</text><circle cx=\"493.5\" cy=\"369.9\" r=\"5\" fill=\"#B5523B\"/><text x=\"504.9\" y=\"390.4\" text-anchor=\"middle\" font-size=\"14\">M₁₅</text><circle cx=\"539.0\" cy=\"312.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"555.4\" y=\"326.9\" text-anchor=\"middle\" font-size=\"14\">M₁₆</text><circle cx=\"559.0\" cy=\"241.1\" r=\"5\" fill=\"#B5523B\"/><text x=\"577.5\" y=\"247.5\" text-anchor=\"middle\" font-size=\"14\">M₁₇</text><circle cx=\"390\" cy=\"228\" r=\"9\" fill=\"#C8962E\" stroke=\"#3a3a3a\"/><text x=\"402\" y=\"252\" font-size=\"15\">Soleil</text><text x=\"745\" y=\"220\" text-anchor=\"end\" font-size=\"15\">x (× 10¹¹ m)</text><text x=\"398\" y=\"16\" font-size=\"15\">y (× 10¹¹ m)</text></svg>",
+      "code": [
+        "x, y = positions_mars(40)      # coordonnées (m) des positions, tous les 40 jours",
+        "aires = []",
+        "for i in range(len(x) - 1):",
+        "    A = ...                    # aire du triangle O-Mi-Mi+1 (m²), à compléter",
+        "    aires.append(round(A / 1e21, 2))",
+        "print(aires)",
+        "# Affichage : [9.18, 9.2, 9.22, 9.24, 9.26, 9.28, 9.29, 9.3, 9.3, 9.3, 9.29, 9.28, 9.27, 9.25, 9.22, 9.2, 9.19]"
+      ],
+      "contexte2": [
+        "Doc. 2 — Script Python. Les listes x et y contiennent les coordonnées (en m) des positions M₀ à M₁₇. L'aire du triangle de sommets O(0 ; 0), M₁(x₁ ; y₁) et M₂(x₂ ; y₂) vaut ½ × |x₁ × y₂ − x₂ × y₁|. La dernière ligne du script indique ce qu'il affiche une fois complété (aires en 10²¹ m²)."
+      ],
+      "questions": [
+        {
+          "texte": "Doc. 1 : laquelle des positions M₀ et M₉ est le périhélie ? Justifie de deux façons (distance au Soleil, espacement des positions).",
+          "aides": []
+        },
+        {
+          "texte": "Montre que le demi-grand axe de l'orbite vaut a = 2,28 × 10¹¹ m.",
+          "aides": [
+            "Le périhélie et l'aphélie sont aux deux extrémités du grand axe de l'ellipse ; le Soleil est entre les deux.",
+            "La longueur du grand axe vaut 2a = r<sub>p</sub> + r<sub>a</sub>."
+          ]
+        },
+        {
+          "texte": "Énonce la deuxième loi de Kepler. Que représentent les deux surfaces colorées du doc. 1 ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète la ligne « A = ... » du script (doc. 2).",
+          "aides": []
+        },
+        {
+          "texte": "Exploite l'affichage du script : calcule l'écart relatif entre la plus grande et la plus petite aire. La deuxième loi de Kepler est-elle vérifiée ? Pourquoi les aires calculées ne sont-elles pas rigoureusement égales ?",
+          "aides": [
+            "Écart relatif = (A<sub>max</sub> − A<sub>min</sub>) / A<sub>max</sub>.",
+            "Le triangle O-Mi-Mi+1 a un côté rectiligne (la corde MiMi+1) alors que la surface réellement balayée est limitée par un arc d'ellipse."
+          ]
+        },
+        {
+          "texte": "Doc. 3 — Terre : a = 1,49598 × 10¹¹ m, T = 365,256 jours ; Jupiter : a = 7,78479 × 10¹¹ m, T = 4 332,589 jours (données NASA). Calcule T²/a³ pour la Terre et pour Jupiter. Conclus.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en la masse M<sub>S</sub> du Soleil, et compare-la à la valeur de référence 1,989 × 10³⁰ kg.",
+          "aides": [
+            "Utilise T²/a³ = 4π² / (G × M<sub>S</sub>) avec la valeur de T²/a³ trouvée à la question précédente.",
+            "Isole M<sub>S</sub>, puis calcule l'écart relatif avec la valeur de référence."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : sur une durée très courte, l'aire balayée au périhélie et à l'aphélie s'assimile à un triangle rectangle ; la loi des aires donne alors r<sub>p</sub> × v<sub>p</sub> = r<sub>a</sub> × v<sub>a</sub>. Calcule le rapport v<sub>p</sub> / v<sub>a</sub> des vitesses de Mars au périhélie et à l'aphélie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> M₀ est le périhélie : c'est la position la plus proche du Soleil (environ 2,1 × 10¹¹ m, contre 2,5 × 10¹¹ m pour M₉), et les positions y sont plus espacées (Mars va plus vite près du Soleil).",
+        "<strong>2.</strong> Le périhélie et l'aphélie sont les extrémités du grand axe : 2a = r<sub>p</sub> + r<sub>a</sub>, donc a = (2,0665 + 2,4926) × 10¹¹ / 2 = 2,2796 × 10¹¹ m ≈ 2,28 × 10¹¹ m.",
+        "<strong>3.</strong> Le segment Soleil–planète balaie des aires égales pendant des durées égales. Les deux surfaces colorées sont les aires balayées entre M₀ et M₁ et entre M₈ et M₉, pendant la même durée de 40 jours : elles doivent être égales.",
+        "<strong>4.</strong> A = 0.5 * abs(x[i] * y[i+1] - x[i+1] * y[i])",
+        "<strong>5.</strong> Écart relatif = (9,30 − 9,18) / 9,30 = 1,3 % : les aires balayées en 40 jours sont égales à mieux que 2 % près, la deuxième loi de Kepler est vérifiée. Elles ne sont pas rigoureusement égales car le triangle O-Mi-Mi+1 n'est qu'une approximation de la vraie surface balayée (limitée par un arc d'ellipse, pas par une corde) ; l'approximation est moins bonne là où l'arc parcouru est le plus long, près du périhélie, d'où des aires calculées un peu plus petites.",
+        "<strong>6.</strong> Terre : T = 365,256 × 86 400 = 3,156 × 10⁷ s ; T²/a³ = (3,156 × 10⁷)² / (1,49598 × 10¹¹)³ = 2,97 × 10⁻¹⁹ s²·m⁻³. Jupiter : T = 3,743 × 10⁸ s ; T²/a³ = (3,743 × 10⁸)² / (7,78479 × 10¹¹)³ = 2,97 × 10⁻¹⁹ s²·m⁻³. Le rapport est le même : la troisième loi de Kepler est vérifiée (la constante ne dépend que du Soleil).",
+        "<strong>7.</strong> T²/a³ = 4π² / (G × M<sub>S</sub>), donc M<sub>S</sub> = 4π² / (G × T²/a³) = 4π² / (6,67 × 10⁻¹¹ × 2,975 × 10⁻¹⁹) (valeur de la Terre non arrondie) = 1,99 × 10³⁰ kg. Écart relatif avec 1,989 × 10³⁰ kg : moins de 0,1 %.",
+        "<strong>8.</strong> Pour aller plus loin : v<sub>p</sub> / v<sub>a</sub> = r<sub>a</sub> / r<sub>p</sub> = 2,4926 / 2,0665 = 1,21 : Mars va environ 21 % plus vite au périhélie qu'à l'aphélie.",
+        "<em>⚠ Erreur fréquente : confondre le demi-grand axe a avec la distance Soleil–planète, ou calculer T²/a³ avec T en jours et a en m (on obtient une « constante » qui n'a rien à voir avec 4π²/(G × M<sub>S</sub>)).</em>"
+      ]
+    }
+  ]
+}

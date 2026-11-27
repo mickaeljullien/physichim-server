@@ -1,0 +1,660 @@
+{
+  "id": 5,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Constitution d'une lunette astronomique",
+        "icon": "🔭",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une lunette astronomique est l'association de <strong>deux lentilles minces convergentes</strong> centrées sur le même axe optique."
+          },
+          {
+            "type": "def",
+            "term": "Objectif",
+            "text": "Lentille convergente de grande distance focale f'₁, tournée vers l'objet observé (généralement à l'infini). Elle forme une <strong>image intermédiaire</strong> réelle de l'objet observé."
+          },
+          {
+            "type": "def",
+            "term": "Oculaire",
+            "text": "Lentille convergente de petite distance focale f'₂, côté œil de l'observateur. Elle joue le rôle d'une <strong>loupe</strong> pour observer l'image intermédiaire formée par l'objectif."
+          }
+        ]
+      },
+      {
+        "title": "2. Modèle afocal",
+        "icon": "♾️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Système afocal",
+            "text": "Système optique tel qu'un faisceau de rayons <strong>parallèles</strong> en entrée ressort <strong>parallèle</strong> en sortie. Un objet à l'infini donne alors une image à l'infini, ce qui permet une observation à l'œil au repos (non accommodé)."
+          },
+          {
+            "type": "formula",
+            "label": "Condition du modèle afocal",
+            "text": "Le foyer image de l'objectif F'₁ est confondu avec le foyer objet de l'oculaire F₂ :\nF'₁ = F₂"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 560 200\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"rayArrow5\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#1B2420\"/></marker></defs><line x1=\"10\" y1=\"100\" x2=\"550\" y2=\"100\" stroke=\"#B9C0AC\" stroke-width=\"1.5\" stroke-dasharray=\"4 4\"/><line x1=\"150\" y1=\"20\" x2=\"150\" y2=\"180\" stroke=\"#6E4FA0\" stroke-width=\"2.5\"/><path d=\"M143,20 L150,10 L157,20\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M143,180 L150,190 L157,180\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"150\" y=\"199\" text-anchor=\"middle\" font-size=\"11\" fill=\"#1B2420\">Objectif (f'₁)</text><line x1=\"430\" y1=\"70\" x2=\"430\" y2=\"130\" stroke=\"#6E4FA0\" stroke-width=\"2.5\"/><path d=\"M423,70 L430,60 L437,70\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M423,130 L430,140 L437,130\" fill=\"none\" stroke=\"#6E4FA0\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"430\" y=\"199\" text-anchor=\"middle\" font-size=\"11\" fill=\"#1B2420\">Oculaire (f'₂)</text><circle cx=\"290\" cy=\"100\" r=\"3\" fill=\"#C0472F\"/><text x=\"290\" y=\"88\" text-anchor=\"middle\" font-size=\"11\" fill=\"#C0472F\">F'₁ = F₂</text><line x1=\"15\" y1=\"80\" x2=\"150\" y2=\"80\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"15\" y1=\"120\" x2=\"150\" y2=\"120\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"80\" x2=\"290\" y2=\"100\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"150\" y1=\"120\" x2=\"290\" y2=\"100\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"100\" x2=\"430\" y2=\"120\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"290\" y1=\"100\" x2=\"430\" y2=\"80\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"430\" y1=\"120\" x2=\"545\" y2=\"120\" stroke=\"#1B2420\" stroke-width=\"1.5\" marker-end=\"url(#rayArrow5)\"/><line x1=\"430\" y1=\"80\" x2=\"545\" y2=\"80\" stroke=\"#1B2420\" stroke-width=\"1.5\" marker-end=\"url(#rayArrow5)\"/><text x=\"12\" y=\"68\" font-size=\"10\" fill=\"#5C6B60\">Objet à l'infini</text></svg>",
+            "caption": "Rayons parallèles issus d'un objet à l'infini : ils convergent vers le foyer commun F'₁ = F₂, puis ressortent parallèles entre eux après l'oculaire — d'où le nom de système afocal."
+          }
+        ]
+      },
+      {
+        "title": "3. Grossissement",
+        "icon": "🔍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Grossissement G",
+            "text": "Rapport entre l'angle α' sous lequel l'observateur voit l'image à travers l'instrument, et l'angle α sous lequel il verrait l'objet à l'œil nu : G = α'/α."
+          },
+          {
+            "type": "formula",
+            "label": "Grossissement dans le modèle afocal",
+            "text": "G = f'objectif / f'oculaire = f'₁ / f'₂"
+          },
+          {
+            "type": "warn",
+            "text": "Plus la distance focale de l'oculaire f'₂ est petite, plus le grossissement G est important."
+          }
+        ]
+      },
+      {
+        "title": "4. Exemple : caractéristiques d'une lunette commerciale",
+        "icon": "🌌",
+        "content": [
+          {
+            "type": "text",
+            "text": "Exemple chiffré : une lunette astronomique commerciale a un objectif de diamètre 70 mm et de distance focale f'₁ = 700 mm, livrée avec un oculaire de distance focale f'₂ = 10 mm."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul du grossissement",
+            "text": "G = f'₁ / f'₂ = 700 / 10 = 70\n(grossissement ×70 avec cet oculaire)"
+          },
+          {
+            "type": "text",
+            "text": "En changeant d'oculaire (par exemple f'₂ = 25 mm), on obtient G = 700/25 = 28 : un grossissement plus faible, mais un champ d'observation plus large."
+          }
+        ]
+      },
+      {
+        "title": "5. Limites de l'instrument",
+        "icon": "⚠️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le pouvoir séparateur d'une lunette (sa capacité à distinguer deux points proches) est limité par la <strong>diffraction</strong> due au diamètre D de l'objectif : θ ≈ λ/D. Plus le diamètre de l'objectif est grand, plus la limite de diffraction est repoussée et plus l'instrument peut révéler de détails."
+          }
+        ]
+      },
+      {
+        "title": "6. Simulation interactive : construction des rayons",
+        "icon": "🔭",
+        "content": [
+          {
+            "type": "embed",
+            "title": "Simulation : construis l'image intermédiaire puis la lunette complète, en réglant f'₁, f'₂ et α",
+            "height": 2500,
+            "html": "<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"></head><body>\n<title>Lunette astronomique</title>\n<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap\">\n<style>\n:root{\n  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#10212C; --muted:#52646F; --line:#D3DCE2;\n  --accent:#0B7A86; --accent-ink:#FFFFFF; --accent-soft:#E0F1F3; --amber:#A85A0C;\n  --ok:#1E7A46; --bad:#B3361F; --screen:#050A0E;\n  --display:\"Bricolage Grotesque\",\"Trebuchet MS\",system-ui,sans-serif;\n  --body:\"Source Sans 3\",system-ui,-apple-system,\"Segoe UI\",sans-serif;\n  --mono:\"IBM Plex Mono\",ui-monospace,Menlo,Consolas,monospace;\n}\n@media (prefers-color-scheme: dark){\n  :root:not([data-theme=\"light\"]){\n    --bg:#0C1519; --surface:#131F25; --ink:#E6EEF1; --muted:#93A6AF; --line:#26363E;\n    --accent:#4FC3CF; --accent-ink:#06222A; --accent-soft:#12303A; --amber:#F2B441;\n    --ok:#5CCB8A; --bad:#F08066; color-scheme:dark;\n  }\n}\n:root[data-theme=\"dark\"]{\n  --bg:#0C1519; --surface:#131F25; --ink:#E6EEF1; --muted:#93A6AF; --line:#26363E;\n  --accent:#4FC3CF; --accent-ink:#06222A; --accent-soft:#12303A; --amber:#F2B441;\n  --ok:#5CCB8A; --bad:#F08066; color-scheme:dark;\n}\n*{box-sizing:border-box}\n[hidden]{display:none!important}\nbody{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;padding-inline:16px;padding-block:28px 56px;margin:0}\n.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:28px}\nh1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}\nh1{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.01em}\nh2{font-size:1.5rem}\nh3{font-size:1.1rem}\np{margin:0}\n.lead{color:var(--muted);max-width:62ch;margin-top:10px}\n.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}\n.tabs{display:flex;gap:8px;flex-wrap:wrap}\n.tab{font:600 1rem var(--body);padding:10px 18px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;cursor:pointer}\n.tab[aria-selected=\"true\"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}\n:focus-visible{outline:3px solid var(--accent);outline-offset:2px}\n.panel{display:flex;flex-direction:column;gap:28px}\n.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 32px}\n.idea p+p{margin-top:8px}\n.idea h3{margin-bottom:6px}\n.fig{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:18px 24px;align-items:start}\n@media (max-width:820px){.fig{grid-template-columns:minmax(0,1fr)}}\n.stage{background:var(--screen);border-radius:6px;overflow:hidden;line-height:0}\n.stage canvas{width:100%;height:auto;display:block}\n.sec-head{display:flex;flex-direction:column;gap:4px;margin-bottom:12px}\n.sec-head p{color:var(--muted);max-width:70ch}\n.ctl{display:flex;flex-direction:column;gap:14px;padding-top:2px}\n.row label{display:flex;justify-content:space-between;gap:10px;font-weight:600;font-size:.95rem}\n.row output{font-family:var(--mono);font-weight:500;color:var(--accent)}\n.row input[type=range]{width:100%;accent-color:var(--accent);margin:6px 0 0}\n.chk{display:flex;gap:8px;align-items:center;font-size:.95rem}\n.chk input{accent-color:var(--accent);width:18px;height:18px}\n.read{font-family:var(--mono);font-size:.88rem;line-height:1.6;border-top:1px solid var(--line);padding-top:12px;color:var(--ink)}\n.read b{color:var(--accent);font-weight:500}\n.note{font-size:.9rem;color:var(--muted)}\n.keep{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px 28px}\n.keep h3{grid-column:1/-1}\n.formula{font-family:var(--mono);font-size:1.05rem;background:var(--accent-soft);padding:8px 12px;border-radius:6px;display:inline-block;margin-top:6px}\n.quiz{border-top:2px solid var(--ink);padding-top:22px;display:flex;flex-direction:column;gap:20px}\n.q{display:flex;flex-direction:column;gap:10px}\n.q .opts{display:flex;flex-wrap:wrap;gap:8px}\n.opt{font:inherit;font-size:.98rem;padding:9px 14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;cursor:pointer;text-align:left}\n.opt:hover{border-color:var(--accent)}\n.opt.ok{border-color:var(--ok);background:var(--surface);box-shadow:inset 0 0 0 1px var(--ok)}\n.opt.no{border-color:var(--bad);box-shadow:inset 0 0 0 1px var(--bad)}\n.fb{font-size:.95rem;min-height:1.4em}\n.fb.ok{color:var(--ok)} .fb.no{color:var(--bad)}\n.score{font-family:var(--mono);color:var(--muted);font-size:.9rem}\n@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}\n</style>\n\n<div class=\"wrap\">\n  <header>\n    <div class=\"eyebrow\">Physique-Chimie · Terminale spécialité · Optique</div>\n    <h1>La lunette astronomique</h1>\n    <p class=\"lead\">Deux lentilles convergentes suffisent à construire une lunette. Déplace les curseurs pour voir comment l'image se forme, étape par étape, à partir des rayons issus d'un objet à l'infini.</p>\n  </header>\n\n  <div class=\"tabs\" role=\"tablist\" aria-label=\"Étape\">\n    <button class=\"tab\" role=\"tab\" id=\"tab-obj\" aria-selected=\"true\" aria-controls=\"panel-obj\" data-tab=\"obj\">Image intermédiaire</button>\n    <button class=\"tab\" role=\"tab\" id=\"tab-full\" aria-selected=\"false\" aria-controls=\"panel-full\" data-tab=\"full\">Lunette complète</button>\n  </div>\n\n  <!-- ============ OBJECTIF SEUL ============ -->\n  <section class=\"panel\" id=\"panel-obj\" role=\"tabpanel\" aria-labelledby=\"tab-obj\">\n    <div class=\"two idea\">\n      <div>\n        <h3>L'idée en une phrase</h3>\n        <p>Un objet à l'infini envoie vers l'objectif un <b>faisceau de rayons parallèles</b>, inclinés d'un angle α par rapport à l'axe.</p>\n        <p>L'objectif seul les fait converger en un point unique, dans son <b>plan focal image</b> : c'est l'image intermédiaire.</p>\n      </div>\n      <div>\n        <h3>Construction</h3>\n        <p>Le rayon qui passe par le centre O₁ n'est pas dévié : il continue tout droit et atteint le plan focal à la hauteur h. Tous les autres rayons parallèles, eux, convergent au <b>même point</b> après la lentille.</p>\n      </div>\n    </div>\n\n    <div>\n      <div class=\"sec-head\">\n        <h2>Construction des rayons — objectif seul</h2>\n        <p>Rayons parallèles issus d'un objet à l'infini, inclinés de l'angle α, traversant l'objectif de distance focale f'₁.</p>\n      </div>\n      <div class=\"fig\">\n        <div class=\"stage\"><canvas id=\"c-obj\" width=\"720\" height=\"320\" role=\"img\" aria-label=\"Construction des rayons formant l'image intermédiaire par l'objectif d'une lunette astronomique\"></canvas></div>\n        <div class=\"ctl\">\n          <div class=\"row\"><label for=\"o-f1\">Distance focale objectif f'₁ <output id=\"o-f1-o\"></output></label><input type=\"range\" id=\"o-f1\" min=\"300\" max=\"900\" step=\"10\" value=\"700\"></div>\n          <div class=\"row\"><label for=\"o-a\">Angle de l'objet α <output id=\"o-a-o\"></output></label><input type=\"range\" id=\"o-a\" min=\"1\" max=\"10\" step=\"0.5\" value=\"5\"></div>\n          <div class=\"read\" id=\"o-read\" aria-live=\"polite\"></div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"keep\">\n      <h3>À retenir</h3>\n      <div><p>Hauteur de l'image intermédiaire dans le plan focal :</p><span class=\"formula\">h = f'₁ × tan α</span></div>\n      <p class=\"note\">Essaie : à angle α fixé, augmente f'₁. Que devient h ? C'est cette hauteur qui servira ensuite d'« objet » pour l'oculaire.</p>\n    </div>\n  </section>\n\n  <!-- ============ LUNETTE COMPLETE ============ -->\n  <section class=\"panel\" id=\"panel-full\" role=\"tabpanel\" aria-labelledby=\"tab-full\" hidden>\n    <div class=\"two idea\">\n      <div>\n        <h3>L'idée en une phrase</h3>\n        <p>L'oculaire joue le rôle d'une <b>loupe</b> : il observe l'image intermédiaire formée par l'objectif et en donne une image à l'infini, pour une observation à l'œil non accommodé.</p>\n        <p>Condition indispensable : le foyer image de l'objectif F'₁ doit être <b>confondu</b> avec le foyer objet de l'oculaire F₂ (système afocal).</p>\n      </div>\n      <div>\n        <h3>Construction</h3>\n        <p>L'image intermédiaire est exactement dans le plan focal objet de l'oculaire : tous les rayons qui en partent ressortent <b>parallèles entre eux</b>, inclinés de l'angle α'. Le rayon par le centre O₂ donne directement la direction de sortie.</p>\n      </div>\n    </div>\n\n    <div>\n      <div class=\"sec-head\">\n        <h2>Construction des rayons — lunette complète</h2>\n        <p>L'objectif et l'oculaire sont automatiquement positionnés pour respecter la condition afocale (F'₁ = F₂) : leur écartement vaut toujours f'₁ + f'₂.</p>\n      </div>\n      <div class=\"fig\">\n        <div class=\"stage\"><canvas id=\"c-full\" width=\"720\" height=\"340\" role=\"img\" aria-label=\"Construction des rayons dans une lunette astronomique complète, objectif et oculaire\"></canvas></div>\n        <div class=\"ctl\">\n          <div class=\"row\"><label for=\"f-f1\">Distance focale objectif f'₁ <output id=\"f-f1-o\"></output></label><input type=\"range\" id=\"f-f1\" min=\"300\" max=\"900\" step=\"10\" value=\"700\"></div>\n          <div class=\"row\"><label for=\"f-f2\">Distance focale oculaire f'₂ <output id=\"f-f2-o\"></output></label><input type=\"range\" id=\"f-f2\" min=\"5\" max=\"50\" step=\"1\" value=\"10\"></div>\n          <div class=\"row\"><label for=\"f-a\">Angle de l'objet α (exagéré pour la lisibilité) <output id=\"f-a-o\"></output></label><input type=\"range\" id=\"f-a\" min=\"0.2\" max=\"3\" step=\"0.1\" value=\"1\"></div>\n          <div class=\"read\" id=\"f-read\" aria-live=\"polite\"></div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"keep\">\n      <h3>À retenir</h3>\n      <div><p>Grossissement (indépendant de α) :</p><span class=\"formula\">G = f'₁ / f'₂ = α'/α</span></div>\n      <div><p>Condition afocale :</p><span class=\"formula\">F'₁ = F₂</span></div>\n      <div><p>L'image observée est <b>renversée</b> par rapport à l'objet (α' de signe opposé à α) — c'est le cas de toute lunette astronomique simple, sans dispositif redresseur.</p></div>\n      <p class=\"note\">Essaie : règle f'₁ = 700 et f'₂ = 10 (G = 70), puis passe à f'₂ = 25 (G = 28) — retrouve les deux valeurs de l'exemple du cours.</p>\n    </div>\n  </section>\n\n  <!-- ============ QUIZ ============ -->\n  <section class=\"quiz\" aria-labelledby=\"quiz-h\">\n    <div>\n      <h2 id=\"quiz-h\">Vérifie que tu as compris</h2>\n      <p class=\"lead\">Réponds d'abord dans ta tête, puis clique. Tu peux tester ta réponse avec les curseurs.</p>\n    </div>\n    <div id=\"quiz\"></div>\n    <div class=\"score\" id=\"score\" aria-live=\"polite\"></div>\n  </section>\n</div>\n\n<script>\n(function(){\n\"use strict\";\nconst $ = id => document.getElementById(id);\nconst D2R = Math.PI / 180;\nconst fmt = (x, d) => x.toLocaleString(\"fr-FR\", { minimumFractionDigits: d, maximumFractionDigits: d });\n\nfunction drawArrowLens(ctx, x, axisY, halfH, color, label) {\n  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 2.5;\n  ctx.beginPath(); ctx.moveTo(x, axisY - halfH); ctx.lineTo(x, axisY + halfH); ctx.stroke();\n  const drawHead = (yTip, yBase) => {\n    ctx.beginPath();\n    ctx.moveTo(x - 7, yBase); ctx.lineTo(x, yTip); ctx.lineTo(x + 7, yBase);\n    ctx.lineCap = \"round\"; ctx.lineJoin = \"round\"; ctx.stroke();\n  };\n  drawHead(axisY - halfH - 9, axisY - halfH + 1);\n  drawHead(axisY + halfH + 9, axisY + halfH - 1);\n  ctx.font = \"13px 'Source Sans 3', sans-serif\";\n  ctx.textAlign = \"center\";\n  ctx.fillText(label, x, axisY + halfH + 26);\n}\n\nfunction angleArc(ctx, x, y, angleDeg, color, label, above) {\n  ctx.save();\n  ctx.strokeStyle = color; ctx.fillStyle = color; ctx.lineWidth = 2;\n  const r = 26, a = angleDeg * D2R * (above ? -1 : 1);\n  ctx.beginPath(); ctx.arc(x, y, r, 0, a, above);\n  ctx.stroke();\n  ctx.font = \"600 13px 'IBM Plex Mono', monospace\";\n  ctx.textAlign = \"left\";\n  ctx.fillText(label, x + r + 4, y + (above ? -6 : 14));\n  ctx.restore();\n}\n\n/* ============ TAB 1 : objectif seul ============ */\nconst oF1 = $(\"o-f1\"), oA = $(\"o-a\"), oReadEl = $(\"o-read\");\nconst cObj = $(\"c-obj\"), ctxObj = cObj.getContext(\"2d\");\nconst W1 = cObj.width, H1 = cObj.height, AXIS1 = H1 / 2, XLENS1 = 130, HALF1 = 78;\n\nfunction draw1() {\n  const f1 = +oF1.value, alphaDeg = +oA.value;\n  $(\"o-f1-o\").textContent = f1 + \" mm\";\n  $(\"o-a-o\").textContent = alphaDeg + \"°\";\n  const tanA = Math.tan(alphaDeg * D2R);\n  const drawSpan = W1 - XLENS1 - 60;\n  const scale = drawSpan / f1;\n  const xFocal = XLENS1 + f1 * scale;\n  const hPx = tanA * f1 * scale;\n\n  ctxObj.clearRect(0, 0, W1, H1);\n  ctxObj.fillStyle = \"#050A0E\"; ctxObj.fillRect(0, 0, W1, H1);\n\n  ctxObj.strokeStyle = \"rgba(255,255,255,.3)\"; ctxObj.lineWidth = 1;\n  ctxObj.beginPath(); ctxObj.moveTo(10, AXIS1); ctxObj.lineTo(W1 - 10, AXIS1); ctxObj.stroke();\n\n  ctxObj.strokeStyle = \"rgba(242,180,65,.85)\"; ctxObj.setLineDash([5, 4]); ctxObj.lineWidth = 1.3;\n  ctxObj.beginPath(); ctxObj.moveTo(xFocal, 20); ctxObj.lineTo(xFocal, H1 - 20); ctxObj.stroke();\n  ctxObj.setLineDash([]);\n\n  const heights = [-60, -22, 22, 60];\n  ctxObj.strokeStyle = \"#4FC3CF\"; ctxObj.lineWidth = 1.6;\n  heights.forEach(y0 => {\n    const yLens = AXIS1 - y0;\n    const xStart = 16;\n    const yStart = yLens - tanA * (XLENS1 - xStart);\n    ctxObj.beginPath(); ctxObj.moveTo(xStart, yStart); ctxObj.lineTo(XLENS1, yLens); ctxObj.stroke();\n    ctxObj.beginPath(); ctxObj.moveTo(XLENS1, yLens); ctxObj.lineTo(xFocal, AXIS1 - hPx); ctxObj.stroke();\n  });\n\n  ctxObj.fillStyle = \"#F2B441\";\n  ctxObj.beginPath(); ctxObj.arc(xFocal, AXIS1 - hPx, 4, 0, Math.PI * 2); ctxObj.fill();\n  ctxObj.font = \"600 13px 'IBM Plex Mono', monospace\"; ctxObj.textAlign = \"left\";\n  ctxObj.fillText(\"image intermédiaire\", xFocal + 10, AXIS1 - hPx - 8);\n\n  drawArrowLens(ctxObj, XLENS1, AXIS1, HALF1, \"#8B6FD1\", \"Objectif (f'₁)\");\n  angleArc(ctxObj, XLENS1 - 40, AXIS1, alphaDeg, \"#E6EEF1\", \"α\", true);\n\n  ctxObj.fillStyle = \"rgba(230,238,241,.85)\"; ctxObj.font = \"14px 'Source Sans 3', sans-serif\"; ctxObj.textAlign = \"left\";\n  ctxObj.fillText(\"objet à l'infini\", 14, 22);\n  ctxObj.textAlign = \"right\";\n  ctxObj.fillText(\"plan focal F'₁\", xFocal - 8, H1 - 14);\n\n  oReadEl.innerHTML = \"h = f'₁ × tan α = \" + f1 + \" × tan(\" + alphaDeg + \"°) = <b>\" + fmt(hPx / scale, 1) + \" mm</b>\";\n}\n[oF1, oA].forEach(el => el.addEventListener(\"input\", draw1));\ndraw1();\n\n/* ============ TAB 2 : lunette complète ============ */\nconst fF1 = $(\"f-f1\"), fF2 = $(\"f-f2\"), fA = $(\"f-a\"), fReadEl = $(\"f-read\");\nconst cFull = $(\"c-full\"), ctxFull = cFull.getContext(\"2d\");\nconst W2 = cFull.width, H2 = cFull.height, AXIS2 = H2 / 2, XLENS2 = 90, HALF2 = 78, HALF2B = 40;\n\nfunction draw2() {\n  const f1 = +fF1.value, f2 = +fF2.value, alphaDeg = +fA.value;\n  $(\"f-f1-o\").textContent = f1 + \" mm\";\n  $(\"f-f2-o\").textContent = f2 + \" mm\";\n  $(\"f-a-o\").textContent = alphaDeg + \"°\";\n  const tanA = Math.tan(alphaDeg * D2R);\n  const drawSpan = (W2 - 110) - XLENS2;\n  const scale = drawSpan / (f1 + f2);\n  const xFocal = XLENS2 + f1 * scale;\n  const xOc = XLENS2 + (f1 + f2) * scale;\n  const hPx = tanA * f1 * scale;\n  const G = f1 / f2;\n  // Relation en angles petits (celle du cours, G = α'/α) : valable ici quel que soit G,\n  // contrairement à un calcul par tan/atan qui diverge dès que G × α approche 90°.\n  const alphaPDeg = G * alphaDeg;\n\n  ctxFull.clearRect(0, 0, W2, H2);\n  ctxFull.fillStyle = \"#050A0E\"; ctxFull.fillRect(0, 0, W2, H2);\n\n  ctxFull.strokeStyle = \"rgba(255,255,255,.3)\"; ctxFull.lineWidth = 1;\n  ctxFull.beginPath(); ctxFull.moveTo(10, AXIS2); ctxFull.lineTo(W2 - 10, AXIS2); ctxFull.stroke();\n\n  ctxFull.strokeStyle = \"rgba(242,180,65,.85)\"; ctxFull.setLineDash([5, 4]); ctxFull.lineWidth = 1.3;\n  ctxFull.beginPath(); ctxFull.moveTo(xFocal, 24); ctxFull.lineTo(xFocal, H2 - 24); ctxFull.stroke();\n  ctxFull.setLineDash([]);\n\n  const heightsIn = [-58, -20, 20, 58];\n  ctxFull.strokeStyle = \"#4FC3CF\"; ctxFull.lineWidth = 1.6;\n  heightsIn.forEach(y0 => {\n    const yLens = AXIS2 - y0;\n    const xStart = 14;\n    const yStart = yLens - tanA * (XLENS2 - xStart);\n    ctxFull.beginPath(); ctxFull.moveTo(xStart, yStart); ctxFull.lineTo(XLENS2, yLens); ctxFull.stroke();\n    ctxFull.beginPath(); ctxFull.moveTo(XLENS2, yLens); ctxFull.lineTo(xFocal, AXIS2 - hPx); ctxFull.stroke();\n  });\n\n  const heightsOut = [-24, -8, 8, 24];\n  ctxFull.strokeStyle = \"#F08066\"; ctxFull.lineWidth = 1.6;\n  const exitRun = 130;\n  // tanApDraw : pente de sortie utilisée pour le DESSIN uniquement, comprimée (tanh) pour\n  // rester lisible même à fort G — la lecture numérique de α' (ci-dessous) reste exacte,\n  // via la relation α' = G × α valable en angles petits (celle du cours), sans repasser\n  // par un rapport de tangentes qui exploserait au-delà de 90° pour les forts G.\n  const drawAlphaPDeg = 75 * Math.tanh(alphaPDeg / 75);\n  const tanApDraw = Math.tan(drawAlphaPDeg * D2R);\n  heightsOut.forEach(yAtOc => {\n    ctxFull.beginPath(); ctxFull.moveTo(xFocal, AXIS2 - hPx); ctxFull.lineTo(xOc, AXIS2 - yAtOc); ctxFull.stroke();\n    const yEnd = (AXIS2 - yAtOc) + tanApDraw * exitRun;\n    ctxFull.beginPath(); ctxFull.moveTo(xOc, AXIS2 - yAtOc); ctxFull.lineTo(xOc + exitRun, yEnd); ctxFull.stroke();\n  });\n\n  ctxFull.fillStyle = \"#F2B441\";\n  ctxFull.beginPath(); ctxFull.arc(xFocal, AXIS2 - hPx, 4, 0, Math.PI * 2); ctxFull.fill();\n\n  drawArrowLens(ctxFull, XLENS2, AXIS2, HALF2, \"#8B6FD1\", \"Objectif (f'₁)\");\n  drawArrowLens(ctxFull, xOc, AXIS2, HALF2B, \"#8B6FD1\", \"Oculaire (f'₂)\");\n  angleArc(ctxFull, XLENS2 - 40, AXIS2, alphaDeg, \"#E6EEF1\", \"α\", true);\n  angleArc(ctxFull, xOc + exitRun - 34, AXIS2, drawAlphaPDeg, \"#F08066\", \"α'\", false);\n\n  ctxFull.fillStyle = \"rgba(230,238,241,.85)\"; ctxFull.font = \"13px 'IBM Plex Mono', monospace\"; ctxFull.textAlign = \"center\";\n  ctxFull.fillText(\"F'₁ = F₂\", xFocal, 18);\n  ctxFull.font = \"14px 'Source Sans 3', sans-serif\"; ctxFull.textAlign = \"left\";\n  ctxFull.fillText(\"objet à l'infini\", 14, H2 - 12);\n\n  const warn = alphaPDeg > 90\n    ? \"<br><span style=\\\"color:#F2B441\\\">⚠️ α' dépasse ici l'approximation des petits angles (α trop grand pour ce grossissement) : le tracé de sortie est schématique.</span>\"\n    : \"\";\n  fReadEl.innerHTML =\n    \"G = f'₁/f'₂ = \" + f1 + \"/\" + f2 + \" = <b>×\" + fmt(G, 1) + \"</b><br>\" +\n    \"α' = G × α ≈ <b>\" + fmt(alphaPDeg, 1) + \"°</b> (sens inversé)<br>\" +\n    \"Écartement objectif–oculaire = f'₁+f'₂ = <b>\" + (f1 + f2) + \" mm</b>\" + warn;\n}\n[fF1, fF2, fA].forEach(el => el.addEventListener(\"input\", draw2));\ndraw2();\n\n/* ============ onglets ============ */\ndocument.querySelectorAll(\".tab\").forEach(b => {\n  b.addEventListener(\"click\", () => {\n    document.querySelectorAll(\".tab\").forEach(o => o.setAttribute(\"aria-selected\", o === b ? \"true\" : \"false\"));\n    const t = b.getAttribute(\"data-tab\");\n    $(\"panel-obj\").hidden = t !== \"obj\";\n    $(\"panel-full\").hidden = t !== \"full\";\n  });\n});\n\n/* ============ quiz ============ */\nconst QS = [\n  { q: \"Tu gardes le même objectif mais tu remplaces l'oculaire f'₂ = 10 mm par un oculaire f'₂ = 40 mm. Le grossissement G…\",\n    o: [\"augmente\", \"diminue\", \"ne change pas\"], c: 1,\n    e: \"G = f'₁/f'₂ : f'₂ augmente, f'₁ ne change pas, donc G diminue. Un oculaire de plus grande distance focale grossit moins.\" },\n  { q: \"Tu changes d'oculaire (donc de f'₂). Pour que le système reste afocal, il faut aussi…\",\n    o: [\"ne rien changer d'autre\", \"déplacer l'oculaire pour que F₂ reste confondu avec F'₁\", \"changer la distance focale de l'objectif\"], c: 1,\n    e: \"La condition afocale F'₁ = F₂ impose un écartement objectif-oculaire égal à f'₁+f'₂ : si f'₂ change, il faut donc repositionner l'oculaire (la mise au point d'une lunette, en pratique).\" },\n  { q: \"L'image d'une étoile observée à travers une lunette astronomique simple, sans dispositif redresseur, est…\",\n    o: [\"à l'endroit, comme à l'œil nu\", \"renversée par rapport à l'objet\", \"toujours floue, quel que soit le réglage\"], c: 1,\n    e: \"Le rayon par le centre de l'oculaire ressort du côté opposé à l'axe : l'angle de sortie α' est de signe contraire à α. L'image est donc renversée (cela n'a pas d'importance pour observer des étoiles, mais empêche d'utiliser une lunette simple pour une observation terrestre).\" }\n];\nlet score = 0, done = 0;\nconst root = $(\"quiz\");\nQS.forEach((item, qi) => {\n  const box = document.createElement(\"div\"); box.className = \"q\";\n  const p = document.createElement(\"p\"); p.innerHTML = \"<b>\" + (qi + 1) + \". </b>\" + item.q;\n  const opts = document.createElement(\"div\"); opts.className = \"opts\";\n  const fb = document.createElement(\"div\"); fb.className = \"fb\";\n  let answered = false;\n  item.o.forEach((txt, oi) => {\n    const b = document.createElement(\"button\"); b.type = \"button\"; b.className = \"opt\"; b.textContent = txt;\n    b.addEventListener(\"click\", () => {\n      if (answered) return; answered = true; done++;\n      const right = oi === item.c; if (right) score++;\n      b.classList.add(right ? \"ok\" : \"no\");\n      if (!right) opts.children[item.c].classList.add(\"ok\");\n      fb.className = \"fb \" + (right ? \"ok\" : \"no\");\n      fb.textContent = (right ? \"Exact. \" : \"Pas tout à fait. \") + item.e;\n      $(\"score\").textContent = done === QS.length\n        ? \"Score : \" + score + \" / \" + QS.length + (score === QS.length ? \" — bravo.\" : \" — relis les « À retenir » et refais un essai avec les curseurs.\")\n        : \"\";\n    });\n    opts.appendChild(b);\n  });\n  box.appendChild(p); box.appendChild(opts); box.appendChild(fb); root.appendChild(box);\n});\nroot.style.display = \"flex\"; root.style.flexDirection = \"column\"; root.style.gap = \"20px\";\n})();\n</script>\n</body></html>",
+            "caption": "Onglet « Image intermédiaire » : formation de l'image par l'objectif seul. Onglet « Lunette complète » : ajout de l'oculaire, condition afocale et grossissement. L'angle α est volontairement exagéré pour rester visible sur le schéma — un objet réel (étoile) a un angle bien plus petit."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une lunette astronomique est constituée :",
+      "opts": [
+        "d'un objectif divergent et d'un oculaire convergent",
+        "de deux lentilles convergentes : un objectif et un oculaire",
+        "d'un objectif convergent et d'un oculaire divergent",
+        "d'un objectif de petite focale et d'un oculaire de grande focale"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "lunette-lentille-divergente",
+          "texte": "Croire que l'objectif est divergent : les deux lentilles d'une lunette astronomique sont convergentes"
+        },
+        null,
+        {
+          "code": "lunette-oculaire-divergent",
+          "texte": "Croire que l'oculaire est divergent : il est convergent et joue le rôle d'une loupe"
+        },
+        {
+          "code": "focales-objectif-oculaire-inversees",
+          "texte": "Inverser les focales : l'objectif a une grande distance focale, l'oculaire une petite"
+        }
+      ],
+      "exp": "Objectif et oculaire sont deux lentilles convergentes de même axe ; l'objectif a une grande distance focale f'₁, l'oculaire une petite f'₂. Attention : c'est f'₁ > f'₂ qui permet de grossir."
+    },
+    {
+      "q": "Dans une lunette astronomique, l'objectif sert à :",
+      "opts": [
+        "agrandir l'image comme une loupe",
+        "former une image intermédiaire réelle de l'objet observé",
+        "former l'image finale directement sur la rétine",
+        "collecter la lumière sans former d'image"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "roles-objectif-oculaire-inverses",
+          "texte": "Confondre les rôles : c'est l'oculaire qui joue le rôle de loupe"
+        },
+        null,
+        {
+          "code": "image-finale-objectif",
+          "texte": "Croire que l'objectif forme l'image finale : il forme une image intermédiaire, observée à travers l'oculaire"
+        },
+        {
+          "code": "objectif-sans-image",
+          "texte": "Croire que l'objectif ne forme pas d'image : il donne une image réelle dans son plan focal image"
+        }
+      ],
+      "exp": "L'objectif donne d'un objet très éloigné une image intermédiaire réelle A₁B₁, dans son plan focal image ; l'oculaire sert de loupe pour l'observer. Attention à ne pas inverser les rôles des deux lentilles."
+    },
+    {
+      "q": "Un système optique est dit afocal lorsque :",
+      "opts": [
+        "il ne possède aucun foyer",
+        "un faisceau de rayons parallèles qui y entre en ressort parallèle",
+        "il forme une image réelle sur un écran",
+        "tous les rayons qui en sortent passent par un même point"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "afocal-sans-foyer",
+          "texte": "Prendre « afocal » au pied de la lettre : les deux lentilles ont des foyers, mais le système n'en a pas au sens global"
+        },
+        null,
+        {
+          "code": "afocal-image-reelle",
+          "texte": "Croire que l'image finale est réelle : elle est rejetée à l'infini"
+        },
+        {
+          "code": "afocal-faisceau-convergent",
+          "texte": "Croire que le faisceau sortant converge : il ressort parallèle, pour un œil au repos"
+        }
+      ],
+      "exp": "Un système afocal transforme un faisceau parallèle en un faisceau parallèle : un objet à l'infini donne une image à l'infini, observable sans accommoder. Attention : chaque lentille a bien des foyers."
+    },
+    {
+      "q": "Dans le modèle afocal de la lunette, la position des deux lentilles est telle que :",
+      "opts": [
+        "F₁ = F'₂",
+        "F'₁ = F'₂",
+        "F'₁ = F₂",
+        "la distance entre les lentilles vaut f'₁"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "foyers-objet-image-inverses",
+          "texte": "Confondre foyer objet et foyer image : c'est le foyer image de l'objectif qui coïncide avec le foyer objet de l'oculaire"
+        },
+        {
+          "code": "foyers-images-confondus",
+          "texte": "Faire coïncider les deux foyers images : l'image intermédiaire doit être au foyer objet de l'oculaire"
+        },
+        null,
+        {
+          "code": "oubli-focale-oculaire",
+          "texte": "Placer l'oculaire au foyer de l'objectif : il faut ajouter sa propre distance focale, O₁O₂ = f'₁ + f'₂"
+        }
+      ],
+      "exp": "Le foyer image F'₁ de l'objectif est confondu avec le foyer objet F₂ de l'oculaire : l'image intermédiaire, formée en F'₁, est donc au foyer objet de l'oculaire et son image est à l'infini. Attention à ne pas confondre foyer objet et foyer image."
+    },
+    {
+      "q": "Une lunette afocale a un objectif de distance focale f'₁ = 700 mm et un oculaire de distance focale f'₂ = 10 mm. La distance O₁O₂ entre les deux lentilles vaut :",
+      "opts": [
+        "690 mm",
+        "710 mm",
+        "70 mm",
+        "700 mm"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "focales-soustraites",
+          "texte": "Soustraire les distances focales : 700 − 10 = 690 mm"
+        },
+        null,
+        {
+          "code": "grossissement-pris-pour-longueur",
+          "texte": "Calculer le grossissement f'₁ / f'₂ = 70 au lieu d'une distance"
+        },
+        {
+          "code": "oubli-focale-oculaire",
+          "texte": "Oublier la distance focale de l'oculaire : O₁O₂ = f'₁ + f'₂"
+        }
+      ],
+      "exp": "Avec F'₁ = F₂ : O₁O₂ = O₁F'₁ + F₂O₂ = f'₁ + f'₂ = 700 + 10 = 710 mm. Attention : l'oculaire est placé une distance f'₂ après le foyer commun."
+    },
+    {
+      "q": "Le grossissement G d'une lunette est défini par :",
+      "opts": [
+        "G = α / α'",
+        "G = taille de l'image / taille de l'objet",
+        "G = α' / α",
+        "G = α' − α"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "grossissement-inverse",
+          "texte": "Inverser le rapport : α' (angle à travers la lunette) est au numérateur"
+        },
+        {
+          "code": "grossissement-vs-grandissement",
+          "texte": "Confondre grossissement (rapport d'angles) et grandissement (rapport de tailles)"
+        },
+        null,
+        {
+          "code": "grossissement-difference",
+          "texte": "Faire une différence d'angles au lieu d'un rapport"
+        }
+      ],
+      "exp": "G = α' / α, où α est l'angle sous lequel on voit l'objet à l'œil nu et α' l'angle sous lequel on voit son image à travers la lunette. Attention : pour un objet à l'infini, on compare des angles, pas des tailles."
+    },
+    {
+      "q": "Une lunette afocale a un objectif de distance focale f'₁ = 70 cm et un oculaire de distance focale f'₂ = 10 mm. Son grossissement G vaut :",
+      "opts": [
+        "7",
+        "1,4 × 10⁻²",
+        "7,0 × 10³",
+        "70"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "unites-non-homogenes",
+          "texte": "Diviser sans convertir dans la même unité : 70 (cm) / 10 (mm) = 7"
+        },
+        {
+          "code": "grossissement-inverse",
+          "texte": "Inverser le rapport : f'₂ / f'₁ = 10 / 700 = 1,4 × 10⁻²"
+        },
+        {
+          "code": "grossissement-produit",
+          "texte": "Multiplier les distances focales au lieu de les diviser : 700 × 10"
+        },
+        null
+      ],
+      "exp": "G = f'₁ / f'₂ = 700 mm / 10 mm = 70. Attention : les deux distances focales doivent être dans la même unité ; G est sans unité."
+    },
+    {
+      "q": "Avec le même objectif, on remplace l'oculaire par un oculaire de plus grande distance focale f'₂. Le grossissement :",
+      "opts": [
+        "augmente, car G est proportionnel à f'₂",
+        "diminue, car G = f'₁ / f'₂",
+        "ne change pas, car il ne dépend que de l'objectif",
+        "augmente, car la lunette devient plus longue"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "grossissement-proportionnel-oculaire",
+          "texte": "Croire que G augmente avec f'₂ : f'₂ est au dénominateur"
+        },
+        null,
+        {
+          "code": "grossissement-objectif-seul",
+          "texte": "Croire que G ne dépend que de l'objectif : il dépend des deux distances focales"
+        },
+        {
+          "code": "grossissement-longueur-lunette",
+          "texte": "Croire qu'une lunette plus longue grossit forcément plus : seul le rapport f'₁ / f'₂ compte"
+        }
+      ],
+      "exp": "G = f'₁ / f'₂ : si f'₂ augmente, G diminue (mais le champ observé est plus large). Attention : un oculaire de petite distance focale donne un fort grossissement."
+    },
+    {
+      "q": "Un faisceau de rayons parallèles, incliné d'un angle α sur l'axe optique, traverse une lunette afocale de grossissement G = 50. À la sortie de l'oculaire, le faisceau :",
+      "opts": [
+        "converge en un point, image de l'objet",
+        "ressort parallèle, incliné d'un angle α' = 50 α",
+        "ressort parallèle à l'axe optique",
+        "ressort parallèle, incliné du même angle α"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "afocal-faisceau-convergent",
+          "texte": "Croire que le faisceau sortant converge : il ressort parallèle, pour un œil au repos"
+        },
+        null,
+        {
+          "code": "faisceau-sortie-axe",
+          "texte": "Croire que les rayons ressortent parallèles à l'axe : ils sont inclinés d'un angle α'"
+        },
+        {
+          "code": "lunette-sans-grossissement",
+          "texte": "Oublier le grossissement : l'angle de sortie est α' = G × α, pas α"
+        }
+      ],
+      "exp": "Système afocal : le faisceau ressort parallèle ; il est incliné de α' = G × α, c'est ce qui fait voir l'objet plus grand. Attention : sans changement d'angle, la lunette ne grossirait pas."
+    },
+    {
+      "q": "Pour un objet à l'infini, l'image intermédiaire A₁B₁ donnée par l'objectif se forme :",
+      "opts": [
+        "dans le plan focal image de l'objectif",
+        "dans le plan focal objet de l'objectif",
+        "au centre optique de l'oculaire",
+        "à l'infini"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "foyers-objet-image-inverses",
+          "texte": "Confondre foyer objet et foyer image : un objet à l'infini donne une image dans le plan focal image"
+        },
+        {
+          "code": "image-intermediaire-sur-oculaire",
+          "texte": "Placer l'image intermédiaire sur l'oculaire : elle est dans son plan focal objet, à la distance f'₂"
+        },
+        {
+          "code": "image-intermediaire-infini",
+          "texte": "Confondre l'image intermédiaire et l'image finale, qui seule est à l'infini"
+        }
+      ],
+      "exp": "Un objet à l'infini donne, par une lentille convergente, une image dans son plan focal image : A₁B₁ est en F'₁, qui est aussi le foyer objet F₂ de l'oculaire. Attention : seule l'image finale est à l'infini."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "À la découverte de Saturne — lunette astronomique",
+      "session": "Métropole · Jour 1",
+      "link": "https://www.labolycee.org/metropole-2023-jour-1"
+    },
+    {
+      "year": "2023",
+      "title": "L'observation de Saturne",
+      "session": "Nouvelle-Calédonie · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-nouvelle-caledonie-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Vrai ou faux sur la lunette ?",
+      "contexte": [
+        "Avant sa première soirée d'observation au club d'astronomie du lycée, Yanis relit ses notes sur la lunette astronomique."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. L'objectif est la lentille de plus petite distance focale.<br>b. Dans le modèle afocal, le foyer image de l'objectif est confondu avec le foyer objet de l'oculaire.<br>c. À travers une lunette afocale, une étoile (objet à l'infini) donne une image à l'infini : l'œil l'observe sans accommoder.<br>d. Pour grossir davantage, il faut choisir un oculaire de plus grande distance focale.<br>e. L'objectif forme une image intermédiaire dans son plan focal image.",
+          "aides": []
+        },
+        {
+          "texte": "QCM. Une lunette afocale possède un objectif de distance focale f'₁ = 1,00 m et un oculaire de distance focale f'₂ = 20 mm. Choisis la bonne réponse pour chaque item.<br>a. Son grossissement vaut : (A) 0,02 ; (B) 5 ; (C) 50 ; (D) 1 020.<br>b. La distance entre l'objectif et l'oculaire vaut : (A) 0,98 m ; (B) 1,00 m ; (C) 1,02 m ; (D) 20 mm.",
+          "aides": [
+            "Pour calculer un rapport de deux longueurs, elles doivent être dans la même unité.",
+            "20 mm = 0,020 m. Pour l'écartement, pense à la condition F'₁ = F₂."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : l'objectif a une GRANDE distance focale ; c'est l'oculaire, qui joue le rôle de loupe, qui a la plus petite distance focale.",
+        "b. VRAI : c'est la condition du modèle afocal, F'₁ = F₂.",
+        "c. VRAI : un faisceau parallèle entrant ressort parallèle ; l'image finale est à l'infini, l'œil normal l'observe au repos.",
+        "d. FAUX : G = f'₁/f'₂ ; plus f'₂ est petite, plus G est grand.",
+        "e. VRAI : un objet à l'infini a son image dans le plan focal image de l'objectif ; c'est l'image intermédiaire A₁B₁.",
+        "<strong>2.</strong> a. Réponse (C) : G = f'₁/f'₂ = 1,00 / (20 × 10⁻³) = 50 (les deux distances dans la même unité).",
+        "b. Réponse (C) : O₁O₂ = f'₁ + f'₂ = 1,00 + 0,020 = 1,02 m.",
+        "<em>⚠ Erreur fréquente : diviser 1,00 par 20 sans convertir (on trouve 0,05) ; un grossissement inférieur à 1 pour une lunette doit alerter.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La fiche technique d'une lunette « 70/700 »",
+      "contexte": [
+        "Un magasin propose une lunette d'initiation vendue avec trois oculaires. Extrait de la fiche technique :",
+        "• Lunette 70/700 : diamètre de l'objectif D = 70 mm ; distance focale de l'objectif f'₁ = 700 mm.",
+        "• Oculaires fournis : f'₂ = 25 mm ; 10 mm ; 4 mm.",
+        "• Grossissement maximal utile : 140 (au-delà, l'image est plus grande mais floue et sombre, sans nouveaux détails)."
+      ],
+      "questions": [
+        {
+          "texte": "Que désignent les deux nombres « 70 » et « 700 » du nom de la lunette ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le grossissement obtenu avec chacun des trois oculaires.",
+          "aides": []
+        },
+        {
+          "texte": "Quel oculaire la publicité devrait-elle éviter de mettre en avant ? Justifie.",
+          "aides": [
+            "Calcule les trois grossissements et compare-les à l'indication du fabricant.",
+            "Un oculaire qui donne un grossissement supérieur au grossissement maximal utile n'apporte rien."
+          ]
+        },
+        {
+          "texte": "Avec l'oculaire de 25 mm, quelle est la distance entre l'objectif et l'oculaire quand la lunette est réglée en système afocal ?",
+          "aides": []
+        },
+        {
+          "texte": "La Lune est vue à l'œil nu sous un angle α = 9,0 × 10⁻³ rad. Sous quel angle α' la voit-on avec l'oculaire de 25 mm ? Exprime-le aussi en degrés.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 70 : diamètre de l'objectif D = 70 mm ; 700 : distance focale de l'objectif f'₁ = 700 mm.",
+        "<strong>2.</strong> G = f'₁/f'₂ : avec 25 mm, G = 700/25 = 28 ; avec 10 mm, G = 700/10 = 70 ; avec 4 mm, G = 700/4 = 175.",
+        "<strong>3.</strong> L'oculaire de 4 mm : il donne G = 175 &gt; 140, grossissement maximal utile. L'image serait plus grande mais sans détail supplémentaire (floue et sombre).",
+        "<strong>4.</strong> O₁O₂ = f'₁ + f'₂ = 700 + 25 = 725 mm.",
+        "<strong>5.</strong> α' = G × α = 28 × 9,0 × 10⁻³ = 0,25 rad, soit 0,25 × 180/π ≈ 14°. La Lune paraît 28 fois plus grande (en angle) qu'à l'œil nu."
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Compléter un tracé de rayons",
+      "contexte": [
+        "On modélise une petite lunette par deux lentilles minces convergentes de même axe optique, dessinées sur un quadrillage (1 carreau = 1 unité de longueur) : l'objectif L₁ de centre O₁ et de distance focale f'₁ = 6 carreaux, et l'oculaire L₂ de centre O₂ et de distance focale f'₂ = 2 carreaux. O₁O₂ = 8 carreaux.",
+        "Un point B très éloigné (à l'infini), situé hors de l'axe, envoie sur l'objectif le faisceau de rayons parallèles représenté. Reproduis la figure ou complète-la directement."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker id=\"fo\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker></defs><line x1=\"61.5\" y1=\"422.0\" x2=\"61.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"104.5\" y1=\"422.0\" x2=\"104.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"147.5\" y1=\"422.0\" x2=\"147.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"190.5\" y1=\"422.0\" x2=\"190.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"233.5\" y1=\"422.0\" x2=\"233.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"276.5\" y1=\"422.0\" x2=\"276.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"319.5\" y1=\"422.0\" x2=\"319.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"362.5\" y1=\"422.0\" x2=\"362.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"405.5\" y1=\"422.0\" x2=\"405.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"448.5\" y1=\"422.0\" x2=\"448.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"491.5\" y1=\"422.0\" x2=\"491.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"534.5\" y1=\"422.0\" x2=\"534.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"577.5\" y1=\"422.0\" x2=\"577.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"620.5\" y1=\"422.0\" x2=\"620.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"663.5\" y1=\"422.0\" x2=\"663.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"706.5\" y1=\"422.0\" x2=\"706.5\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"422.0\" x2=\"728.0\" y2=\"422.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"379.0\" x2=\"728.0\" y2=\"379.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"336.0\" x2=\"728.0\" y2=\"336.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"293.0\" x2=\"728.0\" y2=\"293.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"250.0\" x2=\"728.0\" y2=\"250.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"207.0\" x2=\"728.0\" y2=\"207.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"164.0\" x2=\"728.0\" y2=\"164.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"121.0\" x2=\"728.0\" y2=\"121.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"78.0\" x2=\"728.0\" y2=\"78.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"40.0\" y1=\"250.0\" x2=\"728.0\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><text x=\"723.7\" y=\"239.2\" text-anchor=\"end\" fill=\"#3a3a3a\" font-size=\"15\">axe optique</text><line x1=\"190.5\" y1=\"138.2\" x2=\"190.5\" y2=\"361.8\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M182.5,148.2 L190.5,138.2 L198.5,148.2\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M182.5,351.8 L190.5,361.8 L198.5,351.8\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"190.5\" y=\"124.2\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">L₁ (objectif)</text><line x1=\"534.5\" y1=\"138.2\" x2=\"534.5\" y2=\"361.8\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M526.5,148.2 L534.5,138.2 L542.5,148.2\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M526.5,351.8 L534.5,361.8 L542.5,351.8\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"534.5\" y=\"124.2\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">L₂ (oculaire)</text><circle cx=\"190.5\" cy=\"250.0\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"175.4\" y=\"273.6\" text-anchor=\"middle\" fill=\"#3a3a3a\" font-size=\"16\">O₁</text><circle cx=\"534.5\" cy=\"250.0\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"551.7\" y=\"273.6\" text-anchor=\"middle\" fill=\"#3a3a3a\" font-size=\"16\">O₂</text><line x1=\"40.0\" y1=\"138.9\" x2=\"190.5\" y2=\"164.0\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"115.2\" y1=\"151.5\" x2=\"116.8\" y2=\"151.7\" stroke=\"#B5523B\" stroke-width=\"2.4\" marker-end=\"url(#fo)\"/><line x1=\"40.0\" y1=\"310.9\" x2=\"190.5\" y2=\"336.0\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><line x1=\"115.2\" y1=\"323.5\" x2=\"116.8\" y2=\"323.7\" stroke=\"#B5523B\" stroke-width=\"2.4\" marker-end=\"url(#fo)\"/><text x=\"48.6\" y=\"404.8\" text-anchor=\"start\" fill=\"#B5523B\" font-size=\"15\">faisceau issu d'un point B à l'infini</text></svg>",
+      "questions": [
+        {
+          "texte": "Place les foyers F'₁, F₂ et F'₂. Que remarques-tu pour F'₁ et F₂ ? Comment s'appelle ce type de lunette ?",
+          "aides": []
+        },
+        {
+          "texte": "Trace le rayon du faisceau incident qui passe par O₁. Où coupe-t-il le plan focal image de L₁ ? Nomme B₁ ce point.",
+          "aides": [
+            "Le rayon qui passe par le centre optique d'une lentille n'est pas dévié.",
+            "Le plan focal image de L₁ est la droite perpendiculaire à l'axe passant par F'₁. Compte les carreaux : 6 vers la droite, de combien descend-on ?"
+          ]
+        },
+        {
+          "texte": "Complète la marche des deux rayons tracés jusqu'à l'oculaire.",
+          "aides": []
+        },
+        {
+          "texte": "Trace les rayons qui sortent de l'oculaire. Le faisceau émergent est-il convergent, divergent ou parallèle ?",
+          "aides": [
+            "B₁ est dans le plan focal objet de L₂ : que deviennent des rayons issus d'un point du plan focal objet d'une lentille ?",
+            "Ils ressortent parallèles entre eux. Pour trouver leur direction, trace le rayon (non dévié) qui joindrait B₁ à O₂."
+          ]
+        },
+        {
+          "texte": "Les rayons incidents descendent de 1 carreau pour 6 carreaux parcourus (tan α = 1/6). Détermine sur ta figure tan α' pour les rayons émergents, puis compare tan α'/tan α à f'₁/f'₂.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F'₁ est à 6 carreaux à droite de O₁ ; F₂ est à 2 carreaux à gauche de O₂, donc aussi à 6 carreaux de O₁ ; F'₂ est à 2 carreaux à droite de O₂ (10 carreaux de O₁). F'₁ et F₂ sont confondus : la lunette est afocale.",
+        "<strong>2.</strong> Le rayon passant par O₁ n'est pas dévié : parallèle aux autres, il descend de 1 carreau sur 6 carreaux et coupe le plan focal image (verticale passant par F'₁) en B₁, à 1 carreau SOUS l'axe.",
+        "<strong>3.</strong> Les rayons parallèles convergent tous en B₁ (foyer secondaire image de L₁). Le rayon qui frappe L₁ à 2 carreaux au-dessus de l'axe passe par B₁ et atteint L₂ à 2 carreaux sous l'axe ; celui qui frappe L₁ à 2 carreaux sous l'axe passe par B₁ et atteint L₂ à environ 0,67 carreau sous l'axe.",
+        "<strong>4.</strong> B₁ est dans le plan focal objet de L₂ : les rayons ressortent parallèles entre eux, parallèles au rayon (non dévié) qui joindrait B₁ à O₂. Ils montent de 1 carreau pour 2 carreaux parcourus. Le faisceau émergent est parallèle : l'image finale est à l'infini.",
+        "<strong>5.</strong> tan α' = 1/2 = 0,5 ; tan α'/tan α = 0,5 / (1/6) = 3 = f'₁/f'₂ = 6/2. Les rayons émergents montent alors que les rayons incidents descendent : l'image est renversée.",
+        "<em>⚠ Erreur fréquente : faire sortir les rayons de l'oculaire n'importe comment ; ils sont tous parallèles à la droite (B₁O₂).</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Démontrer l'expression du grossissement",
+      "contexte": [
+        "Le schéma ci-dessous, à l'échelle, représente une maquette de lunette afocale : objectif L₁ (f'₁ = 30 cm), oculaire L₂ (f'₂ = 10 cm). Le faisceau provient d'un point B à l'infini vu sous l'angle α = 10° (angle volontairement exagéré pour la lisibilité). A₁B₁ est l'image intermédiaire."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><defs><marker id=\"fl\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1F4E5A\"/></marker><marker id=\"fo\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#B5523B\"/></marker></defs><line x1=\"30.0\" y1=\"225.0\" x2=\"721.2\" y2=\"225.0\" stroke=\"#3a3a3a\" stroke-width=\"1.6\"/><line x1=\"462.0\" y1=\"165.6\" x2=\"462.0\" y2=\"341.6\" stroke=\"#C8962E\" stroke-width=\"1.6\" stroke-dasharray=\"6 5\"/><text x=\"462.0\" y=\"357.8\" text-anchor=\"middle\" fill=\"#C8962E\" font-size=\"15\">plan focal image de L₁ = plan focal objet de L₂</text><line x1=\"30.0\" y1=\"162.8\" x2=\"138.0\" y2=\"181.8\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"84.0\" y1=\"172.3\" x2=\"85.1\" y2=\"172.5\" stroke=\"#1F4E5A\" stroke-width=\"2.2\" marker-end=\"url(#fl)\"/><line x1=\"138.0\" y1=\"181.8\" x2=\"570.0\" y2=\"315.6\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"354.0\" y1=\"248.7\" x2=\"358.3\" y2=\"250.0\" stroke=\"#1F4E5A\" stroke-width=\"2.2\" marker-end=\"url(#fl)\"/><line x1=\"570.0\" y1=\"315.6\" x2=\"721.2\" y2=\"235.6\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><line x1=\"645.6\" y1=\"275.6\" x2=\"647.1\" y2=\"274.8\" stroke=\"#B5523B\" stroke-width=\"2.2\" marker-end=\"url(#fo)\"/><line x1=\"30.0\" y1=\"206.0\" x2=\"138.0\" y2=\"225.0\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"84.0\" y1=\"215.5\" x2=\"85.1\" y2=\"215.7\" stroke=\"#1F4E5A\" stroke-width=\"2.2\" marker-end=\"url(#fl)\"/><line x1=\"138.0\" y1=\"225.0\" x2=\"570.0\" y2=\"301.2\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"354.0\" y1=\"263.1\" x2=\"358.3\" y2=\"263.8\" stroke=\"#1F4E5A\" stroke-width=\"2.2\" marker-end=\"url(#fl)\"/><line x1=\"570.0\" y1=\"301.2\" x2=\"721.2\" y2=\"221.2\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><line x1=\"645.6\" y1=\"261.2\" x2=\"647.1\" y2=\"260.4\" stroke=\"#B5523B\" stroke-width=\"2.2\" marker-end=\"url(#fo)\"/><line x1=\"30.0\" y1=\"249.2\" x2=\"138.0\" y2=\"268.2\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"84.0\" y1=\"258.7\" x2=\"85.1\" y2=\"258.9\" stroke=\"#1F4E5A\" stroke-width=\"2.2\" marker-end=\"url(#fl)\"/><line x1=\"138.0\" y1=\"268.2\" x2=\"570.0\" y2=\"286.8\" stroke=\"#1F4E5A\" stroke-width=\"2.2\"/><line x1=\"354.0\" y1=\"277.5\" x2=\"358.3\" y2=\"277.7\" stroke=\"#1F4E5A\" stroke-width=\"2.2\" marker-end=\"url(#fl)\"/><line x1=\"570.0\" y1=\"286.8\" x2=\"721.2\" y2=\"206.8\" stroke=\"#B5523B\" stroke-width=\"2.2\"/><line x1=\"645.6\" y1=\"246.8\" x2=\"647.1\" y2=\"246.0\" stroke=\"#B5523B\" stroke-width=\"2.2\" marker-end=\"url(#fo)\"/><line x1=\"462.0\" y1=\"282.1\" x2=\"721.2\" y2=\"145.0\" stroke=\"#3a3a3a\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><line x1=\"138.0\" y1=\"158.0\" x2=\"138.0\" y2=\"292.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M130.0,168.0 L138.0,158.0 L146.0,168.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M130.0,282.0 L138.0,292.0 L146.0,282.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"138.0\" y=\"144.0\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">L₁ objectif</text><line x1=\"570.0\" y1=\"121.3\" x2=\"570.0\" y2=\"328.7\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M562.0,131.3 L570.0,121.3 L578.0,131.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M562.0,318.7 L570.0,328.7 L578.0,318.7\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"570.0\" y=\"107.3\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-weight=\"bold\">L₂ oculaire</text><line x1=\"462.0\" y1=\"225.0\" x2=\"462.0\" y2=\"282.1\" stroke=\"#C8962E\" stroke-width=\"4\"/><circle cx=\"462.0\" cy=\"282.1\" r=\"5\" fill=\"#C8962E\"/><text x=\"454.4\" y=\"299.4\" text-anchor=\"end\" fill=\"#3a3a3a\" font-size=\"16\" font-weight=\"bold\">B₁</text><text x=\"455.5\" y=\"218.5\" text-anchor=\"end\" fill=\"#3a3a3a\" font-size=\"15\" font-weight=\"bold\">A₁ = F'₁ = F₂</text><circle cx=\"138.0\" cy=\"225.0\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"147.7\" y=\"242.3\" text-anchor=\"start\" fill=\"#3a3a3a\" font-size=\"16\">O₁</text><circle cx=\"570.0\" cy=\"225.0\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"561.4\" y=\"218.5\" text-anchor=\"end\" fill=\"#3a3a3a\" font-size=\"16\">O₂</text><line x1=\"678.0\" y1=\"218.0\" x2=\"678.0\" y2=\"232.0\" stroke=\"#3a3a3a\" stroke-width=\"2.2\"/><text x=\"678.0\" y=\"211.0\" text-anchor=\"middle\" fill=\"#3a3a3a\" font-size=\"16\">F'₂</text><path d=\"M68.0,225.0 A70,70 0 0 1 69.1,212.8\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2\"/><text x=\"50.0\" y=\"222.0\" text-anchor=\"middle\" fill=\"#3a3a3a\" font-size=\"18\" font-weight=\"bold\">α</text><path d=\"M640.0,225.0 A70,70 0 0 0 631.9,192.3\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2\"/><text x=\"652.0\" y=\"211.0\" text-anchor=\"middle\" fill=\"#B5523B\" font-size=\"18\" font-weight=\"bold\">α'</text><text x=\"14.0\" y=\"455.0\" text-anchor=\"start\" fill=\"#3a3a3a\" font-size=\"15\">Schéma à l'échelle : f'₁ = 30 cm, f'₂ = 10 cm, α = 10° (angle exagéré).</text></svg>",
+      "questions": [
+        {
+          "texte": "Justifie que l'image intermédiaire B₁ se trouve dans le plan focal image de L₁, puis que le faisceau émergent est parallèle.",
+          "aides": []
+        },
+        {
+          "texte": "Dans le triangle O₁A₁B₁, exprime tan α en fonction de A₁B₁ et f'₁. Dans le triangle O₂A₁B₁, exprime tan α' en fonction de A₁B₁ et f'₂.",
+          "aides": [
+            "Repère sur le schéma le triangle rectangle qui contient α : ses côtés sont O₁A₁ et A₁B₁.",
+            "tangente = côté opposé / côté adjacent ; O₁A₁ = f'₁ et A₁O₂ = f'₂ dans le modèle afocal."
+          ]
+        },
+        {
+          "texte": "En utilisant l'approximation des petits angles, démontre que G = f'₁/f'₂.",
+          "aides": [
+            "Pour un angle petit exprimé en radian, tan α ≈ α.",
+            "Remplace α et α' dans G = α'/α par les expressions de la question 2 : A₁B₁ se simplifie."
+          ]
+        },
+        {
+          "texte": "Pour le schéma (α = 10°) : calcule A₁B₁, puis α'. Compare α'/α à f'₁/f'₂ et explique l'écart.",
+          "aides": [
+            "A₁B₁ = f'₁ × tan α, puis α' = arctan(A₁B₁/f'₂) (calculatrice en degrés).",
+            "Calcule tan 10° et (10° converti en radian) : sont-ils encore égaux ?"
+          ]
+        },
+        {
+          "texte": "Hugo observe la Lune (α = 9,0 × 10⁻³ rad) avec une lunette afocale de distances focales f'₁ = 900 mm et f'₂ = 20 mm. Calcule G, l'angle α' sous lequel il voit la Lune, et la taille de l'image intermédiaire A₁B₁.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> B est à l'infini : son image par L₁ est dans le plan focal image de L₁ (point B₁ où convergent les rayons, sur le rayon non dévié passant par O₁). Ce plan est aussi le plan focal objet de L₂ (F'₁ = F₂) : les rayons issus de B₁ ressortent de L₂ parallèles entre eux.",
+        "<strong>2.</strong> Triangle O₁A₁B₁ rectangle en A₁ : tan α = A₁B₁ / O₁A₁ = A₁B₁ / f'₁. Triangle O₂A₁B₁ rectangle en A₁ : tan α' = A₁B₁ / A₁O₂ = A₁B₁ / f'₂.",
+        "<strong>3.</strong> Pour des angles petits (en radian), tan α ≈ α et tan α' ≈ α'. Donc G = α'/α ≈ (A₁B₁/f'₂) / (A₁B₁/f'₁) = f'₁/f'₂. Le grossissement ne dépend pas de l'objet observé.",
+        "<strong>4.</strong> A₁B₁ = f'₁ × tan α = 30 × tan 10° = 5,3 cm. tan α' = A₁B₁/f'₂ = 0,529, d'où α' = 27,9°. α'/α = 27,9/10 = 2,79 alors que f'₁/f'₂ = 3 (écart d'environ 7 %). L'angle de 10° est trop grand pour que tan α ≈ α : la relation G = f'₁/f'₂ n'est exacte que pour de petits angles, ce qui est le cas en astronomie.",
+        "<strong>5.</strong> G = 900/20 = 45 ; α' = G × α = 45 × 9,0 × 10⁻³ = 0,41 rad (≈ 23°) ; A₁B₁ = f'₁ × α = 900 × 9,0 × 10⁻³ = 8,1 mm (image réelle et renversée).",
+        "<em>⚠ Erreur fréquente : calculer tan α avec un angle en degrés dans l'approximation tan α ≈ α ; elle n'est valable qu'avec α en radian.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Fabriquer une lunette en TP",
+      "contexte": [
+        "En TP, Lina dispose de quatre lentilles minces convergentes de vergences + 2,0 δ ; + 5,0 δ ; + 10 δ et + 20 δ, et d'un banc d'optique de 1,00 m.",
+        "Elle veut construire la maquette de lunette afocale qui grossit le plus, en tenant sur le banc."
+      ],
+      "questions": [
+        {
+          "texte": "Calcule la distance focale de chaque lentille (en cm).",
+          "aides": []
+        },
+        {
+          "texte": "Quelles lentilles Lina doit-elle choisir comme objectif et comme oculaire ? Calcule le grossissement de sa lunette et l'écartement des lentilles.",
+          "aides": [
+            "f' = 1/V : plus la vergence est grande, plus la distance focale est petite.",
+            "G = f'₁/f'₂ est grand si f'₁ est grande et f'₂ petite ; vérifie que f'₁ + f'₂ ≤ 1,00 m."
+          ]
+        },
+        {
+          "texte": "Pour tester sa lunette, Lina vise une mire placée à 12,0 m de l'objectif. À l'aide de la relation de conjugaison, détermine la position de l'image donnée par l'objectif. Peut-on considérer la mire comme « à l'infini » ? Comment Lina doit-elle ajuster son oculaire ?",
+          "aides": [
+            "Origine au centre O₁ de l'objectif, axe orienté dans le sens de la lumière : OA = − 12,0 m.",
+            "1/OA' = 1/OA + 1/f'₁ ; compare OA' à f'₁ = 50 cm."
+          ]
+        },
+        {
+          "texte": "Pour mesurer le grossissement, Lina regarde la mire (à grands carreaux) avec un œil dans la lunette et l'autre œil directement : un carreau vu dans la lunette recouvre 9,5 carreaux vus à l'œil nu. Donne la valeur expérimentale de G et calcule l'écart relatif avec la valeur théorique.",
+          "aides": []
+        },
+        {
+          "texte": "Lina voit-elle la mire à l'endroit ou à l'envers ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> f' = 1/V : + 2,0 δ → 0,50 m = 50 cm ; + 5,0 δ → 20 cm ; + 10 δ → 10 cm ; + 20 δ → 5,0 cm.",
+        "<strong>2.</strong> G = f'₁/f'₂ est maximal avec la plus grande focale pour l'objectif et la plus petite pour l'oculaire : objectif + 2,0 δ (50 cm), oculaire + 20 δ (5,0 cm). G = 50/5,0 = 10. Écartement O₁O₂ = 50 + 5,0 = 55,0 cm &lt; 1,00 m : la lunette tient sur le banc.",
+        "<strong>3.</strong> Avec OA = − 12,0 m et 1/f'₁ = 2,0 δ : 1/OA' = 1/OA + 1/f'₁ = − 0,0833 + 2,0 = 1,917 m⁻¹, d'où OA' = 0,522 m = 52,2 cm. L'image est 2,2 cm après F'₁ (écart de 4 % sur 50 cm) : la mire est presque à l'infini, mais pour une image nette sans accommoder, Lina doit reculer l'oculaire de 2,2 cm pour que son foyer objet F₂ coïncide avec cette image (O₁O₂ ≈ 57,2 cm).",
+        "<strong>4.</strong> G<sub>exp</sub> = 9,5. Écart relatif = |9,5 − 10| / 10 = 5,0 % : mesure cohérente avec la valeur théorique, compte tenu de la méthode (lecture à l'œil d'un recouvrement de carreaux).",
+        "<strong>5.</strong> À l'envers : l'image intermédiaire donnée par l'objectif est renversée, et l'oculaire (loupe) ne la redresse pas.",
+        "<em>⚠ Erreur fréquente : choisir la lentille de plus grande vergence comme objectif. Grande vergence = petite distance focale : c'est l'oculaire.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Jupiter et ses lunes au club d'astronomie",
+      "contexte": [
+        "Doc. 1 — La lunette du club. Lunette 90/900 : objectif de diamètre D = 90 mm et de distance focale f'₁ = 900 mm. Deux oculaires : f'₂ = 25 mm et f'₂ = 9 mm. Chaque oculaire a un champ apparent de 50° : on voit dans l'oculaire tout ce qui est vu (à travers la lunette) sous un angle inférieur à 25° de part et d'autre de l'axe.",
+        "Doc. 2 — Jupiter ce soir-là. Diamètre de Jupiter : 1,43 × 10⁵ km. Distance Terre–Jupiter : 6,3 × 10⁸ km. Callisto, satellite de Jupiter, est à 1,88 × 10⁶ km de la planète ; ce soir-là, il est vu à son écart maximal, perpendiculairement à la direction d'observation.",
+        "Doc. 3 — L'œil. Deux points sont distingués par l'œil s'ils sont vus sous un angle supérieur à environ 3 × 10⁻⁴ rad. La nuit, la pupille a un diamètre d'environ 6 mm."
+      ],
+      "questions": [
+        {
+          "texte": "Quelle lentille joue le rôle d'objectif ? Calcule le grossissement de la lunette avec chacun des deux oculaires.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le diamètre apparent α<sub>J</sub> de Jupiter vu de la Terre. À l'œil nu, voit-on Jupiter comme un disque ou comme un point ?",
+          "aides": [
+            "Pour un angle petit (en radian) : angle ≈ taille / distance.",
+            "Diamètre et distance doivent être dans la même unité (ici, les deux en km). Compare ensuite au pouvoir séparateur de l'œil (doc. 3)."
+          ]
+        },
+        {
+          "texte": "Avec l'oculaire de 25 mm, sous quel angle α'<sub>J</sub> voit-on Jupiter ? Conclus.",
+          "aides": []
+        },
+        {
+          "texte": "Callisto et Jupiter peuvent-ils être vus en même temps dans l'oculaire de 9 mm ? Justifie par un calcul.",
+          "aides": []
+        },
+        {
+          "texte": "Sur son croquis, une élève dessine Callisto à gauche et au-dessus de Jupiter, tel qu'elle le voit dans la lunette. Où se trouve réellement Callisto par rapport à Jupiter dans le ciel ? Justifie.",
+          "aides": [
+            "Dans une lunette astronomique, l'angle α' est de signe opposé à α.",
+            "L'image est renversée : haut et bas, mais aussi gauche et droite, sont échangés."
+          ]
+        },
+        {
+          "texte": "Représente, sans souci d'échelle, la lunette et le faisceau issu d'un point de Jupiter situé sur l'axe, qui remplit tout l'objectif. Montre que la largeur du faisceau émergent vaut d = D × f'₂/f'₁, puis calcule d pour chaque oculaire. Toute la lumière collectée entre-t-elle dans l'œil ?",
+          "aides": [
+            "Le faisceau converge en F'₁ = F₂ puis diverge jusqu'à l'oculaire : repère deux triangles de même sommet.",
+            "Hauteurs D et d, « longueurs » f'₁ et f'₂ : utilise le théorème de Thalès."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : la diffraction par l'objectif limite la finesse de l'image à un angle θ ≈ λ/D. Pour λ = 550 nm, calcule θ, la taille du plus petit détail observable à la surface de Jupiter, et le grossissement minimal pour que l'œil perçoive un tel détail.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'objectif est la lentille de grande distance focale, f'₁ = 900 mm, tournée vers Jupiter. G = f'₁/f'₂ : avec 25 mm, G = 900/25 = 36 ; avec 9 mm, G = 900/9 = 100.",
+        "<strong>2.</strong> Angle petit : α<sub>J</sub> ≈ diamètre / distance = 1,43 × 10⁵ / 6,3 × 10⁸ = 2,3 × 10⁻⁴ rad. C'est inférieur à 3 × 10⁻⁴ rad : à l'œil nu, Jupiter apparaît comme un point brillant.",
+        "<strong>3.</strong> α'<sub>J</sub> = G × α<sub>J</sub> = 36 × 2,27 × 10⁻⁴ = 8,2 × 10⁻³ rad, environ 27 fois plus que la limite de l'œil : Jupiter apparaît comme un petit disque, on peut distinguer des détails.",
+        "<strong>4.</strong> À l'œil nu, Callisto est à α<sub>C</sub> ≈ 1,88 × 10⁶ / 6,3 × 10⁸ = 3,0 × 10⁻³ rad de Jupiter. Avec l'oculaire de 9 mm : α'<sub>C</sub> = 100 × 2,98 × 10⁻³ = 0,30 rad, soit 17°. Si Jupiter est au centre du champ, Callisto est à 17° &lt; 25° de l'axe : on voit les deux en même temps.",
+        "<strong>5.</strong> La lunette astronomique donne une image renversée (α' de signe opposé à α) : la gauche et la droite, le haut et le bas sont inversés. Dans le ciel, Callisto est à droite et au-dessous de Jupiter.",
+        "<strong>6.</strong> Schéma attendu : faisceau parallèle à l'axe de largeur D sur l'objectif, convergeant en F'₁ = F₂, puis ressortant parallèle à l'axe après l'oculaire, avec une largeur d. Les deux triangles de sommet commun F'₁ = F₂ sont semblables (théorème de Thalès) : D / f'₁ = d / f'₂, donc d = D × f'₂/f'₁. Avec 25 mm : d = 90 × 25 / 900 = 2,5 mm ; avec 9 mm : d = 0,90 mm. Dans les deux cas d &lt; 6 mm : tout le faisceau entre dans la pupille, toute la lumière collectée par l'objectif atteint l'œil.",
+        "<strong>7.</strong> Pour aller plus loin : θ = 550 × 10⁻⁹ / 0,090 = 6,1 × 10⁻⁶ rad. Plus petit détail : θ × distance = 6,1 × 10⁻⁶ × 6,3 × 10⁸ = 3,9 × 10³ km. Pour que l'œil le perçoive, il faut G × θ &gt; 3 × 10⁻⁴ rad, soit G &gt; 49 : l'oculaire de 9 mm (G = 100) convient, celui de 25 mm (G = 36) ne montre pas tous les détails que permet l'objectif.",
+        "<em>⚠ Erreur fréquente : utiliser des distances dans des unités différentes (km et m) pour calculer un angle, ou oublier que l'image est renversée.</em>"
+      ]
+    }
+  ]
+}

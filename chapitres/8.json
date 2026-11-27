@@ -1,0 +1,688 @@
+{
+  "id": 8,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Vecteur position et trajectoire",
+        "icon": "📍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Vecteur position",
+            "text": "Dans un référentiel muni d'une origine O, le vecteur position d'un point M à l'instant t est OM(t). L'ensemble des positions successives occupées par M au cours du temps constitue la <strong>trajectoire</strong> du point dans ce référentiel."
+          },
+          {
+            "type": "formula",
+            "label": "Coordonnées cartésiennes",
+            "text": "OM(t) = x(t) i + y(t) j + z(t) k\n(i, j, k) : vecteurs unitaires de la base cartésienne"
+          },
+          {
+            "type": "warn",
+            "text": "La trajectoire d'un mouvement dépend du référentiel d'étude : un même mouvement peut être rectiligne dans un référentiel et curviligne dans un autre."
+          }
+        ]
+      },
+      {
+        "title": "2. Vecteur vitesse",
+        "icon": "➡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Vecteur vitesse instantanée",
+            "text": "v(t) = dOM/dt. À chaque instant, il est <strong>tangent à la trajectoire</strong> au point M considéré et orienté dans le sens du mouvement."
+          },
+          {
+            "type": "formula",
+            "label": "Coordonnées cartésiennes",
+            "text": "vx(t) = dx/dt\nvy(t) = dy/dt\nvz(t) = dz/dt"
+          }
+        ]
+      },
+      {
+        "title": "3. Vecteur accélération",
+        "icon": "↗️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Vecteur accélération instantanée",
+            "text": "a(t) = dv/dt = d²OM/dt². Il traduit la façon dont le vecteur vitesse varie au cours du temps, en norme et/ou en direction."
+          },
+          {
+            "type": "formula",
+            "label": "Coordonnées cartésiennes",
+            "text": "ax(t) = dvx/dt\nay(t) = dvy/dt\naz(t) = dvz/dt"
+          }
+        ]
+      },
+      {
+        "title": "4. Le repère de Frenet",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "def",
+            "term": "Repère de Frenet",
+            "text": "Repère local (M, uT, uN) associé à un point M mobile sur sa trajectoire : uT est le vecteur unitaire tangent à la trajectoire, orienté dans le sens du mouvement ; uN est le vecteur unitaire normal, perpendiculaire à uT et dirigé vers le centre de courbure de la trajectoire."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 400 300\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"uArrowT8\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"uArrowN8\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><circle cx=\"200\" cy=\"180\" r=\"110\" fill=\"none\" stroke=\"#B9C0AC\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\"/><circle cx=\"200\" cy=\"180\" r=\"3\" fill=\"#1B2420\"/><text x=\"185\" y=\"176\" font-size=\"12\" fill=\"#1B2420\">C</text><line x1=\"200\" y1=\"180\" x2=\"295\" y2=\"125\" stroke=\"#1B2420\" stroke-width=\"1\" stroke-dasharray=\"2 2\"/><text x=\"238\" y=\"145\" font-size=\"11\" fill=\"#5C6B60\">R</text><circle cx=\"295\" cy=\"125\" r=\"3.5\" fill=\"#1B2420\"/><text x=\"303\" y=\"120\" font-size=\"12\" fill=\"#1B2420\" font-weight=\"600\">M</text><line x1=\"295\" y1=\"125\" x2=\"320\" y2=\"168\" stroke=\"#3E7DBF\" stroke-width=\"2.2\" marker-end=\"url(#uArrowT8)\"/><text x=\"328\" y=\"180\" font-size=\"12\" fill=\"#3E7DBF\" font-weight=\"600\">uT</text><line x1=\"295\" y1=\"125\" x2=\"252\" y2=\"150\" stroke=\"#C0472F\" stroke-width=\"2.2\" marker-end=\"url(#uArrowN8)\"/><text x=\"210\" y=\"145\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">uN</text></svg>",
+            "caption": "Repère de Frenet sur une trajectoire circulaire : uT est tangent à la trajectoire (sens du mouvement), uN pointe vers le centre C — direction de l'accélération centripète v²/R."
+          },
+          {
+            "type": "formula",
+            "label": "Accélération dans le repère de Frenet",
+            "text": "a = (dv/dt) uT + (v²/R) uN\ndv/dt : accélération tangentielle, liée à la variation de la norme (valeur) de la vitesse\nv²/R : accélération normale (ou centripète), liée à la variation de la direction de la vitesse ; R = rayon de courbure de la trajectoire"
+          },
+          {
+            "type": "warn",
+            "text": "L'accélération tangentielle est nulle si le mouvement est uniforme (v = cste). L'accélération normale est nulle si le mouvement est rectiligne (rayon de courbure infini)."
+          }
+        ]
+      },
+      {
+        "title": "5. Mouvements particuliers",
+        "icon": "⭕",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Mouvement",
+              "at (tangentielle)",
+              "an (normale)",
+              "Caractéristiques"
+            ],
+            "rows": [
+              [
+                "Rectiligne uniforme (MRU)",
+                "0",
+                "0",
+                "Trajectoire rectiligne, vecteur vitesse constant (norme et direction)"
+              ],
+              [
+                "Rectiligne varié",
+                "≠ 0",
+                "0",
+                "Trajectoire rectiligne, norme de la vitesse variable"
+              ],
+              [
+                "Circulaire uniforme (MCU)",
+                "0",
+                "v²/R ≠ 0",
+                "Trajectoire circulaire de rayon R, norme de la vitesse constante, direction variable"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Dans le cas d'un <strong>mouvement circulaire uniforme</strong>, la norme de la vitesse est constante : v = R×ω, où ω est la vitesse angulaire (rad·s⁻¹). La période de révolution vaut T = 2πR/v = 2π/ω. Le vecteur accélération est alors uniquement normal, dirigé en permanence vers le centre du cercle : a = (v²/R) uN."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Le vecteur vitesse instantanée d'un point M est défini par :",
+      "opts": [
+        "v = OM / t",
+        "v = dOM/dt",
+        "v = d²OM/dt²",
+        "v = dt/dOM"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "vitesse-moyenne-vs-instantanee",
+          "texte": "Confondre vitesse instantanée (dérivée) et vitesse moyenne (rapport)"
+        },
+        null,
+        {
+          "code": "vitesse-vs-acceleration",
+          "texte": "Confondre vitesse (dérivée première de la position) et accélération (dérivée seconde)"
+        },
+        {
+          "code": "derivee-inversee",
+          "texte": "Inverser la dérivée : on dérive la position par rapport au temps"
+        }
+      ],
+      "exp": "v(t) = dOM/dt : la dérivée du vecteur position par rapport au temps. Attention : OM / t n'est pas une vitesse instantanée, et d²OM/dt² est l'accélération."
+    },
+    {
+      "q": "À chaque instant, le vecteur vitesse d'un point en mouvement est :",
+      "opts": [
+        "perpendiculaire à la trajectoire",
+        "dirigé vers le centre de courbure",
+        "tangent à la trajectoire, dans le sens du mouvement",
+        "toujours de même direction que le vecteur accélération"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "vitesse-perpendiculaire-trajectoire",
+          "texte": "Dessiner le vecteur vitesse perpendiculaire à la trajectoire : il lui est tangent"
+        },
+        {
+          "code": "vitesse-vs-acceleration-circulaire",
+          "texte": "Confondre vitesse et accélération : dans un virage, c'est l'accélération qui pointe vers l'intérieur"
+        },
+        null,
+        {
+          "code": "vitesse-acceleration-meme-direction",
+          "texte": "Croire que vitesse et accélération ont toujours la même direction"
+        }
+      ],
+      "exp": "Le vecteur vitesse est tangent à la trajectoire et orienté dans le sens du mouvement. Attention : l'accélération, elle, peut avoir une autre direction (vers le centre dans un virage)."
+    },
+    {
+      "q": "Un point se déplace sur un axe selon x(t) = 3,0 t² + 2,0 (x en m, t en s). La coordonnée vx de sa vitesse à t = 2,0 s vaut :",
+      "opts": [
+        "14 m·s⁻¹",
+        "6,0 m·s⁻¹",
+        "7,0 m·s⁻¹",
+        "12 m·s⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "position-vs-vitesse",
+          "texte": "Calculer la position x(2,0) = 14 m au lieu de la vitesse"
+        },
+        {
+          "code": "vitesse-vs-acceleration",
+          "texte": "Dériver deux fois : 6,0 m·s⁻² est l'accélération, pas la vitesse"
+        },
+        {
+          "code": "vitesse-moyenne-vs-instantanee",
+          "texte": "Calculer x / t = 14 / 2,0 au lieu de la dérivée"
+        },
+        null
+      ],
+      "exp": "vx(t) = dx/dt = 6,0 t, donc vx(2,0) = 6,0 × 2,0 = 12 m·s⁻¹. Attention : la vitesse instantanée est la dérivée de la position, pas le rapport x / t."
+    },
+    {
+      "q": "Dans un mouvement circulaire uniforme, le vecteur accélération est :",
+      "opts": [
+        "nul, car la valeur de la vitesse est constante",
+        "dirigé vers le centre du cercle",
+        "tangent à la trajectoire, dans le sens du mouvement",
+        "dirigé vers l'extérieur du cercle"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "uniforme-acceleration-nulle",
+          "texte": "Croire que l'accélération est nulle si la valeur de la vitesse est constante : la direction de la vitesse change"
+        },
+        null,
+        {
+          "code": "vitesse-acceleration-meme-direction",
+          "texte": "Croire que vitesse et accélération ont toujours la même direction"
+        },
+        {
+          "code": "acceleration-centrifuge",
+          "texte": "Croire que l'accélération pointe vers l'extérieur (« force centrifuge ») : elle est centripète"
+        }
+      ],
+      "exp": "La valeur de v est constante (at = 0), mais sa direction tourne : a = (v²/R) uN, dirigée vers le centre. Attention : uniforme ne veut pas dire sans accélération."
+    },
+    {
+      "q": "Dans le repère de Frenet (M, uT, uN) d'un point en mouvement circulaire, le vecteur uN est :",
+      "opts": [
+        "tangent à la trajectoire, dans le sens du mouvement",
+        "dirigé vers le centre du cercle",
+        "dirigé vers l'extérieur du cercle",
+        "toujours vertical, vers le haut"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ut-un-inverses",
+          "texte": "Confondre uN (normal) et uT (tangent à la trajectoire)"
+        },
+        null,
+        {
+          "code": "un-vers-exterieur",
+          "texte": "Orienter uN vers l'extérieur : il pointe vers le centre de courbure"
+        },
+        {
+          "code": "frenet-repere-fixe",
+          "texte": "Confondre le repère de Frenet, lié au point mobile, avec un repère fixe (vertical, horizontal)"
+        }
+      ],
+      "exp": "uT est tangent à la trajectoire (sens du mouvement), uN lui est perpendiculaire et pointe vers le centre du cercle. Attention : ce repère tourne avec le point M."
+    },
+    {
+      "q": "Un mobile parcourt un cercle de rayon R = 2,0 m à la vitesse constante v = 4,0 m·s⁻¹. La valeur de son accélération vaut :",
+      "opts": [
+        "2,0 m·s⁻²",
+        "8,0 m·s⁻²",
+        "16 m·s⁻²",
+        "0,50 m·s⁻²"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-carre-vitesse",
+          "texte": "Oublier le carré de la vitesse : v / R = 2,0"
+        },
+        null,
+        {
+          "code": "oubli-division-rayon",
+          "texte": "Oublier de diviser par R : v² = 16"
+        },
+        {
+          "code": "rapport-inverse-acceleration",
+          "texte": "Inverser le rapport : R / v = 0,50"
+        }
+      ],
+      "exp": "Mouvement circulaire uniforme : a = an = v² / R = 4,0² / 2,0 = 8,0 m·s⁻². Attention : la vitesse est au carré, et at = 0 puisque v est constante."
+    },
+    {
+      "q": "L'accélération tangentielle dv/dt d'un mobile est nulle lorsque son mouvement est :",
+      "opts": [
+        "rectiligne",
+        "circulaire",
+        "uniforme",
+        "arrêté à cet instant (v = 0)"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "at-an-inverses",
+          "texte": "Confondre les deux composantes : c'est an = v²/R qui est nulle pour un mouvement rectiligne"
+        },
+        {
+          "code": "circulaire-donc-uniforme",
+          "texte": "Croire qu'un mouvement circulaire est forcément uniforme"
+        },
+        null,
+        {
+          "code": "vitesse-nulle-acceleration-nulle",
+          "texte": "Croire que l'accélération est nulle quand la vitesse est nulle (au sommet d'un lancer vertical, a = g)"
+        }
+      ],
+      "exp": "dv/dt traduit la variation de la valeur de la vitesse : elle est nulle si le mouvement est uniforme. Attention : une vitesse nulle à un instant n'implique pas une accélération nulle."
+    },
+    {
+      "q": "L'accélération normale v²/R d'un mobile en mouvement est nulle à chaque instant lorsque son mouvement est :",
+      "opts": [
+        "uniforme",
+        "rectiligne",
+        "circulaire uniforme",
+        "ralenti"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "at-an-inverses",
+          "texte": "Confondre les deux composantes : c'est dv/dt qui est nulle pour un mouvement uniforme"
+        },
+        null,
+        {
+          "code": "uniforme-acceleration-nulle",
+          "texte": "Croire qu'un mouvement circulaire uniforme n'a pas d'accélération"
+        },
+        {
+          "code": "ralenti-vs-direction",
+          "texte": "Associer an au ralentissement : an traduit le changement de direction de la vitesse"
+        }
+      ],
+      "exp": "an = v²/R traduit le changement de direction de la vitesse : elle est nulle si la trajectoire est rectiligne (rayon de courbure infini). Attention : un mouvement circulaire uniforme a une accélération normale non nulle."
+    },
+    {
+      "q": "La valve d'une roue de vélo décrit un cercle dans le référentiel du cadre du vélo. Dans le référentiel terrestre, quand le vélo avance, sa trajectoire est :",
+      "opts": [
+        "le même cercle, car la trajectoire ne dépend pas du référentiel",
+        "une droite parallèle à la route, comme celle du cadre",
+        "une courbe qui n'est pas un cercle (une cycloïde)",
+        "un point fixe, puisque la valve reste sur la roue"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "trajectoire-independante-referentiel",
+          "texte": "Croire que la trajectoire ne dépend pas du référentiel"
+        },
+        {
+          "code": "trajectoire-objet-vs-point",
+          "texte": "Confondre la trajectoire du vélo (son cadre) et celle d'un point de la roue"
+        },
+        null,
+        {
+          "code": "referentiel-inverse",
+          "texte": "Confondre les référentiels : la valve n'est immobile dans aucun des deux"
+        }
+      ],
+      "exp": "Dans le référentiel terrestre, la valve tourne et avance à la fois : sa trajectoire est une cycloïde. Attention : on précise toujours le référentiel d'étude avant de décrire un mouvement."
+    },
+    {
+      "q": "Une nacelle de manège tourne sur un cercle de rayon R = 5,0 m à la vitesse constante v = 3,0 m·s⁻¹. La période de révolution T vaut environ :",
+      "opts": [
+        "10 s",
+        "1,7 s",
+        "0,095 s",
+        "94 s"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "oubli-2pi-perimetre",
+          "texte": "Oublier le périmètre : R / v = 1,7 s au lieu de 2πR / v"
+        },
+        {
+          "code": "periode-vs-frequence",
+          "texte": "Calculer la fréquence v / (2πR) au lieu de la période"
+        },
+        {
+          "code": "periode-produit",
+          "texte": "Multiplier au lieu de diviser : 2πR × v = 94"
+        }
+      ],
+      "exp": "En une période, la nacelle parcourt le périmètre 2πR : T = 2πR / v = 2π × 5,0 / 3,0 ≈ 10 s. Attention : la distance parcourue en un tour est 2πR, pas R."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "Bicycle Moto cross — théorème de l'énergie cinétique",
+      "session": "Amérique du Nord · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-amerique-du-nord-jour-1"
+    },
+    {
+      "year": "2022",
+      "title": "L'épaisseur du matelas du saut à la perche — mouvement, énergie",
+      "session": "Amérique du Nord · Jour 1",
+      "link": "https://www.labolycee.org/amerique-du-nord-2022-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Vrai ou faux à la fête foraine",
+      "contexte": [
+        "Inès et Yanis passent l'après-midi à la fête foraine. Ils montent dans la grande roue, regardent passer les voitures sur la route voisine et discutent de physique (si, si)."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. « Assis dans la nacelle, je suis immobile. »<br>b. « La grande roue tourne à vitesse constante, donc le vecteur vitesse de notre nacelle est constant. »<br>c. « Comme la vitesse de la nacelle ne change pas, son vecteur accélération est nul. »<br>d. « À chaque instant, le vecteur vitesse de la nacelle est tangent au cercle qu'elle décrit. »<br>e. « La voiture qui freine en ligne droite a un vecteur accélération de sens opposé à son vecteur vitesse. »",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque situation (1 à 4) à la description de son vecteur accélération (A à D).<br>1. Une bille lâchée sans vitesse tombe verticalement. — 2. Une voiture roule sur l'autoroute en ligne droite, régulateur de vitesse à 110 km/h. — 3. La nacelle de la grande roue, qui tourne à vitesse constante. — 4. Une voiture accélère en sortie de rond-point (trajectoire courbe).<br>A. Vecteur nul. — B. Dirigé vers le centre de la trajectoire, de valeur v²/R. — C. Il a une composante tangentielle ET une composante normale. — D. Même direction et même sens que le vecteur vitesse.",
+          "aides": []
+        },
+        {
+          "texte": "La grande roue a un rayon R = 25 m et fait un tour en 10 min, à vitesse constante. Calcule la vitesse v de la nacelle, puis la valeur de son accélération.",
+          "aides": [
+            "Pendant une période T, la nacelle fait un tour complet : quelle distance parcourt-elle ?",
+            "v = 2πR / T avec T en secondes ; pour un mouvement circulaire uniforme, a = v²/R."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX (ou plutôt : incomplet). Inès est immobile dans le référentiel de la nacelle, mais en mouvement circulaire dans le référentiel terrestre. Un mouvement se décrit toujours par rapport à un référentiel.",
+        "b. FAUX : la valeur v est constante, mais la direction du vecteur vitesse change à chaque instant (il reste tangent au cercle). Le vecteur vitesse n'est donc pas constant.",
+        "c. FAUX : le vecteur vitesse change de direction, donc le vecteur accélération n'est pas nul. Il est dirigé vers le centre de la roue, de valeur a = v²/R (a<sub>t</sub> = 0, a<sub>n</sub> = v²/R).",
+        "d. VRAI : le vecteur vitesse est toujours tangent à la trajectoire et orienté dans le sens du mouvement.",
+        "e. VRAI : en ligne droite, a<sub>n</sub> = 0 ; la valeur de la vitesse diminue, donc a<sub>t</sub> = dv/dt &lt; 0 : le vecteur accélération est de sens opposé au vecteur vitesse.",
+        "<strong>2.</strong> 1 → D (rectiligne accéléré) ; 2 → A (rectiligne uniforme) ; 3 → B (circulaire uniforme) ; 4 → C (courbe et accéléré).",
+        "<strong>3.</strong> Distance parcourue en un tour : 2πR. v = 2πR / T = 2π × 25 / 600 = 0,26 m·s⁻¹. Mouvement circulaire uniforme : a = a<sub>n</sub> = v²/R = 0,262² / 25 = 2,7 × 10⁻³ m·s⁻².",
+        "<em>⚠ Erreur fréquente : laisser T en minutes. T = 10 min = 600 s.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La bille sur le rail",
+      "contexte": [
+        "En TP, Bilal lâche une bille sans vitesse en haut d'un rail rectiligne incliné et filme sa descente. Avec un logiciel de pointage, il obtient la chronophotographie ci-dessous : les positions M0, M1, … M6 de la bille, séparées par une durée τ = 0,10 s, repérées sur une règle graduée en centimètres."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"60\" text-anchor=\"middle\" font-weight=\"bold\">Chronophotographie de la bille (vue de dessus du rail)</text><text x=\"380\" y=\"88\" text-anchor=\"middle\">Durée entre deux positions successives : τ = 0,10 s</text><rect x=\"40\" y=\"262\" width=\"680\" height=\"56\" fill=\"#f4ede1\" stroke=\"#3a3a3a\" stroke-width=\"1.2\"/><line x1=\"50.0\" y1=\"262\" x2=\"50.0\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"50.0\" y=\"308\" text-anchor=\"middle\">0</text><line x1=\"66.5\" y1=\"262\" x2=\"66.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"83.0\" y1=\"262\" x2=\"83.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"99.5\" y1=\"262\" x2=\"99.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"116.0\" y1=\"262\" x2=\"116.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"132.5\" y1=\"262\" x2=\"132.5\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"132.5\" y=\"308\" text-anchor=\"middle\">5</text><line x1=\"149.0\" y1=\"262\" x2=\"149.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"165.5\" y1=\"262\" x2=\"165.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"182.0\" y1=\"262\" x2=\"182.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"198.5\" y1=\"262\" x2=\"198.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"215.0\" y1=\"262\" x2=\"215.0\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"215.0\" y=\"308\" text-anchor=\"middle\">10</text><line x1=\"231.5\" y1=\"262\" x2=\"231.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"248.0\" y1=\"262\" x2=\"248.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"264.5\" y1=\"262\" x2=\"264.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"281.0\" y1=\"262\" x2=\"281.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"297.5\" y1=\"262\" x2=\"297.5\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"297.5\" y=\"308\" text-anchor=\"middle\">15</text><line x1=\"314.0\" y1=\"262\" x2=\"314.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"330.5\" y1=\"262\" x2=\"330.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"347.0\" y1=\"262\" x2=\"347.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"363.5\" y1=\"262\" x2=\"363.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"380.0\" y1=\"262\" x2=\"380.0\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"380.0\" y=\"308\" text-anchor=\"middle\">20</text><line x1=\"396.5\" y1=\"262\" x2=\"396.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"413.0\" y1=\"262\" x2=\"413.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"429.5\" y1=\"262\" x2=\"429.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"446.0\" y1=\"262\" x2=\"446.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"462.5\" y1=\"262\" x2=\"462.5\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"462.5\" y=\"308\" text-anchor=\"middle\">25</text><line x1=\"479.0\" y1=\"262\" x2=\"479.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"495.5\" y1=\"262\" x2=\"495.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"512.0\" y1=\"262\" x2=\"512.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"528.5\" y1=\"262\" x2=\"528.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"545.0\" y1=\"262\" x2=\"545.0\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"545.0\" y=\"308\" text-anchor=\"middle\">30</text><line x1=\"561.5\" y1=\"262\" x2=\"561.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"578.0\" y1=\"262\" x2=\"578.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"594.5\" y1=\"262\" x2=\"594.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"611.0\" y1=\"262\" x2=\"611.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"627.5\" y1=\"262\" x2=\"627.5\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"627.5\" y=\"308\" text-anchor=\"middle\">35</text><line x1=\"644.0\" y1=\"262\" x2=\"644.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"660.5\" y1=\"262\" x2=\"660.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"677.0\" y1=\"262\" x2=\"677.0\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"693.5\" y1=\"262\" x2=\"693.5\" y2=\"274\" stroke=\"#3a3a3a\" stroke-width=\"0.8\"/><line x1=\"710.0\" y1=\"262\" x2=\"710.0\" y2=\"284\" stroke=\"#3a3a3a\" stroke-width=\"1.4\"/><text x=\"710.0\" y=\"308\" text-anchor=\"middle\">40</text><text x=\"715\" y=\"345\" text-anchor=\"end\">règle graduée en cm</text><line x1=\"40\" y1=\"250\" x2=\"720\" y2=\"250\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><line x1=\"50.0\" y1=\"250\" x2=\"50.0\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"50.0\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"50.0\" y=\"228\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">0</tspan></text><line x1=\"66.5\" y1=\"250\" x2=\"66.5\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"66.5\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"66.5\" y=\"200\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">1</tspan></text><line x1=\"116.0\" y1=\"250\" x2=\"116.0\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"116.0\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"116.0\" y=\"228\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">2</tspan></text><line x1=\"198.5\" y1=\"250\" x2=\"198.5\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"198.5\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"198.5\" y=\"200\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">3</tspan></text><line x1=\"314.0\" y1=\"250\" x2=\"314.0\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"314.0\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"314.0\" y=\"228\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">4</tspan></text><line x1=\"462.5\" y1=\"250\" x2=\"462.5\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"462.5\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"462.5\" y=\"200\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">5</tspan></text><line x1=\"644.0\" y1=\"250\" x2=\"644.0\" y2=\"262\" stroke=\"#1F4E5A\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><circle cx=\"644.0\" cy=\"250\" r=\"6\" fill=\"#1F4E5A\"/><text x=\"644.0\" y=\"228\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">M<tspan dy=\"5\" font-size=\"13\">6</tspan></text><line x1=\"300\" y1=\"390\" x2=\"460\" y2=\"390\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><polygon points=\"460,383 474,390 460,397\" fill=\"#B5523B\"/><text x=\"380\" y=\"420\" text-anchor=\"middle\" fill=\"#B5523B\">sens du mouvement</text></svg>",
+      "questions": [
+        {
+          "texte": "Quelle est la nature de la trajectoire de la bille dans le référentiel du rail ? Comment voit-on, sans calcul, que la valeur de sa vitesse augmente ?",
+          "aides": []
+        },
+        {
+          "texte": "Relève les abscisses x de M1, M2, M3, M4 et M5 sur la règle.",
+          "aides": []
+        },
+        {
+          "texte": "La vitesse en un point est approchée par la distance entre le point précédent et le point suivant, divisée par 2τ : par exemple v<sub>3</sub> = (x<sub>4</sub> − x<sub>2</sub>) / (2τ). Calcule v<sub>2</sub>, v<sub>3</sub> et v<sub>4</sub> en m·s⁻¹.",
+          "aides": [
+            "Pour v<sub>2</sub>, le point précédent est M1 et le point suivant est M3 : quelle distance les sépare ?",
+            "Convertis cette distance en mètres, puis divise-la par 2τ = 0,20 s (entre M1 et M3, il s'écoule deux intervalles τ)."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur approchée de l'accélération au point M3 : a<sub>3</sub> = (v<sub>4</sub> − v<sub>2</sub>) / (2τ).",
+          "aides": []
+        },
+        {
+          "texte": "Conclus : comment varie la vitesse au cours du temps ? Nomme le mouvement et décris le vecteur accélération (direction, sens).",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les positions sont alignées : la trajectoire est rectiligne. Les distances parcourues pendant des durées égales τ augmentent : la bille va de plus en plus vite.",
+        "<strong>2.</strong> x<sub>1</sub> = 1 cm ; x<sub>2</sub> = 4 cm ; x<sub>3</sub> = 9 cm ; x<sub>4</sub> = 16 cm ; x<sub>5</sub> = 25 cm (et x<sub>0</sub> = 0, x<sub>6</sub> = 36 cm).",
+        "<strong>3.</strong> v<sub>2</sub> = (x<sub>3</sub> − x<sub>1</sub>) / (2τ) = (9 − 1) × 10⁻² / 0,20 = 0,40 m·s⁻¹ ; v<sub>3</sub> = (16 − 4) × 10⁻² / 0,20 = 0,60 m·s⁻¹ ; v<sub>4</sub> = (25 − 9) × 10⁻² / 0,20 = 0,80 m·s⁻¹.",
+        "<strong>4.</strong> a<sub>3</sub> = (0,80 − 0,40) / 0,20 = 2,0 m·s⁻².",
+        "<strong>5.</strong> La vitesse augmente de 0,20 m·s⁻¹ toutes les 0,10 s : elle augmente régulièrement, l'accélération est constante (on retrouve aussi a<sub>4</sub> = (1,00 − 0,60) / 0,20 = 2,0 m·s⁻²). Le mouvement est rectiligne uniformément accéléré. Le vecteur accélération a la direction du rail, le sens du mouvement, et une valeur constante de 2,0 m·s⁻².",
+        "<em>⚠ Erreur fréquente : diviser par τ au lieu de 2τ (entre M1 et M3, il s'écoule deux intervalles), ou oublier de convertir les cm en m.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le décollage du drone",
+      "contexte": [
+        "Un drone de prise de vue décolle d'un stade. Dans le référentiel terrestre, muni d'un repère (O ; vecteur i horizontal, vecteur j vertical vers le haut), les coordonnées de son vecteur position pendant les premières secondes sont :",
+        "x(t) = 1,5 t   et   y(t) = 0,40 t²   (x et y en m, t en s)."
+      ],
+      "questions": [
+        {
+          "texte": "Établis les coordonnées v<sub>x</sub>(t) et v<sub>y</sub>(t) du vecteur vitesse.",
+          "aides": [
+            "Dérive chaque coordonnée par rapport au temps : la dérivée de k·t est k, celle de k·t² est 2k·t."
+          ]
+        },
+        {
+          "texte": "Établis les coordonnées a<sub>x</sub>(t) et a<sub>y</sub>(t) du vecteur accélération.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la valeur de la vitesse du drone à la date t = 2,0 s.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie.<br>a. Le vecteur accélération est constant.<br>b. Le mouvement est uniforme.<br>c. Le mouvement est rectiligne.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> v<sub>x</sub> = dx/dt = 1,5 m·s⁻¹ ; v<sub>y</sub> = dy/dt = 2 × 0,40 t = 0,80 t (en m·s⁻¹).",
+        "<strong>2.</strong> a<sub>x</sub> = dv<sub>x</sub>/dt = 0 ; a<sub>y</sub> = dv<sub>y</sub>/dt = 0,80 m·s⁻².",
+        "<strong>3.</strong> À t = 2,0 s : v<sub>x</sub> = 1,5 m·s⁻¹ et v<sub>y</sub> = 0,80 × 2,0 = 1,6 m·s⁻¹. v = √(v<sub>x</sub>² + v<sub>y</sub>²) = √(1,5² + 1,6²) = 2,2 m·s⁻¹.",
+        "<strong>4.</strong> a. VRAI : ses coordonnées (0 ; 0,80) ne dépendent pas du temps. Il est vertical, vers le haut, de valeur 0,80 m·s⁻².",
+        "b. FAUX : v<sub>y</sub> augmente avec t, donc la valeur v de la vitesse augmente.",
+        "c. FAUX : t = x / 1,5 donc y = 0,40 × (x / 1,5)² ≈ 0,18 x² : la trajectoire est une portion de parabole. On peut aussi dire que la direction du vecteur vitesse change (v<sub>y</sub>/v<sub>x</sub> varie).",
+        "<em>⚠ Erreur fréquente : dériver 0,40 t² en 0,40 t ou en 0,80 t² ; la dérivée de t² est 2t.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "L'essorage du linge",
+      "contexte": [
+        "Pendant l'essorage, le tambour d'un lave-linge, de rayon R = 25 cm, tourne à 1 200 tours par minute. On étudie un point M de la paroi du tambour dans le référentiel du lave-linge."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\">Tambour vu de face (M est un point de la paroi du tambour)</text><circle cx=\"380\" cy=\"255\" r=\"160\" fill=\"#f4ede1\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><circle cx=\"495.9\" cy=\"223.9\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"464.9\" cy=\"170.1\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"411.1\" cy=\"139.1\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"348.9\" cy=\"139.1\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"295.1\" cy=\"170.1\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"264.1\" cy=\"223.9\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"264.1\" cy=\"286.1\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"295.1\" cy=\"339.9\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"348.9\" cy=\"370.9\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"411.1\" cy=\"370.9\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"464.9\" cy=\"339.9\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"495.9\" cy=\"286.1\" r=\"5\" fill=\"none\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><circle cx=\"380\" cy=\"255\" r=\"5\" fill=\"#3a3a3a\"/><text x=\"390\" y=\"279\" font-weight=\"bold\">C</text><circle cx=\"502.6\" cy=\"152.2\" r=\"7\" fill=\"#B5523B\"/><text x=\"516.6\" y=\"144.2\" font-weight=\"bold\" fill=\"#B5523B\">M</text><line x1=\"380\" y1=\"255\" x2=\"220\" y2=\"255\" stroke=\"#3a3a3a\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\"/><text x=\"300.0\" y=\"247\" text-anchor=\"middle\">R = 25 cm</text><polyline points=\"346.1,63.0 329.5,66.6 313.3,71.8 297.6,78.3 282.5,86.1 268.2,95.3 254.7,105.6 242.1,117.1 230.6,129.7 220.3,143.2 211.1,157.5 203.3,172.6 196.8,188.3 191.6,204.5 188.0,221.1\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"3\"/><polygon points=\"176.5,225.4 194.5,225.4 185.5,245.4\" fill=\"#C8962E\"/><text x=\"259.1\" y=\"75.6\" text-anchor=\"end\" fill=\"#C8962E\" font-weight=\"bold\">sens de rotation</text></svg>",
+      "questions": [
+        {
+          "texte": "Pendant l'essorage à vitesse de rotation constante, quel est le mouvement du point M ? Reproduis la figure et représente en M les vecteurs u<sub>T</sub> et u<sub>N</sub> du repère de Frenet, puis l'allure du vecteur accélération.",
+          "aides": [
+            "Trajectoire circulaire + valeur de vitesse constante : quelle composante de l'accélération est nulle ?",
+            "Le vecteur u<sub>T</sub> est tangent au cercle dans le sens de rotation ; le vecteur u<sub>N</sub> pointe vers le centre C."
+          ]
+        },
+        {
+          "texte": "Calcule la vitesse angulaire ω (en rad·s⁻¹), la période de rotation T et la vitesse v du point M.",
+          "aides": [
+            "1 200 tours par minute : combien de radians par seconde ? (1 tour = 2π rad, 1 min = 60 s)",
+            "Puis T = 2π/ω et v = R × ω, avec R en mètres."
+          ]
+        },
+        {
+          "texte": "Calcule la valeur de l'accélération du point M. Combien de fois est-elle plus grande que g ? Explique pourquoi l'eau est chassée à travers les trous du tambour.",
+          "aides": []
+        },
+        {
+          "texte": "Au démarrage, le tambour passe de l'arrêt à 1 200 tr/min en 20 s ; la valeur de la vitesse de M augmente alors régulièrement.<br>a. Calcule l'accélération tangentielle a<sub>t</sub> de M pendant cette phase.<br>b. Calcule a<sub>n</sub> à t = 10 s, puis compare a<sub>t</sub> et a<sub>n</sub>. Le vecteur accélération est-il alors dirigé vers C ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Mouvement circulaire uniforme (trajectoire : cercle de centre C et de rayon R ; valeur de la vitesse constante). En M : vecteur u<sub>T</sub> tangent au cercle, dans le sens de rotation ; vecteur u<sub>N</sub> dirigé de M vers C. a<sub>t</sub> = dv/dt = 0, donc vecteur a = (v²/R)·vecteur u<sub>N</sub> : le vecteur accélération est porté par MC, dirigé vers le centre C.",
+        "<strong>2.</strong> ω = 1 200 × 2π / 60 = 126 rad·s⁻¹ (125,7). T = 2π/ω = 60 / 1 200 = 5,00 × 10⁻² s. v = R × ω = 0,25 × 125,7 = 31 m·s⁻¹ (31,4).",
+        "<strong>3.</strong> a = a<sub>n</sub> = v²/R = 31,4² / 0,25 = 3,9 × 10³ m·s⁻², soit a/g = 3 948 / 9,81 ≈ 4,0 × 10² : environ 400 fois g. Pour suivre une trajectoire circulaire, l'eau a besoin d'une accélération énorme vers le centre ; le linge est retenu par la paroi, mais l'eau qui arrive au niveau d'un trou n'est plus retenue : elle s'échappe tangentiellement (dans la direction de son vecteur vitesse).",
+        "<strong>4.</strong> a. a<sub>t</sub> = Δv/Δt = (31,4 − 0) / 20 = 1,6 m·s⁻².",
+        "b. À t = 10 s, v = 31,4 / 2 = 15,7 m·s⁻¹, donc a<sub>n</sub> = 15,7² / 0,25 = 9,9 × 10² m·s⁻². a<sub>n</sub> est environ 600 fois plus grande que a<sub>t</sub> : le vecteur accélération n'est plus exactement dirigé vers C (il penche un peu vers l'avant), mais l'écart est imperceptible.",
+        "<em>⚠ Erreur fréquente : utiliser R = 25 (cm) dans v = Rω ou a = v²/R, ou oublier de convertir les tours par minute en rad·s⁻¹ (1 tour = 2π rad, 1 min = 60 s).</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Le tir en cloche",
+      "contexte": [
+        "Sofiane filme un tir en cloche au basket et pointe les positions du ballon toutes les τ = 0,10 s. Les coordonnées obtenues (en m) sont tracées ci-dessous et recopiées dans le script Python suivant, qui doit calculer puis représenter les vecteurs vitesse et accélération."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"80.0\" y=\"432\" text-anchor=\"middle\">0</text><line x1=\"116.4\" y1=\"30\" x2=\"116.4\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"152.8\" y1=\"30\" x2=\"152.8\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"152.8\" y=\"432\" text-anchor=\"middle\">0,5</text><line x1=\"189.2\" y1=\"30\" x2=\"189.2\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"225.6\" y1=\"30\" x2=\"225.6\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"225.6\" y=\"432\" text-anchor=\"middle\">1</text><line x1=\"261.9\" y1=\"30\" x2=\"261.9\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"298.3\" y1=\"30\" x2=\"298.3\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"298.3\" y=\"432\" text-anchor=\"middle\">1,5</text><line x1=\"334.7\" y1=\"30\" x2=\"334.7\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"371.1\" y1=\"30\" x2=\"371.1\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"371.1\" y=\"432\" text-anchor=\"middle\">2</text><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"443.9\" y1=\"30\" x2=\"443.9\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"443.9\" y=\"432\" text-anchor=\"middle\">2,5</text><line x1=\"480.3\" y1=\"30\" x2=\"480.3\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"516.7\" y1=\"30\" x2=\"516.7\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"516.7\" y=\"432\" text-anchor=\"middle\">3</text><line x1=\"553.1\" y1=\"30\" x2=\"553.1\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"589.4\" y1=\"30\" x2=\"589.4\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"589.4\" y=\"432\" text-anchor=\"middle\">3,5</text><line x1=\"625.8\" y1=\"30\" x2=\"625.8\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"662.2\" y1=\"30\" x2=\"662.2\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"662.2\" y=\"432\" text-anchor=\"middle\">4</text><line x1=\"698.6\" y1=\"30\" x2=\"698.6\" y2=\"410\" stroke=\"#d9d2c5\"/><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"735.0\" y=\"432\" text-anchor=\"middle\">4,5</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">1,5</text><line x1=\"80\" y1=\"375.5\" x2=\"735\" y2=\"375.5\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"340.9\" x2=\"735\" y2=\"340.9\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"345.9\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"306.4\" x2=\"735\" y2=\"306.4\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"271.8\" x2=\"735\" y2=\"271.8\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"276.8\" text-anchor=\"end\">2,5</text><line x1=\"80\" y1=\"237.3\" x2=\"735\" y2=\"237.3\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"202.7\" x2=\"735\" y2=\"202.7\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"207.7\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"168.2\" x2=\"735\" y2=\"168.2\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"133.6\" x2=\"735\" y2=\"133.6\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"138.6\" text-anchor=\"end\">3,5</text><line x1=\"80\" y1=\"99.1\" x2=\"735\" y2=\"99.1\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"64.5\" x2=\"735\" y2=\"64.5\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"69.5\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\"/><rect x=\"80\" y=\"30\" width=\"655\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><circle cx=\"80.0\" cy=\"340.9\" r=\"6\" fill=\"#B5523B\"/><text x=\"80.0\" y=\"326.9\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">0</tspan></text><circle cx=\"152.8\" cy=\"264.9\" r=\"6\" fill=\"#B5523B\"/><text x=\"152.8\" y=\"250.9\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">1</tspan></text><circle cx=\"225.6\" cy=\"202.7\" r=\"6\" fill=\"#B5523B\"/><text x=\"225.6\" y=\"188.7\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">2</tspan></text><circle cx=\"298.3\" cy=\"153.0\" r=\"6\" fill=\"#B5523B\"/><text x=\"298.3\" y=\"139.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">3</tspan></text><circle cx=\"371.1\" cy=\"117.1\" r=\"6\" fill=\"#B5523B\"/><text x=\"371.1\" y=\"103.1\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">4</tspan></text><circle cx=\"443.9\" cy=\"96.3\" r=\"6\" fill=\"#B5523B\"/><text x=\"443.9\" y=\"82.3\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">5</tspan></text><circle cx=\"516.7\" cy=\"88.0\" r=\"6\" fill=\"#B5523B\"/><text x=\"516.7\" y=\"74.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">6</tspan></text><circle cx=\"589.4\" cy=\"92.2\" r=\"6\" fill=\"#B5523B\"/><text x=\"589.4\" y=\"78.2\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">7</tspan></text><circle cx=\"662.2\" cy=\"111.5\" r=\"6\" fill=\"#B5523B\"/><text x=\"662.2\" y=\"97.5\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">M<tspan dy=\"5\" font-size=\"13\">8</tspan></text><text x=\"407.5\" y=\"460\" text-anchor=\"middle\" font-weight=\"bold\">x (m)</text><text transform=\"translate(24,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">y (m)</text></svg>",
+      "code": [
+        "import matplotlib.pyplot as plt",
+        "tau = 0.10                                    # durée entre deux positions (s)",
+        "x = [0.00, 0.50, 1.00, 1.50, 2.00, 2.50, 3.00, 3.50, 4.00]   # (m)",
+        "y = [2.00, 2.55, 3.00, 3.36, 3.62, 3.77, 3.83, 3.80, 3.66]   # (m)",
+        "n = len(x)",
+        "vx, vy = [], []                               # vitesses aux points M1 à M7",
+        "for i in range(1, n - 1):",
+        "    vx.append(...)                            # ligne A, à compléter",
+        "    vy.append(...)                            # ligne B, à compléter",
+        "ax, ay = [], []                               # accélérations aux points M2 à M6",
+        "for j in range(1, len(vx) - 1):",
+        "    ax.append((vx[j+1] - vx[j-1]) / (2 * tau))",
+        "    ay.append(...)                            # ligne C, à compléter",
+        "    print(round(ax[-1], 1), round(ay[-1], 1))",
+        "plt.plot(x, y, \"o\")",
+        "for i in range(1, n - 1):",
+        "    plt.quiver(x[i], y[i], vx[i-1], vy[i-1], angles=\"xy\", scale_units=\"xy\", scale=5)",
+        "plt.show()"
+      ],
+      "questions": [
+        {
+          "texte": "Calcule les coordonnées v<sub>x</sub> et v<sub>y</sub> du vecteur vitesse au point M3, puis sa valeur v<sub>3</sub>.",
+          "aides": [
+            "Méthode de l'exercice 2 : v<sub>3x</sub> = (x<sub>4</sub> − x<sub>2</sub>) / (2τ), et de même pour v<sub>3y</sub>.",
+            "v<sub>3</sub> = √(v<sub>3x</sub>² + v<sub>3y</sub>²)."
+          ]
+        },
+        {
+          "texte": "Complète les lignes A, B et C du script.",
+          "aides": [
+            "La vitesse au point i utilise les points i − 1 et i + 1 : dans les listes, x[i-1] et x[i+1].",
+            "La ligne C est construite comme la ligne qui la précède, en remplaçant vx par vy."
+          ]
+        },
+        {
+          "texte": "Que représente chaque flèche tracée par l'instruction plt.quiver(...) ? Sans le script, décris le vecteur vitesse au point M6 (sommet de la trajectoire).",
+          "aides": []
+        },
+        {
+          "texte": "Le script affiche pour a<sub>x</sub> : 0,0 à chaque ligne ; et pour a<sub>y</sub> : −9,5 ; −10,0 ; −10,3 ; −9,5 ; −9,5 (en m·s⁻²). Caractérise le vecteur accélération du ballon (direction, sens, valeur) et compare-le à une grandeur connue.",
+          "aides": [
+            "a<sub>x</sub> = 0 : le vecteur accélération n'a pas de composante horizontale. Quel est le signe de a<sub>y</sub> ?",
+            "Compare la valeur moyenne de a<sub>y</sub> à l'intensité de la pesanteur g."
+          ]
+        },
+        {
+          "texte": "Pourquoi les valeurs de a<sub>y</sub> ne sont-elles pas toutes identiques ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> v<sub>3x</sub> = (x<sub>4</sub> − x<sub>2</sub>) / (2τ) = (2,00 − 1,00) / 0,20 = 5,0 m·s⁻¹ ; v<sub>3y</sub> = (y<sub>4</sub> − y<sub>2</sub>) / (2τ) = (3,62 − 3,00) / 0,20 = 3,1 m·s⁻¹. v<sub>3</sub> = √(5,0² + 3,1²) = 5,9 m·s⁻¹.",
+        "<strong>2.</strong> Ligne A : vx.append((x[i+1] - x[i-1]) / (2 * tau)) ; ligne B : vy.append((y[i+1] - y[i-1]) / (2 * tau)) ; ligne C : ay.append((vy[j+1] - vy[j-1]) / (2 * tau)).",
+        "<strong>3.</strong> Chaque flèche représente le vecteur vitesse du ballon au point M<sub>i</sub> (origine en M<sub>i</sub>, coordonnées (v<sub>x</sub> ; v<sub>y</sub>), à une échelle fixée par scale). Au sommet M6, v<sub>y</sub> ≈ (3,80 − 3,77) / 0,20 = 0,15 m·s⁻¹ ≈ 0 : le vecteur vitesse est quasiment horizontal, tangent à la trajectoire, orienté vers la droite, de valeur ≈ v<sub>x</sub> = 5,0 m·s⁻¹.",
+        "<strong>4.</strong> a<sub>x</sub> = 0 et a<sub>y</sub> ≈ −9,8 m·s⁻² (moyenne des 5 valeurs : −9,75) : le vecteur accélération est constant, vertical, orienté vers le bas, de valeur ≈ 9,8 m·s⁻², c'est-à-dire égale à g = 9,81 m·s⁻² aux erreurs de mesure près.",
+        "<strong>5.</strong> Les positions sont pointées au centimètre près (arrondies) et l'accélération est obtenue par deux calculs de différences successifs, qui amplifient ces petites erreurs de pointage.",
+        "<em>⚠ Erreur fréquente : décaler les indices. vx[0] correspond au point M1 (la boucle commence à i = 1), d'où vx[i-1] dans plt.quiver.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Un métro automatique confortable",
+      "contexte": [
+        "Doc. 1 — Une rame de métro automatique (sans conducteur) relie deux stations. Sur ce trajet fictif, la voie est rectiligne pendant les phases 1 et 3 ; pendant la phase 2, la rame parcourt notamment un virage circulaire de rayon R = 200 m. Le graphique donne la valeur v de la vitesse de la rame, dans le référentiel terrestre, en fonction du temps."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"80.0\" y=\"432\" text-anchor=\"middle\">0</text><line x1=\"134.2\" y1=\"30\" x2=\"134.2\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"134.2\" y=\"432\" text-anchor=\"middle\">5</text><line x1=\"188.3\" y1=\"30\" x2=\"188.3\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"188.3\" y=\"432\" text-anchor=\"middle\">10</text><line x1=\"242.5\" y1=\"30\" x2=\"242.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"242.5\" y=\"432\" text-anchor=\"middle\">15</text><line x1=\"296.7\" y1=\"30\" x2=\"296.7\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"296.7\" y=\"432\" text-anchor=\"middle\">20</text><line x1=\"350.8\" y1=\"30\" x2=\"350.8\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"350.8\" y=\"432\" text-anchor=\"middle\">25</text><line x1=\"405.0\" y1=\"30\" x2=\"405.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"405.0\" y=\"432\" text-anchor=\"middle\">30</text><line x1=\"459.2\" y1=\"30\" x2=\"459.2\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"459.2\" y=\"432\" text-anchor=\"middle\">35</text><line x1=\"513.3\" y1=\"30\" x2=\"513.3\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"513.3\" y=\"432\" text-anchor=\"middle\">40</text><line x1=\"567.5\" y1=\"30\" x2=\"567.5\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"567.5\" y=\"432\" text-anchor=\"middle\">45</text><line x1=\"621.7\" y1=\"30\" x2=\"621.7\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"621.7\" y=\"432\" text-anchor=\"middle\">50</text><line x1=\"675.8\" y1=\"30\" x2=\"675.8\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"675.8\" y=\"432\" text-anchor=\"middle\">55</text><line x1=\"730.0\" y1=\"30\" x2=\"730.0\" y2=\"410\" stroke=\"#d9d2c5\"/><text x=\"730.0\" y=\"432\" text-anchor=\"middle\">60</text><line x1=\"80\" y1=\"410.0\" x2=\"730\" y2=\"410.0\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"388.9\" x2=\"730\" y2=\"388.9\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"367.8\" x2=\"730\" y2=\"367.8\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"372.8\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"346.7\" x2=\"730\" y2=\"346.7\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"325.6\" x2=\"730\" y2=\"325.6\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"330.6\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"304.4\" x2=\"730\" y2=\"304.4\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"283.3\" x2=\"730\" y2=\"283.3\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"288.3\" text-anchor=\"end\">6</text><line x1=\"80\" y1=\"262.2\" x2=\"730\" y2=\"262.2\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"241.1\" x2=\"730\" y2=\"241.1\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"246.1\" text-anchor=\"end\">8</text><line x1=\"80\" y1=\"220.0\" x2=\"730\" y2=\"220.0\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"198.9\" x2=\"730\" y2=\"198.9\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"203.9\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"177.8\" x2=\"730\" y2=\"177.8\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"156.7\" x2=\"730\" y2=\"156.7\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"161.7\" text-anchor=\"end\">12</text><line x1=\"80\" y1=\"135.6\" x2=\"730\" y2=\"135.6\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"114.4\" x2=\"730\" y2=\"114.4\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"119.4\" text-anchor=\"end\">14</text><line x1=\"80\" y1=\"93.3\" x2=\"730\" y2=\"93.3\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"72.2\" x2=\"730\" y2=\"72.2\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"77.2\" text-anchor=\"end\">16</text><line x1=\"80\" y1=\"51.1\" x2=\"730\" y2=\"51.1\" stroke=\"#d9d2c5\"/><line x1=\"80\" y1=\"30.0\" x2=\"730\" y2=\"30.0\" stroke=\"#d9d2c5\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">18</text><rect x=\"80\" y=\"30\" width=\"650\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,410.0 242.5,93.3 567.5,93.3 730.0,410.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"161.2\" y=\"57.4\" text-anchor=\"middle\" fill=\"#B5523B\" font-weight=\"bold\">phase 1</text><text x=\"405.0\" y=\"57.4\" text-anchor=\"middle\" fill=\"#B5523B\" font-weight=\"bold\">phase 2</text><text x=\"648.8\" y=\"57.4\" text-anchor=\"middle\" fill=\"#B5523B\" font-weight=\"bold\">phase 3</text><text x=\"405.0\" y=\"460\" text-anchor=\"middle\" font-weight=\"bold\">t (s)</text><text transform=\"translate(24,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">v (m·s⁻¹)</text></svg>",
+      "contexte2": [
+        "Doc. 2 — Critère de confort (valeur fixée pour cet exercice). Pour que les voyageurs debout ne perdent pas l'équilibre, le concepteur impose que la valeur de l'accélération de la rame reste inférieure ou égale à a<sub>max</sub> = 1,3 m·s⁻², quelle que soit la phase du mouvement.",
+        "Doc. 3 — Composantes de l'accélération. Si la trajectoire est courbe et que la valeur de la vitesse varie, le vecteur accélération a deux composantes perpendiculaires : a<sub>t</sub> = dv/dt (tangentielle) et a<sub>n</sub> = v²/R (normale). Sa valeur est alors a = √(a<sub>t</sub>² + a<sub>n</sub>²)."
+      ],
+      "questions": [
+        {
+          "texte": "Décris le mouvement de la rame dans chacune des trois phases (trajectoire et évolution de la vitesse), en t'aidant du doc. 1.",
+          "aides": []
+        },
+        {
+          "texte": "Détermine la coordonnée tangentielle a<sub>t</sub> de l'accélération pendant la phase 1, puis pendant la phase 3.",
+          "aides": [
+            "Sur un graphique v(t), l'accélération tangentielle a<sub>t</sub> = dv/dt est le coefficient directeur de la droite.",
+            "Coefficient directeur = Δv / Δt, à lire entre deux points bien choisis de chaque segment."
+          ]
+        },
+        {
+          "texte": "Pendant la phase 1, on admet que la position de la rame sur la voie est x(t) = ½ a<sub>1</sub> t², avec a<sub>1</sub> la valeur trouvée à la question 2. Vérifie par dérivation que ce modèle redonne bien v(t) et une accélération constante, puis calcule la distance parcourue pendant la phase 1.",
+          "aides": []
+        },
+        {
+          "texte": "Pendant la phase 2, la rame aborde le virage. Caractérise le vecteur accélération dans le repère de Frenet, calcule sa valeur et vérifie le critère de confort.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle vitesse maximale (en km/h) la rame pourrait-elle avoir dans ce virage en respectant le critère ?",
+          "aides": []
+        },
+        {
+          "texte": "Un ingénieur propose de gagner du temps en commençant le freinage de la phase 3 dès l'entrée dans le virage. Rédige un avis argumenté, chiffré, sur cette proposition.",
+          "aides": [
+            "Pendant ce freinage dans le virage, quelles composantes de l'accélération sont non nulles ?",
+            "a<sub>t</sub> vient de la phase 3, a<sub>n</sub> du virage (question 4) ; le doc. 3 donne la valeur de l'accélération à partir des deux.",
+            "Compare le résultat à a<sub>max</sub> et conclus."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : à l'entrée du virage, a<sub>n</sub> passe de 0 à v²/R. Pour éviter un « à-coup », les ingénieurs limitent la variation de l'accélération par seconde (appelée « jerk », en m·s⁻³). Avec un jerk de 0,50 m·s⁻³, combien de temps doit durer cette transition, et sur quelle longueur de voie (la rame roulant à 15 m·s⁻¹) ?",
+          "aides": [
+            "Le jerk est la variation de l'accélération divisée par la durée de cette variation.",
+            "Δt = Δa<sub>n</sub> / jerk, puis la longueur se déduit de la vitesse constante."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Phase 1 (0 à 15 s) : trajectoire rectiligne, v augmente régulièrement de 0 à 15 m·s⁻¹ : mouvement rectiligne uniformément accéléré. Phase 2 (15 à 45 s) : v constante = 15 m·s⁻¹ : mouvement uniforme (rectiligne puis circulaire uniforme dans le virage). Phase 3 (45 à 60 s) : trajectoire rectiligne, v diminue régulièrement jusqu'à 0 : mouvement rectiligne uniformément décéléré (ralenti).",
+        "<strong>2.</strong> a<sub>t</sub> = dv/dt = coefficient directeur de la droite v(t). Phase 1 : a<sub>1</sub> = (15 − 0) / (15 − 0) = 1,0 m·s⁻². Phase 3 : a<sub>3</sub> = (0 − 15) / (60 − 45) = −1,0 m·s⁻² (le vecteur accélération est de sens opposé au mouvement). Dans les deux cas, a = 1,0 m·s⁻² ≤ 1,3 m·s⁻² : critère respecté.",
+        "<strong>3.</strong> v(t) = dx/dt = ½ a<sub>1</sub> × 2t = a<sub>1</sub> t : on retrouve la droite passant par l'origine du doc. 1 ; a(t) = dv/dt = a<sub>1</sub> = constante. Distance : x(15 s) = ½ × 1,0 × 15² = 1,1 × 10² m (112,5 m).",
+        "<strong>4.</strong> Dans le virage, v est constante : a<sub>t</sub> = dv/dt = 0. Le vecteur accélération est normal : vecteur a = (v²/R)·vecteur u<sub>N</sub>, dirigé vers le centre du virage. a = a<sub>n</sub> = 15² / 200 = 1,1 m·s⁻² (1,125) ≤ 1,3 m·s⁻² : critère respecté.",
+        "<strong>5.</strong> a<sub>n</sub> = v²/R ≤ a<sub>max</sub> ⇔ v ≤ √(a<sub>max</sub> × R) = √(1,3 × 200) = 16 m·s⁻¹ (16,1), soit 16,1 × 3,6 = 58 km/h.",
+        "<strong>6.</strong> Éléments attendus : si la rame freine dans le virage, a<sub>t</sub> = −1,0 m·s⁻² et a<sub>n</sub> = 1,125 m·s⁻² au début du freinage (v = 15 m·s⁻¹). Ces composantes sont perpendiculaires : a = √(1,0² + 1,125²) = 1,5 m·s⁻² &gt; 1,3 m·s⁻². Le critère n'est pas respecté : proposition à refuser (ou à adapter : freiner moins fort dans le virage, ou ralentir avant le virage). Remarque : a<sub>n</sub> diminue au cours du freinage (v diminue), le dépassement a lieu surtout en début de freinage.",
+        "<strong>7.</strong> Pour aller plus loin : durée Δt = a<sub>n</sub> / jerk = 1,125 / 0,50 = 2,3 s (2,25) ; longueur L = v × Δt = 15 × 2,25 = 34 m. En pratique, la voie comporte une courbe de raccordement de courbure progressive entre la ligne droite et l'arc de cercle.",
+        "<em>⚠ Erreur fréquente : additionner les composantes (1,0 + 1,125 = 2,1 m·s⁻²) alors qu'elles sont perpendiculaires, ou oublier que dans un virage parcouru à vitesse constante l'accélération n'est pas nulle.</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,713 @@
+{
+  "id": 28,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Qu'est-ce qu'un ion ?",
+        "icon": "⚛️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Ion",
+            "text": "Espèce chimique chargée électriquement, obtenue à partir d'un atome (ou d'un groupe d'atomes) ayant perdu ou gagné un ou plusieurs électrons."
+          },
+          {
+            "type": "def",
+            "term": "Cation",
+            "text": "Ion chargé positivement, obtenu lorsqu'un atome perd un ou plusieurs électrons."
+          },
+          {
+            "type": "def",
+            "term": "Anion",
+            "text": "Ion chargé négativement, obtenu lorsqu'un atome gagne un ou plusieurs électrons."
+          },
+          {
+            "type": "warn",
+            "text": "Un atome est électriquement neutre : il possède autant de protons (charge +) que d'électrons (charge −). Un ion, lui, possède une charge globale non nulle car son nombre d'électrons diffère de son nombre de protons."
+          }
+        ]
+      },
+      {
+        "title": "2. Stabilité des gaz nobles et règle du duet/octet",
+        "icon": "🎯",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les gaz nobles (colonne 18 du tableau périodique), comme l'hélium (He, Z = 2), le néon (Ne, Z = 10) ou l'argon (Ar, Z = 18), sont des éléments chimiquement très stables : ils ne réagissent quasiment avec aucune autre espèce chimique."
+          },
+          {
+            "type": "def",
+            "term": "Règle du duet",
+            "text": "Les atomes de numéro atomique proche de celui de l'hélium (Z ≤ 4) évoluent, au cours d'une transformation chimique, de manière à obtenir 2 électrons sur leur couche externe, comme l'hélium."
+          },
+          {
+            "type": "def",
+            "term": "Règle de l'octet",
+            "text": "Les autres atomes évoluent, au cours d'une transformation chimique, de manière à obtenir 8 électrons sur leur couche externe, comme le néon ou l'argon."
+          },
+          {
+            "type": "text",
+            "text": "Un atome qui perd ou gagne des électrons pour former un ion cherche ainsi à acquérir la structure électronique stable du gaz noble le plus proche de lui dans la classification périodique."
+          }
+        ]
+      },
+      {
+        "title": "3. Formation des ions : deux exemples",
+        "icon": "🔬",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Atome",
+              "Z",
+              "Électrons (couches)",
+              "Ion formé",
+              "Gaz noble imité"
+            ],
+            "rows": [
+              [
+                "Sodium Na",
+                "11",
+                "2, 8, 1",
+                "Na⁺ (perd 1 électron)",
+                "Néon Ne (10 électrons)"
+              ],
+              [
+                "Chlore Cl",
+                "17",
+                "2, 8, 7",
+                "Cl⁻ (gagne 1 électron)",
+                "Argon Ar (18 électrons)"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "L'atome de sodium possède 1 électron sur sa couche externe : en le perdant, il obtient la même structure électronique que le néon et forme le cation Na⁺. L'atome de chlore possède 7 électrons sur sa couche externe : en gagnant 1 électron, il obtient la même structure électronique que l'argon et forme l'anion Cl⁻."
+          }
+        ]
+      },
+      {
+        "title": "4. Tableau des ions courants",
+        "icon": "📋",
+        "content": [
+          {
+            "type": "text",
+            "text": "Il est indispensable de connaître le nom et la formule des ions monoatomiques les plus courants."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Ion",
+              "Nom",
+              "Type"
+            ],
+            "rows": [
+              [
+                "H⁺",
+                "Ion hydrogène",
+                "Cation"
+              ],
+              [
+                "Na⁺",
+                "Ion sodium",
+                "Cation"
+              ],
+              [
+                "K⁺",
+                "Ion potassium",
+                "Cation"
+              ],
+              [
+                "Ca²⁺",
+                "Ion calcium",
+                "Cation"
+              ],
+              [
+                "Mg²⁺",
+                "Ion magnésium",
+                "Cation"
+              ],
+              [
+                "Cl⁻",
+                "Ion chlorure",
+                "Anion"
+              ],
+              [
+                "F⁻",
+                "Ion fluorure",
+                "Anion"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "5. Composés ioniques et neutralité électrique",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Composé ionique",
+            "text": "Solide formé d'un assemblage d'anions et de cations, électriquement neutre dans son ensemble : la somme des charges positives compense exactement la somme des charges négatives."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le chlorure de sodium NaCl est formé d'ions Na⁺ et Cl⁻ en proportions égales. Le chlorure de calcium CaCl₂ est formé d'un ion Ca²⁺ pour deux ions Cl⁻, afin que la charge globale soit nulle : (+2) + 2×(−1) = 0."
+          },
+          {
+            "type": "warn",
+            "text": "Pour écrire la formule d'un composé ionique, il faut toujours vérifier que la charge globale du composé est nulle."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Un cation est un ion :",
+      "opts": [
+        "chargé positivement, formé par gain d'électrons",
+        "chargé positivement, formé par gain de protons",
+        "chargé positivement, formé par perte d'électrons",
+        "chargé négativement, formé par perte d'électrons"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ion-signe-inverse",
+          "texte": "Se tromper sur le signe : gagner des électrons (négatifs) rend l'ion négatif ; en perdre le rend positif"
+        },
+        {
+          "code": "ion-par-protons",
+          "texte": "Croire qu'un ion se forme en gagnant ou perdant des protons : le noyau ne change pas, seuls les électrons s'échangent"
+        },
+        null,
+        {
+          "code": "cation-anion-inverses",
+          "texte": "Inverser cation et anion : le cation est positif, l'anion est négatif"
+        }
+      ],
+      "exp": "Un atome qui perd des électrons a plus de protons que d'électrons : il devient un ion positif, un cation. Attention : le nombre de protons ne change jamais lors de la formation d'un ion."
+    },
+    {
+      "q": "Un ion possède 8 protons et 10 électrons. Sa charge est :",
+      "opts": [
+        "2+",
+        "2−",
+        "10−",
+        "8+"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ion-signe-inverse",
+          "texte": "Se tromper sur le signe : il y a plus d'électrons (négatifs) que de protons, l'ion est négatif"
+        },
+        null,
+        {
+          "code": "electrons-pris-pour-charge",
+          "texte": "Prendre le nombre d'électrons pour la charge : la charge est l'écart 8 − 10 = −2"
+        },
+        {
+          "code": "protons-pris-pour-charge",
+          "texte": "Prendre le nombre de protons pour la charge : les électrons compensent une partie des charges des protons"
+        }
+      ],
+      "exp": "Charge = (nombre de protons − nombre d'électrons) × e = (8 − 10) e = −2e : l'ion porte la charge 2− (c'est l'ion oxyde O²⁻). Attention : un électron en trop donne une charge négative."
+    },
+    {
+      "q": "L'atome de magnésium Mg (Z = 12) forme l'ion Mg²⁺. Combien d'électrons possède cet ion ?",
+      "opts": [
+        "14",
+        "12",
+        "10",
+        "2"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ion-signe-inverse",
+          "texte": "Se tromper sur le sens : la charge 2+ signifie que l'atome a perdu 2 électrons, pas qu'il en a gagné"
+        },
+        {
+          "code": "charge-ignoree",
+          "texte": "Oublier que la charge modifie le nombre d'électrons : 12 est le nombre d'électrons de l'atome neutre"
+        },
+        null,
+        {
+          "code": "charge-prise-pour-electrons",
+          "texte": "Prendre la charge pour le nombre d'électrons : 2+ indique 2 électrons perdus, il en reste 12 − 2"
+        }
+      ],
+      "exp": "L'atome neutre a 12 électrons ; Mg²⁺ en a perdu 2 : il lui en reste 12 − 2 = 10, comme le néon. Attention : la charge indique combien d'électrons ont été perdus ou gagnés."
+    },
+    {
+      "q": "L'atome d'oxygène (Z = 8) a 6 électrons sur sa couche externe. Pour respecter la règle de l'octet, il forme :",
+      "opts": [
+        "l'ion O²⁻, en gagnant 2 électrons",
+        "l'ion O⁶⁺, en perdant ses 6 électrons externes",
+        "l'ion O²⁺, en gagnant 2 électrons",
+        "l'ion O²⁻, en gagnant 2 protons"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "perte-electrons-valence-toujours",
+          "texte": "Croire qu'un atome perd toujours ses électrons externes : il est plus simple d'en gagner 2 que d'en perdre 6"
+        },
+        {
+          "code": "ion-signe-inverse",
+          "texte": "Se tromper sur le signe : gagner 2 électrons donne une charge 2−"
+        },
+        {
+          "code": "ion-par-protons",
+          "texte": "Croire qu'un ion se forme en gagnant ou perdant des protons : le noyau ne change pas, seuls les électrons s'échangent"
+        }
+      ],
+      "exp": "En gagnant 2 électrons, l'oxygène obtient 8 électrons sur sa couche externe, comme le néon : il forme l'ion O²⁻. Attention : gagner des électrons donne un ion négatif."
+    },
+    {
+      "q": "L'ion Mg²⁺ (10 électrons) a la même structure électronique que l'atome :",
+      "opts": [
+        "argon (Z = 18)",
+        "hélium (Z = 2)",
+        "sodium (Z = 11)",
+        "néon (Z = 10)"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "gaz-noble-mauvaise-periode",
+          "texte": "Prendre le gaz noble de la même ligne que l'atome : Mg²⁺ a 10 électrons, comme le néon"
+        },
+        {
+          "code": "duet-vs-octet",
+          "texte": "Appliquer la règle du duet (hélium) à un atome de Z > 4 : le magnésium suit la règle de l'octet"
+        },
+        {
+          "code": "gaz-noble-mal-identifie",
+          "texte": "Croire que l'ion imite un élément voisin quelconque : il prend la structure d'un gaz noble, et le sodium n'en est pas un"
+        },
+        null
+      ],
+      "exp": "Mg²⁺ a 12 − 2 = 10 électrons, comme le néon (Z = 10), gaz noble le plus proche. Attention : on compare le nombre d'électrons de l'ion à celui d'un gaz noble."
+    },
+    {
+      "q": "L'atome de lithium (Z = 3) a un seul électron sur sa couche externe (n = 2). Il forme l'ion :",
+      "opts": [
+        "Li⁵⁻, en gagnant 5 électrons pour avoir un octet",
+        "Li⁺, qui a la structure de l'hélium",
+        "Li⁺, qui a la structure du néon",
+        "Li⁻, en gagnant 1 électron"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "duet-vs-octet",
+          "texte": "Appliquer la règle de l'octet à un atome proche de l'hélium (Z ≤ 4) : il suit la règle du duet"
+        },
+        null,
+        {
+          "code": "gaz-noble-mauvaise-periode",
+          "texte": "Prendre le gaz noble de la même ligne que l'atome : Li⁺ a 2 électrons, comme l'hélium"
+        },
+        {
+          "code": "gain-au-lieu-perte",
+          "texte": "Croire que l'atome gagne un électron : avec un seul électron externe, il est plus simple de le perdre"
+        }
+      ],
+      "exp": "En perdant son électron externe, le lithium garde 2 électrons, comme l'hélium (règle du duet) : il forme Li⁺. Attention : pour Z ≤ 4, la règle est celle du duet."
+    },
+    {
+      "q": "L'ion Cl⁻ s'appelle :",
+      "opts": [
+        "l'ion chlore",
+        "l'ion chlorate",
+        "l'ion chlorure",
+        "l'ion calcium"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "nom-anion-ure",
+          "texte": "Garder le nom de l'atome : les anions monoatomiques se terminent en « -ure » (chlorure, fluorure)"
+        },
+        {
+          "code": "chlorure-vs-chlorate",
+          "texte": "Confondre chlorure (Cl⁻) et chlorate (ClO₃⁻, un ion formé de plusieurs atomes)"
+        },
+        null,
+        {
+          "code": "symboles-confondus",
+          "texte": "Confondre les symboles Cl (chlore) et Ca (calcium)"
+        }
+      ],
+      "exp": "Cl⁻ est l'ion chlorure ; de même, F⁻ est l'ion fluorure. Attention : « ion chlore » n'est pas le nom correct."
+    },
+    {
+      "q": "Le fluorure de calcium est un solide ionique formé d'ions Ca²⁺ et F⁻. Sa formule est :",
+      "opts": [
+        "CaF",
+        "Ca₂F",
+        "CaF₂",
+        "Ca₂F₂"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "neutralite-non-verifiee",
+          "texte": "Prendre autant d'anions que de cations sans vérifier la charge globale : (+2) + (−1) ≠ 0"
+        },
+        {
+          "code": "rapport-charges-inverse",
+          "texte": "Inverser le rapport : chaque Ca²⁺ apporte deux charges +, il faut donc deux ions F⁻"
+        },
+        null,
+        {
+          "code": "neutralite-non-verifiee",
+          "texte": "Ne pas vérifier la charge globale : 2 × (+2) + 2 × (−1) = +2 ≠ 0"
+        }
+      ],
+      "exp": "(+2) + 2 × (−1) = 0 : un ion Ca²⁺ pour deux ions F⁻, d'où CaF₂. Attention : la formule d'un composé ionique doit toujours être électriquement neutre."
+    },
+    {
+      "q": "Le sel de cuisine solide (chlorure de sodium) est formé :",
+      "opts": [
+        "de molécules NaCl",
+        "d'atomes de sodium et de chlore neutres",
+        "d'ions Na⁺ et Cl⁻ en nombres égaux",
+        "d'ions Na⁺ et Cl⁻, avec plus d'ions Cl⁻"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ionique-vs-moleculaire",
+          "texte": "Croire qu'un solide ionique est formé de molécules : NaCl indique seulement la proportion des ions"
+        },
+        {
+          "code": "ions-vs-atomes-neutres",
+          "texte": "Croire que le sel contient des atomes neutres : il est formé d'ions Na⁺ et Cl⁻"
+        },
+        null,
+        {
+          "code": "neutralite-non-verifiee",
+          "texte": "Oublier l'électroneutralité : avec des charges +1 et −1, il faut autant d'ions de chaque sorte"
+        }
+      ],
+      "exp": "Le chlorure de sodium est un empilement d'ions Na⁺ et Cl⁻ en nombres égaux, ce qui le rend neutre. Attention : un solide ionique n'est pas fait de molécules."
+    },
+    {
+      "q": "Les gaz nobles (hélium, néon, argon) sont chimiquement très stables parce que :",
+      "opts": [
+        "leur couche externe est saturée (2 ou 8 électrons)",
+        "ce sont des gaz, et les gaz ne réagissent pas",
+        "ils ont 8 électrons au total",
+        "ils ont autant de protons que d'électrons"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "gaz-donc-inerte",
+          "texte": "Croire que l'état gazeux explique la stabilité : le dioxygène ou le dichlore sont des gaz très réactifs"
+        },
+        {
+          "code": "octet-total-vs-externe",
+          "texte": "Confondre 8 électrons au total et 8 électrons sur la couche externe : l'argon en a 18 au total"
+        },
+        {
+          "code": "neutralite-vs-stabilite",
+          "texte": "Confondre neutralité et stabilité : tous les atomes ont autant de protons que d'électrons"
+        }
+      ],
+      "exp": "Leur couche externe contient 2 électrons (hélium) ou 8 électrons (néon, argon) : elle est saturée, ce qui les rend très peu réactifs. Attention : tous les atomes sont neutres, mais tous ne sont pas stables."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Atome ou ion ?",
+      "contexte": [
+        "Avant l'interrogation, Amine fait le point sur ce qu'il a retenu du cours. Certaines de ses phrases sont fausses."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse. Corrige celles qui sont fausses.<br>a. Un ion se forme quand un atome gagne ou perd des protons.<br>b. Un cation est un ion chargé positivement.<br>c. L'ion chlorure Cl⁻ possède un électron de plus que l'atome de chlore.<br>d. Un atome qui perd deux électrons devient un anion.<br>e. Comme un atome, un ion possède autant de protons que d'électrons.",
+          "aides": []
+        },
+        {
+          "texte": "Complète, pour chaque entité, le nombre de protons et le nombre d'électrons. Utilise les numéros atomiques de l'encadré « Données ».<br>a. l'ion magnésium Mg²⁺ ;  b. l'ion fluorure F⁻ ;  c. l'ion potassium K⁺ ;  d. l'atome de néon Ne.",
+          "aides": [
+            "Le nombre de protons est égal au numéro atomique Z, que la particule soit un atome ou un ion.",
+            "Charge 2+ : l'atome a perdu 2 électrons ; charge − : il en a gagné 1."
+          ]
+        },
+        {
+          "texte": "Une entité contient 13 protons et 10 électrons. Est-ce un atome, un cation ou un anion ? Quelle est sa charge ? De quel élément s'agit-il ? Écris sa formule.",
+          "aides": [
+            "Compare le nombre de protons (charges +) et le nombre d'électrons (charges −).",
+            "Charge = (nombre de protons − nombre d'électrons) × e. Le nombre de protons donne Z, donc l'élément."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : les protons sont dans le noyau et ne changent pas ; un ion se forme quand un atome gagne ou perd des électrons.",
+        "b. VRAI : un cation est chargé positivement (il a perdu des électrons).",
+        "c. VRAI : l'atome de chlore a 17 électrons, l'ion Cl⁻ en a 18 (il a gagné 1 électron).",
+        "d. FAUX : il a alors 2 protons de plus que d'électrons ; il devient un cation de charge 2+ (2 charges positives).",
+        "e. FAUX : un ion a une charge non nulle, donc son nombre d'électrons est différent de son nombre de protons.",
+        "<strong>2.</strong> a. Mg²⁺ : 12 protons (Z = 12) ; il a perdu 2 électrons : 12 − 2 = 10 électrons.",
+        "b. F⁻ : 9 protons ; il a gagné 1 électron : 9 + 1 = 10 électrons.",
+        "c. K⁺ : 19 protons ; 19 − 1 = 18 électrons.",
+        "d. Ne : atome neutre, 10 protons et 10 électrons.",
+        "<strong>3.</strong> Il y a 3 protons de plus que d'électrons : c'est un cation de charge 3+ (soit +3e). 13 protons, donc Z = 13 : c'est l'aluminium. Formule : Al³⁺ (ion aluminium).",
+        "<em>⚠ Erreur fréquente : croire que la charge « + » vient d'un proton gagné. Le nombre de protons ne change jamais : un ion positif a PERDU des électrons.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Les ions de l'eau minérale",
+      "contexte": [
+        "Sofia lit l'étiquette de sa bouteille d'eau minérale. Elle y découvre une liste d'ions dissous dans l'eau, avec leur concentration en masse (en mg/L)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"150\" y=\"18\" width=\"460\" height=\"434\" rx=\"14\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><rect x=\"150\" y=\"18\" width=\"460\" height=\"74\" rx=\"14\" fill=\"#1F4E5A\"/><rect x=\"150\" y=\"70\" width=\"460\" height=\"22\" fill=\"#1F4E5A\"/><text x=\"380\" y=\"50\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#fff\">SOURCE DES COTEAUX</text><text x=\"380\" y=\"78\" text-anchor=\"middle\" font-size=\"15\" fill=\"#fff\">Eau minérale naturelle — étiquette fictive</text><text x=\"380\" y=\"124\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#B5523B\">Composition moyenne (en mg/L)</text><rect x=\"185\" y=\"138\" width=\"390\" height=\"33\" fill=\"#f1e7d4\"/><text x=\"200\" y=\"160\" font-size=\"17\">Calcium</text><text x=\"560\" y=\"160\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">80</text><text x=\"200\" y=\"193\" font-size=\"17\">Hydrogénocarbonates HCO₃⁻</text><text x=\"560\" y=\"193\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">360</text><rect x=\"185\" y=\"204\" width=\"390\" height=\"33\" fill=\"#f1e7d4\"/><text x=\"200\" y=\"226\" font-size=\"17\">Magnésium</text><text x=\"560\" y=\"226\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">26</text><text x=\"200\" y=\"259\" font-size=\"17\">Sulfates SO₄²⁻</text><text x=\"560\" y=\"259\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">40</text><rect x=\"185\" y=\"270\" width=\"390\" height=\"33\" fill=\"#f1e7d4\"/><text x=\"200\" y=\"292\" font-size=\"17\">Sodium</text><text x=\"560\" y=\"292\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">6,5</text><text x=\"200\" y=\"325\" font-size=\"17\">Chlorures</text><text x=\"560\" y=\"325\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">10</text><rect x=\"185\" y=\"336\" width=\"390\" height=\"33\" fill=\"#f1e7d4\"/><text x=\"200\" y=\"358\" font-size=\"17\">Potassium</text><text x=\"560\" y=\"358\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">1,5</text><text x=\"200\" y=\"391\" font-size=\"17\">Fluorures</text><text x=\"560\" y=\"391\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">0,3</text><line x1=\"185\" y1=\"412\" x2=\"575\" y2=\"412\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"200\" y=\"438\" font-size=\"16\">pH = 7,4</text><text x=\"560\" y=\"438\" text-anchor=\"end\" font-size=\"16\">Bouteille de 1,5 L</text></svg>",
+      "questions": [
+        {
+          "texte": "Écris la formule de chacun des six ions monoatomiques de l'étiquette.",
+          "aides": [
+            "Le nom de l'ion vient de celui de l'élément : cherche le symbole de l'élément (calcium → Ca).",
+            "Les ions calcium et magnésium portent deux charges positives ; ceux du sodium et du potassium, une seule."
+          ]
+        },
+        {
+          "texte": "Classe les huit ions de l'étiquette en deux groupes : les cations et les anions.",
+          "aides": [
+            "Un cation est chargé positivement, un anion négativement : regarde le signe de la charge.",
+            "Les terminaisons en « -ure » et « -ate » désignent ici des anions."
+          ]
+        },
+        {
+          "texte": "QCM. L'ion calcium et l'atome de calcium ont : (A) le même nombre d'électrons ; (B) le même nombre de protons ; (C) la même charge électrique.",
+          "aides": []
+        },
+        {
+          "texte": "Le médecin conseille à Sofia une eau riche en calcium. Calcule la masse m d'ions calcium contenue dans une bouteille pleine, avec la relation m = c<sub>m</sub> × V (c<sub>m</sub> : concentration en masse, V : volume d'eau).",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Calcium : Ca²⁺ ; magnésium : Mg²⁺ ; sodium : Na⁺ ; potassium : K⁺ ; chlorure : Cl⁻ ; fluorure : F⁻.",
+        "<strong>2.</strong> Cations (charge positive) : Ca²⁺, Mg²⁺, Na⁺, K⁺. Anions (charge négative) : HCO₃⁻, SO₄²⁻, Cl⁻, F⁻.",
+        "<strong>3.</strong> Réponse B : l'ion Ca²⁺ a gardé ses 20 protons, mais il a 2 électrons de moins que l'atome (18 au lieu de 20) et il est chargé alors que l'atome est neutre.",
+        "<strong>4.</strong> m = c<sub>m</sub> × V = 80 mg/L × 1,5 L = 120 mg d'ions calcium.",
+        "<em>⚠ Erreur fréquente : confondre « chlorure » (l'ion Cl⁻) et « chlore » (l'élément ou l'atome Cl), ou oublier le « 2 » des ions Ca²⁺ et Mg²⁺.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Le sodium imite le néon",
+      "contexte": [
+        "Configurations électroniques de quelques atomes :",
+        "hélium He : 1s² ;  néon Ne : 1s² 2s² 2p⁶ ;  argon Ar : 1s² 2s² 2p⁶ 3s² 3p⁶ ;",
+        "lithium Li : 1s² 2s¹ ;  sodium Na : 1s² 2s² 2p⁶ 3s¹ ;  chlore Cl : 1s² 2s² 2p⁶ 3s² 3p⁵.",
+        "Le lithium est utilisé dans les batteries de smartphone, le sodium et le chlore forment le sel de cuisine."
+      ],
+      "questions": [
+        {
+          "texte": "Combien d'électrons les atomes d'hélium, de néon et d'argon possèdent-ils sur leur couche externe ? Que peut-on dire de la réactivité chimique de ces gaz nobles ?",
+          "aides": []
+        },
+        {
+          "texte": "Recopie et complète le texte à trous : « L'atome de lithium possède … électron(s) sur sa couche externe. Le gaz noble le plus proche de lui est …, il suit donc la règle du … . Il … 1 électron et forme l'ion …, de configuration électronique … . »",
+          "aides": [
+            "La couche externe du lithium est la couche n = 2 : combien d'électrons contient-elle ?",
+            "Z = 3 est proche de Z = 2 : quel gaz noble, et quelle règle (duet ou octet) ?"
+          ]
+        },
+        {
+          "texte": "Même travail pour le sodium : combien d'électrons perd-il ? Quel ion forme-t-il ? Quel gaz noble imite-t-il ?",
+          "aides": []
+        },
+        {
+          "texte": "Le chlore possède 7 électrons sur sa couche externe. Explique comment il obtient un octet, écris la formule de l'ion formé et sa configuration électronique.",
+          "aides": []
+        },
+        {
+          "texte": "L'ion chlorure et l'atome d'argon ont la même configuration électronique. Sont-ils pour autant la même entité ? Justifie.",
+          "aides": [
+            "Qu'est-ce qui caractérise un élément chimique : le nombre de protons ou d'électrons ?",
+            "Compare le nombre de protons et la charge de Cl⁻ et de Ar."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Hélium : 2 électrons sur sa couche externe (n = 1) : un duet. Néon : 2 + 6 = 8 électrons (couche n = 2) et argon : 2 + 6 = 8 électrons (couche n = 3) : un octet. Leur couche externe est saturée : ils sont chimiquement très stables, ils ne réagissent quasiment pas.",
+        "<strong>2.</strong> « L'atome de lithium possède 1 électron sur sa couche externe. Le gaz noble le plus proche de lui est l'hélium, il suit donc la règle du duet. Il perd 1 électron et forme l'ion Li⁺, de configuration électronique 1s². »",
+        "<strong>3.</strong> Le sodium perd son unique électron externe (3s¹) : il forme l'ion Na⁺, de configuration 1s² 2s² 2p⁶, celle du néon (10 électrons, octet).",
+        "<strong>4.</strong> Il est plus « facile » de gagner 1 électron que d'en perdre 7 : le chlore gagne 1 électron, sa couche externe en compte alors 8 (octet). Ion chlorure Cl⁻ : 1s² 2s² 2p⁶ 3s² 3p⁶, la configuration de l'argon.",
+        "<strong>5.</strong> Non : ils ont le même nombre d'électrons (18), mais l'ion chlorure a 17 protons (Z = 17) et l'argon 18. Ce sont deux éléments différents ; l'ion est chargé (−e), l'atome d'argon est neutre.",
+        "<em>⚠ Erreur fréquente : appliquer la règle de l'octet au lithium. Lithium (Z = 3) est proche de l'hélium : il vise 2 électrons (duet), pas 8.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Prévoir la charge d'un ion",
+      "contexte": [
+        "Le magnésium entre dans la composition des alliages légers des cadres de vélo, l'aluminium dans les canettes, l'oxygène et le fluor dans le dentifrice (fluorure), le soufre dans les engrais. Leurs atomes forment des ions monoatomiques.",
+        "Document : extrait de la classification périodique des éléments (elle sera étudiée en détail au chapitre suivant)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"28\" text-anchor=\"middle\" font-weight=\"bold\">Extrait de la classification périodique (Z ≤ 20)</text><text x=\"105\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 1</text><text x=\"183\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 2</text><text x=\"301\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 13</text><text x=\"379\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 14</text><text x=\"457\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 15</text><text x=\"535\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 16</text><text x=\"613\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 17</text><text x=\"691\" y=\"62\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\" font-weight=\"bold\">col. 18</text><text x=\"40\" y=\"130\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">1ʳᵉ</text><text x=\"40\" y=\"216\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">2ᵉ</text><text x=\"40\" y=\"302\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">3ᵉ</text><text x=\"40\" y=\"388\" text-anchor=\"middle\" font-size=\"15\" fill=\"#1F4E5A\">4ᵉ</text><text x=\"40\" y=\"452\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3a3a3a\">ligne</text><rect x=\"70\" y=\"80\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"76\" y=\"100\" font-size=\"14\">1</text><text x=\"105\" y=\"136\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">H</text><rect x=\"656\" y=\"80\" width=\"70\" height=\"78\" fill=\"#f4e3c0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"662\" y=\"100\" font-size=\"14\">2</text><text x=\"691\" y=\"136\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#B5523B\">He</text><rect x=\"70\" y=\"166\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"76\" y=\"186\" font-size=\"14\">3</text><text x=\"105\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Li</text><rect x=\"148\" y=\"166\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"154\" y=\"186\" font-size=\"14\">4</text><text x=\"183\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Be</text><rect x=\"266\" y=\"166\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"272\" y=\"186\" font-size=\"14\">5</text><text x=\"301\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">B</text><rect x=\"344\" y=\"166\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"350\" y=\"186\" font-size=\"14\">6</text><text x=\"379\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">C</text><rect x=\"422\" y=\"166\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"428\" y=\"186\" font-size=\"14\">7</text><text x=\"457\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">N</text><rect x=\"500\" y=\"166\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"506\" y=\"186\" font-size=\"14\">8</text><text x=\"535\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><rect x=\"578\" y=\"166\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"584\" y=\"186\" font-size=\"14\">9</text><text x=\"613\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">F</text><rect x=\"656\" y=\"166\" width=\"70\" height=\"78\" fill=\"#f4e3c0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"662\" y=\"186\" font-size=\"14\">10</text><text x=\"691\" y=\"222\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#B5523B\">Ne</text><rect x=\"70\" y=\"252\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"76\" y=\"272\" font-size=\"14\">11</text><text x=\"105\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Na</text><rect x=\"148\" y=\"252\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"154\" y=\"272\" font-size=\"14\">12</text><text x=\"183\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Mg</text><rect x=\"266\" y=\"252\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"272\" y=\"272\" font-size=\"14\">13</text><text x=\"301\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Al</text><rect x=\"344\" y=\"252\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"350\" y=\"272\" font-size=\"14\">14</text><text x=\"379\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Si</text><rect x=\"422\" y=\"252\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"428\" y=\"272\" font-size=\"14\">15</text><text x=\"457\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">P</text><rect x=\"500\" y=\"252\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"506\" y=\"272\" font-size=\"14\">16</text><text x=\"535\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">S</text><rect x=\"578\" y=\"252\" width=\"70\" height=\"78\" fill=\"#fbf7ef\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"584\" y=\"272\" font-size=\"14\">17</text><text x=\"613\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Cl</text><rect x=\"656\" y=\"252\" width=\"70\" height=\"78\" fill=\"#f4e3c0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"662\" y=\"272\" font-size=\"14\">18</text><text x=\"691\" y=\"308\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#B5523B\">Ar</text><rect x=\"70\" y=\"338\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"76\" y=\"358\" font-size=\"14\">19</text><text x=\"105\" y=\"394\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">K</text><rect x=\"148\" y=\"338\" width=\"70\" height=\"78\" fill=\"#e3eef0\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"154\" y=\"358\" font-size=\"14\">20</text><text x=\"183\" y=\"394\" text-anchor=\"middle\" font-size=\"24\" font-weight=\"bold\" fill=\"#1F4E5A\">Ca</text><rect x=\"266\" y=\"380\" width=\"22\" height=\"18\" fill=\"#f4e3c0\" stroke=\"#1F4E5A\"/><text x=\"296\" y=\"394\" font-size=\"15\">famille des gaz nobles (col. 18)</text><text x=\"266\" y=\"428\" font-size=\"15\">Z est écrit en haut à gauche de chaque case.</text></svg>",
+      "questions": [
+        {
+          "texte": "Pour chacun des atomes de magnésium Mg, d'aluminium Al, d'oxygène O, de fluor F et de soufre S : écris la configuration électronique, donne le nombre d'électrons de valence, le gaz noble le plus proche, puis la formule de l'ion monoatomique formé.",
+          "aides": [
+            "Nombre d'électrons de l'atome = Z ; remplis 1s, 2s, 2p, 3s, 3p (2 électrons au plus en s, 6 en p).",
+            "Électrons de valence = électrons de la dernière couche (s ET p). Avec 1, 2 ou 3, l'atome les perd ; avec 5, 6 ou 7, il en gagne pour arriver à 8."
+          ]
+        },
+        {
+          "texte": "Lesquels de ces ions ont le même nombre d'électrons que l'atome de néon ?",
+          "aides": []
+        },
+        {
+          "texte": "Repère dans le document les colonnes de Na, Mg, Al, O et Cl. Quelle relation observes-tu entre la colonne d'un élément et la charge de l'ion qu'il forme ? Pourquoi ?",
+          "aides": [
+            "Place chaque ion trouvé à la question 1 sous la colonne de son élément.",
+            "Compte les électrons de valence des éléments d'une même colonne : que remarques-tu ?"
+          ]
+        },
+        {
+          "texte": "Sans écrire de configuration électronique, prévois la formule de l'ion formé par le potassium K et par le calcium Ca. Compare au tableau des ions courants du cours.",
+          "aides": []
+        },
+        {
+          "texte": "Léo affirme : « Le magnésium a 2 électrons externes ; il en gagne 6 pour avoir un octet et forme l'ion Mg⁶⁻. » Explique son erreur.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Mg (12 électrons) : 1s² 2s² 2p⁶ 3s² ; 2 électrons de valence ; gaz noble le plus proche : néon ; il perd 2 électrons : ion Mg²⁺.",
+        "Al (13) : 1s² 2s² 2p⁶ 3s² 3p¹ ; 3 électrons de valence ; néon ; il perd 3 électrons : ion Al³⁺.",
+        "O (8) : 1s² 2s² 2p⁴ ; 6 électrons de valence ; néon ; il gagne 2 électrons : ion oxyde O²⁻.",
+        "F (9) : 1s² 2s² 2p⁵ ; 7 électrons de valence ; néon ; il gagne 1 électron : ion fluorure F⁻.",
+        "S (16) : 1s² 2s² 2p⁶ 3s² 3p⁴ ; 6 électrons de valence ; argon ; il gagne 2 électrons : ion sulfure S²⁻.",
+        "<strong>2.</strong> Mg²⁺ (12 − 2), Al³⁺ (13 − 3), O²⁻ (8 + 2) et F⁻ (9 + 1) ont tous 10 électrons, comme le néon. S²⁻ en a 18, comme l'argon.",
+        "<strong>3.</strong> Colonne 1 (Li, Na, K) : ions de charge 1+ ; colonne 2 (Mg, Ca) : 2+ ; colonne 13 (Al) : 3+ ; colonne 16 (O, S) : 2− ; colonne 17 (F, Cl) : 1− ; colonne 18 : pas d'ion (gaz nobles déjà stables). Les éléments d'une même colonne ont le même nombre d'électrons de valence, ils perdent ou gagnent donc le même nombre d'électrons.",
+        "<strong>4.</strong> K est dans la colonne 1, sous Na : ion K⁺. Ca est dans la colonne 2, sous Mg : ion Ca²⁺. Ce sont bien les ions du tableau des ions courants (ion potassium, ion calcium) ; ils imitent l'argon (18 électrons).",
+        "<strong>5.</strong> L'atome évolue vers le gaz noble le plus proche en échangeant le moins d'électrons possible : perdre 2 électrons (pour retrouver la configuration du néon) est bien plus simple que d'en gagner 6. Le magnésium forme donc l'ion Mg²⁺, comme l'indique le tableau des ions courants.",
+        "<em>⚠ Erreur fréquente : se tromper de signe (écrire O²⁺ ou Mg²⁻). Un gain d'électrons donne une charge négative, une perte une charge positive.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Des solides ioniques au quotidien",
+      "contexte": [
+        "Le chlorure de potassium remplace le sel de cuisine dans le « sel de régime » ; le fluorure de sodium est ajouté à certains dentifrices ; le fluorure de calcium forme un minéral, la fluorine ; le chlorure de magnésium sert à faire cailler le lait de soja pour fabriquer le tofu ; l'oxyde d'aluminium forme le corindon, dont le rubis et le saphir sont des variétés colorées."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chacun de ces cinq solides ioniques, écris les formules des ions qui le constituent, puis la formule du solide. Justifie chaque formule par un calcul de charge.",
+          "aides": [
+            "Commence par écrire les deux ions (questions précédentes et tableau des ions du cours).",
+            "Choisis le plus petit nombre de chaque ion pour que la somme des charges soit nulle. Pour Al³⁺ et O²⁻, cherche un nombre multiple à la fois de 3 et de 2."
+          ]
+        },
+        {
+          "texte": "Calcule, en coulombs, la charge d'un ion calcium et celle d'un ion fluorure. Vérifie par le calcul que l'ensemble « 1 ion calcium + 2 ions fluorure » est électriquement neutre.",
+          "aides": [
+            "Charge d'un ion = (nombre de charges) × e, avec le signe de l'ion.",
+            "Ca²⁺ : 2 × e ; F⁻ : −1 × e. Ajoute ensuite la charge de 1 Ca²⁺ et celle de 2 F⁻."
+          ]
+        },
+        {
+          "texte": "Dans le corindon, combien faut-il d'ions au minimum pour former un ensemble neutre ? Calcule la charge (en C) d'un ion aluminium et d'un ion oxyde.",
+          "aides": []
+        },
+        {
+          "texte": "Une élève a écrit les formules « CaCl » pour le chlorure de calcium et « Mg₂O » pour l'oxyde de magnésium. Corrige-les.",
+          "aides": [
+            "Calcule la charge totale de chaque formule proposée : est-elle nulle ?",
+            "Quels sont les ions ? Mg²⁺ et O²⁻ : combien de chacun pour une charge nulle ?"
+          ]
+        },
+        {
+          "texte": "Quel est le nom du solide ionique de formule K₂S ? Justifie la formule.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Chlorure de potassium : K⁺ et Cl⁻ ; (+1) + (−1) = 0 : KCl.",
+        "Fluorure de sodium : Na⁺ et F⁻ ; (+1) + (−1) = 0 : NaF.",
+        "Fluorure de calcium : Ca²⁺ et F⁻ ; (+2) + 2 × (−1) = 0 : CaF₂.",
+        "Chlorure de magnésium : Mg²⁺ et Cl⁻ ; (+2) + 2 × (−1) = 0 : MgCl₂.",
+        "Oxyde d'aluminium : Al³⁺ et O²⁻ ; 2 × (+3) + 3 × (−2) = 6 − 6 = 0 : Al₂O₃.",
+        "<strong>2.</strong> q(Ca²⁺) = +2e = 2 × 1,60 × 10⁻¹⁹ = 3,20 × 10⁻¹⁹ C ; q(F⁻) = −e = −1,60 × 10⁻¹⁹ C. Total : 3,20 × 10⁻¹⁹ + 2 × (−1,60 × 10⁻¹⁹) = 0 C : l'ensemble est neutre.",
+        "<strong>3.</strong> Il faut 2 ions Al³⁺ et 3 ions O²⁻, soit 5 ions au minimum. q(Al³⁺) = +3e = 4,80 × 10⁻¹⁹ C ; q(O²⁻) = −2e = −3,20 × 10⁻¹⁹ C. Vérification : 2 × 4,80 × 10⁻¹⁹ + 3 × (−3,20 × 10⁻¹⁹) = 0 C.",
+        "<strong>4.</strong> Chlorure de calcium : Ca²⁺ et Cl⁻, il faut 2 ions chlorure : CaCl₂ (« CaCl » aurait une charge +1). Oxyde de magnésium : Mg²⁺ et O²⁻ ont des charges opposées de même valeur : MgO (« Mg₂O » aurait une charge 2 × (+2) − 2 = +2).",
+        "<strong>5.</strong> K₂S est le sulfure de potassium : 2 ions K⁺ pour 1 ion S²⁻, car 2 × (+1) + (−2) = 0.",
+        "<em>⚠ Erreur fréquente : recopier la charge des ions dans la formule du solide (écrire Ca²⁺Cl⁻ ou CaCl₂⁺). La formule d'un solide ionique ne porte pas de charge : elle indique seulement les proportions des ions, choisies pour que la charge totale soit nulle.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le tofu de Yanis",
+      "contexte": [
+        "Doc. 1 — La recette. Yanis veut préparer du tofu maison. Sa recette indique : « Faites chauffer le lait de soja, puis ajoutez une cuillère à café de nigari dissous dans un peu d'eau : le lait caille et forme le tofu. » Dans le placard, il trouve un sachet de poudre blanche dont l'étiquette est illisible. Or il sait que sa famille y range trois poudres blanches qui se ressemblent (doc. 2)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" text-anchor=\"middle\" font-weight=\"bold\">Doc. 2 — Trois poudres blanches qui se ressemblent</text><rect x=\"20\" y=\"54\" width=\"720\" height=\"46\" fill=\"#1F4E5A\"/><text x=\"135.0\" y=\"84\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Produit</text><text x=\"350.0\" y=\"84\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Usage</text><text x=\"595.0\" y=\"84\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">Ions qui le constituent</text><rect x=\"20\" y=\"100\" width=\"720\" height=\"104\" fill=\"#f4ede1\"/><text x=\"34\" y=\"146.0\" font-weight=\"bold\">Nigari</text><text x=\"34\" y=\"170.0\" font-size=\"15\">(chlorure de magnésium)</text><text x=\"350.0\" y=\"158.0\" text-anchor=\"middle\">coagulant du tofu</text><text x=\"464\" y=\"158.0\">ions magnésium et chlorure</text><rect x=\"20\" y=\"204\" width=\"720\" height=\"104\" fill=\"#fff\"/><text x=\"34\" y=\"250.0\" font-weight=\"bold\">Sel d'Epsom</text><text x=\"34\" y=\"274.0\" font-size=\"15\">(sulfate de magnésium)</text><text x=\"350.0\" y=\"262.0\" text-anchor=\"middle\">sels de bain</text><text x=\"464\" y=\"262.0\">ions magnésium et sulfate SO₄²⁻</text><rect x=\"20\" y=\"308\" width=\"720\" height=\"104\" fill=\"#f4ede1\"/><text x=\"34\" y=\"366.0\" font-weight=\"bold\">Chlorure de calcium</text><text x=\"350.0\" y=\"366.0\" text-anchor=\"middle\">absorbeur d'humidité</text><text x=\"464\" y=\"366.0\">ions calcium et chlorure</text><line x1=\"20\" y1=\"54\" x2=\"20\" y2=\"412\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"250\" y1=\"54\" x2=\"250\" y2=\"412\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"450\" y1=\"54\" x2=\"450\" y2=\"412\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"740\" y1=\"54\" x2=\"740\" y2=\"412\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><rect x=\"20\" y=\"54\" width=\"720\" height=\"358\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"380\" y=\"446\" text-anchor=\"middle\" font-size=\"15\" fill=\"#3a3a3a\">L'ion sulfate SO₄²⁻ est un ion formé de plusieurs atomes (ion polyatomique).</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Analyse au lycée. Son professeur accepte d'analyser un échantillon du sachet. Le compte rendu indique : « Le solide ne contient qu'une sorte de cation et qu'une sorte d'anion. Cation : charge du noyau +1,92 × 10⁻¹⁸ C ; il possède 10 électrons. Anion : charge du noyau +2,72 × 10⁻¹⁸ C ; charge de l'ion −1,60 × 10⁻¹⁹ C. Dans le solide, on compte 2 anions pour 1 cation. »",
+        "Utilise aussi l'encadré « Données » de la fiche."
+      ],
+      "questions": [
+        {
+          "texte": "Pour démarrer : écris la formule des ions qui constituent chacune des trois poudres du doc. 2, puis la formule de chaque poudre (l'ion sulfate est SO₄²⁻).",
+          "aides": [
+            "Le nom donne les ions : « chlorure de magnésium » = ions chlorure et magnésium. Quelles sont leurs charges ?",
+            "Écris la formule qui rend la charge totale nulle (comme à l'exercice 5)."
+          ]
+        },
+        {
+          "texte": "Yanis peut-il utiliser le contenu de ce sachet pour préparer son tofu ? Ta réponse s'appuiera sur l'identification des ions présents dans le sachet.",
+          "aides": [
+            "S'approprier : pour distinguer les trois poudres, que faut-il connaître ? Le cation, l'anion, ou les deux ?",
+            "Analyser : la charge du noyau donne le nombre de protons, donc l'élément ; la comparaison protons / électrons donne la charge de l'ion.",
+            "Réaliser : Z = (charge du noyau) / e pour chaque ion, puis confronte les ions trouvés au doc. 2 et vérifie la proportion avec l'électroneutralité."
+          ]
+        },
+        {
+          "texte": "Regard critique : le cation identifié respecte-t-il la règle de l'octet ? Et l'anion ? Pourquoi l'identification du seul cation n'aurait-elle pas suffi à conclure ?",
+          "aides": [
+            "Écris la configuration électronique de chaque ion à partir de son nombre d'électrons.",
+            "Regarde dans le doc. 2 quelles poudres contiennent le même cation."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : l'ion sulfate SO₄²⁻ est un ion polyatomique. Combien d'atomes contient-il ? Combien de protons et combien d'électrons au total ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Nigari (chlorure de magnésium) : Mg²⁺ et Cl⁻ : MgCl₂. Sel d'Epsom (sulfate de magnésium) : Mg²⁺ et SO₄²⁻, charges opposées de même valeur : MgSO₄. Chlorure de calcium : Ca²⁺ et Cl⁻ : CaCl₂.",
+        "<strong>2.</strong> Démarche attendue :",
+        "• Cation : chaque proton porte +e, donc Z = 1,92 × 10⁻¹⁸ / 1,60 × 10⁻¹⁹ = 12 : c'est le magnésium. Il a 12 protons et 10 électrons : charge +2e, c'est l'ion Mg²⁺ (cela exclut le chlorure de calcium, dont le cation est Ca²⁺, de noyau +20e = 3,20 × 10⁻¹⁸ C).",
+        "• Anion : Z = 2,72 × 10⁻¹⁸ / 1,60 × 10⁻¹⁹ = 17 : chlore. Charge −1,60 × 10⁻¹⁹ C = −e : il a un électron de plus que de protons, soit 18 électrons : c'est l'ion chlorure Cl⁻ (cela exclut le sel d'Epsom, dont l'anion est SO₄²⁻).",
+        "• Électroneutralité : Mg²⁺ et Cl⁻ s'associent en MgCl₂, soit 2 anions pour 1 cation : c'est bien ce qu'indique l'analyse (le sulfate de magnésium MgSO₄ aurait 1 anion pour 1 cation).",
+        "• Conclusion : le sachet contient du chlorure de magnésium, c'est-à-dire du nigari. Yanis peut l'utiliser pour son tofu.",
+        "<strong>3.</strong> Mg²⁺ a 10 électrons (1s² 2s² 2p⁶) et Cl⁻ en a 18 (1s² 2s² 2p⁶ 3s² 3p⁶) : ils ont la configuration du néon et de l'argon, avec un octet sur leur couche externe : les résultats sont cohérents avec la règle de l'octet. Le cation seul ne suffisait pas : le nigari et le sel d'Epsom contiennent tous les deux l'ion Mg²⁺ ; il fallait identifier aussi l'anion (ou utiliser la proportion 2 anions pour 1 cation).",
+        "<strong>4.</strong> Pour aller plus loin : SO₄²⁻ contient 1 atome de soufre et 4 atomes d'oxygène, soit 5 atomes. Protons : 16 + 4 × 8 = 48. L'ion porte la charge 2− : il a 2 électrons de plus que de protons, soit 50 électrons.",
+        "Éléments valorisés (même si la conclusion est fausse) : relation Z = (charge du noyau) / e ; lien entre Z et l'élément ; calcul de la charge de l'ion à partir des nombres de protons et d'électrons ; utilisation de l'électroneutralité ; confrontation de chaque poudre du doc. 2 aux résultats ; conclusion cohérente avec les calculs.",
+        "<em>⚠ Erreur fréquente : identifier l'élément à partir du nombre d'électrons de l'ion (10 électrons → néon) au lieu du nombre de protons. C'est Z, le nombre de protons, qui caractérise l'élément.</em>"
+      ]
+    }
+  ]
+}

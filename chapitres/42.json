@@ -1,0 +1,718 @@
+{
+  "id": 42,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Lentilles minces convergentes",
+        "icon": "🔍",
+        "content": [
+          {
+            "type": "def",
+            "term": "Lentille convergente",
+            "text": "Lentille (généralement bombée, plus épaisse au centre qu'aux bords) qui fait converger un faisceau de rayons lumineux parallèles vers un point unique appelé foyer image F'."
+          },
+          {
+            "type": "def",
+            "term": "Centre optique et foyers",
+            "text": "O : centre optique de la lentille (tout rayon passant par O n'est pas dévié). F : foyer objet. F' : foyer image, symétrique de F par rapport à O."
+          },
+          {
+            "type": "formula",
+            "label": "Distance focale",
+            "text": "f' = OF' (exprimée en mètre, m)\nVergence : C = 1 / f' (exprimée en dioptrie, δ)"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Rayon incident",
+              "Rayon émergent"
+            ],
+            "rows": [
+              [
+                "Passe par le centre optique O",
+                "N'est pas dévié"
+              ],
+              [
+                "Arrive parallèle à l'axe optique",
+                "Émerge en passant par le foyer image F´"
+              ],
+              [
+                "Passe par le foyer objet F",
+                "Émerge parallèle à l'axe optique"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Construction géométrique d'une image",
+        "icon": "✏️",
+        "content": [
+          {
+            "type": "text",
+            "text": "Pour construire l'image A'B' d'un objet AB perpendiculaire à l'axe optique, il suffit de tracer deux des trois rayons remarquables issus du point B (le sommet de l'objet) : leur intersection donne le point B', puis A' se trouve sur l'axe optique à la verticale de B'."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 500 260\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"axArrow42\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#5C6B60\"/></marker><marker id=\"objArrow42\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#2F7D75\"/></marker><marker id=\"imgArrow42\" markerWidth=\"8\" markerHeight=\"8\" refX=\"6\" refY=\"4\" orient=\"auto\"><path d=\"M0,0 L8,4 L0,8 Z\" fill=\"#C0472F\"/></marker></defs><line x1=\"20\" y1=\"130\" x2=\"470\" y2=\"130\" stroke=\"#5C6B60\" stroke-width=\"1.2\" marker-end=\"url(#axArrow42)\"/><line x1=\"250\" y1=\"40\" x2=\"250\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"2\"/><path d=\"M250,40 L242,52 L258,52 Z\" fill=\"#1B2420\"/><path d=\"M250,220 L242,208 L258,208 Z\" fill=\"#1B2420\"/><text x=\"256\" y=\"122\" font-size=\"12\" fill=\"#1B2420\">O</text><circle cx=\"170\" cy=\"130\" r=\"2.5\" fill=\"#5C6B60\"/><text x=\"166\" y=\"148\" font-size=\"12\" fill=\"#5C6B60\">F</text><circle cx=\"330\" cy=\"130\" r=\"2.5\" fill=\"#5C6B60\"/><text x=\"326\" y=\"148\" font-size=\"12\" fill=\"#5C6B60\">F'</text><line x1=\"100\" y1=\"60\" x2=\"421\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"100\" y1=\"60\" x2=\"250\" y2=\"60\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"250\" y1=\"60\" x2=\"421\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"100\" y1=\"60\" x2=\"250\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\"/><line x1=\"250\" y1=\"210\" x2=\"418\" y2=\"210\" stroke=\"#5C6B60\" stroke-width=\"1.3\" marker-end=\"url(#axArrow42)\"/><line x1=\"100\" y1=\"130\" x2=\"100\" y2=\"63\" stroke=\"#2F7D75\" stroke-width=\"2.4\" marker-end=\"url(#objArrow42)\"/><text x=\"88\" y=\"148\" font-size=\"12\" fill=\"#2F7D75\">A</text><text x=\"88\" y=\"58\" font-size=\"12\" fill=\"#2F7D75\" font-weight=\"600\">B</text><line x1=\"421\" y1=\"130\" x2=\"421\" y2=\"207\" stroke=\"#C0472F\" stroke-width=\"2.4\" marker-end=\"url(#imgArrow42)\"/><text x=\"427\" y=\"146\" font-size=\"12\" fill=\"#C0472F\">A'</text><text x=\"427\" y=\"215\" font-size=\"12\" fill=\"#C0472F\" font-weight=\"600\">B'</text></svg>",
+            "caption": "Construction de l'image A'B' à l'aide des trois rayons remarquables issus de B : par O (non dévié), parallèle à l'axe (émerge par F'), par F (émerge parallèle à l'axe). L'objet étant au-delà de F, l'image A'B' est réelle et renversée."
+          },
+          {
+            "type": "warn",
+            "text": "Si l'image obtenue se forme du côté opposé à l'objet (sur un écran), elle est dite réelle ; elle est généralement renversée par rapport à l'objet."
+          }
+        ]
+      },
+      {
+        "title": "3. Modèle de l'œil réduit",
+        "icon": "👁️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Œil réduit",
+            "text": "Modèle simplifié de l'œil dans lequel le cristallin est assimilé à une lentille mince convergente, et la rétine à un écran situé à distance fixe derrière la lentille."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Élément de l'œil",
+              "Modélisation"
+            ],
+            "rows": [
+              [
+                "Cristallin",
+                "Lentille mince convergente (vergence variable)"
+              ],
+              [
+                "Rétine",
+                "Écran (capteur de lumière)"
+              ],
+              [
+                "Distance cristallin-rétine",
+                "Fixe, environ 17 mm chez l'adulte"
+              ]
+            ]
+          },
+          {
+            "type": "def",
+            "term": "Accommodation",
+            "text": "Capacité du cristallin à se déformer (donc à modifier sa vergence, donc sa distance focale) grâce aux muscles ciliaires, afin qu'une image nette se forme sur la rétine, que l'objet observé soit proche ou éloigné."
+          }
+        ]
+      },
+      {
+        "title": "4. Grandissement et théorème de Thalès",
+        "icon": "📐",
+        "content": [
+          {
+            "type": "text",
+            "text": "Les distances sont des grandeurs algébriques, mesurées à partir du centre optique O sur l'axe orienté dans le sens de la lumière (de l'objet vers l'écran) : un objet placé avant la lentille a une abscisse OA négative, une image réelle formée après la lentille a une abscisse OA' positive."
+          },
+          {
+            "type": "text",
+            "text": "Sur le schéma de construction, les triangles OAB et OA'B' sont semblables (configuration de Thalès), ce qui permet de relier la taille de l'image à celle de l'objet."
+          },
+          {
+            "type": "formula",
+            "label": "Grandissement",
+            "text": "γ = A'B' / AB = OA' / OA   (grandeurs algébriques)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple chiffré : un objet AB de 4 cm de haut est placé 24 cm avant une lentille convergente : OA = − 24 cm. L'image nette se forme sur un écran situé 12 cm après la lentille : OA' = + 12 cm."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul du grandissement",
+            "text": "γ = OA' / OA = 12 / (− 24) = − 0,5\nA'B' = γ × AB = − 0,5 × 4 = − 2 cm"
+          },
+          {
+            "type": "formula",
+            "label": "Pour aller plus loin (programme de Première) : relation de conjugaison",
+            "text": "1 / OA' − 1 / OA = 1 / f'\nAvec l'exemple : 1 / 12 − 1 / (− 24) = 3 / 24 = 1 / 8, donc f' = 8 cm."
+          },
+          {
+            "type": "warn",
+            "text": "Le signe négatif de γ indique que l'image est renversée par rapport à l'objet ; sa valeur absolue (0,5 < 1) indique que l'image est réduite par rapport à l'objet."
+          }
+        ]
+      },
+      {
+        "title": "5. Défauts de vision courants",
+        "icon": "👓",
+        "content": [
+          {
+            "type": "def",
+            "term": "Myopie",
+            "text": "Défaut de vision dans lequel l'image d'un objet éloigné se forme en avant de la rétine (œil trop long ou cristallin trop convergent). La vision de loin est floue. Correction : lentille divergente."
+          },
+          {
+            "type": "def",
+            "term": "Hypermétropie",
+            "text": "Défaut de vision dans lequel l'image d'un objet se forme en arrière de la rétine (œil trop court ou cristallin pas assez convergent). La vision de près est difficile. Correction : lentille convergente."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Un rayon lumineux arrive sur une lentille convergente parallèlement à l'axe optique. Il ressort :",
+      "opts": [
+        "en passant par le foyer objet F",
+        "sans être dévié",
+        "en restant parallèle à l'axe optique",
+        "en passant par le foyer image F'"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "foyers-objet-image-inverses",
+          "texte": "Confondre foyer objet F et foyer image F' : un rayon parallèle à l'axe ressort par F', situé de l'autre côté de la lentille"
+        },
+        {
+          "code": "rayons-remarquables-confondus",
+          "texte": "Confondre les rayons remarquables : seul le rayon passant par le centre optique O n'est pas dévié"
+        },
+        {
+          "code": "parallele-reste-parallele",
+          "texte": "Croire qu'un rayon parallèle à l'axe le reste : c'est le rayon passant par F qui ressort parallèle à l'axe"
+        },
+        null
+      ],
+      "exp": "Un rayon parallèle à l'axe optique ressort en passant par le foyer image F'. Les deux autres rayons remarquables : par O, non dévié ; par F, ressort parallèle à l'axe."
+    },
+    {
+      "q": "Un rayon lumineux passe par le foyer objet F d'une lentille convergente. Il ressort :",
+      "opts": [
+        "parallèle à l'axe optique",
+        "en passant par le foyer image F'",
+        "sans être dévié",
+        "en passant par le centre optique O"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "rayon-par-f-vers-f-prime",
+          "texte": "Croire qu'un rayon passant par F ressort par F' : c'est le rayon arrivant parallèle à l'axe qui ressort par F'"
+        },
+        {
+          "code": "rayons-remarquables-confondus",
+          "texte": "Confondre les rayons remarquables : seul le rayon passant par le centre optique O n'est pas dévié"
+        },
+        {
+          "code": "foyer-vs-centre-optique",
+          "texte": "Confondre foyer et centre optique : le centre optique O est au milieu de la lentille, les foyers de part et d'autre"
+        }
+      ],
+      "exp": "Un rayon passant par le foyer objet F ressort parallèle à l'axe optique. C'est le « retour » du rayon parallèle qui passe par F'."
+    },
+    {
+      "q": "La distance focale f' d'une lentille convergente est la distance :",
+      "opts": [
+        "entre les deux foyers F et F'",
+        "entre le centre optique O et le foyer image F'",
+        "entre l'objet et la lentille",
+        "entre la lentille et l'image, quel que soit l'objet"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "focale-entre-foyers",
+          "texte": "Prendre la distance entre les deux foyers : FF' = 2f' ; la distance focale est OF'"
+        },
+        null,
+        {
+          "code": "focale-vs-distance-objet",
+          "texte": "Confondre distance focale et distance de l'objet : f' est une caractéristique de la lentille, elle ne dépend pas de l'objet"
+        },
+        {
+          "code": "image-toujours-au-foyer",
+          "texte": "Croire que l'image se forme toujours au foyer : c'est le cas seulement pour un objet très éloigné"
+        }
+      ],
+      "exp": "f' = OF' : c'est une caractéristique de la lentille. L'image d'un objet se forme au foyer F' seulement si l'objet est très éloigné."
+    },
+    {
+      "q": "On forme sur un écran l'image nette d'un paysage très lointain avec une lentille convergente. La distance entre la lentille et l'écran est alors égale :",
+      "opts": [
+        "à la distance focale f'",
+        "à deux fois la distance focale",
+        "à la distance entre le paysage et la lentille",
+        "à rien de précis : on ne peut pas former l'image d'un objet si lointain"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "focale-entre-foyers",
+          "texte": "Confondre f' et FF' = 2f' : l'image d'un objet très lointain se forme au foyer image F'"
+        },
+        {
+          "code": "distance-image-egale-objet",
+          "texte": "Croire que l'image est à la même distance que l'objet : elle se forme au foyer F', tout près de la lentille"
+        },
+        {
+          "code": "objet-lointain-sans-image",
+          "texte": "Croire qu'un objet très lointain ne donne pas d'image : ses rayons arrivent parallèles et convergent en F'"
+        }
+      ],
+      "exp": "Les rayons venant d'un objet très éloigné arrivent parallèles : ils convergent dans le plan du foyer image. L'écran est donc à la distance f' : c'est une méthode simple pour mesurer f'."
+    },
+    {
+      "q": "Un objet de 3,0 cm est placé à 30 cm d'une lentille ; son image nette se forme à 15 cm de la lentille. La taille de l'image vaut :",
+      "opts": [
+        "6,0 cm",
+        "1,5 cm",
+        "0,50 cm",
+        "45 cm"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "grandissement-inverse",
+          "texte": "Inverser le rapport des distances : |γ| = OA' / OA = 15 / 30 = 0,50, pas 30 / 15"
+        },
+        null,
+        {
+          "code": "gamma-pris-pour-taille",
+          "texte": "Donner le grandissement comme taille : |γ| = 0,50 est sans unité, A'B' = 0,50 × 3,0 cm"
+        },
+        {
+          "code": "produit-au-lieu-quotient",
+          "texte": "Multiplier la distance de l'image par la taille de l'objet : il faut A'B' = AB × OA' / OA"
+        }
+      ],
+      "exp": "En valeur absolue : A'B' / AB = OA' / OA = 15 / 30 = 0,50, donc A'B' = 0,50 × 3,0 = 1,5 cm. Attention : |γ| est sans unité."
+    },
+    {
+      "q": "Pour une image formée par une lentille convergente, on trouve un grandissement γ = −0,5. L'image est :",
+      "opts": [
+        "droite et deux fois plus petite que l'objet",
+        "renversée et deux fois plus grande que l'objet",
+        "renversée et deux fois plus petite que l'objet",
+        "droite et deux fois plus grande que l'objet"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "signe-gamma-ignore",
+          "texte": "Ignorer le signe de γ : un grandissement négatif indique une image renversée"
+        },
+        {
+          "code": "gamma-inverse-taille",
+          "texte": "Mal lire la valeur de γ : |γ| = 0,5 < 1 signifie que l'image est deux fois plus petite"
+        },
+        null,
+        {
+          "code": "gamma-mal-interprete",
+          "texte": "Mal interpréter γ : le signe indique le sens (négatif : renversée), la valeur absolue la taille (0,5 : deux fois plus petite)"
+        }
+      ],
+      "exp": "γ < 0 : image renversée ; |γ| = 0,5 < 1 : image deux fois plus petite que l'objet. Attention : on lit séparément le signe et la valeur."
+    },
+    {
+      "q": "On cache la moitié supérieure d'une lentille avec un carton. L'image de l'objet sur l'écran :",
+      "opts": [
+        "perd sa moitié inférieure",
+        "perd sa moitié supérieure",
+        "disparaît complètement",
+        "reste entière, mais moins lumineuse"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "lentille-masquee-moitie-image",
+          "texte": "Croire que masquer une partie de la lentille coupe une partie de l'image : chaque point de la lentille reçoit de la lumière de tout l'objet"
+        },
+        {
+          "code": "lentille-masquee-moitie-image",
+          "texte": "Croire que masquer une partie de la lentille coupe une partie de l'image : chaque point de la lentille reçoit de la lumière de tout l'objet"
+        },
+        {
+          "code": "lentille-masquee-plus-image",
+          "texte": "Croire qu'une lentille partiellement masquée ne forme plus d'image : la partie libre suffit à former toute l'image"
+        },
+        null
+      ],
+      "exp": "Chaque point de l'objet envoie des rayons sur toute la lentille ; la moitié libre suffit à former l'image entière, mais elle reçoit deux fois moins de lumière : l'image est moins lumineuse."
+    },
+    {
+      "q": "L'image d'un objet est nette sur un écran. On rapproche l'écran de la lentille, sans rien changer d'autre. L'image :",
+      "opts": [
+        "reste nette, mais devient plus petite",
+        "devient floue",
+        "reste nette, mais devient plus lumineuse",
+        "disparaît : l'écran ne reçoit plus de lumière"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "image-nette-partout",
+          "texte": "Croire que l'image est nette à toute distance : elle n'est nette qu'à une position précise de l'écran"
+        },
+        null,
+        {
+          "code": "luminosite-vs-nettete",
+          "texte": "Confondre luminosité et netteté : hors de la position de l'image, la lumière s'étale en une tache floue"
+        },
+        {
+          "code": "flou-vs-absence",
+          "texte": "Confondre image floue et absence d'image : l'écran reçoit toujours de la lumière, mais étalée"
+        }
+      ],
+      "exp": "Pour un objet et une lentille donnés, l'image nette se forme à une seule distance. Ailleurs, l'écran reçoit une tache floue. C'est pourquoi l'œil doit accommoder."
+    },
+    {
+      "q": "Dans le modèle de l'œil réduit, le cristallin est modélisé par :",
+      "opts": [
+        "l'écran",
+        "une lentille mince convergente",
+        "une lentille divergente",
+        "le diaphragme qui règle la quantité de lumière"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "cristallin-vs-retine",
+          "texte": "Confondre cristallin et rétine : la rétine est l'écran, le cristallin la lentille"
+        },
+        null,
+        {
+          "code": "oeil-divergent",
+          "texte": "Croire que le cristallin est divergent : il fait converger la lumière pour former une image sur la rétine"
+        },
+        {
+          "code": "cristallin-vs-iris",
+          "texte": "Confondre cristallin et iris : c'est l'iris (diaphragme) qui règle la quantité de lumière"
+        }
+      ],
+      "exp": "Œil réduit : le cristallin est une lentille mince convergente, la rétine un écran, l'iris un diaphragme. L'image sur la rétine est réelle et renversée."
+    },
+    {
+      "q": "On lève les yeux d'un livre pour regarder un paysage lointain. Pour que l'image reste nette sur la rétine :",
+      "opts": [
+        "la rétine se rapproche du cristallin",
+        "la pupille se dilate",
+        "le cristallin change de forme",
+        "rien ne change : l'image est nette à toutes les distances"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "accommodation-retine-bouge",
+          "texte": "Croire que la rétine se déplace : la distance cristallin-rétine est fixe, c'est le cristallin qui se déforme"
+        },
+        {
+          "code": "accommodation-vs-pupille",
+          "texte": "Confondre accommodation et adaptation à la lumière : la pupille règle la quantité de lumière, pas la netteté"
+        },
+        null,
+        {
+          "code": "image-nette-partout",
+          "texte": "Croire que l'image est nette à toute distance : sans accommodation, l'image d'un objet proche ou lointain serait floue"
+        }
+      ],
+      "exp": "La distance cristallin-rétine est fixe : c'est le cristallin qui se déforme (accommodation) pour que l'image se forme toujours sur la rétine."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "La loupe et le Soleil",
+      "contexte": [
+        "Au club sciences, Lina tient une loupe au-dessus d'une feuille de papier, en plein soleil (attention : on ne regarde jamais le Soleil à travers une loupe). Elle éloigne doucement la loupe de la feuille : la tache lumineuse devient de plus en plus petite et brillante, jusqu'à devenir un point quand la loupe est à 4,0 cm de la feuille.",
+        "La loupe est une lentille mince convergente. La figure ci-dessous la représente avec son axe optique, à l'échelle 1 carreau = 1 cm. Trois rayons lumineux 1, 2 et 3 arrivent sur la lentille."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Loupe de Lina (lentille convergente) — 1 carreau = 1 cm</text><line x1=\"56.0\" y1=\"55.0\" x2=\"56.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"92.0\" y1=\"55.0\" x2=\"92.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"128.0\" y1=\"55.0\" x2=\"128.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"164.0\" y1=\"55.0\" x2=\"164.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"200.0\" y1=\"55.0\" x2=\"200.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"236.0\" y1=\"55.0\" x2=\"236.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"272.0\" y1=\"55.0\" x2=\"272.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"308.0\" y1=\"55.0\" x2=\"308.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"344.0\" y1=\"55.0\" x2=\"344.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"380.0\" y1=\"55.0\" x2=\"380.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"416.0\" y1=\"55.0\" x2=\"416.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"452.0\" y1=\"55.0\" x2=\"452.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"488.0\" y1=\"55.0\" x2=\"488.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"524.0\" y1=\"55.0\" x2=\"524.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"560.0\" y1=\"55.0\" x2=\"560.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"596.0\" y1=\"55.0\" x2=\"596.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"632.0\" y1=\"55.0\" x2=\"632.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"668.0\" y1=\"55.0\" x2=\"668.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"704.0\" y1=\"55.0\" x2=\"704.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"415.0\" x2=\"704.0\" y2=\"415.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"379.0\" x2=\"704.0\" y2=\"379.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"343.0\" x2=\"704.0\" y2=\"343.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"307.0\" x2=\"704.0\" y2=\"307.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"271.0\" x2=\"704.0\" y2=\"271.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"235.0\" x2=\"704.0\" y2=\"235.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"199.0\" x2=\"704.0\" y2=\"199.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"163.0\" x2=\"704.0\" y2=\"163.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"127.0\" x2=\"704.0\" y2=\"127.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"91.0\" x2=\"704.0\" y2=\"91.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"56.0\" y1=\"55.0\" x2=\"704.0\" y2=\"55.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"50.0\" y1=\"235\" x2=\"710.0\" y2=\"235\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" stroke-dasharray=\"10 4 2 4\"/><line x1=\"380.0\" y1=\"235.0\" x2=\"380.0\" y2=\"81.4\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"380.0,69.4 385.4,81.4 374.6,81.4\" fill=\"#1F4E5A\"/><line x1=\"380.0\" y1=\"235.0\" x2=\"380.0\" y2=\"388.6\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"380.0,400.6 374.6,388.6 385.4,388.6\" fill=\"#1F4E5A\"/><text x=\"372.0\" y=\"255.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"236.0\" y1=\"229\" x2=\"236.0\" y2=\"241\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"236.0\" y=\"257.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">F</text><line x1=\"524.0\" y1=\"229\" x2=\"524.0\" y2=\"241\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"524.0\" y=\"257.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">F'</text><line x1=\"56.0\" y1=\"163.0\" x2=\"380.0\" y2=\"163.0\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><line x1=\"147.2\" y1=\"163.0\" x2=\"146.2\" y2=\"163.0\" stroke=\"#B5523B\" stroke-width=\"0.1\"/><polygon points=\"159.2,163.0 146.2,168.8 146.2,157.2\" fill=\"#B5523B\"/><text x=\"50.0\" y=\"168.0\" text-anchor=\"end\" font-weight=\"bold\" font-size=\"17\" fill=\"#B5523B\">1</text><line x1=\"92.0\" y1=\"127.0\" x2=\"380.0\" y2=\"235.0\" stroke=\"#C8962E\" stroke-width=\"2.5\"/><line x1=\"172.8\" y1=\"157.3\" x2=\"171.8\" y2=\"156.9\" stroke=\"#C8962E\" stroke-width=\"0.1\"/><polygon points=\"184.0,161.5 169.8,162.4 173.9,151.5\" fill=\"#C8962E\"/><text x=\"86.0\" y=\"132.0\" text-anchor=\"end\" font-weight=\"bold\" font-size=\"17\" fill=\"#C8962E\">2</text><line x1=\"92.0\" y1=\"271.0\" x2=\"380.0\" y2=\"199.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><line x1=\"172.6\" y1=\"250.9\" x2=\"171.6\" y2=\"251.1\" stroke=\"#1F4E5A\" stroke-width=\"0.1\"/><polygon points=\"184.2,247.9 173.0,256.8 170.2,245.4\" fill=\"#1F4E5A\"/><text x=\"86.0\" y=\"276.0\" text-anchor=\"end\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">3</text><text x=\"30\" y=\"458\" font-size=\"15\">Les rayons 1, 2 et 3 sont tracés jusqu'à la lentille ; leur trajet après la lentille est à compléter.</text></svg>",
+      "questions": [
+        {
+          "texte": "Recopie et complète : « Une lentille convergente est plus ………… au centre qu'aux bords. Les rayons du Soleil, très lointain, arrivent ………… à l'axe optique ; après la lentille, ils convergent en un point appelé ………… et noté ………… . La distance entre le centre optique O et ce point est la ………… , notée f'. »",
+          "aides": []
+        },
+        {
+          "texte": "D'après l'expérience de Lina, quelle est la distance focale f' de sa loupe ? Vérifie-le sur la figure en comptant les carreaux entre O et F'.",
+          "aides": [
+            "Où se trouve la feuille quand le point lumineux est le plus petit : en F, en O ou en F' ?",
+            "Les rayons du Soleil arrivent parallèles à l'axe : ils convergent au foyer image F'. La distance loupe–feuille est alors égale à OF'."
+          ]
+        },
+        {
+          "texte": "Pour chacun des rayons 1, 2 et 3, indique de quel rayon particulier il s'agit (parallèle à l'axe, passant par O, passant par F), puis complète son trajet après la lentille sur la figure.",
+          "aides": [
+            "Regarde où chaque rayon arrive : sur la lentille à la hauteur où il était (parallèle à l'axe), au centre O, ou après être passé par le point F ?",
+            "Règles de la fiche : par O → non dévié ; parallèle à l'axe → émerge par F' ; par F → émerge parallèle à l'axe."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. « Le foyer objet F et le foyer image F' sont à la même distance du centre optique O. »<br>b. « Un rayon qui passe par le centre optique O est dévié vers F'. »<br>c. « Avec une loupe de distance focale 10 cm, Lina obtiendrait le point lumineux en plaçant la loupe à 10 cm de la feuille. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> « Une lentille convergente est plus épaisse (bombée) au centre qu'aux bords. Les rayons du Soleil, très lointain, arrivent parallèles à l'axe optique ; après la lentille, ils convergent en un point appelé foyer image et noté F'. La distance entre le centre optique O et ce point est la distance focale, notée f'. »",
+        "<strong>2.</strong> Les rayons du Soleil convergent en F' : le point lumineux se forme quand la feuille passe par F'. Donc f' = OF' = 4,0 cm. Sur la figure, F' est à 4 carreaux de O, soit 4 × 1 cm = 4 cm : c'est cohérent. (C'est une méthode simple pour estimer la distance focale d'une lentille : former l'image d'un objet très éloigné.)",
+        "<strong>3.</strong> Rayon 1 : parallèle à l'axe optique → il émerge en passant par le foyer image F' (il coupe l'axe 4 carreaux après O, puis continue vers le bas). Rayon 2 : il passe par le centre optique O → il n'est pas dévié (il continue en ligne droite ; 8 carreaux après O, il est 3 carreaux sous l'axe). Rayon 3 : il passe par le foyer objet F → il émerge parallèle à l'axe optique (à 1 carreau au-dessus de l'axe).",
+        "<strong>4.</strong> a. VRAI : F' est le symétrique de F par rapport à O, donc OF = OF' = f'.",
+        "b. FAUX : un rayon passant par O n'est pas dévié. Ce sont les rayons parallèles à l'axe qui émergent en passant par F'.",
+        "c. VRAI : le point lumineux se forme au foyer image, à une distance f' = 10 cm de la lentille.",
+        "<em>⚠ Erreur fréquente : confondre F et F'. Le foyer image F' est du côté où la lumière sort de la lentille (ici à droite) ; le foyer objet F est du côté d'où arrive la lumière.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Une lettre sur l'écran",
+      "contexte": [
+        "En TP, Yanis éclaire une lettre « F » découpée dans un carton : c'est l'objet AB, de hauteur 4 cm. Il la place à 24 cm d'une lentille convergente de distance focale f' = 8 cm, et cherche où mettre l'écran pour obtenir une image nette.",
+        "Pour prévoir la position de l'écran, il fait une construction à l'échelle : 1 carreau = 2 cm (figure ci-dessous). Rappel : pour construire l'image B' du point B, il suffit de tracer deux des trois rayons particuliers issus de B ; A' est sur l'axe optique, à la verticale de B'."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Banc d'optique de Yanis — 1 carreau = 2 cm</text><line x1=\"35.0\" y1=\"105.0\" x2=\"35.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"65.0\" y1=\"105.0\" x2=\"65.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"95.0\" y1=\"105.0\" x2=\"95.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"125.0\" y1=\"105.0\" x2=\"125.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"155.0\" y1=\"105.0\" x2=\"155.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"185.0\" y1=\"105.0\" x2=\"185.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"215.0\" y1=\"105.0\" x2=\"215.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"245.0\" y1=\"105.0\" x2=\"245.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"275.0\" y1=\"105.0\" x2=\"275.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"305.0\" y1=\"105.0\" x2=\"305.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"335.0\" y1=\"105.0\" x2=\"335.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"365.0\" y1=\"105.0\" x2=\"365.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"395.0\" y1=\"105.0\" x2=\"395.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"425.0\" y1=\"105.0\" x2=\"425.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"455.0\" y1=\"105.0\" x2=\"455.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"485.0\" y1=\"105.0\" x2=\"485.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"515.0\" y1=\"105.0\" x2=\"515.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"545.0\" y1=\"105.0\" x2=\"545.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"575.0\" y1=\"105.0\" x2=\"575.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"605.0\" y1=\"105.0\" x2=\"605.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"635.0\" y1=\"105.0\" x2=\"635.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"665.0\" y1=\"105.0\" x2=\"665.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"695.0\" y1=\"105.0\" x2=\"695.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"725.0\" y1=\"105.0\" x2=\"725.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"345.0\" x2=\"725.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"315.0\" x2=\"725.0\" y2=\"315.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"285.0\" x2=\"725.0\" y2=\"285.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"255.0\" x2=\"725.0\" y2=\"255.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"225.0\" x2=\"725.0\" y2=\"225.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"195.0\" x2=\"725.0\" y2=\"195.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"165.0\" x2=\"725.0\" y2=\"165.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"135.0\" x2=\"725.0\" y2=\"135.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"105.0\" x2=\"725.0\" y2=\"105.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"29.0\" y1=\"225\" x2=\"731.0\" y2=\"225\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" stroke-dasharray=\"10 4 2 4\"/><line x1=\"425.0\" y1=\"225.0\" x2=\"425.0\" y2=\"129.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"425.0,117.0 430.4,129.0 419.6,129.0\" fill=\"#1F4E5A\"/><line x1=\"425.0\" y1=\"225.0\" x2=\"425.0\" y2=\"321.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"425.0,333.0 419.6,321.0 430.4,321.0\" fill=\"#1F4E5A\"/><text x=\"417.0\" y=\"245.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"305.0\" y1=\"219\" x2=\"305.0\" y2=\"231\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"305.0\" y=\"247.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">F</text><line x1=\"545.0\" y1=\"219\" x2=\"545.0\" y2=\"231\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"545.0\" y=\"247.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">F'</text><line x1=\"65.0\" y1=\"225.0\" x2=\"65.0\" y2=\"178.0\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"65.0,165.0 70.8,178.0 59.1,178.0\" fill=\"#B5523B\"/><text x=\"65.0\" y=\"247.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">A</text><text x=\"55.0\" y=\"161.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">B</text><text x=\"665.0\" y=\"126.0\" text-anchor=\"middle\" font-size=\"15\" fill=\"#555\">écran ?</text><text x=\"30\" y=\"458\" font-size=\"15\">Objet AB : lettre « F » éclairée, de hauteur 4 cm. Lentille de distance focale f' = 8 cm.</text></svg>",
+      "questions": [
+        {
+          "texte": "Combien de carreaux représentent f', AB et la distance OA ? Vérifie que la figure respecte l'échelle.",
+          "aides": []
+        },
+        {
+          "texte": "Sur la figure, trace le rayon issu de B qui passe par O, puis le rayon issu de B parallèle à l'axe optique (et son trajet après la lentille). Place leur point d'intersection B'.",
+          "aides": [
+            "Le rayon qui passe par O est une simple ligne droite de B à travers O, prolongée de l'autre côté.",
+            "Le rayon parallèle à l'axe arrive sur la lentille à la même hauteur que B (2 carreaux) ; de là, il repart en passant par F'. B' est là où les deux droites se croisent."
+          ]
+        },
+        {
+          "texte": "Trace le troisième rayon particulier issu de B (celui qui passe par F). Passe-t-il aussi par B' ?",
+          "aides": []
+        },
+        {
+          "texte": "Place A', puis mesure OA' et A'B' en carreaux. Convertis en centimètres. À quelle distance de la lentille Yanis doit-il placer l'écran ?",
+          "aides": [
+            "A' est sur l'axe optique, juste à la verticale de B'. Compte les carreaux entre O et A', puis entre A' et B'.",
+            "1 carreau = 2 cm : multiplie le nombre de carreaux par 2. L'image est sous l'axe : A'B' est négative."
+          ]
+        },
+        {
+          "texte": "Recopie en choisissant le bon mot : « L'image est réelle / virtuelle, droite / renversée, plus grande / plus petite que l'objet. »",
+          "aides": []
+        },
+        {
+          "texte": "Le grandissement est γ = A'B' / AB. Calcule γ, puis vérifie qu'il est égal à OA' / OA en grandeurs algébriques (l'objet est avant la lentille : OA = − 24 cm). Que signifient le signe et la valeur de γ ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> f' = 8 cm → 8 / 2 = 4 carreaux ; AB = 4 cm → 2 carreaux ; OA = 24 cm → 12 carreaux. Sur la figure, F et F' sont à 4 carreaux de O, B à 2 carreaux au-dessus de l'axe et A à 12 carreaux de O : la figure est à l'échelle.",
+        "<strong>2.</strong> Le rayon B → O traverse la lentille sans être dévié. Le rayon issu de B parallèle à l'axe arrive sur la lentille 2 carreaux au-dessus de l'axe, puis émerge en passant par F'. Les deux rayons se coupent en B', 6 carreaux à droite de O et 1 carreau sous l'axe.",
+        "<strong>3.</strong> Le rayon issu de B passant par F coupe la lentille 1 carreau sous l'axe, puis émerge parallèle à l'axe : il passe bien par B'. Les trois rayons sont concourants en B' (bonne vérification de la construction).",
+        "<strong>4.</strong> OA' = 6 carreaux = 6 × 2 = 12 cm ; A'B' = − 1 carreau = − 2 cm (image renversée, de taille 2 cm). Yanis doit placer l'écran à 12 cm de la lentille, de l'autre côté de l'objet.",
+        "<strong>5.</strong> L'image est réelle (on peut la recueillir sur un écran), renversée, plus petite que l'objet.",
+        "<strong>6.</strong> γ = A'B' / AB = − 2 / 4 = − 0,5. Avec les grandeurs algébriques : OA' / OA = 12 / (− 24) = − 0,5 : on retrouve la même valeur. γ &lt; 0 : l'image est renversée ; |γ| = 0,5 &lt; 1 : l'image est deux fois plus petite que l'objet.",
+        "<em>⚠ Erreur fréquente : oublier de convertir les carreaux en centimètres (1 carreau = 2 cm) et répondre « OA' = 6 cm ».</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "De l'œil à l'œil réduit",
+      "contexte": [
+        "Inès est assise au fond du car scolaire ; elle regarde par la vitre un arbre au bord de la route, puis l'écran de son téléphone. Le document ci-dessous montre une coupe simplifiée de l'œil (à gauche) et le modèle de l'œil réduit (à droite).",
+        "Liste des éléments de l'œil : cornée ; iris (qui délimite la pupille) ; cristallin ; rétine ; nerf optique."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Doc. — L'œil (coupe simplifiée) et son modèle, l'œil réduit</text><circle cx=\"250\" cy=\"240\" r=\"120\" fill=\"#fbf7f0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M 291.0 127.2 A 120 120 0 0 1 291.0 352.8\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"7\"/><path d=\"M 145.0 182.0 Q 85.0 240 145.0 298.0\" fill=\"#e8f1f3\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><line x1=\"154\" y1=\"178\" x2=\"154\" y2=\"218\" stroke=\"#C8962E\" stroke-width=\"7\"/><line x1=\"154\" y1=\"262\" x2=\"154\" y2=\"302\" stroke=\"#C8962E\" stroke-width=\"7\"/><ellipse cx=\"178\" cy=\"240\" rx=\"18\" ry=\"44\" fill=\"#cfe3e8\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><path d=\"M 366 246 L 425 270 L 425 292 L 360 274 Z\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"2\"/><line x1=\"100\" y1=\"220\" x2=\"50\" y2=\"130\" stroke=\"#333\" stroke-width=\"1.4\"/><circle cx=\"50\" cy=\"130\" r=\"14\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"50\" y=\"135\" text-anchor=\"middle\" font-weight=\"bold\">1</text><line x1=\"154\" y1=\"190\" x2=\"130\" y2=\"90\" stroke=\"#333\" stroke-width=\"1.4\"/><circle cx=\"130\" cy=\"90\" r=\"14\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"130\" y=\"95\" text-anchor=\"middle\" font-weight=\"bold\">2</text><line x1=\"178\" y1=\"270\" x2=\"130\" y2=\"390\" stroke=\"#333\" stroke-width=\"1.4\"/><circle cx=\"130\" cy=\"390\" r=\"14\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"130\" y=\"395\" text-anchor=\"middle\" font-weight=\"bold\">3</text><line x1=\"360\" y1=\"190\" x2=\"370\" y2=\"90\" stroke=\"#333\" stroke-width=\"1.4\"/><circle cx=\"370\" cy=\"90\" r=\"14\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"370\" y=\"95\" text-anchor=\"middle\" font-weight=\"bold\">4</text><line x1=\"410\" y1=\"280\" x2=\"400\" y2=\"390\" stroke=\"#333\" stroke-width=\"1.4\"/><circle cx=\"400\" cy=\"390\" r=\"14\" fill=\"#fff\" stroke=\"#333\" stroke-width=\"1.6\"/><text x=\"400\" y=\"395\" text-anchor=\"middle\" font-weight=\"bold\">5</text><text x=\"250\" y=\"455\" text-anchor=\"middle\" font-size=\"15\">L'œil réel (coupe horizontale)</text><line x1=\"460\" y1=\"240\" x2=\"740\" y2=\"240\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" stroke-dasharray=\"10 4 2 4\"/><line x1=\"530.0\" y1=\"240.0\" x2=\"530.0\" y2=\"157.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"530.0,145.0 535.4,157.0 524.6,157.0\" fill=\"#1F4E5A\"/><line x1=\"530.0\" y1=\"240.0\" x2=\"530.0\" y2=\"323.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"530.0,335.0 524.6,323.0 535.4,323.0\" fill=\"#1F4E5A\"/><text x=\"522\" y=\"260\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"710\" y1=\"145\" x2=\"710\" y2=\"335\" stroke=\"#B5523B\" stroke-width=\"7\"/><text x=\"530\" y=\"132\" text-anchor=\"middle\" font-weight=\"bold\">X</text><text x=\"710\" y=\"132\" text-anchor=\"middle\" font-weight=\"bold\">Y</text><line x1=\"530\" y1=\"365\" x2=\"710\" y2=\"365\" stroke=\"#333\" stroke-width=\"1.4\"/><line x1=\"530\" y1=\"357\" x2=\"530\" y2=\"373\" stroke=\"#333\" stroke-width=\"1.4\"/><line x1=\"710\" y1=\"357\" x2=\"710\" y2=\"373\" stroke=\"#333\" stroke-width=\"1.4\"/><text x=\"620\" y=\"390\" text-anchor=\"middle\" font-weight=\"bold\">d = 17 mm (fixe)</text><text x=\"600\" y=\"455\" text-anchor=\"middle\" font-size=\"15\">L'œil réduit (modèle)</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe chaque numéro 1 à 5 de l'œil réel à un élément de la liste.",
+          "aides": []
+        },
+        {
+          "texte": "Dans l'œil réduit, que modélisent la lentille X et l'écran Y ? Recopie et complète : « cristallin → ………… ; rétine → ………… ; distance cristallin–rétine → ………… ».",
+          "aides": []
+        },
+        {
+          "texte": "L'arbre AB mesure 10 m de haut et se trouve à OA = 50 m de l'œil d'Inès. La taille de son image sur la rétine vaut A'B' = AB × OA' / OA (en valeur absolue), avec OA' = 17 mm. Calcule cette taille en millimètres. L'image est-elle droite ou renversée ?",
+          "aides": [
+            "Avant de calculer, mets les trois longueurs dans la même unité (par exemple en mètres : 17 mm = 0,017 m).",
+            "Calcule 10 × 0,017 / 50, puis convertis le résultat en millimètres (× 1 000)."
+          ]
+        },
+        {
+          "texte": "Recopie en choisissant le bon mot : « Quand Inès passe de l'arbre à son téléphone, la distance cristallin–rétine change / ne change pas. Pour que l'image reste nette sur la rétine, le cristallin se déforme grâce aux muscles ciliaires : il devient plus / moins bombé et sa distance focale augmente / diminue. C'est l'accommodation. »",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? « Pour un objet très éloigné, et sans accommoder, l'image se forme au foyer image du cristallin : la distance focale de l'œil au repos vaut environ 17 mm. » Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> 1 : cornée ; 2 : iris (autour de la pupille) ; 3 : cristallin ; 4 : rétine ; 5 : nerf optique.",
+        "<strong>2.</strong> X modélise le cristallin : lentille mince convergente (de vergence variable). Y modélise la rétine : écran (capteur de lumière). Cristallin → lentille mince convergente ; rétine → écran ; distance cristallin–rétine → fixe, environ 17 mm chez l'adulte.",
+        "<strong>3.</strong> Conversion : OA' = 17 mm = 0,017 m. A'B' = 10 × 0,017 / 50 = 0,0034 m = 3,4 mm. L'image est renversée (comme toute image réelle formée par une lentille convergente : γ &lt; 0) ; c'est le cerveau qui « redresse » l'image.",
+        "<strong>4.</strong> « … la distance cristallin–rétine ne change pas. Pour que l'image reste nette sur la rétine, le cristallin se déforme grâce aux muscles ciliaires : il devient plus bombé et sa distance focale diminue. C'est l'accommodation. »",
+        "<strong>5.</strong> VRAI : les rayons issus d'un point très éloigné arrivent parallèles ; ils convergent au foyer image F'. Pour que l'image soit nette, F' doit être sur la rétine : f' = OF' ≈ 17 mm (œil au repos).",
+        "<em>⚠ Erreur fréquente : mélanger les unités (10 m, 50 m et 17 mm) : il faut tout exprimer dans la même unité avant de calculer, ou garder le rapport AB / OA = 10 / 50 sans unité.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Le vidéoprojecteur du CDI",
+      "contexte": [
+        "Dans un vidéoprojecteur, une petite image lumineuse (la « matrice ») joue le rôle d'objet ; l'objectif, modélisé par une lentille mince convergente, en donne une image agrandie sur le mur. Pour comprendre son fonctionnement, Mme Diallo, la professeure documentaliste, construit avec la classe une maquette à l'échelle 1 carreau = 1 cm (figure ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Maquette du vidéoprojecteur — 1 carreau = 1 cm</text><line x1=\"34.0\" y1=\"109.0\" x2=\"34.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"66.0\" y1=\"109.0\" x2=\"66.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"98.0\" y1=\"109.0\" x2=\"98.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"130.0\" y1=\"109.0\" x2=\"130.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"162.0\" y1=\"109.0\" x2=\"162.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"194.0\" y1=\"109.0\" x2=\"194.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"226.0\" y1=\"109.0\" x2=\"226.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"258.0\" y1=\"109.0\" x2=\"258.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"290.0\" y1=\"109.0\" x2=\"290.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"322.0\" y1=\"109.0\" x2=\"322.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"354.0\" y1=\"109.0\" x2=\"354.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"386.0\" y1=\"109.0\" x2=\"386.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"418.0\" y1=\"109.0\" x2=\"418.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"450.0\" y1=\"109.0\" x2=\"450.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"482.0\" y1=\"109.0\" x2=\"482.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"514.0\" y1=\"109.0\" x2=\"514.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"546.0\" y1=\"109.0\" x2=\"546.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"578.0\" y1=\"109.0\" x2=\"578.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"610.0\" y1=\"109.0\" x2=\"610.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"642.0\" y1=\"109.0\" x2=\"642.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"674.0\" y1=\"109.0\" x2=\"674.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"706.0\" y1=\"109.0\" x2=\"706.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"738.0\" y1=\"109.0\" x2=\"738.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"333.0\" x2=\"738.0\" y2=\"333.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"301.0\" x2=\"738.0\" y2=\"301.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"269.0\" x2=\"738.0\" y2=\"269.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"237.0\" x2=\"738.0\" y2=\"237.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"205.0\" x2=\"738.0\" y2=\"205.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"173.0\" x2=\"738.0\" y2=\"173.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"141.0\" x2=\"738.0\" y2=\"141.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"109.0\" x2=\"738.0\" y2=\"109.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"28.0\" y1=\"205\" x2=\"744.0\" y2=\"205\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" stroke-dasharray=\"10 4 2 4\"/><line x1=\"290.0\" y1=\"205.0\" x2=\"290.0\" y2=\"105.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"290.0,93.0 295.4,105.0 284.6,105.0\" fill=\"#1F4E5A\"/><line x1=\"290.0\" y1=\"205.0\" x2=\"290.0\" y2=\"305.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"290.0,317.0 284.6,305.0 295.4,305.0\" fill=\"#1F4E5A\"/><text x=\"282.0\" y=\"225.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"98.0\" y1=\"205.0\" x2=\"98.0\" y2=\"170.0\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"98.0,157.0 103.8,170.0 92.2,170.0\" fill=\"#B5523B\"/><text x=\"98.0\" y=\"227.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">A</text><text x=\"88.0\" y=\"153.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">B</text><text x=\"30\" y=\"440\" font-size=\"15\">Lentille : distance focale f' = 4,0 cm (les foyers ne sont pas placés).</text><text x=\"30\" y=\"462\" font-size=\"15\">Objet AB : hauteur 1,5 cm, placé à 6,0 cm de la lentille.</text></svg>",
+      "questions": [
+        {
+          "texte": "Place les foyers F et F' de la lentille sur la figure.",
+          "aides": [
+            "f' = 4,0 cm : combien de carreaux ? De quel côté de la lentille sort la lumière ?",
+            "F' est du côté opposé à l'objet, à f' de O ; F est son symétrique par rapport à O."
+          ]
+        },
+        {
+          "texte": "Construis l'image A'B' de l'objet AB en traçant les trois rayons particuliers issus de B.",
+          "aides": [
+            "Commence par les deux rayons les plus simples : celui qui passe par O et celui qui est parallèle à l'axe.",
+            "Le troisième rayon passe par B et F : prolonge-le jusqu'à la lentille, puis fais-le repartir parallèle à l'axe. Il doit passer par le même point B'."
+          ]
+        },
+        {
+          "texte": "Donne la distance OA' et la taille A'B' de l'image (avec son signe). Décris l'image : réelle ou virtuelle ? droite ou renversée ? agrandie ou réduite ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule le grandissement γ de deux façons différentes. Les résultats sont-ils cohérents ?",
+          "aides": []
+        },
+        {
+          "texte": "Les triangles OAB et OA'B' sont en configuration de Thalès. Écris l'égalité de rapports correspondante et déduis-en que la taille de l'image vaut AB × OA' / OA.",
+          "aides": []
+        },
+        {
+          "texte": "Dans le vrai vidéoprojecteur du CDI, la matrice mesure 1,5 cm de haut et se trouve à 2,5 cm de l'objectif ; l'image nette sur le mur mesure 1,20 m de haut. Calcule le grandissement, puis la distance entre l'objectif et le mur. Le résultat te paraît-il réaliste ? Pourquoi la matrice affiche-t-elle l'image « à l'envers » ?",
+          "aides": [
+            "La taille de l'image sur le mur s'écrit avec un signe « − » (image renversée), et AB et A'B' doivent être dans la même unité.",
+            "γ = A'B' / AB ; puis utilise γ = OA' / OA, avec OA = − 2,5 cm (la matrice est avant l'objectif), pour trouver OA'."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> f' = 4,0 cm = 4 carreaux : F' sur l'axe 4 carreaux à droite de O (côté où sort la lumière), F son symétrique, 4 carreaux à gauche de O (entre O et A, puisque OA = 6 cm).",
+        "<strong>2.</strong> Rayon B → O : non dévié. Rayon issu de B parallèle à l'axe (1,5 carreau au-dessus de l'axe) : émerge en passant par F'. Rayon issu de B passant par F : coupe la lentille 3 carreaux sous l'axe, émerge parallèle à l'axe. Les trois rayons se coupent en B', 12 carreaux à droite de O et 3 carreaux sous l'axe.",
+        "<strong>3.</strong> OA' = 12 cm ; A'B' = − 3,0 cm. L'image est réelle (de l'autre côté de la lentille, on peut la recueillir sur un écran), renversée et agrandie (3,0 cm contre 1,5 cm).",
+        "<strong>4.</strong> γ = A'B' / AB = − 3,0 / 1,5 = − 2,0. γ = OA' / OA = 12 / (− 6,0) = − 2,0 (OA est négatif : l'objet est avant la lentille). Les deux calculs concordent : l'image est renversée et 2 fois plus grande que l'objet.",
+        "<strong>5.</strong> Les droites (AB) et (A'B') sont parallèles (perpendiculaires à l'axe) et les droites (AA') et (BB') se coupent en O. Théorème de Thalès : OA' / OA = OB' / OB = A'B' / AB (en longueurs). Donc la taille de l'image vaut AB × OA' / OA = 1,5 × 12 / 6,0 = 3,0 cm : on retrouve la mesure. C'est ce qui justifie γ = OA' / OA en grandeurs algébriques : OA est négatif et OA' positif, donc γ est négatif, ce qui traduit le renversement.",
+        "<strong>6.</strong> L'image est renversée : A'B' = − 1,20 m = − 120 cm. γ = A'B' / AB = − 120 / 1,5 = − 80. Avec γ = OA' / OA et OA = − 2,5 cm : OA' = γ × OA = (− 80) × (− 2,5) = 200 cm = 2,0 m. Une distance de 2 m entre un vidéoprojecteur et le mur est réaliste dans une salle. Comme l'image donnée par la lentille est renversée, la matrice affiche l'image à l'envers pour qu'elle apparaisse à l'endroit sur le mur.",
+        "<em>⚠ Erreur fréquente : placer F' du côté de l'objet, ou mélanger les unités en 6 (1,20 m et 1,5 cm) : on trouverait γ = 0,8, ce qui donnerait une image plus petite que la matrice, absurde pour un projecteur.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Maquette d'œil : voir de près, voir de loin",
+      "contexte": [
+        "Au laboratoire, Théo et Maëlys utilisent une maquette d'œil : une lentille convergente dont on peut régler la distance focale (lentille souple remplie d'eau) et un écran fixe placé à 6,0 cm de la lentille. Ils placent un objet lumineux AB de hauteur 3,0 cm à 12 cm de la lentille (figure ci-dessous, 1 carreau = 1 cm) et règlent la lentille jusqu'à obtenir une image nette sur l'écran."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Maquette d'œil — 1 carreau = 1 cm</text><line x1=\"35.0\" y1=\"105.0\" x2=\"35.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"65.0\" y1=\"105.0\" x2=\"65.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"95.0\" y1=\"105.0\" x2=\"95.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"125.0\" y1=\"105.0\" x2=\"125.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"155.0\" y1=\"105.0\" x2=\"155.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"185.0\" y1=\"105.0\" x2=\"185.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"215.0\" y1=\"105.0\" x2=\"215.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"245.0\" y1=\"105.0\" x2=\"245.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"275.0\" y1=\"105.0\" x2=\"275.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"305.0\" y1=\"105.0\" x2=\"305.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"335.0\" y1=\"105.0\" x2=\"335.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"365.0\" y1=\"105.0\" x2=\"365.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"395.0\" y1=\"105.0\" x2=\"395.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"425.0\" y1=\"105.0\" x2=\"425.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"455.0\" y1=\"105.0\" x2=\"455.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"485.0\" y1=\"105.0\" x2=\"485.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"515.0\" y1=\"105.0\" x2=\"515.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"545.0\" y1=\"105.0\" x2=\"545.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"575.0\" y1=\"105.0\" x2=\"575.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"605.0\" y1=\"105.0\" x2=\"605.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"635.0\" y1=\"105.0\" x2=\"635.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"665.0\" y1=\"105.0\" x2=\"665.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"695.0\" y1=\"105.0\" x2=\"695.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"345.0\" x2=\"695.0\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"315.0\" x2=\"695.0\" y2=\"315.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"285.0\" x2=\"695.0\" y2=\"285.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"255.0\" x2=\"695.0\" y2=\"255.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"225.0\" x2=\"695.0\" y2=\"225.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"195.0\" x2=\"695.0\" y2=\"195.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"165.0\" x2=\"695.0\" y2=\"165.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"135.0\" x2=\"695.0\" y2=\"135.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"35.0\" y1=\"105.0\" x2=\"695.0\" y2=\"105.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"29.0\" y1=\"225\" x2=\"701.0\" y2=\"225\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" stroke-dasharray=\"10 4 2 4\"/><line x1=\"425.0\" y1=\"225.0\" x2=\"425.0\" y2=\"126.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"425.0,114.0 430.4,126.0 419.6,126.0\" fill=\"#1F4E5A\"/><line x1=\"425.0\" y1=\"225.0\" x2=\"425.0\" y2=\"324.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"425.0,336.0 419.6,324.0 430.4,324.0\" fill=\"#1F4E5A\"/><text x=\"417.0\" y=\"245.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">O</text><line x1=\"65.0\" y1=\"225.0\" x2=\"65.0\" y2=\"148.0\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><polygon points=\"65.0,135.0 70.8,148.0 59.1,148.0\" fill=\"#B5523B\"/><text x=\"65.0\" y=\"247.0\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">A</text><text x=\"55.0\" y=\"131.0\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#B5523B\">B</text><line x1=\"605.0\" y1=\"111.0\" x2=\"605.0\" y2=\"339.0\" stroke=\"#B5523B\" stroke-width=\"6\"/><text x=\"615.0\" y=\"126.0\" font-weight=\"bold\" fill=\"#B5523B\">écran</text><text x=\"615.0\" y=\"147.0\" font-weight=\"bold\" fill=\"#B5523B\">(fixe)</text><text x=\"30\" y=\"458\" font-size=\"15\">Lentille de distance focale réglable (foyers inconnus). Écran fixe à 6,0 cm de la lentille.</text></svg>",
+      "questions": [
+        {
+          "texte": "Quel élément de l'œil modélise chaque partie de la maquette ? Pourquoi l'écran est-il fixe ?",
+          "aides": []
+        },
+        {
+          "texte": "L'image B' est sur l'écran. Trace le rayon issu de B qui passe par O et place B'. Quelle est la taille de l'image ?",
+          "aides": [
+            "Le rayon qui passe par O n'est pas dévié : prolonge la droite (BO) jusqu'à l'écran.",
+            "Compte de combien de carreaux B' est sous l'axe, ou utilise Thalès : AB × OA' / OA."
+          ]
+        },
+        {
+          "texte": "Trace le rayon issu de B parallèle à l'axe optique : après la lentille, il doit passer par B'. Déduis-en la position du foyer image F' et la distance focale f' de la lentille réglée.",
+          "aides": [
+            "Le rayon parallèle à l'axe arrive sur la lentille à la hauteur de B (3 carreaux), puis repart vers B'.",
+            "Le foyer image F' est le point où ce rayon émergent coupe l'axe optique. Compte les carreaux entre O et F'."
+          ]
+        },
+        {
+          "texte": "Calcule le grandissement γ de la maquette.",
+          "aides": []
+        },
+        {
+          "texte": "On éloigne maintenant l'objet très loin. Où se forme l'image si on ne touche pas à la lentille ? Quelle distance focale faut-il alors pour que l'image soit nette sur l'écran ? Explique en quoi cette expérience illustre l'accommodation de l'œil.",
+          "aides": [
+            "Pour un objet très éloigné, les rayons arrivent parallèles à l'axe : ils convergent en un point bien précis.",
+            "L'image d'un objet lointain se forme en F'. Pour qu'elle soit sur l'écran, où doit être F' ? Compare la distance focale obtenue avec celle de la question 3."
+          ]
+        },
+        {
+          "texte": "Retour à l'œil réel (distance cristallin–rétine 17 mm). Au tableau, une lettre mesure 6,0 cm de haut et Théo est à 5,0 m ; sur son téléphone, tenu à 25 cm, une lettre mesure 2,0 mm. Calcule la taille de l'image de chaque lettre sur la rétine. Laquelle paraît la plus grande ?",
+          "aides": []
+        },
+        {
+          "texte": "Dans un appareil photo, la distance focale de l'objectif ne change pas, mais on peut avancer ou reculer l'objectif par rapport au capteur. Comment fait-on la mise au point sur un objet proche ? Compare avec l'œil.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Lentille → cristallin ; écran → rétine. L'écran est fixe car, dans l'œil, la distance cristallin–rétine ne change pas (environ 17 mm).",
+        "<strong>2.</strong> Le rayon B → O n'est pas dévié ; il coupe l'écran (6 carreaux après O) en B', 1,5 carreau sous l'axe. Taille de l'image : A'B' = − 1,5 cm (image renversée de 1,5 cm). Par Thalès : AB × OA' / OA = 3,0 × 6,0 / 12 = 1,5 cm.",
+        "<strong>3.</strong> Le rayon issu de B parallèle à l'axe atteint la lentille 3 carreaux au-dessus de l'axe ; on le prolonge jusqu'à B'. Il coupe l'axe optique en F', 4 carreaux après O. Donc f' = OF' = 4,0 cm.",
+        "<strong>4.</strong> γ = A'B' / AB = − 1,5 / 3,0 = − 0,50 (ou γ = OA' / OA = 6,0 / (− 12) = − 0,50, avec OA négatif).",
+        "<strong>5.</strong> Pour un objet très éloigné, les rayons arrivent parallèles à l'axe et l'image se forme au foyer image F', à 4,0 cm de la lentille : elle est devant l'écran, donc floue sur l'écran. Pour qu'elle soit nette, il faut F' sur l'écran : f' = 6,0 cm. Bilan : pour un objet proche, il faut une distance focale plus petite (4,0 cm) que pour un objet lointain (6,0 cm). L'œil fait de même : quand on regarde de près, les muscles ciliaires bombent le cristallin, ce qui diminue sa distance focale, alors que la distance cristallin–rétine reste fixe : c'est l'accommodation.",
+        "<strong>6.</strong> Tableau : A'B' = AB × OA' / OA = 6,0 cm × 17 mm / 5,0 m = 0,060 × 0,017 / 5,0 = 2,04 × 10⁻⁴ m ≈ 0,20 mm. Téléphone : 2,0 mm × 17 mm / 250 mm ≈ 0,14 mm. La lettre du tableau donne une image 1,5 fois plus grande : elle paraît plus grande, même si elle est 20 fois plus loin (5,0 m contre 0,25 m).",
+        "<strong>7.</strong> Pour un objet proche, l'image se forme plus loin derrière l'objectif (comme dans l'ex 2 et la question 3 : l'image d'un objet proche est plus loin que F') : on éloigne l'objectif du capteur jusqu'à ce que l'image soit nette sur le capteur. L'œil, lui, ne peut pas modifier la distance cristallin–rétine : il modifie la distance focale du cristallin (accommodation).",
+        "<em>⚠ Erreur fréquente : faire passer le rayon parallèle par un foyer « deviné » au lieu de l'obliger à passer par B'. Ici, c'est B' (sur l'écran) qui est connu et F' qu'on cherche : la construction se fait « à l'envers ».</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Toute la classe sur la photo ?",
+      "contexte": [
+        "Pour l'album de fin d'année, Sofia doit photographier les 30 élèves de sa classe de Seconde, dans la cour, avec son smartphone tenu à l'horizontale (mode « paysage »). Les élèves sont sur trois rangs ; le rang le plus large mesure L = 8,0 m et le groupe mesure 2,4 m de haut. Sofia se place à D = 6,0 m du groupe. Derrière elle, un muret l'empêche de reculer à plus de 9,0 m.",
+        "Doc. 1 — Modèle de l'appareil photo (figure ci-dessous) : l'objectif est modélisé par une lentille mince convergente et le capteur par un écran. Pour un objet situé à plusieurs mètres, l'image se forme pratiquement dans le plan focal : la distance objectif–capteur est presque égale à f'.",
+        "Doc. 2 — Fiche technique de l'objectif principal du smartphone (données fictives vraisemblables) : distance focale f' = 5,0 mm ; capteur rectangulaire de 6,0 mm de large et 4,5 mm de haut (en mode paysage). Une partie de la scène n'est sur la photo que si son image tombe sur le capteur."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"30\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"17\" fill=\"#1F4E5A\">Doc. 1 — Modèle de l'appareil photo du smartphone (schéma sans échelle)</text><line x1=\"40\" y1=\"235\" x2=\"730\" y2=\"235\" stroke=\"#3a3a3a\" stroke-width=\"1.6\" stroke-dasharray=\"10 4 2 4\"/><line x1=\"90\" y1=\"85\" x2=\"90\" y2=\"385\" stroke=\"#B5523B\" stroke-width=\"6\"/><circle cx=\"74\" cy=\"97.0\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"131.5\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"166.0\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"200.5\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"235.0\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"269.5\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"304.0\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"338.5\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><circle cx=\"74\" cy=\"373.0\" r=\"9\" fill=\"#e9d7c9\" stroke=\"#B5523B\" stroke-width=\"1.5\"/><text x=\"102\" y=\"89\" font-weight=\"bold\" fill=\"#B5523B\">bord gauche du rang</text><text x=\"102\" y=\"389\" font-weight=\"bold\" fill=\"#B5523B\">bord droit du rang</text><text x=\"104\" y=\"223\" font-weight=\"bold\" fill=\"#B5523B\">rang : largeur L</text><line x1=\"520.0\" y1=\"235.0\" x2=\"520.0\" y2=\"177.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"520.0,165.0 525.4,177.0 514.6,177.0\" fill=\"#1F4E5A\"/><line x1=\"520.0\" y1=\"235.0\" x2=\"520.0\" y2=\"293.0\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><polygon points=\"520.0,305.0 514.6,293.0 525.4,293.0\" fill=\"#1F4E5A\"/><text x=\"512\" y=\"325\" text-anchor=\"end\" font-weight=\"bold\" fill=\"#1F4E5A\">objectif (O)</text><rect x=\"636\" y=\"189\" width=\"8\" height=\"92\" fill=\"#C8962E\"/><text x=\"652\" y=\"181\" font-weight=\"bold\" fill=\"#8a6418\">capteur</text><line x1=\"90\" y1=\"85\" x2=\"640\" y2=\"276.9\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"90\" y1=\"385\" x2=\"640\" y2=\"193.1\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"90\" y1=\"430\" x2=\"520\" y2=\"430\" stroke=\"#333\" stroke-width=\"1.4\"/><text x=\"305.0\" y=\"452\" text-anchor=\"middle\">D : distance entre Sofia et le rang</text><line x1=\"520\" y1=\"400\" x2=\"640\" y2=\"400\" stroke=\"#333\" stroke-width=\"1.4\"/><text x=\"600.0\" y=\"420\" text-anchor=\"middle\">≈ f'</text><line x1=\"90\" y1=\"423\" x2=\"90\" y2=\"437\" stroke=\"#333\" stroke-width=\"1.4\"/><line x1=\"520\" y1=\"423\" x2=\"520\" y2=\"437\" stroke=\"#333\" stroke-width=\"1.4\"/><line x1=\"520\" y1=\"393\" x2=\"520\" y2=\"407\" stroke=\"#333\" stroke-width=\"1.4\"/><line x1=\"640\" y1=\"393\" x2=\"640\" y2=\"407\" stroke=\"#333\" stroke-width=\"1.4\"/><text x=\"730\" y=\"311\" text-anchor=\"end\" font-size=\"14\">largeur du capteur : 6,0 mm</text></svg>",
+      "questions": [
+        {
+          "texte": "S'approprier : dans cette situation, que représentent l'objet AB et l'image A'B' ? Quelles sont les valeurs de OA et de OA' (environ) ? Quelle est la plus grande largeur possible pour l'image du groupe ?",
+          "aides": [
+            "Sur le doc. 1, repère l'objet (le rang d'élèves), la lentille (l'objectif) et l'écran (le capteur).",
+            "OA est la distance entre Sofia et le groupe ; OA' est la distance objectif–capteur, presque égale à f'. La largeur de l'image doit tenir dans le capteur."
+          ]
+        },
+        {
+          "texte": "Depuis sa place, Sofia pourra-t-elle faire tenir toute la classe sur la photo ? Si ce n'est pas le cas, que doit-elle faire ? Rédige une réponse argumentée en présentant ta démarche et tes calculs.",
+          "aides": [
+            "Analyser : la taille de l'image et celle de l'objet sont dans le même rapport que les distances OA' et OA (Thalès, grandissement).",
+            "Réaliser : calcule la largeur de l'image du rang à 6,0 m (attention aux unités) et compare-la à 6,0 mm.",
+            "Si l'image est trop large, cherche la distance D pour laquelle la largeur de l'image vaut exactement 6,0 mm, et vérifie qu'elle est inférieure à 9,0 m."
+          ]
+        },
+        {
+          "texte": "Regard critique : on a supposé OA' ≈ f'. Pour aller plus loin (hors programme de Seconde) : en optique, on utilise aussi la relation de conjugaison 1 / OA' − 1 / OA = 1 / f', écrite avec des valeurs algébriques (OA est alors négative : OA = − 6,0 m). Calcule OA' à 6,0 m et l'écart relatif avec f'. L'approximation était-elle justifiée ?",
+          "aides": [
+            "Exprime toutes les longueurs en millimètres : OA = − 6 000 mm, f' = 5,0 mm.",
+            "1 / OA' = 1 / f' + 1 / OA : calcule le membre de droite, puis prends l'inverse. Écart relatif = (OA' − f') / f'."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'objet AB est le rang le plus large (AB = L = 8,0 m) ; l'image A'B' est son image sur le capteur. OA = D = 6,0 m (distance Sofia–groupe) ; OA' ≈ f' = 5,0 mm = 5,0 × 10⁻³ m (doc. 1). L'image du groupe doit tenir dans la largeur du capteur : elle ne doit pas dépasser 6,0 mm.",
+        "<strong>2.</strong> Démarche attendue : (a) relier la taille de l'image à celle de l'objet avec le grandissement (ou Thalès) ; (b) calculer la largeur de l'image à 6,0 m et la comparer à 6,0 mm ; (c) si elle est trop grande, chercher la distance minimale et vérifier qu'elle est possible (muret à 9,0 m).",
+        "a. Taille de l'image : A'B' = AB × OA' / OA (Thalès, ou |γ| = OA' / OA). Ici |γ| = 5,0 × 10⁻³ / 6,0 ≈ 8,3 × 10⁻⁴.",
+        "b. À D = 6,0 m : largeur de l'image = 8,0 × 5,0 × 10⁻³ / 6,0 = 6,7 × 10⁻³ m ≈ 6,7 mm &gt; 6,0 mm. Les élèves des deux bouts du rang seraient coupés.",
+        "c. Distance minimale : il faut 8,0 × 5,0 mm / D ≤ 6,0 mm, soit D ≥ 8,0 × 5,0 / 6,0 ≈ 6,7 m. Sofia doit reculer d'au moins 0,7 m environ (par exemple jusqu'à 7,0 m : image de 5,7 mm de large, avec une petite marge). C'est possible, puisque le muret est à 9,0 m. En hauteur, il n'y a pas de problème : à 6,7 m, l'image du groupe mesure 2,4 × 5,0 / 6,7 ≈ 1,8 mm &lt; 4,5 mm.",
+        "Conclusion : depuis 6,0 m, toute la classe ne tient pas sur la photo (image de 6,7 mm pour un capteur de 6,0 mm). Sofia doit reculer à au moins 6,7 m environ, ce que le muret permet. (Autres solutions acceptées si elles sont justifiées : resserrer les élèves pour réduire L, ou utiliser un objectif « grand-angle » de distance focale plus petite, qui donne une image plus petite.)",
+        "Éléments valorisés même si le résultat final est faux : identification de l'objet, de l'image et de OA' ≈ f' ; relation entre tailles et distances (grandissement ou Thalès) ; conversions mm ↔ m correctes ; comparaison avec la largeur du capteur ; proposition d'une solution vérifiée (distance minimale &lt; 9,0 m) ; conclusion rédigée.",
+        "<strong>3.</strong> Avec OA = − 6,0 m = − 6 000 mm : 1 / OA' = 1 / f' + 1 / OA = 1 / 5,0 − 1 / 6 000, d'où OA' ≈ 5,004 mm. Écart relatif : (5,004 − 5,0) / 5,0 ≈ 8 × 10⁻⁴, soit 0,08 %. La largeur de l'image devient 6,672 mm au lieu de 6,667 mm : la conclusion ne change pas. L'approximation OA' ≈ f' est justifiée, car l'objet est très loin devant f' (6 000 mm contre 5 mm). Limites du modèle : l'objectif réel est formé de plusieurs lentilles, et la taille exacte du capteur dépend du modèle de téléphone.",
+        "<em>⚠ Erreur fréquente : mélanger les unités (8,0 m, 6,0 m et 5,0 mm) : en écrivant 8,0 × 5,0 / 6,0 sans préciser les unités, il faut savoir que le résultat est en mm (même unité que f'), car L / D est un rapport sans unité.</em>",
+        "<em>⚠ Erreur fréquente : conclure « il faut se rapprocher » : plus Sofia est proche, plus l'image du groupe est grande sur le capteur.</em>"
+      ]
+    }
+  ]
+}

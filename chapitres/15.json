@@ -1,0 +1,830 @@
+{
+  "id": 15,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Optimisation d'une synthèse organique",
+        "icon": "🎯",
+        "content": [
+          {
+            "type": "def",
+            "term": "Rendement η",
+            "text": "Rapport entre la quantité de matière (ou masse) de produit effectivement obtenue et la quantité de matière (ou masse) théorique maximale attendue : η = n(obtenu) / n(théorique max) ; souvent exprimé en %."
+          },
+          {
+            "type": "text",
+            "text": "Optimiser une synthèse consiste à agir simultanément sur plusieurs leviers pour améliorer le <strong>rendement</strong>, la <strong>vitesse</strong> de la réaction et la <strong>sélectivité</strong> (obtenir majoritairement le produit visé) :"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Levier",
+              "Effet recherché"
+            ],
+            "rows": [
+              [
+                "Chauffage à reflux",
+                "Accélère la réaction sans perte de matière (les vapeurs se condensent et retombent dans le milieu réactionnel)"
+              ],
+              [
+                "Catalyseur",
+                "Augmente la vitesse et peut améliorer la sélectivité, sans être consommé"
+              ],
+              [
+                "Réactif en excès",
+                "Déplace la réaction dans le sens direct, augmente le rendement du réactif limitant"
+              ],
+              [
+                "Élimination d'un produit (distillation, précipitation)",
+                "Déplace l'équilibre vers la formation des produits"
+              ]
+            ]
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 380\" xmlns=\"http://www.w3.org/2000/svg\"><defs><marker id=\"eauArrowL15\" markerWidth=\"7\" markerHeight=\"7\" refX=\"2\" refY=\"3.5\" orient=\"auto\"><path d=\"M7,0 L0,3.5 L7,7 Z\" fill=\"#3E7DBF\"/></marker><marker id=\"eauArrowR15\" markerWidth=\"7\" markerHeight=\"7\" refX=\"5\" refY=\"3.5\" orient=\"auto\"><path d=\"M0,0 L7,3.5 L0,7 Z\" fill=\"#3E7DBF\"/></marker></defs><line x1=\"280\" y1=\"20\" x2=\"280\" y2=\"360\" stroke=\"#1B2420\" stroke-width=\"3\"/><line x1=\"280\" y1=\"110\" x2=\"225\" y2=\"110\" stroke=\"#1B2420\" stroke-width=\"4\"/><rect x=\"205\" y=\"100\" width=\"20\" height=\"20\" rx=\"3\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"90\" y=\"60\" width=\"40\" height=\"140\" rx=\"6\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"110\" y1=\"45\" x2=\"110\" y2=\"215\" stroke=\"#1B2420\" stroke-width=\"2\"/><line x1=\"140\" y1=\"185\" x2=\"133\" y2=\"185\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#eauArrowL15)\"/><text x=\"144\" y=\"189\" font-size=\"10\" fill=\"#3E7DBF\">eau</text><line x1=\"133\" y1=\"75\" x2=\"140\" y2=\"75\" stroke=\"#3E7DBF\" stroke-width=\"2\" marker-end=\"url(#eauArrowR15)\"/><text x=\"144\" y=\"79\" font-size=\"10\" fill=\"#3E7DBF\">eau</text><text x=\"135\" y=\"50\" font-size=\"11\" fill=\"#5C6B60\">Réfrigérant</text><rect x=\"103\" y=\"210\" width=\"14\" height=\"35\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><circle cx=\"110\" cy=\"300\" r=\"55\" fill=\"#EBECE3\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><path d=\"M62,315 Q110,300 158,315 L158,340 Q110,355 62,340 Z\" fill=\"#3E7DBF\" fill-opacity=\"0.3\"/><circle cx=\"95\" cy=\"325\" r=\"3\" fill=\"#5C6B60\"/><circle cx=\"120\" cy=\"330\" r=\"3\" fill=\"#5C6B60\"/><text x=\"172\" y=\"300\" font-size=\"11\" fill=\"#5C6B60\">Ballon</text><rect x=\"60\" y=\"350\" width=\"100\" height=\"25\" rx=\"8\" fill=\"#B9C0AC\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><text x=\"172\" y=\"366\" font-size=\"11\" fill=\"#5C6B60\">Chauffe-ballon</text></svg>",
+            "caption": "Montage à reflux : les vapeurs qui s'échappent du ballon chauffé sont condensées par le réfrigérant (refroidi par une circulation d'eau à contre-courant) et retombent dans le ballon, sans perte de matière."
+          }
+        ]
+      },
+      {
+        "title": "2. Contrôle de la pureté par CCM",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Chromatographie sur couche mince (CCM)",
+            "text": "Technique qui permet de vérifier la pureté d'une espèce synthétisée et de l'identifier, en comparant sa migration sur une plaque (son rapport frontal Rf) à celle d'espèces de référence déposées sur la même plaque."
+          },
+          {
+            "type": "formula",
+            "label": "Rapport frontal",
+            "text": "Rf = h / H\nh : distance parcourue par l'espèce chimique (du dépôt à la tache)\nH : distance parcourue par l'éluant (du dépôt au front de l'éluant)"
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 320 300\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"40\" y=\"20\" width=\"240\" height=\"245\" fill=\"#FAFAF5\" stroke=\"#5C6B60\" stroke-width=\"1.5\"/><line x1=\"40\" y1=\"250\" x2=\"280\" y2=\"250\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"4\" y=\"254\" font-size=\"9\" fill=\"#5C6B60\">Dépôt</text><line x1=\"40\" y1=\"50\" x2=\"280\" y2=\"50\" stroke=\"#5C6B60\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"178\" y=\"44\" font-size=\"9\" fill=\"#5C6B60\">Front de l'éluant</text><line x1=\"18\" y1=\"50\" x2=\"18\" y2=\"250\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><line x1=\"12\" y1=\"50\" x2=\"24\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><line x1=\"12\" y1=\"250\" x2=\"24\" y2=\"250\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><text x=\"2\" y=\"153\" font-size=\"10\" fill=\"#1B2420\">H</text><line x1=\"70\" y1=\"120\" x2=\"70\" y2=\"250\" stroke=\"#2F7D75\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"120\" x2=\"76\" y2=\"120\" stroke=\"#2F7D75\" stroke-width=\"1.2\"/><line x1=\"64\" y1=\"250\" x2=\"76\" y2=\"250\" stroke=\"#2F7D75\" stroke-width=\"1.2\"/><text x=\"76\" y=\"188\" font-size=\"10\" fill=\"#2F7D75\">h</text><line x1=\"90\" y1=\"120\" x2=\"230\" y2=\"120\" stroke=\"#2F7D75\" stroke-width=\"1\" stroke-dasharray=\"2 2\" opacity=\"0.5\"/><circle cx=\"110\" cy=\"120\" r=\"6\" fill=\"#2F7D75\"/><circle cx=\"210\" cy=\"120\" r=\"6\" fill=\"#2F7D75\"/><text x=\"110\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Produit synth.</text><text x=\"210\" y=\"278\" font-size=\"9\" fill=\"#1B2420\" text-anchor=\"middle\">Référence</text></svg>",
+            "caption": "Si le produit synthétisé est pur et identique à la référence, la CCM ne révèle qu'une seule tache par dépôt, à la même hauteur (même Rf = h/H) que la référence."
+          },
+          {
+            "type": "warn",
+            "text": "Le rapport frontal Rf est toujours compris entre 0 et 1. Deux espèces chimiques identiques migrent à la même hauteur avec un même éluant : elles ont donc le même Rf."
+          }
+        ]
+      },
+      {
+        "title": "3. Réactions d'addition, d'élimination et de substitution",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "def",
+            "term": "Réaction d'addition",
+            "text": "Deux réactifs se combinent pour former une seule molécule produite, avec disparition d'une liaison multiple (double ou triple)."
+          },
+          {
+            "type": "formula",
+            "label": "Exemple d'addition",
+            "text": "CH₂=CH₂ + Br₂ → CH₂Br−CH₂Br\n(addition de dibrome sur l'éthène : la double liaison C=C disparaît)"
+          },
+          {
+            "type": "def",
+            "term": "Réaction d'élimination",
+            "text": "Réaction inverse de l'addition : une molécule se scinde en deux produits, avec formation d'une liaison multiple (ou d'un cycle)."
+          },
+          {
+            "type": "formula",
+            "label": "Exemple d'élimination",
+            "text": "CH₃−CH₂OH → CH₂=CH₂ + H₂O\n(déshydratation intramoléculaire de l'éthanol en milieu acide, à chaud : formation d'un alcène)"
+          },
+          {
+            "type": "def",
+            "term": "Réaction de substitution",
+            "text": "Un atome ou groupe d'atomes est remplacé par un autre atome ou groupe d'atomes au sein d'une molécule."
+          },
+          {
+            "type": "formula",
+            "label": "Exemple de substitution",
+            "text": "CH₃−Br + HO⁻ → CH₃−OH + Br⁻\n(substitution nucléophile : l'ion hydroxyde remplace l'atome de brome)"
+          }
+        ]
+      },
+      {
+        "title": "4. Polymérisation",
+        "icon": "🧬",
+        "content": [
+          {
+            "type": "def",
+            "term": "Polymère",
+            "text": "Macromolécule obtenue par l'enchaînement répété d'un grand nombre de motifs (monomères)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Type",
+              "Mécanisme",
+              "Sous-produit"
+            ],
+            "rows": [
+              [
+                "Polyaddition",
+                "Addition successive de monomères porteurs de liaisons multiples (souvent C=C)",
+                "Aucun"
+              ],
+              [
+                "Polycondensation",
+                "Réaction répétée entre deux groupes caractéristiques (ex : acide + amine, ou acide + alcool) avec élimination d'une petite molécule",
+                "Souvent H₂O"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Exemple : le polyéthylène est obtenu par polyaddition de monomères éthène ; le Nylon (polyamide) est obtenu par polycondensation d'un diacide et d'une diamine, avec élimination d'eau."
+          }
+        ]
+      },
+      {
+        "title": "5. Protection et déprotection de groupes caractéristiques",
+        "icon": "🛡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Protection d'un groupe caractéristique",
+            "text": "Transformation temporaire et réversible d'un groupe fonctionnel réactif en un groupe inerte (groupe protecteur), afin d'éviter qu'il ne réagisse lors d'une étape ultérieure de la synthèse visant un autre site de la molécule."
+          },
+          {
+            "type": "def",
+            "term": "Déprotection",
+            "text": "Étape finale qui régénère le groupe caractéristique initial à partir du groupe protecteur, une fois la transformation ciblée effectuée ailleurs dans la molécule."
+          },
+          {
+            "type": "text",
+            "text": "Cette stratégie est indispensable en synthèse multi-étapes lorsqu'une molécule possède plusieurs groupes caractéristiques réactifs (par exemple un acide carboxylique <strong>et</strong> une amine) et que l'on souhaite ne faire réagir sélectivement que l'un d'entre eux."
+          }
+        ]
+      },
+      {
+        "title": "6. Chimie verte / éco-responsable",
+        "icon": "🌱",
+        "content": [
+          {
+            "type": "text",
+            "text": "La chimie verte vise à limiter l'impact environnemental des synthèses chimiques, en particulier à l'échelle industrielle. Principaux leviers au programme :"
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Principe",
+              "Description"
+            ],
+            "rows": [
+              [
+                "Économie d'atomes",
+                "Privilégier des réactions dont un maximum d'atomes des réactifs se retrouve dans le produit final (limiter les sous-produits et déchets)"
+              ],
+              [
+                "Choix du solvant",
+                "Utiliser des solvants peu toxiques, biodégradables, voire supprimer le solvant (réaction en phase solide ou sans solvant)"
+              ],
+              [
+                "Catalyse",
+                "Utiliser des catalyseurs pour limiter l'énergie consommée (température, durée) et augmenter la sélectivité"
+              ],
+              [
+                "Économie d'énergie",
+                "Privilégier des conditions douces (température ambiante, micro-ondes) plutôt que chauffage prolongé"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "7. Exemple guidé : synthèse multi-étapes d'une liaison peptidique",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "text",
+            "text": "On souhaite faire réagir sélectivement le groupe amine d'un premier acide aminé avec le groupe acide carboxylique d'un second, pour former une liaison peptidique (amide), sans réaction parasite entre les autres groupes réactifs présents."
+          },
+          {
+            "type": "formula",
+            "label": "Étape 1 — Protection",
+            "text": "La fonction amine du premier acide aminé (non concernée par la liaison à former) est protégée par un groupe protecteur (ex : groupe Boc), la transformant en un groupe non réactif."
+          },
+          {
+            "type": "formula",
+            "label": "Étape 2 — Activation de l'acide carboxylique",
+            "text": "La fonction acide carboxylique du second acide aminé est activée (transformée en dérivé plus réactif) pour faciliter la formation de la liaison amide lors du couplage."
+          },
+          {
+            "type": "formula",
+            "label": "Étape 3 — Couplage (formation de la liaison peptidique)",
+            "text": "R−COOH(activé) + H₂N−R' → R−CO−NH−R' + sous-produit\nRéaction de condensation entre l'acide activé et l'amine libre, avec formation de la liaison amide (peptidique) −CO−NH−."
+          },
+          {
+            "type": "formula",
+            "label": "Étape 4 — Déprotection",
+            "text": "Le groupe protecteur introduit à l'étape 1 est retiré pour régénérer la fonction amine libre initiale, donnant le dipeptide final."
+          },
+          {
+            "type": "warn",
+            "text": "Cette stratégie protection → activation → couplage → déprotection illustre la démarche générale d'une synthèse multi-étapes : contrôler la sélectivité en \"neutralisant\" temporairement les groupes non concernés par l'étape en cours."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Synthèse de l'éthanoate d'éthyle (M = 88 g·mol⁻¹) : l'acide éthanoïque (0,20 mol, M = 60 g·mol⁻¹) est le réactif limitant, l'éthanol (0,30 mol) est en excès ; l'équation est 1 pour 1. On obtient 13,2 g d'ester. Le rendement vaut :",
+      "opts": [
+        "50 %",
+        "75 %",
+        "133 %",
+        "110 %"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "rendement-reactif-exces",
+          "texte": "Calculer le rendement à partir du réactif en excès : 0,15 / 0,30 = 50 %"
+        },
+        null,
+        {
+          "code": "rendement-inverse",
+          "texte": "Inverser le rapport : 0,20 / 0,15 = 133 %, un rendement ne dépasse pas 100 %"
+        },
+        {
+          "code": "masse-molaire-reactif-vs-produit",
+          "texte": "Utiliser la masse molaire de l'acide (60) au lieu de celle de l'ester (88) : 13,2 / 60 / 0,20"
+        }
+      ],
+      "exp": "n(ester) = 13,2 / 88 = 0,150 mol ; n max = 0,20 mol (réactif limitant) ; η = 0,150 / 0,20 = 75 %. Attention : le rendement se calcule à partir du réactif limitant."
+    },
+    {
+      "q": "Un élève trouve un rendement de 115 % pour sa synthèse. La cause la plus probable est que :",
+      "opts": [
+        "le produit pesé contient encore du solvant ou des impuretés",
+        "la synthèse a été particulièrement efficace",
+        "le réactif en excès a fait dépasser 100 % au rendement",
+        "la réaction a été accélérée par le chauffage"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "rendement-superieur-100",
+          "texte": "Accepter un rendement supérieur à 100 % : on ne peut pas obtenir plus que la quantité maximale"
+        },
+        {
+          "code": "exces-depasse-100",
+          "texte": "Croire qu'un excès de réactif permet de dépasser 100 % : la quantité maximale est fixée par le réactif limitant"
+        },
+        {
+          "code": "vitesse-vs-rendement",
+          "texte": "Confondre vitesse et rendement : chauffer accélère, mais ne crée pas de produit en plus"
+        }
+      ],
+      "exp": "Le rendement ne peut pas dépasser 100 % : un produit humide ou impur pèse plus que le produit pur. Il faut le sécher ou le purifier avant de le peser."
+    },
+    {
+      "q": "Une réaction d'élimination se reconnaît à :",
+      "opts": [
+        "la formation d'une liaison multiple, une molécule donnant deux produits",
+        "la disparition d'une liaison multiple, deux réactifs donnant un seul produit",
+        "le remplacement d'un atome ou d'un groupe par un autre",
+        "l'élimination du réactif en excès par distillation"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "addition-vs-elimination",
+          "texte": "Confondre élimination et addition (qui fait disparaître une liaison multiple)"
+        },
+        {
+          "code": "substitution-vs-elimination",
+          "texte": "Confondre élimination et substitution (un groupe en remplace un autre)"
+        },
+        {
+          "code": "elimination-vs-separation",
+          "texte": "Confondre la réaction d'élimination avec une technique de séparation"
+        }
+      ],
+      "exp": "Élimination : une molécule perd un petit fragment (souvent H₂O) et une liaison multiple se forme, par exemple CH₃–CH₂OH → CH₂=CH₂ + H₂O. C'est l'inverse d'une addition."
+    },
+    {
+      "q": "La réaction CH₃–Br + HO⁻ → CH₃–OH + Br⁻ est :",
+      "opts": [
+        "une addition, car il y a deux réactifs",
+        "une élimination, car l'ion bromure est éliminé",
+        "une substitution",
+        "une réaction acide-base, car HO⁻ est une base"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "substitution-vs-addition",
+          "texte": "Croire qu'une réaction à deux réactifs est une addition : aucune liaison multiple ne disparaît"
+        },
+        {
+          "code": "substitution-vs-elimination",
+          "texte": "Confondre élimination et substitution : aucune liaison multiple ne se forme"
+        },
+        null,
+        {
+          "code": "ho-toujours-acide-base",
+          "texte": "Croire que HO⁻ réagit toujours en base : ici aucun H⁺ n'est échangé"
+        }
+      ],
+      "exp": "Le groupe –OH remplace l'atome de brome : c'est une substitution. Attention : on classe une réaction d'après l'évolution des liaisons du substrat, pas d'après le nombre de réactifs."
+    },
+    {
+      "q": "La CCM du produit synthétisé montre deux taches, dont l'une est à la même hauteur que la tache du produit de référence. On peut conclure que le produit :",
+      "opts": [
+        "contient l'espèce attendue, mais n'est pas pur",
+        "est pur, puisqu'une tache correspond à la référence",
+        "ne contient pas l'espèce attendue, puisqu'il y a deux taches",
+        "ne peut pas être analysé sans connaître la masse de chaque espèce"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "purete-une-tache-suffit",
+          "texte": "Conclure à la pureté alors qu'il y a deux taches : un produit pur ne donne qu'une tache"
+        },
+        {
+          "code": "deux-taches-echec",
+          "texte": "Croire que deux taches signifient l'absence du produit : l'une d'elles est au même Rf que la référence"
+        },
+        {
+          "code": "ccm-masse-espece",
+          "texte": "Croire que la migration dépend de la masse des espèces : elle dépend de leur affinité pour l'éluant et la plaque"
+        }
+      ],
+      "exp": "Même Rf que la référence : l'espèce attendue est présente ; une seconde tache : il y a une autre espèce (impureté, réactif restant). Attention : la hauteur d'une tache ne dépend pas de la masse de l'espèce."
+    },
+    {
+      "q": "Le chauffage à reflux permet :",
+      "opts": [
+        "d'augmenter la quantité de produit à l'état final",
+        "d'accélérer la réaction sans perte de matière",
+        "de séparer le produit du mélange réactionnel",
+        "de refroidir le mélange réactionnel"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "facteur-cinetique-etat-final",
+          "texte": "Croire que chauffer modifie l'état final : la température est un facteur cinétique"
+        },
+        null,
+        {
+          "code": "reflux-vs-distillation",
+          "texte": "Confondre chauffage à reflux et distillation : au reflux, rien ne quitte le ballon"
+        },
+        {
+          "code": "reflux-refroidit-melange",
+          "texte": "Croire que le réfrigérant refroidit le mélange : il condense seulement les vapeurs"
+        }
+      ],
+      "exp": "On chauffe pour accélérer la réaction ; le réfrigérant condense les vapeurs qui retombent dans le ballon : aucune perte de matière. Attention : le reflux ne sépare rien et ne change pas l'état final."
+    },
+    {
+      "q": "Pour augmenter le rendement d'une estérification, réaction non totale :",
+      "opts": [
+        "on ajoute un catalyseur",
+        "on chauffe davantage",
+        "on introduit les réactifs dans les proportions stœchiométriques",
+        "on met un réactif en excès ou on élimine l'eau formée"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "catalyseur-modifie-etat-final",
+          "texte": "Croire qu'un catalyseur modifie l'état final : il ne change que la vitesse"
+        },
+        {
+          "code": "facteur-cinetique-etat-final",
+          "texte": "Croire que chauffer augmente le rendement : la température accélère l'atteinte de l'état final"
+        },
+        {
+          "code": "proportions-stoechiometriques-rendement",
+          "texte": "Croire que les proportions stœchiométriques maximisent le rendement : pour une réaction non totale, l'excès déplace l'équilibre"
+        },
+        null
+      ],
+      "exp": "Un excès de réactif ou l'élimination d'un produit déplace l'équilibre dans le sens direct (Qr < K). Catalyseur et chauffage ne font qu'accélérer l'atteinte du même état final."
+    },
+    {
+      "q": "En synthèse, protéger un groupe caractéristique consiste à :",
+      "opts": [
+        "le détruire définitivement, car il gêne",
+        "le rendre temporairement non réactif, puis le régénérer",
+        "augmenter sa réactivité pour l'étape suivante",
+        "protéger le manipulateur d'un réactif dangereux"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "protection-irreversible",
+          "texte": "Croire que la protection est définitive : on régénère le groupe par déprotection"
+        },
+        null,
+        {
+          "code": "protection-vs-activation",
+          "texte": "Confondre protection (rendre inerte) et activation (rendre plus réactif)"
+        },
+        {
+          "code": "protection-vs-securite",
+          "texte": "Confondre protection d'un groupe caractéristique et règles de sécurité"
+        }
+      ],
+      "exp": "On transforme temporairement le groupe en un groupe inerte pour qu'il ne réagisse pas lors d'une étape visant un autre site, puis on le régénère (déprotection)."
+    },
+    {
+      "q": "Pour former sélectivement une liaison amide entre l'acide carboxylique d'un acide aminé A et l'amine d'un acide aminé B, la première étape est de :",
+      "opts": [
+        "mélanger directement A et B",
+        "protéger l'acide carboxylique de A",
+        "protéger l'amine de A",
+        "déprotéger l'amine de B"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "oubli-reactions-parasites",
+          "texte": "Oublier les réactions parasites : l'amine de A peut aussi réagir avec l'acide de B"
+        },
+        {
+          "code": "mauvais-groupe-protege",
+          "texte": "Protéger le groupe qui doit réagir : c'est l'amine de A, qui ne doit pas réagir, qu'on protège"
+        },
+        null,
+        {
+          "code": "ordre-protection-deprotection",
+          "texte": "Inverser l'ordre des étapes : la déprotection vient à la fin"
+        }
+      ],
+      "exp": "L'amine de A ne doit pas réagir : on la protège d'abord, puis on fait réagir l'acide de A avec l'amine de B, et on déprotège à la fin. Attention : on protège le groupe qui ne doit pas réagir."
+    },
+    {
+      "q": "Parmi ces choix, lequel respecte un principe de la chimie verte ?",
+      "opts": [
+        "choisir une réaction dont la plupart des atomes des réactifs se retrouvent dans le produit",
+        "chauffer longtemps pour obtenir le rendement le plus élevé possible",
+        "utiliser un large excès de réactif pour améliorer le rendement",
+        "choisir le solvant qui dissout le mieux, quelle que soit sa toxicité"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "chimie-verte-rendement-seul",
+          "texte": "Croire que seul le rendement compte : la chimie verte limite aussi l'énergie consommée"
+        },
+        {
+          "code": "exces-sans-dechet",
+          "texte": "Oublier qu'un large excès de réactif devient un déchet"
+        },
+        {
+          "code": "solvant-toxicite",
+          "texte": "Choisir un solvant sans tenir compte de sa toxicité"
+        }
+      ],
+      "exp": "L'économie d'atomes limite les sous-produits et déchets. La chimie verte cherche aussi des solvants peu toxiques, des catalyseurs et des conditions douces. Attention : un bon rendement ne suffit pas."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2022",
+      "title": "Indigo et carmin d'indigo — synthèse organique",
+      "session": "Amérique du Nord · Jour 1",
+      "link": "https://www.labolycee.org/amerique-du-nord-2022-jour-1"
+    },
+    {
+      "year": "2022",
+      "title": "L'arôme de vanille — synthèse organique, titrage",
+      "session": "Métropole · Jour 2",
+      "link": "https://www.labolycee.org/metropole-2022-jour-2"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Ranger les réactions de la chimie organique",
+      "contexte": [
+        "Voici sept transformations rencontrées dans l'industrie ou au laboratoire.",
+        "(a) Production d'éthanol industriel : CH₂=CH₂ + H₂O → CH₃−CH₂−OH",
+        "(b) Déshydratation du propan-2-ol (milieu acide, à chaud) : CH₃−CH(OH)−CH₃ → CH₂=CH−CH₃ + H₂O",
+        "(c) CH₃−CH₂−CH₂−Br + HO⁻ → CH₃−CH₂−CH₂−OH + Br⁻",
+        "(d) Le vin qui « tourne » au vinaigre : l'éthanol CH₃−CH₂−OH est transformé en acide éthanoïque CH₃−COOH par le dioxygène de l'air.",
+        "(e) CH₃−CH₂−Br + CN⁻ → CH₃−CH₂−C≡N + Br⁻",
+        "(f) Fabrication du polypropylène : n CH₂=CH−CH₃ → −[CH₂−CH(CH₃)]n−",
+        "(g) Détartrage au vinaigre : CH₃−COOH + HO⁻ → CH₃−COO⁻ + H₂O"
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque transformation, indique sa catégorie : addition, élimination, substitution, oxydo-réduction ou acide-base. Justifie brièvement les réponses (a), (b) et (c).",
+          "aides": [
+            "Compte les réactifs et les produits : 2 → 1, 1 → 2, ou 2 → 2 ?",
+            "Une liaison multiple disparaît (addition), apparaît (élimination), ou un atome est simplement remplacé par un autre (substitution). Les réactions (d) et (g) ne sont dans aucune de ces trois catégories : regarde les couples en jeu."
+          ]
+        },
+        {
+          "texte": "Pour chaque transformation (a) à (f), indique s'il s'agit d'une modification de la chaîne carbonée, d'une modification de groupe caractéristique, ou des deux.",
+          "aides": []
+        },
+        {
+          "texte": "La transformation (b) peut-elle être considérée comme l'inverse d'une addition ? Laquelle ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> (a) Addition : deux réactifs donnent un seul produit et la double liaison C=C disparaît.",
+        "(b) Élimination : une molécule donne deux produits (propène + eau) et une double liaison C=C se forme.",
+        "(c) Substitution : le groupe −OH remplace l'atome de brome sur la même chaîne.",
+        "(d) Oxydo-réduction : l'éthanol est oxydé par le dioxygène (couple CH₃COOH / CH₃CH₂OH).",
+        "(e) Substitution : le groupe −C≡N remplace l'atome de brome.",
+        "(f) Addition (polyaddition) : les doubles liaisons C=C disparaissent et les monomères s'enchaînent.",
+        "(g) Acide-base : échange d'un ion H⁺ entre l'acide éthanoïque et l'ion hydroxyde.",
+        "<strong>2.</strong> (a) Groupe caractéristique (apparition d'un groupe hydroxyle ; chaîne à 2 C inchangée). (b) Groupe caractéristique (disparition du groupe hydroxyle, apparition d'une double liaison C=C ; 3 C conservés). (c) Groupe caractéristique (3 C conservés). (d) Groupe caractéristique (hydroxyle → carboxyle ; 2 C conservés). (e) Les deux : la chaîne passe de 2 à 3 atomes de carbone (allongement) et le groupe change. (f) Chaîne carbonée : on passe de chaînes à 3 C à une très longue chaîne.",
+        "<strong>3.</strong> Oui : (b) est l'inverse de l'addition d'eau sur le propène, CH₂=CH−CH₃ + H₂O → CH₃−CH(OH)−CH₃ (même type que (a)).",
+        "<em>⚠ Erreur fréquente : classer (e) en « modification de groupe » seulement. Compte toujours les atomes de carbone avant et après : le carbone du groupe −C≡N allonge la chaîne.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "L'aspirine du TP est-elle réussie ?",
+      "contexte": [
+        "L'aspirine (acide acétylsalicylique, C₉H₈O₄) se synthétise à partir de l'acide salicylique (C₇H₆O₃) et de l'anhydride éthanoïque (C₄H₆O₃) :",
+        "C₇H₆O₃ + C₄H₆O₃ → C₉H₈O₄ + C₂H₄O₂",
+        "Protocole suivi par un binôme : dans un ballon sec, introduire 3,00 g d'acide salicylique, 7,0 mL d'anhydride éthanoïque et 3 gouttes d'acide sulfurique concentré. Chauffer à reflux au bain-marie à 60 °C pendant 20 min. Refroidir, ajouter de l'eau glacée, filtrer sur Büchner et sécher. Le binôme obtient 2,90 g de solide blanc.",
+        "Données : masse volumique de l'anhydride éthanoïque ρ = 1,08 g·mL⁻¹ ; masses molaires (g·mol⁻¹) : acide salicylique : 138,1 ; anhydride éthanoïque : 102,1 ; aspirine : 180,2.",
+        "Le binôme réalise ensuite une CCM (ci-dessous). On mesure les distances à l'aide de la règle, graduée en cm à partir de la ligne de dépôt."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"200\" y=\"40.0\" width=\"330\" height=\"390.0\" fill=\"#fbf8f2\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"200\" y1=\"380\" x2=\"530\" y2=\"380\" stroke=\"#3a3a3a\" stroke-width=\"1.2\" stroke-dasharray=\"6 4\"/><line x1=\"200\" y1=\"80.0\" x2=\"530\" y2=\"80.0\" stroke=\"#1F4E5A\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><text x=\"540\" y=\"85.0\" fill=\"#1F4E5A\">front de l'éluant</text><text x=\"540\" y=\"385\">ligne de dépôt</text><circle cx=\"265\" cy=\"380\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"265\" y=\"412\" text-anchor=\"middle\" font-weight=\"bold\">A</text><ellipse cx=\"265\" cy=\"245.0\" rx=\"16\" ry=\"10\" fill=\"#B5523B\" fill-opacity=\"0.85\"/><circle cx=\"365\" cy=\"380\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"365\" y=\"412\" text-anchor=\"middle\" font-weight=\"bold\">B</text><ellipse cx=\"365\" cy=\"170.0\" rx=\"16\" ry=\"10\" fill=\"#C8962E\" fill-opacity=\"0.85\"/><circle cx=\"465\" cy=\"380\" r=\"4\" fill=\"#3a3a3a\"/><text x=\"465\" y=\"412\" text-anchor=\"middle\" font-weight=\"bold\">C</text><ellipse cx=\"465\" cy=\"170.0\" rx=\"16\" ry=\"10\" fill=\"#C8962E\" fill-opacity=\"0.85\"/><ellipse cx=\"465\" cy=\"245.0\" rx=\"16\" ry=\"10\" fill=\"#B5523B\" fill-opacity=\"0.85\"/><rect x=\"106\" y=\"50.0\" width=\"42\" height=\"350.0\" fill=\"#fff\" stroke=\"#3a3a3a\"/><line x1=\"134\" y1=\"380.0\" x2=\"148\" y2=\"380.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"385.0\" text-anchor=\"end\" font-size=\"14\">0</text><line x1=\"143\" y1=\"375.0\" x2=\"148\" y2=\"375.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"370.0\" x2=\"148\" y2=\"370.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"365.0\" x2=\"148\" y2=\"365.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"360.0\" x2=\"148\" y2=\"360.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"139\" y1=\"355.0\" x2=\"148\" y2=\"355.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"350.0\" x2=\"148\" y2=\"350.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"345.0\" x2=\"148\" y2=\"345.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"340.0\" x2=\"148\" y2=\"340.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"335.0\" x2=\"148\" y2=\"335.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"134\" y1=\"330.0\" x2=\"148\" y2=\"330.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"335.0\" text-anchor=\"end\" font-size=\"14\">1</text><line x1=\"143\" y1=\"325.0\" x2=\"148\" y2=\"325.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"320.0\" x2=\"148\" y2=\"320.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"315.0\" x2=\"148\" y2=\"315.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"310.0\" x2=\"148\" y2=\"310.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"139\" y1=\"305.0\" x2=\"148\" y2=\"305.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"300.0\" x2=\"148\" y2=\"300.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"295.0\" x2=\"148\" y2=\"295.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"290.0\" x2=\"148\" y2=\"290.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"285.0\" x2=\"148\" y2=\"285.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"134\" y1=\"280.0\" x2=\"148\" y2=\"280.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"285.0\" text-anchor=\"end\" font-size=\"14\">2</text><line x1=\"143\" y1=\"275.0\" x2=\"148\" y2=\"275.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"270.0\" x2=\"148\" y2=\"270.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"265.0\" x2=\"148\" y2=\"265.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"260.0\" x2=\"148\" y2=\"260.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"139\" y1=\"255.0\" x2=\"148\" y2=\"255.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"250.0\" x2=\"148\" y2=\"250.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"245.0\" x2=\"148\" y2=\"245.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"240.0\" x2=\"148\" y2=\"240.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"235.0\" x2=\"148\" y2=\"235.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"134\" y1=\"230.0\" x2=\"148\" y2=\"230.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"235.0\" text-anchor=\"end\" font-size=\"14\">3</text><line x1=\"143\" y1=\"225.0\" x2=\"148\" y2=\"225.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"220.0\" x2=\"148\" y2=\"220.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"215.0\" x2=\"148\" y2=\"215.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"210.0\" x2=\"148\" y2=\"210.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"139\" y1=\"205.0\" x2=\"148\" y2=\"205.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"200.0\" x2=\"148\" y2=\"200.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"195.0\" x2=\"148\" y2=\"195.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"190.0\" x2=\"148\" y2=\"190.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"185.0\" x2=\"148\" y2=\"185.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"134\" y1=\"180.0\" x2=\"148\" y2=\"180.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"185.0\" text-anchor=\"end\" font-size=\"14\">4</text><line x1=\"143\" y1=\"175.0\" x2=\"148\" y2=\"175.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"170.0\" x2=\"148\" y2=\"170.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"165.0\" x2=\"148\" y2=\"165.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"160.0\" x2=\"148\" y2=\"160.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"139\" y1=\"155.0\" x2=\"148\" y2=\"155.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"150.0\" x2=\"148\" y2=\"150.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"145.0\" x2=\"148\" y2=\"145.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"140.0\" x2=\"148\" y2=\"140.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"135.0\" x2=\"148\" y2=\"135.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"134\" y1=\"130.0\" x2=\"148\" y2=\"130.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"135.0\" text-anchor=\"end\" font-size=\"14\">5</text><line x1=\"143\" y1=\"125.0\" x2=\"148\" y2=\"125.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"120.0\" x2=\"148\" y2=\"120.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"115.0\" x2=\"148\" y2=\"115.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"110.0\" x2=\"148\" y2=\"110.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"139\" y1=\"105.0\" x2=\"148\" y2=\"105.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"100.0\" x2=\"148\" y2=\"100.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"95.0\" x2=\"148\" y2=\"95.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"90.0\" x2=\"148\" y2=\"90.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"143\" y1=\"85.0\" x2=\"148\" y2=\"85.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><line x1=\"134\" y1=\"80.0\" x2=\"148\" y2=\"80.0\" stroke=\"#3a3a3a\" stroke-width=\"1\"/><text x=\"128\" y=\"85.0\" text-anchor=\"end\" font-size=\"14\">6</text><text x=\"127\" y=\"40.0\" text-anchor=\"middle\" font-size=\"14\">règle (cm)</text><line x1=\"148\" y1=\"380\" x2=\"200\" y2=\"380\" stroke=\"#3a3a3a\" stroke-width=\"0.8\" stroke-dasharray=\"2 3\"/><text x=\"560\" y=\"300\" font-size=\"14\">A : acide salicylique pur</text><text x=\"560\" y=\"322\" font-size=\"14\">B : aspirine du commerce</text><text x=\"560\" y=\"344\" font-size=\"14\">C : produit synthétisé</text></svg>",
+      "questions": [
+        {
+          "texte": "Repère dans le protocole les deux choix qui servent à augmenter la vitesse de la réaction. Pourquoi chauffe-t-on « à reflux » ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule les quantités de matière initiales des deux réactifs. Lequel est en excès ? Quel est l'intérêt de ce choix ?",
+          "aides": [
+            "Pour l'anhydride, on connaît un volume : passe d'abord par la masse.",
+            "m = ρ × V, puis n = m / M. Les nombres stœchiométriques valent tous 1 : compare directement les quantités de matière."
+          ]
+        },
+        {
+          "texte": "Calcule la masse maximale d'aspirine attendue, puis le rendement de la synthèse.",
+          "aides": []
+        },
+        {
+          "texte": "Mesure H et les hauteurs des taches, puis calcule leurs rapports frontaux. Le produit synthétisé est-il pur ? Que contient-il ?",
+          "aides": []
+        },
+        {
+          "texte": "Le rendement calculé à la question 3 est-il alors surestimé ou sous-estimé ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le chauffage (60 °C) et l'acide sulfurique, qui joue le rôle de catalyseur. Le reflux permet de chauffer sans perte de matière : les vapeurs se condensent dans le réfrigérant et retombent dans le ballon.",
+        "<strong>2.</strong> n(acide salicylique) = m / M = 3,00 / 138,1 = 2,17 × 10⁻² mol. Anhydride : m = ρ × V = 1,08 × 7,0 = 7,56 g, n = 7,56 / 102,1 = 7,41 × 10⁻² mol. Les réactifs réagissent mole à mole : l'anhydride est en excès (environ 3,4 fois plus), l'acide salicylique est le réactif limitant. L'excès d'un réactif augmente le rendement par rapport au réactif limitant (ici l'acide salicylique, le réactif le plus coûteux à transformer entièrement).",
+        "<strong>3.</strong> n(max) = n(acide salicylique) = 2,17 × 10⁻² mol ; m(max) = 2,17 × 10⁻² × 180,2 = 3,91 g. η = 2,90 / 3,91 = 0,741, soit 74,1 %.",
+        "<strong>4.</strong> H = 6,0 cm. Tache de A et tache basse de C : h = 2,7 cm, Rf = 2,7 / 6,0 = 0,45. Tache de B et tache haute de C : h = 4,2 cm, Rf = 4,2 / 6,0 = 0,70. Le produit C contient de l'aspirine (même Rf que B) mais aussi de l'acide salicylique (même Rf que A) : il n'est pas pur.",
+        "<strong>5.</strong> Surestimé : les 2,90 g ne sont pas uniquement de l'aspirine (une partie est de l'acide salicylique non transformé). Il faudrait purifier le produit (recristallisation) avant de peser.",
+        "<em>⚠ Erreur fréquente : mesurer h à partir du bas de la plaque au lieu de la ligne de dépôt, ou calculer n(anhydride) = V / M sans passer par la masse m = ρ × V.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Les plastiques de la poubelle jaune",
+      "contexte": [
+        "Sur les emballages, un petit triangle numéroté indique le polymère utilisé : 1 pour le PET (bouteilles d'eau), 2 pour le PEHD (flacons de lessive), 3 pour le PVC (tuyaux), 5 pour le PP (pots de yaourt), etc.",
+        "Fragment de chaîne de PVC : −CH₂−CHCl−CH₂−CHCl−CH₂−CHCl−",
+        "Le polypropylène (PP) est obtenu à partir du propène CH₂=CH−CH₃.",
+        "Le PET est obtenu en faisant réagir l'acide téréphtalique HOOC−C₆H₄−COOH avec l'éthane-1,2-diol HO−CH₂−CH₂−OH. Chaque fois qu'un groupe carboxyle réagit avec un groupe hydroxyle, une molécule d'eau est libérée."
+      ],
+      "questions": [
+        {
+          "texte": "Donne le motif du PVC et la formule de son monomère. Par quel type de polymérisation le PVC est-il obtenu ?",
+          "aides": []
+        },
+        {
+          "texte": "Écris le motif du polypropylène.",
+          "aides": []
+        },
+        {
+          "texte": "Le PET est-il obtenu par polyaddition ou par polycondensation ? Quel groupe caractéristique relie les motifs ? Écris le motif du PET.",
+          "aides": [
+            "Regarde s'il se forme une petite molécule à chaque liaison entre monomères.",
+            "Un groupe carboxyle qui réagit avec un groupe hydroxyle forme un ester −CO−O− ; le motif contient un « morceau » de chaque monomère."
+          ]
+        },
+        {
+          "texte": "Une chaîne de polyéthylène (PEHD) a une masse molaire M = 2,8 × 10⁵ g·mol⁻¹. Son motif est −CH₂−CH₂−. Combien de motifs contient-elle environ ?",
+          "aides": []
+        },
+        {
+          "texte": "Classe les polymères suivants en naturels ou synthétiques : cellulose (coton), PET, amidon, nylon, kératine (laine), polystyrène. Cite une utilisation courante pour deux d'entre eux.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Motif : −CH₂−CHCl− ; monomère : CH₂=CHCl (chloroéthène, ou chlorure de vinyle). Polyaddition : la double liaison C=C du monomère s'ouvre, sans sous-produit.",
+        "<strong>2.</strong> −CH₂−CH(CH₃)−",
+        "<strong>3.</strong> Polycondensation : chaque liaison formée libère une molécule d'eau. Les motifs sont reliés par des groupes ester −CO−O− (le PET est un polyester). Motif : −CO−C₆H₄−CO−O−CH₂−CH₂−O−.",
+        "<strong>4.</strong> M(motif) = 2 × 12,01 + 4 × 1,008 = 28,05 g·mol⁻¹ ; nombre de motifs ≈ 2,8 × 10⁵ / 28,05 ≈ 1,0 × 10⁴ motifs.",
+        "<strong>5.</strong> Naturels : cellulose, amidon, kératine. Synthétiques : PET, nylon, polystyrène. Exemples d'utilisations : coton (vêtements), amidon (aliments, colles), PET (bouteilles, fibres polaires), nylon (cordes, collants), polystyrène (emballages, isolation).",
+        "<em>⚠ Erreur fréquente : garder la double liaison dans le motif. Dans la chaîne, chaque carbone du monomère ne porte plus que des liaisons simples.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Protéger une cétone pour réduire un ester",
+      "contexte": [
+        "Le lévulinate de méthyle (4-oxopentanoate de méthyle) CH₃−CO−CH₂−CH₂−COO−CH₃ s'obtient à partir de la cellulose des déchets agricoles : c'est une molécule « biosourcée ». Un laboratoire veut le transformer en 5-hydroxypentan-2-one CH₃−CO−CH₂−CH₂−CH₂−OH, utilisée comme intermédiaire de synthèse.",
+        "Banque de réactions :",
+        "R1 — Réduction par LiAlH₄ (puis hydrolyse) : une cétone R−CO−R' devient un alcool R−CH(OH)−R' ; un ester R−COO−R' devient R−CH₂−OH + R'−OH. Les acétals ne réagissent pas.",
+        "R2 — Formation d'un acétal (catalyseur acide, chauffage) : R−CO−R' + HO−CH₂−CH₂−OH ⇌ acétal cyclique + H₂O. Les esters ne réagissent pas dans ces conditions.",
+        "R3 — Hydrolyse d'un acétal (eau, milieu acide) : acétal cyclique + H₂O → R−CO−R' + HO−CH₂−CH₂−OH.",
+        "Données : M(lévulinate de méthyle) = 130,1 g·mol⁻¹ ; M(5-hydroxypentan-2-one) = 102,1 g·mol⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Nomme les groupes caractéristiques du réactif et du produit visé. Quel groupe doit être transformé ? Lequel doit être conservé ?",
+          "aides": []
+        },
+        {
+          "texte": "Quel produit obtiendrait-on en traitant directement le réactif par LiAlH₄ (R1) ? Pourquoi cette voie ne convient-elle pas ?",
+          "aides": [
+            "R1 s'applique à quels groupes ? Le réactif en possède-t-il plusieurs ?",
+            "Applique R1 à la cétone ET à l'ester, puis écris la molécule obtenue."
+          ]
+        },
+        {
+          "texte": "Propose une séquence de trois étapes, choisies dans la banque, qui conduit au produit visé. Pour chaque étape, précise son rôle (protection, transformation, déprotection).",
+          "aides": [
+            "Il faut rendre la cétone temporairement « invisible » pour LiAlH₄.",
+            "Ordre : protéger (R2) → transformer (R1) → déprotéger (R3)."
+          ]
+        },
+        {
+          "texte": "Lors de l'étape R2, on utilise un montage qui élimine l'eau au fur et à mesure qu'elle se forme. Justifie ce choix.",
+          "aides": []
+        },
+        {
+          "texte": "Les rendements des trois étapes sont 90 %, 80 % et 85 %. Calcule le rendement global, puis la masse de produit visé obtenue à partir de 13,0 g de lévulinate de méthyle.",
+          "aides": [
+            "Chaque étape ne transforme qu'une fraction de ce qu'elle reçoit.",
+            "η(global) = η₁ × η₂ × η₃ ; puis n(produit) = η(global) × n(réactif initial)."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réactif : groupe carbonyle d'une cétone (C=O en position 4) et groupe ester (−COO−CH₃). Produit visé : cétone conservée et groupe hydroxyle (alcool) en bout de chaîne. Il faut transformer l'ester en alcool et conserver la cétone.",
+        "<strong>2.</strong> LiAlH₄ réduit les deux groupes : on obtiendrait le pentane-1,4-diol HO−CH₂−CH₂−CH₂−CH(OH)−CH₃ (et du méthanol). La réaction n'est pas sélective : la cétone est perdue.",
+        "<strong>3.</strong> Étape 1 (R2, protection) : la cétone est transformée en acétal cyclique, inerte vis-à-vis de LiAlH₄ ; l'ester ne réagit pas. Étape 2 (R1, transformation) : LiAlH₄ réduit l'ester en groupe −CH₂−OH ; l'acétal ne réagit pas. Étape 3 (R3, déprotection) : l'hydrolyse acide de l'acétal régénère la cétone : on obtient CH₃−CO−CH₂−CH₂−CH₂−OH.",
+        "<strong>4.</strong> R2 est un équilibre (⇌). Éliminer un produit (l'eau) du milieu réactionnel déplace l'équilibre dans le sens direct : le rendement de la protection augmente.",
+        "<strong>5.</strong> η(global) = 0,90 × 0,80 × 0,85 = 0,612, soit 61,2 %. n(réactif) = 13,0 / 130,1 = 9,99 × 10⁻² mol ; n(produit) = 0,612 × 9,99 × 10⁻² = 6,11 × 10⁻² mol ; m = 6,11 × 10⁻² × 102,1 = 6,24 g.",
+        "<em>⚠ Erreur fréquente : additionner les rendements ou en faire la moyenne. Chaque étape ne transforme qu'une fraction de ce qu'elle reçoit : les rendements se multiplient, et le rendement global est toujours inférieur au plus petit d'entre eux.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Optimiser la synthèse d'un arôme de rhum",
+      "contexte": [
+        "Le méthanoate d'éthyle HCOO−CH₂−CH₃ a une odeur de rhum. On le prépare à partir d'acide méthanoïque et d'éthanol : HCOOH + CH₃−CH₂−OH ⇌ HCOO−CH₂−CH₃ + H₂O.",
+        "Un groupe d'élèves réalise quatre expériences avec 0,50 mol d'acide méthanoïque et suit le rendement η au cours du temps (données modélisées) :",
+        "Expérience 1 : 0,50 mol d'éthanol, 20 °C, sans catalyseur. Expérience 2 : 0,50 mol d'éthanol, chauffage à reflux, sans catalyseur. Expérience 3 : 0,50 mol d'éthanol, chauffage à reflux, avec quelques gouttes d'acide sulfurique. Expérience 4 : 1,50 mol d'éthanol, chauffage à reflux, avec acide sulfurique."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"134.6\" y1=\"30\" x2=\"134.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"134.6\" y=\"430\" text-anchor=\"middle\">10</text><line x1=\"189.2\" y1=\"30\" x2=\"189.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"189.2\" y=\"430\" text-anchor=\"middle\">20</text><line x1=\"243.8\" y1=\"30\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"243.8\" y=\"430\" text-anchor=\"middle\">30</text><line x1=\"298.3\" y1=\"30\" x2=\"298.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"430\" text-anchor=\"middle\">40</text><line x1=\"352.9\" y1=\"30\" x2=\"352.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"352.9\" y=\"430\" text-anchor=\"middle\">50</text><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">60</text><line x1=\"462.1\" y1=\"30\" x2=\"462.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"462.1\" y=\"430\" text-anchor=\"middle\">70</text><line x1=\"516.7\" y1=\"30\" x2=\"516.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"430\" text-anchor=\"middle\">80</text><line x1=\"571.2\" y1=\"30\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"571.2\" y=\"430\" text-anchor=\"middle\">90</text><line x1=\"625.8\" y1=\"30\" x2=\"625.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"625.8\" y=\"430\" text-anchor=\"middle\">100</text><line x1=\"680.4\" y1=\"30\" x2=\"680.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"680.4\" y=\"430\" text-anchor=\"middle\">110</text><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">120</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"372.0\" x2=\"735\" y2=\"372.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"377.0\" text-anchor=\"end\">10</text><line x1=\"80\" y1=\"334.0\" x2=\"735\" y2=\"334.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"339.0\" text-anchor=\"end\">20</text><line x1=\"80\" y1=\"296.0\" x2=\"735\" y2=\"296.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"301.0\" text-anchor=\"end\">30</text><line x1=\"80\" y1=\"258.0\" x2=\"735\" y2=\"258.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"263.0\" text-anchor=\"end\">40</text><line x1=\"80\" y1=\"220.0\" x2=\"735\" y2=\"220.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"225.0\" text-anchor=\"end\">50</text><line x1=\"80\" y1=\"182.0\" x2=\"735\" y2=\"182.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"187.0\" text-anchor=\"end\">60</text><line x1=\"80\" y1=\"144.0\" x2=\"735\" y2=\"144.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"149.0\" text-anchor=\"end\">70</text><line x1=\"80\" y1=\"106.0\" x2=\"735\" y2=\"106.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"111.0\" text-anchor=\"end\">80</text><line x1=\"80\" y1=\"68.0\" x2=\"735\" y2=\"68.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"73.0\" text-anchor=\"end\">90</text><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">100</text><rect x=\"80\" y=\"30\" width=\"655\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><polyline points=\"80.0,410.0 82.7,409.9 85.5,409.8 88.2,409.7 90.9,409.6 93.6,409.5 96.4,409.4 99.1,409.3 101.8,409.2 104.6,409.1 107.3,409.1 110.0,409.0 112.8,408.9 115.5,408.8 118.2,408.7 120.9,408.6 123.7,408.5 126.4,408.4 129.1,408.3 131.9,408.2 134.6,408.1 137.3,408.0 140.0,407.9 142.8,407.8 145.5,407.7 148.2,407.6 151.0,407.5 153.7,407.5 156.4,407.4 159.1,407.3 161.9,407.2 164.6,407.1 167.3,407.0 170.1,406.9 172.8,406.8 175.5,406.7 178.2,406.6 181.0,406.5 183.7,406.4 186.4,406.3 189.2,406.2 191.9,406.1 194.6,406.1 197.4,406.0 200.1,405.9 202.8,405.8 205.5,405.7 208.3,405.6 211.0,405.5 213.7,405.4 216.5,405.3 219.2,405.2 221.9,405.1 224.6,405.0 227.4,404.9 230.1,404.8 232.8,404.8 235.6,404.7 238.3,404.6 241.0,404.5 243.8,404.4 246.5,404.3 249.2,404.2 251.9,404.1 254.7,404.0 257.4,403.9 260.1,403.8 262.9,403.7 265.6,403.6 268.3,403.6 271.0,403.5 273.8,403.4 276.5,403.3 279.2,403.2 282.0,403.1 284.7,403.0 287.4,402.9 290.1,402.8 292.9,402.7 295.6,402.6 298.3,402.5 301.1,402.5 303.8,402.4 306.5,402.3 309.2,402.2 312.0,402.1 314.7,402.0 317.4,401.9 320.2,401.8 322.9,401.7 325.6,401.6 328.4,401.5 331.1,401.5 333.8,401.4 336.5,401.3 339.3,401.2 342.0,401.1 344.7,401.0 347.5,400.9 350.2,400.8 352.9,400.7 355.6,400.6 358.4,400.6 361.1,400.5 363.8,400.4 366.6,400.3 369.3,400.2 372.0,400.1 374.8,400.0 377.5,399.9 380.2,399.8 382.9,399.7 385.7,399.7 388.4,399.6 391.1,399.5 393.9,399.4 396.6,399.3 399.3,399.2 402.0,399.1 404.8,399.0 407.5,398.9 410.2,398.8 413.0,398.8 415.7,398.7 418.4,398.6 421.1,398.5 423.9,398.4 426.6,398.3 429.3,398.2 432.1,398.1 434.8,398.0 437.5,398.0 440.3,397.9 443.0,397.8 445.7,397.7 448.4,397.6 451.2,397.5 453.9,397.4 456.6,397.3 459.4,397.2 462.1,397.2 464.8,397.1 467.5,397.0 470.3,396.9 473.0,396.8 475.7,396.7 478.5,396.6 481.2,396.5 483.9,396.4 486.6,396.4 489.4,396.3 492.1,396.2 494.8,396.1 497.6,396.0 500.3,395.9 503.0,395.8 505.8,395.7 508.5,395.7 511.2,395.6 513.9,395.5 516.7,395.4 519.4,395.3 522.1,395.2 524.9,395.1 527.6,395.0 530.3,394.9 533.0,394.9 535.8,394.8 538.5,394.7 541.2,394.6 544.0,394.5 546.7,394.4 549.4,394.3 552.1,394.2 554.9,394.2 557.6,394.1 560.3,394.0 563.1,393.9 565.8,393.8 568.5,393.7 571.2,393.6 574.0,393.6 576.7,393.5 579.4,393.4 582.2,393.3 584.9,393.2 587.6,393.1 590.4,393.0 593.1,392.9 595.8,392.9 598.5,392.8 601.3,392.7 604.0,392.6 606.7,392.5 609.5,392.4 612.2,392.3 614.9,392.3 617.6,392.2 620.4,392.1 623.1,392.0 625.8,391.9 628.6,391.8 631.3,391.7 634.0,391.7 636.8,391.6 639.5,391.5 642.2,391.4 644.9,391.3 647.7,391.2 650.4,391.1 653.1,391.0 655.9,391.0 658.6,390.9 661.3,390.8 664.0,390.7 666.8,390.6 669.5,390.5 672.2,390.5 675.0,390.4 677.7,390.3 680.4,390.2 683.1,390.1 685.9,390.0 688.6,389.9 691.3,389.9 694.1,389.8 696.8,389.7 699.5,389.6 702.2,389.5 705.0,389.4 707.7,389.3 710.4,389.3 713.2,389.2 715.9,389.1 718.6,389.0 721.4,388.9 724.1,388.8 726.8,388.8 729.5,388.7 732.3,388.6 735.0,388.5\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"2.8\" stroke-dasharray=\"7 5\"/><rect x=\"678.3\" y=\"362.5\" width=\"26\" height=\"20\" fill=\"#fff\"/><text x=\"691.3\" y=\"378.5\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#3a3a3a\">1</text><polyline points=\"80.0,410.0 82.7,409.2 85.5,408.5 88.2,407.7 90.9,407.0 93.6,406.2 96.4,405.5 99.1,404.8 101.8,404.0 104.6,403.3 107.3,402.5 110.0,401.8 112.8,401.1 115.5,400.4 118.2,399.7 120.9,398.9 123.7,398.2 126.4,397.5 129.1,396.8 131.9,396.1 134.6,395.4 137.3,394.7 140.0,394.0 142.8,393.3 145.5,392.6 148.2,391.9 151.0,391.2 153.7,390.5 156.4,389.9 159.1,389.2 161.9,388.5 164.6,387.8 167.3,387.1 170.1,386.5 172.8,385.8 175.5,385.1 178.2,384.5 181.0,383.8 183.7,383.2 186.4,382.5 189.2,381.9 191.9,381.2 194.6,380.6 197.4,379.9 200.1,379.3 202.8,378.6 205.5,378.0 208.3,377.4 211.0,376.7 213.7,376.1 216.5,375.5 219.2,374.9 221.9,374.2 224.6,373.6 227.4,373.0 230.1,372.4 232.8,371.8 235.6,371.1 238.3,370.5 241.0,369.9 243.8,369.3 246.5,368.7 249.2,368.1 251.9,367.5 254.7,366.9 257.4,366.3 260.1,365.7 262.9,365.2 265.6,364.6 268.3,364.0 271.0,363.4 273.8,362.8 276.5,362.2 279.2,361.7 282.0,361.1 284.7,360.5 287.4,359.9 290.1,359.4 292.9,358.8 295.6,358.2 298.3,357.7 301.1,357.1 303.8,356.6 306.5,356.0 309.2,355.5 312.0,354.9 314.7,354.3 317.4,353.8 320.2,353.3 322.9,352.7 325.6,352.2 328.4,351.6 331.1,351.1 333.8,350.5 336.5,350.0 339.3,349.5 342.0,348.9 344.7,348.4 347.5,347.9 350.2,347.4 352.9,346.8 355.6,346.3 358.4,345.8 361.1,345.3 363.8,344.8 366.6,344.2 369.3,343.7 372.0,343.2 374.8,342.7 377.5,342.2 380.2,341.7 382.9,341.2 385.7,340.7 388.4,340.2 391.1,339.7 393.9,339.2 396.6,338.7 399.3,338.2 402.0,337.7 404.8,337.2 407.5,336.7 410.2,336.2 413.0,335.8 415.7,335.3 418.4,334.8 421.1,334.3 423.9,333.8 426.6,333.4 429.3,332.9 432.1,332.4 434.8,331.9 437.5,331.5 440.3,331.0 443.0,330.5 445.7,330.1 448.4,329.6 451.2,329.1 453.9,328.7 456.6,328.2 459.4,327.8 462.1,327.3 464.8,326.8 467.5,326.4 470.3,325.9 473.0,325.5 475.7,325.0 478.5,324.6 481.2,324.1 483.9,323.7 486.6,323.2 489.4,322.8 492.1,322.4 494.8,321.9 497.6,321.5 500.3,321.1 503.0,320.6 505.8,320.2 508.5,319.8 511.2,319.3 513.9,318.9 516.7,318.5 519.4,318.0 522.1,317.6 524.9,317.2 527.6,316.8 530.3,316.3 533.0,315.9 535.8,315.5 538.5,315.1 541.2,314.7 544.0,314.3 546.7,313.9 549.4,313.4 552.1,313.0 554.9,312.6 557.6,312.2 560.3,311.8 563.1,311.4 565.8,311.0 568.5,310.6 571.2,310.2 574.0,309.8 576.7,309.4 579.4,309.0 582.2,308.6 584.9,308.2 587.6,307.8 590.4,307.4 593.1,307.0 595.8,306.7 598.5,306.3 601.3,305.9 604.0,305.5 606.7,305.1 609.5,304.7 612.2,304.3 614.9,304.0 617.6,303.6 620.4,303.2 623.1,302.8 625.8,302.4 628.6,302.1 631.3,301.7 634.0,301.3 636.8,301.0 639.5,300.6 642.2,300.2 644.9,299.8 647.7,299.5 650.4,299.1 653.1,298.8 655.9,298.4 658.6,298.0 661.3,297.7 664.0,297.3 666.8,296.9 669.5,296.6 672.2,296.2 675.0,295.9 677.7,295.5 680.4,295.2 683.1,294.8 685.9,294.5 688.6,294.1 691.3,293.8 694.1,293.4 696.8,293.1 699.5,292.7 702.2,292.4 705.0,292.0 707.7,291.7 710.4,291.4 713.2,291.0 715.9,290.7 718.6,290.3 721.4,290.0 724.1,289.7 726.8,289.3 729.5,289.0 732.3,288.7 735.0,288.3\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2.8\"/><rect x=\"678.3\" y=\"262.3\" width=\"26\" height=\"20\" fill=\"#fff\"/><text x=\"691.3\" y=\"278.3\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#C8962E\">2</text><polyline points=\"80.0,410.0 82.7,396.3 85.5,383.5 88.2,371.6 90.9,360.5 93.6,350.1 96.4,340.4 99.1,331.3 101.8,322.8 104.6,314.7 107.3,307.2 110.0,300.1 112.8,293.4 115.5,287.0 118.2,281.1 120.9,275.4 123.7,270.1 126.4,265.0 129.1,260.2 131.9,255.6 134.6,251.3 137.3,247.2 140.0,243.3 142.8,239.6 145.5,236.0 148.2,232.7 151.0,229.5 153.7,226.4 156.4,223.5 159.1,220.8 161.9,218.1 164.6,215.6 167.3,213.2 170.1,210.9 172.8,208.7 175.5,206.6 178.2,204.6 181.0,202.6 183.7,200.8 186.4,199.0 189.2,197.3 191.9,195.7 194.6,194.2 197.4,192.7 200.1,191.3 202.8,189.9 205.5,188.6 208.3,187.4 211.0,186.2 213.7,185.0 216.5,183.9 219.2,182.9 221.9,181.9 224.6,180.9 227.4,180.0 230.1,179.1 232.8,178.2 235.6,177.4 238.3,176.6 241.0,175.8 243.8,175.1 246.5,174.4 249.2,173.7 251.9,173.1 254.7,172.4 257.4,171.8 260.1,171.3 262.9,170.7 265.6,170.2 268.3,169.7 271.0,169.2 273.8,168.7 276.5,168.3 279.2,167.8 282.0,167.4 284.7,167.0 287.4,166.6 290.1,166.2 292.9,165.9 295.6,165.5 298.3,165.2 301.1,164.9 303.8,164.6 306.5,164.3 309.2,164.0 312.0,163.7 314.7,163.5 317.4,163.2 320.2,163.0 322.9,162.7 325.6,162.5 328.4,162.3 331.1,162.1 333.8,161.9 336.5,161.7 339.3,161.5 342.0,161.3 344.7,161.1 347.5,161.0 350.2,160.8 352.9,160.7 355.6,160.5 358.4,160.4 361.1,160.2 363.8,160.1 366.6,160.0 369.3,159.9 372.0,159.7 374.8,159.6 377.5,159.5 380.2,159.4 382.9,159.3 385.7,159.2 388.4,159.1 391.1,159.0 393.9,158.9 396.6,158.9 399.3,158.8 402.0,158.7 404.8,158.6 407.5,158.5 410.2,158.5 413.0,158.4 415.7,158.3 418.4,158.3 421.1,158.2 423.9,158.2 426.6,158.1 429.3,158.1 432.1,158.0 434.8,158.0 437.5,157.9 440.3,157.9 443.0,157.8 445.7,157.8 448.4,157.7 451.2,157.7 453.9,157.7 456.6,157.6 459.4,157.6 462.1,157.6 464.8,157.5 467.5,157.5 470.3,157.5 473.0,157.4 475.7,157.4 478.5,157.4 481.2,157.3 483.9,157.3 486.6,157.3 489.4,157.3 492.1,157.3 494.8,157.2 497.6,157.2 500.3,157.2 503.0,157.2 505.8,157.2 508.5,157.1 511.2,157.1 513.9,157.1 516.7,157.1 519.4,157.1 522.1,157.1 524.9,157.0 527.6,157.0 530.3,157.0 533.0,157.0 535.8,157.0 538.5,157.0 541.2,157.0 544.0,157.0 546.7,156.9 549.4,156.9 552.1,156.9 554.9,156.9 557.6,156.9 560.3,156.9 563.1,156.9 565.8,156.9 568.5,156.9 571.2,156.9 574.0,156.9 576.7,156.8 579.4,156.8 582.2,156.8 584.9,156.8 587.6,156.8 590.4,156.8 593.1,156.8 595.8,156.8 598.5,156.8 601.3,156.8 604.0,156.8 606.7,156.8 609.5,156.8 612.2,156.8 614.9,156.8 617.6,156.8 620.4,156.8 623.1,156.8 625.8,156.8 628.6,156.8 631.3,156.8 634.0,156.7 636.8,156.7 639.5,156.7 642.2,156.7 644.9,156.7 647.7,156.7 650.4,156.7 653.1,156.7 655.9,156.7 658.6,156.7 661.3,156.7 664.0,156.7 666.8,156.7 669.5,156.7 672.2,156.7 675.0,156.7 677.7,156.7 680.4,156.7 683.1,156.7 685.9,156.7 688.6,156.7 691.3,156.7 694.1,156.7 696.8,156.7 699.5,156.7 702.2,156.7 705.0,156.7 707.7,156.7 710.4,156.7 713.2,156.7 715.9,156.7 718.6,156.7 721.4,156.7 724.1,156.7 726.8,156.7 729.5,156.7 732.3,156.7 735.0,156.7\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"2.8\"/><rect x=\"678.3\" y=\"130.7\" width=\"26\" height=\"20\" fill=\"#fff\"/><text x=\"691.3\" y=\"146.7\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#B5523B\">3</text><polyline points=\"80.0,410.0 82.7,370.2 85.5,335.8 88.2,305.8 90.9,279.6 93.6,256.7 96.4,236.5 99.1,218.6 101.8,202.8 104.6,188.8 107.3,176.3 110.0,165.2 112.8,155.3 115.5,146.5 118.2,138.5 120.9,131.4 123.7,125.1 126.4,119.4 129.1,114.2 131.9,109.6 134.6,105.5 137.3,101.7 140.0,98.4 142.8,95.3 145.5,92.6 148.2,90.1 151.0,87.9 153.7,85.9 156.4,84.1 159.1,82.4 161.9,80.9 164.6,79.6 167.3,78.4 170.1,77.3 172.8,76.3 175.5,75.4 178.2,74.6 181.0,73.9 183.7,73.2 186.4,72.6 189.2,72.1 191.9,71.6 194.6,71.2 197.4,70.8 200.1,70.4 202.8,70.1 205.5,69.8 208.3,69.5 211.0,69.2 213.7,69.0 216.5,68.8 219.2,68.6 221.9,68.5 224.6,68.3 227.4,68.2 230.1,68.1 232.8,68.0 235.6,67.9 238.3,67.8 241.0,67.7 243.8,67.6 246.5,67.6 249.2,67.5 251.9,67.4 254.7,67.4 257.4,67.4 260.1,67.3 262.9,67.3 265.6,67.2 268.3,67.2 271.0,67.2 273.8,67.2 276.5,67.1 279.2,67.1 282.0,67.1 284.7,67.1 287.4,67.1 290.1,67.1 292.9,67.0 295.6,67.0 298.3,67.0 301.1,67.0 303.8,67.0 306.5,67.0 309.2,67.0 312.0,67.0 314.7,67.0 317.4,67.0 320.2,67.0 322.9,67.0 325.6,67.0 328.4,67.0 331.1,67.0 333.8,67.0 336.5,66.9 339.3,66.9 342.0,66.9 344.7,66.9 347.5,66.9 350.2,66.9 352.9,66.9 355.6,66.9 358.4,66.9 361.1,66.9 363.8,66.9 366.6,66.9 369.3,66.9 372.0,66.9 374.8,66.9 377.5,66.9 380.2,66.9 382.9,66.9 385.7,66.9 388.4,66.9 391.1,66.9 393.9,66.9 396.6,66.9 399.3,66.9 402.0,66.9 404.8,66.9 407.5,66.9 410.2,66.9 413.0,66.9 415.7,66.9 418.4,66.9 421.1,66.9 423.9,66.9 426.6,66.9 429.3,66.9 432.1,66.9 434.8,66.9 437.5,66.9 440.3,66.9 443.0,66.9 445.7,66.9 448.4,66.9 451.2,66.9 453.9,66.9 456.6,66.9 459.4,66.9 462.1,66.9 464.8,66.9 467.5,66.9 470.3,66.9 473.0,66.9 475.7,66.9 478.5,66.9 481.2,66.9 483.9,66.9 486.6,66.9 489.4,66.9 492.1,66.9 494.8,66.9 497.6,66.9 500.3,66.9 503.0,66.9 505.8,66.9 508.5,66.9 511.2,66.9 513.9,66.9 516.7,66.9 519.4,66.9 522.1,66.9 524.9,66.9 527.6,66.9 530.3,66.9 533.0,66.9 535.8,66.9 538.5,66.9 541.2,66.9 544.0,66.9 546.7,66.9 549.4,66.9 552.1,66.9 554.9,66.9 557.6,66.9 560.3,66.9 563.1,66.9 565.8,66.9 568.5,66.9 571.2,66.9 574.0,66.9 576.7,66.9 579.4,66.9 582.2,66.9 584.9,66.9 587.6,66.9 590.4,66.9 593.1,66.9 595.8,66.9 598.5,66.9 601.3,66.9 604.0,66.9 606.7,66.9 609.5,66.9 612.2,66.9 614.9,66.9 617.6,66.9 620.4,66.9 623.1,66.9 625.8,66.9 628.6,66.9 631.3,66.9 634.0,66.9 636.8,66.9 639.5,66.9 642.2,66.9 644.9,66.9 647.7,66.9 650.4,66.9 653.1,66.9 655.9,66.9 658.6,66.9 661.3,66.9 664.0,66.9 666.8,66.9 669.5,66.9 672.2,66.9 675.0,66.9 677.7,66.9 680.4,66.9 683.1,66.9 685.9,66.9 688.6,66.9 691.3,66.9 694.1,66.9 696.8,66.9 699.5,66.9 702.2,66.9 705.0,66.9 707.7,66.9 710.4,66.9 713.2,66.9 715.9,66.9 718.6,66.9 721.4,66.9 724.1,66.9 726.8,66.9 729.5,66.9 732.3,66.9 735.0,66.9\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.8\"/><rect x=\"678.3\" y=\"40.9\" width=\"26\" height=\"20\" fill=\"#fff\"/><text x=\"691.3\" y=\"56.9\" text-anchor=\"middle\" font-weight=\"bold\" fill=\"#1F4E5A\">4</text><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">t (min)</text><text transform=\"translate(22,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">rendement η (%)</text></svg>",
+      "contexte2": [
+        "Températures d'ébullition sous 1 bar : méthanoate d'éthyle : 54 °C ; éthanol : 78 °C ; eau : 100 °C ; acide méthanoïque : 101 °C. Masse molaire du méthanoate d'éthyle : 74,08 g·mol⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Quel facteur a été modifié entre les expériences 1 et 2 ? Entre les expériences 2 et 3 ? Quel est leur effet sur la synthèse ?",
+          "aides": []
+        },
+        {
+          "texte": "D'après le cours, vers quel rendement final l'expérience 2 évoluerait-elle si on la prolongeait ? Justifie.",
+          "aides": [
+            "Quelle est la seule différence entre les expériences 2 et 3 ?",
+            "Un catalyseur modifie-t-il l'état final d'un système, ou seulement la durée pour l'atteindre ?"
+          ]
+        },
+        {
+          "texte": "Lis le rendement final des expériences 3 et 4. Explique la différence.",
+          "aides": []
+        },
+        {
+          "texte": "Lis la durée nécessaire pour atteindre un rendement de 60 % dans les expériences 3 et 4. Conclus sur l'intérêt du choix de l'expérience 4.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse d'ester obtenue dans l'expérience 4.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide des températures d'ébullition, propose une modification du montage qui permettrait de dépasser le rendement de l'expérience 4. Justifie.",
+          "aides": [
+            "Quelle espèce du mélange est la plus volatile ?",
+            "Retirer un produit du milieu au fur et à mesure déplace l'équilibre dans le sens de sa formation."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Entre 1 et 2 : la température (chauffage à reflux). Entre 2 et 3 : la présence d'un catalyseur (acide sulfurique). Dans les deux cas, la vitesse de formation de l'ester augmente : le rendement atteint à une date donnée est plus grand (à 120 min : environ 6 %, 32 % puis 67 %).",
+        "<strong>2.</strong> Un catalyseur accélère la réaction mais ne modifie pas l'état final : sans catalyseur, l'expérience 2 tend vers le même rendement final que l'expérience 3, environ 67 %, mais en un temps beaucoup plus long.",
+        "<strong>3.</strong> Expérience 3 : η ≈ 67 % ; expérience 4 : η ≈ 90 %. Dans l'expérience 4, l'éthanol est en excès (1,50 mol pour 0,50 mol d'acide) : l'équilibre est déplacé dans le sens direct, donc le rendement par rapport au réactif limitant (l'acide) augmente.",
+        "<strong>4.</strong> 60 % est atteint en environ 26 min dans l'expérience 3 et environ 5 min dans l'expérience 4. L'excès d'éthanol améliore à la fois le rendement final et la vitesse de formation de l'ester.",
+        "<strong>5.</strong> n(ester) = η × n(acide) = 0,90 × 0,50 = 0,45 mol (0,451 avec η = 90,3 %) ; m = 0,451 × 74,08 = 33,4 g.",
+        "<strong>6.</strong> L'ester est l'espèce la plus volatile (54 °C). En remplaçant le reflux par un montage de distillation dont la tête de colonne est vers 54 °C, on élimine l'ester au fur et à mesure qu'il se forme : l'équilibre est sans cesse déplacé dans le sens direct et le rendement peut approcher 100 %.",
+        "<em>⚠ Erreur fréquente : penser que le catalyseur augmente le rendement final. Il permet seulement d'atteindre plus vite l'état final.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Deux voies de synthèse pour l'aspartame",
+      "contexte": [
+        "Doc. 1 — L'aspartame (E951). Cet édulcorant, environ 200 fois plus sucré que le saccharose, a pour formule HOOC−CH₂−CH(NH₂)−CO−NH−CH(CH₂−C₆H₅)−COO−CH₃. On le fabrique à partir de deux réactifs : l'acide aspartique (Asp) HOOC−CH₂−CH(NH₂)−COOH et l'ester méthylique de la phénylalanine (Phe-OMe) H₂N−CH(CH₂−C₆H₅)−COO−CH₃. Seul le groupe carboxyle porté par le même carbone que le groupe amine de Asp (noté α) doit former la liaison amide : si c'est le groupe carboxyle de la chaîne latérale (noté β) qui réagit, on obtient un isomère qui n'a pas le goût sucré recherché.",
+        "Doc. 2 — Voie A (chimique, 4 étapes). Étape 1 : protection du groupe amine de Asp par un groupe Z (benzyloxycarbonyle), rendement 90 %. Étape 2 : protection du groupe carboxyle β sous forme d'ester benzylique, 85 %. Étape 3 : couplage avec Phe-OMe dans le dichlorométhane (solvant toxique), à l'aide d'un « agent de couplage » qui se transforme en un sous-produit solide à jeter, 80 %. Étape 4 : action du dihydrogène H₂ (catalyseur palladium), qui retire les deux groupes protecteurs en libérant du toluène et du dioxyde de carbone, 95 %.",
+        "Doc. 3 — Voie B (enzymatique, 3 étapes, inspirée d'un procédé industriel). Étape 1 : protection du groupe amine de Asp par le groupe Z, 90 %. Étape 2 : couplage dans l'eau à 40 °C, catalysé par une enzyme qui ne fait réagir que le groupe carboxyle α. On utilise 2 équivalents de Phe-OMe, et le produit couplé, très peu soluble, précipite au fur et à mesure, 90 %. L'enzyme est récupérée et réutilisée. Étape 3 : action de H₂ (catalyseur palladium), 95 %.",
+        "Doc. 4 — Économie d'atomes d'une étape : EA = M(produit visé) / somme des M(réactifs) (chaque masse molaire étant multipliée par le nombre stœchiométrique). Couplage de la voie B : Z-Asp + Phe-OMe → Z-Asp-Phe-OMe + H₂O.",
+        "Masses molaires (g·mol⁻¹) : aspartame : 294,3 ; Asp : 133,1 ; Z-Asp : 267,2 ; Phe-OMe : 179,2 ; Z-Asp-Phe-OMe : 428,4. Les rendements sont des valeurs vraisemblables simplifiées."
+      ],
+      "questions": [
+        {
+          "texte": "Nomme les quatre groupes caractéristiques présents dans l'aspartame.",
+          "aides": []
+        },
+        {
+          "texte": "Sans aucune protection, on mélange Asp, Phe-OMe et un agent de couplage. Explique pourquoi on obtient un mélange de produits ; cite au moins deux produits parasites.",
+          "aides": [
+            "Repère sur Asp et sur Phe-OMe tous les groupes −COOH et −NH₂ libres.",
+            "Une liaison amide se forme dès qu'un −COOH rencontre un −NH₂ : combien de combinaisons possibles, y compris entre deux molécules de Asp ?"
+          ]
+        },
+        {
+          "texte": "Dans la voie A, identifie les étapes de protection et de déprotection et justifie l'intérêt de chaque protection. Dans quelle catégorie de réactions classer l'étape 3 ? l'étape 4 ?",
+          "aides": [
+            "Une protection rend un groupe inerte ; une déprotection le régénère. Dans le doc. 2, quelles étapes ajoutent un groupe, laquelle en retire ?",
+            "Pour classer l'étape 3, regarde ce qui remplace le −OH du groupe carboxyle. Pour l'étape 4, quel est le rôle de H₂ ?"
+          ]
+        },
+        {
+          "texte": "Calcule le rendement global de chaque voie.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la masse d'acide aspartique nécessaire pour produire 1,00 kg d'aspartame par chaque voie.",
+          "aides": [
+            "Commence par la quantité de matière d'aspartame dans 1,00 kg.",
+            "Une molécule de Asp donne au mieux une molécule d'aspartame ; avec un rendement η, il faut n(Asp) = n(aspartame) / η."
+          ]
+        },
+        {
+          "texte": "Dans l'étape 2 de la voie B, relève deux choix qui augmentent le rendement et explique-les. Pourquoi la voie B se passe-t-elle de la protection du groupe carboxyle β ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule l'économie d'atomes de l'étape de couplage de la voie B. Commente.",
+          "aides": []
+        },
+        {
+          "texte": "Rédige une argumentation (une dizaine de lignes) pour désigner la voie la plus écoresponsable, en t'appuyant sur au moins trois critères.",
+          "aides": [
+            "Critères possibles : nombre d'étapes, rendement, matière première consommée, solvant, température (énergie), catalyseur, sous-produits.",
+            "Pour chaque critère, compare les deux voies avec une donnée chiffrée ou un fait des documents, puis conclus en citant une limite."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles) : à chaud, le groupe ester de l'aspartame s'hydrolyse. Écris l'équation de cette hydrolyse et explique pourquoi l'aspartame ne convient pas pour sucrer un gâteau.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Groupe carboxyle (acide carboxylique) −COOH, groupe amine −NH₂, groupe amide −CO−NH−, groupe ester −COO−.",
+        "<strong>2.</strong> Asp possède deux groupes carboxyle et un groupe amine, et Phe-OMe un groupe amine : plusieurs couples « carboxyle + amine » peuvent réagir. Produits parasites possibles : l'isomère β (couplage par le carboxyle de la chaîne latérale, non sucré) ; le dipeptide Asp-Asp (l'amine d'une molécule de Asp réagit avec le carboxyle d'une autre) ; des chaînes plus longues ; un produit où les deux carboxyles de Asp ont réagi avec deux Phe-OMe. Le produit visé est minoritaire et difficile à séparer.",
+        "<strong>3.</strong> Étapes 1 et 2 : protections ; étape 4 : déprotection (des deux groupes à la fois). Protection de l'amine de Asp : empêche Asp de réagir sur lui-même (Asp-Asp, polymères). Protection du carboxyle β : seul le carboxyle α reste libre, donc seul l'isomère sucré se forme. Étape 3 : substitution (le −OH du groupe carboxyle est remplacé par −NH−R ; on parle aussi de condensation). Étape 4 : oxydo-réduction (le dihydrogène est un réducteur).",
+        "<strong>4.</strong> η<sub>A</sub> = 0,90 × 0,85 × 0,80 × 0,95 = 0,581, soit 58,1 %. η<sub>B</sub> = 0,90 × 0,90 × 0,95 = 0,770, soit 77,0 % (76,95 %).",
+        "<strong>5.</strong> n(aspartame) = 1,00 × 10³ / 294,3 = 3,40 mol. Il faut n(Asp) = n(aspartame) / η, une molécule de Asp donnant une molécule d'aspartame. Voie A : n = 3,40 / 0,581 = 5,84 mol, m = 5,84 × 133,1 = 778 g. Voie B : n = 3,40 / 0,770 = 4,42 mol, m = 4,42 × 133,1 = 588 g.",
+        "<strong>6.</strong> Phe-OMe en excès (2 équivalents) : l'équilibre de couplage est déplacé dans le sens direct, le rendement par rapport à Z-Asp augmente. Le produit précipite : il est éliminé du milieu réactionnel (il quitte la solution), ce qui déplace aussi l'équilibre. L'enzyme est sélective : elle ne fait réagir que le carboxyle α, donc le carboxyle β n'a pas besoin d'être protégé (une étape de moins).",
+        "<strong>7.</strong> EA = 428,4 / (267,2 + 179,2) = 0,960, soit 96,0 % : presque tous les atomes des réactifs se retrouvent dans le produit visé ; seul l'eau, non toxique, est formée.",
+        "<strong>8.</strong> Éléments attendus : la voie B compte une étape de moins et a un meilleur rendement global (77 % contre 58 %), donc consomme moins de matière première (588 g contre 778 g de Asp par kg) ; elle utilise l'eau au lieu du dichlorométhane toxique ; elle fonctionne à 40 °C (économie d'énergie) ; elle utilise un catalyseur (enzyme) réutilisable et sélectif ; elle ne produit pas le sous-produit solide de l'agent de couplage ni le toluène de la déprotection de l'ester benzylique (moins de déchets). Limite à mentionner : la voie B utilise un excès de Phe-OMe, qu'il faut récupérer, et produit encore du toluène et du CO₂ à l'étape 3. Conclusion : la voie B est la plus écoresponsable.",
+        "<strong>9.</strong> Pour aller plus loin : HOOC−CH₂−CH(NH₂)−CO−NH−CH(CH₂−C₆H₅)−COO−CH₃ + H₂O → HOOC−CH₂−CH(NH₂)−CO−NH−CH(CH₂−C₆H₅)−COOH + CH₃−OH. Le produit formé n'a plus le goût sucré : à la cuisson, l'aspartame perd son pouvoir sucrant (et l'amide peut aussi s'hydrolyser).",
+        "<em>⚠ Erreur fréquente : calculer la masse de Asp à partir de 1,00 kg sans diviser par le rendement (on trouverait la masse minimale, 452 g, valable seulement pour un rendement de 100 %), ou confondre rendement global et économie d'atomes : l'un compare ce qu'on obtient à ce qu'on pouvait obtenir, l'autre mesure la part des atomes des réactifs qui finissent dans le produit.</em>"
+      ]
+    }
+  ]
+}

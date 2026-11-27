@@ -1,0 +1,708 @@
+{
+  "id": 43,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Tension et intensité électrique",
+        "icon": "⚡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Tension électrique U",
+            "text": "Grandeur qui traduit la différence de potentiel électrique entre deux points d'un circuit ; elle se mesure en volts (V) à l'aide d'un voltmètre branché en dérivation (en parallèle) aux bornes du dipôle étudié."
+          },
+          {
+            "type": "def",
+            "term": "Intensité du courant I",
+            "text": "Grandeur qui traduit le débit de charges électriques circulant dans un circuit ; elle se mesure en ampères (A) à l'aide d'un ampèremètre branché en série dans le circuit."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Grandeur",
+              "Symbole",
+              "Unité (symbole)",
+              "Appareil de mesure",
+              "Branchement"
+            ],
+            "rows": [
+              [
+                "Tension",
+                "U",
+                "volt (V)",
+                "Voltmètre",
+                "Dérivation (parallèle)"
+              ],
+              [
+                "Intensité",
+                "I",
+                "ampère (A)",
+                "Ampèremètre",
+                "Série"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Loi d'Ohm pour un conducteur ohmique",
+        "icon": "🔧",
+        "content": [
+          {
+            "type": "def",
+            "term": "Conducteur ohmique (résistor)",
+            "text": "Dipôle électrique, souvent appelé résistance, dont la tension à ses bornes est proportionnelle à l'intensité du courant qui le traverse."
+          },
+          {
+            "type": "formula",
+            "label": "Loi d'Ohm",
+            "text": "U = R × I\nU en volts (V), R en ohms (Ω), I en ampères (A)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : un conducteur ohmique de résistance R = 100 Ω est traversé par un courant d'intensité I = 0,20 A. La tension à ses bornes vaut :"
+          },
+          {
+            "type": "formula",
+            "label": "Calcul",
+            "text": "U = R × I = 100 × 0,20 = 20 V"
+          }
+        ]
+      },
+      {
+        "title": "3. Associations de résistances",
+        "icon": "🔗",
+        "content": [
+          {
+            "type": "def",
+            "term": "Association en série",
+            "text": "Les résistances sont placées les unes à la suite des autres : elles sont traversées par la même intensité, et les tensions à leurs bornes s'additionnent."
+          },
+          {
+            "type": "formula",
+            "label": "Résistance équivalente en série",
+            "text": "Req = R1 + R2 + ... + Rn"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : R1 = 20 Ω et R2 = 30 Ω sont en série, traversées par I = 0,10 A."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul",
+            "text": "Req = 20 + 30 = 50 Ω\nU = Req × I = 50 × 0,10 = 5 V"
+          },
+          {
+            "type": "def",
+            "term": "Association en dérivation (parallèle)",
+            "text": "Les résistances sont placées sur des branches différentes entre deux mêmes nœuds : elles ont la même tension à leurs bornes, et les intensités qui les traversent s'additionnent pour donner l'intensité totale (loi des nœuds)."
+          },
+          {
+            "type": "formula",
+            "label": "Résistance équivalente en dérivation",
+            "text": "1 / Req = 1 / R1 + 1 / R2 + ... + 1 / Rn"
+          },
+          {
+            "type": "warn",
+            "text": "En dérivation, la résistance équivalente Req est toujours plus petite que la plus petite des résistances associées."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 520 220\" xmlns=\"http://www.w3.org/2000/svg\"><text x=\"115\" y=\"20\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Série</text><line x1=\"30\" y1=\"170\" x2=\"30\" y2=\"115\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"18\" y1=\"108\" x2=\"42\" y2=\"108\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><line x1=\"24\" y1=\"100\" x2=\"36\" y2=\"100\" stroke=\"#1B2420\" stroke-width=\"3\"/><line x1=\"30\" y1=\"95\" x2=\"30\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"50\" x2=\"60\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"60\" y=\"42\" width=\"35\" height=\"16\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"77\" y=\"54\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">R1</text><line x1=\"95\" y1=\"50\" x2=\"130\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"130\" y=\"42\" width=\"35\" height=\"16\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"147\" y=\"54\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">R2</text><line x1=\"165\" y1=\"50\" x2=\"210\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"210\" y1=\"50\" x2=\"210\" y2=\"170\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"210\" y1=\"170\" x2=\"30\" y2=\"170\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"110\" y=\"38\" font-size=\"11\" fill=\"#5C6B60\" text-anchor=\"middle\">même I</text><text x=\"375\" y=\"20\" font-size=\"13\" fill=\"#1B2420\" text-anchor=\"middle\" font-weight=\"600\">Dérivation</text><line x1=\"300\" y1=\"170\" x2=\"300\" y2=\"140\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"288\" y1=\"133\" x2=\"312\" y2=\"133\" stroke=\"#1B2420\" stroke-width=\"1.2\"/><line x1=\"294\" y1=\"125\" x2=\"306\" y2=\"125\" stroke=\"#1B2420\" stroke-width=\"3\"/><line x1=\"300\" y1=\"120\" x2=\"300\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"50\" x2=\"460\" y2=\"50\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"460\" y1=\"50\" x2=\"460\" y2=\"170\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"460\" y1=\"170\" x2=\"300\" y2=\"170\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"85\" x2=\"355\" y2=\"85\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"355\" y=\"77\" width=\"50\" height=\"16\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"380\" y=\"89\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">R1</text><line x1=\"405\" y1=\"85\" x2=\"460\" y2=\"85\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><line x1=\"300\" y1=\"135\" x2=\"355\" y2=\"135\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><rect x=\"355\" y=\"127\" width=\"50\" height=\"16\" fill=\"none\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"380\" y=\"139\" font-size=\"11\" fill=\"#1B2420\" text-anchor=\"middle\">R2</text><line x1=\"405\" y1=\"135\" x2=\"460\" y2=\"135\" stroke=\"#1B2420\" stroke-width=\"1.5\"/><text x=\"380\" y=\"195\" font-size=\"11\" fill=\"#5C6B60\" text-anchor=\"middle\">même U, I se répartit</text></svg>",
+            "caption": "En série, R1 et R2 sont traversées par la même intensité I. En dérivation, R1 et R2 ont la même tension U à leurs bornes, et l'intensité totale se répartit entre les deux branches."
+          }
+        ]
+      },
+      {
+        "title": "4. Puissance électrique",
+        "icon": "💡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Puissance électrique",
+            "text": "Grandeur qui caractérise l'énergie électrique reçue ou fournie par un dipôle par unité de temps."
+          },
+          {
+            "type": "formula",
+            "label": "Puissance électrique",
+            "text": "P = U × I\nP en watts (W), U en volts (V), I en ampères (A)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : une lampe fonctionne sous une tension U = 12 V et est traversée par un courant d'intensité I = 0,5 A."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul",
+            "text": "P = U × I = 12 × 0,5 = 6 W"
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une pile alimente une lampe et une résistance en série. Un ampèremètre placé avant la lampe indique 0,25 A. Placé juste après la lampe, il indique :",
+      "opts": [
+        "moins de 0,25 A, car la lampe consomme du courant",
+        "0 A, car le courant est transformé en lumière",
+        "0,25 A",
+        "0,125 A, car le courant se partage entre les deux dipôles"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "courant-consomme",
+          "texte": "Croire que le courant est consommé par les dipôles : dans un circuit série, l'intensité est la même partout"
+        },
+        {
+          "code": "courant-transforme-en-lumiere",
+          "texte": "Croire que le courant se transforme en lumière : c'est l'énergie qui est convertie, le courant continue de circuler"
+        },
+        null,
+        {
+          "code": "partage-en-serie",
+          "texte": "Croire que le courant se partage en série : il ne se partage qu'aux nœuds d'un circuit en dérivation"
+        }
+      ],
+      "exp": "Dans un circuit série, l'intensité est la même en tout point : 0,25 A avant et après la lampe. Attention : la lampe convertit de l'énergie, elle ne « consomme » pas le courant."
+    },
+    {
+      "q": "Pour mesurer la tension aux bornes d'une lampe, on branche un voltmètre :",
+      "opts": [
+        "en série avec la lampe",
+        "en dérivation aux bornes de la lampe",
+        "aux bornes de la pile : c'est la même tension",
+        "on utilise plutôt un ampèremètre en série"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "voltmetre-en-serie",
+          "texte": "Brancher le voltmètre en série : il se branche en dérivation, entre les deux bornes du dipôle"
+        },
+        null,
+        {
+          "code": "tension-pile-egale-lampe",
+          "texte": "Croire que la tension d'un dipôle est toujours celle de la pile : en série, la tension de la pile se répartit entre les dipôles"
+        },
+        {
+          "code": "tension-vs-intensite",
+          "texte": "Confondre tension et intensité : l'ampèremètre mesure l'intensité, le voltmètre la tension"
+        }
+      ],
+      "exp": "Le voltmètre se branche en dérivation, aux bornes du dipôle étudié ; l'ampèremètre, en série. Attention : tension et intensité sont deux grandeurs différentes."
+    },
+    {
+      "q": "Une intensité de 0,50 A arrive à un nœud. Une première branche emporte 0,20 A. L'intensité dans la seconde branche vaut :",
+      "opts": [
+        "0,70 A",
+        "0,25 A",
+        "0,30 A",
+        "0,50 A"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "noeuds-addition-erronee",
+          "texte": "Additionner au lieu de soustraire : la somme des intensités qui partent est égale à l'intensité qui arrive"
+        },
+        {
+          "code": "partage-egal",
+          "texte": "Croire que le courant se partage toujours à parts égales : ici une branche emporte déjà 0,20 A"
+        },
+        null,
+        {
+          "code": "courant-identique-partout",
+          "texte": "Croire que l'intensité est la même dans toutes les branches : en dérivation, elle se partage entre les branches"
+        }
+      ],
+      "exp": "Loi des nœuds : 0,50 = 0,20 + I₂, donc I₂ = 0,30 A. Attention : le courant se partage aux nœuds, pas forcément à parts égales."
+    },
+    {
+      "q": "Une pile de 9,0 V alimente une lampe et une résistance en série. La tension aux bornes de la résistance vaut 3,5 V. Celle aux bornes de la lampe vaut :",
+      "opts": [
+        "9,0 V",
+        "5,5 V",
+        "12,5 V",
+        "3,5 V"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "tension-pile-egale-lampe",
+          "texte": "Croire que la tension d'un dipôle est toujours celle de la pile : en série, la tension de la pile se répartit entre les dipôles"
+        },
+        null,
+        {
+          "code": "mailles-addition-erronee",
+          "texte": "Additionner la tension de la pile et celle de la résistance : loi des mailles, 9,0 = 3,5 + U(lampe)"
+        },
+        {
+          "code": "tension-meme-en-serie",
+          "texte": "Croire que les dipôles en série ont la même tension : c'est l'intensité qui est la même en série"
+        }
+      ],
+      "exp": "Loi des mailles : U(pile) = U(résistance) + U(lampe), donc U(lampe) = 9,0 − 3,5 = 5,5 V. Attention : en série, l'intensité est commune, les tensions s'additionnent."
+    },
+    {
+      "q": "Deux lampes différentes sont branchées en dérivation sur une pile de 4,5 V. La tension aux bornes de chaque lampe vaut :",
+      "opts": [
+        "2,25 V chacune",
+        "4,5 V chacune",
+        "plus pour la lampe la plus puissante",
+        "4,5 V pour la première, moins pour la seconde"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "partage-tension-derivation",
+          "texte": "Partager la tension entre les branches : en dérivation, chaque branche a la même tension que la pile"
+        },
+        null,
+        {
+          "code": "tension-depend-dipole-derivation",
+          "texte": "Croire que la tension dépend de la lampe en dérivation : c'est l'intensité qui diffère d'une branche à l'autre"
+        },
+        {
+          "code": "raisonnement-sequentiel",
+          "texte": "Raisonner « dans l'ordre du circuit » : la première lampe ne prend rien à la seconde, les deux branches sont branchées sur les mêmes points"
+        }
+      ],
+      "exp": "Loi des mailles : chaque lampe en dérivation est branchée entre les mêmes points que la pile, elle a donc la même tension, 4,5 V. Ce sont les intensités qui diffèrent."
+    },
+    {
+      "q": "Un conducteur ohmique de résistance R = 220 Ω est traversé par un courant de 15 mA. La tension à ses bornes vaut :",
+      "opts": [
+        "3 300 V",
+        "3,3 V",
+        "1,5×10⁴ V",
+        "6,8×10⁻⁵ V"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "conversion-ma-a",
+          "texte": "Oublier de convertir les milliampères en ampères : 15 mA = 0,015 A"
+        },
+        null,
+        {
+          "code": "ohm-r-sur-i",
+          "texte": "Diviser R par I : 220 / 0,015 ; la loi d'Ohm s'écrit U = R × I"
+        },
+        {
+          "code": "ohm-i-sur-r",
+          "texte": "Diviser I par R : 0,015 / 220 ; la loi d'Ohm s'écrit U = R × I"
+        }
+      ],
+      "exp": "U = R × I = 220 × 0,015 = 3,3 V. Attention : l'intensité doit être en ampères."
+    },
+    {
+      "q": "Un conducteur ohmique est soumis à une tension de 6,0 V ; il est traversé par un courant de 30 mA. Sa résistance vaut :",
+      "opts": [
+        "0,18 Ω",
+        "5,0×10⁻³ Ω",
+        "0,20 Ω",
+        "200 Ω"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "ohm-produit",
+          "texte": "Multiplier U par I : la résistance vaut R = U / I"
+        },
+        {
+          "code": "ohm-i-sur-u",
+          "texte": "Inverser le rapport : I / U ; la résistance vaut R = U / I"
+        },
+        {
+          "code": "conversion-ma-a",
+          "texte": "Oublier de convertir les milliampères en ampères : 30 mA = 0,030 A"
+        },
+        null
+      ],
+      "exp": "R = U / I = 6,0 / 0,030 = 200 Ω. Attention : I en ampères pour obtenir des ohms."
+    },
+    {
+      "q": "La caractéristique U = f(I) d'un dipôle est une droite qui ne passe pas par l'origine. Ce dipôle :",
+      "opts": [
+        "est un conducteur ohmique, puisque c'est une droite",
+        "n'a pas un comportement ohmique",
+        "est ohmique, puisque la pente de la droite est positive",
+        "a une résistance égale à l'ordonnée à l'origine"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "proportionnel-vs-affine",
+          "texte": "Confondre droite et proportionnalité : un dipôle est ohmique si U est proportionnelle à I, donc si la droite passe par l'origine"
+        },
+        null,
+        {
+          "code": "ohmique-pente-positive",
+          "texte": "Croire qu'une pente positive suffit : il faut que la droite passe par l'origine (U = R × I)"
+        },
+        {
+          "code": "ordonnee-origine-resistance",
+          "texte": "Prendre l'ordonnée à l'origine pour la résistance : pour un conducteur ohmique, R est le coefficient directeur"
+        }
+      ],
+      "exp": "Comportement ohmique : U = R × I, une droite passant par l'origine, de coefficient directeur R. Une droite qui ne passe pas par l'origine n'est pas une proportionnalité."
+    },
+    {
+      "q": "Dans un circuit série alimenté par une pile, on ajoute une deuxième résistance en série. L'intensité du courant :",
+      "opts": [
+        "reste la même : une pile débite toujours la même intensité",
+        "augmente : il y a plus de dipôles à alimenter",
+        "diminue seulement après la nouvelle résistance",
+        "diminue dans tout le circuit"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "pile-intensite-constante",
+          "texte": "Croire qu'une pile débite toujours la même intensité : l'intensité dépend du circuit branché"
+        },
+        {
+          "code": "dipoles-ajoutent-courant",
+          "texte": "Croire que plus de dipôles appellent plus de courant : une résistance en série de plus freine le courant"
+        },
+        {
+          "code": "raisonnement-sequentiel",
+          "texte": "Raisonner « dans l'ordre du circuit » : un changement en un point modifie l'intensité partout dans la boucle"
+        },
+        null
+      ],
+      "exp": "La résistance totale augmente : l'intensité diminue, et elle reste la même en tout point du circuit série. Attention : la pile impose une tension, pas une intensité."
+    },
+    {
+      "q": "Un élève branche un ampèremètre en dérivation aux bornes d'une lampe allumée. Que se passe-t-il ?",
+      "opts": [
+        "il mesure l'intensité qui traverse la lampe",
+        "il mesure la tension aux bornes de la lampe",
+        "rien : le branchement n'a pas d'importance",
+        "la lampe s'éteint : l'ampèremètre la court-circuite"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "amperemetre-en-derivation",
+          "texte": "Croire qu'un ampèremètre se branche en dérivation : il se branche en série, pour être traversé par le courant à mesurer"
+        },
+        {
+          "code": "tension-vs-intensite",
+          "texte": "Confondre tension et intensité : un ampèremètre ne mesure pas une tension"
+        },
+        {
+          "code": "branchement-sans-importance",
+          "texte": "Croire que le branchement n'a pas d'importance : un ampèremètre en dérivation crée un court-circuit"
+        },
+        null
+      ],
+      "exp": "Un ampèremètre a une résistance très faible : en dérivation, le courant passe par lui plutôt que par la lampe, qui s'éteint (court-circuit, risque pour l'appareil). Il se branche toujours en série."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Brancher les appareils de mesure",
+      "contexte": [
+        "Pour réparer la lampe de son vélo, Sarah réalise au lycée le circuit ci-dessous : une pile de 4,5 V, un interrupteur K, une lampe L et deux multimètres. L'un mesure l'intensité du courant qui traverse la lampe, l'autre la tension aux bornes de la lampe."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"36\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">Circuit de la lampe de Sarah : quel appareil est l'ampèremètre ?</text><line x1=\"160\" y1=\"110\" x2=\"470\" y2=\"110\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"160\" y1=\"390\" x2=\"470\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"160\" y1=\"110\" x2=\"160\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"470\" y1=\"110\" x2=\"470\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"470\" y1=\"170\" x2=\"640\" y2=\"170\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"640\" y1=\"170\" x2=\"640\" y2=\"330\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"640\" y1=\"330\" x2=\"470\" y2=\"330\" stroke=\"#222\" stroke-width=\"2.5\"/><rect x=\"130\" y=\"242\" width=\"60\" height=\"16\" fill=\"#fff\"/><line x1=\"134\" y1=\"243\" x2=\"186\" y2=\"243\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"147\" y1=\"257\" x2=\"173\" y2=\"257\" stroke=\"#222\" stroke-width=\"7\"/><text x=\"200\" y=\"240\" fill=\"#222\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\">+</text><text x=\"200\" y=\"272\" fill=\"#222\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\">−</text><text x=\"120\" y=\"248\" fill=\"#222\" text-anchor=\"end\" font-size=\"17\">pile</text><text x=\"120\" y=\"272\" fill=\"#222\" text-anchor=\"end\" font-size=\"17\">4,5 V</text><rect x=\"232\" y=\"104\" width=\"56\" height=\"12\" fill=\"#fff\"/><circle cx=\"236\" cy=\"110\" r=\"4\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2\"/><circle cx=\"284\" cy=\"110\" r=\"4\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"240\" y1=\"110\" x2=\"280\" y2=\"110\" stroke=\"#222\" stroke-width=\"2.5\"/><text x=\"260\" y=\"94\" fill=\"#222\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">K</text><circle cx=\"370\" cy=\"110\" r=\"19\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"370\" y=\"116\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#B5523B\">1</text><text x=\"370\" y=\"80\" fill=\"#B5523B\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">appareil 1</text><circle cx=\"470\" cy=\"250\" r=\"17\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"457.981\" y1=\"237.981\" x2=\"482.019\" y2=\"262.019\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"457.981\" y1=\"262.019\" x2=\"482.019\" y2=\"237.981\" stroke=\"#222\" stroke-width=\"2\"/><text x=\"440\" y=\"256\" fill=\"#222\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">L</text><circle cx=\"640\" cy=\"250\" r=\"19\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.5\"/><text x=\"640\" y=\"256\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#B5523B\">2</text><text x=\"668\" y=\"256\" fill=\"#B5523B\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">appareil 2</text><circle cx=\"470\" cy=\"170\" r=\"5\" fill=\"#222\"/><circle cx=\"470\" cy=\"330\" r=\"5\" fill=\"#222\"/><text x=\"380\" y=\"445\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"15\">Les appareils 1 et 2 sont des multimètres, réglés l'un en ampèremètre, l'autre en voltmètre.</text></svg>",
+      "questions": [
+        {
+          "texte": "Recopie et complète : « La tension électrique, notée …… , s'exprime en ………… (symbole ……) ; elle se mesure avec un ………… branché en ………… aux bornes du dipôle. L'intensité du courant, notée …… , s'exprime en ………… (symbole ……) ; elle se mesure avec un ………… branché en ………… dans le circuit. »",
+          "aides": []
+        },
+        {
+          "texte": "Lequel des deux appareils (1 ou 2) est l'ampèremètre ? Lequel est le voltmètre ? Justifie à partir de leur branchement.",
+          "aides": [
+            "Suis le trajet du courant depuis la borne + de la pile : quel appareil est traversé par ce courant, à la suite de la lampe ?",
+            "Un appareil branché « à côté » d'un dipôle, entre ses deux bornes, est en dérivation ; un appareil inséré dans la boucle est en série."
+          ]
+        },
+        {
+          "texte": "L'appareil 1 affiche 250 mA et l'appareil 2 affiche 4,3 V. Écris chaque mesure avec son symbole (I = … ou U = …), puis convertis l'intensité en ampères.",
+          "aides": [
+            "Le préfixe « milli » (m) signifie « millième » : 1 mA = 0,001 A.",
+            "Pour passer des mA aux A, on divise par 1 000."
+          ]
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. « Le voltmètre est traversé par le même courant que la lampe. »<br>b. « Si on déplace l'appareil 1 entre la lampe et la borne − de la pile, il affiche toujours 250 mA. »<br>c. « Pour mesurer une tension, il faut ouvrir le circuit et y insérer le voltmètre. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> « La tension électrique, notée U, s'exprime en volts (symbole V) ; elle se mesure avec un voltmètre branché en dérivation (en parallèle) aux bornes du dipôle. L'intensité du courant, notée I, s'exprime en ampères (symbole A) ; elle se mesure avec un ampèremètre branché en série dans le circuit. »",
+        "<strong>2.</strong> L'appareil 1 est placé dans la boucle du circuit, à la suite des autres dipôles : il est branché en série, c'est l'ampèremètre. L'appareil 2 est branché entre les deux bornes de la lampe, sur une branche à part : il est en dérivation, c'est le voltmètre.",
+        "<strong>3.</strong> I = 250 mA = 250 × 10⁻³ A = 0,250 A ; U = 4,3 V.",
+        "<strong>4.</strong> a. FAUX : le voltmètre est branché en dérivation, il n'est pas traversé par le courant de la lampe (il est pratiquement traversé par aucun courant).",
+        "b. VRAI : dans un circuit en série (une seule boucle), l'intensité est la même en tout point ; l'ampèremètre peut être placé n'importe où dans la boucle.",
+        "c. FAUX : c'est l'ampèremètre qu'on insère en ouvrant le circuit. Le voltmètre se branche simplement aux deux bornes du dipôle, sans rien débrancher.",
+        "<em>⚠ Erreur fréquente : écrire 250 mA = 2,50 A ou 25 A. Il faut diviser par 1 000 : 250 mA = 0,250 A.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La maquette du manège : lois des nœuds et des mailles",
+      "contexte": [
+        "Pour la fête du club sciences, Ilyes construit une maquette de manège : un générateur G alimente une lampe L₁ (l'enseigne), puis deux branches en dérivation entre les nœuds A et B : une lampe L₂ (l'éclairage) et un moteur M (qui fait tourner le manège). Voir le schéma ci-dessous.",
+        "Rappels. Loi des nœuds : la somme des intensités des courants qui arrivent à un nœud est égale à la somme des intensités des courants qui en repartent. Loi des mailles : dans une maille (boucle fermée), la tension aux bornes du générateur est égale à la somme des tensions aux bornes des récepteurs placés en série dans cette maille. Des dipôles en dérivation ont la même tension à leurs bornes.",
+        "Mesures d'Ilyes : U<sub>G</sub> = 6,0 V ; U₁ = 2,5 V ; I = 0,50 A ; I₂ = 0,20 A."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">Le circuit de la maquette de manège</text><line x1=\"150\" y1=\"110\" x2=\"620\" y2=\"110\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"150\" y1=\"390\" x2=\"620\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"150\" y1=\"110\" x2=\"150\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"420\" y1=\"110\" x2=\"420\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"620\" y1=\"110\" x2=\"620\" y2=\"390\" stroke=\"#222\" stroke-width=\"2.5\"/><rect x=\"120\" y=\"242\" width=\"60\" height=\"16\" fill=\"#fff\"/><line x1=\"124\" y1=\"243\" x2=\"176\" y2=\"243\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"137\" y1=\"257\" x2=\"163\" y2=\"257\" stroke=\"#222\" stroke-width=\"7\"/><text x=\"190\" y=\"240\" fill=\"#222\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\">+</text><text x=\"190\" y=\"272\" fill=\"#222\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\">−</text><text x=\"110\" y=\"256\" fill=\"#222\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">G</text><circle cx=\"285\" cy=\"110\" r=\"17\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"272.981\" y1=\"97.981\" x2=\"297.019\" y2=\"122.019\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"272.981\" y1=\"122.019\" x2=\"297.019\" y2=\"97.981\" stroke=\"#222\" stroke-width=\"2\"/><text x=\"285\" y=\"152\" fill=\"#222\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">L<tspan font-size=\"13\" dy=\"5\">1</tspan></text><circle cx=\"420\" cy=\"250\" r=\"17\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"407.981\" y1=\"237.981\" x2=\"432.019\" y2=\"262.019\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"407.981\" y1=\"262.019\" x2=\"432.019\" y2=\"237.981\" stroke=\"#222\" stroke-width=\"2\"/><text x=\"448\" y=\"256\" fill=\"#222\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">L<tspan font-size=\"13\" dy=\"5\">2</tspan></text><circle cx=\"620\" cy=\"250\" r=\"19\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.5\"/><text x=\"620\" y=\"256\" text-anchor=\"middle\" font-weight=\"bold\" font-size=\"18\" fill=\"#222\">M</text><text x=\"650\" y=\"256\" fill=\"#222\" text-anchor=\"start\" font-size=\"17\">moteur</text><circle cx=\"420\" cy=\"110\" r=\"5\" fill=\"#222\"/><circle cx=\"420\" cy=\"390\" r=\"5\" fill=\"#222\"/><text x=\"420\" y=\"96\" fill=\"#222\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">A</text><text x=\"420\" y=\"418\" fill=\"#222\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">B</text><polygon points=\"214.0,110.0 196.0,103.7 196.0,116.3\" fill=\"#B5523B\"/><text x=\"205\" y=\"96\" fill=\"#B5523B\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">I</text><polygon points=\"420.0,184.0 413.7,166.0 426.3,166.0\" fill=\"#B5523B\"/><text x=\"404\" y=\"182\" fill=\"#B5523B\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">I<tspan font-size=\"13\" dy=\"5\">2</tspan></text><polygon points=\"620.0,184.0 613.7,166.0 626.3,166.0\" fill=\"#B5523B\"/><text x=\"604\" y=\"182\" fill=\"#B5523B\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">I<tspan font-size=\"13\" dy=\"5\">3</tspan></text><line x1=\"65.0\" y1=\"290.0\" x2=\"65.0\" y2=\"221.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"65.0,210.0 70.0,221.0 60.0,221.0\" fill=\"#1F4E5A\"/><text x=\"55\" y=\"205\" fill=\"#1F4E5A\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">U<tspan font-size=\"13\" dy=\"5\">G</tspan></text><line x1=\"315.0\" y1=\"78.0\" x2=\"266.0\" y2=\"78.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"255.0,78.0 266.0,73.0 266.0,83.0\" fill=\"#1F4E5A\"/><text x=\"330\" y=\"84\" fill=\"#1F4E5A\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">U<tspan font-size=\"13\" dy=\"5\">1</tspan></text><line x1=\"495.0\" y1=\"290.0\" x2=\"495.0\" y2=\"221.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"495.0,210.0 499.9,221.0 490.1,221.0\" fill=\"#1F4E5A\"/><text x=\"505\" y=\"205\" fill=\"#1F4E5A\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">U<tspan font-size=\"13\" dy=\"5\">2</tspan></text><line x1=\"730.0\" y1=\"290.0\" x2=\"730.0\" y2=\"221.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><polygon points=\"730.0,210.0 735.0,221.0 725.0,221.0\" fill=\"#1F4E5A\"/><text x=\"724\" y=\"318\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">U<tspan font-size=\"13\" dy=\"5\">M</tspan></text><text x=\"380\" y=\"450\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"15\">Flèches rouges : sens du courant. Flèches bleues : tensions.</text></svg>",
+      "questions": [
+        {
+          "texte": "Combien ce circuit compte-t-il de nœuds ? Nomme-les. Cite les dipôles de la maille qui contient G, L₁ et L₂.",
+          "aides": []
+        },
+        {
+          "texte": "Écris la loi des nœuds au nœud A, puis calcule l'intensité I₃ du courant qui traverse le moteur.",
+          "aides": [
+            "Au nœud A, repère le courant qui arrive (flèche vers A) et les courants qui repartent (flèches qui s'éloignent de A).",
+            "Intensité qui arrive = somme des intensités qui repartent : I = I₂ + I₃. Isole I₃."
+          ]
+        },
+        {
+          "texte": "Quelle est l'intensité du courant qui traverse la lampe L₁ ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Écris la loi des mailles pour la maille {G, L₁, L₂}, puis calcule la tension U₂ aux bornes de la lampe L₂.",
+          "aides": [
+            "Dans la maille {G, L₁, L₂}, le générateur est G ; les récepteurs en série sont L₁ et L₂.",
+            "U<sub>G</sub> = U₁ + U₂ : isole U₂."
+          ]
+        },
+        {
+          "texte": "Sans nouveau calcul, donne la tension U<sub>M</sub> aux bornes du moteur. Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Deux nœuds : A et B (points où se rejoignent au moins trois fils). La maille {G, L₁, L₂} contient le générateur G, la lampe L₁ et la lampe L₂.",
+        "<strong>2.</strong> Au nœud A, le courant I arrive ; les courants I₂ et I₃ repartent : I = I₂ + I₃, donc I₃ = I − I₂ = 0,50 − 0,20 = 0,30 A.",
+        "<strong>3.</strong> La lampe L₁ est dans la branche principale, en série avec le générateur : elle est traversée par I = 0,50 A.",
+        "<strong>4.</strong> Loi des mailles : U<sub>G</sub> = U₁ + U₂, donc U₂ = U<sub>G</sub> − U₁ = 6,0 − 2,5 = 3,5 V.",
+        "<strong>5.</strong> Le moteur et la lampe L₂ sont branchés en dérivation entre A et B : ils ont la même tension à leurs bornes, donc U<sub>M</sub> = U₂ = 3,5 V. (On le retrouve avec la loi des mailles dans la maille {G, L₁, M} : U<sub>M</sub> = U<sub>G</sub> − U₁.)",
+        "<em>⚠ Erreur fréquente : additionner les intensités des branches en dérivation pour trouver celle du moteur (0,50 + 0,20). Au nœud A, le courant principal se partage : I₃ est plus petit que I.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "La loi d'Ohm au quotidien",
+      "contexte": [
+        "Loi d'Ohm pour un conducteur ohmique : U = R × I, avec U en volts (V), R en ohms (Ω) et I en ampères (A).",
+        "Associations de conducteurs ohmiques : en série, R<sub>éq</sub> = R₁ + R₂ ; en dérivation, 1 / R<sub>éq</sub> = 1 / R₁ + 1 / R₂."
+      ],
+      "questions": [
+        {
+          "texte": "Vrai ou faux ? Justifie chaque réponse en une phrase.<br>a. « Dans la relation U = R × I, la résistance R s'exprime en ampères. »<br>b. « Si l'intensité du courant qui traverse un conducteur ohmique double, la tension à ses bornes double aussi. »<br>c. « La loi d'Ohm s'applique à tous les dipôles, par exemple à une lampe ou à une DEL. »",
+          "aides": []
+        },
+        {
+          "texte": "Calculs guidés. Pour chaque situation, écris la relation utilisée, puis calcule.<br>a. Dans le kit Arduino de Nolan, un conducteur ohmique de résistance R = 470 Ω est traversé par un courant d'intensité I = 10 mA. Calcule la tension U à ses bornes.<br>b. La résistance chauffante d'un grille-pain est soumise à une tension U = 230 V et traversée par un courant I = 4,0 A. Exprime R en fonction de U et de I, puis calcule R.<br>c. Un conducteur ohmique de résistance R = 1,0 kΩ est branché aux bornes d'une pile de 9,0 V. Calcule l'intensité I du courant, en A puis en mA.",
+          "aides": [
+            "Avant de calculer, convertis : I en ampères (mA → A) et R en ohms (kΩ → Ω).",
+            "Pour isoler R ou I dans U = R × I, divise les deux membres par la grandeur à faire disparaître : R = U / I et I = U / R."
+          ]
+        },
+        {
+          "texte": "Nolan dispose de deux conducteurs ohmiques R₁ = 60 Ω et R₂ = 40 Ω.<br>a. Calcule la résistance équivalente R<sub>éq</sub> s'il les branche en série.<br>b. Calcule R<sub>éq</sub> s'il les branche en dérivation. Vérifie la règle de la fiche : « en dérivation, R<sub>éq</sub> est plus petite que la plus petite des résistances ».",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : R s'exprime en ohms (Ω) ; l'ampère est l'unité de l'intensité I.",
+        "b. VRAI : U = R × I, avec R constante : U est proportionnelle à I. Si I est multipliée par 2, U aussi.",
+        "c. FAUX : la loi d'Ohm ne s'applique qu'aux conducteurs ohmiques (résistors). Pour une DEL ou une lampe, U n'est pas proportionnelle à I.",
+        "<strong>2.</strong> a. U = R × I avec I = 10 mA = 10 × 10⁻³ A = 0,010 A : U = 470 × 0,010 = 4,7 V.",
+        "b. R = U / I = 230 / 4,0 = 57,5 Ω ≈ 58 Ω.",
+        "c. I = U / R avec R = 1,0 kΩ = 1 000 Ω : I = 9,0 / 1 000 = 0,0090 A = 9,0 × 10⁻³ A = 9,0 mA.",
+        "<strong>3.</strong> a. En série : R<sub>éq</sub> = R₁ + R₂ = 60 + 40 = 100 Ω.",
+        "b. En dérivation : 1 / R<sub>éq</sub> = 1 / 60 + 1 / 40 = 2 / 120 + 3 / 120 = 5 / 120, donc R<sub>éq</sub> = 120 / 5 = 24 Ω. On a bien 24 Ω &lt; 40 Ω (la plus petite des deux résistances).",
+        "<em>⚠ Erreur fréquente : garder I en milliampères dans U = R × I (on trouverait U = 470 × 10 = 4 700 V !). Dans la loi d'Ohm, I doit être en ampères et R en ohms.</em>",
+        "<em>⚠ Erreur fréquente (3.b) : s'arrêter à 1 / R<sub>éq</sub> ≈ 0,042 et oublier de prendre l'inverse.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Protéger la DEL du kit Arduino",
+      "contexte": [
+        "Nolan veut allumer une DEL rouge avec la sortie de sa carte Arduino, qui délivre une tension de 5,0 V. Le document ci-dessous donne les caractéristiques intensité-tension de deux dipôles de son kit : un conducteur ohmique et cette DEL. Chaque courbe donne l'intensité I du courant qui traverse le dipôle en fonction de la tension U à ses bornes."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"400\" y=\"32\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">Caractéristiques intensité-tension de deux dipôles</text><line x1=\"90.0\" y1=\"60\" x2=\"90.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"120.5\" y1=\"60\" x2=\"120.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"151.0\" y1=\"60\" x2=\"151.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"181.5\" y1=\"60\" x2=\"181.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"212.0\" y1=\"60\" x2=\"212.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"242.5\" y1=\"60\" x2=\"242.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"273.0\" y1=\"60\" x2=\"273.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"303.5\" y1=\"60\" x2=\"303.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"334.0\" y1=\"60\" x2=\"334.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"364.5\" y1=\"60\" x2=\"364.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"395.0\" y1=\"60\" x2=\"395.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"425.5\" y1=\"60\" x2=\"425.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"456.0\" y1=\"60\" x2=\"456.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"486.5\" y1=\"60\" x2=\"486.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"517.0\" y1=\"60\" x2=\"517.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"547.5\" y1=\"60\" x2=\"547.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"578.0\" y1=\"60\" x2=\"578.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"608.5\" y1=\"60\" x2=\"608.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"639.0\" y1=\"60\" x2=\"639.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"669.5\" y1=\"60\" x2=\"669.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"700.0\" y1=\"60\" x2=\"700.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"410.0\" x2=\"700\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"375.0\" x2=\"700\" y2=\"375.0\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"90\" y1=\"340.0\" x2=\"700\" y2=\"340.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"305.0\" x2=\"700\" y2=\"305.0\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"90\" y1=\"270.0\" x2=\"700\" y2=\"270.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"235.0\" x2=\"700\" y2=\"235.0\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"90\" y1=\"200.0\" x2=\"700\" y2=\"200.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"165.0\" x2=\"700\" y2=\"165.0\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"90\" y1=\"130.0\" x2=\"700\" y2=\"130.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90\" y1=\"95.0\" x2=\"700\" y2=\"95.0\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"90\" y1=\"60.0\" x2=\"700\" y2=\"60.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"90.0\" y1=\"410.0\" x2=\"714.0\" y2=\"410.0\" stroke=\"#222\" stroke-width=\"2\"/><polygon points=\"725.0,410.0 714.0,414.9 714.0,405.1\" fill=\"#222\"/><line x1=\"90.0\" y1=\"410.0\" x2=\"90.0\" y2=\"49.0\" stroke=\"#222\" stroke-width=\"2\"/><polygon points=\"90.0,38.0 95.0,49.0 85.0,49.0\" fill=\"#222\"/><text x=\"90.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,0</text><text x=\"151.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,5</text><text x=\"212.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">1,0</text><text x=\"273.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">1,5</text><text x=\"334.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">2,0</text><text x=\"395.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">2,5</text><text x=\"456.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">3,0</text><text x=\"517.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">3,5</text><text x=\"578.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">4,0</text><text x=\"639.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">4,5</text><text x=\"700.0\" y=\"432\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">5,0</text><text x=\"80\" y=\"415.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">0</text><text x=\"80\" y=\"345.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">10</text><text x=\"80\" y=\"275.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">20</text><text x=\"80\" y=\"205.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">30</text><text x=\"80\" y=\"135.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">40</text><text x=\"80\" y=\"65.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">50</text><text x=\"708\" y=\"454\" fill=\"#222\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">U (V)</text><text x=\"98\" y=\"32\" fill=\"#222\" text-anchor=\"start\" font-size=\"16\" font-weight=\"bold\">I (mA)</text><polyline points=\"90.0,410.0 700.0,60.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3.5\"/><polyline points=\"90.0,410.0 90.6,410.0 91.2,410.0 91.8,410.0 92.4,410.0 93.0,410.0 93.7,410.0 94.3,410.0 94.9,410.0 95.5,410.0 96.1,410.0 96.7,410.0 97.3,410.0 97.9,410.0 98.5,410.0 99.2,410.0 99.8,410.0 100.4,410.0 101.0,410.0 101.6,410.0 102.2,410.0 102.8,410.0 103.4,410.0 104.0,410.0 104.6,410.0 105.2,410.0 105.9,410.0 106.5,410.0 107.1,410.0 107.7,410.0 108.3,410.0 108.9,410.0 109.5,410.0 110.1,410.0 110.7,410.0 111.4,410.0 112.0,410.0 112.6,410.0 113.2,410.0 113.8,410.0 114.4,410.0 115.0,410.0 115.6,410.0 116.2,410.0 116.8,410.0 117.5,410.0 118.1,410.0 118.7,410.0 119.3,410.0 119.9,410.0 120.5,410.0 121.1,410.0 121.7,410.0 122.3,410.0 122.9,410.0 123.6,410.0 124.2,410.0 124.8,410.0 125.4,410.0 126.0,410.0 126.6,410.0 127.2,410.0 127.8,410.0 128.4,410.0 129.0,410.0 129.7,410.0 130.3,410.0 130.9,410.0 131.5,410.0 132.1,410.0 132.7,410.0 133.3,410.0 133.9,410.0 134.5,410.0 135.1,410.0 135.8,410.0 136.4,410.0 137.0,410.0 137.6,410.0 138.2,410.0 138.8,410.0 139.4,410.0 140.0,410.0 140.6,410.0 141.2,410.0 141.9,410.0 142.5,410.0 143.1,410.0 143.7,410.0 144.3,410.0 144.9,410.0 145.5,410.0 146.1,410.0 146.7,410.0 147.3,410.0 148.0,410.0 148.6,410.0 149.2,410.0 149.8,410.0 150.4,410.0 151.0,410.0 151.6,410.0 152.2,410.0 152.8,410.0 153.4,410.0 154.1,410.0 154.7,410.0 155.3,410.0 155.9,410.0 156.5,410.0 157.1,410.0 157.7,410.0 158.3,410.0 158.9,410.0 159.5,410.0 160.2,410.0 160.8,410.0 161.4,410.0 162.0,410.0 162.6,410.0 163.2,410.0 163.8,410.0 164.4,410.0 165.0,410.0 165.6,410.0 166.3,410.0 166.9,410.0 167.5,410.0 168.1,410.0 168.7,410.0 169.3,410.0 169.9,410.0 170.5,410.0 171.1,410.0 171.7,410.0 172.4,410.0 173.0,410.0 173.6,410.0 174.2,410.0 174.8,410.0 175.4,410.0 176.0,410.0 176.6,410.0 177.2,410.0 177.8,410.0 178.5,410.0 179.1,410.0 179.7,410.0 180.3,410.0 180.9,410.0 181.5,410.0 182.1,410.0 182.7,410.0 183.3,410.0 183.9,410.0 184.6,410.0 185.2,410.0 185.8,410.0 186.4,410.0 187.0,410.0 187.6,410.0 188.2,410.0 188.8,410.0 189.4,410.0 190.0,410.0 190.7,410.0 191.3,410.0 191.9,410.0 192.5,410.0 193.1,410.0 193.7,410.0 194.3,410.0 194.9,410.0 195.5,410.0 196.1,410.0 196.8,410.0 197.4,410.0 198.0,410.0 198.6,410.0 199.2,410.0 199.8,410.0 200.4,410.0 201.0,410.0 201.6,410.0 202.2,410.0 202.9,410.0 203.5,410.0 204.1,410.0 204.7,410.0 205.3,410.0 205.9,410.0 206.5,410.0 207.1,410.0 207.7,410.0 208.3,410.0 209.0,410.0 209.6,410.0 210.2,410.0 210.8,410.0 211.4,410.0 212.0,410.0 212.6,410.0 213.2,410.0 213.8,410.0 214.4,410.0 215.1,410.0 215.7,410.0 216.3,410.0 216.9,410.0 217.5,410.0 218.1,410.0 218.7,410.0 219.3,410.0 219.9,410.0 220.5,410.0 221.1,410.0 221.8,410.0 222.4,410.0 223.0,410.0 223.6,410.0 224.2,410.0 224.8,410.0 225.4,410.0 226.0,410.0 226.6,410.0 227.2,410.0 227.9,410.0 228.5,410.0 229.1,410.0 229.7,410.0 230.3,410.0 230.9,410.0 231.5,410.0 232.1,410.0 232.7,410.0 233.3,410.0 234.0,410.0 234.6,410.0 235.2,410.0 235.8,410.0 236.4,410.0 237.0,410.0 237.6,410.0 238.2,410.0 238.8,410.0 239.4,410.0 240.1,410.0 240.7,410.0 241.3,410.0 241.9,410.0 242.5,410.0 243.1,410.0 243.7,410.0 244.3,410.0 244.9,410.0 245.5,410.0 246.2,410.0 246.8,410.0 247.4,410.0 248.0,410.0 248.6,410.0 249.2,410.0 249.8,410.0 250.4,410.0 251.0,410.0 251.6,410.0 252.3,410.0 252.9,410.0 253.5,410.0 254.1,409.9 254.7,409.9 255.3,409.9 255.9,409.9 256.5,409.9 257.1,409.9 257.7,409.9 258.4,409.9 259.0,409.9 259.6,409.9 260.2,409.9 260.8,409.9 261.4,409.9 262.0,409.9 262.6,409.9 263.2,409.9 263.8,409.9 264.5,409.9 265.1,409.8 265.7,409.8 266.3,409.8 266.9,409.8 267.5,409.8 268.1,409.8 268.7,409.8 269.3,409.8 269.9,409.7 270.6,409.7 271.2,409.7 271.8,409.7 272.4,409.7 273.0,409.7 273.6,409.6 274.2,409.6 274.8,409.6 275.4,409.6 276.0,409.5 276.7,409.5 277.3,409.5 277.9,409.4 278.5,409.4 279.1,409.4 279.7,409.3 280.3,409.3 280.9,409.3 281.5,409.2 282.1,409.2 282.8,409.1 283.4,409.1 284.0,409.0 284.6,408.9 285.2,408.9 285.8,408.8 286.4,408.7 287.0,408.6 287.6,408.6 288.2,408.5 288.9,408.4 289.5,408.3 290.1,408.2 290.7,408.1 291.3,407.9 291.9,407.8 292.5,407.7 293.1,407.5 293.7,407.4 294.3,407.2 295.0,407.0 295.6,406.8 296.2,406.6 296.8,406.4 297.4,406.2 298.0,406.0 298.6,405.7 299.2,405.5 299.8,405.2 300.4,404.9 301.1,404.6 301.7,404.2 302.3,403.9 302.9,403.5 303.5,403.1 304.1,402.7 304.7,402.2 305.3,401.7 305.9,401.2 306.5,400.7 307.2,400.1 307.8,399.5 308.4,398.8 309.0,398.1 309.6,397.4 310.2,396.6 310.8,395.8 311.4,394.9 312.0,394.0 312.6,393.0 313.3,391.9 313.9,390.8 314.5,389.6 315.1,388.3 315.7,387.0 316.3,385.6 316.9,384.1 317.5,382.4 318.1,380.7 318.7,378.9 319.4,377.0 320.0,374.9 320.6,372.8 321.2,370.5 321.8,368.0 322.4,365.4 323.0,362.6 323.6,359.7 324.2,356.6 324.8,353.2 325.5,349.7 326.1,346.0 326.7,342.0 327.3,337.8 327.9,333.3 328.5,328.6 329.1,323.5 329.7,318.1 330.3,312.4 330.9,306.4 331.6,300.0 332.2,293.1 332.8,285.9 333.4,278.2 334.0,270.0 334.6,261.3 335.2,252.1 335.8,242.3 336.4,231.9 337.0,220.8 337.7,209.1 338.3,196.6 338.9,183.4 339.5,169.3 340.1,154.4 340.7,138.5 341.3,121.7 341.9,103.8 342.5,84.8 343.1,64.6\" fill=\"none\" stroke=\"#B5523B\" stroke-width=\"3.5\"/><rect x=\"541.5\" y=\"201.0\" width=\"90\" height=\"27\" fill=\"#fff\"/><text x=\"547.5\" y=\"221.0\" fill=\"#1F4E5A\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">dipôle A</text><rect x=\"358.5\" y=\"82.0\" width=\"90\" height=\"27\" fill=\"#fff\"/><text x=\"364.5\" y=\"102.0\" fill=\"#B5523B\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">dipôle B</text></svg>",
+      "questions": [
+        {
+          "texte": "Lequel des deux dipôles (A ou B) est le conducteur ohmique ? Justifie à partir de la forme de sa caractéristique.",
+          "aides": [
+            "Quelle est la forme de la caractéristique d'un dipôle pour lequel U et I sont proportionnelles ?",
+            "Une situation de proportionnalité se traduit par une droite qui passe par l'origine."
+          ]
+        },
+        {
+          "texte": "Lis l'intensité du courant qui traverse le dipôle A lorsque la tension à ses bornes vaut 3,0 V, puis calcule sa résistance R.",
+          "aides": [
+            "Place-toi à U = 3,0 V sur l'axe horizontal, monte jusqu'à la droite du dipôle A, puis lis I sur l'axe vertical.",
+            "Convertis I en ampères avant d'utiliser R = U / I."
+          ]
+        },
+        {
+          "texte": "Le dipôle B est la DEL. À partir de quelle tension (tension de seuil) est-elle traversée par un courant notable ? La DEL vérifie-t-elle la loi d'Ohm ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Le fabricant indique que la DEL doit être traversée par un courant de 20 mA. Lis la tension U<sub>DEL</sub> à ses bornes dans ce cas.",
+          "aides": []
+        },
+        {
+          "texte": "Pour ne pas griller la DEL, Nolan la branche en série avec un conducteur ohmique « de protection » de résistance R<sub>p</sub>, le tout aux bornes de la sortie 5,0 V de la carte. Calcule la valeur de R<sub>p</sub> qui permet d'obtenir 20 mA dans la DEL.",
+          "aides": [
+            "La DEL et R<sub>p</sub> sont en série aux bornes de la sortie 5,0 V : écris la loi des mailles.",
+            "U<sub>p</sub> = 5,0 − U<sub>DEL</sub> ; le courant dans R<sub>p</sub> est le même que dans la DEL (série).",
+            "Termine avec la loi d'Ohm R<sub>p</sub> = U<sub>p</sub> / I, I en ampères."
+          ]
+        },
+        {
+          "texte": "Son kit contient des résistances de 100 Ω, 150 Ω, 220 Ω et 330 Ω. Laquelle choisir ? Que se passerait-il, qualitativement, avec 330 Ω ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le dipôle A : sa caractéristique est une droite qui passe par l'origine, donc I est proportionnelle à U, ce qui caractérise un conducteur ohmique. La caractéristique du dipôle B n'est pas une droite.",
+        "<strong>2.</strong> Lecture graphique : pour U = 3,0 V, I = 30 mA = 0,030 A. R = U / I = 3,0 / 0,030 = 100 Ω. (On peut vérifier avec un autre point : 5,0 V et 50 mA donnent aussi 100 Ω.)",
+        "<strong>3.</strong> La DEL n'est traversée par un courant notable qu'au-delà d'environ 1,8 V (lecture graphique : tension de seuil ≈ 1,8 V) ; en dessous, I ≈ 0. Elle ne vérifie pas la loi d'Ohm : sa caractéristique n'est pas une droite passant par l'origine (U et I ne sont pas proportionnelles).",
+        "<strong>4.</strong> Lecture graphique : pour I = 20 mA, U<sub>DEL</sub> ≈ 2,0 V.",
+        "<strong>5.</strong> Loi des mailles : 5,0 V = U<sub>DEL</sub> + U<sub>p</sub>, donc U<sub>p</sub> = 5,0 − 2,0 = 3,0 V aux bornes du conducteur ohmique de protection. Celui-ci est traversé par le même courant que la DEL (montage en série) : I = 20 mA = 0,020 A. Loi d'Ohm : R<sub>p</sub> = U<sub>p</sub> / I = 3,0 / 0,020 = 150 Ω.",
+        "<strong>6.</strong> Il faut choisir 150 Ω. Avec 330 Ω, pour la même tension, l'intensité serait plus faible : la DEL brillerait moins (mais ne serait pas en danger). Avec 100 Ω, l'intensité dépasserait 20 mA et la DEL risquerait d'être endommagée.",
+        "<em>⚠ Erreur fréquente : diviser 3,0 V par 20 (en mA) et trouver R<sub>p</sub> = 0,15 Ω. L'intensité doit être convertie en ampères : 20 mA = 0,020 A.</em>",
+        "<em>⚠ Erreur fréquente : appliquer la loi d'Ohm à la DEL (R = 2,0 / 0,020) : ce n'est pas un conducteur ohmique, on ne peut lui attribuer une résistance constante.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Retrouver une résistance avec Python",
+      "contexte": [
+        "Les anneaux de couleur d'un conducteur ohmique se sont effacés. Lina trace sa caractéristique au lycée : elle fait varier la tension d'un générateur réglable et relève, pour chaque réglage, l'intensité I du courant qui traverse le conducteur ohmique et la tension U à ses bornes.",
+        "Doc. 1 — Mesures de Lina. I (mA) : 0 ; 10 ; 20 ; 30 ; 40 ; 50. U (V) : 0 ; 0,47 ; 0,95 ; 1,40 ; 1,89 ; 2,36.",
+        "Doc. 2 — Le programme Python de Lina, à compléter (sous la figure). Doc. 3 — Ce qu'affiche le programme une fois complété (figure ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"455\" y=\"30\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">Doc. 3 : ce qu'affiche le programme (points de mesure et modèle)</text><line x1=\"100.0\" y1=\"70\" x2=\"100.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"149.2\" y1=\"70\" x2=\"149.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"198.3\" y1=\"70\" x2=\"198.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"247.5\" y1=\"70\" x2=\"247.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"296.7\" y1=\"70\" x2=\"296.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"345.8\" y1=\"70\" x2=\"345.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"395.0\" y1=\"70\" x2=\"395.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"444.2\" y1=\"70\" x2=\"444.2\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"493.3\" y1=\"70\" x2=\"493.3\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"542.5\" y1=\"70\" x2=\"542.5\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"591.7\" y1=\"70\" x2=\"591.7\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"640.8\" y1=\"70\" x2=\"640.8\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"0.8\"/><line x1=\"690.0\" y1=\"70\" x2=\"690.0\" y2=\"400\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"400.0\" x2=\"690\" y2=\"400.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"389.0\" x2=\"690\" y2=\"389.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"378.0\" x2=\"690\" y2=\"378.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"367.0\" x2=\"690\" y2=\"367.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"356.0\" x2=\"690\" y2=\"356.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"345.0\" x2=\"690\" y2=\"345.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"334.0\" x2=\"690\" y2=\"334.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"323.0\" x2=\"690\" y2=\"323.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"312.0\" x2=\"690\" y2=\"312.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"301.0\" x2=\"690\" y2=\"301.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"290.0\" x2=\"690\" y2=\"290.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"279.0\" x2=\"690\" y2=\"279.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"268.0\" x2=\"690\" y2=\"268.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"257.0\" x2=\"690\" y2=\"257.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"246.0\" x2=\"690\" y2=\"246.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"235.0\" x2=\"690\" y2=\"235.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"224.0\" x2=\"690\" y2=\"224.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"213.0\" x2=\"690\" y2=\"213.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"202.0\" x2=\"690\" y2=\"202.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"191.0\" x2=\"690\" y2=\"191.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"180.0\" x2=\"690\" y2=\"180.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"169.0\" x2=\"690\" y2=\"169.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"158.0\" x2=\"690\" y2=\"158.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"147.0\" x2=\"690\" y2=\"147.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"136.0\" x2=\"690\" y2=\"136.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"125.0\" x2=\"690\" y2=\"125.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100\" y1=\"114.0\" x2=\"690\" y2=\"114.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"103.0\" x2=\"690\" y2=\"103.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"92.0\" x2=\"690\" y2=\"92.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"81.0\" x2=\"690\" y2=\"81.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"100\" y1=\"70.0\" x2=\"690\" y2=\"70.0\" stroke=\"#d9d2c5\" stroke-width=\"1.6\"/><line x1=\"100.0\" y1=\"400.0\" x2=\"704.0\" y2=\"400.0\" stroke=\"#222\" stroke-width=\"2\"/><polygon points=\"715.0,400.0 704.0,404.9 704.0,395.1\" fill=\"#222\"/><line x1=\"100.0\" y1=\"400.0\" x2=\"100.0\" y2=\"59.0\" stroke=\"#222\" stroke-width=\"2\"/><polygon points=\"100.0,48.0 105.0,59.0 95.0,59.0\" fill=\"#222\"/><text x=\"100.0\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,000</text><text x=\"198.33333333333334\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,010</text><text x=\"296.6666666666667\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,020</text><text x=\"395.0\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,030</text><text x=\"493.33333333333337\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,040</text><text x=\"591.6666666666667\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,050</text><text x=\"690.0\" y=\"422\" fill=\"#222\" text-anchor=\"middle\" font-size=\"15\">0,060</text><text x=\"90\" y=\"405.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">0,0</text><text x=\"90\" y=\"350.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">0,5</text><text x=\"90\" y=\"295.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">1,0</text><text x=\"90\" y=\"240.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">1,5</text><text x=\"90\" y=\"185.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">2,0</text><text x=\"90\" y=\"130.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">2,5</text><text x=\"90\" y=\"75.0\" fill=\"#222\" text-anchor=\"end\" font-size=\"15\">3,0</text><text x=\"698\" y=\"446\" fill=\"#222\" text-anchor=\"end\" font-size=\"16\" font-weight=\"bold\">I (A)</text><text x=\"108\" y=\"42\" fill=\"#222\" text-anchor=\"start\" font-size=\"16\" font-weight=\"bold\">U (V)</text><line x1=\"100.0\" y1=\"400.0\" x2=\"690.0\" y2=\"89.0\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><circle cx=\"100.0\" cy=\"400.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"198.3\" cy=\"348.3\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"296.7\" cy=\"295.5\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"395.0\" cy=\"246.0\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"493.3\" cy=\"192.1\" r=\"6\" fill=\"#B5523B\"/><circle cx=\"591.7\" cy=\"140.4\" r=\"6\" fill=\"#B5523B\"/><rect x=\"488\" y=\"288\" width=\"150\" height=\"62\" fill=\"#fff\" stroke=\"#d9d2c5\"/><circle cx=\"508\" cy=\"306\" r=\"6\" fill=\"#B5523B\"/><text x=\"530\" y=\"311\" fill=\"#222\" text-anchor=\"start\" font-size=\"15\">mesures</text><line x1=\"494\" y1=\"332\" x2=\"522\" y2=\"332\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><text x=\"530\" y=\"337\" fill=\"#222\" text-anchor=\"start\" font-size=\"15\">modèle</text></svg>",
+      "code": [
+        "import matplotlib.pyplot as plt",
+        "I = [0, 0.010, 0.020, 0.030, 0.040, 0.050]   # intensité (A)",
+        "U = [0, 0.47, 0.95, 1.40, 1.89, 2.36]        # tension (V)",
+        "plt.plot(I, U, \"o\")                          # nuage de points",
+        "# Calcul de U/I pour chaque mesure, sauf la première",
+        "somme = 0",
+        "for k in range(1, len(I)):",
+        "    somme = somme + ..........               # ligne à compléter",
+        "R = somme / (len(I) - 1)                     # moyenne",
+        "print(\"R =\", round(R), \"ohms\")",
+        "Umod = [R * x for x in I]                    # modèle U = R × I",
+        "plt.plot(I, Umod, \"-\")",
+        "plt.xlabel(\"I (A)\")",
+        "plt.ylabel(\"U (V)\")",
+        "plt.show()"
+      ],
+      "questions": [
+        {
+          "texte": "Fais le schéma normalisé du montage de Lina (générateur, conducteur ohmique, ampèremètre, voltmètre) en justifiant le branchement de chaque appareil de mesure.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi Lina a-t-elle saisi les intensités en ampères, et non en milliampères, dans son programme ?",
+          "aides": []
+        },
+        {
+          "texte": "Complète la ligne 8 du programme. Pourquoi la boucle commence-t-elle à k = 1 et non à k = 0 ?",
+          "aides": [
+            "On veut ajouter à « somme » la valeur de U / I pour la mesure numéro k.",
+            "En Python, la k-ième valeur de la liste U s'écrit U[k]. Que vaut I[0] ?"
+          ]
+        },
+        {
+          "texte": "Le programme affiche « R = 47 ohms ». En t'aidant du Doc. 3, explique pourquoi ce dipôle est bien un conducteur ohmique, puis vérifie la valeur de R en calculant le coefficient directeur de la droite modèle à partir d'un point bien choisi.",
+          "aides": [
+            "Une droite qui passe par l'origine traduit une situation de proportionnalité entre U et I.",
+            "Coefficient directeur = U / I pour un point de la droite (ici U en ordonnée, I en abscisse) ; choisis un point éloigné de l'origine, par exemple I = 0,050 A."
+          ]
+        },
+        {
+          "texte": "Lina branche ensuite ce conducteur ohmique aux bornes d'une pile de 9,0 V. Prévois l'intensité du courant qui le traverse, en A puis en mA.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Schéma : une seule boucle contenant le générateur, le conducteur ohmique et l'ampèremètre (cercle marqué A), branché en série car il mesure l'intensité qui traverse le circuit ; le voltmètre (cercle marqué V) est branché en dérivation, directement aux deux bornes du conducteur ohmique, car il mesure la tension à ses bornes.",
+        "<strong>2.</strong> La loi d'Ohm U = R × I donne R en ohms seulement si U est en volts et I en ampères. Avec des milliampères, le programme afficherait R ≈ 0,047, valeur 1 000 fois trop petite.",
+        "<strong>3.</strong> Ligne 8 : somme = somme + U[k] / I[k]. La boucle commence à k = 1 car la première mesure vaut I = 0 : on ne peut pas diviser par zéro (le programme s'arrêterait sur une erreur).",
+        "Valeurs calculées par le programme : 47,0 ; 47,5 ; 46,7 ; 47,3 ; 47,2 Ω, de moyenne 47,1 Ω, affichée arrondie : 47.",
+        "<strong>4.</strong> Sur le Doc. 3, les points de mesure sont alignés sur une droite qui passe par l'origine : U est proportionnelle à I, c'est la caractéristique d'un conducteur ohmique (modèle U = R × I). Coefficient directeur : on choisit un point de la droite éloigné de l'origine, par exemple I = 0,050 A, où on lit U ≈ 2,35 V : R = U / I = 2,35 / 0,050 = 47 Ω, en accord avec le programme.",
+        "<strong>5.</strong> I = U / R = 9,0 / 47 ≈ 0,19 A, soit environ 190 mA (191 mA).",
+        "<em>⚠ Erreur fréquente : calculer le coefficient directeur avec deux points de mesure très proches de l'origine : l'imprécision de lecture devient grande. On choisit un point éloigné, de préférence sur la droite modèle.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Des gants chauffants pour l'arrêt de bus",
+      "contexte": [
+        "L'hiver, Inès attend son bus le matin à Argenteuil et a toujours froid aux mains. Elle décide de fabriquer des gants chauffants : dans chaque gant, elle coud un fil chauffant (un conducteur ohmique), et les deux fils sont alimentés par sa batterie USB, comme sur le schéma du Doc. 1 ci-dessous."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"380\" y=\"34\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">Doc. 1 : schéma du montage des deux gants chauffants</text><line x1=\"170\" y1=\"110\" x2=\"600\" y2=\"110\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"170\" y1=\"380\" x2=\"600\" y2=\"380\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"170\" y1=\"110\" x2=\"170\" y2=\"380\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"400\" y1=\"110\" x2=\"400\" y2=\"380\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"600\" y1=\"110\" x2=\"600\" y2=\"380\" stroke=\"#222\" stroke-width=\"2.5\"/><rect x=\"140\" y=\"237\" width=\"60\" height=\"16\" fill=\"#fff\"/><line x1=\"144\" y1=\"238\" x2=\"196\" y2=\"238\" stroke=\"#222\" stroke-width=\"2.5\"/><line x1=\"157\" y1=\"252\" x2=\"183\" y2=\"252\" stroke=\"#222\" stroke-width=\"7\"/><text x=\"210\" y=\"235\" fill=\"#222\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\">+</text><text x=\"210\" y=\"267\" fill=\"#222\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\">−</text><text x=\"130\" y=\"240\" fill=\"#222\" text-anchor=\"end\" font-size=\"17\">batterie</text><text x=\"130\" y=\"262\" fill=\"#222\" text-anchor=\"end\" font-size=\"17\">USB</text><rect x=\"389.0\" y=\"217.0\" width=\"22\" height=\"56\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.5\"/><text x=\"424\" y=\"238\" fill=\"#222\" text-anchor=\"start\" font-size=\"15\">fil du gant</text><text x=\"424\" y=\"258\" fill=\"#222\" text-anchor=\"start\" font-size=\"15\">gauche</text><text x=\"424\" y=\"282\" fill=\"#222\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">R<tspan font-size=\"13\" dy=\"5\">G</tspan></text><rect x=\"589.0\" y=\"217.0\" width=\"22\" height=\"56\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.5\"/><text x=\"624\" y=\"238\" fill=\"#222\" text-anchor=\"start\" font-size=\"15\">fil du gant</text><text x=\"624\" y=\"258\" fill=\"#222\" text-anchor=\"start\" font-size=\"15\">droit</text><text x=\"624\" y=\"282\" fill=\"#222\" text-anchor=\"start\" font-size=\"17\" font-weight=\"bold\">R<tspan font-size=\"13\" dy=\"5\">D</tspan></text><circle cx=\"400\" cy=\"110\" r=\"5\" fill=\"#222\"/><circle cx=\"400\" cy=\"380\" r=\"5\" fill=\"#222\"/><text x=\"400\" y=\"96\" fill=\"#222\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">A</text><text x=\"400\" y=\"408\" fill=\"#222\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">B</text><polygon points=\"279.0,110.0 261.0,103.7 261.0,116.3\" fill=\"#B5523B\"/><text x=\"270\" y=\"96\" fill=\"#B5523B\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\">I</text><polygon points=\"400.0,177.0 393.7,159.0 406.3,159.0\" fill=\"#B5523B\"/><text x=\"386\" y=\"175\" fill=\"#B5523B\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">I<tspan font-size=\"13\" dy=\"5\">G</tspan></text><polygon points=\"600.0,177.0 593.7,159.0 606.3,159.0\" fill=\"#B5523B\"/><text x=\"586\" y=\"175\" fill=\"#B5523B\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\">I<tspan font-size=\"13\" dy=\"5\">D</tspan></text><text x=\"380\" y=\"440\" fill=\"#1F4E5A\" text-anchor=\"middle\" font-size=\"15\">On néglige la résistance des fils de connexion (câble USB).</text></svg>",
+      "contexte2": [
+        "Doc. 2 — Le fil chauffant (données fictives). Ce fil se comporte comme un conducteur ohmique. Mesures de sa résistance R pour plusieurs longueurs L : L = 0,50 m : R = 2,0 Ω ; L = 1,00 m : R = 4,0 Ω ; L = 1,50 m : R = 6,0 Ω ; L = 2,00 m : R = 8,0 Ω.",
+        "Doc. 3 — La batterie USB. Tension de sortie : 5,0 V. Intensité maximale du courant qu'elle peut débiter : 2,0 A ; au-delà, elle se coupe automatiquement.",
+        "Doc. 4 — Cahier des charges d'Inès (données fictives). Pour que le gant chauffe assez sans risque de brûlure, l'intensité du courant dans chaque fil chauffant doit être comprise entre 0,70 A et 0,90 A. Le dos d'un gant peut contenir au plus 1,6 m de fil."
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : comment les deux fils chauffants sont-ils branchés (série ou dérivation) ? Quelle est la tension aux bornes de chacun d'eux ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Quelle longueur de fil Inès doit-elle coudre dans chaque gant, et sa batterie peut-elle alimenter les deux gants en même temps ? Rédige une réponse argumentée en présentant ta démarche et tes calculs.",
+          "aides": [
+            "Étape 1 : le cahier des charges porte sur l'intensité ; avec U = 5,0 V et la loi d'Ohm, traduis-le en résistance minimale et maximale.",
+            "Étape 2 : avec le doc. 2, calcule la résistance d'un mètre de fil, puis la longueur correspondant à chaque résistance (proportionnalité).",
+            "Étape 3 : choisis une longueur compatible avec le doc. 4, puis applique la loi des nœuds pour comparer l'intensité totale aux 2,0 A de la batterie."
+          ]
+        },
+        {
+          "texte": "Regard critique : son frère lui conseille de brancher plutôt les deux fils en série, « pour moins vider la batterie ». Que se passerait-il pour les gants ? Cite aussi une limite du modèle utilisé.",
+          "aides": [
+            "En série, les résistances s'additionnent : calcule R<sub>éq</sub>, puis l'intensité dans le circuit.",
+            "Compare cette intensité à l'intervalle du cahier des charges (doc. 4)."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors programme de Seconde ; relation de la fiche du site, étudiée en Première) : la puissance électrique reçue par un dipôle est P = U × I. Calcule la puissance reçue par un gant, puis par les deux gants, pour la longueur que tu as choisie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Les deux fils sont branchés en dérivation entre les nœuds A et B, directement aux bornes de la batterie. Des dipôles en dérivation ont la même tension à leurs bornes : chaque fil est soumis à U = 5,0 V (on néglige la résistance du câble).",
+        "<strong>2.</strong> Démarche attendue : (a) traduire le cahier des charges en valeurs de résistance avec la loi d'Ohm ; (b) en déduire les longueurs grâce à la proportionnalité R / L (doc. 2) ; (c) tenir compte de la longueur maximale ; (d) vérifier l'intensité totale avec la loi des nœuds.",
+        "a. R = U / I. Pour I = 0,70 A : R = 5,0 / 0,70 ≈ 7,14 Ω. Pour I = 0,90 A : R = 5,0 / 0,90 ≈ 5,56 Ω. Plus R est grande, plus I est faible : il faut 5,56 Ω ≤ R ≤ 7,14 Ω.",
+        "b. Doc. 2 : R est proportionnelle à L, avec R / L = 4,0 Ω par mètre (2,0 / 0,50 = 4,0). Donc L = R / 4,0 : entre 5,56 / 4,0 ≈ 1,39 m et 7,14 / 4,0 ≈ 1,79 m.",
+        "c. Avec au plus 1,6 m par gant, il faut choisir L entre 1,39 m et 1,6 m, par exemple L = 1,50 m : R = 6,0 Ω et I<sub>G</sub> = I<sub>D</sub> = 5,0 / 6,0 ≈ 0,83 A, bien compris entre 0,70 A et 0,90 A.",
+        "d. Loi des nœuds en A : I = I<sub>G</sub> + I<sub>D</sub> = 0,83 + 0,83 ≈ 1,67 A &lt; 2,0 A : la batterie peut alimenter les deux gants. (Même avec la longueur minimale 1,39 m, I = 2 × 0,90 = 1,80 A &lt; 2,0 A ; avec 1,6 m, I ≈ 2 × 0,78 = 1,56 A.) Autre méthode : en dérivation, 1 / R<sub>éq</sub> = 1 / 6,0 + 1 / 6,0, donc R<sub>éq</sub> = 3,0 Ω et I = 5,0 / 3,0 ≈ 1,67 A.",
+        "Conclusion : Inès peut coudre environ 1,5 m de fil (entre 1,4 m et 1,6 m) dans chaque gant ; la batterie débite alors environ 1,7 A, sans se couper.",
+        "<strong>3.</strong> En série, la résistance équivalente vaudrait R<sub>éq</sub> = 6,0 + 6,0 = 12,0 Ω, et I = 5,0 / 12,0 ≈ 0,42 A dans chaque fil (même intensité partout en série), avec seulement 2,5 V aux bornes de chaque fil : 0,42 A &lt; 0,70 A, les gants ne chaufferaient pas assez. Le frère a raison sur un point (la batterie débite moins), mais le cahier des charges n'est plus respecté. Limites du modèle : on a négligé la résistance du câble USB et des connexions ; la tension de la batterie peut baisser quand elle se décharge ou quand elle débite beaucoup ; la résistance du fil peut varier quand il chauffe.",
+        "<strong>4.</strong> Pour L = 1,50 m : P = U × I = 5,0 × 0,83 ≈ 4,2 W par gant, soit environ 8,3 W pour les deux.",
+        "Éléments valorisés même si le résultat final est faux : reconnaître le montage en dérivation et la même tension de 5,0 V ; utiliser la loi d'Ohm sous la forme R = U / I ; exploiter la proportionnalité entre R et L ; respecter la contrainte de 1,6 m ; vérifier l'intensité totale par la loi des nœuds ; conclusion rédigée.",
+        "<em>⚠ Erreur fréquente : croire que chaque gant peut recevoir 2,0 A (on calculerait R = 5,0 / 2,0 = 2,5 Ω). Les 2,0 A sont l'intensité maximale du courant total débité par la batterie, partagé entre les deux branches.</em>",
+        "<em>⚠ Erreur fréquente : inverser le sens de variation (prendre 0,90 A pour la résistance maximale). Plus la résistance est grande, plus l'intensité est faible.</em>"
+      ]
+    }
+  ]
+}

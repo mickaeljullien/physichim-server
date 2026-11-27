@@ -1,0 +1,730 @@
+{
+  "id": 1,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Couples acide-base de Brønsted",
+        "icon": "⚗️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Acide de Brønsted",
+            "text": "Espèce chimique (moléculaire ou ionique) capable de <strong>céder un proton H⁺</strong>."
+          },
+          {
+            "type": "def",
+            "term": "Base de Brønsted",
+            "text": "Espèce chimique (moléculaire ou ionique) capable de <strong>capter un proton H⁺</strong>."
+          },
+          {
+            "type": "formula",
+            "label": "Couple acide-base conjugué",
+            "text": "AH ⇌ A⁻ + H⁺\n(l'acide AH et sa base conjuguée A⁻ ne diffèrent que d'un proton H⁺)"
+          },
+          {
+            "type": "warn",
+            "text": "Le proton H⁺ n'existe pas seul en solution aqueuse : il est immédiatement capté par une molécule d'eau pour former l'ion oxonium H₃O⁺(aq)."
+          }
+        ]
+      },
+      {
+        "title": "2. Couples à connaître",
+        "icon": "🔗",
+        "content": [
+          {
+            "type": "text",
+            "text": "Le programme impose la connaissance de plusieurs couples acide-base usuels, dont celui de l'<strong>acide carbonique</strong>, essentiel pour comprendre la régulation du pH sanguin et les équilibres carbonatés océaniques."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Couple (acide / base)",
+              "Demi-équation",
+              "Remarque"
+            ],
+            "rows": [
+              [
+                "H₃O⁺ / H₂O",
+                "H₃O⁺ ⇌ H₂O + H⁺",
+                "Couple de l'eau (acide)"
+              ],
+              [
+                "H₂O / HO⁻",
+                "H₂O ⇌ HO⁻ + H⁺",
+                "Couple de l'eau (base)"
+              ],
+              [
+                "CH₃COOH / CH₃COO⁻",
+                "CH₃COOH ⇌ CH₃COO⁻ + H⁺",
+                "Acide éthanoïque / ion éthanoate"
+              ],
+              [
+                "NH₄⁺ / NH₃",
+                "NH₄⁺ ⇌ NH₃ + H⁺",
+                "Ion ammonium / ammoniac"
+              ],
+              [
+                "(CO₂,H₂O) / HCO₃⁻",
+                "(CO₂,H₂O) ⇌ HCO₃⁻ + H⁺",
+                "Acide carbonique / ion hydrogénocarbonate"
+              ],
+              [
+                "HCO₃⁻ / CO₃²⁻",
+                "HCO₃⁻ ⇌ CO₃²⁻ + H⁺",
+                "Ion hydrogénocarbonate / ion carbonate"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. Réaction acide-base",
+        "icon": "🔄",
+        "content": [
+          {
+            "type": "text",
+            "text": "Une réaction acide-base met toujours en jeu <strong>deux couples acide-base</strong> : l'acide d'un couple réagit avec la base de l'autre couple, par transfert direct de proton (sans passer par un proton libre)."
+          },
+          {
+            "type": "formula",
+            "label": "Équation bilan générale",
+            "text": "Couple 1 : A₁H ⇌ A₁⁻ + H⁺\nCouple 2 : A₂H ⇌ A₂⁻ + H⁺\nBilan :  A₁H + A₂⁻  ⇌  A₁⁻ + A₂H"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : réaction entre l'acide éthanoïque et l'ammoniac : <strong>CH₃COOH + NH₃ ⇌ CH₃COO⁻ + NH₄⁺</strong>."
+          }
+        ]
+      },
+      {
+        "title": "4. Caractère amphotère (ampholyte)",
+        "icon": "⚖️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Espèce amphotère (ampholyte)",
+            "text": "Espèce qui appartient à <strong>deux couples acide-base différents</strong> : elle peut se comporter soit comme un acide, soit comme une base, selon le réactif avec lequel elle réagit."
+          },
+          {
+            "type": "text",
+            "text": "L'eau H₂O est amphotère (couples H₃O⁺/H₂O et H₂O/HO⁻). L'ion hydrogénocarbonate HCO₃⁻ l'est également : il appartient au couple (CO₂,H₂O)/HCO₃⁻ (où il joue le rôle de base) et au couple HCO₃⁻/CO₃²⁻ (où il joue le rôle d'acide)."
+          }
+        ]
+      },
+      {
+        "title": "5. pH d'une solution aqueuse",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "formula",
+            "label": "Définition du pH",
+            "text": "pH = −log([H₃O⁺]/c°)\navec c° = 1 mol·L⁻¹ (concentration standard)\nsoit  [H₃O⁺] = c° × 10⁻ᵖᴴ"
+          },
+          {
+            "type": "text",
+            "text": "Exemple chiffré : on prépare une solution d'acide chlorhydrique (acide fort, totalement dissocié dans l'eau) de concentration apportée c = 1,0×10⁻² mol·L⁻¹.\nOn a alors [H₃O⁺] = c = 1,0×10⁻² mol·L⁻¹, donc pH = −log(1,0×10⁻²) = <strong>2,0</strong>."
+          },
+          {
+            "type": "warn",
+            "text": "Le pH n'a de sens que pour 0 ≤ pH ≤ 14 environ, et il diminue quand [H₃O⁺] augmente : une solution très acide a un pH petit."
+          }
+        ]
+      },
+      {
+        "title": "6. Dilution d'une solution",
+        "icon": "💧",
+        "content": [
+          {
+            "type": "def",
+            "term": "Facteur de dilution F",
+            "text": "Rapport entre le volume final V₁ de la solution fille et le volume V₀ de solution mère prélevé : F = V₁/V₀ = c₀/c₁ (F > 1)."
+          },
+          {
+            "type": "formula",
+            "label": "Conservation de la quantité de matière",
+            "text": "La quantité de matière de soluté est conservée lors de la dilution :\nc₀ × V₀ = c₁ × V₁"
+          },
+          {
+            "type": "text",
+            "text": "Pour un acide fort, diluer la solution d'un facteur 10 multiplie [H₃O⁺] par 1/10, donc le pH <strong>augmente d'environ 1 unité</strong> (tant que la solution reste nettement acide, loin de la neutralité)."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Selon Brønsted, une base est une espèce capable de :",
+      "opts": [
+        "capter un proton H⁺",
+        "céder un proton H⁺",
+        "capter un électron",
+        "libérer des ions HO⁻ dans l'eau"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "acide-base-inverses",
+          "texte": "Inverser les définitions : c'est l'acide qui cède un proton H⁺"
+        },
+        {
+          "code": "confusion-acide-base-redox",
+          "texte": "Confondre acide-base (échange de H⁺) et oxydoréduction (échange d'électrons)"
+        },
+        {
+          "code": "base-liberer-ho",
+          "texte": "Croire qu'une base doit libérer HO⁻ : NH₃ est une base sans contenir de HO⁻"
+        }
+      ],
+      "exp": "Une base de Brønsted capte un proton H⁺ ; un acide en cède un. Attention : NH₃ est une base sans contenir HO⁻, et capter un électron relève de l'oxydoréduction."
+    },
+    {
+      "q": "La base conjuguée de l'acide éthanoïque CH₃COOH est :",
+      "opts": [
+        "CH₃COOH₂⁺",
+        "CH₃COO⁻",
+        "H₂O",
+        "HO⁻"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ajout-h-au-lieu-retrait",
+          "texte": "Ajouter un H⁺ au lieu d'en retirer : la base conjuguée a un H⁺ de moins que l'acide"
+        },
+        null,
+        {
+          "code": "base-conjuguee-vs-reactif",
+          "texte": "Confondre la base conjuguée avec l'eau, qui est la base d'un autre couple dans la réaction avec l'eau"
+        },
+        {
+          "code": "base-conjuguee-toujours-ho",
+          "texte": "Croire que la base conjuguée de tout acide est HO⁻"
+        }
+      ],
+      "exp": "Acide et base conjugués ne diffèrent que d'un H⁺ : CH₃COOH ⇌ CH₃COO⁻ + H⁺. Attention : on retire le H⁺ à l'acide, on ne lui en ajoute pas."
+    },
+    {
+      "q": "Le couple acide-base de l'acide carbonique s'écrit :",
+      "opts": [
+        "HCO₃⁻ / CO₃²⁻",
+        "(CO₂,H₂O) / HCO₃⁻",
+        "HCO₃⁻ / (CO₂,H₂O)",
+        "(CO₂,H₂O) / CO₃²⁻"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "couples-carbonates-confondus",
+          "texte": "Confondre les deux couples carbonatés : HCO₃⁻/CO₃²⁻ est le couple de l'ion hydrogénocarbonate"
+        },
+        null,
+        {
+          "code": "couple-ordre-inverse",
+          "texte": "Écrire le couple dans l'ordre base / acide : on écrit toujours acide / base"
+        },
+        {
+          "code": "couple-deux-protons",
+          "texte": "Associer deux espèces qui diffèrent de deux H⁺ : un couple ne diffère que d'un H⁺"
+        }
+      ],
+      "exp": "L'acide carbonique (CO₂,H₂O) cède un H⁺ pour donner l'ion hydrogénocarbonate HCO₃⁻. Attention : on écrit le couple acide / base, et les deux espèces ne diffèrent que d'un seul H⁺."
+    },
+    {
+      "q": "L'équation de la réaction entre l'acide éthanoïque et l'ammoniac est :",
+      "opts": [
+        "CH₃COOH + NH₃ → CH₃COO⁻ + NH₄⁺",
+        "CH₃COOH + NH₃ → CH₃COOH₂⁺ + NH₂⁻",
+        "CH₃COOH + NH₃ → CH₃COO⁻ + NH₃ + H⁺",
+        "CH₃COOH + NH₃ → CH₃COO⁻ + H₃O⁺"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "transfert-h-sens-inverse",
+          "texte": "Faire passer le H⁺ de la base vers l'acide : c'est l'acide qui cède son H⁺ à la base"
+        },
+        {
+          "code": "proton-libre",
+          "texte": "Laisser un H⁺ libre : le proton passe directement de l'acide à la base, il n'existe pas seul en solution"
+        },
+        {
+          "code": "acide-reagit-toujours-eau",
+          "texte": "Croire qu'un acide réagit toujours avec l'eau : ici il réagit avec la base NH₃"
+        }
+      ],
+      "exp": "L'acide CH₃COOH du couple CH₃COOH/CH₃COO⁻ cède un H⁺ à la base NH₃ du couple NH₄⁺/NH₃. Attention : une réaction acide-base met en jeu deux couples et le H⁺ n'apparaît jamais libre."
+    },
+    {
+      "q": "Une espèce amphotère (ampholyte) est une espèce qui :",
+      "opts": [
+        "est à la fois l'acide et la base d'un même couple",
+        "n'est ni un acide ni une base",
+        "est l'acide d'un couple et la base d'un autre couple",
+        "réagit totalement avec l'eau"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ampholyte-meme-couple",
+          "texte": "Croire qu'un ampholyte est l'acide et la base d'un même couple : il appartient à deux couples différents"
+        },
+        {
+          "code": "ampholyte-neutre",
+          "texte": "Confondre « amphotère » et « neutre »"
+        },
+        null,
+        {
+          "code": "ampholyte-vs-fort",
+          "texte": "Confondre caractère amphotère et force d'un acide ou d'une base"
+        }
+      ],
+      "exp": "Un ampholyte appartient à deux couples : acide dans l'un, base dans l'autre. Exemples : H₂O (H₃O⁺/H₂O et H₂O/HO⁻) et HCO₃⁻. Attention : un couple contient deux espèces différentes."
+    },
+    {
+      "q": "Une solution d'acide chlorhydrique (acide fort) a une concentration c = 1,0 × 10⁻³ mol·L⁻¹. Son pH vaut :",
+      "opts": [
+        "−3,0",
+        "3,0",
+        "11,0",
+        "1,0 × 10⁻³"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-signe-moins-log",
+          "texte": "Oublier le signe moins : pH = −log([H₃O⁺]/c°)"
+        },
+        null,
+        {
+          "code": "acide-traite-comme-base",
+          "texte": "Calculer 14 − 3 comme pour une base"
+        },
+        {
+          "code": "ph-pris-pour-concentration",
+          "texte": "Confondre le pH et la concentration en ions H₃O⁺"
+        }
+      ],
+      "exp": "Acide fort : [H₃O⁺] = c = 1,0 × 10⁻³ mol·L⁻¹, donc pH = −log(1,0 × 10⁻³) = 3,0. Attention au signe moins de la définition : un pH est positif pour une solution usuelle."
+    },
+    {
+      "q": "Une solution a un pH = 5,0. Sa concentration en ions oxonium [H₃O⁺] vaut :",
+      "opts": [
+        "1,0 × 10⁵ mol·L⁻¹",
+        "5,0 mol·L⁻¹",
+        "0,70 mol·L⁻¹",
+        "1,0 × 10⁻⁵ mol·L⁻¹"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "oubli-signe-moins-log",
+          "texte": "Oublier le signe moins : [H₃O⁺] = c° × 10⁻ᵖᴴ"
+        },
+        {
+          "code": "ph-pris-pour-concentration",
+          "texte": "Confondre le pH et la concentration en ions H₃O⁺"
+        },
+        {
+          "code": "log-au-lieu-de-puissance",
+          "texte": "Prendre log(5,0) = 0,70 au lieu de calculer 10⁻⁵"
+        },
+        null
+      ],
+      "exp": "[H₃O⁺] = c° × 10⁻ᵖᴴ = 1 × 10⁻⁵,⁰ = 1,0 × 10⁻⁵ mol·L⁻¹. Attention : pour revenir du pH à la concentration, on calcule une puissance de 10, pas un logarithme."
+    },
+    {
+      "q": "On dilue 10 fois une solution d'acide fort de pH = 2,0. Le pH de la solution diluée vaut :",
+      "opts": [
+        "3,0",
+        "2,0",
+        "1,0",
+        "0,20"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "dilution-ph-inchange",
+          "texte": "Croire que la dilution ne change pas le pH"
+        },
+        {
+          "code": "dilution-ph-diminue",
+          "texte": "Croire que diluer rend la solution plus acide (pH plus petit)"
+        },
+        {
+          "code": "ph-proportionnel-concentration",
+          "texte": "Croire que le pH est proportionnel à la concentration : 2,0 / 10"
+        }
+      ],
+      "exp": "[H₃O⁺] est divisée par 10, donc pH = 2,0 + log(10) = 3,0. Attention : le pH n'est pas proportionnel à la concentration ; diviser [H₃O⁺] par 10 augmente le pH d'une unité."
+    },
+    {
+      "q": "On prélève V₀ = 10,0 mL de solution mère et on complète à V₁ = 250,0 mL avec de l'eau. Le facteur de dilution F vaut :",
+      "opts": [
+        "0,040",
+        "24",
+        "25",
+        "26"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "facteur-dilution-inverse",
+          "texte": "Inverser le rapport : F = V₀ / V₁ = 0,040 (F est toujours supérieur à 1)"
+        },
+        {
+          "code": "dilution-volume-eau-ajoutee",
+          "texte": "Diviser le volume d'eau ajoutée par V₀ : 240 / 10,0 = 24"
+        },
+        null,
+        {
+          "code": "dilution-volume-final-additionne",
+          "texte": "Ajouter V₀ au volume final : (250,0 + 10,0) / 10,0 = 26"
+        }
+      ],
+      "exp": "F = V₁ / V₀ = 250,0 / 10,0 = 25, avec V₁ le volume final de la fiole. Attention : V₁ est le volume total après ajout d'eau, pas le volume d'eau ajoutée."
+    },
+    {
+      "q": "Une solution A a un pH = 3, une solution B a un pH = 5. On peut affirmer que :",
+      "opts": [
+        "B est plus acide que A, car son pH est plus grand",
+        "[H₃O⁺] est 100 fois plus grande dans A que dans B",
+        "[H₃O⁺] est 2 fois plus grande dans A que dans B",
+        "A contient forcément plus d'acide apporté que B"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ph-eleve-plus-acide",
+          "texte": "Croire qu'un pH élevé signifie « beaucoup d'acide » : plus le pH est petit, plus la solution est acide"
+        },
+        null,
+        {
+          "code": "ph-proportionnel-concentration",
+          "texte": "Raisonner comme si le pH était proportionnel à la concentration (5 − 3 = 2)"
+        },
+        {
+          "code": "force-vs-concentration",
+          "texte": "Confondre [H₃O⁺] et concentration en acide apporté : un acide faible concentré peut avoir le même pH qu'un acide fort dilué"
+        }
+      ],
+      "exp": "[H₃O⁺]A / [H₃O⁺]B = 10⁻³ / 10⁻⁵ = 100. Attention : une unité de pH correspond à un facteur 10 sur [H₃O⁺], et le pH ne dit rien seul de la quantité d'acide apportée."
+    }
+  ],
+  "annales": [
+    {
+      "year": "2023",
+      "title": "L'eau de boisson des poules — acide-base, Ka, diagramme de prédominance",
+      "session": "Réunion · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-reunion-jour-1"
+    },
+    {
+      "year": "2023",
+      "title": "Contrôle de la qualité d'un biberon — acide-base, dosage",
+      "session": "Centres étrangers · Jour 1",
+      "link": "https://www.labolycee.org/bac-2023-centres-etrangers-1-jour-1"
+    }
+  ],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "L'étiquette de l'eau gazeuse",
+      "contexte": [
+        "Sur l'étiquette d'une eau minérale gazeuse, Yanis lit : « hydrogénocarbonates HCO₃⁻, gaz carbonique CO₂ ». En révisant le cours, il écrit quelques phrases dans son cahier. Aide-le à les vérifier."
+      ],
+      "questions": [
+        {
+          "texte": "Pour chaque affirmation, indique si elle est vraie ou fausse, puis justifie en une phrase.<br>a. Un acide de Brønsted est une espèce capable de capter un proton H⁺.<br>b. L'ion ammonium NH₄⁺ est un acide ; sa base conjuguée est l'ammoniac NH₃.<br>c. Dans une solution acide, des protons H⁺ se déplacent librement entre les molécules d'eau.<br>d. Une réaction acide-base ne fait intervenir qu'un seul couple acide-base.",
+          "aides": []
+        },
+        {
+          "texte": "Pour chaque espèce ci-dessous, donne l'espèce conjuguée, précise si l'espèce donnée joue le rôle d'acide ou de base, et écris la demi-équation acide-base du couple.<br>(i) H₃O⁺   (ii) HO⁻   (iii) CH₃COOH   (iv) CO₃²⁻   (v) HCO₃⁻, base conjuguée du gaz carbonique dissous (CO₂,H₂O)",
+          "aides": [
+            "Une espèce et son espèce conjuguée ne diffèrent que d'un proton H⁺ : ajoute ou retire un H⁺ (et ajuste la charge).",
+            "La demi-équation s'écrit toujours : acide ⇌ base + H⁺."
+          ]
+        },
+        {
+          "texte": "Dans ta réponse à la question 2, deux espèces apparaissent dans deux couples différents : lesquelles ? Comment appelle-t-on de telles espèces ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> a. FAUX : un acide de Brønsted CÈDE un proton H⁺ ; c'est une base qui capte un proton.",
+        "b. VRAI : NH₄⁺ ⇌ NH₃ + H⁺ ; NH₄⁺ et NH₃ ne diffèrent que d'un proton.",
+        "c. FAUX : le proton H⁺ n'existe pas seul en solution aqueuse ; il est immédiatement capté par une molécule d'eau pour former l'ion oxonium H₃O⁺(aq).",
+        "d. FAUX : une réaction acide-base met toujours en jeu deux couples : l'acide de l'un cède un proton à la base de l'autre.",
+        "<strong>2.</strong> (i) H₃O⁺ est un acide, base conjuguée H₂O : H₃O⁺ ⇌ H₂O + H⁺.",
+        "(ii) HO⁻ est une base, acide conjugué H₂O : H₂O ⇌ HO⁻ + H⁺.",
+        "(iii) CH₃COOH est un acide, base conjuguée CH₃COO⁻ (ion éthanoate) : CH₃COOH ⇌ CH₃COO⁻ + H⁺.",
+        "(iv) CO₃²⁻ est une base, acide conjugué HCO₃⁻ : HCO₃⁻ ⇌ CO₃²⁻ + H⁺.",
+        "(v) HCO₃⁻ est ici une base, acide conjugué (CO₂,H₂O) : (CO₂,H₂O) ⇌ HCO₃⁻ + H⁺.",
+        "<strong>3.</strong> H₂O (acide dans H₂O/HO⁻, base dans H₃O⁺/H₂O) et HCO₃⁻ (base dans (CO₂,H₂O)/HCO₃⁻, acide dans HCO₃⁻/CO₃²⁻). Ce sont des espèces amphotères (ampholytes).",
+        "<em>⚠ Erreur fréquente : écrire la demi-équation « à l'envers » ou avec H₃O⁺. Par convention, on écrit toujours acide ⇌ base + H⁺, l'acide à gauche.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le pH dans la cuisine… et dans le corps",
+      "contexte": [
+        "Le tableau ci-dessous rassemble des valeurs typiques de pH ou de concentration en ions oxonium pour quelques liquides du quotidien (valeurs indicatives, à 25 °C).",
+        "Jus de citron : pH = 2,4  |  Café : pH = 5,0  |  Sang : pH = 7,40",
+        "Vinaigre : [H₃O⁺] = 1,3 × 10⁻³ mol·L⁻¹  |  Lait : [H₃O⁺] = 2,0 × 10⁻⁷ mol·L⁻¹  |  Eau de mer : [H₃O⁺] = 7,9 × 10⁻⁹ mol·L⁻¹"
+      ],
+      "questions": [
+        {
+          "texte": "Calcule [H₃O⁺] pour le jus de citron, le café et le sang.",
+          "aides": [
+            "Utilise [H₃O⁺] = c° × 10⁻ᵖᴴ, avec c° = 1 mol·L⁻¹.",
+            "Sur la calculatrice : 10 ^ (−2,4). N'oublie pas le signe moins."
+          ]
+        },
+        {
+          "texte": "Calcule le pH du vinaigre, du lait et de l'eau de mer.",
+          "aides": []
+        },
+        {
+          "texte": "Classe les six liquides du plus acide au plus basique. Lesquels sont basiques ?",
+          "aides": []
+        },
+        {
+          "texte": "Combien de fois la concentration en ions oxonium est-elle plus grande dans le jus de citron que dans le café ?",
+          "aides": [
+            "Fais le quotient des deux concentrations calculées à la question 1.",
+            "Remarque que 10⁻ᵃ / 10⁻ᵇ = 10ᵇ⁻ᵃ : la différence des pH suffit."
+          ]
+        },
+        {
+          "texte": "QCM : quand le pH d'une solution diminue d'une unité, la concentration [H₃O⁺] est… (A) divisée par 10 ; (B) augmentée de 1 mol·L⁻¹ ; (C) multipliée par 10 ; (D) multipliée par 2.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> [H₃O⁺] = c° × 10⁻ᵖᴴ. Citron : 10^(−2,4) = 4,0 × 10⁻³ mol·L⁻¹ ; café : 10^(−5,0) = 1,0 × 10⁻⁵ mol·L⁻¹ ; sang : 10^(−7,40) = 4,0 × 10⁻⁸ mol·L⁻¹.",
+        "<strong>2.</strong> pH = −log([H₃O⁺] / c°). Vinaigre : −log(1,3 × 10⁻³) = 2,9 ; lait : −log(2,0 × 10⁻⁷) = 6,7 ; eau de mer : −log(7,9 × 10⁻⁹) = 8,1.",
+        "<strong>3.</strong> Jus de citron (2,4) &lt; vinaigre (2,9) &lt; café (5,0) &lt; lait (6,7) &lt; sang (7,40) &lt; eau de mer (8,1). Le sang et l'eau de mer ont un pH supérieur à 7 : ils sont (légèrement) basiques.",
+        "<strong>4.</strong> [H₃O⁺]citron / [H₃O⁺]café = 4,0 × 10⁻³ / 1,0 × 10⁻⁵ = 10^(5,0−2,4) = 10^(2,6) ≈ 4,0 × 10² : environ 400 fois plus.",
+        "<strong>5.</strong> Réponse C : [H₃O⁺] = c° × 10⁻ᵖᴴ, donc si le pH diminue de 1, [H₃O⁺] est multipliée par 10.",
+        "<em>⚠ Erreur fréquente : taper « 10 ^ 2,4 » au lieu de « 10 ^ (−2,4) » sur la calculatrice, ou oublier que plus [H₃O⁺] est grande, plus le pH est PETIT. Chiffres significatifs : un pH donné avec n décimales correspond à une concentration à n chiffres significatifs.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "Un filet de citron sur le poisson",
+      "contexte": [
+        "L'odeur du poisson qui n'est plus très frais est due en partie à la triméthylamine, une amine volatile. En cuisine, on arrose le poisson de citron ou de vinaigre : la triméthylamine est alors transformée en ion triméthylammonium, qui n'est pas volatil, et l'odeur diminue.",
+        "Le document ci-dessous donne les schémas de Lewis de quatre espèces (les groupes méthyle CH₃ ne sont pas détaillés ; les tirets rouges sont des doublets non liants)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"22\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"380\" y1=\"20\" x2=\"380\" y2=\"450\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><line x1=\"20\" y1=\"235\" x2=\"740\" y2=\"235\" stroke=\"#d9d2c5\" stroke-width=\"2\"/><text x=\"20\" y=\"40\" font-size=\"20\"><tspan font-weight=\"bold\" fill=\"#1F4E5A\">A</tspan><tspan font-size=\"17\"> — acide éthanoïque</tspan></text><text x=\"75\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">H₃C</text><line x1=\"100.0\" y1=\"150.0\" x2=\"152.0\" y2=\"150.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"165\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">C</text><text x=\"165\" y=\"96\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">O</text><line x1=\"161.0\" y1=\"136.0\" x2=\"161.0\" y2=\"102.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"169.0\" y1=\"136.0\" x2=\"169.0\" y2=\"102.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"184.8\" y1=\"79.5\" x2=\"173.5\" y2=\"68.2\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"156.5\" y1=\"68.2\" x2=\"145.2\" y2=\"79.5\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"235\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">O</text><line x1=\"178.0\" y1=\"150.0\" x2=\"222.0\" y2=\"150.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"295\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">H</text><line x1=\"248.0\" y1=\"150.0\" x2=\"282.0\" y2=\"150.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"243.0\" y1=\"130.0\" x2=\"227.0\" y2=\"130.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"227.0\" y1=\"170.0\" x2=\"243.0\" y2=\"170.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"400\" y=\"40\" font-size=\"20\"><tspan font-weight=\"bold\" fill=\"#1F4E5A\">B</tspan><tspan font-size=\"17\"> — ion éthanoate</tspan></text><text x=\"455\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">H₃C</text><line x1=\"480.0\" y1=\"150.0\" x2=\"532.0\" y2=\"150.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"545\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">C</text><text x=\"545\" y=\"96\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">O</text><line x1=\"541.0\" y1=\"136.0\" x2=\"541.0\" y2=\"102.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"549.0\" y1=\"136.0\" x2=\"549.0\" y2=\"102.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"564.8\" y1=\"79.5\" x2=\"553.5\" y2=\"68.2\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"536.5\" y1=\"68.2\" x2=\"525.2\" y2=\"79.5\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"615\" y=\"158\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">O</text><line x1=\"558.0\" y1=\"150.0\" x2=\"602.0\" y2=\"150.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"623.0\" y1=\"130.0\" x2=\"607.0\" y2=\"130.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"607.0\" y1=\"170.0\" x2=\"623.0\" y2=\"170.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"635.0\" y1=\"158.0\" x2=\"635.0\" y2=\"142.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><circle cx=\"645\" cy=\"120\" r=\"10\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><text x=\"645\" y=\"126\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-size=\"18\" font-weight=\"bold\">−</text><text x=\"20\" y=\"275\" font-size=\"20\"><tspan font-weight=\"bold\" fill=\"#1F4E5A\">C</tspan><tspan font-size=\"17\"> — triméthylamine</tspan></text><text x=\"185\" y=\"383\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">N</text><text x=\"107\" y=\"383\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">H₃C</text><line x1=\"132.0\" y1=\"375.0\" x2=\"172.0\" y2=\"375.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"263\" y=\"383\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">CH₃</text><line x1=\"198.0\" y1=\"375.0\" x2=\"238.0\" y2=\"375.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"185\" y=\"445\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">CH₃</text><line x1=\"185.0\" y1=\"389.0\" x2=\"185.0\" y2=\"421.0\" stroke=\"#222\" stroke-width=\"2.4\"/><line x1=\"193.0\" y1=\"355.0\" x2=\"177.0\" y2=\"355.0\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"400\" y=\"275\" font-size=\"20\"><tspan font-weight=\"bold\" fill=\"#1F4E5A\">D</tspan><tspan font-size=\"17\"> — ion triméthylammonium</tspan></text><text x=\"565\" y=\"383\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">N</text><text x=\"487\" y=\"383\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">H₃C</text><line x1=\"512.0\" y1=\"375.0\" x2=\"552.0\" y2=\"375.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"643\" y=\"383\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">CH₃</text><line x1=\"578.0\" y1=\"375.0\" x2=\"618.0\" y2=\"375.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"565\" y=\"445\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">CH₃</text><line x1=\"565.0\" y1=\"389.0\" x2=\"565.0\" y2=\"421.0\" stroke=\"#222\" stroke-width=\"2.4\"/><text x=\"565\" y=\"325\" text-anchor=\"middle\" fill=\"#222\" font-weight=\"bold\">H</text><line x1=\"565.0\" y1=\"361.0\" x2=\"565.0\" y2=\"331.0\" stroke=\"#222\" stroke-width=\"2.4\"/><circle cx=\"597\" cy=\"345\" r=\"10\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><text x=\"597\" y=\"351\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-size=\"18\" font-weight=\"bold\">+</text></svg>",
+      "questions": [
+        {
+          "texte": "Associe les espèces A, B, C et D deux par deux pour former deux couples acide-base. Écris chaque couple sous la forme acide/base.",
+          "aides": []
+        },
+        {
+          "texte": "Quel atome de la triméthylamine capte le proton H⁺ ? Quelle particularité de son schéma de Lewis le lui permet ?",
+          "aides": []
+        },
+        {
+          "texte": "Écris la formule semi-développée de l'acide éthanoïque et celle de l'ion éthanoate. Entoure le groupe caractéristique de l'acide et nomme sa famille.",
+          "aides": []
+        },
+        {
+          "texte": "Écris les deux demi-équations acide-base, puis l'équation de la réaction entre l'acide éthanoïque du vinaigre et la triméthylamine.",
+          "aides": [
+            "Écris d'abord chaque couple sous la forme acide ⇌ base + H⁺.",
+            "L'acide de l'un des couples réagit avec la base de l'autre : quelle espèce cède le proton, laquelle le capte ?",
+            "Combine les deux demi-équations pour que H⁺ n'apparaisse plus dans le bilan."
+          ]
+        },
+        {
+          "texte": "Explique en une ou deux phrases pourquoi le vinaigre atténue l'odeur du poisson.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> A/B : CH₃COOH/CH₃COO⁻ (acide éthanoïque/ion éthanoate) ; D/C : (CH₃)₃NH⁺/(CH₃)₃N (ion triméthylammonium/triméthylamine). Dans chaque couple, l'acide possède un H⁺ de plus que sa base conjuguée.",
+        "<strong>2.</strong> L'atome d'azote N : il porte un doublet non liant, qui lui permet de former une liaison avec le proton H⁺ (l'azote devient alors chargé +, voir D).",
+        "<strong>3.</strong> Acide éthanoïque : CH₃–C(=O)–OH (groupe carboxyle –COOH : famille des acides carboxyliques). Ion éthanoate : CH₃–C(=O)–O⁻ (ion carboxylate).",
+        "<strong>4.</strong> CH₃COOH ⇌ CH₃COO⁻ + H⁺ et (CH₃)₃NH⁺ ⇌ (CH₃)₃N + H⁺. Bilan : CH₃COOH + (CH₃)₃N → CH₃COO⁻ + (CH₃)₃NH⁺.",
+        "<strong>5.</strong> L'acide éthanoïque cède un proton à la triméthylamine : l'amine volatile (odorante) est transformée en ion triméthylammonium, qui reste dans le poisson (non volatil). Il y a moins de molécules odorantes dans l'air.",
+        "<em>⚠ Erreur fréquente : écrire un H⁺ libre dans l'équation-bilan. Les H⁺ doivent disparaître : le proton passe directement de l'acide d'un couple à la base de l'autre.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Des dilutions en cascade",
+      "contexte": [
+        "Un groupe d'élèves dispose d'une solution S₀ d'acide chlorhydrique (H₃O⁺(aq) + Cl⁻(aq)) de concentration apportée c₀ = 1,0 × 10⁻¹ mol·L⁻¹. L'acide chlorhydrique est un acide fort : [H₃O⁺] = c.",
+        "Ils préparent S₁ en diluant S₀ dix fois, puis S₂ en diluant S₁ dix fois, et ainsi de suite jusqu'à S₄. Ils mesurent ensuite le pH de chaque solution avec un pH-mètre étalonné : S₀ : 1,04 ; S₁ : 2,01 ; S₂ : 3,02 ; S₃ : 4,03 ; S₄ : 4,96. Le graphique représente le pH mesuré en fonction de −log(c / c°)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"80.0\" y1=\"30\" x2=\"80.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"80.0\" y=\"430\" text-anchor=\"middle\">0</text><line x1=\"134.6\" y1=\"30\" x2=\"134.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"189.2\" y1=\"30\" x2=\"189.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"189.2\" y=\"430\" text-anchor=\"middle\">1</text><line x1=\"243.8\" y1=\"30\" x2=\"243.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"298.3\" y1=\"30\" x2=\"298.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"298.3\" y=\"430\" text-anchor=\"middle\">2</text><line x1=\"352.9\" y1=\"30\" x2=\"352.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"407.5\" y1=\"30\" x2=\"407.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"407.5\" y=\"430\" text-anchor=\"middle\">3</text><line x1=\"462.1\" y1=\"30\" x2=\"462.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"516.7\" y1=\"30\" x2=\"516.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"516.7\" y=\"430\" text-anchor=\"middle\">4</text><line x1=\"571.2\" y1=\"30\" x2=\"571.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"625.8\" y1=\"30\" x2=\"625.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"625.8\" y=\"430\" text-anchor=\"middle\">5</text><line x1=\"680.4\" y1=\"30\" x2=\"680.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"735.0\" y1=\"30\" x2=\"735.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"735.0\" y=\"430\" text-anchor=\"middle\">6</text><line x1=\"80\" y1=\"410.0\" x2=\"735\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"80\" y1=\"378.3\" x2=\"735\" y2=\"378.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"346.7\" x2=\"735\" y2=\"346.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"351.7\" text-anchor=\"end\">1</text><line x1=\"80\" y1=\"315.0\" x2=\"735\" y2=\"315.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"283.3\" x2=\"735\" y2=\"283.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"288.3\" text-anchor=\"end\">2</text><line x1=\"80\" y1=\"251.7\" x2=\"735\" y2=\"251.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"220.0\" x2=\"735\" y2=\"220.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"225.0\" text-anchor=\"end\">3</text><line x1=\"80\" y1=\"188.3\" x2=\"735\" y2=\"188.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"156.7\" x2=\"735\" y2=\"156.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"161.7\" text-anchor=\"end\">4</text><line x1=\"80\" y1=\"125.0\" x2=\"735\" y2=\"125.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"93.3\" x2=\"735\" y2=\"93.3\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"98.3\" text-anchor=\"end\">5</text><line x1=\"80\" y1=\"61.7\" x2=\"735\" y2=\"61.7\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><line x1=\"80\" y1=\"30.0\" x2=\"735\" y2=\"30.0\" stroke=\"#d9d2c5\" stroke-width=\"1\"/><text x=\"72\" y=\"35.0\" text-anchor=\"end\">6</text><rect x=\"80\" y=\"30\" width=\"655\" height=\"380\" fill=\"none\" stroke=\"#3a3a3a\" stroke-width=\"1.5\"/><line x1=\"182.2\" y1=\"337.1\" x2=\"196.2\" y2=\"351.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"182.2\" y1=\"351.1\" x2=\"196.2\" y2=\"337.1\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"179.2\" y=\"332.1\" text-anchor=\"end\" fill=\"#B5523B\" font-weight=\"bold\">S₀</text><line x1=\"291.3\" y1=\"275.7\" x2=\"305.3\" y2=\"289.7\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"291.3\" y1=\"289.7\" x2=\"305.3\" y2=\"275.7\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"288.3\" y=\"270.7\" text-anchor=\"end\" fill=\"#B5523B\" font-weight=\"bold\">S₁</text><line x1=\"400.5\" y1=\"211.7\" x2=\"414.5\" y2=\"225.7\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"400.5\" y1=\"225.7\" x2=\"414.5\" y2=\"211.7\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"397.5\" y=\"206.7\" text-anchor=\"end\" fill=\"#B5523B\" font-weight=\"bold\">S₂</text><line x1=\"509.7\" y1=\"147.8\" x2=\"523.7\" y2=\"161.8\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"509.7\" y1=\"161.8\" x2=\"523.7\" y2=\"147.8\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"506.7\" y=\"142.8\" text-anchor=\"end\" fill=\"#B5523B\" font-weight=\"bold\">S₃</text><line x1=\"618.8\" y1=\"88.9\" x2=\"632.8\" y2=\"102.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><line x1=\"618.8\" y1=\"102.9\" x2=\"632.8\" y2=\"88.9\" stroke=\"#B5523B\" stroke-width=\"3\"/><text x=\"615.8\" y=\"83.9\" text-anchor=\"end\" fill=\"#B5523B\" font-weight=\"bold\">S₄</text><text x=\"407.5\" y=\"458\" text-anchor=\"middle\" font-weight=\"bold\">−log(c / c°)</text><text transform=\"translate(24,220.0) rotate(-90)\" text-anchor=\"middle\" font-weight=\"bold\">pH mesuré</text></svg>",
+      "questions": [
+        {
+          "texte": "Décris précisément la préparation de 50,0 mL de S₁ à partir de S₀ (volume prélevé, verrerie, gestes).",
+          "aides": [
+            "La quantité de soluté se conserve lors d'une dilution : c₀ × V₀ = c₁ × V₁.",
+            "Avec F = V₁ / V₀ = 10 et V₁ = 50,0 mL, calcule V₀, puis choisis une pipette jaugée et une fiole jaugée adaptées."
+          ]
+        },
+        {
+          "texte": "Calcule la concentration c de chaque solution S₁ à S₄, puis la valeur de −log(c / c°).",
+          "aides": []
+        },
+        {
+          "texte": "Trace sur le graphique la droite d'équation pH = −log(c / c°). Les mesures sont-elles en accord avec la relation pH = −log([H₃O⁺] / c°) ?",
+          "aides": [
+            "La droite d'équation y = x passe par l'origine et par le point (5 ; 5).",
+            "Compare la position de chaque point à cette droite : écart vertical petit ou grand devant l'unité ?"
+          ]
+        },
+        {
+          "texte": "À partir du pH mesuré, calcule [H₃O⁺] dans S₂, puis l'écart relatif avec la concentration apportée. Fais de même pour S₄.",
+          "aides": []
+        },
+        {
+          "texte": "On voudrait obtenir directement, en une seule dilution de S₀, 100,0 mL d'une solution de pH = 3,0. Quel facteur de dilution faut-il ? Quel volume de S₀ faut-il prélever ?",
+          "aides": [
+            "Passer d'un pH 1 à un pH 3, c'est diviser [H₃O⁺] par combien ?",
+            "F = c₀ / c₁ ; puis V₀ = V₁ / F."
+          ]
+        },
+        {
+          "texte": "Lou affirme : « Si je dilue S₀ un milliard de fois, j'obtiens une solution de pH 10. » Explique pourquoi c'est impossible.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> F = 10, donc V₀ = V₁ / F = 50,0 / 10 = 5,0 mL. Prélever 5,0 mL de S₀ avec une pipette jaugée de 5,0 mL (munie d'une propipette), les verser dans une fiole jaugée de 50,0 mL, ajouter de l'eau distillée aux trois quarts, agiter, compléter jusqu'au trait de jauge, boucher et homogénéiser.",
+        "<strong>2.</strong> Chaque dilution divise c par 10 (c₀ × V₀ = c₁ × V₁) : c₁ = 1,0 × 10⁻² ; c₂ = 1,0 × 10⁻³ ; c₃ = 1,0 × 10⁻⁴ ; c₄ = 1,0 × 10⁻⁵ mol·L⁻¹. Donc −log(c / c°) = 2,0 ; 3,0 ; 4,0 ; 5,0 (et 1,0 pour S₀).",
+        "<strong>3.</strong> La droite passe par l'origine et a pour coefficient directeur 1 (elle passe par (1 ; 1), (5 ; 5)…). Les points sont très proches de cette droite : pH ≈ −log(c / c°). Comme [H₃O⁺] = c pour un acide fort, les mesures sont en accord avec pH = −log([H₃O⁺] / c°).",
+        "<strong>4.</strong> S₂ : [H₃O⁺] = 10^(−3,02) = 9,5 × 10⁻⁴ mol·L⁻¹ ; écart relatif = |9,5 × 10⁻⁴ − 1,0 × 10⁻³| / 1,0 × 10⁻³ = 4,5 %. S₄ : [H₃O⁺] = 10^(−4,96) = 1,1 × 10⁻⁵ mol·L⁻¹ ; écart relatif ≈ 10 %. Ces écarts restent faibles : une incertitude de 0,05 sur le pH correspond déjà à un facteur 10^(0,05) ≈ 1,12, soit environ 12 % sur [H₃O⁺].",
+        "<strong>5.</strong> Le pH doit passer de 1,0 à 3,0 : [H₃O⁺] doit être divisée par 10² = 100, donc F = 100. V₀ = V / F = 100,0 / 100 = 1,0 mL : pipette jaugée de 1,0 mL et fiole jaugée de 100,0 mL.",
+        "<strong>6.</strong> Diluer une solution acide avec de l'eau ne peut pas la rendre basique : quand c devient très petite, les ions H₃O⁺ apportés par l'acide deviennent négligeables devant ceux de l'eau elle-même, et le pH tend vers 7 (pH de l'eau pure à 25 °C), sans le dépasser. La relation pH = −log(c / c°) n'est valable que si la solution reste nettement acide.",
+        "<em>⚠ Erreur fréquente : croire que diluer 10 fois divise le pH par 10. C'est [H₃O⁺] qui est divisée par 10 ; le pH, lui, augmente d'une unité.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Brûlures d'estomac : le bicarbonate à la rescousse",
+      "contexte": [
+        "Le suc gastrique est très acide. En cas de brûlures d'estomac, certains médicaments antiacides contiennent de l'hydrogénocarbonate de sodium NaHCO₃ (le « bicarbonate de soude » de la cuisine), qui se dissout en ions Na⁺(aq) et HCO₃⁻(aq).",
+        "On modélise un excès d'acidité par 50 mL de liquide gastrique de pH = 1,3, dont l'acidité est due aux ions H₃O⁺. Un comprimé (données fictives) contient 0,50 g d'hydrogénocarbonate de sodium. On suppose que la transformation est totale et que tout le dioxyde de carbone formé se dégage sous forme de gaz."
+      ],
+      "questions": [
+        {
+          "texte": "Montre que l'ion hydrogénocarbonate est une espèce amphotère.",
+          "aides": []
+        },
+        {
+          "texte": "Écris l'équation de la réaction entre les ions hydrogénocarbonate et les ions oxonium du suc gastrique, en précisant les deux couples mis en jeu.",
+          "aides": [
+            "Quelle espèce du suc gastrique est un acide ? Quel rôle HCO₃⁻ peut-il alors jouer ?",
+            "Le CO₂ dissous (CO₂,H₂O) est l'acide conjugué de HCO₃⁻."
+          ]
+        },
+        {
+          "texte": "Au laboratoire, on mélange une solution d'hydrogénocarbonate de sodium et une solution de soude (Na⁺(aq) + HO⁻(aq)). Écris l'équation de la réaction. Quel rôle joue HCO₃⁻ cette fois ?",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la quantité de matière d'ions H₃O⁺ contenue dans les 50 mL de liquide gastrique.",
+          "aides": [
+            "Commence par calculer [H₃O⁺] à partir du pH.",
+            "Puis n = [H₃O⁺] × V, avec V en litres."
+          ]
+        },
+        {
+          "texte": "Calcule la masse minimale d'hydrogénocarbonate de sodium nécessaire pour consommer tous ces ions H₃O⁺. Un comprimé suffit-il ?",
+          "aides": [
+            "D'après les nombres stœchiométriques, combien d'ions HCO₃⁻ faut-il pour un ion H₃O⁺ ?",
+            "Calcule M(NaHCO₃) avec les données, puis m = n × M."
+          ]
+        },
+        {
+          "texte": "Calcule le volume de dioxyde de carbone gazeux libéré. Quel effet secondaire désagréable cela explique-t-il ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> HCO₃⁻ appartient à deux couples : (CO₂,H₂O)/HCO₃⁻, où il est la base, et HCO₃⁻/CO₃²⁻, où il est l'acide. Il peut donc capter ou céder un proton : il est amphotère.",
+        "<strong>2.</strong> Couples H₃O⁺/H₂O et (CO₂,H₂O)/HCO₃⁻. H₃O⁺ ⇌ H₂O + H⁺ et (CO₂,H₂O) ⇌ HCO₃⁻ + H⁺, d'où : HCO₃⁻(aq) + H₃O⁺(aq) → (CO₂,H₂O)(aq) + H₂O(ℓ).",
+        "<strong>3.</strong> Couples HCO₃⁻/CO₃²⁻ et H₂O/HO⁻ : HCO₃⁻(aq) + HO⁻(aq) → CO₃²⁻(aq) + H₂O(ℓ). HCO₃⁻ joue ici le rôle d'acide (il cède un proton), alors qu'il jouait le rôle de base à la question 2.",
+        "<strong>4.</strong> [H₃O⁺] = c° × 10⁻ᵖᴴ = 10^(−1,3) = 5,0 × 10⁻² mol·L⁻¹ ; n(H₃O⁺) = [H₃O⁺] × V = 5,0 × 10⁻² × 50 × 10⁻³ = 2,5 × 10⁻³ mol.",
+        "<strong>5.</strong> D'après l'équation, HCO₃⁻ et H₃O⁺ réagissent mole à mole : n(NaHCO₃) = 2,5 × 10⁻³ mol. M(NaHCO₃) = 22,99 + 1,008 + 12,01 + 3 × 16,00 = 84,01 g·mol⁻¹. m = n × M = 2,5 × 10⁻³ × 84,01 = 0,21 g. Le comprimé (0,50 g, soit 6,0 × 10⁻³ mol) suffit : HCO₃⁻ est en excès.",
+        "<strong>6.</strong> n(CO₂) = n(H₃O⁺) = 2,5 × 10⁻³ mol (H₃O⁺ est le réactif limitant) ; V = n × V<sub>m</sub> = 2,5 × 10⁻³ × 24,0 = 6,0 × 10⁻² L = 60 mL. Ce gaz explique les éructations (rots) après la prise du médicament.",
+        "<em>⚠ Erreur fréquente : écrire [H₃O⁺] = 1,3 × 10⁻¹ ou 10^(−1,3) « ≈ 0,13 » : c'est 10 puissance (−1,3) qu'il faut calculer, soit 0,050 mol·L⁻¹.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "L'océan s'acidifie : les coquillages en danger ?",
+      "contexte": [
+        "Doc. 1 — Le CO₂ dans l'océan. Une partie du dioxyde de carbone émis par les activités humaines se dissout dans l'eau de mer. Le CO₂ dissous, noté (CO₂,H₂O), est l'acide du couple (CO₂,H₂O)/HCO₃⁻ : il réagit avec l'eau.",
+        "Doc. 2 — Le pH de l'océan. Selon le GIEC, le pH moyen des eaux de surface océaniques est passé d'environ 8,2 avant l'ère industrielle à environ 8,1 aujourd'hui. Dans un scénario de fortes émissions de CO₂, il pourrait descendre vers 7,8 à la fin du siècle.",
+        "Doc. 3 — Les coquilles. Les huîtres, les moules, les coraux ou certains planctons construisent leur coquille ou leur squelette en carbonate de calcium CaCO₃, à partir des ions calcium Ca²⁺ et des ions carbonate CO₃²⁻ présents dans l'eau de mer. Moins il y a d'ions carbonate disponibles, plus cette construction est difficile."
+      ],
+      "questions": [
+        {
+          "texte": "Écris l'équation de la réaction entre le CO₂ dissous et l'eau. Explique pourquoi la dissolution du CO₂ fait diminuer le pH de l'océan.",
+          "aides": [
+            "Le CO₂ dissous est un acide. Quelle base, présente en très grande quantité, peut capter son proton ?",
+            "Les couples sont (CO₂,H₂O)/HCO₃⁻ et H₃O⁺/H₂O. Quel ion est formé, et que devient alors le pH ?"
+          ]
+        },
+        {
+          "texte": "Dans l'eau de mer coexistent (CO₂,H₂O), HCO₃⁻ et CO₃²⁻. Quelle espèce est amphotère ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Le CO₂ dissous peut aussi réagir avec les ions carbonate. Écris l'équation de cette réaction, puis explique en quoi elle menace les organismes du doc. 3.",
+          "aides": [
+            "Ici la base qui capte le proton de (CO₂,H₂O) est CO₃²⁻ : quel est son acide conjugué ?",
+            "Les deux produits sont la même espèce : pense à regrouper."
+          ]
+        },
+        {
+          "texte": "Calcule [H₃O⁺] dans l'océan avant l'ère industrielle et aujourd'hui, puis le pourcentage d'augmentation de [H₃O⁺].",
+          "aides": [
+            "[H₃O⁺] = c° × 10⁻ᵖᴴ pour chaque époque.",
+            "Pourcentage d'augmentation = (valeur finale − valeur initiale) / valeur initiale × 100."
+          ]
+        },
+        {
+          "texte": "Par quel facteur [H₃O⁺] serait-elle multipliée entre l'époque préindustrielle et la fin du siècle, dans le scénario du doc. 2 ?",
+          "aides": []
+        },
+        {
+          "texte": "Un article titre : « En 2100, l'océan sera devenu acide ». Rédige une réponse argumentée de quelques lignes pour corriger ou nuancer ce titre, sans minimiser le problème.",
+          "aides": [
+            "À 25 °C, à partir de quelle valeur de pH une solution est-elle acide ?",
+            "Distingue « devenir acide » et « s'acidifier » (voir le sens de variation du pH), puis reviens sur les conséquences du doc. 3."
+          ]
+        },
+        {
+          "texte": "Pour aller plus loin (hors capacités exigibles de ce chapitre) : dans l'eau de mer, pour le couple HCO₃⁻/CO₃²⁻, on admet la relation pH = 9,0 + log([CO₃²⁻] / [HCO₃⁻]). Calcule le rapport [CO₃²⁻] / [HCO₃⁻] pour pH = 8,2 et pour pH = 7,8, et conclus.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Couples (CO₂,H₂O)/HCO₃⁻ et H₃O⁺/H₂O : (CO₂,H₂O)(aq) + H₂O(ℓ) → HCO₃⁻(aq) + H₃O⁺(aq). La dissolution du CO₂ produit des ions oxonium : [H₃O⁺] augmente, donc le pH = −log([H₃O⁺] / c°) diminue.",
+        "<strong>2.</strong> HCO₃⁻ : base du couple (CO₂,H₂O)/HCO₃⁻ et acide du couple HCO₃⁻/CO₃²⁻. Il appartient à deux couples : il est amphotère.",
+        "<strong>3.</strong> Acide (CO₂,H₂O), base CO₃²⁻ : (CO₂,H₂O)(aq) + CO₃²⁻(aq) → 2 HCO₃⁻(aq). Le CO₂ dissous consomme des ions carbonate : il en reste moins pour fabriquer le carbonate de calcium des coquilles et des squelettes, dont la construction devient plus difficile (et les coquilles déjà formées peuvent se fragiliser).",
+        "<strong>4.</strong> Préindustriel : [H₃O⁺] = 10^(−8,2) = 6,3 × 10⁻⁹ mol·L⁻¹ ; aujourd'hui : 10^(−8,1) = 7,9 × 10⁻⁹ mol·L⁻¹. Augmentation = (7,9 × 10⁻⁹ − 6,3 × 10⁻⁹) / 6,3 × 10⁻⁹ × 100 = 26 % (soit un facteur 10^(0,1) ≈ 1,26).",
+        "<strong>5.</strong> À pH = 7,8 : [H₃O⁺] = 10^(−7,8) = 1,6 × 10⁻⁸ mol·L⁻¹. Facteur : 10^(8,2−7,8) = 10^(0,4) = 2,5. La concentration en ions oxonium serait environ 2,5 fois plus grande qu'avant l'ère industrielle.",
+        "<strong>6.</strong> Éléments attendus : avec pH = 7,8 &gt; 7, l'océan resterait légèrement basique, il ne deviendrait pas « acide » au sens strict ; « acidification » désigne la DIMINUTION du pH (augmentation de [H₃O⁺]), pas le passage sous pH 7. Mais la variation est importante : [H₃O⁺] multipliée par 2,5, et surtout la consommation des ions carbonate (question 3) menace les organismes à coquille, ce qui justifie l'inquiétude.",
+        "<strong>7.</strong> Pour aller plus loin : [CO₃²⁻] / [HCO₃⁻] = 10^(pH − 9,0). À pH = 8,2 : 10^(−0,8) = 0,16 ; à pH = 7,8 : 10^(−1,2) = 0,063. La proportion d'ions carbonate par rapport aux ions hydrogénocarbonate serait divisée par 2,5 : il y aurait nettement moins d'ions carbonate disponibles pour les coquilles.",
+        "<em>⚠ Erreur fréquente : croire qu'une baisse de 0,1 du pH est négligeable. L'échelle de pH est logarithmique : −0,1 sur le pH correspond à +26 % sur [H₃O⁺].</em>"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,699 @@
+{
+  "id": 51,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Cohésion d'un solide",
+        "icon": "🧊",
+        "content": [
+          {
+            "type": "def",
+            "term": "Cohésion d'un solide ionique",
+            "text": "Assurée par les interactions électrostatiques attractives entre ions de charges opposées."
+          },
+          {
+            "type": "def",
+            "term": "Cohésion d'un solide moléculaire",
+            "text": "Assurée par des interactions de Van der Waals (entre entités polaires ou apolaires) et, lorsque des atomes d'hydrogène sont liés à O, N ou F, par des liaisons hydrogène (pont H), plus intenses."
+          },
+          {
+            "type": "text",
+            "text": "Exemples : NaCl(s) — interactions électrostatiques (ioniques) entre Na⁺ et Cl⁻. I2(s) — interactions de Van der Waals entre molécules apolaires de I2. Glace H2O(s) — liaisons hydrogène (pont H) entre molécules d'eau, en plus des interactions de Van der Waals."
+          }
+        ]
+      },
+      {
+        "title": "2. Dissolution d'un solide ionique",
+        "icon": "💧",
+        "content": [
+          {
+            "type": "def",
+            "term": "Solvatation",
+            "text": "L'eau, molécule polaire, entoure et stabilise les ions du solide, ce qui permet la dissociation du réseau cristallin et le passage en solution des ions."
+          },
+          {
+            "type": "formula",
+            "label": "Équations de dissolution",
+            "text": "NaCl(s) → Na⁺(aq) + Cl⁻(aq)\nKCl(s) → K⁺(aq) + Cl⁻(aq)"
+          },
+          {
+            "type": "text",
+            "text": "Exemple : on dissout m = 5,85 g de chlorure de sodium NaCl dans V = 500 mL d'eau distillée (M(NaCl) = 58,5 g/mol)."
+          },
+          {
+            "type": "formula",
+            "label": "Calcul des concentrations (NaCl)",
+            "text": "n(NaCl) = m/M = 5,85 / 58,5 = 0,100 mol\n[Na⁺] = [Cl⁻] = n(NaCl)/V = 0,100 / 0,500 = 0,200 mol/L"
+          },
+          {
+            "type": "text",
+            "text": "Autre exemple : on dissout m = 3,725 g de chlorure de potassium KCl (M = 74,5 g/mol) dans V = 250 mL d'eau : n(KCl) = 3,725/74,5 = 0,0500 mol, donc [K⁺] = [Cl⁻] = 0,0500/0,250 = 0,200 mol/L."
+          }
+        ]
+      },
+      {
+        "title": "3. Solubilité et miscibilité",
+        "icon": "🧪",
+        "content": [
+          {
+            "type": "def",
+            "term": "Solubilité",
+            "text": "Masse maximale d'une espèce que l'on peut dissoudre dans un litre d'un solvant donné."
+          },
+          {
+            "type": "def",
+            "term": "Miscibilité",
+            "text": "Deux liquides sont miscibles s'ils forment, une fois mélangés, une seule phase."
+          },
+          {
+            "type": "warn",
+            "text": "Règle qualitative : « qui se ressemble s'assemble ». Une espèce polaire se dissout mieux dans un solvant polaire, une espèce apolaire dans un solvant apolaire."
+          }
+        ]
+      },
+      {
+        "title": "4. Extraction liquide-liquide",
+        "icon": "⚗️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Extraction liquide-liquide",
+            "text": "Un soluté se répartit entre deux solvants non miscibles selon sa solubilité relative dans chacun d'eux. On choisit un solvant extracteur dans lequel le soluté est plus soluble que dans le solvant initial, et non miscible avec celui-ci. L'opération se réalise à l'aide d'une ampoule à décanter."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : pour extraire le diiode I2 (peu soluble et peu polaire) d'une solution aqueuse orangée, on utilise le cyclohexane (très bon solvant du diiode, non miscible à l'eau, ρ = 0,78 g/mL), et non l'éthanol (bon solvant mais miscible à l'eau, donc inutilisable)."
+          },
+          {
+            "type": "warn",
+            "text": "Le cyclohexane étant moins dense que l'eau, la phase organique (cyclohexane, colorée en violet par le diiode) se retrouve au-dessus de la phase aqueuse, qui s'éclaircit fortement après extraction."
+          }
+        ]
+      },
+      {
+        "title": "5. Les savons, espèces amphiphiles",
+        "icon": "🧼",
+        "content": [
+          {
+            "type": "def",
+            "term": "Espèce amphiphile",
+            "text": "Une molécule de savon possède une longue chaîne carbonée apolaire (lipophile) et une tête ionique polaire (hydrophile) : on dit qu'elle est amphiphile."
+          },
+          {
+            "type": "text",
+            "text": "En solution aqueuse, les molécules de savon s'organisent en micelles : les chaînes lipophiles piègent les graisses en leur centre, tandis que les têtes hydrophiles, en contact avec l'eau, permettent leur élimination par rinçage."
+          }
+        ]
+      },
+      {
+        "title": "6. Synthèse",
+        "icon": "📌",
+        "content": [
+          {
+            "type": "table",
+            "headers": [
+              "Notion",
+              "Définition"
+            ],
+            "rows": [
+              [
+                "Cohésion",
+                "Interactions (ioniques, Van der Waals, pont H) entre entités"
+              ],
+              [
+                "Extraction liquide-liquide",
+                "Transfert d'un soluté vers un solvant extracteur non miscible"
+              ],
+              [
+                "Espèce amphiphile",
+                "Possède une partie hydrophile et une partie lipophile"
+              ]
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "La cohésion du chlorure de sodium solide NaCl(s) est assurée par :",
+      "opts": [
+        "des liaisons hydrogène entre les ions",
+        "des interactions électrostatiques entre ions de charges opposées",
+        "des liaisons covalentes entre Na et Cl",
+        "des interactions de Van der Waals entre molécules NaCl"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "pont-h-partout",
+          "texte": "Voir des liaisons hydrogène partout : il faut un atome H lié à O, N ou F ; NaCl n'en contient pas"
+        },
+        null,
+        {
+          "code": "covalente-vs-ionique",
+          "texte": "Confondre liaison covalente et interaction entre ions : Na⁺ et Cl⁻ ne partagent pas d'électrons"
+        },
+        {
+          "code": "ionique-vs-moleculaire",
+          "texte": "Croire qu'un solide ionique est formé de molécules : NaCl indique seulement la proportion des ions Na⁺ et Cl⁻"
+        }
+      ],
+      "exp": "NaCl(s) est un solide ionique : sa cohésion est assurée par les interactions électrostatiques attractives entre ions Na⁺ et Cl⁻. Attention : il ne contient pas de molécules NaCl."
+    },
+    {
+      "q": "La cohésion de la glace H₂O(s) est assurée par des interactions de Van der Waals et surtout par :",
+      "opts": [
+        "les liaisons covalentes O–H entre molécules voisines",
+        "des interactions entre ions H⁺ et O²⁻",
+        "des liaisons hydrogène entre molécules",
+        "rien d'autre : comme pour I₂, seulement Van der Waals"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "intra-vs-intermoleculaire",
+          "texte": "Confondre liaison covalente (à l'intérieur d'une molécule) et interaction entre molécules : la fusion ne casse pas les liaisons O–H"
+        },
+        {
+          "code": "eau-solide-ionique",
+          "texte": "Croire que la glace est un solide ionique : elle est formée de molécules H₂O"
+        },
+        null,
+        {
+          "code": "pont-h-oublie",
+          "texte": "Oublier les liaisons hydrogène : H est lié à O, très électronégatif, ce qui permet des ponts H entre molécules"
+        }
+      ],
+      "exp": "Dans la glace, un atome H d'une molécule lié à O interagit avec un doublet non liant de l'O d'une molécule voisine : c'est une liaison hydrogène, plus intense que les interactions de Van der Waals."
+    },
+    {
+      "q": "Entre les molécules de laquelle de ces espèces peut-il s'établir des liaisons hydrogène ?",
+      "opts": [
+        "Le méthane CH₄",
+        "Le dioxyde de carbone CO₂",
+        "Le diiode I₂",
+        "L'ammoniac NH₃"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "pont-h-tout-h",
+          "texte": "Croire qu'il suffit d'un atome H : il faut un H lié à O, N ou F ; dans CH₄, H est lié à C, peu électronégatif"
+        },
+        {
+          "code": "pont-h-avec-o",
+          "texte": "Croire que la présence de O suffit : CO₂ n'a aucun atome H"
+        },
+        {
+          "code": "pont-h-partout",
+          "texte": "Voir des liaisons hydrogène partout : I₂ n'a pas d'hydrogène, ses molécules ne sont liées que par Van der Waals"
+        },
+        null
+      ],
+      "exp": "Une liaison hydrogène s'établit entre un atome H lié à O, N ou F et un doublet non liant d'un atome électronégatif voisin. Dans NH₃, H est lié à N : c'est possible. Attention : un atome H ne suffit pas."
+    },
+    {
+      "q": "L'eau H₂O bout à 100 °C, le sulfure d'hydrogène H₂S (M = 34 g·mol⁻¹) à −60 °C. Comment expliquer cet écart ?",
+      "opts": [
+        "L'ébullition de l'eau casse les liaisons O–H, très solides",
+        "Les liaisons hydrogène entre molécules d'eau sont plus intenses",
+        "Les molécules d'eau sont plus lourdes que celles de H₂S",
+        "L'eau est un solide ionique, H₂S un solide moléculaire"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "changement-etat-nouvelle-espece",
+          "texte": "Croire qu'un changement d'état casse les molécules : la vapeur d'eau est formée de molécules H₂O intactes"
+        },
+        null,
+        {
+          "code": "masse-explique-ebullition",
+          "texte": "Expliquer par la masse : H₂O (18 g·mol⁻¹) est plus légère que H₂S (34 g·mol⁻¹), et bout pourtant bien plus haut"
+        },
+        {
+          "code": "eau-solide-ionique",
+          "texte": "Croire que l'eau est ionique : H₂O et H₂S sont deux espèces moléculaires"
+        }
+      ],
+      "exp": "Pour vaporiser l'eau, il faut rompre les liaisons hydrogène entre molécules, plus intenses que les interactions de Van der Waals qui lient les molécules de H₂S (S est peu électronégatif). Les liaisons O–H, elles, restent intactes."
+    },
+    {
+      "q": "L'équation de dissolution du chlorure de calcium CaCl₂(s) dans l'eau s'écrit :",
+      "opts": [
+        "CaCl₂(s) → Ca²⁺(aq) + Cl₂²⁻(aq)",
+        "CaCl₂(s) → Ca²⁺(aq) + Cl⁻(aq)",
+        "CaCl₂(s) → CaCl₂(aq)",
+        "CaCl₂(s) → Ca²⁺(aq) + 2 Cl⁻(aq)"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "indice-garde-dans-ion",
+          "texte": "Garder l'indice dans l'ion : le solide libère deux ions chlorure Cl⁻ séparés, pas un ion Cl₂²⁻"
+        },
+        {
+          "code": "conservation-charge-oubliee",
+          "texte": "Oublier de conserver les éléments et la charge : à gauche 2 Cl et une charge nulle, il faut 2 Cl⁻ à droite"
+        },
+        {
+          "code": "dissolution-sans-dissociation",
+          "texte": "Croire que le solide ionique se dissout en « molécules » : les ions se séparent et sont solvatés"
+        },
+        null
+      ],
+      "exp": "Le solide ionique se dissocie : CaCl₂(s) → Ca²⁺(aq) + 2 Cl⁻(aq). Attention : l'indice 2 devient un nombre stœchiométrique, et la charge totale (nulle) est conservée."
+    },
+    {
+      "q": "On dissout n = 2,00×10⁻² mol de CaCl₂ dans de l'eau pour obtenir 200 mL de solution. La concentration en ions chlorure vaut :",
+      "opts": [
+        "0,100 mol·L⁻¹",
+        "0,200 mol·L⁻¹",
+        "5,00×10⁻² mol·L⁻¹",
+        "2,00×10⁻⁴ mol·L⁻¹"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "oubli-indice",
+          "texte": "Oublier que chaque CaCl₂ libère 2 ions Cl⁻ : n(Cl⁻) = 2 × 2,00×10⁻² = 4,00×10⁻² mol"
+        },
+        null,
+        {
+          "code": "stoechiometrie-inversee",
+          "texte": "Diviser par 2 au lieu de multiplier : il y a deux fois plus d'ions Cl⁻ que de CaCl₂ dissous"
+        },
+        {
+          "code": "conversion-ml-l",
+          "texte": "Oublier de convertir les mL en L : 4,00×10⁻² / 200 ; 200 mL = 0,200 L"
+        }
+      ],
+      "exp": "n(Cl⁻) = 2 × n(CaCl₂) = 4,00×10⁻² mol, donc [Cl⁻] = 4,00×10⁻² / 0,200 = 0,200 mol·L⁻¹ (et [Ca²⁺] = 0,100 mol·L⁻¹). Attention au coefficient 2 de l'équation de dissolution."
+    },
+    {
+      "q": "Lors de la dissolution de NaCl, les molécules d'eau entourent les ions Na⁺ en tournant vers eux :",
+      "opts": [
+        "leur atome d'oxygène, porteur de δ⁻",
+        "leurs atomes d'hydrogène, porteurs de δ⁺",
+        "n'importe quel côté : l'eau sépare les ions par agitation",
+        "des ions HO⁻ formés par l'eau"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "solvatation-orientation-inverse",
+          "texte": "Inverser l'orientation : un cation (+) attire le côté δ⁻ de la molécule d'eau, l'oxygène"
+        },
+        {
+          "code": "dissolution-mecanique",
+          "texte": "Croire que la dissolution est purement mécanique : les ions sont attirés et entourés par les molécules d'eau polaires"
+        },
+        {
+          "code": "eau-forme-ions",
+          "texte": "Croire que l'eau se transforme en ions : ce sont des molécules H₂O entières qui entourent les ions (solvatation)"
+        }
+      ],
+      "exp": "L'eau est polaire : O porte δ⁻ et les H portent δ⁺. Autour de Na⁺, les molécules d'eau tournent leur oxygène vers l'ion ; autour de Cl⁻, elles tournent leurs hydrogènes. C'est la solvatation."
+    },
+    {
+      "q": "Pour extraire le diiode d'une solution aqueuse, quel solvant choisir ? (le diiode est très soluble dans l'éthanol et dans le cyclohexane ; l'éthanol est miscible à l'eau, le cyclohexane ne l'est pas)",
+      "opts": [
+        "L'éthanol, car le diiode y est très soluble",
+        "Le cyclohexane, non miscible à l'eau, où le diiode est très soluble",
+        "De l'eau supplémentaire, pour diluer le diiode",
+        "N'importe quel solvant plus dense que l'eau"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "solvant-miscible",
+          "texte": "Choisir un solvant miscible : on n'obtiendrait qu'une phase, impossible à séparer dans l'ampoule à décanter"
+        },
+        null,
+        {
+          "code": "solubilite-inversee",
+          "texte": "Inverser le critère : le soluté doit être plus soluble dans le solvant extracteur que dans le solvant initial"
+        },
+        {
+          "code": "solvant-densite-obligatoire",
+          "texte": "Croire que le solvant doit être plus dense : sa densité dit seulement si sa phase est en haut ou en bas"
+        }
+      ],
+      "exp": "Un solvant extracteur doit être non miscible avec le solvant initial et mieux dissoudre le soluté : le cyclohexane convient. Attention : l'éthanol dissout bien le diiode, mais il est miscible à l'eau."
+    },
+    {
+      "q": "On extrait le diiode d'une solution aqueuse avec du dichlorométhane (ρ = 1,33 g·mL⁻¹, non miscible à l'eau). Après décantation, la phase organique se trouve :",
+      "opts": [
+        "au-dessus : une phase organique est toujours au-dessus",
+        "mélangée à la phase aqueuse après agitation",
+        "en dessous, car le dichlorométhane est plus dense que l'eau",
+        "au-dessus, car le dichlorométhane est apolaire"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "phase-organique-toujours-dessus",
+          "texte": "Croire que la phase organique est toujours au-dessus : c'est vrai pour le cyclohexane (0,78), pas pour le dichlorométhane (1,33)"
+        },
+        {
+          "code": "agitation-melange-phases",
+          "texte": "Croire que l'agitation mélange définitivement les phases : deux liquides non miscibles se séparent toujours au repos"
+        },
+        null,
+        {
+          "code": "polarite-position-phases",
+          "texte": "Relier la position des phases à la polarité : seule la masse volumique compte, le plus dense est en bas"
+        }
+      ],
+      "exp": "Le dichlorométhane (1,33 g·mL⁻¹) est plus dense que l'eau (1,00 g·mL⁻¹) : la phase organique est en dessous. Attention : avec le cyclohexane (0,78 g·mL⁻¹), elle serait au-dessus."
+    },
+    {
+      "q": "Dans l'eau, les molécules de savon s'organisent en micelles autour d'une goutte de graisse. Les chaînes carbonées des molécules de savon :",
+      "opts": [
+        "sont tournées vers l'eau, qu'elles attirent",
+        "sont tournées vers l'intérieur, au contact de la graisse",
+        "se dissolvent dans l'eau, ce qui entraîne la graisse",
+        "réagissent avec la graisse pour la détruire"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "hydrophile-lipophile-inverses",
+          "texte": "Inverser les rôles : la chaîne carbonée, apolaire, est lipophile ; c'est la tête ionique qui est hydrophile"
+        },
+        null,
+        {
+          "code": "chaine-apolaire-soluble-eau",
+          "texte": "Croire que la chaîne carbonée se dissout dans l'eau : apolaire, elle fuit l'eau et se tourne vers la graisse"
+        },
+        {
+          "code": "savon-detruit-graisse",
+          "texte": "Croire que le savon détruit la graisse : il l'entoure et l'entraîne dans l'eau, sans transformation chimique"
+        }
+      ],
+      "exp": "La molécule de savon est amphiphile : la chaîne carbonée, lipophile, pénètre dans la graisse ; la tête ionique, hydrophile, reste au contact de l'eau. La micelle emprisonne la graisse, éliminée au rinçage."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Qui fait tenir le solide ?",
+      "contexte": [
+        "Sofiane prépare un exposé sur les solides et réunit cinq échantillons : du sel de cuisine NaCl(s), formé d'ions Na⁺ et Cl⁻ ; de la glace H₂O(s) ; de la carboglace CO₂(s), formée de molécules apolaires ; des cristaux de diiode I₂(s), formés de molécules apolaires ; du sucre (saccharose C₁₂H₂₂O₁₁), formé de molécules polaires qui possèdent chacune huit groupes –OH.",
+        "Températures de changement d'état sous 1 bar : fusion du sel NaCl : 801 °C ; fusion de la glace : 0 °C ; sublimation de la carboglace (passage direct de l'état solide à l'état gazeux) : −78 °C."
+      ],
+      "questions": [
+        {
+          "texte": "Classe ces cinq solides en deux catégories : solides ioniques et solides moléculaires.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque solide à ce qui assure sa cohésion : (A) interactions électrostatiques entre ions de charges opposées ; (B) interactions de Van der Waals seulement ; (C) interactions de Van der Waals et liaisons hydrogène.",
+          "aides": [
+            "Pour chaque solide moléculaire, demande-toi : ses molécules possèdent-elles un atome H lié à O, N ou F ?",
+            "Si oui, des liaisons hydrogène s'ajoutent aux interactions de Van der Waals ; si non, il n'y a que des interactions de Van der Waals."
+          ]
+        },
+        {
+          "texte": "Range le sel, la glace et la carboglace par température de changement d'état décroissante. Explique ce classement à l'aide de l'intensité des interactions entre entités.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie. « Quand la glace fond, les liaisons covalentes O–H des molécules d'eau sont rompues. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Solide ionique : le sel NaCl(s) (ions Na⁺ et Cl⁻). Solides moléculaires : la glace, la carboglace, le diiode et le sucre.",
+        "<strong>2.</strong> NaCl(s) → (A). Carboglace CO₂(s) et diiode I₂(s) → (B) : molécules apolaires, sans atome H lié à O, N ou F. Glace et sucre → (C) : leurs molécules possèdent des atomes H liés à un atome O (groupes –OH), qui permettent des liaisons hydrogène entre molécules.",
+        "<strong>3.</strong> Sel (801 °C) &gt; glace (0 °C) &gt; carboglace (−78 °C). Pour fondre (ou se sublimer), un solide doit recevoir de l'énergie pour vaincre les interactions entre ses entités : plus ces interactions sont intenses, plus il faut d'énergie et plus la température de changement d'état est élevée. Interactions électrostatiques entre ions (les plus intenses) &gt; liaisons hydrogène &gt; interactions de Van der Waals seules (les plus faibles).",
+        "<strong>4.</strong> FAUX : la fusion est une transformation physique ; les molécules H₂O restent intactes. Ce sont les interactions ENTRE molécules (liaisons hydrogène, Van der Waals) qui sont affaiblies ou rompues, pas les liaisons covalentes à l'intérieur des molécules.",
+        "<em>⚠ Erreur fréquente : confondre la liaison covalente (à l'intérieur d'une molécule, très solide) et les interactions intermoléculaires (entre molécules, bien plus faibles), qui sont les seules concernées par un changement d'état.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "La liaison hydrogène dans la glace",
+      "contexte": [
+        "Rappel : une liaison hydrogène s'établit entre un atome H lié à un atome très électronégatif (O, N ou F) d'une molécule, et un atome O, N ou F porteur d'un doublet non liant d'une autre molécule. La figure ci-dessous représente une molécule d'eau A et ses voisines B, C, D et E dans la glace."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"431.4\" y1=\"232.2\" x2=\"478.0\" y2=\"196.1\" stroke=\"#C8962E\" stroke-width=\"4\" stroke-dasharray=\"3 6\" stroke-linecap=\"round\"/><line x1=\"328.6\" y1=\"232.2\" x2=\"282.0\" y2=\"196.1\" stroke=\"#C8962E\" stroke-width=\"4\" stroke-dasharray=\"3 6\" stroke-linecap=\"round\"/><line x1=\"367.1\" y1=\"287.3\" x2=\"329.2\" y2=\"332.5\" stroke=\"#C8962E\" stroke-width=\"4\" stroke-dasharray=\"3 6\" stroke-linecap=\"round\"/><line x1=\"392.9\" y1=\"287.3\" x2=\"430.8\" y2=\"332.5\" stroke=\"#C8962E\" stroke-width=\"4\" stroke-dasharray=\"3 6\" stroke-linecap=\"round\"/><line x1=\"380.0\" y1=\"272.0\" x2=\"421.1\" y2=\"240.2\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><line x1=\"380.0\" y1=\"272.0\" x2=\"338.9\" y2=\"240.2\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><circle cx=\"380.0\" cy=\"272.0\" r=\"19\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"380.0\" y=\"278.0\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">O</text><circle cx=\"421.1\" cy=\"240.2\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"421.1\" y=\"245.2\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><circle cx=\"338.9\" cy=\"240.2\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"338.9\" y=\"245.2\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><line x1=\"493.9\" y1=\"183.8\" x2=\"493.9\" y2=\"131.8\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><line x1=\"493.9\" y1=\"183.8\" x2=\"544.2\" y2=\"196.9\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><circle cx=\"493.9\" cy=\"183.8\" r=\"19\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"493.9\" y=\"189.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">O</text><circle cx=\"493.9\" cy=\"131.8\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"493.9\" y=\"136.8\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><circle cx=\"544.2\" cy=\"196.9\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"544.2\" y=\"201.9\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><line x1=\"266.1\" y1=\"183.8\" x2=\"215.8\" y2=\"196.9\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><line x1=\"266.1\" y1=\"183.8\" x2=\"266.1\" y2=\"131.8\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><circle cx=\"266.1\" cy=\"183.8\" r=\"19\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"266.1\" y=\"189.8\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">O</text><circle cx=\"215.8\" cy=\"196.9\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"215.8\" y=\"201.9\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><circle cx=\"266.1\" cy=\"131.8\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"266.1\" y=\"136.8\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><line x1=\"287.4\" y1=\"382.3\" x2=\"320.9\" y2=\"342.5\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><line x1=\"287.4\" y1=\"382.3\" x2=\"240.5\" y2=\"359.9\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><circle cx=\"287.4\" cy=\"382.3\" r=\"19\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"287.4\" y=\"388.3\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">O</text><circle cx=\"320.9\" cy=\"342.5\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"320.9\" y=\"347.5\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><circle cx=\"240.5\" cy=\"359.9\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"240.5\" y=\"364.9\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><line x1=\"472.6\" y1=\"382.3\" x2=\"439.1\" y2=\"342.5\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><line x1=\"472.6\" y1=\"382.3\" x2=\"519.5\" y2=\"359.9\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><circle cx=\"472.6\" cy=\"382.3\" r=\"19\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.5\"/><text x=\"472.6\" y=\"388.3\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">O</text><circle cx=\"439.1\" cy=\"342.5\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"439.1\" y=\"347.5\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><circle cx=\"519.5\" cy=\"359.9\" r=\"12\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"519.5\" y=\"364.9\" text-anchor=\"middle\" font-size=\"14\" fill=\"#1F4E5A\">H</text><text x=\"521.9\" y=\"159.8\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">B</text><text x=\"226.1\" y=\"159.8\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">D</text><text x=\"247.4\" y=\"412.3\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">C</text><text x=\"500.6\" y=\"412.3\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">E</text><text x=\"406\" y=\"284\" font-weight=\"bold\" font-size=\"18\" fill=\"#1F4E5A\">A</text><text x=\"328\" y=\"280\" font-size=\"17\" fill=\"#B5523B\" font-weight=\"bold\">δ⁻</text><text x=\"437.1\" y=\"248.2\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"bold\">δ⁺</text><rect x=\"20\" y=\"14\" width=\"225\" height=\"76\" fill=\"#fff\" stroke=\"#d9d2c5\" stroke-width=\"1.5\"/><line x1=\"34\" y1=\"38\" x2=\"84\" y2=\"38\" stroke=\"#1F4E5A\" stroke-width=\"5\"/><text x=\"94\" y=\"43\" font-size=\"15\">liaison covalente</text><line x1=\"34\" y1=\"68\" x2=\"84\" y2=\"68\" stroke=\"#C8962E\" stroke-width=\"4\" stroke-dasharray=\"3 6\" stroke-linecap=\"round\"/><text x=\"94\" y=\"73\" font-size=\"15\">liaison hydrogène</text><text x=\"740\" y=\"455\" text-anchor=\"end\" font-size=\"15\" fill=\"#1F4E5A\">Modèle plan simplifié (dans la glace, l'arrangement est en 3D)</text></svg>",
+      "questions": [
+        {
+          "texte": "Pourquoi l'atome d'oxygène porte-t-il une charge partielle δ⁻ et chaque atome d'hydrogène une charge partielle δ⁺ ? Utilise les électronégativités.",
+          "aides": []
+        },
+        {
+          "texte": "Combien de liaisons hydrogène la molécule A établit-elle avec ses voisines ? Précise, pour chacune, quel atome de A est concerné.",
+          "aides": []
+        },
+        {
+          "texte": "Sur la figure, la liaison hydrogène est plus longue que la liaison covalente O–H. Laquelle des deux est la plus facile à rompre ?",
+          "aides": []
+        },
+        {
+          "texte": "QCM. Parmi ces espèces, lesquelles peuvent établir des liaisons hydrogène entre leurs propres molécules ? Justifie. A. méthane CH₄   B. ammoniac NH₃   C. méthanol CH₃–OH   D. méthoxyméthane CH₃–O–CH₃   E. fluorure d'hydrogène HF",
+          "aides": [
+            "Pour chaque molécule, regarde à quel atome est lié chaque atome H.",
+            "Seul un H lié à O, N ou F peut former une liaison hydrogène ; regarde bien la formule CH₃–O–CH₃ : à quoi sont liés ses atomes H ?"
+          ]
+        },
+        {
+          "texte": "Sous 1 bar, l'eau H₂O bout à 100 °C alors que le sulfure d'hydrogène H₂S, molécule de même forme et plus lourde, bout à −60 °C. Calcule les différences d'électronégativité χ(O) − χ(H) et χ(S) − χ(H), puis explique cet écart.",
+          "aides": [
+            "Une différence d'électronégativité faible signifie une liaison peu polarisée.",
+            "Le soufre fait-il partie des atomes O, N, F ? Quelles interactions existent alors entre molécules de H₂S ?",
+            "Plus les interactions entre molécules sont intenses, plus il faut d'énergie pour les séparer à l'ébullition."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> χ(O) = 3,44 &gt; χ(H) = 2,20 : l'atome d'oxygène attire vers lui les doublets des liaisons O–H. Il porte une charge partielle négative δ⁻ et chaque atome H une charge partielle positive δ⁺ (notion du chapitre De la structure à la polarité d'une entité).",
+        "<strong>2.</strong> Quatre liaisons hydrogène : deux par ses deux atomes H (vers les atomes O de B et de D) et deux par son atome O, qui porte deux doublets non liants (il reçoit un atome H de C et un atome H de E).",
+        "<strong>3.</strong> La liaison hydrogène, plus longue, est beaucoup moins intense que la liaison covalente : c'est elle qui se rompt la première (par exemple lors de la fusion ou de la vaporisation).",
+        "<strong>4.</strong> Réponses B, C et E : NH₃ (H lié à N), CH₃–OH (H lié à O) et HF (H lié à F). Pas A : dans CH₄, les atomes H sont liés à C, peu électronégatif. Pas D : dans CH₃–O–CH₃, aucun H n'est lié à l'atome O (tous sont liés à C), donc ces molécules ne peuvent pas se lier entre elles par pont H.",
+        "<strong>5.</strong> χ(O) − χ(H) = 3,44 − 2,20 = 1,24 ; χ(S) − χ(H) = 2,58 − 2,20 = 0,38. La liaison S–H est très peu polarisée et S n'est pas O, N ou F : pas de liaisons hydrogène entre molécules de H₂S, seulement des interactions de Van der Waals. Entre molécules d'eau s'ajoutent des liaisons hydrogène : il faut beaucoup plus d'énergie pour séparer les molécules, d'où une température d'ébullition bien plus élevée (160 °C d'écart).",
+        "<em>⚠ Erreur fréquente : penser qu'une molécule qui contient H et O fait forcément des liaisons hydrogène entre ses molécules. Il faut que l'atome H soit lié directement à O, N ou F (cas D).</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "L'absorbeur d'humidité",
+      "contexte": [
+        "Les absorbeurs d'humidité vendus en grande surface contiennent du chlorure de calcium CaCl₂(s), un solide ionique formé d'ions Ca²⁺ et Cl⁻. En captant l'eau de l'air, il se dissout peu à peu. Au laboratoire, Maëlle dissout m = 2,78 g de chlorure de calcium dans de l'eau et obtient V = 250 mL de solution. La figure ci-dessous représente deux ions de la solution entourés de molécules d'eau."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><circle cx=\"200\" cy=\"240\" r=\"34\" fill=\"#f4e6c4\" stroke=\"#C8962E\" stroke-width=\"3\"/><text x=\"200\" y=\"248\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">①</text><line x1=\"200.0\" y1=\"182.0\" x2=\"173.1\" y2=\"161.2\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"200.0\" y1=\"182.0\" x2=\"226.9\" y2=\"161.2\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"200.0\" cy=\"182.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"200.0\" y=\"187.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"173.1\" cy=\"161.2\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"226.9\" cy=\"161.2\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"149.8\" y1=\"211.0\" x2=\"118.3\" y2=\"223.9\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"149.8\" y1=\"211.0\" x2=\"145.2\" y2=\"177.3\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"149.8\" cy=\"211.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"149.8\" y=\"216.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"118.3\" cy=\"223.9\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"145.2\" cy=\"177.3\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"149.8\" y1=\"269.0\" x2=\"145.2\" y2=\"302.7\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"149.8\" y1=\"269.0\" x2=\"118.3\" y2=\"256.1\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"149.8\" cy=\"269.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"149.8\" y=\"274.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"145.2\" cy=\"302.7\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"118.3\" cy=\"256.1\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"200.0\" y1=\"298.0\" x2=\"226.9\" y2=\"318.8\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"200.0\" y1=\"298.0\" x2=\"173.1\" y2=\"318.8\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"200.0\" cy=\"298.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"200.0\" y=\"303.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"226.9\" cy=\"318.8\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"173.1\" cy=\"318.8\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"250.2\" y1=\"269.0\" x2=\"281.7\" y2=\"256.1\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"250.2\" y1=\"269.0\" x2=\"254.8\" y2=\"302.7\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"250.2\" cy=\"269.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"250.2\" y=\"274.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"281.7\" cy=\"256.1\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"254.8\" cy=\"302.7\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"250.2\" y1=\"211.0\" x2=\"254.8\" y2=\"177.3\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"250.2\" y1=\"211.0\" x2=\"281.7\" y2=\"223.9\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"250.2\" cy=\"211.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"250.2\" y=\"216.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"254.8\" cy=\"177.3\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"281.7\" cy=\"223.9\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"560\" cy=\"240\" r=\"50\" fill=\"#d5e3e6\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"560\" y=\"248\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\" fill=\"#1F4E5A\">②</text><line x1=\"560.0\" y1=\"130.0\" x2=\"560.0\" y2=\"164.0\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"560.0\" y1=\"130.0\" x2=\"527.1\" y2=\"121.5\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"560.0\" cy=\"130.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"560.0\" y=\"135.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"560.0\" cy=\"164.0\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"527.1\" cy=\"121.5\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"464.7\" y1=\"185.0\" x2=\"494.2\" y2=\"202.0\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"464.7\" y1=\"185.0\" x2=\"440.9\" y2=\"209.3\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"464.7\" cy=\"185.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"464.7\" y=\"190.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"494.2\" cy=\"202.0\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"440.9\" cy=\"209.3\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"464.7\" y1=\"295.0\" x2=\"494.2\" y2=\"278.0\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"464.7\" y1=\"295.0\" x2=\"473.8\" y2=\"327.8\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"464.7\" cy=\"295.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"464.7\" y=\"300.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"494.2\" cy=\"278.0\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"473.8\" cy=\"327.8\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"560.0\" y1=\"350.0\" x2=\"560.0\" y2=\"316.0\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"560.0\" y1=\"350.0\" x2=\"592.9\" y2=\"358.5\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"560.0\" cy=\"350.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"560.0\" y=\"355.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"560.0\" cy=\"316.0\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"592.9\" cy=\"358.5\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"655.3\" y1=\"295.0\" x2=\"625.8\" y2=\"278.0\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"655.3\" y1=\"295.0\" x2=\"679.1\" y2=\"270.7\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"655.3\" cy=\"295.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"655.3\" y=\"300.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"625.8\" cy=\"278.0\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"679.1\" cy=\"270.7\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><line x1=\"655.3\" y1=\"185.0\" x2=\"625.8\" y2=\"202.0\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><line x1=\"655.3\" y1=\"185.0\" x2=\"646.2\" y2=\"152.2\" stroke=\"#1F4E5A\" stroke-width=\"4\"/><circle cx=\"655.3\" cy=\"185.0\" r=\"15\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"655.3\" y=\"190.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"14\" font-weight=\"bold\">O</text><circle cx=\"625.8\" cy=\"202.0\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><circle cx=\"646.2\" cy=\"152.2\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><text x=\"200\" y=\"440\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">ion ① entouré de molécules d'eau</text><text x=\"560\" y=\"440\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">ion ② entouré de molécules d'eau</text><line x1=\"380\" y1=\"30\" x2=\"380\" y2=\"420\" stroke=\"#d9d2c5\" stroke-width=\"2\" stroke-dasharray=\"8 6\"/><circle cx=\"40\" cy=\"32\" r=\"13\" fill=\"#B5523B\" stroke=\"#1F4E5A\" stroke-width=\"1.2\"/><text x=\"60\" y=\"38\" font-size=\"15\">atome d'oxygène</text><circle cx=\"40\" cy=\"64\" r=\"9\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"1.8\"/><text x=\"60\" y=\"70\" font-size=\"15\">atome d'hydrogène</text></svg>",
+      "questions": [
+        {
+          "texte": "Quel ion, ① ou ②, est l'ion Ca²⁺ ? Lequel est l'ion Cl⁻ ? Justifie à l'aide de l'orientation des molécules d'eau.",
+          "aides": [
+            "Un ion positif attire les charges partielles négatives, un ion négatif les charges partielles positives.",
+            "Dans une molécule d'eau, quel atome porte δ⁻ ? Lequel porte δ⁺ ? Vers quel ion chacun est-il tourné sur la figure ?"
+          ]
+        },
+        {
+          "texte": "Complète les phrases avec les mots : dissociation, solvatation, polaire. « L'eau est un solvant … . Ses molécules attirent les ions du cristal et les séparent les uns des autres : c'est la … . Chaque ion s'entoure ensuite de molécules d'eau : c'est la … . »",
+          "aides": []
+        },
+        {
+          "texte": "Écris l'équation de la réaction de dissolution du chlorure de calcium dans l'eau, avec les notations (s) et (aq).",
+          "aides": []
+        },
+        {
+          "texte": "Calcul guidé.<br>a. Calcule la quantité de matière de chlorure de calcium dissous, avec n = m / M.<br>b. À l'aide de l'équation, déduis-en les quantités d'ions Ca²⁺ et Cl⁻ en solution, puis leurs concentrations [Ca²⁺] et [Cl⁻].",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> L'ion ① est l'ion Ca²⁺ : les molécules d'eau tournent vers lui leur atome O, porteur d'une charge partielle δ⁻, attirée par la charge positive du cation. L'ion ② est l'ion Cl⁻ : les molécules d'eau tournent vers lui un atome H, porteur d'une charge partielle δ⁺, attirée par la charge négative de l'anion.",
+        "<strong>2.</strong> « L'eau est un solvant polaire. Ses molécules attirent les ions du cristal et les séparent les uns des autres : c'est la dissociation. Chaque ion s'entoure ensuite de molécules d'eau : c'est la solvatation. »",
+        "<strong>3.</strong> CaCl₂(s) → Ca²⁺(aq) + 2 Cl⁻(aq)",
+        "<strong>4.</strong> a. n(CaCl₂) = m / M = 2,78 / 111,1 = 2,50 × 10⁻² mol.",
+        "b. D'après l'équation, une entité CaCl₂ libère un ion Ca²⁺ et deux ions Cl⁻ : n(Ca²⁺) = 2,50 × 10⁻² mol et n(Cl⁻) = 2 × 2,50 × 10⁻² = 5,00 × 10⁻² mol. Avec V = 0,250 L : [Ca²⁺] = 2,50 × 10⁻² / 0,250 = 0,100 mol·L⁻¹ et [Cl⁻] = 5,00 × 10⁻² / 0,250 = 0,200 mol·L⁻¹.",
+        "<em>⚠ Erreur fréquente : écrire [Cl⁻] = [Ca²⁺] en oubliant le nombre 2 de l'équation de dissolution. La solution doit rester électriquement neutre : deux charges négatives (deux ions Cl⁻) pour un ion Ca²⁺.</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Une solution de réhydratation",
+      "contexte": [
+        "En cas de diarrhée, les médecins conseillent de boire une solution de réhydratation, qui apporte de l'eau, des ions et du sucre. Le mode d'emploi d'un sachet indique : « dissoudre le contenu du sachet dans 500 mL d'eau ». Un sachet contient 1,30 g de chlorure de sodium NaCl(s), 0,760 g de chlorure de potassium KCl(s) et 6,75 g de glucose C₆H₁₂O₆(s). Le glucose est un solide moléculaire : chaque molécule possède cinq groupes –OH.",
+        "On admet que le volume de la solution obtenue est V = 500 mL."
+      ],
+      "questions": [
+        {
+          "texte": "Indique, pour chacun des trois solides, s'il est ionique ou moléculaire, puis écris les équations des réactions de dissolution dans l'eau.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule les concentrations [Na⁺], [K⁺] et [Cl⁻] dans la solution, ainsi que la concentration en glucose.",
+          "aides": [
+            "Pour chaque sel : n = m / M, puis utilise l'équation de dissolution pour trouver la quantité de chaque ion.",
+            "Les ions Cl⁻ viennent de deux sels différents : additionne les deux quantités avant de diviser par V (en litres)."
+          ]
+        },
+        {
+          "texte": "Vérifie que la solution est électriquement neutre.",
+          "aides": []
+        },
+        {
+          "texte": "Le glucose ne libère aucun ion, et pourtant il est très soluble dans l'eau. Explique pourquoi à l'échelle des molécules.",
+          "aides": [
+            "Quels groupes d'atomes la molécule de glucose possède-t-elle ? Quel type d'interaction peuvent-ils établir avec l'eau ?",
+            "Pense à la règle « qui se ressemble s'assemble » : le glucose et l'eau sont-ils polaires ?"
+          ]
+        },
+        {
+          "texte": "Un parent dissout par erreur le sachet dans un biberon de 250 mL. Que deviennent les concentrations ? Pourquoi faut-il respecter le volume indiqué ?",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> NaCl et KCl sont des solides ioniques ; le glucose est un solide moléculaire. NaCl(s) → Na⁺(aq) + Cl⁻(aq) ; KCl(s) → K⁺(aq) + Cl⁻(aq) ; C₆H₁₂O₆(s) → C₆H₁₂O₆(aq) (les molécules se dispersent sans se dissocier en ions).",
+        "<strong>2.</strong> n(NaCl) = 1,30 / 58,5 = 2,22 × 10⁻² mol, donc [Na⁺] = 2,22 × 10⁻² / 0,500 = 4,44 × 10⁻² mol·L⁻¹.",
+        "n(KCl) = 0,760 / 74,6 = 1,02 × 10⁻² mol, donc [K⁺] = 1,02 × 10⁻² / 0,500 = 2,04 × 10⁻² mol·L⁻¹.",
+        "Les ions Cl⁻ viennent des DEUX sels : n(Cl⁻) = 2,22 × 10⁻² + 1,02 × 10⁻² = 3,24 × 10⁻² mol, donc [Cl⁻] = 3,24 × 10⁻² / 0,500 = 6,48 × 10⁻² mol·L⁻¹.",
+        "n(glucose) = 6,75 / 180,0 = 3,75 × 10⁻² mol, donc c(glucose) = 3,75 × 10⁻² / 0,500 = 7,50 × 10⁻² mol·L⁻¹.",
+        "<strong>3.</strong> Charges positives : [Na⁺] + [K⁺] = 4,44 × 10⁻² + 2,04 × 10⁻² = 6,48 × 10⁻² mol·L⁻¹ = [Cl⁻] (charges négatives) : la solution est bien électriquement neutre.",
+        "<strong>4.</strong> Les molécules de glucose sont polaires et possèdent des groupes –OH : elles établissent de nombreuses liaisons hydrogène avec les molécules d'eau (et des interactions de Van der Waals). Ces interactions soluté-solvant remplacent celles qui assuraient la cohésion du solide : « qui se ressemble s'assemble », un soluté polaire se dissout bien dans un solvant polaire.",
+        "<strong>5.</strong> La quantité de chaque soluté est la même, mais le volume est deux fois plus petit : toutes les concentrations sont multipliées par 2 ([Na⁺] ≈ 8,9 × 10⁻² mol·L⁻¹, [K⁺] ≈ 4,1 × 10⁻² mol·L⁻¹, [Cl⁻] ≈ 1,3 × 10⁻¹ mol·L⁻¹, glucose : 0,150 mol·L⁻¹). La solution n'a plus la composition prévue par le fabricant : elle est trop concentrée en ions et en sucre, ce qui peut aggraver la déshydratation au lieu de la soigner.",
+        "<em>⚠ Erreur fréquente : oublier que les ions Cl⁻ proviennent des deux sels, ou au contraire compter deux fois chaque ion. Le contrôle de l'électroneutralité (question 3) permet de repérer l'erreur.</em>",
+        "<em>⚠ Erreur fréquente : écrire une équation de dissolution du glucose avec des ions. Un solide moléculaire se disperse sous forme de molécules.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "Extraire la caféine d'une boisson énergisante",
+      "contexte": [
+        "Une canette de 250 mL de boisson énergisante contient 80 mg de caféine. En TP, un élève veut extraire la caféine de 100 mL de boisson avec un solvant. Il dispose du tableau ci-dessous (valeurs approchées, à 20 °C).",
+        "Solubilité de la caféine : eau : 22 g·L⁻¹ ; éthanol : 15 g·L⁻¹ ; dichlorométhane : 100 g·L⁻¹ ; cyclohexane : très faible (inférieure à 1 g·L⁻¹). Miscibilité avec l'eau : éthanol : miscible ; dichlorométhane : non miscible ; cyclohexane : non miscible. Masses volumiques : boisson : 1,04 g·mL⁻¹ ; dichlorométhane : 1,33 g·mL⁻¹ ; cyclohexane : 0,78 g·mL⁻¹ ; éthanol : 0,79 g·mL⁻¹. Le dichlorométhane est volatil et nocif.",
+        "L'élève verse la boisson et 20,0 mL du solvant choisi dans une ampoule à décanter, agite en dégazant régulièrement, puis laisse reposer (figure ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><defs><clipPath id=\"amp\"><path d=\"M284,92 C180,150 170,235 230,290 L292,350 L308,350 L370,290 C430,235 420,150 316,92 Z\"/></clipPath><marker id=\"fl5\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 Z\" fill=\"#1F4E5A\"/></marker></defs><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><rect x=\"160\" y=\"150\" width=\"280\" height=\"132\" fill=\"#f4e6c4\" clip-path=\"url(#amp)\"/><rect x=\"160\" y=\"282\" width=\"280\" height=\"78\" fill=\"#d5e3e6\" clip-path=\"url(#amp)\"/><line x1=\"220\" y1=\"150\" x2=\"380\" y2=\"150\" stroke=\"#C8962E\" stroke-width=\"2\"/><line x1=\"240\" y1=\"282\" x2=\"360\" y2=\"282\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><path d=\"M284,92 C180,150 170,235 230,290 L292,350 L308,350 L370,290 C430,235 420,150 316,92 Z\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><rect x=\"284\" y=\"62\" width=\"32\" height=\"32\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><rect x=\"278\" y=\"44\" width=\"44\" height=\"22\" rx=\"4\" fill=\"#d9d2c5\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><rect x=\"294\" y=\"350\" width=\"12\" height=\"80\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><rect x=\"270\" y=\"366\" width=\"60\" height=\"14\" rx=\"3\" fill=\"#d9d2c5\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><rect x=\"330\" y=\"362\" width=\"10\" height=\"22\" rx=\"2\" fill=\"#1F4E5A\"/><ellipse cx=\"300\" cy=\"324\" rx=\"40\" ry=\"7\" fill=\"none\" stroke=\"#6b6b6b\" stroke-width=\"4\"/><line x1=\"260\" y1=\"324\" x2=\"90\" y2=\"324\" stroke=\"#6b6b6b\" stroke-width=\"5\"/><line x1=\"90\" y1=\"30\" x2=\"90\" y2=\"455\" stroke=\"#6b6b6b\" stroke-width=\"8\"/><path d=\"M255,405 L255,455 L345,455 L345,405\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.5\"/><line x1=\"520\" y1=\"200\" x2=\"360\" y2=\"210\" stroke=\"#1F4E5A\" stroke-width=\"1.5\" marker-end=\"url(#fl5)\"/><text x=\"528\" y=\"205\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"bold\">phase ①</text><text x=\"528\" y=\"225\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"normal\">(volume ≈ 100 mL)</text><line x1=\"520\" y1=\"290\" x2=\"322\" y2=\"298\" stroke=\"#1F4E5A\" stroke-width=\"1.5\" marker-end=\"url(#fl5)\"/><text x=\"528\" y=\"295\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"bold\">phase ②</text><text x=\"528\" y=\"315\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"normal\">(volume ≈ 20 mL)</text><line x1=\"520\" y1=\"380\" x2=\"344\" y2=\"374\" stroke=\"#1F4E5A\" stroke-width=\"1.5\" marker-end=\"url(#fl5)\"/><text x=\"528\" y=\"385\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"bold\">robinet</text><line x1=\"520\" y1=\"55\" x2=\"326\" y2=\"55\" stroke=\"#1F4E5A\" stroke-width=\"1.5\" marker-end=\"url(#fl5)\"/><text x=\"528\" y=\"60\" font-size=\"17\" fill=\"#1F4E5A\" font-weight=\"bold\">bouchon</text></svg>",
+      "questions": [
+        {
+          "texte": "Calcule la concentration en masse de caféine dans la boisson. Toute la caféine est-elle bien dissoute dans l'eau de la boisson ?",
+          "aides": []
+        },
+        {
+          "texte": "Choisis le solvant extracteur parmi l'éthanol, le dichlorométhane et le cyclohexane. Justifie ton choix et le rejet des deux autres.",
+          "aides": [
+            "Un solvant extracteur doit remplir deux conditions : lesquelles ? Regarde la ligne miscibilité puis la ligne solubilité.",
+            "Élimine d'abord le solvant miscible à l'eau, puis compare la solubilité de la caféine dans les deux solvants restants à sa solubilité dans l'eau."
+          ]
+        },
+        {
+          "texte": "Identifie la phase organique et la phase aqueuse sur la figure. Dans quelle phase se trouve la majorité de la caféine après l'agitation ?",
+          "aides": [
+            "Ce n'est pas la nature organique ou aqueuse qui décide de la position d'une phase : quelle grandeur faut-il comparer ?",
+            "La phase la plus dense est en bas. Compare la masse volumique du solvant choisi à celle de la boisson."
+          ]
+        },
+        {
+          "texte": "Propose un test simple pour vérifier expérimentalement laquelle des deux phases est la phase aqueuse.",
+          "aides": []
+        },
+        {
+          "texte": "Les 20,0 mL de solvant peuvent-ils, en principe, dissoudre toute la caféine présente dans les 100 mL de boisson ? Pourquoi recommence-t-on pourtant souvent l'extraction deux ou trois fois ?",
+          "aides": [
+            "Solubilité 100 g·L⁻¹ : quelle masse de caféine peut se dissoudre dans 20,0 mL = 0,0200 L ?",
+            "Compare à la masse de caféine contenue dans 100 mL de boisson (utilise la concentration de la question 1)."
+          ]
+        },
+        {
+          "texte": "La boisson contient aussi beaucoup de sucres (glucose, saccharose). Dans quelle phase restent-ils ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Cite deux précautions de sécurité à prendre pendant cette manipulation.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> C<sub>m</sub> = m / V = 80 × 10⁻³ / 0,250 = 0,32 g·L⁻¹. C'est environ 70 fois moins que la solubilité de la caféine dans l'eau (22 g·L⁻¹) : la solution n'est pas saturée, toute la caféine est dissoute.",
+        "<strong>2.</strong> Un solvant extracteur doit (1) être non miscible avec l'eau de la boisson et (2) dissoudre mieux la caféine que l'eau. Le dichlorométhane convient : non miscible et solubilité 100 g·L⁻¹ &gt; 22 g·L⁻¹. L'éthanol est rejeté : il est miscible à l'eau, on n'obtiendrait qu'une seule phase (et il dissout moins bien la caféine que l'eau). Le cyclohexane est rejeté : il est non miscible, mais la caféine y est très peu soluble.",
+        "<strong>3.</strong> ρ(dichlorométhane) = 1,33 g·mL⁻¹ &gt; ρ(boisson) = 1,04 g·mL⁻¹ : la phase organique (dichlorométhane) est la phase du bas, la phase ② (environ 20 mL) ; la phase aqueuse est la phase ① du haut (environ 100 mL). La caféine, plus soluble dans le dichlorométhane, se trouve majoritairement dans la phase ②.",
+        "<strong>4.</strong> Ajouter quelques gouttes d'eau dans l'ampoule : elles rejoignent la phase aqueuse (elles s'y mélangent), alors qu'elles traversent la phase organique sans s'y mélanger. On peut aussi prélever un peu de chaque phase et regarder laquelle se mélange à de l'eau dans un tube à essais.",
+        "<strong>5.</strong> Masse maximale de caféine dissoute dans 20,0 mL de dichlorométhane : 100 × 0,0200 = 2,0 g. La boisson n'en contient que 0,32 × 0,100 = 0,032 g = 32 mg, soit environ 60 fois moins : le solvant ne sera pas saturé. Mais la caféine se répartit entre les deux phases : une partie reste dans l'eau après une seule extraction. En recommençant avec du solvant neuf, on récupère une plus grande part de la caféine.",
+        "<strong>6.</strong> Les sucres restent dans la phase aqueuse : ce sont des molécules polaires possédant de nombreux groupes –OH, qui établissent des liaisons hydrogène avec l'eau ; ils sont très peu solubles dans un solvant comme le dichlorométhane. L'extraction sépare donc la caféine des sucres.",
+        "<strong>7.</strong> Travailler sous hotte (solvant volatil et nocif), porter gants et lunettes, dégazer régulièrement l'ampoule (robinet vers le haut, dirigé vers la paillasse vide) pour évacuer la surpression de vapeur, retirer le bouchon avant d'ouvrir le robinet pour vider l'ampoule.",
+        "<em>⚠ Erreur fréquente : croire que la phase organique est toujours en haut. La position des phases dépend uniquement des masses volumiques : le cyclohexane (0,78 g·mL⁻¹) flotte sur l'eau, le dichlorométhane (1,33 g·mL⁻¹) coule au fond.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Comment le savon lave-t-il ?",
+      "contexte": [
+        "Doc. 1 — Le savon. Un savon solide est constitué principalement de stéarate de sodium C₁₇H₃₅COONa, un solide ionique formé d'ions sodium Na⁺ et d'ions stéarate de formule semi-développée CH₃–(CH₂)₁₆–COO⁻ (formule brute C₁₇H₃₅COO⁻). Les huiles et les graisses sont formées de grosses molécules apolaires.",
+        "Doc. 2 — Modèle de l'ion stéarate et coupe d'une micelle (figure ci-dessous)."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"16\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><text x=\"20\" y=\"38\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">(a) Modèle de l'ion stéarate C₁₇H₃₅COO⁻</text><polyline points=\"30.0,87.0 43.0,103.0 56.0,87.0 69.0,103.0 82.0,87.0 95.0,103.0 108.0,87.0 121.0,103.0 134.0,87.0 147.0,103.0 160.0,87.0 173.0,103.0 186.0,87.0 199.0,103.0 212.0,87.0 225.0,103.0 238.0,87.0 251.0,103.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"4\" stroke-linejoin=\"round\"/><circle cx=\"271\" cy=\"95\" r=\"17\" fill=\"#B5523B\"/><text x=\"271\" y=\"102\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"20\" font-weight=\"bold\">−</text><path d=\"M30,120 L30,128 L251,128 L251,120\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"140\" y=\"150\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#C8962E\">partie A</text><text x=\"140\" y=\"170\" text-anchor=\"middle\" font-size=\"15\">chaîne CH₃–(CH₂)₁₆–</text><path d=\"M254,120 L254,128 L288,128 L288,120\" fill=\"none\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"292\" y=\"150\" text-anchor=\"middle\" font-size=\"16\" font-weight=\"bold\" fill=\"#C8962E\">partie B</text><text x=\"300\" y=\"170\" text-anchor=\"middle\" font-size=\"15\">groupe –COO⁻</text><text x=\"20\" y=\"215\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">(b) Coupe d'une micelle dans l'eau,</text><text x=\"20\" y=\"237\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">autour d'une gouttelette d'huile</text><rect x=\"420\" y=\"20\" width=\"330\" height=\"440\" rx=\"10\" fill=\"#d5e3e6\" opacity=\"0.55\"/><circle cx=\"530\" cy=\"300\" r=\"72\" fill=\"#f4e6c4\" stroke=\"#C8962E\" stroke-width=\"2\"/><text x=\"530\" y=\"306\" text-anchor=\"middle\" font-size=\"17\" font-weight=\"bold\" fill=\"#C8962E\">huile</text><polyline points=\"618.0,305.0 608.0,295.0 598.0,305.0 588.0,295.0 578.0,305.0 568.0,295.0 558.0,305.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"634.0\" cy=\"300.0\" r=\"11\" fill=\"#B5523B\"/><text x=\"634.0\" y=\"306.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"613.2,270.9 600.1,265.5 594.7,278.6 581.7,273.2 576.3,286.3 563.2,280.8 557.8,293.9\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"626.1\" cy=\"260.2\" r=\"11\" fill=\"#B5523B\"/><text x=\"626.1\" y=\"266.2\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"595.8,241.3 581.6,241.3 581.6,255.5 567.5,255.5 567.5,269.6 553.3,269.6 553.3,283.7\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"603.5\" cy=\"226.5\" r=\"11\" fill=\"#B5523B\"/><text x=\"603.5\" y=\"232.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"568.3,220.6 555.2,226.0 560.6,239.1 547.6,244.5 553.0,257.6 539.9,263.0 545.3,276.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"569.8\" cy=\"203.9\" r=\"11\" fill=\"#B5523B\"/><text x=\"569.8\" y=\"209.9\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"535.0,212.0 525.0,222.0 535.0,232.0 525.0,242.0 535.0,252.0 525.0,262.0 535.0,272.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"530.0\" cy=\"196.0\" r=\"11\" fill=\"#B5523B\"/><text x=\"530.0\" y=\"202.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"500.9,216.8 495.5,229.9 508.6,235.3 503.2,248.3 516.3,253.7 510.8,266.8 523.9,272.2\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"490.2\" cy=\"203.9\" r=\"11\" fill=\"#B5523B\"/><text x=\"490.2\" y=\"209.9\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"471.3,234.2 471.3,248.4 485.5,248.4 485.5,262.5 499.6,262.5 499.6,276.7 513.7,276.7\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"456.5\" cy=\"226.5\" r=\"11\" fill=\"#B5523B\"/><text x=\"456.5\" y=\"232.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"450.6,261.7 456.0,274.8 469.1,269.4 474.5,282.4 487.6,277.0 493.0,290.1 506.0,284.7\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"433.9\" cy=\"260.2\" r=\"11\" fill=\"#B5523B\"/><text x=\"433.9\" y=\"266.2\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"442.0,295.0 452.0,305.0 462.0,295.0 472.0,305.0 482.0,295.0 492.0,305.0 502.0,295.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"426.0\" cy=\"300.0\" r=\"11\" fill=\"#B5523B\"/><text x=\"426.0\" y=\"306.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"446.8,329.1 459.9,334.5 465.3,321.4 478.3,326.8 483.7,313.7 496.8,319.2 502.2,306.1\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"433.9\" cy=\"339.8\" r=\"11\" fill=\"#B5523B\"/><text x=\"433.9\" y=\"345.8\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"464.2,358.7 478.4,358.7 478.4,344.5 492.5,344.5 492.5,330.4 506.7,330.4 506.7,316.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"456.5\" cy=\"373.5\" r=\"11\" fill=\"#B5523B\"/><text x=\"456.5\" y=\"379.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"491.7,379.4 504.8,374.0 499.4,360.9 512.4,355.5 507.0,342.4 520.1,337.0 514.7,324.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"490.2\" cy=\"396.1\" r=\"11\" fill=\"#B5523B\"/><text x=\"490.2\" y=\"402.1\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"525.0,388.0 535.0,378.0 525.0,368.0 535.0,358.0 525.0,348.0 535.0,338.0 525.0,328.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"530.0\" cy=\"404.0\" r=\"11\" fill=\"#B5523B\"/><text x=\"530.0\" y=\"410.0\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"559.1,383.2 564.5,370.1 551.4,364.7 556.8,351.7 543.7,346.3 549.2,333.2 536.1,327.8\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"569.8\" cy=\"396.1\" r=\"11\" fill=\"#B5523B\"/><text x=\"569.8\" y=\"402.1\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"588.7,365.8 588.7,351.6 574.5,351.6 574.5,337.5 560.4,337.5 560.4,323.3 546.3,323.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"603.5\" cy=\"373.5\" r=\"11\" fill=\"#B5523B\"/><text x=\"603.5\" y=\"379.5\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><polyline points=\"609.4,338.3 604.0,325.2 590.9,330.6 585.5,317.6 572.4,323.0 567.0,309.9 554.0,315.3\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\" stroke-linejoin=\"round\"/><circle cx=\"626.1\" cy=\"339.8\" r=\"11\" fill=\"#B5523B\"/><text x=\"626.1\" y=\"345.8\" text-anchor=\"middle\" fill=\"#fff\" font-size=\"16\" font-weight=\"bold\">−</text><text x=\"445\" y=\"70\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"690\" y=\"90\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"720\" y=\"250\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"700\" y=\"420\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"470\" y=\"430\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"440\" y=\"200\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"600\" y=\"160\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"610\" y=\"445\" font-size=\"15\" fill=\"#1F4E5A\">Na⁺</text><text x=\"735\" y=\"45\" text-anchor=\"end\" font-size=\"17\" font-weight=\"bold\" fill=\"#1F4E5A\">eau</text><circle cx=\"40\" cy=\"300\" r=\"11\" fill=\"#B5523B\"/><text x=\"60\" y=\"306\" font-size=\"15\">groupe –COO⁻</text><polyline points=\"28.0,336.0 36.0,344.0 44.0,336.0 52.0,344.0\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"3\"/><text x=\"60\" y=\"346\" font-size=\"15\">chaîne carbonée</text><text x=\"20\" y=\"400\" font-size=\"15\">Les ions Na⁺ restent dispersés</text><text x=\"20\" y=\"420\" font-size=\"15\">dans l'eau autour des micelles.</text></svg>",
+      "contexte2": [
+        "Doc. 3 — Expériences d'un élève. Tube 1 : eau distillée + 2 mL d'huile, agité : deux phases se reforment en quelques secondes, l'huile au-dessus. Tube 2 : même mélange + un copeau de savon, agité : le mélange devient trouble et homogène et le reste longtemps ; de la mousse se forme. Tube 3 : même mélange que le tube 2 mais préparé avec l'eau du robinet du lycée : peu de mousse, des flocons gris apparaissent et l'huile se sépare plus vite.",
+        "Doc. 4 — Eau dure. Une eau riche en ions calcium Ca²⁺ est dite « dure ». Les ions stéarate forment avec les ions calcium un solide très peu soluble, le stéarate de calcium (C₁₇H₃₅COO)₂Ca (M = 606,1 g·mol⁻¹), responsable des dépôts gris sur les lavabos. Un élève a mesuré, dans l'eau du robinet du lycée, [Ca²⁺] = 2,8 × 10⁻³ mol·L⁻¹."
+      ],
+      "questions": [
+        {
+          "texte": "Doc. 1 et 2 : quelle partie de l'ion stéarate (A ou B) est hydrophile ? Laquelle est lipophile ? Justifie, puis explique pourquoi on dit que l'ion stéarate est amphiphile.",
+          "aides": [
+            "Quelle partie est chargée électriquement ? Quelle partie ne contient que des atomes C et H ?",
+            "Une partie polaire ou ionique « aime l'eau » (hydrophile) ; une partie apolaire « aime les graisses » (lipophile)."
+          ]
+        },
+        {
+          "texte": "Un élève dissout 1,53 g de savon (assimilé à du stéarate de sodium pur) dans de l'eau tiède et obtient 500 mL de solution. Écris l'équation de dissolution et calcule la concentration de chacun des ions apportés.",
+          "aides": []
+        },
+        {
+          "texte": "À l'aide du doc. 2, explique comment le savon permet d'éliminer une tache de graisse au rinçage. Ton explication doit utiliser les mots : interactions de Van der Waals, hydrophile, lipophile, micelle.",
+          "aides": [
+            "Sur la figure, où se trouvent les chaînes carbonées ? Et les groupes –COO⁻ ?",
+            "Les chaînes interagissent avec l'huile, les têtes avec l'eau ; que se passe-t-il ensuite au rinçage ?"
+          ]
+        },
+        {
+          "texte": "Interprète les observations des tubes 1 et 2 du doc. 3. Cite deux autres produits du quotidien qui contiennent des espèces amphiphiles (tensioactifs).",
+          "aides": []
+        },
+        {
+          "texte": "Doc. 4 : eau dure.<br>a. Écris l'équation de la réaction de formation du stéarate de calcium.<br>b. On remplit une bassine de 5,0 L de l'eau du lycée. Calcule la masse de savon « perdue » (ions stéarate précipités, qui ne lavent plus) avant que le savon commence à laver, et la masse de dépôt formé.<br>c. Ces résultats permettent-ils d'interpréter l'observation du tube 3 ? Propose une solution pour laver efficacement avec une eau dure.",
+          "aides": [
+            "Écris l'équation en équilibrant les charges : combien d'ions stéarate (charge −1) pour un ion Ca²⁺ (charge +2) ?",
+            "Chaîne de calcul : [Ca²⁺] et V → n(Ca²⁺) → n(ions stéarate) → masse de savon (M du stéarate de sodium).",
+            "La quantité de dépôt formé est égale à celle des ions calcium consommés."
+          ]
+        },
+        {
+          "texte": "Regard critique : indique deux limites du modèle utilisé dans la question 5.b.",
+          "aides": []
+        },
+        {
+          "texte": "Pour aller plus loin (hors programme de Première) : les membranes des cellules sont formées de phospholipides, molécules amphiphiles à une tête hydrophile et deux chaînes lipophiles, entourées d'eau des deux côtés (intérieur et extérieur de la cellule). Propose, par un schéma, une organisation de ces molécules compatible avec leur caractère amphiphile.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Partie B (groupe –COO⁻) : hydrophile. Elle est chargée (ionique), donc très polaire : elle interagit fortement avec les molécules d'eau polaires (interactions électrostatiques, liaisons hydrogène avec les atomes H de l'eau). Partie A (longue chaîne CH₃–(CH₂)₁₆–) : lipophile. Elle ne contient que des liaisons C–C et C–H, très peu polarisées (χ(C) − χ(H) = 0,35) : elle est apolaire et interagit avec les graisses apolaires par interactions de Van der Waals. L'ion possède à la fois une partie hydrophile et une partie lipophile : il est amphiphile.",
+        "<strong>2.</strong> C₁₇H₃₅COONa(s) → C₁₇H₃₅COO⁻(aq) + Na⁺(aq). n = m / M = 1,53 / 306,0 = 5,00 × 10⁻³ mol. Une entité dissoute libère un ion de chaque sorte : [C₁₇H₃₅COO⁻] = [Na⁺] = 5,00 × 10⁻³ / 0,500 = 1,00 × 10⁻² mol·L⁻¹.",
+        "<strong>3.</strong> Éléments attendus : la graisse, apolaire, n'est pas soluble dans l'eau. Les chaînes lipophiles des ions stéarate pénètrent dans la graisse, avec laquelle elles établissent des interactions de Van der Waals ; les têtes hydrophiles –COO⁻ restent en contact avec l'eau. La gouttelette de graisse se retrouve emprisonnée au centre d'une micelle dont la surface, chargée négativement, est entourée d'eau. Les micelles, toutes chargées négativement, se repoussent et restent dispersées dans l'eau : elles sont entraînées par l'eau de rinçage, avec la graisse.",
+        "<strong>4.</strong> Tube 1 : l'huile (apolaire) et l'eau (polaire) ne sont pas miscibles ; l'huile, moins dense, se place au-dessus. Tube 2 : le savon disperse l'huile en fines gouttelettes entourées d'ions stéarate (micelles) qui restent en suspension dans l'eau : le mélange paraît homogène et trouble (émulsion). La mousse vient aussi des espèces amphiphiles, qui se placent à la surface de l'eau, au contact de l'air. Exemples de produits : shampoing, gel douche, liquide vaisselle, lessive, dentifrice, mousse à raser.",
+        "<strong>5.</strong> a. Ca²⁺(aq) + 2 C₁₇H₃₅COO⁻(aq) → (C₁₇H₃₅COO)₂Ca(s)",
+        "b. n(Ca²⁺) = [Ca²⁺] × V = 2,8 × 10⁻³ × 5,0 = 1,4 × 10⁻² mol. D'après l'équation, il faut deux fois plus d'ions stéarate : n(C₁₇H₃₅COO⁻) = 2 × 1,4 × 10⁻² = 2,8 × 10⁻² mol. Masse de savon perdue : m = n × M(C₁₇H₃₅COONa) = 2,8 × 10⁻² × 306,0 = 8,6 g. Dépôt : n((C₁₇H₃₅COO)₂Ca) = n(Ca²⁺) = 1,4 × 10⁻² mol, soit m = 1,4 × 10⁻² × 606,1 = 8,5 g.",
+        "c. Oui : avec l'eau du robinet, une partie des ions stéarate est piégée dans le précipité (flocons gris) ; il en reste moins pour former des micelles et de la mousse, donc l'huile est moins bien dispersée et se sépare plus vite. Solutions : utiliser plus de savon, une eau adoucie (adoucisseur, eau distillée ou eau de pluie), ou un détergent de synthèse dont les ions ne précipitent pas avec les ions calcium.",
+        "<strong>6.</strong> Éléments attendus : le savon réel n'est pas du stéarate de sodium pur (il contient d'autres ions carboxylate, de la glycérine, des parfums) ; l'eau dure contient aussi des ions magnésium Mg²⁺, qui précipitent également avec les ions stéarate ; on suppose que la réaction de précipitation est totale et se fait avant la formation des micelles ; la concentration [Ca²⁺] mesurée est connue avec une certaine incertitude (2 chiffres significatifs).",
+        "<strong>7.</strong> Pour aller plus loin : les phospholipides s'organisent en bicouche ; les chaînes lipophiles des deux couches se font face au centre de la membrane, à l'abri de l'eau, tandis que les têtes hydrophiles sont tournées vers l'eau, d'un côté vers l'intérieur de la cellule, de l'autre vers l'extérieur.",
+        "<em>⚠ Erreur fréquente : inverser les rôles et dire que la tête « attire la graisse ». C'est la longue chaîne carbonée, apolaire comme la graisse, qui est lipophile.</em>",
+        "<em>⚠ Erreur fréquente : oublier le nombre stœchiométrique 2 de l'équation de précipitation (5.b) : il faut deux ions stéarate par ion calcium.</em>"
+      ]
+    }
+  ]
+}

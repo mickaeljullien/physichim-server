@@ -1,0 +1,702 @@
+{
+  "id": 44,
+  "fiche": {
+    "sections": [
+      {
+        "title": "1. Qu'est-ce qu'un capteur ?",
+        "icon": "📡",
+        "content": [
+          {
+            "type": "def",
+            "term": "Capteur",
+            "text": "Dispositif qui convertit (transforme) une grandeur physique (température, intensité lumineuse, pression, position...) en un signal électrique exploitable (le plus souvent une tension, parfois une résistance)."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Capteur",
+              "Grandeur physique mesurée",
+              "Signal électrique associé"
+            ],
+            "rows": [
+              [
+                "Thermistance",
+                "Température",
+                "Résistance qui varie avec la température"
+              ],
+              [
+                "Photorésistance (LDR)",
+                "Intensité lumineuse (éclairement)",
+                "Résistance qui varie avec la lumière reçue"
+              ],
+              [
+                "Capteur de pression",
+                "Pression",
+                "Tension proportionnelle à la pression"
+              ],
+              [
+                "Potentiomètre (capteur de position)",
+                "Position angulaire ou linéaire",
+                "Résistance/tension qui varie avec la position"
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "title": "2. Exemples de capteurs courants",
+        "icon": "🌡️",
+        "content": [
+          {
+            "type": "def",
+            "term": "Thermistance",
+            "text": "Composant électronique dont la résistance électrique varie fortement en fonction de la température. Pour une thermistance CTN (coefficient de température négatif), la résistance diminue quand la température augmente."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Température (°C)",
+              "Résistance d'une thermistance CTN (exemple)"
+            ],
+            "rows": [
+              [
+                "0",
+                "9 000 Ω"
+              ],
+              [
+                "20",
+                "3 300 Ω"
+              ],
+              [
+                "40",
+                "1 500 Ω"
+              ],
+              [
+                "60",
+                "750 Ω"
+              ]
+            ]
+          },
+          {
+            "type": "def",
+            "term": "Photorésistance (LDR)",
+            "text": "Composant dont la résistance électrique diminue lorsque l'éclairement (l'intensité lumineuse) reçu augmente : elle vaut plusieurs centaines de kilo-ohms dans l'obscurité, et seulement quelques centaines d'ohms en pleine lumière."
+          }
+        ]
+      },
+      {
+        "title": "3. La chaîne de mesure",
+        "icon": "🔗",
+        "content": [
+          {
+            "type": "text",
+            "text": "Un capteur seul délivre souvent une grandeur difficile à lire directement (une résistance, par exemple). Il s'intègre donc dans une chaîne de mesure comportant plusieurs étapes."
+          },
+          {
+            "type": "table",
+            "headers": [
+              "Étape",
+              "Rôle"
+            ],
+            "rows": [
+              [
+                "Capteur",
+                "Convertit la grandeur physique en signal électrique (souvent une résistance)"
+              ],
+              [
+                "Conditionnement (ex : diviseur de tension)",
+                "Transforme ce signal en une tension facilement mesurable"
+              ],
+              [
+                "Affichage / traitement",
+                "Affiche la mesure (voltmètre, écran) ou l'enregistre (carte d'acquisition, ordinateur)"
+              ]
+            ]
+          },
+          {
+            "type": "text",
+            "text": "Exemple : pour utiliser une thermistance, on l'associe souvent à un diviseur de tension (thermistance + résistance fixe alimentées par une tension constante) : la tension mesurée aux bornes de la résistance fixe varie alors avec la température, ce qui permet de la déterminer."
+          }
+        ]
+      },
+      {
+        "title": "4. Étalonnage d'un capteur",
+        "icon": "📈",
+        "content": [
+          {
+            "type": "def",
+            "term": "Étalonnage (ou calibrage)",
+            "text": "Opération qui consiste à établir la relation entre la grandeur physique à mesurer et le signal électrique délivré par le capteur, en comparant les mesures du capteur à des valeurs de référence connues."
+          },
+          {
+            "type": "text",
+            "text": "Exemple : pour étalonner une thermistance, on la plonge successivement dans des bains d'eau à températures connues (0 °C, 20 °C, 40 °C, 60 °C, 80 °C, mesurées avec un thermomètre de référence) et on relève à chaque fois la tension U délivrée par le montage. On trace ensuite la courbe d'étalonnage U = f(θ)."
+          },
+          {
+            "type": "schema",
+            "svg": "<svg viewBox=\"0 0 480 260\" xmlns=\"http://www.w3.org/2000/svg\"><line x1=\"60\" y1=\"220\" x2=\"455\" y2=\"220\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><line x1=\"60\" y1=\"220\" x2=\"60\" y2=\"25\" stroke=\"#1B2420\" stroke-width=\"1.3\"/><text x=\"400\" y=\"238\" font-size=\"11\" fill=\"#1B2420\">θ (°C)</text><text x=\"38\" y=\"30\" font-size=\"11\" fill=\"#1B2420\">U (V)</text><polyline points=\"60,196.25 144.4,164.9 228.9,125 313.3,84.15 397.8,48.05\" fill=\"none\" stroke=\"#4f8ef7\" stroke-width=\"2.2\"/><circle cx=\"60\" cy=\"196.25\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"144.4\" cy=\"164.9\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"228.9\" cy=\"125\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"313.3\" cy=\"84.15\" r=\"4\" fill=\"#1B2420\"/><circle cx=\"397.8\" cy=\"48.05\" r=\"4\" fill=\"#1B2420\"/><line x1=\"60\" y1=\"144\" x2=\"186.7\" y2=\"144\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><line x1=\"186.7\" y1=\"144\" x2=\"186.7\" y2=\"220\" stroke=\"#C0472F\" stroke-width=\"1.3\" stroke-dasharray=\"4 3\"/><circle cx=\"186.7\" cy=\"144\" r=\"5\" fill=\"#C0472F\"/><text x=\"18\" y=\"148\" font-size=\"11\" fill=\"#C0472F\">1,6</text><text x=\"170\" y=\"234\" font-size=\"11\" fill=\"#C0472F\">30</text></svg>",
+            "caption": "Courbe d'étalonnage U = f(θ) de la thermistance : la relation n'est pas une droite (la résistance de la CTN décroît de façon non linéaire avec θ). Pour une mesure U = 1,6 V, on lit par projection θ ≈ 30 °C."
+          },
+          {
+            "type": "warn",
+            "text": "Une fois la courbe d'étalonnage établie, elle permet de déterminer une température inconnue à partir d'une simple mesure de tension, sans avoir besoin d'un thermomètre de référence à chaque utilisation."
+          }
+        ]
+      }
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Une thermistance est un capteur résistif de température. Elle convertit :",
+      "opts": [
+        "une résistance en température",
+        "une température en une valeur de résistance",
+        "de l'énergie électrique en chaleur",
+        "un courant électrique en une température affichée"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "capteur-sens-conversion",
+          "texte": "Inverser le rôle du capteur : il part de la grandeur physique (la température) et donne un signal électrique (une résistance)"
+        },
+        null,
+        {
+          "code": "capteur-vs-actionneur",
+          "texte": "Confondre capteur et actionneur : un radiateur convertit l'énergie électrique en chaleur, un capteur mesure"
+        },
+        {
+          "code": "capteur-vs-afficheur",
+          "texte": "Confondre capteur et affichage : l'affichage est la dernière étape de la chaîne de mesure"
+        }
+      ],
+      "exp": "Un capteur convertit une grandeur physique (ici la température) en un signal électrique (ici une résistance). L'affichage vient ensuite, après conditionnement."
+    },
+    {
+      "q": "Pour une thermistance CTN, quand la température augmente :",
+      "opts": [
+        "sa résistance augmente",
+        "sa résistance diminue",
+        "sa résistance reste constante, comme celle d'un conducteur ohmique",
+        "elle produit une tension de plus en plus grande"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "ctn-sens-inverse",
+          "texte": "Inverser le sens de variation : pour une CTN (coefficient de température négatif), R diminue quand θ augmente"
+        },
+        null,
+        {
+          "code": "capteur-resistance-fixe",
+          "texte": "Croire que la résistance du capteur est fixe : c'est justement sa variation qui permet de mesurer"
+        },
+        {
+          "code": "capteur-source-tension",
+          "texte": "Croire qu'un capteur résistif produit une tension : il faut l'alimenter ; seule sa résistance varie"
+        }
+      ],
+      "exp": "CTN : coefficient de température négatif, la résistance diminue quand la température augmente (par exemple 9 000 Ω à 0 °C, 750 Ω à 60 °C)."
+    },
+    {
+      "q": "Étalonnage d'une thermistance : 9 000 Ω à 0 °C ; 3 300 Ω à 20 °C ; 1 500 Ω à 40 °C ; 750 Ω à 60 °C. On mesure 750 Ω. La température vaut :",
+      "opts": [
+        "0 °C",
+        "750 °C",
+        "60 °C",
+        "on ne peut pas savoir sans thermomètre"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "ctn-sens-inverse",
+          "texte": "Associer petite résistance et basse température : pour une CTN, la plus petite résistance correspond à la plus haute température"
+        },
+        {
+          "code": "lecture-colonne-confondue",
+          "texte": "Recopier la valeur mesurée comme résultat : on lit la température qui correspond à 750 Ω"
+        },
+        null,
+        {
+          "code": "etalonnage-inutile",
+          "texte": "Oublier le rôle de l'étalonnage : une fois établi, il permet de trouver la température sans thermomètre"
+        }
+      ],
+      "exp": "D'après l'étalonnage, R = 750 Ω correspond à θ = 60 °C. C'est tout l'intérêt de l'étalonnage : une mesure de résistance suffit ensuite."
+    },
+    {
+      "q": "On éclaire davantage une photorésistance (LDR). Sa résistance :",
+      "opts": [
+        "diminue",
+        "augmente",
+        "ne change pas : elle ne dépend que de la température",
+        "devient nulle en pleine lumière"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "ldr-sens-inverse",
+          "texte": "Inverser le sens de variation : la résistance d'une photorésistance diminue quand l'éclairement augmente"
+        },
+        {
+          "code": "ldr-vs-thermistance",
+          "texte": "Confondre photorésistance et thermistance : la LDR est sensible à la lumière"
+        },
+        {
+          "code": "ldr-resistance-nulle",
+          "texte": "Croire que la résistance devient nulle : en pleine lumière, elle vaut encore quelques centaines d'ohms"
+        }
+      ],
+      "exp": "Plus la photorésistance reçoit de lumière, plus sa résistance est faible : plusieurs centaines de kΩ dans le noir, quelques centaines d'ohms en pleine lumière."
+    },
+    {
+      "q": "Pour mesurer directement la résistance d'une thermistance, débranchée du circuit, on utilise :",
+      "opts": [
+        "un voltmètre",
+        "un ampèremètre",
+        "un ohmmètre",
+        "un thermomètre"
+      ],
+      "ans": 2,
+      "pieges": [
+        {
+          "code": "mesure-resistance-voltmetre",
+          "texte": "Utiliser un voltmètre : il mesure une tension ; la résistance se mesure à l'ohmmètre"
+        },
+        {
+          "code": "mesure-resistance-amperemetre",
+          "texte": "Utiliser un ampèremètre : il mesure une intensité ; la résistance se mesure à l'ohmmètre"
+        },
+        null,
+        {
+          "code": "grandeur-vs-signal",
+          "texte": "Confondre la grandeur physique (la température) et le signal du capteur (sa résistance)"
+        }
+      ],
+      "exp": "La résistance se mesure à l'ohmmètre, dipôle débranché. Attention : le thermomètre de référence sert à l'étalonnage, pour mesurer la température des bains."
+    },
+    {
+      "q": "Pour étalonner une thermistance, on :",
+      "opts": [
+        "mesure sa résistance à une seule température connue",
+        "mesure sa résistance dans plusieurs bains de températures connues",
+        "mesure la température avec la thermistance seule",
+        "vérifie que sa résistance ne varie pas"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "etalonnage-un-point",
+          "texte": "Croire qu'une seule mesure suffit : il faut plusieurs points pour tracer la courbe d'étalonnage"
+        },
+        null,
+        {
+          "code": "etalonnage-sans-reference",
+          "texte": "Oublier la référence : on compare la résistance à des températures connues, mesurées avec un thermomètre"
+        },
+        {
+          "code": "capteur-resistance-fixe",
+          "texte": "Croire que la résistance du capteur est fixe : c'est justement sa variation qui permet de mesurer"
+        }
+      ],
+      "exp": "On relève la résistance (ou la tension du montage) pour plusieurs températures connues, mesurées avec un thermomètre de référence, puis on trace la courbe d'étalonnage."
+    },
+    {
+      "q": "Courbe d'étalonnage d'un montage à thermistance : U = 2,8 V à 0 °C ; 1,9 V à 20 °C ; 1,3 V à 40 °C ; 0,9 V à 60 °C. On mesure U = 1,6 V. La température vaut :",
+      "opts": [
+        "1,6 °C",
+        "environ 30 °C",
+        "entre 40 et 60 °C",
+        "on ne peut rien dire : 1,6 V n'est pas dans le tableau"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "lecture-colonne-confondue",
+          "texte": "Recopier la valeur mesurée comme résultat : on lit la température qui correspond à 1,6 V"
+        },
+        null,
+        {
+          "code": "sens-courbe-inverse",
+          "texte": "Se tromper de sens : ici la tension diminue quand la température augmente ; 1,6 V est entre 1,9 V (20 °C) et 1,3 V (40 °C)"
+        },
+        {
+          "code": "interpolation-refusee",
+          "texte": "Croire qu'on ne peut lire que les points mesurés : la courbe d'étalonnage permet de lire entre eux"
+        }
+      ],
+      "exp": "1,6 V est entre 1,9 V (20 °C) et 1,3 V (40 °C) : par lecture sur la courbe, θ ≈ 30 °C. La courbe sert justement à lire entre les points mesurés."
+    },
+    {
+      "q": "Un capteur a été étalonné de 0 °C à 60 °C. On mesure une valeur qui correspondrait à une température bien au-delà de 60 °C. On peut :",
+      "opts": [
+        "prolonger la courbe en ligne droite pour lire la température",
+        "annoncer 60 °C, la valeur la plus proche",
+        "conclure que la thermistance est cassée",
+        "seulement dire que θ > 60 °C, sans valeur fiable"
+      ],
+      "ans": 3,
+      "pieges": [
+        {
+          "code": "extrapolation-hors-gamme",
+          "texte": "Prolonger la courbe hors de la plage étalonnée : la relation n'est pas une droite, rien ne garantit son prolongement"
+        },
+        {
+          "code": "valeur-etalon-recopiee",
+          "texte": "Recopier la valeur de l'étalon le plus proche : la mesure est en dehors de la plage, pas égale à sa limite"
+        },
+        {
+          "code": "hors-gamme-panne",
+          "texte": "Croire qu'une valeur hors plage signifie une panne : le capteur fonctionne, il faudrait l'étalonner plus loin"
+        },
+        null
+      ],
+      "exp": "Hors de la plage d'étalonnage, on sait seulement que θ dépasse 60 °C. Pour mesurer, il faudrait étendre l'étalonnage. La courbe n'étant pas une droite, on ne la prolonge pas."
+    },
+    {
+      "q": "Dans la chaîne de mesure d'un thermomètre électronique, le diviseur de tension associé à la thermistance sert à :",
+      "opts": [
+        "traduire la résistance en une tension",
+        "se passer de l'étalonnage du capteur",
+        "mesurer directement la température",
+        "afficher la valeur de la température"
+      ],
+      "ans": 0,
+      "pieges": [
+        null,
+        {
+          "code": "conditionnement-remplace-etalonnage",
+          "texte": "Croire que le conditionnement dispense d'étalonner : il faut toujours relier la tension obtenue à la température"
+        },
+        {
+          "code": "conditionnement-vs-capteur",
+          "texte": "Confondre conditionnement et capteur : c'est la thermistance qui réagit à la température"
+        },
+        {
+          "code": "conditionnement-vs-affichage",
+          "texte": "Confondre conditionnement et affichage : l'affichage est la dernière étape"
+        }
+      ],
+      "exp": "Chaîne de mesure : capteur (résistance qui varie) → conditionnement (diviseur de tension : tension qui varie) → affichage ou traitement. L'étalonnage relie la tension finale à la température."
+    },
+    {
+      "q": "Pour allumer automatiquement l'éclairage d'une rue à la tombée de la nuit, on utilise :",
+      "opts": [
+        "une thermistance",
+        "une photorésistance",
+        "un ampèremètre",
+        "une lampe plus puissante"
+      ],
+      "ans": 1,
+      "pieges": [
+        {
+          "code": "capteur-mal-choisi",
+          "texte": "Choisir un capteur qui ne mesure pas la bonne grandeur : à la tombée de la nuit, c'est l'éclairement qui baisse"
+        },
+        null,
+        {
+          "code": "capteur-vs-appareil-mesure",
+          "texte": "Confondre capteur et appareil de mesure électrique : l'ampèremètre mesure une intensité, pas l'éclairement"
+        },
+        {
+          "code": "capteur-vs-actionneur",
+          "texte": "Confondre capteur et actionneur : la lampe est commandée, c'est le capteur qui détecte la nuit"
+        }
+      ],
+      "exp": "La photorésistance détecte la baisse de l'éclairement : sa résistance augmente à la tombée de la nuit, ce qui commande l'allumage. Il faut un capteur sensible à la grandeur qui change."
+    }
+  ],
+  "annales": [],
+  "exercices": [
+    {
+      "id": "ex1",
+      "niveau": 1,
+      "titre": "Des capteurs partout autour de moi",
+      "contexte": [
+        "Sans qu'on y pense, nos objets du quotidien « sentent » leur environnement grâce à des capteurs : l'écran du smartphone s'assombrit dans le noir, le radiateur se coupe quand la pièce est chaude, la manette de jeu sait dans quelle direction on pousse le joystick…",
+        "Objets : A. réglage automatique de la luminosité de l'écran d'un smartphone ; B. thermostat d'un radiateur électrique ; C. joystick d'une manette de console ; D. système qui surveille le gonflage des pneus d'une voiture.",
+        "Capteurs : 1. thermistance ; 2. photorésistance (LDR) ; 3. capteur de pression ; 4. potentiomètre. Grandeurs physiques : a. température ; b. éclairement (intensité lumineuse) ; c. pression ; d. position (angle)."
+      ],
+      "questions": [
+        {
+          "texte": "QCM — Un capteur est un dispositif qui : a. fabrique de l'énergie électrique ; b. convertit une grandeur physique en un signal électrique exploitable ; c. affiche une mesure sur un écran ; d. ne fonctionne que pour la température.",
+          "aides": []
+        },
+        {
+          "texte": "Associe chaque objet (A à D) au capteur qu'il contient (1 à 4) et à la grandeur physique mesurée (a à d). Présente ta réponse dans un tableau.",
+          "aides": [
+            "Commence par la grandeur : que « sent » chaque objet ? la lumière, la chaleur, l'air comprimé ou un mouvement ?",
+            "Le préfixe « photo » signifie lumière, « thermo » chaleur ; un potentiomètre est un bouton ou un levier dont la position modifie la résistance."
+          ]
+        },
+        {
+          "texte": "Le thermomètre électronique de cuisine de Sofiane, planté dans un rôti, fonctionne en trois étapes, données ici dans le désordre : (i) un diviseur de tension transforme la variation de résistance en une tension facile à mesurer ; (ii) l'écran affiche « 63 °C » ; (iii) la résistance de la thermistance placée dans la pointe diminue quand le rôti chauffe.<br>a. Remets les trois étapes dans l'ordre de la chaîne de mesure.<br>b. Nomme chaque étape : capteur, conditionnement ou affichage.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? Justifie en une phrase.<br>a. « Un capteur délivre toujours directement une tension. »<br>b. « Le microphone d'un smartphone est un capteur : il convertit les variations de pression de l'air (le son) en tension électrique. »<br>c. « Une fois sa courbe d'étalonnage établie, un capteur permet de mesurer une grandeur sans instrument de référence. »",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réponse b : un capteur convertit une grandeur physique (température, éclairement, pression, position…) en un signal électrique exploitable (une tension, ou une résistance qui varie).",
+        "<strong>2.</strong> A → 2 (photorésistance) → b (éclairement) ; B → 1 (thermistance) → a (température) ; C → 4 (potentiomètre) → d (position angulaire du joystick) ; D → 3 (capteur de pression) → c (pression de l'air dans le pneu).",
+        "<strong>3.</strong> a. Ordre : (iii) → (i) → (ii).",
+        "b. (iii) capteur : la thermistance convertit la température en résistance ; (i) conditionnement : le diviseur de tension transforme la résistance en tension ; (ii) affichage : l'écran affiche la température.",
+        "<strong>4.</strong> a. FAUX : beaucoup de capteurs délivrent une résistance qui varie (thermistance, photorésistance) ; il faut alors un conditionnement (diviseur de tension) pour obtenir une tension.",
+        "b. VRAI : le son est une variation de pression de l'air ; le microphone la convertit en signal électrique : c'est bien un capteur.",
+        "c. VRAI : c'est tout l'intérêt de l'étalonnage : la courbe permet de convertir le signal mesuré en valeur de la grandeur, sans thermomètre (ou autre instrument) de référence à chaque mesure.",
+        "<em>⚠ Erreur fréquente : confondre le capteur (le composant sensible à la grandeur) et l'appareil d'affichage (écran, voltmètre), qui n'est que la dernière étape de la chaîne de mesure.</em>"
+      ]
+    },
+    {
+      "id": "ex2",
+      "niveau": 1,
+      "titre": "Le bain du petit frère",
+      "contexte": [
+        "En TP, Inès étalonne une thermistance CTN. Elle la plonge successivement dans des bains d'eau dont la température θ est mesurée avec un thermomètre de référence (0 °C, 10 °C, …, 80 °C) et mesure à chaque fois la résistance R<sub>T</sub> de la thermistance avec un ohmmètre. Elle trace ensuite la courbe d'étalonnage ci-dessous (points mesurés et courbe moyenne).",
+        "Le soir, elle veut vérifier l'eau du bain de son petit frère, qui doit être à environ 37 °C. Elle plonge la thermistance dans la baignoire : l'ohmmètre indique R<sub>T</sub> = 1 200 Ω."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"105.0\" y1=\"40\" x2=\"105.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"105.0\" y=\"432\" text-anchor=\"middle\">0</text><line x1=\"143.4\" y1=\"40\" x2=\"143.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"181.9\" y1=\"40\" x2=\"181.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"181.9\" y=\"432\" text-anchor=\"middle\">10</text><line x1=\"220.3\" y1=\"40\" x2=\"220.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"258.8\" y1=\"40\" x2=\"258.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"258.8\" y=\"432\" text-anchor=\"middle\">20</text><line x1=\"297.2\" y1=\"40\" x2=\"297.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"335.6\" y1=\"40\" x2=\"335.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"335.6\" y=\"432\" text-anchor=\"middle\">30</text><line x1=\"374.1\" y1=\"40\" x2=\"374.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"412.5\" y1=\"40\" x2=\"412.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"412.5\" y=\"432\" text-anchor=\"middle\">40</text><line x1=\"450.9\" y1=\"40\" x2=\"450.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"489.4\" y1=\"40\" x2=\"489.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"489.4\" y=\"432\" text-anchor=\"middle\">50</text><line x1=\"527.8\" y1=\"40\" x2=\"527.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"566.2\" y1=\"40\" x2=\"566.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"566.2\" y=\"432\" text-anchor=\"middle\">60</text><line x1=\"604.7\" y1=\"40\" x2=\"604.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"643.1\" y1=\"40\" x2=\"643.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"643.1\" y=\"432\" text-anchor=\"middle\">70</text><line x1=\"681.6\" y1=\"40\" x2=\"681.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"720.0\" y1=\"40\" x2=\"720.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"720.0\" y=\"432\" text-anchor=\"middle\">80</text><line x1=\"105\" y1=\"410.0\" x2=\"720\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"415.0\" text-anchor=\"end\">0</text><line x1=\"105\" y1=\"391.5\" x2=\"720\" y2=\"391.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"373.0\" x2=\"720\" y2=\"373.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"378.0\" text-anchor=\"end\">1 000</text><line x1=\"105\" y1=\"354.5\" x2=\"720\" y2=\"354.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"336.0\" x2=\"720\" y2=\"336.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"341.0\" text-anchor=\"end\">2 000</text><line x1=\"105\" y1=\"317.5\" x2=\"720\" y2=\"317.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"299.0\" x2=\"720\" y2=\"299.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"304.0\" text-anchor=\"end\">3 000</text><line x1=\"105\" y1=\"280.5\" x2=\"720\" y2=\"280.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"262.0\" x2=\"720\" y2=\"262.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"267.0\" text-anchor=\"end\">4 000</text><line x1=\"105\" y1=\"243.5\" x2=\"720\" y2=\"243.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"225.0\" x2=\"720\" y2=\"225.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"230.0\" text-anchor=\"end\">5 000</text><line x1=\"105\" y1=\"206.5\" x2=\"720\" y2=\"206.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"188.0\" x2=\"720\" y2=\"188.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"193.0\" text-anchor=\"end\">6 000</text><line x1=\"105\" y1=\"169.5\" x2=\"720\" y2=\"169.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"151.0\" x2=\"720\" y2=\"151.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"156.0\" text-anchor=\"end\">7 000</text><line x1=\"105\" y1=\"132.5\" x2=\"720\" y2=\"132.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"114.0\" x2=\"720\" y2=\"114.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"119.0\" text-anchor=\"end\">8 000</text><line x1=\"105\" y1=\"95.5\" x2=\"720\" y2=\"95.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"77.0\" x2=\"720\" y2=\"77.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"82.0\" text-anchor=\"end\">9 000</text><line x1=\"105\" y1=\"58.5\" x2=\"720\" y2=\"58.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"40.0\" x2=\"720\" y2=\"40.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"45.0\" text-anchor=\"end\">10 000</text><line x1=\"105\" y1=\"410\" x2=\"735\" y2=\"410\" stroke=\"#222\" stroke-width=\"1.6\"/><line x1=\"105\" y1=\"410\" x2=\"105\" y2=\"25\" stroke=\"#222\" stroke-width=\"1.6\"/><text x=\"720\" y=\"458\" text-anchor=\"end\" font-weight=\"bold\">θ (°C)</text><text x=\"115\" y=\"22\" font-weight=\"bold\">R (Ω)</text><polyline fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" points=\"105.0,77.0 106.9,81.2 108.8,85.4 110.8,89.5 112.7,93.6 114.6,97.6 116.5,101.6 118.5,105.5 120.4,109.3 122.3,113.2 124.2,116.9 126.1,120.6 128.1,124.3 130.0,127.9 131.9,131.5 133.8,135.1 135.8,138.5 137.7,142.0 139.6,145.4 141.5,148.7 143.4,152.1 145.4,155.3 147.3,158.6 149.2,161.8 151.1,164.9 153.0,168.0 155.0,171.1 156.9,174.1 158.8,177.1 160.7,180.1 162.7,183.0 164.6,185.9 166.5,188.7 168.4,191.5 170.3,194.3 172.3,197.0 174.2,199.7 176.1,202.4 178.0,205.0 180.0,207.6 181.9,210.2 183.8,212.6 185.7,215.1 187.6,217.4 189.6,219.8 191.5,222.1 193.4,224.4 195.3,226.7 197.2,228.9 199.2,231.2 201.1,233.3 203.0,235.5 204.9,237.6 206.9,239.8 208.8,241.8 210.7,243.9 212.6,245.9 214.5,247.9 216.5,249.9 218.4,251.9 220.3,253.8 222.2,255.7 224.2,257.6 226.1,259.5 228.0,261.3 229.9,263.1 231.8,264.9 233.8,266.7 235.7,268.5 237.6,270.2 239.5,271.9 241.5,273.6 243.4,275.3 245.3,276.9 247.2,278.5 249.1,280.1 251.1,281.7 253.0,283.3 254.9,284.9 256.8,286.4 258.8,287.9 260.7,289.1 262.6,290.4 264.5,291.6 266.4,292.8 268.4,293.9 270.3,295.1 272.2,296.3 274.1,297.4 276.0,298.5 278.0,299.7 279.9,300.8 281.8,301.9 283.7,303.0 285.7,304.1 287.6,305.1 289.5,306.2 291.4,307.2 293.3,308.3 295.3,309.3 297.2,310.3 299.1,311.3 301.0,312.3 303.0,313.3 304.9,314.3 306.8,315.2 308.7,316.2 310.6,317.1 312.6,318.1 314.5,319.0 316.4,319.9 318.3,320.8 320.2,321.7 322.2,322.6 324.1,323.5 326.0,324.4 327.9,325.2 329.9,326.1 331.8,326.9 333.7,327.8 335.6,328.6 337.5,329.4 339.5,330.1 341.4,330.9 343.3,331.7 345.2,332.4 347.2,333.1 349.1,333.9 351.0,334.6 352.9,335.3 354.8,336.0 356.8,336.7 358.7,337.4 360.6,338.1 362.5,338.8 364.5,339.5 366.4,340.2 368.3,340.8 370.2,341.5 372.1,342.1 374.1,342.8 376.0,343.4 377.9,344.1 379.8,344.7 381.8,345.3 383.7,345.9 385.6,346.5 387.5,347.1 389.4,347.7 391.4,348.3 393.3,348.9 395.2,349.5 397.1,350.1 399.0,350.7 401.0,351.2 402.9,351.8 404.8,352.3 406.7,352.9 408.7,353.4 410.6,354.0 412.5,354.5 414.4,355.0 416.3,355.5 418.3,356.0 420.2,356.4 422.1,356.9 424.0,357.4 426.0,357.9 427.9,358.3 429.8,358.8 431.7,359.2 433.6,359.7 435.6,360.1 437.5,360.6 439.4,361.0 441.3,361.4 443.2,361.9 445.2,362.3 447.1,362.7 449.0,363.1 450.9,363.6 452.9,364.0 454.8,364.4 456.7,364.8 458.6,365.2 460.5,365.6 462.5,366.0 464.4,366.4 466.3,366.8 468.2,367.1 470.2,367.5 472.1,367.9 474.0,368.3 475.9,368.6 477.8,369.0 479.8,369.4 481.7,369.7 483.6,370.1 485.5,370.5 487.5,370.8 489.4,371.1 491.3,371.5 493.2,371.8 495.1,372.1 497.1,372.4 499.0,372.8 500.9,373.1 502.8,373.4 504.8,373.7 506.7,374.0 508.6,374.3 510.5,374.6 512.4,374.9 514.4,375.2 516.3,375.5 518.2,375.8 520.1,376.0 522.0,376.3 524.0,376.6 525.9,376.9 527.8,377.2 529.7,377.4 531.7,377.7 533.6,378.0 535.5,378.3 537.4,378.5 539.3,378.8 541.3,379.0 543.2,379.3 545.1,379.6 547.0,379.8 549.0,380.1 550.9,380.3 552.8,380.6 554.7,380.8 556.6,381.1 558.6,381.3 560.5,381.5 562.4,381.8 564.3,382.0 566.2,382.2 568.2,382.5 570.1,382.7 572.0,382.9 573.9,383.1 575.9,383.4 577.8,383.6 579.7,383.8 581.6,384.0 583.5,384.2 585.5,384.4 587.4,384.6 589.3,384.9 591.2,385.1 593.2,385.3 595.1,385.5 597.0,385.7 598.9,385.9 600.8,386.1 602.8,386.3 604.7,386.5 606.6,386.6 608.5,386.8 610.5,387.0 612.4,387.2 614.3,387.4 616.2,387.6 618.1,387.8 620.1,388.0 622.0,388.1 623.9,388.3 625.8,388.5 627.8,388.7 629.7,388.8 631.6,389.0 633.5,389.2 635.4,389.4 637.4,389.5 639.3,389.7 641.2,389.9 643.1,390.0 645.0,390.2 647.0,390.3 648.9,390.5 650.8,390.6 652.7,390.8 654.7,390.9 656.6,391.0 658.5,391.2 660.4,391.3 662.3,391.5 664.3,391.6 666.2,391.7 668.1,391.9 670.0,392.0 672.0,392.1 673.9,392.3 675.8,392.4 677.7,392.5 679.6,392.7 681.6,392.8 683.5,392.9 685.4,393.1 687.3,393.2 689.2,393.3 691.2,393.4 693.1,393.6 695.0,393.7 696.9,393.8 698.9,393.9 700.8,394.0 702.7,394.2 704.6,394.3 706.5,394.4 708.5,394.5 710.4,394.6 712.3,394.7 714.2,394.9 716.2,395.0 718.1,395.1 720.0,395.2\"/><circle cx=\"105.0\" cy=\"77.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"181.9\" cy=\"210.2\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"258.8\" cy=\"287.9\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"335.6\" cy=\"328.6\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"412.5\" cy=\"354.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"489.4\" cy=\"371.1\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"566.2\" cy=\"382.2\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"643.1\" cy=\"390.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"720.0\" cy=\"395.2\" r=\"5\" fill=\"#B5523B\"/><text x=\"560\" y=\"90\" fill=\"#1F4E5A\" font-weight=\"bold\">Thermistance CTN</text></svg>",
+      "questions": [
+        {
+          "texte": "QCM — Étalonner la thermistance, c'est : a. vérifier qu'elle n'est pas cassée ; b. établir la relation entre la température et sa résistance, à l'aide de températures de référence connues ; c. mesurer sa résistance à une seule température ; d. la chauffer avant de l'utiliser.",
+          "aides": []
+        },
+        {
+          "texte": "Vrai ou faux ? « Pour mesurer la résistance de la thermistance, on branche l'ohmmètre en série dans un circuit alimenté par un générateur. » Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Pourquoi dit-on que cette thermistance est une CTN (coefficient de température négatif) ? Justifie à l'aide de la courbe.",
+          "aides": []
+        },
+        {
+          "texte": "La résistance R<sub>T</sub> est-elle proportionnelle à la température θ ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Lis sur la courbe la résistance R<sub>T</sub> de la thermistance à 25 °C.",
+          "aides": [
+            "Repère 25 °C sur l'axe horizontal : c'est entre 20 et 30, sur la petite graduation du milieu.",
+            "Monte verticalement jusqu'à la courbe, puis va horizontalement vers l'axe des résistances ; une petite graduation verticale vaut 500 Ω."
+          ]
+        },
+        {
+          "texte": "Détermine graphiquement la température de l'eau du bain. Le bain est-il prêt pour le petit frère ?",
+          "aides": [
+            "Cette fois, tu connais la résistance : pars de l'axe vertical (R<sub>T</sub> = 1 200 Ω).",
+            "Trace un trait horizontal jusqu'à la courbe, puis descends verticalement jusqu'à l'axe des températures. Compare ensuite à 37 °C."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Réponse b : on compare la réponse du capteur (ici sa résistance) à des températures de référence connues pour obtenir la courbe d'étalonnage R<sub>T</sub> = f(θ).",
+        "<strong>2.</strong> FAUX : l'ohmmètre se branche directement aux bornes de la thermistance, qui doit être isolée de tout circuit et non alimentée (c'est l'ohmmètre qui fournit le petit courant de mesure).",
+        "<strong>3.</strong> Quand la température augmente, la résistance diminue (9 000 Ω à 0 °C, 750 Ω à 60 °C) : la courbe est décroissante. « Coefficient de température négatif » traduit justement cette diminution.",
+        "<strong>4.</strong> Non : la courbe n'est pas une droite passant par l'origine. Par exemple, quand θ passe de 20 °C à 40 °C (×2), R<sub>T</sub> passe de 3 300 Ω à 1 500 Ω : elle n'est pas multipliée par 2, elle diminue.",
+        "<strong>5.</strong> On part de θ = 25 °C sur l'axe horizontal, on monte jusqu'à la courbe, puis on lit sur l'axe vertical : R<sub>T</sub> ≈ 2 700 Ω (on accepte de 2 600 Ω à 2 800 Ω).",
+        "<strong>6.</strong> On part de R<sub>T</sub> = 1 200 Ω sur l'axe vertical, on va horizontalement jusqu'à la courbe, puis on descend sur l'axe horizontal : θ ≈ 46 °C (on accepte de 44 °C à 48 °C). C'est nettement plus que 37 °C : le bain est trop chaud, il faut ajouter de l'eau froide avant d'y mettre le petit frère.",
+        "<em>⚠ Erreur fréquente : lire la courbe « dans le mauvais sens » (partir de 1 200 sur l'axe des températures) ou mal compter les graduations : sur l'axe vertical, une petite graduation vaut 500 Ω ; sur l'axe horizontal, 5 °C.</em>"
+      ]
+    },
+    {
+      "id": "ex3",
+      "niveau": 1,
+      "titre": "La veilleuse qui s'allume toute seule",
+      "contexte": [
+        "La veilleuse de la chambre de Maël s'allume toute seule quand la nuit tombe. À l'intérieur, une photorésistance (LDR) surveille la lumière ambiante.",
+        "Maël démonte une veilleuse hors d'usage et mesure la résistance de la photorésistance avec un ohmmètre : dans l'obscurité (la main posée dessus) : 500 kΩ ; dans la chambre éclairée par le plafonnier : 5,0 kΩ ; en plein soleil, sur le rebord de la fenêtre : 200 Ω."
+      ],
+      "questions": [
+        {
+          "texte": "Complète : « La photorésistance est un capteur d'… lumineux : sa … électrique … quand l'éclairement qu'elle reçoit augmente. »",
+          "aides": []
+        },
+        {
+          "texte": "Exprime les résistances 500 kΩ et 5,0 kΩ en ohms, en écriture scientifique.",
+          "aides": [
+            "« kilo » signifie mille : 1 kΩ = 10³ Ω.",
+            "500 kΩ = 500 × 10³ Ω ; écris 500 = 5,00 × 10², puis additionne les exposants."
+          ]
+        },
+        {
+          "texte": "On applique une tension U = 5,0 V aux bornes de la photorésistance. L'intensité du courant qui la traverse se calcule avec la loi d'Ohm écrite sous la forme I = U / R.<br>a. Calcule l'intensité I dans l'obscurité, puis en plein soleil. Donne les résultats en ampères puis en milliampères.<br>b. Combien de fois l'intensité est-elle plus grande en plein soleil que dans l'obscurité ?",
+          "aides": []
+        },
+        {
+          "texte": "Explique, en deux ou trois phrases, comment le circuit de la veilleuse peut « savoir » qu'il fait nuit.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> « La photorésistance est un capteur d'éclairement (d'intensité) lumineux : sa résistance électrique diminue quand l'éclairement qu'elle reçoit augmente. »",
+        "<strong>2.</strong> 500 kΩ = 500 × 10³ Ω = 5,00 × 10⁵ Ω ; 5,0 kΩ = 5,0 × 10³ Ω.",
+        "<strong>3.</strong> a. Obscurité : I = U / R = 5,0 / (5,00 × 10⁵) = 1,0 × 10⁻⁵ A = 0,010 mA. Plein soleil : I = 5,0 / 200 = 2,5 × 10⁻² A = 25 mA.",
+        "b. 25 / 0,010 = 2 500 : l'intensité est 2 500 fois plus grande en plein soleil (la résistance, elle, est 2 500 fois plus petite).",
+        "<strong>4.</strong> La nuit, la résistance de la photorésistance devient très grande (plusieurs centaines de kΩ), donc l'intensité qui la traverse (ou la tension associée) change fortement. Le circuit de la veilleuse détecte ce changement : quand la résistance dépasse une valeur seuil, il allume la lampe ; le jour, la résistance est faible et la lampe reste éteinte.",
+        "<em>⚠ Erreur fréquente : oublier de convertir les kΩ en Ω avant d'utiliser la loi d'Ohm (on trouverait 0,010 A au lieu de 1,0 × 10⁻⁵ A, mille fois trop).</em>"
+      ]
+    },
+    {
+      "id": "ex4",
+      "niveau": 2,
+      "titre": "Les pneus du VTT",
+      "contexte": [
+        "Yanis a fabriqué en club de robotique un manomètre électronique pour vérifier le gonflage des pneus de son VTT. Il utilise un capteur de pression qui délivre une tension U qui dépend de la pression P de l'air dans le pneu (P désigne ici la surpression par rapport à l'air extérieur).",
+        "Pour étalonner son capteur, il le relie à un manomètre de référence et relève : P (kPa) : 0 ; 50 ; 100 ; 200 ; 300 ; 400 — U (V) : 0,00 ; 0,61 ; 1,19 ; 2,41 ; 3,59 ; 4,80.",
+        "Sur le flanc des pneus de son VTT, il est écrit : pression conseillée de 2,0 bar à 3,0 bar."
+      ],
+      "questions": [
+        {
+          "texte": "Quelle grandeur physique ce capteur mesure-t-il ? Sous quelle forme délivre-t-il l'information ?",
+          "aides": []
+        },
+        {
+          "texte": "Montre que la tension U est proportionnelle à la pression P.",
+          "aides": [
+            "Deux grandeurs sont proportionnelles si leur quotient est constant.",
+            "Calcule U / P pour chaque colonne (sauf P = 0) et compare les résultats, en tolérant de petites erreurs de mesure."
+          ]
+        },
+        {
+          "texte": "Quelle est l'allure de la courbe d'étalonnage U = f(P) ? Détermine le coefficient de proportionnalité k (avec son unité) tel que U = k × P.",
+          "aides": []
+        },
+        {
+          "texte": "Sur le pneu avant, le capteur indique U = 2,16 V ; sur le pneu arrière, U = 3,00 V. Détermine la pression dans chaque pneu, en kPa puis en bar. Les pneus sont-ils correctement gonflés ?",
+          "aides": [
+            "De U = k × P on tire P = U / k.",
+            "Avec k en V·kPa⁻¹, P sort en kPa ; puis 100 kPa = 1 bar."
+          ]
+        },
+        {
+          "texte": "Un ami de Yanis mesure, sur le pneu de son vélo de route, U = 5,2 V. Il calcule P = 433 kPa. Ce résultat est-il fiable ? Justifie.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Le capteur mesure la pression de l'air dans le pneu ; il délivre l'information sous forme d'une tension électrique U.",
+        "<strong>2.</strong> On calcule le quotient U / P pour chaque mesure (sauf P = 0) : 0,61 / 50 = 0,0122 V·kPa⁻¹ ; 1,19 / 100 = 0,0119 ; 2,41 / 200 = 0,0120 ; 3,59 / 300 = 0,0120 ; 4,80 / 400 = 0,0120. Les quotients sont égaux aux erreurs de mesure près (écart maximal 1,5 %), et U = 0 pour P = 0 : U est proportionnelle à P.",
+        "<strong>3.</strong> La courbe d'étalonnage est une droite passant par l'origine. Son coefficient directeur est k = U / P ≈ 0,0120 V·kPa⁻¹ (moyenne des quotients), soit 12,0 mV par kPa.",
+        "<strong>4.</strong> P = U / k. Pneu avant : P = 2,16 / 0,0120 = 180 kPa = 1,80 bar. Pneu arrière : P = 3,00 / 0,0120 = 250 kPa = 2,50 bar. Le pneu arrière est bien gonflé (2,0 bar ≤ 2,50 bar ≤ 3,0 bar) ; le pneu avant est sous-gonflé (1,80 bar &lt; 2,0 bar) : Yanis doit le regonfler.",
+        "<strong>5.</strong> Non : la tension 5,2 V dépasse la plus grande tension de l'étalonnage (4,80 V pour 400 kPa). On ne sait pas si la relation U = k × P reste valable au-delà (le capteur peut saturer) : on ne peut utiliser une courbe d'étalonnage que dans le domaine où elle a été établie. Il faudrait prolonger l'étalonnage au-delà de 400 kPa.",
+        "<em>⚠ Erreur fréquente : calculer P = U × k au lieu de P = U / k, ou oublier la conversion 100 kPa = 1 bar avant de comparer à la pression conseillée.</em>"
+      ]
+    },
+    {
+      "id": "ex5",
+      "niveau": 2,
+      "titre": "La yaourtière maison",
+      "contexte": [
+        "Pour réussir des yaourts maison, le lait doit fermenter entre 40 °C et 45 °C environ. Léa fabrique un thermomètre électronique pour sa yaourtière : elle associe en série la thermistance CTN des données (résistance R<sub>T</sub>) et une résistance fixe R = 3,3 kΩ, alimentées par un générateur de tension constante E = 5,0 V. Un voltmètre mesure la tension U<sub>R</sub> aux bornes de la résistance fixe (schéma ci-dessous).",
+        "Une fois la yaourtière en marche, le voltmètre indique U<sub>R</sub> = 3,44 V."
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><polyline points=\"150,200 150,110 300,110\" stroke=\"#222\" stroke-width=\"2.2\" fill=\"none\"/><polyline points=\"420,110 560,110 560,180\" stroke=\"#222\" stroke-width=\"2.2\" fill=\"none\"/><polyline points=\"560,290 560,360 150,360 150,270\" stroke=\"#222\" stroke-width=\"2.2\" fill=\"none\"/><circle cx=\"150\" cy=\"235\" r=\"35\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.2\"/><line x1=\"150\" y1=\"212\" x2=\"150\" y2=\"258\" stroke=\"#222\" stroke-width=\"2.2\"/><text x=\"100\" y=\"240\" text-anchor=\"end\" font-size=\"17\">E = 5,0 V</text><text x=\"100\" y=\"262\" text-anchor=\"end\" font-size=\"14\">(générateur)</text><text x=\"160\" y=\"195\" font-size=\"17\" font-weight=\"bold\">+</text><rect x=\"300\" y=\"94\" width=\"120\" height=\"32\" fill=\"#fff\" stroke=\"#1F4E5A\" stroke-width=\"2.4\"/><polyline points=\"290,142 310,142 430,80\" fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2\"/><text x=\"436\" y=\"80\" fill=\"#1F4E5A\" font-size=\"16\">−θ</text><text x=\"360\" y=\"168\" text-anchor=\"middle\" fill=\"#1F4E5A\" font-size=\"16\">thermistance CTN (R<tspan baseline-shift=\"sub\" font-size=\"12\">T</tspan>)</text><rect x=\"544\" y=\"180\" width=\"32\" height=\"110\" fill=\"#fff\" stroke=\"#B5523B\" stroke-width=\"2.4\"/><text x=\"532\" y=\"230\" text-anchor=\"end\" fill=\"#B5523B\" font-size=\"16\">résistance fixe</text><text x=\"532\" y=\"252\" text-anchor=\"end\" fill=\"#B5523B\" font-size=\"16\">R = 3,3 kΩ</text><polyline points=\"560,150 650,150 650,200\" stroke=\"#222\" stroke-width=\"2.2\" fill=\"none\"/><polyline points=\"650,270 650,320 560,320\" stroke=\"#222\" stroke-width=\"2.2\" fill=\"none\"/><circle cx=\"560\" cy=\"150\" r=\"4.5\" fill=\"#222\"/><circle cx=\"560\" cy=\"320\" r=\"4.5\" fill=\"#222\"/><circle cx=\"650\" cy=\"235\" r=\"32\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"2.2\"/><text x=\"650\" y=\"243\" text-anchor=\"middle\" font-size=\"22\" font-weight=\"bold\">V</text><text x=\"692\" y=\"240\" font-size=\"16\">U<tspan baseline-shift=\"sub\" font-size=\"12\">R</tspan></text><text x=\"360\" y=\"60\" text-anchor=\"middle\" font-size=\"15\" fill=\"#C8962E\">sonde placée dans la cuve de la yaourtière</text><text x=\"355\" y=\"400\" text-anchor=\"middle\" font-size=\"15\">intensité I (la même dans tout le circuit)</text><polygon points=\"365,353 345,360 365,367\" fill=\"#222\"/></svg>",
+      "questions": [
+        {
+          "texte": "Dans ce montage, indique quel élément joue le rôle de capteur, lequel joue le rôle de conditionnement et lequel joue le rôle d'affichage.",
+          "aides": []
+        },
+        {
+          "texte": "Calcule la tension U<sub>T</sub> aux bornes de la thermistance.",
+          "aides": [
+            "La thermistance et la résistance fixe sont en série avec le générateur : comment s'ajoutent les tensions ?",
+            "E = U<sub>T</sub> + U<sub>R</sub> : isole U<sub>T</sub>."
+          ]
+        },
+        {
+          "texte": "Calcule l'intensité I du courant qui traverse la résistance fixe. Quelle est l'intensité du courant qui traverse la thermistance ? Justifie.",
+          "aides": []
+        },
+        {
+          "texte": "Déduis-en la résistance R<sub>T</sub> de la thermistance, puis la température du lait. Les yaourts vont-ils bien fermenter ?",
+          "aides": [
+            "Applique la loi d'Ohm à la thermistance : il te faut la tension à SES bornes et l'intensité qui la traverse.",
+            "R<sub>T</sub> = U<sub>T</sub> / I ; cherche ensuite cette valeur dans le tableau d'étalonnage des données."
+          ]
+        },
+        {
+          "texte": "Au démarrage, le lait est à 20 °C. Sans calcul compliqué, détermine la tension U<sub>R</sub> qu'affichait alors le voltmètre.",
+          "aides": [
+            "Que vaut R<sub>T</sub> à 20 °C ? Compare-la à R.",
+            "Deux résistances égales, traversées par la même intensité, ont la même tension ; et les deux tensions additionnées font E."
+          ]
+        },
+        {
+          "texte": "Quand la température du lait augmente, la tension U<sub>R</sub> augmente-t-elle ou diminue-t-elle ? Justifie par un raisonnement.",
+          "aides": []
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Capteur : la thermistance CTN (sa résistance dépend de la température). Conditionnement : le diviseur de tension (générateur + résistance fixe) qui transforme la résistance en tension. Affichage : le voltmètre.",
+        "<strong>2.</strong> En série, la tension du générateur est la somme des tensions : E = U<sub>T</sub> + U<sub>R</sub>, donc U<sub>T</sub> = E − U<sub>R</sub> = 5,0 − 3,44 = 1,56 V.",
+        "<strong>3.</strong> Loi d'Ohm pour la résistance fixe : I = U<sub>R</sub> / R = 3,44 / (3,3 × 10³) = 1,04 × 10⁻³ A = 1,04 mA. La thermistance est en série avec la résistance fixe : elle est traversée par la même intensité I = 1,04 mA.",
+        "<strong>4.</strong> R<sub>T</sub> = U<sub>T</sub> / I = 1,56 / (1,04 × 10⁻³) = 1,50 × 10³ Ω = 1 500 Ω. D'après le tableau d'étalonnage, R<sub>T</sub> = 1 500 Ω correspond à θ = 40 °C. Le lait est à 40 °C, dans l'intervalle 40 °C – 45 °C : les yaourts vont fermenter (on est en bas de l'intervalle, Léa peut laisser chauffer encore un peu).",
+        "<strong>5.</strong> À 20 °C, R<sub>T</sub> = 3 300 Ω = R. Les deux résistances sont égales et traversées par la même intensité, donc elles ont la même tension (U = R × I) : U<sub>R</sub> = U<sub>T</sub> = E / 2 = 2,5 V.",
+        "<strong>6.</strong> Quand θ augmente, R<sub>T</sub> diminue (CTN). La résistance totale R + R<sub>T</sub> diminue, donc l'intensité I = E / (R + R<sub>T</sub>) augmente. Comme U<sub>R</sub> = R × I avec R fixe, U<sub>R</sub> augmente. (Vérification : 2,5 V à 20 °C, 3,44 V à 40 °C.)",
+        "<em>⚠ Erreur fréquente : calculer R<sub>T</sub> avec E au lieu de U<sub>T</sub> (5,0 / 1,04 × 10⁻³ ≈ 4 800 Ω, c'est la résistance totale R + R<sub>T</sub>), ou oublier de convertir 3,3 kΩ en 3 300 Ω.</em>"
+      ]
+    },
+    {
+      "id": "ex6",
+      "niveau": 3,
+      "titre": "Le ventilateur de la serre tourne trop",
+      "contexte": [
+        "Le lycée a installé une petite serre connectée pour les plants de tomates du club jardinage. Mme Diallo, professeure de SVT, a demandé que le ventilateur se mette en marche dès que la température dépasse 30 °C, et seulement dans ce cas.",
+        "Doc. 1 — Le montage. La thermistance CTN des données est placée en série avec une résistance fixe R = 1,0 kΩ, le tout alimenté sous 5,0 V. Un microcontrôleur mesure la tension U aux bornes de la résistance fixe : il la code par un nombre entier « valeur » compris entre 0 (pour 0 V) et 1 023 (pour 5,0 V), proportionnel à U.",
+        "Doc. 2 — Courbe d'étalonnage U = f(θ) du montage, obtenue en plaçant la thermistance dans des bains à températures connues (figure ci-dessous).",
+        "Doc. 3 — Le programme écrit par un élève du club (sous la figure). Les lignes qui commencent par # sont des commentaires.",
+        "Doc. 4 — Constat du club. « Hier matin à 9 h, le thermomètre de la serre indiquait 22 °C… et le ventilateur tournait déjà ! Il a tourné presque toute la journée. »"
+      ],
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100%\" style=\"max-width:640px;height:auto\" viewBox=\"0 0 760 470\" font-family=\"Trebuchet MS, Arial\" font-size=\"15\"><rect width=\"100%\" height=\"100%\" fill=\"#fff\"/><line x1=\"105.0\" y1=\"40\" x2=\"105.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"105.0\" y=\"432\" text-anchor=\"middle\">0</text><line x1=\"143.4\" y1=\"40\" x2=\"143.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"181.9\" y1=\"40\" x2=\"181.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"181.9\" y=\"432\" text-anchor=\"middle\">10</text><line x1=\"220.3\" y1=\"40\" x2=\"220.3\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"258.8\" y1=\"40\" x2=\"258.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"258.8\" y=\"432\" text-anchor=\"middle\">20</text><line x1=\"297.2\" y1=\"40\" x2=\"297.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"335.6\" y1=\"40\" x2=\"335.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"335.6\" y=\"432\" text-anchor=\"middle\">30</text><line x1=\"374.1\" y1=\"40\" x2=\"374.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"412.5\" y1=\"40\" x2=\"412.5\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"412.5\" y=\"432\" text-anchor=\"middle\">40</text><line x1=\"450.9\" y1=\"40\" x2=\"450.9\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"489.4\" y1=\"40\" x2=\"489.4\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"489.4\" y=\"432\" text-anchor=\"middle\">50</text><line x1=\"527.8\" y1=\"40\" x2=\"527.8\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"566.2\" y1=\"40\" x2=\"566.2\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"566.2\" y=\"432\" text-anchor=\"middle\">60</text><line x1=\"604.7\" y1=\"40\" x2=\"604.7\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"643.1\" y1=\"40\" x2=\"643.1\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"643.1\" y=\"432\" text-anchor=\"middle\">70</text><line x1=\"681.6\" y1=\"40\" x2=\"681.6\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"720.0\" y1=\"40\" x2=\"720.0\" y2=\"410\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"720.0\" y=\"432\" text-anchor=\"middle\">80</text><line x1=\"105\" y1=\"410.0\" x2=\"720\" y2=\"410.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"415.0\" text-anchor=\"end\">0,0</text><line x1=\"105\" y1=\"400.8\" x2=\"720\" y2=\"400.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"391.5\" x2=\"720\" y2=\"391.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"382.2\" x2=\"720\" y2=\"382.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"373.0\" x2=\"720\" y2=\"373.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"363.8\" x2=\"720\" y2=\"363.8\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"368.8\" text-anchor=\"end\">0,5</text><line x1=\"105\" y1=\"354.5\" x2=\"720\" y2=\"354.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"345.2\" x2=\"720\" y2=\"345.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"336.0\" x2=\"720\" y2=\"336.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"326.8\" x2=\"720\" y2=\"326.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"317.5\" x2=\"720\" y2=\"317.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"322.5\" text-anchor=\"end\">1,0</text><line x1=\"105\" y1=\"308.2\" x2=\"720\" y2=\"308.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"299.0\" x2=\"720\" y2=\"299.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"289.8\" x2=\"720\" y2=\"289.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"280.5\" x2=\"720\" y2=\"280.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"271.2\" x2=\"720\" y2=\"271.2\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"276.2\" text-anchor=\"end\">1,5</text><line x1=\"105\" y1=\"262.0\" x2=\"720\" y2=\"262.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"252.7\" x2=\"720\" y2=\"252.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"243.5\" x2=\"720\" y2=\"243.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"234.2\" x2=\"720\" y2=\"234.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"225.0\" x2=\"720\" y2=\"225.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"230.0\" text-anchor=\"end\">2,0</text><line x1=\"105\" y1=\"215.8\" x2=\"720\" y2=\"215.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"206.5\" x2=\"720\" y2=\"206.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"197.2\" x2=\"720\" y2=\"197.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"188.0\" x2=\"720\" y2=\"188.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"178.8\" x2=\"720\" y2=\"178.8\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"183.8\" text-anchor=\"end\">2,5</text><line x1=\"105\" y1=\"169.5\" x2=\"720\" y2=\"169.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"160.2\" x2=\"720\" y2=\"160.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"151.0\" x2=\"720\" y2=\"151.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"141.7\" x2=\"720\" y2=\"141.7\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"132.5\" x2=\"720\" y2=\"132.5\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"137.5\" text-anchor=\"end\">3,0</text><line x1=\"105\" y1=\"123.2\" x2=\"720\" y2=\"123.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"114.0\" x2=\"720\" y2=\"114.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"104.8\" x2=\"720\" y2=\"104.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"95.5\" x2=\"720\" y2=\"95.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"86.2\" x2=\"720\" y2=\"86.2\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"91.2\" text-anchor=\"end\">3,5</text><line x1=\"105\" y1=\"77.0\" x2=\"720\" y2=\"77.0\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"67.8\" x2=\"720\" y2=\"67.8\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"58.5\" x2=\"720\" y2=\"58.5\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"49.2\" x2=\"720\" y2=\"49.2\" stroke=\"#d9d2c5\" stroke-width=\"0.7\"/><line x1=\"105\" y1=\"40.0\" x2=\"720\" y2=\"40.0\" stroke=\"#d9d2c5\" stroke-width=\"1.4\"/><text x=\"97\" y=\"45.0\" text-anchor=\"end\">4,0</text><line x1=\"105\" y1=\"410\" x2=\"735\" y2=\"410\" stroke=\"#222\" stroke-width=\"1.6\"/><line x1=\"105\" y1=\"410\" x2=\"105\" y2=\"25\" stroke=\"#222\" stroke-width=\"1.6\"/><text x=\"720\" y=\"458\" text-anchor=\"end\" font-weight=\"bold\">θ (°C)</text><text x=\"115\" y=\"22\" font-weight=\"bold\">U (V)</text><polyline fill=\"none\" stroke=\"#1F4E5A\" stroke-width=\"2.6\" points=\"105.0,363.8 106.9,363.2 108.8,362.7 110.8,362.1 112.7,361.6 114.6,361.0 116.5,360.5 118.5,359.9 120.4,359.3 122.3,358.7 124.2,358.2 126.1,357.6 128.1,357.0 130.0,356.4 131.9,355.8 133.8,355.1 135.8,354.5 137.7,353.9 139.6,353.3 141.5,352.6 143.4,352.0 145.4,351.3 147.3,350.7 149.2,350.0 151.1,349.3 153.0,348.7 155.0,348.0 156.9,347.3 158.8,346.6 160.7,345.9 162.7,345.2 164.6,344.5 166.5,343.7 168.4,343.0 170.3,342.3 172.3,341.5 174.2,340.8 176.1,340.0 178.0,339.3 180.0,338.5 181.9,337.7 183.8,337.0 185.7,336.2 187.6,335.5 189.6,334.7 191.5,333.9 193.4,333.1 195.3,332.3 197.2,331.5 199.2,330.7 201.1,329.9 203.0,329.1 204.9,328.3 206.9,327.4 208.8,326.6 210.7,325.7 212.6,324.9 214.5,324.0 216.5,323.2 218.4,322.3 220.3,321.4 222.2,320.5 224.2,319.6 226.1,318.7 228.0,317.8 229.9,316.9 231.8,316.0 233.8,315.1 235.7,314.2 237.6,313.2 239.5,312.3 241.5,311.3 243.4,310.4 245.3,309.4 247.2,308.4 249.1,307.4 251.1,306.5 253.0,305.5 254.9,304.5 256.8,303.5 258.8,302.4 260.7,301.6 262.6,300.8 264.5,299.9 266.4,299.1 268.4,298.2 270.3,297.3 272.2,296.5 274.1,295.6 276.0,294.7 278.0,293.8 279.9,293.0 281.8,292.1 283.7,291.2 285.7,290.3 287.6,289.4 289.5,288.5 291.4,287.6 293.3,286.7 295.3,285.7 297.2,284.8 299.1,283.9 301.0,283.0 303.0,282.0 304.9,281.1 306.8,280.1 308.7,279.2 310.6,278.2 312.6,277.3 314.5,276.3 316.4,275.3 318.3,274.4 320.2,273.4 322.2,272.4 324.1,271.4 326.0,270.5 327.9,269.5 329.9,268.5 331.8,267.5 333.7,266.5 335.6,265.5 337.5,264.5 339.5,263.6 341.4,262.6 343.3,261.6 345.2,260.7 347.2,259.7 349.1,258.7 351.0,257.8 352.9,256.8 354.8,255.8 356.8,254.8 358.7,253.8 360.6,252.8 362.5,251.8 364.5,250.8 366.4,249.8 368.3,248.8 370.2,247.8 372.1,246.8 374.1,245.8 376.0,244.8 377.9,243.8 379.8,242.7 381.8,241.7 383.7,240.7 385.6,239.7 387.5,238.6 389.4,237.6 391.4,236.6 393.3,235.5 395.2,234.5 397.1,233.4 399.0,232.4 401.0,231.3 402.9,230.3 404.8,229.2 406.7,228.2 408.7,227.1 410.6,226.1 412.5,225.0 414.4,224.0 416.3,223.0 418.3,222.0 420.2,221.0 422.1,220.0 424.0,219.0 426.0,218.0 427.9,217.0 429.8,216.0 431.7,215.0 433.6,214.0 435.6,213.0 437.5,212.0 439.4,211.0 441.3,210.0 443.2,209.0 445.2,207.9 447.1,206.9 449.0,205.9 450.9,204.9 452.9,203.9 454.8,202.9 456.7,201.8 458.6,200.8 460.5,199.8 462.5,198.8 464.4,197.8 466.3,196.7 468.2,195.7 470.2,194.7 472.1,193.6 474.0,192.6 475.9,191.6 477.8,190.6 479.8,189.5 481.7,188.5 483.6,187.5 485.5,186.5 487.5,185.4 489.4,184.4 491.3,183.4 493.2,182.4 495.1,181.5 497.1,180.5 499.0,179.5 500.9,178.6 502.8,177.6 504.8,176.6 506.7,175.6 508.6,174.7 510.5,173.7 512.4,172.7 514.4,171.7 516.3,170.8 518.2,169.8 520.1,168.8 522.0,167.9 524.0,166.9 525.9,165.9 527.8,165.0 529.7,164.0 531.7,163.0 533.6,162.1 535.5,161.1 537.4,160.1 539.3,159.2 541.3,158.2 543.2,157.2 545.1,156.3 547.0,155.3 549.0,154.3 550.9,153.4 552.8,152.4 554.7,151.5 556.6,150.5 558.6,149.5 560.5,148.6 562.4,147.6 564.3,146.7 566.2,145.7 568.2,144.8 570.1,143.9 572.0,142.9 573.9,142.0 575.9,141.1 577.8,140.2 579.7,139.2 581.6,138.3 583.5,137.4 585.5,136.5 587.4,135.6 589.3,134.6 591.2,133.7 593.2,132.8 595.1,131.9 597.0,131.0 598.9,130.1 600.8,129.2 602.8,128.3 604.7,127.4 606.6,126.5 608.5,125.6 610.5,124.7 612.4,123.8 614.3,122.9 616.2,122.0 618.1,121.1 620.1,120.2 622.0,119.3 623.9,118.4 625.8,117.5 627.8,116.7 629.7,115.8 631.6,114.9 633.5,114.0 635.4,113.2 637.4,112.3 639.3,111.4 641.2,110.5 643.1,109.7 645.0,108.9 647.0,108.1 648.9,107.3 650.8,106.5 652.7,105.7 654.7,105.0 656.6,104.2 658.5,103.4 660.4,102.6 662.3,101.9 664.3,101.1 666.2,100.3 668.1,99.6 670.0,98.8 672.0,98.0 673.9,97.3 675.8,96.5 677.7,95.8 679.6,95.0 681.6,94.2 683.5,93.5 685.4,92.7 687.3,92.0 689.2,91.3 691.2,90.5 693.1,89.8 695.0,89.0 696.9,88.3 698.9,87.6 700.8,86.8 702.7,86.1 704.6,85.4 706.5,84.7 708.5,83.9 710.4,83.2 712.3,82.5 714.2,81.8 716.2,81.1 718.1,80.4 720.0,79.6\"/><circle cx=\"105.0\" cy=\"363.8\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"181.9\" cy=\"337.7\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"258.8\" cy=\"302.4\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"335.6\" cy=\"265.5\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"412.5\" cy=\"225.0\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"489.4\" cy=\"184.4\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"566.2\" cy=\"145.7\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"643.1\" cy=\"109.7\" r=\"5\" fill=\"#B5523B\"/><circle cx=\"720.0\" cy=\"79.6\" r=\"5\" fill=\"#B5523B\"/><text x=\"470\" y=\"390\" fill=\"#1F4E5A\" font-weight=\"bold\">Courbe d'étalonnage U = f(θ)</text></svg>",
+      "code": [
+        "# Serre connectée : pilotage du ventilateur",
+        "SEUIL = 1.2                        # tension seuil, en volts",
+        "while True:",
+        "    valeur = capteur.read_analog()  # nombre entier entre 0 et 1023",
+        "    U = valeur * 5.0 / 1023         # tension aux bornes de R, en volts",
+        "    if U > SEUIL:",
+        "        ventilateur.on()",
+        "    else:",
+        "        ventilateur.off()",
+        "    sleep(1000)                     # attendre 1000 ms avant la mesure suivante"
+      ],
+      "questions": [
+        {
+          "texte": "S'approprier : que calcule la 5ᵉ ligne du programme (celle qui commence par « U = ») ? Calcule U lorsque le microcontrôleur lit valeur = 512.",
+          "aides": [
+            "Doc. 1 : 0 correspond à 0 V et 1 023 à 5,0 V ; c'est une situation de proportionnalité (produit en croix).",
+            "Remplace « valeur » par 512 dans la formule du programme (le symbole * signifie « multiplié par »)."
+          ]
+        },
+        {
+          "texte": "Le programme met-il le ventilateur en marche à partir de 30 °C, comme le souhaite Mme Diallo ? Explique le constat du doc. 4, puis propose une correction du programme. Rédige une réponse argumentée en présentant ta démarche.",
+          "aides": [
+            "Repère dans le programme la condition qui allume le ventilateur : à quelle tension correspond-elle ?",
+            "Utilise la courbe du doc. 2 dans les deux sens : quelle température pour 1,2 V ? quelle tension pour 30 °C ?",
+            "À 22 °C (doc. 4), quelle tension le microcontrôleur mesure-t-il ? Est-elle plus grande que SEUIL ?"
+          ]
+        },
+        {
+          "texte": "Regard critique : avec ta correction, à quelle température le ventilateur démarrera-t-il exactement ? Cite au moins une raison pour laquelle la température de déclenchement réelle peut différer un peu de 30 °C.",
+          "aides": [
+            "Lis sur la courbe la température qui correspond exactement à ton nouveau seuil.",
+            "Pense à la précision de la lecture graphique, à la position de la sonde dans la serre, à l'alimentation du montage."
+          ]
+        }
+      ],
+      "corrige": [
+        "<strong>1.</strong> Cette ligne convertit le nombre lu par le microcontrôleur en tension, en volts, par proportionnalité (1 023 ↔ 5,0 V). Pour valeur = 512 : U = 512 × 5,0 / 1 023 = 2,50 V (environ la moitié de 5,0 V, ce qui est cohérent).",
+        "<strong>2.</strong> Démarche attendue : (a) repérer dans le programme la condition de démarrage : le ventilateur tourne si U &gt; SEUIL, avec SEUIL = 1,2 V ; (b) utiliser la courbe d'étalonnage (doc. 2) pour trouver la température qui correspond à 1,2 V, puis la tension qui correspond à 30 °C ; (c) comparer et conclure ; (d) corriger.",
+        "a. Lecture graphique : U = 1,2 V correspond à θ ≈ 21 °C. Avec SEUIL = 1,2 V, le ventilateur démarre donc dès 21 °C environ, et non à 30 °C. La courbe est croissante : plus il fait chaud, plus U est grande.",
+        "b. Explication du doc. 4 : à 22 °C, la courbe donne U ≈ 1,24 V &gt; 1,2 V : la condition U &gt; SEUIL est vraie, le ventilateur tourne. Dès que la serre dépasse 21 °C (presque toute la journée), il tourne.",
+        "c. Correction : sur la courbe, θ = 30 °C correspond à U ≈ 1,56 V (≈ 1,6 V). Il faut donc remplacer la valeur de SEUIL par 1,56 (écrite avec un point décimal dans le programme). Le reste du programme est correct (U &gt; SEUIL, car U augmente avec la température). Autre correction acceptée : tester directement « valeur » avec un seuil de 320 (1,56 × 1 023 / 5,0 ≈ 320).",
+        "<strong>3.</strong> Avec SEUIL = 1,56 V, le ventilateur démarre vers 30 °C ; avec un seuil arrondi à 1,6 V, vers 31 °C. Raisons possibles d'un écart : précision de la lecture graphique (une petite graduation vaut 0,1 V et 5 °C) ; incertitude des mesures de l'étalonnage ; thermistance placée au soleil ou contre la vitre, qui ne mesure pas la température de l'air de la serre ; dérive de la tension d'alimentation (si elle n'est plus exactement 5,0 V, la courbe d'étalonnage n'est plus valable).",
+        "Éléments valorisés même si la conclusion est fausse : condition de démarrage correctement identifiée dans le programme ; lecture graphique faite dans le bon sens (de U vers θ et de θ vers U) ; lien entre le doc. 4 et le seuil trop bas ; correction proposée cohérente avec la courbe ; regard critique sur la précision ou la position de la sonde.",
+        "<em>⚠ Erreur fréquente : croire qu'il faut écrire « if U &lt; SEUIL » parce que la résistance d'une CTN diminue quand θ augmente : ici on mesure la tension aux bornes de la résistance fixe, qui AUGMENTE avec la température (doc. 2). Le sens du test est bon, c'est la valeur du seuil qui est fausse.</em>"
+      ]
+    }
+  ]
+}
