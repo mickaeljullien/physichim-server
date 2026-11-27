@@ -84,6 +84,12 @@ async function initAppDB() {
       created_at TIMESTAMPTZ NOT NULL DEFAULT now()
     );
     CREATE INDEX IF NOT EXISTS idx_devoirs_classe ON devoirs(classe_id);
+
+    -- Devoirs sur des exercices (novembre 2026) : un devoir porte sur le quiz du chapitre
+    -- (avec_quiz, comme avant), sur des exercices précis du chapitre, ou sur les deux.
+    -- Les devoirs existants gardent avec_quiz = true et aucun exercice : rien ne change pour eux.
+    ALTER TABLE devoirs ADD COLUMN IF NOT EXISTS avec_quiz BOOLEAN NOT NULL DEFAULT true;
+    ALTER TABLE devoirs ADD COLUMN IF NOT EXISTS exercices TEXT[] NOT NULL DEFAULT '{}';
   `);
 }
 
@@ -156,6 +162,22 @@ async function initStudentDB() {
     CREATE INDEX IF NOT EXISTS idx_quiz_scores_eleve ON quiz_scores(eleve_id);
     CREATE INDEX IF NOT EXISTS idx_notes_eleve ON notes(eleve_id);
     CREATE INDEX IF NOT EXISTS idx_eleves_admin ON eleves(admin_id);
+
+    -- Suivi des exercices différenciés : une ligne par élève et par exercice.
+    -- ouvert_le = première fois que l'exercice a été affiché à l'écran ; aides = nombre d'aides
+    -- dévoilées par question ({"0": 2, "3": 1} : 2 aides à la question 1, 1 à la question 4) ;
+    -- aide_le = date de la dernière aide dévoilée ; termine_le = « J'ai terminé » (une seule fois).
+    CREATE TABLE IF NOT EXISTS exercices_suivi (
+      eleve_id TEXT NOT NULL REFERENCES eleves(id) ON DELETE CASCADE,
+      chapitre_id INTEGER NOT NULL,
+      exercice_id TEXT NOT NULL,
+      ouvert_le TIMESTAMPTZ NOT NULL DEFAULT now(),
+      aides JSONB NOT NULL DEFAULT '{}',
+      aide_le TIMESTAMPTZ,
+      termine_le TIMESTAMPTZ,
+      PRIMARY KEY (eleve_id, chapitre_id, exercice_id)
+    );
+    CREATE INDEX IF NOT EXISTS idx_exercices_suivi_chapitre ON exercices_suivi(chapitre_id);
   `);
 }
 
@@ -262,11 +284,76 @@ const MIGRATION_FUSION_APPLI = [
      SELECT classe_id, $2 FROM classe_chapitres WHERE chapitre_id = $1 ON CONFLICT DO NOTHING`],
   ['classe_chapitres supprimés', 'DELETE FROM classe_chapitres WHERE chapitre_id = $1 AND chapitre_id <> $2'],
 ];
+// exercices_suivi n'est pas dans cette liste : la table a été créée après la fusion 18 → 2,
+// aucune ligne ne peut porter l'ancien id (la route /api/exercices le convertit à l'entrée).
 const MIGRATION_FUSION_ELEVES = [
   ['quiz_scores', 'UPDATE quiz_scores SET chapitre_id = $2 WHERE chapitre_id = $1'],
   ['progression', 'UPDATE progression SET chapitre_id = $2 WHERE chapitre_id = $1'],
   ['erreurs_quiz', 'UPDATE erreurs_quiz SET chapitre_id = $2 WHERE chapitre_id = $1'],
 ];
+
+// Décalage des numéros d'exercices d'un chapitre fusionné (même table dans index.html) :
+// l'ex3 de l'ancien chapitre 18 est devenu l'ex9 du chapitre 2.
+const DECALAGE_EXERCICES_FUSIONNES = { 18: 6 };
+function exerciceIdActuel(chapitreId, exId) {
+  for (let n = 0; n < 10 && Number.isInteger(chapitreId) && estFusionne(chapitreId); n++) {
+    const m = /^ex(\d+)$/.exec(exId);
+    if (m) exId = `ex${Number(m[1]) + (DECALAGE_EXERCICES_FUSIONNES[chapitreId] || 0)}`;
+    chapitreId = CHAPITRES_FUSIONNES[chapitreId];
+  }
+  return exId;
+}
+
+// ── Catalogue des exercices ────────────────────────────────
+// Lu au démarrage dans le contenu des chapitres (constante CHAPTERS d'index.html) : liste des
+// exercices de chaque chapitre, pour refuser un exercice inexistant et pour que l'espace
+// enseignant affiche leurs titres. Map { chapitre_id -> [{ id, titre, niveau, nbQuestions }] }.
+// null si la lecture a échoué : on se contente alors de contrôler le format des identifiants.
+const EXERCICE_ID_RE = /^ex\d{1,3}$/;
+let catalogueExercices = null;
+
+function finLitteral(src, start) {
+  const open = src[start], close = open === '[' ? ']' : '}';
+  let depth = 0;
+  for (let i = start; i < src.length; i++) {
+    const c = src[i];
+    if (c === '"' || c === "'" || c === '`') { for (i++; i < src.length && src[i] !== c; i++) if (src[i] === '\\') i++; continue; }
+    if (c === '/' && src[i + 1] === '/') { while (i < src.length && src[i] !== '\n') i++; continue; }
+    if (c === '/' && src[i + 1] === '*') { i = src.indexOf('*/', i + 2) + 1; continue; }
+    if (c === open) depth++;
+    else if (c === close && --depth === 0) return i;
+  }
+  throw new Error('fin de CHAPTERS introuvable');
+}
+
+const texteSansBalises = (html) => String(html || '').replace(/<[^>]*>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim();
+
+function chargerCatalogueExercices() {
+  try {
+    const src = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+    const debut = src.indexOf('[', src.indexOf('const CHAPTERS'));
+    const chapitres = require('vm').runInNewContext('(' + src.slice(debut, finLitteral(src, debut) + 1) + ')', {}, { timeout: 5000 });
+    const cat = new Map();
+    for (const ch of chapitres) {
+      if (!Array.isArray(ch.exercices)) continue;
+      cat.set(ch.id, ch.exercices.map(ex => ({
+        id: ex.id, titre: texteSansBalises(ex.titre), niveau: Number(ex.niveau) || 1,
+        nbQuestions: Array.isArray(ex.questions) ? ex.questions.length : 0
+      })));
+    }
+    catalogueExercices = cat;
+    console.log(`✏️  Catalogue des exercices : ${[...cat.values()].reduce((n, l) => n + l.length, 0)} exercices dans ${cat.size} chapitres`);
+  } catch (e) {
+    catalogueExercices = null;
+    console.error('⚠ Catalogue des exercices illisible (identifiants contrôlés sur leur seul format) :', e.message);
+  }
+}
+
+function exerciceDuCatalogue(chapitreId, exId) {
+  if (typeof exId !== 'string' || !EXERCICE_ID_RE.test(exId)) return null;
+  if (!catalogueExercices) return { id: exId, nbQuestions: 30 };
+  return (catalogueExercices.get(chapitreId) || []).find(e => e.id === exId) || null;
+}
 
 // ── Erreurs fréquentes aux quiz ────────────────────────────
 // Mêmes règles que index.html (normaliserPiege) et l'outil quiz_tool.js du skill.
@@ -323,28 +410,59 @@ function finJourneeParis(dateIso) {
   return minuitUtc - decalage;
 }
 
-// Statut d'un devoir pour un élève, à partir des dates de ses quiz sur ce chapitre :
-//   a_temps   : quiz fait après l'assignation, avant la fin de la date limite
-//   en_retard : quiz fait après l'assignation, mais après la date limite
-//   a_faire   : pas encore fait, date limite pas dépassée
-//   non_fait  : pas fait, date limite dépassée
-function statutDevoir(devoir, datesQuiz, now) {
+// Statut d'un devoir pour un élève. Un devoir a une ou plusieurs parties : le quiz du chapitre
+// (avec_quiz) et/ou des exercices précis. Chaque partie a sa date de réalisation :
+//   - quiz : premier quiz du chapitre fait APRÈS l'assignation (comme avant) ;
+//   - exercice : « J'ai terminé », quelle que soit sa date (il ne se fait qu'une fois : un
+//     exercice déjà terminé avant que le devoir soit donné compte comme fait).
+// Le devoir est fait quand toutes ses parties le sont, à la date de la dernière :
+//   a_temps   : tout fait avant la fin de la date limite
+//   en_retard : tout fait, mais la dernière partie après la date limite
+//   a_faire   : pas encore tout fait, date limite pas dépassée
+//   non_fait  : pas tout fait, date limite dépassée
+// `parties` détaille chaque partie : { quiz: date|null (si avec_quiz), exercices: { ex4: date|null } }.
+// datesQuiz : dates des quiz de l'élève sur ce chapitre ; finsExercices : Map exercice_id -> termine_le.
+function statutDevoir(devoir, datesQuiz, now, finsExercices = new Map()) {
   const debut = new Date(devoir.created_at).getTime();
   const limite = finJourneeParis(devoir.date_limite);
-  const premier = datesQuiz.map(d => new Date(d).getTime()).filter(t => t >= debut).sort((a, b) => a - b)[0];
-  if (premier !== undefined) {
-    return { statut: premier < limite ? 'a_temps' : 'en_retard', fait_le: new Date(premier).toISOString() };
+  const parties = {};
+  const faits = [];
+  let manque = false;
+  if (devoir.avec_quiz !== false) {
+    const premier = datesQuiz.map(d => new Date(d).getTime()).filter(t => t >= debut).sort((a, b) => a - b)[0];
+    parties.quiz = premier === undefined ? null : new Date(premier).toISOString();
+    if (premier === undefined) manque = true; else faits.push(premier);
   }
-  return { statut: now < limite ? 'a_faire' : 'non_fait', fait_le: null };
+  const exercices = devoir.exercices || [];
+  if (exercices.length) {
+    parties.exercices = {};
+    for (const ex of exercices) {
+      const fin = finsExercices.get(ex);
+      parties.exercices[ex] = fin ? new Date(fin).toISOString() : null;
+      if (fin) faits.push(new Date(fin).getTime()); else manque = true;
+    }
+  }
+  if (!manque && faits.length) {
+    const dernier = Math.max(...faits);
+    return { statut: dernier < limite ? 'a_temps' : 'en_retard', fait_le: new Date(dernier).toISOString(), parties };
+  }
+  return { statut: now < limite ? 'a_faire' : 'non_fait', fait_le: null, parties };
+}
+
+// Fins d'exercices d'un élève sur un chapitre : Map exercice_id -> termine_le.
+function finsExercicesDuChapitre(suivis, chapitreId) {
+  return new Map(suivis.filter(s => s.chapitre_id === chapitreId && s.termine_le).map(s => [s.exercice_id, s.termine_le]));
 }
 
 // Devoirs à montrer à un élève : un devoir fait reste visible jusqu'à sa date limite,
 // un devoir non fait reste visible (en retard) encore quelques jours après.
-function devoirsPourEleve(devoirs, scores, now) {
+function devoirsPourEleve(devoirs, scores, now, suivis = []) {
   return devoirs.map(d => {
     const dates = scores.filter(s => s.chapitre_id === d.chapitre_id).map(s => s.date);
-    return { id: d.id, chapitre_id: d.chapitre_id, date_limite: d.date_limite, ...statutDevoir(d, dates, now) };
+    return { id: d.id, chapitre_id: d.chapitre_id, date_limite: d.date_limite, avec_quiz: d.avec_quiz !== false,
+      exercices: d.exercices || [], ...statutDevoir(d, dates, now, finsExercicesDuChapitre(suivis, d.chapitre_id)) };
   }).filter(d => {
+
     const limite = finJourneeParis(d.date_limite);
     const fait = d.statut === 'a_temps' || d.statut === 'en_retard';
     return now < (fait ? limite : limite + DEVOIR_AFFICHAGE_RETARD_JOURS * 86400000);
@@ -686,7 +804,7 @@ function servirPage(req, res, fichier) {
 // ── Purge de fin d'année ───────────────────────────────────
 // Tables de la base élèves qui contiennent l'activité d'un élève (une colonne eleve_id).
 // Toute nouvelle table d'activité élève doit être ajoutée ici (purge) et dans l'export.
-const TABLES_ACTIVITE_ELEVE = ['quiz_scores', 'erreurs_quiz', 'progression', 'notes', 'connexions'];
+const TABLES_ACTIVITE_ELEVE = ['quiz_scores', 'erreurs_quiz', 'progression', 'notes', 'connexions', 'exercices_suivi'];
 
 // Élèves et classes concernés : une classe de l'enseignant, ou (classeId vide) tous ses élèves
 // et toutes ses classes. null si la classe n'existe pas ou n'est pas à lui.
@@ -822,6 +940,7 @@ async function router(req, res) {
     const scores = await studentDb.all('SELECT chapitre_id, score, total, date FROM quiz_scores WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
     const notes = await studentDb.all('SELECT id, type, intitule, valeur, date FROM notes WHERE eleve_id = $1 ORDER BY date DESC', [eleve.id]);
     const progression = await studentDb.all('SELECT chapitre_id, action, date FROM progression WHERE eleve_id = $1 ORDER BY date DESC LIMIT 50', [eleve.id]);
+    const exercices = await studentDb.all('SELECT chapitre_id, exercice_id, aides, ouvert_le, termine_le FROM exercices_suivi WHERE eleve_id = $1', [eleve.id]);
 
     let classe = null;
     let chapitresAutorises = [];
@@ -831,8 +950,8 @@ async function router(req, res) {
       if (classe) {
         const rows = await appDb.all('SELECT chapitre_id FROM classe_chapitres WHERE classe_id = $1', [eleve.classe_id]);
         chapitresAutorises = rows.map(r => r.chapitre_id);
-        const devoirsClasse = await appDb.all('SELECT id, chapitre_id, date_limite, created_at FROM devoirs WHERE classe_id = $1 ORDER BY date_limite, created_at', [eleve.classe_id]);
-        devoirs = devoirsPourEleve(devoirsClasse, scores, Date.now());
+        const devoirsClasse = await appDb.all('SELECT id, chapitre_id, date_limite, created_at, avec_quiz, exercices FROM devoirs WHERE classe_id = $1 ORDER BY date_limite, created_at', [eleve.classe_id]);
+        devoirs = devoirsPourEleve(devoirsClasse, scores, Date.now(), exercices);
       }
     }
 
@@ -841,8 +960,60 @@ async function router(req, res) {
       // Jeton à renvoyer (en-tête Authorization) sur toutes les routes élèves.
       jeton: makeEleveToken(eleve), jeton_duree_s: ELEVE_TOKEN_MAX_AGE_MS / 1000,
       classe, chapitresAutorises, devoirs,
-      scores, notes, progression
+      scores, notes, progression, exercices
     });
+  }
+
+  // ── API : Suivi d'un exercice différencié ──
+  // POST /api/exercices  { chapitre_id, exercice_id, action, question?, nb? } + jeton élève
+  //   action « ouverture » : l'exercice a été affiché à l'écran (seule la première date est gardée)
+  //   action « aide »      : nb aides sont maintenant dévoilées à la question `question` (0 = la 1re)
+  //   action « termine »   : « J'ai terminé » (seule la première date est gardée)
+  // Chaque action crée la ligne si besoin : une aide ou une fin compte aussi comme une ouverture.
+  if (p === '/api/exercices' && method === 'POST') {
+    const body = await parseBody(req);
+    const auth = await eleveAuthentifie(req, body);
+    if (auth.erreur) return json(res, auth.erreur[0], { error: auth.erreur[1] });
+    const brut = body.chapitre_id;
+    const chapitre_id = chapitreIdActuel(brut); // ancien chapitre fusionné → chapitre actuel
+    const exercice_id = Number.isInteger(brut) ? exerciceIdActuel(brut, body.exercice_id) : body.exercice_id;
+    const { action } = body;
+    if (!isChapitreIdValide(chapitre_id) || !['ouverture', 'aide', 'termine'].includes(action)) {
+      return json(res, 400, { error: 'Données invalides' });
+    }
+    const ex = exerciceDuCatalogue(chapitre_id, exercice_id);
+    if (!ex) return json(res, 400, { error: 'Exercice inconnu' });
+    const params = [auth.id, chapitre_id, exercice_id];
+    if (action === 'aide') {
+      const { question, nb } = body;
+      if (!Number.isInteger(question) || question < 0 || question >= Math.max(ex.nbQuestions, 1)
+        || !Number.isInteger(nb) || nb < 1 || nb > 10) {
+        return json(res, 400, { error: 'Données invalides' });
+      }
+      // Jamais de baisse : une aide renvoyée deux fois, ou dans le désordre, ne fait pas reculer le compte.
+      await studentDb.run(
+        `INSERT INTO exercices_suivi (eleve_id, chapitre_id, exercice_id, aides, aide_le)
+         VALUES ($1, $2, $3, jsonb_build_object($4::text, $5::int), now())
+         ON CONFLICT (eleve_id, chapitre_id, exercice_id) DO UPDATE SET
+           aides = exercices_suivi.aides || jsonb_build_object($4::text, GREATEST(COALESCE((exercices_suivi.aides->>($4::text))::int, 0), $5::int)),
+           aide_le = now()`,
+        [...params, String(question), nb]
+      );
+    } else if (action === 'termine') {
+      await studentDb.run(
+        `INSERT INTO exercices_suivi (eleve_id, chapitre_id, exercice_id, termine_le) VALUES ($1, $2, $3, now())
+         ON CONFLICT (eleve_id, chapitre_id, exercice_id) DO UPDATE SET termine_le = COALESCE(exercices_suivi.termine_le, now())`,
+        params
+      );
+    } else {
+      await studentDb.run(
+        `INSERT INTO exercices_suivi (eleve_id, chapitre_id, exercice_id) VALUES ($1, $2, $3)
+         ON CONFLICT (eleve_id, chapitre_id, exercice_id) DO NOTHING`,
+        params
+      );
+    }
+    const ligne = await studentDb.get('SELECT chapitre_id, exercice_id, aides, ouvert_le, termine_le FROM exercices_suivi WHERE eleve_id = $1 AND chapitre_id = $2 AND exercice_id = $3', params);
+    return json(res, 201, { ok: true, suivi: ligne });
   }
 
   // ── API : Sauvegarder un score de quiz (et les erreurs fréquentes commises) ──
@@ -1259,8 +1430,16 @@ async function router(req, res) {
   // ROUTES DEVOIRS (scoped à l'enseignant connecté)
   // ══════════════════════════════════════════════════════════
 
+  // ── Catalogue des exercices (titres, niveaux), par chapitre ──
+  // GET /api/admin/catalogue-exercices  →  { "<chapitre_id>": [{ id, titre, niveau, nbQuestions }] }
+  if (p === '/api/admin/catalogue-exercices' && method === 'GET') {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    return json(res, 200, Object.fromEntries(catalogueExercices || []));
+  }
+
   // ── Donner un devoir à une classe ──
-  // POST /api/admin/classes/:id/devoirs  { chapitre_id, date_limite: "AAAA-MM-JJ" }
+  // POST /api/admin/classes/:id/devoirs  { chapitre_id, date_limite: "AAAA-MM-JJ", avec_quiz?: true, exercices?: ["ex4", "ex5"] }
   if (p.match(/^\/api\/admin\/classes\/[^/]+\/devoirs$/) && method === 'POST') {
     const admin = await getAdminFromToken(req);
     if (!admin) return json(res, 401, { error: 'Non autorisé' });
@@ -1276,12 +1455,21 @@ async function router(req, res) {
       return json(res, 400, { error: 'Chapitre invalide pour cette classe' });
     }
     if (!isDateIso(date_limite)) return json(res, 400, { error: 'Date limite invalide (AAAA-MM-JJ attendu)' });
+    // Sans précision (ancienne page enseignant) : le quiz seul, comme avant.
+    const avec_quiz = body.avec_quiz === undefined ? true : body.avec_quiz;
+    const exercices = body.exercices === undefined ? [] : body.exercices;
+    if (typeof avec_quiz !== 'boolean' || !Array.isArray(exercices) || exercices.length > 30
+      || new Set(exercices).size !== exercices.length
+      || !exercices.every(ex => exerciceDuCatalogue(chapitre_id, ex))) {
+      return json(res, 400, { error: 'Exercices invalides pour ce chapitre' });
+    }
+    if (!avec_quiz && !exercices.length) return json(res, 400, { error: 'Choisissez le quiz ou au moins un exercice' });
 
     const id = genId();
-    await appDb.run('INSERT INTO devoirs (id, classe_id, chapitre_id, date_limite) VALUES ($1, $2, $3, $4)', [id, classeId, chapitre_id, date_limite]);
+    await appDb.run('INSERT INTO devoirs (id, classe_id, chapitre_id, date_limite, avec_quiz, exercices) VALUES ($1, $2, $3, $4, $5, $6)', [id, classeId, chapitre_id, date_limite, avec_quiz, exercices]);
     // Un devoir sur un chapitre verrouillé serait infaisable : on l'ouvre à la classe.
     await appDb.run('INSERT INTO classe_chapitres (classe_id, chapitre_id) VALUES ($1, $2) ON CONFLICT DO NOTHING', [classeId, chapitre_id]);
-    return json(res, 201, { ok: true, id, chapitre_id, date_limite });
+    return json(res, 201, { ok: true, id, chapitre_id, date_limite, avec_quiz, exercices });
   }
 
   // ── Devoirs d'une classe, avec le suivi élève par élève ──
@@ -1293,7 +1481,7 @@ async function router(req, res) {
     const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
     if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
 
-    const devoirs = await appDb.all('SELECT id, chapitre_id, date_limite, created_at FROM devoirs WHERE classe_id = $1 ORDER BY date_limite DESC, created_at DESC', [classeId]);
+    const devoirs = await appDb.all('SELECT id, chapitre_id, date_limite, created_at, avec_quiz, exercices FROM devoirs WHERE classe_id = $1 ORDER BY date_limite DESC, created_at DESC', [classeId]);
     if (!devoirs.length) return json(res, 200, []);
 
     const eleves = await studentDb.all('SELECT id, code, pseudo FROM eleves WHERE classe_id = $1 ORDER BY pseudo', [classeId]);
@@ -1304,11 +1492,19 @@ async function router(req, res) {
       ),
       'eleve_id'
     );
+    const finsParEleve = groupBy(
+      await studentDb.all(
+        'SELECT eleve_id, chapitre_id, exercice_id, termine_le FROM exercices_suivi WHERE eleve_id = ANY($1::text[]) AND chapitre_id = ANY($2::int[]) AND termine_le IS NOT NULL',
+        [eleves.map(e => e.id), [...new Set(devoirs.map(d => d.chapitre_id))]]
+      ),
+      'eleve_id'
+    );
     const now = Date.now();
     const result = devoirs.map(d => {
       const suivi = eleves.map(e => {
         const dates = (tentatives.get(e.id) || []).filter(t => t.chapitre_id === d.chapitre_id).map(t => t.date);
-        return { id: e.id, code: e.code, pseudo: e.pseudo, ...statutDevoir(d, dates, now) };
+        const fins = finsExercicesDuChapitre(finsParEleve.get(e.id) || [], d.chapitre_id);
+        return { id: e.id, code: e.code, pseudo: e.pseudo, ...statutDevoir(d, dates, now, fins) };
       });
       const compte = { a_temps: 0, en_retard: 0, a_faire: 0, non_fait: 0 };
       suivi.forEach(s => compte[s.statut]++);
@@ -1394,6 +1590,69 @@ async function router(req, res) {
       result.chapitre = { chapitre_id: chapitreId, nb_eleves_quiz: quizRow ? quizRow.n : 0, erreurs };
     }
     return json(res, 200, result);
+  }
+
+  // ══════════════════════════════════════════════════════════
+  // SUIVI DES EXERCICES (scoped à l'enseignant connecté)
+  // ══════════════════════════════════════════════════════════
+
+  // ── Tableau élèves × exercices d'une classe, pour un chapitre ──
+  // GET /api/admin/classes/:id/exercices?chapitre_id=7
+  // Par élève et par exercice : ouvert, aides dévoilées, terminé. Par exercice : nombre et
+  // pourcentage d'élèves de la classe qui l'ont terminé (« réussite » = « J'ai terminé »), et
+  // moyenne d'aides dévoilées par les élèves qui l'ont ouvert. Sans chapitre_id : nombre
+  // d'exercices terminés par chapitre, pour choisir le chapitre.
+  if (p.match(/^\/api\/admin\/classes\/[^/]+\/exercices$/) && method === 'GET') {
+    const admin = await getAdminFromToken(req);
+    if (!admin) return json(res, 401, { error: 'Non autorisé' });
+    const classeId = p.split('/')[4];
+    const classe = await appDb.get('SELECT * FROM classes WHERE id = $1', [classeId]);
+    if (!classe || classe.admin_id !== admin.id) return json(res, 404, { error: 'Classe introuvable' });
+
+    const eleves = await studentDb.all('SELECT id, code, pseudo FROM eleves WHERE classe_id = $1 ORDER BY pseudo', [classeId]);
+    const eleveIds = eleves.map(e => e.id);
+    const chapitreParam = url.searchParams.get('chapitre_id');
+    if (chapitreParam === null) {
+      const parChapitre = await studentDb.all(
+        `SELECT chapitre_id, COUNT(DISTINCT eleve_id)::int AS nb_eleves, COUNT(termine_le)::int AS nb_termines
+         FROM exercices_suivi WHERE eleve_id = ANY($1::text[]) GROUP BY chapitre_id ORDER BY chapitre_id`,
+        [eleveIds]
+      );
+      return json(res, 200, { classe: { id: classe.id, nom: classe.nom, niveau: classe.niveau }, nbEleves: eleves.length, chapitres: parChapitre });
+    }
+    const chapitreId = chapitreIdActuel(Number(chapitreParam));
+    if (!/^\d{1,3}$/.test(chapitreParam) || !isChapitreIdValide(chapitreId)) return json(res, 400, { error: 'Chapitre invalide' });
+
+    const lignes = await studentDb.all(
+      'SELECT eleve_id, exercice_id, aides, ouvert_le, aide_le, termine_le FROM exercices_suivi WHERE eleve_id = ANY($1::text[]) AND chapitre_id = $2',
+      [eleveIds, chapitreId]
+    );
+    const totalAides = (aides) => Object.values(aides || {}).reduce((a, n) => a + (Number(n) || 0), 0);
+    const parEleve = groupBy(lignes, 'eleve_id');
+    // Exercices du catalogue, puis ceux qui n'y sont plus mais ont des données (exercice retiré).
+    const exercices = [...((catalogueExercices && catalogueExercices.get(chapitreId)) || [])];
+    for (const l of lignes) if (!exercices.some(e => e.id === l.exercice_id)) exercices.push({ id: l.exercice_id, titre: '(exercice retiré)', niveau: 0, nbQuestions: 0 });
+
+    const stats = {};
+    for (const ex of exercices) {
+      const ls = lignes.filter(l => l.exercice_id === ex.id);
+      const nbTermine = ls.filter(l => l.termine_le).length;
+      stats[ex.id] = {
+        nb_ouvert: ls.length, nb_termine: nbTermine,
+        pct_termine: eleves.length ? Math.round((100 * nbTermine) / eleves.length) : 0,
+        moyenne_aides: ls.length ? Math.round((10 * ls.reduce((a, l) => a + totalAides(l.aides), 0)) / ls.length) / 10 : null
+      };
+    }
+    return json(res, 200, {
+      classe: { id: classe.id, nom: classe.nom, niveau: classe.niveau }, chapitre_id: chapitreId, nbEleves: eleves.length,
+      exercices, stats,
+      eleves: eleves.map(e => ({
+        id: e.id, code: e.code, pseudo: e.pseudo,
+        suivi: Object.fromEntries((parEleve.get(e.id) || []).map(l => [l.exercice_id, {
+          ouvert_le: l.ouvert_le, termine_le: l.termine_le, aide_le: l.aide_le, aides: l.aides, nb_aides: totalAides(l.aides)
+        }]))
+      }))
+    });
   }
 
   // ── Changer la date limite d'un devoir ──
@@ -1573,7 +1832,7 @@ async function router(req, res) {
 
     let csv = 'Classe;Niveau;Code;Pseudo;Derniere_connexion;';
     csv += chapitres.map(i => `Ch${String(i).padStart(2,'0')}_meilleur_score`).join(';');
-    csv += ';Nb_notes;Moyenne_notes;Nb_erreurs_quiz;Erreurs_principales\n';
+    csv += ';Nb_notes;Moyenne_notes;Nb_erreurs_quiz;Erreurs_principales;Nb_exercices_ouverts;Nb_exercices_termines;Nb_aides_exercices;Exercices_termines\n';
 
     const eleveIds = eleves.map(e => e.id);
     const scoresParEleve = groupBy(
@@ -1595,8 +1854,20 @@ async function router(req, res) {
       'eleve_id'
     );
 
+    // Exercices : ouverts, terminés (liste « Ch07 ex4 | Ch07 ex5 »), total d'aides dévoilées.
+    const exosParEleve = groupBy(
+      await studentDb.all(
+        'SELECT eleve_id, chapitre_id, exercice_id, aides, termine_le FROM exercices_suivi WHERE eleve_id = ANY($1::text[]) ORDER BY chapitre_id, exercice_id',
+        [eleveIds]
+      ),
+      'eleve_id'
+    );
+
     const rows = eleves.map(e => {
       const scores = scoresParEleve.get(e.id) || [];
+      const exos = exosParEleve.get(e.id) || [];
+      const exosTermines = exos.filter(x => x.termine_le);
+      const nbAidesExos = exos.reduce((a, x) => a + Object.values(x.aides || {}).reduce((b, n) => b + (Number(n) || 0), 0), 0);
       const notes = notesParEleve.get(e.id) || [];
       const erreurs = erreursParEleve.get(e.id) || [];
       const nbErreurs = erreurs.reduce((a, r) => a + r.n, 0);
@@ -1610,7 +1881,9 @@ async function router(req, res) {
       const niveauLabelCsv = e.classe_niveau === '2nde' ? 'Seconde' : e.classe_niveau === '1ere' ? 'Première' : e.classe_niveau === 'tle' ? 'Terminale' : '';
       const cells = [csvField(e.classe_nom || 'Sans classe'), niveauLabelCsv, csvField(e.code), csvField(e.pseudo), e.last_seen,
         ...chapitres.map(i => scoreMap[i] !== undefined ? scoreMap[i] : ''), notes.length, avgNote,
-        nbErreurs, csvField(erreursPrincipales)];
+        nbErreurs, csvField(erreursPrincipales),
+        exos.length, exosTermines.length, nbAidesExos,
+        csvField(exosTermines.map(x => `Ch${String(x.chapitre_id).padStart(2, '0')} ${x.exercice_id}`).join(' | '))];
       return cells.join(';');
     });
     csv += rows.join('\n') + '\n';
@@ -1654,6 +1927,7 @@ async function router(req, res) {
     await studentDb.run('DELETE FROM erreurs_quiz WHERE eleve_id = $1', [eleveId]);
     await studentDb.run('DELETE FROM notes WHERE eleve_id = $1', [eleveId]);
     await studentDb.run('DELETE FROM progression WHERE eleve_id = $1', [eleveId]);
+    await studentDb.run('DELETE FROM exercices_suivi WHERE eleve_id = $1', [eleveId]);
     return json(res, 200, { ok: true });
   }
 
@@ -1712,6 +1986,8 @@ const server = http.createServer(async (req, res) => {
     await initStudentDB();
     await migrerChapitresFusionnes(pgPool, 'élèves', MIGRATION_FUSION_ELEVES);
     await purgerVieillesConnexions();
+    chargerCatalogueExercices();
+
     console.log('✅ Base de données élèves (PostgreSQL) initialisée');
   } catch (e) {
     console.error('❌ Erreur PostgreSQL :', e.message);

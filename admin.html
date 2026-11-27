@@ -115,6 +115,19 @@
   .err-eleves{padding:0 12px 10px 12px;display:flex;flex-wrap:wrap;gap:6px}
   .err-eleves[hidden]{display:none}
 
+  /* Suivi des exercices */
+  .exo-table th, .exo-table td{text-align:center}
+  .exo-table th:first-child, .exo-table td:first-child{text-align:left;position:sticky;left:0;background:var(--surface);z-index:1}
+  .exo-table th:first-child{background:var(--surface2)}
+  .exo-cell{font-family:'DM Mono',monospace;font-size:.75rem;white-space:nowrap}
+  .exo-ok{color:var(--green);font-weight:600}
+  .exo-ouvert{color:var(--yellow)}
+  .exo-rien{color:var(--muted)}
+  .exo-stat td{font-size:.75rem;color:var(--muted);background:var(--surface2)}
+  .devoir-exos{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:6px;font-size:.82rem}
+  .devoir-exos label{display:flex;align-items:center;gap:6px;cursor:pointer}
+  .devoir-exos input{accent-color:var(--accent);width:16px;height:16px}
+
   @media(max-width:600px){
     .stats-grid{grid-template-columns:1fr 1fr}
     .add-eleve-row{flex-direction:column}
@@ -253,6 +266,7 @@
       <button class="tab" id="tab-scores" onclick="switchTab('scores')">📊 Scores quiz</button>
       <button class="tab" id="tab-notes" onclick="switchTab('notes')">📝 Notes</button>
       <button class="tab" id="tab-erreurs" onclick="switchTab('erreurs')">⚠️ Erreurs fréquentes</button>
+      <button class="tab" id="tab-exercices" onclick="switchTab('exercices')">✏️ Exercices</button>
     </div>
 
     <!-- Onglet Classes -->
@@ -280,7 +294,7 @@
 
       <div class="card" style="margin-top:24px">
         <div class="card-title">🧹 Fin d'année : effacer les données des élèves</div>
-        <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Efface les scores de quiz, les erreurs fréquentes, les chapitres ouverts, les notes saisies, le journal des connexions et les devoirs de vos classes. Les classes et leurs chapitres autorisés sont conservés. Pensez à faire l'<button type="button" class="link-muted" style="background:none;border:none;font:inherit;padding:0" onclick="exportCSV()">export CSV</button> avant : cette action est irréversible.</p>
+        <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Efface les scores de quiz, les erreurs fréquentes, les chapitres ouverts, le suivi des exercices, les notes saisies, le journal des connexions et les devoirs de vos classes. Les classes et leurs chapitres autorisés sont conservés. Pensez à faire l'<button type="button" class="link-muted" style="background:none;border:none;font:inherit;padding:0" onclick="exportCSV()">export CSV</button> avant : cette action est irréversible.</p>
         <div class="add-eleve-row">
           <div class="form-group">
             <label class="form-label" for="purge-classe">Classes concernées</label>
@@ -376,6 +390,25 @@
           </div>
         </div>
         <div id="err-resultats"></div>
+      </div>
+    </div>
+
+    <!-- Onglet Suivi des exercices -->
+    <div id="pane-exercices" style="display:none">
+      <div class="card">
+        <div class="card-title">✏️ Suivi des exercices différenciés</div>
+        <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Pour chaque élève de la classe et chaque exercice du chapitre : ✓ = « J'ai terminé », 💡 = nombre d'aides dévoilées, « ouvert » = affiché à l'écran mais pas terminé. En bas, par exercice : élèves qui l'ont terminé (sur toute la classe) et moyenne d'aides dévoilées par ceux qui l'ont ouvert. Les numéros sont ceux des fiches (ex4 = Ex. 4 du QR code).</p>
+        <div class="err-filtres">
+          <div class="form-group">
+            <label class="form-label" for="exo-classe">Classe</label>
+            <select class="form-select" id="exo-classe" onchange="exoChoix.classe = this.value; exoChoix.chapitre = null; loadExercicesSuivi()"></select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="exo-chapitre">Chapitre</label>
+            <select class="form-select" id="exo-chapitre" onchange="exoChoix.chapitre = Number(this.value); loadExercicesSuivi()"></select>
+          </div>
+        </div>
+        <div id="exo-resultats"></div>
       </div>
     </div>
   </div>
@@ -577,6 +610,7 @@ async function enterMain() {
   document.getElementById('teacher-label').textContent = `${CURRENT_ADMIN.nom} (${CURRENT_ADMIN.identifiant})`;
   await refreshClasses();
   await refreshData();
+  chargerCatalogue().then(() => { if (currentClasseId) renderDevoirExosChoix(); });
 }
 
 function doLogout() {
@@ -947,6 +981,7 @@ function openClasse(id) {
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
         <button class="btn btn-secondary btn-sm" onclick="voirErreursClasse('${c.id}')">⚠️ Erreurs fréquentes</button>
+        <button class="btn btn-secondary btn-sm" onclick="voirExercicesClasse('${c.id}')">✏️ Suivi des exercices</button>
         <button class="btn btn-secondary btn-sm" onclick="exportCSV('${c.id}')">📥 Export CSV</button>
         ${c.niveau !== 'tle' ? `<button class="btn btn-secondary btn-sm" onclick="promouvoirClasse('${c.id}')">🎓 Promouvoir en ${niveauLabel(NIVEAU_ORDER[NIVEAU_ORDER.indexOf(c.niveau)+1])}</button>` : ''}
         <button class="btn btn-danger btn-sm" onclick="deleteClasse('${c.id}')">✕ Supprimer la classe</button>
@@ -955,11 +990,11 @@ function openClasse(id) {
 
     <div class="card">
       <div class="card-title">📝 Devoirs</div>
-      <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Donnez un chapitre à travailler pour une date. Le devoir est validé dès que l'élève fait le quiz du chapitre après l'assignation ; il apparaît en haut de son accueil. Le chapitre est déverrouillé automatiquement pour la classe.</p>
+      <p style="color:var(--muted);font-size:.82rem;margin-bottom:12px">Donnez un chapitre à travailler pour une date : son quiz, des exercices précis, ou les deux. Le quiz compte s'il est fait après l'assignation ; un exercice compte quand l'élève a cliqué « J'ai terminé » (même avant l'assignation). Le devoir est fait quand tout est fait ; il apparaît en haut de l'accueil de l'élève. Le chapitre est déverrouillé automatiquement pour la classe.</p>
       <div class="add-eleve-row">
         <div class="form-group">
           <label class="form-label">Chapitre</label>
-          <select class="form-select" id="devoir-chapitre">
+          <select class="form-select" id="devoir-chapitre" onchange="renderDevoirExosChoix()">
             ${groupesChapitres.slice().reverse().map(g => `<optgroup label="${niveauLabel(g.niveau)}">${g.chapitres.map(ch => `<option value="${ch.id}">${escapeHtml(ch.name)}</option>`).join('')}</optgroup>`).join('')}
           </select>
         </div>
@@ -969,6 +1004,7 @@ function openClasse(id) {
         </div>
         <button class="btn btn-primary" onclick="addDevoir('${c.id}')">Donner le devoir</button>
       </div>
+      <div class="devoir-exos" id="devoir-exos" role="group" aria-label="Contenu du devoir"></div>
       <div id="devoir-alert"></div>
       <div id="devoirs-list" style="margin-top:14px"><p style="color:var(--muted);font-size:.82rem">Chargement…</p></div>
     </div>
@@ -1040,6 +1076,34 @@ function openClasse(id) {
   document.getElementById('view-detail').style.display = 'none';
   document.getElementById('view-classe-detail').style.display = 'block';
   loadDevoirs(id);
+  renderDevoirExosChoix();
+}
+
+// ── Catalogue des exercices (titres par chapitre), chargé à la connexion ──
+let CATALOGUE = {};
+async function chargerCatalogue() {
+  const r = await fetch(SERVER + '/api/admin/catalogue-exercices', { headers: headers() }).catch(() => null);
+  CATALOGUE = r && r.ok ? await r.json() : {};
+}
+function exercicesDuChapitre(chId) { return CATALOGUE[chId] || []; }
+const exoNum = id => id.replace(/^ex/, 'Ex. ');
+
+// Cases « Quiz » + une case par exercice du chapitre choisi pour le devoir.
+function renderDevoirExosChoix() {
+  const box = document.getElementById('devoir-exos');
+  const sel = document.getElementById('devoir-chapitre');
+  if (!box || !sel) return;
+  const exos = exercicesDuChapitre(Number(sel.value));
+  box.innerHTML = `<label><input type="checkbox" id="devoir-quiz" checked> Quiz du chapitre</label>`
+    + exos.map(e => `<label title="${escapeHtml(e.titre)}"><input type="checkbox" class="devoir-exo" value="${escapeHtml(e.id)}"> ${escapeHtml(exoNum(e.id))}${'★'.repeat(e.niveau || 0) ? ' ' + '★'.repeat(e.niveau) : ''}</label>`).join('');
+}
+
+// Description d'un devoir : « Quiz + Ex. 4, Ex. 5 ».
+function devoirContenu(d) {
+  const parts = [];
+  if (d.avec_quiz !== false) parts.push('Quiz');
+  if (d.exercices && d.exercices.length) parts.push(d.exercices.map(exoNum).join(', '));
+  return parts.join(' + ');
 }
 
 // ── Devoirs d'une classe ─────────────────────────────────
@@ -1088,6 +1152,7 @@ function renderDevoirs() {
       <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
         <div>
           <div style="font-weight:600">${escapeHtml(nom)}</div>
+          <div style="font-size:.8rem;margin-top:2px">${escapeHtml(devoirContenu(d))}</div>
           <div style="color:var(--muted);font-size:.78rem">Donné le ${new Date(d.created_at).toLocaleDateString('fr-FR')} · à faire pour le ${dateFr(d.date_limite)}</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
@@ -1099,13 +1164,17 @@ function renderDevoirs() {
       ${suivi.length ? `<details style="margin-top:8px">
         <summary style="cursor:pointer;font-size:.8rem;color:var(--muted)">Voir le détail par élève</summary>
         <div class="table-wrap" style="margin-top:8px"><table>
-          <thead><tr><th>Élève</th><th>Code</th><th>Statut</th><th>Quiz fait le</th></tr></thead>
-          <tbody>${suivi.map(e => `<tr>
+          <thead><tr><th>Élève</th><th>Code</th><th>Statut</th>${d.avec_quiz !== false ? '<th>Quiz fait le</th>' : ''}${(d.exercices || []).map(x => `<th>${escapeHtml(exoNum(x))} terminé le</th>`).join('')}</tr></thead>
+          <tbody>${suivi.map(e => {
+            const parties = e.parties || { quiz: e.fait_le };
+            const quand = v => v ? new Date(v).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }) : '—';
+            return `<tr>
             <td>${escapeHtml(e.pseudo)}</td>
             <td><strong style="font-family:DM Mono,monospace">${escapeHtml(e.code)}</strong></td>
             <td><span class="badge ${DEVOIR_STATUTS[e.statut].badge}">${DEVOIR_STATUTS[e.statut].label}</span></td>
-            <td style="color:var(--muted);font-size:.78rem">${e.fait_le ? new Date(e.fait_le).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }) : '—'}</td>
-          </tr>`).join('')}</tbody>
+            ${d.avec_quiz !== false ? `<td style="color:var(--muted);font-size:.78rem">${quand(parties.quiz)}</td>` : ''}
+            ${(d.exercices || []).map(x => `<td style="color:var(--muted);font-size:.78rem">${quand(parties.exercices && parties.exercices[x])}</td>`).join('')}
+          </tr>`; }).join('')}</tbody>
         </table></div>
       </details>` : ''}
     </div>`;
@@ -1116,7 +1185,11 @@ async function addDevoir(classeId) {
   const chapitre_id = parseInt(document.getElementById('devoir-chapitre').value, 10);
   const date_limite = document.getElementById('devoir-date').value;
   if (!date_limite) { showAlert('devoir-alert', 'Choisissez une date limite.', 'err'); return; }
-  const r = await fetch(`${SERVER}/api/admin/classes/${classeId}/devoirs`, { method:'POST', headers:headers(), body: JSON.stringify({ chapitre_id, date_limite }) });
+  const caseQuiz = document.getElementById('devoir-quiz');
+  const avec_quiz = caseQuiz ? caseQuiz.checked : true;
+  const exercices = [...document.querySelectorAll('#devoir-exos .devoir-exo:checked')].map(cb => cb.value);
+  if (!avec_quiz && !exercices.length) { showAlert('devoir-alert', 'Cochez le quiz ou au moins un exercice.', 'err'); return; }
+  const r = await fetch(`${SERVER}/api/admin/classes/${classeId}/devoirs`, { method:'POST', headers:headers(), body: JSON.stringify({ chapitre_id, date_limite, avec_quiz, exercices }) });
   const d = await r.json().catch(() => ({}));
   if (!r.ok) { showAlert('devoir-alert', escapeHtml(d.error || 'Erreur'), 'err'); return; }
   // Le chapitre vient peut-être d'être déverrouillé : on recharge la classe pour mettre à jour ses cases.
@@ -1435,7 +1508,8 @@ async function confirmBulkImport() {
 async function resetEleve(id) {
   const e = DATA.find(x => x.id === id);
   const pseudo = e ? e.pseudo : id;
-  if (!confirm(`Réinitialiser toutes les données de ${pseudo} ?\n(quiz, erreurs fréquentes, notes, progression)\nCette action est irréversible.`)) return;
+  if (!confirm(`Réinitialiser toutes les données de ${pseudo} ?\n(quiz, erreurs fréquentes, notes, progression, suivi des exercices)\nCette action est irréversible.`)) return;
+
   const r = await fetch(`${SERVER}/api/admin/eleves/${id}/reset`, { method:'POST', headers:headers() });
   if (r.ok) { await refreshData(); if (currentClasseId) openClasse(currentClasseId); }
 }
@@ -1575,7 +1649,7 @@ function toggleErreurEleves(btn) {
 // dans une seule transaction.
 const PURGE_LIBELLES = {
   quiz_scores: 'scores de quiz', erreurs_quiz: 'erreurs fréquentes', progression: 'chapitres ouverts',
-  notes: 'notes saisies par les élèves', connexions: 'connexions enregistrées'
+  notes: 'notes saisies par les élèves', connexions: 'connexions enregistrées', exercices_suivi: 'suivis d\'exercices'
 };
 let purgeEnCours = null;
 
@@ -1643,13 +1717,82 @@ async function purgeExecuter() {
   await refreshData();
 }
 
+// ── Suivi des exercices ──────────────────────────────────
+const exoChoix = { classe: null, chapitre: null };
+let exoRequete = 0;
+
+function voirExercicesClasse(classeId) {
+  exoChoix.classe = classeId;
+  exoChoix.chapitre = null;
+  showList();
+  switchTab('exercices');
+}
+
+async function loadExercicesSuivi() {
+  const selClasse = document.getElementById('exo-classe');
+  const selChap = document.getElementById('exo-chapitre');
+  const box = document.getElementById('exo-resultats');
+  if (!CLASSES.length) { selClasse.innerHTML = '<option value="">Aucune classe</option>'; selChap.innerHTML = ''; box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Créez une classe pour suivre les exercices de ses élèves.</p>'; return; }
+  if (!CLASSES.some(c => c.id === exoChoix.classe)) exoChoix.classe = CLASSES[0].id;
+  selClasse.innerHTML = CLASSES.map(c => `<option value="${escapeHtml(c.id)}" ${c.id === exoChoix.classe ? 'selected' : ''}>${escapeHtml(c.nom)} — ${niveauLabel(c.niveau)}</option>`).join('');
+  const classe = CLASSES.find(c => c.id === exoChoix.classe);
+  const num = ++exoRequete;
+  box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Chargement…</p>';
+  // Chapitres proposés : ceux de la classe (année + années précédentes) qui ont des exercices,
+  // avec le nombre d'exercices terminés ; par défaut, le chapitre le plus travaillé.
+  const rAct = await fetch(`${SERVER}/api/admin/classes/${encodeURIComponent(classe.id)}/exercices`, { headers: headers() }).catch(() => null);
+  if (num !== exoRequete) return;
+  const activite = rAct && rAct.ok ? (await rAct.json()).chapitres : [];
+  const actParChap = new Map(activite.map(a => [a.chapitre_id, a]));
+  const chapitres = chaptersAccessibles(classe.niveau).filter(ch => exercicesDuChapitre(ch.id).length);
+  if (!chapitres.length) { selChap.innerHTML = ''; box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Aucun chapitre avec exercices pour cette classe.</p>'; return; }
+  if (!chapitres.some(ch => ch.id === exoChoix.chapitre)) {
+    const plusActif = activite.slice().sort((a, b) => b.nb_termines - a.nb_termines || b.nb_eleves - a.nb_eleves)[0];
+    exoChoix.chapitre = plusActif && chapitres.some(ch => ch.id === plusActif.chapitre_id) ? plusActif.chapitre_id : chapitres[chapitres.length - 1].id;
+  }
+  selChap.innerHTML = chapitres.slice().reverse().map(ch => {
+    const a = actParChap.get(ch.id);
+    return `<option value="${ch.id}" ${ch.id === exoChoix.chapitre ? 'selected' : ''}>${escapeHtml(chapitreNom(ch.id))}${a ? ` — ${a.nb_termines} terminé${a.nb_termines === 1 ? '' : 's'}` : ''}</option>`;
+  }).join('');
+  const r = await fetch(`${SERVER}/api/admin/classes/${encodeURIComponent(classe.id)}/exercices?chapitre_id=${exoChoix.chapitre}`, { headers: headers() }).catch(() => null);
+  if (num !== exoRequete) return;
+  if (!r || !r.ok) { box.innerHTML = '<p style="color:var(--red);font-size:.82rem">Impossible de charger le suivi des exercices.</p>'; return; }
+  renderExercicesSuivi(await r.json());
+}
+
+function renderExercicesSuivi(d) {
+  const box = document.getElementById('exo-resultats');
+  if (!d.nbEleves) { box.innerHTML = '<p style="color:var(--muted);font-size:.82rem">Aucun élève dans cette classe.</p>'; return; }
+  const exos = d.exercices;
+  const cellule = s => {
+    if (!s) return '<span class="exo-rien" aria-label="pas ouvert">—</span>';
+    const aides = s.nb_aides ? ` 💡${s.nb_aides}` : '';
+    const titreAides = Object.entries(s.aides || {}).sort((a, b) => a[0] - b[0]).map(([q, n]) => `Q${Number(q) + 1} : ${n} aide${n > 1 ? 's' : ''}`).join(', ');
+    const info = [s.termine_le ? `Terminé le ${new Date(s.termine_le).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })}` : `Ouvert le ${new Date(s.ouvert_le).toLocaleDateString('fr-FR')}`, titreAides].filter(Boolean).join(' — ');
+    return s.termine_le
+      ? `<span class="exo-ok" title="${escapeHtml(info)}">✓${aides}</span>`
+      : `<span class="exo-ouvert" title="${escapeHtml(info)}">ouvert${aides}</span>`;
+  };
+  box.innerHTML = `
+    <div class="table-wrap"><table class="exo-table">
+      <thead><tr><th>Élève</th>${exos.map(e => `<th title="${escapeHtml(e.titre)}">${escapeHtml(exoNum(e.id))}<br><span style="font-weight:400;text-transform:none">${'★'.repeat(e.niveau || 0)}</span></th>`).join('')}</tr></thead>
+      <tbody>
+        ${d.eleves.map(el => `<tr><td>${escapeHtml(el.pseudo)}</td>${exos.map(e => `<td class="exo-cell">${cellule(el.suivi[e.id])}</td>`).join('')}</tr>`).join('')}
+        <tr class="exo-stat"><td>Terminé (réussite)</td>${exos.map(e => { const s = d.stats[e.id]; return `<td>${s.nb_termine}/${d.nbEleves}<br>${s.pct_termine} %</td>`; }).join('')}</tr>
+        <tr class="exo-stat"><td>Aides en moyenne</td>${exos.map(e => { const s = d.stats[e.id]; return `<td>${s.moyenne_aides === null ? '—' : String(s.moyenne_aides).replace('.', ',')}</td>`; }).join('')}</tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--muted);font-size:.75rem;margin-top:8px">Survolez une case pour voir les dates et les aides par question.</p>`;
+}
+
 // ── Tabs ─────────────────────────────────────────────────
 function switchTab(tab) {
-  ['classes','eleves','scores','notes','erreurs'].forEach(t => {
+  ['classes','eleves','scores','notes','erreurs','exercices'].forEach(t => {
     document.getElementById('tab-'+t).classList.toggle('active', t===tab);
     document.getElementById('pane-'+t).style.display = t===tab ? 'block' : 'none';
   });
   if (tab === 'erreurs') loadErreurs();
+  if (tab === 'exercices') loadExercicesSuivi();
 }
 
 // ── Alerts ───────────────────────────────────────────────
